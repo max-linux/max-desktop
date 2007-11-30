@@ -1,3 +1,18 @@
+max-meta (0.3) max; urgency=low
+
+  * Change depends:
+    - evince-gtk => evince
+    - totem-xine => totem-gstreamer
+    - xvncviewer => xvnc4viewer
+  * Add codecs depends: ubuntu-restricted-extras
+  * Remove duplicates
+  * Add: libgl1-mesa-dri (direct rendering drivers)
+  * Change kernel depends: linux-image-generic linux-headers-generic linux-restricted-modules
+  * Add linuxprinting.org (printers drivers) linuxprinting.org-ppds linuxprinting.org-ppds-extra
+  * Add openoffice.org-gnome openoffice.org-gtk (humanize openoffice)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 30 Nov 2007 18:37:58 +0100
+
 max-meta (0.2) max; urgency=low
 
   * Se quitan las dependencias de max-vmplayer, vmware-player
