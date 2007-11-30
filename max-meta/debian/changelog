@@ -10,8 +10,9 @@ max-meta (0.3) max; urgency=low
   * Change kernel depends: linux-image-generic linux-headers-generic linux-restricted-modules
   * Add linuxprinting.org (printers drivers) linuxprinting.org-ppds linuxprinting.org-ppds-extra
   * Add openoffice.org-gnome openoffice.org-gtk (humanize openoffice)
+  * Add mozilla-firefox-locale-es-es
 
- -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 30 Nov 2007 18:37:58 +0100
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 30 Nov 2007 19:16:57 +0100
 
 max-meta (0.2) max; urgency=low
 
