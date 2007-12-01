@@ -10,7 +10,7 @@ if [ "$(basename ${JAVA_VM}| grep -c "gij")" = 1 ]; then
    update-alternatives --config java ${JAVA_VM}
 fi
 
-sed -i 's|__JAVA__|${JAVA_VM}|g' /etc/geogebra.lax
+sed -i "s|__JAVA__|${JAVA_VM}|g" /etc/geogebra.lax
 
 
 #DEBCONF#
