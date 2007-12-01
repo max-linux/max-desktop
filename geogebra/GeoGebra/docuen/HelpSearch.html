@@ -1,0 +1,53 @@
+<html>
+<head>
+  <title>GeoGebra Help</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta name="GENERATOR" content="Macrobject Word-2-Web Pro 2007.8.1.286">
+  <link rel="stylesheet" href="template.css">
+  <script language="javascript" src="scripts/HelpNavigate.js"></script>
+  <script language="javascript" src="scripts/HelpSearchData.js"></script>
+  <script language="javascript" src="scripts/HelpSearch.js"></script>
+</head>
+<body class="panel">
+
+<table height="100%" width="100%" style="table-layout:fixed;">
+  <tr><td height="30">
+    <table height="100%" width="100%" cellspacing="0" cellpadding="0">
+      <tr height="5">
+        <td width="20"></td>
+        <td></td>
+        <td></td> 
+        <td class="tab_s1"><img height="1" width="0"></td>
+        <td width="20"></td> 
+      </tr>
+      <tr>
+        <td class="tab_0">&nbsp;</td>
+        <td class="tab_l"><a class="tab" href="HelpTree.html">Contents</a></td>
+        <td class="tab_l"><a class="tab" href="HelpIndex.html">Index</a></td>
+        <td class="tab_s2">Search</td> 
+        <td class="tab_0">&nbsp;</td> 
+      </tr>
+    </table>
+  </td></tr>
+  <tr><td height="24">Type in the keyword to find:</td></tr>
+  <tr><td height="48">
+    <form name="searchForm" onsubmit="javascript:se.search(this.keywords.value);return false;">
+      <table height="48" width="100%" cellspacing="0" cellpadding="0">
+        <tr><td><input name="keywords" type="text" style="width:100%"></td></tr>
+        <tr><td align="right"><input type="submit" value="Search"></td></tr>
+      </table>
+    </form>
+  </td></tr>
+  <tr><td height="*"><select id="listbox" size="5" style="width:100%;height:100%" ondblclick="javascript:se.display();" onkeypress="javascript:se.keypress();"></select></td></tr>
+  <tr><td height="24" align="right"><input type="button" value="Display" onclick="javascript:se.display();"></td></tr>
+</table>
+
+<script language="javascript">
+  se.setListbox(listbox);
+  initNavigate();
+  se.init(searchForm.keywords);
+</script>
+
+
+</body>
+</html>

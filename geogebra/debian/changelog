@@ -1,0 +1,17 @@
+geogebra (3.0.beta2-1) max; urgency=low
+
+  * New upstream release
+  * Move geogebra.lax to /etc and edit JAVA_VM in postinst
+  * Add sun-java6-bin to Depends
+  * Remove force update-alternatives in config
+  * If gij is default JAVA_VM set another one (sun only)
+  * Change distribution stable => max
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Dec 2007 16:08:01 +0100
+
+geogebra (1.0-1) stable; urgency=low
+
+  * Initial release
+
+ -- Jon Latorre Martinez <moebius@grupoikusnet.com>  Mon, 26 Sep 2006 16:32:35 +0200
+
