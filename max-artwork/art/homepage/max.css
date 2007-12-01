@@ -1,0 +1,147 @@
+/*
+** Max stylesheet derived from the original Plone style sheet for CSS2-capable browsers.
+**
+** Copyright Alexander Limi - http://www.plonesolutions.com
+**
+** Additional Plone 2 work:
+** Joe Geldart & Tom Croucher - http://www.netalleynetworks.com
+** Michael Zeltner - http://niij.org
+** Geir B�kholt - http://www.plonesolutions.com
+**
+** All you guys rock :)
+**
+** Style sheet documentation can be found at http://plone.org/documentation
+**
+** Feel free to use whole or parts of this for your own designs, but give credit
+** where credit is due.
+**
+*/
+
+/*  (do not remove this :) */
+/*  (not this either :) */
+
+/* The basic elements: */
+
+html {
+	background-color: white;
+	color: #002B3D;
+	font-family: "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+	font-size: 0.90em;
+	line-height: 1.75em;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#mastwrap {
+    background: bottom left repeat-x #9C1810;
+}
+
+#masthead {
+	position:relative;
+	background: url('max-logo.png') center left no-repeat transparent;
+	border: 0px solid white;
+	height: 90px;
+	color: #000;
+}
+
+#content {
+	margin-top: 2em;
+	margin-left: 3em;
+	margin-right: 3em;
+}
+
+.inlinemediaobject {
+	display: block;
+	text-align: center;
+}
+
+div.toc {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+div.toc dt { 
+  margin-top: 2px; 
+}
+
+div.toc dt :visited { 
+	color: black; /* Ubuntu visited link color */
+}
+
+ul {
+	margin-right: 25%;
+}
+
+div.qandaset dt :visited { 
+	color: black; /* Ubuntu visited link color */
+}
+
+:link { 
+	color: #9C1810; /* max red */
+}
+
+:visited { 
+	color: #EF8E19; /* max orange */
+}
+
+dl { 
+  margin-top: 0em; 
+  margin-bottom: 0.5em; 
+}
+
+dt { 
+  margin-top: 1em; 
+}
+
+div.qandaset {
+	margin-left: 1em;
+}
+
+.guimenu, .guimenuitem, .guisubmenu {
+	font-style: italic;
+	color: #6d4c07; /* dark brown */
+}
+
+.guilabel, .guibutton { 
+}
+
+.question { 
+  font-weight: bold; 
+}
+
+/* accelerator keys in menus */
+.accel { 
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+        font-weight: normal; 
+        color: #9C1810; /* max red */
+        line-height: 1.2em;
+
+}	
+
+h1
+{
+        font-size: 1.6em; border-bottom: 2px solid #9C1810;
+}
+
+h2 {font-size: 1.4em;}
+h3 {font-size: 1.3em;}
+h4 {font-size: 1.2em;}
+h5, h6 {font-size: 1em;}
+
+
+
+strong
+{
+        margin: 1.5em 0 0 0;
+        font-weight: normal; 
+        color: #9C1810; /* max red */
+        font-size: 1.3em;
+}
+

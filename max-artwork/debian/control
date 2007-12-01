@@ -1,0 +1,21 @@
+Source: max-artwork
+Section: gnome
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs, intltool, libusplash-dev, ubuntu-docs (>= 6.04.7)
+Standards-Version: 3.6.2
+
+Package: max-artwork
+Architecture: all
+Depends: gtk2-engines-ubuntulooks, gnome-icon-theme-gartoon, gdm, max-artwork-usplash
+Conflicts: edubuntu-artwork, ubuntu-artwork, xubuntu-artwork
+Replaces: edubuntu-artwork, ubuntu-artwork, xubuntu-artwork
+Provides: ubuntu-artwork
+Description:MaX themes and artwork
+ This package contains MaX themes, artwork and default settings.
+
+Package: max-artwork-usplash
+Architecture: any
+Depends: usplash, ${shlibs:Depends}
+Description: MaX artwork for usplash
+ This is us the usplash startup screen for MaX.
