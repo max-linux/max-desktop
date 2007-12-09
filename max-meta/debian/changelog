@@ -1,3 +1,12 @@
+max-meta (0.4) max; urgency=low
+
+  * Move moodle to max-server package
+  * Add thunderbird packages and translations
+  * Add alternatives in java packages (support java5 and java6)
+  * Revert debian/control file to old depends style
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 09 Dec 2007 16:50:31 +0100
+
 max-meta (0.3) max; urgency=low
 
   * Change depends:

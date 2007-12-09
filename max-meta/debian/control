@@ -7,73 +7,13 @@ Build-Depends: debhelper (>= 4)
 
 Package: max-desktop
 Architecture: any
-Depends: max-core, max-educacion, max-ofimatica, 
-         firefox, firefox-locale-es-es, acroread, acroread-plugins,
-         audacity, blender, ekiga, evince, evolution, gdebi, 
-         pidgin, pidgin-libnotify, pidgin-extprefs, 
-         gedit, gedit-plugins, gftp,
-         gimp, gimp-python, gimp-print, gimp-gap, gimp-gnomevfs,
-         gdm, gtk2-engines, 
-Recomends: max-server
+Depends: ${max-desktop:Depends}
+Recommends: ${max-desktop:Recommends}
 Description: The Max desktop system
  This package depends on all of the packages in the Max desktop system
  .
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
-
-Package: max-educacion
-Architecture: any
-Depends: animalandia, anjuta, atnag, celestia, chilsplay, diveintopython, doc-base, doc-debian,
-         gcompris, gcompris-sound-es, geogebra, glade, gnome-devel, gnopernicus, gnuplot-x11, 
-         istanbul, inkscape, javahotpot, jclic, kalzium, kanagram, kanjidic, kdeedu, kdeedu, keduca,
-         kitchensync, klatin, klettres, kmplot, kstars, ktuberling, kturtle, kvoctrain, 
-         kwordquiz, lemurae, malted, malted-linux-doc, malted-projects, maxima, maxima-doc,
-         max-javahotpot-tutorial, max-jclic-curso, maxmoodle, max-squeak-manual, qcad, 
-         robolinux, squeak, squeak-image, squeak-sources, squeak-vm, starplot, stars,
-         stellarium, timidity, tuxmath, tuxpaint, tuxtype, type1inst, wxmaxima, xvidcap,
-         xtide, bluefish, avidemux, denemo
-Description: The Max educational packages
- This package depends on educational packages in the Max desktop system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
-Package: max-core
-Architecture: any
-Depends: acpi, acpid, acpi-support, anacron, apmd, aptitude, autoconf, autogen,
-         automake, bc, bluez-cups, bluez-pcmcia-support, bluez-utils, bogofilter,
-         brltty, build-essential, cdparanoia, cdrdao, cdrecord, ctags, dbus, dbus-1-utils,
-         epson-alc1100-filter, epson-alc1100-filter-cups, example-content, fonts-ttf-decoratives,
-         gnome-screensaver, nautilus-open-terminal, 
-         xawtv, xawtv-plugins, xawtv-plugin-qt, xawtv-tools, scantv,  
-         zip, unzip, rar, unrar, xserver-xorg, xorg, xtightvncviewer, xvnc4viewer,
-         x-ttcidfont-conf, xterm, ttf-freefont, ttf-indic-fonts, ttf-malayalam-fonts, unifont,
-         ttf-arabeyes, ttf-arphic-ukai, ttf-arphic-uming, ttf-baekmuk, ttf-bitstream-vera,
-         ttf-dejavu, ttf-dustin, ttf-gentium, ttf-kochi-gothic, ttf-kochi-mincho, ttf-lao,
-         ttf-mgopen, ttf-thai-tlwg,
-         gstreamer0.10-ffmpeg, gstreamer0.10-plugins-bad, gstreamer0.10-plugins-bad-multiverse,
-         gstreamer0.10-plugins-bad, gstreamer0.10-plugins-bad-multiverse, gstreamer0.10-plugins-ugly,
-         gstreamer0.10-plugins-ugly, gstreamer0.10-plugins-ugly-multiverse, totem-gstreamer,
-         ubuntu-restricted-extras,
-Description: The Max core packages
- This package depends on core packages in the Max desktop system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
-Package: max-ofimatica
-Architecture: any
-Depends: openoffice.org, openoffice.org-help-es, openoffice.org-l10n-es, openoffice.org-gtk, 
-         openoffice.org-gnome, cupsys, cupsys-bsd, cupsys-client, cupsys-driver-gutenprint, 
-         gnome-cups-manager, hplip-ppds, linuxprinting.org-ppds, linuxprinting.org-ppds-extra,
-         foomatic-db, foomatic-db-engine, foomatic-db-gutenprint, foomatic-db-hpijs, 
-         foomatic-filters,
-Description: The Max core packages
- This package depends on core packages in the Max desktop system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
 
 Package: max-server
 Architecture: any

@@ -298,7 +298,6 @@ max-kde-icons
 max-konqueror-shortcuts
 max-lanzador
 max-manuales
-maxmoodle
 max-netbeans
 max-proxyconf
 max-squeak-manual
@@ -307,12 +306,10 @@ min12xxw
 mjpegtools
 mkisofs
 monodoc
-moodle
 mousepad
 mozilla-acroread
 mozilla-firefox-locale-es-es
 mozilla-mplayer
-mozilla-thunderbird
 mplayer
 mplayer-fonts
 mysql-server
@@ -421,7 +418,7 @@ squeak-vm
 starplot
 stars
 stellarium
-sun-java5-jdk
+sun-java5-jdk|sun-java6-jdk|sun-java5-bin|sun-java6-bin
 synaptic
 tango-icon-theme
 tango-icon-theme-common
@@ -429,6 +426,9 @@ thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-media-tags-plugin
+thunderbird
+thunderbird-gnome-support
+thunderbird-locale-es-es
 tightvncserver
 timidity
 totem-gstreamer
