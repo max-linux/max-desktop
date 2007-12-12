@@ -1,0 +1,17 @@
+Source: openoffice.org-thesaurus-es
+Section: text
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends-Indep: debhelper (>= 4.0.0), cdbs, libmythes-dev
+Standards-Version: 3.7.2
+
+Package: openoffice.org-thesaurus-es
+Architecture: all
+Provides: openoffice.org2-thesaurus, openoffice.org2-thesaurus-es
+Depends: openoffice.org-core (>= 1.9) | language-support-es, dictionaries-common (>= 0.10) | openoffice.org-updatedicts
+Conflicts: openoffice.org (<< 1.9)
+Description: Spanish Thesaurus for OpenOffice.org 2
+ This package contains an Spanish thesaurus for use with the
+ OpenOffice.org 2 office suite.
+
+
