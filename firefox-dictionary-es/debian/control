@@ -1,0 +1,13 @@
+Source: firefox-dictionary-es
+Section: metapackages
+Priority: optional
+Maintainer: Mario Izquierdo Rodriguez (mariodebian) <mariodebian@gmail.com>
+Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 4)
+
+Package: firefox-dictionary-es
+Architecture: all
+Depends: firefox
+Description: Spanish dictionary extension for Firefox
+ Downloaded from https://addons.mozilla.org/es-ES/firefox/browse/type:3
+
