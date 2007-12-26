@@ -1,0 +1,31 @@
+Source: flashplugin-nonfree
+Section: contrib/web
+Priority: optional
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
+XSBC-Original-Maintainer: Bart Martens <bartm@knars.be>
+Build-Depends: debhelper (>= 5), cdbs
+Standards-Version: 3.7.2
+
+Package: flashplugin-nonfree
+Architecture: i386 amd64 lpia
+Depends: nspluginwrapper (>= 0.9.91.4-2ubuntu1) [amd64], debconf | debconf-2.0, wget, libgtk2.0-0, fontconfig, libxt6, libxext6, libatk1.0-0, libc6, libcairo2, libexpat1, libfontconfig1, libfreetype6, libglib2.0-0, libice6, libpango1.0-0, libpng12-0, libsm6, libx11-6, libxau6, libxcursor1, libxdmcp6, libxfixes3, libxi6, libxinerama1, libxrandr2, libxrender1, zlib1g
+Suggests: firefox, konqueror-nsplugins, x-ttcidfont-conf, msttcorefonts, ttf-bitstream-vera | ttf-dejavu, ttf-xfree86-nonfree, xfs (>= 1:1.0.1-5)
+Conflicts: flashplugin (<< 6), xfs (<< 1:1.0.1-5), flashplayer-mozilla
+Replaces: flashplugin (<< 6)
+Xb-Npp-Applications: ec8030f7-c20a-464f-9b0e-13a3a9e97384, 92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a, aa5ca914-c309-495d-91cf-3141bbb04115, 
+Xb-Npp-MimeType: application/x-shockwave-flash
+Xb-Npp-Name: Adobe Flash Player (installer)
+Description: Adobe Flash Player plugin installer
+ This package will download the Flash Player from Adobe.  It is a
+ Netscape/Mozilla type plugin.  Any browser based on Netscape or Mozilla can
+ use the Flash plugin.  This package currently supports the following browsers:
+ Mozilla, Mozilla-Firefox, Firefox, Iceweasel, and Iceape.  Also Galeon and
+ Epiphany can use the Flash plugin.  Konqueror can also use the Flash plugin if
+ konqueror-nsplugins is installed.
+ .
+ WARNING: Installing this Ubuntu package causes the Adobe flash plugin to be
+ downloaded from www.adobe.com.  The distribution license of the Adobe flash
+ plugin is available at www.adobe.com.  Installing this Ubuntu package implies
+ that you have accepted the terms of that license.
+ .
+  Homepage: http://wiki.ubuntu.com/FlashPlayer9

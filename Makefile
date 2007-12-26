@@ -2,4 +2,4 @@ all:
 	#none
 
 clean:
-	rm -f *.*
+	rm -f *.* 2>/dev/null || true

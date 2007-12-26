@@ -1,0 +1,84 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: flashplugin-nonfree 7.0.61-3\n"
+"Report-Msgid-Bugs-To: bartm@knars.be\n"
+"POT-Creation-Date: 2006-10-28 10:40+0200\n"
+"PO-Revision-Date: 2006-06-07 16:40+0200\n"
+"Last-Translator: Morten Brix Pedersen <morten@wtf.dk>\n"
+"Language-Team: debian-l10n-danish <debian-l10n-danish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid "Location to the local file:"
+msgstr "Placering på den lokale fil:"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+#, fuzzy
+msgid ""
+"Have you already downloaded the .tar.gz package from Adobe? If so, please "
+"enter the directory you downloaded it into. Do not include the filename "
+"here. If you have not already downloaded it, leave this blank and the "
+"package will be downloaded automatically."
+msgstr ""
+"Har du allerede hentet install_flash_player_7_linux.tar.gz pakken fra "
+"Macromedia? Hvis ja, så indtast den mappe du hentede den ned til. Inkludér "
+"ikke \"install_flash_player_7_linux.tar.gz\" her. Hvis du ikke har hentet "
+"den, så lad dette være tomt, og pakken vil blive hentet automatisk."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "File not found"
+msgstr "Fil ikke fundet"
+
+#. Type: error
+#. Description
+#: ../templates:2001
+#, fuzzy
+msgid ""
+"The .tar.gz file does not exist in the directory you entered. Please try "
+"again. Enter the path of the directory that the package is in (don't type "
+"the filename at the end of the path)."
+msgstr ""
+"install_flash_player_7_linux.tar.gz eksisterer ikke i den mappe du "
+"indtastede. Prøv igen. Indtast stien på den mappe hvor pakken er i (indtast "
+"ikke \"install_flash_player_7_linux.tar.gz\" i slutningen af stien."
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"Do you accept the license and do you want to download the flash plugin now?"
+msgstr "Accepterer du licenset, og vil du hente flash plugin nu?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+#, fuzzy
+msgid ""
+"The Adobe flash plugin is to be downloaded from www.adobe.com.  This can be "
+"done automatically now.  The distribution license of the Adobe flash plugin "
+"is available at www.adobe.com."
+msgstr ""
+"Macromedia flash plugin skal hentes fra www.macromedia.com. Dette kan ske "
+"automatisk nu. Distributions licenset på Macromedia flash plugin er "
+"tilgængeligt på www.macromedia.com."

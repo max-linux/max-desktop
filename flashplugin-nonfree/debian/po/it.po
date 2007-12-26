@@ -1,0 +1,135 @@
+# Italian translation of flashplugin-nonfree_7.0.25-5_templates.po
+# Luca Bruno, 2005, 2006.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: flashplugin-nonfree_7.0.25-5_templates\n"
+"Report-Msgid-Bugs-To: bartm@knars.be\n"
+"POT-Creation-Date: 2006-10-28 10:40+0200\n"
+"PO-Revision-Date: 2006-05-31 20:30+0200\n"
+"Last-Translator: Luca Bruno <luca.br@uno.it>\n"
+"Language-Team: Italian <tp@lists.linux.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid "Location to the local file:"
+msgstr "Indirizzo del file locale:"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+#, fuzzy
+msgid ""
+"Have you already downloaded the .tar.gz package from Adobe? If so, please "
+"enter the directory you downloaded it into. Do not include the filename "
+"here. If you have not already downloaded it, leave this blank and the "
+"package will be downloaded automatically."
+msgstr ""
+"Il pacchetto install_flash_player_7_linux.tar.gz è già stato scaricato da "
+"Macromedia? Se sì, indicare la directory in cui è stato salvato. Non "
+"indicare anche \"install_flash_player_7_linux.tar.gz\". Se non lo si è "
+"ancora scaricato, lasciare l'indirizzo vuoto, in modo tale che il pacchetto "
+"verrà scaricato automaticamente."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "File not found"
+msgstr "File non trovato"
+
+#. Type: error
+#. Description
+#: ../templates:2001
+#, fuzzy
+msgid ""
+"The .tar.gz file does not exist in the directory you entered. Please try "
+"again. Enter the path of the directory that the package is in (don't type "
+"the filename at the end of the path)."
+msgstr ""
+"install_flash_player_7_linux.tar.gz non esiste nella directory indicata."
+"Inserire il percorso in cui risiede il pacchetto (non inserire "
+"\"install_flash_player_7_linux.tar.gz\" alla fine del percorso)."
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"Do you accept the license and do you want to download the flash plugin now?"
+msgstr "Accettare la licenza e scaricare il plugin flash ora?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+#, fuzzy
+msgid ""
+"The Adobe flash plugin is to be downloaded from www.adobe.com.  This can be "
+"done automatically now.  The distribution license of the Adobe flash plugin "
+"is available at www.adobe.com."
+msgstr ""
+"Il plugin Macromedia flash deve essere scaricato da www.macromedia.com. "
+"Questo può esser fatto automaticamente. La licenza è disponibile sempre "
+"presso www.macromedia.com."
+
+#~ msgid ""
+#~ "install_flash_player_7_linux.tar.gz does not exist in the directory you "
+#~ "entered."
+#~ msgstr ""
+#~ "install_flash_player_7_linux.tar.gz non esiste nella directory che è "
+#~ "stata indicata."
+
+#~ msgid ""
+#~ "Would you like flashplugin to be automatically downloaded and installed "
+#~ "from the Internet?"
+#~ msgstr ""
+#~ "Si vuole che il plugin flash venga scaricato automaticamente e installato "
+#~ "da internet?"
+
+#~ msgid ""
+#~ "If you are currently connected to the Internet accept here, and "
+#~ "install_flash_player_7_linux.tar.gz will automatically be downloaded and "
+#~ "installed from Macromedia's web site. If you are not connected to the "
+#~ "Internet, you should refuse here. You can install flashplugin later as "
+#~ "the root user by running update-flashplugin (8)."
+#~ msgstr ""
+#~ "Se si è attualmente connessi a internet, accettare. "
+#~ "install_flash_player_7_linux.tar.gz verrà scaricato automaticamente e "
+#~ "installato dal sito web di Macromedia. Se non si è connessi a internet, "
+#~ "si dovrebbe rifiutare. Si può installare successivamente il plugin flash "
+#~ "eseguendo update-flashplugin (8) come utente root."
+
+#~ msgid "Please enter your http proxy address"
+#~ msgstr "Inserire l'indirizzo del proxy http"
+
+#~ msgid ""
+#~ "If you have a http proxy server, please enter. (e.g: "
+#~ "http://192.168.0.1:3128) Leave empty if it is not needed."
+#~ msgstr ""
+#~ "Se si sta usando un server proxy http, specificarlo. (es. "
+#~ "http://192.168.0.1:3128). Lasciare vuoto se non è necessario."
+
+#~ msgid ""
+#~ "Would you like to delete install_flash_player_7_linux.tar.gz after it has "
+#~ "been installed?"
+#~ msgstr ""
+#~ "Si vuole rimuovere install_flash_player_7_linux.tar.gz dopo che è stato "
+#~ "installato?"
+
+#~ msgid "If you want to keep the archive, refuse here."
+#~ msgstr "Se si vuole conservare l'archivio, rifiutare."
+
+#~ msgid "Installation of the flash plugin failed"
+#~ msgstr "Installazione del plugin flash fallita"
+
+#~ msgid ""
+#~ "The installation of the plugin failed. Try again with /usr/sbin/update-"
+#~ "flashplugin or get the plugin from http://macromedia.mplug.org/ and "
+#~ "follow the instructions you find with the plugin."
+#~ msgstr ""
+#~ "L'installazione del plugin flash è fallita. Riprovare di nuovo eseguendo /"
+#~ "usr/sbin/update-flashplugin, oppure scaricando il plugin da http://"
+#~ "macromedia.mplug.org/ e seguendo le istruzioni fornite insieme al plugin."

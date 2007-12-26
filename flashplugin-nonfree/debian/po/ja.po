@@ -1,0 +1,71 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: flashplugin-nonfree\n"
+"Report-Msgid-Bugs-To: bartm@knars.be\n"
+"POT-Creation-Date: 2006-10-28 10:40+0200\n"
+"PO-Revision-Date: 2006-11-14 21:46+0900\n"
+"Last-Translator: Kenshi Muto <kmuto@debian.org>\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid "Location to the local file:"
+msgstr "ローカルファイルの場所:"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"Have you already downloaded the .tar.gz package from Adobe? If so, please "
+"enter the directory you downloaded it into. Do not include the filename "
+"here. If you have not already downloaded it, leave this blank and the "
+"package will be downloaded automatically."
+msgstr "Adobe から .tar.gz パッケージをすでにダウンロードしていますか? もしそうであれば、ダウンロードしたものを置いているディレクトリを入力してください。ファイル名はここでは含めないでください。まだダウンロードしていないのであれば、ここは空のままにしておくことで、パッケージは自動的にダウンロードされます。"
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "File not found"
+msgstr "ファイルが見つかりません"
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"The .tar.gz file does not exist in the directory you entered. Please try "
+"again. Enter the path of the directory that the package is in (don't type "
+"the filename at the end of the path)."
+msgstr ".tar.gz ファイルが指定のディレクトリに存在しません。再度試してください。パッケージのあるディレクトリのパスを入力してください (パスの最後にはファイル名は入れないでください)。"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"Do you accept the license and do you want to download the flash plugin now?"
+msgstr "ライセンスに同意して flash プラグインを今ダウンロードしますか?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"The Adobe flash plugin is to be downloaded from www.adobe.com.  This can be "
+"done automatically now.  The distribution license of the Adobe flash plugin "
+"is available at www.adobe.com."
+msgstr "Adobe flash プラグインは www.adobe.com からダウンロードされます。これは今自動的に行うことができます。Adobe flash プラグインの配布ライセンスは、www.adobe.com から入手できます。"
