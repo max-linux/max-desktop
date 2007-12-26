@@ -1,9 +1,24 @@
+max-meta (0.7) max; urgency=low
+
+  * Split packages in:
+    - max-desktop-common
+    - max-desktop-kde
+    - max-desktop-gnome
+    - max-desktop-xfce
+  * Add libk3b-mp3 to debian-desktop-kde package (Closes: #34)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 26 Dec 2007 21:01:23 +0100
+
 max-meta (0.6) max; urgency=low
 
   * Add spanish gcompris sound files:
     - gcompris-sound-es
+  * Add firefox-dictionary-es extension
+  * Remove non existent linux-restricted-modules package
+  * Remove some duplicate packages
+  * Move mysql-server and nfs-kernel-server to server package
 
- -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 12 Dec 2007 10:24:24 +0100
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 20 Dec 2007 15:59:52 +0100
 
 max-meta (0.5) max; urgency=low
 

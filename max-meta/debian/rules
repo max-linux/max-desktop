@@ -14,7 +14,15 @@ build: build-stamp
 build-stamp:	desktop-$(DEB_BUILD_ARCH) server-$(DEB_BUILD_ARCH)
 	dh_clean
 
-	for seed in desktop server; do \
+#	for seed in desktop server; do \
+#		package=max-$$seed; \
+#		(printf "$$package:Depends="; perl -pe 's/\n/, /g'  $$seed-$(DEB_BUILD_ARCH); echo) \
+#			>> debian/$$package.substvars; \
+#		(printf "$$package:Recommends="; perl -pe 's/\n/, /g'  $$seed-recommends-$(DEB_BUILD_ARCH); echo) \
+#			>> debian/$$package.substvars; \
+#	done
+
+	for seed in desktop-common desktop-gnome desktop-kde desktop-xfce server; do \
 		package=max-$$seed; \
 		(printf "$$package:Depends="; perl -pe 's/\n/, /g'  $$seed-$(DEB_BUILD_ARCH); echo) \
 			>> debian/$$package.substvars; \
