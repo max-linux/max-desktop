@@ -1,0 +1,5 @@
+# which /dev/dsp wrapper to use
+FIREFOX_DSP="none"
+# Note that "auto" and "esd" involve the use of esddsp, which
+# is known to be buggy and to make Firefox unstable.
+# See https://launchpad.net/malone/bugs/29760.
