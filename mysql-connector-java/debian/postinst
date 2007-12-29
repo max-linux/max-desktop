@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+case "$1" in
+configure)
+
+  JAVAS=$(update-alternatives --list java| grep -e "jre*.sun" -e "java.*sun" | sed 's|/bin/java||g')
+
+  for JAVA in $JAVAS; do
+    EXT_DIR=$(dirname $JAVA)/ext
+    if [ -d $EXT_DIR ]; then
+      if [ ! -e $EXT_DIR/mysql-connector-java.jar ]; then
+		ln -s /usr/share/mysql-connector-java/mysql-connector-java.jar $EXT_DIR/
+		echo "linking mysql-connector-java at $EXT_DIR"
+      fi
+    fi
+  done
+  ;;
+esac
+
