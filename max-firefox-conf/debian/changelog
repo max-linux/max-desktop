@@ -1,3 +1,15 @@
+max-firefox-conf (0.2max3) max; urgency=low
+
+  * Remove svn dirs in package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Dec 2007 12:56:10 +0100
+
+max-firefox-conf (0.2max2) max; urgency=low
+
+  * Remove code from postinst && postrm and delete preinst script
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Dec 2007 12:50:29 +0100
+
 max-firefox-conf (0.2max1) max; urgency=low
 
   * New relaase
