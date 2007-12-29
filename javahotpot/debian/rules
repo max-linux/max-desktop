@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+configure/javahotpot::
+	if [ ! -d tmp ]; then mkdir tmp; fi
+
+build/javahotpot::
+	if [ ! -e tmp/javahotpot60.zip ]; then (cd tmp && wget http://web.uvic.ca/hrd/hotpot/javahotpot60.zip); fi
+	if [ ! -d tmp/JavaHotPot ]; then (cd tmp && unzip -o javahotpot60.zip); fi
+
+binary-install/javahotpot::
+	# install shell script launcher
+	install -m 755 javahotpot.sh debian/javahotpot/usr/bin/javahotpot
+
+clean::
+	rm -rf tmp
