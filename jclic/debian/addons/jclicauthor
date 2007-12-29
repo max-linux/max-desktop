@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ ! -d $HOME/JClic ]; then
+  cp -ra /usr/share/jclic/JClic $HOME/
+fi
+
+
+cd $HOME
+aux="java"
+CLASSPATH="$CLASSPATH:/usr/share/jclic"
+
+# TCOS thin client
+REMOTE_DISPLAY=$(echo $DISPLAY| awk -F ":" '{print $1}')
+if [ "${REMOTE_DISPLAY}" != "" ]; then
+  if [ -x /usr/bin/padsp ]; then
+     padsp -s "$REMOTE_DISPLAY" -n JClic -m JClic-stream $aux -cp $CLASSPATH -jar /usr/share/jclic/jclicautor.jar "$@" &>/dev/null &
+     exit 0
+  fi
+fi
+
+$aux -cp $CLASSPATH -jar /usr/share/jclic/jclicauthor.jar "$@" &>/dev/null
+
+

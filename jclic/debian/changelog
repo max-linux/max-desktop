@@ -1,0 +1,44 @@
+jclic (0.1.2.2-2max2) max; urgency=low
+
+  * Disable Reports (need to configure MySQL database)
+  * Recomends: mysql-connector-java
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Dec 2007 22:33:16 +0100
+
+jclic (0.1.2.2-2max1) max; urgency=low
+
+  * Build in Ubuntu gutsy (MaX 3.1)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Dec 2007 12:31:02 +0100
+
+jclic (0.1.2.2-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 08 Oct 2007 15:17:33 +0200
+
+jclic (0.1.2.1b-2) unstable; urgency=low
+
+  * Fix JAVA_HOME path, use /etc/alternatives/java to read java PATH.
+  * Move JClicAuthor outside Education menu.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 31 Dec 2006 12:06:36 +0100
+
+jclic (0.1.2.1b-1) unstable; urgency=low
+
+  * Update to last upstreamer version (24/10/2006)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 17 Dec 2006 19:28:01 +0100
+
+jclic (0.1.2.0-2) unstable; urgency=low
+
+  * Update Desktop menu categories.
+  * Add debian menu file
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 17 Dec 2006 19:25:41 +0100
+
+jclic (0.1.2.0-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu,  7 Sep 2006 12:27:34 +0200

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=JClic
+Comment=Educational activities
+Comment[es]=Programa educativo para realizar ejercicios
+Comment[ca]=Programa educatiu per a realitzar exercicis
+Exec=jclic %U
+Icon=/usr/share/jclic/icons/jclic.png
+Terminal=0
+Type=Application
+Categories=Game;KidsGame;Education;Teaching;

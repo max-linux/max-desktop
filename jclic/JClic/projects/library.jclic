@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JClicProject name="Sin_nombre" version="0.1.3" type="library">
+ <settings>
+  <title>Biblioteca principal</title>
+  <revision description="created" date="10/27/06" />
+  <descriptors />
+ </settings>
+ <sequence>
+  <item id="main" name="main">
+   <jump action="STOP" id="forward" />
+   <jump action="RETURN" id="back" />
+  </item>
+ </sequence>
+ <activities>
+  <activity class="@panels.Menu" name="main">
+   <description>
+    <p>Menú principal</p>
+   </description>
+   <messages>
+    <cell type="initial">
+     <style />
+     <p>Menú principal</p>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="false" actions="false" score="false" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+  </activity>
+ </activities>
+ <mediaBag />
+</JClicProject>
+
