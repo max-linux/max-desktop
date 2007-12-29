@@ -1,0 +1,36 @@
+#!/bin/bash
+
+
+# install gconf settings
+META_GCONF=/usr/share/max/gconf/
+META_GCONF_DUMPS=/usr/share/max/gconf-dumps
+
+for _file in $(find $META_GCONF -name "*.gconf"); do
+  /usr/sbin/maxgconf --set $_file
+done
+
+
+max_gconf_load() {
+  gconftool-2 --direct --config-source  xml:readwrite:$1 --load $2 >/dev/null 2>&1
+}
+
+
+# parse dumps files
+
+for _file in $(find $META_GCONF_DUMPS -name "*dump.gconf"); do
+  if [ $(echo $file | grep -c "mandatory") -gt 0 ]; then
+    echo "Loading mandatory gconf values in $(basename $_file)"
+    max_gconf_load "/etc/gconf/gconf.xml.mandatory" $_file
+  else
+    echo "Loading defaults gconf values in $(basename $_file)"
+    max_gconf_load "/etc/gconf/gconf.xml.defaults" $_file
+  fi
+
+  # set at user too
+  for home in /home/*; do
+    max_gconf_load "$home/.gconf" $_file
+  done
+done
+
+
+##DEBHELPER##

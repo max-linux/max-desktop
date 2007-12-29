@@ -1,67 +1,21 @@
 #!/usr/bin/make -f
 
-#export DH_VERBOSE=1
+include /usr/share/cdbs/1/rules/debhelper.mk
 
-clean:
-	dh_testdir
-	dh_clean
+PACKAGES=desktop-common desktop-gnome desktop-kde desktop-xfce server
 
-	rm -rf build-stamp *.old debootstrap-dir
-
-DEB_BUILD_ARCH:=$(shell dpkg-architecture -qDEB_BUILD_ARCH)
-
-build: build-stamp
-build-stamp:	desktop-$(DEB_BUILD_ARCH) server-$(DEB_BUILD_ARCH)
-	dh_clean
-
-#	for seed in desktop server; do \
-#		package=max-$$seed; \
-#		(printf "$$package:Depends="; perl -pe 's/\n/, /g'  $$seed-$(DEB_BUILD_ARCH); echo) \
-#			>> debian/$$package.substvars; \
-#		(printf "$$package:Recommends="; perl -pe 's/\n/, /g'  $$seed-recommends-$(DEB_BUILD_ARCH); echo) \
-#			>> debian/$$package.substvars; \
-#	done
-
-	for seed in desktop-common desktop-gnome desktop-kde desktop-xfce server; do \
+configure/max-desktop::
+	for seed in $(PACKAGES); do \
 		package=max-$$seed; \
 		(printf "$$package:Depends="; perl -pe 's/\n/, /g'  $$seed-$(DEB_BUILD_ARCH); echo) \
 			>> debian/$$package.substvars; \
-		(printf "$$package:Recommends="; perl -pe 's/\n/, /g'  $$seed-recommends-$(DEB_BUILD_ARCH); echo) \
-			>> debian/$$package.substvars; \
+		#(printf "$$package:Recommends="; perl -pe 's/\n/, /g'  $$seed-recommends-$(DEB_BUILD_ARCH); echo) \
+		#	>> debian/$$package.substvars; \
 	done
-	touch $@
 
-install: build-stamp
-	dh_testdir
-	dh_testroot
-	dh_installdirs
-	
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/max-server
-         
-binary-arch: install
-	dh_testdir -a
-	dh_testroot -a
-	dh_installdocs -a
-	dh_installchangelogs -a
-	dh_compress -a
-	dh_fixperms -a
-	dh_installdeb -a
-	dh_gencontrol -a
-	dh_md5sums -a
-	dh_builddeb -a
+install/max-desktop-common::
+	install -m 755 maxgconf.sh $(CURDIR)/debian/max-desktop-common/usr/sbin/maxgconf
 
-binary-indep:
-	dh_testdir -i
-	dh_testroot -i
-	dh_installdocs -i
-	dh_installchangelogs -i
-	dh_compress -i
-	dh_fixperms -i
-	dh_installdeb -i
-	dh_gencontrol -i
-	dh_md5sums -i
-	dh_builddeb -i
+clean::
+	rm -f *~ desktop-sin-dupli-i386 desktop-all-i386 desktop-dupli-i386
 
-binary: binary-indep binary-arch
-
-.PHONY: binary binary-arch binary-indep clean checkroot build

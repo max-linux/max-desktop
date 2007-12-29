@@ -1,3 +1,13 @@
+max-meta (0.8.3) max; urgency=low
+
+  * Convert package to cdbs
+  * Add maxgconf utility
+  * Add gconf/* default and mandatory settings
+  * Depends: Remove max-3.0-firefox-conf and add max-firefox-conf
+  * Add gconf-dumps/* to items (like panel) with complex gconf settings
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Dec 2007 19:12:23 +0100
+
 max-meta (0.7) max; urgency=low
 
   * Split packages in:

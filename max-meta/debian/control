@@ -3,7 +3,7 @@ Section: metapackages
 Priority: optional
 Maintainer: Pedro Peña Pérez <pedro.pena@edmanufacturer.es>
 Standards-Version: 3.6.2
-Build-Depends: debhelper (>= 4)
+Build-Depends: debhelper (>= 4), cdbs
 
 Package: max-desktop
 Architecture: all

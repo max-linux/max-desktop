@@ -1,0 +1,16 @@
+#!/bin/bash
+
+META_GCONF=/usr/share/max/gconf/
+META_GCONF_DUMPS=/usr/share/max/gconf-dumps
+
+if [ "$1" = "purge" ]; then
+   # remove gconf settings
+
+   for _file in $(find $META_GCONF -name "*.gconf"); do
+     /usr/sbin/maxgconf --unset $_file
+   done
+fi
+
+# FIXME remove default
+
+##DEBHELPER##
