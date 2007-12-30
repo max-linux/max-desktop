@@ -1,3 +1,10 @@
+max-meta (0.12) max; urgency=low
+
+  * gconf/desktop.gnome.interface.gconf:
+    - Change default icon_them to gartoon
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 21:28:25 +0100
+
 max-meta (0.11) max; urgency=low
 
   * Fix error in maxgconf stderr redirection
