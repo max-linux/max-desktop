@@ -110,19 +110,19 @@ set_key() {
 
    if [ "$3" = "" ]; then decho "ERROR: key $1 don't have value"; return;  fi
 
-   gconftool-2 --direct --type $2 --config-source xml:readwrite:/etc/gconf/gconf.xml.${prio} --set $1 "$3" &>> /tmp/maxgconf.errors
+   gconftool-2 --direct --type $2 --config-source xml:readwrite:/etc/gconf/gconf.xml.${prio} --set $1 "$3" >> /tmp/maxgconf.errors 2>&1
 
    # if mandatory set at homes too
    if [ "$prio" = "mandatory" ]; then
      for home in /home/*; do
-        gconftool-2 --config-source xml:readwrite:$home/.gconf --type $2 --set $1 "$3" &>> /tmp/maxgconf.errors
+        gconftool-2 --config-source xml:readwrite:$home/.gconf --type $2 --set $1 "$3" >> /tmp/maxgconf.errors 2>&1
      done
    fi
 }
 
 unset_key() {
-   gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults --unset $1
-   gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory --unset $1
+   gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults --unset $1 >> /tmp/maxgconf.errors 2>&1
+   gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory --unset $1 >> /tmp/maxgconf.errors 2>&1
 }
 
 

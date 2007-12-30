@@ -1,3 +1,9 @@
+max-meta (0.11) max; urgency=low
+
+  * Fix error in maxgconf stderr redirection
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 18:08:12 +0100
+
 max-meta (0.10) max; urgency=low
 
   * Change max-3.0-skel-conf with max-skel-conf
