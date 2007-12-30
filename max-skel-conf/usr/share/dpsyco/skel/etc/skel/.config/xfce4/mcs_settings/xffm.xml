@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mcs-option SYSTEM "mcs-option.dtd">
+
+<mcs-option>
+	<option name="DESKTOP_BACKGROUND_IMAGE" type="string" value=""/>
+	<option name="DESKTOP_COLOR" type="string" value=""/>
+	<option name="DISABLE_DESKTOP" type="string" value="True"/>
+	<option name="SMB_USER" type="string" value=""/>
+	<option name="TERMCMD" type="string" value=""/>
+	<option name="USE_DESKTOP_MENU" type="string" value=""/>
+	<option name="USE_DESKTOP_MENU_ICONS" type="string" value=""/>
+	<option name="XFFM_DEFAULT_UNLINK" type="string" value=""/>
+	<option name="XFFM_DISABLE_CELL_EDIT" type="string" value=""/>
+	<option name="XFFM_DISABLE_DIAGNOSTICS" type="string" value=""/>
+	<option name="XFFM_DISABLE_MONITOR" type="string" value=""/>
+	<option name="XFFM_DISABLE_TEXTCOLORS" type="string" value=""/>
+	<option name="XFFM_DISABLE_TIPS" type="string" value=""/>
+	<option name="XFFM_DRAG_DOES_COPY" type="string" value=""/>
+	<option name="XFFM_FORCE_DIAGNOSTICS" type="string" value=""/>
+	<option name="XFFM_HOLD_XTERM" type="string" value=""/>
+	<option name="XFFM_MAX_PREVIEW_SIZE" type="string" value=""/>
+	<option name="XFFM_SINGLE_CLICK_NAVIGATION" type="string" value=""/>
+	<option name="XFFM_USE_SUDO" type="string" value=""/>
+</mcs-option>

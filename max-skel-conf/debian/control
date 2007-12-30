@@ -1,0 +1,20 @@
+Source: max-skel-conf
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs
+Standards-Version: 3.7.2
+
+Package: max-skel-conf
+Architecture: all
+Pre-Depends: dpsyco-lib (>= 1.0.11), dpsyco-lib (<= 1.1.0), dpsyco-skel (>= 1.0.11)
+Conflicts: max-3.0-skel-conf
+Replaces: max-3.0-skel-conf
+Description: Configuración skel para Ubuntu/MAX.
+ Configuración basada en dpsyco para /etc/skel y APT
+ Contiene:
+  * /etc/skel
+  * /etc/skel-alumno
+  * /etc/apt/preferences
+  * /etc/samba/smb.conf
+

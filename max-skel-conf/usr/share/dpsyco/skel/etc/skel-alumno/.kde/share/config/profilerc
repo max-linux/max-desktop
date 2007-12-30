@@ -1,0 +1,3261 @@
+[application/ogg - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=12
+ServiceType=application/ogg
+
+[application/ogg - 10]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=application/ogg
+
+[application/ogg - 11]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=application/ogg
+
+[application/ogg - 12]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=application/ogg
+
+[application/ogg - 13]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=application/ogg
+
+[application/ogg - 14]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=application/ogg
+
+[application/ogg - 15]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=application/ogg
+
+[application/ogg - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=application/ogg
+
+[application/ogg - 3]
+AllowAsDefault=true
+Application=audacity.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=application/ogg
+
+[application/ogg - 4]
+AllowAsDefault=true
+Application=rhythmbox.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=application/ogg
+
+[application/ogg - 5]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=application/ogg
+
+[application/ogg - 6]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=application/ogg
+
+[application/ogg - 7]
+AllowAsDefault=true
+Application=xmms.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=application/ogg
+
+[application/ogg - 8]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=application/ogg
+
+[application/ogg - 9]
+AllowAsDefault=true
+Application=XMMS.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=application/ogg
+
+[application/smil - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=application/smil
+
+[application/smil - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=application/smil
+
+[application/smil - 3]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=application/smil
+
+[application/smil - 4]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=application/smil
+
+[application/smil - 5]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=application/smil
+
+[application/smil - 6]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=application/smil
+
+[application/smil - 7]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=application/smil
+
+[application/smil - 8]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=application/smil
+
+[application/smil - 9]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=application/smil
+
+[application/vnd.rn-realmedia - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=application/vnd.rn-realmedia
+
+[application/vnd.rn-realmedia - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=application/vnd.rn-realmedia
+
+[application/vnd.rn-realmedia - 3]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=application/vnd.rn-realmedia
+
+[application/vnd.rn-realmedia - 4]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=application/vnd.rn-realmedia
+
+[application/vnd.rn-realmedia - 5]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=application/vnd.rn-realmedia
+
+[application/vnd.rn-realmedia - 6]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=application/vnd.rn-realmedia
+
+[application/vnd.rn-realmedia - 7]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=application/vnd.rn-realmedia
+
+[application/vnd.rn-realmedia - 8]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=application/vnd.rn-realmedia
+
+[application/x-mplayer2 - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=application/x-mplayer2
+
+[application/x-mplayer2 - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=application/x-mplayer2
+
+[application/x-mplayer2 - 3]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=application/x-mplayer2
+
+[application/x-mplayer2 - 4]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=application/x-mplayer2
+
+[application/x-mplayer2 - 5]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=application/x-mplayer2
+
+[application/x-mplayer2 - 6]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=application/x-mplayer2
+
+[application/x-mplayer2 - 7]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=application/x-mplayer2
+
+[application/x-ogg - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=application/x-ogg
+
+[application/x-ogg - 10]
+AllowAsDefault=true
+Application=XMMS.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=application/x-ogg
+
+[application/x-ogg - 11]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=application/x-ogg
+
+[application/x-ogg - 12]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=application/x-ogg
+
+[application/x-ogg - 13]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=application/x-ogg
+
+[application/x-ogg - 14]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=application/x-ogg
+
+[application/x-ogg - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=application/x-ogg
+
+[application/x-ogg - 3]
+AllowAsDefault=true
+Application=rhythmbox.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=application/x-ogg
+
+[application/x-ogg - 4]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=application/x-ogg
+
+[application/x-ogg - 5]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=application/x-ogg
+
+[application/x-ogg - 6]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=application/x-ogg
+
+[application/x-ogg - 7]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=application/x-ogg
+
+[application/x-ogg - 8]
+AllowAsDefault=true
+Application=xmms.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=application/x-ogg
+
+[application/x-ogg - 9]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=application/x-ogg
+
+[audio/aac - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/aac
+
+[audio/aac - 2]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/aac
+
+[audio/aac - 3]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/aac
+
+[audio/aac - 4]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/aac
+
+[audio/aac - 5]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/aac
+
+[audio/aac - 6]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/aac
+
+[audio/basic - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/basic
+
+[audio/basic - 10]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/basic
+
+[audio/basic - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/basic
+
+[audio/basic - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/basic
+
+[audio/basic - 4]
+AllowAsDefault=true
+Application=audacity.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/basic
+
+[audio/basic - 5]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/basic
+
+[audio/basic - 6]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/basic
+
+[audio/basic - 7]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/basic
+
+[audio/basic - 8]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/basic
+
+[audio/basic - 9]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/basic
+
+[audio/mp4 - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=audio/mp4
+
+[audio/mp4 - 10]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=4
+ServiceType=audio/mp4
+
+[audio/mp4 - 11]
+AllowAsDefault=true
+Application=codeine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/mp4
+
+[audio/mp4 - 12]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/mp4
+
+[audio/mp4 - 13]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/mp4
+
+[audio/mp4 - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=audio/mp4
+
+[audio/mp4 - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/mp4
+
+[audio/mp4 - 4]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/mp4
+
+[audio/mp4 - 5]
+AllowAsDefault=true
+Application=kde-codeine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/mp4
+
+[audio/mp4 - 6]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/mp4
+
+[audio/mp4 - 7]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/mp4
+
+[audio/mp4 - 8]
+AllowAsDefault=true
+Application=xine.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/mp4
+
+[audio/mp4 - 9]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/mp4
+
+[audio/mpeg - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=12
+ServiceType=audio/mpeg
+
+[audio/mpeg - 10]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/mpeg
+
+[audio/mpeg - 11]
+AllowAsDefault=true
+Application=XMMS.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/mpeg
+
+[audio/mpeg - 12]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/mpeg
+
+[audio/mpeg - 13]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/mpeg
+
+[audio/mpeg - 14]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/mpeg
+
+[audio/mpeg - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=audio/mpeg
+
+[audio/mpeg - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=audio/mpeg
+
+[audio/mpeg - 4]
+AllowAsDefault=true
+Application=audacity.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=audio/mpeg
+
+[audio/mpeg - 5]
+AllowAsDefault=true
+Application=rhythmbox.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=audio/mpeg
+
+[audio/mpeg - 6]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/mpeg
+
+[audio/mpeg - 7]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/mpeg
+
+[audio/mpeg - 8]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/mpeg
+
+[audio/mpeg - 9]
+AllowAsDefault=true
+Application=xmms.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/mpeg
+
+[audio/mpegurl - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=13
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 10]
+AllowAsDefault=true
+Application=rhythmbox.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 11]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 12]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 13]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 14]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 15]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 16]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=12
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 4]
+AllowAsDefault=true
+Application=XMMS-pl.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 5]
+AllowAsDefault=true
+Application=xmms-pl.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 6]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 7]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 8]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/mpegurl
+
+[audio/mpegurl - 9]
+AllowAsDefault=true
+Application=serpentine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/mpegurl
+
+[audio/prs.sid - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/prs.sid
+
+[audio/prs.sid - 2]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/prs.sid
+
+[audio/vnd.rn-realaudio - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=audio/vnd.rn-realaudio
+
+[audio/vnd.rn-realaudio - 10]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/vnd.rn-realaudio
+
+[audio/vnd.rn-realaudio - 11]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/vnd.rn-realaudio
+
+[audio/vnd.rn-realaudio - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/vnd.rn-realaudio
+
+[audio/vnd.rn-realaudio - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/vnd.rn-realaudio
+
+[audio/vnd.rn-realaudio - 4]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/vnd.rn-realaudio
+
+[audio/vnd.rn-realaudio - 5]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/vnd.rn-realaudio
+
+[audio/vnd.rn-realaudio - 6]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/vnd.rn-realaudio
+
+[audio/vnd.rn-realaudio - 7]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/vnd.rn-realaudio
+
+[audio/vnd.rn-realaudio - 8]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/vnd.rn-realaudio
+
+[audio/vnd.rn-realaudio - 9]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/vnd.rn-realaudio
+
+[audio/vorbis - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=13
+ServiceType=audio/vorbis
+
+[audio/vorbis - 10]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/vorbis
+
+[audio/vorbis - 11]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/vorbis
+
+[audio/vorbis - 12]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/vorbis
+
+[audio/vorbis - 13]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/vorbis
+
+[audio/vorbis - 14]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/vorbis
+
+[audio/vorbis - 15]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/vorbis
+
+[audio/vorbis - 16]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/vorbis
+
+[audio/vorbis - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=12
+ServiceType=audio/vorbis
+
+[audio/vorbis - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=audio/vorbis
+
+[audio/vorbis - 4]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=audio/vorbis
+
+[audio/vorbis - 5]
+AllowAsDefault=true
+Application=xmms.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=audio/vorbis
+
+[audio/vorbis - 6]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=audio/vorbis
+
+[audio/vorbis - 7]
+AllowAsDefault=true
+Application=XMMS.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/vorbis
+
+[audio/vorbis - 8]
+AllowAsDefault=true
+Application=audacity.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/vorbis
+
+[audio/vorbis - 9]
+AllowAsDefault=true
+Application=rhythmbox.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/vorbis
+
+[audio/x-adpcm - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-adpcm
+
+[audio/x-adpcm - 2]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-adpcm
+
+[audio/x-adpcm - 3]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-adpcm
+
+[audio/x-adpcm - 4]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-adpcm
+
+[audio/x-adpcm - 5]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-adpcm
+
+[audio/x-aiff - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/x-aiff
+
+[audio/x-aiff - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-aiff
+
+[audio/x-aiff - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-aiff
+
+[audio/x-aiff - 4]
+AllowAsDefault=true
+Application=audacity.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-aiff
+
+[audio/x-aiff - 5]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-aiff
+
+[audio/x-aiff - 6]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-aiff
+
+[audio/x-aiff - 7]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/x-aiff
+
+[audio/x-aiff - 8]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-aiff
+
+[audio/x-flac - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/x-flac
+
+[audio/x-flac - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-flac
+
+[audio/x-flac - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-flac
+
+[audio/x-flac - 4]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-flac
+
+[audio/x-flac - 5]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-flac
+
+[audio/x-flac - 6]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-flac
+
+[audio/x-flac - 7]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/x-flac
+
+[audio/x-flac - 8]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-flac
+
+[audio/x-matroska - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/x-matroska
+
+[audio/x-matroska - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-matroska
+
+[audio/x-matroska - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-matroska
+
+[audio/x-matroska - 4]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-matroska
+
+[audio/x-matroska - 5]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-matroska
+
+[audio/x-matroska - 6]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-matroska
+
+[audio/x-matroska - 7]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/x-matroska
+
+[audio/x-matroska - 8]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/x-matroska
+
+[audio/x-matroska - 9]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-matroska
+
+[audio/x-midi - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-midi
+
+[audio/x-midi - 2]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-midi
+
+[audio/x-midi - 3]
+AllowAsDefault=true
+Application=kde-kmid.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-midi
+
+[audio/x-midi - 4]
+AllowAsDefault=true
+Application=kde-kmid.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-midi
+
+[audio/x-mod - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-mod
+
+[audio/x-mod - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-mod
+
+[audio/x-mod - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-mod
+
+[audio/x-mod - 4]
+AllowAsDefault=true
+Application=xmms.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-mod
+
+[audio/x-mod - 5]
+AllowAsDefault=true
+Application=XMMS.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-mod
+
+[audio/x-mod - 6]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-mod
+
+[audio/x-mp2 - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=13
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 10]
+AllowAsDefault=true
+Application=rhythmbox.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 11]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 12]
+AllowAsDefault=true
+Application=xmms.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 13]
+AllowAsDefault=true
+Application=XMMS.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 14]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 15]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=12
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 4]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 5]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 6]
+AllowAsDefault=true
+Application=xine.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 7]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 8]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/x-mp2
+
+[audio/x-mp2 - 9]
+AllowAsDefault=true
+Application=audacity.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-mp2
+
+[audio/x-mp3 - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=14
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 10]
+AllowAsDefault=true
+Application=xmms.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 11]
+AllowAsDefault=true
+Application=xine.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 12]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 13]
+AllowAsDefault=true
+Application=XMMS.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 14]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 15]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 16]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 17]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=13
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=12
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 4]
+AllowAsDefault=true
+Application=audacity.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 5]
+AllowAsDefault=true
+Application=rhythmbox.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 6]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 7]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 8]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/x-mp3
+
+[audio/x-mp3 - 9]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/x-mp3
+
+[audio/x-mpegurl - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=13
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 10]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 11]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 12]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 13]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 14]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 15]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 16]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=12
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 4]
+AllowAsDefault=true
+Application=serpentine.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 5]
+AllowAsDefault=true
+Application=XMMS-pl.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 6]
+AllowAsDefault=true
+Application=xmms-pl.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 7]
+AllowAsDefault=true
+Application=rhythmbox.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 8]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/x-mpegurl
+
+[audio/x-mpegurl - 9]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-mpegurl
+
+[audio/x-ms-wma - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/x-ms-wma
+
+[audio/x-ms-wma - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-ms-wma
+
+[audio/x-ms-wma - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-ms-wma
+
+[audio/x-ms-wma - 4]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-ms-wma
+
+[audio/x-ms-wma - 5]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-ms-wma
+
+[audio/x-ms-wma - 6]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-ms-wma
+
+[audio/x-ms-wma - 7]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/x-ms-wma
+
+[audio/x-ms-wma - 8]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/x-ms-wma
+
+[audio/x-ms-wma - 9]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-ms-wma
+
+[audio/x-musepack - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-musepack
+
+[audio/x-musepack - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-musepack
+
+[audio/x-musepack - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-musepack
+
+[audio/x-musepack - 4]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-musepack
+
+[audio/x-musepack - 5]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-musepack
+
+[audio/x-musepack - 6]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/x-musepack
+
+[audio/x-musepack - 7]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-musepack
+
+[audio/x-oggflac - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=13
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 10]
+AllowAsDefault=true
+Application=xmms.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 11]
+AllowAsDefault=true
+Application=XMMS.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 12]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 13]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 14]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 15]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 16]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=12
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 4]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 5]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 6]
+AllowAsDefault=true
+Application=audacity.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 7]
+AllowAsDefault=true
+Application=rhythmbox.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 8]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/x-oggflac
+
+[audio/x-oggflac - 9]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-oggflac
+
+[audio/x-pn-realaudio - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=audio/x-pn-realaudio
+
+[audio/x-pn-realaudio - 10]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/x-pn-realaudio
+
+[audio/x-pn-realaudio - 11]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-pn-realaudio
+
+[audio/x-pn-realaudio - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/x-pn-realaudio
+
+[audio/x-pn-realaudio - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/x-pn-realaudio
+
+[audio/x-pn-realaudio - 4]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-pn-realaudio
+
+[audio/x-pn-realaudio - 5]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-pn-realaudio
+
+[audio/x-pn-realaudio - 6]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-pn-realaudio
+
+[audio/x-pn-realaudio - 7]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-pn-realaudio
+
+[audio/x-pn-realaudio - 8]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-pn-realaudio
+
+[audio/x-pn-realaudio - 9]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/x-pn-realaudio
+
+[audio/x-scpls - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=12
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 10]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 11]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 12]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 13]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 14]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 15]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 4]
+AllowAsDefault=true
+Application=serpentine.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 5]
+AllowAsDefault=true
+Application=XMMS-pl.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 6]
+AllowAsDefault=true
+Application=xmms-pl.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 7]
+AllowAsDefault=true
+Application=rhythmbox.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 8]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-scpls
+
+[audio/x-scpls - 9]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-scpls
+
+[audio/x-speex - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-speex
+
+[audio/x-speex - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-speex
+
+[audio/x-speex - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-speex
+
+[audio/x-speex - 4]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-speex
+
+[audio/x-speex - 5]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-speex
+
+[audio/x-vorbis - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=13
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 10]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 11]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 12]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 13]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 14]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 15]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 16]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=12
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 4]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 5]
+AllowAsDefault=true
+Application=xmms.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 6]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 7]
+AllowAsDefault=true
+Application=XMMS.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 8]
+AllowAsDefault=true
+Application=audacity.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/x-vorbis
+
+[audio/x-vorbis - 9]
+AllowAsDefault=true
+Application=rhythmbox.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-vorbis
+
+[audio/x-wav - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=12
+ServiceType=audio/x-wav
+
+[audio/x-wav - 10]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=audio/x-wav
+
+[audio/x-wav - 11]
+AllowAsDefault=true
+Application=XMMS.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=audio/x-wav
+
+[audio/x-wav - 12]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=audio/x-wav
+
+[audio/x-wav - 13]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=audio/x-wav
+
+[audio/x-wav - 14]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=audio/x-wav
+
+[audio/x-wav - 15]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=audio/x-wav
+
+[audio/x-wav - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=audio/x-wav
+
+[audio/x-wav - 3]
+AllowAsDefault=true
+Application=kde-amarok.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=audio/x-wav
+
+[audio/x-wav - 4]
+AllowAsDefault=true
+Application=audacity.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=audio/x-wav
+
+[audio/x-wav - 5]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=audio/x-wav
+
+[audio/x-wav - 6]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=audio/x-wav
+
+[audio/x-wav - 7]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=audio/x-wav
+
+[audio/x-wav - 8]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=audio/x-wav
+
+[audio/x-wav - 9]
+AllowAsDefault=true
+Application=xmms.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=audio/x-wav
+
+[video/avi - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=video/avi
+
+[video/avi - 10]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=video/avi
+
+[video/avi - 11]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/avi
+
+[video/avi - 12]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/avi
+
+[video/avi - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=video/avi
+
+[video/avi - 3]
+AllowAsDefault=true
+Application=kde-codeine.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=video/avi
+
+[video/avi - 4]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=video/avi
+
+[video/avi - 5]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=video/avi
+
+[video/avi - 6]
+AllowAsDefault=true
+Application=xine.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=video/avi
+
+[video/avi - 7]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=video/avi
+
+[video/avi - 8]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/avi
+
+[video/avi - 9]
+AllowAsDefault=true
+Application=codeine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=4
+ServiceType=video/avi
+
+[video/mp4 - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=video/mp4
+
+[video/mp4 - 10]
+AllowAsDefault=true
+Application=codeine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=video/mp4
+
+[video/mp4 - 11]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/mp4
+
+[video/mp4 - 12]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/mp4
+
+[video/mp4 - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=video/mp4
+
+[video/mp4 - 3]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=video/mp4
+
+[video/mp4 - 4]
+AllowAsDefault=true
+Application=kde-codeine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=video/mp4
+
+[video/mp4 - 5]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=video/mp4
+
+[video/mp4 - 6]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=video/mp4
+
+[video/mp4 - 7]
+AllowAsDefault=true
+Application=xine.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=video/mp4
+
+[video/mp4 - 8]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/mp4
+
+[video/mp4 - 9]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=4
+ServiceType=video/mp4
+
+[video/mpeg - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=video/mpeg
+
+[video/mpeg - 10]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=video/mpeg
+
+[video/mpeg - 11]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/mpeg
+
+[video/mpeg - 12]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/mpeg
+
+[video/mpeg - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=video/mpeg
+
+[video/mpeg - 3]
+AllowAsDefault=true
+Application=kde-codeine.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=video/mpeg
+
+[video/mpeg - 4]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=video/mpeg
+
+[video/mpeg - 5]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=video/mpeg
+
+[video/mpeg - 6]
+AllowAsDefault=true
+Application=xine.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=video/mpeg
+
+[video/mpeg - 7]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=video/mpeg
+
+[video/mpeg - 8]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/mpeg
+
+[video/mpeg - 9]
+AllowAsDefault=true
+Application=codeine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=4
+ServiceType=video/mpeg
+
+[video/quicktime - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=video/quicktime
+
+[video/quicktime - 10]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=video/quicktime
+
+[video/quicktime - 11]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/quicktime
+
+[video/quicktime - 12]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/quicktime
+
+[video/quicktime - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=video/quicktime
+
+[video/quicktime - 3]
+AllowAsDefault=true
+Application=kde-codeine.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=video/quicktime
+
+[video/quicktime - 4]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=video/quicktime
+
+[video/quicktime - 5]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=video/quicktime
+
+[video/quicktime - 6]
+AllowAsDefault=true
+Application=xine.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=video/quicktime
+
+[video/quicktime - 7]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=video/quicktime
+
+[video/quicktime - 8]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/quicktime
+
+[video/quicktime - 9]
+AllowAsDefault=true
+Application=codeine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=4
+ServiceType=video/quicktime
+
+[video/vnd.rn-realvideo - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=video/vnd.rn-realvideo
+
+[video/vnd.rn-realvideo - 10]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=video/vnd.rn-realvideo
+
+[video/vnd.rn-realvideo - 11]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/vnd.rn-realvideo
+
+[video/vnd.rn-realvideo - 12]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/vnd.rn-realvideo
+
+[video/vnd.rn-realvideo - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=video/vnd.rn-realvideo
+
+[video/vnd.rn-realvideo - 3]
+AllowAsDefault=true
+Application=kde-codeine.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=video/vnd.rn-realvideo
+
+[video/vnd.rn-realvideo - 4]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=video/vnd.rn-realvideo
+
+[video/vnd.rn-realvideo - 5]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=video/vnd.rn-realvideo
+
+[video/vnd.rn-realvideo - 6]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=video/vnd.rn-realvideo
+
+[video/vnd.rn-realvideo - 7]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=video/vnd.rn-realvideo
+
+[video/vnd.rn-realvideo - 8]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/vnd.rn-realvideo
+
+[video/vnd.rn-realvideo - 9]
+AllowAsDefault=true
+Application=codeine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=4
+ServiceType=video/vnd.rn-realvideo
+
+[video/x-matroska - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=video/x-matroska
+
+[video/x-matroska - 10]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-matroska
+
+[video/x-matroska - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=video/x-matroska
+
+[video/x-matroska - 3]
+AllowAsDefault=true
+Application=kde-codeine.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=video/x-matroska
+
+[video/x-matroska - 4]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=video/x-matroska
+
+[video/x-matroska - 5]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=video/x-matroska
+
+[video/x-matroska - 6]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-matroska
+
+[video/x-matroska - 7]
+AllowAsDefault=true
+Application=codeine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=4
+ServiceType=video/x-matroska
+
+[video/x-matroska - 8]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=video/x-matroska
+
+[video/x-matroska - 9]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-matroska
+
+[video/x-ms-asf - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=video/x-ms-asf
+
+[video/x-ms-asf - 10]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-ms-asf
+
+[video/x-ms-asf - 11]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-ms-asf
+
+[video/x-ms-asf - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=video/x-ms-asf
+
+[video/x-ms-asf - 3]
+AllowAsDefault=true
+Application=kde-codeine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=video/x-ms-asf
+
+[video/x-ms-asf - 4]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=video/x-ms-asf
+
+[video/x-ms-asf - 5]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=video/x-ms-asf
+
+[video/x-ms-asf - 6]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=video/x-ms-asf
+
+[video/x-ms-asf - 7]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-ms-asf
+
+[video/x-ms-asf - 8]
+AllowAsDefault=true
+Application=codeine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=4
+ServiceType=video/x-ms-asf
+
+[video/x-ms-asf - 9]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=video/x-ms-asf
+
+[video/x-ms-wmp - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=video/x-ms-wmp
+
+[video/x-ms-wmp - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=video/x-ms-wmp
+
+[video/x-ms-wmp - 3]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-ms-wmp
+
+[video/x-ms-wmp - 4]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-ms-wmp
+
+[video/x-ms-wmp - 5]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-ms-wmp
+
+[video/x-ms-wmv - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=video/x-ms-wmv
+
+[video/x-ms-wmv - 10]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-ms-wmv
+
+[video/x-ms-wmv - 11]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-ms-wmv
+
+[video/x-ms-wmv - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=video/x-ms-wmv
+
+[video/x-ms-wmv - 3]
+AllowAsDefault=true
+Application=kde-codeine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=video/x-ms-wmv
+
+[video/x-ms-wmv - 4]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=video/x-ms-wmv
+
+[video/x-ms-wmv - 5]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=video/x-ms-wmv
+
+[video/x-ms-wmv - 6]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=video/x-ms-wmv
+
+[video/x-ms-wmv - 7]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-ms-wmv
+
+[video/x-ms-wmv - 8]
+AllowAsDefault=true
+Application=codeine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=4
+ServiceType=video/x-ms-wmv
+
+[video/x-ms-wmv - 9]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=video/x-ms-wmv
+
+[video/x-msvideo - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=video/x-msvideo
+
+[video/x-msvideo - 10]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=video/x-msvideo
+
+[video/x-msvideo - 11]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-msvideo
+
+[video/x-msvideo - 12]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-msvideo
+
+[video/x-msvideo - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=video/x-msvideo
+
+[video/x-msvideo - 3]
+AllowAsDefault=true
+Application=kde-codeine.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=video/x-msvideo
+
+[video/x-msvideo - 4]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=video/x-msvideo
+
+[video/x-msvideo - 5]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=video/x-msvideo
+
+[video/x-msvideo - 6]
+AllowAsDefault=true
+Application=xine.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=video/x-msvideo
+
+[video/x-msvideo - 7]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=video/x-msvideo
+
+[video/x-msvideo - 8]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-msvideo
+
+[video/x-msvideo - 9]
+AllowAsDefault=true
+Application=codeine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=4
+ServiceType=video/x-msvideo
+
+[video/x-ogm - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=13
+ServiceType=video/x-ogm
+
+[video/x-ogm - 10]
+AllowAsDefault=true
+Application=XMMS.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=video/x-ogm
+
+[video/x-ogm - 11]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=video/x-ogm
+
+[video/x-ogm - 12]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=video/x-ogm
+
+[video/x-ogm - 13]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-ogm
+
+[video/x-ogm - 14]
+AllowAsDefault=true
+Application=codeine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=4
+ServiceType=video/x-ogm
+
+[video/x-ogm - 15]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=video/x-ogm
+
+[video/x-ogm - 16]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-ogm
+
+[video/x-ogm - 17]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-ogm
+
+[video/x-ogm - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=12
+ServiceType=video/x-ogm
+
+[video/x-ogm - 3]
+AllowAsDefault=true
+Application=kde-codeine.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=video/x-ogm
+
+[video/x-ogm - 4]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=video/x-ogm
+
+[video/x-ogm - 5]
+AllowAsDefault=true
+Application=audacity.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=video/x-ogm
+
+[video/x-ogm - 6]
+AllowAsDefault=true
+Application=rhythmbox.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=video/x-ogm
+
+[video/x-ogm - 7]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=video/x-ogm
+
+[video/x-ogm - 8]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=video/x-ogm
+
+[video/x-ogm - 9]
+AllowAsDefault=true
+Application=xmms.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=video/x-ogm
+
+[video/x-theora - 1]
+AllowAsDefault=true
+Application=totem.desktop
+GenericServiceType=Application
+Preference=13
+ServiceType=video/x-theora
+
+[video/x-theora - 10]
+AllowAsDefault=true
+Application=xmms.desktop
+GenericServiceType=Application
+Preference=4
+ServiceType=video/x-theora
+
+[video/x-theora - 11]
+AllowAsDefault=true
+Application=XMMS.desktop
+GenericServiceType=Application
+Preference=3
+ServiceType=video/x-theora
+
+[video/x-theora - 12]
+AllowAsDefault=true
+Application=kde-juk.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=video/x-theora
+
+[video/x-theora - 13]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-theora
+
+[video/x-theora - 14]
+AllowAsDefault=true
+Application=codeine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=4
+ServiceType=video/x-theora
+
+[video/x-theora - 15]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=video/x-theora
+
+[video/x-theora - 16]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-theora
+
+[video/x-theora - 17]
+AllowAsDefault=true
+Application=kplayerpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-theora
+
+[video/x-theora - 2]
+AllowAsDefault=true
+Application=kde-kmplayer.desktop
+GenericServiceType=Application
+Preference=12
+ServiceType=video/x-theora
+
+[video/x-theora - 3]
+AllowAsDefault=true
+Application=kde-codeine.desktop
+GenericServiceType=Application
+Preference=11
+ServiceType=video/x-theora
+
+[video/x-theora - 4]
+AllowAsDefault=true
+Application=kde-kplayer.desktop
+GenericServiceType=Application
+Preference=10
+ServiceType=video/x-theora
+
+[video/x-theora - 5]
+AllowAsDefault=true
+Application=mplayer.desktop
+GenericServiceType=Application
+Preference=9
+ServiceType=video/x-theora
+
+[video/x-theora - 6]
+AllowAsDefault=true
+Application=audacity.desktop
+GenericServiceType=Application
+Preference=8
+ServiceType=video/x-theora
+
+[video/x-theora - 7]
+AllowAsDefault=true
+Application=rhythmbox.desktop
+GenericServiceType=Application
+Preference=7
+ServiceType=video/x-theora
+
+[video/x-theora - 8]
+AllowAsDefault=true
+Application=vlc.desktop
+GenericServiceType=Application
+Preference=6
+ServiceType=video/x-theora
+
+[video/x-theora - 9]
+AllowAsDefault=true
+Application=realplay.desktop
+GenericServiceType=Application
+Preference=5
+ServiceType=video/x-theora
