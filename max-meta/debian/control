@@ -1,8 +1,8 @@
 Source: max-meta
-Section: metapackages
+Section: max
 Priority: optional
 Maintainer: Pedro Peña Pérez <pedro.pena@edmanufacturer.es>
-Standards-Version: 3.6.2
+Standards-Version: 3.7.2
 Build-Depends: debhelper (>= 4), cdbs
 
 Package: max-desktop
@@ -37,7 +37,7 @@ Description: The Max desktop system (KDE desktop)
  it not be removed.
 
 Package: max-desktop-xfce
-Architecture: any
+Architecture: all
 Depends: max-desktop-common, ${max-desktop-xfce:Depends}
 Recommends: ${max-desktop-xfce:Recommends}
 Provides: max-desktop
@@ -48,7 +48,7 @@ Description: The Max desktop system (Xfce4 desktop)
  it not be removed.
 
 Package: max-server
-Architecture: any
+Architecture: all
 Depends: max-desktop-common, ${max-server:Depends}
 Recommends: ${max-server:Recommends}
 Description: The Max server system
