@@ -1,3 +1,11 @@
+max-artwork (3.1.20071230.max1) max; urgency=low
+
+  * Remove gconf data in max-artwork package
+  * Change gdm color theme in postinst and postrm
+  * Change section to max
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 18:09:40 +0100
+
 max-artwork (0.1.1-1) gutsy; urgency=low
 
   * Nuevo paquete para MaX 3.1 (Ubuntu gutsy)

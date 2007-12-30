@@ -1,5 +1,5 @@
 Source: max-artwork
-Section: gnome
+Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
 Build-Depends: debhelper (>= 4.0.0), cdbs, intltool, libusplash-dev, ubuntu-docs (>= 6.04.7)

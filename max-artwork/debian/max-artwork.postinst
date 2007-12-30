@@ -1,28 +1,19 @@
 #! /bin/sh
 set -e
 
-#DEBHELPER#
+change_gdm_colors() {
+  ORIG_COLOR="dab082"
+  NEW_COLOR="3B6242"
+  sed -i 's/$ORIG_COLOR/$NEW_COLOR/g' /etc/gdm/gdm.conf
+  sed -i 's/$ORIG_COLOR/$NEW_COLOR/g' /etc/gdm/PreSession/Default
+}
+
 
 case "$1" in
   configure)
-  . /usr/share/debconf/confmodule
-  db_version 2.0
 
-  db_get max-artwork/theme
-  theme="$RET"
-		  			  
-  echo "Setting desktop defaults ..."
-  if [ -L /usr/share/gconf/defaults/20-max ]; then
-	rm /usr/share/gconf/defaults/20-max
-  	ln -s /usr/share/max-artwork/gconf/$theme /usr/share/gconf/defaults/20-max
-  else
-	ln -s /usr/share/max-artwork/gconf/$theme /usr/share/gconf/defaults/20-max
-  fi
-
-  if [ -x /usr/sbin/update-gconf-defaults ]; then
-	 /usr/sbin/update-gconf-defaults || true
-     echo "Activating gconf changes ..."
-  fi
+  echo "Change gdm colors"
+  change_gdm_colors
 
   echo "Installing firefox homepage ..."
   # link default homepage
@@ -31,6 +22,7 @@ case "$1" in
     firefox-homepage /usr/share/max-artwork/home/index.html 45 \
     --slave /usr/share/max-artwork/home/locales \
     firefox-homepage-locales /usr/share/max-artwork/home/locales
+
   if [ ! -L /usr/share/max-artwork/home/locales/max.css ]; then
   	ln -s /usr/share/max-artwork/home/max.css /usr/share/max-artwork/home/locales/max.css
   fi
@@ -46,13 +38,9 @@ case "$1" in
     update-alternatives --auto gdm-config-derivative
   fi
 
-  for arch in $(ls -d /opt/ltsp/{powerpc,i386,amd64} 2>/dev/null|sed -e 's/\/opt\/ltsp\// /'|tr -d '\n')
-  do
-	  echo "Setting LDM theme for $arch ..."
-	  LC_ALL=C chroot /opt/ltsp/$arch /usr/sbin/update-alternatives \
-	  --set ldm-theme /usr/share/ldm/themes/Max >/dev/null 2>&1 || true
-  done
   ;;
 esac
+
+#DEBHELPER#
 
 exit 0
