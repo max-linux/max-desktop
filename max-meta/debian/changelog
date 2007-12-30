@@ -1,3 +1,16 @@
+max-meta (0.10) max; urgency=low
+
+  * Change max-3.0-skel-conf with max-skel-conf
+  * Set num of workspaces to 3
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 17:20:25 +0100
+
+max-meta (0.9) max; urgency=low
+
+  * New version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 16:35:50 +0100
+
 max-meta (0.8.3) max; urgency=low
 
   * Convert package to cdbs
