@@ -7,6 +7,7 @@ change_gdm_colors() {
   NEW_COLOR="dab082"
   sed -i 's/$ORIG_COLOR/$NEW_COLOR/g' /etc/gdm/gdm.conf
   sed -i 's/$ORIG_COLOR/$NEW_COLOR/g' /etc/gdm/PreSession/Default
+  sed -i 's/$ORIG_COLOR/$NEW_COLOR/g' /etc/gdm/factory-gdm.conf
 }
 
 
@@ -30,7 +31,7 @@ case "$1" in
     upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
 	;;
     purge)
-        echo "Revert gdm colors"
+        echo "Revert GDM colors"
         change_gdm_colors
         ;;
     *)

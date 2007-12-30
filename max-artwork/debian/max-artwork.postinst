@@ -6,13 +6,14 @@ change_gdm_colors() {
   NEW_COLOR="3B6242"
   sed -i 's/$ORIG_COLOR/$NEW_COLOR/g' /etc/gdm/gdm.conf
   sed -i 's/$ORIG_COLOR/$NEW_COLOR/g' /etc/gdm/PreSession/Default
+  sed -i 's/$ORIG_COLOR/$NEW_COLOR/g' /etc/gdm/factory-gdm.conf
 }
 
 
 case "$1" in
   configure)
 
-  echo "Change gdm colors"
+  echo "Change GDM colors"
   change_gdm_colors
 
   echo "Installing firefox homepage ..."

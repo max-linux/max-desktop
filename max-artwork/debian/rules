@@ -10,3 +10,6 @@ common-binary-post-install-indep::
 		debian/max-artwork \
 		/usr/share/max-artwork/home/locales \
 		../index.html
+
+	# delete Tango-Brown icon theme
+	rm -rf $(CURDIR)/debian/max-artwork/usr/share/icons/Tango-Brown

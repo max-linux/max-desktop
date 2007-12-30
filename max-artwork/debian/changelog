@@ -1,3 +1,10 @@
+max-artwork (3.1.20071230.max2) max; urgency=low
+
+  * Disable Tango-Brown icons
+  * Delete debconf and template
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 21:26:30 +0100
+
 max-artwork (3.1.20071230.max1) max; urgency=low
 
   * Remove gconf data in max-artwork package
