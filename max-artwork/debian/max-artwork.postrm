@@ -5,9 +5,9 @@ set -e
 change_gdm_colors() {
   ORIG_COLOR="3B6242"
   NEW_COLOR="dab082"
-  sed -i 's/$ORIG_COLOR/$NEW_COLOR/g' /etc/gdm/gdm.conf
-  sed -i 's/$ORIG_COLOR/$NEW_COLOR/g' /etc/gdm/PreSession/Default
-  sed -i 's/$ORIG_COLOR/$NEW_COLOR/g' /etc/gdm/factory-gdm.conf
+  sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/gdm.conf
+  sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/PreSession/Default
+  sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/factory-gdm.conf
 }
 
 
