@@ -1,3 +1,10 @@
+geogebra (3.0.beta2.max1) max; urgency=low
+
+  * Move package to cdbs build system
+  * Change section to max
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Jan 2008 21:15:06 +0100
+
 geogebra (3.0.beta2-2) max; urgency=low
 
   * Fix error in debian/postinst
