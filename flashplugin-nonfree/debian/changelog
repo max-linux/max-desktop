@@ -1,3 +1,10 @@
+flashplugin-nonfree (9.0.115.0ubuntu2.max2) max; urgency=low
+
+  * Change package Section to max
+  * Change package repository to max instead of gutsy
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Jan 2008 21:22:05 +0100
+
 flashplugin-nonfree (9.0.115.0ubuntu2.max1) gutsy; urgency=low
 
   * Backport from hardy to gutsy
