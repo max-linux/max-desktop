@@ -1,0 +1,1584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "xhtml11.dtd">
+       <html xmlns="http://www.w3.org/1999/xhtml"
+             xml:lang="en"><head><meta name="author" content="Created with Quandary by Half-Baked Software, registered to Martin Holmes."></meta><meta name="keywords" content="Quandary, Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+
+<!-- This is the core XHTML code which is used to build the exercise page. -->
+
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC:Creator" content="Martin Holmes" />
+<meta name="DC:Title" content="Hot Potatoes 6 Tutorial" />
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+
+<title>
+Hot Potatoes 6 Tutorial
+</title>
+
+<!-- Made with executable version 2.0 Release 8 Build 0 -->
+
+<style type="text/css">
+
+
+/* This is the CSS stylesheet used in the exercise. */
+/* Elements in square brackets are replaced by data based on configuration settings when the exercise is built. */
+
+
+body{
+	font-family: Arial,sans-serif;
+	background-color: #d9d9d9;
+	color: #000000;
+ 
+	margin-right: 5%;
+	margin-left: 5%;
+	font-size: small;
+
+}
+
+p{
+	text-align: left;
+	margin: 0px;
+	font-size: small;
+}
+
+div,span,td{
+	font-size: small;
+	color: #000000;
+}
+
+div.Titles{
+	padding: 10px;
+	text-align: center;
+	color: #000000;
+}
+
+button{
+	display: inline;
+}
+
+.ExerciseTitle{
+	font-size: large;
+	color: #000000;
+}
+
+div#Timer{
+	padding: 6px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+span#TimerText{
+	padding: 6px;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: bold;
+	display: none;
+}
+
+div.ControlButtons{
+	text-align: center;
+}
+
+.Instructions{
+	margin-top: 1em;
+}
+
+.DecisionPointTitle{
+	font-size: medium;
+}
+
+.DecisionPointText{
+	text-align: left;
+	margin: auto;
+}
+
+div.Assets{
+	margin: 20px;
+}
+
+table.AssetTable{
+	border-width: 3px;
+	border-style: double;
+	border-color: #000000;
+	padding: 5px;
+}
+
+table.AssetTable th{
+	background-color: #000000;
+	color: #ffffff;
+	padding: 5px;
+}
+
+div.LinkList{
+	margin-top: 10px;
+}
+
+table.LinkTable{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+.FeedbackText{
+	color: #000000;
+}
+
+table.DPTable{
+	margin-left: auto;
+	margin-right: auto;
+	border-width: 0px;
+	padding: 10px;
+	vertical-align: top;
+}
+
+div.Feedback {
+	background-color: #d9d9d9;
+	left: 33%;
+	width: 34%;
+	top: 33%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	text-align: center;
+	color: #000000;
+	position: absolute;
+	display: none;
+	font-size: small;
+}
+
+div.DecisionPoint{
+	background-color: #ffffff;
+	text-align: center;
+	font-size: small;
+	color: #000000;
+	padding: 8px;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: #000000;
+	margin: 1px;
+}
+
+.FuncButton {
+	
+	text-align: center;
+	border-style: solid;
+
+	color: #ffffff;
+	border-color: #ffffff;
+	background-color: #000000;
+
+	border-width: 2px;
+	padding: 3px 6px 3px 6px;
+	cursor: pointer;
+}
+
+.FuncButtonUp {
+	color: #ffffff;
+	text-align: center;
+	border-style: solid;
+
+	border-left-color: #ffffff;
+	border-top-color: #ffffff;
+	border-right-color: #7f7f7f;
+	border-bottom-color: #7f7f7f;
+	background-color: #000000;
+
+	border-width: 2px;
+	padding: 2px 7px 4px 5px;
+	cursor: pointer;
+}
+
+.FuncButtonDown {
+	color: #ffffff;
+	text-align: center;
+	border-style: solid;
+
+	border-left-color: #7f7f7f;
+	border-top-color: #7f7f7f;
+	border-right-color: #ffffff;
+	border-bottom-color: #ffffff;
+	background-color: #000000;
+
+	border-width: 2px;
+	padding: 4px 5px 2px 7px;
+	cursor: pointer;
+}
+
+div.NavButtonBar{
+	background-color: #0060A4;
+	text-align: center;
+	margin: 2px 0px 2px 0px;
+	clear: both;
+	font-size: small;
+}
+
+.NavButton {
+	border-style: solid;
+	border-color: #0060A4;
+	background-color: #0060A4;
+	border-width: 2px;
+	padding: 2px 2px 2px 2px;
+	color: #ffffff;
+	cursor: pointer;	
+}
+
+.NavButtonUp {
+	border-style: solid;
+
+	border-left-color: #7fafd1;
+	border-top-color: #7fafd1;
+	border-right-color: #003052;
+	border-bottom-color: #003052;
+	background-color: #0060A4;
+
+	border-width: 2px;
+	padding: 1px 3px 3px 1px;
+	color: #ffffff;
+	cursor: pointer;	
+}
+
+.NavButtonDown {
+	border-style: solid;
+
+	border-left-color: #003052;
+	border-top-color: #003052;
+	border-right-color: #7fafd1;
+	border-bottom-color: #7fafd1;
+	background-color: #0060A4;
+
+	background-color: #0060A4;
+	border-width: 2px;
+	padding: 3px 1px 1px 3px;
+	color: #ffffff;
+	cursor: pointer;	
+}
+
+a{
+	color: #0060A4;
+}
+
+a:visited{
+	color: #0000ff;
+}
+
+a:hover{
+	color: #0060A4;
+}
+
+
+</style>
+
+<!-- The following insertion allows you to add your own code directly to this head tag from the configuration screen -->
+
+<style type="text/css">
+strong{background-color: #ffff00;color:inherited;}
+</style>
+
+<script type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+
+//This is the JavaScript code needed to make the exercise function
+
+//Simple browser check comes first -- you may want to make this more sophisticated
+//if you have many users with old or obscure browsers
+
+if (document.getElementById == false){
+	alert('Your browser is not able to show this page properly. A modern browser that supports W3C standards is required.');
+}
+
+//USING USER-DEFINED STRINGS:
+//If you are using the user-defined strings on the Other tab of the Config screen, 
+//make sure the strings are correctly escaped for use in JavaScript.
+
+//CODE FOR ASSETS AND ASSET BASKETS
+
+//ASSETS SECTION
+function Asset(ID, Name, InitVal, DecPlace, ShowDuring, ShowEnd, CurrVal, Parent){
+	this.ID = ID;
+	this.Name=Name;
+	this.InitVal=InitVal;
+	this.DecPlace=DecPlace;
+	this.ShowDuring=ShowDuring;
+	this.ShowEnd=ShowEnd;
+	this.CurrVal=CurrVal;
+	this.Parent = Parent;
+}
+
+function AssetGetCurrValString(){
+	var Num = this.CurrVal;
+	if (this.DecPlace > 0){
+		for (var i=0; i<this.DecPlace; i++){Num /= 10;}
+	}
+	var Result = Num.toString();
+	if (this.DecPlace > 0){
+		var DecLoc = Result.indexOf('.');
+		if (DecLoc < 0){Result += '.';}
+//Add leading zeros if required
+		while (((Result.length-1) - Result.indexOf('.'))<this.DecPlace){Result += '0';} 
+//Truncate trailing places if required
+		while (((Result.length-1) - Result.indexOf('.'))>this.DecPlace){Result = Result.substring(0, Result.length-1);}
+	}
+	return Result;
+}
+Asset.prototype.GetCurrValString=AssetGetCurrValString;
+
+function AssetGetCurrValFloat(){
+	var Num = this.CurrVal;
+	if (this.DecPlace > 0){
+		for (var i=0; i<this.DecPlace; i++){Num /= 10;}
+	}
+		return Num;
+}
+Asset.prototype.GetCurrValFloat=AssetGetCurrValFloat;
+
+function AssetSetCurrValFromFloat(Num){
+	if (this.DecPlace > 0){
+		for (var i=0; i<this.DecPlace; i++){Num *= 10;}
+	}
+	this.CurrVal = Num;
+}
+Asset.prototype.SetCurrValFromFloat=AssetSetCurrValFromFloat;
+
+function AssetReportCurrState(){
+	return this.Name + ': ' + this.GetCurrValString();
+}
+Asset.prototype.ReportCurrState=AssetReportCurrState;
+
+function AssetMeetsRequirement(ReqType, Req){
+	var Result = true;
+	switch(ReqType){
+		case 0: break;
+		case 1: Result = (this.CurrVal > Req); break;
+		case 2: Result = (this.CurrVal < Req); break;
+		case 3: Result = (this.CurrVal == Req); break;
+	}
+	return Result;
+}
+Asset.prototype.MeetsRequirement=AssetMeetsRequirement;
+
+function AssetPerformTransaction(OperatorType, Operand){
+	if ((this.Name == '_Timer_Seconds')&&(this.Parent.Active == true)){
+		this.CurrVal = Seconds;
+	}
+	switch(OperatorType){
+//Operands coming into this function should already be massaged to be at the same decimal place level as 
+//the asset being manipulated; therefore +, -, and = operators can use the values directly, but *, /, % 
+//and ^ transactions will have to reduce the operand to its true value by dividing it.
+		case 1: this.CurrVal += Operand; break; //add
+		case 2: this.CurrVal -= Operand; break; //subtract
+		case 3: for (var x=0; x<this.DecPlace; x++){Operand /= 10;}this.CurrVal *= Operand; break; //multiply
+		case 4: for (var x=0; x<this.DecPlace; x++){Operand /= 10;}this.CurrVal /= Operand; break; //divide
+		case 5: this.CurrVal = Operand; break; //set equal to
+		case 6: for (var x=0; x<this.DecPlace; x++){Operand /= 10;}this.CurrVal *= (Operand/100); break; //percentage
+//Difficult case (power of); need to change the operand and the value to core values, do the calculation, then
+//change the value back
+		case 7: 
+//Change the operand to core value
+			for (var x=0; x<this.DecPlace; x++){Operand /= 10;}
+//Change the asset value to core value
+			var y = this.CurrVal; for (var x=0; x<this.DecPlace; x++){y /= 10;}
+//Do the math
+			x = y; for (var j=1; j<Operand; j++){y *= x;} 
+//Raise the val again
+			for (var x=0; x<this.DecPlace; x++){y *= 10;}
+//Set the value
+			this.CurrVal = y;
+			break; 
+	}
+	this.CurrVal = Math.round(this.CurrVal);
+	if ((this.Name == '_Timer_Seconds')&&(this.Parent.Active == true)){
+		Seconds = this.CurrVal;
+	}
+}
+Asset.prototype.PerformTransaction=AssetPerformTransaction;
+
+function AssetCanBeShown(){
+	var Result = true;
+	if (IsEndPoint == true){
+		switch (this.ShowEnd){
+			case 0: Result = true; break;
+			case 1: Result = false; break;
+			case 2: Result = (this.CurrVal != 0); break;
+		}
+	}
+	else{
+		switch (this.ShowDuring){
+			case 0: Result = true; break;
+			case 1: Result = false; break;
+			case 2: Result = (this.CurrVal != 0); break;
+		}
+	}
+	return Result;
+}
+Asset.prototype.CanBeShown=AssetCanBeShown;
+
+function Basket(AList, Active){
+	this.Active = Active;
+	this.Assets = new Array();
+	if (AList.length > 0){
+		for (var i=0; i<AList.length; i++){
+			this.Assets[i] = new Asset(i, AList[i][0], AList[i][1], AList[i][2], AList[i][3], AList[i][4], A[i][5], this);
+		}
+	}
+}
+
+function BasketGetEffectiveOperand(Trans){
+//The "effective operand" is the operand converted to the right decimal place level (so an operand of 
+//5, which is to act on an asset with 2dps, should be converted to 500). This is especially difficult 
+//when the operand is the value of another asset, since that may have its own dp setting, and the two 
+//settings must be harmonized
+	var Operand = 0;
+	switch(Trans[2]){
+//First, a fixed value (this should already be specified at the right dp level)
+		case 0: Operand = Trans[3]; break;
+//Second, a random value; again, this should be specified at the right dp level already)
+		case 1: Operand = GetRand(Trans[3], Trans[4]); break;
+//Finally, the problem case: the value of another asset. In this case, we need to find out the dp 
+//settings of both the source and target asset
+//First get the real value of the source asset (so 500 for an asset with 2dp would be 5)
+		case 2: Operand = this.Assets[Trans[5]].GetCurrValFloat(); 
+//Now multiply this up according to the dp setting of the target asset (so 5 operating on a target asset
+//with dp2 would become 500)
+			for (var i=0; i<this.Assets[Trans[0]].DecPlace; i++){Operand *= 10;}
+			break;
+	}
+	return Operand;
+}
+Basket.prototype.GetEffectiveOperand=BasketGetEffectiveOperand;
+
+function BasketReportCurrState(){
+	if (this.Assets.length < 1){return '';}
+	var Result = '';
+	for (var i=0; i<this.Assets.length; i++){
+		if (this.Assets[i].CanBeShown()==true){
+			Result += '<tr><td style="text-align: right;">' + this.Assets[i].Name + ': </td>';
+			Result += '<td style="text-align: left;">' + this.Assets[i].GetCurrValString() + '</td></tr>';
+		}
+	}
+	if (Result.length > 0){
+		Result = '<table class="AssetTable"><tr><th colspan="2">' + strYouHave + '</th></tr>' + Result + '</table>';
+	}
+	return Result;
+}
+Basket.prototype.ReportCurrState=BasketReportCurrState;
+
+function BasketCloneSelf(Copy, Active){
+	Copy = new Basket(A, false);
+	Copy.Active = Active;
+	for (var i=0; i<this.Assets.length; i++){
+		Copy.Assets[i].CurrVal = this.Assets[i].CurrVal;
+	}
+	return Copy;
+}
+Basket.prototype.CloneSelf=BasketCloneSelf;
+
+function BAssetMeetsRequirement(ANum, ReqType, Req){
+	return this.Assets[ANum].MeetsRequirement(ReqType, Req);
+}
+Basket.prototype.AssetMeetsRequirement=BAssetMeetsRequirement;
+
+function BAssetPerformTransaction(ANum, OpType, Operand){
+	this.Assets[ANum].PerformTransaction(OpType, Operand);
+}
+Basket.prototype.PerformTransaction=BAssetPerformTransaction;
+
+function BGetAssetValByName(AssetName){
+	var Result = 0;
+	for (var i=0; i<this.Assets.length; i++){
+		if (this.Assets[i].Name == AssetName){
+			Result = this.Assets[i].CurrVal;
+		}
+	}
+	return Result;
+}
+Basket.prototype.GetAssetValByName=BGetAssetValByName;
+
+//VARIABLES AND INTERFACE STRINGS
+
+var CurrBasket;
+var TempBasket;
+var CurrNode=0;
+var strYouHave='You have: ';
+var strLinkCaption='Go!';
+var strFinishCaption='Go!';
+var strDefaultRefusalMessage='Sorry! You can\'t do that.';
+var strTimesUp = 'Your time has run out!';
+var strBookmarkExplanation = 'Your current position and settings have been encoded in <br />the URL of the page. Now set a bookmark in your <br />browser, so you can return here.<br />';
+var strExerciseComplete = 'You have reached the end of the exercise.';
+var ShowImpossibleLinks=true;
+var Interval;
+var StartTime = (new Date()).toLocaleString();
+var HPNStartTime = (new Date()).getTime();
+var SubmissionTimeout = 30000;
+var FollowingTrack = false;
+var CurrTime;
+var Started=false;
+
+var IsEndPoint = false;
+
+function TransactionList(NNum, LNum){
+	this.List = new Array();
+	var i;
+	for (i=0; i<N[NNum][4].length; i++){this.List[this.List.length] = N[NNum][4][i];}
+	for (i=0; i<N[NNum][3][LNum][2].length; i++){this.List[this.List.length] = N[NNum][3][LNum][2][i];}
+	for (i=0; i<N[N[NNum][3][LNum][0]][2].length; i++){this.List[this.List.length] = N[N[NNum][3][LNum][0]][2][i];}
+}
+
+function TestTransactions(NNum, LNum){
+	var T = new TransactionList(NNum, LNum);
+	var Result = '';
+//Create a clone of the current asset basket to operate on
+	var B = CurrBasket.CloneSelf(B, false);
+
+//For each transaction
+	for (var i=0; i<T.List.length; i++){
+//Test the requirement
+		if (B.AssetMeetsRequirement(T.List[i][0], T.List[i][7], T.List[i][6]) == true){
+//If it succeeds, do the transaction
+			B.PerformTransaction(T.List[i][0], T.List[i][1], B.GetEffectiveOperand(T.List[i]));
+		}
+		else{
+//If it fails, check the refusal message
+			if (T.List[i][8].length > 0){
+				return T.List[i][8];
+			}
+//If no refusal message, return a string with spaces, otherwise return refusal message
+			else{
+				return strDefaultRefusalMessage;
+			}
+		}
+	}
+//If all have passed, return an empty string
+	return '';
+}
+
+function StartExercise(){
+	CurrBasket = new Basket(A, true);
+	ParseSearch();
+	CurrTime = new Date();
+	ShowCurrNode();
+
+	Started = true;
+}
+
+function StartUp(){
+	if (document.location.search.indexOf('___') > -1){
+		StartExercise();
+	}
+}
+
+function Restart(){
+	var d = document.location;
+	d.search = '';
+	document.location = d;
+}
+
+//CODE FOR HANDLING UNDO FUNCTIONALITY AND TRACKING NODE SEQUENCE
+function HNode(NNum, LNum, Bask){
+	this.NNum = NNum; //Number of the node
+	this.LNum = LNum; //Number of the link selected to leave the node
+	this.Basket = Bask.CloneSelf(A, false); //Copy of current basket of assets
+//	this.EntryTime = CurrTime.getTime() - HPNStartTime; //Stores time of entry to this node, offset by start time, in milliseconds
+	this.EntryTime = CurrTime.getTime(); //Stores absolute time of entry to this node
+	this.EntryTimeString = CurrTime.toLocaleString();
+	var D = new Date();
+//	this.ExitTime = D.getTime() - HPNStartTime; //Stores the time of exit from this node
+	this.ExitTime = D.getTime(); //Stores the absolute time of exit from this node
+
+	this.ExitTimeString = D.toLocaleString(); //Stores the time in human-readable format
+}
+
+function HNodeReportSelf(AddTime){
+	var S = this.NNum + ':' + this.LNum;
+	if (AddTime == true){
+		S += ':' + this.EntryTime;
+	}
+	return S;
+}
+HNode.prototype.ReportSelf=HNodeReportSelf;
+
+//Object containing the list of tracking node objects
+function HNodeList(){
+	this.Nodes = new Array();
+	var D = new Date();
+	this.StartTime = D.getTime(); // Stores the entry time of the exercise; =entry time to node 0
+	this.StartTimeString = D.toLocaleString();
+}
+
+function HNodeListReportAsSearch(IncludeTime){
+	var S = '___t;';
+	if (this.Nodes.length > 0){
+		S += this.Nodes[0].ReportSelf(IncludeTime);
+		for (var i=1; i<this.Nodes.length; i++){
+			S += ',' + this.Nodes[i].ReportSelf(IncludeTime);
+		}
+	}
+	return S;
+}
+HNodeList.prototype.ReportAsSearch=HNodeListReportAsSearch;
+
+var H = new HNodeList(); //array of HNode elements
+
+function Undo(){
+	if (H.Nodes.length < 1){
+		return;
+	}
+	var LastNode = H.Nodes.pop();
+	CurrNode = LastNode.NNum;
+	CurrBasket = LastNode.Basket.CloneSelf(A, true);
+	ShowCurrNode();
+}
+
+//CODE FOR HANDLING URL ENCODING OF STATE
+function ParseSearch(){
+	if (document.location.search.length < 1){return;}
+//First, get the part of the search string we're interested in
+	var Temp = document.location.search.substring(document.location.search.lastIndexOf('___'), document.location.search.length);
+	if (Temp.length < 1){return;}
+
+	var S = Temp.split(';');
+//S[0] tells us this is a bookmark, or a track
+	if (S.length > 0){
+		if (S[0] == '___b'){
+//It's a bookmark
+			ShowMessage(strBookmarkExplanation);
+		}
+		if (S[0] == '___t'){
+//It's tracking data
+			ParseTrack(S[1]);
+			return;
+		}
+	}
+//S[1] is the current node
+	if (S.length > 1){
+		if (S[1].length > 0){
+			var CN=parseInt(S[1]);
+			if ((CN>-1)&&(CN<N.length)){
+				CurrNode = CN;
+			}
+		}
+	}
+	if (S.length > 2){
+		if (S[2].length > 0){
+			var AA=S[2].split(',');
+			if (AA.length > 0){
+				for (var i=0; i<AA.length; i++){
+					var Val = parseInt(AA[i]);
+					if ((i<A.length)&&(Val != NaN)){
+						CurrBasket.Assets[i].CurrVal = Val;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+var Footprints = new Array();
+
+function ParseTrack(Track){
+	if (Track.length < 3){
+		return;
+	}
+
+	var Steps = Track.split(',');
+	if (Steps.length < 2){
+		return;
+	}
+//We have valid track data, so the exercise can be displayed accordingly
+	FollowingTrack = true;
+	var NNum = 0;
+	var LNum = 0;
+	var T = 0;
+	for (var i=0; i<Steps.length; i++){
+		var Step = Steps[i].split(':');
+		NNum = parseInt(Step[0]);
+		if (NNum > -1){
+			LNum = parseInt(Step[1]);
+			if (LNum > -1){
+				if (Step.length > 2){
+					T = parseInt(Step[2]);
+				}
+				Footprints.push(new Array(NNum, LNum, T));
+			}
+		}
+	}
+}
+
+function CreateBookmark(){
+	var S = '___b;' + CurrNode + ';';
+	if (CurrBasket.Assets.length > 0){
+		S += CurrBasket.Assets[0].CurrVal;
+		for (var i=1; i<CurrBasket.Assets.length; i++){
+			S += ',' + CurrBasket.Assets[i].CurrVal;
+		}
+	}
+
+	return S;
+}
+
+function SetBookmark(){
+	if (Started == false){return;}
+	var Temp = document.location.search;
+	if (Temp.length < 1){
+		Temp = '?';
+	}
+	else{
+		Temp += '&';
+	}
+	document.location.search = Temp + CreateBookmark();
+}
+
+//CODE FOR HANDLING NAV BUTTONS AND FUNCTION BUTTONS
+
+function NavBtnOver(Btn){
+	if (Btn.className != 'NavButtonDown'){Btn.className = 'NavButtonUp';}
+}
+
+function NavBtnOut(Btn){
+	Btn.className = 'NavButton';
+}
+
+function NavBtnDown(Btn){
+	Btn.className = 'NavButtonDown';
+}
+
+function FuncBtnOver(Btn){
+	if (Btn.className != 'FuncButtonDown'){Btn.className = 'FuncButtonUp';}
+}
+
+function FuncBtnOut(Btn){
+	Btn.className = 'FuncButton';
+}
+
+function FuncBtnDown(Btn){
+	Btn.className = 'FuncButtonDown';
+}
+
+
+//CODE FOR HANDLING DISPLAY OF POPUP FEEDBACK BOX
+
+var topZ = 1000;
+
+function ShowMessage(Feedback){
+	var Output = Feedback + '<br /><br />';
+	document.getElementById('FeedbackContent').innerHTML = Output;
+	var FDiv = document.getElementById('FeedbackDiv');
+	topZ++;
+	FDiv.style.zIndex = topZ;
+	FDiv.style.display = 'block';
+	document.getElementById('FeedbackOKButton').focus();
+
+//[inclPreloadImages]
+//	RefreshImages();
+//[/inclPreloadImages]
+}
+
+function HideFeedback(){
+	document.getElementById('FeedbackDiv').style.display = 'none';
+	if (IsEndPoint == true){
+		Finish();
+	}
+}
+
+function MillisecondsToTimeReadout(MS){
+	var DT = new Date(MS);
+	return DT.getHours() + ':' + DT.getMinutes() + ':' + DT.getSeconds() + ':' + DT.getMilliseconds();
+}
+
+function ShowCurrNode(){
+	var DPT = N[CurrNode][0];
+	if ((FollowingTrack==true)&&(Footprints.length > 0)){
+		if (Footprints[0][2] > 0){
+			DPT += ' (' + MillisecondsToTimeReadout(Footprints[0][2]) + ')';
+		}
+	}
+	document.getElementById('DPTitle').innerHTML = DPT;
+	document.getElementById('DPContentsDiv').innerHTML = N[CurrNode][1];
+	var Links = '';
+	var Refusal = '';
+	var ValidLinks = 0;
+	for (var LNum=0; LNum<N[CurrNode][3].length; LNum++){
+		if ((FollowingTrack==true)&&(Footprints.length > 0)){
+//We're following a track, so we only want to make a working link for the correct item
+			if (LNum == Footprints[0][1]){
+				Links += MakeLink(CurrNode, LNum);
+				ValidLinks++;
+			}
+			else{
+				Links += MakeDummyLink(CurrNode, LNum);
+			}
+
+		}
+		else{
+			Refusal = TestTransactions(CurrNode, LNum);
+			if (Refusal.length > 0){
+				if (N[CurrNode][3][LNum][4] < 1){
+					N[CurrNode][3][LNum][3] = Refusal;
+					Links += MakeRefusalLink(CurrNode, LNum);
+				}
+			}
+			else{
+				Links += MakeLink(CurrNode, LNum);
+				ValidLinks++;
+			}
+		}
+	}
+	if (Links.length > 0){
+		Links = '<table class="LinkTable">' + Links + '</table>';
+	}
+
+	if (ValidLinks < 1){
+		IsEndPoint = true;
+		if (document.getElementById('store') != null){
+			Links = '<table class="LinkTable">' + MakeEndLink() + '</table>';
+		}
+		else{
+			if (document.getElementById('UndoButton') == null){
+				Links = '<table class="LinkTable"><tr><td>' + strExerciseComplete + '</td></tr></table>';
+			}
+		}
+	}
+	document.getElementById('LinkListDiv').innerHTML = Links;
+
+//Show assets now -- endpoint issue may affect which are shown
+	document.getElementById('AssetsDiv').innerHTML = CurrBasket.ReportCurrState();
+
+//Remove the last footprint from the track
+	if (Footprints.length > 0){Footprints.shift();}
+
+	if ((IsEndPoint==true)&&(document.getElementById('UndoButton') == null)){
+//Record current state in the history array
+		H.Nodes.push(new HNode(CurrNode, LNum, CurrBasket));
+
+//Reset the current time
+		CurrTime = new Date();
+		setTimeout('Finish()', SubmissionTimeout);
+	}
+}
+
+function MakeRefusalLink(NNum, LNum){
+	var Result = '<tr><td><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="ShowMessage(N[' + NNum + '][3][' + LNum + '][3])">' + strLinkCaption + '</button></td>';
+	Result += '<td>' + N[NNum][3][LNum][1] + '</td></tr>';
+	return Result;
+}
+
+function MakeLink(NNum, LNum){
+	var Result = '<tr><td><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="FollowLink(' + LNum + ')">' + strLinkCaption + '</button></td>';
+	Result += '<td>' + N[NNum][3][LNum][1] + '</td></tr>';
+	return Result;
+}
+
+function MakeDummyLink(NNum, LNum){
+	var Result = '<tr><td style="text-align: right;">&nbsp;&#x25cf;&nbsp;</td>';
+	Result += '<td>' + N[NNum][3][LNum][1] + '</td></tr>';
+	return Result;
+}
+
+function MakeEndLink(){
+	var Result = '<tr><td><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="Finish()">' + strFinishCaption + '</button></td>';
+	Result += '<td>' + strExerciseComplete + '</td></tr>';
+	return Result;
+}
+
+function FollowLink(LNum){
+
+//Record current state in the history array
+	H.Nodes.push(new HNode(CurrNode, LNum, CurrBasket));
+
+//Reset the current time
+	CurrTime = new Date();
+
+	var T = new TransactionList(CurrNode, LNum);
+//For each transaction
+	for (var i=0; i<T.List.length; i++){
+//Do the transaction
+		CurrBasket.PerformTransaction(T.List[i][0], T.List[i][1], CurrBasket.GetEffectiveOperand(T.List[i]));
+	}
+//Now change the node
+	CurrNode = N[CurrNode][3][LNum][0];
+	ShowCurrNode();
+}
+
+//CODE FOR HANDLING TIMER
+
+
+//HOTPOTNET FUNCTIONS
+function Finish(){
+//If there's a form, fill it out and submit it
+	try{
+		var F = document.getElementById('store');
+		if (F != null){
+			F.starttime.value = HPNStartTime;
+			F.endtime.value = (new Date()).getTime();
+			F.mark.value = CurrBasket.GetAssetValByName('Score'); //if an asset called "Score" exists, this value will be submitted as the mark
+			var Temp = '<?xml version="1.0"?><hpnetresult><fields>';
+			Temp += '<field><fieldname>endbookmark</fieldname><fieldtype>url-search</fieldtype><fieldlabel>Click here to see the final position in the maze</fieldlabel><fieldlabelid>QuandaryViewFinalPosition</fieldlabelid><fielddata>' + CreateBookmark() + '</fielddata></field>';
+			Temp += '<field><fieldname>track</fieldname><fieldtype>url-search</fieldtype><fieldlabel>Click here to track the student through the maze.</fieldlabel><fieldlabelid>QuandaryViewTrack</fieldlabelid><fielddata>' + H.ReportAsSearch(false) + '</fielddata></field>';
+			Temp += '<field><fieldname>timedtrack</fieldname><fieldtype>url-search</fieldtype><fieldlabelid>QuandaryViewTimedTrack</fieldlabelid><fieldlabel>Click here to track the student through the maze with timing data.</fieldlabel><fielddata>' + H.ReportAsSearch(true) + '</fielddata></field>';
+			Temp += '</fields></hpnetresult>';
+			F.detail.value = Temp;
+			F.submit();
+
+		}
+	}
+	catch(er){
+		return;
+	}
+}
+
+//UTILITY FUNCTIONS
+function GetRand(Lower, Upper){
+	var Rng = Upper-Lower;
+	return (Math.round(Math.random()*Rng)) + Lower;
+}
+
+var A = new Array();
+
+
+var N = new Array();
+N[0] = new Array();
+N[0][0] = 'Welcome to Hot Potatoes!';
+N[0][1] = 'This browser-based presentation will introduce the main exercise-types produced by the programs, and take you through the basic steps involved in creating an interactive exercise. Choose one of the options below.';
+N[0][2] = new Array();
+
+N[0][3] = new Array();
+N[0][3][0] = new Array();
+N[0][3][0][0] = 1;
+N[0][3][0][1] = 'What is Hot Potatoes?';
+N[0][3][0][2] = new Array();
+
+N[0][3][0][3] = '';
+N[0][3][0][4] = 0;
+
+N[0][3][1] = new Array();
+N[0][3][1][0] = 2;
+N[0][3][1][1] = 'What\'s new in version 6?';
+N[0][3][1][2] = new Array();
+
+N[0][3][1][3] = '';
+N[0][3][1][4] = 0;
+
+N[0][3][2] = new Array();
+N[0][3][2][0] = 3;
+N[0][3][2][1] = 'Getting started';
+N[0][3][2][2] = new Array();
+
+N[0][3][2][3] = '';
+N[0][3][2][4] = 0;
+
+N[0][3][3] = new Array();
+N[0][3][3][0] = 4;
+N[0][3][3][1] = 'The Potatoes, one by one';
+N[0][3][3][2] = new Array();
+
+N[0][3][3][3] = '';
+N[0][3][3][4] = 0;
+
+N[0][3][4] = new Array();
+N[0][3][4][0] = 17;
+N[0][3][4][1] = 'The <strong>hotpotatoes.net</strong> server';
+N[0][3][4][2] = new Array();
+
+N[0][3][4][3] = '';
+N[0][3][4][4] = 0;
+
+
+N[0][4] = new Array();
+
+
+N[1] = new Array();
+N[1][0] = 'What is Hot Potatoes?';
+N[1][1] = 'The <strong>Hot Potatoes</strong> suite is a set of six authoring tools, created by the Research and Development team at the University of Victoria <a href="http://web.uvic.ca/hrd/hcmc/">Humanities Computing and Media Centre</a>. They enable you to create interactive Web-based exercises of several basic types. The exercises are standard Web pages using XHTML 1.1 code for display, and JavaScript (ECMAScript) for interactivity. These core W3C standards are supported by all good modern browsers, including Internet Explorer 6+, Mozilla 1.2+, Phoenix, Safari, and many others. The authoring tools will also handle Unicode, so you can create exercises in virtually any language, or in a mixture of languages.<br /><br />You don\'t need to know anything about XHTML or JavaScript to use the programs. All you need to do is to enter your data -- texts, questions, answers etc. -- and the programs will create the Web pages for you. Then you can post them on your Web site. However, the programs are designed so that almost every aspect of the pages can be customized, so if you do know HTML or JavaScript code, you can make almost any change you want to the way the exercises work or to the format of the Web pages.<br /><br />If you work in a non-profit-making educational institution or context, and you are prepared to share your exercises by placing them on a publicly-accessible Web server, then you may use the Hot Potatoes suite free of charge. If you are working for a company or in a commercial context, or if you password-protect your exercises or distribute them only on an intranet, you will need to buy a licence (contact <a href="http://www.halfbakedsoftware.com/">Half-Baked Software</a> for information). However, whether you\'re commercial or otherwise, we do ask that you register the programs; all you have to do is to <a href="http://web.uvic.ca/hrd/hotpot/register.htm">fill in a form on our Website</a>. This helps us to stay in touch with our users and get some idea of who is using our programs. See the help file for more information on registration.<br /><br />Now go on to look at some examples of the kinds of exercises you can make using <strong>Hot Potatoes</strong>. (Note that the data files for all of these exercises are available in the tutorial folder if you want to look at them inside the authoring programs later.)<br />';
+N[1][2] = new Array();
+
+N[1][3] = new Array();
+N[1][3][0] = new Array();
+N[1][3][0][0] = 11;
+N[1][3][0][1] = 'Example exercises';
+N[1][3][0][2] = new Array();
+
+N[1][3][0][3] = '';
+N[1][3][0][4] = 0;
+
+
+N[1][4] = new Array();
+
+
+N[2] = new Array();
+N[2][0] = 'What\'s new in version 6?';
+N[2][1] = 'The Help file contains a more detailed list of new features and changes, but these are the primary differences between version 5.5 and version 6.0:<ul><li><strong>Unicode support</strong>, so you can create exercises in virtually any language or in a mixture of languages. Unicode support is only enabled on Windows 2000 or XP; earlier versions of Windows do not support it.</li><li><strong>Mixed question types in a quiz.</strong> The old JBC (multiple-choice) application has been combined with JQuiz, and the new application allows you to create a quiz with a mixture of multiple-choice, short-answer and multi-select questions, along with a new question type ("hybrid").</li><li><strong>More sophisticated scoring in JQuiz.</strong> Questions can now be weighted, and individual answers can be given a "percentage correct" setting.</li><li><strong>Simpler output format.</strong> Instead of the old frames-based format, in which the content of exercise pages was written from JavaScript, the new XHTML-based pages are simpler and allow easier editing of the output pages in WYSIWYG editors such as DreamWeaver.</li><li>A <strong>timer</strong> can now be placed on exercises, rather than on associated reading texts as in previous versions.</li><li>Exercises and all associated media files can be uploaded automatically to an account on the <a href="http://www.hotpotatotes.net">www.hotpotatotes.net</a> server, so that your students can log on and have their results recorded.</li></ul>';
+N[2][2] = new Array();
+
+N[2][3] = new Array();
+N[2][3][0] = new Array();
+N[2][3][0][0] = 0;
+N[2][3][0][1] = 'Back to the index';
+N[2][3][0][2] = new Array();
+
+N[2][3][0][3] = '';
+N[2][3][0][4] = 0;
+
+N[2][3][1] = new Array();
+N[2][3][1][0] = 3;
+N[2][3][1][1] = 'Getting started';
+N[2][3][1][2] = new Array();
+
+N[2][3][1][3] = '';
+N[2][3][1][4] = 0;
+
+
+N[2][4] = new Array();
+
+
+N[3] = new Array();
+N[3][0] = 'Getting started';
+N[3][1] = 'The best way to get started with Hot Potatoes is to work through the example exercises; these will show you the different types of exercise you can make, and at the same time teach you some of the basic concepts. Then you can go on to making your first exercise.';
+N[3][2] = new Array();
+
+N[3][3] = new Array();
+N[3][3][0] = new Array();
+N[3][3][0][0] = 11;
+N[3][3][0][1] = 'Example exercises';
+N[3][3][0][2] = new Array();
+
+N[3][3][0][3] = '';
+N[3][3][0][4] = 0;
+
+N[3][3][1] = new Array();
+N[3][3][1][0] = 12;
+N[3][3][1][1] = 'The 2-minute challenge: Make your first exercise';
+N[3][3][1][2] = new Array();
+
+N[3][3][1][3] = '';
+N[3][3][1][4] = 0;
+
+N[3][3][2] = new Array();
+N[3][3][2][0] = 13;
+N[3][3][2][1] = 'Three steps in making an exercise';
+N[3][3][2][2] = new Array();
+
+N[3][3][2][3] = '';
+N[3][3][2][4] = 0;
+
+
+N[3][4] = new Array();
+
+
+N[4] = new Array();
+N[4][0] = 'The Potatoes, one by one';
+N[4][1] = 'There are six Potatoes in version 6 of Hot Potatoes. Choose the one you want to learn about:';
+N[4][2] = new Array();
+
+N[4][3] = new Array();
+N[4][3][0] = new Array();
+N[4][3][0][0] = 5;
+N[4][3][0][1] = 'JQuiz (question-based exercises)';
+N[4][3][0][2] = new Array();
+
+N[4][3][0][3] = '';
+N[4][3][0][4] = 0;
+
+N[4][3][1] = new Array();
+N[4][3][1][0] = 6;
+N[4][3][1][1] = 'JCloze (gapfill exercises)';
+N[4][3][1][2] = new Array();
+
+N[4][3][1][3] = '';
+N[4][3][1][4] = 0;
+
+N[4][3][2] = new Array();
+N[4][3][2][0] = 7;
+N[4][3][2][1] = 'JMatch (matching exercises)';
+N[4][3][2][2] = new Array();
+
+N[4][3][2][3] = '';
+N[4][3][2][4] = 0;
+
+N[4][3][3] = new Array();
+N[4][3][3][0] = 8;
+N[4][3][3][1] = 'JMix (jumble exercises)';
+N[4][3][3][2] = new Array();
+
+N[4][3][3][3] = '';
+N[4][3][3][4] = 0;
+
+N[4][3][4] = new Array();
+N[4][3][4][0] = 9;
+N[4][3][4][1] = 'JCross (crosswords)';
+N[4][3][4][2] = new Array();
+
+N[4][3][4][3] = '';
+N[4][3][4][4] = 0;
+
+N[4][3][5] = new Array();
+N[4][3][5][0] = 10;
+N[4][3][5][1] = 'The Masher (buildling linked units of material)';
+N[4][3][5][2] = new Array();
+
+N[4][3][5][3] = '';
+N[4][3][5][4] = 0;
+
+
+N[4][4] = new Array();
+
+
+N[5] = new Array();
+N[5][0] = ' Introduction to JQuiz (question-based exercises)';
+N[5][1] = 'JQuiz is a tool for making question-based exercises. Each quiz can consist of an unlimited number of questions. There are four basic question types:<br /><br />In <strong>multiple-choice questions</strong>, the student chooses an answer by clicking on a button. If the answer is correct, the button caption will change to a smiley face :-), and if it\'s wrong, it will change to an X (you can configure these bits of text in the configuration screen). In either case, the student will see feedback specific to that answer, explaining why it\'s right or wrong (assuming you write the feedback when you make the exercise!). If the answer is wrong, the student can continue choosing answers until a correct answer is selected. The score for each question is based on the number of tries taken to get a correct answer. Once a correct answer is chosen, the scoring is "frozen", but the student can still click on buttons to see the feedback for other answers without penalty.<br /><br />In <strong>short-answer questions</strong>, the students has to type the answer into a text box on the page, and press a <strong>Check</strong> button to see if it is correct. The page will try to match the student\'s answer to a list of correct or incorrect answers you have defined. If a match is found, the feedback for that answer will be shown. If not, then the page will try to find the nearest match among the specified correct answers, and signal to the student which parts of their answer are right and which parts are wrong. The score for each question is based on the number of attempts the student makes before getting a correct answer. You can also include a <strong>Hint</strong> button, which will give the student one letter of the answer; using the Hint button incurs a penalty on the score.<br /><br />A <strong>hybrid question</strong> is a combination of a multiple-choice question and a short-answer question. In this type of question, the student is first presented with a text box and asked to type the answer. However, if the student fails to get the answer right after a specified number of tries (which you can configure in the configuration screen), the question changes to a multiple-choice question to make it easier.<br /><br />Finally, a <strong>multi-select</strong> question asks the student to select several of a specific set of items. The idea here is that the student must select all the correct items, and not select all the wrong items. This type of question might take the format "Which of the following are nouns?", followed by a list of words. The student must check all the nouns, but not check any answers which are not nouns, then press a <strong>Check</strong> button. If the answer is not completely correct, the student will see a readout of the number of correct choices, and one piece of feedback; this would be the feedback from the first item in the list which was either <strong>selected when it shouldn\'t be selected</strong>, or <strong>not selected when it should be selected</strong>.<br /><br />To try out all these question types, go to this <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'jquiz2.htm\'); return false;">example quiz</a>.<br /><br />For an example of how to make a quiz in JQuiz, check out the "Three Steps" link below. For more information on how JQuiz works, check out the <strong>Help file</strong> -- just start JQuiz and press the <strong>F1</strong> key.';
+N[5][2] = new Array();
+
+N[5][3] = new Array();
+N[5][3][0] = new Array();
+N[5][3][0][0] = 0;
+N[5][3][0][1] = 'Index';
+N[5][3][0][2] = new Array();
+
+N[5][3][0][3] = '';
+N[5][3][0][4] = 0;
+
+N[5][3][1] = new Array();
+N[5][3][1][0] = 13;
+N[5][3][1][1] = 'Three steps in making an exercise';
+N[5][3][1][2] = new Array();
+
+N[5][3][1][3] = '';
+N[5][3][1][4] = 0;
+
+N[5][3][2] = new Array();
+N[5][3][2][0] = 4;
+N[5][3][2][1] = 'The Potatoes, one by one';
+N[5][3][2][2] = new Array();
+
+N[5][3][2][3] = '';
+N[5][3][2][4] = 0;
+
+
+N[5][4] = new Array();
+
+
+N[6] = new Array();
+N[6][0] = ' Introduction to JCloze (gapfill exercises)';
+N[6][1] = 'JCloze is used to make gap-fill or cloze exercises. The idea of a gap-fill exercise is that the student completes all the answers before checking; in other words, it\'s a holistic exercise. When all the answers have been entered, the student presses the <strong>Check</strong> button to mark the answers. Correct answers will be inserted into the text; any incorrect answers will be left in textboxes, so that they can be corrected. When the student checks an answer that is not completely correct, a penalty is incurred, so the score depends on the number of checks required before the answer is completely correct. <br /><br />In a JCloze exercise, you can include a <strong>Hint</strong> button which will give the student one free letter of the answer he or she is currently working on (based on where the cursor is). You can also include a specific clue for each gap. Using the <strong>Hint</strong> or <strong>Clue</strong> buttons.<br /><br />Making a gapfill is easy -- see the picture below for basic steps:<br /><br /><img src="jcloze1.png" alt="Making a JCloze exercise." title="Making a JCloze exercise." width="600" height="400"></img><br /><br />You can also look at this <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'jcloze1.htm\'); return false;">example JCloze exercise</a>. For more information on how JCloze works, check out the <strong>Help file</strong> -- just start JCloze and press the <strong>F1</strong> key.';
+N[6][2] = new Array();
+
+N[6][3] = new Array();
+N[6][3][0] = new Array();
+N[6][3][0][0] = 0;
+N[6][3][0][1] = 'Index';
+N[6][3][0][2] = new Array();
+
+N[6][3][0][3] = '';
+N[6][3][0][4] = 0;
+
+N[6][3][1] = new Array();
+N[6][3][1][0] = 13;
+N[6][3][1][1] = 'Three steps in making an exercise';
+N[6][3][1][2] = new Array();
+
+N[6][3][1][3] = '';
+N[6][3][1][4] = 0;
+
+N[6][3][2] = new Array();
+N[6][3][2][0] = 4;
+N[6][3][2][1] = 'The Potatoes, one by one';
+N[6][3][2][2] = new Array();
+
+N[6][3][2][3] = '';
+N[6][3][2][4] = 0;
+
+
+N[6][4] = new Array();
+
+
+N[7] = new Array();
+N[7][0] = ' Introduction to JMatch (matching exercises)';
+N[7][1] = 'JMatch is used to create matching exercises. Basically, this means that a list of items appears on one side, and each one must be matched up to an item on the other side.<br /><br />JMatch output comes in two types: <strong>standard</strong> and <strong>drag-drop</strong>. The standard output (see an <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'jmatch1.htm\'); return false;">example</a>) uses a drop-down list of items on the right. This is the format to use when you have more than seven or eight items, and the items on the right are only text; if you have only a few items, and especially if the items are graphics, you may want to use the drag-drop format (see this <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'jmatch2.htm\'); return false;">example</a>). Don\'t use the drag-drop format if you have more than eight items, because scrolling on the page will make dragging and dropping difficult.<br /><br />To make a JMatch exercise, enter each pair of items on the same line, as in the picture below. When you export to create the Web page, the program will shuffle the items on the right for you.<br /><br /><img src="jmatch1.png" alt="Making a JMatch exercise" title="Making a JMatch exercise" width="663" height="489"></img><br /><br />For more information on how JMatch works, check out the <strong>Help file</strong> -- just start JMatch and press the <strong>F1</strong> key.';
+N[7][2] = new Array();
+
+N[7][3] = new Array();
+N[7][3][0] = new Array();
+N[7][3][0][0] = 0;
+N[7][3][0][1] = 'Index';
+N[7][3][0][2] = new Array();
+
+N[7][3][0][3] = '';
+N[7][3][0][4] = 0;
+
+N[7][3][1] = new Array();
+N[7][3][1][0] = 13;
+N[7][3][1][1] = 'Three steps in making an exercise';
+N[7][3][1][2] = new Array();
+
+N[7][3][1][3] = '';
+N[7][3][1][4] = 0;
+
+N[7][3][2] = new Array();
+N[7][3][2][0] = 4;
+N[7][3][2][1] = 'The Potatoes, one by one';
+N[7][3][2][2] = new Array();
+
+N[7][3][2][3] = '';
+N[7][3][2][4] = 0;
+
+
+N[7][4] = new Array();
+
+
+N[8] = new Array();
+N[8][0] = ' Introduction to JMix (jumbled sentence or jumbled word exercises)';
+N[8][1] = 'JMix is used to make jumble exercises. You can jumble the words in a sentence, or the letters in a word. Like JMatch, JMix has two output formats: <strong>standard</strong>, and <strong>drag-drop</strong>. For examples, see this <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'jmix1.htm\'); return false;">standard exercise</a> and this <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'jmix2.htm\'); return false;">drag-drop exercise</a>.<br /><br />To see detailed instructions for making a simple JMix exercise, go to the 2-Minute Challenge link below.<br /><br />For more information on how JMix works, check out the <strong>Help file</strong> -- just start JMix and press the <strong>F1</strong> key.';
+N[8][2] = new Array();
+
+N[8][3] = new Array();
+N[8][3][0] = new Array();
+N[8][3][0][0] = 0;
+N[8][3][0][1] = 'Index';
+N[8][3][0][2] = new Array();
+
+N[8][3][0][3] = '';
+N[8][3][0][4] = 0;
+
+N[8][3][1] = new Array();
+N[8][3][1][0] = 13;
+N[8][3][1][1] = 'Three steps in making an exercise';
+N[8][3][1][2] = new Array();
+
+N[8][3][1][3] = '';
+N[8][3][1][4] = 0;
+
+N[8][3][2] = new Array();
+N[8][3][2][0] = 4;
+N[8][3][2][1] = 'The Potatoes, one by one';
+N[8][3][2][2] = new Array();
+
+N[8][3][2][3] = '';
+N[8][3][2][4] = 0;
+
+
+N[8][4] = new Array();
+
+
+N[9] = new Array();
+N[9][0] = ' Introduction to JCross (crosswords)';
+N[9][1] = 'JCross is used to make crossword exercises. There are two steps to making an exercise: first enter your letters in the grid, then add the clues. To enter letters in the grid, click on a square and type a letter. Try following the example in the picture below to get you started:<br /><br /><img src="jcross1.png" alt="Creating a crossword grid." title="Creating a crossword grid." width="550" height="470"></img><br /><br />When you\'ve created the grid, click on <strong>Add Clues</strong>. Then, to add each clue, click on the word, type the clue, and press the OK button:<br /><br /><img src="jcross2.png" alt="Adding clues." title="Adding clues." width="504" height="337"></img><br /><br />Here is an <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'jcross1.htm\'); return false;">example JCross crossword</a>. For more information on how JCross works, check out the <strong>Help file</strong> -- just start JCross and press the <strong>F1</strong> key.<br /><br />';
+N[9][2] = new Array();
+
+N[9][3] = new Array();
+N[9][3][0] = new Array();
+N[9][3][0][0] = 0;
+N[9][3][0][1] = 'Index';
+N[9][3][0][2] = new Array();
+
+N[9][3][0][3] = '';
+N[9][3][0][4] = 0;
+
+N[9][3][1] = new Array();
+N[9][3][1][0] = 13;
+N[9][3][1][1] = 'Three steps in making an exercise';
+N[9][3][1][2] = new Array();
+
+N[9][3][1][3] = '';
+N[9][3][1][4] = 0;
+
+N[9][3][2] = new Array();
+N[9][3][2][0] = 4;
+N[9][3][2][1] = 'The Potatoes, one by one';
+N[9][3][2][2] = new Array();
+
+N[9][3][2][3] = '';
+N[9][3][2][4] = 0;
+
+
+N[9][4] = new Array();
+
+
+N[10] = new Array();
+N[10][0] = 'The Masher (buildling linked units of material)';
+N[10][1] = 'The Masher is a different kind of application from the others in the Hot Potatoes suite. It\'s intended to help you make larger units of materials, linked together. The Masher requires a separate registration key, which you can only get if you buy a commercial licence for Hot Potatoes. Without the key, you can only make small units of exercises. The Masher is also used to upload files which are not Hot Potatoes exercises to the <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'http://www.hotpotatoes.net\'); return false;">www.hotpotatoes.net</a> server.<br /><br />The Masher has its own tutorial (click on <strong>Help / Tutorial</strong> in the Masher program, or <a href="mashertutorial.htm">go there now</a>), and a detailed Help file with full instructions. To see the Help file, start the Masher program and press the <strong>F1</strong> key.';
+N[10][2] = new Array();
+
+N[10][3] = new Array();
+N[10][3][0] = new Array();
+N[10][3][0][0] = 0;
+N[10][3][0][1] = 'Index';
+N[10][3][0][2] = new Array();
+
+N[10][3][0][3] = '';
+N[10][3][0][4] = 0;
+
+N[10][3][1] = new Array();
+N[10][3][1][0] = 13;
+N[10][3][1][1] = 'Three steps in making an exercise';
+N[10][3][1][2] = new Array();
+
+N[10][3][1][3] = '';
+N[10][3][1][4] = 0;
+
+N[10][3][2] = new Array();
+N[10][3][2][0] = 4;
+N[10][3][2][1] = 'The Potatoes, one by one';
+N[10][3][2][2] = new Array();
+
+N[10][3][2][3] = '';
+N[10][3][2][4] = 0;
+
+
+N[10][4] = new Array();
+
+
+N[11] = new Array();
+N[11][0] = 'Example exercises';
+N[11][1] = 'Clicking on a link will make the exercise pop up in a new window (so that you don\'t lose your place in this tutorial). Once you have one exercise in your browser, you can move through them by clicking on the Next button at the top of the exercise. When you\'ve finished working through the exercises, close that browser window and you\'ll see this window again. Then you can go on to try making your first exercise.<ul><li><a href="" style="cursor: pointer;" onclick="window.open(\'jquiz1.htm\'); return false;">JQuiz exercise</a></li><li><a href="" style="cursor: pointer;" onclick="window.open(\'jcloze1.htm\'); return false;">JCloze exercise 1</a></li><li><a href="" style="cursor: pointer;" onclick="window.open(\'jcloze2.htm\'); return false;">JCloze exercise 2</a></li><li><a href="" style="cursor: pointer;" onclick="window.open(\'jcross1.htm\'); return false;">JCross exercise</a></li><li><a href="" style="cursor: pointer;" onclick="window.open(\'jmix1.htm\'); return false;">JMix exercise 1</a></li><li><a href="" style="cursor: pointer;" onclick="window.open(\'jmix2.htm\'); return false;">JMix exercise 2 (drag/drop)</a></li><li><a href="" style="cursor: pointer;" onclick="window.open(\'jmatch1.htm\'); return false;">JMatch exercise 1</a></li><li><a href="" style="cursor: pointer;" onclick="window.open(\'jmatch2.htm\'); return false;">JMatch exercise 2 (drag/drop)</a></li></ul>';
+N[11][2] = new Array();
+
+N[11][3] = new Array();
+N[11][3][0] = new Array();
+N[11][3][0][0] = 12;
+N[11][3][0][1] = 'The 2-minute challenge: Make your first exercise';
+N[11][3][0][2] = new Array();
+
+N[11][3][0][3] = '';
+N[11][3][0][4] = 0;
+
+
+N[11][4] = new Array();
+
+
+N[12] = new Array();
+N[12][0] = 'The 2-minute challenge: Make your first exercise';
+N[12][1] = 'Now that you\'ve seen all the exercises at work, it\'s time to try creating your own exercise. We\'re willing to bet that you can do it in two minutes flat, using <strong>JMix</strong>. You might want to print this out first, so you can easily refer to it while working in JMix. Here\'s what you do:<br /><br />Start the <strong>JMix</strong> program, then<br /><ol><br /> <li>Enter a <strong>title</strong>.</li> <li>Enter a <strong>sentence</strong>. Break your sentence into segments, by putting each segment on a separate line.</li> <li>Click on one of the two the Web buttons, or choose "Create Web page" from the File menu. There are two output formats to choose from, standard and drag/drop. For this exercise, it doesn\'t matter which one you choose.</li> <li>Answer the question about "This" with "no".</li> <li>Choose a name for your Web page.</li> <li>Answer "Yes" to view the exercise in your browser.</li></ol><br />When you\'ve finished, come back here to continue the presentation! You might want to use the <strong>Bookmark</strong> button above to create a bookmark in your browser, so that you don\'t have to search for this section again.<br /><br /><img src="jmix1.png" alt="How to create an exercise in JMix" width="550" height="410" title="How to create an exercise in JMix"></img>';
+N[12][2] = new Array();
+
+N[12][3] = new Array();
+N[12][3][0] = new Array();
+N[12][3][0][0] = 13;
+N[12][3][0][1] = 'Three steps in making an exercise';
+N[12][3][0][2] = new Array();
+
+N[12][3][0][3] = '';
+N[12][3][0][4] = 0;
+
+
+N[12][4] = new Array();
+
+
+N[13] = new Array();
+N[13][0] = 'Three steps in making an exercise';
+N[13][1] = 'Although you probably found the 2-minute challenge very straightforward, you\'ll actually need to know more about how the programs work in order to take best advantage of them. This final section of the tutorial will take you step by step through the process of making an exercise using <strong>JQuiz</strong>, in order to introduce some of the basic concepts you\'ll need to be familiar with.<br /><br />There are three main steps in creating an exercise:<br /><br /><ol><li><strong>Entering data</strong> (questions, answers and so on)</li><li><strong>Configuring the output</strong> (preparing the button captions, instructions, and other features of your Web pages)</li><li><strong>Creating Web pages</strong> (compiling your exercise into HTML pages).</li></ol>';
+N[13][2] = new Array();
+
+N[13][3] = new Array();
+N[13][3][0] = new Array();
+N[13][3][0][0] = 14;
+N[13][3][0][1] = 'Step 1: Entering data';
+N[13][3][0][2] = new Array();
+
+N[13][3][0][3] = '';
+N[13][3][0][4] = 0;
+
+
+N[13][4] = new Array();
+
+
+N[14] = new Array();
+N[14][0] = 'Step 1: Entering data';
+N[14][1] = 'In this part of the tutorial, we\'re going to make a multiple-choice exercise using <strong>JQuiz</strong>. The first stage is to enter the questions and answers for your exercise. First, start the <strong>JQuiz</strong> program. You should see an interface like the one below. If your interface looks more complicated than this, it\'s probably switched to <strong>advanced mode</strong>; in that case, just click on <strong>Options / Mode / Beginner Mode</strong>.<br /><br />Look at the picture below, and type in the information:<br /><br /><ol><li>Type the title in the title box.</li><li>Type the question in the question box.</li><li>Make sure that "Multiple-choice" is selected in the drop-down list box to the right of the question. This defines the type of question you want to make.</li><li>Type the answers in the boxes on the left, and the feedback on the right. Note that each answer, right or wrong, has its own feedback.</li><li>Check the "Correct" checkbox next to answer B.</li></ol><br /><br /><img src="jquiz1.png" alt="JQuiz main interface showing a multiple-choice question." width="760" height="590" title="JQuiz main interface showing a multiple-choice question."></img>';
+N[14][2] = new Array();
+
+N[14][3] = new Array();
+N[14][3][0] = new Array();
+N[14][3][0][0] = 15;
+N[14][3][0][1] = 'Step 2: Configuring the output';
+N[14][3][0][2] = new Array();
+
+N[14][3][0][3] = '';
+N[14][3][0][4] = 0;
+
+
+N[14][4] = new Array();
+
+
+N[15] = new Array();
+N[15][0] = 'Step 2: Configuring the output';
+N[15][1] = 'When a Hot Potatoes program creates Web pages, it does so by combining 3 resources:<ul><li>The <strong>data</strong> you entered</li><li>The <strong>configuration</strong> information</li><li>A set of "<strong>source files</strong>", or templates, containing the page structure. </li></ul>We have already looked at data; the next step is Configuration. The configuration information is a collection of pieces of text, including instructions for doing the exercise, button captions, and link URLs, which are unlikely to change much from one exercise to another. For example, some of the sample exercises you looked at earlier in this presentation included a button labelled "Check", so that the student could check his or her answer. The caption "Check" is not likely to change from exercise to exercise, so it does not need to be stored with the data; however, you may need to change it (if you are creating quizzes in another language, for example).<br /><br />When you looked at the example multiple-choice exercise, you might remember that the exercise had a title, a subtitle, and some instructions at the top of the page. The title of each exercise is likely to be unique, so that\'s part of the <strong>data</strong>. However, the subtitle (e.g. "Multiple-choice exercise") and the instructions ("Choose the correct answer for each question") may be the same for most similar exercises, so these are part of the <strong>configuration</strong>. In Step 2, we\'re going to change the configuration.<br /><br />First, click on <strong>Options / Configure Output</strong> to get to the configuration screen. The first tab, labelled <strong>Titles/Instructions</strong>, holds the exercise subtitle and instructions. Type some text in, as in the example below, then press OK.<br /><br /><img src="jquiz_config.png" alt="JQuiz configuration screen" title="JQuiz configuration screen" width="600" height="366"></img>';
+N[15][2] = new Array();
+
+N[15][3] = new Array();
+N[15][3][0] = new Array();
+N[15][3][0][0] = 16;
+N[15][3][0][1] = 'Step 3: Creating a Web page';
+N[15][3][0][2] = new Array();
+
+N[15][3][0][3] = '';
+N[15][3][0][4] = 0;
+
+
+N[15][4] = new Array();
+
+
+N[16] = new Array();
+N[16][0] = 'Step 3: Creating a Web page';
+N[16][1] = 'The final step is to create a Web page from your data. All you need to do is click on <strong>Create Web page / Web page for v6 browsers</strong> from the File menu, then give your page a filename. Use the filename "<strong>test.htm</strong>":<br /><br /><img src="jquiz_output.png" alt="Creating a Web page with JQuiz" title="Creating a Web page with JQuiz" width="402" height="414"></img><br /><br />The program will tell you that it has produced a file, and let you view it in your Web browser. That\'s all there is to it!<br />';
+N[16][2] = new Array();
+
+N[16][3] = new Array();
+N[16][3][0] = new Array();
+N[16][3][0][0] = 0;
+N[16][3][0][1] = 'Index';
+N[16][3][0][2] = new Array();
+
+N[16][3][0][3] = '';
+N[16][3][0][4] = 0;
+
+N[16][3][1] = new Array();
+N[16][3][1][0] = 4;
+N[16][3][1][1] = 'The Potatoes, one by one';
+N[16][3][1][2] = new Array();
+
+N[16][3][1][3] = '';
+N[16][3][1][4] = 0;
+
+
+N[16][4] = new Array();
+
+
+N[17] = new Array();
+N[17][0] = 'The hotpotatoes.net server';
+N[17][1] = 'Whenever you create a Hot Potatoes exercise, you will see the following screen:<br /><br /><img src="hotpotnet1.png" alt="Viewing or uploading an exercise." title="Viewing or uploading an exercise." width="455" height="240"></img><br /><br />Generally, you will want to view the exercise in your browser to see if it works as you expect. However, the second option allows you to make use of the <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'http://www.hotpotatoes.net\'); return false;">www.hotpotatoes.net</a> hosting service. This is a Web server which can host your Hot Potatoes exercises, and allow you to password-protect them; your students can log on to the server and take the exercises, and you can check in later to find out their results. This service is not free, but it\'s fairly cheap, and you can test it out by creating a demo account and uploading a couple of exercises. To create a demo account, just click on "<strong>Upload the file to the hotpotatoes.net Website</strong>", then select the option "<strong>Create a demo account for me on hotpotatoes.net</strong>". <br /><br />For more information on the hotpotatoes.net service, see <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'http://www.hotpotatoes.info\'); return false;">www.hotpotatoes.info</a>.';
+N[17][2] = new Array();
+
+N[17][3] = new Array();
+N[17][3][0] = new Array();
+N[17][3][0][0] = 0;
+N[17][3][0][1] = 'Index';
+N[17][3][0][2] = new Array();
+
+N[17][3][0][3] = '';
+N[17][3][0][4] = 0;
+
+
+N[17][4] = new Array();
+
+
+
+
+
+
+//-->
+
+//]]>
+
+</script>
+
+</head>
+
+<body onload="StartUp()">
+
+<!-- BeginTopNavButtons -->
+
+
+<div class="NavButtonBar">
+
+
+
+
+<button class="NavButton" onfocus="NavBtnOver(this)" onblur="NavBtnOut(this)"  onmouseover="NavBtnOver(this)" onmouseout="NavBtnOut(this)" onmousedown="NavBtnDown(this)" onmouseup="NavBtnOver(this)" onclick="location='tutorial.htm?___q;0;'; return false;"> Index </button>
+
+
+
+
+</div>
+
+
+<!-- EndTopNavButtons -->
+
+<div class="Titles">
+	<h2 class="ExerciseTitle">Hot Potatoes 6 Tutorial</h2>
+
+
+
+</div>
+
+<div class="DecisionPoint">
+
+
+<div class="ControlButtons">
+
+<button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="SetBookmark()">Bookmark</button>
+
+<button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="Restart()">Restart</button>
+
+<button id="UndoButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="Undo()">Go back</button>
+
+</div>
+
+	<h2 id="DPTitle" class="DecisionPointTitle"></h2>
+
+<table class="DPTable"><tr>
+<td>
+
+	<div id="DPContentsDiv" class="DecisionPointText">
+
+		<div class="Instructions">
+		Welcome to the Hot Potatoes tutorial. This tutorial runs in your Web browser. Click on the Start button to enter the tutorial.<br />
+		</div>
+
+		<div class="Instructions">
+		
+		</div>
+
+	</div>
+
+	<div id="LinkListDiv" class="LinkList">
+
+		<div style="text-align: center">
+<button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="StartExercise()">Start</button>
+		</div>
+	</div>
+
+</td>
+<td>
+	<div id="AssetsDiv" class="Assets">
+
+	</div>
+</td></tr></table>
+</div>
+
+
+<div class="Feedback" id="FeedbackDiv">
+<div class="FeedbackText" id="FeedbackContent"></div>
+<button id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="HideFeedback(); return false;">&nbsp;OK&nbsp;</button>
+</div>
+
+<!-- BeginBottomNavButtons -->
+
+
+<!-- <div class="NavButtonBar" id="BottomNavBar">
+
+
+
+
+<button class="NavButton" onfocus="NavBtnOver(this)" onblur="NavBtnOut(this)"  onmouseover="NavBtnOver(this)" onmouseout="NavBtnOut(this)" onmousedown="NavBtnDown(this)" onmouseup="NavBtnOver(this)" onclick="location='tutorial.htm?___q;0;'; return false;"> Index </button>
+
+
+
+
+</div> -->
+
+
+<!-- EndBottomNavButtons -->
+
+<!-- BeginSubmissionForm -->
+
+<!-- EndSubmissionForm -->
+
+
+</body>
+</html>

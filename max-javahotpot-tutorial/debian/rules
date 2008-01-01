@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+
+binary-install/max-javahotpot-tutorial::
+	# clean svn dirs
+	find $(CURDIR)/debian/max-javahotpot-tutorial -type d -name .svn | xargs rm -rf --
+
