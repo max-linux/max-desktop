@@ -1,3 +1,16 @@
+max-meta (0.13) max; urgency=low
+
+  * Set gconf settings in user home before /etc/gconf
+  * Change max-server background image
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Jan 2008 19:42:50 +0100
+
+max-meta (0.12.0) max; urgency=low
+
+  * Delete max-3.0-menu-conf package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 22:50:41 +0100
+
 max-meta (0.12) max; urgency=low
 
   * gconf/desktop.gnome.interface.gconf:

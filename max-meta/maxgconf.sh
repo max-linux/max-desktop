@@ -110,14 +110,12 @@ set_key() {
 
    if [ "$3" = "" ]; then decho "ERROR: key $1 don't have value"; return;  fi
 
-   gconftool-2 --direct --type $2 --config-source xml:readwrite:/etc/gconf/gconf.xml.${prio} --set $1 "$3" >> /tmp/maxgconf.errors 2>&1
+   # set at gconf home settings before general
+   for home in /home/*; do
+      gconftool-2 --config-source xml:readwrite:$home/.gconf --type $2 --set $1 "$3" >> /tmp/maxgconf.errors 2>&1
+   done
 
-   # if mandatory set at homes too
-   if [ "$prio" = "mandatory" ]; then
-     for home in /home/*; do
-        gconftool-2 --config-source xml:readwrite:$home/.gconf --type $2 --set $1 "$3" >> /tmp/maxgconf.errors 2>&1
-     done
-   fi
+   gconftool-2 --direct --type $2 --config-source xml:readwrite:/etc/gconf/gconf.xml.${prio} --set $1 "$3" >> /tmp/maxgconf.errors 2>&1
 }
 
 unset_key() {
@@ -163,7 +161,7 @@ if [ "$1" = "--set" ]; then
     decho "File $2 don't exists"
     exit 1
   fi
-  decho "Reading \"$2\" to set gconf values..."
+  decho "Reading \"$(basename $2)\" to set gconf values..."
   lines=$(cat $2| wc -l)
   for i in $(seq $lines); do
    line=$(get_line $i $2)
@@ -189,7 +187,7 @@ if [ "$1" = "--unset" ]; then
     decho "File $2 don't exists"
     exit 1
   fi
-  decho "Reading \"$2\" to unset gconf values..."
+  decho "Reading \"$(basename $2)\" to unset gconf values..."
   lines=$(cat $2| wc -l)
   for i in $(seq $lines); do
    line=$(get_line $i $2)
