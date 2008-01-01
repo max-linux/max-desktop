@@ -6,6 +6,13 @@ case "$1" in
     configure)
         /usr/sbin/update-dpsyco-skel
 
+    # create manual launcher in existent HOMES
+    for home in /home/*; do
+      if [ ! -e $home/Desktop/manual.desktop ]; then
+         ln -s /etc/skel/Desktop/manual.desktop $home/Desktop/manual.desktop || true
+      fi
+    done
+
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
