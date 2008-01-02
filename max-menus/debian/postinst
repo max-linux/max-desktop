@@ -4,21 +4,19 @@ set -e
 
 case "$1" in
     configure)
-        echo "Update Dpsyco skel..."
+        echo "Updating Dpsyco skel..."
         /usr/sbin/update-dpsyco-skel > /dev/null 2>&1
 
+        echo "Call maxmenus"
+	/usr/sbin/maxmenus --update >> /tmp/maxmenus.log 2>&1
+
 
     ;;
 
-    abort-upgrade|abort-remove|abort-deconfigure)
-
-    ;;
-
-    *)
-        echo "postinst called with unknown argument \`$1'" >&2
-        exit 0
-    ;;
 esac
+
+
+#DEBHELPER#
 
 exit 0
 

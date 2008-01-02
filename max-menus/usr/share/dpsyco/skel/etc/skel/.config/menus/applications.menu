@@ -121,8 +121,39 @@
 				<Filename>max-jclicdescarga.desktop</Filename>
 			</Include>
 		</Menu>
+		<Menu>
+			<Name>Matemáticas</Name>
+			<Directory>matematicas.directory</Directory>
+			<Include>
+				<Filename>geogrebra.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>wxmaxima.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>kde-kbruch.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>kde-kpercentage.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>kde-kig.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>tuxmath.desktop</Filename>
+			</Include>
+		</Menu>
 		<Exclude>
 			<Filename>jclic.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kbruch.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kpercentage.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kig.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>kde-kstars.desktop</Filename>
@@ -137,7 +168,16 @@
 			<Filename>stellarium.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>animalandia-tutorial.desktop</Filename>
+			<Filename>animalandia.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>GeoGrebra.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>tuxmath.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>wxmaxima.desktop</Filename>
 		</Exclude>
 	</Menu>
 	<Menu>
@@ -240,8 +280,8 @@
 		<Name>Accessories</Name>
 		<DefaultLayout inline="false"/>
 		<Menu>
-			<Name>alacarte-made-2</Name>
-			<Directory>alacarte-made-2.directory</Directory>
+			<Name>Aplicaciones Tablet PC</Name>
+			<Directory>tabletpc.directory</Directory>
 			<Include>
 				<Filename>Xournal.desktop</Filename>
 			</Include>
@@ -249,7 +289,10 @@
 				<Filename>NoteLab.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>jarnal-2.desktop</Filename>
+				<Filename>jarnal.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>jarnalannotate.desktop</Filename>
 			</Include>
 		</Menu>
 		<Exclude>
@@ -260,16 +303,7 @@
 			<Filename>notelab.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>jarnal-1.desktop</Filename>
-		</Exclude>
-		<Include>
-			<Filename>alacarte-made-1.desktop</Filename>
-		</Include>
-		<Exclude>
 			<Filename>redhat-manage-print-jobs.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>jarnalannotate.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>dasher.desktop</Filename>
@@ -285,6 +319,12 @@
 		<Name>Games</Name>
 		<Exclude>
 			<Filename>gcompris.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>tuxmath.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>tuxtype.desktop</Filename>
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
 	</Menu>

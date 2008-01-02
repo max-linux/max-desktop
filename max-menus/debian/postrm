@@ -8,12 +8,9 @@ case "$1" in
        /usr/sbin/update-dpsyco-skel > /dev/null 2>&1
 
         ;;
-
-    *)
-        echo "postrm called with unknown argument \`$1'" >&2
-        exit 0
-
 esac
+
+#DEBHELPER#
 
 exit 0
 

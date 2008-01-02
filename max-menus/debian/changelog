@@ -1,3 +1,12 @@
+max-menus (3.1.20080102.max2) max; urgency=low
+
+  * Add maxmenus script (copy menus in users home)
+  * Remove not needed code in debian/[postinst|prerm|postrm]
+  * Add Math menu in .config/menus/applications.menu
+  * Remove not needed launchers in usr/share/max/applications
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 20:09:47 +0100
+
 max-menus (3.1.20080102.max1) max; urgency=low
 
   * First version
