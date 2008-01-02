@@ -1,3 +1,15 @@
+max-meta (0.16) max; urgency=low
+
+  * Replace max-netbeans package with netbeans5.5
+  * Add tree and tuxmath packages
+  * Add max-desktop-all, depends on max-dekstop-gnome, max-desktop-kde, max-dekstop-xfce packages
+  * Move notelab from gnome package => common
+  * Add new package max-menus
+  * maxgconf.sh:
+    - Exec chown $user in .gconf user dirs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 20:29:49 +0100
+
 max-meta (0.15) max; urgency=low
 
   * desktop-xfce-i386:
