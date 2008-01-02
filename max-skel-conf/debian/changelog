@@ -1,3 +1,18 @@
+max-skel-conf (3.1.20080102.max3) max; urgency=low
+
+  * Remove /etc/skel-alumno
+  * Rename Desktop => Escritorio
+  * Clean postinst and postrm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 20:47:00 +0100
+
+max-skel-conf (3.1.20080102.max2) max; urgency=low
+
+  * Fix typo in postint creating link
+  * Remove some not needed code in potinst and postrm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 19:26:18 +0100
+
 max-skel-conf (3.1.20080102.max1) max; urgency=low
 
   * Use Escritorio or Desktop with manual.desktop

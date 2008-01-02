@@ -1,8 +1,0 @@
-alias ..="cd .."
-alias ll="ls -l --color=auto" 
-alias l="ls -a --color=auto"
-alias rm="rm -i"
-alias mv="mv -i"
-alias cp="cp -i"
-alias la="ls -la --color=auto"
-alias ls="ls --color=auto"

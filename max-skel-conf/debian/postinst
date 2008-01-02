@@ -11,23 +11,19 @@ case "$1" in
     for home in /home/*; do
       if [ -d $home/Desktop ] && [ ! -e $home/Desktop/manual.desktop ]; then
          ln -s /etc/skel/Desktop/manual.desktop $home/Desktop/manual.desktop || true
+         chown $(basename $home) $home/Desktop/manual.desktop || true
       fi
       if [ -d $home/Escritorio ] && [ ! -e $home/Escritorio/manual.desktop ]; then
-         ln -s /etc/skel/Desktop/manual.desktop $home/Desktop/manual.desktop || true
+         ln -s /etc/skel/Desktop/manual.desktop $home/Escritorio/manual.desktop || true
+         chown $(basename $home) $home/Escritorio/manual.desktop || true
       fi
     done
-
     ;;
 
-    abort-upgrade|abort-remove|abort-deconfigure)
-
-    ;;
-
-    *)
-        echo "postinst called with unknown argument \`$1'" >&2
-        exit 0
-    ;;
 esac
+
+#DEBHELPER#
+
 
 exit 0
 
