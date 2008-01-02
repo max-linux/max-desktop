@@ -1,3 +1,11 @@
+max-meta (0.15) max; urgency=low
+
+  * desktop-xfce-i386:
+    - Add max-xfce-default-settings
+    - Add thunar-volman
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 15:46:01 +0100
+
 max-meta (0.14) gutsy; urgency=low
 
   * Closes #39
