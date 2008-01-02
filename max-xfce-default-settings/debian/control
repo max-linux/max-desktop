@@ -1,0 +1,15 @@
+Source: max-xfce-default-settings
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.1.0), cdbs
+Standards-Version: 3.7.2
+
+Package: max-xfce-default-settings
+Replaces: xubuntu-default-settings
+Conflicts: xubuntu-default-settings
+Provides: xubuntu-default-settings
+Architecture: all 
+Description: xfce default settings MAX 3.1
+ Contains default Xfce4 settings for Ubuntu based MaX 3.1 distro
+ Conflicts with xubuntu-default-settings
