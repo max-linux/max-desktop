@@ -1,3 +1,10 @@
+max-skel-conf (3.1.20080102.max1) max; urgency=low
+
+  * Use Escritorio or Desktop with manual.desktop
+  * Redirect dpsyco output to /dev/null
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 10:34:16 +0100
+
 max-skel-conf (3.1-20071230.max2) max; urgency=low
 
   * Create/Remove manual.desktop file in user Desktop

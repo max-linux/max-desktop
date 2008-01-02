@@ -4,11 +4,15 @@ set -e
 
 case "$1" in
     configure)
-        /usr/sbin/update-dpsyco-skel
+        echo "Update Dpsyco skel..."
+        /usr/sbin/update-dpsyco-skel > /dev/null 2>&1
 
     # create manual launcher in existent HOMES
     for home in /home/*; do
-      if [ ! -e $home/Desktop/manual.desktop ]; then
+      if [ -d $home/Desktop ] && [ ! -e $home/Desktop/manual.desktop ]; then
+         ln -s /etc/skel/Desktop/manual.desktop $home/Desktop/manual.desktop || true
+      fi
+      if [ -d $home/Escritorio ] && [ ! -e $home/Escritorio/manual.desktop ]; then
          ln -s /etc/skel/Desktop/manual.desktop $home/Desktop/manual.desktop || true
       fi
     done
