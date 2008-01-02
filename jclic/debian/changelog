@@ -1,3 +1,14 @@
+jclic (0.1.2.2-2max4) max; urgency=low
+
+  * Add some launchers:
+    - max-jclicauthor.desktop
+    - max-jclicdescarga.desktop
+    - max-jcliccurso.desktop
+    - max-jclicreports.desktop
+  * Delete .svn dirs before building deb package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 15:40:41 +0100
+
 jclic (0.1.2.2-2max3) max; urgency=low
 
   * Create .edu.xtec.properties on first run

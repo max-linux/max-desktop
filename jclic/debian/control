@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: jclic
 Architecture: any
-Recomends: mysql-connector-java
+Recommends: mysql-connector-java
 Depends: java-virtual-machine | java-runtime | sun-java5-jre | sun-java5-jdk | sun-java6-jdk | sun-java6-jre, ${misc:Depends}, ${shlibs:Depends}
 Description: JClic java player.
  JClic is formed by a set of computer applications that are

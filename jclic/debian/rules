@@ -16,3 +16,7 @@ install/jclic::
 	cp -ra jclic-$(VERSION)/* debian/jclic/usr/share/jclic
 	mv debian/jclic/usr/share/jclic/*[TtXxTt] debian/jclic/usr/share/doc/jclic/
 	
+binary-install/jclic::
+	# clean svn dirs
+	find $(CURDIR)/debian/jclic -type d -name .svn | xargs rm -rf --
+
