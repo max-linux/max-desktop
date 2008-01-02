@@ -12,6 +12,7 @@ build/javahotpot::
 binary-install/javahotpot::
 	# install shell script launcher
 	install -m 755 javahotpot.sh debian/javahotpot/usr/bin/javahotpot
+	find $(CURDIR)/debian/javahotpot -type d -name .svn | xargs rm -rf --
 
 clean::
 	rm -rf tmp
