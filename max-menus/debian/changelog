@@ -1,3 +1,10 @@
+max-menus (3.1.20080102.max3) max; urgency=low
+
+  * Remove more unneeded launchers
+  * Fix typo in debian/rules DESTDIR => CURDIR
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 03 Jan 2008 11:47:58 +0100
+
 max-menus (3.1.20080102.max2) max; urgency=low
 
   * Add maxmenus script (copy menus in users home)

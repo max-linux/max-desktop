@@ -5,7 +5,7 @@ VERSION=$(shell dpkg-parsechangelog -ldebian/changelog| awk '/^Version/ {print $
 
 
 binary-install/max-menus::
-	install -m 755 maxmenus.sh $(DESTDIR)/debian/max-menus/usr/sbin/maxmenus
-	sed -i "s|__VERSION__|$VERSION|g" $(DESTDIR)/debian/max-menus/usr/sbin/maxmenus
+	install -m 755 maxmenus.sh $(CURDIR)/debian/max-menus/usr/sbin/maxmenus
+	sed -i "s|__VERSION__|$VERSION|g" $(CURDIR)/debian/max-menus/usr/sbin/maxmenus
 	# clean svn dirs
 	find $(CURDIR)/debian/max-menus -type d -name .svn | xargs rm -rf --
