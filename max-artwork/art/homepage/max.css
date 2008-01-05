@@ -1,5 +1,5 @@
 /*
-** Max stylesheet derived from the original Plone style sheet for CSS2-capable browsers.
+** Plone style sheet for CSS2-capable browsers.
 **
 ** Copyright Alexander Limi - http://www.plonesolutions.com
 **
@@ -12,9 +12,16 @@
 **
 ** Style sheet documentation can be found at http://plone.org/documentation
 **
+** You should preferrably use ploneCustom.css to add your own CSS classes and to
+** customize your portal, as these are the base fundaments of Plone, and will
+** change and be refined in newer versions. Keeping your changes in
+** ploneCustom.css will make it easier to upgrade.
+**
 ** Feel free to use whole or parts of this for your own designs, but give credit
 ** where credit is due.
 **
+** El archivo original ha sido modificado (colores y logotipos) para Max por Felipe Perucho (felipeperucho@gmail.com)
+
 */
 
 /*  (do not remove this :) */
@@ -24,7 +31,7 @@
 
 html {
 	background-color: white;
-	color: #002B3D;
+	color: #1c4ca6;
 	font-family: "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
 	font-size: 0.90em;
 	line-height: 1.75em;
@@ -36,12 +43,13 @@ body {
 }
 
 #mastwrap {
-    background: bottom left repeat-x #9C1810;
+/*    background: url(img/header.png) bottom left repeat-x #1c4ca6;*/
+    background: bottom left repeat-x #1c4ca6;
 }
 
 #masthead {
 	position:relative;
-	background: url('max-logo.png') center left no-repeat transparent;
+	background: url('max-logo.png') bottom left no-repeat transparent;
 	border: 0px solid white;
 	height: 90px;
 	color: #000;
@@ -50,7 +58,7 @@ body {
 #content {
 	margin-top: 2em;
 	margin-left: 3em;
-	margin-right: 3em;
+	margin-right: 15em;
 }
 
 .inlinemediaobject {
@@ -80,11 +88,11 @@ div.qandaset dt :visited {
 }
 
 :link { 
-	color: #9C1810; /* max red */
+	color: #ed0d0d; /* rojo */
 }
 
 :visited { 
-	color: #EF8E19; /* max orange */
+	color: #9f3b3b; /* rojo oscuro */
 }
 
 dl { 
@@ -102,7 +110,7 @@ div.qandaset {
 
 .guimenu, .guimenuitem, .guisubmenu {
 	font-style: italic;
-	color: #6d4c07; /* dark brown */
+	color: #ed0d0d; /* rojo */
 }
 
 .guilabel, .guibutton { 
@@ -120,14 +128,14 @@ div.qandaset {
 h1, h2, h3, h4, h5, h6
 {
         font-weight: normal; 
-        color: #9C1810; /* max red */
+        color: #ed0d0d; /* rojo */
         line-height: 1.2em;
 
 }	
 
 h1
 {
-        font-size: 1.6em; border-bottom: 2px solid #9C1810;
+        font-size: 1.6em; border-bottom: 2px solid #6d4c07;
 }
 
 h2 {font-size: 1.4em;}
@@ -141,7 +149,7 @@ strong
 {
         margin: 1.5em 0 0 0;
         font-weight: normal; 
-        color: #9C1810; /* max red */
+        color: #ed0d0d; /* rojo */
         font-size: 1.3em;
 }
 
