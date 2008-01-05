@@ -55,18 +55,24 @@
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Menu>
 			<Name>Astronomía</Name>
-			<Directory>alacarte-made-4.directory</Directory>
+			<Directory>astronomia.directory</Directory>
 			<Include>
-				<Filename>KStars.desktop</Filename>
+				<Filename>kstars.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>Starplot Star Chart Viewer.desktop</Filename>
+				<Filename>starplot.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>Stars Sky Chart.desktop</Filename>
+				<Filename>celestia.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>Stellarium.desktop</Filename>
+				<Filename>stars.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>stellarium.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>kstars.desktop</Filename>
 			</Include>
 		</Menu>
 		<Menu>
@@ -95,6 +101,9 @@
 		<Exclude>
 			<Filename>animalandia.desktop</Filename>
 		</Exclude>
+		<Exclude>
+			<Filename>animalandia-tutorial.desktop</Filename>
+		</Exclude>
 		<DefaultLayout inline="false"/>
 		<Menu>
 			<Name>JClic</Name>
@@ -119,7 +128,7 @@
 			<Name>Matemáticas</Name>
 			<Directory>matematicas.directory</Directory>
 			<Include>
-				<Filename>geogrebra.desktop</Filename>
+				<Filename>geogebra.desktop</Filename>
 			</Include>
 			<Include>
 				<Filename>wxmaxima.desktop</Filename>
@@ -132,6 +141,9 @@
 			</Include>
 			<Include>
 				<Filename>kde-kig.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>kde-kmplot.desktop</Filename>
 			</Include>
 			<Include>
 				<Filename>tuxmath.desktop</Filename>
@@ -153,6 +165,9 @@
 			<Filename>kde-kstars.desktop</Filename>
 		</Exclude>
 		<Exclude>
+			<Filename>kde-kmplot.desktop</Filename>
+		</Exclude>
+		<Exclude>
 			<Filename>starplot.desktop</Filename>
 		</Exclude>
 		<Exclude>
@@ -165,13 +180,25 @@
 			<Filename>animalandia.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>GeoGrebra.desktop</Filename>
+			<Filename>animalandia-tutorial.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>tuxmath.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>wxmaxima.desktop</Filename>
+		</Exclude>
+		<Include>
+			<Filename>denemo.desktop</Filename>
+		</Include>
+		<Exclude>
+			<Filename>geogebra.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kstars.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>celestia.desktop</Filename>
 		</Exclude>
 	</Menu>
 	<Menu>
@@ -192,33 +219,6 @@
 		<Exclude>
 			<Filename>max-maltededitor.desktop</Filename>
 		</Exclude>
-		<Layout>
-			<Merge type="menus"/>
-			<Filename>nautilus-folder-handler.desktop</Filename>
-			<Filename>atnag.desktop</Filename>
-			<Filename>max-atnag-activ.desktop</Filename>
-			<Filename>max-atnag-juegos.desktop</Filename>
-			<Filename>bluefish-project.desktop</Filename>
-			<Filename>max-malteddepurador.desktop</Filename>
-			<Filename>kde-keyboard_layout.desktop</Filename>
-			<Filename>gmenu-simple-editor.desktop</Filename>
-			<Filename>max-maltededitor.desktop</Filename>
-			<Filename>geogebra.desktop</Filename>
-			<Filename>gnome-cups-icon.desktop</Filename>
-			<Filename>max-maltednavegador.desktop</Filename>
-			<Filename>kde-khotkeys.desktop</Filename>
-			<Filename>javahotpot.desktop</Filename>
-			<Filename>ooo-math.desktop</Filename>
-			<Filename>sun-java5-java.desktop</Filename>
-			<Filename>sun-java6-java.desktop</Filename>
-			<Filename>kde-keyboard.desktop</Filename>
-			<Filename>max-malteddocwww.desktop</Filename>
-			<Filename>max-malteddocpdf.desktop</Filename>
-			<Filename>gnome-font-viewer.desktop</Filename>
-			<Filename>wxmaxima.desktop</Filename>
-			<Filename>xmms-pl.desktop</Filename>
-			<Merge type="files"/>
-		</Layout>
 		<Exclude>
 			<Filename>max-maltednavegador.desktop</Filename>
 		</Exclude>
@@ -236,6 +236,9 @@
 		</Exclude>
 		<Exclude>
 			<Filename>wxmaxima.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Category>KDE</Category>
 		</Exclude>
 	</Menu>
 	<Menu>
@@ -277,10 +280,10 @@
 			<Name>Aplicaciones Tablet PC</Name>
 			<Directory>tabletpc.directory</Directory>
 			<Include>
-				<Filename>Xournal.desktop</Filename>
+				<Filename>xournal.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>NoteLab.desktop</Filename>
+				<Filename>notelab.desktop</Filename>
 			</Include>
 			<Include>
 				<Filename>jarnal.desktop</Filename>
@@ -291,6 +294,12 @@
 		</Menu>
 		<Exclude>
 			<Filename>xournal.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>jarnal.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>jarnalannotate.desktop</Filename>
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
@@ -306,7 +315,7 @@
 			<Filename>file-roller.desktop</Filename>
 		</Include>
 		<Include>
-			<Filename>Visor de tipografías de Gnome.desktop</Filename>
+			<Filename>gnome-font-viewer.desktop</Filename>
 		</Include>
 	</Menu>
 	<Menu>
@@ -316,6 +325,9 @@
 		</Exclude>
 		<Exclude>
 			<Filename>tuxmath.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>jclic.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>tuxtype.desktop</Filename>

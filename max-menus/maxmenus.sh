@@ -48,6 +48,10 @@ for home in /home/*; do
     mkdir -p $home/$USER_MENUS
     mkdir -p $home/$USER_LOCAL
 
+    # clean dirs
+    rm -f $home/$USER_MENUS/*
+    rm -f $home/$USER_LOCAL/*
+
     for file in $SKEL_MENUS/*; do
       [ "$ACTION" = "update" ] && cp $file $home/$USER_MENUS/
       [ "$ACTION" = "purge" ] &&  rm -f $home/$USER_MENUS/$(basename $file)
@@ -59,7 +63,7 @@ for home in /home/*; do
     done
 
     # check for permissions
-    chown $user $home/$USER_MENUS/* 2>/dev/null
-    chown $user $home/$USER_LOCAL/* 2>/dev/null
+    chown -R $user $home/$USER_MENUS 2>/dev/null
+    chown -R $user $home/$USER_LOCAL 2>/dev/null
 
 done # end of for $home
