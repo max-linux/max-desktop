@@ -1,3 +1,9 @@
+max-meta (0.18) max; urgency=low
+
+  * Set default browser to firefox in max-dekstop-kde.postinst
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 05 Jan 2008 13:58:23 +0100
+
 max-meta (0.17) max; urgency=low
 
   * Add startupmanager (Closes ticket #21)
