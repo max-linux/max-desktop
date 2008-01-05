@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+if [ ! -d $HOME/JClic ]; then
+  cp -ra /usr/share/jclic/JClic $HOME/
+  cat << EOF > $HOME/.edu.xtec.properties
+#$(date)
+JClic=$HOME/JClic
+language=es
+EOF
+fi
+
+cd $HOME
+aux="java"
+CLASSPATH="$CLASSPATH:/usr/share/jclic"
+
+
+$aux -cp $CLASSPATH -jar /usr/share/jclic/reportServer.jar "$@" &>/dev/null
+
