@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+update-alternatives --install /usr/bin/acroread acroread \
+	/usr/lib/Adobe/Reader8/bin/acroread-en 30
+
+update-alternatives --install /usr/bin/acroread acroread \
+	/usr/lib/Adobe/Reader8/bin/acroread-es 60
+
+#DEBHELPER#

@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+if [ -d /usr/lib/Acrobat5/Reader/intellinux/app-defaults ]; then
+  rm -rf /usr/lib/Acrobat5/Reader/intellinux/app-defaults
+fi
+
+#DEBHELPER#
+
+exit 0

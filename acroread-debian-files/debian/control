@@ -1,0 +1,23 @@
+Source: acroread-debian-files
+Section: text
+Priority: optional
+Maintainer: Christian Marillat <marillat@debian.org>
+Bugs: mailto:marillat@debian.org
+Homepage: http://www.debian-multimedia.org
+Standards-Version: 3.7.3
+Build-Depends: debhelper (>= 5)
+
+Package: acroread-debian-files
+Architecture: i386
+Depends: acroread (>= 8.1.1)
+Replaces: acroread (<= 7.0.9-0.2sarge1)
+Recommends: mime-support
+Description: Debian specific parts of Adobe Acrobat Reader
+ This package contains extra files supplied by Debian that are not part of
+ the upstream source:
+ .
+  o manpage
+  o README.Debian
+  o Debian menu file
+  o MIME types
+  o Startup script (/usr/bin/acroread)
