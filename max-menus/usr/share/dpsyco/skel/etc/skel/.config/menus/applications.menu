@@ -12,6 +12,23 @@
 		<AppDir>/usr/share/max/applications</AppDir>
 	</Menu>
 	<Menu>
+		<Name>MaX 3.1</Name>
+		<Directory>max31.directory</Directory>
+		<Include>
+			<Filename>max-educamadrid.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>max-foros.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>max-installed-help.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>max-installed-help-usr.desktop</Filename>
+		</Include>
+		<AppDir>/usr/share/max/applications</AppDir>
+	</Menu>
+	<Menu>
 		<Name>Education</Name>
 		<Menu>
 			<Name>Atnag</Name>
@@ -50,6 +67,16 @@
 			</Include>
 			<Include>
 				<Filename>animalandia-tutorial.desktop</Filename>
+			</Include>
+		</Menu>
+		<Menu>
+			<Name>Robótica</Name>
+			<Directory>robotics.directory</Directory>
+			<Include>
+				<Filename>robolinux.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>max-robolinux-doc.desktop</Filename>
 			</Include>
 		</Menu>
 		<AppDir>/usr/share/max/applications</AppDir>
@@ -229,6 +256,9 @@
 			<Filename>max-malteddocpdf.desktop</Filename>
 		</Exclude>
 		<Exclude>
+			<Filename>max-robolinux-doc.desktop</Filename>
+		</Exclude>
+		<Exclude>
 			<Filename>geogebra.desktop</Filename>
 		</Exclude>
 		<Exclude>
@@ -291,6 +321,9 @@
 			<Include>
 				<Filename>jarnalannotate.desktop</Filename>
 			</Include>
+			<Include>
+				<Filename>cellwriter.desktop</Filename>
+			</Include>
 		</Menu>
 		<Exclude>
 			<Filename>xournal.desktop</Filename>
@@ -304,6 +337,9 @@
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
 			<Filename>notelab.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>cellwriter.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>redhat-manage-print-jobs.desktop</Filename>
