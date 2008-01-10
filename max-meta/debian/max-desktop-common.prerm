@@ -4,6 +4,7 @@ META_GCONF=/usr/share/max/gconf/
 META_GCONF_DUMPS=/usr/share/max/gconf-dumps
 
 
+
 max_gconf_unset() {
   gconftool-2 --direct --config-source xml:readwrite:$1 --unset $2 >/dev/null 2>&1
 }
@@ -36,4 +37,4 @@ case $1 in
 esac
 
 
-##DEBHELPER##
+#DEBHELPER#

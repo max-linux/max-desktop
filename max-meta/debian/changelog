@@ -2,8 +2,14 @@ max-meta (0.19) max; urgency=low
 
   * Move geogebra from gnome to common
   * Move denemo from gnome to common
+  * Remove max-3.0-denemo* packages (now patches are compiled into denemo package)
+  * Move celestia, gcompris, gnuplot, celestia gournal, inkscape, iscan,
+    isdnutils-xtools, istanbul, jarnal, javahotpot, jclic, landscape-client
+    lemurae, lilypond, mjpegtools, scite, screem, scribus, skype, xarchiver,
+    xournal, xvidcap to desktop-common
+  * Remove mandatory gconf keys (all keys are default)
 
- -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 06 Jan 2008 21:14:15 +0100
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Jan 2008 16:57:07 +0100
 
 max-meta (0.18) max; urgency=low
 
