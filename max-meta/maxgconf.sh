@@ -111,10 +111,11 @@ set_key() {
    if [ "$3" = "" ]; then decho "ERROR: key $1 don't have value"; return;  fi
 
    # set at gconf home settings before general
-   for home in /home/*; do
+   for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
+      username=$(basename $home)
       gconftool-2 --config-source xml:readwrite:$home/.gconf --type $2 --set $1 "$3" >> /tmp/maxgconf.errors 2>&1
-      chown -R $(basename $home) $home/.gconf >> /tmp/maxgconf.errors 2>&1
-      chown -R $(basename $home):$(basename $home) $home/.gconf >> /tmp/maxgconf.errors 2>&1
+      chown -R $username $home/.gconf >> /tmp/maxgconf.errors 2>&1
+      chown -R $username:$username $home/.gconf >> /tmp/maxgconf.errors 2>&1
    done
 
    gconftool-2 --direct --type $2 --config-source xml:readwrite:/etc/gconf/gconf.xml.${prio} --set $1 "$3" >> /tmp/maxgconf.errors 2>&1
@@ -122,10 +123,11 @@ set_key() {
 
 unset_key() {
    # set at gconf home settings before general
-   for home in /home/*; do
+   for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
+      username=$(basename $home)
       gconftool-2 --direct --config-source xml:readwrite:$home/.gconf --unset $1  >> /tmp/maxgconf.errors 2>&1
-      chown -R $(basename $home) $home/.gconf >> /tmp/maxgconf.errors 2>&1
-      chown -R $(basename $home):$(basename $home) $home/.gconf >> /tmp/maxgconf.errors 2>&1
+      chown -R $username $home/.gconf >> /tmp/maxgconf.errors 2>&1
+      chown -R $username:$username $home/.gconf >> /tmp/maxgconf.errors 2>&1
    done
 
    gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults --unset $1 >> /tmp/maxgconf.errors 2>&1

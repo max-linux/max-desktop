@@ -1,3 +1,15 @@
+max-meta (0.22) max; urgency=low
+
+  * Fix home dir expansion in maxgconf and max-desktop-common.postinst
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 14 Jan 2008 18:34:41 +0100
+
+max-meta (0.21) max; urgency=low
+
+  * Remove all mandatory gconf keys
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 14 Jan 2008 12:20:44 +0100
+
 max-meta (0.20) max; urgency=low
 
   * Fix typo gnuplot-x11x => gnuplot-x11

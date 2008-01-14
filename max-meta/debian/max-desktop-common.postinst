@@ -17,6 +17,11 @@ case $1 in
 
      # parse dumps files
      for _file in $(find $META_GCONF_DUMPS -name "*dump.gconf"); do
+       # set at user too
+       for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
+         max_gconf_load "$home/.gconf" $_file
+       done
+
        # filename contain mandatory string
        if [ $(echo $_file | grep -c "mandatory") -gt 0 ]; then
          echo "Loading mandatory gconf values in $(basename $_file)"
@@ -26,10 +31,6 @@ case $1 in
          max_gconf_load "/etc/gconf/gconf.xml.defaults" $_file
        fi
 
-       # set at user too
-       for home in /home/*; do
-         max_gconf_load "$home/.gconf" $_file
-       done
      done
      ;;
 esac
