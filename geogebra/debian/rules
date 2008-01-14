@@ -2,7 +2,9 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
-install/geogrebra::
+binary-install/geogebra::
+	# clean svn dirs
+	find $(CURDIR)/debian/geogebra -type d -name .svn | xargs rm -rf --
 	rm -f $(CURDIR)/debian/geogebra/usr/share/geogebra/geogebra.lax
 
 	# delete uninstall info
@@ -13,6 +15,3 @@ install/geogrebra::
 	# conf file is in /etc
 	dh_link /etc/geogebra.lax /usr/share/geogebra/geogebra.lax
 
-binary-install/geogebra::
-	# clean svn dirs
-	find $(CURDIR)/debian/geogebra -type d -name .svn | xargs rm -rf --
