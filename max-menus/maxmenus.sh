@@ -35,7 +35,7 @@ USER_LOCAL=".local/share/desktop-directories"
 SKEL_MENUS="/etc/skel/.config/menus"
 SKEL_LOCAL="/etc/skel/.local/share/desktop-directories"
 
-for home in /home/*; do
+for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
 
     user=$(basename $home)
 
