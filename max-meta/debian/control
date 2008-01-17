@@ -49,7 +49,7 @@ Description: The Max desktop system (Xfce4 desktop)
 
 Package: max-server
 Architecture: all
-Depends: max-desktop-common, ${max-server:Depends}
+Depends: max-desktop, ${max-server:Depends}
 Recommends: ${max-server:Recommends}
 Description: The Max server system
  This package depends on all of the packages in the Max server system
