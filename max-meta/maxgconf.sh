@@ -71,6 +71,16 @@ get_subkeys() {
   done
 }
 
+is_username() {
+  id=$(grep "${1}:" /etc/passwd| awk -F':' '{print $3}')
+  id=$(($id+0))
+  if [ "$id" -gt 999 ]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
 get_schema_type() {
  TYPE=$(gconftool-2 --dump $(dirname $1)|grep -A2 "$(basename $1)" |tail -1 |egrep "int|bool|float|string|list|pair")
  case $TYPE in
@@ -114,8 +124,8 @@ set_key() {
    for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
       username=$(basename $home)
       gconftool-2 --config-source xml:readwrite:$home/.gconf --type $2 --set $1 "$3" >> /tmp/maxgconf.errors 2>&1
-      chown -R $username $home/.gconf >> /tmp/maxgconf.errors 2>&1
-      chown -R $username:$username $home/.gconf >> /tmp/maxgconf.errors 2>&1
+      is_username "$username" && chown -R $username $home/.gconf >> /tmp/maxgconf.errors 2>&1
+      is_username "$username" && chown -R $username:$username $home/.gconf >> /tmp/maxgconf.errors 2>&1
    done
 
    gconftool-2 --direct --type $2 --config-source xml:readwrite:/etc/gconf/gconf.xml.${prio} --set $1 "$3" >> /tmp/maxgconf.errors 2>&1
@@ -126,8 +136,8 @@ unset_key() {
    for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
       username=$(basename $home)
       gconftool-2 --direct --config-source xml:readwrite:$home/.gconf --unset $1  >> /tmp/maxgconf.errors 2>&1
-      chown -R $username $home/.gconf >> /tmp/maxgconf.errors 2>&1
-      chown -R $username:$username $home/.gconf >> /tmp/maxgconf.errors 2>&1
+      is_username "$username" && chown -R $username $home/.gconf >> /tmp/maxgconf.errors 2>&1
+      is_username "$username" && chown -R $username:$username $home/.gconf >> /tmp/maxgconf.errors 2>&1
    done
 
    gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults --unset $1 >> /tmp/maxgconf.errors 2>&1
