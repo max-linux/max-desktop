@@ -8,9 +8,9 @@ Standards-Version: 3.7.2
 Package: max-artwork
 Architecture: all
 Depends: gtk2-engines-ubuntulooks, gnome-icon-theme-gartoon, gdm, max-artwork-usplash
-Conflicts: edubuntu-artwork, ubuntu-artwork, xubuntu-artwork
-Replaces: edubuntu-artwork, ubuntu-artwork, xubuntu-artwork
-Provides: ubuntu-artwork
+Conflicts: edubuntu-artwork, ubuntu-artwork, xubuntu-artwork, kubuntu-artwork
+Replaces: edubuntu-artwork, ubuntu-artwork, xubuntu-artwork, kubuntu-artwork
+Provides: ubuntu-artwork, edubuntu-artwork, xubuntu-artwork, kubuntu-artwork
 Description:MaX themes and artwork
  This package contains MaX themes, artwork and default settings.
 

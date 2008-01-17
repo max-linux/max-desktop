@@ -20,8 +20,8 @@ case "$1" in
 	update-alternatives --remove firefox-homepage \
 		/usr/share/max-artwork/home/index.html
 	update-alternatives --auto firefox-homepage
-	rm /usr/share/max-artwork/home/locales/max.css
-	rm /usr/share/max-artwork/home/locales/max-logo.png
+	rm -f /usr/share/max-artwork/home/locales/max.css || true
+	rm -f /usr/share/max-artwork/home/locales/max-logo.png || true
 	
 
 	echo "Reverting GDM changes ..."
