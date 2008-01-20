@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+# delete obsolete file
+if [ -e /etc/xdg/xfce4/panel/clock-7.rc ]; then
+  rm -f /etc/xdg/xfce4/panel/clock-7.rc
+fi
+
+#DEBHELPER#
