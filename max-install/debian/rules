@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+binary-install/max-install::
+	# clean svn dirs
+	find $(CURDIR)/debian/max-install -type d -name .svn | xargs rm -rf --

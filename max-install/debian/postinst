@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    configure)
+        echo "Update Dpsyco skel..."
+        /usr/sbin/update-dpsyco-skel > /dev/null 2>&1
+
+    ;;
+
+esac
+
+#DEBHELPER#
+
+
+exit 0
+
+
