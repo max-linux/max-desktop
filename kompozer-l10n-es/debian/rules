@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+
+binary-install/kompozer-l10n-es::
+	dh_desktop -pkompozer-l10n-es
+
+
