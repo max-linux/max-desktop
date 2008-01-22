@@ -7,8 +7,8 @@ Standards-Version: 3.7.2
 
 Package: max-install
 Architecture: all
-Pre-Depends: dpsyco-lib (>= 1.0.11), dpsyco-lib (<= 1.1.0), dpsyco-skel (>= 1.0.11)
-Description: Some diversion to install MaX 3.1 based on dpsyco
+Depends: ubiquity, ubiquity-frontend-gtk
+Description: Some files to custom ubiquity installer
  Contains:
-  * /usr/sbin/update-grub
+  * Configuration of MaX mirror
 
