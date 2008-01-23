@@ -1,3 +1,9 @@
+max-tcos (3.1.max3) max; urgency=low
+
+  * Use TcosActions.py from stable release (not from 0.2 beta)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Jan 2008 09:28:39 +0100
+
 max-tcos (3.1.max2) max; urgency=low
 
   * Move translations of logout messages to /etc/tcos/conf.d/session-cmd-max.conf
