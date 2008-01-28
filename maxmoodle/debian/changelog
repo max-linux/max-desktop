@@ -1,0 +1,50 @@
+maxmoodle (3.1.max6) max; urgency=low
+
+  * Revert all test 
+  * Priority extra
+  * Remove typo en preinst
+  * Remove maxmoodle-servers
+  * Have to build mysql-server and moodle packages to pre-depend on maxmoodle-pressed
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Jan 2008 18:00:28 +0100
+
+maxmoodle (3.1.max5) max; urgency=low
+
+  * Change priority to required
+  * Move maxmoodle-pressed config to preinst
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Jan 2008 16:47:02 +0100
+
+maxmoodle (3.1.max4) max; urgency=low
+
+  * Try another way. 
+  * Use another package (maxmoodle-servers) with pre-depends
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Jan 2008 16:26:13 +0100
+
+maxmoodle (3.1.max3) max; urgency=low
+
+  * MOve pressed from preinst to config (don't know if work)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Jan 2008 16:07:48 +0100
+
+maxmoodle (3.1.max2) max; urgency=low
+
+  * Rename package maxmoodle-preEsed => maxmoodle-preSsed
+  * Pressed settings in preinst
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Jan 2008 12:38:48 +0100
+
+maxmoodle (3.1.max1) max; urgency=low
+
+  * Create maxmoodle-preesed package to preseed mysql and moodle settings
+  * Disable launcher to start/stop mysql/apache
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Jan 2008 11:56:29 +0100
+
+maxmoodle (1.0-1) stable; urgency=low
+
+  * Initial release
+
+ -- bertuco <bertuco@grupoikusnet.com>  Mon, 25 Sep 2006 16:32:35 +0200
+
