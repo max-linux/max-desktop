@@ -4,10 +4,7 @@ set -e
 
 case "$1" in
     configure)
-        echo "Updating Dpsyco skel..."
-        /usr/sbin/update-dpsyco-skel > /dev/null 2>&1
-
-        echo "Call maxmenus"
+        echo "Updating MaX menus..."
 	/usr/sbin/maxmenus --update >> /tmp/maxmenus.log 2>&1
 
 

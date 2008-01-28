@@ -4,7 +4,7 @@ set -e
 
 case "$1" in
        purge)
-        echo "Call maxmenus"
+        echo "Updating MaX menus"
         /usr/sbin/maxmenus --purge >> /tmp/maxmenus.log 2>&1
         ;;
 esac
