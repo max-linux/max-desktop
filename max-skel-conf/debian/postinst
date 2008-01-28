@@ -4,8 +4,6 @@ set -e
 
 case "$1" in
     configure)
-        echo "Update Dpsyco skel..."
-        /usr/sbin/update-dpsyco-skel > /dev/null 2>&1
 
     # create manual launcher in existent HOMES
     for home in /home/*; do
