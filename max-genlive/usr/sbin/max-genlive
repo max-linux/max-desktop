@@ -1,0 +1,171 @@
+#!/bin/bash
+
+# Hacer el cd de MaX remasterizando el de Ubuntu
+
+IMAGE_NAME="MaX-3.1-beta4"
+
+
+ISO="ubuntu-7.10-desktop-i386.iso"
+MIRROR="ftp://ftp.rediris.es/sites/releases.ubuntu.com/releases/gutsy/"
+CHROOT=chroot
+CDRW=cdimage2
+CDRO=cdimage
+CDTMP=cdtmp
+NEW_ISOLINUX=/usr/share/max-genlive/isolinux
+GENLIVE=/usr/share/max-genlive
+APT_OPTS="-y --force-yes"
+
+
+# ver si tenemos la iso en este directorio
+if [ ! -f $ISO ]; then
+  echo "No se ha encontrado la iso de ubuntu en este directorio"
+  echo -n "Descargar ahora??? [S/n]"
+  read resp
+  if [ "$resp" = "n" ]; then
+    echo "Saliendo..."
+    exit 1
+  else
+    wget $MIRROR/$ISO
+  fi
+fi
+
+
+# creamos los directorios
+mkdir -p $CHROOT $CDRW $CDRO $CDTMP
+
+
+maxmontar() {
+  mount -o loop $ISO $CDRO
+  if [ ! -d $CHROOT/etc/apt ]; then
+    echo "Descomprimiendo sistema squashfs (tarda un rato)..."
+    unsquashfs $CDRO/casper/filesystem.squashfs -d $CHROOT
+  fi
+  echo "Montando la iso de ubuntu para poder escribir"
+  mount -t unionfs -o dirs=$CDTMP/=rw:$CDRO/=ro unionfs $CDRW
+}
+
+
+maxenter() {
+  cp /etc/resolv.conf $CHROOT/etc/
+  if [ $LOCAL_MIRROR ]; then
+     cp $GENLIVE/sources.list.local $CHROOT/etc/apt/sources.list
+  else
+     cp $GENLIVE/sources.list $CHROOT/etc/apt/
+  fi
+  mount --bind /proc $CHROOT/proc
+  mount --bind /sys   $CHROOT/sys
+}
+
+
+maxubuntizar() {
+  MAS_PAQUETES=$(echo $PAQ_EXTRA | sed 's/,/ /g')
+  chroot $CHROOT << EOC
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+apt-get $APT_OPTS update
+apt-get $APT_OPTS upgrade
+DEBIAN_FRONTEND="noninteractive" apt-get install $APT_OPTS max-keyring
+apt-get $APT_OPTS update
+DEBIAN_FRONTEND="noninteractive" apt-get install max-desktop-all
+apt-get clean
+DEBIAN_FRONTEND="noninteractive" apt-get install maxmoodle-pressed
+DEBIAN_FRONTEND="noninteractive" apt-get install language-support-es $MAS_PAQUETES
+DEBIAN_FRONTEND="noninteractive" apt-get install tree less $MAS_PAQUETES
+apt-get clean
+EOC
+}
+
+
+maxexit() {
+   chroot $CHROOT/ dpkg-query -W --showformat='${Package} ${Version}\n' > $CDRW/casper/filesystem.manifest
+
+   cp $CDRW/casper/filesystem.manifest  $CDRW/casper/filesystem.manifest-desktop
+   sed -ie /ubiquity/d                  $CDRW/casper/filesystem.manifest-desktop
+   sed -ie /casper/d                    $CDRW/casper/filesystem.manifest-desktop 
+   sed -ie /libdebian-installer4/d      $CDRW/casper/filesystem.manifest-desktop
+   sed -ie /os-prober/d                 $CDRW/casper/filesystem.manifest-desktop
+   sed -ie /ubuntu-live/d               $CDRW/casper/filesystem.manifest-desktop
+   sed -ie /user-setup/d                $CDRW/casper/filesystem.manifest-desktop
+
+   echo "Limpiando... (puede fallar algun archivo)"
+
+   rm $CHROOT/etc/mtab
+   rm $CHROOT/etc/X11/xorg.conf
+   rm $CHROOT/var/crash/*
+   for log in $(find $CHROOT/var/log/ -type f); do cat /dev/null > $log; done
+
+   umount -l $CHROOT/proc
+   umount - $CHROOT/sys
+   umount $CHROOT/lib/modules/*/volatile/
+
+
+   cp /etc/resolv.conf $CHROOT/etc/
+   cp $GENLIVE/sources.list $CHROOT/etc/apt
+   chroot $CHROOT apt-get update
+   rm $CHROOT/etc/resolv.conf
+
+}
+
+
+maxmake(){
+  mksquashfs $CHROOT/ filesystem.squashfs
+  rm $CDRW/casper/filesystem.squashfs || exit 1
+  mv filesystem.squashfs $CDRW/casper/filesystem.squashfs
+
+  echo "Creating ${IMAGE_NAME}.iso"
+
+  cd $CDRW 
+
+  echo "Generando md5sum de archivos de dentro del cdrom..."
+  find . -type f -print0 |xargs -0 md5sum > md5sum.txt
+
+  mkisofs -r -V "$IMAGE_NAME" -cache-inodes -J -l -b isolinux/isolinux.bin \
+     -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
+     -boot-info-table -o ../${IMAGE_NAME}.iso ./
+
+  cd ../
+  echo "Generando md5 del DVD"
+  md5sum ${IMAGE_NAME}.iso > ${IMAGE_NAME}.iso.md5
+}
+
+
+usage() {
+  cat << EOF
+max-genlive:
+
+     Acciones:
+           --montar                     (Monta la iso de Ubuntu)
+           --convertir                  (Instala los paquetes de MaX en la distro de ubuntu)
+           --update-images              (Update chroot TCOS images)
+
+     Opciones:
+           --local         (Usa repositorios locales para la actualizacion)
+           --paquetes=package1,package2  (Instala mas paquetes extra, separados por comas y SIN ESPACIOS)
+
+EOF
+}
+
+
+OPTIONS=`getopt -o d:ko:r:v --long help,local,paquetes:,montar,convertir,iso -n "$0" -- "$@"`
+
+if [ $? != 0 ] ; then echo "Terminando..." >&2 ; exit 1 ; fi
+eval set -- "$OPTIONS"
+
+while true; do
+        case "$1" in
+                --help) usage ; exit 0              ;;
+                --local) LOCAL_MIRROR=1; shift 1     ;;
+                --paquetes) PAQ_EXTRA=$2; shift 2   ;;
+
+                --montar) maxmontar; maxenter; shift 1 ;;
+                --convertir) maxubuntizar;     shift 1 ;;
+
+                --iso) maxmake ; shift     ;;
+
+                --) shift ; break ;;
+                *) usage; echo "Unknow option $1"; exit -1
+                       ;;
+        esac
+done
+
