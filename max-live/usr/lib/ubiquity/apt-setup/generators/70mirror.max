@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+
+file="$1"
+
+dists="main"
+codename="max"
+hostname="max.educa.madrid.org"
+directory="/max31"
+protocol="http"
+
+
+cat >> $file <<EOF
+#
+#  MaX 3.1 mirror
+#
+
+deb $protocol://$hostname$directory $codename $dists
+#deb-src $protocol://$hostname$directory $codename $dists
+
+EOF
+
+
+

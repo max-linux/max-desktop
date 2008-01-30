@@ -1,0 +1,92 @@
+#!/bin/sh
+set -e
+
+. /usr/share/debconf/confmodule
+
+file="$1"
+
+db_get apt-setup/security_host
+host="$RET"
+if [ -z "$host" ]; then
+	exit
+fi
+directory=/ubuntu
+
+# Awful Ubuntu-specific hack. *-security suites for ports architectures
+# aren't available on security.ubuntu.com, only on ports.ubuntu.com.
+if [ "$host" = security.ubuntu.com ]; then
+	db_get mirror/protocol
+	protocol="$RET"
+	db_get mirror/$protocol/hostname
+	if [ "$RET" = ports.ubuntu.com ]; then
+		host="$RET"
+		db_get mirror/$protocol/directory
+		directory="$RET"
+	fi
+fi
+
+# To determine if restricted should be included, grep the file to see if it
+# is listed in it.
+dists="main"
+for dist in restricted; do
+	if grep -q '^[^#]* '$dist $ROOT/etc/apt/sources.list.new; then
+		dists="$dists $dist"
+	fi
+done
+
+if ! db_get mirror/codename || [ -z "$RET" ]; then
+	db_get cdrom/codename
+fi
+codename="$RET"
+
+# No updates for sid (unstable). Never mind.
+if [ "$codename" = sid ]; then
+	exit
+fi
+
+# FIXME what if choose-mirror isn't available, i.e. full CD install?
+if db_get mirror/http/proxy && [ -n "$RET" ]; then
+	proxy="$RET"
+	if ! grep -iq "Acquire::http::Proxy" $ROOT/etc/apt/apt.conf.new; then
+		echo "Acquire::http::Proxy \"$proxy\";" >> $ROOT/etc/apt/apt.conf.new
+	fi
+fi
+
+CODE=0
+echo "deb http://$host$directory $codename-security $dists" >> $file
+if ! apt-setup-verify $file; then
+#	db_subst apt-setup/security-updates-failed SECURITY_HOST "$host"
+#	db_input medium apt-setup/security-updates-failed || true
+#	if ! db_go; then
+#		exit 10 # back up
+#	fi
+	CODE=9
+fi
+
+echo "deb-src http://$host$directory $codename-security $dists" >> $file
+
+# Security sources for Ubuntu universe; not used much, but e.g. unsupported
+# binary packages from a supported source package will end up here.
+if db_get apt-setup/universe && [ "$RET" = true ]; then
+	COMMENT=
+else
+	COMMENT='# '
+fi
+cat >> $file <<EOF
+${COMMENT}deb http://$host$directory $codename-security universe
+${COMMENT}deb-src http://$host$directory $codename-security universe
+EOF
+
+# Security sources for Ubuntu multiverse, with the same caveats as for
+# universe.
+if db_get apt-setup/multiverse && [ "$RET" = true ]; then
+	COMMENT=
+else
+	COMMENT='# '
+fi
+cat >> $file <<EOF
+${COMMENT}deb http://$host$directory $codename-security multiverse
+${COMMENT}deb-src http://$host$directory $codename-security multiverse
+EOF
+
+exit $CODE
