@@ -1,0 +1,17 @@
+
+_echo "Configurando entorno live"
+
+chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes para la versión live"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+apt-get $APT_OPTS install maxmoodle-pressed
+apt-get $APT_OPTS install maxmoodle
+/etc/init.d/apache2 stop || true
+/etc/init.d/mysql stop || true
+apt-get $APT_OPTS install language-support-es
+apt-get $APT_OPTS install max-live
+apt-get clean
+apt-get $APT_OPTS autoremove
+EOC

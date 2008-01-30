@@ -1,0 +1,12 @@
+
+
+if [ ! $DISABLE_SQUASHFS ]; then
+  _echo "Creando archivo squashfs (tarda bastante)..."
+
+  mksquashfs $CHROOT/ filesystem.squashfs || _exit "No se ha podido generar el archivo squashfs"
+  rm -f $CDRW/casper/filesystem.squashfs 
+  mv filesystem.squashfs $CDRW/casper/filesystem.squashfs || _exit "No se ha podido mover el archivo squashfs"
+fi
+
+
+

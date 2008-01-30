@@ -1,0 +1,49 @@
+
+_echo "Actualizando imágenes de arranque"
+
+# configurar usplash para 1024
+cat << EOF > $CHROOT/etc/usplash.conf
+# MaX usplash conf
+xres=1024
+yres=768
+EOF
+
+KERNEL=$(basename $(echo chroot/boot/vmlinuz*)| sed 's/vmlinuz-//g')
+chroot $CHROOT /usr/sbin/update-initramfs -u -k $KERNEL || _exit "No se ha podido generar la imagen de arranque"
+cp $CHROOT/boot/vmlinuz-$KERNEL   $CDRW/casper/vmlinuz
+cp $CHROOT/boot/initrd.img-$KERNEL $CDRW/casper/initrd.gz
+
+rm -f $CHROOT/boot/initrd.img-$KERNEL.bak
+
+
+
+_echo "Generando listas de paquetes para la version instalada"
+
+chroot $CHROOT/ dpkg-query -W --showformat='${Package} ${Version}\n' > $CDRW/casper/filesystem.manifest
+cp $CDRW/casper/filesystem.manifest  $CDRW/casper/filesystem.manifest-desktop
+sed -ie /ubiquity/d                  $CDRW/casper/filesystem.manifest-desktop
+sed -ie /casper/d                    $CDRW/casper/filesystem.manifest-desktop 
+sed -ie /max-live/d                  $CDRW/casper/filesystem.manifest-desktop 
+sed -ie /libdebian-installer4/d      $CDRW/casper/filesystem.manifest-desktop
+sed -ie /os-prober/d                 $CDRW/casper/filesystem.manifest-desktop
+sed -ie /ubuntu-live/d               $CDRW/casper/filesystem.manifest-desktop
+sed -ie /user-setup/d                $CDRW/casper/filesystem.manifest-desktop
+
+_echo "Limpiando... (puede fallar algun archivo, no pasa nada...)"
+rm -f $CHROOT/etc/mtab
+rm -f $CHROOT/etc/X11/xorg.conf
+rm -f $CHROOT/var/crash/*
+rm -rf $CHROOT/tmp/*
+for log in $(find $CHROOT/var/log/ -type f); do cat /dev/null > $log; done
+
+_echo "Desmontando proc sys y posiblemente modules/volatile"
+umount -l $CHROOT/proc
+umount -l $CHROOT/sys
+umount $CHROOT/lib/modules/*/volatile/
+
+#echo "Configurando repositorio global"
+#cp /etc/resolv.conf $CHROOT/etc/
+#cp $GENLIVE/sources.list $CHROOT/etc/apt
+#chroot $CHROOT apt-get update
+#rm $CHROOT/etc/resolv.conf
+

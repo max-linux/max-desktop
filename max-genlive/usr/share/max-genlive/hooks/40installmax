@@ -1,0 +1,20 @@
+
+
+
+
+_echo "Instalando paquetes de MaX"
+
+chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes de MaX"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+apt-get $APT_OPTS update
+apt-get $APT_OPTS upgrade
+apt-get $APT_OPTS install max-keyring
+apt-get $APT_OPTS update
+apt-get $APT_OPTS install max-desktop-all
+apt-get clean
+EOC
+
+

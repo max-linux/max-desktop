@@ -1,0 +1,42 @@
+
+
+
+
+# ver si tenemos la iso en este directorio
+if [ ! -f $ISO ]; then
+  _echo "No se ha encontrado la iso de ubuntu en este directorio"
+  echo -n "Descargar ahora??? [S/n]"
+  read resp
+  if [ "$resp" = "n" ]; then
+    _exit "Se ha cancelado la descarga de $ISO"
+  else
+    wget -c $MIRROR/$ISO || _exit "Error descargando $ISO desde $MIRROR"
+  fi
+fi
+
+
+. $HOOKS/90umount
+
+# creamos los directorios
+mkdir -p $CDRW $CDRO $CDTMP
+
+
+if [ $(grep -c $CDRO /etc/mtab) = 0 ]; then
+  mount -o loop $ISO $CDRO || _exit "No se ha podido montar $ISO"
+else
+  _exit "Hay montada alguna ISO, no se pudo desmontar..."
+fi
+
+if [ ! -d $CHROOT/etc/apt ]; then
+   _echo "Descomprimiendo sistema squashfs (tarda un rato)..."
+   rm -rf squashfs-root/
+   unsquashfs $CDRO/casper/filesystem.squashfs || _exit "No se ha podido descomprimir el squashfs"
+   rm -rf $CHROOT
+   mv squashfs-root $CHROOT
+fi
+
+if [ $(grep -c $CDRW /proc/mounts ) = 0 ]; then
+  _echo "Montando la iso de ubuntu para poder escribir"
+  mount -t unionfs -o dirs=$CDTMP/=rw:$CDRO/=ro unionfs $CDRW || _exit "No se ha podido crear un directorio modificable para la imagen ISO"
+fi
+

@@ -1,0 +1,28 @@
+
+_echo "Configurando DNS del chroot y nuevo sources.list"
+
+cp /etc/resolv.conf $CHROOT/etc/
+
+if [ $LOCAL_MIRROR ]; then
+     _echo " ****** sources.list ***** Usando mirror local"
+     cp $GENLIVE/sources.list.local $CHROOT/etc/apt/sources.list
+else
+     cp $GENLIVE/sources.list $CHROOT/etc/apt/
+fi
+
+mount --bind /proc $CHROOT/proc
+mount --bind /sys   $CHROOT/sys
+
+# se necesita para ebeam-driver (luego se borra)
+touch $CHROOT/etc/X11/xorg.conf
+
+
+_echo "Configurando la licencia JAVA SUN-DLJ con DEBCONF"
+chroot $CHROOT debconf-set-selections << EOF || _exit "No se ha podido aceptar la licencia JAVA"
+sun-java5-bin   shared/accepted-sun-dlj-v1-1    boolean true
+sun-java5-jdk   shared/accepted-sun-dlj-v1-1    boolean true
+sun-java5-jre   shared/accepted-sun-dlj-v1-1    boolean true
+sun-java6-bin   shared/accepted-sun-dlj-v1-1    boolean true
+sun-java6-jre   shared/accepted-sun-dlj-v1-1    boolean true
+sun-java6-jdk   shared/accepted-sun-dlj-v1-1    boolean true
+EOF

@@ -1,0 +1,49 @@
+
+#echo "Desmontando directorio RW de la iso..."
+umount -l $CDRW 2>/dev/null
+
+_get_line() {
+ head -$1 $2 |tail -1
+}
+
+_desmontar() {
+ grep "$1" /etc/mtab > /tmp/_desmontar
+ nl=$(cat /tmp/_desmontar| wc -l)
+ if [ $nl = 0 ]; then
+   rm -f /tmp/_desmontar
+   return
+ fi
+ for i in $(seq $nl); do
+  line=$(_get_line $i /tmp/_desmontar)
+  mnt=$(echo $line| awk '{print $2}')
+  _echo "## Desmontando $mnt ##"
+  umount -l $mnt 2>/dev/null || true
+ done
+ rm -f /tmp/_desmontar
+}
+
+#echo "Desmontando la iso de ubuntu"
+if [ $(grep -c $CDRO /etc/mtab) != 0 ]; then
+ _desmontar "$CDRO"
+fi
+
+
+#echo "Desmontando proc y sys del chroot"
+if [ $(grep -c $CHROOT/proc /etc/mtab) != 0 ]; then
+  _desmontar "$CHROOT/proc"
+fi
+
+if [ $(grep -c $CHROOT/sys /etc/mtab) != 0 ]; then
+  _desmontar "$CHROOT/sys"
+fi
+
+
+umount -l $CDRO 2>/dev/null
+
+if [ ! $DISABLE_CLEAN ]; then
+  _echo "Limpiando temporales, excepto el chroot"
+  rm -rf $CDRW
+  rm -rf $CDRO
+  rm -rf $CDTMP
+fi
+
