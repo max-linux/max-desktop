@@ -1,59 +1,23 @@
 #!/usr/bin/make -f
-# debian/rules file - for debian/keyring
-# Based on sample debian/rules file - for GNU Hello (1.3).
-# Copyright 1994,1995 by Ian Jackson.
-# Copyright 1998-2003 James Troup
-# I hereby give you perpetual unlimited permission to copy,
-# modify and relicense this file, provided that you do not remove
-# my name from the file itself.  (I assert my moral right of
-# paternity under the Copyright, Designs and Patents Act 1988.)
-# This file may have to be extensively modified
 
-install_dir=install -d -m 755
-install_file=install -m 644
-install_script=install -m 755
-install_binary=install -m 755 -s
+include /usr/share/cdbs/1/rules/debhelper.mk
 
-VERSION := $(shell dpkg-parsechangelog | grep ^Version: | cut -d' ' -f2)
+UBUNTU=usr/share/dpsyco/skel/usr/share/keyrings/ubuntu-archive-keyring.gpg
+MAX=usr/share/keyrings/max-archive-keyring.gpg
 
-build:
+GPG_GET=gpg --list-options show-keyring
+KEY_MAX=$(shell $(GPG_GET) $(MAX)|awk '/^pub/ {print $$2}'| awk -F'/' '{print $$2}')
+KEY_UBUNTU=$(shell $(GPG_GET) $(UBUNTU)|awk '/^pub/ {print $$2}'| awk -F'/' '{print $$2}' | sed 's/\n//g')
 
-clean:
-	$(checkdir)
-	-rm -f foo foo.asc *.bak *~ */*~ debian/files* debian/*substvars
-	-rm -rf debian/tmp 
+build/max-keyring::
+	@if [ ! -f build-stamp ]; then \
+		gpg --import < $(UBUNTU); \
+		gpg --import < $(MAX); \
+		rm -f $(UBUNTU); \
+		gpg --export $(KEY_MAX) $(KEY_UBUNTU) > $(UBUNTU); \
+	fi
+	touch build-stamp
 
-binary-indep: checkroot
-	$(checkdir)
-	-rm -rf debian/tmp
-	$(install_dir) debian/tmp/DEBIAN/
-	$(install_script) debian/postinst debian/tmp/DEBIAN/
-
-	$(install_dir) debian/tmp/usr/share/keyrings/
-	$(install_file) keyrings/max-archive-keyring.gpg debian/tmp/usr/share/keyrings/
-
-	$(install_dir) debian/tmp/usr/share/doc/max-keyring/
-	$(install_file) debian/changelog debian/tmp/usr/share/doc/max-keyring/changelog
-	gzip -9v debian/tmp/usr/share/doc/max-keyring/*
-	$(install_file) debian/copyright debian/tmp/usr/share/doc/max-keyring/
-
-	dpkg-gencontrol -pmax-keyring -isp
-	chown -R root.root debian/tmp
-	chmod -R go=rX debian/tmp
-	dpkg --build debian/tmp ..
-
-binary-arch:
-
-define checkdir
-	test -f keyrings/max-archive-keyring.gpg
-endef
-
-# Below here is fairly generic really
-
-binary:		binary-indep binary-arch
-
-checkroot:
-	$(checkdir)
-	test root = "`whoami`"
-
-.PHONY: binary binary-arch binary-indep clean checkroot
+binary-install/max-keyring::
+	# clean svn dirs
+	find $(CURDIR)/debian/max-keyring -type d -name .svn | xargs rm -rf --

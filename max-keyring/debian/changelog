@@ -1,3 +1,11 @@
+max-keyring (2008.01.31) max; urgency=low
+
+  * Change package to cdbs
+  * Import ubuntu-keyring and add (during build) max-keyring
+  * Put ubuntu-keyring in dpsyco overwrite original ubuntu-keyring
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 31 Jan 2008 15:50:25 +0100
+
 max-keyring (2008.01.17) max; urgency=low
 
   * Versión inicial
