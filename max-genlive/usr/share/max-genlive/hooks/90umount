@@ -40,6 +40,12 @@ fi
 
 umount -l $CDRO 2>/dev/null
 
+# desmontando loops
+for loop in $(losetup -a | grep $ISO | awk -F':' '{print $1}'); do
+  losetup -d $loop 2>/dev/null
+done
+
+
 if [ ! $DISABLE_CLEAN ]; then
   _echo "Limpiando temporales, excepto el chroot"
   rm -rf $CDRW

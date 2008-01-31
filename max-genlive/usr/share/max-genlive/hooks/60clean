@@ -27,7 +27,9 @@ sed -ie /max-live/d                  $CDRW/casper/filesystem.manifest-desktop
 sed -ie /libdebian-installer4/d      $CDRW/casper/filesystem.manifest-desktop
 sed -ie /os-prober/d                 $CDRW/casper/filesystem.manifest-desktop
 sed -ie /ubuntu-live/d               $CDRW/casper/filesystem.manifest-desktop
-sed -ie /user-setup/d                $CDRW/casper/filesystem.manifest-desktop
+
+# borrar temporal
+rm -f $CDRW/casper/filesystem.manifest-desktope
 
 _echo "Limpiando... (puede fallar algun archivo, no pasa nada...)"
 rm -f $CHROOT/etc/mtab
@@ -41,9 +43,9 @@ umount -l $CHROOT/proc
 umount -l $CHROOT/sys
 umount $CHROOT/lib/modules/*/volatile/
 
-#echo "Configurando repositorio global"
-#cp /etc/resolv.conf $CHROOT/etc/
-#cp $GENLIVE/sources.list $CHROOT/etc/apt
-#chroot $CHROOT apt-get update
-#rm $CHROOT/etc/resolv.conf
+_echo "Configurando repositorio global"
+cp /etc/resolv.conf $CHROOT/etc/
+cp $GENLIVE/sources.list $CHROOT/etc/apt
+chroot $CHROOT apt-get update
+rm $CHROOT/etc/resolv.conf
 

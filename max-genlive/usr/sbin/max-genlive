@@ -2,13 +2,60 @@
 
 # Hacer el cd de MaX remasterizando el de Ubuntu
 
+DISTRO=gutsy
+DISTRO_VERSION="7.10"
+ARCH=i386
 IMAGE_NAME="MaX-3.1-beta4"
-ISO="ubuntu-7.10-desktop-i386.iso"
+
+ayuda() {
+cat << EOF
+  Ayuda de max-genlive:
+
+    No hacen falta demasiadas cosas para hacer generar un livecd pero
+    existen algunas variables para personalizarlo más:
+
+    LOCAL_MIRROR=1 usará /usr/share/max-genlive/sources.list-local
+                   como repositorio para hacer las descargas
+                   Viene configurado como 10.0.2.2/mirror/*
+                   La IP es la del anfitrion de un virtualbox donde se supone
+                   que tenemos el mirror de ubuntu completo y el de MaX
+
+
+    DISABLE_SQUASHFS=1 ni comprime ni descomprime el archivo squashfs (para hacer pruebas)
+
+    DISABLE_CLEAN=1 no borra los directorios temporales
+
+    ENABLE_EXTRA=1 Añade al DVD varios paquetes (ver variable PAQUETES_EXTRA)
+                   Para usar esta opción tienes que ser desarrollador de max y tener cuenta
+                   SSH en max.educa.madrid.org porque hay que subir el archivo Release
+                   firmarlo con la clave GPG de MaX y descargar el Release.gpg
+
+EOF
+}
+
+if [ "$1" = "--help" ]; then
+  ayuda
+  exit 1
+fi
+
+if [ "x$1" = "x" ] || [ ! -f "$1" ]; then
+  ISO="ubuntu-7.10-desktop-i386.iso"
+else
+  echo "Usando $1 como ISO base a actualizar..."
+  ISO="$1"
+fi
+
 MIRROR="ftp://ftp.rediris.es/sites/releases.ubuntu.com/releases/gutsy/"
-CHROOT=chroot
-CDRW=cdimage2
-CDRO=cdimage
-CDTMP=cdtmp
+
+CURDIR=$(pwd)
+
+CHROOT=$CURDIR/chroot
+CDRW=$CURDIR/cdimage2
+CDRO=$CURDIR/cdimage
+CDTMP=$CURDIR/cdtmp
+
+PAQUETES_EXTRA="tcos backharddi backharddi-net max-tcos-alumno max-tcos-profesor"
+
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
 GENLIVE=/usr/share/max-genlive
 APT_OPTS="-y --force-yes"
@@ -32,6 +79,14 @@ _echo() {
   echo " *  $@"
   echo ""
 }
+
+
+# esto es para pruebas
+#. /usr/share/max-genlive/hooks/10mountiso
+#. /usr/share/max-genlive/hooks/20configurechroot
+#. /usr/share/max-genlive/hooks/55addmaxpackages
+#. /usr/share/max-genlive/hooks/90umount
+#_exit "Fin de pruebas"
 
 
 for hook in $HOOKS/*; do
