@@ -4,8 +4,13 @@ set -e
 
 
 # Remove index.html link (another package have created link and index.html is a file)
-if [ ! -L /usr/share/max-artwork/home/index.html ]; then
+if [ -L /usr/share/max-artwork/home/index.html ]; then
     rm -f /usr/share/max-artwork/home/index.html
+fi
+
+# Remove locales link (another package have created link and locales is a directory)
+if [ -L /usr/share/max-artwork/home/locales ]; then
+    rm -rf /usr/share/max-artwork/home/locales
 fi
 
 

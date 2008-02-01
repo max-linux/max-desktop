@@ -1,3 +1,16 @@
+max-artwork (3.1.20080106.max6) max; urgency=low
+
+  * Use ubuntu-artwork dir (not build max-docs package to override)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 01 Feb 2008 19:51:49 +0100
+
+max-artwork (3.1.20080106.max5) max; urgency=low
+
+  * max-artwork.preinst:
+    - Remove locales link too (not a link, is a dir)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 01 Feb 2008 15:34:26 +0100
+
 max-artwork (3.1.20080106.max4) max; urgency=low
 
   * max-artwork.preinst:

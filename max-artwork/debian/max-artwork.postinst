@@ -19,9 +19,9 @@ case "$1" in
   echo "Installing firefox homepage ..."
   # link default homepage
   update-alternatives \
-    --install /usr/share/max-artwork/home/index.html \
+    --install /usr/share/ubuntu-artwork/home/index.html \
     firefox-homepage /usr/share/max-artwork/home/index.html 45 \
-    --slave /usr/share/max-artwork/home/locales \
+    --slave /usr/share/ubuntu-artwork/home/locales \
     firefox-homepage-locales /usr/share/max-artwork/home/locales
 
   if [ ! -L /usr/share/max-artwork/home/locales/max.css ]; then
