@@ -1,0 +1,14 @@
+#! /bin/sh
+set -e
+
+
+
+# Remove index.html link (another package have created link and index.html is a file)
+if [ ! -L /usr/share/max-artwork/home/index.html ]; then
+    rm -f /usr/share/max-artwork/home/index.html
+fi
+
+
+#DEBHELPER#
+
+exit 0
