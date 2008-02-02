@@ -1,3 +1,10 @@
+max-dpsyco-custom (3.1.max2) max; urgency=low
+
+  * etc/apt/apt.conf.d/92update-dpsyco-skel:
+    - Exec dpsyco in silent mode
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 02 Feb 2008 23:19:23 +0100
+
 max-dpsyco-custom (3.1.max1) max; urgency=low
 
   * Initial release
