@@ -31,3 +31,5 @@ install:
 	$(INSTALL_PROGRAM) max-splash.so $(DESTDIR)/usr/lib/usplash/max-splash.so
 clean:
 	rm -f *.png.c *.bdf.c *.c.o *.so
+
+distclean: clean

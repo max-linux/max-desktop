@@ -1,1 +1,1 @@
-SUBDIRS = gartoon Tango-Brown
+SUBDIRS = gartoon

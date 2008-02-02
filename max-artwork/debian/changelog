@@ -1,3 +1,11 @@
+max-artwork (3.1.20080202.max1) max; urgency=low
+
+  * Remove Tango-Brown icon theme from sources
+  * Add distributor-logo (svg and png icons)
+  * Run ./autogen.sh to update Makefile.in files with new targets
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 02 Feb 2008 15:32:00 +0100
+
 max-artwork (3.1.20080106.max6) max; urgency=low
 
   * Use ubuntu-artwork dir (not build max-docs package to override)
