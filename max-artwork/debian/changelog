@@ -1,3 +1,19 @@
+max-artwork (3.1.20080202.max4) max; urgency=low
+
+  * Add maxtoon icon theme (based on Ubuntoon)
+  * Update some Makefile.am
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 02 Feb 2008 22:58:48 +0100
+
+max-artwork (3.1.20080202.max3) max; urgency=low
+
+  * Add link art/icons/gartoon/scalable/places/start-here.svg
+    (this file is start menu icon of gnome-panel)
+  * Remove not needed art/icons/gartoon/48x48/apps/distributor-logo.png
+  * Run again ./autogen.sh
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 02 Feb 2008 16:31:55 +0100
+
 max-artwork (3.1.20080202.max2) max; urgency=low
 
   * Change GDM background to background.png (not jpg)

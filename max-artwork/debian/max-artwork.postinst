@@ -43,6 +43,7 @@ case "$1" in
   # configure scalable/places (distributor-logo)
   if [ $(grep -c "scalable/places" /usr/share/icons/gartoon/index.theme) = 0 ]; then
     cat << EOF >> /usr/share/icons/gartoon/index.theme
+
 [scalable/places]
 Size=24
 Context=Places
