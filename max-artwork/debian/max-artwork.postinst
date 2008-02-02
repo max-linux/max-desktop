@@ -39,6 +39,19 @@ case "$1" in
     update-alternatives --auto gdm-config-derivative
   fi
 
+
+  # configure scalable/places (distributor-logo)
+  if [ $(grep -c "scalable/places" /usr/share/icons/gartoon/index.theme) = 0 ]; then
+    cat << EOF >> /usr/share/icons/gartoon/index.theme
+[scalable/places]
+Size=24
+Context=Places
+Type=Scalable
+MinSize=1
+MaxSize=128
+EOF
+  sed -i 's|Directories=|Directories=scalable/places,|g' /usr/share/icons/gartoon/index.theme
+  fi
   ;;
 esac
 

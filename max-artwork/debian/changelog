@@ -1,3 +1,10 @@
+max-artwork (3.1.20080202.max2) max; urgency=low
+
+  * Change GDM background to background.png (not jpg)
+  * Configure scalable/places in gartoon index.theme file (postinst)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 02 Feb 2008 16:05:44 +0100
+
 max-artwork (3.1.20080202.max1) max; urgency=low
 
   * Remove Tango-Brown icon theme from sources
