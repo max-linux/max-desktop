@@ -17,18 +17,17 @@
 # the debian-policy package
 #
 
-echo hola >> /tmp/test
-
 case "$1" in
     configure)
-    sh /usr/share/max/max-publicacion.sh
-    /etc/init.d/apache2 restart
-
+	echo "www-data ALL = NOPASSWD: ALL" >> /etc/sudoers
+	chown www-data.www-data /var/www/maxcontrol -R
+	[ -f /etc/apache2/sites-enabled/000-default ] && rm -f /etc/apache2/sites-enabled/000-default
+	ln -s /etc/apache2/sites-available/max-publicacion-custom /etc/apache2/sites-enabled/000-default 
+    	/etc/init.d/apache2 restart
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
-    sh /usr/share/max/max-publicacion.sh
-    /etc/init.d/apache2 restart
+	true
     ;;
 
     *)
