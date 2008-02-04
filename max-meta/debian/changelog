@@ -1,3 +1,10 @@
+max-meta (0.32) gutsy; urgency=low
+
+  * Se añaden dependencias a max-server: max-tcos-profesor y backharddi-net
+  * Notificación de reinicio tras la instalación de max-desktop-common
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Mon, 04 Feb 2008 16:54:58 +0100
+
 max-meta (0.31) max; urgency=low
 
   * Change default icon theme to maxtoon (new version of gartoon, aka Ubuntoon)
