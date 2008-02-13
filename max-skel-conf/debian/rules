@@ -5,3 +5,7 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 binary-install/max-skel-conf::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-skel-conf -type d -name .svn | xargs rm -rf --
+
+binary-install/homealumno::
+	# clean svn dirs
+	find $(CURDIR)/debian/homealumno -type d -name .svn | xargs rm -rf --

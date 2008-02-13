@@ -1,3 +1,38 @@
+max-skel-conf (3.1.20080102.max11) max; urgency=low
+
+  * Fix typo in rsync homealumno-apply
+  * Fix type in config PRECLEAN not defined hook
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 13:34:10 +0100
+
+max-skel-conf (3.1.20080102.max10) max; urgency=low
+
+  * Change POSTCLEAN to source file instead of string
+  * Add PRECLEAN hook
+  * Add verbose to rsync command
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 13:21:33 +0100
+
+max-skel-conf (3.1.20080102.max9) max; urgency=low
+
+  * Fix POSTCLEAN typo (need spaces)
+  * Fix homealumno-apply echos, rsync is now exec
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 13:11:53 +0100
+
+max-skel-conf (3.1.20080102.max8) max; urgency=low
+
+  * Fix error in homealumno dirs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 13:00:31 +0100
+
+max-skel-conf (3.1.20080102.max7) max; urgency=low
+
+  * Merge homealumno package with max-skel-conf
+  * homelaumno use rsync with /etc/skel first and secondly with /etc/homealumno/skel
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 12:03:37 +0100
+
 max-skel-conf (3.1.20080102.max6) max; urgency=low
 
   * Remove update-dpsyco-skel call in postinst and postrm

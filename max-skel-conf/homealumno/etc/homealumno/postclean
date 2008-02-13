@@ -1,0 +1,11 @@
+# comandos ejecutados despues de la limpieza
+
+echo "homealumno: postclean configurando menus..."
+maxmenus --user
+
+#
+# aqui se podría deshabilitar el menu de administración (que no se vea)
+#
+
+echo "homealumno: postclean acabado..."
+

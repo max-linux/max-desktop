@@ -18,3 +18,8 @@ Description: Configuración skel para Ubuntu/MAX.
   * /etc/apt/preferences
   * /etc/samba/smb.conf
 
+Package: homealumno
+Architecture: all
+Depends: max-dpsyco-custom, max-skel-conf, max-menus, rsync
+Description: Sistema modo kiosko para el usuario alumno
+ Configuración basada en dpsyco para /etc/skel y max-menus
