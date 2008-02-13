@@ -1,3 +1,10 @@
+max-menus (3.1.20080102.max9) max; urgency=low
+
+  * Move maxmenus script to /usr/bin
+  * Create option --user to use with homealumno
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 11:31:37 +0100
+
 max-menus (3.1.20080102.max8) max; urgency=low
 
   * Remove update-dpsyco-skel calls in postinst and postrm

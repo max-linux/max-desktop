@@ -2,10 +2,6 @@
 
 VERSION=__VERSION__
 
-if [ $(id -u) != 0 ]; then
-  echo "You aren't root user. Access denied."
-  exit 1
-fi
 
 decho() {
   echo "maxmenus:: $@" >&2
@@ -24,16 +20,46 @@ case $1 in
    --purge)
      ACTION=purge
      ;;
+   --user)
+     ACTION=user
+     ;;
    *)
      usage
      exit 1
      ;;
 esac
 
+if [ "$ACTION" != "user" ] && [ $(id -u) != 0 ]; then
+  echo "No eres usuario root. Permiso denegado."
+  exit 1
+fi
+
+
 USER_MENUS=".config/menus"
 USER_LOCAL=".local/share/desktop-directories"
 SKEL_MENUS="/etc/skel/.config/menus"
 SKEL_LOCAL="/etc/skel/.local/share/desktop-directories"
+
+if [ "$ACTION" = "user" ]; then
+  mkdir -p $HOME/$USER_MENUS
+  mkdir -p $HOME/$USER_LOCAL
+
+  rm -f $HOME/$USER_MENUS/*
+  rm -f $HOME/$USER_LOCAL/*
+
+  for file in $SKEL_MENUS/*; do
+      cp $file $HOME/$USER_MENUS/
+  done
+
+  for file in $SKEL_LOCAL/*; do
+      cp $file $HOME/$USER_LOCAL/
+  done
+
+  # check for permissions
+  chown -R $USER $HOME/$USER_MENUS 2>/dev/null
+  chown -R $USER $HOME/$USER_LOCAL 2>/dev/null
+  exit 0
+fi
 
 for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
 
