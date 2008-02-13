@@ -17,7 +17,7 @@ Description: Configuración de tcos-standalone para equipos de alumnos
 Package: max-tcos-profesor
 Architecture: all
 Pre-Depends: dpsyco-lib (>= 1.0.11), dpsyco-lib (<= 1.1.0), dpsyco-skel (>= 1.0.11)
-Depends: tcosmonitor, rsync, vlc
+Depends: tcosmonitor ( >= 0.2.1.max1), rsync, vlc
 Description: Configuración de tcosmonitor para equipos de profesores
  Contiene:
   * Parches para vlc sin MP3
