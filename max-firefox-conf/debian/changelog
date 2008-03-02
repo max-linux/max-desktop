@@ -1,3 +1,9 @@
+max-firefox-conf (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 20:03:39 +0100
+
 max-firefox-conf (0.2max4) max; urgency=low
 
   * Delete update-dpsyco-skel calls in postinst and postrm
