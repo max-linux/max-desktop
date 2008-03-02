@@ -17,7 +17,7 @@ mount --bind /sys   $CHROOT/sys
 touch $CHROOT/etc/X11/xorg.conf
 
 
-_echo "Configurando la licencia JAVA SUN-DLJ con DEBCONF"
+_echo "Configurando DEBCONF: licencia JAVA, zona horaria,mapa de teclado..."
 chroot $CHROOT debconf-set-selections << EOF || _exit "No se ha podido aceptar la licencia JAVA"
 sun-java5-bin   shared/accepted-sun-dlj-v1-1    boolean true
 sun-java5-jdk   shared/accepted-sun-dlj-v1-1    boolean true
@@ -25,4 +25,24 @@ sun-java5-jre   shared/accepted-sun-dlj-v1-1    boolean true
 sun-java6-bin   shared/accepted-sun-dlj-v1-1    boolean true
 sun-java6-jre   shared/accepted-sun-dlj-v1-1    boolean true
 sun-java6-jdk   shared/accepted-sun-dlj-v1-1    boolean true
+tzdata  tzdata/Areas    select  Europe
+tzdata  tzdata/Zones/Europe     select  Madrid
+xserver-xorg    xserver-xorg/config/inputdevice/keyboard/layout string  es
+xserver-xorg    xserver-xorg/config/inputdevice/keyboard/model  string  pc105
 EOF
+# not work
+#console-setup	console-setup/variant	select	Spain
+#console-setup	console-setup/layoutcode	string	es
+#console-setup	console-setup/charmap	select	UTF-8
+#console-setup	console-setup/fontsize-text	select	16
+#console-setup	console-setup/layout	select	Spain
+#console-setup	console-setup/variantcode	string	
+#console-setup	console-setup/codesetcode	string	Uni1
+#console-setup	console-setup/modelcode	string	pc105
+#console-setup	console-setup/altgr	select	No AltGr key
+#console-setup	console-setup/ttys	string	/dev/tty[1-6]
+#console-setup	console-setup/model	select	Generic 105-key (Intl) PC
+#console-setup	console-setup/fontsize-fb	select	16
+#console-setup	console-setup/fontface	select	Fixed
+#console-setup	console-setup/fontsize	string	16
+#EOF

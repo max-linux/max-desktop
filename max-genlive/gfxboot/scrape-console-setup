@@ -1,0 +1,373 @@
+#! /usr/bin/perl -w
+use strict;
+
+use File::Find;
+
+do "/usr/share/console-setup/KeyboardNames.pl"
+    or die "can't load /usr/share/console-setup/KeyboardNames.pl";
+
+# Horrible hardcoded mess for now; please keep this in the same order as in
+# console-setup/debian/config.proto. The values are substrings since that
+# seems to be simplest to handle in gfxboot-ese.
+my %keymap_locales = (
+    'al' => '_AL',
+    'az' => '_AZ',
+    'bd' => '_BD',
+    'be' => '_BE',
+    'bg' => '_BG',
+    'br' => '_BR',
+    'by' => '_BY',
+    'ca' => '_CA',
+    'ch_fr' => 'fr_CH',
+    'ch' => '_CH',
+    'cz' => '_CZ',
+    'dk' => '_DK',
+    'ee' => '_EE',
+    'es' => '_ES',
+    'fi_smi' => 'se_FI',
+    'fi' => '_FI',
+    'gb' => '_GB',
+    'hu' => '_HU',
+    'ie' => '_IE',
+    'il' => '_IL',
+    'ir' => '_IR',
+    'is' => '_IS',
+    'it' => '_IT',
+    'jp' => '_JP',
+    'lt' => '_LT',
+    'lv' => '_LV',
+    'ma' => '_MA',
+    'mk' => '_MK',
+    'mn' => '_MN',
+    'mt' => '_MT',
+    'no_smi' => 'se_NO',
+    'no' => '_NO',
+    'pl' => '_PL',
+    'pt' => '_PT',
+    'ro' => '_RO',
+    'ru' => '_RU',
+    'se_smi' => 'se_SE',
+    'sk' => '_SK',
+    'si' => '_SI',
+    'tj' => '_TJ',
+    'th' => '_TH',
+    'tr' => '_TR',
+    'ua' => '_UA',
+    'us' => ['en_US', '_VN'],
+    'us_intl' => '_NL',
+    'latam' => ['_AR', '_BO', '_CL', '_CO', '_CR', '_DO', '_EC', '_GT', '_HN', '_MX', '_NI', '_PA', '_PE', 'es_PR', '_PY', '_SV', 'es_US', '_UY', '_VE'],
+    'ara' => 'ar_',
+    'ba' => 'bs_',
+    'de' => 'de_',
+    'gr' => 'el_',
+    'epo' => 'eo', # lack of trailing underscore is deliberate
+    'fr_oss' => 'fr_',
+    'in_guj' => 'gu_',
+    'in' => 'hi_',
+    'hr' => 'hr_',
+    'am' => 'hy_',
+    'ge' => 'ka_',
+    'in_kan' => 'kn_',
+    'la' => 'lo_',
+    'in_mal' => 'ml_',
+    'in_guru' => 'pa_',
+    'me' => 'sr_ME',
+    'rs' => 'sr_',
+    'se' => 'sv_',
+    'in_tam' => 'ta_',
+    'in_tel' => 'te_',
+    'cn' => 'zh_CN',
+);
+
+# Non-top-level layouts to put on the menu.
+my @show_variants = (
+    'ch_fr',
+    'fr_oss',
+    'tr_f',
+    'us_dvorak',
+);
+
+# Exclude these keymaps.
+my @exclude_keymaps = (
+    'fr',
+    'nec/jp',
+    'nec_vndr/jp',
+);
+
+# Manual descriptions to make the list a bit narrower, thereby avoiding
+# overflowing the screen.
+my %description_overrides = (
+    'ba' => 'Bosnia',
+    'cd' => 'Congo',
+    'ch_fr' => 'Swiss French',
+    'ch' => 'Swiss German',
+    'cs' => 'Serbia',
+    'fi_smi' => 'Saami (Fin.)',
+    'fo' => 'Faroes',
+    'fr_oss' => 'France',
+    'gb' => 'UK',
+    'in_guj' => 'Gujarati',
+    'in_guru' => 'Gurmukhi',
+    'in_kan' => 'Kannada',
+    'in_mal' => 'Malayalam',
+    'in_tam' => 'Tamil',
+    'in_tel' => 'Telugu',
+    'kr' => 'Korea',
+    'latam' => 'Latin Amer.',
+    'no_smi' => 'Saami (Nor.)',
+    'se_smi' => 'Saami (Swe.)',
+    'us_dvorak' => 'Dvorak',
+    'us_intl' => 'USA Intl.',
+);
+
+# These keymaps are non-Latin, which isn't very useful in gfxboot, so map
+# them to US instead.
+my @non_latin = (
+    'am',
+    'ara',
+    'ben',
+    'bd',
+    'bg',
+    'bt',
+    'by',
+    'deva',
+    'ge',
+    'gh',
+    'gr',
+    'guj',
+    'guru',
+    'il',
+    'in',
+    'ir',
+    'iku',
+    'jp',
+    'kan',
+    'kh',
+    'la',
+    'lao',
+    'lk',
+    'lt',
+    'mk',
+    'mm',
+    'mn',
+    'mv',
+    'mal',
+    'ori',
+    'pk',
+    'ru',
+    'scc',
+    'sy',
+    'syr',
+    'tel',
+    'th',
+    'tj',
+    'tam',
+    'ua',
+    'uz',
+);
+
+# Some keymaps require unusual models for extra keys.
+my %unusual_models = (
+    'br' => 'abnt2',
+    'jp' => 'jp106',
+);
+
+binmode STDOUT, ':utf8';
+
+print <<EOF;
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+%
+% Keyboard mappings.
+%
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+/.km.name    0 def
+/.km.map     1 def
+/.km.display 2 def
+/.km.locales 3 def
+/.km.model   4 def
+
+EOF
+
+my %pad_map = (
+    0x00 => 'keyIns',
+    0x01 => 'keyEnd',
+    0x02 => 'keyDown',
+    0x03 => 'keyPgDown',
+    0x04 => 'keyLeft',
+    0x06 => 'keyRight',
+    0x07 => 'keyHome',
+    0x08 => 'keyUp',
+    0x09 => 'keyPgUp',
+    0x10 => 'keyDel',
+);
+
+my %spec_map = (
+    0x01 => 'keyEnter',
+);
+
+sub map_keycode ($) {
+    my $type = ($_[0] >> 8) & 0xff;
+    my $code = $_[0] & 0xff;
+    if ($type == 0xf0 or $type == 0xfb) {
+	# KT_LATIN or KT_LETTER
+	if ($code == 0x08 or $code == 0x7f) {
+	    # Backspace vs. Delete is a tricky case. gfxboot understands
+	    # both (0x08 for delete-left, keyDel for delete-right), so we
+	    # should map 0x7f to KeyDel. Unfortunately many keymaps only
+	    # appear to define Delete, and the situation in console-data
+	    # seems to be quite confused. Accordingly, we just ignore both
+	    # and let gfxboot work it out for itself, which seems to work
+	    # better.
+	    return '0x00';
+	} else {
+	    return sprintf '0x%02x', $code;
+	}
+    } elsif ($type == 0xf2) {
+	# KT_SPEC
+	return $spec_map{$code} if exists $spec_map{$code};
+    } elsif ($type == 0xf3) {
+	# KT_PAD
+	return $pad_map{$code} if exists $pad_map{$code};
+    }
+    return '0x00';
+}
+
+# Flip KeyboardNames structures into more useful formats.
+my %layouts;
+my %variants;
+for my $layout (keys %KeyboardNames::layouts) {
+    my $name = $KeyboardNames::layouts{$layout};
+    $layouts{$name} = $layout;
+    for my $variant (keys %{$KeyboardNames::variants{$name}}) {
+	my $variantname = $KeyboardNames::variants{$name}{$variant};
+	$variants{$name}{$variantname} = $variant;
+    }
+}
+
+my %keymaps = map { $_ => 1 }
+	      (keys %layouts, keys %keymap_locales, @show_variants);
+delete $keymaps{$_} for @exclude_keymaps;
+my @keymaps = sort keys %keymaps;
+
+my %keycodes;
+for my $keymap (@keymaps) {
+    my ($layout, $variant, $model);
+    if ($keymap =~ /(.+)_(.+)/) {
+	$layout = $1;
+	$variant = $2;
+    } else {
+	$layout = $keymap;
+	undef $variant;
+    }
+    if (exists $unusual_models{$layout}) {
+	$model = $unusual_models{$layout};
+    } else {
+	$model = 'pc105';
+    }
+    my $ckbcomp = "ckbcomp -model $model -layout \Q$layout\E";
+    $ckbcomp .= " -variant \Q$variant\E" if defined $variant;
+    my $table = `$ckbcomp | sudo loadkeys -m 2>/dev/null`;
+    for my $map (qw(plain shift altgr)) {
+	if ($table =~ /${map}_map\[\] = {\s*(.*?)(?:\s|,)*}/s) {
+	    $keycodes{$keymap}{$map} =
+		[map { map_keycode(hex) } split(/,\s+/, $1)];
+	} else {
+	    $keycodes{$keymap}{$map} = [('0x00') x 128];
+	}
+    }
+}
+
+for my $keymap (@non_latin) {
+    $keycodes{$keymap} = $keycodes{us};
+}
+
+my %keymapfunc;
+
+for my $keymap (@keymaps) {
+    my $found = 0;
+    for my $index (0 .. 127) {
+	# Never map keys that are special when unshifted; this caused
+	# problems for the French keymap, and made it difficult in general
+	# to get out of a keymap you selected by accident.
+	if ($keycodes{us}{plain}[$index] =~ /^key/) {
+	    next;
+	}
+	my $plain = $keycodes{$keymap}{plain}[$index];
+	my $shift = $keycodes{$keymap}{shift}[$index];
+	my $altgr = $keycodes{$keymap}{altgr}[$index];
+	if ($plain eq $keycodes{us}{plain}[$index] and
+	    $shift eq $keycodes{us}{shift}[$index] and
+	    $altgr eq $keycodes{us}{altgr}[$index]) {
+	    # The PC105 less than / greater than key isn't necessarily
+	    # mapped correctly by the BIOS.
+	    if ($index != 86) {
+		next;
+	    }
+	}
+	if (($plain ne '0x00') or ($shift ne '0x00') or ($altgr ne '0x00')) {
+	    print "/keymap.$keymap [\n" unless $found;
+	    $found = 1;
+	    my $hexindex = sprintf '0x%02x', $index;
+	    print "  [ $hexindex $plain $shift $altgr ]\n";
+	}
+    }
+    if ($found) {
+	$keymapfunc{$keymap} = "keymap.$keymap";
+    } else {
+	$keymapfunc{$keymap} = '.undef';
+    }
+    print "] def\n\n" if $found;
+}
+
+my %descriptions;
+for my $keymap (@keymaps) {
+    my $desc;
+    if (exists $description_overrides{$keymap}) {
+	$desc = $description_overrides{$keymap};
+    } elsif ($keymap =~ /(.+)_(.+)/) {
+	warn "Description for $keymap not found!\n"
+	    unless exists $layouts{$1} and exists $variants{$1}{$2};
+	$desc = "$layouts{$1} ($variants{$1}{$2})";
+    } else {
+	warn "Description for $keymap not found!\n"
+	    unless exists $layouts{$keymap};
+	$desc = $layouts{$keymap};
+    }
+    $descriptions{$keymap} = $desc;
+}
+
+print "/keymaps [\n";
+my $i = 0;
+my $us_index;
+for my $keymap (sort { $descriptions{$a} cmp $descriptions{$b} } @keymaps) {
+    my $localelist;
+    if (exists $keymap_locales{$keymap}) {
+	if (ref $keymap_locales{$keymap}) {
+	    $localelist = join(' ', map(qq{"$_"}, @{$keymap_locales{$keymap}}));
+	} else {
+	    $localelist = qq{"$keymap_locales{$keymap}"};
+	}
+	$localelist = "[ $localelist ]";
+    } else {
+	$localelist = '[ ]';
+    }
+    my $model;
+    if (exists $unusual_models{$keymap}) {
+	$model = qq{"$unusual_models{$keymap}"};
+    } else {
+	$model = '.undef';
+    }
+    print qq{  [ "$keymap" $keymapfunc{$keymap} "$descriptions{$keymap}" $localelist $model ]\n};
+    $us_index = $i if $keymap eq 'us';
+    ++$i;
+}
+print "] def\n\n";
+
+die "'us' keymap not found!\n" unless defined $us_index;
+
+print <<EOF;
+% set to "us" for safety
+/config.keymap keymaps $us_index get def
+EOF

@@ -1,0 +1,430 @@
+# Occitan (post 1500) translation for gfxboot-theme-ubuntu
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the gfxboot-theme-ubuntu package.
+# Yannig MARCHEGAY (Kokoyaya)  <yannig@marchegay.org>, 2006.
+# , fuzzy
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gfxboot-theme-ubuntu\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
+"PO-Revision-Date: 2007-05-06 19:11+0000\n"
+"Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
+"Language-Team: Occitan (post 1500) <oc@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. ok button label
+#. txt_ok
+msgid "OK"
+msgstr "Validar"
+
+#. cancel button label
+#. txt_cancel
+msgid "Cancel"
+msgstr "Anullar"
+
+#. reboot button label
+#. txt_reboot
+msgid "Reboot"
+msgstr "Tornar aviar"
+
+#. continue button label
+#. txt_continue
+msgid "Continue"
+msgstr "Contunhar"
+
+#. txt_bootoptions
+msgid "Boot Options"
+msgstr "Opcions d'aviada"
+
+#. window title for exit dialog
+#. txt_exit_title (see txt_exit_dialog)
+msgid "Exiting..."
+msgstr "Sortir..."
+
+#. txt_exit_dialog
+msgid ""
+"You are leaving the graphical boot menu and\n"
+"starting the text mode interface."
+msgstr ""
+"Sortissètz del menut d'aviada grafic e\n"
+"dintratz dins l'interfaç en mòde tèxt."
+
+#. txt_help
+msgid "Help"
+msgstr "Ajuda"
+
+#. window title for kernel loading (see txt_load_kernel)
+#. txt_load_kernel_title
+msgid "Starting..."
+msgstr "Aviada..."
+
+#. Keep the three newlines!
+#. txt_load_kernel
+msgid ""
+"Loading Linux Kernel\n"
+"\n"
+"\n"
+msgstr ""
+"Cargament del nucli de Linux\n"
+"\n"
+"\n"
+
+#. Keep the three newlines!
+#. txt_load_memtest
+msgid ""
+"Loading memtest86\n"
+"\n"
+"\n"
+msgstr ""
+"Cargament de memtest86\n"
+"\n"
+"\n"
+
+#. info box title
+#. txt_info_title
+msgid "Boot loader"
+msgstr "Gestionari d'aviada"
+
+#. error box title
+#. txt_error_title
+msgid "I/O error"
+msgstr "Error E/S"
+
+#. boot disk change dialog title
+#. txt_change_disk_title
+msgid "Change Boot Disk"
+msgstr "Cambiar la disqueta d'aviada"
+
+#. txt_insert_disk
+#, c-format
+msgid "Insert boot disk %u."
+msgstr "Inserir lo disc d'aviada %u."
+
+#. txt_insert_disk2
+#, c-format
+msgid ""
+"This is boot disk %u.\n"
+"Insert boot disk %u."
+msgstr ""
+"Aquò's lo disc d'aviada %u.\n"
+"Inserissètz lo disc d'aviada %u."
+
+#. txt_insert_disk3
+#, c-format
+msgid ""
+"This is not a suitable boot disk.\n"
+"Please insert boot disk %u."
+msgstr ""
+"Es pas un disc d'aviada corrècte.\n"
+"Inserissètz lo disc d'aviada %u."
+
+#. password dialog title
+#. txt_password_title
+msgid "Password"
+msgstr "Mot de pas"
+
+#. Keep the newlines and spaces after ':'!
+#. txt_password
+msgid ""
+"Enter your password:   \n"
+"\n"
+"\n"
+msgstr ""
+"Picatz vòstre mot de pas :   \n"
+"\n"
+"\n"
+
+#. dvd warning title
+#. txt_dvd_warning_title
+msgid "DVD Error"
+msgstr "Error DVD"
+
+#. txt_dvd_warning2
+msgid ""
+"This is a two-sided DVD. You have booted from the second side.\n"
+"\n"
+"Turn the DVD over then continue."
+msgstr ""
+
+#. power off dialog title
+#. txt_power_off_title
+msgid "Power Off"
+msgstr "Atudar"
+
+#. txt_power_off
+msgid "Halt the system now?"
+msgstr "Atudar lo sistèma ara ?"
+
+#. dialog title for hard disk installation
+#. txt_harddisk_title
+msgid "Hard Disk Installation"
+msgstr "Installacion disc dur"
+
+#. txt_hd_diskdevice
+msgid "Disk Device (scan all disks if empty)\n"
+msgstr "Periferic disc (examinar totes los discs s'es void)\n"
+
+#. txt_directory
+msgid "Directory\n"
+msgstr "Repertòri\n"
+
+#. dialog title for ftp installation
+#. txt_ftp_title
+msgid "FTP Installation"
+msgstr "Installacion FTP"
+
+#. txt_server
+msgid "Server\n"
+msgstr "Servidor\n"
+
+#. txt_password
+msgid "Password\n"
+msgstr "Mot de pas\n"
+
+#. label for ftp user input
+#. txt_user1
+msgid "User (anonymous login if empty)\n"
+msgstr "Utilizaire (connexion anonima s'es void)\n"
+
+#. dialog title for nfs installation
+#. txt_nfs_title
+msgid "NFS Installation"
+msgstr "Installacion NFS"
+
+#. label for smb user input
+#. txt_user2
+msgid "User (using \"guest\" if empty)\n"
+msgstr "Utilizaire (\"convidat\" s'es void)\n"
+
+#. dialog title for smb installation
+#. txt_smb_title
+msgid "SMB (Windows Share) Installation"
+msgstr ""
+
+#. dialog title for http installation
+#. txt_http_title
+msgid "HTTP Installation"
+msgstr "Installacion HTTP"
+
+#. as in Windows Authentication Domain
+#. txt_domain
+msgid "Domain\n"
+msgstr "Domeni\n"
+
+#. button label for other/more options
+#. txt_other_options
+msgid "Other Options"
+msgstr "Autras opcions"
+
+#. label for language selection
+#. txt_language
+msgid "Language"
+msgstr "Lenga"
+
+#. label for keymap selection
+#. txt_keymap
+msgid "Keymap"
+msgstr "Clavièr"
+
+#. label for installation mode selection
+#. txt_modes
+msgid "Modes"
+msgstr ""
+
+#. Shown on main menu to point out that more boot options are on F4.
+#. txt_modes_help
+msgid "Press F4 to select alternative start-up and installation modes."
+msgstr ""
+
+#. label for d-i mode menu
+#. txt_expert_mode
+msgid "Expert mode"
+msgstr "Mòde expèrt"
+
+#. title for accessibility menu
+#. txt_access
+msgid "Accessibility"
+msgstr "Accessibilitat"
+
+#. label for accessibility menu
+#. txt_access_none
+msgid "None"
+msgstr "Pas cap"
+
+#. label for accessibility menu
+#. txt_access_v1
+msgid "High Contrast"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_v2
+msgid "Magnifier"
+msgstr "Lópia"
+
+#. label for accessibility menu
+#. txt_access_v3
+msgid "Screen Reader"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_brltty
+msgid "Braille Terminal"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_m1
+msgid "Keyboard Modifiers"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_m2
+msgid "On-Screen Keyboard"
+msgstr "Clavièr virtual"
+
+#. label for accessibility menu
+#. txt_access_m3
+msgid "Motor Difficulties - switch devices"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_all
+msgid "Everything"
+msgstr "Tot"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu
+#, fuzzy
+msgid "^Try Ubuntu without any change to your computer"
+msgstr "^Aviar o installar Ubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu
+#, fuzzy
+msgid "^Try Kubuntu without any change to your computer"
+msgstr "^Aviar o installar Kubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_edubuntu
+#, fuzzy
+msgid "^Try Edubuntu without any change to your computer"
+msgstr "^Aviar o installar Edubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_xubuntu
+#, fuzzy
+msgid "^Try Xubuntu without any change to your computer"
+msgstr "^Aviar o installar Xubuntu"
+
+#. Installation mode.
+#. txt_menuitem_xforcevesa
+#, fuzzy
+msgid "Safe graphics mode"
+msgstr "Aviar Ubuntu en mòde ^grafic sens fracàs"
+
+#. Installation mode.
+#. txt_menuitem_driverupdates
+msgid "Use driver update CD"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_ubuntu
+#, fuzzy
+msgid "^Install Ubuntu in text mode"
+msgstr "^Installar en mòde tèxt"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_kubuntu
+msgid "^Install Kubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_edubuntu
+msgid "^Install Edubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_xubuntu
+msgid "^Install Xubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu
+msgid "^Install Ubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu
+msgid "^Install Kubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_edubuntu
+msgid "^Install Edubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_xubuntu
+msgid "^Install Xubuntu"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_workstation
+msgid "Install a workstation"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_server
+#, fuzzy
+msgid "Install a server"
+msgstr "Installar un ser^vidor"
+
+#. Installation mode.
+#. txt_menuitem_oem
+msgid "OEM install (for manufacturers)"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_lamp
+#, fuzzy
+msgid "Install a LAMP server"
+msgstr "Installar un servidor ^LAMP"
+
+#. Installation mode.
+#. txt_menuitem_ltsp
+#, fuzzy
+msgid "Install an LTSP server"
+msgstr "Installlar un servidor ^LTSP"
+
+#. Installation mode.
+#. txt_menuitem_cli
+#, fuzzy
+msgid "Install a command-line system"
+msgstr "Installar un sistèma en linha de com^anda"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_check
+msgid "^Check CD for defects"
+msgstr "^Verificar lo CD"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_rescue
+msgid "^Rescue a broken system"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_memtest
+#, fuzzy
+msgid "Test ^memory"
+msgstr "Tèst de memòria"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_hd
+msgid "^Boot from first hard disk"
+msgstr "^Aviar a partir del primièr disc dur"

@@ -10,9 +10,14 @@ mkdir -p $CDRW/pool/max/
 
 chroot $CHROOT << EOF || _exit "Error actualizando chroot"
 apt-get update
+apt-get clean
 EOF
 
 URIS=$(chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA| awk '{print $1}' | sed "s/'//g")
+
+if [ "$URIS" = "" ]; then
+  _exit "Error leyendo URIS de paquetes extra, conflictos o dependencias seguramente..."
+fi
 
 for url in $URIS; do
   ruta=$(dirname $(echo $url| awk -F"pool" '{print $2}') | sed 's/main//g'| sed 's/universe//g' | sed 's/multiverse//g'| sed 's|//|/|g')
@@ -97,7 +102,7 @@ APT::FTPArchive::Release::Version "$DISTRO_VERSION";
 APT::FTPArchive::Release::Codename "$DISTRO";
 APT::FTPArchive::Release::Architectures "$ARCH";
 APT::FTPArchive::Release::Components "main restricted max";
-APT::FTPArchive::Release::Description "Ubuntu Gutsy 7.10";
+APT::FTPArchive::Release::Description "Ubuntu Hardy 8.04";
 EOF
 
 APTCONF=$TMP/release.conf

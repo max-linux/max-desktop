@@ -3,7 +3,7 @@
 if [ ! $DISABLE_SQUASHFS ]; then
   _echo "Creando archivo squashfs (tarda bastante)..."
 
-  mksquashfs $CHROOT/ filesystem.squashfs || _exit "No se ha podido generar el archivo squashfs"
+  mksquashfs $CHROOT/ filesystem.squashfs -nolzma || _exit "No se ha podido generar el archivo squashfs"
 
   _echo "Moviendo nuevo squashfs al directorio temporal de la ISO"
   rm -f $CDRW/casper/filesystem.squashfs 

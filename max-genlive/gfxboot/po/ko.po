@@ -1,0 +1,434 @@
+# Korean translation for gfxboot-theme-ubuntu
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the gfxboot-theme-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gfxboot-theme-ubuntu\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Namhyung Kim <namhyung@gmail.com>\n"
+"Language-Team: Korean <ko@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. ok button label
+#. txt_ok
+msgid "OK"
+msgstr "확인"
+
+#. cancel button label
+#. txt_cancel
+msgid "Cancel"
+msgstr "취소"
+
+#. reboot button label
+#. txt_reboot
+msgid "Reboot"
+msgstr "다시 시작"
+
+#. continue button label
+#. txt_continue
+msgid "Continue"
+msgstr "계속"
+
+#. txt_bootoptions
+msgid "Boot Options"
+msgstr "부트 옵션"
+
+#. window title for exit dialog
+#. txt_exit_title (see txt_exit_dialog)
+msgid "Exiting..."
+msgstr "끝내기"
+
+#. txt_exit_dialog
+msgid ""
+"You are leaving the graphical boot menu and\n"
+"starting the text mode interface."
+msgstr ""
+"그래픽 부트 메뉴를 중지하고\n"
+"텍스트 모드 환경에서 시작합니다."
+
+#. txt_help
+msgid "Help"
+msgstr "도움말"
+
+#. window title for kernel loading (see txt_load_kernel)
+#. txt_load_kernel_title
+msgid "Starting..."
+msgstr "시작하는 중..."
+
+#. Keep the three newlines!
+#. txt_load_kernel
+msgid ""
+"Loading Linux Kernel\n"
+"\n"
+"\n"
+msgstr ""
+"리눅스 커널 로드 중\n"
+"\n"
+"\n"
+
+#. Keep the three newlines!
+#. txt_load_memtest
+msgid ""
+"Loading memtest86\n"
+"\n"
+"\n"
+msgstr ""
+"memtest86 읽어오는 중\n"
+"\n"
+"\n"
+
+#. info box title
+#. txt_info_title
+msgid "Boot loader"
+msgstr "부트 로더"
+
+#. error box title
+#. txt_error_title
+msgid "I/O error"
+msgstr "입출력 오류"
+
+#. boot disk change dialog title
+#. txt_change_disk_title
+msgid "Change Boot Disk"
+msgstr "부트 디스크를 변경하여 주십시오."
+
+#. txt_insert_disk
+#, c-format
+msgid "Insert boot disk %u."
+msgstr "부트 디스크 %u을(를) 넣어주십시오."
+
+#. txt_insert_disk2
+#, c-format
+msgid ""
+"This is boot disk %u.\n"
+"Insert boot disk %u."
+msgstr ""
+"이것은 부트 디스크 %u입니다.\n"
+"부트 디스크 %u를 넣어주십시오."
+
+#. txt_insert_disk3
+#, c-format
+msgid ""
+"This is not a suitable boot disk.\n"
+"Please insert boot disk %u."
+msgstr ""
+"올바른 부트 디스크가 아닙니다.\n"
+"부트 디스크 %u을(를) 넣어주십시오."
+
+#. password dialog title
+#. txt_password_title
+msgid "Password"
+msgstr "비밀번호"
+
+#. Keep the newlines and spaces after ':'!
+#. txt_password
+msgid ""
+"Enter your password:   \n"
+"\n"
+"\n"
+msgstr ""
+"비밀번호를 입력하여 주십시오:   \n"
+"\n"
+"\n"
+
+#. dvd warning title
+#. txt_dvd_warning_title
+msgid "DVD Error"
+msgstr "DVD 오류"
+
+#. txt_dvd_warning2
+msgid ""
+"This is a two-sided DVD. You have booted from the second side.\n"
+"\n"
+"Turn the DVD over then continue."
+msgstr ""
+"이것은 양면 DVD입니다. 두 번째 면으로 부팅해야 합니다.\n"
+"\n"
+"DVD를 바꿔 넣은 후 계속하십시오."
+
+#. power off dialog title
+#. txt_power_off_title
+msgid "Power Off"
+msgstr "전원 끄기"
+
+#. txt_power_off
+msgid "Halt the system now?"
+msgstr "시스템을 중지하시겠습니까?"
+
+#. dialog title for hard disk installation
+#. txt_harddisk_title
+msgid "Hard Disk Installation"
+msgstr "하드 디스크 설치"
+
+#. txt_hd_diskdevice
+msgid "Disk Device (scan all disks if empty)\n"
+msgstr "디스크 장치 (비어있다면 모든 디스크를 찾습니다)\n"
+
+#. txt_directory
+msgid "Directory\n"
+msgstr "디렉토리\n"
+
+#. dialog title for ftp installation
+#. txt_ftp_title
+msgid "FTP Installation"
+msgstr "FTP 설치"
+
+#. txt_server
+msgid "Server\n"
+msgstr "서버\n"
+
+#. txt_password
+msgid "Password\n"
+msgstr "비밀번호\n"
+
+#. label for ftp user input
+#. txt_user1
+msgid "User (anonymous login if empty)\n"
+msgstr "사용자 (비워둔다면 익명 로그인)\n"
+
+#. dialog title for nfs installation
+#. txt_nfs_title
+msgid "NFS Installation"
+msgstr "NFS 설치"
+
+#. label for smb user input
+#. txt_user2
+msgid "User (using \"guest\" if empty)\n"
+msgstr "사용자 (비워둔다면 \"guest\"를 사용)\n"
+
+#. dialog title for smb installation
+#. txt_smb_title
+msgid "SMB (Windows Share) Installation"
+msgstr "SMB (윈도우 공유) 설치"
+
+#. dialog title for http installation
+#. txt_http_title
+msgid "HTTP Installation"
+msgstr "HTTP 설치"
+
+#. as in Windows Authentication Domain
+#. txt_domain
+msgid "Domain\n"
+msgstr "도메인\n"
+
+#. button label for other/more options
+#. txt_other_options
+msgid "Other Options"
+msgstr "기타 설정"
+
+#. label for language selection
+#. txt_language
+msgid "Language"
+msgstr "언어"
+
+#. label for keymap selection
+#. txt_keymap
+msgid "Keymap"
+msgstr "키 맵"
+
+#. label for installation mode selection
+#. txt_modes
+msgid "Modes"
+msgstr ""
+
+#. Shown on main menu to point out that more boot options are on F4.
+#. txt_modes_help
+msgid "Press F4 to select alternative start-up and installation modes."
+msgstr ""
+
+#. label for d-i mode menu
+#. txt_expert_mode
+msgid "Expert mode"
+msgstr "전문가 모드"
+
+#. title for accessibility menu
+#. txt_access
+msgid "Accessibility"
+msgstr "접근성 기능"
+
+#. label for accessibility menu
+#. txt_access_none
+msgid "None"
+msgstr "없음"
+
+#. label for accessibility menu
+#. txt_access_v1
+msgid "High Contrast"
+msgstr "고대비"
+
+#. label for accessibility menu
+#. txt_access_v2
+msgid "Magnifier"
+msgstr "돋보기"
+
+#. label for accessibility menu
+#. txt_access_v3
+msgid "Screen Reader"
+msgstr "화면-음성 변환"
+
+#. label for accessibility menu
+#. txt_access_brltty
+msgid "Braille Terminal"
+msgstr "점자 터미널"
+
+#. label for accessibility menu
+#. txt_access_m1
+msgid "Keyboard Modifiers"
+msgstr "키보드"
+
+#. label for accessibility menu
+#. txt_access_m2
+msgid "On-Screen Keyboard"
+msgstr "화상 키보드"
+
+#. label for accessibility menu
+#. txt_access_m3
+msgid "Motor Difficulties - switch devices"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_all
+msgid "Everything"
+msgstr "모두"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu
+#, fuzzy
+msgid "^Try Ubuntu without any change to your computer"
+msgstr "우분투 시작 또는 설치하기 (^S)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu
+#, fuzzy
+msgid "^Try Kubuntu without any change to your computer"
+msgstr "쿠분투 시작 또는 설치하기 (^S)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_edubuntu
+#, fuzzy
+msgid "^Try Edubuntu without any change to your computer"
+msgstr "에듀분투 시작 또는 설치하기 (^S)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_xubuntu
+#, fuzzy
+msgid "^Try Xubuntu without any change to your computer"
+msgstr "엑스분투 시작 또는 설치하기 (^S)"
+
+#. Installation mode.
+#. txt_menuitem_xforcevesa
+#, fuzzy
+msgid "Safe graphics mode"
+msgstr "안전한 그래픽 모드에서 우분투 시작하기 (^g)"
+
+#. Installation mode.
+#. txt_menuitem_driverupdates
+#, fuzzy
+msgid "Use driver update CD"
+msgstr "업데이트 CD로 드라이버 설치하기 (^U)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_ubuntu
+#, fuzzy
+msgid "^Install Ubuntu in text mode"
+msgstr "텍스트 모드에서 설치하기 (^I)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_kubuntu
+msgid "^Install Kubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_edubuntu
+msgid "^Install Edubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_xubuntu
+msgid "^Install Xubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu
+msgid "^Install Ubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu
+msgid "^Install Kubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_edubuntu
+msgid "^Install Edubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_xubuntu
+msgid "^Install Xubuntu"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_workstation
+#, fuzzy
+msgid "Install a workstation"
+msgstr "워크스테이션으로 설치하기 (^w)"
+
+#. Installation mode.
+#. txt_menuitem_server
+#, fuzzy
+msgid "Install a server"
+msgstr "서버 설치하기 (^V)"
+
+#. Installation mode.
+#. txt_menuitem_oem
+#, fuzzy
+msgid "^OEM install (for manufacturers)"
+msgstr "생산업체를 위한 텍스트 모드 설치하기 (^N)"
+
+#. Installation mode.
+#. txt_menuitem_lamp
+#, fuzzy
+msgid "Install a LAMP server"
+msgstr "LAMP 서버로 설치하기 (^L)"
+
+#. Installation mode.
+#. txt_menuitem_ltsp
+#, fuzzy
+msgid "Install an LTSP server"
+msgstr "LTSP 서버 설치하기 (^L)"
+
+#. Installation mode.
+#. txt_menuitem_cli
+#, fuzzy
+msgid "Install a command-line system"
+msgstr "명령행 시스템 설치하기 (^A)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_check
+msgid "^Check CD for defects"
+msgstr "시디의 결함 확인하기 (^C)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_rescue
+msgid "^Rescue a broken system"
+msgstr "망가진 시스템 복구하기 (^R)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_memtest
+#, fuzzy
+msgid "Test ^memory"
+msgstr "메모리 테스트 (^M)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_hd
+msgid "^Boot from first hard disk"
+msgstr "첫 번째 하드 디스크로 부팅하기 (^B)"

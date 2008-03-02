@@ -8,7 +8,7 @@ xres=1024
 yres=768
 EOF
 
-KERNEL=$(basename $(echo chroot/boot/vmlinuz*)| sed 's/vmlinuz-//g')
+KERNEL=$(basename $(ls chroot/boot/vmlinuz* -t| head -1)| sed 's/vmlinuz-//g')
 chroot $CHROOT /usr/sbin/update-initramfs -u -k $KERNEL || _exit "No se ha podido generar la imagen de arranque"
 cp $CHROOT/boot/vmlinuz-$KERNEL   $CDRW/casper/vmlinuz
 cp $CHROOT/boot/initrd.img-$KERNEL $CDRW/casper/initrd.gz
@@ -41,7 +41,7 @@ for log in $(find $CHROOT/var/log/ -type f); do cat /dev/null > $log; done
 _echo "Desmontando proc sys y posiblemente modules/volatile"
 umount -l $CHROOT/proc
 umount -l $CHROOT/sys
-umount $CHROOT/lib/modules/*/volatile/
+umount $CHROOT/lib/modules/*/volatile/ 2>/dev/null
 
 _echo "Configurando repositorio global"
 cp /etc/resolv.conf $CHROOT/etc/

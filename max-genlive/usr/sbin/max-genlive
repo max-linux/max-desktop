@@ -2,10 +2,10 @@
 
 # Hacer el cd de MaX remasterizando el de Ubuntu
 
-DISTRO=gutsy
-DISTRO_VERSION="7.10"
+DISTRO=hardy
+DISTRO_VERSION="8.04"
 ARCH=i386
-IMAGE_NAME="MaX-3.1-beta4"
+IMAGE_NAME="MaX-4.0-0alpha1"
 
 ayuda() {
 cat << EOF
@@ -39,13 +39,13 @@ if [ "$1" = "--help" ]; then
 fi
 
 if [ "x$1" = "x" ] || [ ! -f "$1" ]; then
-  ISO="ubuntu-7.10-desktop-i386.iso"
+  ISO="hardy-desktop-i386.iso"
 else
   echo "Usando $1 como ISO base a actualizar..."
   ISO="$1"
 fi
 
-MIRROR="ftp://ftp.rediris.es/sites/releases.ubuntu.com/releases/gutsy/"
+MIRROR="ftp://ftp.rediris.es/sites/releases.ubuntu.com/releases/hardy/"
 
 CURDIR=$(pwd)
 
@@ -54,7 +54,8 @@ CDRW=$CURDIR/cdimage2
 CDRO=$CURDIR/cdimage
 CDTMP=$CURDIR/cdtmp
 
-PAQUETES_EXTRA="tcos backharddi backharddi-net max-tcos-alumno max-tcos-profesor virtualbox-ose"
+#PAQUETES_EXTRA="tcos backharddi backharddi-net max-tcos-alumno max-tcos-profesor virtualbox-ose"
+PAQUETES_EXTRA="tcos max-tcos-alumno max-tcos-profesor virtualbox-ose"
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
 GENLIVE=/usr/share/max-genlive

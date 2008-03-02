@@ -9,12 +9,14 @@ export LC_ALL=C
 export LC_MESSAGES=C
 export DEBCONF_FRONTEND="noninteractive"
 export DEBIAN_FRONTEND="noninteractive"
-apt-get $APT_OPTS update
-apt-get $APT_OPTS upgrade
-apt-get $APT_OPTS install max-keyring
-apt-get $APT_OPTS update
-apt-get $APT_OPTS install max-desktop-all
+export ERROR=0
+apt-get $APT_OPTS update || ERROR=1
+apt-get $APT_OPTS upgrade || ERROR=1
+apt-get $APT_OPTS install max-keyring || ERROR=1
+apt-get $APT_OPTS update || ERROR=1
+apt-get $APT_OPTS install max-desktop-all || ERROR=1
 apt-get clean
+exit \$ERROR
 EOC
 
 

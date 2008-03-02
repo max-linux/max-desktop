@@ -1,0 +1,4 @@
+suck language list out of localechooser at d-i build time
+font reduction may need to be tweaked
+fix zh_CN/zh_TW/pt_BR preseeding (maybe a localechooser fix)
+simpler logo handling (black background, small logo pasted into it)

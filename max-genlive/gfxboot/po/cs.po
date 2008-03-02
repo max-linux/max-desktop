@@ -1,0 +1,436 @@
+# translation of cs.po to Czech
+# translation of cs.po to cs_CZ
+# translation of bootloader.po to cs_CZ
+# LANGUAGE translations for boot loader
+# Copyright (C) 2004 SUSE LINUX AG
+# Klara Cihlarova <koty@seznam.cz>, 2004, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cs\n"
+"Report-Msgid-Bugs-To:  \n"
+"POT-Creation-Date: 2007-10-09 09:00+0000\n"
+"PO-Revision-Date: 2007-09-11 16:54+0000\n"
+"Last-Translator: Martin Böhm <martin.bohm@kubuntu.org>\n"
+"Language-Team: Czech <suse@suse.cz>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. ok button label
+#. txt_ok
+msgid "OK"
+msgstr "OK"
+
+#. cancel button label
+#. txt_cancel
+msgid "Cancel"
+msgstr "Zrušit"
+
+#. reboot button label
+#. txt_reboot
+msgid "Reboot"
+msgstr "Restartovat"
+
+#. continue button label
+#. txt_continue
+msgid "Continue"
+msgstr "Pokračovat"
+
+#. txt_bootoptions
+msgid "Boot Options"
+msgstr "Možnosti zavedení"
+
+#. window title for exit dialog
+#. txt_exit_title (see txt_exit_dialog)
+msgid "Exiting..."
+msgstr "Ukončuje se..."
+
+#. txt_exit_dialog
+msgid ""
+"You are leaving the graphical boot menu and\n"
+"starting the text mode interface."
+msgstr ""
+"Opouštíte grafickou nabídku zavádění\n"
+"a spouštíte textový režim."
+
+#. txt_help
+msgid "Help"
+msgstr "Nápověda"
+
+#. window title for kernel loading (see txt_load_kernel)
+#. txt_load_kernel_title
+msgid "Starting..."
+msgstr "Spouští se..."
+
+#. Keep the three newlines!
+#. txt_load_kernel
+msgid ""
+"Loading Linux Kernel\n"
+"\n"
+"\n"
+msgstr ""
+"Zavádí se linuxové jádro\n"
+"\n"
+"\n"
+
+#. Keep the three newlines!
+#. txt_load_memtest
+msgid ""
+"Loading memtest86\n"
+"\n"
+"\n"
+msgstr ""
+"Zavádím memtest86\n"
+"\n"
+"\n"
+
+#. info box title
+#. txt_info_title
+msgid "Boot loader"
+msgstr "Zavaděč"
+
+#. error box title
+#. txt_error_title
+msgid "I/O error"
+msgstr "Chyba I/O"
+
+#. boot disk change dialog title
+#. txt_change_disk_title
+msgid "Change Boot Disk"
+msgstr "Změnit zaváděcí disk"
+
+#. txt_insert_disk
+#, c-format
+msgid "Insert boot disk %u."
+msgstr "Vložte zaváděcí disk %u."
+
+#. txt_insert_disk2
+#, c-format
+msgid ""
+"This is boot disk %u.\n"
+"Insert boot disk %u."
+msgstr ""
+"Toto je zaváděcí disk %u.\n"
+"Vložte zaváděcí disk %u."
+
+#. txt_insert_disk3
+#, c-format
+msgid ""
+"This is not a suitable boot disk.\n"
+"Please insert boot disk %u."
+msgstr ""
+"Toto není vyhovující  zaváděcí disk.\n"
+"Prosím vložte zaváděcí disk %u."
+
+#. password dialog title
+#. txt_password_title
+msgid "Password"
+msgstr "Heslo"
+
+#. Keep the newlines and spaces after ':'!
+#. txt_password
+msgid ""
+"Enter your password:   \n"
+"\n"
+"\n"
+msgstr ""
+"Zadejte své heslo:   \n"
+"\n"
+"\n"
+
+#. dvd warning title
+#. txt_dvd_warning_title
+msgid "DVD Error"
+msgstr "Chyba DVD"
+
+#. txt_dvd_warning2
+msgid ""
+"This is a two-sided DVD. You have booted from the second side.\n"
+"\n"
+"Turn the DVD over then continue."
+msgstr ""
+"Toto je oboustranné DVD. Spouštíte systém z druhé strany DVD.\n"
+"\n"
+"Obraťte prosím DVD a pokračujte."
+
+#. power off dialog title
+#. txt_power_off_title
+msgid "Power Off"
+msgstr "Vypnout"
+
+#. txt_power_off
+msgid "Halt the system now?"
+msgstr "Chcete nyní vypnout systém?"
+
+#. dialog title for hard disk installation
+#. txt_harddisk_title
+msgid "Hard Disk Installation"
+msgstr "Instalace z pevného disku"
+
+#. txt_hd_diskdevice
+msgid "Disk Device (scan all disks if empty)\n"
+msgstr "Disk (při nevyplnění prohledávání všech disků)\n"
+
+#. txt_directory
+msgid "Directory\n"
+msgstr "Adresář\n"
+
+#. dialog title for ftp installation
+#. txt_ftp_title
+msgid "FTP Installation"
+msgstr "Instalace z FTP"
+
+#. txt_server
+msgid "Server\n"
+msgstr "Server\n"
+
+#. txt_password
+msgid "Password\n"
+msgstr "Heslo\n"
+
+#. label for ftp user input
+#. txt_user1
+msgid "User (anonymous login if empty)\n"
+msgstr "Uživatel (není-li vyplněno, anonymní přihlášení)\n"
+
+#. dialog title for nfs installation
+#. txt_nfs_title
+msgid "NFS Installation"
+msgstr "Instalace z NFS"
+
+#. label for smb user input
+#. txt_user2
+msgid "User (using \"guest\" if empty)\n"
+msgstr "Uživatel (není-li vyplněno, použije se \"guest\")\n"
+
+#. dialog title for smb installation
+#. txt_smb_title
+msgid "SMB (Windows Share) Installation"
+msgstr "Instalace ze SMB (sdílená složka Windows)"
+
+#. dialog title for http installation
+#. txt_http_title
+msgid "HTTP Installation"
+msgstr "Instalace z HTTP"
+
+#. as in Windows Authentication Domain
+#. txt_domain
+msgid "Domain\n"
+msgstr "Doména\n"
+
+#. button label for other/more options
+#. txt_other_options
+msgid "Other Options"
+msgstr "Další možnosti"
+
+#. label for language selection
+#. txt_language
+msgid "Language"
+msgstr "Jazyk"
+
+#. label for keymap selection
+#. txt_keymap
+msgid "Keymap"
+msgstr "Klávesnice"
+
+#. label for installation mode selection
+#. txt_modes
+msgid "Modes"
+msgstr ""
+
+#. Shown on main menu to point out that more boot options are on F4.
+#. txt_modes_help
+msgid "Press F4 to select alternative start-up and installation modes."
+msgstr ""
+
+#. label for d-i mode menu
+#. txt_expert_mode
+msgid "Expert mode"
+msgstr "Expertní režim"
+
+#. title for accessibility menu
+#. txt_access
+msgid "Accessibility"
+msgstr "Zpřístupnění"
+
+#. label for accessibility menu
+#. txt_access_none
+msgid "None"
+msgstr "Žádné"
+
+#. label for accessibility menu
+#. txt_access_v1
+msgid "High Contrast"
+msgstr "Vysoký kontrast"
+
+#. label for accessibility menu
+#. txt_access_v2
+msgid "Magnifier"
+msgstr "Lupa"
+
+#. label for accessibility menu
+#. txt_access_v3
+msgid "Screen Reader"
+msgstr "Čtečka obrazovky"
+
+#. label for accessibility menu
+#. txt_access_brltty
+msgid "Braille Terminal"
+msgstr "Braillův terminál"
+
+#. label for accessibility menu
+#. txt_access_m1
+msgid "Keyboard Modifiers"
+msgstr "Modifikátory klávesnice"
+
+#. label for accessibility menu
+#. txt_access_m2
+msgid "On-Screen Keyboard"
+msgstr "Klávesnice na obrazovce"
+
+#. label for accessibility menu
+#. txt_access_m3
+msgid "Motor Difficulties - switch devices"
+msgstr "Pohybové postižení - přepínací zařízení"
+
+#. label for accessibility menu
+#. txt_access_all
+msgid "Everything"
+msgstr "Vše"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu
+#, fuzzy
+msgid "^Try Ubuntu without any change to your computer"
+msgstr "^Spustit Ubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu
+#, fuzzy
+msgid "^Try Kubuntu without any change to your computer"
+msgstr "^Spustit Kubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_edubuntu
+#, fuzzy
+msgid "^Try Edubuntu without any change to your computer"
+msgstr "^Spustit Edubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_xubuntu
+#, fuzzy
+msgid "^Try Xubuntu without any change to your computer"
+msgstr "^Spustit Xubuntu"
+
+#. Installation mode.
+#. txt_menuitem_xforcevesa
+#, fuzzy
+msgid "Safe graphics mode"
+msgstr "Spustit Ubuntu v ^záchraném grafickém režimu"
+
+#. Installation mode.
+#. txt_menuitem_driverupdates
+#, fuzzy
+msgid "Use driver update CD"
+msgstr "Nainstalovat pomocí CD s akt^ualizacemi ovladačů"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_ubuntu
+#, fuzzy
+msgid "^Install Ubuntu in text mode"
+msgstr "^Nainstalovat v textovém režimu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_kubuntu
+msgid "^Install Kubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_edubuntu
+msgid "^Install Edubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_xubuntu
+msgid "^Install Xubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu
+msgid "^Install Ubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu
+msgid "^Install Kubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_edubuntu
+msgid "^Install Edubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_xubuntu
+msgid "^Install Xubuntu"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_workstation
+#, fuzzy
+msgid "Install a workstation"
+msgstr "Nainstalovat ^pracovní stanici"
+
+#. Installation mode.
+#. txt_menuitem_server
+#, fuzzy
+msgid "Install a server"
+msgstr "Nainstalovat ser^ver"
+
+#. Installation mode.
+#. txt_menuitem_oem
+#, fuzzy
+msgid "OEM install (for manufacturers)"
+msgstr "^OEM instalace (pro výrobce)"
+
+#. Installation mode.
+#. txt_menuitem_lamp
+#, fuzzy
+msgid "Install a LAMP server"
+msgstr "Nainstalovat ^LAMP server"
+
+#. Installation mode.
+#. txt_menuitem_ltsp
+#, fuzzy
+msgid "Install an LTSP server"
+msgstr "Nainstalovat ^LTSP server"
+
+#. Installation mode.
+#. txt_menuitem_cli
+#, fuzzy
+msgid "Install a command-line system"
+msgstr "Nainst^alovat systém jen s příkazovou řádkou"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_check
+msgid "^Check CD for defects"
+msgstr "Zkontrolovat, zda CD neobsahuje ^chyby"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_rescue
+msgid "^Rescue a broken system"
+msgstr "Zach^ránit poškozený systém"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_memtest
+#, fuzzy
+msgid "Test ^memory"
+msgstr "Test pa^měti"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_hd
+msgid "^Boot from first hard disk"
+msgstr "^Zavést systém z prvního pevného disku"

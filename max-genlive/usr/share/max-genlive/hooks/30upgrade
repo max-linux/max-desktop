@@ -9,12 +9,14 @@ export LC_ALL=C
 export LC_MESSAGES=C
 export DEBCONF_FRONTEND="noninteractive"
 export DEBIAN_FRONTEND="noninteractive"
-apt-get $APT_OPTS update
+export ERROR=0
+apt-get $APT_OPTS update || ERROR=1
 dpkg --configure -a
 apt-get $APT_OPTS -f install
-apt-get $APT_OPTS upgrade
-apt-get $APT_OPTS dist-upgrade
+apt-get $APT_OPTS upgrade || ERROR=1
+apt-get $APT_OPTS dist-upgrade || ERROR=1
 apt-get clean
+exit \$ERROR
 EOC
 
 

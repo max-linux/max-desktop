@@ -1,0 +1,431 @@
+# translation of da.po to Dansk
+# translation of bootloader.pot_[g4TXCa].po to Dansk
+# LANGUAGE translations for boot loader
+# Copyright (C) 2005 SUSE Linux GmbH
+# Martin Møller <martin@martinm-76.dk>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: da\n"
+"Report-Msgid-Bugs-To:  \n"
+"POT-Creation-Date: 2007-10-09 09:00+0000\n"
+"PO-Revision-Date: 2006-09-26 13:35+0000\n"
+"Last-Translator: David Nielsen <david@lovesunix.net>\n"
+"Language-Team: Dansk <da@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. ok button label
+#. txt_ok
+msgid "OK"
+msgstr "O.k."
+
+#. cancel button label
+#. txt_cancel
+msgid "Cancel"
+msgstr "Annullér"
+
+#. reboot button label
+#. txt_reboot
+msgid "Reboot"
+msgstr "Genstart"
+
+#. continue button label
+#. txt_continue
+msgid "Continue"
+msgstr "Fortsæt"
+
+#. txt_bootoptions
+msgid "Boot Options"
+msgstr "Opstartsmuligheder"
+
+#. window title for exit dialog
+#. txt_exit_title (see txt_exit_dialog)
+msgid "Exiting..."
+msgstr "Afslutter..."
+
+#. txt_exit_dialog
+msgid ""
+"You are leaving the graphical boot menu and\n"
+"starting the text mode interface."
+msgstr ""
+"Du forlader nu den grafiske opstartsmenu og\n"
+"starter tekstbrugerfladen i stedet."
+
+#. txt_help
+msgid "Help"
+msgstr "Hjælp"
+
+#. window title for kernel loading (see txt_load_kernel)
+#. txt_load_kernel_title
+msgid "Starting..."
+msgstr "Starter..."
+
+#. Keep the three newlines!
+#. txt_load_kernel
+msgid ""
+"Loading Linux Kernel\n"
+"\n"
+"\n"
+msgstr ""
+"Indlæser Linuxkernen\n"
+"\n"
+"\n"
+
+#. Keep the three newlines!
+#. txt_load_memtest
+msgid ""
+"Loading memtest86\n"
+"\n"
+"\n"
+msgstr ""
+"Indlæser memtest86\n"
+"\n"
+"\n"
+
+#. info box title
+#. txt_info_title
+msgid "Boot loader"
+msgstr "Opstartsindlæser"
+
+#. error box title
+#. txt_error_title
+msgid "I/O error"
+msgstr "I/U-fejl"
+
+#. boot disk change dialog title
+#. txt_change_disk_title
+msgid "Change Boot Disk"
+msgstr "Skift opstartsdisk"
+
+#. txt_insert_disk
+#, c-format
+msgid "Insert boot disk %u."
+msgstr "Indsæt opstartsdisk %u."
+
+#. txt_insert_disk2
+#, c-format
+msgid ""
+"This is boot disk %u.\n"
+"Insert boot disk %u."
+msgstr ""
+"Dette er opstartsdisk %u.\n"
+"Indsæt opstartsdisk %u."
+
+#. txt_insert_disk3
+#, c-format
+msgid ""
+"This is not a suitable boot disk.\n"
+"Please insert boot disk %u."
+msgstr ""
+"Dette er ikke en gyldig opstartsdiskette.\n"
+"Indsætte venligst opstartsdiskette %u."
+
+#. password dialog title
+#. txt_password_title
+msgid "Password"
+msgstr "Adgangskode"
+
+#. Keep the newlines and spaces after ':'!
+#. txt_password
+msgid ""
+"Enter your password:   \n"
+"\n"
+"\n"
+msgstr ""
+"Skiv din adgangskode her:   \n"
+"\n"
+"\n"
+
+#. dvd warning title
+#. txt_dvd_warning_title
+msgid "DVD Error"
+msgstr "Dvd fejl"
+
+#. txt_dvd_warning2
+msgid ""
+"This is a two-sided DVD. You have booted from the second side.\n"
+"\n"
+"Turn the DVD over then continue."
+msgstr ""
+"Dette er en tosidet dvd. Du har startet op fra den anden side.\n"
+"\n"
+"Vend dvd'en om og prøv igen."
+
+#. power off dialog title
+#. txt_power_off_title
+msgid "Power Off"
+msgstr "Sluk maskinen"
+
+#. txt_power_off
+msgid "Halt the system now?"
+msgstr "Luk systemet ned nu?"
+
+#. dialog title for hard disk installation
+#. txt_harddisk_title
+msgid "Hard Disk Installation"
+msgstr "Harddisk installation"
+
+#. txt_hd_diskdevice
+msgid "Disk Device (scan all disks if empty)\n"
+msgstr "Diskenhed (gennemsøg alle diske hvis blank)\n"
+
+#. txt_directory
+msgid "Directory\n"
+msgstr "Katalog\n"
+
+#. dialog title for ftp installation
+#. txt_ftp_title
+msgid "FTP Installation"
+msgstr "FTP installation"
+
+#. txt_server
+msgid "Server\n"
+msgstr "Server\n"
+
+#. txt_password
+msgid "Password\n"
+msgstr "Adgangskode\n"
+
+#. label for ftp user input
+#. txt_user1
+msgid "User (anonymous login if empty)\n"
+msgstr "Bruger (anonymt login hvis blank)\n"
+
+#. dialog title for nfs installation
+#. txt_nfs_title
+msgid "NFS Installation"
+msgstr "NFS installation"
+
+#. label for smb user input
+#. txt_user2
+msgid "User (using \"guest\" if empty)\n"
+msgstr "Bruger (bruger \"guest\" hvis blank)\n"
+
+#. dialog title for smb installation
+#. txt_smb_title
+msgid "SMB (Windows Share) Installation"
+msgstr "SMB (Windows fildeling) installation"
+
+#. dialog title for http installation
+#. txt_http_title
+msgid "HTTP Installation"
+msgstr "HTTP installation"
+
+#. as in Windows Authentication Domain
+#. txt_domain
+msgid "Domain\n"
+msgstr "Domæne\n"
+
+#. button label for other/more options
+#. txt_other_options
+msgid "Other Options"
+msgstr "Andre indstillinger"
+
+#. label for language selection
+#. txt_language
+msgid "Language"
+msgstr "Sprog"
+
+#. label for keymap selection
+#. txt_keymap
+msgid "Keymap"
+msgstr "Tastaturlayout"
+
+#. label for installation mode selection
+#. txt_modes
+msgid "Modes"
+msgstr ""
+
+#. Shown on main menu to point out that more boot options are on F4.
+#. txt_modes_help
+msgid "Press F4 to select alternative start-up and installation modes."
+msgstr ""
+
+#. label for d-i mode menu
+#. txt_expert_mode
+msgid "Expert mode"
+msgstr "Ekspert tilstand"
+
+#. title for accessibility menu
+#. txt_access
+msgid "Accessibility"
+msgstr "Tilgængelighed"
+
+#. label for accessibility menu
+#. txt_access_none
+msgid "None"
+msgstr "Ingen"
+
+#. label for accessibility menu
+#. txt_access_v1
+msgid "High Contrast"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_v2
+msgid "Magnifier"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_v3
+msgid "Screen Reader"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_brltty
+msgid "Braille Terminal"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_m1
+msgid "Keyboard Modifiers"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_m2
+msgid "On-Screen Keyboard"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_m3
+msgid "Motor Difficulties - switch devices"
+msgstr "Bevægelsesbesvær - afbryderenheder"
+
+#. label for accessibility menu
+#. txt_access_all
+msgid "Everything"
+msgstr "Alt"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu
+#, fuzzy
+msgid "^Try Ubuntu without any change to your computer"
+msgstr "^Start Ubuntu eller installér Ubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu
+#, fuzzy
+msgid "^Try Kubuntu without any change to your computer"
+msgstr "^Start Kubuntu eller installér Kubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_edubuntu
+#, fuzzy
+msgid "^Try Edubuntu without any change to your computer"
+msgstr "^Start Edubuntu eller installér Edubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_xubuntu
+#, fuzzy
+msgid "^Try Xubuntu without any change to your computer"
+msgstr "^Start Xubuntu eller installér Xubuntu"
+
+#. Installation mode.
+#. txt_menuitem_xforcevesa
+#, fuzzy
+msgid "Safe graphics mode"
+msgstr "Start Ubuntu i sikker ^grafisk tilstand"
+
+#. Installation mode.
+#. txt_menuitem_driverupdates
+msgid "Use driver update CD"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_ubuntu
+#, fuzzy
+msgid "^Install Ubuntu in text mode"
+msgstr "^Installér i teksttilstand"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_kubuntu
+msgid "^Install Kubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_edubuntu
+msgid "^Install Edubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_xubuntu
+msgid "^Install Xubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu
+msgid "^Install Ubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu
+msgid "^Install Kubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_edubuntu
+msgid "^Install Edubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_xubuntu
+msgid "^Install Xubuntu"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_workstation
+#, fuzzy
+msgid "Install a workstation"
+msgstr "Installér en ^arbejdsstation"
+
+#. Installation mode.
+#. txt_menuitem_server
+msgid "Install a server"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_oem
+msgid "OEM install (for manufacturers)"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_lamp
+#, fuzzy
+msgid "Install a LAMP server"
+msgstr "Installér en ^LAMP server"
+
+#. Installation mode.
+#. txt_menuitem_ltsp
+msgid "Install an LTSP server"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_cli
+#, fuzzy
+msgid "Install a comm^and-line system"
+msgstr "Installér en ^server"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_check
+msgid "^Check CD for defects"
+msgstr "^Check cd for defekter"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_rescue
+msgid "^Rescue a broken system"
+msgstr "^Genopret ødelagt system"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_memtest
+#, fuzzy
+msgid "Test ^memory"
+msgstr "^Hukommelsestest"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_hd
+msgid "^Boot from first hard disk"
+msgstr "^Start op fra første harddisk"

@@ -1,3 +1,43 @@
+max-genlive (4.0.max0.5) max; urgency=low
+
+  * Translate OEM install and Test memory phrases
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 21:01:33 +0100
+
+max-genlive (4.0.max0.4) max; urgency=low
+
+  * Install es.tr to translate gfxboot messages
+  * Remove backharddi from cached packages (not in MaX 4.0 yet)
+  * Remove preseed of console-data
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 15:51:57 +0100
+
+max-genlive (4.0.max0.3) max; urgency=low
+
+  * usr/share/max-genlive/hooks/50max-installer:
+    - Fix typo ERROR=0 not 1
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 13:51:19 +0100
+
+max-genlive (4.0.max0.2) max; urgency=low
+
+  * Check for errors during update/upgrade and exit if found
+  * Build squashfs with -nolzma (ubuntu don't support it)
+  * Add gfxboot build:
+    - Disable language popup at startup
+    - Translate some strings in po/es.po
+    - Translate Modes menu (remove driver-update entry)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 12:57:19 +0100
+
+max-genlive (4.0.max0.1) max; urgency=low
+
+  * Update to MaX 4.0
+  * Change gutsy => hardy
+  * Update splash.pcx with blue background
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 17:59:47 +0100
+
 max-genlive (3.1.max4) max; urgency=low
 
   * Add virtualbox-ose in DVD packages

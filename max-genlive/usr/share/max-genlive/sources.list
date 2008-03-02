@@ -1,10 +1,9 @@
-# deb cdrom:[Ubuntu 7.10 _Gutsy Gibbon_ - Release i386 (20071016)]/ gutsy main restricted
 # See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
 # newer versions of the distribution.
 
-deb http://es.archive.ubuntu.com/ubuntu/ gutsy main restricted universe multiverse
-deb http://es.archive.ubuntu.com/ubuntu/ gutsy-updates main restricted universe multiverse
-deb http://es.archive.ubuntu.com/ubuntu/ gutsy-security main restricted universe multiverse
-deb http://max.educa.madrid.org/max31 max main
+deb http://es.archive.ubuntu.com/ubuntu/ hardy main restricted universe multiverse
+deb http://es.archive.ubuntu.com/ubuntu/ hardy-updates main restricted universe multiverse
+deb http://es.archive.ubuntu.com/ubuntu/ hardy-security main restricted universe multiverse
+deb http://max.educa.madrid.org/max40 max main
 
 
