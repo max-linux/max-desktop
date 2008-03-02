@@ -1,3 +1,23 @@
+max-dpsyco-custom (4.0.max2.1) max; urgency=low
+
+  * Remove splash.xpm.gz link
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 15:41:37 +0100
+
+max-dpsyco-custom (4.0.max2) max; urgency=low
+
+  * Remove splash.xpm.gz and create link to grub splash in max-artwork package
+  * Change update-grub splash detection (use -e instead of -f)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 13:28:06 +0100
+
+max-dpsyco-custom (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+  * Update update-grub file (with new hardy version)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 12:37:28 +0100
+
 max-dpsyco-custom (3.1.max2) max; urgency=low
 
   * etc/apt/apt.conf.d/92update-dpsyco-skel:
