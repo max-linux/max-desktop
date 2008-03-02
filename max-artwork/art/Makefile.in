@@ -192,7 +192,7 @@ sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = gdm gnome gtk homepage splash wallpapers usplash icons metacity
+SUBDIRS = gdm gnome gtk homepage splash wallpapers usplash icons metacity grub
 all: all-recursive
 
 .SUFFIXES:

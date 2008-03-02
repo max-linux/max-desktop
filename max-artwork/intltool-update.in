@@ -30,7 +30,7 @@
 
 ## Release information
 my $PROGRAM = "intltool-update";
-my $VERSION = "0.37.0";
+my $VERSION = "0.37.1";
 my $PACKAGE = "intltool";
 
 ## Loaded modules
@@ -1118,6 +1118,8 @@ sub FindPOTKeywords
 	close IN;
     }
 
+    # unwrap lines split with a trailing \
+    $make_source =~  s/\\ $ \n/ /mxg;
     $keywords = $1 if $make_source =~ /^$varname[ ]*=\[?([^\n\]]+)/m;
     
     return $keywords;

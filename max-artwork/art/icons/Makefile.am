@@ -1,1 +1,1 @@
-SUBDIRS = gartoon maxtoon
+SUBDIRS = maxtoon

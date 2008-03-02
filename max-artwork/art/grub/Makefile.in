@@ -32,9 +32,8 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = art/icons/gartoon
-DIST_COMMON = $(nobase_dist_theme_DATA) $(srcdir)/Makefile.am \
-	$(srcdir)/Makefile.in
+subdir = art/grub
+DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
@@ -49,9 +48,9 @@ am__vpath_adj = case $$p in \
     *) f=$$p;; \
   esac;
 am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
-am__installdirs = "$(DESTDIR)$(themedir)"
-nobase_dist_themeDATA_INSTALL = $(install_sh_DATA)
-DATA = $(nobase_dist_theme_DATA)
+am__installdirs = "$(DESTDIR)$(grubdir)"
+grubDATA_INSTALL = $(INSTALL_DATA)
+DATA = $(grub_DATA)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 ALL_LINGUAS = @ALL_LINGUAS@
@@ -191,11 +190,11 @@ sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-themedir = $(datadir)/icons/gartoon
-nobase_dist_theme_DATA = \
-	scalable/places/distributor-logo.svg
+grubdir = $(datadir)/max-artwork/grub
+grub_DATA = \
+	splash.xpm.gz
 
-EXTRA_DIST = $(theme_DATA)
+EXTRA_DIST = $(grub_DATA)
 all: all-am
 
 .SUFFIXES:
@@ -208,9 +207,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__confi
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  art/icons/gartoon/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  art/grub/Makefile'; \
 	cd $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu  art/icons/gartoon/Makefile
+	  $(AUTOMAKE) --gnu  art/grub/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
@@ -228,24 +227,22 @@ $(top_srcdir)/configure: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
-install-nobase_dist_themeDATA: $(nobase_dist_theme_DATA)
+install-grubDATA: $(grub_DATA)
 	@$(NORMAL_INSTALL)
-	test -z "$(themedir)" || $(MKDIR_P) "$(DESTDIR)$(themedir)"
-	@$(am__vpath_adj_setup) \
-	list='$(nobase_dist_theme_DATA)'; for p in $$list; do \
+	test -z "$(grubdir)" || $(MKDIR_P) "$(DESTDIR)$(grubdir)"
+	@list='$(grub_DATA)'; for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  $(am__vpath_adj) \
-	  echo " $(nobase_dist_themeDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(themedir)/$$f'"; \
-	  $(nobase_dist_themeDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(themedir)/$$f"; \
+	  f=$(am__strip_dir) \
+	  echo " $(grubDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(grubdir)/$$f'"; \
+	  $(grubDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(grubdir)/$$f"; \
 	done
 
-uninstall-nobase_dist_themeDATA:
+uninstall-grubDATA:
 	@$(NORMAL_UNINSTALL)
-	@$(am__vpath_adj_setup) \
-	list='$(nobase_dist_theme_DATA)'; for p in $$list; do \
-	  $(am__vpath_adj) \
-	  echo " rm -f '$(DESTDIR)$(themedir)/$$f'"; \
-	  rm -f "$(DESTDIR)$(themedir)/$$f"; \
+	@list='$(grub_DATA)'; for p in $$list; do \
+	  f=$(am__strip_dir) \
+	  echo " rm -f '$(DESTDIR)$(grubdir)/$$f'"; \
+	  rm -f "$(DESTDIR)$(grubdir)/$$f"; \
 	done
 tags: TAGS
 TAGS:
@@ -284,7 +281,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(themedir)"; do \
+	for dir in "$(DESTDIR)$(grubdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -329,7 +326,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-nobase_dist_themeDATA
+install-data-am: install-grubDATA
 
 install-dvi: install-dvi-am
 
@@ -363,24 +360,21 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-nobase_dist_themeDATA
+uninstall-am: uninstall-grubDATA
 
 .MAKE: install-am install-strip
 
 .PHONY: all all-am check check-am clean clean-generic distclean \
 	distclean-generic distdir dvi dvi-am html html-am info info-am \
 	install install-am install-data install-data-am install-dvi \
-	install-dvi-am install-exec install-exec-am install-html \
-	install-html-am install-info install-info-am install-man \
-	install-nobase_dist_themeDATA install-pdf install-pdf-am \
-	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installdirs maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-generic pdf \
-	pdf-am ps ps-am uninstall uninstall-am \
-	uninstall-nobase_dist_themeDATA
+	install-dvi-am install-exec install-exec-am install-grubDATA \
+	install-html install-html-am install-info install-info-am \
+	install-man install-pdf install-pdf-am install-ps \
+	install-ps-am install-strip installcheck installcheck-am \
+	installdirs maintainer-clean maintainer-clean-generic \
+	mostlyclean mostlyclean-generic pdf pdf-am ps ps-am uninstall \
+	uninstall-am uninstall-grubDATA
 
-
-@INTLTOOL_THEME_RULE@
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:

@@ -1,12 +1,17 @@
-#! /bin/sh
-set -e
+#!/bin/sh
 
 change_gdm_colors() {
   ORIG_COLOR="dab082"
   NEW_COLOR="3B6242"
-  sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/gdm.conf
-  sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/PreSession/Default
-  sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/factory-gdm.conf
+  if [ -e /etc/gdm/gdm.conf ]; then
+    sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/gdm.conf
+  fi
+  if [ -e /etc/gdm/PreSession/Default ]; then
+    sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/PreSession/Default
+  fi
+  if [ -e /etc/gdm/factory-gdm.conf ]; then
+    sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/factory-gdm.conf
+  fi
 }
 
 
@@ -39,20 +44,10 @@ case "$1" in
     update-alternatives --auto gdm-config-derivative
   fi
 
+  # install grub splash
+  mkdir -p /boot/grub
+  cp /usr/share/max-artwork/grub/splash.xpm.gz /boot/grub/
 
-  # configure scalable/places (distributor-logo)
-  if [ $(grep -c "scalable/places" /usr/share/icons/gartoon/index.theme) = 0 ]; then
-    cat << EOF >> /usr/share/icons/gartoon/index.theme
-
-[scalable/places]
-Size=24
-Context=Places
-Type=Scalable
-MinSize=1
-MaxSize=128
-EOF
-  sed -i 's|Directories=|Directories=scalable/places,|g' /usr/share/icons/gartoon/index.theme
-  fi
   ;;
 esac
 

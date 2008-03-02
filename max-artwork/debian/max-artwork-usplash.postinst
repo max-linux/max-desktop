@@ -1,12 +1,20 @@
-#! /bin/sh
+#!/bin/sh
 
-set -e
 
-#DEBHELPER#
 
 case "$1" in
   configure)
     update-alternatives --install /usr/lib/usplash/usplash-artwork.so usplash-artwork.so /usr/lib/usplash/max-splash.so 70
+    if [ $(grep -c "xres=640" /etc/usplash.conf 2>/dev/null) = 1 ]; then
+    cat << EOF > /etc/usplash.conf
+# Usplash configuration file (MaX)
+xres=1024
+yres=768
+EOF
+    fi
     [ -x /usr/sbin/update-initramfs ] && /usr/sbin/update-initramfs -u
     ;;
 esac
+
+
+#DEBHELPER#

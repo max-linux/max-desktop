@@ -2,14 +2,12 @@ Source: max-artwork
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.0.0), cdbs, intltool, libusplash-dev, librsvg2-bin, libglib2.0-dev, ubuntu-docs (>= 7.10)
+Build-Depends: debhelper (>= 4.0.0), cdbs, intltool, libusplash-dev, librsvg2-bin, libglib2.0-dev, ubuntu-docs
 Standards-Version: 3.7.2
 
 Package: max-artwork
 Architecture: all
-Depends: gtk2-engines-ubuntulooks, gnome-icon-theme-gartoon, gdm, max-artwork-usplash
-Conflicts: edubuntu-artwork, ubuntu-artwork, xubuntu-artwork, kubuntu-artwork
-Replaces: edubuntu-artwork, ubuntu-artwork, xubuntu-artwork, kubuntu-artwork
+Depends: gtk2-engines-ubuntulooks, gdm, max-artwork-usplash
 Provides: ubuntu-artwork, edubuntu-artwork, xubuntu-artwork, kubuntu-artwork
 Description:MaX themes and artwork
  This package contains MaX themes, artwork and default settings.

@@ -1,3 +1,42 @@
+max-artwork (4.0.max0.5) max; urgency=low
+
+  * Update firefox homepage version and fix some spanish tildes
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 16:29:03 +0100
+
+max-artwork (4.0.max0.4) max; urgency=low
+
+  * Add 1280x1024 usplash theme
+  * Remove gradient of usplash images
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 11:46:46 +0100
+
+max-artwork (4.0.max0.3) max; urgency=low
+
+  * Remove gartoon icon theme
+  * Not conflicts with ubuntu-artwork (or derivates)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 15:52:00 +0100
+
+max-artwork (4.0.max0.2) max; urgency=low
+
+  * Add pingu-ismail.png to SVG file and wallpapers
+  * Add art/grub/splash.xpm.gz and edit configure.ac and Makefiles
+  * max-artwork-usplash.postinst:
+    - Set size to 1024x768 when old size is 640x480
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 13:24:05 +0100
+
+max-artwork (4.0.max0.1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+  * Change all artwork (add 4.0 svg file)
+  * Generate maxtoon icons in PNG (at build time) with this sizes:
+    - 16x16 22x22 32x32 48x48 64x64 72x72 96x96 128x128
+  * Remove firefox-toon icon (use firefox icon)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 12:37:15 +0100
+
 max-artwork (3.1.20080202.max4) max; urgency=low
 
   * Add maxtoon icon theme (based on Ubuntoon)
