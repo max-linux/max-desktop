@@ -1,3 +1,16 @@
+max-keyring (4.0.max2) max; urgency=low
+
+  * Remove old ubuntu-archive keyring
+  * Update debian/rules, Ubuntu Hardy have 2 keyring: archive and master
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 19:54:02 +0100
+
+max-keyring (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 12:41:47 +0100
+
 max-keyring (2008.01.31) max; urgency=low
 
   * Change package to cdbs
