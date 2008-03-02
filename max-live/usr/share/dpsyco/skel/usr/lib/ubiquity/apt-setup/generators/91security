@@ -5,12 +5,20 @@ set -e
 
 file="$1"
 
-db_get apt-setup/security_host
-host="$RET"
-if [ -z "$host" ]; then
+db_get apt-setup/services-select
+if ! echo "$RET" | grep -q security; then
 	exit
 fi
+
+db_get apt-setup/security_host
+host="$RET"
+[ "$host" ] || exit
 directory=/ubuntu
+
+if ! db_get mirror/codename || [ -z "$RET" ]; then
+	db_get cdrom/codename
+fi
+codename="$RET"
 
 # Awful Ubuntu-specific hack. *-security suites for ports architectures
 # aren't available on security.ubuntu.com, only on ports.ubuntu.com.
@@ -34,33 +42,22 @@ for dist in restricted; do
 	fi
 done
 
-if ! db_get mirror/codename || [ -z "$RET" ]; then
-	db_get cdrom/codename
-fi
-codename="$RET"
-
-# No updates for sid (unstable). Never mind.
-if [ "$codename" = sid ]; then
-	exit
-fi
-
-# FIXME what if choose-mirror isn't available, i.e. full CD install?
-if db_get mirror/http/proxy && [ -n "$RET" ]; then
-	proxy="$RET"
-	if ! grep -iq "Acquire::http::Proxy" $ROOT/etc/apt/apt.conf.new; then
-		echo "Acquire::http::Proxy \"$proxy\";" >> $ROOT/etc/apt/apt.conf.new
-	fi
-fi
-
-CODE=0
+# Don't test mirror if no network selected in netcfg
 echo "deb http://$host$directory $codename-security $dists" >> $file
-if ! apt-setup-verify $file; then
-#	db_subst apt-setup/security-updates-failed SECURITY_HOST "$host"
-#	db_input medium apt-setup/security-updates-failed || true
-#	if ! db_go; then
-#		exit 10 # back up
-#	fi
+if db_get netcfg/dhcp_options && \
+   [ "$RET" = "Do not configure the network at this time" ]; then
 	CODE=9
+else
+	CODE=0
+	if ! apt-setup-verify $file; then
+		# disabled to not show error => MaX 4.0
+		#db_subst apt-setup/service-failed HOST "$host"
+		#db_input critical apt-setup/service-failed || true
+		#if ! db_go; then
+		#	exit 10 # back up
+		#fi
+		CODE=9
+	fi
 fi
 
 echo "deb-src http://$host$directory $codename-security $dists" >> $file
@@ -88,5 +85,7 @@ cat >> $file <<EOF
 ${COMMENT}deb http://$host$directory $codename-security multiverse
 ${COMMENT}deb-src http://$host$directory $codename-security multiverse
 EOF
+
+apt-setup-signed-release security.ubuntu.com "$file"
 
 exit $CODE

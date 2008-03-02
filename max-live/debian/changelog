@@ -1,3 +1,36 @@
+max-live (4.0.max0.4) max; urgency=low
+
+  * Move usr/lib/ubiquity/apt-setup/generators/90security to
+    usr/lib/ubiquity/apt-setup/generators/91security and update from hardy
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 20:49:19 +0100
+
+max-live (4.0.max0.3) max; urgency=low
+
+  * 11max:
+    - Rename Examples => Ejemplos
+    - chown to madrid user
+    - touch .sudo hidden file
+    - Overwrite timezone with Europe/Madrid
+  * /etc/casper.conf
+    - Revert builder to Ubuntu (configure sudo user)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 16:15:33 +0100
+
+max-live (4.0.max0.2) max; urgency=low
+
+  * Add /etc/casper.conf to rename live user and live hostname
+  * Add 11max to casper-bottom to create links to manuals and rename Desktop => Escritorio
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 13:48:39 +0100
+
+max-live (4.0.max0.1) max; urgency=low
+
+  * Update to MaX 4.0
+  * Change max mirror to max40 directory
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 17:24:22 +0100
+
 max-live (3.1.max6) max; urgency=low
 
   * Add /usr/lib/ubiquity/apt-setup/generators/90security
