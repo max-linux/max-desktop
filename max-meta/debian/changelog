@@ -1,3 +1,56 @@
+max-meta (4.0.max1.5) max; urgency=low
+
+  * max-desktop-common:
+    - Add libsane-extras, sane and sane-utils packages
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 16:47:35 +0100
+
+max-meta (4.0.max1.4) max; urgency=low
+
+  * max-desktop-kde:
+    - Replace kdevelop3 => kdevelop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 17:06:33 +0100
+
+max-meta (4.0.max1.3) max; urgency=low
+
+  * max-desktop-common:
+    - Remove atnag, ebeam-driver, epson-alc1100-filter, iscan, libdvdcss2, max-proxyconf
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 16:09:33 +0100
+
+max-meta (4.0.max1.2) max; urgency=low
+
+  * max-desktop-common:
+    - Remove w32codecs stars and spacechart
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 23:01:26 +0100
+
+max-meta (4.0.max1.1) max; urgency=low
+
+  * max-desktop-common:
+    - Add ttf-liberation fonts
+    - Replace NVU => Kompozer
+    - Replace netbeans5.5 => netbeans
+    - Remove lemurae
+    - Install sun-java6-jdk
+    - Remove fonts-ttf-decoratives
+  * max-dekstop-gnome:
+    - Replace system-config-printer => system-config-printer-gnome
+    - Remove gfontview gimp-print gnopernicus
+  * max-desktop-xfce:
+    - Remove xffm4-filemanager
+  * max-desktop-kde:
+    - Replace libk3b2-mp3 => libk3b2-extracodecs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 23:01:02 +0100
+
+max-meta (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 12:55:32 +0100
+
 max-meta (0.32) gutsy; urgency=low
 
   * Se añaden dependencias a max-server: max-tcos-profesor y backharddi-net
