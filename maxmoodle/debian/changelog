@@ -1,3 +1,17 @@
+maxmoodle (4.0.max2) max; urgency=low
+
+  * Fix desktop Icon file (remove png suffix)
+  * Update launcher version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 21:11:46 +0100
+
+maxmoodle (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+  * Add Moodle icon
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 20:15:26 +0100
+
 maxmoodle (3.1.max6) max; urgency=low
 
   * Revert all test 
