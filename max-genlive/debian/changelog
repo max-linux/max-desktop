@@ -1,3 +1,25 @@
+max-genlive (4.0.max0.8) max; urgency=low
+
+  * usr/share/max-genlive/hooks/60clean:
+    - Generate metapackages list (alumno, profesor, servidor)
+  * Add max-server and backharddi packages to DVD cache
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 08 Mar 2008 12:39:13 +0100
+
+max-genlive (4.0.max0.7) max; urgency=low
+
+  * Revert isolinux.cfg pressed lang and keyboard
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 07 Mar 2008 12:12:12 +0100
+
+max-genlive (4.0.max0.6) max; urgency=low
+
+  * Build lang menu again but not show
+  * Add max.seed file to pressed lang Spanish and other installer things
+  * Remove preseed in isolinux.cfg
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 05 Mar 2008 18:49:39 +0100
+
 max-genlive (4.0.max0.5) max; urgency=low
 
   * Translate OEM install and Test memory phrases

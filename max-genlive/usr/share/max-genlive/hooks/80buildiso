@@ -4,6 +4,11 @@ _echo "Copiando archivos isolinux..."
 
 cp $GENLIVE/isolinux/* $CDRW/isolinux/ || _exit "No se puede sobreescribir isolinux"
 
+_echo "Copiando preseed"
+rm -f $CDRW/preseed/*
+cp $GENLIVE/preseed/* $CDRW/preseed/ || _exit "No se puede sobreescribir preseed"
+
+
 _echo "Generando md5sum de archivos de dentro del DVD..."
 (cd $CDRW && find . -type f -print0 |xargs -0 md5sum > md5sum.txt)
 

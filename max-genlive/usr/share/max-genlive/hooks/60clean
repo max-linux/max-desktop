@@ -31,6 +31,42 @@ sed -ie /ubuntu-live/d               $CDRW/casper/filesystem.manifest-desktop
 # borrar temporal
 rm -f $CDRW/casper/filesystem.manifest-desktope
 
+_echo "Generando listas de metapaquetes"
+# generar metalistas para escritorio alumno profesor y servidor
+for meta in alumno profesor servidor; do
+
+  case $meta in;
+     alumno)
+       metapkg="max-tcos-alumno"
+       metafile=$CDRW/casper/filesystem.manifest-desktop.alumno
+       ;;
+     profesor)
+       metapkg="max-tcos-profesor"
+       metafile=$CDRW/casper/filesystem.manifest-desktop.profesor
+       ;;
+     servidor)
+       metapkg="max-server"
+       metafile=$CDRW/casper/filesystem.manifest-desktop.servidor
+       ;;
+  esac
+
+  cp $CDRW/casper/filesystem.manifest-desktop $metafile
+
+  URIS=$(chroot $CHROOT apt-get --print-uris -qq install $metapkg | awk '{print $2}')
+
+  if [ "$URIS" = "" ]; then
+    _exit "Error leyendo URIS de paquetes alumno, conflictos o dependencias seguramente..."
+  fi
+  
+  for pkg in $URIS; do
+    pkgname=$(echo $pkg | awk -F"_" '{print $1}')
+    pkgversion=$(echo $pkg | awk -F"_" '{print $2}')
+    echo "$pkgname $pkgversion" >> $metafile
+  done
+
+done
+
+
 _echo "Limpiando... (puede fallar algun archivo, no pasa nada...)"
 rm -f $CHROOT/etc/mtab
 rm -f $CHROOT/etc/X11/xorg.conf

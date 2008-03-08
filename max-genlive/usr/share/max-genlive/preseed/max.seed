@@ -1,0 +1,25 @@
+# Install the MaX Ubuntu desktop.
+# http://forja.guadalinex.org/pipermail/forja.guadalinexv4-commits/2007-January/001602.html
+#ubiquity	partman-auto/choose_recipe	select	60guadalinex
+#ubiquity	partman-auto/expert_recipe_file	string	/lib/partman/recipes/60guadalinex
+#
+#
+#
+tasksel	tasksel/first	multiselect ubuntu-desktop
+debconf		debconf/language	string	es
+#
+# Ubiquity installer
+#
+ubiquity	languagechooser/language-name-fb	select	Spanish
+ubiquity	countrychooser/shortlist	select	ES
+ubiquity	countrychooser/countryname	select	Spain
+ubiquity	countrychooser/country-name	string	Spain
+ubiquity	console-keymaps-at/keymap	select	es
+ubiquity	localechooser/supported-locales	multiselect	es_ES.UTF-8
+ubiquity	tzconfig/gmt	boolean	false
+ubiquity	time/zone	select	Europe/Madrid
+#
+# xorg spanish keymap
+#
+xserver-xorg	xserver-xorg/config/inputdevice/keyboard/model	string	pc105
+xserver-xorg	xserver-xorg/config/inputdevice/keyboard/layout	string	 es

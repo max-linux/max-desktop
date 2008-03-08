@@ -185,15 +185,16 @@
 %
 % ( ) => ( )
 %
-%/panel.lang {
-%  "keytable" help.setcontext
-%
-%  window.xmenu
-%  dup .xmenu xmenu.lang put
-%  dup .xmenu.update /lang.update put
+/panel.lang {
+  "keytable" help.setcontext
+
+  window.xmenu
+  dup .xmenu xmenu.lang put
+  dup .xmenu.update /lang.update put
+% not show language at start by MaX
 %  dup window.init
 %      window.show
-%} def
+} def
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
