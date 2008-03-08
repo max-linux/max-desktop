@@ -1,3 +1,18 @@
+max-live (4.0.max0.6) max; urgency=low
+
+  * 11max:
+    - Create new PolicyKit.conf to not ask password for madrid user in live session
+    - Install ubiquity-maxui.desktop instead of ubuntu installer
+    - Remove Examples/Ejemplos dir in desktop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 07 Mar 2008 12:00:57 +0100
+
+max-live (4.0.max0.5) max; urgency=low
+
+  * Add ubiquity-frontend-max to Depends
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 05 Mar 2008 18:53:49 +0100
+
 max-live (4.0.max0.4) max; urgency=low
 
   * Move usr/lib/ubiquity/apt-setup/generators/90security to

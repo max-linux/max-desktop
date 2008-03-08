@@ -20,27 +20,55 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
+# delete old ubiquity
+rm -f /root/home/$USERNAME/Desktop/ubiquity*desktop 2>/dev/null
 
-for file in /usr/share/max-manuales/manual.desktop /usr/share/max-manuales/install-manual.desktop; do
+for file in /usr/share/applications/ubiquity-maxui.desktop /usr/share/max-manuales/manual.desktop /usr/share/max-manuales/install-manual.desktop; do
     if [ -f "/root/$file" ]; then
         chroot /root install -D -o $USERNAME -g $USERNAME $file /home/$USERNAME/Desktop/$(basename "$file")
     fi
 done
 
-# rename Desktop, Examples chown to max user
+# rename Desktop, remove Examples chown to max user
 chroot /root << EOF
 rm -rf /home/$USERNAME/Escritorio
 mv /home/$USERNAME/Desktop /home/$USERNAME/Escritorio
 ln -s /home/$USERNAME/Escritorio /home/$USERNAME/Desktop
-chown $USERNAME:$USERNAME /home/$USERNAME/Desktop
 touch /home/$USERNAME/.sudo_as_admin_successful
-chown $USERNAME:$USERNAME /home/$USERNAME/.sudo_as_admin_successful
-mv /home/$USERNAME/Escritorio/Examples /home/$USERNAME/Escritorio/Ejemplos
+rm -f /home/$USERNAME/Escritorio/Examples
+chown -R $USERNAME:$USERNAME /home/$USERNAME
 EOF
 
 
 # copy Madrid timezone
 cp -f /root/usr/share/zoneinfo/Europe/Madrid /root/etc/localtime
 
+# disable network icon
+# /apps/nautilus/desktop/network_icon_visible bool false
+chroot /root gconftool-2 --direct --type bool \
+             --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults \
+             --set /apps/nautilus/desktop/network_icon_visible false
+
+# configure PolicyKit in live session
+
+cat << EOF > /root/etc/PolicyKit/PolicyKit.conf
+<?xml version="1.0" encoding="UTF-8"?> <!-- -*- XML -*- -->
+
+<!DOCTYPE pkconfig PUBLIC "-//freedesktop//DTD PolicyKit Configuration 1.0//EN"
+"http://hal.freedesktop.org/releases/PolicyKit/1.0/config.dtd">
+
+<!-- See the manual page PolicyKit.conf(5) for file format -->
+
+<config version="0.1">
+    <match user="root">
+        <return result="yes"/>
+    </match>
+    <!-- MaX: don't ask password for user in live session -->
+    <match user="$USERNAME">
+        <return result="yes"/>
+    </match>
+    <define_admin_auth group="admin"/>
+</config>
+EOF
 
 log_end_msg
