@@ -291,14 +291,14 @@
       <key>applets/applet_2/panel_right_stick</key>
       <schema_key>/schemas/apps/panel/objects/panel_right_stick</schema_key>
       <value>
-        <bool>false</bool>
+        <bool>true</bool>
       </value>
     </entry>
     <entry>
       <key>applets/applet_2/position</key>
       <schema_key>/schemas/apps/panel/objects/position</schema_key>
       <value>
-        <int>698</int>
+        <int>197</int>
       </value>
     </entry>
     <entry>
@@ -347,7 +347,7 @@
       <key>applets/applet_2/prefs/num_rows</key>
       <schema_key>/schemas/apps/workspace_switcher_applet/prefs/num_rows</schema_key>
       <value>
-        <int>1</int>
+        <int>2</int>
       </value>
     </entry>
     <entry>
@@ -417,7 +417,7 @@
       <key>applets/clock_screen0/position</key>
       <schema_key>/schemas/apps/panel/objects/position</schema_key>
       <value>
-        <int>3</int>
+        <int>46</int>
       </value>
     </entry>
     <entry>
@@ -449,6 +449,17 @@
       </value>
     </entry>
     <entry>
+      <key>applets/clock_screen0/prefs/cities</key>
+      <schema_key>/schemas/apps/clock_applet/prefs/cities</schema_key>
+      <value>
+        <list type="string">
+            <value>
+              <string>&lt;location name=&quot;Madrid&quot; timezone=&quot;Europe/Madrid&quot; latitude=&quot;40.450001&quot; longitude=&quot;-3.550000&quot; code=&quot;LEMD&quot;/&gt;</string>
+            </value>
+        </list>
+      </value>
+    </entry>
+    <entry>
       <key>applets/clock_screen0/prefs/config_tool</key>
       <schema_key>/schemas/apps/clock_applet/prefs/config_tool</schema_key>
       <value>
@@ -474,6 +485,13 @@
       <schema_key>/schemas/apps/clock_applet/prefs/expand_birthdays</schema_key>
       <value>
         <bool>false</bool>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/clock_screen0/prefs/expand_locations</key>
+      <schema_key>/schemas/apps/clock_applet/prefs/expand_locations</schema_key>
+      <value>
+        <bool>true</bool>
       </value>
     </entry>
     <entry>
@@ -533,6 +551,13 @@
       </value>
     </entry>
     <entry>
+      <key>applets/clock_screen0/prefs/show_temperature</key>
+      <schema_key>/schemas/apps/clock_applet/prefs/show_temperature</schema_key>
+      <value>
+        <bool>false</bool>
+      </value>
+    </entry>
+    <entry>
       <key>applets/clock_screen0/prefs/show_timezones</key>
       <schema_key>/schemas/apps/clock_applet/prefs/show_timezones</schema_key>
       <value>
@@ -547,10 +572,31 @@
       </value>
     </entry>
     <entry>
+      <key>applets/clock_screen0/prefs/show_weather</key>
+      <schema_key>/schemas/apps/clock_applet/prefs/show_weather</schema_key>
+      <value>
+        <bool>false</bool>
+      </value>
+    </entry>
+    <entry>
       <key>applets/clock_screen0/prefs/show_week_numbers</key>
       <schema_key>/schemas/apps/clock_applet/prefs/show_week_numbers</schema_key>
       <value>
         <bool>true</bool>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/clock_screen0/prefs/speed_unit</key>
+      <schema_key>/schemas/apps/clock_applet/prefs/speed_unit</schema_key>
+      <value>
+        <string>Default</string>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/clock_screen0/prefs/temperature_unit</key>
+      <schema_key>/schemas/apps/clock_applet/prefs/temperature_unit</schema_key>
+      <value>
+        <string>Default</string>
       </value>
     </entry>
     <entry>
@@ -628,14 +674,14 @@
       <key>applets/mixer_screen0/panel_right_stick</key>
       <schema_key>/schemas/apps/panel/objects/panel_right_stick</schema_key>
       <value>
-        <bool>false</bool>
+        <bool>true</bool>
       </value>
     </entry>
     <entry>
       <key>applets/mixer_screen0/position</key>
       <schema_key>/schemas/apps/panel/objects/position</schema_key>
       <value>
-        <int>868</int>
+        <int>120</int>
       </value>
     </entry>
     <entry>
@@ -726,14 +772,14 @@
       <key>applets/notification_area_screen0/panel_right_stick</key>
       <schema_key>/schemas/apps/panel/objects/panel_right_stick</schema_key>
       <value>
-        <bool>false</bool>
+        <bool>true</bool>
       </value>
     </entry>
     <entry>
       <key>applets/notification_area_screen0/position</key>
       <schema_key>/schemas/apps/panel/objects/position</schema_key>
       <value>
-        <int>658</int>
+        <int>256</int>
       </value>
     </entry>
     <entry>
@@ -824,7 +870,7 @@
       <key>applets/trashapplet_screen0/position</key>
       <schema_key>/schemas/apps/panel/objects/position</schema_key>
       <value>
-        <int>1</int>
+        <int>85</int>
       </value>
     </entry>
     <entry>
@@ -2751,7 +2797,7 @@
       <key>global/disable_lock_screen</key>
       <schema_key>/schemas/apps/panel/global/disable_lock_screen</schema_key>
       <value>
-        <bool>false</bool>
+        <bool>true</bool>
       </value>
     </entry>
     <entry>
@@ -3333,14 +3379,14 @@
       <key>objects/object_3/panel_right_stick</key>
       <schema_key>/schemas/apps/panel/objects/panel_right_stick</schema_key>
       <value>
-        <bool>false</bool>
+        <bool>true</bool>
       </value>
     </entry>
     <entry>
       <key>objects/object_3/position</key>
       <schema_key>/schemas/apps/panel/objects/position</schema_key>
       <value>
-        <int>836</int>
+        <int>152</int>
       </value>
     </entry>
     <entry>

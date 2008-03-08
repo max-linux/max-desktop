@@ -1,3 +1,36 @@
+max-meta (4.0.max1.9) max; urgency=low
+
+  * Remove from max-server:
+    - max-correo-custom (empty package)
+    - max-proxy-custom  (empty package)
+    - max-tools-custom  (empty package)
+    - max-webmin-custom (need to update webmin version)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 08 Mar 2008 12:53:07 +0100
+
+max-meta (4.0.max1.8) max; urgency=low
+
+  * max-desktop-common:
+    - Remove metapackage openoffice.org (not avalaible)
+    - Add bash-completion
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 07 Mar 2008 12:48:28 +0100
+
+max-meta (4.0.max1.7) max; urgency=low
+
+  * Change to 4 workspaces in 2 lines
+  * Configure new Sites Calendar with Madrid as Home place (disable show at panel)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 07 Mar 2008 12:26:06 +0100
+
+max-meta (4.0.max1.6) max; urgency=low
+
+  * max-desktop-common:
+    - Remove libsane-extras due to critical BUG:
+      https://bugs.launchpad.net/ubuntu/+source/sane-backends-extras/+bug/180169
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 04 Mar 2008 10:06:05 +0100
+
 max-meta (4.0.max1.5) max; urgency=low
 
   * max-desktop-common:
