@@ -1,3 +1,9 @@
+max-keyring (4.0.max3) max; urgency=low
+
+  * Rebuild with new version of ubuntu-keyring
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 05 Mar 2008 18:51:53 +0100
+
 max-keyring (4.0.max2) max; urgency=low
 
   * Remove old ubuntu-archive keyring
