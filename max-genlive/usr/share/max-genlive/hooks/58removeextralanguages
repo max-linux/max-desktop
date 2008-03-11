@@ -1,0 +1,29 @@
+
+#Removing max-desktop-all ...
+#Removing max-desktop-xfce ...
+#Removing max-desktop-kde ...
+#Removing max-desktop-gnome ...
+#Removing max-desktop-common ...
+#Removing ubuntu-desktop ...
+#Removing language-selector ...
+#Removing language-selector-qt ...
+#Removing language-selector-common ...
+
+
+
+_echo "Borrando paquetes de idioma extra"
+
+chroot $CHROOT << EOC || _exit "No se han podido borrar paquetes de idioma"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export ERROR=0
+apt-get $APT_OPTS remove --purge \$(dpkg -l|awk '{print \$2}'| grep language-pack| grep -v -e "-es" -e "-en" -e "common" -e "selector") || ERROR=1
+apt-get $APT_OPTS install language-support-es max-desktop-all ubuntu-desktop language-selector || ERROR=1
+apt-get autoremove
+apt-get clean
+exit \$ERROR
+EOC
+
+

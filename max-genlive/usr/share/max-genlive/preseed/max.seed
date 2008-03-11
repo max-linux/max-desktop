@@ -1,5 +1,5 @@
 # Install the MaX Ubuntu desktop.
-# http://forja.guadalinex.org/pipermail/forja.guadalinexv4-commits/2007-January/001602.html
+# http://forja.guadalinex.org/plugins/scmsvn/cgi-bin/viewcvs.cgi/generation_system/demiurgo/trunk/debian-cd/data/edgy/preseed/ubiquity.seed?root=guadalinexv4&rev=755&view=markup
 #ubiquity	partman-auto/choose_recipe	select	60guadalinex
 #ubiquity	partman-auto/expert_recipe_file	string	/lib/partman/recipes/60guadalinex
 #
@@ -19,7 +19,33 @@ ubiquity	localechooser/supported-locales	multiselect	es_ES.UTF-8
 ubiquity	tzconfig/gmt	boolean	false
 ubiquity	time/zone	select	Europe/Madrid
 #
-# xorg spanish keymap
+#ubiquity	ubiquity/stepLanguage	boolean	true
+#ubiquity	ubiquity/stepLocation	boolean	true
+#ubiquity	ubiquity/stepKeyboardConf	boolean	true
+ubiquity	ubiquity/stepMigrationAssistant	boolean	false
 #
-xserver-xorg	xserver-xorg/config/inputdevice/keyboard/model	string	pc105
-xserver-xorg	xserver-xorg/config/inputdevice/keyboard/layout	string	 es
+#  Create user madrid
+passwd        passwd/user-fullname            string Usuario Madrid
+passwd        passwd/username                string madrid
+passwd        passwd/user-password            password cmadrid
+passwd        passwd/user-password-again      password cmadrid
+ubiquity	ubiquity/stepUserInfo	boolean	false
+#
+#d-i	passwd passwd/make-user boolean true
+#d-i	passwd/user-fullname string Dummy User
+#d-i	passwd/username string dummy
+#d-i	passwd/user-password-crypted password deleted
+#
+#
+#
+# xorg spanish keymap
+# (disabled, autodetect seems to work)
+#xserver-xorg xserver-xorg/config/inputdevice/keyboard/model string "pc105"
+#xserver-xorg xserver-xorg/config/inputdevice/keyboard/layout string "es"
+#
+# console locales
+#
+console-setup	console-setup/layoutcode	select	es
+console-setup	console-setup/modelcode	select	pc105
+console-setup	console-setup/layout	select	Spain
+console-setup	console-setup/variant	select	Spain

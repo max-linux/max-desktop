@@ -1,3 +1,13 @@
+max-genlive (4.0.max0.9) max; urgency=low
+
+  * 60clean:
+    - Remove old kernels
+  * max.seed:
+    - Add madrid user and hide userinfo step
+    - Disable migration assistant
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 11 Mar 2008 10:08:02 +0100
+
 max-genlive (4.0.max0.8) max; urgency=low
 
   * usr/share/max-genlive/hooks/60clean:

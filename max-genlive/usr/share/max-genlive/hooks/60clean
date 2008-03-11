@@ -1,4 +1,8 @@
 
+#_echo "Abriendo consola para limpiar"
+#bash
+
+
 _echo "Actualizando imágenes de arranque"
 
 # configurar usplash para 1024
@@ -16,6 +20,29 @@ cp $CHROOT/boot/initrd.img-$KERNEL $CDRW/casper/initrd.gz
 rm -f $CHROOT/boot/initrd.img-$KERNEL.bak
 
 
+# borrar kernel viejos
+for kernel in $(ls $CHROOT/lib/modules/); do
+  if [ "$kernel" = "$KERNEL" ]; then
+    _echo "  No borrando el kernel por defecto $kernel ..."
+  else
+    _echo "  Borrando kernel $kernel"
+    PKGS=$(chroot $CHROOT/ dpkg -l |grep $kernel | awk '{print $2}')
+    chroot $CHROOT/ << EOF || _exit "No se pudo desinstalar el kernel viejo $kernel."
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export ERROR=0
+apt-get $APT_OPTS remove --purge $PKGS || ERROR=1
+EOF
+  fi
+done
+
+# borrar configuracion residual
+chroot $CHROOT/ << EOF || _exit "No se pudo borrar la conf residual"
+dpkg --purge \$(dpkg -l |grep ^rc| awk '{print \$2}')
+EOF
+
 
 _echo "Generando listas de paquetes para la version instalada"
 
@@ -27,6 +54,7 @@ sed -ie /max-live/d                  $CDRW/casper/filesystem.manifest-desktop
 sed -ie /libdebian-installer4/d      $CDRW/casper/filesystem.manifest-desktop
 sed -ie /os-prober/d                 $CDRW/casper/filesystem.manifest-desktop
 sed -ie /ubuntu-live/d               $CDRW/casper/filesystem.manifest-desktop
+sed -ie /user-setup/d                $CDRW/casper/filesystem.manifest-desktop
 
 # borrar temporal
 rm -f $CDRW/casper/filesystem.manifest-desktope
@@ -35,7 +63,7 @@ _echo "Generando listas de metapaquetes"
 # generar metalistas para escritorio alumno profesor y servidor
 for meta in alumno profesor servidor; do
 
-  case $meta in;
+  case $meta in
      alumno)
        metapkg="max-tcos-alumno"
        metafile=$CDRW/casper/filesystem.manifest-desktop.alumno
@@ -55,7 +83,7 @@ for meta in alumno profesor servidor; do
   URIS=$(chroot $CHROOT apt-get --print-uris -qq install $metapkg | awk '{print $2}')
 
   if [ "$URIS" = "" ]; then
-    _exit "Error leyendo URIS de paquetes alumno, conflictos o dependencias seguramente..."
+    _exit "Error leyendo URIS de paquetes $meta, conflictos o dependencias seguramente..."
   fi
   
   for pkg in $URIS; do
@@ -63,7 +91,8 @@ for meta in alumno profesor servidor; do
     pkgversion=$(echo $pkg | awk -F"_" '{print $2}')
     echo "$pkgname $pkgversion" >> $metafile
   done
-
+  cat ${metafile} | sort > ${metafile}.tmp
+  mv ${metafile}.tmp ${metafile}
 done
 
 
