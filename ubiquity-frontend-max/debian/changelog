@@ -1,0 +1,20 @@
+ubiquity-frontend-max (4.0.max0.3) max; urgency=low
+
+  * usr/share/ubiquity/install.py:
+    - Rewrite with dpsyco
+    - Read InstallType and install extra packages from manifest files
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 11 Mar 2008 10:13:12 +0100
+
+ubiquity-frontend-max (4.0.max0.2) max; urgency=low
+
+  * Add StepInstallType and edit stepWelcomeMaX
+  * Hide locale, language and tzmap steps
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 08 Mar 2008 13:00:55 +0100
+
+ubiquity-frontend-max (4.0.max0.1) max; urgency=low
+
+  * Initial version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 05 Mar 2008 18:56:14 +0100

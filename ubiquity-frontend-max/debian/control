@@ -1,0 +1,15 @@
+Source: ubiquity-frontend-max
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs, python
+Standards-Version: 3.7.2
+
+Package: ubiquity-frontend-max
+Architecture: all
+Depends: ubiquity, ubiquity-frontend-gtk
+Description: Some files to custom ubiquity installer
+ Contains:
+  * MaX gui of ubiquity installer
+  * Dpsyco overwrite of Ubuntu ubiquity
+

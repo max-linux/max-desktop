@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Encoding=UTF-8
+Name=Install
+Name[es]=Instalar
+Comment=Install this system permanently to your hard disk
+Comment[es]=Instalar este sistema de forma permanente en el disco duro
+Exec=ubiquity --desktop %k max_ui
+Icon=ubiquity-max
+Terminal=false
+Categories=GTK;System;Settings;
+OnlyShowIn=GNOME;XFCE;
+#X-Ubuntu-Gettext-Domain=ubiquity
