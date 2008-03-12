@@ -1,3 +1,13 @@
+max-genlive (4.0.max0.10) max; urgency=low
+
+  * max.seed:
+    - Preseed Language instalation to Spanish
+    - Add max_install_type (escritorio, alumno, profesor, servidor, nanomax)
+  * 60clean:
+    - Dont add to manifest all depends, leave apt to install it
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 12 Mar 2008 18:33:09 +0100
+
 max-genlive (4.0.max0.9) max; urgency=low
 
   * 60clean:

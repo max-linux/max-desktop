@@ -11,6 +11,7 @@ debconf		debconf/language	string	es
 # Ubiquity installer
 #
 ubiquity	languagechooser/language-name-fb	select	Spanish
+ubiquity	languagechooser/language-name	select	Spanish
 ubiquity	countrychooser/shortlist	select	ES
 ubiquity	countrychooser/countryname	select	Spain
 ubiquity	countrychooser/country-name	string	Spain
@@ -24,11 +25,27 @@ ubiquity	time/zone	select	Europe/Madrid
 #ubiquity	ubiquity/stepKeyboardConf	boolean	true
 ubiquity	ubiquity/stepMigrationAssistant	boolean	false
 #
+# Tipo de instalacion, puede ser:
+#  escritorio (lo que va en el DVD)
+#  alumno (instala max-alumno)
+#  profesor (instala max-profesor)
+#  servidor (instala max-servidor)
+#
+ubiquity	ubiquity/max_install_type	string	escritorio
+#
+#
 #  Create user madrid
 passwd        passwd/user-fullname            string Usuario Madrid
 passwd        passwd/username                string madrid
 passwd        passwd/user-password            password cmadrid
 passwd        passwd/user-password-again      password cmadrid
+passwd        passwd/user-default-groups      string adm audio cdrom dialout floppy video dip lpadmin plugdev fuse scanner
+#
+passwd        passwd/alumno-userfullname      string Alumno Madrid
+passwd        passwd/alumno-username          string alumno
+passwd        passwd/alumno-password          password alumno
+passwd        passwd/alumno-default-groups    string audio cdrom floppy video plugdev scanner
+
 ubiquity	ubiquity/stepUserInfo	boolean	false
 #
 #d-i	passwd passwd/make-user boolean true

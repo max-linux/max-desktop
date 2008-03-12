@@ -65,32 +65,26 @@ for meta in alumno profesor servidor; do
 
   case $meta in
      alumno)
-       metapkg="max-tcos-alumno"
+       metapkg="max-alumno"
        metafile=$CDRW/casper/filesystem.manifest-desktop.alumno
        ;;
      profesor)
-       metapkg="max-tcos-profesor"
+       metapkg="max-profesor"
        metafile=$CDRW/casper/filesystem.manifest-desktop.profesor
        ;;
      servidor)
-       metapkg="max-server"
+       metapkg="max-servidor"
+       metafile=$CDRW/casper/filesystem.manifest-desktop.servidor
+       ;;
+     nanomax)
+       metapkg="max-nanomax"
        metafile=$CDRW/casper/filesystem.manifest-desktop.servidor
        ;;
   esac
 
   cp $CDRW/casper/filesystem.manifest-desktop $metafile
+  echo "$metapkg 0.0.1" >> $metafile
 
-  URIS=$(chroot $CHROOT apt-get --print-uris -qq install $metapkg | awk '{print $2}')
-
-  if [ "$URIS" = "" ]; then
-    _exit "Error leyendo URIS de paquetes $meta, conflictos o dependencias seguramente..."
-  fi
-  
-  for pkg in $URIS; do
-    pkgname=$(echo $pkg | awk -F"_" '{print $1}')
-    pkgversion=$(echo $pkg | awk -F"_" '{print $2}')
-    echo "$pkgname $pkgversion" >> $metafile
-  done
   cat ${metafile} | sort > ${metafile}.tmp
   mv ${metafile}.tmp ${metafile}
 done
