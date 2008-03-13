@@ -75,3 +75,38 @@ Description: The Max desktop all metapackage
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
 
+Package: max-alumno
+Architecture: all
+Depends: max-tcos-alumno
+Description: The Max desktop alumno metapackage
+ This package depends on max-tcos-alumno
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-profesor
+Architecture: all
+Depends: max-tcos-profesor
+Description: The Max desktop profesor metapackage
+ This package depends on max-tcos-profesor
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-nanomax
+Architecture: all
+Description: The Max nanoMaX metapackage
+ This package no have depends
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-servidor
+Architecture: all
+Depends: max-server
+Description: The Max server metapackage
+ This package depends on max-server
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+

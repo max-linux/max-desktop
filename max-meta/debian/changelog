@@ -1,3 +1,20 @@
+max-meta (4.0.max1.11) max; urgency=low
+
+  * Add new packages:
+    - max-alumno
+    - max-profesor
+    - max-servidor
+    - max-nanomax
+  * Add atnag package again
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 12 Mar 2008 18:53:42 +0100
+
+max-meta (4.0.max1.10) max; urgency=low
+
+  * Remove SCIM packages (buggy)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 11 Mar 2008 12:31:26 +0100
+
 max-meta (4.0.max1.9) max; urgency=low
 
   * Remove from max-server:
