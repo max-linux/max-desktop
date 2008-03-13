@@ -1,3 +1,18 @@
+max-live (4.0.max0.8) max; urgency=low
+
+  * 45disable_scim:
+    - Disable SCIM (as enabled by default in Ubuntu)
+      see: https://bugs.launchpad.net/ubuntu/+source/scim/+bug/199030
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 12 Mar 2008 09:53:23 +0100
+
+max-live (4.0.max0.7) max; urgency=low
+
+  * 44fix_xorg_keymap:
+    - Replace xorg Layout and Model (xorg add a blank before string)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 11 Mar 2008 12:25:56 +0100
+
 max-live (4.0.max0.6) max; urgency=low
 
   * 11max:
