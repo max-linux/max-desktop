@@ -1731,6 +1731,17 @@ exit 0"""
         apt_install_direct = open('/var/lib/ubiquity/apt-install-direct', 'w')
         apt_install_direct.close()
 
+    # MaX
+    def killall_target_proc(self):
+        self.chroot_setup()
+        pin,pout,perr=os.popen3("sudo lsof /target | awk '{print $2}'| grep -v PID| sort| uniq")
+        pin.close()
+        for pid in pout.readline().strip():
+            os.system("kill -9 %s"%pid)
+        pout.close()
+        perr.close()
+        self.chroot_cleanup()
+
     def install_max_extras(self):
         # MaX have 4 different install types escritorio, alumno, profesor, servidor
         if not os.path.exists("/tmp/max_install_type"):
@@ -1747,7 +1758,7 @@ exit 0"""
         # make a diff between filesystem.manifest-desktop and filesystem.manifest-desktop.xxxxxx
         install_file="/cdrom/casper/filesystem.manifest-desktop.%s"%install_type
         if not os.path.exists(install_file):
-            syslog.syslog("DEBUG: iinstall_max_extras() file %s not found"%install_file)
+            syslog.syslog("DEBUG: install_max_extras() file %s not found"%install_file)
             return
         new=set()        
         newpkgs=open(install_file)
@@ -1769,6 +1780,10 @@ exit 0"""
             return
         syslog.syslog("DEBUG: install_max_extras() installing: %s"%diff)
         self.do_install(diff)
+        try:
+            self.killall_target_proc()
+        except Exception, err:
+            syslog.syslog("DEBUG: install_max_extras() Exception %s"%err)
 
     def remove_extras(self):
         """Try to remove packages that are needed on the live CD but not on

@@ -1,3 +1,20 @@
+ubiquity-frontend-max (4.0.max0.5) max; urgency=low
+
+  * Revert last debconf changes, can't force to show InstallType and hide console_setup
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 13 Mar 2008 11:18:26 +0100
+
+ubiquity-frontend-max (4.0.max0.4) max; urgency=low
+
+  * max_uy.py:
+    - Read fron preseed max.seed in max-genlive package
+    - Force username creation (madrid)
+    - Set hostname to max40
+  * Add user-setup-alumno and edit user-setup:
+    - Create alumno from preseed (max.seed) file
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 12 Mar 2008 17:54:10 +0100
+
 ubiquity-frontend-max (4.0.max0.3) max; urgency=low
 
   * usr/share/ubiquity/install.py:

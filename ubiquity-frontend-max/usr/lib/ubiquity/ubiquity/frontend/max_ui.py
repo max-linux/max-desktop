@@ -201,15 +201,40 @@ class Wizard(BaseFrontend):
         self.customize_installer()
 
         # MaX set as default escritorio install
-        self.install_type_escritorio.set_active(True)
-        self.save_install_type("escritorio")
-        self.get_install_type()
+        install_type=self.get_install_type()
+        if install_type == "alumno":
+            self.install_type_alumno.set_active(True)
         
-        # FIXME need to save debconf value        
-        #dbinstall=filteredcommand.FilteredCommand('ubiquity', self.debconf_communicator())
-        #dbinstall.preseed('ubiquity/install_type', 'escritorio')
-        #self.debconf_operation('set', 'ubiquity/install_type', 'escritorio')
+        elif install_type == "profesor":
+            self.install_type_profesor.set_active(True)
+        
+        elif install_type == "servidor":
+            self.install_type_servidor.set_active(True)
+        
+        elif install_type == "nanomax":
+            self.install_type_nanomax.set_active(True)
+        
+        else:
+            self.install_type_escritorio.set_active(True)
+        
+        # read pressed username and set (stepUserInfo == false)
+        if not self.get_debconf_preseed("ubiquity/stepUserInfo"):
+                self.fullname.set_text(self.get_debconf_preseed("passwd/user-fullname"))
+                self.username.set_text(self.get_debconf_preseed("passwd/username"))
+                self.password.set_text(self.get_debconf_preseed("passwd/user-password"))
+                self.username_edited = True
+                self.set_language("Spanish")
+                self.hostname.set_text("max40")
 
+    def get_debconf_preseed(self, varname):
+        db=DebconfCommunicator(PACKAGE, cloexec=True)
+        try:
+            data=db.get(varname)
+        except Exception, err:
+            syslog.syslog("DEBUG: Exception varname=%s don't exists" %varname)
+            data=None
+        db.shutdown()
+        return data
 
     def save_install_type(self, itype):
         f=open(self.install_type_file, "w")
