@@ -38,11 +38,12 @@ EOF
   fi
 done
 
-# borrar configuracion residual
-chroot $CHROOT/ << EOF || _exit "No se pudo borrar la conf residual"
+if [ "$(chroot $CHROOT/ dpkg -l |grep -c ^rc)" != 0 ]; then
+  # borrar configuracion residual
+  chroot $CHROOT/ << EOF || _exit "No se pudo borrar la conf residual"
 dpkg --purge \$(dpkg -l |grep ^rc| awk '{print \$2}')
 EOF
-
+fi
 
 _echo "Generando listas de paquetes para la version instalada"
 
