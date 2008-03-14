@@ -6,6 +6,8 @@ DISTRO=hardy
 DISTRO_VERSION="8.04"
 ARCH=i386
 IMAGE_NAME="MaX-4.0-0alpha1"
+TITLE="MaX 4.0"
+
 
 ayuda() {
 cat << EOF

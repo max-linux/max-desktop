@@ -1,5 +1,6 @@
 
 stamp=$(date '+%Y%m%d_%H%M')
+created=$(date '+%Y%m%d')
 _echo "Copiando archivos isolinux..."
 
 cp $GENLIVE/isolinux/* $CDRW/isolinux/ || _exit "No se puede sobreescribir isolinux"
@@ -8,6 +9,8 @@ _echo "Copiando preseed"
 rm -f $CDRW/preseed/*
 cp $GENLIVE/preseed/* $CDRW/preseed/ || _exit "No se puede sobreescribir preseed"
 
+printf "$TITLE "Alfa 1" - Alfa i386 ($created)" > $CDRW/.disk/info
+printf "http://max.educa.madrid.org:8000/MaX40/NotasPublicacion" > > $CDRW/.disk/release_notes_url
 
 _echo "Generando md5sum de archivos de dentro del DVD..."
 (cd $CDRW && find . -type f -print0 |xargs -0 md5sum > md5sum.txt)

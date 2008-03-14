@@ -1,3 +1,10 @@
+max-genlive (4.0.max0.12) max; urgency=low
+
+  * max-genlive 80buildiso
+    - Edit /cdrom/.disk/info and release_notes_url files
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 14 Mar 2008 23:27:30 +0100
+
 max-genlive (4.0.max0.11) max; urgency=low
 
   * 60clean:
