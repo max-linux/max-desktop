@@ -1,3 +1,10 @@
+maxmoodle (4.0.max3) max; urgency=low
+
+  * Really install moodle.png file
+  * Revert icon name in desktop file (moodle.png)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 14 Mar 2008 22:25:03 +0100
+
 maxmoodle (4.0.max2) max; urgency=low
 
   * Fix desktop Icon file (remove png suffix)
