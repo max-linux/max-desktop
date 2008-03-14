@@ -1,3 +1,10 @@
+max-live (4.0.max0.9) max; urgency=low
+
+  * Remove PolicyKit patch, appy in upstream (casper 1.123)
+    - https://bugs.launchpad.net/ubuntu/+source/casper/+bug/201852
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 14 Mar 2008 23:05:12 +0100
+
 max-live (4.0.max0.8) max; urgency=low
 
   * 45disable_scim:

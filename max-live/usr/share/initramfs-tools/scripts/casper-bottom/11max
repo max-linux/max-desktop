@@ -49,26 +49,9 @@ chroot /root gconftool-2 --direct --type bool \
              --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults \
              --set /apps/nautilus/desktop/network_icon_visible false
 
-# configure PolicyKit in live session
 
-cat << EOF > /root/etc/PolicyKit/PolicyKit.conf
-<?xml version="1.0" encoding="UTF-8"?> <!-- -*- XML -*- -->
-
-<!DOCTYPE pkconfig PUBLIC "-//freedesktop//DTD PolicyKit Configuration 1.0//EN"
-"http://hal.freedesktop.org/releases/PolicyKit/1.0/config.dtd">
-
-<!-- See the manual page PolicyKit.conf(5) for file format -->
-
-<config version="0.1">
-    <match user="root">
-        <return result="yes"/>
-    </match>
-    <!-- MaX: don't ask password for user in live session -->
-    <match user="$USERNAME">
-        <return result="yes"/>
-    </match>
-    <define_admin_auth group="admin"/>
-</config>
-EOF
+# PolicyKit is configured in casper 1.123
+# patch send https://launchpad.net/bugs/201852
+# and merged
 
 log_end_msg
