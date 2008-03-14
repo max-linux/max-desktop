@@ -1742,6 +1742,7 @@ exit 0"""
         perr.close()
         self.chroot_cleanup()
 
+    # MaX
     def install_max_extras(self):
         # MaX have 4 different install types escritorio, alumno, profesor, servidor
         if not os.path.exists("/tmp/max_install_type"):

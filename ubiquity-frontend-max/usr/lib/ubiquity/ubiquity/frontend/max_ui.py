@@ -201,7 +201,7 @@ class Wizard(BaseFrontend):
         self.customize_installer()
 
         # MaX set as default escritorio install
-        install_type=self.get_install_type()
+        install_type=self.get_debconf_preseed('ubiquity/max_install_type')
         if install_type == "alumno":
             self.install_type_alumno.set_active(True)
         
@@ -217,23 +217,33 @@ class Wizard(BaseFrontend):
         else:
             self.install_type_escritorio.set_active(True)
         
+        #save to file
+        self.save_install_type(install_type)
+
         # read pressed username and set (stepUserInfo == false)
         if not self.get_debconf_preseed("ubiquity/stepUserInfo"):
+                syslog.syslog("DEBUG: preseeding user info")
                 self.fullname.set_text(self.get_debconf_preseed("passwd/user-fullname"))
                 self.username.set_text(self.get_debconf_preseed("passwd/username"))
                 self.password.set_text(self.get_debconf_preseed("passwd/user-password"))
+                self.verified_password.set_text(self.get_debconf_preseed("passwd/user-password"))
                 self.username_edited = True
-                self.set_language("Spanish")
+                #self.set_language("Spanish")
                 self.hostname.set_text("max40")
+        else:
+                syslog.syslog("DEBUG: ERROR not debconf user forced !!!")
 
     def get_debconf_preseed(self, varname):
-        db=DebconfCommunicator(PACKAGE, cloexec=True)
+        db=self.debconf_communicator()
         try:
             data=db.get(varname)
+            syslog.syslog("DEBUG: get_debconf_preseed('%s')=%s"%(varname,data))
         except Exception, err:
             syslog.syslog("DEBUG: Exception varname=%s don't exists" %varname)
-            data=None
+            data=None        
         db.shutdown()
+        if data == "false": data=False
+        if data == "true":  data=True
         return data
 
     def save_install_type(self, itype):
@@ -385,14 +395,14 @@ class Wizard(BaseFrontend):
             #    usersetup.UserSetup, migrationassistant.MigrationAssistant,
             #    summary.Summary]
             self.pages = [console_setup.ConsoleSetup, partman.Partman,
-                usersetup.UserSetup, migrationassistant.MigrationAssistant,
+                migrationassistant.MigrationAssistant,
                 summary.Summary]
         else:
             #self.pages = [language.Language, timezone.Timezone,
             #    console_setup.ConsoleSetup, partman.Partman,
             #    usersetup.UserSetup, summary.Summary]
             self.pages = [console_setup.ConsoleSetup, partman.Partman,
-                usersetup.UserSetup, summary.Summary]
+                summary.Summary]
             
         self.pagesindex = 0
         pageslen = len(self.pages)
@@ -552,8 +562,6 @@ class Wizard(BaseFrontend):
         #    self.tzmap = zoommap.ZoomMapWidget(*args)
         #    self.tzmap.show()
 
-        if 'UBIQUITY_NO_CONTINUE' in os.environ:
-            del self.quit_button
 
         if 'UBIQUITY_DEBUG' in os.environ:
             self.password_debug_warning_label.show()

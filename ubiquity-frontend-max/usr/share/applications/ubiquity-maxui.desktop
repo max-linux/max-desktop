@@ -11,4 +11,5 @@ Icon=ubiquity-max
 Terminal=false
 Categories=GTK;System;Settings;
 OnlyShowIn=GNOME;XFCE;
+StartupNotify=true
 #X-Ubuntu-Gettext-Domain=ubiquity

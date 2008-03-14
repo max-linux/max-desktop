@@ -1,5 +1,6 @@
 #! /bin/bash
-set -e
+# MaX dont fail creating users
+#set -e
 
 . /usr/share/debconf/confmodule
 
@@ -194,13 +195,13 @@ fi
 # MaX add alumno user
 
 db_get passwd/alumno-username
-ALUMNO_USERNAME=$RET
+ALUMNO_USERNAME="$RET"
 
 db_get passwd/alumno-userfullname
-ALUMNO_USERFULLNAME=$RET
+ALUMNO_USERFULLNAME="$RET"
 
 db_get passwd/alumno-password
-ALUMNO_PASSWORD=$RET
+ALUMNO_PASSWORD="$RET"
 
 db_get passwd/alumno-default-groups
 ALUMNO_GROUPS=$RET
@@ -208,10 +209,10 @@ ALUMNO_GROUPS=$RET
 
 
 $log $chroot $ROOT adduser --disabled-password --gecos "$ALUMNO_USERFULLNAME" "$ALUMNO_USERNAME" >/dev/null || true
-setpassword "$ALUMNO_USERNAME" "$ALUMNO_PASSWORD" "false"
+setpassword "$ALUMNO_USERNAME" "$ALUMNO_PASSWORD" "false" || true
 
 for group in $ALUMNO_GROUPS; do
-  adduser alumno $group
+  $log $chroot $ROOT adduser $ALUMNO_USERNAME $group || true
 done
 
 exit 0

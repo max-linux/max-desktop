@@ -1,0 +1,24 @@
+#!/bin/sh
+# Test for linux distributions.
+set -e
+
+. /usr/share/os-prober/common.sh
+
+partition="$1"
+dir="$2"
+type="$3"
+
+if [ -f $dir/boot/grub/menu.lst ]; then
+  first_entry=$(grep ^title $dir/boot/grub/menu.lst | head -1 | sed 's/title//g')
+  if [ "$(echo $first_entry | grep -c -i max)" != "0" ]; then
+    # is MaX
+    short=$(echo $first_entry| awk -F"," '{print $1}')
+    long=$first_entry
+    label=$(count_next_label $short)
+    result "$partition:$long:$label:linux"
+    exit 0
+  fi
+fi
+
+exit 1
+

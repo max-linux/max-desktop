@@ -1,3 +1,15 @@
+ubiquity-frontend-max (4.0.max0.6) max; urgency=low
+
+  * Fix user-setup-apply, add user to groups inside chroot
+  * Hide stepUserInfo
+  * Create alumno user from preseed data (see max-genlive preesed file)
+  * usr/lib/os-probes/mounted/35detect_max:
+    - Try to detect previous MaX using menu.lst of installed system
+  * ubiquity-maxui.desktop
+    - Add StartupNotification (busy mouse when launching)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 14 Mar 2008 23:30:50 +0100
+
 ubiquity-frontend-max (4.0.max0.5) max; urgency=low
 
   * Revert last debconf changes, can't force to show InstallType and hide console_setup
