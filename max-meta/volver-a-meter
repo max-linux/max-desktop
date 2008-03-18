@@ -23,3 +23,8 @@ desktop-gnome-i386:scim-gtk2-immodule
 desktop-gnome-i386:scim-hangul
 desktop-gnome-i386:scim-pinyin
 desktop-gnome-i386:scim-qtimm
+
+desktop-common:
+-tightvncserver
+-xmms
+-xtightvncviewer

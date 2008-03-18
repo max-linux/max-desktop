@@ -1,3 +1,17 @@
+max-meta (4.0.max1.13) max; urgency=low
+
+  * max-desktop-common:
+    - Remove tightvncserver xmms xtightvncviewer (not avalaible)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 17 Mar 2008 23:57:44 +0100
+
+max-meta (4.0.max1.12) max; urgency=low
+
+  * gconf-dumps/apps.panel.dump.gconf:
+    - Set clock in 24h format (not show A.M. or P.M.)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 17 Mar 2008 11:35:12 +0100
+
 max-meta (4.0.max1.11) max; urgency=low
 
   * Add new packages:
