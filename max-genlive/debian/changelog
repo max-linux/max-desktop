@@ -1,3 +1,28 @@
+max-genlive (4.0.max0.15) max; urgency=low
+
+  * 60clean:
+    - Cache esound and libesd0 without apt-get (conflicts with pulseaudio-esound-compat)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 18 Mar 2008 16:25:23 +0100
+
+max-genlive (4.0.max0.14) max; urgency=low
+
+  * 60clean:
+    - Add max-terminales package
+  * 80buildiso
+    - Remove wuby (windows installer)
+  * max-genlive
+    - Cache esound, libesd0, discover, discover-data, libdicover2 (needed by TCOS)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 17 Mar 2008 22:36:54 +0100
+
+max-genlive (4.0.max0.13) max; urgency=low
+
+  * 80buildiso:
+    - Fix typo with double > >
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 15 Mar 2008 10:10:10 +0100
+
 max-genlive (4.0.max0.12) max; urgency=low
 
   * max-genlive 80buildiso

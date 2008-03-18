@@ -62,7 +62,7 @@ rm -f $CDRW/casper/filesystem.manifest-desktope
 
 _echo "Generando listas de metapaquetes"
 # generar metalistas para escritorio alumno profesor y servidor
-for meta in alumno profesor servidor; do
+for meta in alumno profesor servidor terminales; do
 
   case $meta in
      alumno)
@@ -76,6 +76,10 @@ for meta in alumno profesor servidor; do
      servidor)
        metapkg="max-servidor"
        metafile=$CDRW/casper/filesystem.manifest-desktop.servidor
+       ;;
+     terminales)
+       metapkg="max-terminales"
+       metafile=$CDRW/casper/filesystem.manifest-desktop.terminales
        ;;
      nanomax)
        metapkg="max-nanomax"

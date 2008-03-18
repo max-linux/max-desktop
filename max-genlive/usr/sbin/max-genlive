@@ -57,7 +57,7 @@ CDRO=$CURDIR/cdimage
 CDTMP=$CURDIR/cdtmp
 
 #PAQUETES_EXTRA="tcos backharddi backharddi-net max-tcos-alumno max-tcos-profesor virtualbox-ose"
-PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-nanomax virtualbox-ose backharddi backharddi-net"
+PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales max-nanomax virtualbox-ose backharddi backharddi-net discover libdiscover2 discover-data"
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
 GENLIVE=/usr/share/max-genlive
@@ -94,7 +94,7 @@ _echo() {
 
 for hook in $HOOKS/*; do
   #_echo "Cargando extension $hook"
-  [ -f $hook ] && . $hook
+  [ -f $hook ] && . $hook || _exit "Error ejecutando $hook"
 done
 
 echo "Terminado"

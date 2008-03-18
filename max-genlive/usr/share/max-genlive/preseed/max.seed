@@ -30,6 +30,7 @@ ubiquity	ubiquity/stepMigrationAssistant	boolean	false
 #  alumno (instala max-alumno)
 #  profesor (instala max-profesor)
 #  servidor (instala max-servidor)
+#  terminales (instala max-servidor y max-netboot-server)
 #
 ubiquity	ubiquity/max_install_type	string	escritorio
 #
@@ -66,3 +67,8 @@ console-setup	console-setup/layoutcode	select	es
 console-setup	console-setup/modelcode	select	pc105
 console-setup	console-setup/layout	select	Spain
 console-setup	console-setup/variant	select	Spain
+#
+#
+# ATFTPD necesita configurase sin inetd
+#
+atftpd	atftpd/use_inetd	boolean	false
