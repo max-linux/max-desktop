@@ -1,3 +1,21 @@
+ubiquity-frontend-max (4.0.max0.7) max; urgency=low
+
+  * Overwrite /etc/init.d/ubiquity to show max_ui installer
+  * Add sti detection scripts to install GRUB into (hd0,0) instead of (hd0)
+  * 35detect_max:
+    - Delete tabs from menu.lst entry name
+  * max_ui.py
+    - Add install_type terminales
+    - Preseed cdrom defaults settings (if exec installer twice password are empty)
+  * stepInstallType.glade
+    - Add install_type terminales radio button
+  * install.py:
+    - Kill process with fuser -k /target instead of lsof
+  * grubinstaller.py:
+    - Call test-sti script to change boot device to (hd0,0)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 17 Mar 2008 16:06:47 +0100
+
 ubiquity-frontend-max (4.0.max0.6) max; urgency=low
 
   * Fix user-setup-apply, add user to groups inside chroot

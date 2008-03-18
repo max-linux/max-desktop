@@ -8,6 +8,7 @@ clean::
 	#   CLEAN PYC files
 	#
 	python $(CURDIR)/compile-py-modules.py --clean
+	cd sti && make clean
 
 
 build:
@@ -15,8 +16,10 @@ build:
 	#  COMPILE PYC files
 	#
 	python $(CURDIR)/compile-py-modules.py --compile
+	cd sti && make
 
 
 binary-install/ubiquity-frontend-max::
+	cd sti && make install DESTDIR=$(CURDIR)/debian/ubiquity-frontend-max
 	# clean svn dirs
 	find $(CURDIR)/debian/ubiquity-frontend-max -type d -name .svn | xargs rm -rf --

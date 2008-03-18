@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Detect STI cards
+# based on BackHarddi by Pedro Peña
+# http://backharddi.ideseneca.es/browser/backharddi-udeb/trunk/inicio.d/sti
+
+#
+# RETURNS YES or NO
+#
+
+#
+# Called from grubinstaller.py ubiquity/components
+#
+
+FOUND_STI=0
+
+lspci -n | grep -q 0000:0059 || lspci -n | grep -q 0000:8000 || echo "NO" && exit 0 
+
+STI_SIG1="PILTpilt"
+STI_SIG2="X-MBR"
+
+for disk in /dev/[sh]d?; do
+	[ -e "$disk" ] || continue
+	dd if=$disk count=1 2>/dev/null | grep -q $STI_SIG1 || dd if=$disk count=1 2>/dev/null | grep -q $STI_SIG2 || continue
+	stidump $disk > /dev/null 2>&1 || continue
+	FOUND_STI=1
+done
+
+if [ $FOUND_STI = 1 ]; then
+  echo "YES"
+else
+  echo "NO"
+fi
+
+exit 0

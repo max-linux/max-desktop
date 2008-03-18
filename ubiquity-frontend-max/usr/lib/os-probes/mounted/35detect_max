@@ -9,9 +9,9 @@ dir="$2"
 type="$3"
 
 if [ -f $dir/boot/grub/menu.lst ]; then
-  first_entry=$(grep ^title $dir/boot/grub/menu.lst | head -1 | sed 's/title//g')
+  first_entry=$(grep ^title $dir/boot/grub/menu.lst | grep kernel | head -1 | sed 's/title//g' | sed 's|\t||g')
   if [ "$(echo $first_entry | grep -c -i max)" != "0" ]; then
-    # is MaX
+    # is MaX example: (MaX 3.1, kernel 2.6.22-14-generic)
     short=$(echo $first_entry| awk -F"," '{print $1}')
     long=$first_entry
     label=$(count_next_label $short)

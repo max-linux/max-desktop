@@ -169,7 +169,8 @@ class Wizard(BaseFrontend):
         self.installing_no_return = False
         self.returncode = 0
         # MaX
-        self.install_types={"escritorio":1, "alumno":2, "profesor":3, "servidor":4, "nanomax":5}
+        os.popen("sudo debconf-set-selections < /cdrom/preseed/max.seed")
+        self.install_types={"escritorio":1, "alumno":2, "profesor":3, "servidor":4, "terminales":5, "nanomax":5}
         self.install_type="escritorio"
         self.install_type_file="/tmp/max_install_type"
 
@@ -210,6 +211,9 @@ class Wizard(BaseFrontend):
         
         elif install_type == "servidor":
             self.install_type_servidor.set_active(True)
+        
+        elif install_type == "terminales":
+            self.install_type_terminales.set_active(True)
         
         elif install_type == "nanomax":
             self.install_type_nanomax.set_active(True)

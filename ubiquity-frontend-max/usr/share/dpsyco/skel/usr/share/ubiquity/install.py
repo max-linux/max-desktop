@@ -1734,12 +1734,7 @@ exit 0"""
     # MaX
     def killall_target_proc(self):
         self.chroot_setup()
-        pin,pout,perr=os.popen3("sudo lsof /target | awk '{print $2}'| grep -v PID| sort| uniq")
-        pin.close()
-        for pid in pout.readline().strip():
-            os.system("kill -9 %s"%pid)
-        pout.close()
-        perr.close()
+        os.popen("sudo fuser -k /target")
         self.chroot_cleanup()
 
     # MaX
