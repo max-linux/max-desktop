@@ -1,0 +1,16 @@
+Source: max-netboot-server
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs
+Standards-Version: 3.7.2
+
+Package: max-netboot-server
+Architecture: all
+Depends: syslinux, atftpd, dhcp3-server, tcos, backharddi-net
+Description: Configure MaX as netboot server
+ Contains:
+  * Configuration of DHCP server
+  * Configuration of ATFTPD server (as daemon)
+  * Neutral PXES image to boot TCOS or BackHarddi
+

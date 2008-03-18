@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+
+case $1 in
+  configure)
+
+     if [ -x /usr/sbin/update-netboot-server ]; then
+        /usr/sbin/update-netboot-server || true
+     fi
+
+     ;;
+esac
+
+##DEBHELPER##

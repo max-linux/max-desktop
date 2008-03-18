@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+binary-install/max-netboot-server::
+	# clean svn dirs
+	find $(CURDIR)/debian/max-netboot-server -type d -name .svn | xargs rm -rf --
