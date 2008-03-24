@@ -3,6 +3,6 @@
 include /usr/share/cdbs/1/rules/debhelper.mk
 
 install/max-gnome-default-settings::
-	install -m 755 maxgconf.sh $(CURDIR)/debian/max-gnome-default-settings/usr/sbin/maxgconf
+	install -m 755 maxgconf.sh $(CURDIR)/debian/max-gnome-default-settings/usr/bin/maxgconf
 
 

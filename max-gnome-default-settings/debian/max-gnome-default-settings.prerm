@@ -14,7 +14,7 @@ case $1 in
    purge)
      # remove gconf settings
      for _file in $(find $META_GCONF -name "*.gconf"); do
-       /usr/sbin/maxgconf --unset $_file
+       maxgconf --unset $_file
      done
 
      # unset mandatory and defaults
