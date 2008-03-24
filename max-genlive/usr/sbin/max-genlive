@@ -5,7 +5,7 @@
 DISTRO=hardy
 DISTRO_VERSION="8.04"
 ARCH=i386
-IMAGE_NAME="MaX-4.0-0alpha1"
+IMAGE_NAME="MaX-4.0-0beta1"
 TITLE="MaX 4.0"
 
 
@@ -41,13 +41,13 @@ if [ "$1" = "--help" ]; then
 fi
 
 if [ "x$1" = "x" ] || [ ! -f "$1" ]; then
-  ISO="hardy-desktop-i386.iso"
+  ISO="ubuntu-8.04-beta-desktop-i386.iso"
 else
   echo "Usando $1 como ISO base a actualizar..."
   ISO="$1"
 fi
 
-MIRROR="ftp://ftp.rediris.es/sites/releases.ubuntu.com/releases/hardy/"
+MIRROR="http://www.tcosproject.org/max/"
 
 CURDIR=$(pwd)
 

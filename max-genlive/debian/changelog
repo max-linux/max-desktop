@@ -1,3 +1,16 @@
+max-genlive (4.0.max0.17) max; urgency=low
+
+  * Check if mksquashfs have nolzma argument
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 24 Mar 2008 14:21:44 +0100
+
+max-genlive (4.0.max0.16) max; urgency=low
+
+  * Change iso name to ubuntu-8.04-beta-desktop-i386.iso
+  * Build MaX 4.0 beta1 (alfa is old)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 23 Mar 2008 18:03:12 +0100
+
 max-genlive (4.0.max0.15) max; urgency=low
 
   * 60clean:
