@@ -1,3 +1,12 @@
+max-live (4.0.max0.10) max; urgency=low
+
+  * 45disable_scim:
+    - Fix typo ; intead of ,
+  * 44fix_xorg_keymap:
+    - Wrap strings with ""
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 24 Mar 2008 19:07:30 +0100
+
 max-live (4.0.max0.9) max; urgency=low
 
   * Remove PolicyKit patch, appy in upstream (casper 1.123)

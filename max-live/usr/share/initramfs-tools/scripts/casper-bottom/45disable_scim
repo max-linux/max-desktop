@@ -20,7 +20,7 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
-if [ -e /root/usr/bin/im-switch ], then
+if [ -e /root/usr/bin/im-switch ]; then
   chroot /root << EOF
 im-switch -z all_ALL -s none
 EOF
