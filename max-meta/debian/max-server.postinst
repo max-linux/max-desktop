@@ -12,7 +12,7 @@ max_gconf_load() {
 case $1 in
   configure)
      for _file in $(find $META_GCONF -name "*.gconf.max-server"); do
-       /usr/sbin/maxgconf --set $_file
+       maxgconf --set $_file
      done
 
      # parse dumps files

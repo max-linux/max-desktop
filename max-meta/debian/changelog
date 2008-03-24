@@ -1,3 +1,9 @@
+max-meta (4.0.max1.15) max; urgency=low
+
+  * Call maxgconf without PATH (moved to /usr/bin)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 24 Mar 2008 16:51:00 +0100
+
 max-meta (4.0.max1.14) max; urgency=low
 
   * Move maxgconf to max-gnome-default-settings package

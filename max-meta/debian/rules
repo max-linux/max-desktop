@@ -13,9 +13,6 @@ configure/max-desktop::
 		#	>> debian/$$package.substvars; \
 	done
 
-install/max-desktop-common::
-	install -m 755 maxgconf.sh $(CURDIR)/debian/max-desktop-common/usr/sbin/maxgconf
-
 clean::
 	rm -f *~ desktop-sin-dupli-i386 desktop-all-i386 desktop-dupli-i386
 
