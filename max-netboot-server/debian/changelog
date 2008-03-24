@@ -1,3 +1,10 @@
+max-netboot-server (4.0.max0.3) max; urgency=low
+
+  * update-netboot-server:
+    - Use cdrom files if exists intead of caching with gentcos
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 24 Mar 2008 19:15:17 +0100
+
 max-netboot-server (4.0.max0.2) max; urgency=low
 
   * Fix typo in postinst file
