@@ -1,3 +1,13 @@
+max-meta (4.0.max1.14) max; urgency=low
+
+  * Move maxgconf to max-gnome-default-settings package
+  * Delete all max-desktop-common scripts (not needed anymore)
+  * max-server:
+   - Don't provide gconf file (file is in max-gnome-default-settings package)
+  * Add max-gnome-default-settings depends in server and gnome package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 23 Mar 2008 21:19:07 +0100
+
 max-meta (4.0.max1.13) max; urgency=low
 
   * max-desktop-common:

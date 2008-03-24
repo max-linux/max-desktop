@@ -5,7 +5,7 @@
 
 case $1 in
     configure)
-       update-alternatives --set x-www-browser /usr/bin/firefox || true
+       update-alternatives --set x-www-browser /usr/bin/firefox-3.0 || true
     ;;
 esac
 
