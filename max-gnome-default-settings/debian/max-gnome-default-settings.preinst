@@ -1,0 +1,15 @@
+#!/bin/bash
+
+META_GCONF=/usr/share/max/gconf/
+META_GCONF_DUMPS=/usr/share/max/gconf-dumps
+
+
+# upgrade to 0.19 should remove mandatory strings
+if dpkg --compare-versions "$2" lt 0.22; then
+     # remove gconf settings
+     for _file in $(find $META_GCONF -name "*.gconf"); do
+       /usr/sbin/maxgconf --unset $_file
+     done
+fi
+
+#DEBHELPER#

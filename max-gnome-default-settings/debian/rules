@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+install/max-gnome-default-settings::
+	install -m 755 maxgconf.sh $(CURDIR)/debian/max-gnome-default-settings/usr/sbin/maxgconf
+
+

@@ -1,0 +1,14 @@
+Source: max-gnome-default-settings
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 4), cdbs
+
+Package: max-gnome-default-settings
+Architecture: all
+Conflicts: max-desktop-common (<< 4.0.max1.13)
+Description: MaX gnome default settings
+ Contains:
+  * maxgconf
+  * gconf dumps and settings
