@@ -11,10 +11,17 @@
 
 if [ -f /etc/tcos/tcos.conf ]; then
   . /etc/tcos/tcos.conf
-  echo -n " * Configurando NET-menu TCOS ... "
+  echo " * Configurando NET-menu TCOS ... "
    sed -e "s/__TCOS_KERNEL__/${TCOS_KERNEL}/g" \
     /var/lib/max-netboot/pxelinux.cfg/tcos.menu.tpl > /var/lib/max-netboot/pxelinux.cfg/tcos.menu
-  echo " [done]"
+
+
+  # configurar XFS
+  if [ $(grep -c "^no-listen" /etc/X11/fs/config) != 0 ]; then
+    sed -i 's/no-listen/#no-listen/g' /etc/X11/fs/config
+    invoke-rc.d xfs restart
+  fi
+
 
   # generar imagenes de arranque
   if [ -x /usr/sbin/gentcos ]; then
@@ -33,12 +40,6 @@ if [ -f /etc/tcos/tcos.conf ]; then
     # generar imagenes de arranque 
     gentcos -tftp
   fi
-  # configurar XFS
-  if [ $(grep -c "^no-listen" /etc/X11/fs/config) != 0 ]; then
-    sed -i 's/no-listen/#no-listen/g' /etc/X11/fs/config
-    invoke-rc.d xfs restart
-  fi
-
 fi
 
 #
@@ -49,11 +50,10 @@ if [ -d /usr/share/backharddi ]; then
   # buscar kernel
   BK_KERNEL=$(basename `ls /boot/linux*backharddi*`)
   BK_INITRD=$(basename `ls /boot/minirt*backharddi*`)
-  echo -n " * Configurando NET-menu Backharddi ... "
+  echo " * Configurando NET-menu Backharddi ... "
   sed -e "s/__BK_KERNEL__/${BK_KERNEL}/g" \
        -e "s/__BK_INITRD__/${BK_INITRD}/" \
     /var/lib/max-netboot/pxelinux.cfg/backharddi.menu.tpl > /var/lib/max-netboot/pxelinux.cfg/backharddi.menu
-  echo " [done]"
 fi
 
 #
