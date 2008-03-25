@@ -25,7 +25,7 @@ case "$1" in
   # link default homepage
   update-alternatives \
     --install /usr/share/ubuntu-artwork/home/index.html \
-    firefox-homepage /usr/share/max-artwork/home/index.html 45 \
+    firefox-homepage /usr/share/max-artwork/home/index.html 75 \
     --slave /usr/share/ubuntu-artwork/home/locales \
     firefox-homepage-locales /usr/share/max-artwork/home/locales
 
