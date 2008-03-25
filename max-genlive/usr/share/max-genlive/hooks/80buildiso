@@ -9,7 +9,7 @@ _echo "Copiando preseed"
 rm -f $CDRW/preseed/*
 cp $GENLIVE/preseed/* $CDRW/preseed/ || _exit "No se puede sobreescribir preseed"
 
-printf "$TITLE "Alfa 1" - Alfa i386 ($created)" > $CDRW/.disk/info
+printf "%s - i386 (%s)" "$TITLE" "$created" > $CDRW/.disk/info
 printf "http://max.educa.madrid.org:8000/MaX40/NotasPublicacion" > $CDRW/.disk/release_notes_url
 
 
@@ -21,6 +21,7 @@ rm -rf $CDRW/pics/
 # FIXME este es buen sitio para añadir software portable o una pagina html de bienvenida.
 
 _echo "Generando md5sum de archivos de dentro del DVD..."
+# FIXME no hay que hacer el md5 de boot.cat o isolinux.bin
 (cd $CDRW && find . -type f -print0 |xargs -0 md5sum > md5sum.txt)
 
 _echo "Generando ${IMAGE_NAME}-${stamp}.iso"
