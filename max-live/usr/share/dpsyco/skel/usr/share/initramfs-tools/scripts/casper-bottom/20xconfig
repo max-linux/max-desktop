@@ -1,0 +1,66 @@
+#!/bin/sh
+
+PREREQ=""
+DESCRIPTION="Configuring X..."
+
+. /scripts/casper-functions
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+if [ "$TERM_TYPE" = "serial" ]; then
+    # Don't bother trying to configure or start X on a serial console
+    rm -f /root/etc/rc?.d/S??[gkx]dm
+    exit 0
+fi
+
+locale=en_US.UTF-8
+
+for x in $(cat /proc/cmdline); do
+	case $x in
+		debian-installer/locale=*)
+			locale=${x#debian-installer/locale=}
+			;;
+		locale=*)
+			locale=${x#locale=}
+			;;
+		textonly)
+			exit 0
+			;;
+	esac
+done
+
+log_begin_msg "$DESCRIPTION"
+
+mount -n -o bind /sys /root/sys
+mount -n -o bind /proc /root/proc
+mount -n -o bind /dev /root/dev
+
+if [ -n "${XDEBCONF}" -a -x /root/usr/sbin/xdebconfigurator ]; then
+    # xdebconfigurator
+    chroot /root /usr/sbin/xdebconfigurator
+fi
+
+chroot /root debconf-communicate -fnoninteractive casper > /dev/null <<EOF
+set xserver-xorg/autodetect_keyboard false
+fset xserver-xorg/autodetect_keyboard seen true
+set xserver-xorg/config/inputdevice/keyboard/layout es
+set xserver-xorg/config/inputdevice/keyboard/model pc105
+EOF
+
+DEBUG_XORG_PACKAGE=1 DEBUG_XORG_DEBCONF=1 LANG=$(grep "^${locale}" /root/usr/share/i18n/SUPPORTED | grep UTF-8 | sed -e 's, .*,,' -e q) casper-reconfigure /root xserver-xorg
+umount /root/sys
+umount /root/proc
+umount /root/dev
+
+log_end_msg

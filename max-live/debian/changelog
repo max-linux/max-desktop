@@ -1,3 +1,10 @@
+max-live (4.0.max0.11) max; urgency=low
+
+  * 20xconfig:
+    - Preseed keyboard layout (avoid to use wrong " pc105")
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 25 Mar 2008 13:00:45 +0100
+
 max-live (4.0.max0.10) max; urgency=low
 
   * 45disable_scim:
