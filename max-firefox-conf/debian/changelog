@@ -1,3 +1,10 @@
+max-firefox-conf (4.0.max2) max; urgency=low
+
+  * Remove all files except bookmarks.html
+  * Move profile to /etc/firefox-3.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 25 Mar 2008 16:58:21 +0100
+
 max-firefox-conf (4.0.max1) max; urgency=low
 
   * Rebuild in MaX 4.0
