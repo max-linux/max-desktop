@@ -1,3 +1,13 @@
+max-genlive (4.0.max0.19) max; urgency=low
+
+  * isolinux.cfg:
+    - Translate HDD boot menu option
+  * gfxboot.cfg:
+    - Hide OEM install
+    - Add all_generic_ide option for DVD problems
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 25 Mar 2008 14:16:15 +0100
+
 max-genlive (4.0.max0.18) max; urgency=low
 
   * 80buildiso:
