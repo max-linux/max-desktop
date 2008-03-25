@@ -2,14 +2,14 @@
 <!-- 	$Id: metacity-theme-1.xml,v 1.1 2005/08/01 18:39:07 thos Exp $	 -->
 <metacity_theme>
 <info>
-  <name>MaxColors</name>
-  <author>Oliver Grawert &lt;ogra@ubuntu.com&gt;</author>
-  <copyright>&#194; 2005 Oliver Grawert / Daniel Borgman (Clearlooks)</copyright>
-  <date>Dec, 2005</date>
-  <description>MaxColors, based on Clearlooks</description>
+  <name>Human</name>
+  <author>Daniel Borgmann &lt;daniel.borgmann@gmail.com&gt; Billy Cantrell, bvcmdk@yahoo.com</author>
+  <copyright>&#194; 2005 Daniel Borgmann</copyright>
+  <date>April, 2006</date>
+  <description>Ubuntu Human Round, based on Clearlooks</description>
 </info>
  
-<frame_geometry name="normal" rounded_top_left="true" rounded_top_right="true" rounded_bottom_left="false" rounded_bottom_right="false">
+<frame_geometry name="normal" rounded_top_left="true" rounded_top_right="true" rounded_bottom_left="true" rounded_bottom_right="true">
   <distance name="left_width" value="5"/>
   <distance name="right_width" value="5"/>
   <distance name="bottom_height" value="5"/>
@@ -64,65 +64,91 @@
 
 <draw_ops name="corners_outline_selected_top">
 	<!-- top left -->
-	<line color="shade/gtk:bg[SELECTED]/0.25" x1="1" y1="3" x2="1" y2="4"/>
- 	<line color="shade/gtk:bg[SELECTED]/0.25" x1="2" y1="2" x2="2" y2="2"/>
-	<line color="shade/gtk:bg[SELECTED]/0.25" x1="3" y1="1" x2="4" y2="1"/>
+	<line color="shade/gtk:bg[SELECTED]/0.4" x1="0" y1="6" x2="1" y2="2"/>
+	<line color="shade/gtk:bg[SELECTED]/0.5" x1="1" y1="3" x2="1" y2="4"/>
+ 	<line color="shade/gtk:bg[SELECTED]/0.55" x1="1" y1="3" x2="2" y2="2"/>
+	<line color="shade/gtk:bg[SELECTED]/0.55" x1="3" y1="1" x2="4" y2="1"/>
+	<line color="shade/gtk:bg[SELECTED]/0.6" x1="3" y1="1" x2="1" y2="1"/>
 
 	<!-- top right -->
-	<line color="shade/gtk:bg[SELECTED]/0.25" x1="width-2" y1="3" x2="width-2" y2="4"/>
-	<line color="shade/gtk:bg[SELECTED]/0.25" x1="width-3" y1="2" x2="width-3" y2="2"/>
-	<line color="shade/gtk:bg[SELECTED]/0.25" x1="width-4" y1="1" x2="width-5" y2="1"/>
+	<line color="shade/gtk:bg[SELECTED]/0.4" x1="width-1" y1="6" x2="width-1" y2="2"/>
+	<line color="shade/gtk:bg[SELECTED]/0.5" x1="width-2" y1="3" x2="width-2" y2="4"/>
+	<line color="shade/gtk:bg[SELECTED]/0.55" x1="width-2" y1="3" x2="width-3" y2="2"/>
+	<line color="shade/gtk:bg[SELECTED]/0.55" x1="width-4" y1="1" x2="width-5" y2="1"/>
+	<line color="shade/gtk:bg[SELECTED]/0.6" x1="width-4" y1="1" x2="width-1" y2="1"/>
 </draw_ops>
 
 <draw_ops name="corners_outline_top">
 	<!-- top left -->
-	<line color="shade/gtk:bg[NORMAL]/0.25" x1="1" y1="3" x2="1" y2="4"/>
- 	<line color="shade/gtk:bg[NORMAL]/0.25" x1="2" y1="2" x2="2" y2="2"/>
-	<line color="shade/gtk:bg[NORMAL]/0.25" x1="3" y1="1" x2="4" y2="1"/>
+	<line color="shade/gtk:bg[NORMAL]/0.35" x1="1" y1="3" x2="1" y2="4"/>
+ 	<line color="shade/gtk:bg[NORMAL]/0.4" x1="2" y1="2" x2="2" y2="2"/>
+	<line color="shade/gtk:bg[NORMAL]/0.45" x1="3" y1="1" x2="4" y2="1"/>
 
 	<!-- top right -->
-	<line color="shade/gtk:bg[NORMAL]/0.25" x1="width-2" y1="3" x2="width-2" y2="4"/>
-	<line color="shade/gtk:bg[NORMAL]/0.25" x1="width-3" y1="2" x2="width-3" y2="2"/>
-	<line color="shade/gtk:bg[NORMAL]/0.25" x1="width-4" y1="1" x2="width-5" y2="1"/>
+	<line color="shade/gtk:bg[NORMAL]/0.35" x1="width-2" y1="3" x2="width-2" y2="4"/>
+	<line color="shade/gtk:bg[NORMAL]/0.4" x1="width-3" y1="2" x2="width-3" y2="2"/>
+	<line color="shade/gtk:bg[NORMAL]/0.45" x1="width-4" y1="1" x2="width-5" y2="1"/>
 </draw_ops>
 
 <draw_ops name="corners_outline_selected_bottom">
 	<!-- bottom left -->
-	<line color="shade/gtk:bg[SELECTED]/0.25" x1="1" y1="height-4" x2="1" y2="height-5"/>
- 	<line color="shade/gtk:bg[SELECTED]/0.25" x1="2" y1="height-3" x2="2" y2="height-3"/>
-	<line color="shade/gtk:bg[SELECTED]/0.25" x1="2" y1="height-2" x2="4" y2="height-2"/>
+	<line color="shade/gtk:bg[SELECTED]/0.38" x1="1" y1="height-4" x2="0" y2="height-7"/>
+	<line color="shade/gtk:bg[SELECTED]/0.36" x1="1" y1="height-4" x2="1" y2="height-5"/>
+ 	<line color="shade/gtk:bg[SELECTED]/0.38" x1="2" y1="height-3" x2="2" y2="height-3"/>
+	<line color="shade/gtk:bg[SELECTED]/0.35" x1="2" y1="height-2" x2="4" y2="height-2"/>
 
 	<!-- bottom right -->
-	<line color="shade/gtk:bg[SELECTED]/0.25" x1="width-2" y1="height-4" x2="width-2" y2="height-5"/>
-	<line color="shade/gtk:bg[SELECTED]/0.25" x1="width-3" y1="height-3" x2="width-3" y2="height-3"/>
-	<line color="shade/gtk:bg[SELECTED]/0.25" x1="width-4" y1="height-2" x2="width-5" y2="height-2"/>
+	<line color="shade/gtk:bg[SELECTED]/0.38" x1="width-2" y1="height-4" x2="width-1" y2="height-7"/>
+	<line color="shade/gtk:bg[SELECTED]/0.36" x1="width-2" y1="height-4" x2="width-2" y2="height-5"/>
+	<line color="shade/gtk:bg[SELECTED]/0.38" x1="width-3" y1="height-3" x2="width-3" y2="height-3"/>
+	<line color="shade/gtk:bg[SELECTED]/0.35" x1="width-4" y1="height-2" x2="width-5" y2="height-2"/>
 </draw_ops>
 <draw_ops name="corners_outline_bottom">
 	<!-- bottom left -->
-	<line color="shade/gtk:bg[NORMAL]/0.25" x1="1" y1="height-4" x2="1" y2="height-5"/>
- 	<line color="shade/gtk:bg[NORMAL]/0.25" x1="2" y1="height-3" x2="2" y2="height-3"/>
-	<line color="shade/gtk:bg[NORMAL]/0.25" x1="2" y1="height-2" x2="4" y2="height-2"/>
+	<line color="shade/gtk:bg[NORMAL]/0.95" x1="4" y1="height-3" x2="1" y2="height-3"/>
+	<line color="shade/gtk:bg[NORMAL]/0.93" x1="3" y1="height-3" x2="1" y2="height-3"/>
+	<line color="shade/gtk:bg[NORMAL]/1.05" x1="2" y1="height-5" x2="1" y2="height-6"/>
+	<line color="shade/gtk:bg[NORMAL]/1.03" x1="2" y1="height-4" x2="1" y2="height-5"/>
+	<line color="shade/gtk:bg[NORMAL]/0.85" x1="6" y1="height-2" x2="1" y2="height-2"/>
+	<line color="shade/gtk:bg[NORMAL]/0.83" x1="5" y1="height-2" x2="1" y2="height-3"/>
+
+	<line color="shade/gtk:bg[NORMAL]/0.28" x1="1" y1="height-4" x2="1" y2="height-5"/>
+ 	<line color="shade/gtk:bg[NORMAL]/0.3" x1="2" y1="height-3" x2="2" y2="height-3"/>
+	<line color="shade/gtk:bg[NORMAL]/0.28" x1="2" y1="height-2" x2="4" y2="height-2"/>
 
 	<!-- bottom right -->
-	<line color="shade/gtk:bg[NORMAL]/0.25" x1="width-2" y1="height-4" x2="width-2" y2="height-5"/>
-	<line color="shade/gtk:bg[NORMAL]/0.25" x1="width-3" y1="height-3" x2="width-3" y2="height-3"/>
-	<line color="shade/gtk:bg[NORMAL]/0.25" x1="width-4" y1="height-2" x2="width-5" y2="height-2"/>
+	<line color="shade/gtk:bg[NORMAL]/0.90" x1="width-3" y1="height-4" x2="width-2" y2="height-4"/>
+	<line color="shade/gtk:bg[NORMAL]/0.90" x1="width-3" y1="height-5" x2="width-2" y2="height-5"/>
+	<line color="shade/gtk:bg[NORMAL]/0.90" x1="width-4" y1="height-3" x2="width-5" y2="height-3"/>
+	<line color="shade/gtk:bg[NORMAL]/0.97" x1="width-4" y1="height-4" x2="width-4" y2="height-4"/>
+
+	<line color="shade/gtk:bg[NORMAL]/0.28" x1="width-2" y1="height-4" x2="width-2" y2="height-5"/>
+	<line color="shade/gtk:bg[NORMAL]/0.3" x1="width-3" y1="height-3" x2="width-3" y2="height-3"/>
+	<line color="shade/gtk:bg[NORMAL]/0.28" x1="width-4" y1="height-2" x2="width-5" y2="height-2"/>
+
 </draw_ops>
 
 <draw_ops name="corners_hilight">
-
 	<!-- ** corner hilight for left top ** -->
-	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.4"
-		x="2" y="3" width="1" height="2"/>
-	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.4"
-		x="3" y="2" width="2" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.3" x="2" y="3" width="1" height="2"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.2" x="3" y="3" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.3" x="3" y="2" width="2" height="1"/>
+	<tint color="#000000" alpha="0.07" x="3" y="2" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.2" x="2" y="5" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.05" x="2" y="6" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.1" x="4" y="3" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.1" x="3" y="4" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.2" x="5" y="2" width="1" height="1"/>
   
 
 	<!-- ** corner hilight for right top ** -->
-	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.4"
-		x="width-5" y="2" width="2" height="1"/>
-	<tint color="#000000" alpha="0.1"
-		x="width-3" y="3" width="1" height="2"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.15" x="width-4" y="3" width="1" height="1"/>
+	<tint color="#000000" alpha="0.05" x="width-4" y="2" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.2" x="width-5" y="2" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.1" x="width-6" y="2" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.05" x="width-7" y="2" width="1" height="1"/>
+	<tint color="#000000" alpha="0.1" x="width-3" y="3" width="1" height="1"/>
+	<tint color="#000000" alpha="0.04" x="width-3" y="4" width="1" height="2"/>
   
   <!-- ** corner hilight for left bottom ** -->
   <!--<line color="shade/gtk:bg[NORMAL]/1.3" x1="2" y1="height-4" x2="2" y2="height-5"/>
@@ -131,35 +157,40 @@
   <!-- ** corner hilight for right bottom ** -->
   <!--<line color="shade/gtk:bg[NORMAL]/0.88" x1="width-3" y1="height-4" x2="width-3" y2="height-5"/>
   <line color="shade/gtk:bg[NORMAL]/0.88" x1="width-4" y1="height-3" x2="width-5" y2="height-3"/>-->
-
 </draw_ops>
 
 <draw_ops name="corners_hilight_shaded">
-
 	<!-- ** corner hilight for left top ** -->
-	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.4"
-		x="2" y="3" width="1" height="2"/>
-	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.4"
-		x="3" y="2" width="2" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.3" x="2" y="3" width="1" height="2"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.2" x="3" y="3" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.3" x="3" y="2" width="2" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.2" x="2" y="5" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.05" x="2" y="6" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.1" x="4" y="3" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.1" x="3" y="4" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.2" x="5" y="2" width="1" height="1"/>
   
 	<!-- ** corner hilight for right top ** -->
-	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.4"
-		x="width-5" y="2" width="2" height="1"/>
-	<tint color="#000000" alpha="0.1"
-		x="width-3" y="3" width="1" height="2"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.2" x="width-5" y="2" width="2" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.1" x="width-4" y="3" width="1" height="1"/>
+	<tint color="#000000" alpha="0.04" x="width-3" y="3" width="1" height="2"/>
   
 	<!-- ** corner hilight for left bottom ** -->
-	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.4"
-		x="2" y="height-5" width="1" height="2"/>
-	<tint color="#000000" alpha="0.1"
-		x="3" y="height-3" width="2" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.2" x="2" y="height-5" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.15" x="2" y="height-4" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.1" x="3" y="height-4" width="1" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.1" x="2" y="height-6" width="1" height="1"/>
+	<tint color="#000000" alpha="0.05" x="4" y="height-3" width="1" height="1"/>
+	<tint color="#000000" alpha="0.1" x="3" y="height-3" width="1" height="1"/>
 
 	<!-- ** corner hilight for right bottom ** -->
-	<tint color="#000000" alpha="0.1"
-		x="width-5" y="height-3" width="2" height="1"/>
-	<tint color="#000000" alpha="0.1"
-		x="width-3" y="height-5" width="1" height="2"/>
-
+	<tint color="#000000" alpha="0.03" x="width-6" y="height-3" width="1" height="1"/>
+	<tint color="#000000" alpha="0.03" x="width-4" y="height-4" width="1" height="1"/>
+	<tint color="#000000" alpha="0.03" x="width-3" y="height-6" width="1" height="1"/>
+	<tint color="#000000" alpha="0.11" x="width-5" y="height-3" width="1" height="1"/>
+	<tint color="#000000" alpha="0.15" x="width-4" y="height-3" width="1" height="1"/>
+	<tint color="#000000" alpha="0.09" x="width-3" y="height-5" width="1" height="1"/>
+	<tint color="#000000" alpha="0.13" x="width-3" y="height-4" width="1" height="1"/>
 </draw_ops>
 
 <draw_ops name="outer_frame">
@@ -179,63 +210,63 @@
 
 <draw_ops name="title_background">
 	<gradient type="vertical" x="0" y="1" width="width" height="top_height / 2">
-		<color value="shade/gtk:bg[SELECTED]/1.5"/> <!-- 1.25 0.97 - 0.95 1.00 -->
+		<color value="shade/gtk:bg[SELECTED]/1.3"/> <!-- 1.25 0.97 - 0.95 1.00 -->
 		<color value="shade/gtk:bg[SELECTED]/1.0"/>
 	</gradient>
 	<gradient type="vertical" x="0" y="top_height / 2" width="width" height="top_height / 2">
-		<color value="shade/gtk:bg[SELECTED]/0.95"/>
-		<color value="shade/gtk:bg[SELECTED]/1.10"/>
+		<color value="shade/gtk:bg[SELECTED]/0.97"/>
+		<color value="shade/gtk:bg[SELECTED]/1.1"/>
 	</gradient>
 	
-	<line color="shade/gtk:bg[SELECTED]/0.25" x1="0" y1="0" x2="width" y2="0"/>
-	
-	<!--<line color="shade/gtk:bg[SELECTED]/1.45" x1="0" y1="1" x2="width" y2="1"/>-->
-	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.4"
-		x="0" y="1" width="width" height="1"/>
-	
-	<line color="shade/gtk:bg[SELECTED]/0.9" x1="0" y1="top_height-2" x2="width" y2="top_height-2"/>
-	<line color="shade/gtk:bg[SELECTED]/0.5" x1="0" y1="top_height-1" x2="width-1" y2="top_height-1"/>
+	<line color="shade/gtk:bg[SELECTED]/0.55" x1="0" y1="0" x2="width" y2="0"/>
+	<!--<line color="shade/gtk:bg[SELECTED]/0.4" x1="7" y1="0" x2="width -8" y2="0"/>-->
+
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.3" x="0" y="1" width="width" height="1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.05" x="7" y="1" width="width -14" height="1"/>
+
+	<line color="shade/gtk:bg[SELECTED]/0.97" x1="0" y1="top_height-2" x2="width" y2="top_height-2"/>
+	<line color="shade/gtk:bg[SELECTED]/0.7" x1="0" y1="top_height-1" x2="width-1" y2="top_height-1"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.1" x="6" y="2" width="1" height="1"/>
+
+	<tint color="#000000" alpha="0.05" x="width-6" y="1" width="1" height="1"/>
+	<tint color="#000000" alpha="0.05" x="5" y="1" width="1" height="1"/>
 </draw_ops>
 
 <!-- ** title background with side borders ** -->
 <draw_ops name="title_background_full">
 	<include name="title_background"/>
 	
-	<line color="shade/gtk:bg[SELECTED]/0.25" x1="0" y1="0" x2="0" y2="top_height-1"/>
-	<line color="shade/gtk:bg[SELECTED]/0.25" x1="width-1" y1="0" x2="width-1" y2="top_height-1"/>
+	<line color="shade/gtk:bg[SELECTED]/0.32" x1="0" y1="0" x2="0" y2="top_height-1"/>
+	<line color="shade/gtk:bg[SELECTED]/0.32" x1="width-1" y1="0" x2="width-1" y2="top_height-1"/>
 	
-	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.4"
-		x="1" y="2" width="1" height="top_height-3"/>
-	<tint color="#000000" alpha="0.1"
-		x="width-2" y="2" width="1" height="top_height-4"/>
+	<tint color="shade/gtk:bg[SELECTED]/2" alpha="0.3" x="1" y="2" width="1" height="top_height-3"/>
+	<tint color="#000000" alpha="0.05" x="width-2" y="2" width="1" height="top_height-4"/>
 </draw_ops>
 
 <draw_ops name="title_background_unfocused">
-	<gradient type="vertical" x="0" y="1" width="width" height="top_height / 2">
-		<color value="shade/gtk:bg[NORMAL]/1.25"/>
+	<gradient type="vertical" x="2" y="1" width="width - 4" height="top_height / 2">
+		<color value="shade/gtk:bg[NORMAL]/1.05"/>
 		<color value="shade/gtk:bg[NORMAL]/1.0"/>
 	</gradient>
-	<gradient type="vertical" x="0" y="top_height / 2" width="width" height="top_height / 2">
-		<color value="shade/gtk:bg[NORMAL]/0.97"/>
+	<gradient type="vertical" x="2" y="top_height / 2" width="width - 4" height="top_height / 2">
+		<color value="shade/gtk:bg[NORMAL]/0.99"/>
 		<color value="shade/gtk:bg[NORMAL]/1.0"/>
 	</gradient>
 	
-	<line color="shade/gtk:bg[NORMAL]/0.25" x1="0" y1="0" x2="width" y2="0"/>
+	<line color="shade/gtk:bg[NORMAL]/0.45" x1="0" y1="0" x2="width" y2="0"/>
 	<line color="shade/gtk:bg[NORMAL]/1.3" x1="0" y1="1" x2="width" y2="1"/>
-	<!--<line color="shade/gtk:bg[NORMAL]/0.95" x1="0" y1="top_height-2" x2="width" y2="top_height-2"/>-->
-	<!--<line color="shade/gtk:bg[NORMAL]/0.7" x1="0" y1="top_height-1" x2="width-1" y2="top_height-1"/>-->
 </draw_ops>
 
 <draw_ops name="title_background_unfocused_full">
 	<include name="title_background_unfocused"/>
 	
-	<line color="shade/gtk:bg[NORMAL]/0.25" x1="0" y1="0" x2="0" y2="top_height-1"/>
+	<!--<line color="shade/gtk:bg[NORMAL]/0.25" x1="0" y1="0" x2="0" y2="top_height-1"/>
 	<line color="shade/gtk:bg[NORMAL]/0.25" x1="width-1" y1="0" x2="width-1" y2="top_height-1"/>
 	
 	<tint color="shade/gtk:bg[NORMAL]/2" alpha="0.4"
 		x="1" y="2" width="1" height="top_height-3"/>
 	<tint color="#000000" alpha="0.1"
-		x="width-2" y="2" width="1" height="top_height-4"/>
+		x="width-2" y="2" width="1" height="top_height-4"/>-->
 </draw_ops>
 
 <draw_ops name="bevel_maximized">
@@ -266,7 +297,7 @@
 <draw_ops name="round_bevel_unfocused">
   <include name="bevel_unfocused"/>
   <include name="corners_outline_top"/>
-  <!--<include name="corners_outline_bottom"/>-->
+  <include name="corners_outline_bottom"/>
   <include name="corners_hilight"/>
 </draw_ops>
 
@@ -286,7 +317,7 @@
 <draw_ops name="round_bevel">
   <include name="bevel"/>
   <include name="corners_outline_selected_top"/>
-  <!--<include name="corners_outline_bottom"/>-->
+  <include name="corners_outline_bottom"/>
   <include name="corners_hilight"/>
 </draw_ops>
 
@@ -416,12 +447,12 @@
 
 <draw_ops name="button_bg_unfocused">
 	<gradient type="vertical" x="2" y="4" width="width - 4" height="height / 2 - 4">
-		<color value="shade/gtk:bg[NORMAL]/1.3"/>
+		<color value="shade/gtk:bg[NORMAL]/1.1"/>
 		<color value="shade/gtk:bg[NORMAL]/1.0"/>
 	</gradient>
 	<gradient type="vertical" x="2" y="height / 2" width="width - 4" height="height / 2 - 3">
-		<color value="shade/gtk:bg[NORMAL]/0.92"/>
-		<color value="shade/gtk:bg[NORMAL]/0.93"/>
+		<color value="shade/gtk:bg[NORMAL]/0.98"/>
+		<color value="shade/gtk:bg[NORMAL]/1.0"/>
 	</gradient>
 
 	<include name="button_outline"/>		
@@ -429,12 +460,12 @@
 
 <draw_ops name="button_bg_unfocused_prelight">
 	<gradient type="vertical" x="2" y="4" width="width - 4" height="height / 2 - 4">
-		<color value="shade/gtk:bg[NORMAL]/1.4"/>
+		<color value="shade/gtk:bg[NORMAL]/1.3"/>
 		<color value="shade/gtk:bg[NORMAL]/1.1"/>
 	</gradient>
 	<gradient type="vertical" x="2" y="height / 2" width="width - 4" height="height / 2 - 3">
-		<color value="shade/gtk:bg[NORMAL]/0.94"/>
-		<color value="shade/gtk:bg[NORMAL]/1.0"/>
+		<color value="shade/gtk:bg[NORMAL]/1.05"/>
+		<color value="shade/gtk:bg[NORMAL]/1.1"/>
 	</gradient>
 
 	<include name="button_outline"/>	
@@ -442,12 +473,12 @@
 
 <draw_ops name="button_bg_unfocused_pressed">
 	<gradient type="vertical" x="2" y="4" width="width - 4" height="height / 2 - 4">
-		<color value="shade/gtk:bg[NORMAL]/0.95"/>
-		<color value="shade/gtk:bg[NORMAL]/0.85"/>
+		<color value="shade/gtk:bg[NORMAL]/0.76"/>
+		<color value="shade/gtk:bg[NORMAL]/0.75"/>
 	</gradient>
 	<gradient type="vertical" x="2" y="height / 2" width="width - 4" height="height / 2 - 3">
+		<color value="shade/gtk:bg[NORMAL]/0.73"/>
 		<color value="shade/gtk:bg[NORMAL]/0.75"/>
-		<color value="shade/gtk:bg[NORMAL]/0.8"/>
 	</gradient>
 
 	<include name="button_outline"/>	

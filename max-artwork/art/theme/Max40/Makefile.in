@@ -30,7 +30,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-subdir = art/homepage
+subdir = art/theme/Max40
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -46,9 +46,9 @@ am__vpath_adj = case $$p in \
     *) f=$$p;; \
   esac;
 am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
-am__installdirs = "$(DESTDIR)$(pagedir)"
-pageDATA_INSTALL = $(INSTALL_DATA)
-DATA = $(page_DATA)
+am__installdirs = "$(DESTDIR)$(themedir)"
+themeDATA_INSTALL = $(INSTALL_DATA)
+DATA = $(theme_DATA)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 ALL_LINGUAS = @ALL_LINGUAS@
@@ -180,13 +180,11 @@ sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-pagedir = $(datadir)/max-artwork/home
-page_DATA = \
-	max-logo.png \
-	max.css \
-	index.html
+themedir = /usr/share/themes/Max40
+theme_DATA = \
+	index.theme
 
-EXTRA_DIST = $(page_DATA)
+EXTRA_DIST = $(theme_DATA)
 all: all-am
 
 .SUFFIXES:
@@ -199,9 +197,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__confi
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  art/homepage/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  art/theme/Max40/Makefile'; \
 	cd $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu  art/homepage/Makefile
+	  $(AUTOMAKE) --gnu  art/theme/Max40/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
@@ -219,22 +217,22 @@ $(top_srcdir)/configure: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
-install-pageDATA: $(page_DATA)
+install-themeDATA: $(theme_DATA)
 	@$(NORMAL_INSTALL)
-	test -z "$(pagedir)" || $(MKDIR_P) "$(DESTDIR)$(pagedir)"
-	@list='$(page_DATA)'; for p in $$list; do \
+	test -z "$(themedir)" || $(MKDIR_P) "$(DESTDIR)$(themedir)"
+	@list='$(theme_DATA)'; for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  f=$(am__strip_dir) \
-	  echo " $(pageDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pagedir)/$$f'"; \
-	  $(pageDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pagedir)/$$f"; \
+	  echo " $(themeDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(themedir)/$$f'"; \
+	  $(themeDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(themedir)/$$f"; \
 	done
 
-uninstall-pageDATA:
+uninstall-themeDATA:
 	@$(NORMAL_UNINSTALL)
-	@list='$(page_DATA)'; for p in $$list; do \
+	@list='$(theme_DATA)'; for p in $$list; do \
 	  f=$(am__strip_dir) \
-	  echo " rm -f '$(DESTDIR)$(pagedir)/$$f'"; \
-	  rm -f "$(DESTDIR)$(pagedir)/$$f"; \
+	  echo " rm -f '$(DESTDIR)$(themedir)/$$f'"; \
+	  rm -f "$(DESTDIR)$(themedir)/$$f"; \
 	done
 tags: TAGS
 TAGS:
@@ -273,7 +271,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(pagedir)"; do \
+	for dir in "$(DESTDIR)$(themedir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -318,7 +316,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-pageDATA
+install-data-am: install-themeDATA
 
 install-dvi: install-dvi-am
 
@@ -352,7 +350,7 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-pageDATA
+uninstall-am: uninstall-themeDATA
 
 .MAKE: install-am install-strip
 
@@ -361,11 +359,11 @@ uninstall-am: uninstall-pageDATA
 	install install-am install-data install-data-am install-dvi \
 	install-dvi-am install-exec install-exec-am install-html \
 	install-html-am install-info install-info-am install-man \
-	install-pageDATA install-pdf install-pdf-am install-ps \
-	install-ps-am install-strip installcheck installcheck-am \
+	install-pdf install-pdf-am install-ps install-ps-am \
+	install-strip install-themeDATA installcheck installcheck-am \
 	installdirs maintainer-clean maintainer-clean-generic \
 	mostlyclean mostlyclean-generic pdf pdf-am ps ps-am uninstall \
-	uninstall-am uninstall-pageDATA
+	uninstall-am uninstall-themeDATA
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
