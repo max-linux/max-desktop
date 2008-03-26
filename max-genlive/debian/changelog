@@ -1,3 +1,10 @@
+max-genlive (4.0.max0.20) max; urgency=low
+
+  * isolinux/splash.pcx:
+    - Remove alfa1 string
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 26 Mar 2008 16:09:28 +0100
+
 max-genlive (4.0.max0.19) max; urgency=low
 
   * isolinux.cfg:
