@@ -1,3 +1,10 @@
+max-live (4.0.max0.13) max; urgency=low
+
+  * 11max:
+    - Enable Desktop network icon
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 26 Mar 2008 16:11:51 +0100
+
 max-live (4.0.max0.12) max; urgency=low
 
   * Translate /etc/init.d/casper script (eject cdrom)

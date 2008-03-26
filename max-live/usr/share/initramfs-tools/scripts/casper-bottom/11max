@@ -45,9 +45,10 @@ cp -f /root/usr/share/zoneinfo/Europe/Madrid /root/etc/localtime
 
 # disable network icon
 # /apps/nautilus/desktop/network_icon_visible bool false
-chroot /root gconftool-2 --direct --type bool \
-             --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults \
-             --set /apps/nautilus/desktop/network_icon_visible false
+#chroot /root gconftool-2 --direct --type bool \
+#             --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults \
+#             --set /apps/nautilus/desktop/network_icon_visible false
+#
 
 
 # PolicyKit is configured in casper 1.123
