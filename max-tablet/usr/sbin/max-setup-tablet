@@ -1,0 +1,219 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+##########################################################################
+# max-setup-tablet writen by MarioDebian <mariodebian@gmail.com>
+#
+# Copyright (c) 2008, Mario Izquierdo <mariodebian@gmail.com>
+# Copyright (c) 2008, Consejería de Educación de la Comunidad Autónoma de Madrid 
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+# 02111-1307, USA.
+###########################################################################
+
+import os
+import sys
+import time
+
+
+XORG="/etc/X11/xorg.conf"
+WACOM_DEV="/dev/input/wacom"
+FORCE=False
+OUTPUT=sys.stdout
+
+if "--force" in sys.argv:
+    FORCE=True
+
+
+WACOM_SECTIONS=[
+['#WACOM',
+ '# Sections added by max-setup at %s' %(time.ctime()),
+ '#' ],
+
+['Section "InputDevice"',
+    '\tIdentifier\t"stylus"',
+    '\tDriver\t\t"wacom"', 
+    '\tOption\t\t"Device"\t"/dev/input/wacom"', 
+    '\tOption\t\t"Type"\t"stylus"', 
+    '\tOption\t\t"USB"\t"on"', 
+'EndSection\n'], 
+
+['Section "InputDevice"',
+    '\tIdentifier\t"eraser"', '\tDriver\t\t"wacom"', 
+    '\tOption\t\t"Device"\t"/dev/input/wacom"',
+    '\tOption\t\t"Type"\t"eraser"', 
+    '\tOption\t\t"USB"\t"on"',
+'EndSection\n'], 
+
+['Section "InputDevice"',
+    '\tIdentifier\t"cursor"',
+    '\tDriver\t\t"wacom"', 
+    '\tOption\t\t"Device"\t"/dev/input/wacom"',
+    '\tOption\t\t"Type"\t"cursor"', 
+    '\tOption\t\t"USB"\t"on"',
+'EndSection\n'], 
+
+['Section "InputDevice"',
+    '\tIdentifier\t"pad"',
+    '\tDriver\t\t"wacom"', 
+    '\tOption\t\t"Device"\t"/dev/input/wacom"',
+    '\tOption\t\t"Type"\t"pad"', 
+    '\tOption\t\t"USB"\t"on"',
+'EndSection\n']
+]
+
+
+WACOM_LAYOUT=[
+'\tInputdevice	"stylus"	"SendCoreEvents"',
+'\tInputdevice	"cursor"	"SendCoreEvents"',
+'\tInputdevice	"eraser"	"SendCoreEvents"',
+'\tInputdevice	"pad"	    "SendCoreEvents"'
+]
+
+XORG_LAYOUT=['Section "ServerLayout"',
+                '\tIdentifier	"Default Layout"',
+                '\tscreen "Default Screen"','EndSection\n'
+            ]
+
+
+def print_debug(txt):
+    print >> sys.stderr, "DEBUG: %s"%txt
+
+
+
+def load_xorg():
+    rawdata=[]
+    f=open(XORG, 'r')
+    for line in f.readlines():
+        rawdata.append(line.replace('\n',''))
+    f.close()
+    return rawdata
+
+def parse_xorg(data):
+    comments=[]
+    sections=[]
+    section=None
+    i=0
+    for line in data:
+        if line.startswith('#'):
+            comments.append(line)
+        if line.startswith('Section'):
+            section=line.replace('Section','').strip().replace('"','')
+            sections.append([])
+        if line.startswith('EndSection'):
+            section=None
+            sections[i].append(line + "\n")
+            i+=1
+        
+        if section:
+            sections[i].append(line)
+    
+    comments.append("\n\n")
+    return (comments,sections)
+
+
+
+def insert_wacom(sections, comments):
+    found_server_layout=False
+    found_old_wacom=False
+    for section in sections:
+        if section == 'Section "ServerLayout"':
+            found_server_layout=True
+    
+    for wacom_section in WACOM_SECTIONS:
+        sections.append(wacom_section)
+    
+    # ADD ServerLayout Section
+    if not found_server_layout:
+        sections.append(XORG_LAYOUT)
+    
+    # insert WACOM LAYOUT
+    for i in range(len(sections)):
+        if sections[i][0] == 'Section "ServerLayout"':
+            tmp=sections[i][0:-1]
+            for wacom in WACOM_LAYOUT:
+                tmp.append(wacom)
+            tmp.append(sections[i][-1])
+            sections[i]=tmp
+    
+    return sections
+
+
+
+def backup_xorg(xorg_file):
+    BACKUP_FILE="%s.max-setup-tablet-"%xorg_file
+    for s in time.localtime():
+        BACKUP_FILE+=str(s)
+    f1=open(xorg_file, 'r')
+    f2=open(BACKUP_FILE , 'w')
+    f2.write(f1.read())
+    f1.close()
+    f2.close()
+
+
+
+def save_xorg(comments, sections, xorg_file):
+    if os.path.exists(xorg_file):
+        backup_xorg(xorg_file)
+    f=open(xorg_file, 'w')
+    f.write( "\n".join(comments) )
+    for section in sections:
+        for line in section:
+            f.write( line + "\n" )
+    f.close()
+
+#############################################################################
+#                          app starts here                                  #
+#############################################################################
+
+# check for WACOM_DEV
+if not FORCE and not os.path.exists(WACOM_DEV):
+    print " * WACOM device (%s) not found in this system"%WACOM_DEV
+    print " * Use %s --force [xorg.conf] to force setup" %sys.argv[0]
+    sys.exit(0)
+
+if not os.path.exists(XORG):
+    print " * max-setup-tablet file %s don't exists, exiting"%XORG
+    sys.exit(0)
+
+# load xorg.conf
+data=load_xorg()
+
+# parse in a multi list
+comments, sections=parse_xorg(data)
+
+# check for already configured file
+for comment in comments:
+    if comment== WACOM_SECTIONS[0][0]:
+        print " * WACOM already configured in this file\n * %s" %XORG
+        sys.exit(0)
+
+# insert sections
+sections=insert_wacom(sections, comments)
+
+if len(sys.argv) == 3:
+    OUTPUT=sys.argv[2]
+
+
+# save file if passed as arg or print to stdout
+if OUTPUT != sys.stdout:
+    save_xorg(comments, sections, OUTPUT)
+    print " * Successfull WACOM setup on %s"%OUTPUT
+else:
+    print "\n".join(comments)
+    for section in sections:
+        for line in section:
+            print line
+
+

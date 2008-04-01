@@ -1,0 +1,17 @@
+#!/bin/sh
+
+#set -e
+
+
+
+if [ "$1" = "configure" ]; then
+    [ -x /usr/sbin/max-setup-tablet ] && /usr/sbin/max-setup-tablet /etc/X11/xorg.conf || true
+fi
+
+
+
+#DEBHELPER#
+
+exit 0
+
+
