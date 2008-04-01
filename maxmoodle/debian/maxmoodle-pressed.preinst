@@ -9,11 +9,10 @@ if [ ! -e /var/cache/maxmoodle/mysql.pressed ]; then
   echo "maxmoodle-pressed: pressing mysql server"
   debconf-set-selections << END
 mysql-server-5.0	mysql-server/root_password	password	cmadrid
+mysql-server-5.0	mysql-server/root_password_again	password	cmadrid
 mysql-server-5.0	mysql-server-5.0/really_downgrade	boolean	false
 mysql-server-5.0	mysql-server-5.0/need_sarge_compat	boolean	false
 mysql-server-5.0	mysql-server-5.0/start_on_boot	boolean	true
-mysql-server-5.0	mysql-server/error_setting_password	error	
-mysql-server-5.0	mysql-server-5.0/nis_warning	note	
 mysql-server-5.0	mysql-server-5.0/postrm_remove_databases	boolean	false
 mysql-server-5.0	mysql-server-5.0/need_sarge_compat_done	boolean	true
 END
@@ -25,18 +24,17 @@ if [ ! -e /var/cache/maxmoodle/moodle.pressed ]; then
   echo "maxmoodle-pressed: pressing moodle"
   debconf-set-selections << END
 moodle	moodle/dbu_password	password	cmadrid
-moodle	moodle/dba_confirm	password	cmadrid
 moodle	moodle/dba_password	password	cmadrid
 moodle	moodle/dbu_confirm	password	cmadrid
-moodle	moodle/dbu_name	string	moodle
-moodle	moodle/db_server	select	mysql-server
+moodle	moodle/dba_confirm	password	cmadrid
 moodle	moodle/db_host	string	localhost
 moodle	moodle/create_db	note	
 moodle	moodle/create_tables	note	
-moodle	moodle/webserver	select	apache2
 moodle	moodle/notconfigured	note	
+moodle	moodle/dbu_name	string	moodle
+moodle	moodle/db_server	select	mysql-server
+moodle	moodle/webserver	select	apache2
 moodle	moodle/db_postgres_create	boolean	true
-moodle	moodle/mismatch	note	
 moodle	moodle/old_webserver_config	note	
 moodle	moodle/dba_name	string	root
 END

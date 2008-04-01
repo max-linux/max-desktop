@@ -1,3 +1,15 @@
+maxmoodle (4.0.max5) max; urgency=low
+
+  * Update moodle preseed data (add moodle.preseed file to package)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Apr 2008 10:44:18 +0200
+
+maxmoodle (4.0.max4) max; urgency=low
+
+  * Preseed mysql-server/root_password_again (new debconf var)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 17:17:39 +0100
+
 maxmoodle (4.0.max3) max; urgency=low
 
   * Really install moodle.png file
