@@ -5,25 +5,37 @@
 #
 #
 #
-tasksel	tasksel/first	multiselect ubuntu-desktop
-debconf		debconf/language	string	es
+tasksel tasksel/first multiselect ubuntu-desktop
+debconf debconf/language string es
+d-i debian-installer/locale string es_ES
+d-i clock-setup/utc boolean false
+d-i time/zone string Europe/Madrid
+#
+#
+#
+# Keyboard selection.
+d-i console-setup/modelcode string pc105
+d-i console-setup/layoutcode string es
+# To select a variant of the selected layout (if you leave this out, the
+# basic form of the layout will be used):
+#d-i console-setup/variantcode string dvorak
 #
 # Ubiquity installer
 #
-ubiquity	languagechooser/language-name-fb	select	Spanish
-ubiquity	languagechooser/language-name	select	Spanish
-ubiquity	countrychooser/shortlist	select	ES
-ubiquity	countrychooser/countryname	select	Spain
-ubiquity	countrychooser/country-name	string	Spain
-ubiquity	console-keymaps-at/keymap	select	es
-ubiquity	localechooser/supported-locales	multiselect	es_ES.UTF-8
-ubiquity	tzconfig/gmt	boolean	false
-ubiquity	time/zone	select	Europe/Madrid
+ubiquity languagechooser/language-name-fb select Spanish
+ubiquity languagechooser/language-name select Spanish
+ubiquity countrychooser/shortlist select ES
+ubiquity countrychooser/countryname select Spain
+ubiquity countrychooser/country-name string Spain
+ubiquity console-keymaps-at/keymap select es
+ubiquity localechooser/supported-locales multiselect es_ES.UTF-8
+ubiquity tzconfig/gmt boolean false
+ubiquity time/zone select Europe/Madrid
 #
-#ubiquity	ubiquity/stepLanguage	boolean	true
-#ubiquity	ubiquity/stepLocation	boolean	true
-#ubiquity	ubiquity/stepKeyboardConf	boolean	true
-ubiquity	ubiquity/stepMigrationAssistant	boolean	false
+#ubiquity ubiquity/stepLanguage boolean true
+#ubiquity ubiquity/stepLocation boolean true
+#ubiquity ubiquity/stepKeyboardConf	boolean true
+ubiquity ubiquity/stepMigrationAssistant boolean false
 #
 # Tipo de instalacion, puede ser:
 #  escritorio (lo que va en el DVD)
@@ -32,22 +44,22 @@ ubiquity	ubiquity/stepMigrationAssistant	boolean	false
 #  servidor (instala max-servidor)
 #  terminales (instala max-servidor y max-netboot-server)
 #
-ubiquity	ubiquity/max_install_type	string	escritorio
+ubiquity ubiquity/max_install_type string escritorio
 #
 #
 #  Create user madrid
-passwd        passwd/user-fullname            string Usuario Madrid
-passwd        passwd/username                string madrid
-passwd        passwd/user-password            password cmadrid
-passwd        passwd/user-password-again      password cmadrid
-passwd        passwd/user-default-groups      string adm audio cdrom dialout floppy video dip lpadmin plugdev fuse scanner
+passwd passwd/user-fullname string Usuario Madrid
+passwd passwd/username string madrid
+passwd passwd/user-password password cmadrid
+passwd passwd/user-password-again password cmadrid
+passwd passwd/user-default-groups string adm audio cdrom dialout floppy video dip lpadmin plugdev fuse scanner vboxusers
 #
-passwd        passwd/alumno-userfullname      string Alumno Madrid
-passwd        passwd/alumno-username          string alumno
-passwd        passwd/alumno-password          password alumno
-passwd        passwd/alumno-default-groups    string audio cdrom floppy video plugdev scanner
+passwd passwd/alumno-userfullname string Alumno Madrid
+passwd passwd/alumno-username string alumno
+passwd passwd/alumno-password password alumno
+passwd passwd/alumno-default-groups string audio cdrom floppy video plugdev scanner vboxusers
 
-ubiquity	ubiquity/stepUserInfo	boolean	false
+ubiquity ubiquity/stepUserInfo boolean false
 #
 #d-i	passwd passwd/make-user boolean true
 #d-i	passwd/user-fullname string Dummy User
@@ -63,12 +75,12 @@ ubiquity	ubiquity/stepUserInfo	boolean	false
 #
 # console locales
 #
-console-setup	console-setup/layoutcode	select	es
-console-setup	console-setup/modelcode	select	pc105
-console-setup	console-setup/layout	select	Spain
-console-setup	console-setup/variant	select	Spain
+#console-setup	console-setup/layoutcode	select	es
+#console-setup	console-setup/modelcode	select	pc105
+#console-setup	console-setup/layout	select	Spain
+#console-setup	console-setup/variant	select	Spain
 #
 #
 # ATFTPD necesita configurase sin inetd
 #
-atftpd	atftpd/use_inetd	boolean	false
+atftpd atftpd/use_inetd boolean false

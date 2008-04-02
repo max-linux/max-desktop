@@ -10,8 +10,6 @@ export LC_MESSAGES=C
 export DEBCONF_FRONTEND="noninteractive"
 export DEBIAN_FRONTEND="noninteractive"
 export ERROR=0
-apt-get $APT_OPTS update || ERROR=1
-apt-get $APT_OPTS upgrade || ERROR=1
 apt-get $APT_OPTS install max-keyring || ERROR=1
 apt-get $APT_OPTS update || ERROR=1
 apt-get $APT_OPTS install max-desktop-all || ERROR=1
@@ -20,3 +18,4 @@ exit \$ERROR
 EOC
 
 
+rm -rf $CHROOT/home/*

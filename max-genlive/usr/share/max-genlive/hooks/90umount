@@ -2,6 +2,7 @@
 #echo "Desmontando directorio RW de la iso..."
 umount -l $CDRW 2>/dev/null
 
+
 _get_line() {
  head -$1 $2 |tail -1
 }
@@ -45,6 +46,7 @@ for loop in $(losetup -a | grep $ISO | awk -F':' '{print $1}'); do
   losetup -d $loop 2>/dev/null
 done
 
+_revert_invoke
 
 if [ ! $DISABLE_CLEAN ]; then
   _echo "Limpiando temporales, excepto el chroot"

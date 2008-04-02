@@ -9,11 +9,35 @@ export DEBIAN_FRONTEND="noninteractive"
 export ERROR=0
 apt-get $APT_OPTS install maxmoodle-pressed || ERROR=1
 apt-get $APT_OPTS install maxmoodle || ERROR=1
-/etc/init.d/apache2 stop || true
-/etc/init.d/mysql stop || true
 apt-get $APT_OPTS install language-support-es || ERROR=1
 apt-get $APT_OPTS install max-live || ERROR=1
 apt-get $APT_OPTS autoremove
 apt-get clean
 exit \$ERROR
 EOC
+
+# stop MySQL server in host
+[ -x /etc/init.d/mysql ] && /etc/init.d/mysql stop || true
+
+
+# needed to start mysql
+_revert_invoke
+
+# moodle need to createdatabase and user
+chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes para la versión live"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export ERROR=0
+/etc/init.d/mysql start || ERROR=1
+dpkg-reconfigure -phigh moodle || ERROR=1
+/etc/init.d/mysql stop   || true
+/etc/init.d/apache2 stop || true
+exit \$ERROR
+EOC
+
+_add_invoke
+
+# start MySQL server in host
+[-x /etc/init.d/mysql ] && /etc/init.d/mysql start || true

@@ -10,7 +10,7 @@ if [ ! -f $ISO ]; then
   if [ "$resp" = "n" ]; then
     _exit "Se ha cancelado la descarga de $ISO"
   else
-    wget -c $MIRROR/$ISO || _exit "Error descargando $ISO desde $MIRROR"
+    wget -c $ISO_MIRROR/$ISO || _exit "Error descargando $ISO desde $ISO_MIRROR"
   fi
 fi
 

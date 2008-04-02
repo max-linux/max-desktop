@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: max-genlive
 Architecture: all
-Depends: mkisofs, squashfs-tools
+Depends: mkisofs, squashfs-tools, max-win32-apps
 Description: Tool to generate MaX live DVD
  Contains:
   * max-genlive

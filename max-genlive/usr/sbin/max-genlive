@@ -5,8 +5,34 @@
 DISTRO=hardy
 DISTRO_VERSION="8.04"
 ARCH=i386
-IMAGE_NAME="MaX-4.0-0beta1"
+IMAGE_NAME="MaX-4.0-0beta2"
 TITLE="MaX 4.0"
+
+if [ "$MIRROR" = "" ]; then
+  MIRROR=192.168.0.3
+fi
+
+LOCAL_MIRROR=1
+ENABLE_EXTRA=1
+
+ISO_MIRROR="http://www.tcosproject.org/max/"
+
+CURDIR=$(pwd)
+
+CHROOT=$CURDIR/chroot
+CDRW=$CURDIR/cdimage2
+CDRO=$CURDIR/cdimage
+CDTMP=$CURDIR/cdtmp
+
+PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales max-nanomax virtualbox-ose backharddi backharddi-net discover libdiscover2 discover-data"
+
+NEW_ISOLINUX=/usr/share/max-genlive/isolinux
+GENLIVE=/usr/share/max-genlive
+APT_OPTS="-y --force-yes"
+HOOKS=/usr/share/max-genlive/hooks/
+
+
+MY_NAME=$(basename $0)
 
 
 ayuda() {
@@ -18,10 +44,9 @@ cat << EOF
 
     LOCAL_MIRROR=1 usará /usr/share/max-genlive/sources.list-local
                    como repositorio para hacer las descargas
-                   Viene configurado como 10.0.2.2/mirror/*
-                   La IP es la del anfitrion de un virtualbox donde se supone
-                   que tenemos el mirror de ubuntu completo y el de MaX
+                   Viene configurado como $MIRROR/mirror/*
 
+    MIRROR=$MIRROR IP o nombre de equipo que se usará para el mirror
 
     DISABLE_SQUASHFS=1 ni comprime ni descomprime el archivo squashfs (para hacer pruebas)
 
@@ -34,38 +59,6 @@ cat << EOF
 
 EOF
 }
-
-if [ "$1" = "--help" ]; then
-  ayuda
-  exit 1
-fi
-
-if [ "x$1" = "x" ] || [ ! -f "$1" ]; then
-  ISO="ubuntu-8.04-beta-desktop-i386.iso"
-else
-  echo "Usando $1 como ISO base a actualizar..."
-  ISO="$1"
-fi
-
-MIRROR="http://www.tcosproject.org/max/"
-
-CURDIR=$(pwd)
-
-CHROOT=$CURDIR/chroot
-CDRW=$CURDIR/cdimage2
-CDRO=$CURDIR/cdimage
-CDTMP=$CURDIR/cdtmp
-
-#PAQUETES_EXTRA="tcos backharddi backharddi-net max-tcos-alumno max-tcos-profesor virtualbox-ose"
-PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales max-nanomax virtualbox-ose backharddi backharddi-net discover libdiscover2 discover-data"
-
-NEW_ISOLINUX=/usr/share/max-genlive/isolinux
-GENLIVE=/usr/share/max-genlive
-APT_OPTS="-y --force-yes"
-HOOKS=/usr/share/max-genlive/hooks/
-
-
-MY_NAME=$(basename $0)
 
 _exit() {
   echo "Se ha producido un error:"
@@ -84,6 +77,59 @@ _echo() {
 }
 
 
+_revert_invoke() {
+ if [ -e $CHROOT/usr/sbin/invoke-rc.d.REAL ]; then
+   _echo "Revirtiendo /usr/sbin/invoke-rc.d"
+   mv $CHROOT/usr/sbin/invoke-rc.d.REAL $CHROOT/usr/sbin/invoke-rc.d
+ fi
+ if [ -e $CHROOT/sbin/start-stop-daemon.REAL ]; then
+   _echo "Revirtiendo /sbin/start-stop-daemon"
+   mv $CHROOT/sbin/start-stop-daemon.REAL $CHROOT/sbin/start-stop-daemon
+ fi
+}
+
+_add_invoke() {
+  if [ ! -e $CHROOT/usr/sbin/invoke-rc.d.REAL ]; then
+    # Cambiamos invoke-rc.d
+    mv $CHROOT/usr/sbin/invoke-rc.d $CHROOT/usr/sbin/invoke-rc.d.REAL
+    cat << EOF > $CHROOT/usr/sbin/invoke-rc.d
+#!/bin/sh
+echo "" >&2
+echo "  ** Fake invoke-rc.d called with args: '\$@'" >&2
+echo "" >&2
+exit 0
+EOF
+    chmod +x $CHROOT/usr/sbin/invoke-rc.d
+  fi
+
+  if [ ! -e $CHROOT/sbin/start-stop-daemon.REAL ]; then
+    # Cambiamos start-stop-daemon
+    mv $CHROOT/sbin/start-stop-daemon $CHROOT/sbin/start-stop-daemon.REAL
+    cat << EOF > $CHROOT/sbin/start-stop-daemon
+#!/bin/sh
+echo "" >&2
+echo "  ** Fake start-stop-daemon called with args: '\$@'" >&2
+echo "" >&2
+exit 0
+EOF
+    chmod +x $CHROOT/sbin/start-stop-daemon
+  fi
+}
+
+
+if [ "$1" = "--help" ]; then
+  ayuda
+  exit 1
+fi
+
+if [ "x$1" = "x" ] || [ ! -f "$1" ]; then
+  ISO="ubuntu-8.04-beta-desktop-i386.iso"
+else
+  echo "Usando $1 como ISO base a actualizar..."
+  ISO="$1"
+fi
+
+
 # esto es para pruebas
 #. /usr/share/max-genlive/hooks/10mountiso
 #. /usr/share/max-genlive/hooks/20configurechroot
@@ -97,4 +143,6 @@ for hook in $HOOKS/*; do
   [ -f $hook ] && . $hook || _exit "Error ejecutando $hook"
 done
 
-echo "Terminado"
+_echo "Terminado"
+
+exit 0

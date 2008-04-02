@@ -1,3 +1,105 @@
+max-genlive (4.0.max0.34) max; urgency=low
+
+  * Delete chroot/home/*, some package create it and max-genlive crash
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 23:24:07 +0200
+
+max-genlive (4.0.max0.33) max; urgency=low
+
+  * max.seed:
+    - Add more preseed vars
+  * Fix typo in stop MySQL server in 50maxinstaller
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 17:40:45 +0200
+
+max-genlive (4.0.max0.32) max; urgency=low
+
+  * 50maxinstaller:
+    - Stop MySQL server in host before starting into chroot and start after moodle configure
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Apr 2008 18:34:54 +0200
+
+max-genlive (4.0.max0.31) max; urgency=low
+
+  * 50maxinstaller:
+    - Moodle need a running MySQL instance to configure database and users
+  * Move _add_invoke code to max-genlive script
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Apr 2008 14:23:09 +0200
+
+max-genlive (4.0.max0.30) max; urgency=low
+
+  * Depends on new package max-win32-apps
+  * 80builiso:
+    - Copy win32apps contents to ISO
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Apr 2008 10:54:56 +0200
+
+max-genlive (4.0.max0.29) max; urgency=low
+
+  * Set MIRROR=192.168.0.3 only if no MIRROR var found
+  * Disable preseed console-setup
+  * Add _exit at ENABLE_EXTRA shell exit 1
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 31 Mar 2008 16:04:59 +0200
+
+max-genlive (4.0.max0.28) max; urgency=low
+
+  * isolinux.cfg:
+    - Remove preseed from cmdline (gfxboot append)
+  * gfxboot.cfg:
+    - Add new option textmode (don't start X session)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 00:10:23 +0100
+
+max-genlive (4.0.max0.27) max; urgency=low
+
+  * Rename old MIRROR var to ISO_MIRROR
+  * Remove example-content package in manifest-desktop file
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 28 Mar 2008 17:00:50 +0100
+
+max-genlive (4.0.max0.26) max; urgency=low
+
+  * Revert invoke before building squashfs
+  * Move _revert_invoke to /usr/sbin/max-genlive
+  * New var MIRROR to use with LOCAL_MIRROR (delete sources.list.local)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 28 Mar 2008 14:48:04 +0100
+
+max-genlive (4.0.max0.25) max; urgency=low
+
+  * Change local sources.list to 192.168.0.3 (FIXME create a nev var to avoid this)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 28 Mar 2008 13:10:38 +0100
+
+max-genlive (4.0.max0.24) max; urgency=low
+
+  * Only replace invoke-rc.d and start-stop-daemon if *.REAL not exists
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 17:42:46 +0100
+
+max-genlive (4.0.max0.23) max; urgency=low
+
+  * Change invoke-rc.d and start-stop-daemon with fake scripts
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 17:16:18 +0100
+
+max-genlive (4.0.max0.22) max; urgency=low
+
+  * max.seed:
+    - Add madrid and alumno users to vboxusers group (created by max-live package)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 12:10:01 +0100
+
+max-genlive (4.0.max0.21) max; urgency=low
+
+  * Change version to beta2
+  * Disable preseeding xorg and tzdata
+  * Remove extra apt-get update line
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 11:57:17 +0100
+
 max-genlive (4.0.max0.20) max; urgency=low
 
   * isolinux/splash.pcx:

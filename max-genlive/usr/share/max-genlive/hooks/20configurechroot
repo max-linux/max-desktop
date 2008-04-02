@@ -4,8 +4,15 @@ _echo "Configurando DNS del chroot y nuevo sources.list"
 cp /etc/resolv.conf $CHROOT/etc/
 
 if [ $LOCAL_MIRROR ]; then
-     _echo " ****** sources.list ***** Usando mirror local"
-     cp $GENLIVE/sources.list.local $CHROOT/etc/apt/sources.list
+     _echo " ****** sources.list ***** Usando mirror local => $MIRROR"
+     cat << EOF > $CHROOT/etc/apt/sources.list
+deb http://$MIRROR/mirror/ubuntu ${DISTRO} main universe multiverse
+deb http://$MIRROR/mirror/ubuntu ${DISTRO}-updates main universe multiverse
+deb http://$MIRROR/mirror/ubuntu ${DISTRO}-security main universe multiverse
+
+deb http://$MIRROR/mirror/max40 max main
+
+EOF
 else
      cp $GENLIVE/sources.list $CHROOT/etc/apt/
 fi
@@ -17,7 +24,7 @@ mount --bind /sys   $CHROOT/sys
 touch $CHROOT/etc/X11/xorg.conf
 
 
-_echo "Configurando DEBCONF: licencia JAVA, zona horaria,mapa de teclado..."
+_echo "Configurando DEBCONF: licencia JAVA..."
 chroot $CHROOT debconf-set-selections << EOF || _exit "No se ha podido aceptar la licencia JAVA"
 sun-java5-bin   shared/accepted-sun-dlj-v1-1    boolean true
 sun-java5-jdk   shared/accepted-sun-dlj-v1-1    boolean true
@@ -25,11 +32,11 @@ sun-java5-jre   shared/accepted-sun-dlj-v1-1    boolean true
 sun-java6-bin   shared/accepted-sun-dlj-v1-1    boolean true
 sun-java6-jre   shared/accepted-sun-dlj-v1-1    boolean true
 sun-java6-jdk   shared/accepted-sun-dlj-v1-1    boolean true
-tzdata  tzdata/Areas    select  Europe
-tzdata  tzdata/Zones/Europe     select  Madrid
-xserver-xorg    xserver-xorg/config/inputdevice/keyboard/layout string  es
-xserver-xorg    xserver-xorg/config/inputdevice/keyboard/model  string  pc105
 EOF
+#tzdata  tzdata/Areas    select  Europe
+#tzdata  tzdata/Zones/Europe     select  Madrid
+#xserver-xorg    xserver-xorg/config/inputdevice/keyboard/layout string es
+#xserver-xorg    xserver-xorg/config/inputdevice/keyboard/model  string pc105
 # not work
 #console-setup	console-setup/variant	select	Spain
 #console-setup	console-setup/layoutcode	string	es

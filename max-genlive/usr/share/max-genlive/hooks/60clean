@@ -56,6 +56,7 @@ sed -ie /libdebian-installer4/d      $CDRW/casper/filesystem.manifest-desktop
 sed -ie /os-prober/d                 $CDRW/casper/filesystem.manifest-desktop
 sed -ie /ubuntu-live/d               $CDRW/casper/filesystem.manifest-desktop
 sed -ie /user-setup/d                $CDRW/casper/filesystem.manifest-desktop
+sed -ie /example-content/d           $CDRW/casper/filesystem.manifest-desktop
 
 # borrar temporal
 rm -f $CDRW/casper/filesystem.manifest-desktope
