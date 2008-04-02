@@ -21,9 +21,23 @@ esac
 log_begin_msg "$DESCRIPTION"
 
 if [ -e /root/usr/sbin/max-setup-tablet ]; then
-  chroot /root << EOF
-/usr/sbin/max-setup-tablet /etc/X11/xorg.conf
+   cat << EOF > /root/etc/rc2.d/S16configure_wacom
+#!/bin/sh
+
+# Max40 configure WACOM tablet xorg.conf
+
+case "\$1" in
+  start)
+    /usr/sbin/max-setup-tablet /etc/X11/xorg.conf || true
+    ;;
+esac
+
+exit 0
+rm -f /etc/rc2.d/S16configure_wacom
+
 EOF
+chmod +x /root/etc/rc2.d/S16configure_wacom
+
 
 fi
 

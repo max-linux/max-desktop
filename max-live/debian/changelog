@@ -1,3 +1,11 @@
+max-live (4.0.max0.18) max; urgency=low
+
+  * 50configure_wacom:
+    - Not exec into initramfs (wacom drivers not loaded)
+    - Create a shell script in /etc/rc2.d/ to configure xorg.conf in live mode
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 21:51:35 +0200
+
 max-live (4.0.max0.17) max; urgency=low
 
   * Add 50configure_wacom:
