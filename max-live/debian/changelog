@@ -1,3 +1,31 @@
+max-live (4.0.max0.17) max; urgency=low
+
+  * Add 50configure_wacom:
+    - Configure /etc/X11/xorg.conf for WACOM tablets if /dev/input/wacom exists
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Apr 2008 16:46:22 +0200
+
+max-live (4.0.max0.16) max; urgency=low
+
+  * Delete dpsyco 20xconfig (bug detected in max-genlive preseed)
+  * Remove 50configure_keyboard
+  * Remove 44fix_xorg
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 31 Mar 2008 16:53:12 +0200
+
+max-live (4.0.max0.15) max; urgency=low
+
+  * Restart console-setup at casper-bottom
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 00:24:12 +0100
+
+max-live (4.0.max0.14) max; urgency=low
+
+  * debian/postinst:
+    - Create vboxusers group (add to max.seed too)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 12:08:36 +0100
+
 max-live (4.0.max0.13) max; urgency=low
 
   * 11max:

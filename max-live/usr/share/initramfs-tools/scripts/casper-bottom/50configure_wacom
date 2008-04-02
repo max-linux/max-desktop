@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PREREQ=""
-DESCRIPTION="Configuring MaX keyboard..."
+DESCRIPTION="Configure WACOM tablets in MaX..."
 
 . /scripts/casper-functions
 
@@ -20,9 +20,11 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
-chroot /root << EOF
-sed -i '/XkbModel/s/" pc105"/"pc105"/g' /etc/X11/xorg.conf
-sed -i '/XkbLayout/s/" es"/"es"/g'      /etc/X11/xorg.conf
+if [ -e /root/usr/sbin/max-setup-tablet ]; then
+  chroot /root << EOF
+/usr/sbin/max-setup-tablet /etc/X11/xorg.conf
 EOF
+
+fi
 
 log_end_msg
