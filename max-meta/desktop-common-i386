@@ -20,6 +20,7 @@ brickos
 brltty
 build-essential
 celestia
+cellwriter
 cdparanoia
 cdrdao
 cdrecord
@@ -32,6 +33,7 @@ diveintopython
 doc-base
 doc-debian
 dvd+rw-tools
+escritorio-movistar
 example-content
 exim4 | postfix
 festvox-ellpc11k
@@ -47,12 +49,14 @@ foomatic-filters
 fortune-mod
 freepats
 fttools
+gambas2
 gcompris
 gcompris-sound-es
 geogebra
 gnuplot-x11
 gournal
 gs-esp
+homealumno
 hotkey-setup
 hplip
 hplip-ppds
@@ -72,6 +76,7 @@ language-selector
 latex-xft-fonts
 less
 lftp
+libdvdcss2
 libfont-afm-perl
 libft-perl
 libgl1-mesa-glx
@@ -97,18 +102,21 @@ malted-linux-doc
 malted-projects
 maxima
 maxima-doc
-max-firefox-conf
-max-skel-conf
 max-apt
 max-artwork
 max-artwork-usplash
 max-dpsyco-custom
+max-firefox-conf
+max-java-jre
 max-javahotpot-tutorial
 max-jclic-curso
 max-keyring
 max-manuales
 max-menus
+max-squeak
 max-squeak-manual
+max-skel-conf
+max-tablet
 min12xxw
 mjpegtools
 mkisofs
@@ -143,14 +151,9 @@ screem
 scribus
 skype
 speedcrunch
-squeak
-squeak-image
-squeak-sources
-squeak-vm
 starplot
 startupmanager
 stellarium
-sun-java6-jdk
 thunderbird
 thunderbird-gnome-support
 thunderbird-locale-es-es
@@ -189,6 +192,7 @@ wacom-tools
 webhttrack
 wvdial
 wxmaxima
+w32codecs
 xawtv
 xawtv-plugin-qt
 xawtv-plugins

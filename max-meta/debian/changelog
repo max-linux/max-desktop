@@ -1,3 +1,66 @@
+max-meta (4.0.max1.24) max; urgency=low
+
+  * max-desktop-common:
+    - Add escritorio-movistar
+    - Add w32codecs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 17:13:52 +0200
+
+max-meta (4.0.max1.23) max; urgency=low
+
+  * max-desktop-common:
+    - Add libdvdcss2 to view movies with VLC or Totem
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 10:40:57 +0200
+
+max-meta (4.0.max1.22) max; urgency=low
+
+  * max-desktop-common:
+    - Add max-tablet (configure WACOM tablet pcs)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 31 Mar 2008 21:23:19 +0200
+
+max-meta (4.0.max1.21) max; urgency=low
+
+  * max-desktop-common:
+    - Add cellwriter
+  * max-dekstop-gnome:
+    - Add compizconfig-settings-manager
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 31 Mar 2008 16:20:54 +0200
+
+max-meta (4.0.max1.20) max; urgency=low
+
+  * max-desktop-common
+    - Add max-java-jre
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 15:25:57 +0100
+
+max-meta (4.0.max1.19) max; urgency=low
+
+  * Remove depends on sun-java6-jdk and sun-java6-plugin (try to use openjdk)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 13:44:07 +0100
+
+max-meta (4.0.max1.18) max; urgency=low
+
+  * max-desktop-common:
+    - Remove squeak depends (only depends on max-squeak package)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 15:40:17 +0100
+
+max-meta (4.0.max1.17) max; urgency=low
+
+  * Add max-squeak package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 13:25:29 +0100
+
+max-meta (4.0.max1.16) max; urgency=low
+
+  * Add homealumno as install default package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 12:00:30 +0100
+
 max-meta (4.0.max1.15) max; urgency=low
 
   * Call maxgconf without PATH (moved to /usr/bin)
