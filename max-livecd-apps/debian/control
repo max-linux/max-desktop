@@ -1,0 +1,17 @@
+Source: max-win32-apps
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs, wget, unzip, bzip2, gzip
+Standards-Version: 3.7.2
+
+Package: max-win32-apps
+Architecture: all
+Depends: wacom-tools
+Description: Aplicaciones win32 incluidas en el DVD
+ Contiene:
+  * OpenOffice
+  * Firefox
+  * Thunderbird
+  * etc..
+
