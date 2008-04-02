@@ -6,7 +6,7 @@ case "$1" in
     configure)
 
     # create manual launcher in existent HOMES
-    for home in /home/*; do
+    for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
       if [ -d $home/Desktop ] && [ ! -e $home/Desktop/manual.desktop ]; then
          ln -s /etc/skel/Escritorio/manual.desktop $home/Desktop/manual.desktop || true
          chown $(basename $home) $home/Desktop/manual.desktop || true

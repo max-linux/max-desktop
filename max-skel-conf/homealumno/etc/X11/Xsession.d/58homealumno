@@ -3,6 +3,6 @@
 #
 
 if [ -x /usr/bin/homealumno-apply ] ; then
-    /usr/bin/homealumno-apply > $HOME/.homealumno.log 2>&1
+    /usr/bin/homealumno-apply
 fi
 
