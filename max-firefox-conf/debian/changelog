@@ -1,3 +1,27 @@
+max-firefox-conf (4.0.max6) max; urgency=low
+
+  * Add max-java-plugin depends
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 15:26:56 +0100
+
+max-firefox-conf (4.0.max5) max; urgency=low
+
+  * Remove Depends on sun-java6-plugin
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 14:09:58 +0100
+
+max-firefox-conf (4.0.max4) max; urgency=low
+
+  * Link firefox pixmap: firefox-3.0.png => firefox.png
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 14:22:52 +0100
+
+max-firefox-conf (4.0.max3) max; urgency=low
+
+  * Install java pluging in /usr/lib/firefox-addons/plugins
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 13:34:11 +0100
+
 max-firefox-conf (4.0.max2) max; urgency=low
 
   * Remove all files except bookmarks.html

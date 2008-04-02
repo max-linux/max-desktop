@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: max-firefox-conf
 Architecture: all
-Depends: max-dpsyco-custom
+Depends: max-dpsyco-custom, max-java-plugin
 Conflicts: max-3.0-firefox-conf
 Replaces: max-3.0-firefox.conf
 Description: Configuración de firefox para Ubuntu/MAX.
