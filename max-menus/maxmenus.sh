@@ -10,6 +10,7 @@ decho() {
 usage() {
   echo "$0 usage:"
   echo "           $0 --update (update all home menus)"
+  echo "           $0 --user  (update current user menus)"
   echo "           $0 --purge (try to remove all home menus)"
 }
 
@@ -28,6 +29,12 @@ case $1 in
      exit 1
      ;;
 esac
+
+# salir si start-stop-daemon es un script
+if [ $(file /sbin/start-stop-daemon | grep -c ELF) != 0 ]; then
+  echo "No ejecutando.... start-stop-daemon no es un binario"
+  exit 0
+fi
 
 if [ "$ACTION" != "user" ] && [ $(id -u) != 0 ]; then
   echo "No eres usuario root. Permiso denegado."
@@ -64,8 +71,12 @@ fi
 for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
 
     user=$(basename $home)
+    if [ "$user" = "ftp" ]; then
+      # no updating ftp user
+      continue
+    fi
 
-    # look for lock file
+    # look for a lock file
     if [ -e $home/.maxmenus.lock ]; then
       decho "No updating menus, found $home/.maxmenus.lock"
       continue

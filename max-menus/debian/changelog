@@ -1,3 +1,29 @@
+max-menus (4.0.max1.6) max; urgency=low
+
+  * Don't fail package instalation if postinst or postrm fail
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 23:21:03 +0200
+
+max-menus (4.0.max1.5) max; urgency=low
+
+  * maxmenus.sh:
+    - Exit if start-stop-daemon is a script
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 21:19:46 +0200
+
+max-menus (4.0.max1.4) max; urgency=low
+
+  * Remove squeak icon (squeak-vm provides it)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 13:58:20 +0100
+
+max-menus (4.0.max1.3) max; urgency=low
+
+  * Add educational SQUEAK menu item and logo
+  * Hide Gcompris launcher in educational menu (gcompris have submenu)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 13:22:58 +0100
+
 max-menus (4.0.max1.2) max; urgency=low
 
   * Rename 3.1 => 4.0 in applicactions.menu too

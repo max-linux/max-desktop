@@ -69,6 +69,20 @@
 				<Filename>animalandia-tutorial.desktop</Filename>
 			</Include>
 		</Menu>
+		<AppDir>/usr/share/max/applications</AppDir>
+		<Menu>
+			<Name>Squeak</Name>
+			<Directory>squeak.directory</Directory>
+			<Include>
+				<Filename>squeak-image-es.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>squeak-small-land.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>squeak-small-land-plugin.desktop</Filename>
+			</Include>
+		</Menu>
 		<Menu>
 			<Name>Robótica</Name>
 			<Directory>robotics.directory</Directory>
@@ -226,6 +240,9 @@
 		</Exclude>
 		<Exclude>
 			<Filename>celestia.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>gcompris.desktop</Filename>
 		</Exclude>
 	</Menu>
 	<Menu>

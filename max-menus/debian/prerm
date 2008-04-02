@@ -1,11 +1,11 @@
 #!/bin/sh
 
-set -e
+#set -e
 
 case "$1" in
        purge)
         echo "Updating MaX menus"
-        maxmenus --purge >> /tmp/maxmenus.log 2>&1
+        maxmenus --purge >> /tmp/maxmenus.log 2>&1 || true
         ;;
 esac
 
