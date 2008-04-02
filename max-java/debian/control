@@ -1,0 +1,24 @@
+Source: max-java
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs
+Standards-Version: 3.7.2
+
+Package: max-java-jre
+Architecture: all
+Depends: sun-java6-jre
+Description: Dependencias de máquina virtual java JRE para Max40
+ Máquina virtual java JRE para Max40
+
+Package: max-java-jdk
+Architecture: all
+Depends: sun-java6-jdk
+Description: Dependencias de máquina virtual java JDK para Max40
+ Máquina virtual java JDK para Max40
+
+Package: max-java-plugin
+Architecture: all
+Depends: sun-java6-plugin
+Description: Dependencias de máquina virtual java (plugin mozilla) para Max40
+ Máquina virtual java (plugin mozilla) para Max40

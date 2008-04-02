@@ -1,0 +1,33 @@
+#!/bin/sh
+
+#set -e
+
+# openjdk have priority 1061
+priority=1063
+basedir=/usr/lib/jvm/java-6-sun
+jre_tools='ControlPanel java java_vm javaws jcontrol keytool pack200 policytool rmid rmiregistry unpack200 orbd servertool tnameserv'
+
+configure_alternatives() {
+  for i in $jre_tools; do
+    update-alternatives --quiet \
+            --install \
+            /usr/bin/$i \
+            $i \
+            $basedir/jre/bin/$i \
+            $priority
+    update-alternatives --quiet --set $i $basedir/jre/bin/$i
+  done
+}
+
+
+if [ "$1" = "configure" ]; then
+    configure_alternatives
+fi
+
+
+
+#DEBHELPER#
+
+exit 0
+
+

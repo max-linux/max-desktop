@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+binary-install/max-java::
+	# clean svn dirs
+	find $(CURDIR)/debian/max-java -type d -name .svn | xargs rm -rf --
