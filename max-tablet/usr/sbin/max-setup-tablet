@@ -46,14 +46,15 @@ WACOM_SECTIONS=[
     '\tDriver\t\t"wacom"', 
     '\tOption\t\t"Device"\t"/dev/input/wacom"', 
     '\tOption\t\t"Type"\t"stylus"', 
-    '\tOption\t\t"USB"\t"on"', 
+    '\tOption\t\t"ForceDevice"\t"ISDV4"# Tablet PC ONLY',
 'EndSection\n'], 
 
 ['Section "InputDevice"',
-    '\tIdentifier\t"eraser"', '\tDriver\t\t"wacom"', 
+    '\tIdentifier\t"eraser"',
+    '\tDriver\t\t"wacom"', 
     '\tOption\t\t"Device"\t"/dev/input/wacom"',
     '\tOption\t\t"Type"\t"eraser"', 
-    '\tOption\t\t"USB"\t"on"',
+    '\tOption\t\t"ForceDevice"\t"ISDV4"# Tablet PC ONLY',
 'EndSection\n'], 
 
 ['Section "InputDevice"',
@@ -61,7 +62,7 @@ WACOM_SECTIONS=[
     '\tDriver\t\t"wacom"', 
     '\tOption\t\t"Device"\t"/dev/input/wacom"',
     '\tOption\t\t"Type"\t"cursor"', 
-    '\tOption\t\t"USB"\t"on"',
+    '\tOption\t\t"ForceDevice"\t"ISDV4"# Tablet PC ONLY',
 'EndSection\n'], 
 
 ['Section "InputDevice"',
@@ -69,7 +70,7 @@ WACOM_SECTIONS=[
     '\tDriver\t\t"wacom"', 
     '\tOption\t\t"Device"\t"/dev/input/wacom"',
     '\tOption\t\t"Type"\t"pad"', 
-    '\tOption\t\t"USB"\t"on"',
+    '\tOption\t\t"ForceDevice"\t"ISDV4"# Tablet PC ONLY',
 'EndSection\n']
 ]
 
@@ -205,6 +206,8 @@ sections=insert_wacom(sections, comments)
 if len(sys.argv) == 3:
     OUTPUT=sys.argv[2]
 
+if not FORCE and len(sys.argv) == 2:
+    OUTPUT=sys.argv[1]
 
 # save file if passed as arg or print to stdout
 if OUTPUT != sys.stdout:
