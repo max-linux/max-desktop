@@ -473,7 +473,9 @@ class Wizard(BaseFrontend):
                         self.refresh()
                 if self.backup:
                     if self.pagesindex > 0:
-                        self.pagesindex = self.pagesindex - 1
+                        step = self.step_name(self.steps.get_current_page())
+                        if not step == 'stepPartAdvanced':
+                            self.pagesindex = self.pagesindex - 1
 
             while gtk.events_pending():
                 gtk.main_iteration()
@@ -513,6 +515,8 @@ class Wizard(BaseFrontend):
 
         self.logo_image.set_from_file(logo)
         self.photo.set_from_file(photo)
+        if 'UBIQUITY_ONLY' in os.environ:
+            self.live_installer.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_DIALOG)
         
         # MaX Welcome logo
         if os.path.exists( os.path.join(PIXMAPSDIR, "logo.png") ):
@@ -882,7 +886,7 @@ class Wizard(BaseFrontend):
 
         self.run_success_cmd()
         if not self.get_reboot_seen():
-            if 'UBIQUITY_NO_CONTINUE' in os.environ:
+            if 'UBIQUITY_ONLY' in os.environ:
                 txt = self.get_string('ubiquity/finished_restart_only')
                 self.finished_label.set_label(txt)
                 self.quit_button.hide()

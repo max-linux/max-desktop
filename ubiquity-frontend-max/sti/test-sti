@@ -12,24 +12,47 @@
 # Called from grubinstaller.py ubiquity/components
 #
 
+
+log() {
+  log-output -t test-sti echo "$@"
+}
+
+
 FOUND_STI=0
 
-lspci -n | grep -q 0000:0059 || lspci -n | grep -q 0000:8000 || echo "NO" && exit 0 
+PCI_TEST=$(lspci -n | grep -e 0000:0059 -e 0000:8000)
+
+if [ "$PCI_TEST" = "" ]; then
+  echo "NO"
+  log "exiting with NO"
+  exit 0 
+else
+  PCI_BUS_ID=$(lspci |grep `echo $PCI_TEST | awk '{print $1}'`)
+  log "test-sti: Found PCI: $PCI_TEST"
+  log "test-sti: MODEL: $PCI_BUS_ID"
+fi
 
 STI_SIG1="PILTpilt"
 STI_SIG2="X-MBR"
 
-for disk in /dev/[sh]d?; do
+#for disk in /dev/[sh]d?; do
+for block in $(ls /sys/block/ |grep -v -e ram -e loop -e fd0); do
+        [ "$(cat /sys/block/$block/removable)" = "1" ] && continue
+        disk=/dev/$block
+        log "testing for disk: $disk"
 	[ -e "$disk" ] || continue
 	dd if=$disk count=1 2>/dev/null | grep -q $STI_SIG1 || dd if=$disk count=1 2>/dev/null | grep -q $STI_SIG2 || continue
 	stidump $disk > /dev/null 2>&1 || continue
+        log "$disk found STI data"
 	FOUND_STI=1
 done
 
 if [ $FOUND_STI = 1 ]; then
   echo "YES"
+  log "exiting with YES"
 else
   echo "NO"
+  log "exiting with NO"
 fi
 
 exit 0

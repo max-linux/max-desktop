@@ -1,3 +1,45 @@
+ubiquity-frontend-max (4.0.max0.12) max; urgency=low
+
+  * sti/test-sti:
+    - Fix PCI detection and add log-output (from ubiquity package)
+    - Use /sys/block to detect hdd (don't include removable)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 00:19:49 +0100
+
+ubiquity-frontend-max (4.0.max0.11) max; urgency=low
+
+  * Disable deb-src mirrors (commented):
+    - Take bandwitch and nobody use them.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 28 Mar 2008 19:09:08 +0100
+
+ubiquity-frontend-max (4.0.max0.10) max; urgency=low
+
+  * install.py:
+    - Don't kill install* process
+  * 50mirror.ubuntu:
+    - Move to apt-setup/generators
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 28 Mar 2008 16:40:45 +0100
+
+ubiquity-frontend-max (4.0.max0.9) max; urgency=low
+
+  * 50mirror.ubuntu:
+    - Configure archive.ubuntu.com mirror as default (choose-mirror select gb.archive.ubuntu.com)
+  * install.py:
+    - Remade killall_target_proc() use lsof and don't kill python process
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 28 Mar 2008 13:27:21 +0100
+
+ubiquity-frontend-max (4.0.max0.8) max; urgency=low
+
+  * usr/share/ubiquity/install.py:
+    - Disable language install packages
+    - Disable configure_timezone
+    - Kill all process in chroot before umounting proc and sys
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 11:51:27 +0100
+
 ubiquity-frontend-max (4.0.max0.7) max; urgency=low
 
   * Overwrite /etc/init.d/ubiquity to show max_ui installer

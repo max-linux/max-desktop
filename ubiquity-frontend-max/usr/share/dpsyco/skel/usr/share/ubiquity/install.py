@@ -377,22 +377,24 @@ class Install:
             self.db.progress('INFO', 'ubiquity/install/apt')
             self.configure_apt()
 
-            self.db.progress('SET', 80)
-            self.db.progress('REGION', 80, 85)
+            # MaX disable language install (already installed)
+            #self.db.progress('SET', 80)
+            #self.db.progress('REGION', 80, 85)
             # Ignore failures from language pack installation.
-            try:
-                self.install_language_packs()
-            except InstallStepError:
-                pass
-            except IOError:
-                pass
-            except SystemError:
-                pass
+            #try:
+            #    self.install_language_packs()
+            #except InstallStepError:
+            #    pass
+            #except IOError:
+            #    pass
+            #except SystemError:
+            #    pass
 
-            self.db.progress('SET', 85)
-            self.db.progress('REGION', 85, 86)
-            self.db.progress('INFO', 'ubiquity/install/timezone')
-            self.configure_timezone()
+            # MaX not configure timezene (already configured)
+            #self.db.progress('SET', 85)
+            #self.db.progress('REGION', 85, 86)
+            #self.db.progress('INFO', 'ubiquity/install/timezone')
+            #self.configure_timezone()
 
             self.db.progress('SET', 86)
             self.db.progress('REGION', 86, 87)
@@ -1733,9 +1735,34 @@ exit 0"""
 
     # MaX
     def killall_target_proc(self):
-        self.chroot_setup()
-        os.popen("sudo fuser -k /target")
-        self.chroot_cleanup()
+        pin,pout=os.popen2("sudo lsof /target 2>/dev/null")
+        pin.close()
+        data=pout.readlines()
+        pout.close()
+        pids={}
+        for line in data:
+            pid=line.strip().split()[1]
+            name=line.strip().split()[0]
+            if pids.has_key(pid): continue
+            try:
+                # PID must be an integer
+                pids[pid]=[int(pid), name]
+            except:
+                pass
+        syslog.syslog("DEBUG: killall_target_proc() pids=%s"%pids)
+        if len(pids) > 0:
+            strpids=""
+            for pid in pids.keys():
+                # don't kill python process
+                syslog.syslog("DEBUG: killall_target_proc() pid=%s"%(pids[pid]))
+                if pids[pid][1].startswith("python"): continue
+                if pids[pid][1].startswith("install"): continue
+                syslog.syslog("DEBUG: killing %s" %(pids[pid]) )
+                pin,pout=os.popen2("sudo kill %s"%(pid) )
+                pin.close()
+                pout.close()
+        else:
+            syslog.syslog("No process to kill")
 
     # MaX
     def install_max_extras(self):
