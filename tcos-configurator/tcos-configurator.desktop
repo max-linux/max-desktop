@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=TCOS Server Configurator
+Name[es]=Configurador servidor TCOS 
+Comment=Configure TCOS server daemons and users
+Comment[es]=Configurar servicios y usuarios del servidor TCOS
+Exec=gksu /usr/sbin/tcos-configurator
+Terminal=false
+Type=Application
+Icon=/usr/share/tcos-configurator/images/tcos-icon-32x32.png
+Categories=GNOME;Settings;System;DesktopSettings;Monitor
