@@ -340,11 +340,14 @@ class TcosStandalone:
     def disable_remotelogin(self):
         self.SetVar("xdmcp","Enable","false")
 
-    def SetVar(self, section, key, value, do=False):
+    def SetVar(self, section, key, value, do=True):
         GDMCONF=GDM_CONF_FILE
         # try to edit correct file (Ubuntu use -custom file)
         if os.path.isfile(GDM_CONF_FILE + "-custom"):
             GDMCONF=GDM_CONF_FILE+"-custom"
+
+        if os.path.isfile("/etc/gdm/gdm-cdd.conf"):
+            GDMCONF="/etc/gdm/gdm-cdd.conf"
 
         if not do:
             print_debug("NOACTION: SetVar() gdm.conf=%s section=%s key=%s value=%s" 
@@ -352,7 +355,7 @@ class TcosStandalone:
             return
             
         config=MyConfigObj( os.path.realpath(GDMCONF) )
-        print_debug("setting section=[%s] key=%s value=%s" %(section, key, value) )
+        print_debug("setting gdm=%s section=[%s] key=%s value=%s" %(GDMCONF, section, key, value) )
         config[section][key] = value
         try:
             config.write()

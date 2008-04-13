@@ -7,6 +7,6 @@ build/tcos-configurator::
 
 
 binary-install/tcos-configurator::
-	make install DESTDIR=debian/tcos-configurator PREFIX=/usr
+	make install DESTDIR=$(CURDIR)/debian/tcos-configurator PREFIX=/usr
 	# clean svn dirs
 	find $(CURDIR)/debian/tcos-configurator -type d -name .svn | xargs rm -rf --

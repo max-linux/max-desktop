@@ -42,5 +42,6 @@ install: gmo
 	@for lang in $(LANGUAGES); do \
 		echo " **INSTALL MO** $$lang" ; \
 		mkdir -p $(DESTDIR)/$(PREFIX)/share/locale/$$lang/LC_MESSAGES/; \
+		echo "    Installing $$lang.mo into $(DESTDIR)/$(PREFIX)/share/locale/$$lang/LC_MESSAGES/$(PACKAGE).mo"; \
 		msgfmt -o $(DESTDIR)/$(PREFIX)/share/locale/$$lang/LC_MESSAGES/$(PACKAGE).mo $$lang.po; \
 	done
