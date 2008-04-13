@@ -402,7 +402,7 @@ fi
 # doesn't already exist. Only edit the lines between the two "EOF"s. The others are
 # part of the script.
 newtemplate=$(tempfile)
-cat > "$newtemplate" <<EOF
+cat >> "$newtemplate" <<EOF
 # $menu_file_basename - See: grub(8), info grub, update-grub(8)
 #            grub-install(8), grub-floppy(8),
 #            grub-md5-crypt, /usr/share/doc/grub
@@ -732,6 +732,9 @@ write_kernel_entry()
 	if [ -n "$recovery_desc" ]; then
 		echo -n " $recovery_suffix"  >> $buffer
 	fi
+	if [ -n "$dapper_upgrade" -a -z "$kernel_options$recovery_desc" ]; then
+		echo -n " "  >> $buffer
+	fi
 	echo >> $buffer
 
 	if [ -n "$initrd" ]; then
@@ -1009,7 +1012,7 @@ else
 	else
 		echo -n "Would you like $menu_file generated for you? " >&2
 		echo -n "(y/N) " >&2
-		read answer
+		read answer <&2
 	fi
 
 	case "$answer" in
@@ -1204,6 +1207,7 @@ if [ `sed -e "/^$start/,/^$end/d" $menu_file | grep -c '^splashimage='` != "0" ]
        splashimage=$(grep '^splashimage=' ${menu_file})
        echo "found: ${splashimage##*=}" >&2
        echo >&2  
+#MaX test exists not file splash.xpm.gz can be a link
 elif [ -e "${grub_dir}/splash.xpm.gz" ]  && [ "$current_splash" = "" ]; then
        echo "found: /boot/grub/splash.xpm.gz" >&2
        echo "$splashimage_path" >> $buffer

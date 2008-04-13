@@ -1,3 +1,15 @@
+max-dpsyco-custom (4.0.max2.3) max; urgency=low
+
+  * Add displayconfig-gtk.desktop, to show in System -> Admin
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 13 Apr 2008 12:31:20 +0200
+
+max-dpsyco-custom (4.0.max2.2) max; urgency=low
+
+  * Resync update-grub script with lastest of Ubuntu
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 23:34:17 +0200
+
 max-dpsyco-custom (4.0.max2.1) max; urgency=low
 
   * Remove splash.xpm.gz link
