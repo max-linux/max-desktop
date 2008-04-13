@@ -29,12 +29,13 @@ cupsys-bsd
 cupsys-client
 cupsys-driver-gutenprint
 dc
+devede
 diveintopython
 doc-base
 doc-debian
 dvd+rw-tools
 escritorio-movistar
-example-content
+epson-alc1100-filter
 exim4 | postfix
 festvox-ellpc11k
 firefox
@@ -63,6 +64,8 @@ hplip-ppds
 iaxcomm
 inkscape
 irssi
+iscan
+iscan-plugins
 isdnutils-xtools
 istanbul
 jarnal
@@ -128,10 +131,15 @@ mplayer-fonts
 myspell-es
 netbeans
 notelab
+openoffice.org
 openoffice.org-help-es
 openoffice.org-l10n-es
+openoffice.org-java-common
+openoffice.org-ogltrans
+openoffice.org-presentation-minimizer
 openoffice.org-thesaurus-es
 openoffice.org-hyphenation
+pitivi
 pnm2ppa
 powermanagement-interface
 powernowd
@@ -140,6 +148,7 @@ pppoeconf
 psfontmgr
 qcad
 qca-tls
+qdvdauthor
 readahead
 robolinux
 rosegarden
@@ -187,6 +196,8 @@ ubuntu-restricted-extras
 unifont
 unzip
 usplash
+vlc
+vlc-plugin-pulse
 vorbis-tools
 wacom-tools
 webhttrack

@@ -1,3 +1,62 @@
+max-meta (4.0.max1.30) max; urgency=low
+
+  * max-desktop-gnome:
+    - Add nautilus-filename-repairer nautilus-mount-image
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 15:52:24 +0200
+
+max-meta (4.0.max1.29+nmu2) max; urgency=low
+
+  * max-desktop-common:
+    - Add vlc and vlc-plugin-pulse
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 09:34:25 +0200
+
+max-meta (4.0.max1.29+nmu1) max; urgency=high
+
+  * max-desktop-gnome:
+    - Remove bluez-pcmcia-support
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 07 Apr 2008 10:50:55 +0200
+
+max-meta (4.0.max1.29) max; urgency=high
+
+  * max-desktop-common:
+    - Add pitivi (video editor) package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 07 Apr 2008 10:31:31 +0200
+
+max-meta (4.0.max1.28) max; urgency=low
+
+  * max-desktop-common:
+    - Add iscan-plugins package
+  * max-terminales:
+    - Add tcos-configurator
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 05 Apr 2008 22:43:25 +0200
+
+max-meta (4.0.max1.27) max; urgency=low
+
+  * max-desktop-common:
+    - Add devede and qdvdauthor
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 04 Apr 2008 10:30:41 +0200
+
+max-meta (4.0.max1.26) max; urgency=low
+
+  * max-desktop-common:
+    - Add epson-alc1100-filter and iscan
+    - Remove example-content (uninstalled by ubiquity)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 03 Apr 2008 14:50:13 +0200
+
+max-meta (4.0.max1.25) max; urgency=low
+
+  * max-desktop-common:
+    - Add openoffice.org, openoffice.org-java-common, openoffice.org-ogltrans, openoffice.org-presentation-minimizer
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 03 Apr 2008 09:24:02 +0200
+
 max-meta (4.0.max1.24) max; urgency=low
 
   * max-desktop-common:
