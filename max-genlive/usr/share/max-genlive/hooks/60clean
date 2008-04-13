@@ -13,6 +13,18 @@ yres=768
 EOF
 
 KERNEL=$(basename $(ls chroot/boot/vmlinuz* -t| head -1)| sed 's/vmlinuz-//g')
+
+_echo "Instalando modulos extra para $KERNEL"
+chroot $CHROOT/ << EOF
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+apt-get $APT_OPTS install linux-backports-modules-$KERNEL linux-restricted-modules-$KERNEL virtualbox-ose-modules-$KERNEL
+EOF
+
+
+
 chroot $CHROOT /usr/sbin/update-initramfs -u -k $KERNEL || _exit "No se ha podido generar la imagen de arranque"
 cp $CHROOT/boot/vmlinuz-$KERNEL   $CDRW/casper/vmlinuz
 cp $CHROOT/boot/initrd.img-$KERNEL $CDRW/casper/initrd.gz
@@ -26,14 +38,16 @@ for kernel in $(ls $CHROOT/lib/modules/); do
     _echo "  No borrando el kernel por defecto $kernel ..."
   else
     _echo "  Borrando kernel $kernel"
-    PKGS=$(chroot $CHROOT/ dpkg -l |grep $kernel | awk '{print $2}')
+    PKGS=$(chroot $CHROOT/ dpkg -l | awk '{print $2}' | grep $kernel )
+    DELPKG=""
+    for pkg in $PKGS; do DELPKG="$DELPKG $pkg"; done
     chroot $CHROOT/ << EOF || _exit "No se pudo desinstalar el kernel viejo $kernel."
 export LC_ALL=C
 export LC_MESSAGES=C
 export DEBCONF_FRONTEND="noninteractive"
 export DEBIAN_FRONTEND="noninteractive"
 export ERROR=0
-apt-get $APT_OPTS remove --purge $PKGS || ERROR=1
+apt-get $APT_OPTS remove --purge $DELPKG || ERROR=1
 EOF
   fi
 done
@@ -44,6 +58,8 @@ if [ "$(chroot $CHROOT/ dpkg -l |grep -c ^rc)" != 0 ]; then
 dpkg --purge \$(dpkg -l |grep ^rc| awk '{print \$2}')
 EOF
 fi
+
+
 
 _echo "Generando listas de paquetes para la version instalada"
 

@@ -7,6 +7,8 @@ if [ ! $DISABLE_SQUASHFS ]; then
 
   _revert_invoke
 
+  rm -rf $CHROOT/home/*
+
   LZMA=""
   # ver si hay que desactivar LZMA
   mksquashfs -help 2>&1 | grep -q nolzma && LZMA="-nolzma"

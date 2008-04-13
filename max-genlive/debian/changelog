@@ -1,3 +1,38 @@
+max-genlive (4.0.max0.39) max; urgency=low
+
+  * 60clean:
+    - Install backports and restricted modules
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 13 Apr 2008 12:58:12 +0200
+
+max-genlive (4.0.max0.38) max; urgency=low
+
+  * Rebuild
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 23:10:24 +0200
+
+max-genlive (4.0.max0.37) max; urgency=low
+
+  * Change version to beta3
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 07 Apr 2008 10:26:18 +0200
+
+max-genlive (4.0.max0.36) max; urgency=low
+
+  * 60clean:
+    - Fix purge packages
+  * gfxboot.cfg:
+    - Really delete OEM install, not comment
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 04 Apr 2008 11:16:27 +0200
+
+max-genlive (4.0.max0.35) max; urgency=low
+
+  * Try to remove /home/* during install max-desktop-all
+  * Change mirror in sources.list es.archive.ubuntu => archive.ubuntu
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 04 Apr 2008 09:18:37 +0200
+
 max-genlive (4.0.max0.34) max; urgency=low
 
   * Delete chroot/home/*, some package create it and max-genlive crash

@@ -40,4 +40,4 @@ EOC
 _add_invoke
 
 # start MySQL server in host
-[-x /etc/init.d/mysql ] && /etc/init.d/mysql start || true
+[ -x /etc/init.d/mysql ] && /etc/init.d/mysql start || true

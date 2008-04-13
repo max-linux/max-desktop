@@ -5,15 +5,20 @@
 DISTRO=hardy
 DISTRO_VERSION="8.04"
 ARCH=i386
-IMAGE_NAME="MaX-4.0-0beta2"
+IMAGE_NAME="MaX-4.0-0beta3"
 TITLE="MaX 4.0"
 
 if [ "$MIRROR" = "" ]; then
   MIRROR=192.168.0.3
 fi
 
-LOCAL_MIRROR=1
-ENABLE_EXTRA=1
+if [ ! $LOCAL_MIRROR ]; then
+  LOCAL_MIRROR=1
+fi
+
+if [ ! $ENABLE_EXTRA ]; then
+  ENABLE_EXTRA=1
+fi
 
 ISO_MIRROR="http://www.tcosproject.org/max/"
 
