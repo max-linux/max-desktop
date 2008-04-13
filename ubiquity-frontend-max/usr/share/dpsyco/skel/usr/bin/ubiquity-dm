@@ -7,6 +7,7 @@ import time
 import signal
 import errno
 import imp
+import grp
 
 sys.path.insert(0, '/usr/lib/ubiquity')
 
@@ -51,6 +52,11 @@ class DM:
         self.homedir = pwd.getpwnam(self.username)[5]
         self.uid = int(self.uid)
         self.gid = int(self.gid)
+        self.groups = []
+        for g in grp.getgrall():
+            if self.username in g[3] or g[0] == self.username:
+                self.groups.append(g[2])
+
         # Look for a frontend module; we won't actually use it (yet), but
         # this lets us find out which window manager etc. to launch. Be
         # careful that importing this here will cause the underlying library
@@ -72,6 +78,7 @@ class DM:
         self.server_started = True
 
     def drop_privileges(self):
+        os.setgroups(self.groups)
         os.setgid(self.gid)
         os.setuid(self.uid)
 
@@ -87,7 +94,13 @@ class DM:
         signal.signal(signal.SIGUSR1, self.sigusr1_handler)
         signal.signal(signal.SIGTTIN, signal.SIG_IGN)
         signal.signal(signal.SIGTTOU, signal.SIG_IGN)
-        server = subprocess.Popen(['X', '-br', '-ac', '-noreset', self.vt, self.display], stdin=null, stdout=logfile, stderr=logfile, preexec_fn=self.server_preexec)
+
+        servercommand = ['X', '-br', '-ac', '-noreset', self.vt, self.display]
+        if self.frontend == 'mythbuntu_ui':
+            servercommand.append('-dpi')
+            servercommand.append('100')
+
+        server = subprocess.Popen(servercommand, stdin=null, stdout=logfile, stderr=logfile, preexec_fn=self.server_preexec)
 
         os.environ['DISPLAY'] = self.display
         os.environ['HOME'] = self.homedir
@@ -132,7 +145,6 @@ class DM:
                     stdin=null, stdout=logfile, stderr=logfile, preexec_fn=self.drop_privileges))
 
             # Accessibility
-            os.environ['GTK_MODULES'] = 'gail:atk-bridge'
             gconf_dir = ('xml:readwrite:%s' %
                 os.path.expanduser('~%s/.gconf' %
                 self.username))
@@ -148,6 +160,7 @@ class DM:
                     extras.append(subprocess.Popen(['/usr/lib/at-spi/at-spi-registryd'],
                         stdin=null, stdout=logfile, stderr=logfile,
                         preexec_fn=self.drop_privileges))
+                    os.environ['GTK_MODULES'] = 'gail:atk-bridge'
                 fp = open('/proc/cmdline', 'r')
                 if 'access=m2' in fp.readline():
                     if osextras.find_on_path('onboard'):

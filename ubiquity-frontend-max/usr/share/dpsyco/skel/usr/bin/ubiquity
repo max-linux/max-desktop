@@ -10,6 +10,8 @@ import subprocess
 
 sys.path.insert(0, '/usr/lib/ubiquity')
 
+from ubiquity import osextras
+
 def main():
     newargv = []
     desktop = None
@@ -30,7 +32,18 @@ def main():
 
     if os.getuid() == 0:
         # no privilege escalation required
-        pass
+        inner = ['/usr/lib/ubiquity/bin/ubiquity']
+        inner.extend(newargv)
+
+        # Lock HAL's storage subsystem.
+        if osextras.find_on_path('hal-lock'):
+            toexec.extend(['hal-lock',
+                           '--interface', 'org.freedesktop.Hal.Device.Storage',
+                           '--exclusive', '--run'])
+            # hal-lock has irritating argument passing conventions.
+            toexec.append(' '.join(inner))
+        else:
+            toexec.extend(inner)
     else:
         if frontend is None:
             # Try to detect which frontend will be used by looking for a
@@ -55,6 +68,11 @@ def main():
             toexec = ['kdesu', '--nonewdcop', '--']
         else:
             toexec = ['sudo']
+
+        # re-exec ourselves first time round, to cope with broken argument
+        # handling in kdesu
+        toexec.append(sys.argv[0])
+        toexec.extend(newargv)
 
     # Workaround for hang on relatively low-memory PS3 systems (#106683).
     # Apparently killing a few processes up-front helps.
@@ -92,9 +110,6 @@ def main():
         raise
     except:
         pass
-
-    toexec.append('/usr/lib/ubiquity/bin/ubiquity')
-    toexec.extend(newargv)
 
     if 'UBIQUITY_WRAPPER_DEBUG' in os.environ:
         print >>sys.stderr, toexec

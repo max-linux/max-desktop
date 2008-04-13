@@ -10,6 +10,7 @@ test -x /usr/bin/ubiquity-dm || exit 0
 ubiquity=
 automatic=
 debug=
+noninteractive=
 for x in $(cat /proc/cmdline); do
 	case $x in
 		debug-ubiquity)
@@ -22,6 +23,10 @@ for x in $(cat /proc/cmdline); do
 			;;
 		only-ubiquity)
 			ubiquity=1
+			;;
+		noninteractive)
+			ubiquity=1
+			noninteractive=1
 			;;
 	esac
 done
@@ -55,8 +60,15 @@ case "$1" in
 			usplash=false
 			log_end_msg=log_end_msg
 		fi
-		# Run in the foreground.
-		if ubiquity-dm vt7 :0 /usr/bin/ubiquity max_ui $debug $automatic --no-continue; then
+		# turn off console blanking for install process
+		setterm -blank 0
+		if [ -n "$noninteractive" ]; then
+			cmd="ubiquity max_ui noninteractive"
+		else
+			# Run in the foreground.
+			cmd="ubiquity-dm vt7 :0 /usr/bin/ubiquity max_ui $debug $automatic --only"
+		fi
+		if ${cmd}; then
 			$log_end_msg 0
 		else
 			log_end_msg $?

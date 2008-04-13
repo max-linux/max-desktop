@@ -499,8 +499,9 @@ class Install:
         times = [(time_start, copied_size)]
         long_enough = False
         time_last_update = time_start
-        md5_check = False
-        if self.db.get('ubiquity/install/md5_check') == 'true':
+        if self.db.get('ubiquity/install/md5_check') == 'false':
+            md5_check = False
+        else:
             md5_check = True
         
         old_umask = os.umask(0)
@@ -529,18 +530,31 @@ class Install:
                     sourcefh = None
                     targetfh = None
                     try:
-                        while True:
+                        while 1:
                             sourcefh = open(sourcepath, 'rb')
                             targetfh = open(targetpath, 'wb')
-                            shutil.copyfileobj(sourcefh, targetfh)
+                            if md5_check:
+                                sourcehash = md5()
+                            while 1:
+                                buf = sourcefh.read(16 * 1024)
+                                if not buf:
+                                    break
+                                targetfh.write(buf)
+                                if md5_check:
+                                    sourcehash.update(buf)
+
                             if not md5_check:
                                 break
-                            sourcefh.seek(0)
                             targetfh.close()
                             targetfh = open(targetpath, 'rb')
-                            targethash = md5(targetfh.read()).hexdigest()
-                            sourcehash = md5(sourcefh.read()).hexdigest()
-                            if targethash != sourcehash:
+                            if md5_check:
+                                targethash = md5()
+                            while 1:
+                                buf = targetfh.read(16 * 1024)
+                                if not buf:
+                                    break
+                                targethash.update(buf)
+                            if targethash.digest() != sourcehash.digest():
                                 if targetfh:
                                     targetfh.close()
                                 if sourcefh:
@@ -592,10 +606,11 @@ class Install:
                         times.pop(0)
                     speed = ((times[-1][1] - times[0][1]) /
                              (times[-1][0] - times[0][0]))
-                    time_remaining = int((total_size - copied_size) / speed)
-                    if time_remaining < 60:
-                        self.db.progress(
-                            'INFO', 'ubiquity/install/copying_minute')
+                    if speed != 0:
+                        time_remaining = int((total_size - copied_size) / speed)
+                        if time_remaining < 60:
+                            self.db.progress(
+                                'INFO', 'ubiquity/install/copying_minute')
 
         # Apply timestamps to all directories now that the items within them
         # have been copied.
@@ -784,7 +799,7 @@ class Install:
                     "Failed to detach loopback device %s" % dev)
 
 
-    def chroot_setup(self):
+    def chroot_setup(self, x11=False):
         """Set up /target for safe package management operations."""
         policy_rc_d = os.path.join(self.target, 'usr/sbin/policy-rc.d')
         f = open(policy_rc_d, 'w')
@@ -811,8 +826,34 @@ exit 0"""
         if not os.path.exists(os.path.join(self.target, 'sys/devices')):
             self.chrex('mount', '-t', 'sysfs', 'sysfs', '/sys')
 
-    def chroot_cleanup(self):
+        if x11 and 'DISPLAY' in os.environ:
+            if 'SUDO_USER' in os.environ:
+                xauthority = os.path.expanduser('~%s/.Xauthority' %
+                                                os.environ['SUDO_USER'])
+            else:
+                xauthority = os.path.expanduser('~/.Xauthority')
+            if os.path.exists(xauthority):
+                shutil.copy(xauthority,
+                            os.path.join(self.target, 'root/.Xauthority'))
+
+            if not os.path.isdir(os.path.join(self.target, 'tmp/.X11-unix')):
+                os.mkdir(os.path.join(self.target, 'tmp/.X11-unix'))
+            misc.execute('mount', '--bind', '/tmp/.X11-unix',
+                         os.path.join(self.target, 'tmp/.X11-unix'))
+
+    def chroot_cleanup(self, x11=False):
         """Undo the work done by chroot_setup."""
+        if x11 and 'DISPLAY' in os.environ:
+            misc.execute('umount', os.path.join(self.target, 'tmp/.X11-unix'))
+            try:
+                os.rmdir(os.path.join(self.target, 'tmp/.X11-unix'))
+            except OSError:
+                pass
+            try:
+                os.unlink(os.path.join(self.target, 'root/.Xauthority'))
+            except OSError:
+                pass
+
         self.chrex('umount', '/sys')
         self.chrex('umount', '/proc')
 
@@ -1164,7 +1205,7 @@ exit 0"""
         except OSError:
             pass
 
-        self.chroot_setup()
+        self.chroot_setup(x11=True)
         self.chrex('dpkg-divert', '--package', 'ubiquity', '--rename',
                    '--quiet', '--add', '/usr/sbin/update-initramfs')
         try:
@@ -1190,7 +1231,7 @@ exit 0"""
             self.chrex('dpkg-divert', '--package', 'ubiquity', '--rename',
                        '--quiet', '--remove', '/usr/sbin/update-initramfs')
             self.chrex('update-initramfs', '-c', '-k', os.uname()[2])
-            self.chroot_cleanup()
+            self.chroot_cleanup(x11=True)
 
         # Fix up kernel symlinks now that the initrd exists. Depending on
         # the architecture, these may be in / or in /boot.
@@ -1726,6 +1767,11 @@ exit 0"""
                         print >>kpersonalizerrc_file, 'FirstLogin=false'
                         kpersonalizerrc_file.close()
                         open('%s.created-by-oem', 'w').close()
+		# Carry the locale setting over to the installed system.
+		# This mimics the behavior in 01oem-config-udeb.
+                di_locale = self.db.get('debian-installer/locale')
+                if di_locale:
+                    self.set_debconf('debian-installer/locale', di_locale)
         except debconf.DebconfError:
             pass
 
@@ -1840,6 +1886,20 @@ exit 0"""
         if len(difference) == 0:
             return
 
+        use_restricted = True
+        try:
+            if self.db.get('apt-setup/restricted') == 'false':
+                use_restricted = False
+        except debconf.DebconfError:
+            pass
+        if not use_restricted:
+            cache = Cache()
+            for pkg in cache.keys():
+                if (cache[pkg].isInstalled and
+                    cache[pkg].section.startswith('restricted/')):
+                    difference.add(pkg)
+            del cache
+
         # Don't worry about failures removing packages; it will be easier
         # for the user to sort them out with a graphical package manager (or
         # whatever) after installation than it will be to try to deal with
@@ -1905,12 +1965,16 @@ exit 0"""
             dccomm.wait()
 
 
+    def reconfigure_preexec(self):
+        debconf_disconnect()
+        os.environ['XAUTHORITY'] = '/root/.Xauthority'
+
     def reconfigure(self, package):
         """executes a dpkg-reconfigure into installed system to each
         package which provided by args."""
         subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
                          'dpkg-reconfigure', '-fnoninteractive', package],
-                        preexec_fn=debconf_disconnect, close_fds=True)
+                        preexec_fn=self.reconfigure_preexec, close_fds=True)
 
 
 if __name__ == '__main__':
