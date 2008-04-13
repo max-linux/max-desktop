@@ -47,6 +47,7 @@ WACOM_SECTIONS=[
     '\tOption\t\t"Device"\t"/dev/input/wacom"', 
     '\tOption\t\t"Type"\t"stylus"', 
     '\tOption\t\t"ForceDevice"\t"ISDV4"# Tablet PC ONLY',
+    '\tOption\t\t"Button2"\t"3"',
 'EndSection\n'], 
 
 ['Section "InputDevice"',
@@ -55,6 +56,7 @@ WACOM_SECTIONS=[
     '\tOption\t\t"Device"\t"/dev/input/wacom"',
     '\tOption\t\t"Type"\t"eraser"', 
     '\tOption\t\t"ForceDevice"\t"ISDV4"# Tablet PC ONLY',
+    '\tOption\t\t"Button1"\t"2"',
 'EndSection\n'], 
 
 ['Section "InputDevice"',
