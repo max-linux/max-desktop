@@ -1,3 +1,10 @@
+max-live (4.0.max0.19) max; urgency=low
+
+  * dpsyco casper-bottom/14locales:
+    - write LC_ALL env var too
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 21:52:04 +0200
+
 max-live (4.0.max0.18) max; urgency=low
 
   * 50configure_wacom:
