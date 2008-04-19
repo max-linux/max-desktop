@@ -15,7 +15,7 @@ apt-get $APT_OPTS install max-keyring || ERROR=1
 apt-get $APT_OPTS update || ERROR=1
 apt-get $APT_OPTS install max-desktop-all
 [ "\$(ls /home/)" != "" ] && rm -rf /home/* && apt-get $APT_OPTS -f install 
-apt-get $APT_OPTS install max-desktop-all || ERROR=1
+apt-get $APT_OPTS install max-desktop-all max-drivers || ERROR=1
 apt-get clean
 exit \$ERROR
 EOC

@@ -12,11 +12,15 @@ if [ "$MIRROR" = "" ]; then
   MIRROR=192.168.0.3
 fi
 
-if [ ! $LOCAL_MIRROR ]; then
+if [ "$LOCAL_MIRROR" = "" ]; then
+  LOCAL_MIRROR=
+else
   LOCAL_MIRROR=1
 fi
 
-if [ ! $ENABLE_EXTRA ]; then
+if [ "$ENABLE_EXTRA" = "" ]; then
+  ENABLE_EXTRA=
+else
   ENABLE_EXTRA=1
 fi
 
@@ -29,7 +33,8 @@ CDRW=$CURDIR/cdimage2
 CDRO=$CURDIR/cdimage
 CDTMP=$CURDIR/cdtmp
 
-PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales max-nanomax virtualbox-ose backharddi backharddi-net discover libdiscover2 discover-data"
+PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales max-nanomax virtualbox-ose backharddi backharddi-net"
+PAQUETES_EXTRA="$PAQUETES_EXTRA discover libdiscover2 discover-data nvidia-glx-new avm-fritz-firmware"
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
 GENLIVE=/usr/share/max-genlive

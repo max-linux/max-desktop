@@ -1,3 +1,23 @@
+max-genlive (4.0.max0.42) max; urgency=low
+
+  * Install max-drivers
+  * Fix ubuntu double pool typo
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 16 Apr 2008 21:56:29 +0200
+
+max-genlive (4.0.max0.41) max; urgency=low
+
+  * 20configurechroot:
+    - Enable tzdata in preseed
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 16 Apr 2008 18:30:37 +0200
+
+max-genlive (4.0.max0.40) max; urgency=low
+
+  * Add nvidia-glx-new and firmware to PAQUETES_EXTRA (need to add more packages here)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 13 Apr 2008 14:26:04 +0200
+
 max-genlive (4.0.max0.39) max; urgency=low
 
   * 60clean:

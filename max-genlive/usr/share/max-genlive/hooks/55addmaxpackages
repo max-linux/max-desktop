@@ -21,7 +21,7 @@ for pkg in esound libesd0; do
   if [ $LOCAL_MIRROR ]; then
     tmp="http://$MIRROR/mirror/ubuntu/$tmp"
   else
-    tmp="http://archive.ubuntu.com/ubuntu/pool/$tmp"
+    tmp="http://archive.ubuntu.com/ubuntu/$tmp"
   fi
   URIS="$URIS $tmp"
 done
