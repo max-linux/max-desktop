@@ -1,0 +1,23 @@
+content	ubufox	content/
+locale	ubufox	af-ZA	locale/af-ZA/
+locale	ubufox	cs-CZ	locale/cs-CZ/
+locale	ubufox	el-GR	locale/el-GR/
+locale	ubufox	en-US	locale/en-US/
+locale	ubufox	eu-ES	locale/eu-ES/
+locale	ubufox	fi-FI	locale/fi-FI/
+locale	ubufox	fr-CA	locale/fr-CA/
+locale	ubufox	fr-FR	locale/fr-FR/
+locale	ubufox	hu-HU	locale/hu-HU/
+locale	ubufox	it-IT	locale/it-IT/
+locale	ubufox	lt-LT	locale/lt-LT/
+locale	ubufox	pl-PL	locale/pl-PL/
+locale	ubufox	pt-BR	locale/pt-BR/
+locale	ubufox	ru-RU	locale/ru-RU/
+locale	ubufox	sl-SI	locale/sl-SI/
+locale	ubufox	sv-SE	locale/sv-SE/
+locale	ubufox	uk	locale/uk/
+skin	ubufox	classic/1.0	skin/
+overlay	chrome://browser/content/browser.xul	chrome://ubufox/content/ubuntuHelpMenuOverlay.xul
+overlay chrome://mozapps/content/extensions/extensions.xul chrome://ubufox/content/ubuntuAddonsOverlay.xul appversion>=3.0b3
+overlay chrome://mozapps/content/extensions/extensions.xul chrome://ubufox/content/ubuntuAddonsOverlay.ffox2.xul appversion<2.0.0.*
+override chrome://mozapps/content/plugins/pluginInstallerWizard.xul chrome://ubufox/content/pluginInstallerWizard.xul

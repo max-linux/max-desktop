@@ -1,0 +1,4 @@
+
+AddHandler mod_python .py
+PythonHandler plugin-finder 
+PythonDebug On 
