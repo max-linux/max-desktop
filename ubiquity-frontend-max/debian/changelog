@@ -1,3 +1,10 @@
+ubiquity-frontend-max (4.0.max0.15) max; urgency=low
+
+  * grubinstaller.py:
+    - Call self.detect_sti() in run()
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 16 Apr 2008 18:09:19 +0200
+
 ubiquity-frontend-max (4.0.max0.14) max; urgency=low
 
   * Resync with ubiquity 1.8.4

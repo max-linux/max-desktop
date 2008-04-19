@@ -52,6 +52,7 @@ class GrubInstaller(FilteredCommand):
         return FilteredCommand.error(self, priority, question)
 
     def run(self, priority, question):
+        self.detect_sti()
         if question == 'grub-installer/bootdev':
             # Force to (hd0) in the case of an unsupported OS.
             if self.db.get(question) == '':
