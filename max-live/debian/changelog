@@ -1,3 +1,12 @@
+max-live (4.0.max0.20) max; urgency=low
+
+  * 11max:
+    - No create .sudo_as_admin to show sudo help
+  * 50configure_wacom:
+    - No remove script
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 13 Apr 2008 14:17:35 +0200
+
 max-live (4.0.max0.19) max; urgency=low
 
   * dpsyco casper-bottom/14locales:

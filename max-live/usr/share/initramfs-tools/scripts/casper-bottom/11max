@@ -34,8 +34,8 @@ chroot /root << EOF
 rm -rf /home/$USERNAME/Escritorio
 mv /home/$USERNAME/Desktop /home/$USERNAME/Escritorio
 ln -s /home/$USERNAME/Escritorio /home/$USERNAME/Desktop
-touch /home/$USERNAME/.sudo_as_admin_successful
 rm -f /home/$USERNAME/Escritorio/Examples
+mv /home/$USERNAME/Examples /home/$USERNAME/Ejemplos
 chown -R $USERNAME:$USERNAME /home/$USERNAME
 EOF
 
