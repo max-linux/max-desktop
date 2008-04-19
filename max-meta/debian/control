@@ -119,3 +119,13 @@ Description: The Max NETBOOT server metapackage
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
 
+Package: max-drivers
+Architecture: all
+Depends: ${max-drivers:Depends}
+Recommends: ${max-drivers:Recommends}
+Description: The Max drivers metapackage
+ This package depends on all drivers used in the Max system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
