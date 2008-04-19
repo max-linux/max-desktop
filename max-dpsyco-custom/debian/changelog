@@ -1,3 +1,10 @@
+max-dpsyco-custom (4.0.max2.4) max; urgency=low
+
+  * add /usr/share/applications/sun-java6-javaws.desktop:
+    - https://bugs.launchpad.net/ubuntu/+source/sun-java6/+bug/84501
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 16 Apr 2008 17:46:42 +0200
+
 max-dpsyco-custom (4.0.max2.3) max; urgency=low
 
   * Add displayconfig-gtk.desktop, to show in System -> Admin
