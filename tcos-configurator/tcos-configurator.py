@@ -210,9 +210,10 @@ class TcosStandalone:
         self.w={}
         for widget in ['img_logo', 'combo_interfaces', 'txt_serverip', 'txt_startip', 
                        'txt_endip', 'btn_configure_dhcp', 'combo_boot_mode', 'hbox_dynamic',
-                       'ck_static', 'btn_hostname_help', 'txt_hostname_prefix']:
+                       'ck_static', 'btn_hostname_help', 'txt_hostname_prefix', 'lbl_dhcp']:
             self.w[widget]=self.ui.get_widget(widget)
         
+        self.w['lbl_dhcp'].set_text("")
         self.w['img_logo'].set_from_file(IMG_DIR + 'tcos-logo.png')
         self.w['combo_interfaces'].connect('changed', self.combo_interface_change )
         self.w['btn_configure_dhcp'].connect('clicked', self.on_btn_configure_dhcp)
@@ -225,8 +226,8 @@ class TcosStandalone:
         
         self.interfaces=self.getNetInterfaces()
         self.configured_interfaces=self.read_etc_network_interfaces()
-        if len(self.configured_interfaces) < 1:
-            self.w['hbox_dynamic'].show()
+        print_debug("self.configured_interfaces=%s len=%s"%(self.configured_interfaces, len(self.configured_interfaces)))
+        
         
         self.populate_select(self.w['combo_interfaces'],  self.interfaces )
         if len(self.interfaces) == 1:
@@ -235,8 +236,8 @@ class TcosStandalone:
         for widget in ['txt_serverip', 'txt_startip', 'txt_endip', 'combo_boot_mode']:
             self.w[widget].connect('changed', self.set_dhcp_modified)
         
-        self.w['lbl_dhcp']=self.ui.get_widget('lbl_dhcp')
-        self.w['lbl_dhcp'].set_text("")
+        if len(self.configured_interfaces) < 2:
+            self.w['hbox_dynamic'].show()
         self.dhcp_modified=False
         
         
@@ -275,6 +276,8 @@ class TcosStandalone:
     def combo_interface_change(self, widget):
         seliface=self.read_select_value(widget)
         for iface in self.interfaces:
+            print_debug("static iface=%s seliface=%s"%(iface, seliface))
+            print_debug("self.interfaces=%s"%(self.interfaces))
             if iface[0] == seliface and iface[1] != None:
                 self.w['txt_startip'].set_text(".".join(iface[1].split('.')[0:3]) + ".101")
                 self.w['txt_endip'].set_text(  ".".join(iface[1].split('.')[0:3]) + ".131")
@@ -475,14 +478,15 @@ class TcosStandalone:
                 interfaces[curiface]['broadcast']=line.split()[1]
             if curiface and line.startswith('dns-nameservers'):
                 interfaces[curiface]['dns-nameservers']=line.split()[1:]
+        print_debug("%s"%interfaces)
         return interfaces
                 
 
     def configure_static(self, data):
+        print_debug("configure_static() data=%s"%data)
         newdata=[]
         curiface=None
         added=False
-        print data
         try:
             f=open("/etc/network/interfaces",'r')
         except:
@@ -511,14 +515,23 @@ class TcosStandalone:
                     
             newdata.append(line.replace('\n','') )
         
+        if not added:
+            newdata.append("\n#added by tcos-configurator")
+            newdata.append("auto %s"%data['iface'])
+            newdata.append("iface %s inet static"%data['iface'])
+            newdata.append("\taddress %s"%data['address'])
+            newdata.append("\tnetmask %s"%data['netmask'])
+            newdata.append("\tgateway %s"%data['gateway'])
+            newdata.append("\n\n")
+        print_debug(newdata)
         try:
             f=open("/etc/network/interfaces", 'w')
         except:
             return False
         for line in newdata:
-            f.write(line)
+            f.write(line + "\n")
         f.close()
-        
+        self.exe_cmd("sync")
         return True
 
 ################### combo stuff ##############################
@@ -561,7 +574,7 @@ class TcosStandalone:
         print_debug(line)
         return line
 
-    def write_into_etc_host(self, newline):
+    def write_into_etc_host(self, newline, noaction=False):
         ip=newline[0]
         hostname=newline[1]
         # check if exists
@@ -582,8 +595,8 @@ class TcosStandalone:
                 f.write("%s\t%s\n" %(ip, hostname) )
                 f.close()
                 return True
-        except:
-            print "Error editting /etc/hosts, are you root?"
+        except Exception, err:
+            print "Error '%s' editting /etc/hosts, are you root?"%err
             return False
 
     def configureDHCP(self, *args):
@@ -605,9 +618,16 @@ class TcosStandalone:
             server_ip=self.configured_interfaces[server_iface]['address']
             gateway=self.configured_interfaces[server_iface]['gateway']
             netmask=self.configured_interfaces[server_iface]['netmask']
-            network=self.configured_interfaces[server_iface]['network']
-            broadcast=self.configured_interfaces[server_iface]['broadcast']
+            if self.configured_interfaces[server_iface].has_key('network'):
+                network=self.configured_interfaces[server_iface]['network']
+            else:
+                network=".".join( server_ip.split('.')[0:-1]) + ".0"
+            if self.configured_interfaces[server_iface].has_key('broadcast'):
+                broadcast=self.configured_interfaces[server_iface]['broadcast']
+            else:
+                broadcast=".".join( server_ip.split('.')[0:-1]) + ".255"
         else:
+            print_debug("configureDHCP() dynamic IP")
             server_ip=None
             for interface in self.interfaces:
                 if interface[0] == server_iface:
@@ -656,7 +676,7 @@ class TcosStandalone:
         try:
             f=open("/etc/dhcp3/dhcpd.conf", 'w')
             for line in new_file:
-                f.write(line)
+                f.write(line + "\n")
             f.close()
         except:
             # error writing
@@ -665,6 +685,21 @@ class TcosStandalone:
             gtk.gdk.threads_leave()
             time.sleep(4)
         
+        
+        f=open("/etc/default/dhcp3-server", 'r')
+        dhcpdata=[]
+        for line in f.readlines():
+            if line.startswith("INTERFACES"):
+                dhcpdata.append("INTERFACES=\"%s\"\n"%server_iface)
+            else:
+                dhcpdata.append(line)
+        f.close()
+        f=open("/etc/default/dhcp3-server", 'w')
+        for line in dhcpdata:
+            f.write(line)
+        f.close()
+                    
+
         # edit /etc/hosts
         ip_pref=".".join(self.w['txt_startip'].get_text().split('.')[0:3])
         ip_start=int(self.w['txt_startip'].get_text().split('.')[-1])
@@ -689,10 +724,13 @@ class TcosStandalone:
             }
         if self.w['ck_static'].get_active():
             if self.configure_static(data):
+                time.sleep(1)
+                self.exe_cmd("/etc/init.d/networking restart")
+                self.exe_cmd("ifconfig %s"%server_iface)
                 gtk.gdk.threads_enter()
                 self.w['lbl_dhcp'].set_text( _("Configured static network") )
                 gtk.gdk.threads_leave()
-                time.sleep(1)
+                time.sleep(2)
             else:
                 gtk.gdk.threads_enter()
                 self.w['lbl_dhcp'].set_markup( _("ERROR:<b>Error configuring static network.</b>") )
@@ -707,8 +745,8 @@ class TcosStandalone:
         result=self.exe_cmd("/etc/init.d/dhcp3-server restart")
         fail=False
         for line in result:
-            if "fail" in line:
-                fail=True
+            if "fail" in line: fail=True
+            if "OK" in line: fail=False
         
         gtk.gdk.threads_enter()
         if not fail:
