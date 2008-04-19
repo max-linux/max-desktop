@@ -1,3 +1,9 @@
+max-skel-conf (4.0.max4) max; urgency=low
+
+  * Add /etc/issue[.net]
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 16 Apr 2008 18:01:46 +0200
+
 max-skel-conf (4.0.max3) max; urgency=low
 
   * /etc/profile /etc/skel/.bashrc /etc/bash.bashrc
