@@ -1,3 +1,16 @@
+max-meta (4.0.max1.33) max; urgency=low
+
+  * Remove mozilla-firefox locale (xulrunner have translations to spanish now)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 17:37:40 +0200
+
+max-meta (4.0.max1.32) max; urgency=low
+
+  * max-desktop-common:
+    - Remove type1inst
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 16:31:04 +0200
+
 max-meta (4.0.max1.31) max; urgency=low
 
   * New package max-drivers (nvidia and b43)
