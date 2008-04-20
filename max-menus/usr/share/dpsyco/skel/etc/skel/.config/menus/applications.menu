@@ -53,6 +53,9 @@
 				<Filename>max-malteddepurador.desktop</Filename>
 			</Include>
 			<Include>
+				<Filename>max-maltededitor.desktop</Filename>
+			</Include>
+			<Include>
 				<Filename>max-malteddocwww.desktop</Filename>
 			</Include>
 			<Include>
@@ -134,6 +137,27 @@
 			</Include>
 			<Include>
 				<Filename>javahotpot-tutorial.desktop</Filename>
+			</Include>
+		</Menu>
+		<Menu>
+			<Name>Moodle</Name>
+			<Directory>moodle.directory</Directory>
+			<Include>
+				<Filename>maxmoodle.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>max-moodle-doc.desktop</Filename>
+			</Include>
+		</Menu>
+		<Menu>
+			<Name>Keduca</Name>
+			<AppDir>/usr/share/applications/kde/</AppDir>
+			<Directory>keduca.directory</Directory>
+			<Include>
+				<Filename>keduca.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>keducabuilder.desktop</Filename>
 			</Include>
 		</Menu>
 		<Exclude>
@@ -244,6 +268,26 @@
 		<Exclude>
 			<Filename>gcompris.desktop</Filename>
 		</Exclude>
+		<Exclude>
+			<Filename>kde-kiten.desktop</Filename>
+		</Exclude>
+		<AppDir>/usr/share/max/applications/</AppDir>
+		<Exclude>
+			<Filename>kde-kturtle.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>tuxpaint.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>maxmoodle.desktop</Filename>
+		</Exclude>
+		<AppDir>/home/madrid/.local/share/applications</AppDir>
+		<Exclude>
+			<Filename>kde-keduca.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-keducabuilder.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Other</Name>
@@ -290,22 +334,39 @@
 		<Exclude>
 			<Category>KDE</Category>
 		</Exclude>
+		<AppDir>/usr/share/max/applications/</AppDir>
+		<Exclude>
+			<Filename>kde-wineconfig.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-audioencoding.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kcm_knetworkconfmodule_ss.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-medianotifications.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>tcospersonalize.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Universal Access</Name>
-		<Include>
-			<Filename>orca.desktop</Filename>
-		</Include>
 		<AppDir>/usr/share/max/applications</AppDir>
-		<Include>
-			<Filename>gnopernicus.desktop</Filename>
-		</Include>
 		<Include>
 			<Filename>onboard-settings.desktop</Filename>
 		</Include>
 		<Include>
 			<Filename>onboard.desktop</Filename>
 		</Include>
+		<Include>
+			<Filename>orca.desktop</Filename>
+		</Include>
+		<AppDir>/usr/share/max/applications/</AppDir>
+		<Exclude>
+			<Filename>gnopernicus.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Graphics</Name>
@@ -321,6 +382,9 @@
 		</Exclude>
 		<Include>
 			<Filename>evince.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>Tux Paint.desktop</Filename>
 		</Include>
 	</Menu>
 	<Menu>
@@ -339,11 +403,12 @@
 				<Filename>jarnal.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>jarnalannotate.desktop</Filename>
-			</Include>
-			<Include>
 				<Filename>cellwriter.desktop</Filename>
 			</Include>
+			<Exclude>
+				<Filename>jarnalannotate.desktop</Filename>
+			</Exclude>
+			<AppDir>/usr/share/max/applications/</AppDir>
 		</Menu>
 		<Exclude>
 			<Filename>xournal.desktop</Filename>
@@ -373,6 +438,31 @@
 		<Include>
 			<Filename>gnome-font-viewer.desktop</Filename>
 		</Include>
+		<Exclude>
+			<Filename>xfce4-terminal.desktop</Filename>
+		</Exclude>
+		<AppDir>/usr/share/max/applications/</AppDir>
+		<Exclude>
+			<Filename>Thunar.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-ark.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>xfce4-appfinder.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kcalc.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kfilereplace.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kjobviewer.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>gok.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Games</Name>
@@ -389,5 +479,68 @@
 			<Filename>tuxtype.desktop</Filename>
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
+	</Menu>
+	<Menu>
+		<Name>System</Name>
+		<Exclude>
+			<Filename>xfce4-taskmanager.desktop</Filename>
+		</Exclude>
+		<AppDir>/usr/share/max/applications/</AppDir>
+		<Exclude>
+			<Filename>kde-kcron.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-keep.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-konsole.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-ksysguard.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-ksystemlog.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kwifimanager.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-adept_manager.desktop</Filename>
+		</Exclude>
+	</Menu>
+	<Menu>
+		<Name>Internet</Name>
+		<Exclude>
+			<Filename>WebHTTrack-Websites.desktop</Filename>
+		</Exclude>
+		<AppDir>/usr/share/max/applications/</AppDir>
+		<Exclude>
+			<Filename>kde-Kppp.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kwifimanager.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>openjdk-6-javaws.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>WebHTTrack.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-wlassistant.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>xchat.desktop</Filename>
+		</Exclude>
+	</Menu>
+	<Menu>
+		<Name>Development</Name>
+		<Exclude>
+			<Filename>kde-kxsldbg.desktop</Filename>
+		</Exclude>
+		<AppDir>/usr/share/max/applications/</AppDir>
+		<Exclude>
+			<Filename>squeak.desktop</Filename>
+		</Exclude>
 	</Menu>
 </Menu>

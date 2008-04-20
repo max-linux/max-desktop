@@ -31,7 +31,7 @@ case $1 in
 esac
 
 # salir si start-stop-daemon es un script
-if [ $(file /sbin/start-stop-daemon | grep -c ELF) != 0 ]; then
+if [ $(file /sbin/start-stop-daemon | grep -c ELF) = 0 ]; then
   echo "No ejecutando.... start-stop-daemon no es un binario"
   exit 0
 fi
@@ -48,6 +48,9 @@ SKEL_MENUS="/etc/skel/.config/menus"
 SKEL_LOCAL="/etc/skel/.local/share/desktop-directories"
 
 if [ "$ACTION" = "user" ]; then
+  if [ ! -d $HOME ]; then
+    exit 0
+  fi
   mkdir -p $HOME/$USER_MENUS
   mkdir -p $HOME/$USER_LOCAL
 
@@ -67,6 +70,9 @@ if [ "$ACTION" = "user" ]; then
   chown -R $USER $HOME/$USER_LOCAL 2>/dev/null
   exit 0
 fi
+
+# call update-dpsyco-skel
+[ -x /usr/sbin/update-dpsyco-skel ] && update-dpsyco-skel >/dev/null 2>&1
 
 for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
 

@@ -1,3 +1,16 @@
+max-menus (4.0.max1.8) max; urgency=low
+
+  * Call update-dpsyco-skel before updating allusers menus
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 21:27:37 +0200
+
+max-menus (4.0.max1.7) max; urgency=low
+
+  * Don't exec if start-stop-daemon |grep ELF is = 0 (not != 0)
+  * Exit if HOME don't exists
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 17:53:32 +0200
+
 max-menus (4.0.max1.6) max; urgency=low
 
   * Don't fail package instalation if postinst or postrm fail
