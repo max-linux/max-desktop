@@ -107,6 +107,10 @@ for meta in alumno profesor servidor terminales; do
   cp $CDRW/casper/filesystem.manifest-desktop $metafile
   echo "$metapkg 0.0.1" >> $metafile
 
+  if [ "$meta" = "terminales" ]; then
+    echo "915resolution 0.0.1" >> $metafile
+  fi
+
   cat ${metafile} | sort > ${metafile}.tmp
   mv ${metafile}.tmp ${metafile}
 done

@@ -52,12 +52,12 @@ passwd passwd/user-fullname string Usuario Madrid
 passwd passwd/username string madrid
 passwd passwd/user-password password cmadrid
 passwd passwd/user-password-again password cmadrid
-passwd passwd/user-default-groups string adm audio cdrom dialout floppy video dip lpadmin plugdev fuse scanner vboxusers
+passwd passwd/user-default-groups string adm audio cdrom dialout floppy video dip lpadmin plugdev fuse scanner vboxusers sambashare
 #
 passwd passwd/alumno-userfullname string Alumno Madrid
 passwd passwd/alumno-username string alumno
 passwd passwd/alumno-password password alumno
-passwd passwd/alumno-default-groups string audio cdrom floppy video plugdev scanner vboxusers
+passwd passwd/alumno-default-groups string audio cdrom floppy video plugdev scanner vboxusers sambashare
 
 ubiquity ubiquity/stepUserInfo boolean false
 #

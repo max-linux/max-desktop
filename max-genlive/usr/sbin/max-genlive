@@ -5,7 +5,7 @@
 DISTRO=hardy
 DISTRO_VERSION="8.04"
 ARCH=i386
-IMAGE_NAME="MaX-4.0-0beta3"
+IMAGE_NAME="MaX-4.0-0beta4"
 TITLE="MaX 4.0"
 
 if [ "$MIRROR" = "" ]; then
@@ -34,7 +34,7 @@ CDRO=$CURDIR/cdimage
 CDTMP=$CURDIR/cdtmp
 
 PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales max-nanomax virtualbox-ose backharddi backharddi-net"
-PAQUETES_EXTRA="$PAQUETES_EXTRA discover libdiscover2 discover-data nvidia-glx-new avm-fritz-firmware"
+PAQUETES_EXTRA="$PAQUETES_EXTRA discover libdiscover2 discover-data nvidia-glx-new avm-fritz-firmware 915resolution"
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
 GENLIVE=/usr/share/max-genlive

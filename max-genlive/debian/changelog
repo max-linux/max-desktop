@@ -1,3 +1,17 @@
+max-genlive (4.0.max0.45) max; urgency=low
+
+  * max.seed:
+   - Add sambashare to defaults groups
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 22 Apr 2008 12:12:36 +0200
+
+max-genlive (4.0.max0.44) max; urgency=low
+
+  * Change version to beta4
+  * Install 915resolution in mode=terminales
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 20 Apr 2008 22:18:35 +0200
+
 max-genlive (4.0.max0.43) max; urgency=low
 
   * Enable restricted in sources.list
