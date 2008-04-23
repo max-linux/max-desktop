@@ -1,3 +1,4 @@
+
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
@@ -57,7 +58,7 @@ GenericName[sl]=Igra vislic
 GenericName[sr]=Игра вешала
 GenericName[sr@Latn]=Igra vešala
 GenericName[sv]=Hänga gubben-spel
-GenericName[ta]= ஹாங்க்மேன் விளையாட்டு
+GenericName[ta]=ஹாங்க்மேன் விளையாட்டு
 GenericName[tg]=Бозии Чӯбаи Дор
 GenericName[tr]=Adam Asmaca Oyunu
 GenericName[uk]=Гра Hangman
@@ -118,7 +119,6 @@ Comment[zh_TW]=KDE 劊子手（hangman）遊戲
 Terminal=false
 Name=KHangMan
 Name[af]=K-hangman
-Name[es]=KÁrbol del Ahorcado
 Name[ar]=الشنق ك
 Name[bn]=কে-হ্যাংম্যান
 Name[cy]=Krogwr
@@ -131,4 +131,6 @@ Name[tr]=Adam Asmaca
 Name[ven]=Munembeledzi wa K
 Categories=Qt;KDE;Education;Languages;
 X-Ubuntu-Gettext-Domain=desktop_kdeedu
-
+Name[es_ES]=KÁrbol del Ahorcado
+Comment[es_ES]=Juego del ahorcado de KDE
+Icon[es_ES]=khangman

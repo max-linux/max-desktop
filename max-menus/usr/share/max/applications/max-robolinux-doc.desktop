@@ -1,9 +1,10 @@
+
 [Desktop Entry]
 Encoding=UTF-8
 Version=1.0
 Type=Application
-Exec=acroread "/usr/share/robolinux/ManualRobolinux.pdf"
-Icon=firefox
+Exec=/usr/bin/acroread "/usr/share/doc/robolinux/manual_robolinux.pdf"
+Icon=/usr/share/pixmaps/firefox.png
 X-GNOME-DocPath=
 Terminal=false
 Name=Tutorial de Robolinux
@@ -11,3 +12,7 @@ Name[es]=Tutorial de Robolinux
 Comment[es]=Tutorial de Robolinux
 Categories=Robolinux
 
+Name[es_ES]=Tutorial de Robolinux
+Comment[es_ES]=Tutorial de Robolinux
+Icon[es_ES]=/usr/share/icons/crystalsvg/48x48/apps/acroread.png
+Comment=Tutorial de Robolinux

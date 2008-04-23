@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Sun Java 6 Web Start
+Comment=Sun Java 6 Web Start
+Exec=/usr/lib/jvm/java-6-sun-1.6.0.05/bin/javaws
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/sun-java6.xpm
+Categories=Application;Network;
+MimeType=application/x-java-jnlp-file;

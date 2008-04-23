@@ -1,3 +1,22 @@
+max-menus (4.0.max1.11) max; urgency=low
+
+  * Remove tcospersonalize entries
+  * Add max-manuales in max menu
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 15:25:40 +0200
+
+max-menus (4.0.max1.10) max; urgency=low
+
+  * Change /home/madrid/.local/share/applications => /usr/share/max/applications
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 22 Apr 2008 09:07:58 +0200
+
+max-menus (4.0.max1.9) max; urgency=low
+
+  * Updated menus (CWT)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 21 Apr 2008 23:38:27 +0200
+
 max-menus (4.0.max1.8) max; urgency=low
 
   * Call update-dpsyco-skel before updating allusers menus

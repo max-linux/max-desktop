@@ -27,6 +27,16 @@
 			<Filename>max-installed-help-usr.desktop</Filename>
 		</Include>
 		<AppDir>/usr/share/max/applications</AppDir>
+		<Include>
+			<Filename>install-manual.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>manual.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>creditos_max40.desktop</Filename>
+		</Include>
+		<AppDir>/usr/share/max-manuales</AppDir>
 	</Menu>
 	<Menu>
 		<Name>Education</Name>
@@ -53,13 +63,13 @@
 				<Filename>max-malteddepurador.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>max-maltededitor.desktop</Filename>
-			</Include>
-			<Include>
 				<Filename>max-malteddocwww.desktop</Filename>
 			</Include>
 			<Include>
 				<Filename>max-malteddocpdf.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>Editor de Malted.desktop</Filename>
 			</Include>
 		</Menu>
 		<Menu>
@@ -85,6 +95,7 @@
 			<Include>
 				<Filename>squeak-small-land-plugin.desktop</Filename>
 			</Include>
+			<Deleted/>
 		</Menu>
 		<Menu>
 			<Name>Robótica</Name>
@@ -94,6 +105,9 @@
 			</Include>
 			<Include>
 				<Filename>max-robolinux-doc.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>KTurtle.desktop</Filename>
 			</Include>
 		</Menu>
 		<AppDir>/usr/share/max/applications</AppDir>
@@ -139,27 +153,6 @@
 				<Filename>javahotpot-tutorial.desktop</Filename>
 			</Include>
 		</Menu>
-		<Menu>
-			<Name>Moodle</Name>
-			<Directory>moodle.directory</Directory>
-			<Include>
-				<Filename>maxmoodle.desktop</Filename>
-			</Include>
-			<Include>
-				<Filename>max-moodle-doc.desktop</Filename>
-			</Include>
-		</Menu>
-		<Menu>
-			<Name>Keduca</Name>
-			<AppDir>/usr/share/applications/kde/</AppDir>
-			<Directory>keduca.directory</Directory>
-			<Include>
-				<Filename>keduca.desktop</Filename>
-			</Include>
-			<Include>
-				<Filename>keducabuilder.desktop</Filename>
-			</Include>
-		</Menu>
 		<Exclude>
 			<Filename>gcompris-edit.desktop</Filename>
 		</Exclude>
@@ -169,7 +162,6 @@
 		<Exclude>
 			<Filename>animalandia-tutorial.desktop</Filename>
 		</Exclude>
-		<DefaultLayout inline="false"/>
 		<Menu>
 			<Name>JClic</Name>
 			<Directory>jclic.directory</Directory>
@@ -268,25 +260,73 @@
 		<Exclude>
 			<Filename>gcompris.desktop</Filename>
 		</Exclude>
+		<Menu>
+			<Name>alacarte-made</Name>
+			<Directory>alacarte-made.directory</Directory>
+			<Include>
+				<Filename>KEduca.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>KEduca-Editor.desktop</Filename>
+			</Include>
+		</Menu>
+		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
-			<Filename>kde-kiten.desktop</Filename>
+			<Filename>kde-keduca.desktop</Filename>
 		</Exclude>
-		<AppDir>/usr/share/max/applications/</AppDir>
+		<Menu>
+			<Name>alacarte-made-1</Name>
+			<Directory>alacarte-made-1.directory</Directory>
+			<Include>
+				<Filename>Moodle.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>alacarte-made.desktop</Filename>
+			</Include>
+		</Menu>
+		<Exclude>
+			<Filename>maxmoodle.desktop</Filename>
+		</Exclude>
+		<DefaultLayout inline="false"/>
+		<Menu>
+			<Name>alacarte-made-2</Name>
+			<Directory>alacarte-made-2.directory</Directory>
+			<Include>
+				<Filename>Squeak.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>alacarte-made-1.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>Créditos en MAX 4.0.desktop</Filename>
+			</Include>
+			<Layout>
+				<Merge type="menus"/>
+				<Filename>Squeak.desktop</Filename>
+				<Filename>alacarte-made-1.desktop</Filename>
+				<Filename>alacarte-made-2.desktop</Filename>
+				<Filename>Créditos en MAX 4.0.desktop</Filename>
+				<Merge type="files"/>
+			</Layout>
+			<AppDir>/usr/share/max/applications</AppDir>
+			<Include>
+				<Filename>alacarte-made-2.desktop</Filename>
+			</Include>
+		</Menu>
+		<Exclude>
+			<Filename>squeak.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-keducabuilder.desktop</Filename>
+		</Exclude>
 		<Exclude>
 			<Filename>kde-kturtle.desktop</Filename>
 		</Exclude>
 		<Exclude>
+			<Filename>kde-kiten.desktop</Filename>
+		</Exclude>
+		<Exclude>
 			<Filename>tuxpaint.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>maxmoodle.desktop</Filename>
-		</Exclude>
-		<AppDir>/home/madrid/.local/share/applications</AppDir>
-		<Exclude>
-			<Filename>kde-keduca.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>kde-keducabuilder.desktop</Filename>
 		</Exclude>
 	</Menu>
 	<Menu>
@@ -334,10 +374,7 @@
 		<Exclude>
 			<Category>KDE</Category>
 		</Exclude>
-		<AppDir>/usr/share/max/applications/</AppDir>
-		<Exclude>
-			<Filename>kde-wineconfig.desktop</Filename>
-		</Exclude>
+		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
 			<Filename>kde-audioencoding.desktop</Filename>
 		</Exclude>
@@ -345,28 +382,55 @@
 			<Filename>kde-kcm_knetworkconfmodule_ss.desktop</Filename>
 		</Exclude>
 		<Exclude>
+			<Filename>kde-clock.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kwalletmanager.desktop</Filename>
+		</Exclude>
+		<Exclude>
 			<Filename>kde-medianotifications.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>tcospersonalize.desktop</Filename>
 		</Exclude>
+		<Exclude>
+			<Filename>creditos-max40.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>manual.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>OpenOffice.org Dibujos.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>squeak-doc.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>squeak-manual.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Universal Access</Name>
+		<Include>
+			<Filename>orca.desktop</Filename>
+		</Include>
 		<AppDir>/usr/share/max/applications</AppDir>
+		<Include>
+			<Filename>gnopernicus.desktop</Filename>
+		</Include>
 		<Include>
 			<Filename>onboard-settings.desktop</Filename>
 		</Include>
 		<Include>
 			<Filename>onboard.desktop</Filename>
 		</Include>
-		<Include>
-			<Filename>orca.desktop</Filename>
-		</Include>
-		<AppDir>/usr/share/max/applications/</AppDir>
 		<Exclude>
-			<Filename>gnopernicus.desktop</Filename>
+			<Filename>cellwriter.desktop</Filename>
 		</Exclude>
+		<AppDir>/usr/share/max/applications</AppDir>
+		<Include>
+			<Filename>gok.desktop</Filename>
+		</Include>
 	</Menu>
 	<Menu>
 		<Name>Graphics</Name>
@@ -386,6 +450,34 @@
 		<Include>
 			<Filename>Tux Paint.desktop</Filename>
 		</Include>
+		<Layout>
+			<Merge type="menus"/>
+			<Filename>blender-windowed.desktop</Filename>
+			<Filename>blender-fullscreen.desktop</Filename>
+			<Filename>dia-common.desktop</Filename>
+			<Filename>kde-digikam.desktop</Filename>
+			<Filename>inkscape.desktop</Filename>
+			<Filename>gimp.desktop</Filename>
+			<Filename>xsane.desktop</Filename>
+			<Filename>f-spot.desktop</Filename>
+			<Filename>f-spot-import.desktop</Filename>
+			<Filename>gqview.desktop</Filename>
+			<Filename>kde-gwenview.desktop</Filename>
+			<Filename>kde-kghostview.desktop</Filename>
+			<Filename>kde-kooka.desktop</Filename>
+			<Filename>kde-ksnapshot.desktop</Filename>
+			<Filename>ooo-draw.desktop</Filename>
+			<Filename>qcad.desktop</Filename>
+			<Filename>Tux Paint.desktop</Filename>
+			<Filename>evince.desktop</Filename>
+			<Filename>f-spot-view.desktop</Filename>
+			<Filename>eog.desktop</Filename>
+			<Merge type="files"/>
+		</Layout>
+		<Exclude>
+			<Filename>ooo-draw.desktop</Filename>
+		</Exclude>
+		<AppDir>/usr/share/max/applications</AppDir>
 	</Menu>
 	<Menu>
 		<Name>Accessories</Name>
@@ -400,15 +492,15 @@
 				<Filename>notelab.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>jarnal.desktop</Filename>
+				<Filename>jarnalannotate.desktop</Filename>
 			</Include>
 			<Include>
 				<Filename>cellwriter.desktop</Filename>
 			</Include>
 			<Exclude>
-				<Filename>jarnalannotate.desktop</Filename>
+				<Filename>jarnal.desktop</Filename>
 			</Exclude>
-			<AppDir>/usr/share/max/applications/</AppDir>
+			<AppDir>/usr/share/max/applications</AppDir>
 		</Menu>
 		<Exclude>
 			<Filename>xournal.desktop</Filename>
@@ -441,28 +533,10 @@
 		<Exclude>
 			<Filename>xfce4-terminal.desktop</Filename>
 		</Exclude>
-		<AppDir>/usr/share/max/applications/</AppDir>
-		<Exclude>
-			<Filename>Thunar.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>kde-ark.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>xfce4-appfinder.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>kde-kcalc.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>kde-kfilereplace.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>kde-kjobviewer.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>gok.desktop</Filename>
-		</Exclude>
+		<AppDir>/usr/share/max/applications</AppDir>
+		<Include>
+			<Filename>bluetooth-analyzer.desktop</Filename>
+		</Include>
 	</Menu>
 	<Menu>
 		<Name>Games</Name>
@@ -480,67 +554,175 @@
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
 	</Menu>
+	<Include>
+		<Filename>Guía de Utilización.desktop</Filename>
+	</Include>
+	<Layout>
+		<Merge type="menus"/>
+		<Menuname>Accessories</Menuname>
+		<Menuname>Universal Access</Menuname>
+		<Menuname>Debian</Menuname>
+		<Menuname>Education</Menuname>
+		<Menuname>Graphics</Menuname>
+		<Menuname>System</Menuname>
+		<Menuname>Internet</Menuname>
+		<Filename>Guía de Utilización.desktop</Filename>
+		<Menuname>Games</Menuname>
+		<Menuname>MaX 4.0</Menuname>
+		<Menuname>Office</Menuname>
+		<Menuname>Other</Menuname>
+		<Menuname>Development</Menuname>
+		<Menuname>Multimedia</Menuname>
+		<Menuname>Utilities</Menuname>
+		<Menuname>wine-wine</Menuname>
+		<Separator/>
+		<Filename>gnome-app-install.desktop</Filename>
+		<Merge type="files"/>
+	</Layout>
 	<Menu>
-		<Name>System</Name>
-		<Exclude>
-			<Filename>xfce4-taskmanager.desktop</Filename>
-		</Exclude>
-		<AppDir>/usr/share/max/applications/</AppDir>
-		<Exclude>
-			<Filename>kde-kcron.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>kde-keep.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>kde-konsole.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>kde-ksysguard.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>kde-ksystemlog.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>kde-kwifimanager.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>kde-adept_manager.desktop</Filename>
-		</Exclude>
+		<Name>Office</Name>
+		<Include>
+			<Filename>OpenOffice.org Dibujos.desktop</Filename>
+		</Include>
+		<Layout>
+			<Merge type="menus"/>
+			<Filename>abiword.desktop</Filename>
+			<Filename>AdobeReader.desktop</Filename>
+			<Filename>evolution.desktop</Filename>
+			<Filename>evolution-2.2.desktop</Filename>
+			<Filename>gnumeric.desktop</Filename>
+			<Filename>kde-kaddressbook.desktop</Filename>
+			<Filename>kde-karm.desktop</Filename>
+			<Filename>kde-KMail.desktop</Filename>
+			<Filename>kde-knotes.desktop</Filename>
+			<Filename>kde-Kontact.desktop</Filename>
+			<Filename>kde-kontactdcop.desktop</Filename>
+			<Filename>kde-kpdf.desktop</Filename>
+			<Filename>kde-korganizer.desktop</Filename>
+			<Filename>ooo-template.desktop</Filename>
+			<Filename>ooo-base.desktop</Filename>
+			<Filename>OpenOffice.org Dibujos.desktop</Filename>
+			<Filename>ooo-math.desktop</Filename>
+			<Filename>ooo-calc.desktop</Filename>
+			<Filename>ooo-impress.desktop</Filename>
+			<Filename>ooo-writer.desktop</Filename>
+			<Filename>scribus.desktop</Filename>
+			<Merge type="files"/>
+		</Layout>
 	</Menu>
 	<Menu>
 		<Name>Internet</Name>
 		<Exclude>
-			<Filename>WebHTTrack-Websites.desktop</Filename>
-		</Exclude>
-		<AppDir>/usr/share/max/applications/</AppDir>
-		<Exclude>
-			<Filename>kde-Kppp.desktop</Filename>
-		</Exclude>
-		<Exclude>
 			<Filename>kde-kwifimanager.desktop</Filename>
 		</Exclude>
-		<Exclude>
+		<AppDir>/usr/share/max/applications</AppDir>
+		<Layout>
+			<Merge type="menus"/>
+			<Filename>WebHTTrack-Websites.desktop</Filename>
+			<Filename>xchat-gnome.desktop</Filename>
+			<Filename>pidgin.desktop</Filename>
+			<Filename>tsclient.desktop</Filename>
+			<Filename>evolution-mail.desktop</Filename>
+			<Filename>escritorio-movistar.desktop</Filename>
+			<Filename>firestarter.desktop</Filename>
+			<Filename>gftp.desktop</Filename>
+			<Filename>kde-kbtobexclient.desktop</Filename>
+			<Filename>kde-KMail.desktop</Filename>
+			<Filename>kde-KNode.desktop</Filename>
+			<Filename>kompozer.desktop</Filename>
+			<Filename>kompozer-l10n-es.desktop</Filename>
+			<Filename>kde-konqbrowser.desktop</Filename>
+			<Filename>kde-Kontact.desktop</Filename>
+			<Filename>kde-Kppp.desktop</Filename>
+			<Filename>kde-kppplogview.desktop</Filename>
+			<Filename>kde-krdc.desktop</Filename>
+			<Filename>kde-krfb.desktop</Filename>
+			<Filename>kde-kwifimanager.desktop</Filename>
+			<Filename>thunderbird.desktop</Filename>
+			<Filename>firefox.desktop</Filename>
 			<Filename>openjdk-6-javaws.desktop</Filename>
-		</Exclude>
-		<Exclude>
+			<Filename>skype.desktop</Filename>
+			<Filename>ekiga.desktop</Filename>
+			<Filename>sun-java6-javaws.desktop</Filename>
+			<Filename>transmission.desktop</Filename>
+			<Filename>vinagre-file.desktop</Filename>
+			<Filename>vinagre.desktop</Filename>
 			<Filename>WebHTTrack.desktop</Filename>
-		</Exclude>
-		<Exclude>
 			<Filename>kde-wlassistant.desktop</Filename>
+			<Filename>xchat.desktop</Filename>
+			<Merge type="files"/>
+		</Layout>
+		<Include>
+			<Filename>kde-wlassistant.desktop</Filename>
+		</Include>
+	</Menu>
+	<Menu>
+		<Name>Multimedia</Name>
+		<Include>
+			<Filename>Codificación de audio.desktop</Filename>
+		</Include>
+		<Exclude>
+			<Filename>zattoo_player.desktop</Filename>
+		</Exclude>
+		<AppDir>/usr/share/max/applications</AppDir>
+	</Menu>
+	<Menu>
+		<Name>System</Name>
+		<Include>
+			<Filename>Conexiones de red.desktop</Filename>
+		</Include>
+		<Exclude>
+			<Filename>kde-ksystemlog.desktop</Filename>
+		</Exclude>
+		<AppDir>/usr/share/max/applications</AppDir>
+		<Include>
+			<Filename>Herramienta de gestión de cartera.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>Notificaciones de los medios de almacenamiento.desktop</Filename>
+		</Include>
+		<Exclude>
+			<Filename>tcospersonalize.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>xchat.desktop</Filename>
+			<Filename>backharddi_dvd.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>backharddi_boot.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>backharddi_net.desktop</Filename>
 		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Development</Name>
+		<DefaultLayout inline="false"/>
+		<Menu>
+			<Name>alacarte-made-3</Name>
+			<Directory>alacarte-made-3.directory</Directory>
+			<Include>
+				<Filename>Asistente de KDevelop.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>Diseñador de KDevelop.desktop</Filename>
+			</Include>
+		</Menu>
 		<Exclude>
-			<Filename>kde-kxsldbg.desktop</Filename>
+			<Filename>devhelp.desktop</Filename>
 		</Exclude>
-		<AppDir>/usr/share/max/applications/</AppDir>
+		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
-			<Filename>squeak.desktop</Filename>
+			<Filename>kde-kdevassistant.desktop</Filename>
 		</Exclude>
+		<Exclude>
+			<Filename>kde-kdevdesigner.desktop</Filename>
+		</Exclude>
+		<Include>
+			<Filename>kde-kdevelop_c_cpp.desktop</Filename>
+		</Include>
+	</Menu>
+	<Menu>
+		<Name>wine-wine</Name>
+		<DirectoryDir>/home/madrid/.local/share/desktop-directories</DirectoryDir>
 	</Menu>
 </Menu>
