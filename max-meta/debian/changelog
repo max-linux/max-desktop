@@ -1,3 +1,17 @@
+max-meta (4.0.max1.35) max; urgency=low
+
+  * max-drivers:
+    - Remove broken elousb driver
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 22 Apr 2008 00:12:33 +0200
+
+max-meta (4.0.max1.34) max; urgency=low
+
+  * max-drivers:
+    - Add elo-usb-driver whiteboard
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 21 Apr 2008 23:54:28 +0200
+
 max-meta (4.0.max1.33) max; urgency=low
 
   * Remove mozilla-firefox locale (xulrunner have translations to spanish now)
