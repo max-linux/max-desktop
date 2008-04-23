@@ -1,3 +1,21 @@
+max-gnome-default-settings (4.0.max0.5) max; urgency=low
+
+  * Rebuild again with new trash position
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 20 Apr 2008 21:21:35 +0200
+
+max-gnome-default-settings (4.0.max0.4) max; urgency=low
+
+  * Movo again trash applet
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 20 Apr 2008 19:41:10 +0200
+
+max-gnome-default-settings (4.0.max0.3) max; urgency=low
+
+  * Move trash to right
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 20 Apr 2008 17:45:46 +0200
+
 max-gnome-default-settings (4.0.max0.2) max; urgency=low
 
   * Move maxgconf to /usr/bin
