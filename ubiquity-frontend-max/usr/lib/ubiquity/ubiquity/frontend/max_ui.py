@@ -73,16 +73,11 @@ LOCALEDIR = "/usr/share/locale"
 
 BREADCRUMB_STEPS = {
     "stepInstallType": 1,
-    "stepLanguage": 2,
-    "stepLocation": 3,
-    "stepKeyboardConf": 4,
-    "stepPartAuto": 5,
-    "stepPartAdvanced": 6,
-    "stepUserInfo": 7,
-    "stepMigrationAssistant": 8,
-    "stepReady": 9
+    "stepPartAuto": 2,
+    "stepPartAdvanced": 3,
+    "stepReady": 4
 }
-BREADCRUMB_MAX_STEP = 9
+BREADCRUMB_MAX_STEP = 4
 
 # Define what pages of the UI we want to load.  Note that most of these pages
 # are required for the install to complete successfully.
@@ -660,6 +655,7 @@ class Wizard(BaseFrontend):
                         curstep = str(BREADCRUMB_STEPS[current_name])
                 text = text.replace('${INDEX}', curstep)
                 text = text.replace('${TOTAL}', str(BREADCRUMB_MAX_STEP))
+                syslog.syslog("DEBUG: translate_widget() curstep=%s total=%s"%(curstep, BREADCRUMB_MAX_STEP))
             widget.set_text(text)
 
             # Ideally, these attributes would be in the glade file somehow ...

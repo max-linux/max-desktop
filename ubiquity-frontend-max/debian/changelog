@@ -1,3 +1,11 @@
+ubiquity-frontend-max (4.0.max0.16) max; urgency=low
+
+  * Sync with latest ubiquity version 1.8.7
+  * max_ui.py:
+    - Edit steps to show correct number in step_label (can't hide it)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 15:42:16 +0200
+
 ubiquity-frontend-max (4.0.max0.15) max; urgency=low
 
   * grubinstaller.py:

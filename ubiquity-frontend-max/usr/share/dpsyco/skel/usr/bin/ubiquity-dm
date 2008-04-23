@@ -114,40 +114,11 @@ class DM:
             time.sleep(1)
             timeout -= 1
 
-        if self.frontend == 'gtk_ui' or self.frontend == 'max_ui' or self.frontend == 'mythbuntu_ui':
-            if os.access(background, os.R_OK):
-                import gtk
-                pixbuf = gtk.gdk.pixbuf_new_from_file(background)
-                root = gtk.gdk.get_default_root_window()
-                (root_width, root_height) = root.get_size()
-                scaled = pixbuf.scale_simple(root_width, root_height, gtk.gdk.INTERP_BILINEAR)
-                (pixmap, mask) = scaled.render_pixmap_and_mask(0)
-                root.set_back_pixmap(pixmap, False)
-                root.clear()
-                gtk.gdk.flush()
-
         extras = []
-        if self.frontend in ('gtk_ui', 'max_ui', 'mythbuntu_ui'):
-            if osextras.find_on_path('metacity'):
-                wm = subprocess.Popen(['metacity', '--sm-disable'],
-                    stdin=null, stdout=logfile, stderr=logfile,
-                    preexec_fn=self.drop_privileges)
-            elif osextras.find_on_path('xfwm4'):
-                wm = subprocess.Popen('xfwm4',
-                    stdin=null, stdout=logfile, stderr=logfile,
-                    preexec_fn=self.drop_privileges)
-            else:
-                raise MissingProgramError, \
-                    "No window manager found (tried metacity, xfwm4)"
-
-            if os.path.exists('/usr/lib/gnome-settings-daemon/gnome-settings-daemon'):
-                extras.append(subprocess.Popen(['/usr/lib/gnome-settings-daemon/gnome-settings-daemon'],
-                    stdin=null, stdout=logfile, stderr=logfile, preexec_fn=self.drop_privileges))
-
-            # Accessibility
+        if self.frontend == 'gtk_ui' or self.frontend == 'max_ui' or self.frontend == 'mythbuntu_ui':
+            # Accessibility infrastructure
             gconf_dir = ('xml:readwrite:%s' %
-                os.path.expanduser('~%s/.gconf' %
-                self.username))
+                '/root/.gconf')
             accessibility = 'false'
             if osextras.find_on_path('gconftool-2'):
                 subp = subprocess.Popen(
@@ -158,20 +129,57 @@ class DM:
             if accessibility == 'true':
                 if os.path.exists('/usr/lib/at-spi/at-spi-registryd'):
                     extras.append(subprocess.Popen(['/usr/lib/at-spi/at-spi-registryd'],
-                        stdin=null, stdout=logfile, stderr=logfile,
-                        preexec_fn=self.drop_privileges))
+                        stdin=null, stdout=logfile, stderr=logfile))
                     os.environ['GTK_MODULES'] = 'gail:atk-bridge'
+
+            maybe_drop_privileges = {}
+            if accessibility != 'true':
+                maybe_drop_privileges['preexec_fn'] = self.drop_privileges
+
+            # Don't show the background image in v1 accessibility profile. It
+            # is not shown in the GNOME desktop after all.
+            fp = open('/proc/cmdline', 'r')
+            if os.access(background, os.R_OK) and not 'access=v1' in fp.readline():
+                import gtk
+                pixbuf = gtk.gdk.pixbuf_new_from_file(background)
+                root = gtk.gdk.get_default_root_window()
+                (root_width, root_height) = root.get_size()
+                scaled = pixbuf.scale_simple(root_width, root_height, gtk.gdk.INTERP_BILINEAR)
+                (pixmap, mask) = scaled.render_pixmap_and_mask(0)
+                root.set_back_pixmap(pixmap, False)
+                root.clear()
+                gtk.gdk.flush()
+            fp.close()
+
+        if self.frontend in ('gtk_ui', 'max_ui', 'mythbuntu_ui'):
+            if osextras.find_on_path('metacity'):
+                wm = subprocess.Popen(['metacity', '--sm-disable'],
+                    stdin=null, stdout=logfile, stderr=logfile,
+                    **maybe_drop_privileges)
+            elif osextras.find_on_path('xfwm4'):
+                wm = subprocess.Popen('xfwm4',
+                    stdin=null, stdout=logfile, stderr=logfile,
+                    **maybe_drop_privileges)
+            else:
+                raise MissingProgramError, \
+                    "No window manager found (tried metacity, xfwm4)"
+
+            if os.path.exists('/usr/lib/gnome-settings-daemon/gnome-settings-daemon'):
+                extras.append(subprocess.Popen(['/usr/lib/gnome-settings-daemon/gnome-settings-daemon'],
+                    stdin=null, stdout=logfile, stderr=logfile, **maybe_drop_privileges))
+
+            # Accessibility tools
+            if accessibility == 'true':
                 fp = open('/proc/cmdline', 'r')
                 if 'access=m2' in fp.readline():
                     if osextras.find_on_path('onboard'):
                         extras.append(subprocess.Popen(['onboard'],
-                            stdin=null, stdout=logfile, stderr=logfile,
-                            preexec_fn=self.drop_privileges))
+                            stdin=null, stdout=logfile, stderr=logfile))
                 else:
                     if osextras.find_on_path('orca'):
+                        time.sleep(15)
                         extras.append(subprocess.Popen(['orca', '-n'],
-                            stdin=null, stdout=logfile, stderr=logfile,
-                            preexec_fn=self.drop_privileges))
+                            stdin=null, stdout=logfile, stderr=logfile))
                 fp.close()
         elif self.frontend == 'kde_ui':
             wm = subprocess.Popen('kwin', stdin=null, stdout=logfile,
