@@ -18,11 +18,11 @@ CLASSPATH="$CLASSPATH:/usr/share/jclic"
 REMOTE_DISPLAY=$(echo $DISPLAY| awk -F ":" '{print $1}')
 if [ "${REMOTE_DISPLAY}" != "" ]; then
   if [ -x /usr/bin/padsp ]; then
-     padsp -s "$REMOTE_DISPLAY" -n JClic -m JClic-stream $aux -cp $CLASSPATH -jar /usr/share/jclic/jclicautor.jar "$@" &>/dev/null &
+     padsp -s "$REMOTE_DISPLAY" -n JClic -m JClic-stream $aux -cp $CLASSPATH -jar /usr/share/jclic/jclicautor.jar "$@"
      exit 0
   fi
 fi
 
-$aux -cp $CLASSPATH -jar /usr/share/jclic/jclicauthor.jar "$@" &>/dev/null
+$aux -cp $CLASSPATH -jar /usr/share/jclic/jclicauthor.jar "$@"
 
 

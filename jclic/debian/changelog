@@ -1,3 +1,29 @@
+jclic (0.2.0.3-1max2) max; urgency=low
+
+  * Fix jclic launcher (jclicplayer.jar => jclic.jar)
+  * Show debug output (don't redirect to /dev/null)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 20 Apr 2008 21:24:55 +0200
+
+jclic (0.2.0.3-1max1) max; urgency=low
+
+  * New upstream version
+  * Set firefox as default browser
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 23:33:02 +0200
+
+jclic (0.1.2.2-2max9) max; urgency=low
+
+  * Really install demo.jclic.zip and configure jclic.cfg to read correct path
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 23:21:43 +0200
+
+jclic (0.1.2.2-2max8) max; urgency=low
+
+  * Add demo.jclic.zip and configure library to show it
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 20:23:23 +0200
+
 jclic (0.1.2.2-2max7) max; urgency=low
 
   * Recomends libmysql-java
