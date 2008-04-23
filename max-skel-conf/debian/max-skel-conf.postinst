@@ -1,19 +1,28 @@
 #!/bin/sh
 
-set -e
+create_link() {
+  # $1 is final link
+  # $2 is origin
+  # $3 is username
+  [ -L $1 ] && rm -f $1
+  if [ ! -e $1 ]; then
+    cp $2 $1 
+    chown $3 $1
+  fi
+}
 
 case "$1" in
     configure)
 
     # create manual launcher in existent HOMES
     for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
-      if [ -d $home/Desktop ] && [ ! -e $home/Desktop/manual.desktop ]; then
-         ln -s /etc/skel/Escritorio/manual.desktop $home/Desktop/manual.desktop || true
-         chown $(basename $home) $home/Desktop/manual.desktop || true
+      if [ -d $home/Desktop ]; then
+         create_link $home/Desktop/manual.desktop /etc/skel/Desktop/manual.desktop $(basename $home) || true
+         create_link $home/Desktop/creditos_max40.desktop /etc/skel/Desktop/creditos_max40.desktop $(basename $home) || true
       fi
-      if [ -d $home/Escritorio ] && [ ! -e $home/Escritorio/manual.desktop ]; then
-         ln -s /etc/skel/Escritorio/manual.desktop $home/Escritorio/manual.desktop || true
-         chown $(basename $home) $home/Escritorio/manual.desktop || true
+      if [ -d $home/Escritorio ]; then
+         create_link $home/Escritorio/manual.desktop /etc/skel/Escritorio/manual.desktop $(basename $home) || true
+         create_link $home/Escritorio/creditos_max40.desktop /etc/skel/Escritorio/creditos_max40.desktop $(basename $home) || true
       fi
     done
     ;;

@@ -1,3 +1,21 @@
+max-skel-conf (4.0.max7) max; urgency=low
+
+  * Use chown instead of chmod
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 13:35:48 +0200
+
+max-skel-conf (4.0.max6) max; urgency=low
+
+  * Fix postinst of creditos_max40.dekstop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 13:32:21 +0200
+
+max-skel-conf (4.0.max5) max; urgency=low
+
+  * Add creditos_max40 launcher in Desktop/Escritorio
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 13:17:23 +0200
+
 max-skel-conf (4.0.max4) max; urgency=low
 
   * Add /etc/issue[.net]
