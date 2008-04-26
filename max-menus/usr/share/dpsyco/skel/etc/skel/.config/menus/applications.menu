@@ -408,16 +408,20 @@
 		<Exclude>
 			<Filename>squeak-manual.desktop</Filename>
 		</Exclude>
+		<Exclude>
+			<Filename>Notificaciones de los medios de almacenamiento.desktop</Filename>
+		</Exclude>
+		<AppDir>/usr/share/max/applications</AppDir>
+		<Exclude>
+			<Filename>Herramienta de gestión de cartera.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>Conexiones de red.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Universal Access</Name>
-		<Include>
-			<Filename>orca.desktop</Filename>
-		</Include>
 		<AppDir>/usr/share/max/applications</AppDir>
-		<Include>
-			<Filename>gnopernicus.desktop</Filename>
-		</Include>
 		<Include>
 			<Filename>onboard-settings.desktop</Filename>
 		</Include>
@@ -431,6 +435,13 @@
 		<Include>
 			<Filename>gok.desktop</Filename>
 		</Include>
+		<Include>
+			<Filename>orca.desktop</Filename>
+		</Include>
+		<AppDir>/usr/share/max/applications</AppDir>
+		<Exclude>
+			<Filename>gnopernicus.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Graphics</Name>
@@ -474,9 +485,10 @@
 			<Filename>eog.desktop</Filename>
 			<Merge type="files"/>
 		</Layout>
-		<Exclude>
+		<AppDir>/usr/share/max/applications</AppDir>
+		<Include>
 			<Filename>ooo-draw.desktop</Filename>
-		</Exclude>
+		</Include>
 		<AppDir>/usr/share/max/applications</AppDir>
 	</Menu>
 	<Menu>
@@ -609,6 +621,10 @@
 			<Filename>scribus.desktop</Filename>
 			<Merge type="files"/>
 		</Layout>
+		<Include>
+			<Filename>ooo-math.desktop</Filename>
+		</Include>
+		<AppDir>/usr/share/max/applications</AppDir>
 	</Menu>
 	<Menu>
 		<Name>Internet</Name>
@@ -655,6 +671,16 @@
 		<Include>
 			<Filename>kde-wlassistant.desktop</Filename>
 		</Include>
+		<Exclude>
+			<Filename>WebHTTrack-Websites.desktop</Filename>
+		</Exclude>
+		<AppDir>/usr/share/max/applications</AppDir>
+		<Exclude>
+			<Filename>WebHTTrack.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>openjdk-6-javaws.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Multimedia</Name>
@@ -668,19 +694,10 @@
 	</Menu>
 	<Menu>
 		<Name>System</Name>
-		<Include>
-			<Filename>Conexiones de red.desktop</Filename>
-		</Include>
 		<Exclude>
 			<Filename>kde-ksystemlog.desktop</Filename>
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
-		<Include>
-			<Filename>Herramienta de gestión de cartera.desktop</Filename>
-		</Include>
-		<Include>
-			<Filename>Notificaciones de los medios de almacenamiento.desktop</Filename>
-		</Include>
 		<Exclude>
 			<Filename>tcospersonalize.desktop</Filename>
 		</Exclude>
@@ -693,6 +710,34 @@
 		<Exclude>
 			<Filename>backharddi_net.desktop</Filename>
 		</Exclude>
+		<Exclude>
+			<Filename>kde-adept_manager.desktop</Filename>
+		</Exclude>
+		<AppDir>/usr/share/max/applications</AppDir>
+		<Exclude>
+			<Filename>Conexiones de red.desktop</Filename>
+		</Exclude>
+		<Include>
+			<Filename>gconf-editor.desktop</Filename>
+		</Include>
+		<Exclude>
+			<Filename>xfce4-taskmanager.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>Herramienta de gestión de cartera.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kcron.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>Notificaciones de los medios de almacenamiento.desktop</Filename>
+		</Exclude>
+		<Include>
+			<Filename>gdmflexiserver-xnest.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>gdmflexiserver.desktop</Filename>
+		</Include>
 	</Menu>
 	<Menu>
 		<Name>Development</Name>

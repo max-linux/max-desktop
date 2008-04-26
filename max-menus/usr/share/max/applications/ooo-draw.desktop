@@ -1,5 +1,5 @@
 [Desktop Entry]
-Categories=;
+Categories=Graphics;VectorGraphics;
 Comment=Create and edit drawings, flow charts, and logos by.
 Exec=ooffice -draw %U
 GenericName=Drawing
@@ -72,7 +72,6 @@ GenericName[xh]=Umzobo
 GenericName[zh_CN]=绘图
 GenericName[zh_TW]=繪圖
 GenericName[zu]=Ukudweba
-Hidden=false
 Icon=ooo-draw
 InitialPreference=6
 MimeType=application/vnd.oasis.opendocument.graphics;application/vnd.oasis.opendocument.graphics-template;application/vnd.stardivision.draw;application/vnd.sun.xml.draw;application/vnd.sun.xml.draw.template;
@@ -115,6 +114,7 @@ Name[uk]=OpenOffice.org Drawing
 Name[vi]=Vẽ hình với OpenOffice.org
 Name[zh_CN]=OpenOffice.org 图画
 Name[zh_TW]=OpenOffice.org 繪圖
+NoDisplay=false
 StartupNotify=false
 Terminal=false
 Type=Application
