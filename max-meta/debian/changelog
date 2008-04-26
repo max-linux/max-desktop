@@ -1,3 +1,24 @@
+max-meta (4.0.max1.38) max; urgency=low
+
+  * max-desktop-common:
+    - Add denemo mscore and max-denemo-doc
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 26 Apr 2008 16:59:28 +0200
+
+max-meta (4.0.max1.37) max; urgency=low
+
+  * max-desktop-common:
+    - Add gpsbabel gpsd-client gpsd josm josm-plugins (OpenStreetMap)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 26 Apr 2008 09:17:01 +0200
+
+max-meta (4.0.max1.36) max; urgency=low
+
+  * max-drivers:
+    - Don't install nvidia-glx-new as default (breaks TCOS generator)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 24 Apr 2008 15:37:37 +0200
+
 max-meta (4.0.max1.35) max; urgency=low
 
   * max-drivers:
