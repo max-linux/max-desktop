@@ -54,7 +54,7 @@ import debconf
 from ubiquity import filteredcommand, gconftool, i18n, osextras, validation, \
                      zoommap
 from ubiquity.misc import *
-from ubiquity.components import console_setup, language, timezone, usersetup, \
+from ubiquity.components import grubinstaller, console_setup, language, timezone, usersetup, \
                                 partman, partman_commit, \
                                 summary, install, migrationassistant
 import ubiquity.emap
@@ -218,6 +218,7 @@ class Wizard(BaseFrontend):
         #save to file
         self.save_install_type(install_type)
 
+
         # read pressed username and set (stepUserInfo == false)
         if not self.get_debconf_preseed("ubiquity/stepUserInfo"):
                 syslog.syslog("DEBUG: preseeding user info")
@@ -230,6 +231,14 @@ class Wizard(BaseFrontend):
                 self.hostname.set_text("max40")
         else:
                 syslog.syslog("DEBUG: ERROR not debconf user forced !!!")
+
+        # set default grubinstaller
+        dbfilter = grubinstaller.GrubInstaller(self, self.debconf_communicator())
+        dbfilter.detect_sti()
+        dbfilter.cleanup()
+        dbfilter.db.shutdown()
+
+        syslog.syslog("DEBUG: GRUBDEVICE = '%s' " %(self.get_debconf_preseed("grub-installer/bootdev")) )
 
     def get_debconf_preseed(self, varname):
         db=self.debconf_communicator()
