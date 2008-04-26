@@ -1,0 +1,30 @@
+#!/bin/bash
+
+launch_es_install() {
+	zenity --info --text="Es la primera vez que ejecuta KompoZer.\n\nA continuación se instalará la traducción en español.\n\nReinicie KompoZer para poder usarlo en español."
+	kompozer.real /usr/share/kompozer-l10n-es/kompozer-0.7.10.es-ES.langpack.xpi
+}
+
+
+# read kompozer dir
+if [ ! -d $HOME/.kompozer ]; then
+  launch_es_install
+  exit 0
+fi
+
+# extension is in temp/ and in next boot is installed
+if [ -d $HOME/.kompozer/*default/extensions/temp ]; then
+  kompozer.real "$@"
+  exit 0
+fi
+
+# jar not exists
+if [ ! -e $HOME/.kompozer/*default/extensions/*13eb1aef*/chrome/es-ES.jar ]; then
+  launch_es_install
+  exit 0
+fi
+
+
+# es_ES installed run kompozer.real
+kompozer.real "$@"
+exit 0

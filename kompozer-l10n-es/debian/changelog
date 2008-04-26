@@ -1,3 +1,21 @@
+kompozer-l10n-es (4.0.max4) max; urgency=low
+
+  * If extensions/temp exists run kompozer.real
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 17:07:00 +0200
+
+kompozer-l10n-es (4.0.max3) max; urgency=low
+
+  * Fix startup script
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 16:58:41 +0200
+
+kompozer-l10n-es (4.0.max2) max; urgency=low
+
+  * dpsyco usr/bin/kompozer in usr/bin/kompozer.real to install es_ES first time run
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 16:50:18 +0200
+
 kompozer-l10n-es (4.0.max1) max; urgency=low
 
   * Rebuild in MaX 4.0
