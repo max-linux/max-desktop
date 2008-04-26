@@ -130,60 +130,8 @@ msgstr ""
 msgid "Halt the system now?"
 msgstr ""
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr ""
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr ""
-
-#. txt_directory
-msgid "Directory\n"
-msgstr ""
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr ""
-
-#. txt_server
-msgid "Server\n"
-msgstr ""
-
 #. txt_password
 msgid "Password\n"
-msgstr ""
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr ""
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr ""
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr ""
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr ""
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr ""
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
 msgstr ""
 
 #. button label for other/more options
@@ -209,6 +157,11 @@ msgstr ""
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
+msgstr ""
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
 msgstr ""
 
 #. label for d-i mode menu
@@ -362,6 +315,11 @@ msgid "Install an LTSP server"
 msgstr ""
 
 #. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr ""
+
+#. Installation mode.
 #. txt_menuitem_cli
 msgid "Install a command-line system"
 msgstr ""
@@ -384,4 +342,9 @@ msgstr ""
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
+msgstr ""
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
 msgstr ""

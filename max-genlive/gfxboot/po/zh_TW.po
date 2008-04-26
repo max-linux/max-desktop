@@ -6,13 +6,13 @@ msgstr ""
 "Project-Id-Version: bootloader\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2007-06-21 15:59+0000\n"
-"Last-Translator: ssh <shunhsiung@gmail.com>\n"
+"PO-Revision-Date: 2008-04-19 07:33+0000\n"
+"Last-Translator: Anthony Fok <foka@debian.org>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -161,61 +161,9 @@ msgstr "關閉電源"
 msgid "Halt the system now?"
 msgstr "要立即終止系統嗎？"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "硬碟安裝"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "磁碟裝置 (如果是空的，將掃描所有磁碟)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "目錄\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "FTP 安裝"
-
-#. txt_server
-msgid "Server\n"
-msgstr "伺服器\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "密碼\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "使用者 (如果是空的，將以匿名登入)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "NFS 安裝"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "使用者 (如果是空的，將使用 \"guest\")\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "SMB (Windows 共享) 安裝"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "HTTP 安裝"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "網域\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -235,12 +183,17 @@ msgstr "鍵盤對應表"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "模式"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
-msgstr ""
+msgstr "請按 F4 以選擇其他啟動和安裝模式。"
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "正常模式"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -275,12 +228,12 @@ msgstr "螢幕閱讀器"
 #. label for accessibility menu
 #. txt_access_brltty
 msgid "Braille Terminal"
-msgstr ""
+msgstr "盲人點字終端機"
 
 #. label for accessibility menu
 #. txt_access_m1
 msgid "Keyboard Modifiers"
-msgstr ""
+msgstr "鍵盤修飾鍵"
 
 #. label for accessibility menu
 #. txt_access_m2
@@ -289,9 +242,8 @@ msgstr "螢幕鍵盤"
 
 #. label for accessibility menu
 #. txt_access_m3
-#, fuzzy
 msgid "Motor Difficulties - switch devices"
-msgstr "活動困難 — switch 裝置"
+msgstr "運動機能障礙者專用開關式輸入裝置"
 
 #. label for accessibility menu
 #. txt_access_all
@@ -300,109 +252,103 @@ msgstr "所有東西"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "啟動或安裝 Ubuntu (^S)"
+msgstr "試用 Ubuntu 而不變更電腦中的任何內容 (^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "啟動或安裝 Kubuntu (^S)"
+msgstr "試用 Kubuntu 而不變更電腦中的任何內容 (^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "啟動或安裝 Edubuntu (^S)"
+msgstr "試用 Edubuntu 而不變更電腦中的任何內容 (^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "啟動或安裝 Xubuntu (^S)"
+msgstr "試用 Xubuntu 而不變更電腦中的任何內容 (^T)"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "以安全圖形模式啟動 Ubuntu (^g)"
+msgstr "安全圖形模式"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
 msgid "Use driver update CD"
-msgstr "安裝更新驅動程式光碟片 (^u)"
+msgstr "使用更新驅動程式光碟片"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "安裝文字模式(^I)"
+msgstr "在文字模式下安裝 Ubuntu (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "在文字模式下安裝 Kubuntu (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "在文字模式下安裝 Edubuntu (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "在文字模式下安裝 Xubuntu (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "安裝 Ubuntu (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "安裝 Kubuntu (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "安裝 Edubuntu (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "安裝 Xubuntu (^I)"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "安裝工作站(^w)"
+msgstr "安裝工作站"
 
 #. Installation mode.
 #. txt_menuitem_server
-#, fuzzy
 msgid "Install a server"
-msgstr "安裝伺服器(^v)"
+msgstr "安裝伺服器"
 
 #. Installation mode.
 #. txt_menuitem_oem
 msgid "OEM install (for manufacturers)"
-msgstr ""
+msgstr "OEM 安裝（供廠商使用）"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
-msgstr "安裝 LAMP 伺服器 (^L)"
+msgstr "安裝 LAMP 伺服器"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
-#, fuzzy
 msgid "Install an LTSP server"
-msgstr "安裝 LTSP 伺服器 (^L)"
+msgstr "安裝 LTSP 伺服器"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "安裝無碟影像伺服器"
 
 #. Installation mode.
 #. txt_menuitem_cli
@@ -413,20 +359,24 @@ msgstr "安裝基本系統 (^s)"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
 msgid "^Check CD for defects"
-msgstr "^檢查 CD 是否有缺損"
+msgstr "檢查 CD 是否有缺損 (^C)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
 msgid "^Rescue a broken system"
-msgstr "救援已損壞的系統(^R)"
+msgstr "救援已損壞的系統 (^R)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
-msgstr "記憶體測試(^M)"
+msgstr "記憶體測試 (^M)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
-msgstr "從第一個硬碟開機(^B)"
+msgstr "從第一個硬碟開機 (^B)"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "只安裝自由軟體"

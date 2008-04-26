@@ -19,7 +19,7 @@
   currentpoint 30 fontheight image
 
   timeout.time 0 gt {
-    timeout.seconds "%ds" timeout.buf sprintf
+    timeout.seconds "%d s" timeout.buf sprintf
 
     timeout.time.x timeout.time.y moveto timeout.buf showright
   } if

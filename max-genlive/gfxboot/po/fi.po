@@ -9,13 +9,13 @@ msgstr ""
 "Project-Id-Version: bootloader.fi\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2007-08-25 12:02+0000\n"
+"PO-Revision-Date: 2008-04-19 07:30+0000\n"
 "Last-Translator: Timo Jyrinki <timo.jyrinki@iki.fi>\n"
 "Language-Team: <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -40,7 +40,7 @@ msgstr "Jatka"
 
 #. txt_bootoptions
 msgid "Boot Options"
-msgstr "Käynnistysvalinnat"
+msgstr "Käynnistysv."
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
@@ -164,61 +164,9 @@ msgstr "Katkaise virta"
 msgid "Halt the system now?"
 msgstr "Pysäytetäänkö järjestelmä nyt?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "Kiintolevyasennus"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "Levylaite (tarkistaa kaikki levyt jos tyhjä)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "Hakemisto\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "FTP-asennus"
-
-#. txt_server
-msgid "Server\n"
-msgstr "Palvelin\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "Salasana\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "Käyttäjä (anonyymi kirjautuminen jos tyhjä)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "NFS-asennus"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "Käyttäjä (käytetään \"vieras\" jos tyhjä)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "SMB (Windows-jako) -asennus"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "HTTP-asennus"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "Toimialue\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -233,17 +181,22 @@ msgstr "Kieli"
 #. label for keymap selection
 #. txt_keymap
 msgid "Keymap"
-msgstr "Näppäimistökartta"
+msgstr "Näppäimistö"
 
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "Tilat"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
-msgstr ""
+msgstr "Paina F4 valitaksesi vaihtoehtoisen käynnistys- tai asennustilan."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "Tavallinen"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -302,116 +255,108 @@ msgstr "Kaikki"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "^Käynnistä tai asenna Ubuntu"
+msgstr "^Kokeile Ubuntua ilman muutoksia koneelle"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "^Käynnistä tai asenna Kubuntu"
+msgstr "^Kokeile Kubuntua ilman muutoksia koneelle"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "^Käynnistä tai asenna Edubuntu"
+msgstr "^Kokeile Edubuntua ilman muutoksia koneelle"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "^Käynnistä tai asenna Xubuntu"
+msgstr "^Kokeile Xubuntua ilman muutoksia koneelle"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "Käynnistä Ubuntu turvallisessa ^graafisessa tilassa"
+msgstr "Turvallinen graafinen tila"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
 msgid "Use driver update CD"
-msgstr "Asenna ajuri^päivitys-CD-levyn avulla"
+msgstr "Käytä ajuripäivitys-CD-levyä"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "Asenna tek^stitilassa"
+msgstr "Asenna Ubuntu tek^stitilassa"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "Asenna Kubuntu tek^stitilassa"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "Asenna Edubuntu tek^stitilassa"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "Asenna Xubuntu tek^stitilassa"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "^Asenna Ubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "^Asenna Kubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "^Asenna Edubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "^Asenna Xubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "^Työasema-asennus"
+msgstr "Työasema-asennus"
 
 #. Installation mode.
 #. txt_menuitem_server
-#, fuzzy
 msgid "Install a server"
-msgstr "Asenna pal^velin"
+msgstr "Palvelinasennus"
 
 #. Installation mode.
 #. txt_menuitem_oem
-#, fuzzy
 msgid "OEM install (for manufacturers)"
-msgstr "^OEM-asennus (laitevalmistajille)"
+msgstr "OEM-asennus (laitevalmistajille)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
-msgstr "Asenna ^LAMP-palvelin"
+msgstr "Asenna LAMP-palvelin"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
-#, fuzzy
 msgid "Install an LTSP server"
-msgstr "Asenna ^LTSP-palvelin"
+msgstr "Asenna LTSP-palvelin"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "Asenna levykuvapalvelin"
 
 #. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
-msgstr "Asenna komento^rivijärjestelmä"
+msgstr "Asenna komentorivijärjestelmä"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
@@ -425,7 +370,6 @@ msgstr "^Korjaa rikkinäinen järjestelmä"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
 msgstr "^Muistin tarkistus"
 
@@ -433,3 +377,8 @@ msgstr "^Muistin tarkistus"
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "Käynnistä ^ensimmäiseltä kiintolevyltä"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "Vain vapaita ohjelm."

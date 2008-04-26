@@ -6,13 +6,13 @@ msgstr ""
 "Project-Id-Version: bootloader\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2008-04-20 12:25+0000\n"
 "Last-Translator: Jun Kobayashi <kobayashi+ubuntu@junkobayashi.jp>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -101,7 +101,7 @@ msgstr "ブートディスクの変更"
 #. txt_insert_disk
 #, c-format
 msgid "Insert boot disk %u."
-msgstr "ブートディスク%uを挿入してください。"
+msgstr "ブートディスク %u を挿入してください。"
 
 #. txt_insert_disk2
 #, c-format
@@ -109,8 +109,8 @@ msgid ""
 "This is boot disk %u.\n"
 "Insert boot disk %u."
 msgstr ""
-"これはブートディスク%uです。\n"
-"ブートディスク%uを挿入してください。"
+"これはブートディスク %u です。\n"
+"ブートディスク %u を挿入してください。"
 
 #. txt_insert_disk3
 #, c-format
@@ -119,7 +119,7 @@ msgid ""
 "Please insert boot disk %u."
 msgstr ""
 "これは適切なブートディスクではありません。\n"
-"ブートディスク%uを挿入してください。"
+"ブートディスク %u を挿入してください。"
 
 #. password dialog title
 #. txt_password_title
@@ -148,9 +148,9 @@ msgid ""
 "\n"
 "Turn the DVD over then continue."
 msgstr ""
-"これは両面DVDです。 第2面からブートしています。\n"
+"これは両面DVDです。 裏面からブートしています。\n"
 "\n"
-"DVDをひっくり返してから続行してください。"
+"DVDを裏返してから続行してください。"
 
 #. power off dialog title
 #. txt_power_off_title
@@ -161,61 +161,9 @@ msgstr "電源オフ"
 msgid "Halt the system now?"
 msgstr "システムを停止しますか？"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "ハードディスクインストール"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "ディスクデバイス (空白で全ディスクをスキャン)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "ディレクトリ\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "FTPインストール"
-
-#. txt_server
-msgid "Server\n"
-msgstr "サーバー\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "パスワード\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "ユーザ (空白でanonymousログイン)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "NFSインストール"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "ユーザ (空白で \"guest\" を使用)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "SMB (Windows共有) インストール"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "HTTPインストール"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "ドメイン\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -235,12 +183,17 @@ msgstr "キーマップ"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "モード"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
-msgstr ""
+msgstr "F4 キーを押すとスタートアップとインストールのモードが選択できます。"
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "標準"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -250,7 +203,7 @@ msgstr "エキスパートモード"
 #. title for accessibility menu
 #. txt_access
 msgid "Accessibility"
-msgstr "アクセシビリティ"
+msgstr "アクセス補助"
 
 #. label for accessibility menu
 #. txt_access_none
@@ -299,90 +252,81 @@ msgstr "すべて"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "Ubuntuの起動およびインストール"
+msgstr "コンピュータに変更を加えないでUbuntuを使ってみる(^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "Kubuntuの起動およびインストール"
+msgstr "コンピュータに変更を加えないでUbuntuを使ってみる(^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "Edubuntuの起動およびインストール"
+msgstr "コンピュータに変更を加えないでEdubuntuを使ってみる(^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "Xubuntuの起動およびインストール"
+msgstr "コンピュータに変更を加えないでXubuntuを使ってみる(^T)"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
 msgstr "セーフグラフィックスモードでUbuntuを起動"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
 msgid "Use driver update CD"
-msgstr "ドライバアップデートCDを用いてインストール"
+msgstr "ドライバアップデートCDを使用"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "テキストモードでインストール"
+msgstr "テキストモードでUbuntuをインストール(^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "テキストモードでKubuntuをインストール(^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "テキストモードでEdubuntuをインストール(^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "テキストモードでXubuntuをインストール(^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "Ubuntuをインストール(^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "Kubuntuをインストール(^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "Edubuntuをインストール(^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "Xubuntuをインストール(^I)"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
 msgstr "ワークステーションのインストール"
 
 #. Installation mode.
 #. txt_menuitem_server
-#, fuzzy
 msgid "Install a server"
 msgstr "サーバのインストール"
 
@@ -394,39 +338,45 @@ msgstr "メーカー向けのテキストモードインストール"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
 msgstr "LAMPサーバのインストール"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
-#, fuzzy
 msgid "Install an LTSP server"
 msgstr "LTSPサーバのインストール"
 
 #. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "ディスクレスイメージサーバをインストール"
+
+#. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
 msgstr "コマンドラインシステムのインストール"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
 msgid "^Check CD for defects"
-msgstr "CDの異常をチェック"
+msgstr "CDの異常をチェック(^C)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
 msgid "^Rescue a broken system"
-msgstr "壊れたシステムをレスキュー"
+msgstr "壊れたシステムを修復(^R)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
-msgstr "メモリテスト"
+msgstr "メモリテスト(^M)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
-msgstr "一番目のハードディスクから起動"
+msgstr "一番目のハードディスクから起動(^B)"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "フリーソフトウェアのみ"

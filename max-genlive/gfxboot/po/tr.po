@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2007-04-13 22:16+0000\n"
-"Last-Translator: towsonu2003 <towsonu2003@gmail.com>\n"
+"PO-Revision-Date: 2008-04-19 07:30+0000\n"
+"Last-Translator: baran <baran@flashmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -163,61 +163,9 @@ msgstr "Kapat"
 msgid "Halt the system now?"
 msgstr "Sistem şimdi kapatılsın mı?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "Sabit Disk Kurulumu"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "Disk Aygıtı (eğer boş ise tüm diskleri tara)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "Dizin\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "FTP Kurulumu"
-
-#. txt_server
-msgid "Server\n"
-msgstr "Sunucu\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "Parola\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "Kullanıcı (eğer boş ise anonim oturum aç)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "NFS Kurulumu"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "Kullanıcı (eğer boş ise \"konuk\" kullan)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "SMB (Pencere Paylaşımı) Kurulumu"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "HTTP Kurulumu"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "Etki alanı\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -237,12 +185,17 @@ msgstr "Klavye"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "Kipler"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
-msgstr ""
+msgstr "Başlangıç ve kurulum seçenekleri için F4 tuşuna basın"
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "Normal"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -303,116 +256,132 @@ msgstr "Herşey"
 #. txt_menuitem_live_ubuntu
 #, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "Ubuntu'yu ^Başlat"
+msgstr "^Bilgisayarınızda herhangi bir değişilik yapmadan Ubuntu'yu deneyin"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
 #, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "Kubuntu'yu ^Başlat"
+msgstr "^Bilgisayarınızda herhangi bir değişilik yapmadan Kubuntu'yu deneyin"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
 #, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "Edubuntu'yu ^Başlat"
+msgstr "^Bilgisayarınızda herhangi bir değişilik yapmadan Edubuntu'yu deneyin"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
 #, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "Xubuntu'yu ^Başlat"
+msgstr "^Bilgisayarınızda herhangi bir değişilik yapmadan Xubuntu'yu deneyin"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
 #, fuzzy
 msgid "Safe graphics mode"
-msgstr "Ubuntu'yu güvenli ^grafik kipinde başlat"
+msgstr "Güvenli grafik kipi"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
 #, fuzzy
 msgid "Use driver update CD"
-msgstr "Sürücü ^güncelleme CD'siyle kur"
+msgstr "Sürücü güncelleme CD'si kullan"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
 #, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "Sabit diske ^kur"
+msgstr "^Ubuntu'yu metin kipinde kur"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
+#, fuzzy
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "^Kubuntu'yu metin kipinde kur"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
+#, fuzzy
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "^Edubuntu'yu metin kipinde kur"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
+#, fuzzy
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "^Xubuntu'yu metin kipinde kur"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
+#, fuzzy
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "^Ubuntu kur"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
+#, fuzzy
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "^Kubuntu kur"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
+#, fuzzy
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "^Edubuntu kur"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
+#, fuzzy
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "^Xubuntu kur"
 
 #. Installation mode.
 #. txt_menuitem_workstation
 #, fuzzy
 msgid "Install a workstation"
-msgstr "Bir ^işistasyonu kur"
+msgstr "Bir işistasyonu kur"
 
 #. Installation mode.
 #. txt_menuitem_server
+#, fuzzy
 msgid "Install a server"
-msgstr ""
+msgstr "Bir sunucu kur"
 
 #. Installation mode.
 #. txt_menuitem_oem
+#, fuzzy
 msgid "OEM install (for manufacturers)"
-msgstr ""
+msgstr "OEM kurulum (üreticiler için)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
 #, fuzzy
 msgid "Install a LAMP server"
-msgstr "Bir ^LAMP sunucusu kur"
+msgstr "Bir LAMP sunucusu kur"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
+#, fuzzy
 msgid "Install an LTSP server"
-msgstr ""
+msgstr "Bir LTSP sunucusu kur"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+#, fuzzy
+msgid "Install a Diskless Image Server"
+msgstr "Disksiz Kalıp Sunucusu Kur"
 
 #. Installation mode.
 #. txt_menuitem_cli
 #, fuzzy
 msgid "Install a command-line system"
-msgstr "Bir s^unucu kur"
+msgstr "Bir komut satırı sistemi kur"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
 msgid "^Check CD for defects"
-msgstr "Cd'yi hatalar için ^kontrol et"
+msgstr "Cd'yi hatalar için ^denetle"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -429,3 +398,8 @@ msgstr "^Bellek testi"
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "Birinci sabit diskten ^aç"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "Sadece ücretsiz yazılımlar"

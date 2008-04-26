@@ -5,13 +5,13 @@ msgstr ""
 "Project-Id-Version: bootloader\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2007-08-26 12:00+0000\n"
+"PO-Revision-Date: 2008-04-19 07:32+0000\n"
 "Last-Translator: Daniel Nylander <yeager@ubuntu.com>\n"
 "Language-Team: Svenska <i18n@suse.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 "X-Poedit-Country: SWEDEN\n"
 "X-Poedit-Language: Swedish\n"
@@ -163,66 +163,14 @@ msgstr "Stäng av"
 msgid "Halt the system now?"
 msgstr "Vill du stänga av systemet nu?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "Hårddiskinstallation"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "Diskenhet (sök av alla diskar om blank)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "Katalog\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "FTP-installation"
-
-#. txt_server
-msgid "Server\n"
-msgstr "Server\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "Lösenord\n"
 
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "Användare (anonym inloggning om blank)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "NFS-installation"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "Användare (använder \"guest\" om blank)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "SMB-installation (Windows-utdelning)"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "HTTP-installation"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "Domän\n"
-
 #. button label for other/more options
 #. txt_other_options
 msgid "Other Options"
-msgstr "Övriga alternativ"
+msgstr "Övrigt"
 
 #. label for language selection
 #. txt_language
@@ -237,12 +185,18 @@ msgstr "Tangentbordslayout"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "Lägen"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
 msgstr ""
+"Tryck F4 för att välja alternativa lägen för uppstart och installation."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "Normal"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -252,7 +206,7 @@ msgstr "Expertläge"
 #. title for accessibility menu
 #. txt_access
 msgid "Accessibility"
-msgstr "Tillgänglighet"
+msgstr "Hjälpmedel"
 
 #. label for accessibility menu
 #. txt_access_none
@@ -262,7 +216,7 @@ msgstr "Ingen"
 #. label for accessibility menu
 #. txt_access_v1
 msgid "High Contrast"
-msgstr "Högkontrast"
+msgstr "Hög kontrast"
 
 #. label for accessibility menu
 #. txt_access_v2
@@ -277,7 +231,7 @@ msgstr "Skärmläsare"
 #. label for accessibility menu
 #. txt_access_brltty
 msgid "Braille Terminal"
-msgstr "Braille-terminal"
+msgstr "Blindskriftsterminal"
 
 #. label for accessibility menu
 #. txt_access_m1
@@ -292,7 +246,7 @@ msgstr "Skärmtangentbord"
 #. label for accessibility menu
 #. txt_access_m3
 msgid "Motor Difficulties - switch devices"
-msgstr "Motoriska problem - byt enheter"
+msgstr "Motorikproblem - brytare"
 
 #. label for accessibility menu
 #. txt_access_all
@@ -301,116 +255,108 @@ msgstr "Allting"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "^Starta eller installera Ubuntu"
+msgstr "^Prova Ubuntu utan att göra ändringar på din dator"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "^Starta eller installera Kubuntu"
+msgstr "^Prova Kubuntu utan att göra ändringar på din dator"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "^Starta eller installera Edubuntu"
+msgstr "^Prova Edubuntu utan att göra ändringar på din dator"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "^Starta eller installera Xubuntu"
+msgstr "^Prova Xubuntu utan att göra ändringar på din dator"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "Starta Ubuntu i felsäkert ^grafikläge"
+msgstr "Felsäkert grafikläge"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
 msgid "Use driver update CD"
-msgstr "Installera med cd med drivrutins^uppdatering"
+msgstr "Använd skiva med drivrutinsuppdateringar"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "^Installera i textläge"
+msgstr "^Installera Ubuntu i textläge"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "^Installera Kubuntu i textläge"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "^Installera Edubuntu i textläge"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "^Installera Xubuntu i textläge"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "^Installera Ubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "^Installera Kubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "^Installera Edubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "^Installera Xubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "Installera en ^arbetsstation"
+msgstr "Installera en arbetsstation"
 
 #. Installation mode.
 #. txt_menuitem_server
-#, fuzzy
 msgid "Install a server"
-msgstr "Installera en ser^ver"
+msgstr "Installera en server"
 
 #. Installation mode.
 #. txt_menuitem_oem
-#, fuzzy
 msgid "OEM install (for manufacturers)"
-msgstr "^OEM-installation (för tillverkare)"
+msgstr "OEM-installation (för tillverkare)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
-msgstr "Installera en ^LAMP-server"
+msgstr "Installera en LAMP-server"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
-#, fuzzy
 msgid "Install an LTSP server"
-msgstr "Installera en ^LTSP-server"
+msgstr "Installera en LTSP-server"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "Installera en server för disklösa klienter"
 
 #. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
-msgstr "Installera ett komm^andoradssystem"
+msgstr "Installera ett kommandoradssystem"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
@@ -424,11 +370,15 @@ msgstr "^Rädda ett trasigt system"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
-msgstr "^Minneskontroll"
+msgstr "Kontrollera ^minne"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "^Starta upp från första hårddisken"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "Endast fri programvara"

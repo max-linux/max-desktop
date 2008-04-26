@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2007-02-28 07:00:57.592902+00:00\n"
-"PO-Revision-Date: 2007-04-19 14:25+0000\n"
+"PO-Revision-Date: 2008-04-19 07:33+0000\n"
 "Last-Translator: Anivar Aravind <anivar@movingrepublic.org>\n"
 "Language-Team: Malayalam <ml@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -44,13 +44,15 @@ msgstr ""
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
 msgid "Exiting..."
-msgstr ""
+msgstr "വിടവാങ്ങുന്നു(Exiting)..."
 
 #. txt_exit_dialog
 msgid ""
 "You are leaving the graphical boot menu and\n"
 "starting the text mode interface."
 msgstr ""
+"നിങ്ങള് 'വസ്തുചിത്റപരമായ' 'ബൂട്ടു്' െമനു വിട്ടു്\n"
+" സാദാ 'െടക്സ്ട്' രീതിയിേലക്കു കടക്കുകയാണ്."
 
 #. txt_help
 msgid "Help"
@@ -68,6 +70,9 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
+"'ലിനക്സ് േകറ്ണലു്' േലാഡു െചയ്യുന്നു (loading Linux Kernel)\n"
+"\n"
+"\n"
 
 #. Keep the three newlines!
 #. txt_load_memtest
@@ -80,7 +85,7 @@ msgstr ""
 #. info box title
 #. txt_info_title
 msgid "Boot loader"
-msgstr ""
+msgstr "ബൂട്ട് ലോഡര്‍ (Boot Loader)"
 
 #. error box title
 #. txt_error_title
@@ -90,7 +95,7 @@ msgstr "I/O പിശക്"
 #. boot disk change dialog title
 #. txt_change_disk_title
 msgid "Change Boot Disk"
-msgstr ""
+msgstr "ബൂട്ടു് ഡിസ്ക് മാറ്റി പകരം വക്കുക (change)"
 
 #. txt_insert_disk
 #, c-format
@@ -143,62 +148,10 @@ msgstr ""
 
 #. txt_power_off
 msgid "Halt the system now?"
-msgstr ""
-
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr ""
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr ""
-
-#. txt_directory
-msgid "Directory\n"
-msgstr ""
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr ""
-
-#. txt_server
-msgid "Server\n"
-msgstr ""
+msgstr "സിസ്റ്റം ഇേപ്പാളു് ഹാള്ട്ട് (halt now) െചയ്േതാെട്ട ?"
 
 #. txt_password
 msgid "Password\n"
-msgstr ""
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr ""
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr ""
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr ""
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr ""
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr ""
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
 msgstr ""
 
 #. button label for other/more options
@@ -226,6 +179,11 @@ msgstr ""
 msgid "Press F4 to select alternative start-up and installation modes."
 msgstr ""
 
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr ""
+
 #. label for d-i mode menu
 #. txt_expert_mode
 msgid "Expert mode"
@@ -234,22 +192,22 @@ msgstr ""
 #. title for accessibility menu
 #. txt_access
 msgid "Accessibility"
-msgstr ""
+msgstr "സാമീപ്യത (accessibility)"
 
 #. label for accessibility menu
 #. txt_access_none
 msgid "None"
-msgstr ""
+msgstr "ശൂന്യം (none)"
 
 #. label for accessibility menu
 #. txt_access_v1
 msgid "High Contrast"
-msgstr ""
+msgstr "മിഴിവുറ്റ (High Contrast)"
 
 #. label for accessibility menu
 #. txt_access_v2
 msgid "Magnifier"
-msgstr ""
+msgstr "ഭൂതകണ്ണാടി (Magnifier)"
 
 #. label for accessibility menu
 #. txt_access_v3
@@ -274,12 +232,12 @@ msgstr ""
 #. label for accessibility menu
 #. txt_access_m3
 msgid "Motor Difficulties - switch devices"
-msgstr ""
+msgstr "'േമാേട്ടാറു്' (Motor)ബുധിമുട്ടുകളു് - സ്വിച്ചു് ഉപകരണങ്ങളുെട"
 
 #. label for accessibility menu
 #. txt_access_all
 msgid "Everything"
-msgstr ""
+msgstr "ഇെതല്ലാം (Everything)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
@@ -377,6 +335,11 @@ msgid "Install an LTSP server"
 msgstr ""
 
 #. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr ""
+
+#. Installation mode.
 #. txt_menuitem_cli
 msgid "Install a command-line system"
 msgstr ""
@@ -399,4 +362,9 @@ msgstr ""
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
+msgstr ""
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
 msgstr ""

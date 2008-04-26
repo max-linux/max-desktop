@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2007-09-29 15:35+0000\n"
+"PO-Revision-Date: 2008-04-19 07:31+0000\n"
 "Last-Translator: Ante Karamatić <ivoks@grad.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -163,61 +163,9 @@ msgstr "Gašenje"
 msgid "Halt the system now?"
 msgstr "Zaustaviti sustav?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "Instalacije na čvrsti disk"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "Diskovni uređaj (pretraži sve diskove ako je prazan)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "Direktorij\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "FTP instalacija"
-
-#. txt_server
-msgid "Server\n"
-msgstr "Poslužitelj\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "Lozinka\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "Korisnik (anonimna prijava ako je prazno)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "NFS instalacija"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "Korisnik (koristim \"gost\" ako je prazno)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "SMB (Windows Share) instalacija"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "HTTP instalacija"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "Domena\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -237,11 +185,16 @@ msgstr "Raspored tipkovnice"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "Načini"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
+msgstr "Pritisnite F4 da odaberete alternativni ulaz i načine instalacije."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
 msgstr ""
 
 #. label for d-i mode menu
@@ -301,116 +254,108 @@ msgstr "Sve"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "^Pokreni instalaciju Ubuntua"
+msgstr "^Isprobati Ubuntu bez ikakvih promjena na računalu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "^Pokreni instalaciju Kubuntua"
+msgstr "^Isprobati Kubuntu bez ikakvih promjena na računalu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "^Pokreni instalaciju Edubuntua"
+msgstr "^Isprobati Edubuntu bez ikakvih promjena na računalu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "^Pokreni instalaciju Xubuntua"
+msgstr "^Isprobati Xubuntu bez ikakvih promjena na računalu"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "Pokreni Ubuntu u sigurnom ^grafičkom sučelju"
+msgstr "Sigurno grafičko sučelje"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
 msgid "Use driver update CD"
 msgstr "Instalacija sa CD-om s ^upravljačkim programima"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "^Instaliraj u tekstualnom okružju"
+msgstr "^Instaliraj Ubuntu u tekstualnom načinu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "^Instaliraj Kubuntu u tekstualnom načinu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "^Instaliraj Edubuntu u tekstualnom načinu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "^Instaliraj Xubuntu u tekstualnom načinu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "^Instaliraj Ubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "^Instaliraj Kubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "^Instaliraj Edubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "^Instaliraj Xubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "Instaliraj ^radnu stanicu"
+msgstr "Instaliraj radnu stanicu"
 
 #. Installation mode.
 #. txt_menuitem_server
-#, fuzzy
 msgid "Install a server"
-msgstr "Instalacija ^poslužitelja"
+msgstr "Instalacija poslužitelja"
 
 #. Installation mode.
 #. txt_menuitem_oem
-#, fuzzy
 msgid "OEM install (for manufacturers)"
-msgstr "^OEM instalacija (za proizvođače)"
+msgstr "OEM instalacija (za proizvođače)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
-msgstr "Instaliraj ^LAMP poslužitelj"
+msgstr "Instalacija LAMP poslužitelja"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
-#, fuzzy
 msgid "Install an LTSP server"
-msgstr "Instalacija ^LTSP poslužitelja"
+msgstr "Instalacija LTSP poslužitelja"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "Instaliraj poslužitelja slika za tanke klijente"
 
 #. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
-msgstr "Instaliraj sustav ^bez grafičkog sučelja"
+msgstr "Instalacija komandno-linijskog sustava"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
@@ -424,7 +369,6 @@ msgstr "^Spasi uništeni sustav"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
 msgstr "Test ^memorije"
 
@@ -432,3 +376,8 @@ msgstr "Test ^memorije"
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "^Podigni s prvog čvrstog diska"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr ""

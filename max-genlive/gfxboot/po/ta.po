@@ -10,13 +10,14 @@ msgstr ""
 "Project-Id-Version: ta(gfxboot)\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2006-09-18 21:38+0000\n"
-"Last-Translator: drtvasudevan <agnihot3@gmail.com>\n"
+"PO-Revision-Date: 2008-04-19 07:31+0000\n"
+"Last-Translator: Launchpad Translations Administrators <rosetta@launchpad."
+"net>\n"
 "Language-Team: tamil <Ubuntu-l10n-tam@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -165,61 +166,9 @@ msgstr "மின்சக்தியை நிறுத்து"
 msgid "Halt the system now?"
 msgstr "இப்போது கணினியை நிறுத்தவா?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "வன் வட்டு நிறுவல்"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "வட்டு சாதனம் (காலியாக இருப்பின் அனைத்து வன் வட்டுக்களையும் அலகிடு)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "அடைவு\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "எப்ஃடிபி நிறுவல்"
-
-#. txt_server
-msgid "Server\n"
-msgstr "சேவையகம்\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "கடவுச்சொல்\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "பயனர் (காலியானால் அடையாளம் தெரியாத நுழைவு)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "என்எப்ஃஎஸ் நிறுவல்"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "பயனர் (காலியானால் \"guest\" உபயோகி)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "எஸ்எம்பி (சாளரங்கள் பகிர்) நிறுவல்"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "ஹெச்டிடிபி நிறுவல்"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "தளம்\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -244,6 +193,11 @@ msgstr ""
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
+msgstr ""
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
 msgstr ""
 
 #. label for d-i mode menu
@@ -405,6 +359,11 @@ msgid "Install an LTSP server"
 msgstr ""
 
 #. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr ""
+
+#. Installation mode.
 #. txt_menuitem_cli
 msgid "Install a command-line system"
 msgstr ""
@@ -429,3 +388,8 @@ msgstr "^நினைவக சோதனை"
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "முதல் வன் தட்டிலிருந்து ^பூட் செய்"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr ""

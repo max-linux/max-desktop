@@ -10,19 +10,19 @@ msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2007-04-13 22:13+0000\n"
+"PO-Revision-Date: 2008-04-19 07:31+0000\n"
 "Last-Translator: Kostas Papadimas <pkst@gmx.net>\n"
 "Language-Team: Hellenic-Ελληνικά-Greek <hstg@billg.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
 #. txt_ok
 msgid "OK"
-msgstr "ΟΚ"
+msgstr "Εντάξει"
 
 #. cancel button label
 #. txt_cancel
@@ -46,7 +46,7 @@ msgstr "Ρυθμίσεις Εκκίνησης"
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
 msgid "Exiting..."
-msgstr "Έξοδος..."
+msgstr "Γίνεται τερματισμός..."
 
 #. txt_exit_dialog
 msgid ""
@@ -72,7 +72,7 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-"Ο πυρήνας Linux φορτώνεται\n"
+"Γίνεται η φόρτωση του πυρήνα Linux\n"
 "\n"
 "\n"
 
@@ -90,7 +90,7 @@ msgstr ""
 #. info box title
 #. txt_info_title
 msgid "Boot loader"
-msgstr "Boot loader"
+msgstr "Εκκινητής συστήματος"
 
 #. error box title
 #. txt_error_title
@@ -105,7 +105,7 @@ msgstr "Αλλαγή δίσκου εκκίνησης"
 #. txt_insert_disk
 #, c-format
 msgid "Insert boot disk %u."
-msgstr "Παρακαλώ εισάγετε τον δίσκο εκκίνησης %u."
+msgstr "Παρακαλώ εισάγετε το δίσκο εκκίνησης %u."
 
 #. txt_insert_disk2
 #, c-format
@@ -123,7 +123,7 @@ msgid ""
 "Please insert boot disk %u."
 msgstr ""
 "Αυτή δεν είναι ο κατάλληλος δίσκος εκκίνησης.\n"
-"Παρακαλώ εισάγετε τον δίσκο εκκίνησης %u."
+"Παρακαλώ εισάγετε το δίσκο εκκίνησης %u."
 
 #. password dialog title
 #. txt_password_title
@@ -165,66 +165,14 @@ msgstr "Διακοπή λειτουργίας"
 msgid "Halt the system now?"
 msgstr "Θέλετε να σταματήσετε το σύστημα τώρα;"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "Εγκατάσταση Σκληρού Δίσκου"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "Συσκευή Δίσκου (σάρωση όλων των δίσκων αν είναι κενοί)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "Κατάλογος\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "Εγκατάσταση FTP"
-
-#. txt_server
-msgid "Server\n"
-msgstr "Εξυπηρετητής\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "Κωδικός\n"
 
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "Χρήστης (ανώνυμη σύνδεση εάν είναι κενός)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "Εγκατάσταση NFS"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "Χρήστης (χρήση \"guest\" αν είναι κενός)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "Εγκατάσταση SMB (Windows Share)"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "Εγκατάσταση HTTP"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "Τομέας\n"
-
 #. button label for other/more options
 #. txt_other_options
 msgid "Other Options"
-msgstr "Άλλες Επιλογές"
+msgstr "Επιλογές"
 
 #. label for language selection
 #. txt_language
@@ -234,16 +182,22 @@ msgstr "Γλώσσα"
 #. label for keymap selection
 #. txt_keymap
 msgid "Keymap"
-msgstr "Διάταξη πληκτρολογίου"
+msgstr "Πληκτρολόγιο"
 
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "Λειτουργία"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
+msgstr ""
+"Πατήστε F4 για να επιλέξετε εναλλακτικές επιλογές εκκίνησης και εγκατάστασης."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
 msgstr ""
 
 #. label for d-i mode menu
@@ -289,7 +243,7 @@ msgstr "Τροποποιητές πληκτρολογίου"
 #. label for accessibility menu
 #. txt_access_m2
 msgid "On-Screen Keyboard"
-msgstr "Πληκτρολόγιο Οθόνης"
+msgstr "Πληκτρολόγιο στην οθόνη"
 
 #. label for accessibility menu
 #. txt_access_m3
@@ -303,27 +257,25 @@ msgstr "Όλα"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "Εκκίνηση ^Ubuntu"
+msgstr "Δοκιμή του ^Ubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "Εκκίνηση ^Kubuntu"
+msgstr "Δοκιμή του ^Kubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
 #, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "Εκκίνηση E^dubuntu"
+msgstr "Δοκιμή του ^Edubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
 #, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "Εκκίνηση ^Xubuntu"
+msgstr "Δοκιμή του ^Xubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
@@ -335,99 +287,109 @@ msgstr "Εκκίνηση Ubuntu σε ασφαλή γραφική λειτουρ�
 #. txt_menuitem_driverupdates
 #, fuzzy
 msgid "Use driver update CD"
-msgstr "Εγκατάστασ^η με CD ενημερώσεως οδηγών"
+msgstr "Χρήση CD με ενημερωμένους οδηγούς συσκευών"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
 #, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "Ε^γκατάσταση στο σκληρό δίσκο"
+msgstr "^Εγκατάσταση Ubuntu σε κατάσταση κειμένου"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "^Εγκατάσταση Kubuntu σε κατάσταση κειμένου"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "^Εγκατάσταση Edubuntu σε κατάσταση κειμένου"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "^Εγκατάσταση Xubuntu σε κατάσταση κειμένου"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "^Εγκατάσταση Ubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "^Εγκατάσταση Kubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "^Εγκατάσταση Edubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "^Εγκατάσταση Xubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
 #, fuzzy
 msgid "Install a workstation"
-msgstr "Εγκατάσταση ενός ^σταθμού εργασίας"
+msgstr "Εγκατάσταση ^σταθμού εργασίας"
 
 #. Installation mode.
 #. txt_menuitem_server
 msgid "Install a server"
-msgstr ""
+msgstr "Εγκατάσταση εξυπηρετητή"
 
 #. Installation mode.
 #. txt_menuitem_oem
 msgid "OEM install (for manufacturers)"
-msgstr ""
+msgstr "Εγκατάσταση ΟΕΜ (για κατασκευαστές)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
 #, fuzzy
 msgid "Install a LAMP server"
-msgstr "Εγκατάσταση ενός εξυπηρετητή ^LAMP"
+msgstr "Εγκατάσταση εξυπηρετητή LAMP"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
 msgid "Install an LTSP server"
+msgstr "Εγκατάσταση εξυπηρετητή LTSP"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
 msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_cli
 #, fuzzy
 msgid "Install a command-line system"
-msgstr "Εγκ^ατάσταση συστήματος γραμμής εντολών"
+msgstr "Εγκατάσταση συστήματος γραμμής εντολών"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
 msgid "^Check CD for defects"
-msgstr "Έ^λεγχος CD για ελλατώματα"
+msgstr "Έλεγχος ^CD για ελαττώματα"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
 msgid "^Rescue a broken system"
-msgstr "^Rescue  ενός προβληματικού συστήματος"
+msgstr "Διάσωση προβληματικού συστήματος"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
 #, fuzzy
 msgid "Test ^memory"
-msgstr "Έλεγ^χος μνήμης"
+msgstr "Έλεγχος ^μνήμης"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "Ε^κκίνηση από τον πρώτο σκληρό δίσκο"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "Μόνο ελεύθερο λογισμικό"

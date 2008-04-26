@@ -10,19 +10,19 @@ msgstr ""
 "Project-Id-Version: bootloader-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2008-04-19 07:30+0000\n"
 "Last-Translator: Vladimer Sichinava <vsichi@gnome.org>\n"
 "Language-Team: Georgian <geognome@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
 #. txt_ok
 msgid "OK"
-msgstr "კარგი"
+msgstr "დიახ"
 
 #. cancel button label
 #. txt_cancel
@@ -63,7 +63,7 @@ msgstr "დახმარება"
 #. window title for kernel loading (see txt_load_kernel)
 #. txt_load_kernel_title
 msgid "Starting..."
-msgstr "ვრთავ..."
+msgstr "ირთვება..."
 
 #. Keep the three newlines!
 #. txt_load_kernel
@@ -72,7 +72,7 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-"იტვირთება ლინუქსის ბირთვი\n"
+"ლინუქსის ბირთვის ჩატვირთვა\n"
 "\n"
 "\n"
 
@@ -163,63 +163,11 @@ msgstr "გამორთვა"
 
 #. txt_power_off
 msgid "Halt the system now?"
-msgstr "სისტემის მყისვე გამორთვა?"
-
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "მყარ დისკზე დაყენება"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "მყარი დისკი (ყველა დისკის სკანირება, ცარიელის შემთხვევაში)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "დასტა\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "FTP-ს მეშვეობით დეყენება"
-
-#. txt_server
-msgid "Server\n"
-msgstr "სერვერი\n"
+msgstr "გნებავთ სისტემის მყისვე გამორთვა?"
 
 #. txt_password
 msgid "Password\n"
 msgstr "პაროლი\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "მომხმარებელი (ანონიმური რეგისტრაცია, სახელის არშეყვანის შემთხვევაში)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "NFS-ის მეშვეობით დაყენება"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "მომხმარებელი (ვიყენებ \"guest\" ცარიელის შემთხვევაში)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "SMB-ს (Windows-თან ზიარი) მეშვეობით დაყენება"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "HTTP მეშვეობით დაყენება"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "დომეინი\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -234,17 +182,22 @@ msgstr "ენა"
 #. label for keymap selection
 #. txt_keymap
 msgid "Keymap"
-msgstr "Keymap"
+msgstr "კლავიშების რუქა"
 
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "რეჟიმები"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
-msgstr ""
+msgstr "დააჭირეთ F4-ს ჩატვირთვისა და დაყენების ალტერნატიული  რეჟიმებისთვის."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "ჩვეულებრივი"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -259,7 +212,7 @@ msgstr "დამხმარე საშუალებები"
 #. label for accessibility menu
 #. txt_access_none
 msgid "None"
-msgstr "არა"
+msgstr "არაფერი"
 
 #. label for accessibility menu
 #. txt_access_v1
@@ -303,92 +256,83 @@ msgstr "ყველაფერი"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "^უბუნტუს გაშვება ან დაყენება"
+msgstr "^უბუნტუს გაშვება კომპიუტერზე დაყენების გარეშე"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "^კუბუნტუს დაყენება ან გაშვება"
+msgstr "^კუბუნტუს გაშვება კომპიუტერზე დაყენების გარეშე"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "^ედუბუნტუს გაშვება ან დაყენება"
+msgstr "^ედუბუნტუს გაშვება კომპიუტერზე დაყენების გარეშე"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "^ქსუბუნტუს გაშვება ან დაყენება"
+msgstr "^იქსუბუნტუს გაშვება კომპიუტერზე დაყენების გარეშე"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "უბუნტუს უსაფრთხო ^გრაფიკულ რეჟიმში გაშვება"
+msgstr "უსაფრთხო გრაფიკული რეჟიმი"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
 msgid "Use driver update CD"
-msgstr "დრაივერების განახლების CD-დან დაყენება"
+msgstr "დამატებითი დრაივერების დისკის გამოყენება"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "^ტექსტურ რეჟიმში დაყენება"
+msgstr "^უბუნტუს ტექსტურ რეჟიმში დაყენება"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "^კუბუნტუს ტექსტურ რეჟიმში დაყენება"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "^ედუბუნტუს ტექსტურ რეჟიმში დაყენება"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "^იქსუბუნტუს ტექსტურ რეჟიმში დაყენება"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "^უბუნტუს დაყენება"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "^კუბუნტუს დაყენება"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "^ედუბუნტუს დაყენება"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "^იქსუბუნტუს დაყენება"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "^მუშა სადგურის დაყენება"
+msgstr "საოფისე სისტემის დაყენება"
 
 #. Installation mode.
 #. txt_menuitem_server
-#, fuzzy
 msgid "Install a server"
-msgstr "სერ^ვერის დაყენება"
+msgstr "სერვერის დაყენება"
 
 #. Installation mode.
 #. txt_menuitem_oem
@@ -398,26 +342,28 @@ msgstr "ტექსტურ რეჟიმში დაყენება მ
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
-msgstr "^LAMP სერვერის დაყენება"
+msgstr "LAMP სერვერის დაყენება"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
-#, fuzzy
 msgid "Install an LTSP server"
-msgstr "^LTSP სერვერის დაყენება"
+msgstr "LTSP სერვერის დაყენება"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "სერვერის დისკგარეშე ანარეკლის დაყენება"
 
 #. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
 msgstr "სისტემის დაყენება გრაფიკული ინტერფეისის გარეშე"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
 msgid "^Check CD for defects"
-msgstr "^CD-ს დაზიანებაზე შემოწმება"
+msgstr "^დისკის დაზიანებაზე შემოწმება"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -426,11 +372,15 @@ msgstr "^დაზიანებული სისტემის გადა
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
-msgstr "^მეხსიერების ტესტი"
+msgstr "მეხსიერების ტესტი"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "პირველი ^მყარი დისკიდან ჩატვირთვა"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "მხოლოდ თავისუფალი პროგრამები"

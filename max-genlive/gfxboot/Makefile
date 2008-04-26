@@ -15,7 +15,10 @@ BFLAGS       = -O -v -L ../..
 INCLUDES     = $(wildcard *.inc)
 # Filter out Arabic, Indic languages, and Thai, which we cannot render, and
 # Dzongkha and Mongolian, which ought to be rendered vertically.
-TRANSLATIONS = $(addsuffix .tr,en $(filter-out ar bn dz gu hi km ml mn ne pa ta th, $(notdir $(basename $(wildcard po/*.po)))))
+# gfxboot has no bidirectional text support yet
+# (https://bugs.launchpad.net/ubuntu/+source/gfxboot/+bug/212491) so
+# right-to-left languages (Arabic and Hebrew) won't work.
+TRANSLATIONS = $(addsuffix .tr,en $(filter-out ar bn dz gu he hi km ml mn ne pa ta th, $(notdir $(basename $(wildcard po/*.po)))))
 
 DEFAULT_LANG =
 

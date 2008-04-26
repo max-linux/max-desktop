@@ -8,24 +8,25 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2007-08-22 14:05+0000\n"
-"Last-Translator: A.Tirolli <a.tirolli@hotmail.com>\n"
+"PO-Revision-Date: 2008-04-19 07:32+0000\n"
+"Last-Translator: Launchpad Translations Administrators <rosetta@launchpad."
+"net>\n"
 "Language-Team: Albanian <sq@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
 #. txt_ok
 msgid "OK"
-msgstr "OK"
+msgstr "Në rregull"
 
 #. cancel button label
 #. txt_cancel
 msgid "Cancel"
-msgstr "Anuloje"
+msgstr "Anullo"
 
 #. reboot button label
 #. txt_reboot
@@ -44,7 +45,7 @@ msgstr "Opsionet e Nisjes (boot)"
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
 msgid "Exiting..."
-msgstr "Mbyllet..."
+msgstr "Në mbyllje..."
 
 #. txt_exit_dialog
 msgid ""
@@ -60,7 +61,7 @@ msgstr "Ndihmë"
 #. window title for kernel loading (see txt_load_kernel)
 #. txt_load_kernel_title
 msgid "Starting..."
-msgstr "Starton..."
+msgstr "Në nisje..."
 
 #. Keep the three newlines!
 #. txt_load_kernel
@@ -69,7 +70,7 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-"Ngarkon Bërthamën e Linuxit\n"
+"Duke ngarkuar Bërthamën e Linutxit.\n"
 "\n"
 "\n"
 
@@ -157,61 +158,9 @@ msgstr "Çkyçje e rrymës."
 msgid "Halt the system now?"
 msgstr "Tani ndalon Sistemi?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "Instalimi i Diskut të ngurtë"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "Paisje disku (skano të gjitha disqet nëse janë bosh )\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "Direktoriumi\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "Instalimi i FTP"
-
-#. txt_server
-msgid "Server\n"
-msgstr "Serveri\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "Fjalëkalimi\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "Përdoruesi (hyrja e të panjohurit nëse është e lirë)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "Instalimi i NFS"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "Përdoruesi (përdor \"guest\" nëse është e lirë)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "Instalimi i SMB (Samba)"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "Instalimi i HTTP"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "Domeni\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -226,7 +175,7 @@ msgstr "Gjuha"
 #. label for keymap selection
 #. txt_keymap
 msgid "Keymap"
-msgstr "Keymap"
+msgstr "Klasifikimi i tastires"
 
 #. label for installation mode selection
 #. txt_modes
@@ -236,6 +185,11 @@ msgstr ""
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
+msgstr ""
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
 msgstr ""
 
 #. label for d-i mode menu
@@ -400,6 +354,11 @@ msgid "Install an LTSP server"
 msgstr "Instalo ^LTSP server - in"
 
 #. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr ""
+
+#. Installation mode.
 #. txt_menuitem_cli
 #, fuzzy
 msgid "Install a command-line system"
@@ -425,3 +384,8 @@ msgstr "^Testimi i memorjes"
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "^Boot nga disku i parë i ngurtë."
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr ""

@@ -61,7 +61,7 @@
     } forall
   ] def
   modes.rawlabels length 0 eq {
-    /modes.rawlabels [ "Normal" ] def
+    /modes.rawlabels [ txt_mode_normal ] def
     /modes.append [ .undef ] def
     /modes.replace [ .undef ] def
     /modes.applies [ .undef ] def

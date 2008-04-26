@@ -563,15 +563,18 @@ def
 %
 /split {
 
+  % split does not work if str1 is in a special memory region (where 
+  % 'cvp length' does not work). So we dup it first.
+
+  exch strdup dup rot
+
   currenteotchar exch seteotchar exch
 
   [ exch
 
     {
-      dup length 0 gt {
-        dup strdup exch
-        dup length add
-      } if
+      dup strdup exch
+      dup length add
 
       dup cvp length 1 le { pop exit } if
 
@@ -582,6 +585,8 @@ def
   ]
 
   exch seteotchar
+
+  exch free
 
 } def
 

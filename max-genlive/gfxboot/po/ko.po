@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2008-04-19 07:31+0000\n"
 "Last-Translator: Namhyung Kim <namhyung@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -163,61 +163,9 @@ msgstr "전원 끄기"
 msgid "Halt the system now?"
 msgstr "시스템을 중지하시겠습니까?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "하드 디스크 설치"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "디스크 장치 (비어있다면 모든 디스크를 찾습니다)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "디렉토리\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "FTP 설치"
-
-#. txt_server
-msgid "Server\n"
-msgstr "서버\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "비밀번호\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "사용자 (비워둔다면 익명 로그인)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "NFS 설치"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "사용자 (비워둔다면 \"guest\"를 사용)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "SMB (윈도우 공유) 설치"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "HTTP 설치"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "도메인\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -237,12 +185,17 @@ msgstr "키 맵"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "모드"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
-msgstr ""
+msgstr "시작과 설치 모드를 번갈아 바꾸려면 F4 키를 눌러주십시오."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "일반 모드"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -291,8 +244,9 @@ msgstr "화상 키보드"
 
 #. label for accessibility menu
 #. txt_access_m3
+#, fuzzy
 msgid "Motor Difficulties - switch devices"
-msgstr ""
+msgstr "움직이기 힘듦 - 장치 변경"
 
 #. label for accessibility menu
 #. txt_access_all
@@ -301,92 +255,83 @@ msgstr "모두"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "우분투 시작 또는 설치하기 (^S)"
+msgstr "설치하지 않고 우분투 사용해 보기(^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "쿠분투 시작 또는 설치하기 (^S)"
+msgstr "설치하지 않고 쿠분투 사용해 보기(^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "에듀분투 시작 또는 설치하기 (^S)"
+msgstr "설치하지 않고 에듀분투 사용해 보기(^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "엑스분투 시작 또는 설치하기 (^S)"
+msgstr "설치하지 않고 주분투 사용해 보기(^T)"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "안전한 그래픽 모드에서 우분투 시작하기 (^g)"
+msgstr "안전한 그래픽 모드"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
 msgid "Use driver update CD"
-msgstr "업데이트 CD로 드라이버 설치하기 (^U)"
+msgstr "드라이버 업데이트 CD 사용"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "텍스트 모드에서 설치하기 (^I)"
+msgstr "텍스트 모드에서 우분투 설치하기 (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "텍스트 모드에서 쿠분투 설치하기 (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "텍스트 모드에서 에듀분투 설치하기 (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "텍스트 모드에서 주분투 설치하기 (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "우분투 설치하기 (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "쿠분투 설치하기 (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "에듀분투 설치하기 (^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "주분투 설치하기 (^I)"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "워크스테이션으로 설치하기 (^w)"
+msgstr "워크스테이션 설치하기"
 
 #. Installation mode.
 #. txt_menuitem_server
-#, fuzzy
 msgid "Install a server"
-msgstr "서버 설치하기 (^V)"
+msgstr "서버 설치하기"
 
 #. Installation mode.
 #. txt_menuitem_oem
@@ -396,21 +341,23 @@ msgstr "생산업체를 위한 텍스트 모드 설치하기 (^N)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
-msgstr "LAMP 서버로 설치하기 (^L)"
+msgstr "LAMP 서버 설치하기"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
-#, fuzzy
 msgid "Install an LTSP server"
-msgstr "LTSP 서버 설치하기 (^L)"
+msgstr "LTSP 서버 설치하기"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "디스크 없는 이미지 서버 설치하기"
 
 #. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
-msgstr "명령행 시스템 설치하기 (^A)"
+msgstr "명령행 시스템 설치하기"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
@@ -424,7 +371,6 @@ msgstr "망가진 시스템 복구하기 (^R)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
 msgstr "메모리 테스트 (^M)"
 
@@ -432,3 +378,8 @@ msgstr "메모리 테스트 (^M)"
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "첫 번째 하드 디스크로 부팅하기 (^B)"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "자유 소프트웨어 만 사용"

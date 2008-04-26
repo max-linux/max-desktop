@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-08-22 03:43:17.138284+00:00\n"
-"PO-Revision-Date: 2007-04-13 22:16+0000\n"
+"PO-Revision-Date: 2008-04-19 07:33+0000\n"
 "Last-Translator: Lê Quốc Thái <lquocthai@ioit.ac.vn>\n"
 "Language-Team: Vietnamese <vi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
 #. txt_ok
 msgid "OK"
-msgstr "OK"
+msgstr "Được"
 
 #. cancel button label
 #. txt_cancel
@@ -39,7 +39,7 @@ msgstr "Tiếp tục"
 
 #. txt_bootoptions
 msgid "Boot Options"
-msgstr "Khởi động tùy chọn"
+msgstr "Các lựa chọn khi khởi động"
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
@@ -61,7 +61,7 @@ msgstr "Trợ giúp"
 #. window title for kernel loading (see txt_load_kernel)
 #. txt_load_kernel_title
 msgid "Starting..."
-msgstr "Đang khởi chạy..."
+msgstr "Đang khởi động..."
 
 #. Keep the three newlines!
 #. txt_load_kernel
@@ -87,9 +87,8 @@ msgstr ""
 
 #. info box title
 #. txt_info_title
-#, fuzzy
 msgid "Boot loader"
-msgstr "Bộ nạp cho khởi động"
+msgstr "Bộ nạp khởi động"
 
 #. error box title
 #. txt_error_title
@@ -104,7 +103,7 @@ msgstr "Đổi đĩa khởi động"
 #. txt_insert_disk
 #, c-format
 msgid "Insert boot disk %u."
-msgstr "Đưa đĩa khởi động %u vào."
+msgstr "Cho đĩa khởi động %u vào."
 
 #. txt_insert_disk2
 #, c-format
@@ -164,61 +163,9 @@ msgstr "Tắt nguồn điện"
 msgid "Halt the system now?"
 msgstr "Treo hệ thống ngay bây giờ ?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "Cài đặt ổ cứng"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "Thiết bị đĩa (quét tất cả các đĩa nếu để trống)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "Thư mục\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "Cài đặt dịch vụ FTP"
-
-#. txt_server
-msgid "Server\n"
-msgstr "Máy chủ\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "Mật khẩu\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "Người sử dụng (đăng nhập vô danh nếu để trống)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "Cài đặt NFS"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "Người sử dụng (sẽ là \"guest\" nếu để trống)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "Cài đặt SBM (cơ chế chia xẻ trong Windows)"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "Cài đặt HTTP"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "Miền\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -238,11 +185,17 @@ msgstr "Sơ đồ phím"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "Các chế độ"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
+msgstr ""
+"Bấm F4 để được chọn trong các chế độ khởi động và cài đặt có thể thay thế."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
 msgstr ""
 
 #. label for d-i mode menu
@@ -272,18 +225,17 @@ msgstr "Kính lúp"
 
 #. label for accessibility menu
 #. txt_access_v3
-#, fuzzy
 msgid "Screen Reader"
 msgstr "Trình đọc màn hình"
 
 #. label for accessibility menu
 #. txt_access_brltty
+#, fuzzy
 msgid "Braille Terminal"
-msgstr ""
+msgstr "Hệ thống chữ nổi Bray"
 
 #. label for accessibility menu
 #. txt_access_m1
-#, fuzzy
 msgid "Keyboard Modifiers"
 msgstr "Các hiệu chỉnh bàn phím"
 
@@ -294,7 +246,6 @@ msgstr "Bàn phím trên màn hình"
 
 #. label for accessibility menu
 #. txt_access_m3
-#, fuzzy
 msgid "Motor Difficulties - switch devices"
 msgstr "Khó khăn khi vận động - các thiết bị bật tắt"
 
@@ -307,104 +258,105 @@ msgstr "Mọi thứ"
 #. txt_menuitem_live_ubuntu
 #, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "Khởi động hoặc cài ^Ubuntu"
+msgstr "^Thử Ubuntu mà không làm thay đổi gì máy của bạn"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
 #, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "Khởi động hoặc cài K^ubuntu"
+msgstr "Thử ^Kubuntu mà không làm thay đổi máy tính của bạn"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
 #, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "Khởi động hoặc cài Ed^ubuntu"
+msgstr "Thử ^Edubuntu mà không làm thay đổi máy tính của bạn"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
 #, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "Khởi động hoặc cài X^ubuntu"
+msgstr "Thử ^Xubuntu mà không làm thay đổi máy tính của bạn"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "Khởi động Ubuntu tron^g chế độ đồ họa an toàn"
+msgstr "Chế độ đồ họa an toàn"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
 msgid "Use driver update CD"
-msgstr ""
+msgstr "Dùng đĩa CD cập nhật chương trình điểu khiển thiết bị"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "Cài đặt trong chế độ ^văn bản"
+msgstr "Cài đặt Ubuntu trong chế độ ^văn bản"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "Cài đặt Kubuntu trong chế độ ^văn bản"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "Cài đặt Edubuntu trong chế độ ^văn bản"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "Cài đặt Xubuntu trong chế độ ^văn bản"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "^Cài đặt Ubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "^Cài đặt Kubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "^Cài đặt Edubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "^Cài đặt Xubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
 msgstr "Cài đặt một máy ^trạm"
 
 #. Installation mode.
 #. txt_menuitem_server
 msgid "Install a server"
-msgstr ""
+msgstr "Cài một máy chủ"
 
 #. Installation mode.
 #. txt_menuitem_oem
 msgid "OEM install (for manufacturers)"
-msgstr ""
+msgstr "Cài theo ^OEM (cho nhà sản xuất)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
 msgstr "Cài một máy chủ ^LAMP"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
 msgid "Install an LTSP server"
-msgstr ""
+msgstr "Cài một máy chủ ^LTSP"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "Cài một máy chủ không có ổ cứng"
 
 #. Installation mode.
 #. txt_menuitem_cli
@@ -432,3 +384,8 @@ msgstr "Kiểm tra bộ ^nhớ"
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "K^hởi động từ ổ cứng đầu tiên"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr ""

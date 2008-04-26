@@ -9,13 +9,13 @@ msgstr ""
 "Project-Id-Version: uk(6)\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2007-04-13 22:16+0000\n"
+"PO-Revision-Date: 2008-04-19 07:32+0000\n"
 "Last-Translator: Vadim Abramchuck <abramm@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -166,61 +166,9 @@ msgstr "Вимкнути"
 msgid "Halt the system now?"
 msgstr "Хочете зараз вимкнути систему?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "Встановлення з жорсткого диска"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "Дисковий пристрій (зондувати всі диски, якщо порожнє)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "Каталог\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "Встановлення з FTP"
-
-#. txt_server
-msgid "Server\n"
-msgstr "Сервер\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "Пароль\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "Користувач (буде вжито анонімний вхід, якщо порожнє)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "Встановлення з NFS"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "Користувач (вживати \"guest\", якщо порожнє)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "Встановлення з SMB (Windows Share)"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "Встановлення через HTTP"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "Домен\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -240,12 +188,18 @@ msgstr "Розкладка клавіатури"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "Режими"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
 msgstr ""
+"Натисніть F4, щоб обрати інший варіант завантаження та інсталяційні режими"
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "Нормальний"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -265,32 +219,32 @@ msgstr "Немає"
 #. label for accessibility menu
 #. txt_access_v1
 msgid "High Contrast"
-msgstr ""
+msgstr "Високий Контраст"
 
 #. label for accessibility menu
 #. txt_access_v2
 msgid "Magnifier"
-msgstr ""
+msgstr "Збільшувач"
 
 #. label for accessibility menu
 #. txt_access_v3
 msgid "Screen Reader"
-msgstr ""
+msgstr "Читання з екрану"
 
 #. label for accessibility menu
 #. txt_access_brltty
 msgid "Braille Terminal"
-msgstr ""
+msgstr "Термінал Брайля"
 
 #. label for accessibility menu
 #. txt_access_m1
 msgid "Keyboard Modifiers"
-msgstr ""
+msgstr "Модифікатори клавіатури"
 
 #. label for accessibility menu
 #. txt_access_m2
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "Екранна клавіатура"
 
 #. label for accessibility menu
 #. txt_access_m3
@@ -335,7 +289,7 @@ msgstr "Запустити Ubuntu у безпечному графічному �
 #. Installation mode.
 #. txt_menuitem_driverupdates
 msgid "Use driver update CD"
-msgstr ""
+msgstr "Використовувати CD з оновленнями драйверів"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
@@ -346,37 +300,37 @@ msgstr "Встановити у текстовому режимі"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "^Встановити Kubuntu у текстовому режимі"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "^Встановити Eduubuntu у текстовому режимі"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "^Встановити Xubuntu у текстовому режимі"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "^Встановити Ubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "^Встановити Kubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "^Встановити Edubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "^Встановити Xubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
@@ -387,12 +341,12 @@ msgstr "Встановити робочу станцію"
 #. Installation mode.
 #. txt_menuitem_server
 msgid "Install a server"
-msgstr ""
+msgstr "Встановити сервер"
 
 #. Installation mode.
 #. txt_menuitem_oem
 msgid "OEM install (for manufacturers)"
-msgstr ""
+msgstr "OEM інсталяція (для виробників)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
@@ -403,12 +357,17 @@ msgstr "Встановити ^LAMP сервер"
 #. Installation mode.
 #. txt_menuitem_ltsp
 msgid "Install an LTSP server"
-msgstr ""
+msgstr "Встановити сервер LTSP"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "Встановити бездисковий сервер образу"
 
 #. Installation mode.
 #. txt_menuitem_cli
 msgid "Install a command-line system"
-msgstr ""
+msgstr "Встановити консольний варіант системи"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
@@ -430,3 +389,8 @@ msgstr "Тест пам'яті"
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "Завантажитись з першого жорсткого диску"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "Лише вільне ПЗ"

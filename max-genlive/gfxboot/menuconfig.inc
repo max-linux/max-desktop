@@ -126,8 +126,10 @@
     dup cvp length 0 eq { exit } if
 
     % break lines at \r or \n
-    dup "\x0d" strstr dup 0 ne { 1 sub over exch 0 put } { pop } ifelse
-    dup "\n" strstr dup 0 ne { 1 sub over exch 0 put } { pop } ifelse
+    0 1 2 index length 1 sub {
+      over over get
+      dup '\x0d' eq exch '\n' eq or { over exch 0 put exit } { pop } ifelse
+    } for
 
     skipspace getword tolower
     % keep in sync with common.inc:MenuInit

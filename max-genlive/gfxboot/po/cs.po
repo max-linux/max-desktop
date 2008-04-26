@@ -10,13 +10,13 @@ msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2007-09-11 16:54+0000\n"
-"Last-Translator: Martin Böhm <martin.bohm@kubuntu.org>\n"
+"PO-Revision-Date: 2008-04-19 07:30+0000\n"
+"Last-Translator: Kamil Páral <ripper42@gmail.com>\n"
 "Language-Team: Czech <suse@suse.cz>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -41,7 +41,7 @@ msgstr "Pokračovat"
 
 #. txt_bootoptions
 msgid "Boot Options"
-msgstr "Možnosti zavedení"
+msgstr "Volby startu"
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
@@ -165,61 +165,9 @@ msgstr "Vypnout"
 msgid "Halt the system now?"
 msgstr "Chcete nyní vypnout systém?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "Instalace z pevného disku"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "Disk (při nevyplnění prohledávání všech disků)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "Adresář\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "Instalace z FTP"
-
-#. txt_server
-msgid "Server\n"
-msgstr "Server\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "Heslo\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "Uživatel (není-li vyplněno, anonymní přihlášení)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "Instalace z NFS"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "Uživatel (není-li vyplněno, použije se \"guest\")\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "Instalace ze SMB (sdílená složka Windows)"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "Instalace z HTTP"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "Doména\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -239,12 +187,17 @@ msgstr "Klávesnice"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "Režimy"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
-msgstr ""
+msgstr "Stiskněte F4 pro výběr odlišných spouštěcích a instalačních režimů."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "Normální"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -303,116 +256,108 @@ msgstr "Vše"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "^Spustit Ubuntu"
+msgstr "^Vyzkoušet Ubuntu bez jakýchkoliv změn ve vašem počítači"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "^Spustit Kubuntu"
+msgstr "^Vyzkoušet Kubuntu bez jakýchkoliv změn ve vašem počítači"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "^Spustit Edubuntu"
+msgstr "^Vyzkoušet Edubuntu bez jakýchkoliv změn ve vašem počítači"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "^Spustit Xubuntu"
+msgstr "^Vyzkoušet Xubuntu bez jakýchkoliv změn ve vašem počítači"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "Spustit Ubuntu v ^záchraném grafickém režimu"
+msgstr "Záchranný grafický režim"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
 msgid "Use driver update CD"
-msgstr "Nainstalovat pomocí CD s akt^ualizacemi ovladačů"
+msgstr "Použít CD s aktualizacemi ovladačů"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "^Nainstalovat v textovém režimu"
+msgstr "Na^instalovat Ubuntu v textovém režimu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "Na^instalovat Kubuntu v textovém režimu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "Na^instalovat Edubuntu v textovém režimu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "Na^instalovat Xubuntu v textovém režimu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "Na^instalovat Ubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "Na^instalovat Kubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "Na^instalovat Edubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "Na^instalovat Xubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "Nainstalovat ^pracovní stanici"
+msgstr "Nainstalovat pracovní stanici"
 
 #. Installation mode.
 #. txt_menuitem_server
-#, fuzzy
 msgid "Install a server"
-msgstr "Nainstalovat ser^ver"
+msgstr "Nainstalovat server"
 
 #. Installation mode.
 #. txt_menuitem_oem
-#, fuzzy
 msgid "OEM install (for manufacturers)"
-msgstr "^OEM instalace (pro výrobce)"
+msgstr "OEM instalace (pro výrobce)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
-msgstr "Nainstalovat ^LAMP server"
+msgstr "Nainstalovat LAMP server"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
-#, fuzzy
 msgid "Install an LTSP server"
-msgstr "Nainstalovat ^LTSP server"
+msgstr "Nainstalovat LTSP server"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "Nainstalovat bezdiskový obrazový server"
 
 #. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
-msgstr "Nainst^alovat systém jen s příkazovou řádkou"
+msgstr "Nainstalovat systém jen s příkazovou řádkou"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
@@ -426,11 +371,15 @@ msgstr "Zach^ránit poškozený systém"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
-msgstr "Test pa^měti"
+msgstr "Otestovat pa^měť"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "^Zavést systém z prvního pevného disku"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "Pouze svobodný software"

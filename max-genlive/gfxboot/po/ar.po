@@ -8,13 +8,14 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2007-10-02 17:30+0000\n"
-"Last-Translator: Agari <bluesolid@gmail.com>\n"
+"PO-Revision-Date: 2008-04-19 07:30+0000\n"
+"Last-Translator: Launchpad Translations Administrators <rosetta@launchpad."
+"net>\n"
 "Language-Team: Arabic <ar@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -35,7 +36,7 @@ msgstr "إعادة الإقلاع"
 #. continue button label
 #. txt_continue
 msgid "Continue"
-msgstr "مواصلة"
+msgstr "إستمرّ"
 
 #. txt_bootoptions
 msgid "Boot Options"
@@ -109,17 +110,15 @@ msgid ""
 "This is boot disk %u.\n"
 "Insert boot disk %u."
 msgstr ""
-"هذا قرص الإقلاع %u.\n"
-"أدخل قرص الإقلاع %u."
+"هذا قرص إقلاع %u.\n"
+"أدرج قرص إقلاع %u."
 
 #. txt_insert_disk3
 #, c-format
 msgid ""
 "This is not a suitable boot disk.\n"
 "Please insert boot disk %u."
-msgstr ""
-"ﺐﺳﺎﻨﻣ ﻉﻼ﻿ﻗﺇ ﺹﺮﻗ ﺲﻴﻟ ﺍﺬﻫ.\n"
-"%u ﻉﻼ﻿ﻗﻹ﻿ﺍ ﺹﺮﻗ ﻞِﺧﺩﺃ ﻚﻠﻀﻓ ﻦﻣ."
+msgstr "هذا ليس قرص إقلاع مناسب.من فضلك أدرج قرص إقلاع %u."
 
 #. password dialog title
 #. txt_password_title
@@ -133,7 +132,7 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-":ّﺮﺴﻟﺍ ﺔﻤﻠﻛ ﻞﺧﺩﺃ   \n"
+"أدخل كلمة مرورك:   \n"
 "\n"
 "\n"
 
@@ -161,61 +160,9 @@ msgstr "ﺯﺎﻬﺠﻟﺍ ءﻲﻔﻃﺃ"
 msgid "Halt the system now?"
 msgstr "؟ﻥﻵ﻿ﺍ ﻡﺎﻈﻨﻟﺍ ﻑﺎﻘﻳﺇ ﺩﻮﺗﺃ"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "ﺐﻠﺼﻟﺍ ﺹﺮﻘﻟﺍ ﻰﻠﻋ ﺖﻴﺒﺜﺗ"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "ﺎﻏﺭﺎﻓ ﻙﺮﺗ ﻮﻟ ﺹﺍﺮﻗﻷ﻿ﺍ ﻞﻛ ﺺﺤﻓﺍ) ﺹﺮﻘﻟﺍ ﺯﺎﻬﺟ)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "ﻞﻴﻟﺩ\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "ﺮﺒﻋ ﺖﻴﺒﺜﺗ FTP"
-
-#. txt_server
-msgid "Server\n"
-msgstr "ﻡﺩﺎﺧ\n"
-
 #. txt_password
 msgid "Password\n"
-msgstr "ّﺮﺴﻟﺍ ﺔﻤﻠﻛ\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "ﺎﻏﺭﺎﻓ ﻞﻘﺤﻟﺍ ﺖﻛﺮﺗ ﺍﺫﺇ ﻝﻮﻬﺠﻣ ﻡﺪﺨﺘﺴﻤﻛ ﺝﻮﻟﻭ) ﻡﺪﺨﺘﺴﻤﻟﺍ)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "ﺮﺒﻋ ﺖﻴﺒﺜﺗ NFS"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "ﻡﺪﺨﺘﺴﻨﺳ) ﻡﺪﺨﺘﺴﻤﻟﺍ \"guest\" ﺎﻏﺭﺎﻓ ﻞﻘﺤﻟﺍ ﺖﻛﺮﺗ ﺔﻟﺎﺣ ﻲﻓ)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "ﺮﺒﻋ ﺖﻴﺒﺜﺗ SMB (ﺯﻭﺪﻨﻳﻭ ﺕﺎﻔﻠﻣ ﺔﻛﺭﺎﺸﻣ)"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "ﺮﺒﻋ ﺖﻴﺒﺜﺗ HTTP"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "ﻕﺎﻄﻨﻟﺍ\n"
+msgstr "كلمة مرور\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -240,6 +187,11 @@ msgstr ""
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
+msgstr ""
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
 msgstr ""
 
 #. label for d-i mode menu
@@ -299,43 +251,36 @@ msgstr "ءﻲﺷ ﻞﻛ"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
 msgstr "^ﻮﺘﻨﺑﻭﺃ ﺖّﺒﺛ ﻭﺃ ءﺪﺑﺇ"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
 msgstr "ﻮﺘﻧﻮﺑﻮﻛ ﺖﺒﺛ ﻭﺃ ءﺪﺑ^ﺇ"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
 msgstr "ﻮﺘﻧﻮﺑﻮﻳﺩﺇ ﺖﺒﺛ ﻭﺃ ءﺪﺑ^ﺇ"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
 msgstr "ﻮﺘﻧﻮﺑﻭﺃ ﺲﻛﺇ ﺖﺒﺛ ﻭﺃ ءﺪﺑ^ﺇ"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
 msgstr "ﻦﻣﻵ﻿ﺍ ﺕﺎﻴﻣﻮﺳﺭ^ﻝﺍ ﺭﻮﻃ ﻲﻓ ﻮﺘﻧﻮﺑﻭﺃ ﺃﺪﺑﺍ"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
 msgid "Use driver update CD"
 msgstr "ﺕﻼ﻿ﻐﺸﻤﻟﺍ ﺚﻳﺪﺤﺗ^ ﺹﺮﻗ ﻊﻣ ﺖﺒﺛ"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
 msgstr "^ﻲّﺼﻨﻟﺍ ﺭﻮﻄﻟﺍ ﻲﻓ ﺖِّﺒﺛ"
 
@@ -376,37 +321,36 @@ msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
 msgstr "ﻞﻤﻋ ﺔﻄﺤﻣ^ ﺖِّﺒﺛ"
 
 #. Installation mode.
 #. txt_menuitem_server
-#, fuzzy
 msgid "Install a server"
 msgstr "تثبيت الخ^ادم"
 
 #. Installation mode.
 #. txt_menuitem_oem
-#, fuzzy
 msgid "OEM install (for manufacturers)"
 msgstr "^تثبيت الصانع الأصلي للأجهزة (للصانعين)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
 msgstr "ﻡﺩﺎﺧ ﺖِّﺒﺛ ^LAMP"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
-#, fuzzy
 msgid "Install an LTSP server"
 msgstr "تثبيت خادم ^LTSP"
 
 #. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr ""
+
+#. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
 msgstr "ﺮﻣﺍﻭﺃ ﺮﻄﺳ^ ﻡﺎﻈﻧ ﺖِّﺒﺛ"
 
@@ -422,7 +366,6 @@ msgstr "ﻞّﻄﻌﻣ ﻡﺎﻈﻧ ﺬﻘﻧ^ﺃ"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
 msgstr "ﺓﺮﻛﺍﺫ^ﻝﺍ ﺺﺤﻓ"
 
@@ -430,3 +373,8 @@ msgstr "ﺓﺮﻛﺍﺫ^ﻝﺍ ﺺﺤﻓ"
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "ﻝﻭ^ﻷ﻿ﺍ ﺐﻠﺼﻟﺍ ﺹﺮﻘﻟﺍ ﻦﻣ ﻊﻠﻗﺃ"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr ""

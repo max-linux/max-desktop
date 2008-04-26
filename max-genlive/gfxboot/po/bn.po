@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2007-04-13 22:13+0000\n"
+"PO-Revision-Date: 2008-04-19 07:31+0000\n"
 "Last-Translator: শুভ্র প্রকাশ পাল <shuvro_paul@walla.com>\n"
 "Language-Team: Bengali <bn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -166,61 +166,9 @@ msgstr "পাওয়ার বন্ধ"
 msgid "Halt the system now?"
 msgstr "সিস্টেম হল্ট করা হবে কি?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "হার্ডডিস্ক ইনস্টলেশন"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "ডিস্ক ডিভাইস (সকল ফাঁকা ডিস্ক পরীক্ষা করা হবে)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "ডিরেক্টরি\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "এফটিপি ইনস্টলেশন"
-
-#. txt_server
-msgid "Server\n"
-msgstr "সার্ভার\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "পাসওয়ার্ড\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "ব্যবহারকারী (ফাঁকা থাকলে, নামবিহীন লগইন হবে)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "এন.এফ.এস ইনস্টলেশন"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "ব্যবহারকারী (ফাঁকা থাকলে, \"গেস্ট\" ব্যবহার করা হবে)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "এস.এম.বি (উইন্ডোজ শেয়ার) ইনস্টলেশন"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "এইচ.টি.টি.পি. ইনস্টলেশন"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "ডোমেইন\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -245,6 +193,11 @@ msgstr ""
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
+msgstr ""
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
 msgstr ""
 
 #. label for d-i mode menu
@@ -406,6 +359,11 @@ msgid "Install an LTSP server"
 msgstr ""
 
 #. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr ""
+
+#. Installation mode.
 #. txt_menuitem_cli
 #, fuzzy
 msgid "Install a comm^and-line system"
@@ -431,3 +389,8 @@ msgstr "^মেমরী পরীক্ষা"
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "প্রথম হার্ড ডিস্ক থেকে ^বুট করো"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr ""

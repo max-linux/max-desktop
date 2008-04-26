@@ -216,16 +216,6 @@
     panel.show
   } if
 
-  window.action actInstallOK eq {
-    /window.action actNothing def
-    install.ok
-  } if
-
-  window.action actInstallCancel eq {
-    /window.action actNothing def
-    install.cancel
-  } if
-
   boot.buf menu.entry 0
 } def
 
@@ -378,7 +368,13 @@
 
     config.lang {
       config.lang "en" ne {
-        config.lang lang.getlocale "locale=%s " bc.cmd dup length add sprintf
+        config.lang
+        config.lang "_" strstr 0 eq {
+          "debian-installer/language=%s "
+        } {
+          "locale=%s "
+        } ifelse
+        bc.cmd dup length add sprintf
       } if
     } if
 
@@ -439,12 +435,6 @@
     profile.options xmenu.profile .xm_current get get dup "" ne {
       "%s " bc.cmd dup length add sprintf
     } { pop } ifelse
-  } if
-
-  xmenu.install {
-    install.option "" ne {
-      install.option "%s " bc.cmd dup length add sprintf
-    } if
   } if
 
   bc.cmd dropspaces
@@ -519,7 +509,7 @@
 
   } if
 
-  panel.lang
+  lang.displayed not { panel.lang } if
 
   50 sound.setvolume
   "startup.mod" findfile dup .undef ne {
@@ -968,7 +958,7 @@
 % from menu.humans. Otherwise, return text as-is.
 /menuitemmap {
   0 menu.texts {
-    2 index eq { menu.humans over get exch exit } if
+    2 index eq { menu.humans over get rot pop exch exit } if
     1 add
   } forall pop
   translate
@@ -1130,6 +1120,7 @@
       1 add
     } forall
     tmp dup setlang pop setkeymap
+    /lang.displayed true def
   } {
     pop
     "en" dup setlang pop setkeymap

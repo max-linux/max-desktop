@@ -96,6 +96,7 @@
 /.xmenu.change   newfield % like update but the window remains shown
 /.xmenu.select   newfield
 /.xmenu.input    newfield
+/.xmenu.cleanup  newfield
 
 % window types
 /t_dialog 100 def
@@ -113,9 +114,7 @@
 /actPowerOff          6 def
 /actRedraw            7 def
 /actRedrawPanel       8 def
-/actInstallOK         9 def
-/actInstallCancel    10 def
-/actReboot           11 def
+/actReboot            9 def
 /actNoClose       0x100 def
 
 
@@ -260,6 +259,10 @@
       dup .saved.areas get free
       dup .saved.areas .undef put
     } if
+    % specific cleanup actions
+    window.current .type get
+    dup t_xmenu eq { xmenu.cleanup } if
+    pop
     % free input field memory
     dup .ed get .undef ne {
       dup .ed get 2 get free		% background
@@ -650,16 +653,6 @@
   dup actReboot eq {
     reboot
   } if
-
-  dup actInstallOK eq {
-    install.ok
-    exch not exch
-  } if
-
-%  dup actInstallCancel eq {
-%    install.cancel
-%    exch not exch
-%  } if
 
   pop
 } def

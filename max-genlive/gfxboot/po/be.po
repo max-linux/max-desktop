@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2007-09-03 23:06+0000\n"
+"PO-Revision-Date: 2008-04-19 07:31+0000\n"
 "Last-Translator: Alexander Nyakhaychyk <nyakhaychyk@gmail.com>\n"
 "Language-Team: Belarusian <be@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -39,7 +39,7 @@ msgstr "Працяг"
 
 #. txt_bootoptions
 msgid "Boot Options"
-msgstr "Парамэтры загрузкі"
+msgstr "Опцыі загрузкі"
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
@@ -163,66 +163,14 @@ msgstr "Выключыць"
 msgid "Halt the system now?"
 msgstr "Выключыць сыстэму?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "Усталёўка з жорсткага дыска"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "Дыскавая прылада (аналіз усіх пустых дыскаў)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "Тэчка\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "Усталёўка з FTP"
-
-#. txt_server
-msgid "Server\n"
-msgstr "Паслужнік\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "Пароль\n"
 
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "Карыстальнік (ананімны ўваход, калі пакіне пустое поле)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "Усталёўка праз NFS"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "Карыстальнік (guest - калі не задаць)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "Усталёўка з SMB (агульнага рэсурса Windows)"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "Усталёўка з HTTP"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "Дамен\n"
-
 #. button label for other/more options
 #. txt_other_options
 msgid "Other Options"
-msgstr "Іншыя парамэтры"
+msgstr "Іншыя опцыі"
 
 #. label for language selection
 #. txt_language
@@ -237,22 +185,27 @@ msgstr "Раскладка клявіятуры"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "Рэжымы"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
+msgstr "Націсьніце F4, каб вылучыць альтэрнатыўныя рэжымы запуску."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
 msgstr ""
 
 #. label for d-i mode menu
 #. txt_expert_mode
 msgid "Expert mode"
-msgstr "Рэжым для эксперта"
+msgstr "Рэжым для экспертаў"
 
 #. title for accessibility menu
 #. txt_access
 msgid "Accessibility"
-msgstr "Даступнасць"
+msgstr "Даступнасьць"
 
 #. label for accessibility menu
 #. txt_access_none
@@ -301,116 +254,108 @@ msgstr "Усё разам"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "За_пусьціць альбо ўсталяваць Ubuntu"
+msgstr "Паспрабаваць U^buntu бяз зьменаў на кампутары"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "Запусьціць альбо ўсталяваць ^Kubuntu"
+msgstr "Паспрабаваць Ku^buntu бяз зьменаў на кампутары"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "Запусьціць альбо ўсталяваць ^Edubuntu"
+msgstr "Паспрабаваць Edu^buntu бяз зьменаў на кампутары"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "Запусьціць альбо ўсталяваць ^Xubuntu"
+msgstr "Паспрабаваць Xu^buntu бяз зьменаў на кампутары"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "Запусціць Ubuntu ў бяспечным ^графічным рэжыме"
+msgstr "Бясьпечны рэжым"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
 msgid "Use driver update CD"
-msgstr "Усталяваць з дыскам д^райвэраў"
+msgstr "Ужыць дыск з абнаўленьнямі"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "Усталяваць у ^тэкставым рэжыме"
+msgstr "Усталяваць ^Ubuntu ў тэкставым рэжыме"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "Усталяваць ^Kubuntu ў тэкставым рэжыме"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "Усталяваць ^Edubuntu ў тэкставым рэжыме"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "Усталяваць ^Xubuntu ў тэкставым рэжыме"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "Усталяваць ^Ubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "Усталяваць ^Kubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "Усталяваць ^Edubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "Усталяваць ^Xubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "Усталяваць ^прцоўную станцыю"
+msgstr "Усталяваць прцоўную станцыю"
 
 #. Installation mode.
 #. txt_menuitem_server
-#, fuzzy
 msgid "Install a server"
-msgstr "Усталяваць па^служнік"
+msgstr "Усталяваць паслужнік"
 
 #. Installation mode.
 #. txt_menuitem_oem
-#, fuzzy
 msgid "OEM install (for manufacturers)"
-msgstr "^OEM усталёўка (для вытворцаў)"
+msgstr "OEM усталёўка (для вытворцаў)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
-msgstr "Усталяваць ^LAMP паслужнік"
+msgstr "Усталяваць L^AMP паслужнік"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
-#, fuzzy
 msgid "Install an LTSP server"
 msgstr "Усталяваць ^LTSP паслужнік"
 
 #. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "Усталяваць бяздыскавы паслужнік"
+
+#. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
-msgstr "Усталяваць сыстэму для за^гаднага радка"
+msgstr "Усталяваць кансольную сыстэму"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
@@ -424,11 +369,15 @@ msgstr "Выр^атаваць зламаную сістэму"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
-msgstr "^Тэст памяці"
+msgstr "Тэст памяці"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "^Загрузіцца з жорсткага дыска"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr ""

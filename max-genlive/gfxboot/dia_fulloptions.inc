@@ -11,11 +11,14 @@
 /.fulloptions.acpi_off 1 def
 /.fulloptions.noapic 2 def
 /.fulloptions.nolapic 3 def
+/.fulloptions.edd_on 4 def
+/.fulloptions.free 5 def
 
 % These strings are intentionally not translatable.
 /txt_acpi_off "acpi=off" def
 /txt_noapic "noapic" def
 /txt_nolapic "nolapic" def
+/txt_edd_on "edd=on" def
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -31,6 +34,8 @@
     /.fulloptions.acpi_off dec
     /.fulloptions.noapic dec
     /.fulloptions.nolapic dec
+    /.fulloptions.edd_on dec
+    /.fulloptions.free dec
     xmenu .xm_current .fulloptions.acpi_off put
   } {
     xmenu .xm_current .fulloptions.expert put
@@ -38,7 +43,8 @@
 
   xmenu .xm_list [
     is_live not { /txt_expert_mode } if
-    /txt_acpi_off /txt_noapic /txt_nolapic
+    /txt_acpi_off /txt_noapic /txt_nolapic /txt_edd_on
+    /txt_option_free
   ] put
 
   xmenu .xm_title /txt_other_options put
@@ -70,6 +76,8 @@
       over .fulloptions.acpi_off eq { pop "acpi=off" } if
       over .fulloptions.noapic eq { pop "noapic" } if
       over .fulloptions.nolapic eq { pop "nolapic" } if
+      over .fulloptions.edd_on eq { pop "edd=on" } if
+      over .fulloptions.free eq { pop "apt-setup/restricted=false apt-setup/multiverse=false" } if
       dup {
 	% append new option string
 	dup length fulloptions.option length add 1 add string

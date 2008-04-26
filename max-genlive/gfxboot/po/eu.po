@@ -8,24 +8,24 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2007-08-25 11:44+0000\n"
+"PO-Revision-Date: 2008-04-19 07:30+0000\n"
 "Last-Translator: Mikel Pascual Aldabaldetreku <mikel.paskual@gmail.com>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
 #. txt_ok
 msgid "OK"
-msgstr "Ados"
+msgstr "Onartu"
 
 #. cancel button label
 #. txt_cancel
 msgid "Cancel"
-msgstr "Ezeztatu"
+msgstr "Utzi"
 
 #. reboot button label
 #. txt_reboot
@@ -44,7 +44,7 @@ msgstr "Abio Aukerak"
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
 msgid "Exiting..."
-msgstr "Irteten..."
+msgstr "Irtetzen..."
 
 #. txt_exit_dialog
 msgid ""
@@ -70,7 +70,7 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-"Linux Kernel-a Kargatzen\n"
+"Linux kernel-a kargatzen\n"
 "\n"
 "\n"
 
@@ -88,7 +88,7 @@ msgstr ""
 #. info box title
 #. txt_info_title
 msgid "Boot loader"
-msgstr "Abio kargatzailea"
+msgstr "Abio-kargatzailea"
 
 #. error box title
 #. txt_error_title
@@ -98,7 +98,7 @@ msgstr "S/I errorea"
 #. boot disk change dialog title
 #. txt_change_disk_title
 msgid "Change Boot Disk"
-msgstr "Abio-Diskoa Aldatu"
+msgstr "Abio-diskoa aldatu"
 
 #. txt_insert_disk
 #, c-format
@@ -150,7 +150,7 @@ msgid ""
 "\n"
 "Turn the DVD over then continue."
 msgstr ""
-"Aurpegi bikoitzeko DVD-a da hau. Bigarren aurpegitik abiarazi duzu.\n"
+"Bi aurpegiko DVD-a da hau. Bigarren aurpegitik abiarazi duzu.\n"
 "\n"
 "DVD-ari buelta eman eta jarraitu."
 
@@ -163,61 +163,9 @@ msgstr "Itzali"
 msgid "Halt the system now?"
 msgstr "Sistema itzali orain?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "Disko Gogorreko Instalazioa"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "Disko Irakurgailua (disko guztiak aztertu hutsik badago)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "Direktorioa\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "FTP bidezko Instalazioa"
-
-#. txt_server
-msgid "Server\n"
-msgstr "Zerbitzaria\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "Pasahitza\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "Erabiltzaile-izena (hutsik badago, anonimoa)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "NFS bidezko Instalazioa"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "Erabiltzaile-izena (hutsik badago, \"guest\" erabiliko da)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "SMB (Windows-eko baliabide elkarbanatua) bidezko Instalazioa"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "HTTP bidezko Instalazioa"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "Eremua (domeinua)\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -227,7 +175,7 @@ msgstr "Besteak"
 #. label for language selection
 #. txt_language
 msgid "Language"
-msgstr "Hizkuntza"
+msgstr "Hizkuntza:"
 
 #. label for keymap selection
 #. txt_keymap
@@ -237,12 +185,17 @@ msgstr "Teklatua"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "Moduak"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
-msgstr ""
+msgstr "F4 sakatu ezazu beste abio-aukera eta instalazio-moduak hautatzeko."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "Arrunta"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -252,12 +205,12 @@ msgstr "Aditu modua"
 #. title for accessibility menu
 #. txt_access
 msgid "Accessibility"
-msgstr "Erabilterraztasuna"
+msgstr "Erabilerraztasuna"
 
 #. label for accessibility menu
 #. txt_access_none
 msgid "None"
-msgstr "Bat ere ez"
+msgstr "Batere"
 
 #. label for accessibility menu
 #. txt_access_v1
@@ -272,17 +225,17 @@ msgstr "Lupa"
 #. label for accessibility menu
 #. txt_access_v3
 msgid "Screen Reader"
-msgstr "Pantaila-Irakurlea"
+msgstr "Pantaila-irakurlea"
 
 #. label for accessibility menu
 #. txt_access_brltty
 msgid "Braille Terminal"
-msgstr "Braille Terminala"
+msgstr "Braille terminala"
 
 #. label for accessibility menu
 #. txt_access_m1
 msgid "Keyboard Modifiers"
-msgstr "Teklatu-Modifikatzaileak"
+msgstr "Teklatu-modifikatzaileak"
 
 #. label for accessibility menu
 #. txt_access_m2
@@ -292,125 +245,117 @@ msgstr "Pantailako Teklatua"
 #. label for accessibility menu
 #. txt_access_m3
 msgid "Motor Difficulties - switch devices"
-msgstr "Mugimendu Arazoak - konmutazio gailuak"
+msgstr "Mugimendu arazoak - konmutazio gailuak"
 
 #. label for accessibility menu
 #. txt_access_all
 msgid "Everything"
-msgstr "Guztia"
+msgstr "Dena"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "^Ubuntu abiarazi edo instalatu"
+msgstr "Ubuntu ^probatu, ordenagailuari aldaketarik egin gabe"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "^Kubuntu abiarazi edo instalatu"
+msgstr "Kubuntu ^probatu, ordenagailuari aldaketarik egin gabe"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "^Edubuntu abiarazi edo instalatu"
+msgstr "Edubuntu ^probatu, ordenagailuari aldaketarik egin gabe"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "^Xubuntu abiarazi edo instalatu"
+msgstr "Xubuntu ^probatu, ordenagailuari aldaketarik egin gabe"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "Ubuntu modu ^grafiko seguruan abiarazi"
+msgstr "Modu grafiko segurua"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
 msgid "Use driver update CD"
-msgstr "Kontrolatzaileak ^eguneratzeko CDarekin instalatu"
+msgstr "Kontrolatzaileak eguneratzeko CDa erabili"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "^Testu moduan instalatu"
+msgstr "^Testu moduan instalatu Ubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "^Testu moduan instalatu Kubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "^Testu moduan instalatu Edubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "^Testu moduan instalatu Xubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "Ubuntu ^instalatu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "Kubuntu ^instalatu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "Edubuntu ^instalatu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "Xubuntu ^instalatu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "^Lan-postu bat instalatu"
+msgstr "Lan-postu bat instalatu"
 
 #. Installation mode.
 #. txt_menuitem_server
-#, fuzzy
 msgid "Install a server"
-msgstr "^Zerbitzari bat instalatu"
+msgstr "Zerbitzari bat instalatu"
 
 #. Installation mode.
 #. txt_menuitem_oem
-#, fuzzy
 msgid "OEM install (for manufacturers)"
-msgstr "^OEM instalazioa (fabrikatzaileentzako)"
+msgstr "OEM instalazioa (fabrikatzaileentzako)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
-msgstr "^LAMP zerbitzari bat instalatu"
+msgstr "LAMP zerbitzari bat instalatu"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
-#, fuzzy
 msgid "Install an LTSP server"
-msgstr "^LTSP zerbitzari bat instalatu"
+msgstr "LTSP zerbitzari bat instalatu"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "Diskogabeko-irudi zerbitzaria instalatu"
 
 #. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
-msgstr "^Agindu-lerro sistema bat instalatu"
+msgstr "Agindu-lerro sistema bat instalatu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
@@ -424,7 +369,6 @@ msgstr "^Apurturiko sistema bat berreskuratu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
 msgstr "^Memoria testa"
 
@@ -432,3 +376,8 @@ msgstr "^Memoria testa"
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "^Lehen disko gogorretik abiarazi"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "Software askea bakarrik"

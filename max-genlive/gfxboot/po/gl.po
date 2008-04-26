@@ -6,13 +6,14 @@ msgstr ""
 "Project-Id-Version: bootloader\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Xosé <ubuntu@galizaweb.net>\n"
+"PO-Revision-Date: 2008-04-19 07:31+0000\n"
+"Last-Translator: Launchpad Translations Administrators <rosetta@launchpad."
+"net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -37,20 +38,20 @@ msgstr "Continuar"
 
 #. txt_bootoptions
 msgid "Boot Options"
-msgstr "Opcions de arrinque"
+msgstr "Opcións de arrinque"
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
 msgid "Exiting..."
-msgstr "Saindo..."
+msgstr "A saír..."
 
 #. txt_exit_dialog
 msgid ""
 "You are leaving the graphical boot menu and\n"
 "starting the text mode interface."
 msgstr ""
-"Vai deixar o menu de inicio grafico\n"
-"para seguir en modo texto"
+"Vai deixar o menú de inicio gráfico\n"
+"para iniciar a interface en modo texto."
 
 #. txt_help
 msgid "Help"
@@ -59,7 +60,7 @@ msgstr "Axuda"
 #. window title for kernel loading (see txt_load_kernel)
 #. txt_load_kernel_title
 msgid "Starting..."
-msgstr "Iniciando..."
+msgstr "A iniciar..."
 
 #. Keep the three newlines!
 #. txt_load_kernel
@@ -68,7 +69,7 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-"Cargando o kernel linux\n"
+"A cargar o kernel de linux\n"
 "\n"
 "\n"
 
@@ -79,19 +80,19 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-"Cargando memtest86\n"
+"A cargar o memtest86\n"
 "\n"
 "\n"
 
 #. info box title
 #. txt_info_title
 msgid "Boot loader"
-msgstr "Cargador de inicio"
+msgstr "Cargador de arrinque"
 
 #. error box title
 #. txt_error_title
 msgid "I/O error"
-msgstr "Erro de entrada/saida"
+msgstr "Erro de entrada/saída"
 
 #. boot disk change dialog title
 #. txt_change_disk_title
@@ -119,7 +120,7 @@ msgid ""
 "Please insert boot disk %u."
 msgstr ""
 "Este disco de inicio non vale. \n"
-"Introduza o disco de inicio %u."
+"Introduza o disco de incio %u."
 
 #. password dialog title
 #. txt_password_title
@@ -148,7 +149,7 @@ msgid ""
 "\n"
 "Turn the DVD over then continue."
 msgstr ""
-"Este DVD é de doble cara e iniciou pola segunda.\n"
+"Este DVD é de doble cara e arrincou desde a segunda.\n"
 "\n"
 "Dealle a volta para continuar."
 
@@ -161,61 +162,9 @@ msgstr "Apagar"
 msgid "Halt the system now?"
 msgstr "Quere deter o sistema?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "Instalación no disco duro"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "Disco (buscar nos discos)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "Directorio\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "Instalación por FTP"
-
-#. txt_server
-msgid "Server\n"
-msgstr "Servidor\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "Contrasinal\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "Usuario (se o deixa baleiro, entrará como anónimo)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "Instalación via NFS"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "Usuario (se o deixa baleiro, entrará como \"guest\")\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "Instalación por SMB (compartidos de Windows)"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "Instalación via HTTP"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "Dominio\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -235,12 +184,17 @@ msgstr "Mapa de Teclas"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "Modos"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
-msgstr ""
+msgstr "Prema F4 para seleccionar modos de inicio e instalación alternativos."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "Normal"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -299,92 +253,83 @@ msgstr "Todo"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "^Iniciar ou instalar Ubuntu"
+msgstr "^Probar o Ubuntu sen realizar nengunha alteración no computador"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "^Iniciar ou instalar Kubuntu"
+msgstr "^Probar o Kubuntu sen realizar nengunha alteración no computador"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "^Iniciar ou instalar Edubuntu"
+msgstr "^Probar o Edubuntu sen realizar nengunha alteración no computador"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "^Iniciar ou instalar Xubuntu"
+msgstr "^Probar o Xubuntu sen realizar nengunha alteración no computador"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "Iniciar o Ubuntu en modo ^gráfico seguro"
+msgstr "Modo gráfico seguro"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
 msgid "Use driver update CD"
-msgstr "Instalar con CD de act^ualización de drivers"
+msgstr "Usar o CD de actualización de controladores"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "^Instalar en modo texto"
+msgstr "^Instalar Ubuntu en modo texto"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "^Instalar Kubuntu en modo texto"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "^Instalar Edubuntu en modo texto"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "^Instalar Xubuntu en modo texto"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "^Instalar Ubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "^Instalar Kubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "^Instalar Edubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "^Instalar Xubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "Instalar unha ^estación de traballo"
+msgstr "Instalar unha estación de traballo"
 
 #. Installation mode.
 #. txt_menuitem_server
-#, fuzzy
 msgid "Install a server"
-msgstr "Instalar un ser^vidor"
+msgstr "Instalar un servidor"
 
 #. Installation mode.
 #. txt_menuitem_oem
@@ -394,21 +339,23 @@ msgstr "Instalación en modo texto para fabrica^ntes"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
-msgstr "Instalar un servidor ^LAMP"
+msgstr "Instalar un servidor LAMP"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
-#, fuzzy
 msgid "Install an LTSP server"
-msgstr "Instalar un servidor de ^LTSP"
+msgstr "Instalar un servidor LTSP"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "Instalar un Servidor de Imaxes sen Disco"
 
 #. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
-msgstr "Instalar un sistema de liñ^a-de-comandos"
+msgstr "Instalar un sistema de liña de comandos"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
@@ -422,11 +369,15 @@ msgstr "^Rescatar un sistema estropeado"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
-msgstr "Verificar a ^memoria"
+msgstr "Probar a ^memoria"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "^Iniciar desde o primeiro disco duro"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "Só software libre"

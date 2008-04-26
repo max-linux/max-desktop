@@ -10,13 +10,14 @@ msgstr ""
 "Project-Id-Version: sl\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2007-04-13 22:15+0000\n"
-"Last-Translator: Bernard Banko <beernarrd@siol.com>\n"
+"PO-Revision-Date: 2008-04-19 07:33+0000\n"
+"Last-Translator: Launchpad Translations Administrators <rosetta@launchpad."
+"net>\n"
 "Language-Team: Slovenščina <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 "n%100==4 ? 2: 3);\n"
 
@@ -124,7 +125,7 @@ msgid ""
 "Please insert boot disk %u."
 msgstr ""
 "Zagonska disketa je napačna.\n"
-"Prosim vstavite zagonsko disketo %u."
+"Vstavite zagonsko disketo %u."
 
 #. password dialog title
 #. txt_password_title
@@ -166,61 +167,9 @@ msgstr "Zaustavitev sistema"
 msgid "Halt the system now?"
 msgstr "Želite sedaj zaustaviti sistem?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "Namestitev na trdi disk"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "Naprava (če je polje prazno, pregled vseh diskov)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "Imenik\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "Namestitev preko FTP"
-
-#. txt_server
-msgid "Server\n"
-msgstr "Strežnik\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "Geslo\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "Uporabnik (če je polje prazno, anonimna prijava)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "Namestitev preko NFS"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "Uporabnik (če je polje prazno, uporabnik \"guest\")\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "Namestitev preko SMB (Windows vir v skupini rabi)"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "Namestitev preko HTTP"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "Domena\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -240,12 +189,17 @@ msgstr "Razporeditev tipkovnice"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "Načini"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
-msgstr ""
+msgstr "Za alternativni zagon in druge načine namestitve pritisnite F4."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "Običajno"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -304,106 +258,103 @@ msgstr "Vse"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
 msgstr "^Zaženi ali namesti Ubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
 msgstr "^Zaženi ali namesti Kubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
 msgstr "^Zaženi ali namesti Edubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
 msgstr "^Zaženi ali namesti Xubuntu"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
 msgstr "Zaženi Ubuntu v varnem ^grafičnem načinu"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
 msgid "Use driver update CD"
-msgstr ""
+msgstr "Uporabi CD s posodobljenimi gonilniki"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "Namest^i v besedilnem načinu"
+msgstr "Namesti Ubuntu v ^besedilnem načinu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "Namesti Kubuntu v ^besedilnem načinu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "Namesti Edubuntu v ^besedilnem načinu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "Namesti Xubuntu v ^besedilnem načinu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "^Namesti Ubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "^Namesti Kubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "^Namesti Edubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "^Namesti Xubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "Namesti kot ^delovno postajo"
+msgstr "Namesti delovno postajo"
 
 #. Installation mode.
 #. txt_menuitem_server
 msgid "Install a server"
-msgstr ""
+msgstr "Namesti strežnik"
 
 #. Installation mode.
 #. txt_menuitem_oem
 msgid "OEM install (for manufacturers)"
-msgstr ""
+msgstr "Namesti kot OEM (za proizvajalce)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
-msgstr "Namesti strežnik ^LAMP"
+msgstr "Namesti strežnik LAMP"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
 msgid "Install an LTSP server"
-msgstr ""
+msgstr "Namesti strežnik LTSP"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "Namesti slikovni strežnik brez diska"
 
 #. Installation mode.
 #. txt_menuitem_cli
@@ -423,7 +374,6 @@ msgstr "Pop^ravi okvarjen sistem"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
 msgstr "Preveri delovni po^mnilnik"
 
@@ -431,3 +381,8 @@ msgstr "Preveri delovni po^mnilnik"
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "^Zaženi s prvega trdega diska"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "Samo s prostim programjem"

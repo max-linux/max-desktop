@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2007-10-06 04:31+0000\n"
+"PO-Revision-Date: 2008-04-19 07:31+0000\n"
 "Last-Translator: Roys Hengwatanakul <roysheng@gmail.com>\n"
 "Language-Team: Thai <th@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2007-10-09 09:00+0000\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -163,61 +163,9 @@ msgstr "ปิดเครื่อง"
 msgid "Halt the system now?"
 msgstr "ต้องการปิดเครื่องเดี๋ยวนี้?"
 
-#. dialog title for hard disk installation
-#. txt_harddisk_title
-msgid "Hard Disk Installation"
-msgstr "ติดตั้งจากฮาร์ดดิสก์"
-
-#. txt_hd_diskdevice
-msgid "Disk Device (scan all disks if empty)\n"
-msgstr "ดิสก์ (ค้นหาดิสก์ที่ว่างทุกอัน)\n"
-
-#. txt_directory
-msgid "Directory\n"
-msgstr "ไดเรคทอรี\n"
-
-#. dialog title for ftp installation
-#. txt_ftp_title
-msgid "FTP Installation"
-msgstr "ติดตั้งผ่าน FTP"
-
-#. txt_server
-msgid "Server\n"
-msgstr "เซิร์ฟเวอร์\n"
-
 #. txt_password
 msgid "Password\n"
 msgstr "รหัสผ่าน\n"
-
-#. label for ftp user input
-#. txt_user1
-msgid "User (anonymous login if empty)\n"
-msgstr "ชื่อผู้ใช้ (ถ้าไม่ใส่จะถือเป็น anonymous)\n"
-
-#. dialog title for nfs installation
-#. txt_nfs_title
-msgid "NFS Installation"
-msgstr "ติดตั้งผ่าน NFS"
-
-#. label for smb user input
-#. txt_user2
-msgid "User (using \"guest\" if empty)\n"
-msgstr "ผู้ใช้ (ใช้ \"guest\" ถ้าว่างไว้)\n"
-
-#. dialog title for smb installation
-#. txt_smb_title
-msgid "SMB (Windows Share) Installation"
-msgstr "ติดตั้งผ่าน SMB (Windows Share)"
-
-#. dialog title for http installation
-#. txt_http_title
-msgid "HTTP Installation"
-msgstr "ติดตั้งผ่าน HTTP"
-
-#. as in Windows Authentication Domain
-#. txt_domain
-msgid "Domain\n"
-msgstr "โดเมน\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -242,6 +190,11 @@ msgstr ""
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
+msgstr ""
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
 msgstr ""
 
 #. label for d-i mode menu
@@ -407,6 +360,11 @@ msgid "Install an LTSP server"
 msgstr "ติดตั้งเซิร์ฟเวอร์ ^LTSP"
 
 #. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr ""
+
+#. Installation mode.
 #. txt_menuitem_cli
 #, fuzzy
 msgid "Install a command-line system"
@@ -432,3 +390,8 @@ msgstr "^ทดสอบหน่วยความจำ"
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
 msgstr "บูตจาก^ฮาร์ดดิสก์ตัวแรก"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr ""

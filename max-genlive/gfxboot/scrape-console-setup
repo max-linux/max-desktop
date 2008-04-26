@@ -51,6 +51,7 @@ my %keymap_locales = (
     'si' => '_SI',
     'tj' => '_TJ',
     'th' => '_TH',
+    'tr_ku' => 'ku_TR',
     'tr' => '_TR',
     'ua' => '_UA',
     'us' => ['en_US', '_VN'],
@@ -116,6 +117,7 @@ my %description_overrides = (
     'latam' => 'Latin Amer.',
     'no_smi' => 'Saami (Nor.)',
     'se_smi' => 'Saami (Swe.)',
+    'tr_ku' => 'Kurdish',
     'us_dvorak' => 'Dvorak',
     'us_intl' => 'USA Intl.',
 );
@@ -140,7 +142,6 @@ my @non_latin = (
     'in',
     'ir',
     'iku',
-    'jp',
     'kan',
     'kh',
     'la',
@@ -182,11 +183,11 @@ print <<EOF;
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-/.km.name    0 def
-/.km.map     1 def
-/.km.display 2 def
-/.km.locales 3 def
-/.km.model   4 def
+/.km.name         0 def
+/.km.map          1 def
+/.km.display      2 def
+/.km.locales      3 def
+/.km.model        4 def
 
 EOF
 

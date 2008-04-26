@@ -19,9 +19,9 @@
 /xmenu.selected.bg	0x6c6c6c newcolor
 
 small_layout {
-  /xmenu.maxlines	22 def
+  /xmenu.maxlines	21 def
 } {
-  /xmenu.maxlines	28 def
+  /xmenu.maxlines	27 def
 } ifelse
 
 % xmenu layout
@@ -207,7 +207,9 @@ small_layout {
 
   xmenu.sizes
 
-  dup .saved.areas xmenu.columns array /xmenu.saved.areas over def put
+  dup .saved.areas xmenu.columns
+  xmenu.columns 1 gt xmenu .xm_title get .undef ne and { 1 add } if
+  array /xmenu.saved.areas over def put
 
   0 1 xmenu.columns 1 sub {
     /xmenu.column exch def
@@ -228,7 +230,25 @@ small_layout {
 
   } for
 
+  xmenu.columns 1 gt xmenu .xm_title get .undef ne and {
+    dup .saved.areas get xmenu.columns
+    [
+      xmenu.x 1 sub xmenu.y xmenu.vspace sub xmenu.lheight sub 1 sub moveto
+      currentpoint
+
+      xmenu.light xmenu.dark
+      xmenu.width 2 add xmenu.columns mul
+      xmenu.lheight 2 add
+      over over savescreen 5 1 roll
+      drawborder
+    ] put
+  } if
+
   0 1 xmenu .xm_list get length 1 sub { xmenu.viewentry } for
+
+  xmenu.columns 1 gt xmenu .xm_title get .undef ne and {
+    xmenu.viewheader
+  } if
 
   /xmenu.oldentry xmenu .xm_current get def
 
@@ -248,6 +268,16 @@ small_layout {
   /xmenu.saved.normal xmenu.saved.normal free .undef def
   /xmenu.saved.selected xmenu.saved.selected free .undef def
   /xmenu.saved.areas .undef def
+} def
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Clean up after menu has been undrawn.
+%
+% ( ) ==> ( )
+%
+/xmenu.cleanup {
+  window.current .xmenu.cleanup get dup .undef ne { exec } { pop } ifelse
 } def
 
 
@@ -331,6 +361,30 @@ small_layout {
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Draw menu header.
+%
+% ( ) ==> ( )
+%
+/xmenu.viewheader {
+  xmenu.font setfont
+
+  /xmenu.pos.y xmenu.y xmenu.vspace sub xmenu.lheight sub def
+  /xmenu.header.width xmenu.width 2 add xmenu.columns mul 2 sub def
+
+  xmenu.x xmenu.pos.y moveto
+
+  xmenu.normal.bg setcolor
+  xmenu.header.width xmenu.lheight fillrect
+
+  xmenu.normal.fg setcolor
+  xmenu.x xmenu.header.width 2 div add
+  xmenu.pos.y xmenu.vspace add
+  moveto
+  xmenu .xm_title get exec showcenter
+} def
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Select menu entry.
 %
 % ( new_entry ) ==> ( )
@@ -353,6 +407,8 @@ small_layout {
 %
 /pmenu.panel.update {
   panel.text.moveto
+
+  xmenu.sizes
 
   xmenu .xm_panel_x currentpoint pop xmenu.hspace sub put
   % try to ensure that the menu doesn't overflow the screen
