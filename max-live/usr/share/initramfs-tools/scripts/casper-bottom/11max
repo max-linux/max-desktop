@@ -34,10 +34,19 @@ chroot /root << EOF
 rm -rf /home/$USERNAME/Escritorio
 mv /home/$USERNAME/Desktop /home/$USERNAME/Escritorio
 ln -s /home/$USERNAME/Escritorio /home/$USERNAME/Desktop
-rm -f /home/$USERNAME/Escritorio/Examples
-mv /home/$USERNAME/Examples /home/$USERNAME/Ejemplos
 chown -R $USERNAME:$USERNAME /home/$USERNAME
 EOF
+
+# delete from Escritorio or Desktop
+rm -f /root/home/$USERNAME/*/Examples
+
+# remove examples if exists
+if [ -L /root/home/$USERNAME/Examples ] || [ -L /root/home/$USERNAME/Escritorio/Examples ]; then
+  chroot /root << EOF
+mv /home/$USERNAME/Examples /home/$USERNAME/Ejemplos
+chown -R $USERNAME:$USERNAME /home/$USERNAME/Ejemplos
+EOF
+fi
 
 
 # copy Madrid timezone

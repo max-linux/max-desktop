@@ -1,3 +1,27 @@
+max-live (4.0.max0.25) max; urgency=low
+
+  * Really remove Examples desktop dir
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 24 Apr 2008 19:20:46 +0200
+
+max-live (4.0.max0.24) max; urgency=low
+
+  * Delete Examples from Escritorio or Desktop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 24 Apr 2008 18:41:49 +0200
+
+max-live (4.0.max0.23) max; urgency=low
+
+  * Only remove Exmaples if exists
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 18:27:20 +0200
+
+max-live (4.0.max0.22) max; urgency=low
+
+  * Try to hack new casper lang2locale
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 17:20:56 +0200
+
 max-live (4.0.max0.21) max; urgency=low
 
   * Add creditos_max40

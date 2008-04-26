@@ -18,6 +18,8 @@ prereqs)
        ;;
 esac
 
+set -x
+
 log_begin_msg "$DESCRIPTION"
 
 if [ -e /root/etc/default/locale ]; then
@@ -51,6 +53,7 @@ for x in $(cat /proc/cmdline); do
 done
 
 if [ -z "${locale}" ]; then
+    echo "(14locales) empty locale='$locale' language='$language'" > /casper.log
     # Set a default one
     locale=en_US.UTF-8
     set_locale="true"
