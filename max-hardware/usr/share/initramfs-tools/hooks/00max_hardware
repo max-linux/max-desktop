@@ -1,0 +1,28 @@
+#!/bin/sh
+# initramfs hook for max-hardware
+
+PREREQS=""
+
+# Output pre-requisites
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case "$1" in
+    prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+. /usr/share/initramfs-tools/hook-functions
+
+# We need lspci for IBM
+copy_exec /usr/bin/lspci /bin
+
+# utils for debug
+#copy_exec /bin/dmesg /bin
+
+
+

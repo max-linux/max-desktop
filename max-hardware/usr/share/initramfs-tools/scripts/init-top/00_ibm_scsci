@@ -1,0 +1,25 @@
+#!/bin/sh
+
+PREREQ=""
+prereqs()
+{
+        echo "$PREREQ"
+}
+case $1 in
+# get pre-requisites
+prereqs)
+        prereqs
+        exit 0
+        ;;
+esac
+
+
+
+[ ! -x /bin/lspci ] && exit 0
+
+if [ "$(lspci -n | grep -c "9005:00cf")" != 0  ]; then
+  # IBM de profesores tiene una controladora SCSI que necesita
+  # cargar aic7xxx antes de la emulacion LIBATA
+  modprobe ide-generic
+  modprobe aic7xxx
+fi
