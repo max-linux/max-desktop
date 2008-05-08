@@ -1,3 +1,60 @@
+max-meta (4.0.max1.46) max; urgency=low
+
+  * Add dependencies to max-nanomax package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 08 May 2008 10:37:10 +0200
+
+max-meta (4.0.max1.45) max; urgency=low
+
+  * Add xnest and odf-converter
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 07 May 2008 16:34:20 +0200
+
+max-meta (4.0.max1.44) max; urgency=low
+
+  * max-desktop-common:
+    - Add tuxpaint-stamps-default
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 06 May 2008 09:08:21 +0200
+
+max-meta (4.0.max1.43) max; urgency=low
+
+  * max-desktop-common:
+    - Add gocr and ocrad text OCR recognition packages
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 05 May 2008 09:33:45 +0200
+
+max-meta (4.0.max1.42) max; urgency=low
+
+  * max-desktop-common:
+    - Add fluid-soundfont-gs too
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 15:24:20 +0200
+
+max-meta (4.0.max1.41) max; urgency=low
+
+  * max-desktop-common:
+    - Add fluid-soundfont-gm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 13:35:06 +0200
+
+max-meta (4.0.max1.40) max; urgency=low
+
+  * max-desktop-common:
+    - Fix typo gpsd-client => gpsd-clients
+    - Add new package: max-hardware 
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 12:02:33 +0200
+
+max-meta (4.0.max1.39) max; urgency=low
+
+  * max-server:
+    - Install linux-image-server and linux-headers-server (support for more than 4Gb)
+  * max-desktop-common:
+    - Install setserial for wacom toshiba tablets pc
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 11:29:57 +0200
+
 max-meta (4.0.max1.38) max; urgency=low
 
   * max-desktop-common:

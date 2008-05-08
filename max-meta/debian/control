@@ -95,8 +95,9 @@ Description: The Max desktop profesor metapackage
 
 Package: max-nanomax
 Architecture: all
+Depends: ${max-nanomax:Depends}
 Description: The Max nanoMaX metapackage
- This package no have depends
+ This package depends on all nanomax installed packages and live-system
  .
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.

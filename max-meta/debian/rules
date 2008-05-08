@@ -2,7 +2,7 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
-PACKAGES=desktop-common desktop-gnome desktop-kde desktop-xfce server drivers
+PACKAGES=desktop-common desktop-gnome desktop-kde desktop-xfce server drivers nanomax
 
 configure/max-desktop::
 	for seed in $(PACKAGES); do \
