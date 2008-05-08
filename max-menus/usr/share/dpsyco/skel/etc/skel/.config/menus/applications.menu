@@ -245,9 +245,6 @@
 		<Exclude>
 			<Filename>wxmaxima.desktop</Filename>
 		</Exclude>
-		<Include>
-			<Filename>denemo.desktop</Filename>
-		</Include>
 		<Exclude>
 			<Filename>geogebra.desktop</Filename>
 		</Exclude>
@@ -287,7 +284,6 @@
 		<Exclude>
 			<Filename>maxmoodle.desktop</Filename>
 		</Exclude>
-		<DefaultLayout inline="false"/>
 		<Menu>
 			<Name>alacarte-made-2</Name>
 			<Directory>alacarte-made-2.directory</Directory>
@@ -328,6 +324,32 @@
 		<Exclude>
 			<Filename>tuxpaint.desktop</Filename>
 		</Exclude>
+		<DefaultLayout inline="false"/>
+		<Menu>
+			<Name>Música</Name>
+			<Directory>musica.directory</Directory>
+			<Include>
+				<Filename>GNU Denemo.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>MuseScore.desktop</Filename>
+			</Include>
+		</Menu>
+		<AppDir>/usr/share/max/applications</AppDir>
+		<Menu>
+			<Name>Cartografía</Name>
+			<Directory>cartografia.directory</Directory>
+			<Include>
+				<Filename>josm.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>max-openstreetmap.desktop</Filename>
+			</Include>
+		</Menu>
+		<Exclude>
+			<Filename>denemo.desktop</Filename>
+		</Exclude>
+		<AppDir>/usr/share/max/applications</AppDir>
 	</Menu>
 	<Menu>
 		<Name>Other</Name>
@@ -691,6 +713,13 @@
 			<Filename>zattoo_player.desktop</Filename>
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
+		<Exclude>
+			<Filename>denemo.desktop</Filename>
+		</Exclude>
+		<AppDir>/usr/share/max/applications</AppDir>
+		<Exclude>
+			<Filename>mscore.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>System</Name>
