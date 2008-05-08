@@ -20,7 +20,8 @@
 #define H 255
 #define S 63
 #define STI_V1_INIT_SECTOR -14079
-#define STI_V5_INIT_SECTOR -45896
+#define STI_V5_INIT_SECTOR -13766
+#define STI_V5_OFFSET -16065
 #define STI_V1_LEN 40
 #define STI_V5_LEN 32
 #define meg_to_cil(m) ((((unsigned long long)m)<<20)/(H*S*SECTOR_SIZE)+1)
@@ -76,8 +77,20 @@ int main(int argc, char **argv) {
 	lseek(fd, STI_V5_INIT_SECTOR * SECTOR_SIZE, SEEK_END);
 	if (read(fd, buffer, SECTOR_SIZE * METADATA_SECTORS) != SECTOR_SIZE * METADATA_SECTORS)
 		fatal("Cannot read disk drive", 2);
-		
-	if (memcmp(buffer, "K-10", 4))
+
+	for ( i=0; i < 4; i++ ) {
+		if (!memcmp(buffer, "K-10", 4)) {
+			version=5;
+			break;
+		}
+		else {
+			lseek(fd, (STI_V5_OFFSET * (int)i + STI_V5_INIT_SECTOR) * SECTOR_SIZE, SEEK_END);
+			if (read(fd, buffer, SECTOR_SIZE * METADATA_SECTORS) != SECTOR_SIZE * METADATA_SECTORS)
+				fatal("Cannot read disk drive", 2);
+		}
+	}
+
+	if ( !version )
 	{
 		lseek(fd, -METADATA_SECTORS * SECTOR_SIZE, SEEK_SET);
 		for ( i = 1; i <= 0x50000; i++ ) {
@@ -103,8 +116,6 @@ int main(int argc, char **argv) {
 		else
 			version=1;
 	}
-	else
-		version=5;
 
 	close(fd);
 	

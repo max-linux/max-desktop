@@ -1,3 +1,15 @@
+ubiquity-frontend-max (4.0.max0.19) max; urgency=low
+
+  * Update stidump.c from backharddi SVN r542
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 08 May 2008 09:11:55 +0200
+
+ubiquity-frontend-max (4.0.max0.18) max; urgency=low
+
+  * Update intro.txt message
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 05 May 2008 10:39:13 +0200
+
 ubiquity-frontend-max (4.0.max0.17) max; urgency=low
 
   * Fix test-sti detection and print in summary.py
