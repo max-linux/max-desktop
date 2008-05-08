@@ -1,3 +1,22 @@
+max-java (4.0.max6) max; urgency=low
+
+  * Fix javaws.max arg detection
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 07 May 2008 10:29:47 +0200
+
+max-java (4.0.max5) max; urgency=low
+
+  * Disable error checking in max-java-plugin.postinst
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 07 May 2008 10:00:00 +0200
+
+max-java (4.0.max4) max; urgency=low
+
+  * Use update-java-alternatives to set default java version of jre and plugin
+  * Install usr/bin/javaws.max as web start wrapper
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 07 May 2008 09:44:32 +0200
+
 max-java (4.0.max3) max; urgency=low
 
   * Fix typo coninue => continue

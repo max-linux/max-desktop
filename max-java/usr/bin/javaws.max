@@ -1,0 +1,12 @@
+#!/bin/bash
+
+JAVAWS=/usr/lib/jvm/java-6-sun/bin/javaws
+
+ARGS=""
+if [ ! "$@" ]; then
+ ARGS="-viewer"
+else
+ ARGS="$@"
+fi
+
+$JAVAWS $ARGS

@@ -23,6 +23,7 @@ configure_alternatives() {
 
 if [ "$1" = "configure" ]; then
     configure_alternatives
+    update-java-alternatives --jre --set java-6-sun
 fi
 
 

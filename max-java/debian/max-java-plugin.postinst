@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 
@@ -25,6 +25,8 @@ for browser_dir in $browser_dirs; do
 	$priority
 done
 
+
+update-java-alternatives --plugin --set java-6-sun || true
 
 
 #DEBHELPER#

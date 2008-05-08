@@ -12,6 +12,7 @@ if [ "$1" = "purge" ]; then
   for i in $jre_tools; do
     update-alternatives --remove $i $basedir/jre/bin/$i
   done
+  update-java-alternatives --jre --auto
 fi
 
 
