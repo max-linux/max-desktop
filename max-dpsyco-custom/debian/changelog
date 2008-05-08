@@ -1,3 +1,16 @@
+max-dpsyco-custom (4.0.max2.7) max; urgency=low
+
+  * Change Java Web Start launchers to launch javaws.max
+  * Add dosemu.desktop (exec with su-to-root)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 07 May 2008 09:55:27 +0200
+
+max-dpsyco-custom (4.0.max2.6) max; urgency=low
+
+  * Add openjdk-6-javaws.desktop to exec sun-java6 javaws
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 16:02:33 +0200
+
 max-dpsyco-custom (4.0.max2.5) max; urgency=low
 
   * Add jdkhome to netbeans.desktop launcher

@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Sun Java 6 Web Start
-Comment=Sun Java 6 Web Start
+Name=OpenJDK Java Web Start
+Comment=OpenJDK Java Web Start
 Exec=javaws.max
 Terminal=false
 Type=Application
-Icon=/usr/share/pixmaps/sun-java6.xpm
+Icon=openjdk-6
 Categories=Application;Network;
 MimeType=application/x-java-jnlp-file;

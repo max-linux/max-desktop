@@ -3,7 +3,7 @@
 
 case "$1" in
     configure)
-        /usr/sbin/update-dpsyco-skel
+        /usr/sbin/update-dpsyco-skel >/dev/null 2>&1
     ;;
 
 esac
