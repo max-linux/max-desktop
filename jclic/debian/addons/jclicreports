@@ -15,5 +15,5 @@ aux="java"
 CLASSPATH="$CLASSPATH:/usr/share/jclic"
 
 
-$aux -cp $CLASSPATH -jar /usr/share/jclic/reportServer.jar "$@"
+$aux -cp $CLASSPATH -jar /usr/share/jclic/jclicreports.jar "$@"
 
