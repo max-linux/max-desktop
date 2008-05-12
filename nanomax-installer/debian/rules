@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+binary-install/nanomax-installer::
+	# clean svn dirs
+	find $(CURDIR)/debian/nanomax-installer -type d -name .svn | xargs rm -rf --
