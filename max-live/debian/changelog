@@ -1,3 +1,22 @@
+max-live (4.0.max0.28) max; urgency=low
+
+  * Don't use Escritorio in nanoMaX
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 16:13:10 +0200
+
+max-live (4.0.max0.27) max; urgency=low
+
+  * Dpsyco usr/share/initramfs-tools/scripts/casper:
+    - Remove mode=755 in mount /cow
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 15:35:42 +0200
+
+max-live (4.0.max0.26) max; urgency=low
+
+  * Detect nanomax and start Xfce4 desktop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 08 May 2008 21:24:24 +0200
+
 max-live (4.0.max0.25) max; urgency=low
 
   * Really remove Examples desktop dir

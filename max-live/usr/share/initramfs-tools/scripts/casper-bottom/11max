@@ -29,6 +29,22 @@ for file in /usr/share/applications/ubiquity-maxui.desktop /usr/share/max-manual
     fi
 done
 
+
+if [ -f /root/cdrom/casper/nanomax ]; then
+  cat << EOF > /root/etc/skel/.dmrc
+[Desktop]
+Session=xfce4
+Language=es_ES.UTF-8
+EOF
+  chroot /root install -D -o $USERNAME -g $USERNAME /etc/skel/.dmrc /home/$USERNAME/.dmrc
+
+  # Xfce4 try to create Desktop dir
+  chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Desktop/ || true
+  chroot /root mv /home/$USERNAME/Escritorio/* /home/$USERNAME/Desktop/
+  chroot /root rm -rf /home/$USERNAME/Escritorio
+  chroot /root ln -s /home/$USERNAME/Desktop /home/$USERNAME/Escritorio
+else
+
 # rename Desktop, remove Examples chown to max user
 chroot /root << EOF
 rm -rf /home/$USERNAME/Escritorio
@@ -36,6 +52,8 @@ mv /home/$USERNAME/Desktop /home/$USERNAME/Escritorio
 ln -s /home/$USERNAME/Escritorio /home/$USERNAME/Desktop
 chown -R $USERNAME:$USERNAME /home/$USERNAME
 EOF
+
+fi
 
 # delete from Escritorio or Desktop
 rm -f /root/home/$USERNAME/*/Examples
@@ -63,5 +81,7 @@ cp -f /root/usr/share/zoneinfo/Europe/Madrid /root/etc/localtime
 # PolicyKit is configured in casper 1.123
 # patch send https://launchpad.net/bugs/201852
 # and merged
+
+
 
 log_end_msg
