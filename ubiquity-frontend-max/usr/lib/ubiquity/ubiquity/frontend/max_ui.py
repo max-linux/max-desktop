@@ -50,6 +50,7 @@ import gobject
 import gtk.glade
 
 import debconf
+from subprocess import Popen, PIPE, STDOUT
 
 from ubiquity import filteredcommand, gconftool, i18n, osextras, validation, \
                      zoommap
@@ -212,8 +213,17 @@ class Wizard(BaseFrontend):
         elif install_type == "nanomax":
             self.install_type_nanomax.set_active(True)
         
-        else:
+        elif install_type == "escritorio":
             self.install_type_escritorio.set_active(True)
+
+        else:
+            self.install_type_escritorio.set_sensitive(False)
+            self.install_type_alumno.set_sensitive(False)
+            self.install_type_profesor.set_sensitive(False)
+            self.install_type_servidor.set_sensitive(False)
+            self.install_type_terminales.set_sensitive(False)
+            self.install_type_nanomax.set_sensitive(False)
+            self.install_warn_nano.show()
         
         #save to file
         self.save_install_type(install_type)
@@ -1077,11 +1087,13 @@ class Wizard(BaseFrontend):
         elif step == "stepInstallType":
             # MaX exit of ubiquity FIXME
             if self.get_install_type() == "nanomax":
-                dialog=gtk.MessageDialog(None, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT,
-                                               gtk.MESSAGE_INFO,gtk.BUTTONS_OK, 
-                                               "FIXMEAhora se cerrará este asistente y se abrirá el instalador de nanoMaX")
-                dialog.run()
-                dialog.destroy()
+                self.installing=True
+                p=Popen("sudo /usr/sbin/nanomax-installer", shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+                while self.installing:
+                    if p.poll() != None: self.installing=False
+                    line=p.stdout.readline()
+                    syslog.syslog("DEBUG: %s"%line.strip())
+                # quit when done
                 self.quit()
         # Automatic partitioning
         elif step == "stepPartAuto":

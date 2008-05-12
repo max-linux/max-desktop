@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: ubiquity-frontend-max
 Architecture: all
-Depends: ubiquity, ubiquity-frontend-gtk, debconf-utils
+Depends: ubiquity, ubiquity-frontend-gtk, debconf-utils, nanomax-installer
 Description: Some files to custom ubiquity installer
  Contains:
   * MaX gui of ubiquity installer

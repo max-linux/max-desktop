@@ -1,3 +1,24 @@
+ubiquity-frontend-max (4.0.max0.22) max; urgency=low
+
+  * Add depends nanomax-installer:
+  * Call nanomax-installer if install type is selected
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 12 May 2008 22:00:44 +0200
+
+ubiquity-frontend-max (4.0.max0.21) max; urgency=low
+
+  * dpsyco usr/lib/ubiquity/apt-setup/generators/50cdrom:
+    - Don't show CDROM apt error (nanoMaX)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 18:20:04 +0200
+
+ubiquity-frontend-max (4.0.max0.20) max; urgency=low
+
+  * max_ui.py stepInstallType.glade:
+    - Check for debconf install type to disable type in nanoMax
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 08 May 2008 19:55:56 +0200
+
 ubiquity-frontend-max (4.0.max0.19) max; urgency=low
 
   * Update stidump.c from backharddi SVN r542
