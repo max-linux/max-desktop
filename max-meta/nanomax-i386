@@ -1,3 +1,6 @@
+acpi
+acpid
+acpi-support
 alsa-base
 at-spi
 audacity
@@ -12,6 +15,7 @@ cupsys
 cupsys-client
 cupsys-common
 displayconfig-gtk
+evince
 file-roller
 firefox
 firefox-dictionary-es
@@ -30,8 +34,10 @@ gthumb
 gucharmap
 jclic
 kompozer
+kompozer-l10n-es
 language-pack-es
 language-pack-es-base
+language-pack-gnome-es
 libasound2-plugins
 linux-image-2.6.24-16-generic
 linux-restricted-modules-2.6.24-16-generic
@@ -48,7 +54,6 @@ max-java-plugin
 max-javahotpot-tutorial
 max-jclic-curso
 max-keyring
-max-live
 max-manuales
 max-skel-conf
 max-tablet
@@ -58,6 +63,7 @@ mousepad
 nano
 network-manager
 network-manager-gnome
+notification-daemon
 onboard
 odf-converter
 openoffice.org-base
@@ -77,20 +83,23 @@ openoffice.org-writer
 pidgin
 rhythmbox
 synaptic
+ssh-client
 thunar-archive-plugin
+thunar-volman
 totem
 totem-common
 totem-gstreamer
 totem-plugins
 ttf-bitstream-vera
-ubiquity-frontend-max
-user-setup
+ubufox
 unzip
 vlc
 vlc-nox
 vlc-plugin-pulse
 wget
 xfce4
+xfce4-battery-plugin
+xfce4-mixer
 xfce4-screenshooter-plugin
 xfce4-terminal
 xfonts-100dpi

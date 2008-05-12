@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Load the VERBOSE setting and other rcS variables
+[ -e /lib/init/vars.sh ] && . /lib/init/vars.sh
+
+# Define LSB log_* functions.
+# Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
+. /lib/lsb/init-functions
+
+setup_nanomax() {
+  [ ! -e /usr/bin/acroread ] && ln -s /usr/bin/evince /usr/bin/acroread
+  [ ! -e /usr/share/pixmaps/acroread.png ] && ln -s /usr/share/icons/maxtoon/48x48/apps/xpdf.png /usr/share/pixmaps/acroread.png
+  [ ! -e /usr/share/xsessions/gnome.desktop ] && ln -s /usr/share/xsessions/xfce4.desktop /usr/share/xsessions/gnome.desktop
+}
+
+
+# create some items on boot (for nanomax)
+
+case "$1" in
+  start)
+    log_begin_msg "Starting nanoMaX settings"
+      setup_nanomax
+    log_end_msg 0
+  ;;
+
+esac
+
+exit 0

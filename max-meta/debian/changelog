@@ -1,3 +1,48 @@
+max-meta (4.0.max1.52) max; urgency=low
+
+  * max-nanomax.init:
+    - Create another acroread icon based on maxtoon xpdf (48x48)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 18:50:41 +0200
+
+max-meta (4.0.max1.51) max; urgency=low
+
+  * max-nanomax.init:
+    - Return and exit with 0 status
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 18:26:00 +0200
+
+max-meta (4.0.max1.50) max; urgency=low
+
+  * max-nanomax:
+    - Add ssh-client package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 18:14:50 +0200
+
+max-meta (4.0.max1.49) max; urgency=low
+
+  * max-nanomax:
+    - Add acpi, acpid, acpi-support, evince, kompozer-l10n-es, language-pack-gnome-es, 
+      notification-daemon, thunar-volman, ubufox, xfce4-battery-plugin, xfce4-mixer
+    - Add max-nanomax.init to do some hacks to work in xfce4
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 17:39:45 +0200
+
+max-meta (4.0.max1.48) max; urgency=low
+
+  * max-desktop-gnome:
+    - Remove xchat-gnome
+  * Add gnumeric-doc (Closes #99)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 09 May 2008 09:17:47 +0200
+
+max-meta (4.0.max1.47) max; urgency=low
+
+  * max-nanomax:
+     - Add spanish kompozer and remove max-live ubiquity and user-setup
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 08 May 2008 20:22:35 +0200
+
 max-meta (4.0.max1.46) max; urgency=low
 
   * Add dependencies to max-nanomax package
