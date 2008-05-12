@@ -38,6 +38,15 @@ if [ $(grep -c $CHROOT/sys /etc/mtab) != 0 ]; then
   _desmontar "$CHROOT/sys"
 fi
 
+#echo "Desmontando proc y sys del chroot"
+if [ $(grep -c $NANOCHROOT/proc /etc/mtab) != 0 ]; then
+  _desmontar "$NANOCHROOT/proc"
+fi
+
+if [ $(grep -c $NANOCHROOT/sys /etc/mtab) != 0 ]; then
+  _desmontar "$NANOCHROOT/sys"
+fi
+
 
 umount -l $CDRO 2>/dev/null
 

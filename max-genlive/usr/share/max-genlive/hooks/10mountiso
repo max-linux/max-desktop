@@ -22,7 +22,8 @@ mkdir -p $CDRW $CDRO $CDTMP
 
 
 if [ $(grep -c $CDRO /etc/mtab) = 0 ]; then
-  mount -o loop $ISO $CDRO || _exit "No se ha podido montar $ISO"
+  losetup /dev/loop7 $ISO || _exit "No se ha podido montar el loopback"
+  mount /dev/loop7 $CDRO || _exit "No se ha podido montar $ISO"
 else
   _exit "Hay montada alguna ISO, no se pudo desmontar..."
 fi

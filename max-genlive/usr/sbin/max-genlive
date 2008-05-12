@@ -5,8 +5,11 @@
 DISTRO=hardy
 DISTRO_VERSION="8.04"
 ARCH=i386
-IMAGE_NAME="MaX-4.0-0beta4"
+IMAGE_NAME="MaX-4.0-0rc1"
 TITLE="MaX 4.0"
+
+stamp=$(date '+%Y%m%d_%H%M')
+created=$(date '+%Y%m%d')
 
 if [ "$MIRROR" = "" ]; then
   MIRROR=192.168.0.3
@@ -24,14 +27,22 @@ else
   ENABLE_EXTRA=1
 fi
 
+if [ "$ENABLE_NANO" = "" ]; then
+  ENABLE_NANO=
+else
+  ENABLE_NANO=1
+fi
+
 ISO_MIRROR="http://www.tcosproject.org/max/"
 
 CURDIR=$(pwd)
 
 CHROOT=$CURDIR/chroot
+NANOCHROOT=$CURDIR/nanochroot
 CDRW=$CURDIR/cdimage2
 CDRO=$CURDIR/cdimage
 CDTMP=$CURDIR/cdtmp
+NANOMAX=$CDRW/nanomax
 
 PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales max-nanomax virtualbox-ose backharddi backharddi-net"
 PAQUETES_EXTRA="$PAQUETES_EXTRA discover libdiscover2 discover-data nvidia-glx-new avm-fritz-firmware 915resolution"
@@ -67,6 +78,8 @@ cat << EOF
                    SSH en max.educa.madrid.org porque hay que subir el archivo Release
                    firmarlo con la clave GPG de MaX y descargar el Release.gpg
 
+    ENABLE_NANO=1 Generar NanoMax y CDlive
+
 EOF
 }
 
@@ -88,41 +101,51 @@ _echo() {
 
 
 _revert_invoke() {
- if [ -e $CHROOT/usr/sbin/invoke-rc.d.REAL ]; then
-   _echo "Revirtiendo /usr/sbin/invoke-rc.d"
-   mv $CHROOT/usr/sbin/invoke-rc.d.REAL $CHROOT/usr/sbin/invoke-rc.d
+ if [ "$1" != "" ]; then
+   DIR=$1
+ else
+   DIR=$CHROOT
  fi
- if [ -e $CHROOT/sbin/start-stop-daemon.REAL ]; then
+ if [ -e $DIR/usr/sbin/invoke-rc.d.REAL ]; then
+   _echo "Revirtiendo /usr/sbin/invoke-rc.d"
+   mv $DIR/usr/sbin/invoke-rc.d.REAL $DIR/usr/sbin/invoke-rc.d
+ fi
+ if [ -e $DIR/sbin/start-stop-daemon.REAL ]; then
    _echo "Revirtiendo /sbin/start-stop-daemon"
-   mv $CHROOT/sbin/start-stop-daemon.REAL $CHROOT/sbin/start-stop-daemon
+   mv $DIR/sbin/start-stop-daemon.REAL $DIR/sbin/start-stop-daemon
  fi
 }
 
 _add_invoke() {
-  if [ ! -e $CHROOT/usr/sbin/invoke-rc.d.REAL ]; then
+ if [ "$1" != "" ]; then
+   DIR=$1
+ else
+   DIR=$CHROOT
+ fi
+  if [ ! -e $DIR/usr/sbin/invoke-rc.d.REAL ]; then
     # Cambiamos invoke-rc.d
-    mv $CHROOT/usr/sbin/invoke-rc.d $CHROOT/usr/sbin/invoke-rc.d.REAL
-    cat << EOF > $CHROOT/usr/sbin/invoke-rc.d
+    mv $DIR/usr/sbin/invoke-rc.d $DIR/usr/sbin/invoke-rc.d.REAL
+    cat << EOF > $DIR/usr/sbin/invoke-rc.d
 #!/bin/sh
 echo "" >&2
 echo "  ** Fake invoke-rc.d called with args: '\$@'" >&2
 echo "" >&2
 exit 0
 EOF
-    chmod +x $CHROOT/usr/sbin/invoke-rc.d
+    chmod +x $DIR/usr/sbin/invoke-rc.d
   fi
 
-  if [ ! -e $CHROOT/sbin/start-stop-daemon.REAL ]; then
+  if [ ! -e $DIR/sbin/start-stop-daemon.REAL ]; then
     # Cambiamos start-stop-daemon
-    mv $CHROOT/sbin/start-stop-daemon $CHROOT/sbin/start-stop-daemon.REAL
-    cat << EOF > $CHROOT/sbin/start-stop-daemon
+    mv $DIR/sbin/start-stop-daemon $DIR/sbin/start-stop-daemon.REAL
+    cat << EOF > $DIR/sbin/start-stop-daemon
 #!/bin/sh
 echo "" >&2
 echo "  ** Fake start-stop-daemon called with args: '\$@'" >&2
 echo "" >&2
 exit 0
 EOF
-    chmod +x $CHROOT/sbin/start-stop-daemon
+    chmod +x $DIR/sbin/start-stop-daemon
   fi
 }
 
@@ -144,6 +167,8 @@ fi
 #. /usr/share/max-genlive/hooks/10mountiso
 #. /usr/share/max-genlive/hooks/20configurechroot
 #. /usr/share/max-genlive/hooks/55addmaxpackages
+
+#. /usr/share/max-genlive/hooks/75nanomax
 #. /usr/share/max-genlive/hooks/90umount
 #_exit "Fin de pruebas"
 

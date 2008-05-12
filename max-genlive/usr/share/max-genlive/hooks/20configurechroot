@@ -35,6 +35,17 @@ sun-java6-jdk   shared/accepted-sun-dlj-v1-1    boolean true
 tzdata  tzdata/Areas    select  Europe
 tzdata  tzdata/Zones/Europe     select  Madrid
 EOF
+
+echo "Europe/Madrid" > $CHROOT/etc/timezone
+
+chroot $CHROOT/ << EOF || _exit "Error configurando zona horaria Europe/Madrid"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+dpkg-reconfigure tzdata
+EOF
+
 #xserver-xorg    xserver-xorg/config/inputdevice/keyboard/layout string es
 #xserver-xorg    xserver-xorg/config/inputdevice/keyboard/model  string pc105
 # not work

@@ -1,0 +1,263 @@
+
+
+# hook para nanomax
+
+if [ $ENABLE_NANO ]; then
+
+  rm -rf $NANOCHROOT
+  [ ! -d $NANOCHROOT ] && (debootstrap $DISTRO $NANOCHROOT http://$MIRROR/mirror/ubuntu || _exit "Error en el debootstrap")
+
+  # configurar sources.list
+  cat << EOF > $NANOCHROOT/etc/apt/sources.list
+deb http://$MIRROR/mirror/ubuntu ${DISTRO} main universe multiverse restricted
+deb http://$MIRROR/mirror/ubuntu ${DISTRO}-updates main universe multiverse restricted
+deb http://$MIRROR/mirror/ubuntu ${DISTRO}-security main universe multiverse restricted
+
+deb http://$MIRROR/mirror/max40 max main
+EOF
+
+  _echo "Configurando DEBCONF y zona horaria"
+
+  LC_ALL=C LC_MESSAGES=C chroot $NANOCHROOT debconf-set-selections << EOF
+sun-java5-bin   shared/accepted-sun-dlj-v1-1    boolean true
+sun-java5-jdk   shared/accepted-sun-dlj-v1-1    boolean true
+sun-java5-jre   shared/accepted-sun-dlj-v1-1    boolean true
+sun-java6-bin   shared/accepted-sun-dlj-v1-1    boolean true
+sun-java6-jre   shared/accepted-sun-dlj-v1-1    boolean true
+sun-java6-jdk   shared/accepted-sun-dlj-v1-1    boolean true
+tzdata  tzdata/Areas    select  Europe
+tzdata  tzdata/Zones/Europe     select  Madrid
+EOF
+
+
+  echo "Europe/Madrid" > $NANOCHROOT/etc/timezone
+
+  chroot $NANOCHROOT/ << EOF
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+dpkg-reconfigure tzdata
+EOF
+
+  mount --bind /proc $NANOCHROOT/proc
+  mount --bind /sys  $NANOCHROOT/sys
+
+  _add_invoke $NANOCHROOT
+
+
+  chroot $NANOCHROOT << EOC || _exit "Error instalando max-nanomax"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+apt-get $APT_OPTS install max-keyring
+yes | dpkg --configure -a
+apt-get $APT_OPTS -f install
+apt-get update
+apt-get $APT_OPTS upgrade
+yes| apt-get $APT_OPTS install xserver-xorg firefox ubiquity casper ubiquity-frontend-max user-setup max-live
+apt-get $APT_OPTS install max-nanomax
+apt-get clean
+apt-get $APT_OPTS autoremove --purge
+EOC
+
+  cp $GENLIVE/sources.list $NANOCHROOT/etc/apt/
+
+  chroot $NANOCHROOT << EOC || _exit "Error actualizando max-nanomax"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+yes | dpkg --configure -a
+yes | apt-get $APT_OPTS -f install
+apt-get update
+EOC
+
+  umount -l $NANOCHROOT/proc
+  umount -l $NANOCHROOT/sys
+  umount -l $NANOCHROOT/lib/modules/*/volatile 2>/dev/null
+
+  _revert_invoke $NANOCHROOT
+
+
+  rm -rf $NANOCHROOT/home/*
+
+  mkdir -p $NANOMAX/casper
+
+  chroot $NANOCHROOT/ dpkg-query -W --showformat='${Package} ${Version}\n' > $NANOMAX/casper/filesystem.manifest
+  cp $NANOMAX/casper/filesystem.manifest  $NANOMAX/casper/filesystem.manifest-desktop
+  sed -ie /ubiquity/d                     $NANOMAX/casper/filesystem.manifest-desktop
+  sed -ie /casper/d                       $NANOMAX/casper/filesystem.manifest-desktop
+  sed -ie /max-live/d                     $NANOMAX/casper/filesystem.manifest-desktop
+  sed -ie /libdebian-installer4/d         $NANOMAX/casper/filesystem.manifest-desktop
+  sed -ie /os-prober/d                    $NANOMAX/casper/filesystem.manifest-desktop
+  sed -ie /ubuntu-live/d                  $NANOMAX/casper/filesystem.manifest-desktop
+  #sed -ie /user-setup/d                  $NANOMAX/casper/filesystem.manifest-desktop
+  sed -ie /example-content/d              $NANOMAX/casper/filesystem.manifest-desktop
+
+  # borrar temporal
+  rm -f $NANOMAX/casper/filesystem.manifest-desktope
+
+  touch $NANOMAX/casper/nanomax
+
+  LZMA=""
+  # ver si hay que desactivar LZMA
+  mksquashfs -help 2>&1 | grep -q nolzma && LZMA="-nolzma"
+
+  mksquashfs $NANOCHROOT/  $NANOMAX/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo NANOMAX squashfs"
+
+
+  _echo "Copiando contenido live en nanomax..."
+
+  mkdir -p $NANOMAX/isolinux
+  cp $CDRW/isolinux/*    $NANOMAX/isolinux || _exit "No se puede sobreescribir isolinux"
+  cp $GENLIVE/isolinux/* $NANOMAX/isolinux || _exit "No se puede sobreescribir isolinux"
+
+  cp $GENLIVE/nano/isolinux.cfg $NANOMAX/isolinux/
+
+  mkdir -p $NANOMAX/preseed
+  rm -f $NANOMAX/preseed/*
+  cp $GENLIVE/preseed/* $NANOMAX/preseed/ || _exit "No se puede sobreescribir preseed"
+
+  # cambiar variable de preseed
+  echo "ubiquity ubiquity/max_install_type string no_type" >> $NANOMAX/preseed/max.seed
+
+  mkdir -p $NANOMAX/.disk
+  printf "%s - i386 (%s)" "$TITLE" "$created" > $NANOMAX/.disk/info
+  printf "http://max.educa.madrid.org:8000/MaX40/NotasPublicacion" > $NANOMAX/.disk/release_notes_url
+
+  # kernel
+  cp $NANOCHROOT/boot/vmlinuz-2.6.24-16-generic    $NANOMAX/casper/vmlinuz
+  cp $NANOCHROOT/boot/initrd.img-2.6.24-16-generic $NANOMAX/casper/initrd.gz
+
+  # backharddi
+  cp $NANOCHROOT/boot/linux-2.6.22-3-486-backharddi     $NANOMAX/casper/vmback
+  cp $NANOCHROOT/boot/minirt-2.6.22-3-486-backharddi.gz $NANOMAX/casper/minirt.gz
+
+
+  _echo "Creando ISO CDLIVE"
+  mkisofs -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \
+     -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
+     -boot-info-table -o CD-Nano${IMAGE_NAME}-${stamp}.iso $NANOMAX/ || _exit "Error generando la imagen ISO"
+
+  _echo "Generando md5 del CD"
+  md5sum CD-Nano${IMAGE_NAME}-${stamp}.iso > CD-Nano${IMAGE_NAME}-${stamp}.iso.md5 || _exit "Error generando el md5"
+
+#==============================================
+  # Fichero img final
+  IMG=Nano${IMAGE_NAME}-${stamp}.img
+
+#Tamaño final del archivo img en megas
+SIZE=1900
+
+#Porcentajes destinados a cada una de las particiones. Varialos según las necesidades. El total, siempre igual a 100.
+P1=30
+P2=30
+P3=40
+
+
+_echo "Creando con ceros $IMG"
+dd if=/dev/zero of=$IMG count=$((SIZE*2**11))
+
+losetup /dev/loop0 $IMG
+
+parted /dev/loop0 -s mklabel msdos mkpart primary fat16 0 $((SIZE*P1/100))MB
+parted /dev/loop0 -s mkpart primary ext3 $((SIZE*P1/100))MB $((SIZE*(P1+P2)/100))MB 
+parted /dev/loop0 -s mkpart primary fat16 $((SIZE*(P1+P2)/100))MB ${SIZE}MB
+parted /dev/loop0 -s set 3 boot on
+
+sfdisk -d /dev/loop0 | grep start | tr -d "," | while read device x1 x2 start x3 size x4 id; do
+	num=${device#/dev/loop0p}
+	[ $num = 4 ] && break
+	file=${IMG}.$num
+	dd if=/dev/zero of=$file count=$size
+	losetup /dev/loop$num $file
+done
+
+#La primera partición contendrá las portables. Utilizamos FAT16 por que aprovecha mejor el espacio
+mkdosfs -n "portables" -F 16 /dev/loop1
+
+#La segunda partición será la que aporte persistencia al sistema live
+mkfs.ext3 /dev/loop2 -L "casper-rw"
+
+#La tercera partición tendrá el sistema live
+mkdosfs -n "sistema" -F 16 /dev/loop3
+
+for i in 1 3; do
+	mkdir part$i
+	mount /dev/loop$i part$i
+done
+
+#Ahora mismo tenemos en el directorio part3 la tercera partición montada. Aqui pondremos el sistema live con la estructura normal: un directorio casper y dentro un el filesystem.squashfs, etc. En el raiz de esta partición tiene que haber un syslinux.cfg similar a isolinux.cfg. Los ficheros de núcleo, initrd y splash deben estar en el raiz, no pueden estar en ningún directorio (limitación de syslinux). Añade código aquí para copiar la estructura de ficheros necesaria.
+
+_echo "Copiando sistema"
+
+cp -ra $NANOMAX/* part3/
+mv part3/isolinux/*  part3/
+rmdir part3/isolinux
+cp $GENLIVE/nano/syslinux.cfg part3/
+cp /boot/memtest86+.bin part3/
+# movemos el kernel
+for k in initrd.gz  minirt.gz  vmback  vmlinuz; do
+  mv part3/casper/$k part3/$k
+done
+
+# Metemos syslinux en la tercera partición
+syslinux /dev/loop3
+
+tree part3/
+
+
+# En el directorio part1 está montada la partición de las portables. Añade código aquí para copiar la estructura de ficheros necesaria.
+_echo "Preparando aplicaciones portables"
+
+if [ $LOCAL_MIRROR ]; then
+  URL="http://$MIRROR/mirror/max40/portables.tar.gz"
+else
+  URL="http://max.educa.madrid.org/max40/portables.tar.gz"
+fi
+
+[ ! -f portables.tar.gz ] && wget $URL
+
+_echo "Extrayendo portables a pendrive"
+tar -zxf portables.tar.gz -C part1/
+
+_echo "Copiando portables al DVD"
+mkdir -p $CDRW/portables/
+cp portables.tar.gz $CDRW/portables/
+
+sync
+
+# Finalmente reflejamos los cambios en el fichero img final. Esto tarda bastante.
+_echo "Creando imagen $IMG (tarda un poco)"
+sfdisk -d /dev/loop0 | grep start | tr -d "," | while read device x1 x2 start x3 size x4 id; do
+        num=${device#/dev/loop0p}
+        [ $num = 4 ] && break
+        file=${IMG}.$num
+	[ $num = 2 ] || umount /dev/loop$num
+        dd if=/dev/loop$num of=/dev/loop0 seek=$start
+done
+
+
+#Para hacer limpieza
+for i in 0 1 2 3; do
+	losetup -d /dev/loop$i
+done
+
+rm ${IMG}.* part* -rf
+
+install-mbr -e3 $IMG
+#===============================================
+
+   #rm -rf $CDRW/nanomax
+   #mkdir $CDRW/nanomax
+   #cp ${IMG} $CDRW/nanomax/
+   cp $GENLIVE/nano/* $CDRW/nanomax/
+
+   _echo "Generando md5sum de NanoMax"
+
+   md5sum ${IMG} > ${IMG}.md5
+fi
+
+

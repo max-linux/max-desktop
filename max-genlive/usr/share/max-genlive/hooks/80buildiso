@@ -1,6 +1,4 @@
 
-stamp=$(date '+%Y%m%d_%H%M')
-created=$(date '+%Y%m%d')
 _echo "Copiando archivos isolinux..."
 
 cp $GENLIVE/isolinux/* $CDRW/isolinux/ || _exit "No se puede sobreescribir isolinux"
@@ -41,7 +39,7 @@ _echo "Generando md5sum de archivos de dentro del DVD..."
 
 _echo "Generando ${IMAGE_NAME}-${stamp}.iso"
 
-mkisofs -r -V "$IMAGE_NAME" -cache-inodes -J -l -b isolinux/isolinux.bin \
+mkisofs -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \
      -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
      -boot-info-table -o ${IMAGE_NAME}-${stamp}.iso $CDRW/ || _exit "Error generando la imagen ISO"
 

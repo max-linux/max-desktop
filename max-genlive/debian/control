@@ -3,12 +3,13 @@ Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
 Build-Depends: debhelper (>= 4.0.0), cdbs, gfxboot
-Standards-Version: 3.7.2
+Standards-Version: 3.7.3
 
 Package: max-genlive
 Architecture: all
-Depends: mkisofs, squashfs-tools, max-win32-apps
-Description: Tool to generate MaX live DVD
+Depends: mkisofs, squashfs-tools, max-win32-apps,
+         debootstrap, syslinux, mbr, tree, parted
+Description: Tool to generate MaX live DVD, CD and nanoMaX
  Contains:
   * max-genlive
 

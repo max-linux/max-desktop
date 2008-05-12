@@ -1,3 +1,50 @@
+max-genlive (4.0.max0.53) max; urgency=low
+
+  * Add depends on syslinux, parted, mbr and tree
+  * Copy potables.tar.gz into DVD (not extract)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 12 May 2008 15:25:21 +0200
+
+max-genlive (4.0.max0.52) max; urgency=low
+
+  * Rebuild nanoMaX builder
+  * Add portables data
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 12 May 2008 10:07:25 +0200
+
+max-genlive (4.0.max0.51) max; urgency=low
+
+  * First version of nanoMax generator
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 08 May 2008 15:41:26 +0200
+
+max-genlive (4.0.max0.50) max; urgency=low
+
+  * Force timezone to Europe/Madrid
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 06 May 2008 09:23:41 +0200
+
+max-genlive (4.0.max0.49) max; urgency=low
+
+  * Change iso title
+  * Disable uninstalling user-setup
+  * Update dpsyco before doing squashfs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 16:09:12 +0200
+
+max-genlive (4.0.max0.48) max; urgency=low
+
+  * 60clean:
+    - Clean update-notifier warnings
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 15:27:33 +0200
+
+max-genlive (4.0.max0.47) max; urgency=low
+
+  * Change version to rc1
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 11:23:49 +0200
+
 max-genlive (4.0.max0.46) max; urgency=low
 
   * Update gfxboot-theme-ubuntu package (0.5.20)

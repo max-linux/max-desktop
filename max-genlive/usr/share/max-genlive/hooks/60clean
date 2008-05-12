@@ -71,7 +71,7 @@ sed -ie /max-live/d                  $CDRW/casper/filesystem.manifest-desktop
 sed -ie /libdebian-installer4/d      $CDRW/casper/filesystem.manifest-desktop
 sed -ie /os-prober/d                 $CDRW/casper/filesystem.manifest-desktop
 sed -ie /ubuntu-live/d               $CDRW/casper/filesystem.manifest-desktop
-sed -ie /user-setup/d                $CDRW/casper/filesystem.manifest-desktop
+#sed -ie /user-setup/d                $CDRW/casper/filesystem.manifest-desktop
 sed -ie /example-content/d           $CDRW/casper/filesystem.manifest-desktop
 
 # borrar temporal
@@ -120,6 +120,7 @@ _echo "Limpiando... (puede fallar algun archivo, no pasa nada...)"
 rm -f $CHROOT/etc/mtab
 rm -f $CHROOT/etc/X11/xorg.conf
 rm -f $CHROOT/var/crash/*
+rm -f $CHROOT//var/lib/update-notifier/user.d/*
 rm -rf $CHROOT/tmp/*
 for log in $(find $CHROOT/var/log/ -type f); do cat /dev/null > $log; done
 
@@ -134,3 +135,5 @@ cp $GENLIVE/sources.list $CHROOT/etc/apt
 chroot $CHROOT apt-get update
 rm $CHROOT/etc/resolv.conf
 
+_echo "Actualizando DPSYCO..."
+chroot $CHROOT/ /usr/sbin/update-dpsyco-skel
