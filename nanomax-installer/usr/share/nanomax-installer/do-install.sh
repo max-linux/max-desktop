@@ -87,7 +87,7 @@ copiar_nanomax() {
 
 copiar_portables() {
   echo " * Extrayendo aplicaciones portables... (tarda un rato)"
-  tar -zxfv /cdrom/portables/portables.tar.gz -C /mnt/portables 2>/dev/null | zenity --progress --auto-close --pulsate --text="Extrayendo aplicaciones portables..."
+  tar -vzxf /cdrom/portables/portables.tar.gz -C /mnt/portables 2>/dev/null | zenity --progress --auto-close --pulsate --text="Extrayendo aplicaciones portables..."
 }
 
 
