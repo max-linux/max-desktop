@@ -95,7 +95,6 @@
 			<Include>
 				<Filename>squeak-small-land-plugin.desktop</Filename>
 			</Include>
-			<Deleted/>
 		</Menu>
 		<Menu>
 			<Name>Robótica</Name>
@@ -107,7 +106,7 @@
 				<Filename>max-robolinux-doc.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>KTurtle.desktop</Filename>
+				<Filename>kde-kturtle.desktop</Filename>
 			</Include>
 		</Menu>
 		<AppDir>/usr/share/max/applications</AppDir>
@@ -258,8 +257,8 @@
 			<Filename>gcompris.desktop</Filename>
 		</Exclude>
 		<Menu>
-			<Name>alacarte-made</Name>
-			<Directory>alacarte-made.directory</Directory>
+			<Name>Keduca</Name>
+			<Directory>keduca.directory</Directory>
 			<Include>
 				<Filename>KEduca.desktop</Filename>
 			</Include>
@@ -272,10 +271,10 @@
 			<Filename>kde-keduca.desktop</Filename>
 		</Exclude>
 		<Menu>
-			<Name>alacarte-made-1</Name>
-			<Directory>alacarte-made-1.directory</Directory>
+			<Name>Moodle</Name>
+			<Directory>moodle.directory</Directory>
 			<Include>
-				<Filename>Moodle.desktop</Filename>
+				<Filename>maxmoodle.desktop</Filename>
 			</Include>
 			<Include>
 				<Filename>alacarte-made.desktop</Filename>
@@ -285,8 +284,8 @@
 			<Filename>maxmoodle.desktop</Filename>
 		</Exclude>
 		<Menu>
-			<Name>alacarte-made-2</Name>
-			<Directory>alacarte-made-2.directory</Directory>
+			<Name>Squeak</Name>
+			<Directory>squeak.directory</Directory>
 			<Include>
 				<Filename>Squeak.desktop</Filename>
 			</Include>
@@ -440,6 +439,15 @@
 		<Exclude>
 			<Filename>Conexiones de red.desktop</Filename>
 		</Exclude>
+		<Exclude>
+			<Filename>Administrador de catálogos de KBabel.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>KTurtle.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>Moodle.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Universal Access</Name>
@@ -481,32 +489,8 @@
 			<Filename>evince.desktop</Filename>
 		</Include>
 		<Include>
-			<Filename>Tux Paint.desktop</Filename>
+			<Filename>tuxpaint.desktop</Filename>
 		</Include>
-		<Layout>
-			<Merge type="menus"/>
-			<Filename>blender-windowed.desktop</Filename>
-			<Filename>blender-fullscreen.desktop</Filename>
-			<Filename>dia-common.desktop</Filename>
-			<Filename>kde-digikam.desktop</Filename>
-			<Filename>inkscape.desktop</Filename>
-			<Filename>gimp.desktop</Filename>
-			<Filename>xsane.desktop</Filename>
-			<Filename>f-spot.desktop</Filename>
-			<Filename>f-spot-import.desktop</Filename>
-			<Filename>gqview.desktop</Filename>
-			<Filename>kde-gwenview.desktop</Filename>
-			<Filename>kde-kghostview.desktop</Filename>
-			<Filename>kde-kooka.desktop</Filename>
-			<Filename>kde-ksnapshot.desktop</Filename>
-			<Filename>ooo-draw.desktop</Filename>
-			<Filename>qcad.desktop</Filename>
-			<Filename>Tux Paint.desktop</Filename>
-			<Filename>evince.desktop</Filename>
-			<Filename>f-spot-view.desktop</Filename>
-			<Filename>eog.desktop</Filename>
-			<Merge type="files"/>
-		</Layout>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Include>
 			<Filename>ooo-draw.desktop</Filename>
@@ -515,7 +499,6 @@
 	</Menu>
 	<Menu>
 		<Name>Accessories</Name>
-		<DefaultLayout inline="false"/>
 		<Menu>
 			<Name>Aplicaciones Tablet PC</Name>
 			<Directory>tabletpc.directory</Directory>
@@ -571,6 +554,9 @@
 		<Include>
 			<Filename>bluetooth-analyzer.desktop</Filename>
 		</Include>
+		<Exclude>
+			<Filename>gok.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Games</Name>
@@ -591,105 +577,24 @@
 	<Include>
 		<Filename>Guía de Utilización.desktop</Filename>
 	</Include>
-	<Layout>
-		<Merge type="menus"/>
-		<Menuname>Accessories</Menuname>
-		<Menuname>Universal Access</Menuname>
-		<Menuname>Debian</Menuname>
-		<Menuname>Education</Menuname>
-		<Menuname>Graphics</Menuname>
-		<Menuname>System</Menuname>
-		<Menuname>Internet</Menuname>
-		<Filename>Guía de Utilización.desktop</Filename>
-		<Menuname>Games</Menuname>
-		<Menuname>MaX 4.0</Menuname>
-		<Menuname>Office</Menuname>
-		<Menuname>Other</Menuname>
-		<Menuname>Development</Menuname>
-		<Menuname>Multimedia</Menuname>
-		<Menuname>Utilities</Menuname>
-		<Menuname>wine-wine</Menuname>
-		<Separator/>
-		<Filename>gnome-app-install.desktop</Filename>
-		<Merge type="files"/>
-	</Layout>
 	<Menu>
 		<Name>Office</Name>
 		<Include>
 			<Filename>OpenOffice.org Dibujos.desktop</Filename>
 		</Include>
-		<Layout>
-			<Merge type="menus"/>
-			<Filename>abiword.desktop</Filename>
-			<Filename>AdobeReader.desktop</Filename>
-			<Filename>evolution.desktop</Filename>
-			<Filename>evolution-2.2.desktop</Filename>
-			<Filename>gnumeric.desktop</Filename>
-			<Filename>kde-kaddressbook.desktop</Filename>
-			<Filename>kde-karm.desktop</Filename>
-			<Filename>kde-KMail.desktop</Filename>
-			<Filename>kde-knotes.desktop</Filename>
-			<Filename>kde-Kontact.desktop</Filename>
-			<Filename>kde-kontactdcop.desktop</Filename>
-			<Filename>kde-kpdf.desktop</Filename>
-			<Filename>kde-korganizer.desktop</Filename>
-			<Filename>ooo-template.desktop</Filename>
-			<Filename>ooo-base.desktop</Filename>
-			<Filename>OpenOffice.org Dibujos.desktop</Filename>
-			<Filename>ooo-math.desktop</Filename>
-			<Filename>ooo-calc.desktop</Filename>
-			<Filename>ooo-impress.desktop</Filename>
-			<Filename>ooo-writer.desktop</Filename>
-			<Filename>scribus.desktop</Filename>
-			<Merge type="files"/>
-		</Layout>
 		<Include>
 			<Filename>ooo-math.desktop</Filename>
 		</Include>
 		<AppDir>/usr/share/max/applications</AppDir>
+		<Exclude>
+			<Filename>kde-knotes.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Internet</Name>
 		<Exclude>
 			<Filename>kde-kwifimanager.desktop</Filename>
 		</Exclude>
-		<AppDir>/usr/share/max/applications</AppDir>
-		<Layout>
-			<Merge type="menus"/>
-			<Filename>WebHTTrack-Websites.desktop</Filename>
-			<Filename>xchat-gnome.desktop</Filename>
-			<Filename>pidgin.desktop</Filename>
-			<Filename>tsclient.desktop</Filename>
-			<Filename>evolution-mail.desktop</Filename>
-			<Filename>escritorio-movistar.desktop</Filename>
-			<Filename>firestarter.desktop</Filename>
-			<Filename>gftp.desktop</Filename>
-			<Filename>kde-kbtobexclient.desktop</Filename>
-			<Filename>kde-KMail.desktop</Filename>
-			<Filename>kde-KNode.desktop</Filename>
-			<Filename>kompozer.desktop</Filename>
-			<Filename>kompozer-l10n-es.desktop</Filename>
-			<Filename>kde-konqbrowser.desktop</Filename>
-			<Filename>kde-Kontact.desktop</Filename>
-			<Filename>kde-Kppp.desktop</Filename>
-			<Filename>kde-kppplogview.desktop</Filename>
-			<Filename>kde-krdc.desktop</Filename>
-			<Filename>kde-krfb.desktop</Filename>
-			<Filename>kde-kwifimanager.desktop</Filename>
-			<Filename>thunderbird.desktop</Filename>
-			<Filename>firefox.desktop</Filename>
-			<Filename>openjdk-6-javaws.desktop</Filename>
-			<Filename>skype.desktop</Filename>
-			<Filename>ekiga.desktop</Filename>
-			<Filename>sun-java6-javaws.desktop</Filename>
-			<Filename>transmission.desktop</Filename>
-			<Filename>vinagre-file.desktop</Filename>
-			<Filename>vinagre.desktop</Filename>
-			<Filename>WebHTTrack.desktop</Filename>
-			<Filename>kde-wlassistant.desktop</Filename>
-			<Filename>xchat.desktop</Filename>
-			<Merge type="files"/>
-		</Layout>
 		<Include>
 			<Filename>kde-wlassistant.desktop</Filename>
 		</Include>
@@ -702,6 +607,9 @@
 		</Exclude>
 		<Exclude>
 			<Filename>openjdk-6-javaws.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>evolution-mail.desktop</Filename>
 		</Exclude>
 	</Menu>
 	<Menu>
@@ -709,9 +617,6 @@
 		<Include>
 			<Filename>Codificación de audio.desktop</Filename>
 		</Include>
-		<Exclude>
-			<Filename>zattoo_player.desktop</Filename>
-		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
 			<Filename>denemo.desktop</Filename>
@@ -770,15 +675,29 @@
 	</Menu>
 	<Menu>
 		<Name>Development</Name>
-		<DefaultLayout inline="false"/>
 		<Menu>
-			<Name>alacarte-made-3</Name>
-			<Directory>alacarte-made-3.directory</Directory>
+			<Name>Kdevelop</Name>
+			<Directory>kdevelop.directory</Directory>
 			<Include>
-				<Filename>Asistente de KDevelop.desktop</Filename>
+				<Filename>kde-kdevelop_c_cpp.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>Diseñador de KDevelop.desktop</Filename>
+				<Filename>kde-kdevelop.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>kde-kdevelop_kde_cpp.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>kde-kdevelop_ruby.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>kde-kdevelop_scripting.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>kde-kdevassistant.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>kde-kdevdesigner.desktop</Filename>
 			</Include>
 		</Menu>
 		<Exclude>
@@ -786,17 +705,56 @@
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
+			<Filename>kde-kdevelop.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kdevelop_kde_cpp.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kdevelop_ruby.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kdevelop_scripting.desktop</Filename>
+		</Exclude>
+		<Exclude>
 			<Filename>kde-kdevassistant.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>kde-kdevdesigner.desktop</Filename>
 		</Exclude>
-		<Include>
+		<Exclude>
+			<Filename>kde-kxsldbg.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>squeak.desktop</Filename>
+		</Exclude>
+		<Exclude>
 			<Filename>kde-kdevelop_c_cpp.desktop</Filename>
-		</Include>
-	</Menu>
-	<Menu>
-		<Name>wine-wine</Name>
-		<DirectoryDir>/home/madrid/.local/share/desktop-directories</DirectoryDir>
+		</Exclude>
+		<Menu>
+			<Name>Traducción</Name>
+			<Directory>traduccion.directory</Directory>
+			<Include>
+				<Filename>kde-kbabel.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>kde-kbabeldict.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>gtranslator.desktop</Filename>
+			</Include>
+		</Menu>
+		<Exclude>
+			<Filename>kde-catalogmanager.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kbabeldict.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kbabel.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>gtranslator.desktop</Filename>
+		</Exclude>
 	</Menu>
 </Menu>

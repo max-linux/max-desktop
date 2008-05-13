@@ -1,3 +1,11 @@
+max-menus (4.0.max1.17) max; urgency=low
+
+  * Move all Kdevelop apps to kdevelop menu
+  * Clean applications.menu file
+  * Create Traducciones menu with kbabel and gtranslator
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 17:26:08 +0200
+
 max-menus (4.0.max1.16) max; urgency=low
 
   * Remove dosemu.desktop
