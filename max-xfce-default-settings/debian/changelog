@@ -1,3 +1,12 @@
+max-xfce-default-settings (4.0.max4) max; urgency=low
+
+  * Add etc/xdg/Thunar/volmanrc
+    - Configure thunar-volman in similar way of gnome-volume-manager (Closes: #64)
+  * Configure etc/xdg/xfce4/panel/panels.xml and add etc/xdg/xfce4/panel/xfce4-mixer-9.rc
+    - Show Sound mixer in panel (Closes: #69)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 17:51:22 +0200
+
 max-xfce-default-settings (4.0.max3) max; urgency=low
 
   * Change cursor-theme to DMZ-White and add depends on dmz-cursor-theme
