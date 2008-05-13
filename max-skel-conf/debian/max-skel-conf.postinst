@@ -25,6 +25,12 @@ case "$1" in
          create_link $home/Escritorio/creditos_max40.desktop /etc/skel/Escritorio/creditos_max40.desktop $(basename $home) || true
       fi
     done
+
+    # configure SAMBA (without dpsyco)
+    update-dpsyco-skel >/dev/null 2>&1
+    grep -q AULAMAX /etc/samba/smb.conf || \
+       cat usr/share/max-skel-conf/etc/samba/smb.conf > /etc/samba/smb.conf
+
     ;;
 
 esac
