@@ -1,3 +1,15 @@
+max-genlive (4.0.max0.55) max; urgency=low
+
+  * Be less verbose in portables extract
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 21:36:27 +0200
+
+max-genlive (4.0.max0.54) max; urgency=low
+
+  * Rename usr/sbin/policy-rc.d to avoid hal instal break
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 18:10:16 +0200
+
 max-genlive (4.0.max0.53) max; urgency=low
 
   * Add depends on syslinux, parted, mbr and tree

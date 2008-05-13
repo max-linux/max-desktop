@@ -5,7 +5,7 @@
 DISTRO=hardy
 DISTRO_VERSION="8.04"
 ARCH=i386
-IMAGE_NAME="MaX-4.0-0rc1"
+IMAGE_NAME="MaX-4.0-0rc2"
 TITLE="MaX 4.0"
 
 stamp=$(date '+%Y%m%d_%H%M')
@@ -114,6 +114,10 @@ _revert_invoke() {
    _echo "Revirtiendo /sbin/start-stop-daemon"
    mv $DIR/sbin/start-stop-daemon.REAL $DIR/sbin/start-stop-daemon
  fi
+ if [ -e $DIR/usr/sbin/policy-rc.d.REAL ]; then
+   _echo "Revirtiendo /usr/sbin/policy-rc.d"
+   mv $DIR/usr/sbin/policy-rc.d.REAL $DIR/usr/sbin/policy-rc.d
+ fi
 }
 
 _add_invoke() {
@@ -146,6 +150,19 @@ echo "" >&2
 exit 0
 EOF
     chmod +x $DIR/sbin/start-stop-daemon
+  fi
+
+  if [ ! -e $DIR/usr/sbin/policy-rc.d.REAL ]; then
+    # Cambiamos usr/sbin/policy-rc.d
+    mv $DIR/usr/sbin/policy-rc.d $DIR/usr/sbin/policy-rc.d.REAL
+    cat << EOF > $DIR/usr/sbin/policy-rc.d
+#!/bin/sh
+echo "" >&2
+echo "  ** Fake policy-rc.d called with args: '\$@'" >&2
+echo "" >&2
+exit 101
+EOF
+    chmod +x $DIR/usr/sbin/policy-rc.d.REAL
   fi
 }
 

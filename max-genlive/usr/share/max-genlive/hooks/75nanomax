@@ -221,7 +221,7 @@ fi
 [ ! -f portables.tar.gz ] && wget $URL
 
 _echo "Extrayendo portables a pendrive"
-tar -zxf portables.tar.gz -C part1/
+tar -zxf portables.tar.gz -C part1/ 2>/dev/null
 
 _echo "Copiando portables al DVD"
 mkdir -p $CDRW/portables/
@@ -250,9 +250,6 @@ rm ${IMG}.* part* -rf
 install-mbr -e3 $IMG
 #===============================================
 
-   #rm -rf $CDRW/nanomax
-   #mkdir $CDRW/nanomax
-   #cp ${IMG} $CDRW/nanomax/
    cp $GENLIVE/nano/* $CDRW/nanomax/
 
    _echo "Generando md5sum de NanoMax"
