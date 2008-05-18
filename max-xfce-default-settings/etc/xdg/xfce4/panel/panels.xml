@@ -3,12 +3,12 @@
 <panels>
 	<panel>
 		<properties>
-			<property name="size" value="34"/>
+			<property name="size" value="37"/>
 			<property name="monitor" value="0"/>
 			<property name="screen-position" value="11"/>
 			<property name="fullwidth" value="1"/>
 			<property name="xoffset" value="0"/>
-			<property name="yoffset" value="733"/>
+			<property name="yoffset" value="723"/>
 			<property name="handlestyle" value="0"/>
 			<property name="autohide" value="0"/>
 			<property name="transparency" value="20"/>
@@ -25,7 +25,8 @@
 			<item name="pager" id="1"/>
 			<item name="systray" id="6"/>
 			<item name="xfce4-mixer" id="9"/>
-			<item name="clock" id="10"/>
+			<item name="orageclock" id="7"/>
+			<item name="thunar-tpa" id="12109764780"/>
 		</items>
 	</panel>
 </panels>

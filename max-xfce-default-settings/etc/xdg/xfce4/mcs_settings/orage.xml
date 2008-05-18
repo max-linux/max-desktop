@@ -2,7 +2,6 @@
 <!DOCTYPE mcs-option SYSTEM "mcs-option.dtd">
 
 <mcs-option>
-	<!--<option name="orage/ArchiveFile" type="string" value="/home/madrid/.config/xfce4/orage/orage_old.ics"/>-->
 	<option name="orage/Lookback" type="int" value="0"/>
 	<option name="orage/NormalMode" type="int" value="1"/>
 	<option name="orage/Pager" type="int" value="0"/>

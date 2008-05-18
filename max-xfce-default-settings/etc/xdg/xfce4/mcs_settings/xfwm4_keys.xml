@@ -2,6 +2,5 @@
 <!DOCTYPE mcs-option SYSTEM "mcs-option.dtd">
 
 <mcs-option>
-	<option name="Xfwm/WorkspaceCount" type="int" value="4"/>
-	<option name="names" type="string" value="1;2;3;4"/>
+	<option name="Xfwm/KeyThemeName" type="string" value="Default"/>
 </mcs-option>

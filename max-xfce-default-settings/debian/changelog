@@ -1,3 +1,28 @@
+max-xfce-default-settings (4.0.max8) max; urgency=low
+
+  * Change Xfce menu icon to maxtoon (48x48) max logo (without HDD image)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 18 May 2008 11:54:43 +0200
+
+max-xfce-default-settings (4.0.max7) max; urgency=low
+
+  * Dpsyco etc/xdg/xfce4/desktop/xfce-registered-categories.xml.es
+    - Translate Development and Education menus
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 13:07:28 +0200
+
+max-xfce-default-settings (4.0.max6) max; urgency=low
+
+  * Update Xfce4 settings (panel size=37, 4 workspaces, trash in panel, etc...)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 12:51:56 +0200
+
+max-xfce-default-settings (4.0.max5) max; urgency=low
+
+  * Rebuild with new panel settings
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 21:42:28 +0200
+
 max-xfce-default-settings (4.0.max4) max; urgency=low
 
   * Add etc/xdg/Thunar/volmanrc
