@@ -114,10 +114,6 @@ _revert_invoke() {
    _echo "Revirtiendo /sbin/start-stop-daemon"
    mv $DIR/sbin/start-stop-daemon.REAL $DIR/sbin/start-stop-daemon
  fi
- if [ -e $DIR/usr/sbin/policy-rc.d.REAL ]; then
-   _echo "Revirtiendo /usr/sbin/policy-rc.d"
-   mv $DIR/usr/sbin/policy-rc.d.REAL $DIR/usr/sbin/policy-rc.d
- fi
 }
 
 _add_invoke() {
@@ -152,18 +148,6 @@ EOF
     chmod +x $DIR/sbin/start-stop-daemon
   fi
 
-  if [ ! -e $DIR/usr/sbin/policy-rc.d.REAL ]; then
-    # Cambiamos usr/sbin/policy-rc.d
-    mv $DIR/usr/sbin/policy-rc.d $DIR/usr/sbin/policy-rc.d.REAL
-    cat << EOF > $DIR/usr/sbin/policy-rc.d
-#!/bin/sh
-echo "" >&2
-echo "  ** Fake policy-rc.d called with args: '\$@'" >&2
-echo "" >&2
-exit 101
-EOF
-    chmod +x $DIR/usr/sbin/policy-rc.d.REAL
-  fi
 }
 
 

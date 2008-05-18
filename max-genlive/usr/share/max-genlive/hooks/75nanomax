@@ -139,10 +139,10 @@ EOC
   _echo "Creando ISO CDLIVE"
   mkisofs -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \
      -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
-     -boot-info-table -o CD-Nano${IMAGE_NAME}-${stamp}.iso $NANOMAX/ || _exit "Error generando la imagen ISO"
+     -boot-info-table -o ${IMAGE_NAME}-CDlive-${stamp}.iso $NANOMAX/ || _exit "Error generando la imagen ISO"
 
   _echo "Generando md5 del CD"
-  md5sum CD-Nano${IMAGE_NAME}-${stamp}.iso > CD-Nano${IMAGE_NAME}-${stamp}.iso.md5 || _exit "Error generando el md5"
+  md5sum ${IMAGE_NAME}-CDlive-${stamp}.iso > ${IMAGE_NAME}-CDlive-${stamp}.iso.md5 || _exit "Error generando el md5"
 
 #==============================================
   # Fichero img final

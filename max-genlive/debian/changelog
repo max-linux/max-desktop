@@ -1,3 +1,21 @@
+max-genlive (4.0.max0.58) max; urgency=low
+
+  * Rename NanoMaX cd in isolunux.cfg too
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 12:10:50 +0200
+
+max-genlive (4.0.max0.57) max; urgency=low
+
+  * Change CD name from CD-Nano-MaX to MaX-40-CDlive
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 16 May 2008 20:01:29 +0200
+
+max-genlive (4.0.max0.56) max; urgency=low
+
+  * Remove usr/sbin/policy-rc.d substitution (not needed)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 15 May 2008 11:45:07 +0200
+
 max-genlive (4.0.max0.55) max; urgency=low
 
   * Be less verbose in portables extract
