@@ -95,6 +95,22 @@
 			<Include>
 				<Filename>squeak-small-land-plugin.desktop</Filename>
 			</Include>
+			<Include>
+				<Filename>squeak-atenex.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>squeak-educarex.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>squeak-scratch.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>squeak-doc.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>squeak-manual.desktop</Filename>
+			</Include>
+			<AppDir>/usr/share/max/applications</AppDir>
 		</Menu>
 		<Menu>
 			<Name>Robótica</Name>
