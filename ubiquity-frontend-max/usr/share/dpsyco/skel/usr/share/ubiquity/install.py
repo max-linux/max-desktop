@@ -430,6 +430,8 @@ class Install:
             self.db.progress('REGION', 95, 99)
             self.db.progress('INFO', 'ubiquity/install/removing')
             self.remove_extras()
+            # MaX exec apt-get autoremove --purge
+            self.do_autoremove()
 
             self.db.progress('SET', 99)
             self.db.progress('INFO', 'ubiquity/install/log_files')
@@ -1809,6 +1811,20 @@ exit 0"""
                 pout.close()
         else:
             syslog.syslog("No process to kill")
+
+    # MaX
+    def do_autoremove(self):
+        syslog.syslog("DEBUG do_autoremove() init")
+        self.chroot_setup()
+        try:
+            subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
+                             'apt-get', 'autoremove', '--purge'], close_fds=True)
+            subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
+                             'update-dpsyco-skel'], close_fds=True)
+        except Exception,err:
+            syslog.syslog("DEBUG: Exception in do_autoremove(): %s"%err)
+        self.chroot_cleanup()
+
 
     # MaX
     def install_max_extras(self):

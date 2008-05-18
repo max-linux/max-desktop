@@ -50,7 +50,7 @@ def main():
             # frontend module.
             import imp
             import ubiquity.frontend
-            frontend_names = ['mythbuntu_ui', 'gtk_ui', 'max_ui', 'kde_ui']
+            frontend_names = ['mythbuntu_ui', 'max_ui', 'gtk_ui', 'kde_ui']
             for f in frontend_names:
                 try:
                     imp.find_module(f, ubiquity.frontend.__path__)

@@ -1,3 +1,24 @@
+ubiquity-frontend-max (4.0.max0.25) max; urgency=low
+
+  * ubiquity_max_ui.desktop:
+    - Show in all desktops (not only in GNOME;XFCE)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 18 May 2008 13:21:20 +0200
+
+ubiquity-frontend-max (4.0.max0.24) max; urgency=low
+
+  * Change order in frontend detection
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 13:28:18 +0200
+
+ubiquity-frontend-max (4.0.max0.23) max; urgency=low
+
+  * usr/share/ubiquity/install.py
+    - Exec apt-get autoremove --purge after clean installer packages
+    - Exec update-dpsyco-skel to revert original files
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 12:26:30 +0200
+
 ubiquity-frontend-max (4.0.max0.22) max; urgency=low
 
   * Add depends nanomax-installer:
