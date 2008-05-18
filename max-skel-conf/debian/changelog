@@ -1,3 +1,24 @@
+max-skel-conf (4.0.max12) max; urgency=low
+
+  * Change KDE icon theme to maxtoon and set 4 desktops instead of 3
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 18 May 2008 13:01:31 +0200
+
+max-skel-conf (4.0.max11) max; urgency=low
+
+  * Uppssss, set default-display-manager to /usr/sbin/gdm instead of /usr/bin/gdm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 19:53:07 +0200
+
+max-skel-conf (4.0.max10) max; urgency=low
+
+  * Dpsyco /etc/X11/default-display-manager:
+    - Force GDM as default display manager
+  * max-skel-conf.postinst:
+    - Preseed shared/default-x-display-manager to gdm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 13:17:44 +0200
+
 max-skel-conf (4.0.max9) max; urgency=low
 
   * etc/gftp/gftprc:

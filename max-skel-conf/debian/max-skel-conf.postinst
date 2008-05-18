@@ -16,11 +16,11 @@ case "$1" in
 
     # create manual launcher in existent HOMES
     for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
-      if [ -d $home/Desktop ]; then
+      if [ -d $home/Desktop ] && [ -d /etc/skel/Desktop ]; then
          create_link $home/Desktop/manual.desktop /etc/skel/Desktop/manual.desktop $(basename $home) || true
          create_link $home/Desktop/creditos_max40.desktop /etc/skel/Desktop/creditos_max40.desktop $(basename $home) || true
       fi
-      if [ -d $home/Escritorio ]; then
+      if [ -d $home/Escritorio ] && [ -d /etc/skel/Escritorio ] ; then
          create_link $home/Escritorio/manual.desktop /etc/skel/Escritorio/manual.desktop $(basename $home) || true
          create_link $home/Escritorio/creditos_max40.desktop /etc/skel/Escritorio/creditos_max40.desktop $(basename $home) || true
       fi
@@ -30,6 +30,13 @@ case "$1" in
     update-dpsyco-skel >/dev/null 2>&1
     grep -q AULAMAX /etc/samba/smb.conf || \
        cat usr/share/max-skel-conf/etc/samba/smb.conf > /etc/samba/smb.conf
+
+    # preseed default-display-manager
+    debconf-set-selections << EOF
+gdm shared/default-x-display-manager select gdm
+kdm shared/default-x-display-manager select gdm
+EOF
+
 
     ;;
 
