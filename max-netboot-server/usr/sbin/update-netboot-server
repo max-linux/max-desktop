@@ -40,6 +40,7 @@ if [ -f /etc/tcos/tcos.conf ]; then
     invoke-rc.d xfs restart
   fi
 
+  [ ! -f /etc/tcos/disable915 ] && touch /etc/tcos/disable915
 
   # generar imagenes de arranque
   if [ -x /usr/sbin/gentcos ]; then

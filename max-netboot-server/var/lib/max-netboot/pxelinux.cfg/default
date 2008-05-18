@@ -1,4 +1,4 @@
-DEFAULT menu.c32
+DEFAULT LOCAL
 PROMPT 0
 TIMEOUT 200
 ONTIMEOUT LOCAL
@@ -9,9 +9,7 @@ MENU TITLE MaX Menu de arranque por red...
 LABEL LOCAL
        MENU LABEL ^Arranque desde el disco local
        MENU INDENT 1
-       KERNEL chain.c32
-       APPEND hd0 0
-
+       LOCALBOOT 0x80
 
 LABEL TCOS
        MENU LABEL Arranque TCOS (como terminal ligero)

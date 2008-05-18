@@ -1,3 +1,10 @@
+max-netboot-server (4.0.max0.7) max; urgency=low
+
+  * Change chain.c32 to LOCALBOOT 
+  * Create /etc/tcos/disable915 to not show 915 intel warning
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 15 May 2008 15:22:21 +0200
+
 max-netboot-server (4.0.max0.6) max; urgency=low
 
   * Call update-dpsyco-skel in update-netboot-server
