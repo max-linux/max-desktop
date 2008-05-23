@@ -1,3 +1,16 @@
+ubiquity-frontend-max (4.0.max0.27) max; urgency=low
+
+  * Use self.chrex instead of subprocess to exec apt-get autoremove
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 23 May 2008 15:30:49 +0200
+
+ubiquity-frontend-max (4.0.max0.26) max; urgency=low
+
+  * usr/share/ubiquity/install.py:
+    - Set '-y' in apt-get autoremove --purge to exec in no interactive mode
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 18 May 2008 14:12:45 +0200
+
 ubiquity-frontend-max (4.0.max0.25) max; urgency=low
 
   * ubiquity_max_ui.desktop:

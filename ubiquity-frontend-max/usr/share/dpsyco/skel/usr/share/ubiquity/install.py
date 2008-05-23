@@ -1817,10 +1817,8 @@ exit 0"""
         syslog.syslog("DEBUG do_autoremove() init")
         self.chroot_setup()
         try:
-            subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
-                             'apt-get', 'autoremove', '--purge'], close_fds=True)
-            subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
-                             'update-dpsyco-skel'], close_fds=True)
+            self.chrex('log-output', '-t', 'ubiquity', 'apt-get', 'autoremove', '--purge', '-y' )
+            self.chrex('log-output', '-t', 'ubiquity', 'update-dpsyco-skel' )
         except Exception,err:
             syslog.syslog("DEBUG: Exception in do_autoremove(): %s"%err)
         self.chroot_cleanup()
