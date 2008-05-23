@@ -8,12 +8,22 @@
 DEVICE=$1
 PORTABLES=$2
 PERSISTENTE=$3
+PORTABLES_SIZE=$4
+PERSISTENTE_SIZE=$5
 
 # tamaño para nanomax
 NANOMAX=750
 
 # tamaño para aplicaciones portables
 PORTSIZE=800
+
+get_human_size() {
+  if [ $1 -gt 1000 ]; then
+    echo $(($1/1000)) GiB
+  else
+    echo "$1 MiB"
+  fi
+}
 
 if [ "$DEVICE" = "" ] || [ "$PORTABLES" = "" ] || [ "$PERSISTENTE" = "" ] ; then
   zenity --error --text="Error en los parámetros:\nDispositivo: '$DEVICE'\nPortables: '$PORTABLES'\nPersistente: '$PERSISTENTE'"
@@ -28,34 +38,34 @@ fi
 # leemos el tamaño
 #SIZE=$(LC_ALL=C /sbin/fdisk -l $DEVICE| awk '/^Disk*.*bytes/ {print $3}')
 # usar en bytes y dividir entre 10^6 para tener megas
-SIZE=$(LC_ALL=C /sbin/fdisk -l | awk '/^Disk*.*bytes/ {print int($5/1000000)}')
+SIZE=$(LC_ALL=C /sbin/fdisk -l $DEVICE | awk '/^Disk*.*bytes/ {print int($5/1000000)}')
 
-echo " * Tamaño del dispositivo $DEVICE detectado $SIZE Mb"
+echo " * Tamaño del dispositivo $DEVICE detectado $(get_human_size $SIZE)"
 
 if [ "$PORTABLES" = "1" ] && [ "$PERSISTENTE" = "1" ]; then
-  P1=$PORTSIZE                     # portables
-  P2=$(($SIZE-$PORTSIZE-$NANOMAX)) # casper-rw
-  P3=$NANOMAX                      # nanomax
+  P1=$PORTABLES_SIZE        # portables
+  P2=$PERSISTENTE_SIZE      # casper-rw
+  P3=$NANOMAX               # nanomax
   TIPO=1
-  echo " * Instalación tipo 1: nanoMaX ($P3 Mb) + portables ($PORTSIZE Mb) + persistencia ($P2 Mb)"
+  echo " * Instalación tipo 1: nanoMaX ($(get_human_size $P3)) + portables ($(get_human_size $P1)) + persistencia ($(get_human_size $P2))"
 elif [ "$PORTABLES" = "0" ] && [ "$PERSISTENTE" = "1" ]; then
   P1=$NANOMAX              # nanomax
   P2=$(($SIZE-$NANOMAX))   # persistente
   P3=0
   TIPO=2
-  echo " * Instalación tipo 2: nanoMaX ($P1 Mb) + persistencia ($P2 Mb)"
+  echo " * Instalación tipo 2: nanoMaX ($(get_human_size $P1)) + persistencia ($(get_human_size $P2))"
 elif [ "$PORTABLES" = "0" ] && [ "$PERSISTENTE" = "0" ]; then
   P1=$(($SIZE))
   P2=0
   P3=0
   TIPO=3
-  echo " * Instalación tipo 3: sólo nanoMaX ($P1 Mb)"
+  echo " * Instalación tipo 3: sólo nanoMaX ($(get_human_size $P1))"
 elif [ "$PORTABLES" = "1" ] && [ "$PERSISTENTE" = "0" ]; then
   P1=$(($SIZE-$NANOMAX)) # portables
   P2=$NANOMAX            # nanomax
   P3=0
   TIPO=4
-  echo " * Instalación tipo 4: nanoMaX ($P2 Mb) + portables ($P1 Mb)"
+  echo " * Instalación tipo 4: nanoMaX ($(get_human_size $P2)) + portables ($(get_human_size $P1))"
 fi
 
 #echo " * Desmontando particiones..."
@@ -116,7 +126,7 @@ if [ "$TIPO" = "1" ]; then
   copiar_nanomax
   copiar_portables
   echo " * Sincronizando... (puede tardar un rato)"
-  sync 
+  sync
   syslinux ${DEVICE}3
   umount /mnt/portables
   umount /mnt/nanomax
@@ -155,6 +165,7 @@ if [ "$TIPO" = "3" ]; then
   sleep 1
   mount -t vfat -o noatime,rw ${DEVICE}1 /mnt/nanomax
   copiar_nanomax
+  sed -i -e 's|persistent ||g' /mnt/nanomax/syslinux.cfg
   echo " * Sincronizando... (puede tardar un rato)"
   sync
   syslinux ${DEVICE}1
@@ -177,6 +188,7 @@ if [ "$TIPO" = "4" ]; then
   mount -t vfat -o noatime,rw ${DEVICE}1 /mnt/portables
   copiar_nanomax
   copiar_portables
+  sed -i -e 's|persistent ||g' /mnt/nanomax/syslinux.cfg
   echo " * Sincronizando... (puede tardar un rato)"
   sync
   syslinux ${DEVICE}2
@@ -185,12 +197,12 @@ if [ "$TIPO" = "4" ]; then
   install-mbr -e2 ${DEVICE}
 fi
 
-
+echo " * Borrando directorios temporales"
+rm -rf /mnt/nanomax /mnt/portables
 
 zenity --info --text="Ya esta listo su nanoMaX, inicie su equipo desde el dispositivo USB."
 
-echo " * Borrando directorios temporales"
-rm -rf /mnt/nanomax /mnt/portables
+echo " * Terminado, puede retirar su nueva nanoMaX."
 
 exit 0
 

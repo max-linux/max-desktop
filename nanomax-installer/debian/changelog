@@ -1,3 +1,18 @@
+nanomax-installer (4.0.max1.0) max; urgency=low
+
+  * New Release "Happy Happy worker"
+    - Add sliders to set persistent and portable partition sizes
+    - Remove persistent from syslinux.cfg when persistence is disabled
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 23 May 2008 21:59:48 +0200
+
+nanomax-installer (4.0.max0.4) max; urgency=low
+
+  * usr/share/nanomax-installer/do-install.sh:
+    - Ups forgot to set DEVICE in fdisk command
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 23 May 2008 12:21:57 +0200
+
 nanomax-installer (4.0.max0.3) max; urgency=low
 
   * usr/share/nanomax-installer/do-install.sh:

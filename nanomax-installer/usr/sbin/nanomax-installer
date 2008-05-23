@@ -31,7 +31,10 @@ import dbus.service
 if getattr(dbus, 'version', (0,0,0)) >= (0,41,0):
     import dbus.glib
 
-
+MIN_PORTABLES=500
+MIN_PERSISTENTE=300
+NANOMAX_SIZE=750
+STEP=10
 
 class NanoMaXInstaller (object):
 
@@ -61,6 +64,11 @@ class NanoMaXInstaller (object):
         # disable aceptar button
         self.widgets['aceptar_button'].set_sensitive(False)
         
+        self.widgets['slider_portables'].connect('change-value', self.update_sliders, 'slider_persistente')
+        self.widgets['slider_persistente'].connect('change-value', self.update_sliders, 'slider_portables')
+
+        self.widgets['ck_portables'].connect('toggled', self.disable_sliders)
+        self.widgets['ck_persistente'].connect('toggled', self.disable_sliders)
 
         self._columns = [ 
             ('Dispositivo', gobject.TYPE_STRING),
@@ -97,8 +105,56 @@ class NanoMaXInstaller (object):
         self.device['dev']=model.get_value(iter,0)
         self.device['size']=model.get_value(iter, 1)
         self.device['model']=model.get_value(iter, 2)
+        self.update_sliders()
         self.selected=self.device
         self.widgets['aceptar_button'].set_sensitive(True)
+
+    def disable_sliders(self, *args):
+        portables=self.widgets['ck_portables'].get_active()
+        persistente=self.widgets['ck_persistente'].get_active()
+        if not portables or not persistente:
+            self.widgets['slider_portables'].set_sensitive(False)
+            self.widgets['slider_persistente'].set_sensitive(False)
+        elif self.device:
+            self.widgets['slider_portables'].set_sensitive(True)
+            self.widgets['slider_persistente'].set_sensitive(True)
+
+    def update_sliders(self, *args):
+        size=(float(self.device['size'])*1000)-10 #restamos 10Mb por si acaso
+        portables=self.widgets['ck_portables'].get_active()
+        persistente=self.widgets['ck_persistente'].get_active()
+        smax=(size-NANOMAX_SIZE)
+        maxportables=smax-MIN_PERSISTENTE
+        maxpersistente=smax-MIN_PORTABLES
+        if not self.device:
+            self.widgets['slider_portables'].set_sensitive(False)
+            self.widgets['slider_persistente'].set_sensitive(False)
+        
+        if len(args)>0:
+            newsize=int(args[2])
+            slider=args[3]
+            newvalue=size-NANOMAX_SIZE-newsize
+            if slider == 'slider_portables':
+                nmax=maxportables
+                nmin=MIN_PORTABLES
+                if newvalue <= MIN_PORTABLES: return
+            if slider == 'slider_persistente':
+                nmax=maxpersistente
+                nmin=MIN_PERSISTENTE
+                if newvalue <= MIN_PERSISTENTE: return
+            adj=gtk.Adjustment(newvalue, nmin, nmax, STEP, STEP, STEP)
+            #print "adjustment (%s) new=%s nmin=%s nmax=%s " %(slider, newvalue, nmin, nmax)
+            self.widgets[slider].set_adjustment(adj)
+            #print "%s new=%s smax=%s nmax=%s nmin=%s maxport=%s minport=%s maxpers=%s minpersis=%s" %(slider, newvalue, smax, nmax, nmin, maxportables, MIN_PORTABLES, maxpersistente, MIN_PERSISTENTE)
+        
+        if len(args) == 0 and portables and persistente and size > 1:
+            self.widgets['slider_portables'].set_sensitive(True)
+            self.widgets['slider_persistente'].set_sensitive(True)
+            adj_portables=gtk.Adjustment(maxportables, MIN_PORTABLES, maxportables, STEP, STEP, STEP)
+            self.widgets['slider_portables'].set_adjustment(adj_portables)
+            adj_persistente=gtk.Adjustment(MIN_PERSISTENTE, MIN_PERSISTENTE, maxpersistente, STEP, STEP, STEP)
+            self.widgets['slider_persistente'].set_adjustment(adj_persistente)
+            #print "smax=%s maxport=%s minport=%s maxpers=%s minpersis=%s" %(smax, maxportables, MIN_PORTABLES, maxpersistente, MIN_PERSISTENTE)
 
     def fixed_toggled(self, cell, path, index):
         _iter = self.liststore.get_iter((int(path),))
@@ -146,9 +202,15 @@ class NanoMaXInstaller (object):
         self.widgets['frame1'].hide()
         self.widgets['aceptar_button'].hide()
         self.widgets['scrolledwindow2'].show()
+
+        portables_size=""
+        persistente_size=""
+        if self.selected['portables'] == 1 and self.selected['persistente'] == 1:
+            portables_size=int(self.widgets['slider_portables'].get_value())
+            persistente_size=int(self.widgets['slider_persistente'].get_value())
         
         print "on_aceptar_button_clicked() selected device=%s" %self.selected
-        cmd="bash /usr/share/nanomax-installer/do-install.sh '%s' '%s' '%s'" %(self.selected['dev'], self.selected['portables'], self.selected['persistente'])
+        cmd="bash /usr/share/nanomax-installer/do-install.sh '%s' '%s' '%s' '%s' '%s'" %(self.selected['dev'], self.selected['portables'], self.selected['persistente'], portables_size, persistente_size)
         th=threading.Thread(target=self.install, args=(cmd,))
         th.start()
 
