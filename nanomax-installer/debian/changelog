@@ -1,3 +1,10 @@
+nanomax-installer (4.0.max0.3) max; urgency=low
+
+  * usr/share/nanomax-installer/do-install.sh:
+    - Use bytes and divide with 10^6 to get Mb of DEVICE.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 23 May 2008 12:16:21 +0200
+
 nanomax-installer (4.0.max0.2) max; urgency=low
 
   * Fix typo in portables tar extract command

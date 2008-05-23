@@ -26,7 +26,9 @@ if [ ! -d /cdrom/nanomax ]; then
 fi
 
 # leemos el tamaño
-SIZE=$(LC_ALL=C /sbin/fdisk -l $DEVICE| awk '/^Disk*.*bytes/ {print $3}')
+#SIZE=$(LC_ALL=C /sbin/fdisk -l $DEVICE| awk '/^Disk*.*bytes/ {print $3}')
+# usar en bytes y dividir entre 10^6 para tener megas
+SIZE=$(LC_ALL=C /sbin/fdisk -l | awk '/^Disk*.*bytes/ {print int($5/1000000)}')
 
 echo " * Tamaño del dispositivo $DEVICE detectado $SIZE Mb"
 
