@@ -21,11 +21,21 @@ enable_toshiba_wacom() {
 
 }
 
+# Elo TouchScreen
+enable_elo() {
+  [ ! -e /proc/bus/usb/devices ] && return
+  if grep -q "USB Touchmonitor Interface" /proc/bus/usb/devices ; then
+    modprobe usbtouchscreen
+    ddcprobe > /tmp/ddcprobe 2>&1
+  fi
+}
+
 
 case "$1" in
 start)  
         log_begin_msg "Starting Max40 hardware hacks" "max-hardware"
           enable_toshiba_wacom
+          enable_elo
         log_end_msg $?
         ;;
 esac

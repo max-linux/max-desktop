@@ -1,3 +1,9 @@
+max-hardware (4.0.max0.4) max; urgency=low
+
+  * Exec ddcprobe (and add xresprobe to depends) for Elo TouchComputer
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 23 May 2008 22:12:18 +0200
+
 max-hardware (4.0.max0.3) max; urgency=low
 
   * Add Toshiba PORTEGE M700 wacom detection with setserial
