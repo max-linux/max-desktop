@@ -10,6 +10,7 @@ PORTABLES=$2
 PERSISTENTE=$3
 PORTABLES_SIZE=$4
 PERSISTENTE_SIZE=$5
+PORTABLES_TYPE=fat16
 
 # tamaño para nanomax
 NANOMAX=750
@@ -47,7 +48,10 @@ if [ "$PORTABLES" = "1" ] && [ "$PERSISTENTE" = "1" ]; then
   P2=$PERSISTENTE_SIZE      # casper-rw
   P3=$NANOMAX               # nanomax
   TIPO=1
-  echo " * Instalación tipo 1: nanoMaX ($(get_human_size $P3)) + portables ($(get_human_size $P1)) + persistencia ($(get_human_size $P2))"
+  if [ $PORTABLES_SIZE -gt 1900 ]; then
+    PORTABLES_TYPE=fat32
+  fi
+  echo " * Instalación tipo 1: nanoMaX ($(get_human_size $P3)) + portables ($(get_human_size $P1)) ($PORTABLES_TYPE) + persistencia ($(get_human_size $P2))"
 elif [ "$PORTABLES" = "0" ] && [ "$PERSISTENTE" = "1" ]; then
   P1=$NANOMAX              # nanomax
   P2=$(($SIZE-$NANOMAX))   # persistente
@@ -65,7 +69,10 @@ elif [ "$PORTABLES" = "1" ] && [ "$PERSISTENTE" = "0" ]; then
   P2=$NANOMAX            # nanomax
   P3=0
   TIPO=4
-  echo " * Instalación tipo 4: nanoMaX ($(get_human_size $P2)) + portables ($(get_human_size $P1))"
+  if [ $P1 -gt 1900 ]; then
+    PORTABLES_TYPE=fat32
+  fi
+  echo " * Instalación tipo 4: nanoMaX ($(get_human_size $P2)) + portables ($(get_human_size $P1)) ($PORTABLES_TYPE)"
 fi
 
 #echo " * Desmontando particiones..."
@@ -111,14 +118,18 @@ mkdir -p /mnt/nanomax /mnt/portables
 if [ "$TIPO" = "1" ]; then
   echo " * Haciendo particiones..."
   # portables y casper
-  parted $DEVICE -s mklabel msdos mkpart primary fat16 0 ${P1}MB
+  parted $DEVICE -s mklabel msdos mkpart primary $PORTABLES_TYPE 0 ${P1}MB
   parted $DEVICE -s mkpart primary ext3 ${P1}MB $(($P1+$P2))MB 
   parted $DEVICE -s mkpart primary fat16 $(($P1+$P2))MB ${SIZE}MB
   parted $DEVICE -s set 3 boot on
   sleep 1
   echo " * Formateando..."
   # formatear
-  mkdosfs -n "portables" -F 16 ${DEVICE}1 >/dev/null 2>&1
+  if [ "$PORTABLES_TYPE" = "fat16" ]; then
+      mkdosfs -n "datos" -F 16 ${DEVICE}1 >/dev/null 2>&1
+  else
+      mkdosfs -n "datos" -F 32 ${DEVICE}1 >/dev/null 2>&1
+  fi
   mkfs.ext3 -L "casper-rw" ${DEVICE}2 >/dev/null 2>&1
   mkdosfs -n "nanomax" -F 16 ${DEVICE}3 >/dev/null 2>&1
   mount -t vfat -o noatime,rw ${DEVICE}3 /mnt/nanomax
@@ -176,13 +187,17 @@ fi
 if [ "$TIPO" = "4" ]; then
   # portables y nanomax
   echo " * Haciendo particiones..."
-  parted $DEVICE -s mklabel msdos mkpart primary fat16 0 ${P1}MB
+  parted $DEVICE -s mklabel msdos mkpart primary $PORTABLES_TYPE 0 ${P1}MB
   parted $DEVICE -s mkpart primary fat16 ${P1}MB ${SIZE}MB
   parted $DEVICE -s set 2 boot on
   sleep 1
   echo " * Formateando..."
   # formatear
-  mkdosfs -n "portables" -F 16 ${DEVICE}1 >/dev/null 2>&1
+  if [ "$PORTABLES_TYPE" = "fat16" ]; then
+      mkdosfs -n "datos" -F 16 ${DEVICE}1 >/dev/null 2>&1
+  else
+      mkdosfs -n "datos" -F 32 ${DEVICE}1 >/dev/null 2>&1
+  fi
   mkdosfs -n "nanomax" -F 16 ${DEVICE}2   >/dev/null 2>&1
   mount -t vfat -o noatime,rw ${DEVICE}2 /mnt/nanomax
   mount -t vfat -o noatime,rw ${DEVICE}1 /mnt/portables
@@ -200,7 +215,8 @@ fi
 echo " * Borrando directorios temporales"
 rm -rf /mnt/nanomax /mnt/portables
 
-zenity --info --text="Ya esta listo su nanoMaX, inicie su equipo desde el dispositivo USB."
+# mejor no mostrar este mensaje
+#zenity --info --text="Ya esta listo su nanoMaX, inicie su equipo desde el dispositivo USB."
 
 echo " * Terminado, puede retirar su nueva nanoMaX."
 

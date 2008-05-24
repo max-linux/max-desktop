@@ -1,3 +1,11 @@
+nanomax-installer (4.0.max1.1) max; urgency=low
+
+  * do-install.sh:
+    - Use fat32 filesystem if portables size is greater than 1900 MiB
+    - Rename label portables => datos
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 24 May 2008 13:15:25 +0200
+
 nanomax-installer (4.0.max1.0) max; urgency=low
 
   * New Release "Happy Happy worker"
