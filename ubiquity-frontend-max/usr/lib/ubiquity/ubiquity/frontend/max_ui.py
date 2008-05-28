@@ -654,6 +654,9 @@ class Wizard(BaseFrontend):
         
         self.partition_button_undo.set_label(
             self.get_string('partman/text/undo_everything'))
+        self.partition_button_new_label.set_label('Nueva tabla de particiones')
+        self.partition_button_new.set_label('Nueva partición')
+        self.partition_button_delete.set_label('Borrar partición')
 
     def translate_widget(self, widget, lang):
         if isinstance(widget, gtk.Button) and widget.get_use_stock():

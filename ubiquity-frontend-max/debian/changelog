@@ -1,3 +1,25 @@
+ubiquity-frontend-max (4.0.max0.30) max; urgency=low
+
+  * install.py:
+    - Copy libdebianinstaller if necesary
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 15:41:41 +0200
+
+ubiquity-frontend-max (4.0.max0.29) max; urgency=low
+
+  * install.py:
+    - Fix apt-get autoremove --purge (use log-output before copy it)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 24 May 2008 19:58:55 +0200
+
+ubiquity-frontend-max (4.0.max0.28) max; urgency=low
+
+  * max_ui.py:
+    - Translate some buttons of manual partition editor
+  * Add XS-Vcs-Browser header to debian/control
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 24 May 2008 16:37:00 +0200
+
 ubiquity-frontend-max (4.0.max0.27) max; urgency=low
 
   * Use self.chrex instead of subprocess to exec apt-get autoremove

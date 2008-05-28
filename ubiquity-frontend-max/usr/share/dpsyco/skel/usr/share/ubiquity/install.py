@@ -1816,9 +1816,22 @@ exit 0"""
     def do_autoremove(self):
         syslog.syslog("DEBUG do_autoremove() init")
         self.chroot_setup()
+        delete_libdebian=False
         try:
-            self.chrex('log-output', '-t', 'ubiquity', 'apt-get', 'autoremove', '--purge', '-y' )
-            self.chrex('log-output', '-t', 'ubiquity', 'update-dpsyco-skel' )
+            shutil.copy("/bin/log-output", "/target/bin/log-output")
+            if not os.path.exists("/usr/lib/libdebian-installer.so.4"):
+                delete_libdebian=True
+                shutil.copy("/usr/lib/libdebian-installer.so.4", "/target/usr/lib/libdebian-installer.so.4")
+                shutil.copy("/usr/lib/libdebian-installer.so.4.0.6", "/target/usr/lib/libdebian-installer.so.4.0.6")
+            subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
+                         'apt-get', 'autoremove', '--purge', '-y'],
+                        preexec_fn=debconf_disconnect, close_fds=True)
+            #self.chrex('apt-get', 'autoremove', '--purge', '-y' )
+            self.chrex('update-dpsyco-skel' )
+            os.unlink("/target/bin/log-output")
+            if delete_libdebian:
+                os.unlink("/target/usr/lib/libdebian-installer.so.4")
+                os.unlink("/target/usr/lib/libdebian-installer.so.4.0.6")
         except Exception,err:
             syslog.syslog("DEBUG: Exception in do_autoremove(): %s"%err)
         self.chroot_cleanup()

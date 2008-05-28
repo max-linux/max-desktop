@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
 Build-Depends: debhelper (>= 4.0.0), cdbs, python
 Standards-Version: 3.7.2
+XS-Vcs-Browser: http://max.educa.madrid.org:8000/browser/trunk/ubiquity-frontend-max
 
 Package: ubiquity-frontend-max
 Architecture: all
