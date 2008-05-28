@@ -1,3 +1,19 @@
+max-meta (4.0.max1.59) max; urgency=low
+
+  * max-desktop-common:
+    - Add libsox-fmt-all (needed by sox to create silence files) (closes: #83)
+    - Add timidity and pmidi (closes: #110)
+      (use MaX patched timidity, that don't start if not sound card is avalaible)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 16:40:47 +0200
+
+max-meta (4.0.max1.58) max; urgency=low
+
+  * max-dekstop-kde:
+    - Add valgrind-callgrind used by KCacheGrind (closes: #104)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 16:12:08 +0200
+
 max-meta (4.0.max1.57) max; urgency=low
 
   * max-nanomax:
