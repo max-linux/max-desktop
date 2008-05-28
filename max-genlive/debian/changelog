@@ -1,3 +1,10 @@
+max-genlive (4.0.max0.59) max; urgency=low
+
+  * max-genlive 75nanomax
+    - Update to use 2.6.24-17-generic kernel
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 15:37:27 +0200
+
 max-genlive (4.0.max0.58) max; urgency=low
 
   * Rename NanoMaX cd in isolunux.cfg too

@@ -128,8 +128,8 @@ EOC
   printf "http://max.educa.madrid.org:8000/MaX40/NotasPublicacion" > $NANOMAX/.disk/release_notes_url
 
   # kernel
-  cp $NANOCHROOT/boot/vmlinuz-2.6.24-16-generic    $NANOMAX/casper/vmlinuz
-  cp $NANOCHROOT/boot/initrd.img-2.6.24-16-generic $NANOMAX/casper/initrd.gz
+  cp $NANOCHROOT/boot/vmlinuz-${MAXKERNEL}    $NANOMAX/casper/vmlinuz
+  cp $NANOCHROOT/boot/initrd.img-${MAXKERNEL} $NANOMAX/casper/initrd.gz
 
   # backharddi
   cp $NANOCHROOT/boot/linux-2.6.22-3-486-backharddi     $NANOMAX/casper/vmback
