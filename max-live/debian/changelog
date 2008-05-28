@@ -1,3 +1,12 @@
+max-live (4.0.max0.29) max; urgency=low
+
+  * 11max
+    - In nanoMaX use Desktop and link Escritorio => Desktop
+      (xfdesktop try to create and we have a symlink)
+    - Delete all Examples stuff
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 24 May 2008 15:23:27 +0200
+
 max-live (4.0.max0.28) max; urgency=low
 
   * Don't use Escritorio in nanoMaX

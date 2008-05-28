@@ -39,13 +39,15 @@ EOF
   chroot /root install -D -o $USERNAME -g $USERNAME /etc/skel/.dmrc /home/$USERNAME/.dmrc
 
   # Xfce4 try to create Desktop dir
-  chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Desktop/ || true
-  chroot /root mv /home/$USERNAME/Escritorio/* /home/$USERNAME/Desktop/
-  chroot /root rm -rf /home/$USERNAME/Escritorio
-  chroot /root ln -s /home/$USERNAME/Desktop /home/$USERNAME/Escritorio
+  chroot /root << EOF
+cp /home/$USERNAME/Escritorio/* /home/$USERNAME/Desktop/
+rm -rf /home/$USERNAME/Escritorio
+ln -s /home/$USERNAME/Desktop /home/$USERNAME/Escritorio
+chown -R $USERNAME:$USERNAME /home/$USERNAME
+EOF
 else
 
-# rename Desktop, remove Examples chown to max user
+# MaX (no nano) rename Desktop, remove Examples chown to max user
 chroot /root << EOF
 rm -rf /home/$USERNAME/Escritorio
 mv /home/$USERNAME/Desktop /home/$USERNAME/Escritorio
@@ -56,15 +58,8 @@ EOF
 fi
 
 # delete from Escritorio or Desktop
-rm -f /root/home/$USERNAME/*/Examples
-
-# remove examples if exists
-if [ -L /root/home/$USERNAME/Examples ] || [ -L /root/home/$USERNAME/Escritorio/Examples ]; then
-  chroot /root << EOF
-mv /home/$USERNAME/Examples /home/$USERNAME/Ejemplos
-chown -R $USERNAME:$USERNAME /home/$USERNAME/Ejemplos
-EOF
-fi
+rm -rf /root/home/$USERNAME/*/Examples
+rm -rf /root/home/$USERNAME/Examples
 
 
 # copy Madrid timezone
