@@ -1,3 +1,10 @@
+jclic (0.2.0.3-1max4) max; urgency=low
+
+  * Change depends to max-java-jre
+  * Add header XS-Vcs-Browser
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 24 May 2008 16:40:21 +0200
+
 jclic (0.2.0.3-1max3) max; urgency=low
 
   * Fix jclicreports script launcher (in new version jar file change the name)

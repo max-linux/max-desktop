@@ -3,12 +3,13 @@ Section: games
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
 Build-Depends: debhelper (>= 4.0.0), cdbs, wget, unzip
-Standards-Version: 3.7.2
+Standards-Version: 3.7.3
+XS-Vcs-Browser: http://max.educa.madrid.org:8000/browser/trunk/jclic
 
 Package: jclic
 Architecture: any
 Recommends: libmysql-java
-Depends: java-virtual-machine | java-runtime | sun-java5-jre | sun-java5-jdk | sun-java6-jdk | sun-java6-jre, ${misc:Depends}, ${shlibs:Depends}
+Depends: max-java-jre, ${misc:Depends}, ${shlibs:Depends}
 Description: JClic java player.
  JClic is formed by a set of computer applications that are
  used for carrying out different types of educational 
