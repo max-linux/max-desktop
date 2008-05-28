@@ -1,3 +1,15 @@
+max-menus (4.0.max1.21) max; urgency=low
+
+  * Exclude from Multimedia: Codificación de audio.desktop (closes: #109)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 16:08:30 +0200
+
+max-menus (4.0.max1.20) max; urgency=low
+
+  * enable backharddi and webhttrack again (closes: #122 #117)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 15:59:46 +0200
+
 max-menus (4.0.max1.19) max; urgency=low
 
   * Add squeak scratch menu

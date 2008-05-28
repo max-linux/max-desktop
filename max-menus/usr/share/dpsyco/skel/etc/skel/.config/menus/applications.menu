@@ -614,13 +614,7 @@
 		<Include>
 			<Filename>kde-wlassistant.desktop</Filename>
 		</Include>
-		<Exclude>
-			<Filename>WebHTTrack-Websites.desktop</Filename>
-		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
-		<Exclude>
-			<Filename>WebHTTrack.desktop</Filename>
-		</Exclude>
 		<Exclude>
 			<Filename>openjdk-6-javaws.desktop</Filename>
 		</Exclude>
@@ -630,9 +624,9 @@
 	</Menu>
 	<Menu>
 		<Name>Multimedia</Name>
-		<Include>
+		<Exclude>
 			<Filename>Codificación de audio.desktop</Filename>
-		</Include>
+		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
 			<Filename>denemo.desktop</Filename>
@@ -648,18 +642,6 @@
 			<Filename>kde-ksystemlog.desktop</Filename>
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
-		<Exclude>
-			<Filename>tcospersonalize.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>backharddi_dvd.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>backharddi_boot.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>backharddi_net.desktop</Filename>
-		</Exclude>
 		<Exclude>
 			<Filename>kde-adept_manager.desktop</Filename>
 		</Exclude>
