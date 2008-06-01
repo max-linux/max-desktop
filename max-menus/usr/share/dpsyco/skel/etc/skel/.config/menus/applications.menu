@@ -220,6 +220,9 @@
 			<Include>
 				<Filename>tuxmath.desktop</Filename>
 			</Include>
+			<Include>
+				<Filename>speedcrunch.desktop</Filename>
+			</Include>
 		</Menu>
 		<Exclude>
 			<Filename>jclic.desktop</Filename>
@@ -536,6 +539,12 @@
 			<AppDir>/usr/share/max/applications</AppDir>
 		</Menu>
 		<Exclude>
+			<Filename>gcalctool.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde-kcalc.desktop</Filename>
+		</Exclude>
+		<Exclude>
 			<Filename>xournal.desktop</Filename>
 		</Exclude>
 		<Exclude>
@@ -577,6 +586,9 @@
 	<Menu>
 		<Name>Games</Name>
 		<Exclude>
+			<Filename>freecell.desktop</Filename>
+		</Exclude>
+		<Exclude>
 			<Filename>gcompris.desktop</Filename>
 		</Exclude>
 		<Exclude>
@@ -609,6 +621,9 @@
 	<Menu>
 		<Name>Internet</Name>
 		<Exclude>
+			<Filename>kde-Kontact.desktop</Filename>
+		</Exclude>
+		<Exclude>
 			<Filename>kde-kwifimanager.desktop</Filename>
 		</Exclude>
 		<Include>
@@ -625,7 +640,7 @@
 	<Menu>
 		<Name>Multimedia</Name>
 		<Exclude>
-			<Filename>Codificación de audio.desktop</Filename>
+			<Filename>kde-audiocd.desktop</Filename>
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>

@@ -1,3 +1,10 @@
+max-menus (4.0.max1.22) max; urgency=low
+
+  * Hide menus: kde-audiocd, kde-Kontact, freecell, gcalctool, kde-kcalc
+    (closes: #124, #125, #126)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 01 Jun 2008 20:06:31 +0200
+
 max-menus (4.0.max1.21) max; urgency=low
 
   * Exclude from Multimedia: Codificación de audio.desktop (closes: #109)
