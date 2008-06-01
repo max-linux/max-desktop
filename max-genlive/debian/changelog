@@ -1,3 +1,16 @@
+max-genlive (4.0.max0.61) max; urgency=low
+
+  * Update to maX 4.0 rc4 version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 01 Jun 2008 21:44:31 +0200
+
+max-genlive (4.0.max0.60) max; urgency=low
+
+  * 75nanomax:
+    - Install xfdesktop4 before max-skel-conf and max-xfce-default-settings
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 18:40:45 +0200
+
 max-genlive (4.0.max0.59) max; urgency=low
 
   * max-genlive 75nanomax

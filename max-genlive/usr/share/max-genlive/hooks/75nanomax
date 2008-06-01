@@ -56,7 +56,7 @@ yes | dpkg --configure -a
 apt-get $APT_OPTS -f install
 apt-get update
 apt-get $APT_OPTS upgrade
-yes| apt-get $APT_OPTS install xserver-xorg firefox ubiquity casper ubiquity-frontend-max user-setup max-live
+yes| apt-get $APT_OPTS install xserver-xorg firefox ubiquity casper ubiquity-frontend-max user-setup max-live xfdesktop4
 apt-get $APT_OPTS install max-nanomax
 apt-get clean
 apt-get $APT_OPTS autoremove --purge
