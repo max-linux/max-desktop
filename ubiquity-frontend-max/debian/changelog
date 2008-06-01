@@ -1,3 +1,17 @@
+ubiquity-frontend-max (4.0.max0.32) max; urgency=low
+
+  * Exe sudo command with os.popen instead of execute
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 01 Jun 2008 21:42:50 +0200
+
+ubiquity-frontend-max (4.0.max0.31) max; urgency=low
+
+  * max_ui.py:
+    - Remove /tmp/max_install_type before ussing it (--only create as root)
+    (closes: #112)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 01 Jun 2008 20:11:55 +0200
+
 ubiquity-frontend-max (4.0.max0.30) max; urgency=low
 
   * install.py:

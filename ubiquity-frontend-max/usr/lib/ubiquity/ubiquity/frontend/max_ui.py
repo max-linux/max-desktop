@@ -169,6 +169,9 @@ class Wizard(BaseFrontend):
         self.install_type="escritorio"
         self.install_type_file="/tmp/max_install_type"
 
+        # delete previous tmp file
+        os.popen("sudo rm -f /tmp/max_install_type")
+
         self.laptop = execute("laptop-detect")
 
         # set default language
