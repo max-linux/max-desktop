@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: max-tablet
 Architecture: all
-Depends: wacom-tools
+Depends: wacom-tools (>= 0.8)
 Description: Dependencias y configuracion de TABLETPC para Max40
  Contiene:
   * max-setup-tablet

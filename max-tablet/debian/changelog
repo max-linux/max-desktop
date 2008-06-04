@@ -1,3 +1,9 @@
+max-tablet (4.0.max5) max; urgency=low
+
+  * Add wacom touch device (need wacom-tools > 0.8)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 04 Jun 2008 15:15:22 +0200
+
 max-tablet (4.0.max4) max; urgency=low
 
   * Add options for stylus and eraser

@@ -73,7 +73,16 @@ WACOM_SECTIONS=[
     '\tOption\t\t"Device"\t"/dev/input/wacom"',
     '\tOption\t\t"Type"\t"pad"', 
     '\tOption\t\t"ForceDevice"\t"ISDV4"# Tablet PC ONLY',
+'EndSection\n'],
+
+['Section "InputDevice"',
+    '\tIdentifier\t"touch"',
+    '\tDriver\t\t"wacom"', 
+    '\tOption\t\t"Device"\t"/dev/input/wacom"',
+    '\tOption\t\t"Type"\t"touch"', 
+    '\tOption\t\t"ForceDevice"\t"ISDV4"# Tablet PC ONLY',
 'EndSection\n']
+
 ]
 
 
@@ -82,6 +91,7 @@ WACOM_LAYOUT=[
 '\tInputdevice	"cursor"	"SendCoreEvents"',
 '\tInputdevice	"eraser"	"SendCoreEvents"',
 '\tInputdevice	"pad"	    "SendCoreEvents"'
+'\tInputdevice	"touch"	    "SendCoreEvents"'
 ]
 
 XORG_LAYOUT=['Section "ServerLayout"',
