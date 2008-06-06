@@ -1,3 +1,9 @@
+max-hardware (4.0.max0.5) max; urgency=low
+
+  * Enable Toshiba Portege M700 alsa sound device
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 06 Jun 2008 13:59:13 +0200
+
 max-hardware (4.0.max0.4) max; urgency=low
 
   * Exec ddcprobe (and add xresprobe to depends) for Elo TouchComputer
