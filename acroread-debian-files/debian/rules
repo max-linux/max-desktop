@@ -2,6 +2,8 @@
 
 #export DH_VERBOSE=1
 
+DEBIAN_ARCH = $(shell dpkg-architecture -qDEB_BUILD_ARCH)
+
 build: build-stamp
 build-stamp:
 	dh_testdir
@@ -18,13 +20,10 @@ install: build
 	dh_clean -k
 	dh_installdirs
 
-	dh_install acroread-en \
-	usr/lib/Adobe/Reader8/bin
-
-	dh_install acroread-es \
-	usr/lib/Adobe/Reader8/bin
-
+	dh_install acroread-en usr/lib/Adobe/Reader8/bin
+	dh_install acroread-es usr/lib/Adobe/Reader8/bin
 	dh_install debian/acroread.xpm usr/share/pixmaps
+	dh_install adobe usr/share/acroread-debian-files
 
 # Build architecture-independent files here.
 binary-indep: build install

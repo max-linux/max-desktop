@@ -1,9 +1,16 @@
 #!/bin/sh -e
 
-update-alternatives --install /usr/bin/acroread acroread \
-	/usr/lib/Adobe/Reader8/bin/acroread-en 30
 
-update-alternatives --install /usr/bin/acroread acroread \
-	/usr/lib/Adobe/Reader8/bin/acroread-es 60
+if [ `dpkg --print-architecture` = "amd64" ]; then
+	update-alternatives --install /usr/bin/acroread acroread \
+		/usr/lib32/Adobe/Reader8/bin/acroread-en 30
+	update-alternatives --install /usr/bin/acroread acroread \
+		/usr/lib32/Adobe/Reader8/bin/acroread-es 60
+else		
+	update-alternatives --install /usr/bin/acroread acroread \
+		/usr/lib/Adobe/Reader8/bin/acroread-es 60
+fi		
 
 #DEBHELPER#
+
+exit 0

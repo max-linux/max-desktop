@@ -8,8 +8,8 @@ Standards-Version: 3.7.3
 Build-Depends: debhelper (>= 5)
 
 Package: acroread-debian-files
-Architecture: i386
-Depends: acroread (>= 8.1.1)
+Architecture: i386 amd64
+Depends: acroread (>= 8.1.2)
 Replaces: acroread (<= 7.0.9-0.2sarge1)
 Recommends: mime-support
 Description: Debian specific parts of Adobe Acrobat Reader

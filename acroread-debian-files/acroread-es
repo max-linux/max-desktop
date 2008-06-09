@@ -4,8 +4,32 @@
 # All Rights Reserved
 #
 
+if [ ! -d $HOME/.adobe ]; then
+  cp -ra /usr/share/acroread-debian-files/adobe $HOME/.adobe
+  ln -s /usr/lib/Adobe/Reader8/Reader/Cert/curl-ca-bundle.crt $HOME/.adobe/Acrobat/8.0/Cert/curl-ca-bundle.crt
+fi
 
-ver="8.1.1"
+
+if [ `dpkg --print-architecture` = "amd64" ]; then
+	export GTK_PATH=/usr/lib32/gtk-2.0/
+	export GCONV_PATH=/usr/lib32/gconv
+	export GDK_PIXBUF_MODULE_FILE=/etc/gtk-2.0/gdk-pixbuf.loaders.32
+	export GTK_IM_MODULE_FILE=/etc/gtk-2.0/gtk.immodules.32
+
+# Really needed ?
+#LD_PRELOAD=/usr/lib32/libpangohack.so.0.0
+
+# file doesn't exist
+#export PANGO_RC_FILE=/etc/pango32/pangorc
+
+	export ACRO_HOME=/usr/lib32/Adobe/Reader8/Reader
+	export ACRO_INSTALL_DIR=/usr/lib32/Adobe/Reader8/Reader
+else
+	export ACRO_HOME=/usr/lib/Adobe/Reader8/Reader
+	export ACRO_INSTALL_DIR=/usr/lib/Adobe/Reader8/Reader
+fi
+
+ver="8.1.2"
 
 if [ "$1" = "-version" ]; then
     echo "$ver"
@@ -72,7 +96,6 @@ readlink()
     return 1
 }
 
-
 majorRelease="`echo $ver | cut -d. -f1`.0"
 cwd="`/bin/pwd 2> /dev/null`"
 
@@ -106,20 +129,6 @@ prepend()
     fi
   fi
 }
-
-
-#
-# Tests the version file in an installation directory.
-#
-test_install_dir()
-{
-	if [ "`cat "$1"/AcroVersion 2>/dev/null`" = "$ver" ] ; then
-		return 0
-	else
-		return 1
-	fi
-}
-
 
 #
 # Check a given file in given path
@@ -272,54 +281,6 @@ if [ "$arg0" ] ; then
   export ACRO_ARG0
 fi
 
-
-#
-# Try to find the installation directory
-#
-if ( test_install_dir "$install_dir" ) ; then
-  ACRO_INSTALL_DIR="$install_dir"
-  export ACRO_INSTALL_DIR
-  
-else
-  script="$arg0"
-  while [ "$script" ] ; do
-    install_dir="`dirname "$script"`"
-    if ( test_install_dir "$install_dir/Reader" ) ; then
-      ACRO_INSTALL_DIR="$install_dir/Reader"
-      export ACRO_INSTALL_DIR
-      break
-    fi
-
-    install_dir="`dirname "$install_dir"`"
-    if ( test_install_dir "$install_dir/Reader" ) ; then
-      ACRO_INSTALL_DIR="$install_dir/Reader"
-      export ACRO_INSTALL_DIR
-      break
-    fi
-
-    if [ -h "$script" ] ; then
-      new_script=`readlink "$script"`
-      if [ "$new_script" -a "`expr "$new_script" : '/.*'`" = 0 ] ; then
-        new_script="`dirname "$script"`/$new_script"
-      fi
-      script="$new_script"
-    else
-      break
-    fi
-  done
-
-  if ( test_install_dir "$ACRO_INSTALL_DIR" ) ; then
-    :
-  elif ( test_install_dir "$ACRO_HOME" ) ; then
-    ACRO_INSTALL_DIR="$ACRO_HOME"
-    export ACRO_INSTALL_DIR
-  else
-    printf "%s\n" "ERROR: Cannot find installation directory."
-    exit 1
-  fi
-fi
-
-
 #
 # setup the configuration from uname
 #
@@ -439,7 +400,7 @@ case "$ACRO_CONFIG" in
     ;;
 esac
 
-DefaultPSRESPATH="$HOME/psres:$HOME/fonts:/usr/psres"
+DefaultPSRESPATH="$HOME/psres:$HOME/fonts:/usr/psres:/usr/share/fonts"
 if [ -z "$PSRESOURCEPATH" ] ; then
   PSRESOURCEPATH="$DefaultPSRESPATH"
 else
@@ -527,6 +488,7 @@ export PATH
 rm -rf "${HOME}/.adobe/Acrobat/$majorRelease/Preferences/mozilla"
 mkdir -p "${HOME}/.adobe/Acrobat/$majorRelease/Preferences/mozilla"
 cp -f "$ACRO_INSTALL_DIR/$ACRO_CONFIG/mozilla/prefs.js" "${HOME}/.adobe/Acrobat/$majorRelease/Preferences/mozilla/prefs.js"
+
 
 if [ "$1" = "-DEBUG" ] ; then
   ACRODEBUG=1
