@@ -352,6 +352,9 @@
 			<Include>
 				<Filename>MuseScore.desktop</Filename>
 			</Include>
+			<Include>
+				<Filename>kde-rosegarden.desktop</Filename>
+			</Include>
 		</Menu>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Menu>
@@ -576,11 +579,11 @@
 			<Filename>xfce4-terminal.desktop</Filename>
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
-		<Include>
-			<Filename>bluetooth-analyzer.desktop</Filename>
-		</Include>
 		<Exclude>
 			<Filename>gok.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>bluetooth-analyzer.desktop</Filename>
 		</Exclude>
 	</Menu>
 	<Menu>
