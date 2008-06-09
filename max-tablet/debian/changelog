@@ -1,3 +1,9 @@
+max-tablet (4.0.max6) max; urgency=low
+
+  * Add line break to touch section
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 05 Jun 2008 00:01:14 +0200
+
 max-tablet (4.0.max5) max; urgency=low
 
   * Add wacom touch device (need wacom-tools > 0.8)
