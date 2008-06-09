@@ -46,20 +46,20 @@ if [ -f /etc/tcos/tcos.conf ]; then
   if [ -x /usr/sbin/gentcos ]; then
     # cachear paquetes
     PKGS="esound libesd0 discover libdiscover2 discover-data"
-    if [ -d /cdrom/pool/max ]; then
-      for pkg in $PKGS; do
+    for pkg in $PKGS; do
          if [ -d /var/cache/tcos/packages/${pkg} ]; then
            # ya cacheado
            continue
          fi
-         abspkg=$(find /cdrom/pool/max -name "${pkg}_*")
-         echo "    *  Cacheando $pkg en /var/cache/tcos/packages/${pkg}"
-         rm -rf /var/cache/tcos/packages/${pkg} ; mkdir -p /var/cache/tcos/packages/${pkg}
-         dpkg --extract ${abspkg} /var/cache/tcos/packages/${pkg}
-      done
-    else
-      gentcos -instpkg $PKGS
-    fi
+         if [ -d /cdrom/pool/max ]; then
+           abspkg=$(find /cdrom/pool/max -name "${pkg}_*")
+           echo "    *  Cacheando $pkg en /var/cache/tcos/packages/${pkg}"
+           rm -rf /var/cache/tcos/packages/${pkg} ; mkdir -p /var/cache/tcos/packages/${pkg}
+           dpkg --extract ${abspkg} /var/cache/tcos/packages/${pkg}
+         else
+           gentcos -instpkg $pkg
+         fi
+    done
     # generar imagenes de arranque 
     gentcos -tftp
   fi

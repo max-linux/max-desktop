@@ -1,3 +1,9 @@
+max-netboot-server (4.0.max0.8) max; urgency=low
+
+  * No cache already cached packages
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 05 Jun 2008 18:43:28 +0200
+
 max-netboot-server (4.0.max0.7) max; urgency=low
 
   * Change chain.c32 to LOCALBOOT 
