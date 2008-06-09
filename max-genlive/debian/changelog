@@ -1,3 +1,15 @@
+max-genlive (4.0.max0.63) max; urgency=low
+
+  * export into chroot: UCF_FORCE_CONFFOLD=1
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 05 Jun 2008 18:55:10 +0200
+
+max-genlive (4.0.max0.62) max; urgency=low
+
+  * Update kernel to 2.6.24-18-generic
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 05 Jun 2008 18:37:58 +0200
+
 max-genlive (4.0.max0.61) max; urgency=low
 
   * Update to maX 4.0 rc4 version

@@ -7,7 +7,7 @@ DISTRO_VERSION="8.04"
 ARCH=i386
 IMAGE_NAME="MaX-4.0-0rc4"
 TITLE="MaX 4.0"
-MAXKERNEL=2.6.24-17-generic
+MAXKERNEL=2.6.24-18-generic
 
 stamp=$(date '+%Y%m%d_%H%M')
 created=$(date '+%Y%m%d')

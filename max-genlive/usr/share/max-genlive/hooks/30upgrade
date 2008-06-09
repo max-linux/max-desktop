@@ -7,6 +7,7 @@ export LC_ALL=C
 export LC_MESSAGES=C
 export DEBCONF_FRONTEND="noninteractive"
 export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
 export ERROR=0
 apt-get $APT_OPTS update || ERROR=1
 dpkg --configure -a
@@ -26,6 +27,7 @@ export LC_ALL=C
 export LC_MESSAGES=C
 export DEBCONF_FRONTEND="noninteractive"
 export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
 export ERROR=0
 apt-get $APT_OPTS update || ERROR=1
 dpkg --configure -a
