@@ -1,3 +1,10 @@
+max-skel-conf (4.0.max14) max; urgency=low
+
+  * /etc/skel:
+    - Add .qt/qcadrc (default spanish)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 05 Jun 2008 22:59:09 +0200
+
 max-skel-conf (4.0.max13) max; urgency=low
 
   * postinst:
