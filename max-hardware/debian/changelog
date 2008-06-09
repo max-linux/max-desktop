@@ -1,3 +1,9 @@
+max-hardware (4.0.max0.6) max; urgency=low
+
+  * Mount /proc/bus/usb (needed by Elo TouchComputer)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 09:08:32 +0200
+
 max-hardware (4.0.max0.5) max; urgency=low
 
   * Enable Toshiba Portege M700 alsa sound device
