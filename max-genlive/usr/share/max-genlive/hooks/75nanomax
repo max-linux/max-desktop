@@ -103,6 +103,9 @@ EOC
 
   touch $NANOMAX/casper/nanomax
 
+  _echo "Deshabilitando contraseña de root (nanoMaX)"
+  chroot $NANOCHROOT/ usermod -L root
+
   LZMA=""
   # ver si hay que desactivar LZMA
   mksquashfs -help 2>&1 | grep -q nolzma && LZMA="-nolzma"

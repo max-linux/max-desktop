@@ -1,3 +1,19 @@
+max-genlive (4.0.max0.65) max; urgency=low
+
+  * 60clean 75nanomax:
+    - Fix typo in usermod command
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 17:56:55 +0200
+
+max-genlive (4.0.max0.64) max; urgency=low
+
+  * max.seed:
+    - Add SAMBA debconf settings
+  * 60clean 75nanomax:
+    - Disable root password (fix gnome-system-tools adduser bug)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 17:09:22 +0200
+
 max-genlive (4.0.max0.63) max; urgency=low
 
   * export into chroot: UCF_FORCE_CONFFOLD=1
