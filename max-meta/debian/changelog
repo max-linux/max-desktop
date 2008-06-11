@@ -1,3 +1,16 @@
+max-meta (4.0.max1.64) max; urgency=low
+
+  * max-nanomax:
+    - Add thunar-shares samba smbclient smbfs pyneighborhood
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 11 Jun 2008 10:11:35 +0200
+
+max-meta (4.0.max1.63) max; urgency=low
+
+  * Remove xawtv package (closes: #138)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 23:08:49 +0200
+
 max-meta (4.0.max1.62) max; urgency=low
 
   * max-desktop-common:
