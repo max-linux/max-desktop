@@ -1,3 +1,10 @@
+max-skel-conf (4.0.max15) max; urgency=low
+
+  * homealumno:
+    - Disable compiz using gconftool-2 (needs test)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 15:13:13 +0200
+
 max-skel-conf (4.0.max14) max; urgency=low
 
   * /etc/skel:
