@@ -1,3 +1,17 @@
+ubiquity-frontend-max (4.0.max0.34) max; urgency=low
+
+  * user-setup-apply:
+    - Fix typo in usermod
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 17:58:39 +0200
+
+ubiquity-frontend-max (4.0.max0.33) max; urgency=low
+
+  * user-setup-apply:
+    - Disable root password (fix gnome-system-tools adduser bug)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 17:04:10 +0200
+
 ubiquity-frontend-max (4.0.max0.32) max; urgency=low
 
   * Exe sudo command with os.popen instead of execute

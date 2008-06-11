@@ -192,6 +192,10 @@ else
 	db_set passwd/user-password-again ''
 fi
 
+# MaX ensure to disable root password
+usermod -L root || true
+
+
 # MaX add alumno user
 
 db_get passwd/alumno-username
