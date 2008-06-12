@@ -1,3 +1,9 @@
+max-skel-conf (4.0.max16) max; urgency=low
+
+  * Fix typ in postinst (use abs path of smb.conf)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 11 Jun 2008 19:12:39 +0200
+
 max-skel-conf (4.0.max15) max; urgency=low
 
   * homealumno:
