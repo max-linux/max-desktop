@@ -77,6 +77,8 @@ cp -f /root/usr/share/zoneinfo/Europe/Madrid /root/etc/localtime
 # patch send https://launchpad.net/bugs/201852
 # and merged
 
+# adduser to sambashare group
+chroot /root adduser $USERNAME sambashare
 
 
 log_end_msg
