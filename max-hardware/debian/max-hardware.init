@@ -11,13 +11,6 @@
 . /lib/lsb/init-functions
 
 
-mount_procbususb() {
-  if [ ! -e /proc/bus/usb/devices ]; then
-    VBOXGROUP=$(getent group vboxusers| awk -F":" '{print $3}')
-    [ "$VBOXGROUP" = "" ] && return 
-    mount -o devgid=$VBOXGROUP,devmode=664 -t usbfs none /proc/bus/usb/
-  fi
-}
 
 enable_toshiba() {
   if [ "$(dmidecode --string system-product-name)" = "PORTEGE M700" ]; then
@@ -38,9 +31,10 @@ enable_toshiba() {
 
 # Elo TouchScreen
 enable_elo() {
-  mount_procbususb
-  [ ! -e /proc/bus/usb/devices ] && return
-  if grep -q "USB Touchmonitor Interface" /proc/bus/usb/devices ; then
+  # Detect Elo Touch
+  # $ grep ^04e7 /usr/share/misc/usb.ids 
+  #  => 04e7  Elo TouchSystems
+  if lsusb | grep -q "04e7" ; then
     modprobe usbtouchscreen
     ddcprobe > /tmp/ddcprobe 2>&1
   fi

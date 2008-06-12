@@ -1,3 +1,9 @@
+max-hardware (4.0.max0.7) max; urgency=low
+
+  * Change Elo detection, use 'lsusb|grep -q 04e7' instead of /proc/bus/usb/devices
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 12 Jun 2008 18:47:02 +0200
+
 max-hardware (4.0.max0.6) max; urgency=low
 
   * Mount /proc/bus/usb (needed by Elo TouchComputer)
