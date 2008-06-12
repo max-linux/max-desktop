@@ -1,3 +1,19 @@
+max-meta (4.0.max1.66) max; urgency=low
+
+  * max-nanomax:
+    - Add policykit-gnome (needed by network-admin or services-admin)
+    (http://herramientas.educa.madrid.org/foros/viewtopic.php?t=1149)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 12 Jun 2008 14:00:32 +0200
+
+max-meta (4.0.max1.65) max; urgency=low
+
+  * max-nanomax:
+    - Remove gnome-cups-manager
+    - Remove cupsys (no foomatic-db, that need more size)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 11 Jun 2008 21:57:41 +0200
+
 max-meta (4.0.max1.64) max; urgency=low
 
   * max-nanomax:

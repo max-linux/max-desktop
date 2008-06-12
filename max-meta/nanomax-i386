@@ -11,9 +11,7 @@ binutils-static
 blender
 bsh
 busybox
-cupsys
 cupsys-client
-cupsys-common
 displayconfig-gtk
 evince
 file-roller
@@ -26,7 +24,6 @@ gimp
 gimp-data
 gimp-help-common
 gimp-help-es
-gnome-cups-manager
 gnome-orca
 gnome-system-tools
 gnome-utils
@@ -81,13 +78,15 @@ openoffice.org-thesaurus-es
 openoffice.org-writer
 orage
 pidgin
+policykit-gnome
 pyneighborhood
 rhythmbox
 samba
 smbclient
 smbfs
-synaptic
 ssh-client
+synaptic
+thunar
 thunar-archive-plugin
 thunar-shares
 thunar-volman
