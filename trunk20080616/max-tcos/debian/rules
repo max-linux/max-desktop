@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+
+binary-install/max-tcos-alumno::
+	# clean svn dirs
+	find $(CURDIR)/debian/max-tcos-alumno -type d -name .svn | xargs rm -rf --
+
+binary-install/max-tcos-profesor::
+	# clean svn dirs
+	find $(CURDIR)/debian/max-tcos-profesor -type d -name .svn | xargs rm -rf --

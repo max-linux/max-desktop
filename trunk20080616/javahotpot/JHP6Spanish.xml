@@ -1,0 +1,1918 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!-- traducido por Carlos de Vega, el hormigo -->
+<hotpot-interface-file>
+ <java>
+  <version>6</version>
+<windows>
+  <pnl-shared-main>
+    <lbl-exercise-title>
+      <value>T&#237;tulo del ejercicio</value>
+    </lbl-exercise-title>
+    <ta-exercise-title>
+      <tooltip></tooltip>
+    </ta-exercise-title>
+  </pnl-shared-main>
+  <buttonbar-shared-main>
+    <btn-new-data>
+      <tooltip>Ejercicio nuevo</tooltip>
+    </btn-new-data>
+    <btn-open-data>
+      <tooltip>Abrir ejercicio</tooltip>
+    </btn-open-data>
+    <btn-save-data>
+      <tooltip>Guardar datos</tooltip>
+    </btn-save-data>
+    <btn-save-as-data>
+      <tooltip>Guardar datos como...</tooltip>
+    </btn-save-as-data>
+    <btn-reading>
+      <tooltip>A&#241;adir texto de lectura</tooltip>
+    </btn-reading>
+    <btn-make-exercise>
+      <tooltip>Hacer ejercicio est&#225;ndar</tooltip>
+    </btn-make-exercise>
+    <btn-cut>
+      <tooltip>Cortar selecci&#243;n</tooltip>
+    </btn-cut>
+    <btn-copy>
+      <tooltip>Copiar selecci&#243;n</tooltip>
+    </btn-copy>
+    <btn-paste>
+      <tooltip>Pegar selecci&#243;n</tooltip>
+    </btn-paste>
+    <btn-delete>
+      <tooltip>Borrar selecci&#243;n</tooltip>
+    </btn-delete>
+    <btn-select-all>
+      <tooltip>Seleccionar todo</tooltip>
+    </btn-select-all>
+    <btn-insert-image>
+      <tooltip>Insertar imagen</tooltip>
+    </btn-insert-image>
+    <btn-insert-link>
+      <tooltip>Insertar enlace</tooltip>
+    </btn-insert-link>
+    <btn-show-config>
+      <tooltip>Mostrar ventana de configuraci&#243;n</tooltip>
+    </btn-show-config>
+    <btn-help>
+      <tooltip>Ayuda</tooltip>
+    </btn-help>
+  </buttonbar-shared-main>
+  <pnl-jquiz-specific>
+    <btn-question-arrow-up>
+      <tooltip>Subir en la lista</tooltip>
+    </btn-question-arrow-up>
+    <btn-question-arrow-down>
+      <tooltip>Bajar en la lista</tooltip>
+    </btn-question-arrow-down>
+    <lbl-question>
+      <value>Q</value>
+    </lbl-question>
+    <tf-question-num>
+      <tooltip>N&#250;mero de pregunta actual</tooltip>
+    </tf-question-num>
+    <ta-jquiz-question>
+      <tooltip>Introduce aqu&#237; la pregunta</tooltip>
+    </ta-jquiz-question>
+    <cmbx-question-type>
+      <tooltip>Elige el tipo de pregunta</tooltip>
+    </cmbx-question-type>
+    <lbl-question-weight>
+      <value>Peso</value>
+    </lbl-question-weight>
+    <tf-question-weight>
+      <tooltip>Introduce el peso para la pregunta (0 - 100)</tooltip>
+    </tf-question-weight>
+    <btn-question-weight-arrow-up>
+      <tooltip>Click para aumentar el peso de la pregunta</tooltip>
+    </btn-question-weight-arrow-up>
+    <btn-question-weight-arrow-down>
+      <tooltip>Click para disminuir el peso de la pregunta</tooltip>
+    </btn-question-weight-arrow-down>
+    <btn-answer-arrow-up>
+      <tooltip>Click para subir en la lista de respuestas</tooltip>
+    </btn-answer-arrow-up>
+    <lbl-answers-header>
+      <value>Respuesta</value>
+    </lbl-answers-header>
+    <lbl-feedback-header>
+      <value>Feedback</value>
+    </lbl-feedback-header>
+    <lbl-settings-header>
+      <value>Configuraci&#243;n</value>
+    </lbl-settings-header>
+    <btn-answer-arrow-down>
+      <tooltip>Click para bajar en la lista de respuestas</tooltip>
+    </btn-answer-arrow-down>
+    <ta-answer>
+      <tooltip>Introduce aqu&#237; una respuesta para esta pregunta</tooltip>
+    </ta-answer>
+    <cb-accept-as-correct>
+      <value>Aceptar como correcta</value>
+      <tooltip>Click para aceptar esta respuesta como correcta</tooltip>
+    </cb-accept-as-correct>
+    <tf-pct>
+      <tooltip>Introduce tanto por ciento de valoraci&#243;n (0 - 100)</tooltip>
+    </tf-pct>
+    <btn-pct-arrow-up>
+      <tooltip>Click para aumentar</tooltip>
+    </btn-pct-arrow-up>
+    <btn-pct-arrow-down>
+      <tooltip>Click para disminuir</tooltip>
+    </btn-pct-arrow-down>
+    <cb-include-in-mc>
+      <value>Incluir en Elecci&#243;n M&#250;ltiple</value>
+      <tooltip>Marca para incluir esta respuesta en elecci&#243;n m&#250;ltiple para preguntas h&#237;bridas</tooltip>
+    </cb-include-in-mc>
+  </pnl-jquiz-specific>
+  <pnl-jcloze-specific>
+    <lbl-jcloze-exercise-text>
+      <value>Texto del ejercicio JCloze</value>
+    </lbl-jcloze-exercise-text>
+    <btn-jcloze-gap>
+      <value>Crear hueco</value>
+      <tooltip>Click para convertir en hueco el texto seleccionado</tooltip>
+    </btn-jcloze-gap>
+    <btn-jcloze-un-gap>
+      <value>Eliminar hueco</value>
+      <tooltip>Click para convertir el hueco seleccionado en texto normal</tooltip>
+    </btn-jcloze-un-gap>
+    <btn-jcloze-show-words>
+      <value>Mostrar palabras</value>
+      <tooltip>Click para introducir pista o respuestas correctas alternativas</tooltip>
+    </btn-jcloze-show-words>
+    <btn-jcloze-gap-auto>
+      <value>Huecos autom&#225;ticos</value>
+      <tooltip>Click para crear huecos autom&#225;ticamente cada n palabras</tooltip>
+    </btn-jcloze-gap-auto>
+    <btn-jcloze-un-gap-all>
+      <value>Quitar huecos</value>
+      <tooltip>Click para eliminar todos los huecos de este ejercicio</tooltip>
+    </btn-jcloze-un-gap-all>
+  </pnl-jcloze-specific>
+  <wd-jcloze-more>
+  	<wd-jcloze-more-title>
+      <value>Detalles de los huecos</value>
+  	</wd-jcloze-more-title>
+    <btn-gap-num-up>
+      <tooltip>Click para subir en la lista de huecos</tooltip>
+    </btn-gap-num-up>
+    <btn-gap-num-down>
+      <tooltip>Click para bajar en la lista de huecos</tooltip>
+    </btn-gap-num-down>
+    <lbl-gap-num>
+      <value>Hueco</value>
+    </lbl-gap-num>
+    <tf-gap-num>
+      <tooltip>N&#250;mero de hueco</tooltip>
+    </tf-gap-num>
+    <lbl-gap-word>
+      <value>Palabra</value>
+    </lbl-gap-word>
+    <tf-gap-word>
+      <tooltip>Palabra principal de respuesta a este hueco</tooltip>
+    </tf-gap-word>
+    <lbl-gap-clue>
+      <value>Pista</value>
+    </lbl-gap-clue>
+    <tf-gap-clue>
+      <tooltip>Introduce aqu&#237; una pista para este hueco</tooltip>
+    </tf-gap-clue>
+    <btn-gap-alt-num-up>
+      <tooltip>Click para subir en la lista de respuestas alternativas a este hueco</tooltip>
+    </btn-gap-alt-num-up>
+    <btn-gap-alt-num-down>
+      <tooltip>Click para bajar en la lista de respuestas alternativas a este hueco</tooltip>
+    </btn-gap-alt-num-down>
+    <lbl-gap-alt-title>
+      <value>Palabras correctas alternativas:</value>
+    </lbl-gap-alt-title>
+    <lbl-gap-alt-num>
+      <value>1</value>
+    </lbl-gap-alt-num>
+    <tf-gap-alt-num>
+      <tooltip>N&#250;mero de esta respuesta alternativa</tooltip>
+    </tf-gap-alt-num>
+    <btn-jcloze-more-close>
+      <tooltip>Cerrar esta ventana</tooltip>
+    </btn-jcloze-more-close>
+  </wd-jcloze-more>
+  <pnl-jcross-main>
+    <btn-jcross-show-clues>
+      <value>Mostrar ventana de pistas</value>
+      <tooltip>Mostrar ventana de pistas</tooltip>
+    </btn-jcross-show-clues>
+    <btn-jcross-chars-up>
+      <tooltip>Click para mover los caracteres una fila m&#225;s arriba</tooltip>
+    </btn-jcross-chars-up>
+    <btn-jcross-chars-left>
+      <tooltip>Click para mover los caracteres una columna m&#225;s a la izquierda</tooltip>
+    </btn-jcross-chars-left>
+    <btn-jcross-chars-right>
+      <tooltip>Click para mover los caracteres una columna m&#225;s a la derecha</tooltip>
+    </btn-jcross-chars-right>
+    <btn-jcross-chars-down>
+      <tooltip>Click para mover los caracteres una fila m&#225;s abajo</tooltip>
+    </btn-jcross-chars-down>
+  </pnl-jcross-main>
+  <wd-jcross-more>
+  	<wd-jcross-more-title>
+      <value>Pistas de JCross</value>
+  	</wd-jcross-more-title>
+    <lbl-jcross-across>
+      <value>Horizontales</value>
+    </lbl-jcross-across>
+    <lbl-jcross-down>
+      <value>Verticales</value>
+    </lbl-jcross-down>
+    <btn-jcross-more-close>
+      <tooltip>Cerrar esta ventana</tooltip>
+    </btn-jcross-more-close>
+  </wd-jcross-more>
+  <wd-jcross-auto-grid>
+  	<wd-jcross-auto-grid-title>
+      <value>JCross Crear cuadr&#237;cula a partir de palabras</value>
+  	</wd-jcross-auto-grid-title>
+    <lbl-auto-grid-max>
+      <value>N&#250;mero m&#225;ximo de filas y columnas: </value>
+    </lbl-auto-grid-max>
+    <tf-auto-grid-max>
+      <tooltip>Tama&#241;o m&#225;ximo de la cuadr&#237;cula</tooltip>
+    </tf-auto-grid-max>
+    <btn-auto-grid-max-up>
+      <tooltip>Click para aumentar el tama&#241;o m&#225;ximo</tooltip>
+    </btn-auto-grid-max-up>
+    <btn-auto-grid-max-down>
+      <tooltip>Click para disminuir el tama&#241;o m&#225;ximo</tooltip>
+    </btn-auto-grid-max-down>
+    <lbl-auto-grid-word-list>
+      <value>Introduce cada palabra en una l&#237;nea diferente</value>
+    </lbl-auto-grid-word-list>
+    <tf-auto-grid-word-list>
+      <tooltip>Introduce cada palabra en una l&#237;nea diferente</tooltip>
+    </tf-auto-grid-word-list>
+    <btn-auto-grid-make-grid>
+      <value>Formar cuadr&#237;cula</value>
+      <tooltip>Intenta crear una cuadr&#237;cula a partir de la lista de palabras</tooltip>
+    </btn-auto-grid-make-grid>
+    <btn-auto-grid-stop>
+      <value>Parar creaci&#243;n de cuadr&#237;cula</value>
+      <tooltip>Detiene el intento de crear cuadr&#237;cula</tooltip>
+    </btn-auto-grid-stop>
+    <lbl-auto-grid-status>
+      <value>Proceso de creaci&#243;n de cuadr&#237;cula:</value>
+    </lbl-auto-grid-status>
+    <tf-auto-grid-status>
+      <tooltip>Informe del estado de creaci&#243;n de cuadr&#237;cula</tooltip>
+    </tf-auto-grid-status>
+    <btn-jcross-auto-grid-apply>
+      <value>Aplicar</value>
+      <tooltip>Click para aplicar cuadr&#237;cula</tooltip>
+    </btn-jcross-auto-grid-apply>
+    <btn-jcross-auto-grid-close>
+      <tooltip>Cerrar esta ventana</tooltip>
+    </btn-jcross-auto-grid-close>
+  </wd-jcross-auto-grid>
+  <pnl-jmatch-specific>
+    <lbl-num-col-head>
+      <value>Item</value>
+    </lbl-num-col-head>
+    <lbl-left-col-head>
+      <value>Izquierda (fijos)</value>
+    </lbl-left-col-head>
+    <lbl-right-col-head>
+      <value>Derecha (elegibles)</value>
+    </lbl-right-col-head>
+    <lbl-fix-col-head>
+      <value>Fijar</value>
+    </lbl-fix-col-head>
+    <ta-left>
+      <tooltip>Introduce el valor de la columna de la izquierda para este par</tooltip>
+    </ta-left>
+    <ta-right>
+      <tooltip>Introduce el valor de la columna de la derecha para este par</tooltip>
+    </ta-right>
+    <cb-fix>
+      <tooltip>Marca para fijar la posici&#243;n de las dos partes de este par</tooltip>
+    </cb-fix>
+    <lbl-right-default>
+      <value>Valor predeterminado de la columna de la derecha:</value>
+    </lbl-right-default>
+    <ta-right-default>
+      <tooltip>Introduce el texto predeterminado en los men&#250;s desplegables</tooltip>
+    </ta-right-default>
+  </pnl-jmatch-specific>
+  <pnl-jmix-main>
+    <lbl-main-sentence>
+      <value>Frase principal</value>
+    </lbl-main-sentence>
+    <lbl-alt-sentences>
+      <value>Frases alternativas</value>
+    </lbl-alt-sentences>
+    <ta-main-sentence>
+      <tooltip>Introduce el texto de la frase principal, cada elemento en una l&#237;nea diferente</tooltip>
+    </ta-main-sentence>
+    <ta-alt-sentence>
+      <tooltip>Introduce frases alternativas, la frase completa en una l&#237;nea</tooltip>
+    </ta-alt-sentence>
+    <cb-alt-sentence-warn>
+      <value>Av&#237;same si la frase alternativa no usa todas las palabras de la principal</value>
+      <tooltip>Av&#237;same si la frase alternativa no usa todas las palabras de la principal</tooltip>
+    </cb-alt-sentence-warn>
+  </pnl-jmix-main>
+  <chooser-main>
+  </chooser-main>
+  <wd-choose-paths>
+    <wd-choose-paths-title>
+      <value>Configurar las rutas de todas las Patatas</value>
+    </wd-choose-paths-title>
+    <lbl-paths-prefs-file>
+      <value>Archivo de preferencias del proyecto</value>
+    </lbl-paths-prefs-file>
+    <tf-paths-prefs-file-current>
+      <tooltip>Actual ruta del archivo de preferencias</tooltip>
+    </tf-paths-prefs-file-current>
+    <tf-paths-prefs-file-desired>
+      <tooltip>Introduce la ruta del archivo de preferencias deseado</tooltip>
+    </tf-paths-prefs-file-desired>
+    <btn-paths-prefs-file>
+      <tooltip>Click para elegir la ruta del archivo de preferencias</tooltip>
+    </btn-paths-prefs-file>
+    <lbl-paths-source-folder>
+      <value>Carpeta Source</value>
+    </lbl-paths-source-folder>
+    <tf-paths-source-folder-current>
+      <tooltip>Actual ruta de la carpeta de archivos fuente html (source)</tooltip>
+    </tf-paths-source-folder-current>
+    <tf-paths-source-folder-desired>
+      <tooltip>Introduce la ruta de la carpeta de archivos fuente html (source) deseada</tooltip>
+    </tf-paths-source-folder-desired>
+    <btn-paths-source-folder>
+      <tooltip>Click para elegir la ruta de la carpeta de archivos fuente html (source)</tooltip>
+    </btn-paths-source-folder>
+    <lbl-paths-config-file>
+      <value>Archivo de configuraci&#243;n</value>
+    </lbl-paths-config-file>
+    <tf-paths-config-file-current>
+      <tooltip>Actual ruta del archivo de configuraci&#243;n</tooltip>
+    </tf-paths-config-file-current>
+    <tf-paths-config-file-desired>
+      <tooltip>Introduce la ruta del archivo de configuraci&#243;n deseado</tooltip>
+    </tf-paths-config-file-desired>
+    <btn-paths-config-file>
+      <tooltip>Click para elegir la ruta del archivo de configuraci&#243;n</tooltip>
+    </btn-paths-config-file>
+    <lbl-paths-interface-file>
+      <value>Archivo de interfaz</value>
+    </lbl-paths-interface-file>
+    <tf-paths-interface-file-current>
+      <tooltip>Actual ruta del archivo de interfaz</tooltip>
+    </tf-paths-interface-file-current>
+    <tf-paths-interface-file-desired>
+      <tooltip>Introduce la ruta del archivo de interfaz deseado</tooltip>
+    </tf-paths-interface-file-desired>
+    <btn-paths-interface-file>
+      <tooltip>Click para elegir la ruta del archivo de interfaz</tooltip>
+    </btn-paths-interface-file>
+    <btn-choose-paths-use-defaults>
+      <value>Usar predeterminadas</value>
+      <tooltip>Click para usar las rutas predeterminadas de archivos y carpetas</tooltip>
+    </btn-choose-paths-use-defaults>
+    <btn-choose-paths-save-as>
+      <tooltip>Guardar los cambios de las rutas en un nuevo archivo de preferencias</tooltip>
+    </btn-choose-paths-save-as>
+    <btn-choose-paths-save>
+      <tooltip>Guardar los cambios de las rutas en el actual archivo de preferenciase</tooltip>
+    </btn-choose-paths-save>
+    <btn-choose-paths-close-window>
+      <tooltip>Cerrar esta ventana</tooltip>
+    </btn-choose-paths-close-window>
+  </wd-choose-paths>
+  <wd-insert-image>
+    <lbl-insert-image-path>
+      <value>Ruta o URL de la imagen</value>
+    </lbl-insert-image-path>
+    <tf-insert-image-path>
+      <tooltip>Introduce la ruta relativa o URL absoluta de la imagen</tooltip>
+    </tf-insert-image-path>
+    <btn-insert-image-path>
+      <tooltip>Click para elegir la ruta relativa de la imagen</tooltip>
+    </btn-insert-image-path>
+    <lbl-insert-image-alt>
+      <value>Texto alternativo para la imagen</value>
+    </lbl-insert-image-alt>
+    <tf-insert-image-alt>
+      <tooltip>Introduce texto alt de la imagen</tooltip>
+    </tf-insert-image-alt>
+    <lbl-insert-image-title>
+      <value>T&#237;tulo de la imagen</value>
+    </lbl-insert-image-title>
+    <tf-insert-image-title>
+      <tooltip>Introduce el t&#237;tulo de la imagen</tooltip>
+    </tf-insert-image-title>
+    <lbl-insert-image-width>
+      <value>Ancho</value>
+    </lbl-insert-image-width>
+    <tf-insert-image-width>
+      <tooltip>Introduce el ancho de la imagen (n&#250;mero mayor que 1)</tooltip>
+    </tf-insert-image-width>
+    <lbl-insert-image-height>
+      <value>Alto</value>
+    </lbl-insert-image-height>
+    <tf-insert-image-height>
+      <tooltip>Introduce el alto de la imagen (n&#250;mero mayor que 1)</tooltip>
+    </tf-insert-image-height>
+    <lbl-insert-image-alignment>
+      <value>Posici&#243;n de la imagen</value>
+    </lbl-insert-image-alignment>
+    <cmb-insert-image-alignment>
+      <tooltip>Elige la posici&#243;n de la imagen dentro del objeto que la contiene</tooltip>
+    </cmb-insert-image-alignment>
+    <btn-insert-image-preview>
+      <value>Vista preliminar</value>
+      <tooltip>Click para ver la imagen</tooltip>
+    </btn-insert-image-preview>
+    <btn-insert-image-ok>
+      <tooltip>Click para insertar html de la imagen en el cuadro de texto</tooltip>
+    </btn-insert-image-ok>
+    <btn-insert-image-cancel>
+      <tooltip>Click para cerrar esta ventana</tooltip>
+    </btn-insert-image-cancel>
+  </wd-insert-image>
+  <wd-insert-link>
+    <lbl-insert-link-path>
+      <value>Ruta o URL del archivo enlazado</value>
+    </lbl-insert-link-path>
+    <tf-insert-link-path>
+      <tooltip>Introduce la ruta relativa o la URL absoluta del archivo enlazado</tooltip>
+    </tf-insert-link-path>
+    <btn-insert-link-path>
+      <tooltip>Click para elegir la ruta relativa del archivo enlazado</tooltip>
+    </btn-insert-link-path>
+    <lbl-insert-link-text>
+      <value>Texto del enlace</value>
+    </lbl-insert-link-text>
+    <tf-insert-link-text>
+      <tooltip>Introduce el texto que actuar&#225; como enlace</tooltip>
+    </tf-insert-link-text>
+    <cb-insert-link-new-window>
+      <value>Abrir el enlace en nueva ventana</value>
+      <tooltip>Marca para que en enlace se abra en una ventana nueva</tooltip>
+    </cb-insert-link-new-window>
+    <btn-insert-link-ok>
+      <tooltip>Click para insertar html del enlace en el cuadro de texto</tooltip>
+    </btn-insert-link-ok>
+    <btn-insert-image-cancel>
+      <tooltip>Click para cerrar esta ventana</tooltip>
+    </btn-insert-image-cancel>
+  </wd-insert-link>
+  <wd-insert-object>
+    <lbl-insert-object-path>
+      <value>Ruta o URL del archivo multimedia</value>
+    </lbl-insert-object-path>
+    <tf-insert-object-path>
+      <tooltip>Introduce la ruta relativa o URL absoluta del objeto multimedia</tooltip>
+    </tf-insert-object-path>
+    <btn-insert-object-path>
+      <tooltip>Click para elegir la ruta relativa al objeto multimedia</tooltip>
+    </btn-insert-object-path>
+    <lbl-insert-image-width>
+      <value>Ancho </value>
+    </lbl-insert-image-width>
+    <tf-insert-image-width>
+      <tooltip>Introduce el ancho del objeto multimedia</tooltip>
+    </tf-insert-image-width>
+    <lbl-insert-image-height>
+      <value>Alto </value>
+    </lbl-insert-image-height>
+    <tf-insert-image-height>
+      <tooltip>Introduce el alto del objeto multimedia</tooltip>
+    </tf-insert-image-height>
+    <lbl-insert-object-player>
+      <value>Reproductor para el archivo</value>
+    </lbl-insert-object-player>
+    <cmb-insert-object-player1>
+      <tooltip>Primera elecci&#243;n para reproductor multimedia</tooltip>
+    </cmb-insert-object-player1>
+    <cmb-insert-object-player2>
+      <tooltip>Segunda elecci&#243;n para reproductor multimedia</tooltip>
+    </cmb-insert-object-player2>
+    <cmb-insert-object-player3>
+      <tooltip>Tercera elecci&#243;n para reproductor multimedia</tooltip>
+    </cmb-insert-object-player3>
+    <cmb-insert-object-player4>
+      <tooltip>Cuarta elecci&#243;n para reproductor multimedia</tooltip>
+    </cmb-insert-object-player4>
+    <cb-insert-object-plain-link>
+      <value>Incluir enlace plano al archivo multimedia</value>
+      <tooltip>Marca para incluir enlace plano al archivo multimedia</tooltip>
+    </cb-insert-object-plain-link>
+    <tf-insert-object-plain-link>
+      <tooltip>Introduce texto que act&#250;e como enlace al archivo multimedia</tooltip>
+    </tf-insert-object-plain-link>
+    <btn-insert-object-ok>
+      <tooltip>Click para introducir html del objeto multimedia en el cuadro de texto</tooltip>
+    </btn-insert-object-ok>
+    <btn-insert-object-cancel>
+      <tooltip>Click para cerrar esta ventana</tooltip>
+    </btn-insert-object-cancel>
+  </wd-insert-object>
+  <wd-insert-table>
+    <lbl-insert-table-rows>
+      <value>Filas de la tabla</value>
+    </lbl-insert-table-rows>
+    <tf-insert-table-rows>
+      <tooltip>Introduce el n&#250;mero de filas de la tabla (n&#250;mero mayor que 0)</tooltip>
+    </tf-insert-table-rows>
+    <lbl-insert-table-columns>
+      <value>Columnas de la tabla</value>
+    </lbl-insert-table-columns>
+    <tf-insert-table-columns>
+      <tooltip>Introduce el n&#250;mero de columnas de la tabla (n&#250;mero mayor que 1)</tooltip>
+    </tf-insert-table-columns>
+    <lbl-insert-table-padding>
+      <value>Relleno de celdas</value>
+    </lbl-insert-table-padding>
+    <tf-insert-table-padding>
+      <tooltip>Introduce el valor de relleno de cada celda (0 &#243; mayor)</tooltip>
+    </tf-insert-table-padding>
+    <lbl-insert-table-spacing>
+      <value>Espacio entre celdas</value>
+    </lbl-insert-table-spacing>
+    <tf-insert-table-spacing>
+      <tooltip>Introduce el valor de espacio entre las celdas (0 &#243; mayor)</tooltip>
+    </tf-insert-table-spacing>
+    <lbl-insert-table-border>
+      <value>Borde de la tabla</value>
+    </lbl-insert-table-border>
+    <tf-insert-table-border>
+      <tooltip>Introduce la anchura del borde (0 &#243; mayor)</tooltip>
+    </tf-insert-table-border>
+    <lbl-insert-table-width>
+      <value>Ancho</value>
+    </lbl-insert-table-width>
+    <tf-insert-table-width>
+      <tooltip>Introduce el ancho de la tabla (blank = ancho completo)</tooltip>
+    </tf-insert-table-width>
+    <btn-insert-table-ok>
+      <tooltip>Click para introducir html de la tabla en el cuadro de texto</tooltip>
+    </btn-insert-table-ok>
+    <btn-insert-table-cancel>
+      <tooltip>Click para cerrar esta ventana</tooltip>
+    </btn-insert-table-cancel>
+  </wd-insert-table>
+  <wd-change-interface>
+    <lbl-interface-font>
+      <value>Fuente de etiquetas, botones, pesta&#241;as, etc.</value>
+    </lbl-interface-font>
+    <lbl-interface-font-current>
+      <value>Valor actual:</value>
+    </lbl-interface-font-current>
+    <tf-interface-font-current>
+      <tooltip>Actual fuente de la interfaz</tooltip>
+    </tf-interface-font-current>
+    <lbl-interface-font-desired>
+      <value>Valor deseado:</value>
+    </lbl-interface-font-desired>
+    <tf-interface-font-desired>
+      <tooltip>Introduce la fuente deseada pora los items de la interzaz</tooltip>
+    </tf-interface-font-desired>
+    <btn-interface-font>
+      <tooltip>Click para elegir la fuente de los items de la interfaz</tooltip>
+    </btn-interface-font>
+    <lbl-input-font>
+      <value>Fuente para cuadros de texto, etc.</value>
+    </lbl-input-font>
+    <lbl-input-font-current>
+      <value>Valor actual:</value>
+    </lbl-input-font-current>
+    <tf-input-font-current>
+      <tooltip>Actual fuente de los cuadros de texto</tooltip>
+    </tf-input-font-current>
+    <lbl-input-font-desired>
+      <value>Valor deseado:</value>
+    </lbl-input-font-desired>
+    <tf-input-font-desired>
+      <tooltip>Introduce la fuente deseada en los cuadros de texto</tooltip>
+    </tf-input-font-desired>
+    <btn-input-font>
+      <tooltip>Click para elegir la fuente de los cuadros de texto</tooltip>
+    </btn-input-font>
+    <btn-apply-interface-change>
+      <value>Aplicar</value>
+      <tooltip>Aplicar cambios a las fuentes</tooltip>
+    </btn-apply-interface-change>
+    <btn-close-interface-window>
+      <value>Cerrar</value>
+      <tooltip>Cerrar esta ventana</tooltip>
+    </btn-close-interface-window>
+    <lbl-paths-source-folder>
+      <value>Carpeta Source</value>
+    </lbl-paths-source-folder>
+    <lbl-paths-source-folder-current>
+      <value>Valor actual:</value>
+    </lbl-paths-source-folder-current>
+    <tf-paths-source-folder-current>
+      <tooltip>Ruta actual de la carpeta de origen (source) de esta patata</tooltip>
+    </tf-paths-source-folder-current>
+    <lbl-paths-source-folder-desired>
+      <value>Valor deseado:</value>
+    </lbl-paths-source-folder-desired>
+    <tf-paths-source-folder-desired>
+      <tooltip>Introduce la ruta deseada a la carpeta de origen (source) de esta patata</tooltip>
+    </tf-paths-source-folder-desired>
+    <btn-paths-source-folder>
+      <tooltip>Click para elegir la ruta de la carpeta de origen (source) de esta patata</tooltip>
+    </btn-paths-source-folder>
+    <btn-paths-source-folder-use-default>
+      <value>Usar carpeta predeterminada</value>
+    </btn-paths-source-folder-use-default>
+    <lbl-paths-config-file>
+      <value>Archivo de configuraci&#243;n</value>
+    </lbl-paths-config-file>
+    <lbl-paths-config-file-current>
+      <value>Valor actual:</value>
+    </lbl-paths-config-file-current>
+    <tf-paths-config-file-current>
+      <tooltip>Ruta del archivo de configuraci&#243;n actual de esta patata</tooltip>
+    </tf-paths-config-file-current>
+    <lbl-paths-config-file-desired>
+      <value>Valor deseado:</value>
+    </lbl-paths-config-file-desired>
+    <tf-paths-config-file-desired>
+      <tooltip>Introduce la ruta del archivo de configuraci&#243;n deseado para esta patata</tooltip>
+    </tf-paths-config-file-desired>
+    <btn-paths-config-file>
+      <tooltip>Click para elegir la ruta del archivo de configuraci&#243;n de esta patata</tooltip>
+    </btn-paths-config-file>
+    <lbl-paths-interface-file>
+      <value>Archivo de interfaz</value>
+    </lbl-paths-interface-file>
+    <lbl-paths-interface-file-current>
+      <value>Valor actual:</value>
+    </lbl-paths-interface-file-current>
+    <tf-paths-interface-file-current>
+      <tooltip>Ruta del actual archivo de interfaz de esta patata</tooltip>
+    </tf-paths-interface-file-current>
+    <lbl-paths-interface-file-desired>
+      <value>Valor deseado:</value>
+    </lbl-paths-interface-file-desired>
+    <tf-paths-interface-file-desired>
+      <tooltip>Introduce la ruta del archivo de interfaz deseado para esta patata</tooltip>
+    </tf-paths-interface-file-desired>
+    <btn-paths-interface-file>
+      <tooltip>Click para elegir la ruta del archivo de interfaz para esta patata</tooltip>
+    </btn-paths-interface-file>
+    <btn-paths-interface-file-use-default>
+      <value>Usar valores de interfaz predeterminados (English)</value>
+      <tooltip>Click para usar interfaz English</tooltip>
+    </btn-paths-interface-file-use-default>
+    <lbl-interface-texts-section>
+      <value>Secciones del archivo de interfaz</value>
+    </lbl-interface-texts-section>
+    <lbl-interface-texts-subsection>
+      <value>Subsecciones de la secci&#243;n</value>
+    </lbl-interface-texts-subsection>
+    <lbl-interface-texts-items>
+      <value>Items de la subsecci&#243;n</value>
+    </lbl-interface-texts-items>
+    <lbl-interface-texts-inputs>
+      <value>Textos del item seleccionado</value>
+    </lbl-interface-texts-inputs>
+    <lbl-interface-text-current>
+      <value>Texto actual de este item:</value>
+    </lbl-interface-text-current>
+    <tf-interface-text-current>
+      <tooltip>Valor actual del texto de este item</tooltip>
+    </tf-interface-text-current>
+    <lbl-interface-text-desired>
+      <value>Texto deseado para este item:</value>
+    </lbl-interface-text-desired>
+    <tf-interface-text-desired>
+      <tooltip>Introduce el texto deseado para este item</tooltip>
+    </tf-interface-text-desired>
+    <lbl-interface-tooltip-current>
+      <value>Ayuda actual de este item:</value>
+    </lbl-interface-tooltip-current>
+    <tf-interface-tooltip-current>
+      <tooltip>Valor actual del texto de ayuda para este item</tooltip>
+    </tf-interface-tooltip-current>
+    <lbl-interface-tooltip-desired>
+      <value>Texto de ayuda deseado para este item:</value>
+    </lbl-interface-tooltip-desired>
+    <tf-interface-tooltip-desired>
+      <tooltip>Introduce el texto de ayuda deseado para este item</tooltip>
+    </tf-interface-tooltip-desired>
+    <btn-open-interface-file>
+      <value>Abrir</value>
+      <tooltip>Click para abrir un archivo de interfaz y leerlo en esta ventana</tooltip>
+    </btn-open-interface-file>
+    <btn-save-interface-file>
+      <value>Guardar</value>
+      <tooltip>Click para guardar los cambios</tooltip>
+    </btn-save-interface-file>
+    <btn-save-as-interface-file>
+      <value>Guardar como...</value>
+      <tooltip>Click para guardar los cambios en un nuevo archivo de interfaz</tooltip>
+    </btn-save-as-interface-file>
+  </wd-change-interface>
+  <wd-reading-text>
+    <cb-reading-include>
+      <value>Incluir lectura con el ejercicio</value>
+      <tooltip>Marca para incluir una lectura con el ejercicio</tooltip>
+    </cb-reading-include>
+    <lbl-reading-import>
+      <value>Importar p&#225;gina web para lectura</value>
+    </lbl-reading-import>
+    <btn-reading-import>
+      <tooltip>Click para elegir una texto de lectura para importar</tooltip>
+    </btn-reading-import>
+    <lbl-reading-title>
+      <value>T&#237;tulo de la lectura:</value>
+    </lbl-reading-title>
+    <tf-reading-title>
+      <tooltip>Introduce un t&#237;tulo para la lectura</tooltip>
+    </tf-reading-title>
+    <lbl-reading-text>
+      <value>Texto de lectura:</value>
+    </lbl-reading-text>
+    <ta-reading-text>
+      <tooltip>Introduce el texto html para lectura</tooltip>
+    </ta-reading-text>
+    <btn-reading-ok>
+      <tooltip>Click para aceptar los cambios</tooltip>
+    </btn-reading-ok>
+    <btn-reading-cancel>
+      <tooltip>Click para cerrar esta ventana</tooltip>
+    </btn-reading-cancel>
+  </wd-reading-text>
+  <wd-metadata>
+  	<wd-metadata-title>
+  		<value>DC Metadata</value>
+  	</wd-metadata-title>
+    <lbl-metadata-list-of-elements>
+      <value>Lista de elementos de Dublin Core metadata</value>
+    </lbl-metadata-list-of-elements>
+    <cmb-metadata-list-of-elements>
+      <tooltip>Elige un elemento de esta lista</tooltip>
+    </cmb-metadata-list-of-elements>
+    <lbl-metadata-instance>
+      <value>Instancia de este elemento:</value>
+    </lbl-metadata-instance>
+    <tf-metadata-instance>
+      <tooltip>Instancia de este elemento metadata</tooltip>
+    </tf-metadata-instance>
+    <btn-metadata-instance-up-arrow>
+      <tooltip>Click para subir en la lista de instancias de este elemento</tooltip>
+    </btn-metadata-instance-up-arrow>
+    <btn-metadata-instance-down-arrow>
+      <tooltip>Click para bajar en la lista de instancias de este elemento</tooltip>
+    </btn-metadata-instance-down-arrow>
+    <lbl-metadata-value-text>
+      <value>Texto de esta instancia de este elemento:</value>
+    </lbl-metadata-value-text>
+    <ta-metadata-text-value>
+      <tooltip>Introduce el texto para esta instancia de este elemento metadata</tooltip>
+    </ta-metadata-text-value>
+    <btn-metadata-add>
+      <value>A&#241;adir</value>
+      <tooltip>Click para a&#241;adir esta instancia a este elemento</tooltip>
+    </btn-metadata-add>
+    <btn-metadata-delete>
+      <value>Borrar</value>
+      <tooltip>Click para borrar esta instancia de este elemento</tooltip>
+    </btn-metadata-delete>
+    <btn-metadata-done>
+      <value>Hecho</value>
+      <tooltip>Click para guardar los cambios y cerrar esta ventana</tooltip>
+    </btn-metadata-done>
+  </wd-metadata>
+  <wd-register-user>
+    <register-user-window-title>
+      <value>Registrar usuario</value>
+    </register-user-window-title>
+    <lbl-user-name-to-register>
+      <value>Nombre</value>
+    </lbl-user-name-to-register>
+    <tf-user-name-to-register>
+      <tooltip>Introduce el nombre del usuario</tooltip>
+    </tf-user-name-to-register>
+    <lbl-reg-key-to-register>
+      <value>Registration key (XXXX-XXXX-XXXX)</value>
+    </lbl-reg-key-to-register>
+    <tf-reg-key-to-register>
+      <tooltip>Introduce la clave de registro</tooltip>
+    </tf-reg-key-to-register>
+    <btn-register-user>
+      <value>Registrarse</value>
+      <tooltip>Click para intentar registrarte con este nombre y clave</tooltip>
+    </btn-register-user>
+    <btn-register-user-close-window>
+      <tooltip>Click para cerrar esta ventana</tooltip>
+    </btn-register-user-close-window>
+  </wd-register-user>
+  <wd-config-shared>
+    <lbl-exercise-subtitle>
+      <value>Subt&#237;tulo del ejercicio</value>
+    </lbl-exercise-subtitle>
+    <ta-exercise-subtitle>
+      <tooltip>Introduce el subt&#237;tulo del ejercicio</tooltip>
+    </ta-exercise-subtitle>
+    <lbl-instructions>
+      <value>Instrucciones</value>
+    </lbl-instructions>
+    <ta-instructions>
+      <tooltip>Introduce las instrucciones del ejercicio</tooltip>
+    </ta-instructions>
+    <lbl-correct-indicator>
+      <value>Indicador de correcto</value>
+    </lbl-correct-indicator>
+    <tf-correct-indicator>
+      <tooltip>Introduce uno o dos caracteres para indicar correcto</tooltip>
+    </tf-correct-indicator>
+    <lbl-incorrect-indicator>
+      <value>Indicador de incorrecto</value>
+    </lbl-incorrect-indicator>
+    <tf-incorrect-indicator>
+      <tooltip>Introduce uno o dos caracteres para indicar incorrecto</tooltip>
+    </tf-incorrect-indicator>
+    <lbl-your-score-is>
+      <value>Indicador Tu puntuaci&#243;n es</value>
+    </lbl-your-score-is>
+    <tf-your-score-is>
+      <tooltip>Texto para introducir la puntuaci&#243;n del alumno</tooltip>
+    </tf-your-score-is>
+    <lbl-guess-correct>
+      <value>Aviso de acierto</value>
+    </lbl-guess-correct>
+    <tf-guess-correct>
+      <tooltip>Texto para indicar que la respuesta es correcta</tooltip>
+    </tf-guess-correct>
+    <lbl-guess-incorrect>
+      <value>Aviso de error</value>
+    </lbl-guess-incorrect>
+    <tf-guess-incorrect>
+      <tooltip>Texto para indicar que la respuesta es incorrecta</tooltip>
+    </tf-guess-incorrect>
+    <lbl-correct-first-time>
+      <value>Preguntas respondidas correctamente a la primera</value>
+    </lbl-correct-first-time>
+    <tf-correct-first-time>
+      <tooltip>Texto para introducir el n&#250;mero de preguntas acertadas a la primera</tooltip>
+    </tf-correct-first-time>
+    <lbl-next-correct-letter>
+      <value>Siguiente letra correcta en la respuesta</value>
+    </lbl-next-correct-letter>
+    <tf-next-correct-letter>
+      <tooltip>Texto para introducir la ayuda (siguiente letra correcta)</tooltip>
+    </tf-next-correct-letter>
+    <cb-next-exercise-caption>
+      <value>Texto en el bot&#243;n Siguiente ejercicio</value>
+      <tooltip>Marca para incluir bot&#243;n para pasar al siguiente ejercicio</tooltip>
+    </cb-next-exercise-caption>
+    <tf-next-exercise-caption>
+      <tooltip>Introduce texto para el bot&#243;n que da acceso al siguiente ejercicio</tooltip>
+    </tf-next-exercise-caption>
+    <tf-next-exercise-caption-url>
+      <tooltip>Introduce la ruta relativa o URL absoluta de la siguiente p&#225;gina</tooltip>
+    </tf-next-exercise-caption-url>
+    <btn-next-exercise-caption-url>
+      <tooltip>Click para elegir la ruta relativa a la siguiente p&#225;gina</tooltip>
+    </btn-next-exercise-caption-url>
+    <cb-index-caption>
+      <value>Texto en el bot&#243;n Indice</value>
+      <tooltip>Marca para incluir un bot&#243;n que lleve a la p&#225;gina principal</tooltip>
+    </cb-index-caption>
+    <tf-index-caption>
+      <tooltip>Introduce el texto del bot&#243;n para ir a la p&#225;gina principal</tooltip>
+    </tf-index-caption>
+    <tf-index-caption-url>
+      <tooltip>Introduce la ruta relativa o URL absoluta a la p&#225;gina principal</tooltip>
+    </tf-index-caption-url>
+    <btn-index-caption-url>
+      <tooltip>Introduce el texto del bot&#243;n para ir a la p&#225;gina principal</tooltip>
+    </btn-index-caption-url>
+    <cb-back-caption>
+      <value>Texto en el bot&#243;n Anterior</value>
+      <tooltip>Marca para incluir un bot&#243;n que lleve a la p&#225;gina anterior</tooltip>
+    </cb-back-caption>
+    <tf-back-caption>
+      <tooltip>Introduce el texto para el bot&#243;n que lleve a la p&#225;gina anterior</tooltip>
+    </tf-back-caption>
+    <lbl-check-caption>
+      <value>Texto en el bot&#243;n Comprobar</value>
+    </lbl-check-caption>
+    <tf-check-caption>
+      <tooltip>Introduce al texto del bot&#243;n que comprueba las respuestas</tooltip>
+    </tf-check-caption>
+    <lbl-ok-caption>
+      <value>Texto en el bot&#243;n Aceptar</value>
+    </lbl-ok-caption>
+    <tf-ok-caption>
+      <tooltip>Introduce el texto para el bot&#243;n Aceptar</tooltip>
+    </tf-ok-caption>
+    <cb-hint-caption>
+      <value>Texto del bot&#243;n Ayuda</value>
+      <tooltip>Marca para incluir un bot&#243;n que muestre una ayuda</tooltip>
+    </cb-hint-caption>
+    <tf-hint-caption>
+      <tooltip>Introduce el texto para el bot&#243;n que muestra una ayuda</tooltip>
+    </tf-hint-caption>
+    <lbl-graphic-url>
+      <value>Imagen de fondo</value>
+    </lbl-graphic-url>
+    <tf-graphic-url>
+      <tooltip>Introduce la ruta relativa o URL absoluta de la imagen de fondo</tooltip>
+    </tf-graphic-url>
+    <btn-graphic-url-url>
+      <tooltip>Click para elegir la ruta relativa de la imagen de fondo</tooltip>
+    </btn-graphic-url-url>
+    <lbl-font-face>
+      <value>Tipo de letra en la p&#225;gina del ejercicio</value>
+    </lbl-font-face>
+    <tf-font-face>
+      <tooltip>Introduce la fuente que deseas que muestre el navegador en la p&#225;gina</tooltip>
+    </tf-font-face>
+    <lbl-font-size>
+      <value>Tama&#241;o de letra en la p&#225;gina del ejercicio</value>
+    </lbl-font-size>
+    <tf-font-size>
+      <tooltip>Introduce el tama&#241;o de letra que deseas que muestre el navegador en la p&#225;gina</tooltip>
+    </tf-font-size>
+    <lbl-colourable-page-elements>
+      <value>Colores de los elementos de la p&#225;gina</value>
+    </lbl-colourable-page-elements>
+    <lbl-preview-appearance>
+      <value>Apariencia preliminar</value>
+    </lbl-preview-appearance>
+    <lbl-page-bg-color>
+      <value>Color de fondo de la p&#225;gina</value>
+    </lbl-page-bg-color>
+    <tf-page-bg-color>
+      <tooltip>Introduce el color de fondo de la p&#225;gina (#nnnnnn)</tooltip>
+    </tf-page-bg-color>
+    <btn-page-bg-color>
+      <tooltip></tooltip>
+    </btn-page-bg-color>
+    <lbl-title-color>
+      <value>Color del t&#237;tulo</value>
+    </lbl-title-color>
+    <tf-title-color>
+      <tooltip>Introduce el color del texto de t&#237;tulo (#nnnnnn)</tooltip>
+    </tf-title-color>
+    <btn-title-color>
+      <tooltip>Click para elegir el color del texto de t&#237;tulo</tooltip>
+    </btn-title-color>
+    <lbl-ex-bg-color>
+      <value>Color de fondo del ejercicio</value>
+    </lbl-ex-bg-color>
+    <tf-ex-bg-color>
+      <tooltip>Introduce el color para el fondo del ejercicio (#nnnnnn)</tooltip>
+    </tf-ex-bg-color>
+    <btn-ex-bg-color>
+      <tooltip>Click para elegir color de fondo</tooltip>
+    </btn-ex-bg-color>
+    <lbl-text-color>
+      <value>Color del texto</value>
+    </lbl-text-color>
+    <tf-text-color>
+      <tooltip>Introduce el color del texto (#nnnnnn)</tooltip>
+    </tf-text-color>
+    <btn-text-color>
+      <tooltip>Click para elegir el color del texto de la p&#225;gina</tooltip>
+    </btn-text-color>
+    <lbl-link-color>
+      <value>Color de los enlaces</value>
+    </lbl-link-color>
+    <tf-link-color>
+      <tooltip>Introduce el color del texto de los enlaces (#nnnnnn)</tooltip>
+    </tf-link-color>
+    <btn-link-color>
+      <tooltip>Click para elegir el color de los enlaces</tooltip>
+    </btn-link-color>
+    <lbl-vlink-color>
+      <value>Color de los enlaces visitados</value>
+    </lbl-vlink-color>
+    <tf-vlink-color>
+      <tooltip>Introduce el color de los enlaces visitados (#nnnnnn)</tooltip>
+    </tf-vlink-color>
+    <btn-vlink-color>
+      <tooltip>Click para elegir el color de los enlaces visitados</tooltip>
+    </btn-vlink-color>
+    <lbl-nav-bar-color>
+      <value>Color de la barra de navegaci&#243;n</value>
+    </lbl-nav-bar-color>
+    <tf-nav-bar-color>
+      <tooltip>Introduce el color de la barra de navegaci&#243;n (#nnnnnn)</tooltip>
+    </tf-nav-bar-color>
+    <btn-nav-bar-color>
+      <tooltip>Click para elegir el color de la barra de navegaci&#243;n</tooltip>
+    </btn-nav-bar-color>
+    <btn-preview-appearance>
+      <value>Mostrar en navegador</value>
+      <tooltip>Click para previsualizar los colores en el navegador</tooltip>
+    </btn-preview-appearance>
+    <cb-include-timer>
+      <value>Incluir cron&#243;metro en el ejercicio</value>
+      <tooltip>Marca para incluir un temporizador en este ejercicio</tooltip>
+    </cb-include-timer>
+    <lbl-timer-minutes>
+      <value>Minutos</value>
+    </lbl-timer-minutes>
+    <combo-timer-minutes>
+      <tooltip>Elige los minutos del temporizador</tooltip>
+    </combo-timer-minutes>
+    <lbl-timer-seconds>
+      <value>Segundos</value>
+    </lbl-timer-seconds>
+    <combo-timer-seconds>
+      <tooltip>Elige los segundos del temporizador</tooltip>
+    </combo-timer-seconds>
+    <lbl-times-up>
+      <value>Mensaje cuando el tiempo se acaba</value>
+    </lbl-times-up>
+    <tf-times-up>
+      <tooltip>Introduce el texto que aparecer&#225; cuando el tiempo se acabe</tooltip>
+    </tf-times-up>
+    <cb-separate-js-file>
+      <value>Guardar c&#243;digo javascript en un archivo independiente</value>
+      <tooltip>Marca para guardar el c&#243;digo javascript en un archivo independiente del html</tooltip>
+    </cb-separate-js-file>
+    <cb-process-for-rtl>
+      <value>Hacer un procesado especial de los scripts de derecha a izquierda</value>
+      <tooltip>Elige para permitir un procesado especial para los idiomas de derecha a izquierda</tooltip>
+    </cb-process-for-rtl>
+    <cb-show-limited-questions>
+      <value>Mostrar un n&#250;mero limitado de preguntas</value>
+      <tooltip>Marca para que no se muestren todas las preguntas de un ejercicio cada vez que se carga la p&#225;gina</tooltip>
+    </cb-show-limited-questions>
+    <tf-questions-to-show>
+      <tooltip>Introduce el n&#250;mero de preguntas a mostrar (n&#250;mero mayor que 0)</tooltip>
+    </tf-questions-to-show>
+    <cb-shuffle-questions>
+      <value>Revolver las preguntas cada vez que se carga la p&#225;gina</value>
+      <tooltip>Marca para desordenar las preguntas cada vez que se carga el ejercicio</tooltip>
+    </cb-shuffle-questions>
+    <cb-case-sensitive>
+      <value>La comprobaci&#243;n de respuestas distingue may&#250;sculas</value>
+      <tooltip>Marca para que la comprobaci&#243;n de respuestas distinga may&#250;sculas de min&#250;sculas</tooltip>
+    </cb-case-sensitive>
+    <tf-short-answer-tries-on-hybrid-q>
+      <tooltip>Introduce el n&#250;mero de intentos antes de que la pregunta se convierta en elecci&#243;n m&#250;ltiple</tooltip>
+    </tf-short-answer-tries-on-hybrid-q>
+    <cb-show-also-correct>
+      <value>Mostrar otras respuestas correctas</value>
+      <tooltip>Marca para mostrar a los alumnos todas las posibles respuestas correctas</tooltip>
+    </cb-show-also-correct>
+    <cb-include-keypad>
+      <value>Incluir teclado en la p&#225;gina</value>
+      <tooltip>Marca para incluir un teclado con caracteres especiales que hayas especificado</tooltip>
+    </cb-include-keypad>
+    <lbl-keypad-characters>
+      <value>Incluir siempre estos caracteres en el teclado</value>
+    </lbl-keypad-characters>
+    <tf-keypad-characters>
+      <tooltip>Introduce los caracteres que quieres que aparezcan siempre en el teclado</tooltip>
+    </tf-keypad-characters>
+    <lbl-cgi-warning>
+      <value>No proporcionamos ayuda para esto</value>
+    </lbl-cgi-warning>
+    <cb-include-cgi>
+      <value>Include submission to CGI program</value>
+      <tooltip>cb-include-cgi</tooltip>
+    </cb-include-cgi>
+    <lbl-formmail-url>
+      <value>URL of CGI (FormMail) script:</value>
+    </lbl-formmail-url>
+    <tf-formmail-url>
+      <tooltip>Enter absolute URL to FormMail or other CGI program</tooltip>
+    </tf-formmail-url>
+    <lbl-email>
+      <value>EMail address to submit results to:</value>
+    </lbl-email>
+    <tf-email>
+      <tooltip>Enter email address for FormMail to send results to</tooltip>
+    </tf-email>
+    <lbl-name-please>
+      <value>Pedir al alumno o alumna que introduzca su nombre:</value>
+    </lbl-name-please>
+    <tf-name-please>
+      <tooltip>Introduce el texto que pregunta al alumno por su nombre</tooltip>
+    </tf-name-please>
+    <lbl-user-string-1>
+      <value>Texto para reemplazar a [userstring1]</value>
+    </lbl-user-string-1>
+    <ta-user-string-1>
+      <tooltip>Introduce texto para reemplazar [userstring1]</tooltip>
+    </ta-user-string-1>
+    <lbl-user-string-2>
+      <value>Texto para reemplazar a [userstring2]</value>
+    </lbl-user-string-2>
+    <ta-user-string-2>
+      <tooltip>Introduce texto para reemplazar [userstring2]</tooltip>
+    </ta-user-string-2>
+    <lbl-user-string-3>
+      <value>Texto para reemplazar a [userstring3]</value>
+    </lbl-user-string-3>
+    <ta-user-string-3>
+      <tooltip>Introduce texto para reemplazar [userstring3]</tooltip>
+    </ta-user-string-3>
+    <lbl-header-code>
+      <value>Texto en la cabecera</value>
+    </lbl-header-code>
+    <ta-header-code>
+      <tooltip>Introduce texto para insertar en la cabecera de la p&#225;gina del ejercicio</tooltip>
+    </ta-header-code>
+    <btn-open-config-file>
+      <tooltip>ayuda para el bot&#243;n Abrir Configuraci&#243;n</tooltip>
+    </btn-open-config-file>
+    <btn-save-config-file>
+      <tooltip>ayuda para el bot&#243;n Guardar Configuraci&#243;n</tooltip>
+    </btn-save-config-file>
+    <btn-save-as-config-file>
+      <tooltip>ayuda para el bot&#243;n Guardar Configuraci&#243;n Como</tooltip>
+    </btn-save-as-config-file>
+    <btn-close-config-window>
+      <tooltip>ayuda para el bot&#243;n Cerrar Ventana de Configuraci&#243;n</tooltip>
+    </btn-close-config-window>
+  </wd-config-shared>
+  <wd-config-jquiz>
+    <lbl-enter-a-guess>
+      <value>Por favor, introduce una respuesta</value>
+    </lbl-enter-a-guess>
+    <tf-enter-a-guess>
+      <tooltip>Introduce un aviso si el alumno marca para comprobar</tooltip>
+    </tf-enter-a-guess>
+    <lbl-partly-incorrect>
+      <value>Tu respuesta es en parte incorrecta</value>
+    </lbl-partly-incorrect>
+    <tf-partly-incorrect>
+      <tooltip>Introduce un aviso para indicar al alumno que su respuesta es parcialmente incorrecta</tooltip>
+    </tf-partly-incorrect>
+    <lbl-correct-answers>
+      <value>Respuestas correctas</value>
+    </lbl-correct-answers>
+    <tf-correct-answers>
+      <tooltip>Texto introductorio para la(s) respuesta(s) correcta(s) a esta pregunta</tooltip>
+    </tf-correct-answers>
+    <cb-show-answer-caption>
+      <value>Texto del bot&#243;n Mostrar respuesta</value>
+      <tooltip>Marca para incluir un bot&#243;n que permita al alumno ver la respuesta correcta</tooltip>
+    </cb-show-answer-caption>
+    <tf-show-answer-caption>
+      <tooltip>Introduce el texto del bot&#243;n que muestra la respuesta correcta del alumno</tooltip>
+    </tf-show-answer-caption>
+    <lbl-show-all-questions-caption>
+      <value>Texto para el bot&#243;n Ver todas las preguntas</value>
+    </lbl-show-all-questions-caption>
+    <tf-show-all-questions-caption>
+      <tooltip>Introduce el texto para el bot&#243;n que permite al alumno ver todas las preguntas</tooltip>
+    </tf-show-all-questions-caption>
+    <lbl-show-one-by-one-caption>
+      <value>Texto para el bot&#243;n Ver las preguntas una a una</value>
+    </lbl-show-one-by-one-caption>
+    <tf-show-one-by-one-caption>
+      <tooltip>Introduce el texto para el bot&#243;n que permite ver las preguntas de una en una</tooltip>
+    </tf-show-one-by-one-caption>
+    <lbl-next-q-caption>
+      <value>Texto para el bot&#243;n Siguiente pregunta</value>
+    </lbl-next-q-caption>
+    <tf-next-q-caption>
+      <tooltip>Texto para el bot&#243;n que permite acceder a la siguiente pregunta</tooltip>
+    </tf-next-q-caption>
+    <lbl-last-q-caption>
+      <value>Texto para el bot&#243;n Pregunta anterior</value>
+    </lbl-last-q-caption>
+    <tf-last-q-caption>
+      <tooltip>Texto para el bot&#243;n que permite acceder a la anterior pregunta</tooltip>
+    </tf-last-q-caption>
+    <cb-shuffle-answers>
+      <value>Revolver las respuestas cuando se carga la p&#225;gina</value>
+      <tooltip>Marca para desordenar las respuestas a cada pregunta cuando se carga la p&#225;gina</tooltip>
+    </cb-shuffle-answers>
+    <cb-continuous-scoring>
+      <value>Mostrar la puntuaci&#243;n despu&#233;s de responder a cada pregunta</value>
+      <tooltip>Marca para que se muestre la puntuaci&#243;n conforme se va resolviendo el ejercicio</tooltip>
+    </cb-continuous-scoring>
+    <lbl-short-answer-tries-on-hybrid-q>
+      <value>N&#250;mero de intentos en una pregunta h&#237;brida antes de que aparezcan elecciones m&#250;ltiples</value>
+    </lbl-short-answer-tries-on-hybrid-q>
+    <cb-show-correct-first-time>
+      <value>Mostrar el n&#250;mero de preguntas respondidas correctamente a la primera</value>
+      <tooltip>Marca para que se muestre el n&#250;mero de preguntas respondidas correctamente al primer intento</tooltip>
+    </cb-show-correct-first-time>
+  </wd-config-jquiz>
+  <wd-config-jcloze>
+    <lbl-guesses-correct>
+      <value>Todas correctas</value>
+    </lbl-guesses-correct>
+    <tf-guesses-correct>
+      <tooltip>Introduce el texto que indique que todas las respuestas dadas son correctas</tooltip>
+    </tf-guesses-correct>
+    <lbl-guesses-incorrect>
+      <value>Algunos huecos incorrectos</value>
+    </lbl-guesses-incorrect>
+    <tf-guesses-incorrect>
+      <tooltip>Introduce el texto que indique que algunos huecos no se han rellenado correctamente</tooltip>
+    </tf-guesses-incorrect>
+    <cb-clue-caption>
+      <value>Texto para el bot&#243;n Pista</value>
+      <tooltip>Marca para incluir un bot&#243;n para obtener una pista sobre este hueco</tooltip>
+    </cb-clue-caption>
+    <tf-clue-caption>
+      <tooltip>Introduce el texto del bot&#243;n que mostrar&#225; la pista</tooltip>
+    </tf-clue-caption>
+    <cb-use-drop-down-list>
+      <value>Usar lista desplegable</value>
+      <tooltip>Marca para usar una lista desplegable en lugar de cuadros de texto en los huecos de este ejercicio</tooltip>
+    </cb-use-drop-down-list>
+    <cb-include-word-list>
+      <value>Incluir lista de palabras</value>
+      <tooltip>Marca para que se muestre una lista con las palabras que hay que usar en los huecos</tooltip>
+    </cb-include-word-list>
+    <lbl-minimum-gap-size>
+      <value>Forzar tama&#241;o m&#237;nimo de huecos a</value>
+    </lbl-minimum-gap-size>
+  </wd-config-jcloze>
+  <wd-config-jcross>
+    <lbl-clues-across>
+      <value>Texto sobre la lista de pistas para Horizontales</value>
+    </lbl-clues-across>
+    <tf-clues-across>
+      <tooltip>Introduce encabezado para pistas de Horizontales</tooltip>
+    </tf-clues-across>
+    <lbl-clues-down>
+      <value>Texto sobre la lista de pistas para Verticales</value>
+    </lbl-clues-down>
+    <tf-clues-down>
+      <tooltip>Introduce encabezado para pistas de Verticales</tooltip>
+    </tf-clues-down>
+    <lbl-enter-caption>
+      <value>Texto para el bot&#243;n Introducir</value>
+    </lbl-enter-caption>
+    <tf-enter-caption>
+      <tooltip>Introduce el texto del bot&#243;n que inserta la respuesta en la cuadr&#237;cula</tooltip>
+    </tf-enter-caption>
+    <cb-include-clue-list>
+      <value>Incluir lista de pistas</value>
+      <tooltip>Marca para que se incluya una lista con las pistas bajo la cuadr&#237;cula</tooltip>
+    </cb-include-clue-list>
+  </wd-config-jcross>
+  <wd-config-jmatch>
+    <lbl-flashcard-next-caption>
+      <value>Caption on Next Flashcard button: </value>
+    </lbl-flashcard-next-caption>
+    <tf-flashcard-next-caption>
+      <tooltip>Enter caption for button that displays next flashcard pair</tooltip>
+    </tf-flashcard-next-caption>
+    <lbl-flashcard-delete-caption>
+      <value>Caption on Delete Flashcard button: </value>
+    </lbl-flashcard-delete-caption>
+    <tf-flashcard-delete-caption>
+      <tooltip>Enter caption for button that removes flashcard pair temporarily from list</tooltip>
+    </tf-flashcard-delete-caption>
+  </wd-config-jmatch>
+  <wd-config-jmix>
+    <lbl-this-much-correct>
+      <value>Esta parte de tu respuesta es correcta</value>
+    </lbl-this-much-correct>
+    <tf-this-much-correct>
+      <tooltip>Texto para indicar cu&#225;nto de la respuesta dada es correcto</tooltip>
+    </tf-this-much-correct>
+    <lbl-next-correct-part>
+      <value>La siguiente palabra correcta es</value>
+    </lbl-next-correct-part>
+    <tf-next-correct-part>
+      <tooltip>Texto para indicar el siguiente segmento correcto</tooltip>
+    </tf-next-correct-part>
+    <lbl-click-to-add>
+      <value>Click para a&#241;adir una palabra a la frase</value>
+    </lbl-click-to-add>
+    <tf-click-to-add>
+      <tooltip>Introduce el texto del bot&#243;n que sirve para a&#241;adir la palabra seleccionada a la respuesta</tooltip>
+    </tf-click-to-add>
+    <tf-show-also-correct>
+      <tooltip>Text que indica cualquier respuesta correcta alternativa</tooltip>
+    </tf-show-also-correct>
+    <cb-always-capitalize-first>
+      <value>Poner siempre en may&#250;scula la primera letra</value>
+      <tooltip>Marca para forzar que la primera letra del primer trozo vaya siempre con may&#250;scula</tooltip>
+    </cb-always-capitalize-first>
+    <cb-undo-caption>
+      <value>Texto en el bot&#243;n Deshacer</value>
+      <tooltip>Marca para incluir un bot&#243;n de Deshacer</tooltip>
+    </cb-undo-caption>
+    <tf-undo-caption>
+      <tooltip>Introduce el texto para el bot&#243;n que deshace la &#250;ltima acci&#243;n</tooltip>
+    </tf-undo-caption>
+    <cb-restart-caption>
+      <value>Texto para el bot&#243;n Reiniciar</value>
+      <tooltip>Marca para incluir un bot&#243;n que permita empezar de nuevo</tooltip>
+    </cb-restart-caption>
+    <tf-restart-caption>
+      <tooltip>Introduce el texto del bot&#243;n que permita volver a empezar el ejercicio</tooltip>
+    </tf-restart-caption>
+  </wd-config-jmix>
+</windows>
+<menus>
+<menubar-shared-main>
+  <menu-item-create-v6-page-dragdrop>
+    <value>Crear p&#225;gina Arrastrar y soltar</value>
+    <tooltip>Elige crear un ejercicio de tipo arrastrar y soltar</tooltip>
+  </menu-item-create-v6-page-dragdrop>
+  <menu-item-create-v6-page-text>
+    <value>Crear archivo s&#243;lo-texto</value>
+    <tooltip>Elige crear un archivo de texto plano para las preguntas y respuestas</tooltip>
+  </menu-item-create-v6-page-text>
+  <menu-file>
+    <value>Archivo</value>
+    <tooltip>Items que afectan a archivos enteros</tooltip>
+  </menu-file>
+  <menu-item-new-ex>
+    <value>Nuevo ejercicio</value>
+    <tooltip>Empezar un ejercicio nuevo</tooltip>
+  </menu-item-new-ex>
+  <menu-item-open-ex>
+    <value>Abrir archivo...</value>
+    <tooltip>Abrir un archivo previamente guardado</tooltip>
+  </menu-item-open-ex>
+  <menu-item-save-ex>
+    <value>Guardar archivo</value>
+    <tooltip>Guardar datos en un archivo de datos para esta patata</tooltip>
+  </menu-item-save-ex>
+  <menu-item-save-as-ex>
+    <value>Guardar archivo como...</value>
+    <tooltip>Guardar los datos en un archivo que se especifique</tooltip>
+  </menu-item-save-as-ex>
+  <menu-recent>
+    <value>Archivos recientes</value>
+    <tooltip>Lista de archivo guardados recientemente por esta patata</tooltip>
+  </menu-recent>
+  <menu-item-metadata>
+    <value>Editar Dublin Core Metadata</value>
+    <tooltip>Listado de elementos de Dublin Core metadata</tooltip>
+  </menu-item-metadata>
+  <menu-item-reading-text>
+    <value>Texto de lectura...</value>
+    <tooltip>Incluir un texto de lectura en este ejercicio</tooltip>
+  </menu-item-reading-text>
+  <menu-export>
+    <value>Exportar</value>
+    <tooltip>Para crear p&#225;ginas web, etc.</tooltip>
+  </menu-export>
+  <menu-item-create-v6-page-standard>
+    <value>Crear p&#225;gina V6 est&#225;ndar</value>
+    <tooltip>Crear una p&#225;gina est&#225;ndar con este ejercicio</tooltip>
+  </menu-item-create-v6-page-standard>
+  <menu-item-exit>
+    <value>Salir</value>
+    <tooltip>Cerrar esta patata</tooltip>
+  </menu-item-exit>
+  <menu-edit>
+    <value>Edici&#243;n</value>
+    <tooltip>Items que permiten editar texto</tooltip>
+  </menu-edit>
+  <menu-item-cut>
+    <value>Cortar</value>
+    <tooltip>Cortar al portapapeles el texto seleccionado</tooltip>
+  </menu-item-cut>
+  <menu-item-copy>
+    <value>Copiar</value>
+    <tooltip>Copiar al portapapeles el texto seleccionado</tooltip>
+  </menu-item-copy>
+  <menu-item-paste>
+    <value>Pegar</value>
+    <tooltip>Pegar el texto del portapapeles en el punto de inserci&#243;n</tooltip>
+  </menu-item-paste>
+  <menu-item-delete>
+    <value>Borrar</value>
+    <tooltip>Borrar el texto seleccionado</tooltip>
+  </menu-item-delete>
+  <menu-item-select-all>
+    <value>Seleccionar todo</value>
+    <tooltip>Seleccionar todo el texto</tooltip>
+  </menu-item-select-all>
+  <menu-insert>
+    <value>Insertar</value>
+    <tooltip>Items que permiten insertar bloques de etiquetas HTML</tooltip>
+  </menu-insert>
+  <menu-item-insert-image>
+    <value>Insertar imagen</value>
+    <tooltip>Insertar c&#243;digo HTML para una imagen</tooltip>
+  </menu-item-insert-image>
+  <menu-item-insert-link>
+    <value>Insertar enlace a un archivo</value>
+    <tooltip>Insertar c&#243;digo HTML para un enlace a un archivo</tooltip>
+  </menu-item-insert-link>
+  <menu-item-insert-table>
+    <value>Insertar tabla</value>
+    <tooltip>Insertar c&#243;digo HTML para una tabla</tooltip>
+  </menu-item-insert-table>
+  <menu-item-insert-object>
+    <value>Insertar objeto multimedia</value>
+    <tooltip>Insetar c&#243;digo HTML para un objeto multimedia</tooltip>
+  </menu-item-insert-object>
+  <menu-manage>
+    <value>Gestionar</value>
+    <tooltip>Items que permiten gestionar aspectos del ejercicio</tooltip>
+  </menu-manage>
+  <menu-options>
+    <value>Opciones</value>
+    <tooltip>Items proporcionan varias opciones de configuraci&#243;n</tooltip>
+  </menu-options>
+  <menu-item-read-config>
+    <value>Leer la configuraci&#243;n con el archivo</value>
+    <tooltip>Leer la informaci&#243;n de configuraci&#243;n junto con el archivo</tooltip>
+  </menu-item-read-config>
+  <menu-item-open-config>
+    <value>Abrir ventana de configuraci&#243;n</value>
+    <tooltip>Editar items (botones, mensajes) de la p&#225;gina del ejercicio</tooltip>
+  </menu-item-open-config>
+  <menu-item-open-interface>
+    <value>Abrir ventana de cambio de interfaz</value>
+    <tooltip>Cambiar la interfaz de esta patata (tipos de letra, etc)</tooltip>
+  </menu-item-open-interface>
+  <menu-help>
+    <value>Ayuda</value>
+    <tooltip>Items que proporcionan m&#225;s informaci&#243;n</tooltip>
+  </menu-help>
+  <menu-item-help-contents>
+    <value>Contenidos de la ayuda</value>
+    <tooltip>Ver la ayuda que viene con Hot Potatoes</tooltip>
+  </menu-item-help-contents>
+  <menu-item-feature-list>
+    <value>Lista de nuevas caracter&#237;sticas y errores de esta versi&#243;n</value>
+    <tooltip></tooltip>
+  </menu-item-feature-list>
+  <menu-item-faq>
+    <value>Preguntas frecuentes</value>
+    <tooltip>Ver FAQs en la red</tooltip>
+  </menu-item-faq>
+  <menu-item-bulletin-board>
+    <value>Lista de discusi&#243;n del grupo</value>
+    <tooltip>Ir al grupo de discusi&#243;n en la red</tooltip>
+  </menu-item-bulletin-board>
+  <menu-item-help-email>
+    <value>Soporte por e-mail</value>
+    <tooltip>Enviar e-mail a los desarrolladores</tooltip>
+  </menu-item-help-email>
+  <menu-item-register>
+    <value>Registro</value>
+    <tooltip>Introducier nombre de usuario y clave para registrar esta copia de Hot Potatoes</tooltip>
+  </menu-item-register>
+  <menu-item-about>
+    <value>Acerca de</value>
+    <tooltip>Ver n&#250;mero de versi&#243;n</tooltip>
+  </menu-item-about>
+</menubar-shared-main>
+<menubar-chooser-main>
+  <menu-item-exit-all>
+    <value>Salir de todas las patatas</value>
+    <tooltip>Salir de todas las patatas inmediatamente</tooltip>
+  </menu-item-exit-all>
+  <menu-item-choose-paths>
+    <value>Configuraci&#243;n de rutas de la Ventana del proyecto</value>
+    <tooltip>Elegir las rutas a los archivos importantes de todas las patatas</tooltip>
+  </menu-item-choose-paths>
+</menubar-chooser-main>
+<menubar-jcross-main>
+  <menu-item-resize-grid>
+    <value>Redimensionar cuadr&#237;cula...</value>
+    <tooltip>Cambiar el tama&#241;o de la cuadr&#237;cula</tooltip>
+  </menu-item-resize-grid>
+  <menu-item-auto-grid>
+    <value>Crear cuadr&#237;cula a partir de lista de palabras...</value>
+    <tooltip>Crear la cuadr&#237;cula a partir de una lista de palabras</tooltip>
+  </menu-item-auto-grid>
+</menubar-jcross-main>
+<menubar-jmatch-main>
+  <menu-item-append-exercise>
+    <value>Agregar ejercicio...</value>
+    <tooltip>Agregar otro ejercicio al final de &#233;ste</tooltip>
+  </menu-item-append-exercise>
+  <menu-item-create-v6-page-flashcard>
+    <value>Crear p&#225;gina FlashCard</value>
+    <tooltip>choose to create a flashcard page using current data</tooltip>
+  </menu-item-create-v6-page-flashcard>
+  <menu-item-delete-item>
+    <value>Borrar item...</value>
+    <tooltip>Borrar un item espec&#237;fico del ejercicio</tooltip>
+  </menu-item-delete-item>
+  <menu-item-insert-item>
+    <value>Insertar item...</value>
+    <tooltip>Insertar un nuevo item de ejercicio en el lugar especificado</tooltip>
+  </menu-item-insert-item>
+  <menu-item-move-item>
+    <value>Mover item...</value>
+    <tooltip>Mover el item del ejercicio especificado</tooltip>
+  </menu-item-move-item>
+  <menu-item-shuffle-items>
+    <value>Revolver items</value>
+    <tooltip>Revolver items en esta patata</tooltip>
+  </menu-item-shuffle-items>
+  <menu-item-switch-columns>
+    <value>Intercambiar columnas</value>
+    <tooltip>Intercambiar las columnas izquierda y derecha</tooltip>
+  </menu-item-switch-columns>
+</menubar-jmatch-main>
+<menubar-jmix-main>
+</menubar-jmix-main>
+</menus>
+<messages>
+  <msg-26-index-chars>
+    <value>ABCDEFGHIJKLMONPQRSTUVWXYZ</value>
+  </msg-26-index-chars>
+  <msg-add>
+    <value>A&#241;adir</value>
+   </msg-add>
+   <msg-apply>
+    <value>Aplicar</value>
+   </msg-apply>
+  <msg-apply-tooltip>
+    <value>Click para aplicar los cambios</value>
+  </msg-apply-tooltip>
+   <msg-cancel>
+    <value>Cancelar</value>
+   </msg-cancel>
+  <msg-cancel-tooltip>
+    <value>Click para ignorar los cambios propuestos</value>
+  </msg-cancel-tooltip>
+   <msg-cant-find-config-file>
+    <value>No encuentro el archivo de configuraci&#243;n:</value>
+   </msg-cant-find-config-file>
+   <msg-cant-find-source-file>
+    <value>No encuentro los archivos fuente (source):</value>
+   </msg-cant-find-source-file>
+   <msg-cant-find-source-folder>
+    <value>No encuentro la carpeta fuente (source):</value>
+   </msg-cant-find-source-folder>
+   <msg-caption>
+    <value>Texto</value>
+   </msg-caption>
+   <msg-center>
+    <value>center</value>
+   </msg-center>
+   <msg-check-to-include-in-page>
+        <value>Marca este item para incluirlo en el ejercicio</value>
+   </msg-check-to-include-in-page>
+   <msg-close>
+    <value>Cerrar</value>
+   </msg-close>
+  <msg-close-tooltip>
+    <value>Click para cerrar la ventana sin m&#225;s cambios al ejercicio</value>
+  </msg-close-tooltip>
+   <msg-config-file-is>
+    <value>Archivo de configuraci&#243;n:</value>
+   </msg-config-file-is>
+   <msg-config-tab-instructions>
+     <value>Instrucciones</value>
+   </msg-config-tab-instructions>
+   <msg-config-tab-prompts>
+     <value>Avisos</value>
+   </msg-config-tab-prompts>
+   <msg-config-tab-buttons>
+     <value>Botones</value>
+   </msg-config-tab-buttons>
+   <msg-config-tab-appearance>
+     <value>Apariencia</value>
+   </msg-config-tab-appearance>
+   <msg-config-tab-timer>
+     <value>Temporizador</value>
+   </msg-config-tab-timer>
+   <msg-config-tab-other>
+     <value>Otras</value>
+   </msg-config-tab-other>
+   <msg-config-tab-cgi>
+     <value>CGI</value>
+   </msg-config-tab-cgi>
+   <msg-config-tab-power-user>
+     <value>Usuario avanzado</value>
+   </msg-config-tab-power-user>
+   <msg-configuration-file>
+    <value>Archivo de configuraci&#243;n</value>
+   </msg-configuration-file>
+   <msg-confirm-overwrite>
+    <value>&#191;Quieres reemplazar el archivo actual?</value>
+   </msg-confirm-overwrite>
+   <msg-confirm>
+    <value>Confirmar</value>
+   </msg-confirm>
+   <msg-continue-with-defaults>
+    <value>Se usar&#225;n los valores predeterminados</value>
+   </msg-continue-with-defaults>
+   <msg-create-exercise-file-failed>
+    <value>Fallo al intentar crear el archivo de ejercicio:</value>
+   </msg-create-exercise-file-failed>
+   <msg-create>
+    <value>Crear</value>
+   </msg-create>
+   <msg-current-value>
+    <value>Valor actual</value>
+   </msg-current-value>
+   <msg-default-folder>
+    <value>Carpeta predeterminada</value>
+   </msg-default-folder>
+   <msg-delete-item-enter-number>
+    <value>Introduce el n&#250;mero de item a borrar:</value>
+   </msg-delete-item-enter-number>
+   <msg-delete>
+    <value>Borrar</value>
+   </msg-delete>
+   <msg-desired-value>
+    <value>Valor deseado:</value>
+   </msg-desired-value>
+   <msg-done>
+    <value>Hecho</value>
+   </msg-done>
+   <msg-enter-url-here>
+     <value>Introduce URL absoluta o relativa</value>
+   </msg-enter-url-here>
+   <msg-error-has-occurred>
+    <value>Ha ocurrido un error</value>
+   </msg-error-has-occurred>
+   <msg-error>
+    <value>Error</value>
+   </msg-error>
+   <msg-exercise>
+    <value>Ejercicio</value>
+   </msg-exercise>
+   <msg-file-already-exists>
+    <value>Este archivo ya existe:</value>
+   </msg-file-already-exists>
+   <msg-file-name-has-illegal-char>
+    <value>Este car&#225;cter puede no ser aceptable en el nombre de una p&#225;gina web, &#191;guardar de todas formas?</value>
+   </msg-file-name-has-illegal-char>
+   <msg-file-name-has-space-char>
+    <value>Este nombre de archivo contiene un espaci, &#191;guardar de todas formas?</value>
+   </msg-file-name-has-space-char>
+   <msg-file-name-start-illegal-char>
+    <value>Este car&#225;cter puede no ser aceptable al principio del nombre de una p&#225;gina web, &#191;guardar de todas formas?</value>
+   </msg-file-name-start-illegal-char>
+   <msg-font>
+   	  <value>Fuente</value>
+   </msg-font>
+   <msg-height>
+    <value>Alto: </value>
+   </msg-height>
+   <msg-hide>
+    <value>Esconder</value>
+   </msg-hide>
+   <msg-include-character-at-gap-front>
+    <value>He encontrado el siguiente car&#225;cter al principio del hueco. &#191;Quieres incluirlo?</value>
+   </msg-include-character-at-gap-front>
+   <msg-insertion-must-be-selection>
+    <value>Esto es s&#243;lo un punto de inserci&#243;n, por favor selecciona al menos un car&#225;cter</value>
+   </msg-insertion-must-be-selection>
+   <msg-interface-tab-fonts>
+    <value>Fuentes</value>
+   </msg-interface-tab-fonts>
+   <msg-interface-tab-paths>
+    <value>Rutas</value>
+   </msg-interface-tab-paths>
+   <msg-interface-tab-texts>
+    <value>Textos</value>
+   </msg-interface-tab-texts>
+   <msg-interface-text-section-exercise>
+    <value>Ventanas del ejercicio</value>
+   </msg-interface-text-section-exercise>
+   <msg-interface-text-section-configure>
+    <value>Configurar ventanas</value>
+   </msg-interface-text-section-configure>
+   <msg-interface-text-section-misc>
+    <value>Otras ventanas</value>
+   </msg-interface-text-section-misc>
+   <msg-interface-text-section-menus>
+    <value>Items del men&#250;</value>
+   </msg-interface-text-section-menus>
+   <msg-interface-text-section-messages>
+    <value>Mensajes</value>
+   </msg-interface-text-section-messages>
+   <msg-item-skipped-no-correct-answer>
+    <value>Item(s) skipped because of no correct answer: </value>
+   </msg-item-skipped-no-correct-answer>
+   <msg-item-skipped-no-question>
+    <value>Item(s) omitidos porque no hay pregunta:</value>
+   </msg-item-skipped-no-question>
+   <msg-jcloze-autogap-plain-text-only>
+    <value>Huecos autom&#225;ticos funciona s&#243;lo si el texto no contiene huecos</value>
+   </msg-jcloze-autogap-plain-text-only>
+   <msg-jcloze-confirm-ungap-all>
+    <value>&#191;Est&#225;s seguro/a de querer convertir TODOS los huecos en texto plano?</value>
+   </msg-jcloze-confirm-ungap-all>
+   <msg-jcloze-insertion-not-in-plain-text>
+    <value>El punto de inserci&#243;n est&#225; dentro de un hueco. Debe estar en texto plano.</value>
+   </msg-jcloze-insertion-not-in-plain-text>
+   <msg-jcloze-n-for-autogap>
+    <value>Se crear&#225; un hueco cada N palabras. Introduce un n&#250;mero como valor de N.</value>
+   </msg-jcloze-n-for-autogap>
+   <msg-jcloze-no-gaps-yet>
+    <value>Por favor, crea un hueco antes de intentar esto.</value>
+   </msg-jcloze-no-gaps-yet>
+   <msg-jcloze-no-plain-text-around-gap>
+    <value>Debes incluir al menos un car&#225;cter de texto plano antes y despu&#233;s de tu hueco.</value>
+   </msg-jcloze-no-plain-text-around-gap>
+   <msg-jcloze-selection-contains-gap>
+    <value>Tu selecci&#243;n contiene a otro hueco o parte de &#233;l. Por favor, elige s&#243;lo texto para el hueco.</value>
+   </msg-jcloze-selection-contains-gap>
+   <msg-jcloze-selection-contains-plain-text>
+    <value>Parte de la selecci&#243;n es texto plano. Haz click en el hueco que quieras eliminar.</value>
+   </msg-jcloze-selection-contains-plain-text>
+   <msg-jcloze-selection-contains-whitespace>
+    <value>Tu selecci&#243;n contiene car&#225;cteres invisibles no permitidos (como tab o enter). Por favor, no incluyas eso en un hueco.</value>
+   </msg-jcloze-selection-contains-whitespace>
+   <msg-jcross-grid-letters-at-risk>
+    <value>Esto har&#225; que se borren algunas letras de la cuadr&#237;cula</value>
+   </msg-jcross-grid-letters-at-risk>
+   <msg-jcross-grid-letters-remove>
+    <value>&#191;Conforme con borrar letras de la cuadr&#237;cula?</value>
+   </msg-jcross-grid-letters-remove>
+   <msg-jcross-grid-size>
+    <value>Introduce el tama&#241;o de la cuadr&#237;cula:</value>
+   </msg-jcross-grid-size>
+   <msg-jcross-table-clue>
+    <value>Pista</value>
+   </msg-jcross-table-clue>
+   <msg-jcross-table-number>
+    <value>Num</value>
+   </msg-jcross-table-number>
+   <msg-jcross-table-word>
+    <value>Palabra</value>
+   </msg-jcross-table-word>
+   <msg-jcross-words-lack-definition>
+    <value>La(s) siguiente(s) palabra(s) no tiene(n) definici&#243;n:</value>
+   </msg-jcross-words-lack-definition>
+   <msg-jcross-words-not-placed>
+    <value>Palabras no situadas:</value>
+   </msg-jcross-words-not-placed>
+   <msg-jcross-words-placed-number>
+    <value>N&#250;mero de palabras situadas:</value>
+   </msg-jcross-words-placed-number>
+   <msg-jmix-alternate-answer-has-word-not-in-main>
+    <value>Esta respuesta alternativa contiene algo que no se encuentra en la respuesta principal:</value>
+   </msg-jmix-alternate-answer-has-word-not-in-main>
+   <msg-jmix-alternate-answer-missing-word-in-main>
+    <value>A esta respuesta alternativa le falta un segmento de la respuesta principal:</value>
+   </msg-jmix-alternate-answer-missing-word-in-main>
+   <msg-jquiz-question-type-mc>
+     <value>Elecci&#243;n m&#250;ltiple</value>
+   </msg-jquiz-question-type-mc>
+   <msg-jquiz-question-type-text>
+     <value>Texto</value>
+   </msg-jquiz-question-type-text>
+   <msg-jquiz-question-type-hybrid>
+     <value>H&#237;brida</value>
+   </msg-jquiz-question-type-hybrid>
+   <msg-jquiz-question-type-multi>
+     <value>Varias correctas</value>
+   </msg-jquiz-question-type-multi>
+   <msg-left-side>
+    <value>izquierda</value>
+   </msg-left-side>
+   <msg-metadata-contributor>
+     <value>Contribuidor</value>
+   </msg-metadata-contributor>
+   <msg-metadata-coverage>
+     <value>Alcance</value>
+   </msg-metadata-coverage>
+   <msg-metadata-creator>
+     <value>Creador</value>
+   </msg-metadata-creator>
+   <msg-metadata-date>
+     <value>Fecha</value>
+   </msg-metadata-date>
+   <msg-metadata-description>
+     <value>Descripci&#243;n</value>
+   </msg-metadata-description>
+   <msg-metadata-format>
+     <value>Formato</value>
+   </msg-metadata-format>
+   <msg-metadata-identifier>
+     <value>Identificador</value>
+   </msg-metadata-identifier>
+   <msg-metadata-language>
+     <value>Idioma</value>
+   </msg-metadata-language>
+   <msg-metadata-publisher>
+     <value>Publicaci&#243;n</value>
+   </msg-metadata-publisher>
+   <msg-metadata-relation>
+     <value>Relaci&#243;n</value>
+   </msg-metadata-relation>
+   <msg-metadata-rights>
+     <value>Derechos</value>
+   </msg-metadata-rights>
+   <msg-metadata-source>
+     <value>Fuente</value>
+   </msg-metadata-source>
+   <msg-metadata-subject>
+     <value>Tema</value>
+   </msg-metadata-subject>
+   <msg-metadata-title>
+     <value>T&#237;tulo</value>
+   </msg-metadata-title>
+   <msg-metadata-type>
+     <value>Tipo</value>
+   </msg-metadata-type>
+   <msg-move-item-destination>
+    <value>Introduce el nuevo n&#250;mero para este item:</value>
+   </msg-move-item-destination>
+   <msg-move-item-source>
+    <value>Introduce el n&#250;mero del item que deseas mover:</value>
+   </msg-move-item-source>
+   <msg-must-be-registered>
+    <value>Debes registrar esta copia de Hot Potatoes antes de poder llevar a cabo esta acci&#243;n</value>
+   </msg-must-be-registered>
+   <msg-new-item-enter-number>
+    <value>Introduce el n&#250;mero para el nuevo item:</value>
+   </msg-new-item-enter-number>
+   <msg-none>
+    <value>ninguno</value>
+   </msg-none>
+   <msg-not-a-valid-number>
+    <value>El valor introducido no es un n&#250;mero v&#225;lido</value>
+   </msg-not-a-valid-number>
+   <msg-ok>
+    <value>Aceptar</value>
+   </msg-ok>
+  <msg-ok-tooltip>
+    <value>Click para aceptar los cambios y aplicarlos al ejercicio</value>
+  </msg-ok-tooltip>
+   <msg-open>
+    <value>Abrir</value>
+   </msg-open>
+   <msg-open-file-failed>
+    <value>No se ha podido abrir el archivo:</value>
+   </msg-open-file-failed>
+   <msg-open-potato-to-see-change>
+     <value>Abre de nuevo esta patata para ver los cambios</value>
+   </msg-open-potato-to-see-change>
+  <msg-open-tooltip>
+    <value>Click para elegir un tipo adecuado de archivo para abrir</value>
+  </msg-open-tooltip>
+   <msg-parse-file-failed>
+    <value>No se ha podido descifrar el archivo:</value>
+   </msg-parse-file-failed>
+   <msg-player-flash>
+    <value>Flash</value>
+   </msg-player-flash>
+   <msg-player-qt>
+    <value>QuickTime</value>
+   </msg-player-qt>
+   <msg-player-real>
+    <value>RealPlayer</value>
+   </msg-player-real>
+   <msg-player-wmp>
+    <value>Windows Media Player</value>
+   </msg-player-wmp>
+   <msg-preview>
+    <value>Previsualizaci&#243;n</value>
+   </msg-preview>
+   <msg-registration-failed>
+    <value>El registro NO ha tenido &#233;xito. Por favor, int&#233;ntalo otra vez.</value>
+   </msg-registration-failed>
+   <msg-registration-success>
+    <value>Registro exitoso</value>
+   </msg-registration-success>
+   <msg-right-side>
+    <value>derecha</value>
+   </msg-right-side>
+   <msg-save-changes-to>
+    <value>Guardar cambios en:</value>
+   </msg-save-changes-to>
+   <msg-save-data-first>
+    <value>Guarda lo datos a un archivo antes de hacer esto</value>
+   </msg-save-data-first>
+   <msg-save-file-failed>
+    <value>No se pudo guardar el archivo:</value>
+   </msg-save-file-failed>
+   <msg-save>
+    <value>Guardar</value>
+   </msg-save>
+   <msg-save-as>
+    <value>Guardar como...</value>
+   </msg-save-as>
+   <msg-select-before-insert>
+    <value>Haz click donde quieras que aparezca el texto y entonces abre este di&#225;logo otra vez</value>
+   </msg-select-before-insert>
+   <msg-show>
+    <value>Mostrar</value>
+   </msg-show>
+   <msg-task-terminated>
+    <value>No se puede completar esta tarea</value>
+   </msg-task-terminated>
+   <msg-text>
+    <value>Texto</value>
+   </msg-text>
+   <msg-url>
+    <value>URL</value>
+   </msg-url>
+   <msg-use-this-instead>
+    <value>Se usar&#225; esto en su lugar:</value>
+   </msg-use-this-instead>
+   <msg-width>
+    <value>Ancho</value>
+   </msg-width>
+  </messages>
+ </java>
+</hotpot-interface-file>

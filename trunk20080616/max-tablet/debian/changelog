@@ -1,0 +1,37 @@
+max-tablet (4.0.max6) max; urgency=low
+
+  * Add line break to touch section
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 05 Jun 2008 00:01:14 +0200
+
+max-tablet (4.0.max5) max; urgency=low
+
+  * Add wacom touch device (need wacom-tools > 0.8)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 04 Jun 2008 15:15:22 +0200
+
+max-tablet (4.0.max4) max; urgency=low
+
+  * Add options for stylus and eraser
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 07 Apr 2008 22:51:37 +0200
+
+max-tablet (4.0.max3) max; urgency=low
+
+  * Delete Option "USB"
+  * Add    Option "ForceDevice" "ISDV4" as suggested by Fernando Lisón
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Apr 2008 17:28:17 +0200
+
+max-tablet (4.0.max2) max; urgency=low
+
+  * If no --force used read sys.argv[1] as output file
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Apr 2008 16:14:06 +0200
+
+max-tablet (4.0.max1) max; urgency=low
+
+  * First version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 14:09:58 +0100
+

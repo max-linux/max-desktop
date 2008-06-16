@@ -1,0 +1,383 @@
+# Latvian translation for gfxboot-theme-ubuntu
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the gfxboot-theme-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gfxboot-theme-ubuntu\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
+"PO-Revision-Date: 2008-04-19 07:32+0000\n"
+"Last-Translator: Raivis Dejus <orvils@gmail.com>\n"
+"Language-Team: Latvian <lv@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. ok button label
+#. txt_ok
+msgid "OK"
+msgstr "Labi"
+
+#. cancel button label
+#. txt_cancel
+msgid "Cancel"
+msgstr "Atcelt"
+
+#. reboot button label
+#. txt_reboot
+msgid "Reboot"
+msgstr "Pārlaist"
+
+#. continue button label
+#. txt_continue
+msgid "Continue"
+msgstr "Turpināt"
+
+#. txt_bootoptions
+msgid "Boot Options"
+msgstr "Palaišanas opcijas"
+
+#. window title for exit dialog
+#. txt_exit_title (see txt_exit_dialog)
+msgid "Exiting..."
+msgstr "Iziet..."
+
+#. txt_exit_dialog
+msgid ""
+"You are leaving the graphical boot menu and\n"
+"starting the text mode interface."
+msgstr ""
+"Jūs atstājat grafisko sāknēšanas izvēlni un\n"
+"palaižat teksta režīma saskarni."
+
+#. txt_help
+msgid "Help"
+msgstr "Palīdzība"
+
+#. window title for kernel loading (see txt_load_kernel)
+#. txt_load_kernel_title
+msgid "Starting..."
+msgstr "Startē..."
+
+#. Keep the three newlines!
+#. txt_load_kernel
+msgid ""
+"Loading Linux Kernel\n"
+"\n"
+"\n"
+msgstr ""
+"Ielādē Linux kodolu\n"
+"\n"
+"\n"
+
+#. Keep the three newlines!
+#. txt_load_memtest
+msgid ""
+"Loading memtest86\n"
+"\n"
+"\n"
+msgstr ""
+"Ielādē memtest86\n"
+"\n"
+"\n"
+
+#. info box title
+#. txt_info_title
+msgid "Boot loader"
+msgstr "Palaišanas ielādētājs"
+
+#. error box title
+#. txt_error_title
+msgid "I/O error"
+msgstr "I/O kļūda"
+
+#. boot disk change dialog title
+#. txt_change_disk_title
+msgid "Change Boot Disk"
+msgstr "Nomainīt palaišanas disku"
+
+#. txt_insert_disk
+#, c-format
+msgid "Insert boot disk %u."
+msgstr "Ievietojiet palaišanas disku %u."
+
+#. txt_insert_disk2
+#, c-format
+msgid ""
+"This is boot disk %u.\n"
+"Insert boot disk %u."
+msgstr ""
+"Šis ir palaišanas disks %u.\n"
+"Ievietojiet palaišanas disku %u."
+
+#. txt_insert_disk3
+#, c-format
+msgid ""
+"This is not a suitable boot disk.\n"
+"Please insert boot disk %u."
+msgstr ""
+"Šis nav derīgs palaišanas disks.\n"
+"Lūdzu ievietojiet palaišanas disku %u."
+
+#. password dialog title
+#. txt_password_title
+msgid "Password"
+msgstr "Parole"
+
+#. Keep the newlines and spaces after ':'!
+#. txt_password
+msgid ""
+"Enter your password:   \n"
+"\n"
+"\n"
+msgstr ""
+"Ievadiet jūsu paroli:   \n"
+"\n"
+"\n"
+
+#. dvd warning title
+#. txt_dvd_warning_title
+msgid "DVD Error"
+msgstr "DVD Kļūda"
+
+#. txt_dvd_warning2
+msgid ""
+"This is a two-sided DVD. You have booted from the second side.\n"
+"\n"
+"Turn the DVD over then continue."
+msgstr ""
+"Šajā DVD diskā dati ierakstīti no abām pusēm. Jūs esat palaidis to no otras "
+"puses.\n"
+"Apgrieziet disku otrādi un turpiniet."
+
+#. power off dialog title
+#. txt_power_off_title
+msgid "Power Off"
+msgstr "Izslēgt"
+
+#. txt_power_off
+msgid "Halt the system now?"
+msgstr "Apturēt tagad sistēmu?"
+
+#. txt_password
+msgid "Password\n"
+msgstr "Parole\n"
+
+#. button label for other/more options
+#. txt_other_options
+msgid "Other Options"
+msgstr "Citas opcijas"
+
+#. label for language selection
+#. txt_language
+msgid "Language"
+msgstr "Valoda"
+
+#. label for keymap selection
+#. txt_keymap
+msgid "Keymap"
+msgstr "Taustiņkarte"
+
+#. label for installation mode selection
+#. txt_modes
+msgid "Modes"
+msgstr "Režīmi"
+
+#. Shown on main menu to point out that more boot options are on F4.
+#. txt_modes_help
+msgid "Press F4 to select alternative start-up and installation modes."
+msgstr "Spiediet F4, lai izvēlētos citus instalēšanas režīmus."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "Normāls"
+
+#. label for d-i mode menu
+#. txt_expert_mode
+msgid "Expert mode"
+msgstr "Eksperta režīms"
+
+#. title for accessibility menu
+#. txt_access
+msgid "Accessibility"
+msgstr "Pieejamība"
+
+#. label for accessibility menu
+#. txt_access_none
+msgid "None"
+msgstr "Nekas"
+
+#. label for accessibility menu
+#. txt_access_v1
+msgid "High Contrast"
+msgstr "Augsts kontrasts"
+
+#. label for accessibility menu
+#. txt_access_v2
+msgid "Magnifier"
+msgstr "Lupa"
+
+#. label for accessibility menu
+#. txt_access_v3
+msgid "Screen Reader"
+msgstr "Ekrāna lasītājs"
+
+#. label for accessibility menu
+#. txt_access_brltty
+msgid "Braille Terminal"
+msgstr "Braila terminālis"
+
+#. label for accessibility menu
+#. txt_access_m1
+msgid "Keyboard Modifiers"
+msgstr "Tastatūras izkārtojuma mainītāji"
+
+#. label for accessibility menu
+#. txt_access_m2
+msgid "On-Screen Keyboard"
+msgstr "Ekrāna tastatūra"
+
+#. label for accessibility menu
+#. txt_access_m3
+msgid "Motor Difficulties - switch devices"
+msgstr "Motorisko kustību traucējumi - pārslēgšanas ierīces"
+
+#. label for accessibility menu
+#. txt_access_all
+msgid "Everything"
+msgstr "Viss"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu
+msgid "^Try Ubuntu without any change to your computer"
+msgstr "Izmēģināt Ubuntu (neveicot izmaiņas datorā)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu
+msgid "^Try Kubuntu without any change to your computer"
+msgstr "Izmēģināt Kubuntu (neveicot izmaiņas datorā)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_edubuntu
+msgid "^Try Edubuntu without any change to your computer"
+msgstr "Izmēģināt Edubuntu (neveicot izmaiņas datorā)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_xubuntu
+msgid "^Try Xubuntu without any change to your computer"
+msgstr "Izmēģināt Xubuntu (neveicot izmaiņas datorā)"
+
+#. Installation mode.
+#. txt_menuitem_xforcevesa
+msgid "Safe graphics mode"
+msgstr "Ielādēt Ubuntu drošajā ^grafiskajā režīmā"
+
+#. Installation mode.
+#. txt_menuitem_driverupdates
+msgid "Use driver update CD"
+msgstr "Izmantot draiveru ^atjaunošanas CD"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_ubuntu
+msgid "^Install Ubuntu in text mode"
+msgstr "^Instalēt Ubuntu teksta režīmā"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_kubuntu
+msgid "^Install Kubuntu in text mode"
+msgstr "^Instalēt Kubuntu teksta režīmā"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_edubuntu
+msgid "^Install Edubuntu in text mode"
+msgstr "^Instalēt Edubuntu teksta režīmā"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_xubuntu
+msgid "^Install Xubuntu in text mode"
+msgstr "^Instalēt Xubuntu teksta režīmā"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu
+msgid "^Install Ubuntu"
+msgstr "^Instalēt Ubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu
+msgid "^Install Kubuntu"
+msgstr "^Instalēt Kubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_edubuntu
+msgid "^Install Edubuntu"
+msgstr "^Instalēt Edubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_xubuntu
+msgid "^Install Xubuntu"
+msgstr "^Instalēt Xubuntu"
+
+#. Installation mode.
+#. txt_menuitem_workstation
+msgid "Install a workstation"
+msgstr "Instalēt darba staciju"
+
+#. Installation mode.
+#. txt_menuitem_server
+msgid "Install a server"
+msgstr "Instalēt serveri"
+
+#. Installation mode.
+#. txt_menuitem_oem
+msgid "OEM install (for manufacturers)"
+msgstr "OEM instalācija (ražotājiem)"
+
+#. Installation mode.
+#. txt_menuitem_lamp
+msgid "Install a LAMP server"
+msgstr "Instalēt LAMP serveri"
+
+#. Installation mode.
+#. txt_menuitem_ltsp
+msgid "Install an LTSP server"
+msgstr "Instalēt LTSP serveri"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "Instalēt bezdiska attēlu serveri"
+
+#. Installation mode.
+#. txt_menuitem_cli
+msgid "Install a command-line system"
+msgstr "Instalēt komandrindas sistēmu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_check
+msgid "^Check CD for defects"
+msgstr "Pārbaudīt CD"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_rescue
+msgid "^Rescue a broken system"
+msgstr "^Atjaunot bojātu sistēmu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_memtest
+msgid "Test ^memory"
+msgstr "Pārbaudīt operatīvo at^miņu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_hd
+msgid "^Boot from first hard disk"
+msgstr "Ielādē^t sistēmu no pirmā diska"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "Tikai brīvo programmatūru"

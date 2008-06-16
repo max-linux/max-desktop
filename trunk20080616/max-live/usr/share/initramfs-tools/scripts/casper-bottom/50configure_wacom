@@ -1,0 +1,43 @@
+#!/bin/sh
+
+PREREQ=""
+DESCRIPTION="Configure WACOM tablets in MaX..."
+
+. /scripts/casper-functions
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+log_begin_msg "$DESCRIPTION"
+
+if [ -e /root/usr/sbin/max-setup-tablet ]; then
+   cat << EOF > /root/etc/rc2.d/S16configure_wacom
+#!/bin/sh
+
+# Max40 configure WACOM tablet xorg.conf
+
+case "\$1" in
+  start)
+    /usr/sbin/max-setup-tablet /etc/X11/xorg.conf || true
+    ;;
+esac
+
+exit 0
+
+EOF
+chmod +x /root/etc/rc2.d/S16configure_wacom
+
+
+fi
+
+log_end_msg

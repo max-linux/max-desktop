@@ -1,0 +1,17 @@
+Source: max-publicacion-custom
+Section: contrib
+Priority: optional
+Maintainer: Carlos Salamanca <carlos.salamanca@monolabs.com>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: max-publicacion-custom
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, proftpd, squid, squidguard, apache2
+Description: Re-configure publication system to MAX's policy.
+ The next tools will be installed:
+ -A performance web server (apache2).
+ -A php addon into the web server (php4).
+ -A ftp server (proftpd).
+ -A proxy application (squid).
+ .

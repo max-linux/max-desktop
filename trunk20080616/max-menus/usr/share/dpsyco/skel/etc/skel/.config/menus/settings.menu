@@ -1,0 +1,23 @@
+<!DOCTYPE Menu
+  PUBLIC '-//freedesktop//DTD Menu 1.0//EN'
+  'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>
+<Menu>
+	<Name>Desktop</Name>
+	<MergeFile type="parent">/etc/xdg/menus/settings.menu</MergeFile>
+	<Menu>
+		<Name>Preferences</Name>
+		<AppDir>/usr/share/max/applications/</AppDir>
+		<Include>
+			<Filename>gnomecc.desktop</Filename>
+		</Include>
+		<Exclude>
+			<Filename>kde-kdepasswd.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>openjdk-6-policytool.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>xscreensaver-properties.desktop</Filename>
+		</Exclude>
+	</Menu>
+</Menu>

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if test "$1" = "upgrade" -o "$1" = "install"; then 
+  if test -d /usr/lib/firefox/extensions/ubufox@ubuntu.com; then
+    rm -rf /usr/lib/firefox/extensions/ubufox@ubuntu.com
+  fi
+
+  if test -d /usr/lib/firefox-addons/extensions/ubufox@ubuntu.com; then
+    rm -rf /usr/lib/firefox-addons/extensions/ubufox@ubuntu.com
+  fi
+fi
+

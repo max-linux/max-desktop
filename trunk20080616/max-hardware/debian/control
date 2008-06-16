@@ -1,0 +1,14 @@
+Source: max-hardware
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs
+Standards-Version: 3.7.3
+
+Package: max-hardware
+Architecture: all
+Depends: setserial, dmidecode, xresprobe
+Description: Some files to support max special devices and computers
+ Contains:
+  * Hooks and scripts of initramfs-tools
+

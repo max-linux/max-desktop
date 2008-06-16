@@ -1,0 +1,119 @@
+#!/bin/bash
+#
+#  Configurar servicios netboot de max-server
+#
+#
+#  Copyright Mario Izquierdo mariodebian#gmail.com
+#  Para la Consejería de Educación de la Comunidad de Madrid
+#  
+#  Licencia: GPL2
+#
+#
+
+
+search_file() {
+ SPATH=$1
+ SPATTERN=$2
+ SFILE=$(find $SPATH -name "$SPATTERN" | tail -1) # get last version
+ [ "$SFILE" = "" ] && return 1
+ [ ! -e "$SFILE" ] && return 1
+ SNAME=$(basename $SFILE)
+ echo $SNAME
+}
+
+
+
+#
+# Configurar TCOS
+#
+
+if [ -f /etc/tcos/tcos.conf ]; then
+  . /etc/tcos/tcos.conf
+  echo " * Configurando NET-menu TCOS ... "
+   sed -e "s/__TCOS_KERNEL__/${TCOS_KERNEL}/g" \
+    /var/lib/max-netboot/pxelinux.cfg/tcos.menu.tpl > /var/lib/max-netboot/pxelinux.cfg/tcos.menu
+
+
+  # configurar XFS
+  if [ $(grep -c "^no-listen" /etc/X11/fs/config) != 0 ]; then
+    sed -i 's/no-listen/#no-listen/g' /etc/X11/fs/config
+    invoke-rc.d xfs restart
+  fi
+
+  [ ! -f /etc/tcos/disable915 ] && touch /etc/tcos/disable915
+
+  # generar imagenes de arranque
+  if [ -x /usr/sbin/gentcos ]; then
+    # cachear paquetes
+    PKGS="esound libesd0 discover libdiscover2 discover-data"
+    for pkg in $PKGS; do
+         if [ -d /var/cache/tcos/packages/${pkg} ]; then
+           # ya cacheado
+           continue
+         fi
+         if [ -d /cdrom/pool/max ]; then
+           abspkg=$(find /cdrom/pool/max -name "${pkg}_*")
+           echo "    *  Cacheando $pkg en /var/cache/tcos/packages/${pkg}"
+           rm -rf /var/cache/tcos/packages/${pkg} ; mkdir -p /var/cache/tcos/packages/${pkg}
+           dpkg --extract ${abspkg} /var/cache/tcos/packages/${pkg}
+         else
+           gentcos -instpkg $pkg
+         fi
+    done
+    # generar imagenes de arranque 
+    gentcos -tftp
+  fi
+fi
+
+
+
+
+
+#
+# Configurar Backharddi
+#
+
+if [ -d /usr/share/backharddi ]; then
+  # buscar kernel
+  BK_KERNEL=$(search_file /boot/ "linux*backharddi*")
+  BK_INITRD=$(search_file /boot/ "minirt*backharddi*")
+  if [ "$BK_KERNEL" != "" ] && [ "$BK_INITRD" != "" ]; then
+    echo " * Configurando NET-menu Backharddi ... "
+    sed -e "s/__BK_KERNEL__/${BK_KERNEL}/g" \
+        -e "s/__BK_INITRD__/${BK_INITRD}/" \
+           /var/lib/max-netboot/pxelinux.cfg/backharddi.menu.tpl > /var/lib/max-netboot/pxelinux.cfg/backharddi.menu
+  else
+    echo " ***** No encontrado kernel Backharddi ***** "
+  fi
+fi
+
+#
+# Configurar servidor DHCP
+#
+# FIXME
+# FIXME leer interfaces
+# FIXME configurar /etc/default/dhcp3-server
+# FIXME configurar /etc/dhcp3/dhcpd.conf (rango de 25 ips)
+#
+
+#
+# FIXME Añadir usuarios live
+# FIXME alumno01 => alumno20 (añadir al grupo fuse)
+# FIXME ¿Configurarlos con homealumno?
+# 
+# FIXME Configurar nombres de host de alumno01 hasta alumno20
+#
+#
+
+
+#
+# Actualizar dpsyco
+#
+
+if [ -x /usr/sbin/update-dpsyco-skel ]; then
+  echo "  ** Actualizando plantilla dpsyco **"
+  /usr/sbin/update-dpsyco-skel >/dev/null 2>&1
+  # ATFTPD esta configurado como demonio no desde inetd
+  update-inetd --disable tftp  >/dev/null 2>&1
+fi
+

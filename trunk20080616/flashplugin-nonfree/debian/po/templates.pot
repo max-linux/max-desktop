@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: bartm@knars.be\n"
+"POT-Creation-Date: 2006-10-28 10:40+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid "Location to the local file:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid ""
+"Have you already downloaded the .tar.gz package from Adobe? If so, please "
+"enter the directory you downloaded it into. Do not include the filename "
+"here. If you have not already downloaded it, leave this blank and the "
+"package will be downloaded automatically."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "File not found"
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"The .tar.gz file does not exist in the directory you entered. Please try "
+"again. Enter the path of the directory that the package is in (don't type "
+"the filename at the end of the path)."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"Do you accept the license and do you want to download the flash plugin now?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"The Adobe flash plugin is to be downloaded from www.adobe.com.  This can be "
+"done automatically now.  The distribution license of the Adobe flash plugin "
+"is available at www.adobe.com."
+msgstr ""

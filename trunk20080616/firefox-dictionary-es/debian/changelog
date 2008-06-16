@@ -1,0 +1,45 @@
+firefox-dictionary-es (4.0.max2.3) max; urgency=low
+
+  * Update to work with firefox 3.0 rc1
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 22:11:33 +0200
+
+firefox-dictionary-es (4.0.max2.2) max; urgency=low
+
+  * Update to work with firefox 3.0b5
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 05 Apr 2008 23:21:24 +0200
+
+firefox-dictionary-es (4.0.max2.1) max; urgency=low
+
+  * Move dictionary to firefox-addons/extensions
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 25 Mar 2008 17:25:48 +0100
+
+firefox-dictionary-es (4.0.max2) max; urgency=low
+
+  * Fix install paths
+  * Update compatible version to 3.0b4
+  * Add firefox-dict-es-es.js to configure Spanish dictionary as default
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 25 Mar 2008 16:30:58 +0100
+
+firefox-dictionary-es (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 12:22:05 +0100
+
+firefox-dictionary-es (3.1.max1) max; urgency=low
+
+  * Change build system to cdbs
+  * Create link in thunderbird extensions dir
+  * Change version to new MaX release 3.1
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Jan 2008 21:18:18 +0100
+
+firefox-dictionary-es (0.1) max; urgency=low
+
+  * First release
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 14 Dec 2007 13:48:55 +0100

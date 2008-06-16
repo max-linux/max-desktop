@@ -1,0 +1,56 @@
+#!/bin/sh
+
+change_gdm_colors() {
+  ORIG_COLOR="dab082"
+  NEW_COLOR="3B6242"
+  if [ -e /etc/gdm/gdm.conf ]; then
+    sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/gdm.conf
+  fi
+  if [ -e /etc/gdm/PreSession/Default ]; then
+    sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/PreSession/Default
+  fi
+  if [ -e /etc/gdm/factory-gdm.conf ]; then
+    sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/factory-gdm.conf
+  fi
+}
+
+
+case "$1" in
+  configure)
+
+  echo "Change GDM colors"
+  change_gdm_colors
+
+  echo "Installing firefox homepage ..."
+  # link default homepage
+  update-alternatives \
+    --install /usr/share/ubuntu-artwork/home/index.html \
+    firefox-homepage /usr/share/max-artwork/home/index.html 75 \
+    --slave /usr/share/ubuntu-artwork/home/locales \
+    firefox-homepage-locales /usr/share/max-artwork/home/locales
+
+  if [ ! -L /usr/share/max-artwork/home/locales/max.css ]; then
+  	ln -s /usr/share/max-artwork/home/max.css /usr/share/max-artwork/home/locales/max.css
+  fi
+  if [ ! -L /usr/share/max-artwork/home/locales/max-logo.png ]; then
+  	ln -s /usr/share/max-artwork/home/max-logo.png /usr/share/max-artwork/home/locales/max-logo.png
+  fi
+
+  echo "Installing customized GDM theme ..."
+  if [ -d /etc/gdm ]; then
+    update-alternatives \
+	--install /etc/gdm/gdm-cdd.conf \
+	gdm-config-derivative /usr/share/max-artwork/gdm/gdm-cdd.conf 70
+    update-alternatives --auto gdm-config-derivative
+  fi
+
+  # install grub splash
+  mkdir -p /boot/grub
+  cp /usr/share/max-artwork/grub/splash.xpm.gz /boot/grub/
+
+  ;;
+esac
+
+#DEBHELPER#
+
+exit 0

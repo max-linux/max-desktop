@@ -1,0 +1,56 @@
+#!/bin/bash
+# Start/stop the max-hardware hacks
+#
+
+
+
+[ ! -x /usr/sbin/dmidecode ] && exit 0
+[ ! -x /bin/setserial ] && exit 0
+[ ! -x /usr/sbin/max-setup-tablet ] && exit 0
+
+. /lib/lsb/init-functions
+
+
+
+enable_toshiba() {
+  if [ "$(dmidecode --string system-product-name)" = "PORTEGE M700" ]; then
+     mkdir -p /dev/input/
+     [ ! -e /dev/input/wacom ]  && ln -s /dev/ttyS0 /dev/input/wacom
+     setserial /dev/ttyS0 port 0x338 autoconfig
+     max-setup-tablet /etc/X11/xorg.conf
+
+     # enable sound device (Thanks to Ismail)
+     if [ "$(grep -c 'options snd-hda-intel model=toshiba' /etc/modprobe.d/alsa-base)" = "0" ]; then
+       echo "options snd-hda-intel model=toshiba" >> /etc/modprobe.d/alsa-base
+       rmmod snd-hda-intel 2>/dev/null
+       modprobe snd-hda-intel
+     fi
+  fi
+
+}
+
+# Elo TouchScreen
+enable_elo() {
+  # Detect Elo Touch
+  # $ grep ^04e7 /usr/share/misc/usb.ids 
+  #  => 04e7  Elo TouchSystems
+  if lsusb | grep -q "04e7" ; then
+    modprobe usbtouchscreen
+    ddcprobe > /tmp/ddcprobe 2>&1
+  fi
+}
+
+
+case "$1" in
+start)  
+        log_begin_msg "Starting Max40 hardware hacks" "max-hardware"
+          enable_toshiba
+          enable_elo
+        log_end_msg $?
+        ;;
+esac
+
+
+
+exit 0
+

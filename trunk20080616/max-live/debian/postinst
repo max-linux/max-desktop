@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# create virtualbox group
+
+case "${1}" in
+        configure)
+                # Adding vboxusers group
+                if ! getent group vboxusers > /dev/null
+                then
+                        addgroup --quiet --system vboxusers
+                fi
+
+esac
+
+#DEBHELPER#
+
+exit 0

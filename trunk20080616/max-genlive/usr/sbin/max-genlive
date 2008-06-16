@@ -1,0 +1,185 @@
+#!/bin/bash
+
+# Hacer el cd de MaX remasterizando el de Ubuntu
+
+DISTRO=hardy
+DISTRO_VERSION="8.04"
+ARCH=i386
+IMAGE_NAME="MaX-4.0-0rc5"
+TITLE="MaX 4.0"
+MAXKERNEL=2.6.24-18-generic
+
+stamp=$(date '+%Y%m%d_%H%M')
+created=$(date '+%Y%m%d')
+
+if [ "$MIRROR" = "" ]; then
+  MIRROR=192.168.0.3
+fi
+
+if [ "$LOCAL_MIRROR" = "" ]; then
+  LOCAL_MIRROR=
+else
+  LOCAL_MIRROR=1
+fi
+
+if [ "$ENABLE_EXTRA" = "" ]; then
+  ENABLE_EXTRA=
+else
+  ENABLE_EXTRA=1
+fi
+
+if [ "$ENABLE_NANO" = "" ]; then
+  ENABLE_NANO=
+else
+  ENABLE_NANO=1
+fi
+
+ISO_MIRROR="http://www.tcosproject.org/max/"
+
+CURDIR=$(pwd)
+
+CHROOT=$CURDIR/chroot
+NANOCHROOT=$CURDIR/nanochroot
+CDRW=$CURDIR/cdimage2
+CDRO=$CURDIR/cdimage
+CDTMP=$CURDIR/cdtmp
+NANOMAX=$CDRW/nanomax
+
+PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales max-nanomax virtualbox-ose backharddi backharddi-net"
+PAQUETES_EXTRA="$PAQUETES_EXTRA discover libdiscover2 discover-data nvidia-glx-new avm-fritz-firmware 915resolution"
+
+NEW_ISOLINUX=/usr/share/max-genlive/isolinux
+GENLIVE=/usr/share/max-genlive
+APT_OPTS="-y --force-yes"
+HOOKS=/usr/share/max-genlive/hooks/
+
+
+MY_NAME=$(basename $0)
+
+
+ayuda() {
+cat << EOF
+  Ayuda de max-genlive:
+
+    No hacen falta demasiadas cosas para hacer generar un livecd pero
+    existen algunas variables para personalizarlo más:
+
+    LOCAL_MIRROR=1 usará /usr/share/max-genlive/sources.list-local
+                   como repositorio para hacer las descargas
+                   Viene configurado como $MIRROR/mirror/*
+
+    MIRROR=$MIRROR IP o nombre de equipo que se usará para el mirror
+
+    DISABLE_SQUASHFS=1 ni comprime ni descomprime el archivo squashfs (para hacer pruebas)
+
+    DISABLE_CLEAN=1 no borra los directorios temporales
+
+    ENABLE_EXTRA=1 Añade al DVD varios paquetes (ver variable PAQUETES_EXTRA)
+                   Para usar esta opción tienes que ser desarrollador de max y tener cuenta
+                   SSH en max.educa.madrid.org porque hay que subir el archivo Release
+                   firmarlo con la clave GPG de MaX y descargar el Release.gpg
+
+    ENABLE_NANO=1 Generar NanoMax y CDlive
+
+EOF
+}
+
+_exit() {
+  echo "Se ha producido un error:"
+  echo "--------------------------------"
+  echo "$@"
+  echo "--------------------------------"
+  . $HOOKS/90umount
+  echo "matando $MY_NAME"
+  killall $MY_NAME
+}
+
+_echo() {
+  echo ""
+  echo " *  $@"
+  echo ""
+}
+
+
+_revert_invoke() {
+ if [ "$1" != "" ]; then
+   DIR=$1
+ else
+   DIR=$CHROOT
+ fi
+ if [ -e $DIR/usr/sbin/invoke-rc.d.REAL ]; then
+   _echo "Revirtiendo /usr/sbin/invoke-rc.d"
+   mv $DIR/usr/sbin/invoke-rc.d.REAL $DIR/usr/sbin/invoke-rc.d
+ fi
+ if [ -e $DIR/sbin/start-stop-daemon.REAL ]; then
+   _echo "Revirtiendo /sbin/start-stop-daemon"
+   mv $DIR/sbin/start-stop-daemon.REAL $DIR/sbin/start-stop-daemon
+ fi
+}
+
+_add_invoke() {
+ if [ "$1" != "" ]; then
+   DIR=$1
+ else
+   DIR=$CHROOT
+ fi
+  if [ ! -e $DIR/usr/sbin/invoke-rc.d.REAL ]; then
+    # Cambiamos invoke-rc.d
+    mv $DIR/usr/sbin/invoke-rc.d $DIR/usr/sbin/invoke-rc.d.REAL
+    cat << EOF > $DIR/usr/sbin/invoke-rc.d
+#!/bin/sh
+echo "" >&2
+echo "  ** Fake invoke-rc.d called with args: '\$@'" >&2
+echo "" >&2
+exit 0
+EOF
+    chmod +x $DIR/usr/sbin/invoke-rc.d
+  fi
+
+  if [ ! -e $DIR/sbin/start-stop-daemon.REAL ]; then
+    # Cambiamos start-stop-daemon
+    mv $DIR/sbin/start-stop-daemon $DIR/sbin/start-stop-daemon.REAL
+    cat << EOF > $DIR/sbin/start-stop-daemon
+#!/bin/sh
+echo "" >&2
+echo "  ** Fake start-stop-daemon called with args: '\$@'" >&2
+echo "" >&2
+exit 0
+EOF
+    chmod +x $DIR/sbin/start-stop-daemon
+  fi
+
+}
+
+
+if [ "$1" = "--help" ]; then
+  ayuda
+  exit 1
+fi
+
+if [ "x$1" = "x" ] || [ ! -f "$1" ]; then
+  ISO="ubuntu-8.04-beta-desktop-i386.iso"
+else
+  echo "Usando $1 como ISO base a actualizar..."
+  ISO="$1"
+fi
+
+
+# esto es para pruebas
+#. /usr/share/max-genlive/hooks/10mountiso
+#. /usr/share/max-genlive/hooks/20configurechroot
+#. /usr/share/max-genlive/hooks/55addmaxpackages
+
+#. /usr/share/max-genlive/hooks/75nanomax
+#. /usr/share/max-genlive/hooks/90umount
+#_exit "Fin de pruebas"
+
+
+for hook in $HOOKS/*; do
+  #_echo "Cargando extension $hook"
+  [ -f $hook ] && . $hook || _exit "Error ejecutando $hook"
+done
+
+_echo "Terminado"
+
+exit 0

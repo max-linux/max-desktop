@@ -1,0 +1,21 @@
+Source: maxmoodle
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs
+Standards-Version: 3.7.2
+
+Package: maxmoodle
+Architecture: all
+Pre-Depends: maxmoodle-pressed
+Depends: apache2, mysql-server, php5-mysql, libapache2-mod-php5, 
+         mysql-client, moodle
+Description: Moodle para MaX
+ Dependencias y lanzador para moodle
+
+Package: maxmoodle-pressed
+Architecture: all
+Depends: debconf-utils
+Description: Moodle para MaX (preconfiguración debconf)
+ Configuración de debconf para instalar moodle
+

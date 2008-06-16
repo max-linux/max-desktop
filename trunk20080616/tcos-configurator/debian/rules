@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+build/tcos-configurator::
+	make
+
+
+binary-install/tcos-configurator::
+	make install DESTDIR=$(CURDIR)/debian/tcos-configurator PREFIX=/usr
+	# clean svn dirs
+	find $(CURDIR)/debian/tcos-configurator -type d -name .svn | xargs rm -rf --

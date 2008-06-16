@@ -1,0 +1,15 @@
+Source: max-firefox-conf
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs, dpatch, patchutils, mozilla-devscripts, zip, unzip
+Standards-Version: 3.7.3
+
+Package: max-firefox-conf
+Architecture: all
+Depends: max-dpsyco-custom, max-java-plugin
+Conflicts: max-3.0-firefox-conf
+Replaces: max-3.0-firefox.conf
+Description: Configuración de firefox para Ubuntu/MAX.
+ Configuración basada en dpsyco para firefox.
+ Contiene bookmarks y preferencias del perfil de firefox.

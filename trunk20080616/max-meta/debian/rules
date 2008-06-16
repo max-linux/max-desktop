@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+PACKAGES=desktop-common desktop-gnome desktop-kde desktop-xfce server drivers nanomax
+
+configure/max-desktop::
+	for seed in $(PACKAGES); do \
+		package=max-$$seed; \
+		(printf "$$package:Depends="; perl -pe 's/\n/, /g'  $$seed-$(DEB_BUILD_ARCH); echo) \
+			>> debian/$$package.substvars; \
+		#(printf "$$package:Recommends="; perl -pe 's/\n/, /g'  $$seed-recommends-$(DEB_BUILD_ARCH); echo) \
+		#	>> debian/$$package.substvars; \
+	done
+
+clean::
+	rm -f *~ desktop-sin-dupli-i386 desktop-all-i386 desktop-dupli-i386
+

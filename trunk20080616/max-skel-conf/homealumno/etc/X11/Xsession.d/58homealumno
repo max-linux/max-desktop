@@ -1,0 +1,8 @@
+#
+# Apply the homealumno profile for the current user
+#
+
+if [ -x /usr/bin/homealumno-apply ] ; then
+    /usr/bin/homealumno-apply
+fi
+

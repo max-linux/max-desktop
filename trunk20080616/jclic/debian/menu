@@ -1,0 +1,4 @@
+?package(jclic):needs="X11" section="Apps/Education" \
+  title="jclic" command="/usr/bin/jclic"
+?package(jclic):needs="X11" section="Apps/Education" \
+  title="jclic author" command="/usr/bin/jclicauthor"

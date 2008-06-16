@@ -1,0 +1,29 @@
+acroread for Debian
+-------------------
+
+Here are a few "gotchas" that you may experience, but are easily solved.
+
+ 1. "Let's hide ourselves till we've opened the doc!"
+
+    Yes, acroread_5.06 does that.  Try running
+
+	$ acroread
+
+    with no document opened.  Then, on the menubar, go to Help->Reader Guide.
+    Watch in horror as acroread disappears as if it had crashed, then
+    a few seconds later, reappears with the Adobe Acrobat Reader 4.0 Guide
+    opened.  :-)  Yes, it is "normal" behaviour.
+
+
+ 2. "Where is the [Accept] button for the End User License Agreement (EULA)?"
+    "Why does the EULA screen pop up every time I start acroread?"
+
+    The EULA window is designed for a screen resolution of 1024×768 or
+    higher.  800×600 or less is too small to fit the EULA window.  Try to
+    move the EULA window until you see the [Accept] button, and click on
+    that; don't just close/kill the window.  That should solve your problem. 
+    :-)
+
+Special thanks to Peter Annema for the tips!  :-)
+
+Anthony Fok <foka@debian.org>, Fri, 21 Apr 2000 07:21:35 -0600

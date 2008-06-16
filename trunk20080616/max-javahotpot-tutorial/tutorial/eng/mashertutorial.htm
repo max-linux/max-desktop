@@ -1,0 +1,1360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "xhtml11.dtd">
+       <html xmlns="http://www.w3.org/1999/xhtml"
+             xml:lang="en"><head><meta name="author" content="Created with Quandary by Half-Baked Software, registered to Martin Holmes."></meta><meta name="keywords" content="Quandary, Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+
+<!-- This is the core XHTML code which is used to build the exercise page. -->
+
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC:Creator" content="Martin Holmes" />
+<meta name="DC:Title" content="Tutorial for the Hot Potatoes Masher Program" />
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+
+<title>
+Tutorial for the Hot Potatoes Masher Program
+</title>
+
+<!-- Made with executable version 2.0 Release 8 Build 0 -->
+
+<style type="text/css">
+
+
+/* This is the CSS stylesheet used in the exercise. */
+/* Elements in square brackets are replaced by data based on configuration settings when the exercise is built. */
+
+
+body{
+	font-family: Arial,sans-serif;
+	background-color: #d9d9d9;
+	color: #000000;
+ 
+	margin-right: 5%;
+	margin-left: 5%;
+	font-size: small;
+
+}
+
+p{
+	text-align: left;
+	margin: 0px;
+	font-size: small;
+}
+
+div,span,td{
+	font-size: small;
+	color: #000000;
+}
+
+div.Titles{
+	padding: 10px;
+	text-align: center;
+	color: #000000;
+}
+
+button{
+	display: inline;
+}
+
+.ExerciseTitle{
+	font-size: large;
+	color: #000000;
+}
+
+div#Timer{
+	padding: 6px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+span#TimerText{
+	padding: 6px;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: bold;
+	display: none;
+}
+
+div.ControlButtons{
+	text-align: center;
+}
+
+.Instructions{
+	margin-top: 1em;
+}
+
+.DecisionPointTitle{
+	font-size: medium;
+}
+
+.DecisionPointText{
+	text-align: left;
+	margin: auto;
+}
+
+div.Assets{
+	margin: 20px;
+}
+
+table.AssetTable{
+	border-width: 3px;
+	border-style: double;
+	border-color: #000000;
+	padding: 5px;
+}
+
+table.AssetTable th{
+	background-color: #000000;
+	color: #ffffff;
+	padding: 5px;
+}
+
+div.LinkList{
+	margin-top: 10px;
+}
+
+table.LinkTable{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+.FeedbackText{
+	color: #000000;
+}
+
+table.DPTable{
+	margin-left: auto;
+	margin-right: auto;
+	border-width: 0px;
+	padding: 10px;
+	vertical-align: top;
+}
+
+div.Feedback {
+	background-color: #d9d9d9;
+	left: 33%;
+	width: 34%;
+	top: 33%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	text-align: center;
+	color: #000000;
+	position: absolute;
+	display: none;
+	font-size: small;
+}
+
+div.DecisionPoint{
+	background-color: #ffffff;
+	text-align: center;
+	font-size: small;
+	color: #000000;
+	padding: 8px;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: #000000;
+	margin: 1px;
+}
+
+.FuncButton {
+	
+	text-align: center;
+	border-style: solid;
+
+	color: #ffffff;
+	border-color: #ffffff;
+	background-color: #000000;
+
+	border-width: 2px;
+	padding: 3px 6px 3px 6px;
+	cursor: pointer;
+}
+
+.FuncButtonUp {
+	color: #ffffff;
+	text-align: center;
+	border-style: solid;
+
+	border-left-color: #ffffff;
+	border-top-color: #ffffff;
+	border-right-color: #7f7f7f;
+	border-bottom-color: #7f7f7f;
+	background-color: #000000;
+
+	border-width: 2px;
+	padding: 2px 7px 4px 5px;
+	cursor: pointer;
+}
+
+.FuncButtonDown {
+	color: #ffffff;
+	text-align: center;
+	border-style: solid;
+
+	border-left-color: #7f7f7f;
+	border-top-color: #7f7f7f;
+	border-right-color: #ffffff;
+	border-bottom-color: #ffffff;
+	background-color: #000000;
+
+	border-width: 2px;
+	padding: 4px 5px 2px 7px;
+	cursor: pointer;
+}
+
+div.NavButtonBar{
+	background-color: #0060A4;
+	text-align: center;
+	margin: 2px 0px 2px 0px;
+	clear: both;
+	font-size: small;
+}
+
+.NavButton {
+	border-style: solid;
+	border-color: #0060A4;
+	background-color: #0060A4;
+	border-width: 2px;
+	padding: 2px 2px 2px 2px;
+	color: #ffffff;
+	cursor: pointer;	
+}
+
+.NavButtonUp {
+	border-style: solid;
+
+	border-left-color: #7fafd1;
+	border-top-color: #7fafd1;
+	border-right-color: #003052;
+	border-bottom-color: #003052;
+	background-color: #0060A4;
+
+	border-width: 2px;
+	padding: 1px 3px 3px 1px;
+	color: #ffffff;
+	cursor: pointer;	
+}
+
+.NavButtonDown {
+	border-style: solid;
+
+	border-left-color: #003052;
+	border-top-color: #003052;
+	border-right-color: #7fafd1;
+	border-bottom-color: #7fafd1;
+	background-color: #0060A4;
+
+	background-color: #0060A4;
+	border-width: 2px;
+	padding: 3px 1px 1px 3px;
+	color: #ffffff;
+	cursor: pointer;	
+}
+
+a{
+	color: #0060A4;
+}
+
+a:visited{
+	color: #0000ff;
+}
+
+a:hover{
+	color: #0060A4;
+}
+
+
+</style>
+
+<!-- The following insertion allows you to add your own code directly to this head tag from the configuration screen -->
+
+<style type="text/css">
+strong{background-color: #ffff00;color:inherited;}
+</style>
+
+<script type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+
+//This is the JavaScript code needed to make the exercise function
+
+//Simple browser check comes first -- you may want to make this more sophisticated
+//if you have many users with old or obscure browsers
+
+if (document.getElementById == false){
+	alert('Your browser is not able to show this page properly. A modern browser that supports W3C standards is required.');
+}
+
+//USING USER-DEFINED STRINGS:
+//If you are using the user-defined strings on the Other tab of the Config screen, 
+//make sure the strings are correctly escaped for use in JavaScript.
+
+//CODE FOR ASSETS AND ASSET BASKETS
+
+//ASSETS SECTION
+function Asset(ID, Name, InitVal, DecPlace, ShowDuring, ShowEnd, CurrVal, Parent){
+	this.ID = ID;
+	this.Name=Name;
+	this.InitVal=InitVal;
+	this.DecPlace=DecPlace;
+	this.ShowDuring=ShowDuring;
+	this.ShowEnd=ShowEnd;
+	this.CurrVal=CurrVal;
+	this.Parent = Parent;
+}
+
+function AssetGetCurrValString(){
+	var Num = this.CurrVal;
+	if (this.DecPlace > 0){
+		for (var i=0; i<this.DecPlace; i++){Num /= 10;}
+	}
+	var Result = Num.toString();
+	if (this.DecPlace > 0){
+		var DecLoc = Result.indexOf('.');
+		if (DecLoc < 0){Result += '.';}
+//Add leading zeros if required
+		while (((Result.length-1) - Result.indexOf('.'))<this.DecPlace){Result += '0';} 
+//Truncate trailing places if required
+		while (((Result.length-1) - Result.indexOf('.'))>this.DecPlace){Result = Result.substring(0, Result.length-1);}
+	}
+	return Result;
+}
+Asset.prototype.GetCurrValString=AssetGetCurrValString;
+
+function AssetGetCurrValFloat(){
+	var Num = this.CurrVal;
+	if (this.DecPlace > 0){
+		for (var i=0; i<this.DecPlace; i++){Num /= 10;}
+	}
+		return Num;
+}
+Asset.prototype.GetCurrValFloat=AssetGetCurrValFloat;
+
+function AssetSetCurrValFromFloat(Num){
+	if (this.DecPlace > 0){
+		for (var i=0; i<this.DecPlace; i++){Num *= 10;}
+	}
+	this.CurrVal = Num;
+}
+Asset.prototype.SetCurrValFromFloat=AssetSetCurrValFromFloat;
+
+function AssetReportCurrState(){
+	return this.Name + ': ' + this.GetCurrValString();
+}
+Asset.prototype.ReportCurrState=AssetReportCurrState;
+
+function AssetMeetsRequirement(ReqType, Req){
+	var Result = true;
+	switch(ReqType){
+		case 0: break;
+		case 1: Result = (this.CurrVal > Req); break;
+		case 2: Result = (this.CurrVal < Req); break;
+		case 3: Result = (this.CurrVal == Req); break;
+	}
+	return Result;
+}
+Asset.prototype.MeetsRequirement=AssetMeetsRequirement;
+
+function AssetPerformTransaction(OperatorType, Operand){
+	if ((this.Name == '_Timer_Seconds')&&(this.Parent.Active == true)){
+		this.CurrVal = Seconds;
+	}
+	switch(OperatorType){
+//Operands coming into this function should already be massaged to be at the same decimal place level as 
+//the asset being manipulated; therefore +, -, and = operators can use the values directly, but *, /, % 
+//and ^ transactions will have to reduce the operand to its true value by dividing it.
+		case 1: this.CurrVal += Operand; break; //add
+		case 2: this.CurrVal -= Operand; break; //subtract
+		case 3: for (var x=0; x<this.DecPlace; x++){Operand /= 10;}this.CurrVal *= Operand; break; //multiply
+		case 4: for (var x=0; x<this.DecPlace; x++){Operand /= 10;}this.CurrVal /= Operand; break; //divide
+		case 5: this.CurrVal = Operand; break; //set equal to
+		case 6: for (var x=0; x<this.DecPlace; x++){Operand /= 10;}this.CurrVal *= (Operand/100); break; //percentage
+//Difficult case (power of); need to change the operand and the value to core values, do the calculation, then
+//change the value back
+		case 7: 
+//Change the operand to core value
+			for (var x=0; x<this.DecPlace; x++){Operand /= 10;}
+//Change the asset value to core value
+			var y = this.CurrVal; for (var x=0; x<this.DecPlace; x++){y /= 10;}
+//Do the math
+			x = y; for (var j=1; j<Operand; j++){y *= x;} 
+//Raise the val again
+			for (var x=0; x<this.DecPlace; x++){y *= 10;}
+//Set the value
+			this.CurrVal = y;
+			break; 
+	}
+	this.CurrVal = Math.round(this.CurrVal);
+	if ((this.Name == '_Timer_Seconds')&&(this.Parent.Active == true)){
+		Seconds = this.CurrVal;
+	}
+}
+Asset.prototype.PerformTransaction=AssetPerformTransaction;
+
+function AssetCanBeShown(){
+	var Result = true;
+	if (IsEndPoint == true){
+		switch (this.ShowEnd){
+			case 0: Result = true; break;
+			case 1: Result = false; break;
+			case 2: Result = (this.CurrVal != 0); break;
+		}
+	}
+	else{
+		switch (this.ShowDuring){
+			case 0: Result = true; break;
+			case 1: Result = false; break;
+			case 2: Result = (this.CurrVal != 0); break;
+		}
+	}
+	return Result;
+}
+Asset.prototype.CanBeShown=AssetCanBeShown;
+
+function Basket(AList, Active){
+	this.Active = Active;
+	this.Assets = new Array();
+	if (AList.length > 0){
+		for (var i=0; i<AList.length; i++){
+			this.Assets[i] = new Asset(i, AList[i][0], AList[i][1], AList[i][2], AList[i][3], AList[i][4], A[i][5], this);
+		}
+	}
+}
+
+function BasketGetEffectiveOperand(Trans){
+//The "effective operand" is the operand converted to the right decimal place level (so an operand of 
+//5, which is to act on an asset with 2dps, should be converted to 500). This is especially difficult 
+//when the operand is the value of another asset, since that may have its own dp setting, and the two 
+//settings must be harmonized
+	var Operand = 0;
+	switch(Trans[2]){
+//First, a fixed value (this should already be specified at the right dp level)
+		case 0: Operand = Trans[3]; break;
+//Second, a random value; again, this should be specified at the right dp level already)
+		case 1: Operand = GetRand(Trans[3], Trans[4]); break;
+//Finally, the problem case: the value of another asset. In this case, we need to find out the dp 
+//settings of both the source and target asset
+//First get the real value of the source asset (so 500 for an asset with 2dp would be 5)
+		case 2: Operand = this.Assets[Trans[5]].GetCurrValFloat(); 
+//Now multiply this up according to the dp setting of the target asset (so 5 operating on a target asset
+//with dp2 would become 500)
+			for (var i=0; i<this.Assets[Trans[0]].DecPlace; i++){Operand *= 10;}
+			break;
+	}
+	return Operand;
+}
+Basket.prototype.GetEffectiveOperand=BasketGetEffectiveOperand;
+
+function BasketReportCurrState(){
+	if (this.Assets.length < 1){return '';}
+	var Result = '';
+	for (var i=0; i<this.Assets.length; i++){
+		if (this.Assets[i].CanBeShown()==true){
+			Result += '<tr><td style="text-align: right;">' + this.Assets[i].Name + ': </td>';
+			Result += '<td style="text-align: left;">' + this.Assets[i].GetCurrValString() + '</td></tr>';
+		}
+	}
+	if (Result.length > 0){
+		Result = '<table class="AssetTable"><tr><th colspan="2">' + strYouHave + '</th></tr>' + Result + '</table>';
+	}
+	return Result;
+}
+Basket.prototype.ReportCurrState=BasketReportCurrState;
+
+function BasketCloneSelf(Copy, Active){
+	Copy = new Basket(A, false);
+	Copy.Active = Active;
+	for (var i=0; i<this.Assets.length; i++){
+		Copy.Assets[i].CurrVal = this.Assets[i].CurrVal;
+	}
+	return Copy;
+}
+Basket.prototype.CloneSelf=BasketCloneSelf;
+
+function BAssetMeetsRequirement(ANum, ReqType, Req){
+	return this.Assets[ANum].MeetsRequirement(ReqType, Req);
+}
+Basket.prototype.AssetMeetsRequirement=BAssetMeetsRequirement;
+
+function BAssetPerformTransaction(ANum, OpType, Operand){
+	this.Assets[ANum].PerformTransaction(OpType, Operand);
+}
+Basket.prototype.PerformTransaction=BAssetPerformTransaction;
+
+function BGetAssetValByName(AssetName){
+	var Result = 0;
+	for (var i=0; i<this.Assets.length; i++){
+		if (this.Assets[i].Name == AssetName){
+			Result = this.Assets[i].CurrVal;
+		}
+	}
+	return Result;
+}
+Basket.prototype.GetAssetValByName=BGetAssetValByName;
+
+//VARIABLES AND INTERFACE STRINGS
+
+var CurrBasket;
+var TempBasket;
+var CurrNode=0;
+var strYouHave='You have: ';
+var strLinkCaption='Go!';
+var strFinishCaption='Go!';
+var strDefaultRefusalMessage='Sorry! You can\'t do that.';
+var strTimesUp = 'Your time has run out!';
+var strBookmarkExplanation = 'Your current position and settings have been encoded in <br />the URL of the page. Now set a bookmark in your <br />browser, so you can return here.<br />';
+var strExerciseComplete = 'You have reached the end of the exercise.';
+var ShowImpossibleLinks=true;
+var Interval;
+var StartTime = (new Date()).toLocaleString();
+var HPNStartTime = (new Date()).getTime();
+var SubmissionTimeout = 30000;
+var FollowingTrack = false;
+var CurrTime;
+var Started=false;
+
+var IsEndPoint = false;
+
+function TransactionList(NNum, LNum){
+	this.List = new Array();
+	var i;
+	for (i=0; i<N[NNum][4].length; i++){this.List[this.List.length] = N[NNum][4][i];}
+	for (i=0; i<N[NNum][3][LNum][2].length; i++){this.List[this.List.length] = N[NNum][3][LNum][2][i];}
+	for (i=0; i<N[N[NNum][3][LNum][0]][2].length; i++){this.List[this.List.length] = N[N[NNum][3][LNum][0]][2][i];}
+}
+
+function TestTransactions(NNum, LNum){
+	var T = new TransactionList(NNum, LNum);
+	var Result = '';
+//Create a clone of the current asset basket to operate on
+	var B = CurrBasket.CloneSelf(B, false);
+
+//For each transaction
+	for (var i=0; i<T.List.length; i++){
+//Test the requirement
+		if (B.AssetMeetsRequirement(T.List[i][0], T.List[i][7], T.List[i][6]) == true){
+//If it succeeds, do the transaction
+			B.PerformTransaction(T.List[i][0], T.List[i][1], B.GetEffectiveOperand(T.List[i]));
+		}
+		else{
+//If it fails, check the refusal message
+			if (T.List[i][8].length > 0){
+				return T.List[i][8];
+			}
+//If no refusal message, return a string with spaces, otherwise return refusal message
+			else{
+				return strDefaultRefusalMessage;
+			}
+		}
+	}
+//If all have passed, return an empty string
+	return '';
+}
+
+function StartExercise(){
+	CurrBasket = new Basket(A, true);
+	ParseSearch();
+	CurrTime = new Date();
+	ShowCurrNode();
+
+	Started = true;
+}
+
+function StartUp(){
+	if (document.location.search.indexOf('___') > -1){
+		StartExercise();
+	}
+}
+
+function Restart(){
+	var d = document.location;
+	d.search = '';
+	document.location = d;
+}
+
+//CODE FOR HANDLING UNDO FUNCTIONALITY AND TRACKING NODE SEQUENCE
+function HNode(NNum, LNum, Bask){
+	this.NNum = NNum; //Number of the node
+	this.LNum = LNum; //Number of the link selected to leave the node
+	this.Basket = Bask.CloneSelf(A, false); //Copy of current basket of assets
+//	this.EntryTime = CurrTime.getTime() - HPNStartTime; //Stores time of entry to this node, offset by start time, in milliseconds
+	this.EntryTime = CurrTime.getTime(); //Stores absolute time of entry to this node
+	this.EntryTimeString = CurrTime.toLocaleString();
+	var D = new Date();
+//	this.ExitTime = D.getTime() - HPNStartTime; //Stores the time of exit from this node
+	this.ExitTime = D.getTime(); //Stores the absolute time of exit from this node
+
+	this.ExitTimeString = D.toLocaleString(); //Stores the time in human-readable format
+}
+
+function HNodeReportSelf(AddTime){
+	var S = this.NNum + ':' + this.LNum;
+	if (AddTime == true){
+		S += ':' + this.EntryTime;
+	}
+	return S;
+}
+HNode.prototype.ReportSelf=HNodeReportSelf;
+
+//Object containing the list of tracking node objects
+function HNodeList(){
+	this.Nodes = new Array();
+	var D = new Date();
+	this.StartTime = D.getTime(); // Stores the entry time of the exercise; =entry time to node 0
+	this.StartTimeString = D.toLocaleString();
+}
+
+function HNodeListReportAsSearch(IncludeTime){
+	var S = '___t;';
+	if (this.Nodes.length > 0){
+		S += this.Nodes[0].ReportSelf(IncludeTime);
+		for (var i=1; i<this.Nodes.length; i++){
+			S += ',' + this.Nodes[i].ReportSelf(IncludeTime);
+		}
+	}
+	return S;
+}
+HNodeList.prototype.ReportAsSearch=HNodeListReportAsSearch;
+
+var H = new HNodeList(); //array of HNode elements
+
+function Undo(){
+	if (H.Nodes.length < 1){
+		return;
+	}
+	var LastNode = H.Nodes.pop();
+	CurrNode = LastNode.NNum;
+	CurrBasket = LastNode.Basket.CloneSelf(A, true);
+	ShowCurrNode();
+}
+
+//CODE FOR HANDLING URL ENCODING OF STATE
+function ParseSearch(){
+	if (document.location.search.length < 1){return;}
+//First, get the part of the search string we're interested in
+	var Temp = document.location.search.substring(document.location.search.lastIndexOf('___'), document.location.search.length);
+	if (Temp.length < 1){return;}
+
+	var S = Temp.split(';');
+//S[0] tells us this is a bookmark, or a track
+	if (S.length > 0){
+		if (S[0] == '___b'){
+//It's a bookmark
+			ShowMessage(strBookmarkExplanation);
+		}
+		if (S[0] == '___t'){
+//It's tracking data
+			ParseTrack(S[1]);
+			return;
+		}
+	}
+//S[1] is the current node
+	if (S.length > 1){
+		if (S[1].length > 0){
+			var CN=parseInt(S[1]);
+			if ((CN>-1)&&(CN<N.length)){
+				CurrNode = CN;
+			}
+		}
+	}
+	if (S.length > 2){
+		if (S[2].length > 0){
+			var AA=S[2].split(',');
+			if (AA.length > 0){
+				for (var i=0; i<AA.length; i++){
+					var Val = parseInt(AA[i]);
+					if ((i<A.length)&&(Val != NaN)){
+						CurrBasket.Assets[i].CurrVal = Val;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+var Footprints = new Array();
+
+function ParseTrack(Track){
+	if (Track.length < 3){
+		return;
+	}
+
+	var Steps = Track.split(',');
+	if (Steps.length < 2){
+		return;
+	}
+//We have valid track data, so the exercise can be displayed accordingly
+	FollowingTrack = true;
+	var NNum = 0;
+	var LNum = 0;
+	var T = 0;
+	for (var i=0; i<Steps.length; i++){
+		var Step = Steps[i].split(':');
+		NNum = parseInt(Step[0]);
+		if (NNum > -1){
+			LNum = parseInt(Step[1]);
+			if (LNum > -1){
+				if (Step.length > 2){
+					T = parseInt(Step[2]);
+				}
+				Footprints.push(new Array(NNum, LNum, T));
+			}
+		}
+	}
+}
+
+function CreateBookmark(){
+	var S = '___b;' + CurrNode + ';';
+	if (CurrBasket.Assets.length > 0){
+		S += CurrBasket.Assets[0].CurrVal;
+		for (var i=1; i<CurrBasket.Assets.length; i++){
+			S += ',' + CurrBasket.Assets[i].CurrVal;
+		}
+	}
+
+	return S;
+}
+
+function SetBookmark(){
+	if (Started == false){return;}
+	var Temp = document.location.search;
+	if (Temp.length < 1){
+		Temp = '?';
+	}
+	else{
+		Temp += '&';
+	}
+	document.location.search = Temp + CreateBookmark();
+}
+
+//CODE FOR HANDLING NAV BUTTONS AND FUNCTION BUTTONS
+
+function NavBtnOver(Btn){
+	if (Btn.className != 'NavButtonDown'){Btn.className = 'NavButtonUp';}
+}
+
+function NavBtnOut(Btn){
+	Btn.className = 'NavButton';
+}
+
+function NavBtnDown(Btn){
+	Btn.className = 'NavButtonDown';
+}
+
+function FuncBtnOver(Btn){
+	if (Btn.className != 'FuncButtonDown'){Btn.className = 'FuncButtonUp';}
+}
+
+function FuncBtnOut(Btn){
+	Btn.className = 'FuncButton';
+}
+
+function FuncBtnDown(Btn){
+	Btn.className = 'FuncButtonDown';
+}
+
+
+//CODE FOR HANDLING DISPLAY OF POPUP FEEDBACK BOX
+
+var topZ = 1000;
+
+function ShowMessage(Feedback){
+	var Output = Feedback + '<br /><br />';
+	document.getElementById('FeedbackContent').innerHTML = Output;
+	var FDiv = document.getElementById('FeedbackDiv');
+	topZ++;
+	FDiv.style.zIndex = topZ;
+	FDiv.style.display = 'block';
+	document.getElementById('FeedbackOKButton').focus();
+
+//[inclPreloadImages]
+//	RefreshImages();
+//[/inclPreloadImages]
+}
+
+function HideFeedback(){
+	document.getElementById('FeedbackDiv').style.display = 'none';
+	if (IsEndPoint == true){
+		Finish();
+	}
+}
+
+function MillisecondsToTimeReadout(MS){
+	var DT = new Date(MS);
+	return DT.getHours() + ':' + DT.getMinutes() + ':' + DT.getSeconds() + ':' + DT.getMilliseconds();
+}
+
+function ShowCurrNode(){
+	var DPT = N[CurrNode][0];
+	if ((FollowingTrack==true)&&(Footprints.length > 0)){
+		if (Footprints[0][2] > 0){
+			DPT += ' (' + MillisecondsToTimeReadout(Footprints[0][2]) + ')';
+		}
+	}
+	document.getElementById('DPTitle').innerHTML = DPT;
+	document.getElementById('DPContentsDiv').innerHTML = N[CurrNode][1];
+	var Links = '';
+	var Refusal = '';
+	var ValidLinks = 0;
+	for (var LNum=0; LNum<N[CurrNode][3].length; LNum++){
+		if ((FollowingTrack==true)&&(Footprints.length > 0)){
+//We're following a track, so we only want to make a working link for the correct item
+			if (LNum == Footprints[0][1]){
+				Links += MakeLink(CurrNode, LNum);
+				ValidLinks++;
+			}
+			else{
+				Links += MakeDummyLink(CurrNode, LNum);
+			}
+
+		}
+		else{
+			Refusal = TestTransactions(CurrNode, LNum);
+			if (Refusal.length > 0){
+				if (N[CurrNode][3][LNum][4] < 1){
+					N[CurrNode][3][LNum][3] = Refusal;
+					Links += MakeRefusalLink(CurrNode, LNum);
+				}
+			}
+			else{
+				Links += MakeLink(CurrNode, LNum);
+				ValidLinks++;
+			}
+		}
+	}
+	if (Links.length > 0){
+		Links = '<table class="LinkTable">' + Links + '</table>';
+	}
+
+	if (ValidLinks < 1){
+		IsEndPoint = true;
+		if (document.getElementById('store') != null){
+			Links = '<table class="LinkTable">' + MakeEndLink() + '</table>';
+		}
+		else{
+			if (document.getElementById('UndoButton') == null){
+				Links = '<table class="LinkTable"><tr><td>' + strExerciseComplete + '</td></tr></table>';
+			}
+		}
+	}
+	document.getElementById('LinkListDiv').innerHTML = Links;
+
+//Show assets now -- endpoint issue may affect which are shown
+	document.getElementById('AssetsDiv').innerHTML = CurrBasket.ReportCurrState();
+
+//Remove the last footprint from the track
+	if (Footprints.length > 0){Footprints.shift();}
+
+	if ((IsEndPoint==true)&&(document.getElementById('UndoButton') == null)){
+//Record current state in the history array
+		H.Nodes.push(new HNode(CurrNode, LNum, CurrBasket));
+
+//Reset the current time
+		CurrTime = new Date();
+		setTimeout('Finish()', SubmissionTimeout);
+	}
+}
+
+function MakeRefusalLink(NNum, LNum){
+	var Result = '<tr><td><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="ShowMessage(N[' + NNum + '][3][' + LNum + '][3])">' + strLinkCaption + '</button></td>';
+	Result += '<td>' + N[NNum][3][LNum][1] + '</td></tr>';
+	return Result;
+}
+
+function MakeLink(NNum, LNum){
+	var Result = '<tr><td><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="FollowLink(' + LNum + ')">' + strLinkCaption + '</button></td>';
+	Result += '<td>' + N[NNum][3][LNum][1] + '</td></tr>';
+	return Result;
+}
+
+function MakeDummyLink(NNum, LNum){
+	var Result = '<tr><td style="text-align: right;">&nbsp;&#x25cf;&nbsp;</td>';
+	Result += '<td>' + N[NNum][3][LNum][1] + '</td></tr>';
+	return Result;
+}
+
+function MakeEndLink(){
+	var Result = '<tr><td><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="Finish()">' + strFinishCaption + '</button></td>';
+	Result += '<td>' + strExerciseComplete + '</td></tr>';
+	return Result;
+}
+
+function FollowLink(LNum){
+
+//Record current state in the history array
+	H.Nodes.push(new HNode(CurrNode, LNum, CurrBasket));
+
+//Reset the current time
+	CurrTime = new Date();
+
+	var T = new TransactionList(CurrNode, LNum);
+//For each transaction
+	for (var i=0; i<T.List.length; i++){
+//Do the transaction
+		CurrBasket.PerformTransaction(T.List[i][0], T.List[i][1], CurrBasket.GetEffectiveOperand(T.List[i]));
+	}
+//Now change the node
+	CurrNode = N[CurrNode][3][LNum][0];
+	ShowCurrNode();
+}
+
+//CODE FOR HANDLING TIMER
+
+
+//HOTPOTNET FUNCTIONS
+function Finish(){
+//If there's a form, fill it out and submit it
+	try{
+		var F = document.getElementById('store');
+		if (F != null){
+			F.starttime.value = HPNStartTime;
+			F.endtime.value = (new Date()).getTime();
+			F.mark.value = CurrBasket.GetAssetValByName('Score'); //if an asset called "Score" exists, this value will be submitted as the mark
+			var Temp = '<?xml version="1.0"?><hpnetresult><fields>';
+			Temp += '<field><fieldname>endbookmark</fieldname><fieldtype>url-search</fieldtype><fieldlabel>Click here to see the final position in the maze</fieldlabel><fieldlabelid>QuandaryViewFinalPosition</fieldlabelid><fielddata>' + CreateBookmark() + '</fielddata></field>';
+			Temp += '<field><fieldname>track</fieldname><fieldtype>url-search</fieldtype><fieldlabel>Click here to track the student through the maze.</fieldlabel><fieldlabelid>QuandaryViewTrack</fieldlabelid><fielddata>' + H.ReportAsSearch(false) + '</fielddata></field>';
+			Temp += '<field><fieldname>timedtrack</fieldname><fieldtype>url-search</fieldtype><fieldlabelid>QuandaryViewTimedTrack</fieldlabelid><fieldlabel>Click here to track the student through the maze with timing data.</fieldlabel><fielddata>' + H.ReportAsSearch(true) + '</fielddata></field>';
+			Temp += '</fields></hpnetresult>';
+			F.detail.value = Temp;
+			F.submit();
+
+		}
+	}
+	catch(er){
+		return;
+	}
+}
+
+//UTILITY FUNCTIONS
+function GetRand(Lower, Upper){
+	var Rng = Upper-Lower;
+	return (Math.round(Math.random()*Rng)) + Lower;
+}
+
+var A = new Array();
+
+
+var N = new Array();
+N[0] = new Array();
+N[0][0] = 'Contents of the tutorial';
+N[0][1] = 'Choose the topic you want to learn about.';
+N[0][2] = new Array();
+
+N[0][3] = new Array();
+N[0][3][0] = new Array();
+N[0][3][0][0] = 1;
+N[0][3][0][1] = 'What is the Masher?';
+N[0][3][0][2] = new Array();
+
+N[0][3][0][3] = '';
+N[0][3][0][4] = 0;
+
+N[0][3][1] = new Array();
+N[0][3][1][0] = 2;
+N[0][3][1][1] = 'Building Masher units';
+N[0][3][1][2] = new Array();
+
+N[0][3][1][3] = '';
+N[0][3][1][4] = 0;
+
+N[0][3][2] = new Array();
+N[0][3][2][0] = 3;
+N[0][3][2][1] = 'Uploading files to hotpotatoes.net';
+N[0][3][2][2] = new Array();
+
+N[0][3][2][3] = '';
+N[0][3][2][4] = 0;
+
+N[0][3][3] = new Array();
+N[0][3][3][0] = 4;
+N[0][3][3][1] = 'Registration of the Masher';
+N[0][3][3][2] = new Array();
+
+N[0][3][3][3] = '';
+N[0][3][3][4] = 0;
+
+N[0][3][4] = new Array();
+N[0][3][4][0] = 5;
+N[0][3][4][1] = 'Advanced functions';
+N[0][3][4][2] = new Array();
+
+N[0][3][4][3] = '';
+N[0][3][4][4] = 0;
+
+
+N[0][4] = new Array();
+
+
+N[1] = new Array();
+N[1][0] = 'What is the Masher?';
+N[1][1] = 'The Masher has two basic functions:<br /><br /><ol><li>It is used to create complete units of Hot Potatoes exercises (and other Web pages). A unit created with the Masher can share the same appearance settings, and be linked together automatically by navigation buttons; an Index page is also created automatically. If you regularly create sequences of exercises and other pages -- "units" or "chapters" of teaching materials -- then the Masher can help you organize and build your sites quickly and easily.</li><li>It is also used to upload non-Hot Potatoes files to the <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'[http://www.hotpotatoes.net\');return false;">hotpotatoes.net</a> server. When you export an exercise to create a Web page from inside a Hot Potato, you can automatically upload the page and its linked media files to hotpotatoes.net; however, you may also want to upload other types of file (PDF documents, Word documents, images, etc.) for your students, and you can do this using the Masher</li></ol><br /><br />';
+N[1][2] = new Array();
+
+N[1][3] = new Array();
+N[1][3][0] = new Array();
+N[1][3][0][0] = 2;
+N[1][3][0][1] = 'Learn about building Masher units';
+N[1][3][0][2] = new Array();
+
+N[1][3][0][3] = '';
+N[1][3][0][4] = 0;
+
+N[1][3][1] = new Array();
+N[1][3][1][0] = 3;
+N[1][3][1][1] = 'Learn about uploading files to hotpotatoes.net';
+N[1][3][1][2] = new Array();
+
+N[1][3][1][3] = '';
+N[1][3][1][4] = 0;
+
+
+N[1][4] = new Array();
+
+
+N[2] = new Array();
+N[2][0] = 'Building Masher units';
+N[2][1] = 'Using the Masher to build a unit takes a few steps:<br /><br /><ol><li>Choosing your materials</li><li>Putting them in order</li><li>Deciding on the appearance of the pages</li><li>Setting the navigation options</li><li>Adding a title for your unit</li><li>Saving your settings</li><li>Building the unit</li></ol><br /><br />';
+N[2][2] = new Array();
+
+N[2][3] = new Array();
+N[2][3][0] = new Array();
+N[2][3][0][0] = 6;
+N[2][3][0][1] = 'Basic advice before you start';
+N[2][3][0][2] = new Array();
+
+N[2][3][0][3] = '';
+N[2][3][0][4] = 0;
+
+
+N[2][4] = new Array();
+
+
+N[3] = new Array();
+N[3][0] = 'Uploading files to hotpotatoes.net';
+N[3][1] = 'The <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'http://www.hotpotatoes.net\');return false;">hotpotatoes.net</a> hosting service provides a location for you to store your Hot Potatoes pages and related files. Your students can log in to the server, do their exercises, and have their results stored, and you can check their progress. You can upload exercises from any Hot Potato program by exporting the exercise, and then choosing the upload option when the process is complete.<br /><br />However, you may also want to provide other kinds of material for your students on your hotpotatoes.net account. You can do this by uploading it from inside the Masher:<br /><br /><img src="mash_ul1.png" alt="Masher menu item: Upload file to hotpotatoes.net" title="Masher menu item: Upload file to hotpotatoes.net" width="367" height="70"></img><br /><br />Click on the menu item, then choose your file. You\'ll see this dialog box:<br /><br /><img src="mash_ul2.png" alt="Masher upload file to hotpotatoes.net: title and description dialog box." title="Masher upload file to hotpotatoes.net: title and description dialog box." width="437" height="305"></img><br /><br />Here you can specify a title and description for your file; these will appear for you and your students in the index of materials on the hotpotatoes.net server. You can also click on the View button to view the file if you want to check it\'s the right one.<br /><br />Next, you\'ll see the normal hotpotatoes.net logon dialog box (the same one you see when you upload an exercise from a Potato). Here, you can log on with your user name and password (if you have one), or create a demo account if you don\'t:<br /><br /><img src="mash_ul3.png" alt="Hotpotatoes.net logon screen" title="Hotpotatoes.net logon screen" width="404" height="245"></img><br /><br />If you press OK, and the logon is successful, the file will upload, and it will be available to your students. That\'s all there is to it!';
+N[3][2] = new Array();
+
+N[3][3] = new Array();
+N[3][3][0] = new Array();
+N[3][3][0][0] = 0;
+N[3][3][0][1] = 'Back to the contents of the tutorial';
+N[3][3][0][2] = new Array();
+
+N[3][3][0][3] = '';
+N[3][3][0][4] = 0;
+
+
+N[3][4] = new Array();
+
+
+N[4] = new Array();
+N[4][0] = 'Registration of the Masher';
+N[4][1] = 'The Masher is a professional-level tool, used by people making larger Websites and more complex teaching materials. For that reason, it is <strong>not included in the free use terms of Hot Potatoes</strong>. With the unregistered version of the Masher, you can build units with up to three exercises or pages in them. If you want to build larger units, you will need to <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'http://www.halfbakedsoftware.com/hotpot/\');return false;">buy a licence for Hot Potatoes</a>. When you buy a licence, we will send you a special key for the Masher, which you can enter into the program (<strong>Help / Register</strong>) to remove the limitation.<br /><br />The Masher\'s other function, uploading files to the <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'[http://www.hotpotatoes.net\');return false;">hotpotatoes.net</a> server, does <strong>not</strong> require registration.';
+N[4][2] = new Array();
+
+N[4][3] = new Array();
+N[4][3][0] = new Array();
+N[4][3][0][0] = 0;
+N[4][3][0][1] = 'Back to the contents of the tutorial';
+N[4][3][0][2] = new Array();
+
+N[4][3][0][3] = '';
+N[4][3][0][4] = 0;
+
+
+N[4][4] = new Array();
+
+
+N[5] = new Array();
+N[5][0] = 'Advanced functions';
+N[5][1] = 'There are three important advanced features in the Masher:<br /><br /><h3>User strings</h3><br />The <strong>User strings</strong> tab works the same way as the same item on the Custom tab in the Configuration screen of the rest of the Hot Potatoes programs. If you use modified source files (another advanced Hot Potatoes option), you can include in those files a placeholder such as <strong>[strUserDefined1]</strong>. When you build the pages, this placeholder will be replaced automatically by whatever you type in the <strong>User defined string #1</strong> box. The contents of the bottom box will be automatically inserted into the <strong>head</strong> element of all the pages; this can be useful for inserting a custom stylesheet or a little block of JavaScript code into all your pages.<br /><br /><h3>The Source tab</h3><br />The <strong>Source</strong> tab allows you to do two things: first, you can specify a particular source folder where all the programs will look for source files when building pages, and you can also see the contents of the source file used to create the Index page, and make modifications to it if you wish. For more information on customizing source files, see the Hot Potatoes Help file.<br /><br /><h3>The Batch tool</h3><br />If you click on <strong>Actions</strong> / <strong>Batch processing</strong>, you\'ll see a new window appear: the <strong>Batch</strong> window. The idea of this feature is to allow you to process a whole set of units in one operation. Imagine, for example, that you\'re creating a huge site to teach Latin. Your site has 25 units, and each unit contains a sequence of pages and exercises. You have created 25 <strong>.jms</strong> files in the Masher, one for each unit, so you can build each unit easily. However, sometimes you need to make a change to the whole site. You can do that using the Batch tool. Use the <strong>Add Files</strong> button in the Batch window to select and add all of your .jms files (or drag and drop them into the window). Then press <strong>Go!</strong>, and each one will be processed in turn, building all the units. This may take a while, so be prepared! If you wish, you can also set up (for example) Appearance settings in the main screen before running your batch operation, then choose <strong>Lock colour information</strong>, and the settings you specified will be used for all the output operations, whatever settings you specified in each individual <strong>.jms</strong> file. In this way, you could change the colour settings for a whole site very easily. When you have set up a batch operation, you can save the file list and the other settings using <strong>File</strong> / <strong>Save (As)</strong> in the Batch window. See the Masher Help file for more detailed information on batch processing.';
+N[5][2] = new Array();
+
+N[5][3] = new Array();
+N[5][3][0] = new Array();
+N[5][3][0][0] = 0;
+N[5][3][0][1] = 'Contents of the tutorial';
+N[5][3][0][2] = new Array();
+
+N[5][3][0][3] = '';
+N[5][3][0][4] = 0;
+
+
+N[5][4] = new Array();
+
+
+N[6] = new Array();
+N[6][0] = 'Basic advice before you start';
+N[6][1] = 'Although the Masher can accept files from any locations and output the results to any folder you specify, the cleanest and simplest way to work is this:<br /><br /><ol><li>Put all the Hot Potatoes data files for the unit you want to build in a single folder.</li><li>Copy any other files (other Web pages etc.) that you want to include into the same folder.</li><li>Make sure you save the Masher file in the same folder.</li></ol><br /><br />In other words, you might have a folder like this:<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;<b>unit_01</b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>instructions.htm</b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jcloze1.jcl</b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jmatch1.jmt</b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>unit_01.jms</b><br /><br />This consists of an HTML file you have created in some other program (such as DreamWeaver), two exercises (one JMatch and one JQuiz), and the Masher file that\'s going to be used to build the unit. When you have built the unit, it will look like this:<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;<b>unit_01</b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><strong>index.htm</strong></b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>instructions.htm</b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jcloze1.jcl</b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><strong>jcloze1.htm</strong></b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jmatch1.jmt</b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><strong>jmatch1.htm</strong></b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>unit_01.jms</b><br /><br />The new files are the HTML files created by the Masher, including an index page which links them together. We recommend that you always keep all these files in the same folder; it makes life simple, and makes backups easy.';
+N[6][2] = new Array();
+
+N[6][3] = new Array();
+N[6][3][0] = new Array();
+N[6][3][0][0] = 7;
+N[6][3][0][1] = 'Next: Choosing your materials';
+N[6][3][0][2] = new Array();
+
+N[6][3][0][3] = '';
+N[6][3][0][4] = 0;
+
+
+N[6][4] = new Array();
+
+
+N[7] = new Array();
+N[7][0] = 'Choosing your materials';
+N[7][1] = 'The first stage in building a Masher unit is to bring the materials into the Masher. Start the program, and make sure you\'ve selected the first tab in the interface (<strong>Files</strong>). Next, click on the <strong>Add Files</strong> button, and select one or more of the files you want to include in your unit. It\'s best if these are sitting in the same folder, as we mentioned. When you add a file, you\'ll see a dialog box like this:<br /><br /><img src="mash_f1.png" alt="Loading a file into the Masher" title="Loading a file into the Masher" width="452" height="294"></img><br /><br />For the moment, it\'s fine just to accept the defaults and press OK, but this is what the components mean:<ul><li>The first box shows the path to the HotPot data file (or other Web page).</li><li>The second box shows the filename that will be used when that file is exported to create a Web page as part of the unit.</li><li>The third box can be used to fix the name of the subsequent exercise page. Under normal circumstances, you wouldn\'t need to change this.</li><li>The fourth box allows you to choose the output format for a Hot Potatoes exercise. The options depend on which Potato is involved (so JMatch has three options, but JCloze has only one).</li></ul>Accept the defaults, and add your files.<br /><br />';
+N[7][2] = new Array();
+
+N[7][3] = new Array();
+N[7][3][0] = new Array();
+N[7][3][0][0] = 8;
+N[7][3][0][1] = 'Putting your files in order';
+N[7][3][0][2] = new Array();
+
+N[7][3][0][3] = '';
+N[7][3][0][4] = 0;
+
+
+N[7][4] = new Array();
+
+
+N[8] = new Array();
+N[8][0] = 'Putting your files in order';
+N[8][1] = 'When you\'ve added your files, you should see something like this:<br /><br /><img src="mash_f2.png" alt="Masher file list" title="Masher file list" width="500" height="490"></img><br /><br />You can see the sequence of files that will be included in the unit: it starts with a plain HTML page of instructions, and then there\'s a JCloze exercise, and a JMatch exercise. You can change the order of files in the sequence using the up/down buttons on the right. Note that every time you move a file in the sequence, the file names in the <strong>Next exercise</strong> column are automatically updated.<br /><br />If you want to change the output format of an exercise, just double-click on it, and you\'ll see the same dialog box you saw when you added it to the list.';
+N[8][2] = new Array();
+
+N[8][3] = new Array();
+N[8][3][0] = new Array();
+N[8][3][0][0] = 9;
+N[8][3][0][1] = 'Deciding on the appearance of the pages';
+N[8][3][0][2] = new Array();
+
+N[8][3][0][3] = '';
+N[8][3][0][4] = 0;
+
+
+N[8][4] = new Array();
+
+
+N[9] = new Array();
+N[9][0] = 'Deciding on the appearance of the pages';
+N[9][1] = 'The next stage is the <strong>Appearance</strong> tab. This is almost identical to the Appearance tab in the Configuration screen of the other Hot Potatoes programs, and it works the same way. The only difference is that you can make this choice:<br /><br /><img src="mash_ap1.png" alt="Masher appearance settings" title="Masher appearance settings" width="363" height="77"></img><br /><br />If you choose the first option, all the pages will be compiled using the colours you specify in this screen (so they will all look the same). If you choose the second button, then each file will be compiled using the colours that were set up in the program that created it. Normally, the first option would be the logical one, because you will probably want all the exercises in your unit to look similar.';
+N[9][2] = new Array();
+
+N[9][3] = new Array();
+N[9][3][0] = new Array();
+N[9][3][0][0] = 10;
+N[9][3][0][1] = 'Setting the navigation options';
+N[9][3][0][2] = new Array();
+
+N[9][3][0][3] = '';
+N[9][3][0][4] = 0;
+
+
+N[9][4] = new Array();
+
+
+N[10] = new Array();
+N[10][0] = 'Setting the navigation options';
+N[10][1] = 'The next tab is the <strong>User Strings</strong> tab, but let\'s ignore that for the moment; it\'s a pretty advanced function. Moving on to the <strong>Buttons</strong> tab, you\'ll see these options:<br /><br /><img src="mash_bt1.png" alt="Masher buttons tab" title="Masher buttons tab" width="500" height="215"></img><br /><br />The first part allows you to specify the navigation buttons you want to include in your unit pages. You can choose to include any of the three normal navigation buttons, and set the captions for them. Note that you don\'t have to worry about specifying the location of files here; the links are established automatically by the sequence of files in the Files tab.<br /><br />The final checkbox here relates to any HTML pages you have included (like the Instructions page in our example). You may have created a page like this in another authoring program such as DreamWeaver, but you presumably still want to include the same navigation system on the page, so that it can become part of the unit sequence. If you check this checkbox, the program will try to add navigation bars to the HTML page. If the HTML code is correct, this should work without problems, and your HTML page will have navigation bars like a Hot Potatoes exercise.';
+N[10][2] = new Array();
+
+N[10][3] = new Array();
+N[10][3][0] = new Array();
+N[10][3][0][0] = 11;
+N[10][3][0][1] = 'Adding a title for your unit';
+N[10][3][0][2] = new Array();
+
+N[10][3][0][3] = '';
+N[10][3][0][4] = 0;
+
+
+N[10][4] = new Array();
+
+
+N[11] = new Array();
+N[11][0] = 'Adding a title for your unit';
+N[11][1] = 'The next tab is the <strong>Source</strong> tab, but this is for advanced functions, so we\'ll ignore it for the moment. The final tab is the <strong>Index</strong> tab, which looks like this:<br /><br /><img src="mash_ix1.png" alt="Masher Index tab" title="Masher Index tab" width="500" height="105"></img><br /><br />All you need to do here is specify the name for your Unit. This will appear on the Index page that the program creates.';
+N[11][2] = new Array();
+
+N[11][3] = new Array();
+N[11][3][0] = new Array();
+N[11][3][0][0] = 12;
+N[11][3][0][1] = 'Saving your settings';
+N[11][3][0][2] = new Array();
+
+N[11][3][0][3] = '';
+N[11][3][0][4] = 0;
+
+
+N[11][4] = new Array();
+
+
+N[12] = new Array();
+N[12][0] = 'Saving your settings';
+N[12][1] = '<img src="mash_sv1.png" alt="Save your Masher file" title="Save your Masher file" width="175" height="260" style="float: right;"></img><br /><br />Before we go any further, it\'s a good idea to save your settings as a Masher file. Choose <strong>File</strong> / <strong>Save</strong> or <strong>Save As</strong>, and save your work as a <strong>.jms</strong> file. This saves all the settings in the Masher tabs, so that you can reload them later and build your unit again if you need to.';
+N[12][2] = new Array();
+
+N[12][3] = new Array();
+N[12][3][0] = new Array();
+N[12][3][0][0] = 13;
+N[12][3][0][1] = 'Building the unit';
+N[12][3][0][2] = new Array();
+
+N[12][3][0][3] = '';
+N[12][3][0][4] = 0;
+
+
+N[12][4] = new Array();
+
+
+N[13] = new Array();
+N[13][0] = 'Building the unit';
+N[13][1] = 'Finally, we\'ll build the unit. Just click on the <strong>Build unit</strong> button, and watch it happen!<br /><br />What actually happens is this:<br /><br />The Masher looks at each file in turn, and then starts the required Hot Potato, passing it all the information it needs to build the exercise into a Web page. The Potato starts up, exports the exercise to the target folder, then closes again. If there are any non-Hot Potatoes files, the Masher will load them and add a navigation bar if necessary. Finally, the Masher creates an Index page for the unit, listing all the contents, and saves this with the filename <strong>index.htm</strong> in the same folder. You should now have a complete unit of exercises, with an index and a functioning navigation system so that users can work through the materials in order. Simple!';
+N[13][2] = new Array();
+
+N[13][3] = new Array();
+N[13][3][0] = new Array();
+N[13][3][0][0] = 0;
+N[13][3][0][1] = 'Contents of the tutorial';
+N[13][3][0][2] = new Array();
+
+N[13][3][0][3] = '';
+N[13][3][0][4] = 0;
+
+N[13][3][1] = new Array();
+N[13][3][1][0] = 5;
+N[13][3][1][1] = 'Advanced functions';
+N[13][3][1][2] = new Array();
+
+N[13][3][1][3] = '';
+N[13][3][1][4] = 0;
+
+
+N[13][4] = new Array();
+
+
+
+
+
+
+//-->
+
+//]]>
+
+</script>
+
+</head>
+
+<body onload="StartUp()">
+
+<!-- BeginTopNavButtons -->
+
+
+<div class="NavButtonBar">
+
+
+
+
+<button class="NavButton" onfocus="NavBtnOver(this)" onblur="NavBtnOut(this)"  onmouseover="NavBtnOver(this)" onmouseout="NavBtnOut(this)" onmousedown="NavBtnDown(this)" onmouseup="NavBtnOver(this)" onclick="location='mashertutorial.htm?___q;0;'; return false;"> Index </button>
+
+
+
+
+</div>
+
+
+<!-- EndTopNavButtons -->
+
+<div class="Titles">
+	<h2 class="ExerciseTitle">Tutorial for the Hot Potatoes Masher Program</h2>
+
+
+
+</div>
+
+<div class="DecisionPoint">
+
+
+<div class="ControlButtons">
+
+<button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="SetBookmark()">Bookmark</button>
+
+<button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="Restart()">Restart</button>
+
+<button id="UndoButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="Undo()">Go back</button>
+
+</div>
+
+	<h2 id="DPTitle" class="DecisionPointTitle"></h2>
+
+<table class="DPTable"><tr>
+<td>
+
+	<div id="DPContentsDiv" class="DecisionPointText">
+
+		<div class="Instructions">
+		<div style="text-align: center;"><img src="masher_logo.png" alt="masher_logo.png" title="masher_logo" width="410" height="310" style="margin: auto;"></img></div><br /><br />Welcome to the Masher tutorial. This tutorial runs in your Web browser. Click on the Start button to enter the tutorial.<br />
+		</div>
+
+		<div class="Instructions">
+		
+		</div>
+
+	</div>
+
+	<div id="LinkListDiv" class="LinkList">
+
+		<div style="text-align: center">
+<button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="StartExercise()">Start</button>
+		</div>
+	</div>
+
+</td>
+<td>
+	<div id="AssetsDiv" class="Assets">
+
+	</div>
+</td></tr></table>
+</div>
+
+
+<div class="Feedback" id="FeedbackDiv">
+<div class="FeedbackText" id="FeedbackContent"></div>
+<button id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="HideFeedback(); return false;">&nbsp;OK&nbsp;</button>
+</div>
+
+<!-- BeginBottomNavButtons -->
+
+
+<!-- <div class="NavButtonBar" id="BottomNavBar">
+
+
+
+
+<button class="NavButton" onfocus="NavBtnOver(this)" onblur="NavBtnOut(this)"  onmouseover="NavBtnOver(this)" onmouseout="NavBtnOut(this)" onmousedown="NavBtnDown(this)" onmouseup="NavBtnOver(this)" onclick="location='mashertutorial.htm?___q;0;'; return false;"> Index </button>
+
+
+
+
+</div> -->
+
+
+<!-- EndBottomNavButtons -->
+
+<!-- BeginSubmissionForm -->
+
+<!-- EndSubmissionForm -->
+
+
+</body>
+</html>

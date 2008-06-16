@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+# name the package (as in debian/control) that will ship the extension
+MOZ_EXTENSION_PKG := ubufox
+#
+# xpi.mk will auto detect the .xpi in your package. if you want to do it
+# explicit, use this variable
+#MOZ_XPI_FILE := yourextension.xpi
+#
+# xpi.mk tries to auto detect the extension manager id (em:id) from the .xpis
+# install.rdf file. There might be cases where this doesn't work. use the following
+# variable to explicitly define an extension ID and disable auto detection
+#MOZ_EM_ID := {xxxxxxx-xxxx-xxxx}
+#
+# xpi.mk will run a build command before packaging an .xpi file. you can use this
+# to produce an .xpi. if you define this, the clean rule will remove any .xpi file
+# found in the top level directory
+MOZ_XPI_BUILD_COMMAND = sh build.sh
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/patchsys-quilt.mk
+include /usr/share/mozilla-devscripts/xpi.mk
+

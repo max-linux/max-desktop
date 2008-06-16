@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jquiz-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Martin Holmes</dc:creator>
+    <dc:title>Example JQuiz exercise showing all four question types</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>6</version>
+
+<data>
+<title>Example JQuiz exercise showing all four question types</title>
+
+<reading>
+<include-reading>0</include-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions><question-record><question>This is a multiple-choice question:
+
+Which software company publishes Hot Potatoes?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>Microsoft</text><feedback>Sorry! Microsoft is a very serious company, and would never dream of using a potato for a logo. Try again.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Apple</text><feedback>Sorry! Apple doesn&apos;t produce many programs for Windows! Try again.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Half-Baked Software</text><feedback>That&apos;s us! Half-Baked Software Inc. publishes Hot Potatoes and Quandary.</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Adobe</text><feedback>Sorry! Adobe software is usually related to graphic design. Try again.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>This is a short-answer question. The correct answer is &quot;JQuiz&quot;. Try typing a wrong answer (such as &quot;JCloze&quot;) to see specific feedback for that answer, and try typing an answer which is partly correct (such as &quot;JQuoz&quot;) to see the response you get.
+
+Which program was used to make this quiz?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>2</question-type><answers><answer><text>JCross</text><feedback>Sorry! JCross is used to make crosswords.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>JQuiz</text><feedback>That&apos;s correct! JQuiz is the program used to create question-based exercises.</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>JCloze</text><feedback>Sorry! JCloze is used to make gap-fill exercises.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>This question is a &quot;hybrid&quot; question. You will have two tries at answering it correctly by typing the answer in; if you still don&apos;t get it right, you will see some multiple-choice answers to choose from.
+
+Which program is used to make gap-fill exercises?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>3</question-type><answers><answer><text>JCloze</text><feedback>Correct! JCloze is used to make cloze, or gap-fill, exercises.</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>JCross</text><feedback>Sorry! JCross is used to make crosswords.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>JQuiz</text><feedback>Sorry! JQuiz is used to make question-based exercises.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>JMix</text><feedback>Sorry! JMix is used to make jumbled-word or jumbled-sentence exercises.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>JMatch</text><feedback>Sorry! JMatch is used to make matching exercises.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>This final question is a multiselect question. Which of the following are Hot Potatoes programs?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>4</question-type><answers><answer><text>JCloth</text><feedback>Hint: a JCloth is used for cleaning up the kitchen.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>JCPenney</text><feedback>Hint: JCPenney is a department store.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>JQuiz</text><feedback>Hint: JQuiz is a Potato.</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>JMix</text><feedback>Hint: JMix is a Potato.</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>JLo</text><feedback>Hint: JLo is a famous singer.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>JMatch</text><feedback>Hint: JMatch is a Potato.</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>JCross</text><feedback>Hint: JCross is a Potato.</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>JCloze</text><feedback>Hint: JCloze is a Potato.</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>The Masher</text><feedback>Hint: The Masher is a Potato.</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers><must-select-all>1</must-select-all></question-record></questions>
+</data>
+
+<hotpot-config-file>
+<jquiz>
+<exercise-subtitle></exercise-subtitle>
+<instructions></instructions>
+<guess-correct>Correct!</guess-correct>
+<guess-incorrect>Sorry! Try again.</guess-incorrect>
+<partly-incorrect>Your answer is partly wrong: </partly-incorrect>
+<enter-a-guess>Please enter a guess.</enter-a-guess>
+<next-correct-letter>Next correct letter in the answer: </next-correct-letter>
+<correct-answers>Correct answers: </correct-answers>
+<show-answer-caption>Show answer</show-answer-caption>
+<include-hint>1</include-hint>
+<include-show-answer>1</include-show-answer>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<continuous-scoring>1</continuous-scoring>
+<show-correct-first-time>0</show-correct-first-time>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<short-answer-tries-on-hybrid-q>2</short-answer-tries-on-hybrid-q>
+<separate-javascript-file>0</separate-javascript-file>
+<case-sensitive>0</case-sensitive>
+<include-keypad>0</include-keypad>
+</jquiz>
+
+<global>
+<your-score-is>Your score is: </your-score-is>
+<correct-indicator>:-)</correct-indicator>
+<incorrect-indicator>X</incorrect-indicator>
+<correct-first-time>Questions answered correctly first time: </correct-first-time>
+<keypad-characters></keypad-characters>
+<times-up>Your time is over!</times-up>
+<next-ex-caption>=&amp;#x003E;</next-ex-caption>
+<back-caption>&amp;#x003C;=</back-caption>
+<contents-caption>Index</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>0</include-back>
+<contents-url></contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ffffff</page-bg-color>
+<title-color>#000000</title-color>
+<ex-bg-color>#dddddd</ex-bg-color>
+<text-color>#000000</text-color>
+<link-color>#0000cc</link-color>
+<vlink-color>#0000ff</vlink-color>
+<nav-bar-color>#999999</nav-bar-color>
+<formmail-url></formmail-url>
+<email></email>
+<name-please>Please enter your name:</name-please>
+<user-string-1></user-string-1>
+<user-string-2></user-string-2>
+<user-string-3></user-string-3>
+<header-code></header-code>
+<correct-first-time>Questions answered correctly first time: </correct-first-time>
+<check-caption>Check</check-caption>
+<ok-caption>OK</ok-caption>
+<next-q-caption>=&amp;#x003E;</next-q-caption>
+<last-q-caption>&amp;#x003C;=</last-q-caption>
+<hint-caption>Hint</hint-caption>
+<show-all-questions-caption>Show all questions</show-all-questions-caption>
+<show-one-by-one-caption>Show questions one by one</show-one-by-one-caption>
+<show-also-correct>1</show-also-correct>
+<process-for-rtl>0</process-for-rtl>
+</global>
+</hotpot-config-file>
+</hotpot-jquiz-file>

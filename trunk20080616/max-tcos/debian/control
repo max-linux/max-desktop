@@ -1,0 +1,24 @@
+Source: max-tcos
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs
+Standards-Version: 3.7.2
+
+Package: max-tcos-alumno
+Architecture: all
+Pre-Depends: dpsyco-lib (>= 1.0.11), dpsyco-lib (<= 1.1.0), dpsyco-skel (>= 1.0.11)
+Depends: tcos-standalone, vlc, rsync
+Description: Configuración de tcos-standalone para equipos de alumnos
+ Contiene:
+  * Imagen de bloqueo lockscreen
+  * Mensajes notify
+
+Package: max-tcos-profesor
+Architecture: all
+Pre-Depends: dpsyco-lib (>= 1.0.11), dpsyco-lib (<= 1.1.0), dpsyco-skel (>= 1.0.11)
+Depends: tcosmonitor ( >= 0.2.1.max1), rsync, vlc
+Description: Configuración de tcosmonitor para equipos de profesores
+ Contiene:
+  * Parches para vlc sin MP3
+  * Configuración de rsync

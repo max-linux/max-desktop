@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+binary-install/geogebra::
+	# clean svn dirs
+	find $(CURDIR)/debian/geogebra -type d -name .svn | xargs rm -rf --
+	rm -f $(CURDIR)/debian/geogebra/usr/share/geogebra/geogebra.lax
+
+	# delete uninstall info
+	rm -rf $(CURDIR)/debian/geogebra/usr/share/geogebra/unins*
+
+	dh_link /usr/share/geogebra/geogebra /usr/bin/geogebra
+
+	# conf file is in /etc
+	dh_link /etc/geogebra.lax /usr/share/geogebra/geogebra.lax
+

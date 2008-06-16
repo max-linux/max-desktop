@@ -1,0 +1,52 @@
+max-netboot-server (4.0.max0.8) max; urgency=low
+
+  * No cache already cached packages
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 05 Jun 2008 18:43:28 +0200
+
+max-netboot-server (4.0.max0.7) max; urgency=low
+
+  * Change chain.c32 to LOCALBOOT 
+  * Create /etc/tcos/disable915 to not show 915 intel warning
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 15 May 2008 15:22:21 +0200
+
+max-netboot-server (4.0.max0.6) max; urgency=low
+
+  * Call update-dpsyco-skel in update-netboot-server
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 28 Mar 2008 19:11:00 +0100
+
+max-netboot-server (4.0.max0.5) max; urgency=low
+
+  * update-netboot-server
+    - Don't cache packages already cached
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 11:58:58 +0100
+
+max-netboot-server (4.0.max0.4) max; urgency=low
+
+  * update-netboot-server
+    - Configure font server before exec gentcos
+    - Remove [done] of echos
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 25 Mar 2008 14:19:29 +0100
+
+max-netboot-server (4.0.max0.3) max; urgency=low
+
+  * update-netboot-server:
+    - Use cdrom files if exists intead of caching with gentcos
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 24 Mar 2008 19:15:17 +0100
+
+max-netboot-server (4.0.max0.2) max; urgency=low
+
+  * Fix typo in postinst file
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 17 Mar 2008 22:43:17 +0100
+
+max-netboot-server (4.0.max0.1) max; urgency=low
+
+  * First version.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 17 Mar 2008 18:58:31 +0100

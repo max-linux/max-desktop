@@ -1,0 +1,4 @@
+To select a theme before installation, use the debian-inastaller preseed mechanism
+select F6 at the CD Bootscreen and add the following to the parameter line:
+preseed/max-artwork/theme=plain 
+(replace plain with "young" or "default" as you like)

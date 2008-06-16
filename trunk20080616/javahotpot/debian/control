@@ -1,0 +1,20 @@
+Source: javahotpot
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs, wget, unzip
+Standards-Version: 3.7.2
+
+Package: javahotpot
+Architecture: all
+Depends: sun-java5-bin | sun-java6-bin | sun-java5-jdk | sun-java6-jdk
+Recommends: jmf
+Description: Las "potatoes" son herramientas que permiten diseñar actividades educativas
+ javahotpot es una aplicación diseñada en Java que permite el diseño  de diversos tipos de pruebas educativas:
+ - JCloze diseña ejercicios en los que los alumnos tienen que rellenar huecos
+ - JMatch diseña ejercicios de asociación
+ - JMix diseña ejercicios cuyo objetivo es ordenar frases
+ - JQuiz es un ejercicio de respuestas múltiples
+ En la siguientes direcciones puede consultar manuales en castellano de hotpotatoes
+ http://platea.pntic.mec.es/~iali/CN/Hot_Potatoes/
+ http://www.aula21.net/segunda/hotpotatoes.htm

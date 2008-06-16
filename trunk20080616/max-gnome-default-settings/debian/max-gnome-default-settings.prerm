@@ -1,0 +1,40 @@
+#!/bin/bash
+
+META_GCONF=/usr/share/max/gconf/
+META_GCONF_DUMPS=/usr/share/max/gconf-dumps
+
+
+
+max_gconf_unset() {
+  gconftool-2 --direct --config-source xml:readwrite:$1 --unset $2 >/dev/null 2>&1
+}
+
+
+case $1 in
+   purge)
+     # remove gconf settings
+     for _file in $(find $META_GCONF -name "*.gconf"); do
+       maxgconf --unset $_file
+     done
+
+     # unset mandatory and defaults
+     for _file in $(find $META_GCONF_DUMPS -name "*dump.gconf"); do
+
+       gpath=$(echo "/"$_file| sed 's|.dump.gconf||g' | sed 's|defaults||g' | sed 's|mandatory||g' | sed 's|\.|/|g')
+
+       # filename contain mandatory string
+       if [ $(echo $_file | grep -c "mandatory") -gt 0 ]; then
+         echo "Unsetting mandatory gconf values in $(basename $_file)"
+         max_gconf_unset "/etc/gconf/gconf.xml.mandatory" $gpath
+       else
+         echo "Unsetting defaults gconf values in $(basename $_file)"
+         max_gconf_unset "/etc/gconf/gconf.xml.defaults" $gpath
+       fi
+
+     done
+     
+   ;;
+esac
+
+
+#DEBHELPER#

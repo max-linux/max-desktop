@@ -1,0 +1,42 @@
+max-hardware (4.0.max0.7) max; urgency=low
+
+  * Change Elo detection, use 'lsusb|grep -q 04e7' instead of /proc/bus/usb/devices
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 12 Jun 2008 18:47:02 +0200
+
+max-hardware (4.0.max0.6) max; urgency=low
+
+  * Mount /proc/bus/usb (needed by Elo TouchComputer)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 09:08:32 +0200
+
+max-hardware (4.0.max0.5) max; urgency=low
+
+  * Enable Toshiba Portege M700 alsa sound device
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 06 Jun 2008 13:59:13 +0200
+
+max-hardware (4.0.max0.4) max; urgency=low
+
+  * Exec ddcprobe (and add xresprobe to depends) for Elo TouchComputer
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 23 May 2008 22:12:18 +0200
+
+max-hardware (4.0.max0.3) max; urgency=low
+
+  * Add Toshiba PORTEGE M700 wacom detection with setserial
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 13:10:39 +0200
+
+max-hardware (4.0.max0.2) max; urgency=low
+
+  * Fix typo in 00_ibm_scsci
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 12:18:01 +0200
+
+max-hardware (4.0.max0.1) max; urgency=low
+
+  * Initial version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 24 Apr 2008 19:20:46 +0200
+

@@ -1,0 +1,21 @@
+animalandia (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 12:23:39 +0100
+
+animalandia (3.1.max1) max; urgency=low
+
+  * New release
+  * Delete /usr/bin/animalandia command is now in desktop file
+  * Add animalandia-tutorial.desktop
+  * Add icon in /usr/share/pixmaps
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Jan 2008 19:58:04 +0100
+
+animalandia (1.0-1) stable; urgency=low
+
+  * Initial release
+
+ -- bertuco <bertuco@grupoikusnet.com>  Tue, 26 Sep 2006 14:02:35 +0200
+

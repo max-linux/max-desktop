@@ -1,0 +1,252 @@
+max-live (4.0.max0.30) max; urgency=low
+
+  * 11max:
+    - Adduser USERNAME to sambashare group
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 11 Jun 2008 19:17:17 +0200
+
+max-live (4.0.max0.29) max; urgency=low
+
+  * 11max
+    - In nanoMaX use Desktop and link Escritorio => Desktop
+      (xfdesktop try to create and we have a symlink)
+    - Delete all Examples stuff
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 24 May 2008 15:23:27 +0200
+
+max-live (4.0.max0.28) max; urgency=low
+
+  * Don't use Escritorio in nanoMaX
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 16:13:10 +0200
+
+max-live (4.0.max0.27) max; urgency=low
+
+  * Dpsyco usr/share/initramfs-tools/scripts/casper:
+    - Remove mode=755 in mount /cow
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 15:35:42 +0200
+
+max-live (4.0.max0.26) max; urgency=low
+
+  * Detect nanomax and start Xfce4 desktop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 08 May 2008 21:24:24 +0200
+
+max-live (4.0.max0.25) max; urgency=low
+
+  * Really remove Examples desktop dir
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 24 Apr 2008 19:20:46 +0200
+
+max-live (4.0.max0.24) max; urgency=low
+
+  * Delete Examples from Escritorio or Desktop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 24 Apr 2008 18:41:49 +0200
+
+max-live (4.0.max0.23) max; urgency=low
+
+  * Only remove Exmaples if exists
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 18:27:20 +0200
+
+max-live (4.0.max0.22) max; urgency=low
+
+  * Try to hack new casper lang2locale
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 17:20:56 +0200
+
+max-live (4.0.max0.21) max; urgency=low
+
+  * Add creditos_max40
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 21 Apr 2008 23:46:08 +0200
+
+max-live (4.0.max0.20) max; urgency=low
+
+  * 11max:
+    - No create .sudo_as_admin to show sudo help
+  * 50configure_wacom:
+    - No remove script
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 13 Apr 2008 14:17:35 +0200
+
+max-live (4.0.max0.19) max; urgency=low
+
+  * dpsyco casper-bottom/14locales:
+    - write LC_ALL env var too
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 21:52:04 +0200
+
+max-live (4.0.max0.18) max; urgency=low
+
+  * 50configure_wacom:
+    - Not exec into initramfs (wacom drivers not loaded)
+    - Create a shell script in /etc/rc2.d/ to configure xorg.conf in live mode
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 21:51:35 +0200
+
+max-live (4.0.max0.17) max; urgency=low
+
+  * Add 50configure_wacom:
+    - Configure /etc/X11/xorg.conf for WACOM tablets if /dev/input/wacom exists
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Apr 2008 16:46:22 +0200
+
+max-live (4.0.max0.16) max; urgency=low
+
+  * Delete dpsyco 20xconfig (bug detected in max-genlive preseed)
+  * Remove 50configure_keyboard
+  * Remove 44fix_xorg
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 31 Mar 2008 16:53:12 +0200
+
+max-live (4.0.max0.15) max; urgency=low
+
+  * Restart console-setup at casper-bottom
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 00:24:12 +0100
+
+max-live (4.0.max0.14) max; urgency=low
+
+  * debian/postinst:
+    - Create vboxusers group (add to max.seed too)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 12:08:36 +0100
+
+max-live (4.0.max0.13) max; urgency=low
+
+  * 11max:
+    - Enable Desktop network icon
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 26 Mar 2008 16:11:51 +0100
+
+max-live (4.0.max0.12) max; urgency=low
+
+  * Translate /etc/init.d/casper script (eject cdrom)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 25 Mar 2008 14:03:30 +0100
+
+max-live (4.0.max0.11) max; urgency=low
+
+  * 20xconfig:
+    - Preseed keyboard layout (avoid to use wrong " pc105")
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 25 Mar 2008 13:00:45 +0100
+
+max-live (4.0.max0.10) max; urgency=low
+
+  * 45disable_scim:
+    - Fix typo ; intead of ,
+  * 44fix_xorg_keymap:
+    - Wrap strings with ""
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 24 Mar 2008 19:07:30 +0100
+
+max-live (4.0.max0.9) max; urgency=low
+
+  * Remove PolicyKit patch, appy in upstream (casper 1.123)
+    - https://bugs.launchpad.net/ubuntu/+source/casper/+bug/201852
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 14 Mar 2008 23:05:12 +0100
+
+max-live (4.0.max0.8) max; urgency=low
+
+  * 45disable_scim:
+    - Disable SCIM (as enabled by default in Ubuntu)
+      see: https://bugs.launchpad.net/ubuntu/+source/scim/+bug/199030
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 12 Mar 2008 09:53:23 +0100
+
+max-live (4.0.max0.7) max; urgency=low
+
+  * 44fix_xorg_keymap:
+    - Replace xorg Layout and Model (xorg add a blank before string)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 11 Mar 2008 12:25:56 +0100
+
+max-live (4.0.max0.6) max; urgency=low
+
+  * 11max:
+    - Create new PolicyKit.conf to not ask password for madrid user in live session
+    - Install ubiquity-maxui.desktop instead of ubuntu installer
+    - Remove Examples/Ejemplos dir in desktop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 07 Mar 2008 12:00:57 +0100
+
+max-live (4.0.max0.5) max; urgency=low
+
+  * Add ubiquity-frontend-max to Depends
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 05 Mar 2008 18:53:49 +0100
+
+max-live (4.0.max0.4) max; urgency=low
+
+  * Move usr/lib/ubiquity/apt-setup/generators/90security to
+    usr/lib/ubiquity/apt-setup/generators/91security and update from hardy
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 20:49:19 +0100
+
+max-live (4.0.max0.3) max; urgency=low
+
+  * 11max:
+    - Rename Examples => Ejemplos
+    - chown to madrid user
+    - touch .sudo hidden file
+    - Overwrite timezone with Europe/Madrid
+  * /etc/casper.conf
+    - Revert builder to Ubuntu (configure sudo user)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 16:15:33 +0100
+
+max-live (4.0.max0.2) max; urgency=low
+
+  * Add /etc/casper.conf to rename live user and live hostname
+  * Add 11max to casper-bottom to create links to manuals and rename Desktop => Escritorio
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 13:48:39 +0100
+
+max-live (4.0.max0.1) max; urgency=low
+
+  * Update to MaX 4.0
+  * Change max mirror to max40 directory
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 17:24:22 +0100
+
+max-live (3.1.max6) max; urgency=low
+
+  * Add /usr/lib/ubiquity/apt-setup/generators/90security
+    to not show error if don't have connection and mirror test fail
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Jan 2008 19:29:52 +0100
+
+max-live (3.1.max5) max; urgency=low
+
+  * Rename package max-install => max-live
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 28 Jan 2008 18:04:17 +0100
+
+max-install (3.1.max4) max; urgency=low
+
+  * Add live and installer depends
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 28 Jan 2008 11:15:28 +0100
+
+max-install (3.1.max3) max; urgency=low
+
+  * Remove update-grub, thin package will only contain installer custom files
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 22 Jan 2008 10:02:06 +0100
+
+max-install (3.1.max2) max; urgency=low
+
+  * Add ubiquity max mirror generator (configure max mirror during install)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 21 Jan 2008 18:02:34 +0100
+
+max-install (3.1.max1) max; urgency=low
+
+  * Initial release, divert update-grub script with MaX 3.1 title 
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 20 Jan 2008 21:09:36 +0100

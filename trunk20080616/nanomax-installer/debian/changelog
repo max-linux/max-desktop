@@ -1,0 +1,42 @@
+nanomax-installer (4.0.max1.1) max; urgency=low
+
+  * do-install.sh:
+    - Use fat32 filesystem if portables size is greater than 1900 MiB
+    - Rename label portables => datos
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 24 May 2008 13:15:25 +0200
+
+nanomax-installer (4.0.max1.0) max; urgency=low
+
+  * New Release "Happy Happy worker"
+    - Add sliders to set persistent and portable partition sizes
+    - Remove persistent from syslinux.cfg when persistence is disabled
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 23 May 2008 21:59:48 +0200
+
+nanomax-installer (4.0.max0.4) max; urgency=low
+
+  * usr/share/nanomax-installer/do-install.sh:
+    - Ups forgot to set DEVICE in fdisk command
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 23 May 2008 12:21:57 +0200
+
+nanomax-installer (4.0.max0.3) max; urgency=low
+
+  * usr/share/nanomax-installer/do-install.sh:
+    - Use bytes and divide with 10^6 to get Mb of DEVICE.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 23 May 2008 12:16:21 +0200
+
+nanomax-installer (4.0.max0.2) max; urgency=low
+
+  * Fix typo in portables tar extract command
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 12 May 2008 23:19:30 +0200
+
+nanomax-installer (4.0.max0.1) max; urgency=low
+
+  * First version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 16:13:10 +0200
+

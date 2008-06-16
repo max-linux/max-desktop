@@ -1,0 +1,14 @@
+Source: max-language-es
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs
+Standards-Version: 3.7.3
+
+Package: max-language-es
+Architecture: all
+Depends: scite
+Description: Some translation files of MaX4.0
+ Contains:
+  * Scite translation
+

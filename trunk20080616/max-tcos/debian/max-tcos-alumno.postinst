@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    configure)
+        /usr/sbin/update-dpsyco-skel > /dev/null 2>&1
+        /etc/init.d/tcos-standalone restart || true
+    ;;
+
+esac
+
+
+#DEBHELPER#
+
+exit 0
+
+

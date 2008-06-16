@@ -1,0 +1,81 @@
+max-xfce-default-settings (4.0.max8) max; urgency=low
+
+  * Change Xfce menu icon to maxtoon (48x48) max logo (without HDD image)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 18 May 2008 11:54:43 +0200
+
+max-xfce-default-settings (4.0.max7) max; urgency=low
+
+  * Dpsyco etc/xdg/xfce4/desktop/xfce-registered-categories.xml.es
+    - Translate Development and Education menus
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 13:07:28 +0200
+
+max-xfce-default-settings (4.0.max6) max; urgency=low
+
+  * Update Xfce4 settings (panel size=37, 4 workspaces, trash in panel, etc...)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 12:51:56 +0200
+
+max-xfce-default-settings (4.0.max5) max; urgency=low
+
+  * Rebuild with new panel settings
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 21:42:28 +0200
+
+max-xfce-default-settings (4.0.max4) max; urgency=low
+
+  * Add etc/xdg/Thunar/volmanrc
+    - Configure thunar-volman in similar way of gnome-volume-manager (Closes: #64)
+  * Configure etc/xdg/xfce4/panel/panels.xml and add etc/xdg/xfce4/panel/xfce4-mixer-9.rc
+    - Show Sound mixer in panel (Closes: #69)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 17:51:22 +0200
+
+max-xfce-default-settings (4.0.max3) max; urgency=low
+
+  * Change cursor-theme to DMZ-White and add depends on dmz-cursor-theme
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 17:33:06 +0200
+
+max-xfce-default-settings (4.0.max2) max; urgency=low
+
+  * Update icons and colors themes
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 26 Apr 2008 14:04:22 +0200
+
+max-xfce-default-settings (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 20:40:54 +0100
+
+max-xfce-default-settings (3.1.max3) max; urgency=low
+
+  * Change default panel clock with orage (Jose Miguel Sancho)
+  * Set icons in desktop bigger (Jose Miguel Sancho)
+  * Remove in postinst old clock applet
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 20 Jan 2008 13:14:05 +0100
+
+max-xfce-default-settings (3.1.max2) max; urgency=low
+
+  * etc/xdg/xfce4/mcs_settings/desktop.xml:
+    - Set wallpaper and enable it
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 03 Jan 2008 11:43:21 +0100
+
+max-xfce-default-settings (3.1.max1) max; urgency=low
+
+  * New version
+  * Remove GDM theme
+  * Remove xubuntu-logo.png
+  * Change panel to be similar than GNOME.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 15:56:53 +0100
+
+max-xfce-default-settings (0.1) 30; urgency=low
+
+  * Initial release. (Based on xubuntu-default-settings)
+
+ -- bertuco <bertuco@grupoikusnet.com>  Wed, 27 Sep 2006 10:50:54 +2000

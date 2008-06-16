@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>ubufox@ubuntu.com</em:id>
+    <em:name>Ubuntu Firefox Modifications</em:name>
+    <em:version>0.5~rc2</em:version>
+    <em:creator>Canonical Ltd.</em:creator>
+    <em:contributor>Alexander Sack &lt;asac@ubuntu.com&gt;</em:contributor>
+    <em:contributor>Sasa Bodiroza &lt;jazzva@gmail.com&gt;</em:contributor>
+    <em:contributor>Daniel Abramov &lt;ex@vingrad.ru&gt;</em:contributor>
+    <em:description>Ubuntu configuration defaults and apt support for firefox extensions/plugins.</em:description>
+    <em:iconURL>chrome://ubufox/content/ubuntulogo32.png</em:iconURL>
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- firefox -->
+        <em:minVersion>1.5</em:minVersion>
+        <em:maxVersion>3.0.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>

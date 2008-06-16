@@ -1,0 +1,25 @@
+
+
+
+
+_echo "Instalando paquetes de MaX"
+
+chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes de MaX"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+export ERROR=0
+export MAX_ERROR=0
+apt-get $APT_OPTS install max-keyring || ERROR=1
+apt-get $APT_OPTS update || ERROR=1
+apt-get $APT_OPTS install max-desktop-all
+[ "\$(ls /home/)" != "" ] && rm -rf /home/* && apt-get $APT_OPTS -f install 
+apt-get $APT_OPTS install max-desktop-all max-drivers || ERROR=1
+apt-get clean
+exit \$ERROR
+EOC
+
+
+rm -rf $CHROOT/home/*

@@ -1,0 +1,147 @@
+
+if [ ! -n "$ENABLE_EXTRA" ]; then
+  _echo "No descargando paquetes extra, activar con \$ENABLE_EXTRA=1"
+
+else
+
+# borrar paquetes primero
+rm -rf $CDRW/pool/max/
+mkdir -p $CDRW/pool/max/
+
+chroot $CHROOT << EOF || _exit "Error actualizando chroot"
+apt-get update
+apt-get clean
+EOF
+
+URIS=$(chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA| awk '{print $1}' | sed "s/'//g")
+
+# esound conclicts with pulseaudio-esound-compat
+for pkg in esound libesd0; do
+  tmp=`chroot $CHROOT/ apt-cache show $pkg| awk '/^Filename/ {print $2}'`
+  if [ $LOCAL_MIRROR ]; then
+    tmp="http://$MIRROR/mirror/ubuntu/$tmp"
+  else
+    tmp="http://archive.ubuntu.com/ubuntu/$tmp"
+  fi
+  URIS="$URIS $tmp"
+done
+
+if [ "$URIS" = "" ]; then
+  _exit "Error leyendo URIS de paquetes extra, conflictos o dependencias seguramente..."
+fi
+
+for url in $URIS; do
+  ruta=$(dirname $(echo $url| awk -F"pool" '{print $2}') | sed 's/main//g'| sed 's/universe//g' | sed 's/multiverse//g'| sed 's|//|/|g')
+  mkdir -p $CDRW/pool/max/$ruta/
+  echo "  => Descargando paquete $(basename $url) desde http://$(echo $url| awk -F'/' '{print $3"/"$4}')"
+  wget -q $url -O $CDRW/pool/max/$ruta/$(basename $url) || _exit "Error al descargar $url"
+done
+
+# borrar primero
+rm -rf $CDRW/dists/$DISTRO/max
+mkdir -p $CDRW/dists/$DISTRO/max/binary-$ARCH
+mkdir -p $CDRW/dists/$DISTRO/max/source
+
+cat << EOF > $CDRW/dists/$DISTRO/max/binary-$ARCH/Release
+Archive: $DISTRO
+Version: $DISTRO_VERSION
+Component: max
+Origin: Ubuntu
+Label: Ubuntu
+Architecture: $ARCH
+EOF
+
+TMP=$CURDIR/ftp-archive
+
+mkdir -p $TMP
+
+cat << EOF > $TMP/apt-ftparchive-deb.conf
+Dir {
+  ArchiveDir "$CDRW";
+};
+
+TreeDefault {
+  Directory "pool/";
+};
+
+BinDirectory "pool/main" {
+  Packages "dists/$DISTRO/main/binary-$ARCH/Packages";
+};
+
+Default {
+  Packages {
+    Extensions ".deb";
+    Compress ". gzip";
+  };
+};
+
+Contents {
+  Compress "gzip";
+};
+EOF
+
+cat << EOF > $TMP/apt-ftparchive-max.conf
+Dir {
+  ArchiveDir "$CDRW";
+};
+
+TreeDefault {
+  Directory "pool/";
+};
+
+BinDirectory "pool/max" {
+  Packages "dists/$DISTRO/max/binary-$ARCH/Packages";
+};
+
+Default {
+  Packages {
+    Extensions ".deb";
+    Compress ". gzip";
+  };
+};
+
+Contents {
+  Compress "gzip";
+};
+EOF
+
+cat << EOF > $TMP/release.conf
+APT::FTPArchive::Release::Origin "Ubuntu";
+APT::FTPArchive::Release::Label "Ubuntu";
+APT::FTPArchive::Release::Suite "$DISTRO";
+APT::FTPArchive::Release::Version "$DISTRO_VERSION";
+APT::FTPArchive::Release::Codename "$DISTRO";
+APT::FTPArchive::Release::Architectures "$ARCH";
+APT::FTPArchive::Release::Components "main restricted max";
+APT::FTPArchive::Release::Description "Ubuntu Hardy 8.04";
+EOF
+
+APTCONF=$TMP/release.conf
+
+_echo "Construyendo repositorio para max"
+
+pushd $CDRW
+apt-ftparchive -c $APTCONF generate $TMP/apt-ftparchive-deb.conf
+apt-ftparchive -c $APTCONF generate $TMP/apt-ftparchive-max.conf
+apt-ftparchive -c $APTCONF release $CDRW/dists/$DISTRO > $CDRW/dists/$DISTRO/Release
+# delete Release lines
+sed -i '/Release/d' $CDRW/dists/$DISTRO/Release
+popd
+
+echo ""
+echo "  IMPORTANTE"
+echo ""
+echo "   Hay que subir el archivo  $CDRW/dists/$DISTRO/Release (por scp)"
+echo "   a max.educa.madrid.org firmarlo con la clave privada de MaX y copiarlo en"
+echo "   $CDRW/dists/$DISTRO/Release.gpg"
+echo ""
+
+echo "De momento abrimos una consola y esperamos a que se copie el archivo a su sitio"
+echo "Cuando termines escribes exit o pulsas Ctrl+D para seguir... o exit 1 para terminar"
+
+bash || _exit "Codigo de salida != 0, forzando salida"
+
+
+rm -rf $TMP
+
+fi # fin de ENABLE_EXTRA

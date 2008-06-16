@@ -1,0 +1,146 @@
+
+#_echo "Abriendo consola para limpiar"
+#bash
+
+
+_echo "Actualizando imágenes de arranque"
+
+# configurar usplash para 1024
+cat << EOF > $CHROOT/etc/usplash.conf
+# MaX usplash conf
+xres=1024
+yres=768
+EOF
+
+KERNEL=$(basename $(ls chroot/boot/vmlinuz* -t| head -1)| sed 's/vmlinuz-//g')
+
+_echo "Instalando modulos extra para $KERNEL"
+chroot $CHROOT/ << EOF
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+apt-get $APT_OPTS install linux-backports-modules-$KERNEL linux-restricted-modules-$KERNEL virtualbox-ose-modules-$KERNEL
+EOF
+
+
+
+chroot $CHROOT /usr/sbin/update-initramfs -u -k $KERNEL || _exit "No se ha podido generar la imagen de arranque"
+cp $CHROOT/boot/vmlinuz-$KERNEL   $CDRW/casper/vmlinuz
+cp $CHROOT/boot/initrd.img-$KERNEL $CDRW/casper/initrd.gz
+
+rm -f $CHROOT/boot/initrd.img-$KERNEL.bak
+
+
+# borrar kernel viejos
+for kernel in $(ls $CHROOT/lib/modules/); do
+  if [ "$kernel" = "$KERNEL" ]; then
+    _echo "  No borrando el kernel por defecto $kernel ..."
+  else
+    _echo "  Borrando kernel $kernel"
+    PKGS=$(chroot $CHROOT/ dpkg -l | awk '{print $2}' | grep $kernel )
+    DELPKG=""
+    for pkg in $PKGS; do DELPKG="$DELPKG $pkg"; done
+    chroot $CHROOT/ << EOF || _exit "No se pudo desinstalar el kernel viejo $kernel."
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+export ERROR=0
+apt-get $APT_OPTS remove --purge $DELPKG || ERROR=1
+EOF
+  fi
+done
+
+if [ "$(chroot $CHROOT/ dpkg -l |grep -c ^rc)" != 0 ]; then
+  # borrar configuracion residual
+  chroot $CHROOT/ << EOF || _exit "No se pudo borrar la conf residual"
+dpkg --purge \$(dpkg -l |grep ^rc| awk '{print \$2}')
+EOF
+fi
+
+
+
+_echo "Generando listas de paquetes para la version instalada"
+
+chroot $CHROOT/ dpkg-query -W --showformat='${Package} ${Version}\n' > $CDRW/casper/filesystem.manifest
+cp $CDRW/casper/filesystem.manifest  $CDRW/casper/filesystem.manifest-desktop
+sed -ie /ubiquity/d                  $CDRW/casper/filesystem.manifest-desktop
+sed -ie /casper/d                    $CDRW/casper/filesystem.manifest-desktop 
+sed -ie /max-live/d                  $CDRW/casper/filesystem.manifest-desktop 
+sed -ie /libdebian-installer4/d      $CDRW/casper/filesystem.manifest-desktop
+sed -ie /os-prober/d                 $CDRW/casper/filesystem.manifest-desktop
+sed -ie /ubuntu-live/d               $CDRW/casper/filesystem.manifest-desktop
+#sed -ie /user-setup/d                $CDRW/casper/filesystem.manifest-desktop
+sed -ie /example-content/d           $CDRW/casper/filesystem.manifest-desktop
+
+# borrar temporal
+rm -f $CDRW/casper/filesystem.manifest-desktope
+
+_echo "Generando listas de metapaquetes"
+# generar metalistas para escritorio alumno profesor y servidor
+for meta in alumno profesor servidor terminales; do
+
+  case $meta in
+     alumno)
+       metapkg="max-alumno"
+       metafile=$CDRW/casper/filesystem.manifest-desktop.alumno
+       ;;
+     profesor)
+       metapkg="max-profesor"
+       metafile=$CDRW/casper/filesystem.manifest-desktop.profesor
+       ;;
+     servidor)
+       metapkg="max-servidor"
+       metafile=$CDRW/casper/filesystem.manifest-desktop.servidor
+       ;;
+     terminales)
+       metapkg="max-terminales"
+       metafile=$CDRW/casper/filesystem.manifest-desktop.terminales
+       ;;
+     nanomax)
+       metapkg="max-nanomax"
+       metafile=$CDRW/casper/filesystem.manifest-desktop.servidor
+       ;;
+  esac
+
+  cp $CDRW/casper/filesystem.manifest-desktop $metafile
+  echo "$metapkg 0.0.1" >> $metafile
+
+  if [ "$meta" = "terminales" ]; then
+    echo "915resolution 0.0.1" >> $metafile
+  fi
+
+  cat ${metafile} | sort > ${metafile}.tmp
+  mv ${metafile}.tmp ${metafile}
+done
+
+
+_echo "Limpiando... (puede fallar algun archivo, no pasa nada...)"
+rm -f $CHROOT/etc/mtab
+rm -f $CHROOT/etc/X11/xorg.conf
+rm -f $CHROOT/var/crash/*
+rm -f $CHROOT//var/lib/update-notifier/user.d/*
+rm -rf $CHROOT/tmp/*
+for log in $(find $CHROOT/var/log/ -type f); do cat /dev/null > $log; done
+
+_echo "Desmontando proc sys y posiblemente modules/volatile"
+umount -l $CHROOT/proc
+umount -l $CHROOT/sys
+umount $CHROOT/lib/modules/*/volatile/ 2>/dev/null
+
+_echo "Configurando repositorio global"
+cp /etc/resolv.conf $CHROOT/etc/
+cp $GENLIVE/sources.list $CHROOT/etc/apt
+chroot $CHROOT apt-get update
+rm $CHROOT/etc/resolv.conf
+
+_echo "Actualizando DPSYCO..."
+chroot $CHROOT/ /usr/sbin/update-dpsyco-skel
+
+_echo "Deshabilitando contraseña de root"
+chroot $CHROOT/ usermod -L root
+
+

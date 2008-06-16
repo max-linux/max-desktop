@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/dpatch.mk
+include /usr/share/dpatch/dpatch.make
+
+
+build-stamp:
+	rm -f ubufox.xpi
+	(cd ubufox && sh build.sh)
+	# uncompress xpi file
+	mkdir xpi && cd xpi && unzip ../ubufox/ubufox.xpi
+	touch build-stamp
+
+build/max-firefox-conf:: build-stamp
+
+binary-install/max-firefox-conf::
+	install -m 644 xpi/chrome/ubufox.jar $(CURDIR)/debian/max-firefox-conf/usr/share/dpsyco/skel/usr/share/ubufox/chrome
+	# clean svn dirs
+	find $(CURDIR)/debian/max-firefox-conf -type d -name .svn | xargs rm -rf --

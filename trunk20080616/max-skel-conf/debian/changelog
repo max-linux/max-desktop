@@ -1,0 +1,208 @@
+max-skel-conf (4.0.max17) max; urgency=low
+
+  * Update manual.desktop with new filename
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 13 Jun 2008 12:37:08 +0200
+
+max-skel-conf (4.0.max16) max; urgency=low
+
+  * Fix typ in postinst (use abs path of smb.conf)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 11 Jun 2008 19:12:39 +0200
+
+max-skel-conf (4.0.max15) max; urgency=low
+
+  * homealumno:
+    - Disable compiz using gconftool-2 (needs test)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 15:13:13 +0200
+
+max-skel-conf (4.0.max14) max; urgency=low
+
+  * /etc/skel:
+    - Add .qt/qcadrc (default spanish)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 05 Jun 2008 22:59:09 +0200
+
+max-skel-conf (4.0.max13) max; urgency=low
+
+  * postinst:
+    - Configure smb.conf only if exists
+  * /etc/skel:
+    - Configure qdvdauthor in spanish (avoid to show error startup message) (closes: #82)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 19:42:41 +0200
+
+max-skel-conf (4.0.max12) max; urgency=low
+
+  * Change KDE icon theme to maxtoon and set 4 desktops instead of 3
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 18 May 2008 13:01:31 +0200
+
+max-skel-conf (4.0.max11) max; urgency=low
+
+  * Uppssss, set default-display-manager to /usr/sbin/gdm instead of /usr/bin/gdm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 19:53:07 +0200
+
+max-skel-conf (4.0.max10) max; urgency=low
+
+  * Dpsyco /etc/X11/default-display-manager:
+    - Force GDM as default display manager
+  * max-skel-conf.postinst:
+    - Preseed shared/default-x-display-manager to gdm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 13:17:44 +0200
+
+max-skel-conf (4.0.max9) max; urgency=low
+
+  * etc/gftp/gftprc:
+    - Don't show hidden files by default
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 16:35:24 +0200
+
+max-skel-conf (4.0.max8) max; urgency=low
+
+  * Configure SAMBA without dpsyco (max-skel-conf.postinst)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 16:05:16 +0200
+
+max-skel-conf (4.0.max7) max; urgency=low
+
+  * Use chown instead of chmod
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 13:35:48 +0200
+
+max-skel-conf (4.0.max6) max; urgency=low
+
+  * Fix postinst of creditos_max40.dekstop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 13:32:21 +0200
+
+max-skel-conf (4.0.max5) max; urgency=low
+
+  * Add creditos_max40 launcher in Desktop/Escritorio
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 13:17:23 +0200
+
+max-skel-conf (4.0.max4) max; urgency=low
+
+  * Add /etc/issue[.net]
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 16 Apr 2008 18:01:46 +0200
+
+max-skel-conf (4.0.max3) max; urgency=low
+
+  * /etc/profile /etc/skel/.bashrc /etc/bash.bashrc
+    - Resync with Ubuntu files 
+  * Add /etc/motd.tail
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 23:05:49 +0200
+
+max-skel-conf (4.0.max2) max; urgency=low
+
+  * postinst, postrm:
+    - Search home with find instead of /home/*
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 22:39:01 +0200
+
+max-skel-conf (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 12:27:41 +0100
+
+max-skel-conf (3.1.20080102.max11) max; urgency=low
+
+  * Fix typo in rsync homealumno-apply
+  * Fix type in config PRECLEAN not defined hook
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 13:34:10 +0100
+
+max-skel-conf (3.1.20080102.max10) max; urgency=low
+
+  * Change POSTCLEAN to source file instead of string
+  * Add PRECLEAN hook
+  * Add verbose to rsync command
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 13:21:33 +0100
+
+max-skel-conf (3.1.20080102.max9) max; urgency=low
+
+  * Fix POSTCLEAN typo (need spaces)
+  * Fix homealumno-apply echos, rsync is now exec
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 13:11:53 +0100
+
+max-skel-conf (3.1.20080102.max8) max; urgency=low
+
+  * Fix error in homealumno dirs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 13:00:31 +0100
+
+max-skel-conf (3.1.20080102.max7) max; urgency=low
+
+  * Merge homealumno package with max-skel-conf
+  * homelaumno use rsync with /etc/skel first and secondly with /etc/homealumno/skel
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 12:03:37 +0100
+
+max-skel-conf (3.1.20080102.max6) max; urgency=low
+
+  * Remove update-dpsyco-skel call in postinst and postrm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 28 Jan 2008 12:41:42 +0100
+
+max-skel-conf (3.1.20080102.max5) max; urgency=low
+
+  * Delete xfce4 settings from skel, settings are in max-xfce-default-settings package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 21 Jan 2008 16:02:18 +0100
+
+max-skel-conf (3.1.20080102.max4) max; urgency=low
+
+  * debian/postinst:
+    - Link manual.desktop from /etc/skel/Escritorio
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 03 Jan 2008 11:45:31 +0100
+
+max-skel-conf (3.1.20080102.max3) max; urgency=low
+
+  * Remove /etc/skel-alumno
+  * Rename Desktop => Escritorio
+  * Clean postinst and postrm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 20:47:00 +0100
+
+max-skel-conf (3.1.20080102.max2) max; urgency=low
+
+  * Fix typo in postint creating link
+  * Remove some not needed code in potinst and postrm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 19:26:18 +0100
+
+max-skel-conf (3.1.20080102.max1) max; urgency=low
+
+  * Use Escritorio or Desktop with manual.desktop
+  * Redirect dpsyco output to /dev/null
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 10:34:16 +0100
+
+max-skel-conf (3.1-20071230.max2) max; urgency=low
+
+  * Create/Remove manual.desktop file in user Desktop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Jan 2008 19:48:33 +0100
+
+max-skel-conf (3.1-20071230.max1) max; urgency=low
+
+  * new version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 17:15:29 +0100
+
+max-skel-conf (3.1-20071230) max; urgency=low
+
+  * New version
+  * Remove some of /etc/skel hidden dirs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 17:02:47 +0100

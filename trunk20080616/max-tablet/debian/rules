@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+binary-install/max-tablet::
+	# clean svn dirs
+	find $(CURDIR)/debian/max-tablet -type d -name .svn | xargs rm -rf --

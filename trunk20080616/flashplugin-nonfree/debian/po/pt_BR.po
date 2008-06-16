@@ -1,0 +1,127 @@
+# Translators, if you are not familiar with the PO format, gettext
+# documentation is worth reading, especially sections dedicated to
+# this format, e.g. by running:
+# info -n '(gettext)PO Files'
+# info -n '(gettext)Header Entry'
+# Some information specific to po-debconf are available at
+# /usr/share/doc/po-debconf/README-trans
+# or http://www.debian.org/intl/l10n/po-debconf/README-trans
+# Developers do not need to manually edit POT or PO files.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: flashplugin-nonfree VERSION\n"
+"Report-Msgid-Bugs-To: bartm@knars.be\n"
+"POT-Creation-Date: 2006-10-28 10:40+0200\n"
+"PO-Revision-Date: 2005-05-26 18:00-0300\n"
+"Last-Translator: Caio Begotti <caio1982@gmail.com>\n"
+"Language-Team: Debian l10n portuguese <debian-l10n-portuguese@lists.debian."
+"org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+#, fuzzy
+msgid "Location to the local file:"
+msgstr "Digite o caminho do arquivo local."
+
+#. Type: string
+#. Description
+#: ../templates:1001
+#, fuzzy
+msgid ""
+"Have you already downloaded the .tar.gz package from Adobe? If so, please "
+"enter the directory you downloaded it into. Do not include the filename "
+"here. If you have not already downloaded it, leave this blank and the "
+"package will be downloaded automatically."
+msgstr ""
+"Você já fez o download do pacote install_flash_player_7_linux.tar.gzda "
+"Macromedia? Se sim, por favor indique o diretório em que você o salvou. Não "
+"inclua \"install_flash_player_7_linux.tar.gz\" abaixo. Se vocêainda não "
+"possui o mesmo, deixe a questão em branco e o pacote será "
+"obtidoautomaticamente."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "File not found"
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../templates:2001
+#, fuzzy
+msgid ""
+"The .tar.gz file does not exist in the directory you entered. Please try "
+"again. Enter the path of the directory that the package is in (don't type "
+"the filename at the end of the path)."
+msgstr ""
+"Por favor, tente novamente. Informe o caminho correto para o diretórioonde "
+"está o pacote (não digite \"install_flash_player_7_linux.tar.gz\" no fimdo "
+"caminho)."
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"Do you accept the license and do you want to download the flash plugin now?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"The Adobe flash plugin is to be downloaded from www.adobe.com.  This can be "
+"done automatically now.  The distribution license of the Adobe flash plugin "
+"is available at www.adobe.com."
+msgstr ""
+
+#~ msgid ""
+#~ "install_flash_player_7_linux.tar.gz does not exist in the directory you "
+#~ "entered."
+#~ msgstr ""
+#~ "install_flash_player_7_linux.tar.gz não está no diretório informado."
+
+#~ msgid ""
+#~ "Would you like flashplugin to be automatically downloaded and installed "
+#~ "from the Internet?"
+#~ msgstr ""
+#~ "Você gostaria que o plugin Flash fosse baixado e instalado da "
+#~ "internetautomaticamente?"
+
+#~ msgid ""
+#~ "If you are currently connected to the Internet accept here, and "
+#~ "install_flash_player_7_linux.tar.gz will automatically be downloaded and "
+#~ "installed from Macromedia's web site. If you are not connected to the "
+#~ "Internet, you should refuse here. You can install flashplugin later as "
+#~ "the root user by running update-flashplugin (8)."
+#~ msgstr ""
+#~ "Se você já está conectado à internet, confirme a opção abaixo e o "
+#~ "pacoteinstall_flash_player_7_linux será automaticamente baixado e "
+#~ "instalado do siteda Macromedia. Se você não estiver conectado, cancele. "
+#~ "Você poderá instalar o pluginFlash mais tarde executando o comando update-"
+#~ "flashplugin (8) como root."
+
+#~ msgid "Please enter your http proxy address"
+#~ msgstr "Por favor, digite o endereço do seu proxy http"
+
+#~ msgid ""
+#~ "If you have a http proxy server, please enter. (e.g: "
+#~ "http://192.168.0.1:3128) Leave empty if it is not needed."
+#~ msgstr ""
+#~ "Se você usa um servidor proxy http, especifique-o aqui.(exemplo: "
+#~ "http://192.168.0.1:3128). Deixe em branco senão for necessário."
+
+#~ msgid ""
+#~ "Would you like to delete install_flash_player_7_linux.tar.gz after it has "
+#~ "been installed?"
+#~ msgstr ""
+#~ "Você gostaria de apagar o arquivo install_flash_player_7_linux.tar.gz "
+#~ "após suainstalação?"
+
+#~ msgid "If you want to keep the archive, refuse here."
+#~ msgstr "Se você quiser guardar o pacote, responda não."

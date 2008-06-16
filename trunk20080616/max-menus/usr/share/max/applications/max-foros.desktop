@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=MAX Forums
+Name[es]=Foro de MAX 
+Comment=get help about MAX at forums
+Comment[es]=Obtener ayuda en los foros de MAX
+Exec=firefox http://herramientas.educa.madrid.org/foros/index.php
+Icon=firefox
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Application;Core;

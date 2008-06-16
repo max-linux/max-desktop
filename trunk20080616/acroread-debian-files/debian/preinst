@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+if [ "$1" = upgrade ]; then
+	if [ -d /usr/lib/Acrobat5/Reader/intellinux/app-defaults ]; then
+		rm -rf /usr/lib/Acrobat5/Reader/intellinux/app-defaults
+	fi
+
+	if [ -d /usr/lib32/Adobe ]; then
+		rm -rf /usr/lib32/Adobe
+	fi
+fi
+
+#DEBHELPER#
+
+exit 0

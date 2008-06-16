@@ -1,0 +1,5 @@
+?package(acroread):needs="x11" section="Applications/Viewers" \
+	title="Adobe Reader" \
+	hints="PDF" \
+	icon="/usr/share/pixmaps/acroread.xpm" \
+	command="/usr/bin/acroread"

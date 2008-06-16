@@ -1,0 +1,105 @@
+#! /usr/bin/perl -w
+
+# change a string in *.po files
+
+die "usage: change_text [-c comment] id text_line1 text_line2 ...\n" if @ARGV < 2;
+
+my $comment;
+
+if ($ARGV[0] eq '-c') {
+  shift;
+  $comment = shift;
+}
+
+my $id = shift;
+my @texts = @ARGV;
+
+$id =~ s/^txt_//;
+
+sub print_buffer (*$@) {
+  my $fh = shift;
+  my $need_fuzzy = shift;
+  my @buffer = @_;
+  if ($need_fuzzy) {
+    if (@buffer and $buffer[0] =~ /^#,/) {
+      if ($buffer[0] !~ /fuzzy/) {
+        $buffer[0] =~ s/^#, //;
+        $buffer[0] = "#, fuzzy, $buffer[0]";
+      }
+    } else {
+      unshift @buffer, "#, fuzzy\n";
+    }
+  }
+  print $fh @buffer;
+}
+
+for my $f ("bootloader.pot", <*.po>) {
+  open OLD, $f or next;
+  unless (open NEW, '>', "$f.new") {
+    close OLD;
+    next;
+  }
+  my $state = '';
+  my $need_fuzzy = 0;
+  my @buffer;
+  for (<OLD>) {
+    if (/^#\. txt_\Q$id\E$/) {
+      $state = 'ID';
+      $need_fuzzy = 0;
+      if (defined $comment) {
+        print NEW "#. $comment\n";
+      } else {
+        print NEW @buffer;
+      }
+      @buffer = ();
+      print NEW;
+    } elsif (/^#\. txt_/) {
+      print NEW @buffer;
+      @buffer = ();
+      print NEW;
+    } elsif (/^#\. /) {
+      $state = 'BUFFER';
+      push @buffer, $_;
+    } elsif ($state eq 'ID' and /^#,/) {
+      $state = 'BUFFER';
+      push @buffer, $_;
+    } elsif ($state eq 'ID' and /^msgid/) {
+      $state = 'MSGID';
+      if (@texts == 1) {
+        push @buffer, "msgid \"$texts[0]\"\n";
+      } else {
+        push @buffer, "msgid \"\"\n";
+        for my $text (@texts) {
+          push @buffer, "\"$text\"\n";
+        }
+      }
+    } elsif ($state eq 'MSGID' and /^msgstr/) {
+      $state = 'MSGSTR';
+      $need_fuzzy = 1 if /^msgstr ".+"/;
+      push @buffer, $_;
+    } elsif ($state eq 'MSGSTR' and /^".+"/) {
+      $need_fuzzy = 1;
+      push @buffer, $_;
+    } elsif ($state eq 'MSGSTR' and /^$/) {
+      print_buffer NEW, $need_fuzzy, @buffer;
+      @buffer = ();
+      $state = '';
+      $need_fuzzy = 0;
+      print NEW;
+    } elsif (/^$/) {
+      print NEW @buffer;
+      @buffer = ();
+      print NEW;
+    } elsif ($state eq 'BUFFER' or $state eq 'MSGID' or $state eq 'MSGSTR') {
+      push @buffer, $_;
+    } else {
+      print NEW;
+    }
+  }
+  if ($state ne '' and @buffer) {
+    print_buffer NEW, $need_fuzzy, @buffer;
+  }
+  close NEW;
+  close OLD;
+  rename "$f.new", $f;
+}

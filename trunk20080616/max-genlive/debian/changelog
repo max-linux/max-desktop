@@ -1,0 +1,498 @@
+max-genlive (4.0.max0.66) max; urgency=low
+
+  * Change version to rc5
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 11 Jun 2008 19:39:52 +0200
+
+max-genlive (4.0.max0.65) max; urgency=low
+
+  * 60clean 75nanomax:
+    - Fix typo in usermod command
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 17:56:55 +0200
+
+max-genlive (4.0.max0.64) max; urgency=low
+
+  * max.seed:
+    - Add SAMBA debconf settings
+  * 60clean 75nanomax:
+    - Disable root password (fix gnome-system-tools adduser bug)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 17:09:22 +0200
+
+max-genlive (4.0.max0.63) max; urgency=low
+
+  * export into chroot: UCF_FORCE_CONFFOLD=1
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 05 Jun 2008 18:55:10 +0200
+
+max-genlive (4.0.max0.62) max; urgency=low
+
+  * Update kernel to 2.6.24-18-generic
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 05 Jun 2008 18:37:58 +0200
+
+max-genlive (4.0.max0.61) max; urgency=low
+
+  * Update to maX 4.0 rc4 version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 01 Jun 2008 21:44:31 +0200
+
+max-genlive (4.0.max0.60) max; urgency=low
+
+  * 75nanomax:
+    - Install xfdesktop4 before max-skel-conf and max-xfce-default-settings
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 18:40:45 +0200
+
+max-genlive (4.0.max0.59) max; urgency=low
+
+  * max-genlive 75nanomax
+    - Update to use 2.6.24-17-generic kernel
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 15:37:27 +0200
+
+max-genlive (4.0.max0.58) max; urgency=low
+
+  * Rename NanoMaX cd in isolunux.cfg too
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 12:10:50 +0200
+
+max-genlive (4.0.max0.57) max; urgency=low
+
+  * Change CD name from CD-Nano-MaX to MaX-40-CDlive
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 16 May 2008 20:01:29 +0200
+
+max-genlive (4.0.max0.56) max; urgency=low
+
+  * Remove usr/sbin/policy-rc.d substitution (not needed)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 15 May 2008 11:45:07 +0200
+
+max-genlive (4.0.max0.55) max; urgency=low
+
+  * Be less verbose in portables extract
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 21:36:27 +0200
+
+max-genlive (4.0.max0.54) max; urgency=low
+
+  * Rename usr/sbin/policy-rc.d to avoid hal instal break
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 18:10:16 +0200
+
+max-genlive (4.0.max0.53) max; urgency=low
+
+  * Add depends on syslinux, parted, mbr and tree
+  * Copy potables.tar.gz into DVD (not extract)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 12 May 2008 15:25:21 +0200
+
+max-genlive (4.0.max0.52) max; urgency=low
+
+  * Rebuild nanoMaX builder
+  * Add portables data
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 12 May 2008 10:07:25 +0200
+
+max-genlive (4.0.max0.51) max; urgency=low
+
+  * First version of nanoMax generator
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 08 May 2008 15:41:26 +0200
+
+max-genlive (4.0.max0.50) max; urgency=low
+
+  * Force timezone to Europe/Madrid
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 06 May 2008 09:23:41 +0200
+
+max-genlive (4.0.max0.49) max; urgency=low
+
+  * Change iso title
+  * Disable uninstalling user-setup
+  * Update dpsyco before doing squashfs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 16:09:12 +0200
+
+max-genlive (4.0.max0.48) max; urgency=low
+
+  * 60clean:
+    - Clean update-notifier warnings
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 15:27:33 +0200
+
+max-genlive (4.0.max0.47) max; urgency=low
+
+  * Change version to rc1
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 11:23:49 +0200
+
+max-genlive (4.0.max0.46) max; urgency=low
+
+  * Update gfxboot-theme-ubuntu package (0.5.20)
+    - Better language support
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 16:01:31 +0200
+
+max-genlive (4.0.max0.45) max; urgency=low
+
+  * max.seed:
+   - Add sambashare to defaults groups
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 22 Apr 2008 12:12:36 +0200
+
+max-genlive (4.0.max0.44) max; urgency=low
+
+  * Change version to beta4
+  * Install 915resolution in mode=terminales
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 20 Apr 2008 22:18:35 +0200
+
+max-genlive (4.0.max0.43) max; urgency=low
+
+  * Enable restricted in sources.list
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 17:33:30 +0200
+
+max-genlive (4.0.max0.42) max; urgency=low
+
+  * Install max-drivers
+  * Fix ubuntu double pool typo
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 16 Apr 2008 21:56:29 +0200
+
+max-genlive (4.0.max0.41) max; urgency=low
+
+  * 20configurechroot:
+    - Enable tzdata in preseed
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 16 Apr 2008 18:30:37 +0200
+
+max-genlive (4.0.max0.40) max; urgency=low
+
+  * Add nvidia-glx-new and firmware to PAQUETES_EXTRA (need to add more packages here)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 13 Apr 2008 14:26:04 +0200
+
+max-genlive (4.0.max0.39) max; urgency=low
+
+  * 60clean:
+    - Install backports and restricted modules
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 13 Apr 2008 12:58:12 +0200
+
+max-genlive (4.0.max0.38) max; urgency=low
+
+  * Rebuild
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 23:10:24 +0200
+
+max-genlive (4.0.max0.37) max; urgency=low
+
+  * Change version to beta3
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 07 Apr 2008 10:26:18 +0200
+
+max-genlive (4.0.max0.36) max; urgency=low
+
+  * 60clean:
+    - Fix purge packages
+  * gfxboot.cfg:
+    - Really delete OEM install, not comment
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 04 Apr 2008 11:16:27 +0200
+
+max-genlive (4.0.max0.35) max; urgency=low
+
+  * Try to remove /home/* during install max-desktop-all
+  * Change mirror in sources.list es.archive.ubuntu => archive.ubuntu
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 04 Apr 2008 09:18:37 +0200
+
+max-genlive (4.0.max0.34) max; urgency=low
+
+  * Delete chroot/home/*, some package create it and max-genlive crash
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 23:24:07 +0200
+
+max-genlive (4.0.max0.33) max; urgency=low
+
+  * max.seed:
+    - Add more preseed vars
+  * Fix typo in stop MySQL server in 50maxinstaller
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 17:40:45 +0200
+
+max-genlive (4.0.max0.32) max; urgency=low
+
+  * 50maxinstaller:
+    - Stop MySQL server in host before starting into chroot and start after moodle configure
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Apr 2008 18:34:54 +0200
+
+max-genlive (4.0.max0.31) max; urgency=low
+
+  * 50maxinstaller:
+    - Moodle need a running MySQL instance to configure database and users
+  * Move _add_invoke code to max-genlive script
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Apr 2008 14:23:09 +0200
+
+max-genlive (4.0.max0.30) max; urgency=low
+
+  * Depends on new package max-win32-apps
+  * 80builiso:
+    - Copy win32apps contents to ISO
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Apr 2008 10:54:56 +0200
+
+max-genlive (4.0.max0.29) max; urgency=low
+
+  * Set MIRROR=192.168.0.3 only if no MIRROR var found
+  * Disable preseed console-setup
+  * Add _exit at ENABLE_EXTRA shell exit 1
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 31 Mar 2008 16:04:59 +0200
+
+max-genlive (4.0.max0.28) max; urgency=low
+
+  * isolinux.cfg:
+    - Remove preseed from cmdline (gfxboot append)
+  * gfxboot.cfg:
+    - Add new option textmode (don't start X session)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 00:10:23 +0100
+
+max-genlive (4.0.max0.27) max; urgency=low
+
+  * Rename old MIRROR var to ISO_MIRROR
+  * Remove example-content package in manifest-desktop file
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 28 Mar 2008 17:00:50 +0100
+
+max-genlive (4.0.max0.26) max; urgency=low
+
+  * Revert invoke before building squashfs
+  * Move _revert_invoke to /usr/sbin/max-genlive
+  * New var MIRROR to use with LOCAL_MIRROR (delete sources.list.local)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 28 Mar 2008 14:48:04 +0100
+
+max-genlive (4.0.max0.25) max; urgency=low
+
+  * Change local sources.list to 192.168.0.3 (FIXME create a nev var to avoid this)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 28 Mar 2008 13:10:38 +0100
+
+max-genlive (4.0.max0.24) max; urgency=low
+
+  * Only replace invoke-rc.d and start-stop-daemon if *.REAL not exists
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 17:42:46 +0100
+
+max-genlive (4.0.max0.23) max; urgency=low
+
+  * Change invoke-rc.d and start-stop-daemon with fake scripts
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 17:16:18 +0100
+
+max-genlive (4.0.max0.22) max; urgency=low
+
+  * max.seed:
+    - Add madrid and alumno users to vboxusers group (created by max-live package)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 12:10:01 +0100
+
+max-genlive (4.0.max0.21) max; urgency=low
+
+  * Change version to beta2
+  * Disable preseeding xorg and tzdata
+  * Remove extra apt-get update line
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 11:57:17 +0100
+
+max-genlive (4.0.max0.20) max; urgency=low
+
+  * isolinux/splash.pcx:
+    - Remove alfa1 string
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 26 Mar 2008 16:09:28 +0100
+
+max-genlive (4.0.max0.19) max; urgency=low
+
+  * isolinux.cfg:
+    - Translate HDD boot menu option
+  * gfxboot.cfg:
+    - Hide OEM install
+    - Add all_generic_ide option for DVD problems
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 25 Mar 2008 14:16:15 +0100
+
+max-genlive (4.0.max0.18) max; urgency=low
+
+  * 80buildiso:
+    - Fix printf arguments 
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 24 Mar 2008 19:40:55 +0100
+
+max-genlive (4.0.max0.17) max; urgency=low
+
+  * Check if mksquashfs have nolzma argument
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 24 Mar 2008 14:21:44 +0100
+
+max-genlive (4.0.max0.16) max; urgency=low
+
+  * Change iso name to ubuntu-8.04-beta-desktop-i386.iso
+  * Build MaX 4.0 beta1 (alfa is old)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 23 Mar 2008 18:03:12 +0100
+
+max-genlive (4.0.max0.15) max; urgency=low
+
+  * 60clean:
+    - Cache esound and libesd0 without apt-get (conflicts with pulseaudio-esound-compat)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 18 Mar 2008 16:25:23 +0100
+
+max-genlive (4.0.max0.14) max; urgency=low
+
+  * 60clean:
+    - Add max-terminales package
+  * 80buildiso
+    - Remove wuby (windows installer)
+  * max-genlive
+    - Cache esound, libesd0, discover, discover-data, libdicover2 (needed by TCOS)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 17 Mar 2008 22:36:54 +0100
+
+max-genlive (4.0.max0.13) max; urgency=low
+
+  * 80buildiso:
+    - Fix typo with double > >
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 15 Mar 2008 10:10:10 +0100
+
+max-genlive (4.0.max0.12) max; urgency=low
+
+  * max-genlive 80buildiso
+    - Edit /cdrom/.disk/info and release_notes_url files
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 14 Mar 2008 23:27:30 +0100
+
+max-genlive (4.0.max0.11) max; urgency=low
+
+  * 60clean:
+    - Check for number to packages to purge, if 0 not exec dpkg --purge
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 14 Mar 2008 15:59:41 +0100
+
+max-genlive (4.0.max0.10) max; urgency=low
+
+  * max.seed:
+    - Preseed Language instalation to Spanish
+    - Add max_install_type (escritorio, alumno, profesor, servidor, nanomax)
+  * 60clean:
+    - Dont add to manifest all depends, leave apt to install it
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 12 Mar 2008 18:33:09 +0100
+
+max-genlive (4.0.max0.9) max; urgency=low
+
+  * 60clean:
+    - Remove old kernels
+  * max.seed:
+    - Add madrid user and hide userinfo step
+    - Disable migration assistant
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 11 Mar 2008 10:08:02 +0100
+
+max-genlive (4.0.max0.8) max; urgency=low
+
+  * usr/share/max-genlive/hooks/60clean:
+    - Generate metapackages list (alumno, profesor, servidor)
+  * Add max-server and backharddi packages to DVD cache
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 08 Mar 2008 12:39:13 +0100
+
+max-genlive (4.0.max0.7) max; urgency=low
+
+  * Revert isolinux.cfg pressed lang and keyboard
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 07 Mar 2008 12:12:12 +0100
+
+max-genlive (4.0.max0.6) max; urgency=low
+
+  * Build lang menu again but not show
+  * Add max.seed file to pressed lang Spanish and other installer things
+  * Remove preseed in isolinux.cfg
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 05 Mar 2008 18:49:39 +0100
+
+max-genlive (4.0.max0.5) max; urgency=low
+
+  * Translate OEM install and Test memory phrases
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 21:01:33 +0100
+
+max-genlive (4.0.max0.4) max; urgency=low
+
+  * Install es.tr to translate gfxboot messages
+  * Remove backharddi from cached packages (not in MaX 4.0 yet)
+  * Remove preseed of console-data
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 15:51:57 +0100
+
+max-genlive (4.0.max0.3) max; urgency=low
+
+  * usr/share/max-genlive/hooks/50max-installer:
+    - Fix typo ERROR=0 not 1
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 13:51:19 +0100
+
+max-genlive (4.0.max0.2) max; urgency=low
+
+  * Check for errors during update/upgrade and exit if found
+  * Build squashfs with -nolzma (ubuntu don't support it)
+  * Add gfxboot build:
+    - Disable language popup at startup
+    - Translate some strings in po/es.po
+    - Translate Modes menu (remove driver-update entry)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 12:57:19 +0100
+
+max-genlive (4.0.max0.1) max; urgency=low
+
+  * Update to MaX 4.0
+  * Change gutsy => hardy
+  * Update splash.pcx with blue background
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 17:59:47 +0100
+
+max-genlive (3.1.max4) max; urgency=low
+
+  * Add virtualbox-ose in DVD packages
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 02 Feb 2008 23:21:48 +0100
+
+max-genlive (3.1.max3) max; urgency=low
+
+  * New version
+  * Support cache os packages (need to sign with MaX keyring)
+  * More small fixes
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 31 Jan 2008 17:35:05 +0100
+
+max-genlive (3.1.max2) max; urgency=low
+
+  * Movido todo el código a un directorio de plugins
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 28 Jan 2008 15:25:09 +0100
+
+max-genlive (3.1.max1) max; urgency=low
+
+  * Initial release
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Jan 2008 20:57:38 +0100

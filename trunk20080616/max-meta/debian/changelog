@@ -1,0 +1,774 @@
+max-meta (4.0.max1.66) max; urgency=low
+
+  * max-nanomax:
+    - Add policykit-gnome (needed by network-admin or services-admin)
+    (http://herramientas.educa.madrid.org/foros/viewtopic.php?t=1149)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 12 Jun 2008 14:00:32 +0200
+
+max-meta (4.0.max1.65) max; urgency=low
+
+  * max-nanomax:
+    - Remove gnome-cups-manager
+    - Remove cupsys (no foomatic-db, that need more size)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 11 Jun 2008 21:57:41 +0200
+
+max-meta (4.0.max1.64) max; urgency=low
+
+  * max-nanomax:
+    - Add thunar-shares samba smbclient smbfs pyneighborhood
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 11 Jun 2008 10:11:35 +0200
+
+max-meta (4.0.max1.63) max; urgency=low
+
+  * Remove xawtv package (closes: #138)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 23:08:49 +0200
+
+max-meta (4.0.max1.62) max; urgency=low
+
+  * max-desktop-common:
+    - Add openclipart-png openclipart-openoffice.org
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 06 Jun 2008 16:48:34 +0200
+
+max-meta (4.0.max1.61) max; urgency=low
+
+  * max-nanomax:
+    - Update kernel to 2.6.24-18-generic
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 05 Jun 2008 18:39:27 +0200
+
+max-meta (4.0.max1.60) max; urgency=low
+
+  * max-nanomax:
+    - Add linux-ubuntu-modules-2.6.24-17-generic
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 01 Jun 2008 20:14:41 +0200
+
+max-meta (4.0.max1.59) max; urgency=low
+
+  * max-desktop-common:
+    - Add libsox-fmt-all (needed by sox to create silence files) (closes: #83)
+    - Add timidity and pmidi (closes: #110)
+      (use MaX patched timidity, that don't start if not sound card is avalaible)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 16:40:47 +0200
+
+max-meta (4.0.max1.58) max; urgency=low
+
+  * max-dekstop-kde:
+    - Add valgrind-callgrind used by KCacheGrind (closes: #104)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 16:12:08 +0200
+
+max-meta (4.0.max1.57) max; urgency=low
+
+  * max-nanomax:
+    - Update kernel to 2.6.24-17-generic
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 15:47:57 +0200
+
+max-meta (4.0.max1.56) max; urgency=low
+
+  * max-nanomax:
+    - Add orage package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 19:56:34 +0200
+
+max-meta (4.0.max1.55) max; urgency=low
+
+  * Change xvidcap => gtk-recordmydesktop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 16 May 2008 19:56:09 +0200
+
+max-meta (4.0.max1.54) max; urgency=low
+
+  * max-desktop-common:
+    - Add max-language-es (scite translation)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 21:26:28 +0200
+
+max-meta (4.0.max1.53) max; urgency=low
+
+  * max-desktop-common:
+    - Add gliese and yale (stars for StarPlot package) Closes: #84
+    - Add nfs-kernel-server (install on all, not only on Server version)
+  * max-desktop-kde:
+    - Add kimagemapeditor (Closes: #106)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 17:54:54 +0200
+
+max-meta (4.0.max1.52) max; urgency=low
+
+  * max-nanomax.init:
+    - Create another acroread icon based on maxtoon xpdf (48x48)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 18:50:41 +0200
+
+max-meta (4.0.max1.51) max; urgency=low
+
+  * max-nanomax.init:
+    - Return and exit with 0 status
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 18:26:00 +0200
+
+max-meta (4.0.max1.50) max; urgency=low
+
+  * max-nanomax:
+    - Add ssh-client package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 18:14:50 +0200
+
+max-meta (4.0.max1.49) max; urgency=low
+
+  * max-nanomax:
+    - Add acpi, acpid, acpi-support, evince, kompozer-l10n-es, language-pack-gnome-es, 
+      notification-daemon, thunar-volman, ubufox, xfce4-battery-plugin, xfce4-mixer
+    - Add max-nanomax.init to do some hacks to work in xfce4
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 17:39:45 +0200
+
+max-meta (4.0.max1.48) max; urgency=low
+
+  * max-desktop-gnome:
+    - Remove xchat-gnome
+  * Add gnumeric-doc (Closes #99)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 09 May 2008 09:17:47 +0200
+
+max-meta (4.0.max1.47) max; urgency=low
+
+  * max-nanomax:
+     - Add spanish kompozer and remove max-live ubiquity and user-setup
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 08 May 2008 20:22:35 +0200
+
+max-meta (4.0.max1.46) max; urgency=low
+
+  * Add dependencies to max-nanomax package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 08 May 2008 10:37:10 +0200
+
+max-meta (4.0.max1.45) max; urgency=low
+
+  * Add xnest and odf-converter
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 07 May 2008 16:34:20 +0200
+
+max-meta (4.0.max1.44) max; urgency=low
+
+  * max-desktop-common:
+    - Add tuxpaint-stamps-default
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 06 May 2008 09:08:21 +0200
+
+max-meta (4.0.max1.43) max; urgency=low
+
+  * max-desktop-common:
+    - Add gocr and ocrad text OCR recognition packages
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 05 May 2008 09:33:45 +0200
+
+max-meta (4.0.max1.42) max; urgency=low
+
+  * max-desktop-common:
+    - Add fluid-soundfont-gs too
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 15:24:20 +0200
+
+max-meta (4.0.max1.41) max; urgency=low
+
+  * max-desktop-common:
+    - Add fluid-soundfont-gm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 13:35:06 +0200
+
+max-meta (4.0.max1.40) max; urgency=low
+
+  * max-desktop-common:
+    - Fix typo gpsd-client => gpsd-clients
+    - Add new package: max-hardware 
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 12:02:33 +0200
+
+max-meta (4.0.max1.39) max; urgency=low
+
+  * max-server:
+    - Install linux-image-server and linux-headers-server (support for more than 4Gb)
+  * max-desktop-common:
+    - Install setserial for wacom toshiba tablets pc
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 11:29:57 +0200
+
+max-meta (4.0.max1.38) max; urgency=low
+
+  * max-desktop-common:
+    - Add denemo mscore and max-denemo-doc
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 26 Apr 2008 16:59:28 +0200
+
+max-meta (4.0.max1.37) max; urgency=low
+
+  * max-desktop-common:
+    - Add gpsbabel gpsd-client gpsd josm josm-plugins (OpenStreetMap)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 26 Apr 2008 09:17:01 +0200
+
+max-meta (4.0.max1.36) max; urgency=low
+
+  * max-drivers:
+    - Don't install nvidia-glx-new as default (breaks TCOS generator)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 24 Apr 2008 15:37:37 +0200
+
+max-meta (4.0.max1.35) max; urgency=low
+
+  * max-drivers:
+    - Remove broken elousb driver
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 22 Apr 2008 00:12:33 +0200
+
+max-meta (4.0.max1.34) max; urgency=low
+
+  * max-drivers:
+    - Add elo-usb-driver whiteboard
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 21 Apr 2008 23:54:28 +0200
+
+max-meta (4.0.max1.33) max; urgency=low
+
+  * Remove mozilla-firefox locale (xulrunner have translations to spanish now)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 17:37:40 +0200
+
+max-meta (4.0.max1.32) max; urgency=low
+
+  * max-desktop-common:
+    - Remove type1inst
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 16:31:04 +0200
+
+max-meta (4.0.max1.31) max; urgency=low
+
+  * New package max-drivers (nvidia and b43)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 16 Apr 2008 21:53:42 +0200
+
+max-meta (4.0.max1.30) max; urgency=low
+
+  * max-desktop-gnome:
+    - Add nautilus-filename-repairer nautilus-mount-image
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 15:52:24 +0200
+
+max-meta (4.0.max1.29+nmu2) max; urgency=low
+
+  * max-desktop-common:
+    - Add vlc and vlc-plugin-pulse
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 09:34:25 +0200
+
+max-meta (4.0.max1.29+nmu1) max; urgency=high
+
+  * max-desktop-gnome:
+    - Remove bluez-pcmcia-support
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 07 Apr 2008 10:50:55 +0200
+
+max-meta (4.0.max1.29) max; urgency=high
+
+  * max-desktop-common:
+    - Add pitivi (video editor) package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 07 Apr 2008 10:31:31 +0200
+
+max-meta (4.0.max1.28) max; urgency=low
+
+  * max-desktop-common:
+    - Add iscan-plugins package
+  * max-terminales:
+    - Add tcos-configurator
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 05 Apr 2008 22:43:25 +0200
+
+max-meta (4.0.max1.27) max; urgency=low
+
+  * max-desktop-common:
+    - Add devede and qdvdauthor
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 04 Apr 2008 10:30:41 +0200
+
+max-meta (4.0.max1.26) max; urgency=low
+
+  * max-desktop-common:
+    - Add epson-alc1100-filter and iscan
+    - Remove example-content (uninstalled by ubiquity)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 03 Apr 2008 14:50:13 +0200
+
+max-meta (4.0.max1.25) max; urgency=low
+
+  * max-desktop-common:
+    - Add openoffice.org, openoffice.org-java-common, openoffice.org-ogltrans, openoffice.org-presentation-minimizer
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 03 Apr 2008 09:24:02 +0200
+
+max-meta (4.0.max1.24) max; urgency=low
+
+  * max-desktop-common:
+    - Add escritorio-movistar
+    - Add w32codecs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 17:13:52 +0200
+
+max-meta (4.0.max1.23) max; urgency=low
+
+  * max-desktop-common:
+    - Add libdvdcss2 to view movies with VLC or Totem
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 10:40:57 +0200
+
+max-meta (4.0.max1.22) max; urgency=low
+
+  * max-desktop-common:
+    - Add max-tablet (configure WACOM tablet pcs)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 31 Mar 2008 21:23:19 +0200
+
+max-meta (4.0.max1.21) max; urgency=low
+
+  * max-desktop-common:
+    - Add cellwriter
+  * max-dekstop-gnome:
+    - Add compizconfig-settings-manager
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 31 Mar 2008 16:20:54 +0200
+
+max-meta (4.0.max1.20) max; urgency=low
+
+  * max-desktop-common
+    - Add max-java-jre
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 15:25:57 +0100
+
+max-meta (4.0.max1.19) max; urgency=low
+
+  * Remove depends on sun-java6-jdk and sun-java6-plugin (try to use openjdk)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 13:44:07 +0100
+
+max-meta (4.0.max1.18) max; urgency=low
+
+  * max-desktop-common:
+    - Remove squeak depends (only depends on max-squeak package)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 15:40:17 +0100
+
+max-meta (4.0.max1.17) max; urgency=low
+
+  * Add max-squeak package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 13:25:29 +0100
+
+max-meta (4.0.max1.16) max; urgency=low
+
+  * Add homealumno as install default package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 12:00:30 +0100
+
+max-meta (4.0.max1.15) max; urgency=low
+
+  * Call maxgconf without PATH (moved to /usr/bin)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 24 Mar 2008 16:51:00 +0100
+
+max-meta (4.0.max1.14) max; urgency=low
+
+  * Move maxgconf to max-gnome-default-settings package
+  * Delete all max-desktop-common scripts (not needed anymore)
+  * max-server:
+   - Don't provide gconf file (file is in max-gnome-default-settings package)
+  * Add max-gnome-default-settings depends in server and gnome package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 23 Mar 2008 21:19:07 +0100
+
+max-meta (4.0.max1.13) max; urgency=low
+
+  * max-desktop-common:
+    - Remove tightvncserver xmms xtightvncviewer (not avalaible)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 17 Mar 2008 23:57:44 +0100
+
+max-meta (4.0.max1.12) max; urgency=low
+
+  * gconf-dumps/apps.panel.dump.gconf:
+    - Set clock in 24h format (not show A.M. or P.M.)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 17 Mar 2008 11:35:12 +0100
+
+max-meta (4.0.max1.11) max; urgency=low
+
+  * Add new packages:
+    - max-alumno
+    - max-profesor
+    - max-servidor
+    - max-nanomax
+  * Add atnag package again
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 12 Mar 2008 18:53:42 +0100
+
+max-meta (4.0.max1.10) max; urgency=low
+
+  * Remove SCIM packages (buggy)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 11 Mar 2008 12:31:26 +0100
+
+max-meta (4.0.max1.9) max; urgency=low
+
+  * Remove from max-server:
+    - max-correo-custom (empty package)
+    - max-proxy-custom  (empty package)
+    - max-tools-custom  (empty package)
+    - max-webmin-custom (need to update webmin version)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 08 Mar 2008 12:53:07 +0100
+
+max-meta (4.0.max1.8) max; urgency=low
+
+  * max-desktop-common:
+    - Remove metapackage openoffice.org (not avalaible)
+    - Add bash-completion
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 07 Mar 2008 12:48:28 +0100
+
+max-meta (4.0.max1.7) max; urgency=low
+
+  * Change to 4 workspaces in 2 lines
+  * Configure new Sites Calendar with Madrid as Home place (disable show at panel)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 07 Mar 2008 12:26:06 +0100
+
+max-meta (4.0.max1.6) max; urgency=low
+
+  * max-desktop-common:
+    - Remove libsane-extras due to critical BUG:
+      https://bugs.launchpad.net/ubuntu/+source/sane-backends-extras/+bug/180169
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 04 Mar 2008 10:06:05 +0100
+
+max-meta (4.0.max1.5) max; urgency=low
+
+  * max-desktop-common:
+    - Add libsane-extras, sane and sane-utils packages
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 16:47:35 +0100
+
+max-meta (4.0.max1.4) max; urgency=low
+
+  * max-desktop-kde:
+    - Replace kdevelop3 => kdevelop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 17:06:33 +0100
+
+max-meta (4.0.max1.3) max; urgency=low
+
+  * max-desktop-common:
+    - Remove atnag, ebeam-driver, epson-alc1100-filter, iscan, libdvdcss2, max-proxyconf
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 16:09:33 +0100
+
+max-meta (4.0.max1.2) max; urgency=low
+
+  * max-desktop-common:
+    - Remove w32codecs stars and spacechart
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 23:01:26 +0100
+
+max-meta (4.0.max1.1) max; urgency=low
+
+  * max-desktop-common:
+    - Add ttf-liberation fonts
+    - Replace NVU => Kompozer
+    - Replace netbeans5.5 => netbeans
+    - Remove lemurae
+    - Install sun-java6-jdk
+    - Remove fonts-ttf-decoratives
+  * max-dekstop-gnome:
+    - Replace system-config-printer => system-config-printer-gnome
+    - Remove gfontview gimp-print gnopernicus
+  * max-desktop-xfce:
+    - Remove xffm4-filemanager
+  * max-desktop-kde:
+    - Replace libk3b2-mp3 => libk3b2-extracodecs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 23:01:02 +0100
+
+max-meta (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 12:55:32 +0100
+
+max-meta (0.32) gutsy; urgency=low
+
+  * Se añaden dependencias a max-server: max-tcos-profesor y backharddi-net
+  * Notificación de reinicio tras la instalación de max-desktop-common
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Mon, 04 Feb 2008 16:54:58 +0100
+
+max-meta (0.31) max; urgency=low
+
+  * Change default icon theme to maxtoon (new version of gartoon, aka Ubuntoon)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 02 Feb 2008 23:16:36 +0100
+
+max-meta (0.30) max; urgency=low
+
+  * Fix typo in postinst chmod => chown
+  * Add ubuntu-docs
+  * Remove max-install
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 28 Jan 2008 13:31:44 +0100
+
+max-meta (0.29) max; urgency=low
+
+  * Remove max-docs depends
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 28 Jan 2008 12:58:40 +0100
+
+max-meta (0.28) max; urgency=low
+
+  * Remove max-3.0-branding-conf and add max-dpsyco-custom
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 28 Jan 2008 12:38:23 +0100
+
+max-meta (0.27) max; urgency=low
+
+  * Cambio del fondo de escritorio para max-server
+  * Actualización de dependencias de max-server
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Wed, 23 Jan 2008 16:53:09 +0100
+
+max-meta (0.26) max; urgency=low
+
+  * Add more xfce4 packages (xfce4-mixer) Closes: #69
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 21 Jan 2008 18:04:02 +0100
+
+max-meta (0.25) max; urgency=low
+
+  * Add max-install (dpsycoize update-grub script)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 20 Jan 2008 21:14:51 +0100
+
+max-meta (0.24) max; urgency=low
+
+  * Se añade dependencia de max-keyring para posibilitar la comprobación de la firma del repositorio
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Fri, 18 Jan 2008 09:19:38 +0100
+
+max-meta (0.23) max; urgency=low
+
+  * Check for username exists before trying to set chmod
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 14 Jan 2008 20:58:13 +0100
+
+max-meta (0.22) max; urgency=low
+
+  * Fix home dir expansion in maxgconf and max-desktop-common.postinst
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 14 Jan 2008 18:34:41 +0100
+
+max-meta (0.21) max; urgency=low
+
+  * Remove all mandatory gconf keys
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 14 Jan 2008 12:20:44 +0100
+
+max-meta (0.20) max; urgency=low
+
+  * Fix typo gnuplot-x11x => gnuplot-x11
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Jan 2008 22:26:22 +0100
+
+max-meta (0.19) max; urgency=low
+
+  * Move geogebra from gnome to common
+  * Move denemo from gnome to common
+  * Remove max-3.0-denemo* packages (now patches are compiled into denemo package)
+  * Move celestia, gcompris, gnuplot, celestia gournal, inkscape, iscan,
+    isdnutils-xtools, istanbul, jarnal, javahotpot, jclic, landscape-client
+    lemurae, lilypond, mjpegtools, scite, screem, scribus, skype, xarchiver,
+    xournal, xvidcap to desktop-common
+  * Remove mandatory gconf keys (all keys are default)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Jan 2008 16:57:07 +0100
+
+max-meta (0.18) max; urgency=low
+
+  * Set default browser to firefox in max-dekstop-kde.postinst
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 05 Jan 2008 13:58:23 +0100
+
+max-meta (0.17) max; urgency=low
+
+  * Add startupmanager (Closes ticket #21)
+  * Delete pseudo-depends on java6 (java5 is enought)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 05 Jan 2008 12:59:04 +0100
+
+max-meta (0.16) max; urgency=low
+
+  * Replace max-netbeans package with netbeans5.5
+  * Add tree and tuxmath packages
+  * Add max-desktop-all, depends on max-dekstop-gnome, max-desktop-kde, max-dekstop-xfce packages
+  * Move notelab from gnome package => common
+  * Add new package max-menus
+  * maxgconf.sh:
+    - Exec chown $user in .gconf user dirs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 20:29:49 +0100
+
+max-meta (0.15) max; urgency=low
+
+  * desktop-xfce-i386:
+    - Add max-xfce-default-settings
+    - Add thunar-volman
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 15:46:01 +0100
+
+max-meta (0.14) gutsy; urgency=low
+
+  * Closes #39
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Wed, 02 Jan 2008 13:03:11 +0100
+
+max-meta (0.13) max; urgency=low
+
+  * Set gconf settings in user home before /etc/gconf
+  * Change max-server background image
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Jan 2008 19:42:50 +0100
+
+max-meta (0.12.0) max; urgency=low
+
+  * Delete max-3.0-menu-conf package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 22:50:41 +0100
+
+max-meta (0.12) max; urgency=low
+
+  * gconf/desktop.gnome.interface.gconf:
+    - Change default icon_them to gartoon
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 21:28:25 +0100
+
+max-meta (0.11) max; urgency=low
+
+  * Fix error in maxgconf stderr redirection
+  * Change package types to all (not architecture depend)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 18:16:09 +0100
+
+max-meta (0.10) max; urgency=low
+
+  * Change max-3.0-skel-conf with max-skel-conf
+  * Set num of workspaces to 3
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 17:20:25 +0100
+
+max-meta (0.9) max; urgency=low
+
+  * New version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 16:35:50 +0100
+
+max-meta (0.8.3) max; urgency=low
+
+  * Convert package to cdbs
+  * Add maxgconf utility
+  * Add gconf/* default and mandatory settings
+  * Depends: Remove max-3.0-firefox-conf and add max-firefox-conf
+  * Add gconf-dumps/* to items (like panel) with complex gconf settings
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Dec 2007 19:12:23 +0100
+
+max-meta (0.7) max; urgency=low
+
+  * Split packages in:
+    - max-desktop-common
+    - max-desktop-kde
+    - max-desktop-gnome
+    - max-desktop-xfce
+  * Add libk3b-mp3 to debian-desktop-kde package (Closes: #34)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 26 Dec 2007 21:01:23 +0100
+
+max-meta (0.6) max; urgency=low
+
+  * Add spanish gcompris sound files:
+    - gcompris-sound-es
+  * Add firefox-dictionary-es extension
+  * Remove non existent linux-restricted-modules package
+  * Remove some duplicate packages
+  * Move mysql-server and nfs-kernel-server to server package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 20 Dec 2007 15:59:52 +0100
+
+max-meta (0.5) max; urgency=low
+
+  * Add deppends of spanish dictionaries:
+    - openoffice.org-thesaurus-es
+    - openoffice.org-hyphenation
+  * Add common dictionaries:
+    - aspell-es
+    - myspell-es
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 12 Dec 2007 10:13:10 +0100
+
+max-meta (0.4) max; urgency=low
+
+  * Move moodle to max-server package
+  * Add thunderbird packages and translations
+  * Add alternatives in java packages (support java5 and java6)
+  * Revert debian/control file to old depends style
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 09 Dec 2007 16:50:31 +0100
+
+max-meta (0.3) max; urgency=low
+
+  * Change depends:
+    - evince-gtk => evince
+    - totem-xine => totem-gstreamer
+    - xvncviewer => xvnc4viewer
+  * Add codecs depends: ubuntu-restricted-extras
+  * Remove duplicates
+  * Add: libgl1-mesa-dri (direct rendering drivers)
+  * Change kernel depends: linux-image-generic linux-headers-generic linux-restricted-modules
+  * Add linuxprinting.org (printers drivers) linuxprinting.org-ppds linuxprinting.org-ppds-extra
+  * Add openoffice.org-gnome openoffice.org-gtk (humanize openoffice)
+  * Add mozilla-firefox-locale-es-es
+  * Remove swapd depend
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 30 Nov 2007 20:08:47 +0100
+
+max-meta (0.2) max; urgency=low
+
+  * Se quitan las dependencias de max-vmplayer, vmware-player
+  * Se quitan las dependencias de gnome-gv, python-id3lib, 
+    python-parted, python-syck, realplayer y foomatic-filters-ppds
+  * Se cambia la dependencia de libgl1-mesa por libgl1-mesa-glx
+  * Se cambia la dependencia de xffm4 por xffm4-filemanager
+  * Se cambia la dependencia de libgoffice-gtk-1-2 por libgoffice-gtk-0-4
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Tue, 13 Nov 2007 11:09:05 +0000
+
+max-meta (0.1) max; urgency=low
+
+  [ Pedro Peña Pérez ]
+  * Initial release. (Basado en ubuntu-meta de gutsy y max-meta de Max 3.0)
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Tue, 13 Nov 2007 10:13:25 +0100

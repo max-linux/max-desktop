@@ -1,0 +1,31 @@
+#
+# configuracion para homealumno
+#
+
+#
+# USERS usuarios a los que se les aplicara la plantilla
+#              (separados por espacios)
+USERS="alumno"
+
+
+#
+# EXCLUDE archivos que no se borraran
+#
+EXCLUDE=/etc/homealumno/exclude
+
+
+#
+# SKEL directorio del perfil extra del alumno
+#
+SKEL=/etc/homealumno/skel
+
+
+#
+# PRECLEAN comandos que se ejecutan antes de la restauracion
+#
+PRECLEAN=/etc/homealumno/preclean
+
+#
+# POSTCLEAN comandos que se ejecutan después de la restauracion
+#
+POSTCLEAN=/etc/homealumno/postclean

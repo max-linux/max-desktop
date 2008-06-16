@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registry install_date="2007-12-01 14:09:07" version="1.1" last_modified="2007-12-01 14:09:12">
+	<products>
+		<product name="GeoGebra" id="4c8dfe2a-1edc-11b2-8443-e8ef9273b4a9" version="3.0.0.0" copyright="2001-2007" info_url="http://www.geogebra.org/" support_url="http://www.geogebra.org/forum/" location="/home/mario/sources/geogebra" last_modified="2007-12-01 14:09:11">
+		<![CDATA[GeoGebra is a free and multi-platform dynamic mathematics software for schools that joins geometry, algebra and calculus.
+
+On the one hand, GeoGebra is a dynamic geometry system. You can do constructions with points, vectors, segments, lines, conic sections as well as functions and change them dynamically afterwards.
+
+On the other hand, equations and coordinates can be entered directly. Thus, GeoGebra has the ability to deal with variables for numbers, vectors and points, finds derivatives and integrals of functions and offers commands like Root or Extremum.
+
+These two views are characteristic of GeoGebra: an expression in the algebra window corresponds to an object in the geometry window and vice versa.]]>
+			<vendor name="GeoGebra" id="4c8dfe2b-1edc-11b2-8442-e8ef9273b4a9" home_page="http://www.geogebra.org/" email="yves.kreis@uni.lu"/>
+			<feature name="Aplicación" last_modified="2007-12-01 14:09:07">
+			<![CDATA[Esto instala la característica de aplicación.]]>
+				<component ref_id="6c4b3c47-1edd-11b2-abe6-e8ef9273b4a9" version="3.0.0.0" location="/home/mario/sources/geogebra/geogebra.jar"/>
+			</feature>
+			<feature name="Ayuda" last_modified="2007-12-01 14:09:11">
+			<![CDATA[Esto instala la característica de ayuda.]]>
+				<feature name="English [US]" last_modified="2007-12-01 14:09:11">
+				<![CDATA[This (un)installs the English [US] Help feature.]]>
+					<component ref_id="6c4d6a05-1edd-11b2-abe8-e8ef9273b4a9" version="3.0.0.0" location="/home/mario/bin/Help/English [US]"/>
+				</feature>
+				<feature name="Spanish (Español)" last_modified="2007-12-01 14:09:11">
+				<![CDATA[This (un)installs the Spanish (Español) Help feature.]]>
+					<component ref_id="6c4e585d-1edd-11b2-abf0-e8ef9273b4a9" version="3.0.0.0" location="/home/mario/bin/Help/Spanish (Español)"/>
+				</feature>
+			</feature>
+		</product>
+	</products>
+	<components>
+		<component id="6c4b3c47-1edd-11b2-abe6-e8ef9273b4a9" version="3.0.0.0" name="Application" location="/home/mario/sources/geogebra/geogebra.jar" vendor="GeoGebra">
+			<resource keyfile="false" name="lax.jar" location="/home/mario/sources/geogebra/lax.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="geogebra" location="/home/mario/sources/geogebra/geogebra" type="executable" uninstall="true"/>
+			<resource keyfile="false" name="geogebra.lax" location="/home/mario/sources/geogebra/geogebra.lax" type="file" uninstall="true"/>
+			<resource keyfile="true" name="geogebra.jar" location="/home/mario/sources/geogebra/geogebra.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="geogebra_cas.jar" location="/home/mario/sources/geogebra/geogebra_cas.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="geogebra_export.jar" location="/home/mario/sources/geogebra/geogebra_export.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="geogebra_gui.jar" location="/home/mario/sources/geogebra/geogebra_gui.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="geogebra_properties.jar" location="/home/mario/sources/geogebra/geogebra_properties.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="license.txt" location="/home/mario/sources/geogebra/license.txt" type="file" uninstall="true"/>
+			<resource keyfile="false" name="release_notes.txt" location="/home/mario/sources/geogebra/release_notes.txt" type="file" uninstall="true"/>
+			<resource keyfile="false" name="uninstallerdata" location="/home/mario/sources/geogebra/uninstallerdata" type="directory" uninstall="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="uninstaller.jar" location="/home/mario/sources/geogebra/uninstallerdata/uninstaller.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="uninstaller" location="/home/mario/sources/geogebra/uninstallerdata/uninstaller" type="executable" uninstall="true"/>
+			<resource keyfile="false" name="uninstaller.lax" location="/home/mario/sources/geogebra/uninstallerdata/uninstaller.lax" type="file" uninstall="true"/>
+			<resource keyfile="false" name="uninstaller" location="/home/mario/sources/geogebra/uninstaller" type="shortcut" uninstall="true">
+			<![CDATA[]]>
+			</resource>
+			<resource keyfile="false" name="customcode_post" location="geogebra.installer.Theme.Hicolor " type="customcode_post" uninstall="true"/>
+			<resource keyfile="false" name="geogebra" location="/home/mario/bin/geogebra" type="shortcut" uninstall="true">
+			<![CDATA[]]>
+			</resource>
+			<resource keyfile="false" name="16x16" location="/home/mario/.icons/hicolor/16x16" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="apps" location="/home/mario/.icons/hicolor/16x16/apps" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="geogebra.png" location="/home/mario/.icons/hicolor/16x16/apps/geogebra.png" type="file" uninstall="true"/>
+			<resource keyfile="false" name="24x24" location="/home/mario/.icons/hicolor/24x24" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="apps" location="/home/mario/.icons/hicolor/24x24/apps" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="geogebra.png" location="/home/mario/.icons/hicolor/24x24/apps/geogebra.png" type="file" uninstall="true"/>
+			<resource keyfile="false" name="32x32" location="/home/mario/.icons/hicolor/32x32" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="apps" location="/home/mario/.icons/hicolor/32x32/apps" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="geogebra.png" location="/home/mario/.icons/hicolor/32x32/apps/geogebra.png" type="file" uninstall="true"/>
+			<resource keyfile="false" name="48x48" location="/home/mario/.icons/hicolor/48x48" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="apps" location="/home/mario/.icons/hicolor/48x48/apps" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="geogebra.psd" location="/home/mario/.icons/hicolor/48x48/apps/geogebra.psd" type="file" uninstall="true"/>
+			<resource keyfile="false" name="64x64" location="/home/mario/.icons/hicolor/64x64" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="apps" location="/home/mario/.icons/hicolor/64x64/apps" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="geogebra.png" location="/home/mario/.icons/hicolor/64x64/apps/geogebra.png" type="file" uninstall="true"/>
+			<resource keyfile="false" name="72x72" location="/home/mario/.icons/hicolor/72x72" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="apps" location="/home/mario/.icons/hicolor/72x72/apps" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="geogebra.png" location="/home/mario/.icons/hicolor/72x72/apps/geogebra.png" type="file" uninstall="true"/>
+			<resource keyfile="false" name="96x96" location="/home/mario/.icons/hicolor/96x96" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="apps" location="/home/mario/.icons/hicolor/96x96/apps" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="geogebra.png" location="/home/mario/.icons/hicolor/96x96/apps/geogebra.png" type="file" uninstall="true"/>
+			<resource keyfile="false" name="128x128" location="/home/mario/.icons/hicolor/128x128" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="apps" location="/home/mario/.icons/hicolor/128x128/apps" type="directory" uninstall="false">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="geogebra.png" location="/home/mario/.icons/hicolor/128x128/apps/geogebra.png" type="file" uninstall="true"/>
+			<resource keyfile="false" name="GeoGebra.desktop" location="/home/mario/Desktop/GeoGebra.desktop" type="file" uninstall="true"/>
+			<resource keyfile="false" name=".com.zerog.registry.xml" location="/home/mario/sources/geogebra/uninstallerdata/.com.zerog.registry.xml" type="file" uninstall="true"/>
+		</component>
+		<component id="6c4e585d-1edd-11b2-abf0-e8ef9273b4a9" version="3.0.0.0" name="Spanish (Español)" location="/home/mario/bin/Help/Spanish (Español)" vendor="GeoGebra">
+			<resource keyfile="false" name="docues" location="/home/mario/sources/geogebra/docues" type="directory" uninstall="true">
+			<![CDATA[true]]>
+			</resource>
+		</component>
+		<component id="6c4d6a05-1edd-11b2-abe8-e8ef9273b4a9" version="3.0.0.0" name="English [US]" location="/home/mario/bin/Help/English [US]" vendor="GeoGebra">
+			<resource keyfile="false" name="docuen" location="/home/mario/sources/geogebra/docuen" type="directory" uninstall="true">
+			<![CDATA[true]]>
+			</resource>
+		</component>
+	</components>
+</registry>

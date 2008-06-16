@@ -1,0 +1,84 @@
+#!/bin/sh
+
+PREREQ=""
+DESCRIPTION="Configuring MaX user live HOME..."
+
+. /scripts/casper-functions
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+log_begin_msg "$DESCRIPTION"
+
+# delete old ubiquity
+rm -f /root/home/$USERNAME/Desktop/ubiquity*desktop 2>/dev/null
+
+for file in /usr/share/applications/ubiquity-maxui.desktop /usr/share/max-manuales/manual.desktop /usr/share/max-manuales/install-manual.desktop /usr/share/max-manuales/creditos_max40.desktop; do
+    if [ -f "/root/$file" ]; then
+        chroot /root install -D -o $USERNAME -g $USERNAME $file /home/$USERNAME/Desktop/$(basename "$file")
+    fi
+done
+
+
+if [ -f /root/cdrom/casper/nanomax ]; then
+  cat << EOF > /root/etc/skel/.dmrc
+[Desktop]
+Session=xfce4
+Language=es_ES.UTF-8
+EOF
+  chroot /root install -D -o $USERNAME -g $USERNAME /etc/skel/.dmrc /home/$USERNAME/.dmrc
+
+  # Xfce4 try to create Desktop dir
+  chroot /root << EOF
+cp /home/$USERNAME/Escritorio/* /home/$USERNAME/Desktop/
+rm -rf /home/$USERNAME/Escritorio
+ln -s /home/$USERNAME/Desktop /home/$USERNAME/Escritorio
+chown -R $USERNAME:$USERNAME /home/$USERNAME
+EOF
+else
+
+# MaX (no nano) rename Desktop, remove Examples chown to max user
+chroot /root << EOF
+rm -rf /home/$USERNAME/Escritorio
+mv /home/$USERNAME/Desktop /home/$USERNAME/Escritorio
+ln -s /home/$USERNAME/Escritorio /home/$USERNAME/Desktop
+chown -R $USERNAME:$USERNAME /home/$USERNAME
+EOF
+
+fi
+
+# delete from Escritorio or Desktop
+rm -rf /root/home/$USERNAME/*/Examples
+rm -rf /root/home/$USERNAME/Examples
+
+
+# copy Madrid timezone
+cp -f /root/usr/share/zoneinfo/Europe/Madrid /root/etc/localtime
+
+# disable network icon
+# /apps/nautilus/desktop/network_icon_visible bool false
+#chroot /root gconftool-2 --direct --type bool \
+#             --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults \
+#             --set /apps/nautilus/desktop/network_icon_visible false
+#
+
+
+# PolicyKit is configured in casper 1.123
+# patch send https://launchpad.net/bugs/201852
+# and merged
+
+# adduser to sambashare group
+chroot /root adduser $USERNAME sambashare
+
+
+log_end_msg

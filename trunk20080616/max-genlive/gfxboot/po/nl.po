@@ -1,0 +1,386 @@
+# translation of bootloader.po to Nederlands
+# translation of bootloader.po to Dutch
+# translation of nl.po to Dutch
+# LANGUAGE translations for boot loader
+# Copyright (C) 2004 SUSE LINUX AG
+# Proefgelezen op 10-08-2005 door Henk Krus
+# Arthur & Ettie Kerkmeester <a.s.kerkmeester@hccnet.nl>, 2004, 2005.
+# Rinse de Vries <rinsedevries@kde.nl>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: nl\n"
+"Report-Msgid-Bugs-To:  \n"
+"POT-Creation-Date: 2007-10-09 09:00+0000\n"
+"PO-Revision-Date: 2008-04-19 07:32+0000\n"
+"Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. ok button label
+#. txt_ok
+msgid "OK"
+msgstr "Ok"
+
+#. cancel button label
+#. txt_cancel
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. reboot button label
+#. txt_reboot
+msgid "Reboot"
+msgstr "Herstarten"
+
+#. continue button label
+#. txt_continue
+msgid "Continue"
+msgstr "Doorgaan"
+
+#. txt_bootoptions
+msgid "Boot Options"
+msgstr "Opstartopties"
+
+#. window title for exit dialog
+#. txt_exit_title (see txt_exit_dialog)
+msgid "Exiting..."
+msgstr "Beëindigen..."
+
+#. txt_exit_dialog
+msgid ""
+"You are leaving the graphical boot menu and\n"
+"starting the text mode interface."
+msgstr ""
+"U gaat het grafische opstartmenu verlaten.\n"
+"De interface wordt nu opgestart in tekstmodus."
+
+#. txt_help
+msgid "Help"
+msgstr "Hulp"
+
+#. window title for kernel loading (see txt_load_kernel)
+#. txt_load_kernel_title
+msgid "Starting..."
+msgstr "Starten..."
+
+#. Keep the three newlines!
+#. txt_load_kernel
+msgid ""
+"Loading Linux Kernel\n"
+"\n"
+"\n"
+msgstr ""
+"Linux-kernel wordt geladen\n"
+"\n"
+"\n"
+
+#. Keep the three newlines!
+#. txt_load_memtest
+msgid ""
+"Loading memtest86\n"
+"\n"
+"\n"
+msgstr ""
+"Memtest86 wordt geladen\n"
+"\n"
+"\n"
+
+#. info box title
+#. txt_info_title
+msgid "Boot loader"
+msgstr "Bootloader"
+
+#. error box title
+#. txt_error_title
+msgid "I/O error"
+msgstr "I/O-fout"
+
+#. boot disk change dialog title
+#. txt_change_disk_title
+msgid "Change Boot Disk"
+msgstr "Opstartdiskette wijzigen"
+
+#. txt_insert_disk
+#, c-format
+msgid "Insert boot disk %u."
+msgstr "Plaats opstartdiskette %u."
+
+#. txt_insert_disk2
+#, c-format
+msgid ""
+"This is boot disk %u.\n"
+"Insert boot disk %u."
+msgstr ""
+"Dit is opstartdiskette %u.\n"
+"Plaats opstartdiskette %u."
+
+#. txt_insert_disk3
+#, c-format
+msgid ""
+"This is not a suitable boot disk.\n"
+"Please insert boot disk %u."
+msgstr ""
+"Dit is geen geschikte opstartdiskette.\n"
+"Plaats opstartdiskette %u."
+
+#. password dialog title
+#. txt_password_title
+msgid "Password"
+msgstr "Wachtwoord"
+
+#. Keep the newlines and spaces after ':'!
+#. txt_password
+msgid ""
+"Enter your password:   \n"
+"\n"
+"\n"
+msgstr ""
+"Voer uw wachtwoord in:   \n"
+"\n"
+"\n"
+
+#. dvd warning title
+#. txt_dvd_warning_title
+msgid "DVD Error"
+msgstr "DVD-fout"
+
+#. txt_dvd_warning2
+msgid ""
+"This is a two-sided DVD. You have booted from the second side.\n"
+"\n"
+"Turn the DVD over then continue."
+msgstr ""
+"Dit is een dubbelzijdige DVD. U heeft met kant twee opgestart.\n"
+"\n"
+"Draai de DVD om en gaat dan verder."
+
+#. power off dialog title
+#. txt_power_off_title
+msgid "Power Off"
+msgstr "Computer uitschakelen"
+
+#. txt_power_off
+msgid "Halt the system now?"
+msgstr "Wilt u nu het systeem stoppen?"
+
+#. txt_password
+msgid "Password\n"
+msgstr "Wachtwoord\n"
+
+#. button label for other/more options
+#. txt_other_options
+msgid "Other Options"
+msgstr "Andere opties"
+
+#. label for language selection
+#. txt_language
+msgid "Language"
+msgstr "Taal"
+
+#. label for keymap selection
+#. txt_keymap
+msgid "Keymap"
+msgstr "Toetsenindeling"
+
+#. label for installation mode selection
+#. txt_modes
+msgid "Modes"
+msgstr "Modi"
+
+#. Shown on main menu to point out that more boot options are on F4.
+#. txt_modes_help
+msgid "Press F4 to select alternative start-up and installation modes."
+msgstr "Druk op F4 om alternatieve opstart- en installatie-modi te kiezen."
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "Normaal"
+
+#. label for d-i mode menu
+#. txt_expert_mode
+msgid "Expert mode"
+msgstr "Geavanceerde modus"
+
+#. title for accessibility menu
+#. txt_access
+msgid "Accessibility"
+msgstr "Toegankelijkheid"
+
+#. label for accessibility menu
+#. txt_access_none
+msgid "None"
+msgstr "Geen"
+
+#. label for accessibility menu
+#. txt_access_v1
+msgid "High Contrast"
+msgstr "Hoog contrast"
+
+#. label for accessibility menu
+#. txt_access_v2
+msgid "Magnifier"
+msgstr "Vergrootglas"
+
+#. label for accessibility menu
+#. txt_access_v3
+msgid "Screen Reader"
+msgstr "Schermlezer"
+
+#. label for accessibility menu
+#. txt_access_brltty
+msgid "Braille Terminal"
+msgstr "Braille-terminal"
+
+#. label for accessibility menu
+#. txt_access_m1
+msgid "Keyboard Modifiers"
+msgstr "Toetsenbord controltoetsen"
+
+#. label for accessibility menu
+#. txt_access_m2
+msgid "On-Screen Keyboard"
+msgstr "Schermtoetsenbord"
+
+#. label for accessibility menu
+#. txt_access_m3
+msgid "Motor Difficulties - switch devices"
+msgstr "Motorische handicap - toetsenbord"
+
+#. label for accessibility menu
+#. txt_access_all
+msgid "Everything"
+msgstr "Alles"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu
+msgid "^Try Ubuntu without any change to your computer"
+msgstr "^Ubuntu uitproberen zonder te installeren"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu
+msgid "^Try Kubuntu without any change to your computer"
+msgstr "^Kubuntu uitproberen zonder te installeren"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_edubuntu
+msgid "^Try Edubuntu without any change to your computer"
+msgstr "^Edubuntu uitproberen zonder te installeren"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_xubuntu
+msgid "^Try Xubuntu without any change to your computer"
+msgstr "^Xubuntu uitproberen zonder te installeren"
+
+#. Installation mode.
+#. txt_menuitem_xforcevesa
+msgid "Safe graphics mode"
+msgstr "Veilige modus"
+
+#. Installation mode.
+#. txt_menuitem_driverupdates
+msgid "Use driver update CD"
+msgstr "Update-cd met stuurprogramma's gebruiken"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_ubuntu
+msgid "^Install Ubuntu in text mode"
+msgstr "^Installeer Ubuntu in tekst-modus"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_kubuntu
+msgid "^Install Kubuntu in text mode"
+msgstr "^Installeer Kubuntu in tekstmodus"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_edubuntu
+msgid "^Install Edubuntu in text mode"
+msgstr "^Installeer Edubuntu in tekstmodus"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_xubuntu
+msgid "^Install Xubuntu in text mode"
+msgstr "^Installeer Xubuntu in tekstmodus"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu
+msgid "^Install Ubuntu"
+msgstr "^Installeer Ubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu
+msgid "^Install Kubuntu"
+msgstr "^Installeer Kubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_edubuntu
+msgid "^Install Edubuntu"
+msgstr "^Installeer Edubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_xubuntu
+msgid "^Install Xubuntu"
+msgstr "^Installeer Xubuntu"
+
+#. Installation mode.
+#. txt_menuitem_workstation
+msgid "Install a workstation"
+msgstr "Installeer een werkstation"
+
+#. Installation mode.
+#. txt_menuitem_server
+msgid "Install a server"
+msgstr "Installeer een server"
+
+#. Installation mode.
+#. txt_menuitem_oem
+msgid "OEM install (for manufacturers)"
+msgstr "OEM installatie (voor fabrikanten)"
+
+#. Installation mode.
+#. txt_menuitem_lamp
+msgid "Install a LAMP server"
+msgstr "Installeer een LAMP-server"
+
+#. Installation mode.
+#. txt_menuitem_ltsp
+msgid "Install an LTSP server"
+msgstr "Installeer een LTSP-server"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_cli
+msgid "Install a command-line system"
+msgstr "Installeer een opdrachtregel-besturingssysteem"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_check
+msgid "^Check CD for defects"
+msgstr "^Controleer de cd op fouten"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_rescue
+msgid "^Rescue a broken system"
+msgstr "^Repareer een gebroken systeem"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_memtest
+msgid "Test ^memory"
+msgstr "^Geheugentest"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_hd
+msgid "^Boot from first hard disk"
+msgstr "Start ^op vanaf de eerste harde schijf"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "Alleen vrije software"

@@ -1,0 +1,17 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 20configure_sources_list.dpatch by Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad max-firefox-conf~/ubufox/pfs/db/sources.list.8.04 max-firefox-conf/ubufox/pfs/db/sources.list.8.04
+--- max-firefox-conf~/ubufox/pfs/db/sources.list.8.04	2008-04-14 10:02:47.000000000 +0200
++++ max-firefox-conf/ubufox/pfs/db/sources.list.8.04	2008-04-19 13:42:17.000000000 +0200
+@@ -1,2 +1,4 @@
+-deb http://archive.ubuntu.com/ubuntu/ gutsy main restricted universe multiverse
+-# deb http://archive.ubuntu.com/ubuntu/ gutsy restricted
++deb http://archive.ubuntu.com/ubuntu/ hardy main restricted universe multiverse
++deb http://archive.ubuntu.com/ubuntu/ hardy restricted
++
++deb http://max.educa.madrid.org/max40 max main

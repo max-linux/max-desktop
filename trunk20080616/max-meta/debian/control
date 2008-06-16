@@ -1,0 +1,132 @@
+Source: max-meta
+Section: max
+Priority: optional
+Maintainer: Pedro Peña Pérez <pedro.pena@edmanufacturer.es>
+Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 4), cdbs
+
+Package: max-desktop
+Architecture: all
+Depends: max-desktop-common, max-desktop-gnome | max-desktop-kde | max-desktop-xfce
+Description: The Max desktop system
+ This package depends on all of the packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-desktop-gnome
+Architecture: all
+Depends: max-desktop-common, ${max-desktop-gnome:Depends}
+Recommends: ${max-desktop-gnome:Recommends}
+Provides: max-desktop
+Description: The Max desktop system (GNOME desktop)
+ This package depends on all GNOME packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-desktop-kde
+Architecture: all
+Depends:  max-desktop-common, ${max-desktop-kde:Depends}
+Recommends: ${max-desktop-kde:Recommends}
+Provides: max-desktop
+Description: The Max desktop system (KDE desktop)
+ This package depends on all KDE packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-desktop-xfce
+Architecture: all
+Depends: max-desktop-common, ${max-desktop-xfce:Depends}
+Recommends: ${max-desktop-xfce:Recommends}
+Provides: max-desktop
+Description: The Max desktop system (Xfce4 desktop)
+ This package depends on all Xfce4 packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-server
+Architecture: all
+Depends: max-desktop, ${max-server:Depends}
+Recommends: ${max-server:Recommends}
+Description: The Max server system
+ This package depends on all of the packages in the Max server system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-desktop-common
+Architecture: all
+Depends: ${max-desktop-common:Depends}
+Description: The Max desktop common packages to all desktops
+ This package depends on all of the packages in the Max server system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-desktop-all
+Architecture: all
+Depends: max-desktop-gnome, max-desktop-kde, max-desktop-xfce
+Description: The Max desktop all metapackage
+ This package depends on all desktop packages of MaX system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-alumno
+Architecture: all
+Depends: max-tcos-alumno
+Description: The Max desktop alumno metapackage
+ This package depends on max-tcos-alumno
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-profesor
+Architecture: all
+Depends: max-tcos-profesor
+Description: The Max desktop profesor metapackage
+ This package depends on max-tcos-profesor
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-nanomax
+Architecture: all
+Depends: ${max-nanomax:Depends}
+Description: The Max nanoMaX metapackage
+ This package depends on all nanomax installed packages and live-system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-servidor
+Architecture: all
+Depends: max-server
+Description: The Max server metapackage
+ This package depends on max-server
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-terminales
+Architecture: all
+Depends: max-server, max-netboot-server, tcos-configurator
+Description: The Max NETBOOT server metapackage
+ This package depends on max-server and max-netboot-server
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-drivers
+Architecture: all
+Depends: ${max-drivers:Depends}
+Recommends: ${max-drivers:Recommends}
+Description: The Max drivers metapackage
+ This package depends on all drivers used in the Max system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+

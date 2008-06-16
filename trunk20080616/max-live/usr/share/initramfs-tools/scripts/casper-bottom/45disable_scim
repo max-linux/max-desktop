@@ -1,0 +1,30 @@
+#!/bin/sh
+
+PREREQ=""
+DESCRIPTION="Disable SCIM in MaX..."
+
+. /scripts/casper-functions
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+log_begin_msg "$DESCRIPTION"
+
+if [ -e /root/usr/bin/im-switch ]; then
+  chroot /root << EOF
+im-switch -z all_ALL -s none
+EOF
+
+fi
+
+log_end_msg

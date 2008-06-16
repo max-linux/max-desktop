@@ -1,0 +1,262 @@
+#!/usr/bin/perl 
+
+use Debconf::Client::ConfModule ':all';
+
+print "Updating opensc.conf to fit DNIe smart card...\n";
+
+# Looks for opensc.conf
+$openscconf=&lookforopenscconf;
+if ($openscconf == -1) {
+  print "Could not be able to find out the location of opensc.conf. Using a preconfigured file.\n";
+  $openscconf="/etc/opensc/opensc.conf";
+  system("cp", "/usr/share/opensc-dnie/opensc.conf.dnie", $openscconf);
+  goto configure_startup;
+}
+
+$openscconfdnie=$openscconf.".dnie";
+$previousopenscconf=$openscconf.".bak.dnie";
+
+# Looks for libopensc-dnie.so
+$libopensc=&lookforlibopensc;
+if ($libopensc == -1){
+	print "Couldn't find libopensc-dnie.so. Maybe opensc-dnie is not correctly installed?\n";
+	exit(0);
+}
+
+#At this point a configuration of a modified opensc.conf is needed
+
+system("cp", $openscconf, $previousopenscconf);
+system("cp", $openscconf, $openscconfdnie);
+open(OPENSC,$openscconf);
+open(BUFFER,">".$openscconfdnie);
+
+$i=0;
+
+    @filecontent=<OPENSC>;
+    $i=0;
+    while($i <= $#filecontent){
+  
+  	$content=$filecontent[$i];	
+
+	if ($content=~/\t\ \ reader_drivers\ \=\ pcsc\;\n/){
+        $content="";
+        }
+
+
+        if ($content=~/\#\ reader_drivers\ \=\ openct, pcsc, ctapi/){
+        print BUFFER $content;
+        $firstline ="\t\ \ reader_drivers = pcsc\;\n";
+        $content= $firstline;
+        }
+
+
+
+
+    if ($content=~/\t\ \ card_drivers\ \=\ dnie;/){
+	#We don't print this in the new file.
+	$content = "";
+	}
+    if ($content=~/\tcard_driver\ dnie\ \{/){
+	#We don't print this in the new file.
+	while($filecontent[$i] !~ '\}')
+	{
+		$i++;
+	}
+	$content="";
+    }
+    
+    if ($content=~/card_drivers\ \=\ internal;/)
+	{	
+	$content="";
+	}
+
+
+    if ($content=~/\#\ card_drivers\ \=\ customcos/){
+        print BUFFER $content;
+        $firstline ="\t\ \ card_drivers\ \=\ dnie\;\n";
+	$secondline="\tcard_driver\ dnie\ \{\n";
+	$thirdline ="\t\t\#The\ location\ of\ the\ driver\ library\n";
+	$fourthline="\t\tmodule\ \=\ $libopensc;\n";
+	$fifthline ="\t\}\n";
+
+        print BUFFER $firstline;
+	print BUFFER $secondline;
+	print BUFFER $thirdline;
+	print BUFFER $fourthline;
+        print BUFFER $fifthline;	
+	$content = "";
+	}
+
+
+   if ($content=~/Force using specific card driver/){
+	$firstline = "\t\ card_drivers = internal\;\n";
+	print BUFFER $firstline;
+	
+	print BUFFER $content;
+	$content = "";
+}
+
+   if ($content=~/\#\*\*\*\*\*\ INIT\ OPENSC-DNIe\ CONFIG\ \*\*\*\*\*\#/){
+		$i++;
+		while($filecontent[$i] !~ '\#\/\*\*\*\*\*\ END\ OPENSC-DNIe\ CONFIG\ \*\*\*\*\*\#')
+			{
+				$i++;
+			}
+
+		if($filecontent[$i+1] =~ /\#\ card_drivers\ \=\ customcos,\ internal;/)
+		{
+			$i++;
+		}
+
+		$content="";
+	}
+
+   if ($content=~/max_send_size/){
+		$content = "\t max_send_size\=252\; \n\t max_recv_size=252\;\n";
+		$i++;
+	}
+   if ($content=~/lock_login\=true/)
+	{
+		$content = "\#lock_login\=true\n";
+	}
+   print BUFFER $content;
+   $i++;
+}
+    close(OPENSC);
+    close(BUFFER);
+
+print "Creating a copy of the original opensc.conf...\n";
+system("mv",$openscconf, $previousopenscconf);
+system("mv",$openscconfdnie, $openscconf);
+
+print "File opensc.conf updated successfully!\n";
+
+#copy .purgeopenscconf
+$purgeopenscceres = "/usr/share/opensc-dnie/purgednie";
+$purgeopensc = "/usr/share/opensc/.purgednie";
+
+system("mv", $purgeopenscceres, $purgeopensc);
+
+#copy eliminardefault
+$eliminardefaultdnie = "/usr/share/opensc-dnie/eliminardefaultdnie";
+$eliminardefaultopensc = "/usr/share/opensc/.eliminardefaultdnie";
+system("mv", $eliminardefaultdnie , $eliminardefaultopensc);
+
+configure_startup:
+
+# CONFIGURE GNOME SESSION START-UP
+$gnome_default_session="/usr/share/gnome/default.session";
+
+if (-e $gnome_default_session) {
+
+  open(GNOME,$gnome_default_session);
+  @gnomecontent=<GNOME>;
+  $i=0;
+  $dnie_found=0;
+
+  while($i <= $#gnomecontent && $dnie_found!=1) {
+
+    $content=$gnomecontent[$i];
+
+    if ($content=~/opensc-dnie/) {
+      $dnie_found=1;
+    }
+
+    $i++;
+  }
+
+  close(GNOME);
+
+  if($dnie_found==0){
+    
+    # creating a copy of the original gnome default.session file
+    $gnome_dnie_session="/usr/share/opensc-dnie/dnie.session";
+    $gnome_default_session_orig=$gnome_default_session.".orig";
+  
+    system("cp", $gnome_default_session, $gnome_default_session_orig);
+  
+    open(SESSION,$gnome_default_session);
+    open(BUFFER,">".$gnome_dnie_session);
+
+    @filecontent=<SESSION>;
+    $i=0;
+    $script_name="/usr/share/opensc-dnie/inst_gnome_pkcs11_cert.pl";
+  
+    while($i <= $#filecontent) {
+        $content=$filecontent[$i];
+
+        if($content=~/num_clients=/){
+            if ($content=~ m/(\d+)/) {
+                $total_apps=$1;
+                $actual_app=$1;
+                $total_apps++;
+	            $content="num_clients=".$total_apps."\n";
+            }
+        }
+        
+        print BUFFER $content;
+        $i++;
+    }
+  
+    close(SESSION);
+    close(BUFFER);
+
+    open(BUFFER,">>".$gnome_dnie_session);
+
+    #Add new app info
+    $firstline= 	$actual_app.",id=default".$actual_app."\n";
+    $secondline= 	$actual_app.",Priority=50\n";
+    $thirdline= 	$actual_app.",RestartCommand=".$script_name." --sm-client-id default".$actual_app."\n";
+
+    print BUFFER $firstline;
+    print BUFFER $secondline;
+    print BUFFER $thirdline;
+
+    close(BUFFER);
+  
+    # copying the dnie session file to the default.session one
+    system("mv", $gnome_dnie_session, $gnome_default_session);
+  }
+}
+
+# CONFIGURE KDE SESSION START-UP
+$kde_dnie_session="/usr/share/apps/kconf_update/";
+
+if (-e $kde_dnie_session) {
+  # copying scripts to automatically run it once for each user
+  system("cp", "/usr/share/opensc-dnie/kdnie.upd", "/usr/share/opensc-dnie/inst_kde_pkcs11_cert.pl", $kde_dnie_session);
+}
+
+get("opensc-dnie/restart");
+
+# calls ldconfig
+system("ldconfig");
+
+
+sub lookforopenscconf{
+	if (-e "/etc/opensc.conf") {
+		return "/etc/opensc.conf";
+	} 
+	elsif (-e "/etc/opensc/opensc.conf") {
+		return "/etc/opensc/opensc.conf"
+	}
+	elsif (-e  "/usr/local/etc/opensc.conf") {
+		return "/usr/local/etc/opensc.conf";
+	} 
+	else {
+		return -1;
+	}
+}
+
+sub lookforlibopensc {
+ 	if (-e "/usr/lib/libopensc-dnie.so") {
+		return "/usr/lib/libopensc-dnie.so";
+	} 
+	elsif (-e  "/usr/local/lib/libopensc-dnie.so") {
+		return "/usr/local/lib/libopensc-dnie.so";
+ 	}
+ 	else {
+ 		return -1;
+ 	}
+}
+

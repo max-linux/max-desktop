@@ -1,0 +1,506 @@
+max-artwork (4.0.max0.18) max; urgency=low
+
+  * Add KDE menu and Trash to maxtoon 
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 18 May 2008 12:51:39 +0200
+
+max-artwork (4.0.max0.17) max; urgency=low
+
+  * Rename drive-hardisk-usb.svg => drive-harddisk-usb.svg (Closes: #97)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 16:38:08 +0200
+
+max-artwork (4.0.max0.16) max; urgency=low
+
+  * Add applications-development.svg drive-hardisk-usb.svg drive-
+    removable-media-usb.svg icons
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 09 May 2008 09:23:37 +0200
+
+max-artwork (4.0.max0.15) max; urgency=low
+
+  * Change icons/maxtoon/scalable/apps/applets-screenshooter.svg
+  * Add links for scalable/places/network-server.svg scalable/places/folder-remote.svg
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 07 May 2008 16:30:37 +0200
+
+max-artwork (4.0.max0.14) max; urgency=low
+
+  * Revert homepage :(
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 21 Apr 2008 11:14:48 +0200
+
+max-artwork (4.0.max0.13) max; urgency=low
+
+  * Update homepage with Eduardo Pla Vall text
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 16:19:22 +0200
+
+max-artwork (4.0.max0.12) max; urgency=low
+
+  [ Pedro Peña Pérez ]
+  * Se añaden logos de Seneca
+
+  [ Mario Izquierdo (mariodebian) ]
+  * Add consoltux logos to usplash, gnome-splash and GDM images
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 18 Apr 2008 12:56:05 +0200
+
+max-artwork (4.0.max0.11) max; urgency=low
+
+  * max-server.png:
+    - Remove alfa1 string from wallpaper
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 03 Apr 2008 22:29:04 +0200
+
+max-artwork (4.0.max0.10) max; urgency=low
+
+  * Change priority to firefox-homepage from 45 to 75
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 25 Mar 2008 13:47:16 +0100
+
+max-artwork (4.0.max0.9) max; urgency=low
+
+  * Change MaxColors with new Human-Murrine based theme
+  * Add art/theme/Max40 (theme selector)
+  * Run autogen.sh to add new theme files
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 25 Mar 2008 12:35:27 +0100
+
+max-artwork (4.0.max0.8) max; urgency=low
+
+  * Revert usplash trobber colors
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 18 Mar 2008 13:15:40 +0100
+
+max-artwork (4.0.max0.7) max; urgency=low
+
+  * Delete alfa1 from artwork
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 18 Mar 2008 12:29:45 +0100
+
+max-artwork (4.0.max0.6) max; urgency=low
+
+  * Change wallpaper (add Comunidad de Madrid logo)
+  * Change menu applications Science menu icon
+  * Try to change network server logo
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 08 Mar 2008 12:05:16 +0100
+
+max-artwork (4.0.max0.5) max; urgency=low
+
+  * Update firefox homepage version and fix some spanish tildes
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 16:29:03 +0100
+
+max-artwork (4.0.max0.4) max; urgency=low
+
+  * Add 1280x1024 usplash theme
+  * Remove gradient of usplash images
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 11:46:46 +0100
+
+max-artwork (4.0.max0.3) max; urgency=low
+
+  * Remove gartoon icon theme
+  * Not conflicts with ubuntu-artwork (or derivates)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 15:52:00 +0100
+
+max-artwork (4.0.max0.2) max; urgency=low
+
+  * Add pingu-ismail.png to SVG file and wallpapers
+  * Add art/grub/splash.xpm.gz and edit configure.ac and Makefiles
+  * max-artwork-usplash.postinst:
+    - Set size to 1024x768 when old size is 640x480
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 13:24:05 +0100
+
+max-artwork (4.0.max0.1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+  * Change all artwork (add 4.0 svg file)
+  * Generate maxtoon icons in PNG (at build time) with this sizes:
+    - 16x16 22x22 32x32 48x48 64x64 72x72 96x96 128x128
+  * Remove firefox-toon icon (use firefox icon)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 12:37:15 +0100
+
+max-artwork (3.1.20080202.max4) max; urgency=low
+
+  * Add maxtoon icon theme (based on Ubuntoon)
+  * Update some Makefile.am
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 02 Feb 2008 22:58:48 +0100
+
+max-artwork (3.1.20080202.max3) max; urgency=low
+
+  * Add link art/icons/gartoon/scalable/places/start-here.svg
+    (this file is start menu icon of gnome-panel)
+  * Remove not needed art/icons/gartoon/48x48/apps/distributor-logo.png
+  * Run again ./autogen.sh
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 02 Feb 2008 16:31:55 +0100
+
+max-artwork (3.1.20080202.max2) max; urgency=low
+
+  * Change GDM background to background.png (not jpg)
+  * Configure scalable/places in gartoon index.theme file (postinst)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 02 Feb 2008 16:05:44 +0100
+
+max-artwork (3.1.20080202.max1) max; urgency=low
+
+  * Remove Tango-Brown icon theme from sources
+  * Add distributor-logo (svg and png icons)
+  * Run ./autogen.sh to update Makefile.in files with new targets
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 02 Feb 2008 15:32:00 +0100
+
+max-artwork (3.1.20080106.max6) max; urgency=low
+
+  * Use ubuntu-artwork dir (not build max-docs package to override)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 01 Feb 2008 19:51:49 +0100
+
+max-artwork (3.1.20080106.max5) max; urgency=low
+
+  * max-artwork.preinst:
+    - Remove locales link too (not a link, is a dir)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 01 Feb 2008 15:34:26 +0100
+
+max-artwork (3.1.20080106.max4) max; urgency=low
+
+  * max-artwork.preinst:
+    - Remove index.html link (this package provide a file not link)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 31 Jan 2008 23:03:58 +0100
+
+max-artwork (3.1.20080106.max3) max; urgency=low
+
+  * Se añade wallpaper para max-server
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Wed, 23 Jan 2008 17:23:57 +0100
+
+max-artwork (3.1.20080106.max2) max; urgency=low
+
+  * Conflicts, Replaces, Provides with all Ubuntu derivates
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Jan 2008 17:21:33 +0100
+
+max-artwork (3.1.20080106.max1) max; urgency=low
+
+  * Final artwork (I hope)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 06 Jan 2008 00:29:19 +0100
+
+max-artwork (3.1.20071230.max5) max; urgency=low
+
+  * New firefox homepage (thanks to Felipe Perucho)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 05 Jan 2008 12:26:59 +0100
+
+max-artwork (3.1.20071230.max4) max; urgency=low
+
+  * Add debian/max-logo.png (used in xfce4 start menu)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 16:07:22 +0100
+
+max-artwork (3.1.20071230.max3) max; urgency=low
+
+  * Change text in usplash, splash and wallpaper to MaX 3.1 beta
+  * debian/max-artwork.postrm debian/max-artwork.postinst
+    - Fix sed command
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 31 Dec 2007 13:54:29 +0100
+
+max-artwork (3.1.20071230.max2) max; urgency=low
+
+  * Disable Tango-Brown icons
+  * Delete debconf and template
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 21:26:30 +0100
+
+max-artwork (3.1.20071230.max1) max; urgency=low
+
+  * Remove gconf data in max-artwork package
+  * Change gdm color theme in postinst and postrm
+  * Change section to max
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 18:09:40 +0100
+
+max-artwork (0.1.1-1) gutsy; urgency=low
+
+  * Nuevo paquete para MaX 3.1 (Ubuntu gutsy)
+  * Cambiado forma de generación del usplash con png desde 640x400 hasta 1024x768 con paletas de 255 colores.
+  * Borradas las reglas del Makefile de usplash antiguo (en este no se usa autotools)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Dec 2007 13:18:22 +0100
+
+max-artwork (0.1.0-38) dapper; urgency=low
+
+  * Nuevo fondo, por fin bien puesto. 
+
+ -- Jon Latorre Martinez <moebius@grupoikusnet.com>  Tue, 17 Oct 2006 13:08:58 +0200
+
+max-artwork (0.1.0-37) dapper; urgency=low
+
+  * Nuevo fondo usplash, esta vez con la paleta bien 
+  * Nuevo splash gnome
+
+ -- Jon Latorre Martinez <moebius@grupoikusnet.com>  Tue, 17 Oct 2006 08:38:58 +0200
+
+max-artwork (0.1.0-36) dapper; urgency=low
+
+  *  Retoques en el artwork
+
+ -- Jon Latorre Martinez <moebius@grupoikusnet.com>  Tue, 10 Oct 2006 10:02:11 +0200
+
+max-artwork (0.1.0-35) dapper; urgency=low
+
+  * Cambiado el color marron en gdm
+
+ -- Jon Latorre Martinez <moebius@grupoikusnet.com>  Tue,  3 Oct 2006 11:54:52 +0200
+
+max-artwork (0.1.0-34) dapper; urgency=low
+
+  * Cambiado el usplash y el background
+
+ --  Jon Latorre Martinez <moebius@grupoikusnet.com>  Thu, 28 Sep 2006 16:11:55 +0200
+
+max-artwork (0.1.0-33) dapper; urgency=low
+
+  * cambiado e icono del distribuidor
+
+ --  Jon Latorre Martinez <moebius@grupoikusnet.com>  Fri, 15 Sep 2006 13:17:55 +0200
+
+max-artwork (0.1.0-32) dapper; urgency=low
+
+  * remove "dapper drake" from the default ff homepage 
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Wed, 24 May 2006 18:39:54 +0200
+
+max-artwork (0.1.0-31) dapper; urgency=low
+
+  * Use Michiel's latest usplash artwork, with corrected palette.
+  * Remove the "glow" from the progress bar, to match the Ubuntu
+    usplash, as discussed with Michiel and Scott on IRC last week.
+  * Fix the art/usplash/ clean target to rm usplash-artwork.png.
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Tue, 23 May 2006 23:25:41 +1000
+
+max-artwork (0.1.0-30) dapper; urgency=low
+
+  * fix location of the default firefox's homepage css in the 
+    html source 
+  * got a more polished version of the usplash artwork (thanks to 
+    Michiel Sikma) (still some font color issues to solve)
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Mon, 22 May 2006 21:14:31 +0200
+
+max-artwork (0.1.0-29) dapper; urgency=low
+
+  * now also the wallpaper shows NZ (closes maolne #44766)  
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Mon, 22 May 2006 11:05:29 +0200
+
+max-artwork (0.1.0-28) dapper; urgency=low
+
+  * changed default desktop font, since there is no activity on 
+    bug 35349 and we cant ship with a non utf8 font (switched to dejavu 
+    sans condensed oblique)
+  * add an MaxColors and MaxPlain metathemes, so its easier 
+    to switch back if you changed the default
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Thu, 18 May 2006 20:57:06 +0200
+
+max-artwork (0.1.0-27) dapper; urgency=low
+
+  * added new gnome splashscreen including NZ, 
+    partially fixes malone #44766
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Thu, 18 May 2006 14:48:03 +0200
+
+max-artwork (0.1.0-26) dapper; urgency=low
+
+  * new usplash artwork 
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Thu, 18 May 2006 10:03:37 +0200
+
+max-artwork (0.1.0-25) dapper; urgency=low
+
+  * clean up old calls to gdmflexiserver in the postinst, we dont need that
+    anymore (closes malone #37081)
+  * make sure the right ldm theme is set
+  * use alternatives system for gdm-cdd.conf to not clash with xubuntu 
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Thu, 18 May 2006 06:56:56 +0200
+
+max-artwork (0.1.0-24) dapper; urgency=low
+
+  * Rebuild for new locales for DapperFirefoxStartPageTranslation
+
+ -- Ian Jackson <iwj@ubuntu.com>  Tue, 16 May 2006 17:27:20 +0100
+
+max-artwork (0.1.0-23) dapper; urgency=low
+
+  * added max_homies.jpg for the "young" theme, thanks to Lisa Savage
+  * fine tune gdm theme a bit (make default background match the
+    default chalkboard wallpaper and use the Maxcolors gtk theme)
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Sun, 14 May 2006 23:35:54 +0200
+
+max-artwork (0.1.0-22) dapper; urgency=low
+
+  * add final artwork for the default theme, keep old wallpaper in the 
+    source package (for nostalgical reasons :) we love our maxgirl )
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Fri, 12 May 2006 13:44:24 +0200
+
+max-artwork (0.1.0-21) dapper; urgency=low
+
+  * Support DapperFirefoxStartPageTranslation:
+    - add slave link
+    - install link farm
+    - build-depend on ubuntu-docs now
+    Translations could be added in the source package as
+    art/homepage/index-LOCALE.html; see the wiki for details of
+    values of LOCALE for which this won't just be ignored.
+
+ -- Ian Jackson <iwj@ubuntu.com>  Fri, 21 Apr 2006 18:15:24 +0100
+
+max-artwork (0.1.0-20) dapper; urgency=low
+
+  * added preseeding instructions to
+    /usr/share/doc/max-artwork/README
+  * fixed gdm theme handling (using gdm-cdd.conf now)
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Tue, 28 Mar 2006 17:16:41 +0200
+
+max-artwork (0.1.0-19) dapper; urgency=low
+
+  * add MaxColors metacity theme 
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Tue, 28 Mar 2006 15:47:07 +0200
+
+max-artwork (0.1.0-18) dapper; urgency=low
+
+  * change the names of teh flavors according to what was decided in the
+    max-meeting (we have young, default, and plain themes now)
+  * add distributor-logo.png to tango-brown 
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Mon, 27 Mar 2006 19:49:58 +0200
+
+max-artwork (0.1.0-17) dapper; urgency=low
+
+  * fix copyright info: added the Tango-Brown icontheme data
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Mon, 20 Mar 2006 20:15:42 +0100
+
+max-artwork (0.1.0-16) dapper; urgency=low
+
+  * added a new gtk colortheme called MaxColors to use with the 
+    ubuntulooks engine
+  * depend on ubuntulooks engine
+  * added Tango-Brown icons for the plain theme
+  * changed the gconf settings for the different themes
+  * new interim gnome splash screen (a bit to dark i think)
+  * added distributor logo to the iconthemes we use
+  * removed dependency on ubuntu-artwork, we ship our own gtk theme
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Mon, 20 Mar 2006 12:30:36 +0100
+
+max-artwork (0.1.0-15) dapper; urgency=low
+
+  * added distributor logo 
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Sat, 11 Mar 2006 16:56:33 +0100
+
+max-artwork (0.1.0-14) dapper; urgency=low
+
+  * make gdmflexiserver only update gdm if X is actually running 
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Thu, 12 Jan 2006 12:45:34 +0100
+
+max-artwork (0.1.0-13) dapper; urgency=low
+
+  * make the package use the new gconf
+  * add debconf theme selector with the choice of 3 themes
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Thu, 12 Jan 2006 01:16:02 +0100
+
+max-artwork (0.1.0-12) dapper; urgency=low
+
+  * Add /usr/share/ubuntu-artwork/home/ to max-artwork.dirs
+    for firefox homepage symlink
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon,  2 Jan 2006 17:21:28 +0000
+
+max-artwork (0.1.0-11) dapper; urgency=low
+
+  * Use update-alternatives for Firefox homepage
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 20 Dec 2005 19:48:30 +0000
+
+max-artwork (0.1.0-10) dapper; urgency=low
+
+  * Update usplash image with one munged for the 640x400 switch.  This isn't
+    the final artwork by any stretch, just a stopgap, so don't complain.
+  * Update initramfs when we're upgraded, to make sure we get the new image.
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Mon, 12 Dec 2005 18:51:51 +1100
+
+max-artwork (0.1.0-9) breezy; urgency=low
+
+  * added final community selected wallpaper (maxGirl) 
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Mon, 10 Oct 2005 02:17:21 +0200
+
+max-artwork (0.1.0-8) breezy; urgency=low
+
+  * Fix FTBFS:
+    - Add libbogl-dev Build-Depends.
+    - Cleanup the source tree from prebuilt binaries.
+    - Fix art/usplash/Makefile.am to clean up the dir properly.
+    - autoreconf the overall.
+
+ -- Fabio M. Di Nitto <fabbione@ubuntu.com>  Thu, 29 Sep 2005 11:39:57 +0200
+
+max-artwork (0.1.0-7) breezy; urgency=low
+
+  * Add edusplash.png and tie it into usplash/initramfs-tools
+  * Add package max-artwork-usplash
+
+ -- Jeff Bailey <jbailey@ubuntu.com>  Wed, 28 Sep 2005 00:15:19 -0400
+
+max-artwork (0.1.0-6) breezy; urgency=low
+
+  * unsetting gnome-sceensaver settings, we use xscreensaver again 
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Thu, 22 Sep 2005 00:25:39 +0200
+
+max-artwork (0.1.0-5) breezy; urgency=low
+
+  * set gnome-screensaver to blank-only mode in the cdd settings 
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Fri, 16 Sep 2005 23:56:23 +0200
+
+max-artwork (0.1.0-4) breezy; urgency=low
+
+  * improve postinst/rm scripts  
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Tue, 13 Sep 2005 12:11:48 +0200
+
+max-artwork (0.1.0-3) breezy; urgency=low
+
+  * depend on gdm to make sure the gdm theme gets set
+  * fix path of the default background
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Mon, 12 Sep 2005 14:19:08 +0200
+
+max-artwork (0.1.0-2) breezy; urgency=low
+
+  * Initial Release
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Mon, 22 Aug 2005 13:07:26 +0200

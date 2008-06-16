@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+
+# Some vars
+VERSION=0.2.0.3
+URL=http://clic.xtec.net/dist/jclic/jclic-$(VERSION).zip
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+build-stamp:
+	rm -rf jclic-$(VERSION)/ tmp/
+	mkdir tmp && cd tmp && wget $(URL)
+	unzip -o tmp/jclic-$(VERSION).zip
+	rm -rf tmp
+	touch build-stamp
+
+build/jclic:: build-stamp
+
+
+install/jclic::
+	cp -ra jclic-$(VERSION)/* debian/jclic/usr/share/jclic
+	mv debian/jclic/usr/share/jclic/*[TtXxTt] debian/jclic/usr/share/doc/jclic/
+	install -m 644 demo.jclic.zip debian/jclic/usr/share/jclic/demo
+	
+binary-install/jclic::
+	# clean svn dirs
+	find $(CURDIR)/debian/jclic -type d -name .svn | xargs rm -rf --
+

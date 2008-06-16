@@ -1,0 +1,51 @@
+#!/bin/sh
+
+
+change_gdm_colors() {
+  ORIG_COLOR="3B6242"
+  NEW_COLOR="dab082"
+  if [ -e /etc/gdm/gdm.conf ]; then           
+    sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/gdm.conf
+  fi
+  if [ -e /etc/gdm/PreSession/Default ]; then 
+    sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/PreSession/Default
+  fi
+  if [ -e /etc/gdm/factory-gdm.conf ]; then   
+    sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/factory-gdm.conf
+  fi
+}
+
+
+
+case "$1" in
+    remove)
+
+	echo "Moving Ubuntu firefox homepage back in place ..."
+	# move ubuntu homepage back in place
+	update-alternatives --remove firefox-homepage \
+		/usr/share/max-artwork/home/index.html
+	update-alternatives --auto firefox-homepage
+	rm -f /usr/share/max-artwork/home/locales/max.css || true
+	rm -f /usr/share/max-artwork/home/locales/max-logo.png || true
+	
+
+	echo "Reverting GDM changes ..."
+	update-alternatives --remove gdm-config-derivative /usr/share/max-artwork/gdm/gdm-cdd.conf
+
+	;;
+    upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+	;;
+    purge)
+        echo "Revert GDM colors"
+        change_gdm_colors
+        ;;
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+
+esac
+
+
+#DEBHELPER#
+
+exit 0

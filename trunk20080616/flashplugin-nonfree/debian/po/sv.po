@@ -1,0 +1,111 @@
+# Translators, if you are not familiar with the PO format, gettext
+# documentation is worth reading, especially sections dedicated to
+# this format, e.g. by running:
+# info -n '(gettext)PO Files'
+# info -n '(gettext)Header Entry'
+# Some information specific to po-debconf are available at
+# /usr/share/doc/po-debconf/README-trans
+# or http://www.debian.org/intl/l10n/po-debconf/README-trans
+# Developers do not need to manually edit POT or PO files.
+# , fuzzy
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: flashplugin-nonfree\n"
+"Report-Msgid-Bugs-To: bartm@knars.be\n"
+"POT-Creation-Date: 2006-10-28 10:40+0200\n"
+"PO-Revision-Date: 2006-11-14 04:41+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid "Location to the local file:"
+msgstr "Plats för den lokala filen:"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+msgid "Have you already downloaded the .tar.gz package from Adobe? If so, please enter the directory you downloaded it into. Do not include the filename here. If you have not already downloaded it, leave this blank and the package will be downloaded automatically."
+msgstr "Har du redan hämtat ner tar.gz-paketet från Adobe? Om du har det, ange katalogen där filen ligger. Inkludera inte filnamnet här. Om du inte har hämtat det, lämna fältet blankt och paketet kommer automatiskt att hämtas."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "File not found"
+msgstr "Filen hittades inte"
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "The .tar.gz file does not exist in the directory you entered. Please try again. Enter the path of the directory that the package is in (don't type the filename at the end of the path)."
+msgstr "Paketfilen finns inte i katalogen som du angav. Försök igen. Ange sökvägen till den katalog som paketet finns i (skriv inte in filnamnet på slutet av sökvägen)."
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "Do you accept the license and do you want to download the flash plugin now?"
+msgstr "Accepterar du licensen och vill hämta flash-insticksmodulen nu?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "The Adobe flash plugin is to be downloaded from www.adobe.com.  This can be done automatically now.  The distribution license of the Adobe flash plugin is available at www.adobe.com."
+msgstr "Adobes flash-insticksmodul kommer att hämtas från www.adobe.com.  Detta kan göras automatiskt nu.  Licensen för distribuering för Adobes flash-insticksmodul finns tillgänglig på www.adobe.com."
+
+#~ msgid ""
+#~ "install_flash_player_7_linux.tar.gz does not exist in the directory you "
+#~ "entered."
+#~ msgstr ""
+#~ "Filen install_flash_player_7_linux.tar.gz finns inte i den katalog du "
+#~ "angav."
+#~ msgid ""
+#~ "Would you like flashplugin to be automatically downloaded and installed "
+#~ "from the Internet?"
+#~ msgstr ""
+#~ "Vill du att flashplugin skall automatiskt hämtas från Internet och "
+#~ "installeras?"
+#~ msgid ""
+#~ "If you are currently connected to the Internet accept here, and "
+#~ "install_flash_player_7_linux.tar.gz will automatically be downloaded and "
+#~ "installed from Macromedia's web site. If you are not connected to the "
+#~ "Internet, you should refuse here. You can install flashplugin later as "
+#~ "the root user by running update-flashplugin (8)."
+#~ msgstr ""
+#~ "Om du för tillfället är ansluten till Internet kan "
+#~ "install_flash_player_7_linux.tar.gz automatiskt hämtas och installeras "
+#~ "från Macromedias webbplats. Om du inte är ansluten till Internet, ska du "
+#~ "svara nej här. Du kan installera flashplugin senare genom att köra update-"
+#~ "flashplugin (8) som root."
+#~ msgid "Please enter your http proxy address"
+#~ msgstr "Ange adressen till din http-proxyserver"
+#~ msgid ""
+#~ "If you have a http proxy server, please enter. (e.g: "
+#~ "http://192.168.0.1:3128) Leave empty if it is not needed."
+#~ msgstr ""
+#~ "Om du har en http-proxyserver, ange den här. (exempelvis "
+#~ "http://192.168.0.1:3128) Lämna blank om den inte behövs."
+#~ msgid ""
+#~ "Would you like to delete install_flash_player_7_linux.tar.gz after it has "
+#~ "been installed?"
+#~ msgstr ""
+#~ "Vill du ta bort install_flash_player_7_linux.tar.gz efter att den har "
+#~ "installerats?"
+#~ msgid "If you want to keep the archive, refuse here."
+#~ msgstr "Om du vill behålla arkivet, svara nej här."
+#~ msgid "Installation of the flash plugin failed"
+#~ msgstr "Installationen av flashinsticksmodulen misslyckades"
+#~ msgid ""
+#~ "The installation of the plugin failed. Try again with /usr/sbin/update-"
+#~ "flashplugin or get the plugin from http://macromedia.mplug.org/ and "
+#~ "follow the instructions you find with the plugin."
+#~ msgstr ""
+#~ "Installationen av insticksmodulen misslyckades. Försöke igen med /usr/"
+#~ "sbin/update-flashplugin eller hämta insticksmodulen från http://"
+#~ "macromedia.mplug.org/ och följ instruktionerna du hittar där."
+

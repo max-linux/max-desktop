@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+clean/max-win32-apps::
+	rm -f build-max-win32-apps
+
+build/max-win32-apps::
+	@if [ ! -f build-max-win32-apps ]; then \
+		echo " * Building ..."; \
+		python build.py ;\
+		touch build-max-win32-apps; \
+	fi
+
+
+binary-install/max-win32-apps::
+	# clean svn dirs
+	find $(CURDIR)/debian/max-win32-apps -type d -name .svn | xargs rm -rf --

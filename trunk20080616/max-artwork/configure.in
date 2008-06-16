@@ -1,0 +1,55 @@
+AC_INIT(art)
+AC_PREREQ(2.52)
+
+MAJOR_VERSION=0
+MINOR_VERSION=1
+MICRO_VERSION=0
+VERSION=$MAJOR_VERSION.$MINOR_VERSION.$MICRO_VERSION
+
+AM_INIT_AUTOMAKE(max-artwork, $VERSION)
+
+AC_SUBST(MAJOR_VERSION)
+AC_SUBST(MINOR_VERSION)
+AC_SUBST(MICRO_VERSION)
+
+AC_DEFINE_UNQUOTED(MAJOR_VERSION, $MAJOR_VERSION, [Major Version Number])
+AC_DEFINE_UNQUOTED(MINOR_VERSION, $MINOR_VERSION, [Minor Version Number])
+AC_DEFINE_UNQUOTED(MICRO_VERSION, $MICRO_VERSION, [Micro Version Number])
+
+AM_MAINTAINER_MODE
+
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, max-artwork, [foo])
+GETTEXT_PACKAGE=max-artwork
+AC_SUBST(GETTEXT_PACKAGE)
+AC_PROG_INTLTOOL([0.1.0])
+AM_GLIB_GNU_GETTEXT
+
+AC_OUTPUT([
+Makefile
+art/Makefile
+art/gdm/Makefile
+art/gdm/Max/Makefile
+art/gnome/Makefile
+art/gnome/MaxColors/Makefile
+art/gnome/MaxPlain/Makefile
+art/gtk/Makefile
+art/gtk/MaxColors/Makefile
+art/theme/Makefile
+art/theme/Max40/Makefile
+art/homepage/Makefile
+art/splash/Makefile
+art/wallpapers/Makefile
+art/metacity/Makefile
+art/metacity/MaxColors/Makefile
+art/icons/Makefile
+art/icons/maxtoon/Makefile
+art/grub/Makefile
+po/Makefile.in
+])
+
+echo "
+Configuration:
+
+  Source: ${srcdir}
+  Prefix: ${prefix}
+"

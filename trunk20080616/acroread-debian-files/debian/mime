@@ -1,0 +1,2 @@
+application/pdf; /usr/bin/acroread '%s'; test=test -n "$DISPLAY"; description=Portable Document Format; nametemplate=%s.pdf
+application/pdf; false; x-mozilla-flags=plugin:nppdf.so; priority=0

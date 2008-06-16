@@ -1,0 +1,21 @@
+[Appearance]
+Language=es
+LanguageCmd=es
+
+[Defaults]
+Unit=Millimeter
+
+[Geometry]
+DockWindows=\nExaminador de Biblioteca,\n[Examinador de Biblioteca,256,230,240,400,0]\nFichero,Edición,Vista,Trazador,Opciones de herramientas,\n[Fichero,0,0,-1,-1,1][Edición,0,0,-1,-1,1][Vista,0,0,-1,-1,1][Trazador,0,0,-1,-1,1][Opciones de herramientas,0,1,-1,26,1]\nLínea de comandos,\n[Línea de comandos,0,0,-1,45,1]\nLista de capas,Lista de bloques,\n[Lista de capas,0,0,120,-1,1][Lista de bloques,0,0,120,-1,1]\n,\n[,0,0,59,-1,1]\n
+WindowHeight=700
+WindowWidth=950
+WindowX=0
+WindowY=1
+
+[Paths]
+Fonts=/usr/share/qcad/fonts
+Library=/usr/share/qcad/libraries
+Patterns=/usr/share/qcad/patterns
+Scripts=/usr/share/qcad/scripts
+Translations=/usr/share/qcad/qm
+

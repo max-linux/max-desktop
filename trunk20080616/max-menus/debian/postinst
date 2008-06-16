@@ -1,0 +1,20 @@
+#!/bin/sh
+
+#set -e
+
+case "$1" in
+    configure)
+        echo "Updating MaX menus..."
+	maxmenus --update >> /tmp/maxmenus.log 2>&1 || true
+
+
+    ;;
+
+esac
+
+
+#DEBHELPER#
+
+exit 0
+
+

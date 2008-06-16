@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=DOS emulator
+Name[lt]=DOS emuliatorius
+Comment=DOS emulator "dosemu"
+Comment[lt]=DOS emuliatorius "dosemu"
+Exec=su-to-root -X -c /usr/bin/xdosemu
+Icon=/usr/share/pixmaps/dosemu.xpm
+Terminal=false
+Type=Application
+Categories=System;Emulator;
+Encoding=UTF-8

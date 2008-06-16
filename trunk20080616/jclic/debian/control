@@ -1,0 +1,30 @@
+Source: jclic
+Section: games
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs, wget, unzip
+Standards-Version: 3.7.3
+XS-Vcs-Browser: http://max.educa.madrid.org:8000/browser/trunk/jclic
+
+Package: jclic
+Architecture: any
+Recommends: libmysql-java
+Depends: max-java-jre, ${misc:Depends}, ${shlibs:Depends}
+Description: JClic java player.
+ JClic is formed by a set of computer applications that are
+ used for carrying out different types of educational 
+ activities: puzzles, associations, text exercises, crosswords...
+ .
+ The activities are not usually used alone, but packed in
+ projects. A project is formed by a set of activities and one 
+ or more sequences, which indicate the order in which they
+ have to be shown.
+ .
+ The predecessor of JClic is Clic, an application that  has
+ been used by educators of different countries since 1992 as 
+ a tool for the creation of didactic activities for their students.
+ .
+ JClic is developed in the Java platform, is a free software project
+ and works in different environments and operating systems.
+ .
+  Homepage: http://clic.xtec.es/en/jclic/

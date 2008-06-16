@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Documentación de Moodle
+Name[es]=Documentación de Moodle
+Comment[es]=Documentación de Moodle
+Exec=firefox http://docs.moodle.org/es/Portada
+Icon=firefox
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Application;Core;

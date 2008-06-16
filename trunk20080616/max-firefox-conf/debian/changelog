@@ -1,0 +1,74 @@
+max-firefox-conf (4.0.max8) max; urgency=low
+
+  * bookmarks.html:
+    - Add AulaVirtual link to firefox toolbar
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 16:03:41 +0200
+
+max-firefox-conf (4.0.max7) max; urgency=low
+
+  * Add ubunfox jar to replace homepage
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 13:18:28 +0200
+
+max-firefox-conf (4.0.max6) max; urgency=low
+
+  * Add max-java-plugin depends
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 15:26:56 +0100
+
+max-firefox-conf (4.0.max5) max; urgency=low
+
+  * Remove Depends on sun-java6-plugin
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 14:09:58 +0100
+
+max-firefox-conf (4.0.max4) max; urgency=low
+
+  * Link firefox pixmap: firefox-3.0.png => firefox.png
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 14:22:52 +0100
+
+max-firefox-conf (4.0.max3) max; urgency=low
+
+  * Install java pluging in /usr/lib/firefox-addons/plugins
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 13:34:11 +0100
+
+max-firefox-conf (4.0.max2) max; urgency=low
+
+  * Remove all files except bookmarks.html
+  * Move profile to /etc/firefox-3.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 25 Mar 2008 16:58:21 +0100
+
+max-firefox-conf (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 20:03:39 +0100
+
+max-firefox-conf (0.2max4) max; urgency=low
+
+  * Delete update-dpsyco-skel calls in postinst and postrm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 28 Jan 2008 12:51:36 +0100
+
+max-firefox-conf (0.2max3) max; urgency=low
+
+  * Remove svn dirs in package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Dec 2007 12:56:10 +0100
+
+max-firefox-conf (0.2max2) max; urgency=low
+
+  * Remove code from postinst && postrm and delete preinst script
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Dec 2007 12:50:29 +0100
+
+max-firefox-conf (0.2max1) max; urgency=low
+
+  * New relaase
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Dec 2007 12:32:43 +0100
+

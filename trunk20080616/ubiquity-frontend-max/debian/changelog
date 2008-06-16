@@ -1,0 +1,260 @@
+ubiquity-frontend-max (4.0.max0.34) max; urgency=low
+
+  * user-setup-apply:
+    - Fix typo in usermod
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 17:58:39 +0200
+
+ubiquity-frontend-max (4.0.max0.33) max; urgency=low
+
+  * user-setup-apply:
+    - Disable root password (fix gnome-system-tools adduser bug)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 17:04:10 +0200
+
+ubiquity-frontend-max (4.0.max0.32) max; urgency=low
+
+  * Exe sudo command with os.popen instead of execute
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 01 Jun 2008 21:42:50 +0200
+
+ubiquity-frontend-max (4.0.max0.31) max; urgency=low
+
+  * max_ui.py:
+    - Remove /tmp/max_install_type before ussing it (--only create as root)
+    (closes: #112)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 01 Jun 2008 20:11:55 +0200
+
+ubiquity-frontend-max (4.0.max0.30) max; urgency=low
+
+  * install.py:
+    - Copy libdebianinstaller if necesary
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 15:41:41 +0200
+
+ubiquity-frontend-max (4.0.max0.29) max; urgency=low
+
+  * install.py:
+    - Fix apt-get autoremove --purge (use log-output before copy it)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 24 May 2008 19:58:55 +0200
+
+ubiquity-frontend-max (4.0.max0.28) max; urgency=low
+
+  * max_ui.py:
+    - Translate some buttons of manual partition editor
+  * Add XS-Vcs-Browser header to debian/control
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 24 May 2008 16:37:00 +0200
+
+ubiquity-frontend-max (4.0.max0.27) max; urgency=low
+
+  * Use self.chrex instead of subprocess to exec apt-get autoremove
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 23 May 2008 15:30:49 +0200
+
+ubiquity-frontend-max (4.0.max0.26) max; urgency=low
+
+  * usr/share/ubiquity/install.py:
+    - Set '-y' in apt-get autoremove --purge to exec in no interactive mode
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 18 May 2008 14:12:45 +0200
+
+ubiquity-frontend-max (4.0.max0.25) max; urgency=low
+
+  * ubiquity_max_ui.desktop:
+    - Show in all desktops (not only in GNOME;XFCE)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 18 May 2008 13:21:20 +0200
+
+ubiquity-frontend-max (4.0.max0.24) max; urgency=low
+
+  * Change order in frontend detection
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 13:28:18 +0200
+
+ubiquity-frontend-max (4.0.max0.23) max; urgency=low
+
+  * usr/share/ubiquity/install.py
+    - Exec apt-get autoremove --purge after clean installer packages
+    - Exec update-dpsyco-skel to revert original files
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 12:26:30 +0200
+
+ubiquity-frontend-max (4.0.max0.22) max; urgency=low
+
+  * Add depends nanomax-installer:
+  * Call nanomax-installer if install type is selected
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 12 May 2008 22:00:44 +0200
+
+ubiquity-frontend-max (4.0.max0.21) max; urgency=low
+
+  * dpsyco usr/lib/ubiquity/apt-setup/generators/50cdrom:
+    - Don't show CDROM apt error (nanoMaX)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 May 2008 18:20:04 +0200
+
+ubiquity-frontend-max (4.0.max0.20) max; urgency=low
+
+  * max_ui.py stepInstallType.glade:
+    - Check for debconf install type to disable type in nanoMax
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 08 May 2008 19:55:56 +0200
+
+ubiquity-frontend-max (4.0.max0.19) max; urgency=low
+
+  * Update stidump.c from backharddi SVN r542
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 08 May 2008 09:11:55 +0200
+
+ubiquity-frontend-max (4.0.max0.18) max; urgency=low
+
+  * Update intro.txt message
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 05 May 2008 10:39:13 +0200
+
+ubiquity-frontend-max (4.0.max0.17) max; urgency=low
+
+  * Fix test-sti detection and print in summary.py
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 26 Apr 2008 14:26:00 +0200
+
+ubiquity-frontend-max (4.0.max0.16) max; urgency=low
+
+  * Sync with latest ubiquity version 1.8.7
+  * max_ui.py:
+    - Edit steps to show correct number in step_label (can't hide it)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 15:42:16 +0200
+
+ubiquity-frontend-max (4.0.max0.15) max; urgency=low
+
+  * grubinstaller.py:
+    - Call self.detect_sti() in run()
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 16 Apr 2008 18:09:19 +0200
+
+ubiquity-frontend-max (4.0.max0.14) max; urgency=low
+
+  * Resync with ubiquity 1.8.4
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 13 Apr 2008 12:48:47 +0200
+
+ubiquity-frontend-max (4.0.max0.13) max; urgency=low
+
+  * Sync with new version of Ubiquity 1.8.3
+  * Translate partman columns (Ubuntu use debconf, no wait for new translations)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 22:07:12 +0200
+
+ubiquity-frontend-max (4.0.max0.12) max; urgency=low
+
+  * sti/test-sti:
+    - Fix PCI detection and add log-output (from ubiquity package)
+    - Use /sys/block to detect hdd (don't include removable)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 00:19:49 +0100
+
+ubiquity-frontend-max (4.0.max0.11) max; urgency=low
+
+  * Disable deb-src mirrors (commented):
+    - Take bandwitch and nobody use them.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 28 Mar 2008 19:09:08 +0100
+
+ubiquity-frontend-max (4.0.max0.10) max; urgency=low
+
+  * install.py:
+    - Don't kill install* process
+  * 50mirror.ubuntu:
+    - Move to apt-setup/generators
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 28 Mar 2008 16:40:45 +0100
+
+ubiquity-frontend-max (4.0.max0.9) max; urgency=low
+
+  * 50mirror.ubuntu:
+    - Configure archive.ubuntu.com mirror as default (choose-mirror select gb.archive.ubuntu.com)
+  * install.py:
+    - Remade killall_target_proc() use lsof and don't kill python process
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 28 Mar 2008 13:27:21 +0100
+
+ubiquity-frontend-max (4.0.max0.8) max; urgency=low
+
+  * usr/share/ubiquity/install.py:
+    - Disable language install packages
+    - Disable configure_timezone
+    - Kill all process in chroot before umounting proc and sys
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 11:51:27 +0100
+
+ubiquity-frontend-max (4.0.max0.7) max; urgency=low
+
+  * Overwrite /etc/init.d/ubiquity to show max_ui installer
+  * Add sti detection scripts to install GRUB into (hd0,0) instead of (hd0)
+  * 35detect_max:
+    - Delete tabs from menu.lst entry name
+  * max_ui.py
+    - Add install_type terminales
+    - Preseed cdrom defaults settings (if exec installer twice password are empty)
+  * stepInstallType.glade
+    - Add install_type terminales radio button
+  * install.py:
+    - Kill process with fuser -k /target instead of lsof
+  * grubinstaller.py:
+    - Call test-sti script to change boot device to (hd0,0)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 17 Mar 2008 16:06:47 +0100
+
+ubiquity-frontend-max (4.0.max0.6) max; urgency=low
+
+  * Fix user-setup-apply, add user to groups inside chroot
+  * Hide stepUserInfo
+  * Create alumno user from preseed data (see max-genlive preesed file)
+  * usr/lib/os-probes/mounted/35detect_max:
+    - Try to detect previous MaX using menu.lst of installed system
+  * ubiquity-maxui.desktop
+    - Add StartupNotification (busy mouse when launching)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 14 Mar 2008 23:30:50 +0100
+
+ubiquity-frontend-max (4.0.max0.5) max; urgency=low
+
+  * Revert last debconf changes, can't force to show InstallType and hide console_setup
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 13 Mar 2008 11:18:26 +0100
+
+ubiquity-frontend-max (4.0.max0.4) max; urgency=low
+
+  * max_uy.py:
+    - Read fron preseed max.seed in max-genlive package
+    - Force username creation (madrid)
+    - Set hostname to max40
+  * Add user-setup-alumno and edit user-setup:
+    - Create alumno from preseed (max.seed) file
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 12 Mar 2008 17:54:10 +0100
+
+ubiquity-frontend-max (4.0.max0.3) max; urgency=low
+
+  * usr/share/ubiquity/install.py:
+    - Rewrite with dpsyco
+    - Read InstallType and install extra packages from manifest files
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 11 Mar 2008 10:13:12 +0100
+
+ubiquity-frontend-max (4.0.max0.2) max; urgency=low
+
+  * Add StepInstallType and edit stepWelcomeMaX
+  * Hide locale, language and tzmap steps
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 08 Mar 2008 13:00:55 +0100
+
+ubiquity-frontend-max (4.0.max0.1) max; urgency=low
+
+  * Initial version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 05 Mar 2008 18:56:14 +0100

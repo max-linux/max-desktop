@@ -1,0 +1,14 @@
+Source: max-keyring
+Section: misc
+Priority: optional
+Maintainer: Pedro Peña Pérez <pedro.pena@edmanufacturer.es>
+Build-Depends: debhelper (>= 4.0.0), cdbs, gnupg, ubuntu-keyring
+Standards-Version: 3.7.2
+
+Package: max-keyring
+Priority: important
+Architecture: all
+Depends: gnupg (>= 1.0.6-4), max-dpsyco-custom, ubuntu-keyring
+Description: Claves GnuPG del repositorio Max
+ Max firma digitalmente su fichero Release. Este paquete
+ contiene el archivo con la clave usada para esto.

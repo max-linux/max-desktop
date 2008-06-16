@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmix-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Ismail Ali Gago</dc:creator>
+    <dc:creator>UNREGISTERED</dc:creator>
+    <dc:title>Ejercicio de ordenar frases realizado con JMix</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>6</version>
+
+<data>
+<title>Ejercicio de ordenar frases realizado con JMix</title>
+
+<reading>
+<include-reading>0</include-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<jumbled-order-exercise><main-order><segment>Hot Potatoes</segment>
+<segment>est&amp;#x00E1;</segment>
+<segment>disponible</segment>
+<segment>para</segment>
+<segment>Windows</segment>
+<segment>y</segment>
+<segment>Macintosh</segment>
+<segment>.</segment>
+</main-order><alternate>Hot Potatoes est&amp;#x00E1; disponible para Macintosh y Windows.</alternate>
+</jumbled-order-exercise>
+</data>
+
+<hotpot-config-file>
+<jmix>
+<exercise-subtitle>Ejercicio de ordenar palabras</exercise-subtitle>
+<instructions>Coloque las palabras del ejercicio en orden hasta formar una frase. Cuando crea que la frase est&amp;#x00E1; ordenada, pulse en &quot;Comprobar&quot; para ver las respuestas. Si lo considera necesario, pulse en &quot;Pista&quot; para encontrar la siguiente palabra correcta.</instructions>
+<guess-correct>Correcto</guess-correct>
+<guess-incorrect>Lo siento, pruebe otra vez</guess-incorrect>
+<this-much-correct>Esta parte de su respuesta es corecta:</this-much-correct>
+<next-correct-part>La siguiente palabra correcta es:</next-correct-part>
+<remaining-words>Palabras restantes:</remaining-words>
+<click-to-add>Pulse sobre las palabras para a&amp;#x00F1;adirlas a la frase</click-to-add>
+<also-correct>Estas respuestas son tambi&amp;#x00E9;n correctas:</also-correct>
+<include-undo>1</include-undo>
+<include-restart>1</include-restart>
+<include-hint>1</include-hint>
+<next-ex-url>jmix2.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<capitalize-first-letter>1</capitalize-first-letter>
+<separate-javascript-file>0</separate-javascript-file>
+</jmix>
+
+<global>
+
+<times-up>Your time is over!</times-up>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+<undo-caption>Deshacer</undo-caption>
+<hint-caption>Pista</hint-caption>
+<restart-caption>Volver a empezar</restart-caption>
+<your-score-is>Su puntuaci&amp;#x00F3;n es:</your-score-is>
+<show-also-correct>0</show-also-correct>
+<process-for-rtl>0</process-for-rtl>
+<next-ex-caption>Siguiente ejemplo</next-ex-caption>
+<back-caption>&amp;#x003C;=</back-caption>
+<contents-caption>&amp;#x00CD;ndice</contents-caption>
+<include-next-ex>1</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>0</include-back>
+<contents-url>contents.htm</contents-url>
+<contents-url>contents.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ffffff</page-bg-color>
+<title-color>#330000</title-color>
+<ex-bg-color>#bfcaae</ex-bg-color>
+<text-color>#000000</text-color>
+<link-color>#0000ff</link-color>
+<vlink-color>#0000cc</vlink-color>
+<nav-bar-color>#008000</nav-bar-color>
+<formmail-url>http://web.uvic.ca/cgi-bin/FormMail.pl</formmail-url>
+<email>mholmes@uvic.ca</email>
+<name-please>Please enter your name:</name-please>
+<user-string-1></user-string-1>
+<user-string-2></user-string-2>
+<user-string-3></user-string-3>
+<header-code></header-code>
+</global>
+</hotpot-config-file>
+</hotpot-jmix-file>

@@ -1,0 +1,223 @@
+max-menus (4.0.max1.24) max; urgency=low
+
+  * Delete desktop files of max-manuales package (wrong launchers)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 10:34:31 +0200
+
+max-menus (4.0.max1.23) max; urgency=low
+
+  * Hide bluetooth-analyzer.desktop
+  * Show kde-rosegarden.desktop in educational -> music
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 06 Jun 2008 17:07:27 +0200
+
+max-menus (4.0.max1.22) max; urgency=low
+
+  * Hide menus: kde-audiocd, kde-Kontact, freecell, gcalctool, kde-kcalc
+    (closes: #124, #125, #126)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 01 Jun 2008 20:06:31 +0200
+
+max-menus (4.0.max1.21) max; urgency=low
+
+  * Exclude from Multimedia: Codificación de audio.desktop (closes: #109)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 16:08:30 +0200
+
+max-menus (4.0.max1.20) max; urgency=low
+
+  * enable backharddi and webhttrack again (closes: #122 #117)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 15:59:46 +0200
+
+max-menus (4.0.max1.19) max; urgency=low
+
+  * Add squeak scratch menu
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 15 May 2008 10:17:52 +0200
+
+max-menus (4.0.max1.18) max; urgency=low
+
+  * Add more items to squeak submenu and delete some alacarte desktop files
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 15 May 2008 09:48:47 +0200
+
+max-menus (4.0.max1.17) max; urgency=low
+
+  * Move all Kdevelop apps to kdevelop menu
+  * Clean applications.menu file
+  * Create Traducciones menu with kbabel and gtranslator
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 17:26:08 +0200
+
+max-menus (4.0.max1.16) max; urgency=low
+
+  * Remove dosemu.desktop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 07 May 2008 10:24:56 +0200
+
+max-menus (4.0.max1.15) max; urgency=low
+
+  * Delete usr/share/max/applications/sun-java6-javaws.desktop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 07 May 2008 09:47:48 +0200
+
+max-menus (4.0.max1.14) max; urgency=low
+
+  * Fix Música order menu
+  * Add Cartografía menu and OpenStreetMap web site and editor launchers
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 05 May 2008 11:30:45 +0200
+
+max-menus (4.0.max1.13) max; urgency=low
+
+  * Add Musica menu
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 14:16:50 +0200
+
+max-menus (4.0.max1.12) max; urgency=low
+
+  * Hide not gnome usesfull menu enties
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 24 Apr 2008 18:51:31 +0200
+
+max-menus (4.0.max1.11) max; urgency=low
+
+  * Remove tcospersonalize entries
+  * Add max-manuales in max menu
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 15:25:40 +0200
+
+max-menus (4.0.max1.10) max; urgency=low
+
+  * Change /home/madrid/.local/share/applications => /usr/share/max/applications
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 22 Apr 2008 09:07:58 +0200
+
+max-menus (4.0.max1.9) max; urgency=low
+
+  * Updated menus (CWT)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 21 Apr 2008 23:38:27 +0200
+
+max-menus (4.0.max1.8) max; urgency=low
+
+  * Call update-dpsyco-skel before updating allusers menus
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 21:27:37 +0200
+
+max-menus (4.0.max1.7) max; urgency=low
+
+  * Don't exec if start-stop-daemon |grep ELF is = 0 (not != 0)
+  * Exit if HOME don't exists
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 19 Apr 2008 17:53:32 +0200
+
+max-menus (4.0.max1.6) max; urgency=low
+
+  * Don't fail package instalation if postinst or postrm fail
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 23:21:03 +0200
+
+max-menus (4.0.max1.5) max; urgency=low
+
+  * maxmenus.sh:
+    - Exit if start-stop-daemon is a script
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 21:19:46 +0200
+
+max-menus (4.0.max1.4) max; urgency=low
+
+  * Remove squeak icon (squeak-vm provides it)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 13:58:20 +0100
+
+max-menus (4.0.max1.3) max; urgency=low
+
+  * Add educational SQUEAK menu item and logo
+  * Hide Gcompris launcher in educational menu (gcompris have submenu)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 13:22:58 +0100
+
+max-menus (4.0.max1.2) max; urgency=low
+
+  * Rename 3.1 => 4.0 in applicactions.menu too
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 15:22:14 +0100
+
+max-menus (4.0.max1.1) max; urgency=low
+
+  * Rename MaX menu from 3.1 to 4.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 02 Mar 2008 13:14:34 +0100
+
+max-menus (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 12:39:12 +0100
+
+max-menus (3.1.20080102.max9) max; urgency=low
+
+  * Move maxmenus script to /usr/bin
+  * Create option --user to use with homealumno
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 11:31:37 +0100
+
+max-menus (3.1.20080102.max8) max; urgency=low
+
+  * Remove update-dpsyco-skel calls in postinst and postrm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 28 Jan 2008 12:43:31 +0100
+
+max-menus (3.1.20080102.max7) max; urgency=low
+
+  * Exclude Orage in gnome desktop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 20 Jan 2008 12:53:45 +0100
+
+max-menus (3.1.20080102.max6) max; urgency=low
+
+  * maxmenus.sh change home/* with find command
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 14 Jan 2008 21:02:03 +0100
+
+max-menus (3.1.20080102.max5) max; urgency=low
+
+  * Add robotics menu (with robolinux launchers)
+  * Add MaX 3.1 menu with forum, educamadrid and other launchers
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 05 Jan 2008 20:13:35 +0100
+
+max-menus (3.1.20080102.max4) max; urgency=low
+
+  * maxmenus.sh
+    - Clean before update
+  * Remove extra launchers
+  * Hide all KDE apps in Others menu
+  * Remove alacarte-made* directories
+  * Add Matematicas menu and icon (kbruch copy)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 05 Jan 2008 12:41:58 +0100
+
+max-menus (3.1.20080102.max3) max; urgency=low
+
+  * Remove more unneeded launchers
+  * Fix typo in debian/rules DESTDIR => CURDIR
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 03 Jan 2008 11:47:58 +0100
+
+max-menus (3.1.20080102.max2) max; urgency=low
+
+  * Add maxmenus script (copy menus in users home)
+  * Remove not needed code in debian/[postinst|prerm|postrm]
+  * Add Math menu in .config/menus/applications.menu
+  * Remove not needed launchers in usr/share/max/applications
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 20:09:47 +0100
+
+max-menus (3.1.20080102.max1) max; urgency=low
+
+  * First version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 10:56:47 +0100

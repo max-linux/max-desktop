@@ -1,0 +1,16 @@
+[Desktop Entry]
+Categories=;
+Comment=Edit musical scores
+Comment[en]=Edit musical scores
+Comment[fr]=Ėdite des partitions musicales
+Encoding=UTF-8
+Exec=denemo
+GenericName=Score Editor
+GenericName[en]=Score Editor
+GenericName[fr]=Édieur de partition
+Hidden=false
+Icon=denemo.png
+Name=GNU Denemo
+StartupNotify=true
+Terminal=false
+Type=Application

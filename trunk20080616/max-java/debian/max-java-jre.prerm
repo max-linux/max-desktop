@@ -1,0 +1,23 @@
+#!/bin/sh
+
+#set -e
+
+# openjdk have priority 1061
+priority=1063
+basedir=/usr/lib/jvm/java-6-sun
+jre_tools='ControlPanel java java_vm javaws jcontrol keytool pack200 policytool rmid rmiregistry unpack200 orbd servertool tnameserv'
+
+
+if [ "$1" = "purge" ]; then
+  for i in $jre_tools; do
+    update-alternatives --remove $i $basedir/jre/bin/$i
+  done
+  update-java-alternatives --jre --auto
+fi
+
+
+#DEBHELPER#
+
+exit 0
+
+

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=KompoZer traducción a Español
+Comment=Instalar archivo de traducción a español
+Categories=Network;WebDevelopment;
+Encoding=UTF-8
+Exec=kompozer /usr/share/kompozer-l10n-es/kompozer-0.7.10.es-ES.langpack.xpi
+Icon=kompozer
+Terminal=false
+Type=Application

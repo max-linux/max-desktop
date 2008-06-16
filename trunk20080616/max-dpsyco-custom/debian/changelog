@@ -1,0 +1,89 @@
+max-dpsyco-custom (4.0.max2.10) max; urgency=low
+
+  * Add NotShowIn=GNOME;XFCE;KDE; in openjdk-6-javaws.desktop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 11 Jun 2008 20:37:55 +0200
+
+max-dpsyco-custom (4.0.max2.9) max; urgency=low
+
+  * Add shares.desktop launcher
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 06 Jun 2008 17:13:17 +0200
+
+max-dpsyco-custom (4.0.max2.8) max; urgency=low
+
+  * Translate WebHTTrack launchers
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 21:29:42 +0200
+
+max-dpsyco-custom (4.0.max2.7) max; urgency=low
+
+  * Change Java Web Start launchers to launch javaws.max
+  * Add dosemu.desktop (exec with su-to-root)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 07 May 2008 09:55:27 +0200
+
+max-dpsyco-custom (4.0.max2.6) max; urgency=low
+
+  * Add openjdk-6-javaws.desktop to exec sun-java6 javaws
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 30 Apr 2008 16:02:33 +0200
+
+max-dpsyco-custom (4.0.max2.5) max; urgency=low
+
+  * Add jdkhome to netbeans.desktop launcher
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 18:52:17 +0200
+
+max-dpsyco-custom (4.0.max2.4) max; urgency=low
+
+  * add /usr/share/applications/sun-java6-javaws.desktop:
+    - https://bugs.launchpad.net/ubuntu/+source/sun-java6/+bug/84501
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 16 Apr 2008 17:46:42 +0200
+
+max-dpsyco-custom (4.0.max2.3) max; urgency=low
+
+  * Add displayconfig-gtk.desktop, to show in System -> Admin
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 13 Apr 2008 12:31:20 +0200
+
+max-dpsyco-custom (4.0.max2.2) max; urgency=low
+
+  * Resync update-grub script with lastest of Ubuntu
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 23:34:17 +0200
+
+max-dpsyco-custom (4.0.max2.1) max; urgency=low
+
+  * Remove splash.xpm.gz link
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 15:41:37 +0100
+
+max-dpsyco-custom (4.0.max2) max; urgency=low
+
+  * Remove splash.xpm.gz and create link to grub splash in max-artwork package
+  * Change update-grub splash detection (use -e instead of -f)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 01 Mar 2008 13:28:06 +0100
+
+max-dpsyco-custom (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+  * Update update-grub file (with new hardy version)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 12:37:28 +0100
+
+max-dpsyco-custom (3.1.max2) max; urgency=low
+
+  * etc/apt/apt.conf.d/92update-dpsyco-skel:
+    - Exec dpsyco in silent mode
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 02 Feb 2008 23:19:23 +0100
+
+max-dpsyco-custom (3.1.max1) max; urgency=low
+
+  * Initial release
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 21 Jan 2008 18:02:34 +0100
+

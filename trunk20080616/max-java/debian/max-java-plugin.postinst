@@ -1,0 +1,36 @@
+#!/bin/sh
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+priority=1063
+browser_dirs="xulrunner-addons"
+PLUGIN=libjavaplugin_oji.so
+PLUGINPTH=/usr/lib/jvm/java-6-sun/jre/plugin/i386/ns7/$PLUGIN
+
+# delete old plugin link
+if [ -e /usr/lib/firefox-addons/plugins/libjavaplugin.so ]; then
+  rm -f /usr/lib/firefox-addons/plugins/libjavaplugin.so
+fi
+
+for browser_dir in $browser_dirs; do
+    if [ $browser_dir = xulrunner-addons ]; then
+	browser=xulrunner-1.9
+    else
+	browser=$browser_dir
+    fi
+    update-alternatives --quiet --install \
+	/usr/lib/$browser_dir/plugins/libjavaplugin.so \
+	$browser-javaplugin.so \
+	$PLUGINPTH \
+	$priority
+done
+
+
+update-java-alternatives --plugin --set java-6-sun || true
+
+
+#DEBHELPER#
+
+exit 0
+
+

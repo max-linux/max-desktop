@@ -1,0 +1,32 @@
+#!/bin/sh
+set -e
+
+. /usr/share/debconf/confmodule
+
+file="$1"
+
+logoutput=""
+if [ "$CATCHLOG" ]; then
+	logoutput="log-output -t apt-setup"
+fi
+
+chroot=
+if [ "$ROOT" ]; then
+	chroot=chroot
+fi
+
+tmp=$($chroot $ROOT tempfile)
+
+# apt-cdrom can be interactive, avoid that
+if $logoutput $chroot $ROOT apt-cdrom add \
+   -o Dir::Etc::SourceList=$tmp \
+   </dev/null; then
+	cat $ROOT$tmp >> $file
+else
+	rm -f $ROOT$tmp $ROOT$tmp~
+        # MaX disable show error (needed to nanoMaX)
+	#db_input critical apt-setup/cdrom/failed || true
+	#db_go || exit 10
+fi
+
+rm -f $ROOT$tmp $ROOT$tmp~

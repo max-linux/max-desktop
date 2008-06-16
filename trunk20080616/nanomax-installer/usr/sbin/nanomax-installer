@@ -1,0 +1,363 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+"""
+Installer for nanoMaX
+Copyright 2008, Mario Izquierdo mariodebian@gmail.com
+
+Changelog
+  20080512 - First usable version
+
+"""
+
+import os, sys
+import atexit
+
+# import gtk and glade
+import pygtk
+pygtk.require('2.0')
+import gtk
+from gettext import gettext as _
+import gtk.glade
+
+import gobject
+gobject.threads_init()
+gtk.gdk.threads_init()
+
+from subprocess import Popen, PIPE, STDOUT
+import threading
+
+import dbus
+import dbus.service
+if getattr(dbus, 'version', (0,0,0)) >= (0,41,0):
+    import dbus.glib
+
+MIN_PORTABLES=500
+MIN_PERSISTENTE=300
+NANOMAX_SIZE=750
+STEP=10
+
+class NanoMaXInstaller (object):
+
+    def __init__(self,):
+        self.gconf_previous = {}
+        self.widgets={}
+        self.device={}
+        self.mainloop = gobject.MainLoop()
+        self.hal=DeviceManager(self.insert_row)
+        self.selected=None
+
+
+    def initgui(self):
+        # glade locale init
+        #gtk.glade.bindtextdomain("nanomaxinstaller", "./po")
+        #gtk.glade.textdomain("nanomaxinstaller")
+
+        # Widgets
+        self.ui = gtk.glade.XML('/usr/share/nanomax-installer/nanomaxinstaller.glade')
+
+        # load all widgets
+        for widget in self.ui.get_widget_prefix(""):
+            self.widgets[widget.get_name()]=widget
+        
+        self.ui.signal_autoconnect(self)
+        
+        # disable aceptar button
+        self.widgets['aceptar_button'].set_sensitive(False)
+        
+        self.widgets['slider_portables'].connect('change-value', self.update_sliders, 'slider_persistente')
+        self.widgets['slider_persistente'].connect('change-value', self.update_sliders, 'slider_portables')
+
+        self.widgets['ck_portables'].connect('toggled', self.disable_sliders)
+        self.widgets['ck_persistente'].connect('toggled', self.disable_sliders)
+
+        self._columns = [ 
+            ('Dispositivo', gobject.TYPE_STRING),
+            ('Tamaño (GiB)', gobject.TYPE_STRING),
+            ('Modelo', gobject.TYPE_STRING),
+                ]
+        _val = [i[1] for i in self._columns]
+        self.liststore = gtk.ListStore(*_val)
+        
+        treeview=self.widgets['devices_list']
+        treeview.set_model(self.liststore)
+        
+        _index = 0
+        for (_name,_type) in self._columns:
+            _rend = gtk.CellRendererText()
+            _column = gtk.TreeViewColumn(_name, _rend, text=_index)
+            _column.set_clickable(True)
+            treeview.append_column(_column)
+            _index += 1
+        treeview.columns_autosize()
+        treeview.show()
+        
+        treeview_file = treeview.get_selection()
+        treeview_file.connect("changed", self.on_device_click)
+        
+        self.hal.get_all_devices()
+
+    def on_device_click(self, devices):
+        (model, iter) = devices.get_selected()
+        if not iter:
+            self.widgets['aceptar_button'].set_sensitive(False)
+            self.selected=None
+            return
+        self.device['dev']=model.get_value(iter,0)
+        self.device['size']=model.get_value(iter, 1)
+        self.device['model']=model.get_value(iter, 2)
+        self.update_sliders()
+        self.selected=self.device
+        self.widgets['aceptar_button'].set_sensitive(True)
+
+    def disable_sliders(self, *args):
+        portables=self.widgets['ck_portables'].get_active()
+        persistente=self.widgets['ck_persistente'].get_active()
+        if not portables or not persistente:
+            self.widgets['slider_portables'].set_sensitive(False)
+            self.widgets['slider_persistente'].set_sensitive(False)
+        elif self.device:
+            self.widgets['slider_portables'].set_sensitive(True)
+            self.widgets['slider_persistente'].set_sensitive(True)
+
+    def update_sliders(self, *args):
+        size=(float(self.device['size'])*1000)-10 #restamos 10Mb por si acaso
+        portables=self.widgets['ck_portables'].get_active()
+        persistente=self.widgets['ck_persistente'].get_active()
+        smax=(size-NANOMAX_SIZE)
+        maxportables=smax-MIN_PERSISTENTE
+        maxpersistente=smax-MIN_PORTABLES
+        if not self.device:
+            self.widgets['slider_portables'].set_sensitive(False)
+            self.widgets['slider_persistente'].set_sensitive(False)
+        
+        if len(args)>0:
+            newsize=int(args[2])
+            slider=args[3]
+            newvalue=size-NANOMAX_SIZE-newsize
+            if slider == 'slider_portables':
+                nmax=maxportables
+                nmin=MIN_PORTABLES
+                if newvalue <= MIN_PORTABLES: return
+            if slider == 'slider_persistente':
+                nmax=maxpersistente
+                nmin=MIN_PERSISTENTE
+                if newvalue <= MIN_PERSISTENTE: return
+            adj=gtk.Adjustment(newvalue, nmin, nmax, STEP, STEP, STEP)
+            #print "adjustment (%s) new=%s nmin=%s nmax=%s " %(slider, newvalue, nmin, nmax)
+            self.widgets[slider].set_adjustment(adj)
+            #print "%s new=%s smax=%s nmax=%s nmin=%s maxport=%s minport=%s maxpers=%s minpersis=%s" %(slider, newvalue, smax, nmax, nmin, maxportables, MIN_PORTABLES, maxpersistente, MIN_PERSISTENTE)
+        
+        if len(args) == 0 and portables and persistente and size > 1:
+            self.widgets['slider_portables'].set_sensitive(True)
+            self.widgets['slider_persistente'].set_sensitive(True)
+            adj_portables=gtk.Adjustment(maxportables, MIN_PORTABLES, maxportables, STEP, STEP, STEP)
+            self.widgets['slider_portables'].set_adjustment(adj_portables)
+            adj_persistente=gtk.Adjustment(MIN_PERSISTENTE, MIN_PERSISTENTE, maxpersistente, STEP, STEP, STEP)
+            self.widgets['slider_persistente'].set_adjustment(adj_persistente)
+            #print "smax=%s maxport=%s minport=%s maxpers=%s minpersis=%s" %(smax, maxportables, MIN_PORTABLES, maxpersistente, MIN_PERSISTENTE)
+
+    def fixed_toggled(self, cell, path, index):
+        _iter = self.liststore.get_iter((int(path),))
+        _fixed = self.liststore.get_value(_iter, index)
+        self.liststore.set(_iter, index, not _fixed)
+
+    def insert_row(self, devices):
+        self.clear()
+        for dev in devices:
+            #print "insert_row, dev=%s" %dev
+            row=(dev['device'], "%.02f" %self.size_to_gib(dev['size']) , dev['vendor'] + " " + dev['model'] )
+            self.liststore.append(row)
+        #return self.liststore.append(row)
+
+    def size_to_gib(self, size):
+        gib=(size/1000000000.0)
+        print "size_to_gib() size=%s gib=%s"%(size, gib)
+        return gib
+
+    def clear(self):
+        return self.liststore.clear()
+
+    def on_aceptar_button_clicked(self, *args):
+        if not self.selected: return
+        if float(self.selected['size']) < 0.8:
+            self.error_msg("El dispositivo tiene menos de 800 MiG, para instalar nanoMaX necesita al menos una memoria USB de 1 GiB.")
+            return
+        if self.widgets['ck_portables'].get_active():
+            self.selected['portables']=1
+        else:
+            self.selected['portables']=0
+        if self.widgets['ck_persistente'].get_active():
+            self.selected['persistente']=1
+        else:
+            self.selected['persistente']=0
+        
+        if self.widgets['ck_portables'].get_active() and \
+           self.widgets['ck_persistente'].get_active() and \
+           float(self.selected['size']) < 1.9:
+            self.error_msg("El dispositivo tiene menos de 2 GiG, para instalar nanoMaX con las aplicaciones portables y la persistencia necesita al menos una memoria USB de 2 GiB.")
+            return
+
+        self.widgets['mainwindow'].set_sensitive(False)
+        self.widgets['scrolledwindow1'].hide()
+        self.widgets['frame1'].hide()
+        self.widgets['aceptar_button'].hide()
+        self.widgets['scrolledwindow2'].show()
+
+        portables_size=""
+        persistente_size=""
+        if self.selected['portables'] == 1 and self.selected['persistente'] == 1:
+            portables_size=int(self.widgets['slider_portables'].get_value())
+            persistente_size=int(self.widgets['slider_persistente'].get_value())
+        
+        print "on_aceptar_button_clicked() selected device=%s" %self.selected
+        cmd="bash /usr/share/nanomax-installer/do-install.sh '%s' '%s' '%s' '%s' '%s'" %(self.selected['dev'], self.selected['portables'], self.selected['persistente'], portables_size, persistente_size)
+        th=threading.Thread(target=self.install, args=(cmd,))
+        th.start()
+
+
+    def install(self, cmd):
+        self.installing=True
+        p=Popen(cmd, shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+        while self.installing:
+            if p.poll() != None: self.installing=False
+            line=p.stdout.readline()
+            print "do: %s"%line.strip()
+            gtk.gdk.threads_enter()
+            self.insert_salida(line.strip())
+            gtk.gdk.threads_leave()
+        self.widgets['mainwindow'].set_sensitive(True)
+
+    def insert_salida(self, txt):
+        buffer = self.widgets['salida'].get_buffer()
+        iter = buffer.get_end_iter()
+        mark = buffer.get_insert()
+        txt=str(txt)
+        buffer.insert(iter, '\n  ' + txt)
+        # scroll window
+        self.widgets['salida'].scroll_to_mark(mark, 0.2)
+        return
+
+    def error_msg(self, txt):
+        d = gtk.MessageDialog(None,
+                      gtk.DIALOG_MODAL |
+                      gtk.DIALOG_DESTROY_WITH_PARENT,
+                      gtk.MESSAGE_WARNING,
+                      gtk.BUTTONS_OK,
+                      txt)
+        d.run()
+        d.destroy()
+
+
+    def run (self):
+        try:
+            self.mainloop.run()
+        except KeyboardInterrupt:
+            self.quit()
+        
+    def quit(self, *args):
+        self.mainloop.quit()
+        print "saliendo"
+        sys.exit(0)
+
+
+
+class DBusException(Exception):
+    def __init__(self, *args, **kwargs):
+        pass
+    def __str__(self):
+        pass
+        
+    def get_dbus_name(self):
+        return self._dbus_error_name
+
+dbus.exceptions.DBusException=DBusException
+
+# Code based on:
+# (c) 2007, Davyd Madeley <davyd@madeley.id.au>
+#
+# This program serves as an example, and can be freely used, copied, derived
+# and redistributed by anyone. No warranty is implied or given.
+#
+
+
+class DeviceManager:
+    def __init__(self, update_function=None, event_bus="usb"):
+        self.update_function=update_function
+        self.event_bus=event_bus
+        self.bus = dbus.SystemBus()
+        hal_obj = self.bus.get_object ('org.freedesktop.Hal', '/org/freedesktop/Hal/Manager')
+        self.hal = dbus.Interface (hal_obj, 'org.freedesktop.Hal.Manager')
+        self.bus.add_signal_receiver(self.get_all_devices,
+                        'DeviceAdded',
+                        'org.freedesktop.Hal.Manager',
+                        'org.freedesktop.Hal',
+                        '/org/freedesktop/Hal/Manager')
+ 
+        self.bus.add_signal_receiver(self.remove,
+                        'DeviceRemoved',
+                        'org.freedesktop.Hal.Manager',
+                        'org.freedesktop.Hal',
+                        '/org/freedesktop/Hal/Manager')
+                        
+    def remove(self, udi):
+        self.get_all_devices(None)
+
+        
+    def get_all_devices(self, event_udi=None):
+        #print event_udi
+        try:
+            if event_udi:
+                self.get_udi_data(event_udi)
+        except:
+            return
+        devices=[]
+        #print "\n\nEVENT at UDI %s"%event_udi
+        udis = self.hal.FindDeviceByCapability ('storage')
+        for udi in udis:
+            tmp=self.get_udi_data(udi)
+            if tmp and tmp['bus'] == self.event_bus:
+                devices.append(tmp)
+        #for dev in devices:
+        #    print dev
+        if self.update_function:
+            self.update_function(devices)
+
+    def get_udi_data(self, udi):
+        # get a device object
+        dev_obj = self.bus.get_object ('org.freedesktop.Hal', udi)
+        
+
+        # get an interface to the device
+        dev = dbus.Interface (dev_obj, 'org.freedesktop.Hal.Device')
+        if self.event_bus != dev.GetProperty ('storage.bus'):
+            return None
+        try:
+            if not os.path.exists(str(dev.GetProperty ('block.device'))):
+                print "device don't exists"
+                return None
+        except:
+            return None
+        if int( dev.GetProperty( 'storage.size') ) != 0:
+            size=int( dev.GetProperty( 'storage.size') )
+        else:
+            p = Popen("LC_ALL=C /sbin/fdisk -l %s| awk '/^Disk*.*bytes/ {print $5}'"%str(dev.GetProperty ('block.device')), shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+            size=int(p.stdout.readline().strip())
+        return{
+                "udi": str(udi),
+                "device": str(dev.GetProperty ('block.device')),
+                "bus": str(dev.GetProperty ('storage.bus')),
+                "model": str(dev.GetProperty ('storage.model')),
+                "vendor": str(dev.GetProperty ('storage.vendor')),
+                "removable": bool(dev.GetProperty ('storage.removable')),
+                "size": size
+              }
+
+
+
+
+if __name__ == '__main__':
+    app = NanoMaXInstaller()
+    # Run app
+    app.initgui()
+    #print app.widgets
+    app.run()

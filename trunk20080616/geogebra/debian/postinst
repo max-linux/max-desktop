@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# configure geogebra.lax with correct JAVA VM
+
+JAVA_VM=$(readlink /etc/alternatives/java)
+
+# if JAVA_VM is free GNU JAVA change to another SUN JAVA_VM
+if [ "$(basename ${JAVA_VM}| grep -c "gij")" = 1 ]; then
+   JAVA_VM=$(update-alternatives --list java| grep sun | head -1)
+   update-alternatives --config java ${JAVA_VM}
+fi
+
+sed -i "s|__JAVA__|${JAVA_VM}|g" /etc/geogebra.lax
+
+
+#DEBCONF#

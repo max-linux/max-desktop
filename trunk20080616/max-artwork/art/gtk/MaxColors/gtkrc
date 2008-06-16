@@ -1,0 +1,286 @@
+# Ubuntu Human-Murrine Colorscheme
+#
+# Authors:
+# Cory Kontros <coryisatm@nc.rr.com>
+# Richard Stellingwerff <remenic@gmail.com>
+# Daniel Borgmann <daniel.borgmann@gmail.com>
+# Billy Cantrell <bvcmdk@yahoo.com>
+# Mario Izquierdo <mariodebian@gmail.com> for MaX 4.0
+#
+# Feel free to modify and share!
+
+#
+# colores para MaX 4.0
+# #86abd9 = azul claro (para menus)
+# #6397d7 = azul mas oscuro
+# #dd2928 = rojo comunidad de madrid
+# #a0180f = granate (borde de ventana)
+
+style "theme-default"
+{
+  GtkButton      ::default_border    = { 0, 0, 0, 0 }
+  GtkRange       ::trough_border     = 0
+  GtkPaned       ::handle_size       = 6
+  GtkRange       ::slider_width      = 15
+  GtkRange       ::stepper_size      = 15
+
+  GtkScrollbar   ::min_slider_length = 35
+  GtkCheckButton ::indicator_size    = 14
+# GtkMenuBar     ::internal-padding  = 0
+  GtkTreeView    ::expander_size     = 14
+  GtkExpander    ::expander_size     = 16
+  GtkScale       ::slider-length     = 31
+  GtkMenuBar	 ::shadow-type       = GTK_SHADOW_NONE
+  GtkToolbar     ::shadow-type       = GTK_SHADOW_NONE
+
+  GtkWidget::link-color	        = "#000ff"
+  GtkWidget::visited-link-color	= "#7f007f"
+
+  GtkTreeView::odd_row_color = "#F5F2ED"
+  GtkTreeView::even_row_color = "#FAF9F7"
+  
+  xthickness = 1
+  ythickness = 1
+
+ 	fg[NORMAL]		= "#101010" # Metacity and mouseover, Most text
+	fg[PRELIGHT]      	= "#000000" # Text when mouseover
+	fg[ACTIVE]	  	= "#000000" # Text when mouseclicking button, Tabs, Active window list
+	fg[SELECTED]      	= "#ffffff" # Metacity X when window selected
+	fg[INSENSITIVE]   	= "#B3AFAB" # Insensitive Text
+
+	bg[NORMAL]	  	= "#efebe7" # Normal Background, inactive Metacity bar, buttons
+	bg[PRELIGHT]	  	= "#f5f3f0" # Mouseover buttons
+	bg[ACTIVE]	  	= "#E1D9D1" # Mouseclicking, Tabs, active window list
+	bg[SELECTED]		= "#86ABD9" # Metacity Bar
+	bg[INSENSITIVE]   	= "#efebe7" # Insensitive buttons
+	
+	base[NORMAL]		= "#ffffff" # Background, most
+	base[PRELIGHT]		= "#ffffff" # Mouseover menu
+	base[ACTIVE]	  	= "#E1D9D1" # Menu active item in inactive window
+	base[SELECTED]		= "#6397d7" # Menu active item in active window
+	base[INSENSITIVE] 	= "#efebe7" # Background, insensitive
+	
+	text[NORMAL]	  	= "#000000" # Text in window
+	text[PRELIGHT]		= "#000000" # Text on Mouseover
+	text[ACTIVE]	  	= "#000000" # Active text in inactive window
+	text[SELECTED]    	= "#000000" # Active text in active window
+	text[INSENSITIVE] 	= "#B3AFAB" # Unknown
+
+
+
+ #GnomeHRef::link_color		="#000000" 
+  #GtkIMHtmlr::hyperlink-color	="#000000"
+
+  #NautilusIconContainer::dark_info_color="#827B69"
+  #NautilusIconContainer::light_info_color="#827B69"
+  #NautilusIconContainer::highlight_alpha=70
+
+  engine "murrine" 
+  {
+#		scrollbar_color = "#86ABD9"
+		contrast = 1.0
+		glazestyle = 1 # 0 = flat hilight, 1 = curved hilight, 2 = concave style, 3 = top curved hilight, 4 = beryl hilight
+		menubarstyle = 0 # 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
+		menubaritemstyle = 1 # 0 = menuitem look, 1 = button look
+		menuitemstyle = 0 # 0 = flat, 1 = glassy, 2 = striped
+		listviewheaderstyle = 0 # 0 = flat, 1 = glassy, 2 = raised
+		listviewstyle = 0 # 0 = nothing, 1 = dotted
+		scrollbarstyle = 2 # 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
+		hilight_ratio = 0.9555 # set the amount of buttons or widgets hilight
+		roundness = 2 # 0 = squared, 1 = old default, more will increase roundness
+		animation = TRUE # FALSE = disabled, TRUE = enabled
+                gradients = TRUE
+   }
+}
+
+
+style "theme-wide" = "theme-default"
+{
+  xthickness = 2
+  ythickness = 2
+}
+
+style "theme-wider" = "theme-default"
+{
+  xthickness = 3
+  ythickness = 3
+}
+
+style "theme-entry" = "theme-wider"
+{
+  bg[SELECTED]	    = "#86ABD9"
+}
+
+style "theme-button" = "theme-wider"
+{
+  bg[NORMAL]        = "#e0ddd9"
+  bg[ACTIVE]      = "#ffffff"
+  bg[PRELIGHT]    = "#b3c4d9"
+}
+
+style "theme-slider" = "theme-button"
+{
+  base[NORMAL] = "#e0ddd9"
+  bg[SELECTED] = "#86ABD9"
+}
+
+style "theme-scrollbar" = "theme-button"
+{
+  xthickness = 2
+  ythickness = 2
+}
+
+style "theme-notebook" = "theme-wide"
+{
+  bg[NORMAL]	  = "#f0ece8"
+  bg[ACTIVE]      = "#efebe7"
+}
+
+style "theme-tasklist" = "theme-default"
+{
+  xthickness = 5
+  ythickness = 3
+}
+
+style "theme-menu" = "theme-default"
+{
+  xthickness = 3
+  ythickness = 3
+}
+
+style "theme-menu-item" = "theme-default"
+{
+  xthickness = 1
+  ythickness = 3
+  bg[SELECTED] = "#86ABD9" #hover-over on menu items.
+  fg[PRELIGHT]  = "#ffffff" #Text color on hover-over
+}
+
+style "theme-menubar" = "theme-default"
+{
+bg[NORMAL]= "#efebe7"
+}
+
+style "theme-menubar-item"
+{
+  ythickness = 4
+  bg[PRELIGHT] = "#86ABD9"
+
+}
+
+style "theme-tree" = "theme-default"
+{
+  xthickness = 2
+  ythickness = 2
+}
+
+style "theme-frame-title" = "theme-default"
+{
+
+}
+
+style "theme-tooltips" = "theme-default"
+{
+  xthickness = 4
+  ythickness = 4
+  bg[NORMAL] = "#86abd9"
+}
+
+style "theme-progressbar" = "theme-wide"
+{
+  xthickness = 1
+  ythickness = 1
+  bg[NORMAL]	  = "#FFFFFF"
+  bg[SELECTED] = "#86ABD9"
+}
+
+style "theme-combo" = "theme-button"
+{
+  base[NORMAL]	  = "#FFFFFF"
+  base[SELECTED] = "#86ABD9"
+}
+
+style "metacity-frame"
+{
+  # Normal base color
+  #bg[NORMAL]  = "#86ABD9"
+
+  # Unfocused title background color
+  #bg[INSENSITIVE]  = { 0.8, 0.8, 0.8 }
+
+  # Unfocused title text color
+  #fg[INSENSITIVE]  = { 1.55, 1.55, 1.55 }
+
+  # Focused icon color
+  #fg[NORMAL]  = { 0.2, 0.2, 0.2 }
+
+  # Focused title background color
+  bg[SELECTED]  = "#a0180f"
+  base[ACTIVE]  = "#ffffff"
+
+  # Focused title text color
+  fg[SELECTED]  = "#000000"
+}
+
+class "MetaFrames" 	  style "metacity-frame"
+class "GtkWindow"     style "metacity-frame"
+#style "panelbg"
+#{
+#  xthickness        = 0
+#  ythickness        = 0
+#  bg_pixmap[NORMAL] = "panel.png"
+#}
+
+#class "*Panel*" style "panelbg"
+#class "*panel*" style "panelbg"
+#class "*notif*" style "panelbg"
+#class "*Notif*" style "panelbg"
+#class "*Tray*"  style "panelbg"
+#class "*tray*"  style "panelbg"
+
+style "theme-radiocheck" = "theme-default"
+{
+  text[NORMAL] = "#000000"
+  bg[SELECTED] = "#dd2928" # color de la comunidad de madrid
+  text[PRELIGHT] = "#ffffff"
+}
+class "GtkRadio*" style "theme-radiocheck"
+class "GtkCheck*" style "theme-radiocheck"
+
+# widget styles
+class "GtkWidget"      style "theme-default"
+class "GtkButton"      style "theme-button"
+class "GtkScale"       style "theme-slider"
+class "GtkScrollbar"   style "theme-scrollbar"
+class "GtkCombo"       style "theme-button"
+class "GtkRange"       style "theme-wide"
+class "GtkFrame"       style "theme-wide"
+class "GtkMenu"        style "theme-menu"
+class "GtkEntry"       style "theme-entry"
+class "GtkMenuItem"    style "theme-menu-item"
+class "GtkNotebook"    style "theme-notebook"
+class "GtkProgressBar" style "theme-progressbar"
+class "*MenuBar*"      style "theme-menubar"
+#class "PanelMenuBar"   style "panelbg"
+
+widget_class "*MenuItem.*" style "theme-menu-item"
+widget_class "*MenuBar.*"  style "theme-menubar-item"
+
+# combobox stuff
+widget_class "*.GtkComboBox.GtkButton" style "theme-combo"
+widget_class "*.GtkCombo.GtkButton"    style "theme-combo"
+
+# tooltips stuff
+widget_class "*.tooltips.*.GtkToggleButton" style "theme-tasklist"
+widget "gtk-tooltips" style "theme-tooltips"
+
+# treeview stuff
+widget_class "*.GtkTreeView.GtkButton" style "theme-tree"
+widget_class "*.GtkCTree.GtkButton" style "theme-tree"
+widget_class "*.GtkList.GtkButton" style "theme-tree"
+widget_class "*.GtkCList.GtkButton" style "theme-tree"
+widget_class "*.GtkFrame.GtkLabel" style "theme-frame-title"
+
+# notebook stuff
+widget_class "*.GtkNotebook.*.GtkEventBox" style "theme-notebook"
+widget_class "*.GtkNotebook.*.GtkViewport" style "theme-notebook"

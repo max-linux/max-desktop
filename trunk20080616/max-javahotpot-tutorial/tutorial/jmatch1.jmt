@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jmatch-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Ismail Ali Gago</dc:creator>
+    <dc:creator>UNREGISTERED</dc:creator>
+    <dc:title>Ejercicio de asociación realizado con JMatch</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>6</version>
+
+<data>
+<title>Ejercicio de asociaci&amp;#x00F3;n realizado con JMatch</title>
+
+<timer><seconds>60</seconds><include-timer>0</include-timer></timer>
+
+<reading>
+<include-reading>0</include-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<matching-exercise>
+<default-right-item>???</default-right-item>
+
+<pair>
+<left-item><text>Primero:</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Arranque una Papata</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Segundo:</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Introudzca sus datos, preguntas, respuestas, etc...</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Tercero:</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Guarde sus datos.</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Cuarto:</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Defina la correcta configuraci&amp;#x00F3;n que usted desee</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Quinto:</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Pulse en &quot;Archivo / Crar p&amp;#x00E1;gina web&quot;.</text>
+<fixed>0</fixed>
+</right-item></pair>
+
+<pair>
+<left-item><text>Por &amp;#x00FA;ltimo:</text>
+<fixed>1</fixed>
+</left-item>
+<right-item><text>Rel&amp;#x00E1;jese y t&amp;#x00F3;mese un caf&amp;#x00E9;.</text>
+<fixed>0</fixed>
+</right-item></pair>
+</matching-exercise>
+</data>
+
+<hotpot-config-file>
+<jmatch>
+<exercise-subtitle>Ejercicio de emparejamiento.</exercise-subtitle>
+<instructions>Seleccione la secuencia correcta de etapas para crear un ejercicio de Hot Potatoes, seleccionando la opci&amp;#x00F3;n correcta en los men&amp;#x00FA;s desplegables </instructions>
+<next-ex-url>jmatch2.htm</next-ex-url>
+<send-email>0</send-email>
+<top-frame-size>25</top-frame-size><top-frame-units>%</top-frame-units>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<shuffle-questions>0</shuffle-questions>
+<separate-javascript-file>0</separate-javascript-file>
+<next-caption>Siguiente</next-caption>
+<delete-caption>Borrar</delete-caption>
+<guess-correct>Correcto, bien hecho</guess-correct>
+<guess-incorrect>Lo siento, pruebe de nuevo. Los emparejamentos incorrectos han sido eliminados</guess-incorrect>
+</jmatch>
+
+<global>
+<your-score-is>Su puntuaci&amp;#x00F3;n es  </your-score-is>
+<correct-indicator>:-)</correct-indicator>
+<incorrect-indicator>:-(</incorrect-indicator>
+<process-for-rtl>0</process-for-rtl>
+<times-up>Your time is over!</times-up>
+<check-caption>Comprobar</check-caption>
+<ok-caption>OK</ok-caption>
+<next-ex-caption>Siguiente ejemplo</next-ex-caption>
+<back-caption>&amp;#x003C;=</back-caption>
+<contents-caption>&amp;#x00CD;ndice</contents-caption>
+<include-next-ex>1</include-next-ex>
+<include-contents>0</include-contents>
+<include-back>0</include-back>
+<contents-url>contents.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial</font-face>
+<page-bg-color>#ffffff</page-bg-color>
+<title-color>#660066</title-color>
+<ex-bg-color>#eeccee</ex-bg-color>
+<text-color>#330033</text-color>
+<link-color>#0000cc</link-color>
+<vlink-color>#0000ff</vlink-color>
+<nav-bar-color>#330033</nav-bar-color>
+<formmail-url>http://web.uvic.ca/cgi-bin/FormMail.pl</formmail-url>
+<email>mholmes@uvic.ca</email>
+<name-please>Please enter your name:</name-please>
+<user-string-1></user-string-1>
+<user-string-2></user-string-2>
+<user-string-3></user-string-3>
+<header-code></header-code>
+</global>
+</hotpot-config-file>
+</hotpot-jmatch-file>
