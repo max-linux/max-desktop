@@ -1,13 +1,10 @@
 [Desktop Entry]
 Version=1.0
 Encoding=UTF-8
-Name=Guía de Utilización
+Name=Guía de referencia
+Comment=Guía de referencia
 Type=Application
-Exec=/usr/bin/acroread /usr/share/max-manuales/guia_usuario.pdf
-TryExec=
-Icon=acroread
+Exec=acroread /usr/share/max-manuales/Guia_Referencia_MAX4.pdf
+Icon=/usr/share/icons/crystalsvg/48x48/apps/acroread.png
 X-GNOME-DocPath=
 Terminal=false
-Name[es]=Guía de Utilización
-Comment=Guía de Utilización
-GenericName[es]=

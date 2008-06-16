@@ -1,3 +1,9 @@
+max-skel-conf (4.0.max17) max; urgency=low
+
+  * Update manual.desktop with new filename
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 13 Jun 2008 12:37:08 +0200
+
 max-skel-conf (4.0.max16) max; urgency=low
 
   * Fix typ in postinst (use abs path of smb.conf)
