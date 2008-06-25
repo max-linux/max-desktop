@@ -1,3 +1,13 @@
+tcos-configurator (1.0.max5) max; urgency=low
+
+  * Use only 1 dns server in dhcpd.conf
+  * Show dynamic IP if not static found
+  * Use ifdown/ifup to reconfigure network (add 2 sec of pause between them)
+  * Use 'route' instead of 'ip route' to get gateway
+  * Add gdm var: [security]AllowRemoteAutoLogin=true
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 23 Jun 2008 18:03:35 +0200
+
 tcos-configurator (1.0.max4) max; urgency=low
 
   * Fix detection and configuration of static IP

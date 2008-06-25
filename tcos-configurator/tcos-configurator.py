@@ -274,6 +274,7 @@ class TcosStandalone:
         self.w['lbl_dhcp'].set_text("")
 
     def combo_interface_change(self, widget):
+        configured=False
         seliface=self.read_select_value(widget)
         for iface in self.interfaces:
             print_debug("static iface=%s seliface=%s"%(iface, seliface))
@@ -286,11 +287,18 @@ class TcosStandalone:
                 self.w['lbl_dhcp'].hide()
                 self.w['hbox_dynamic'].hide()
                 self.w['ck_static'].set_active(False)
+                print_debug("iface=%s HAVE IP"%iface)
+                configured=True
             if iface[1] == None:
                 self.w['hbox_dynamic'].show()
                 self.w['ck_static'].set_active(True)
                 self.w['lbl_dhcp'].set_markup( _("WARNING:\n<b>Network interface don't have IP</b>") )
                 self.w['lbl_dhcp'].show()
+                print_debug("iface=%s don't have ip" %iface)
+        if configured:
+            self.w['lbl_dhcp'].hide()
+            self.w['hbox_dynamic'].show()
+            self.w['ck_static'].set_active(True)
 
     def set_dhcp_modified(self, *args):
         self.dhcp_modified=True
@@ -332,8 +340,10 @@ class TcosStandalone:
         self.SetVar("daemon", "TimedLogin", "/usr/sbin/tcos-gdm-autologin|")
         if self.w['ck_autologin'].get_active():
             self.SetVar("daemon", "TimedLoginEnable", "true")
+            self.SetVar("security", "AllowRemoteAutoLogin", "true")
         else:
             self.SetVar("daemon", "TimedLoginEnable", "false")
+            self.SetVar("security", "AllowRemoteAutoLogin", "false")
         self.SetVar("daemon", "TimedLoginDelay", str( int(self.w['scale_autologin'].get_value()) ) )
         # show message to reboot required
         self.w['lbl_login'].set_markup( _("<b>Reboot required (or restart gdm daemon) to enable new GDM settings</b>") )
@@ -610,8 +620,10 @@ class TcosStandalone:
         boot_mode=self.read_select_value(self.w['combo_boot_mode'])
         boot_filename="/pxelinux.0"
         for boot in self.BOOT_MODES:
+            print_debug("boot[0]=%s boot_mode=%s"%(boot[0], boot_mode) )
             if boot[0] == boot_mode:
                 boot_filename=boot[1]
+                print_debug("configureDHCP() setting boot filename to %s"%boot_filename)
         # get server_ip
         server_iface=self.read_select_value(self.w['combo_interfaces'])
         if self.configured_interfaces.has_key(server_iface) and len(self.configured_interfaces[server_iface]) > 1:
@@ -632,10 +644,11 @@ class TcosStandalone:
             for interface in self.interfaces:
                 if interface[0] == server_iface:
                     server_ip=interface[1]
-            if server_ip == None:
+            if self.w['txt_serverip'].get_text() != '':
                 server_ip=self.w['txt_serverip'].get_text()
             # gateway
-            gateway=self.exe_cmd("ip route| grep %s| awk '/^default/ {print $3}'"%server_iface)
+            #gateway=self.exe_cmd("ip route| grep %s| awk '/^default/ {print $3}'"%server_iface)
+            gateway=self.exe_cmd("route -n| awk '/^0.0.0.0(.*)%s/ {print $2}'" %server_iface)
             if gateway == [] or gateway == "":
                 print_debug("gateway not found, using server_ip")
                 gateway=server_ip
@@ -647,7 +660,7 @@ class TcosStandalone:
         f=open("/etc/resolv.conf", 'r')
         dns=[]
         for line in f.readlines():
-            if line.startswith("nameserver"):
+            if line.startswith("nameserver") and len(dns) == 0:
                 dns.append(line.split(' ')[1].strip())
         f.close()
         
@@ -656,7 +669,7 @@ class TcosStandalone:
         "__DATE__":time.ctime(),
         "__MASK__":netmask,
         "__NET__":network,
-        "__DNS__":" ".join(dns),
+        "__DNS__":dns[0],
         "__BROADCAST__":broadcast,
         "__ROUTERS__":gateway,
         "__SERVERIP__":server_ip,
@@ -706,7 +719,7 @@ class TcosStandalone:
         ip_end=int(self.w['txt_endip'].get_text().split('.')[-1])
         txt_prefix=self.w['txt_hostname_prefix'].get_text()
         
-        for ip in range ( (ip_end - ip_start) ):
+        for ip in range ( (ip_end - ip_start) + 1 ):
             ip=ip_start + ip
             if ip > 100:
                 ipname=ip-100
@@ -725,10 +738,18 @@ class TcosStandalone:
         if self.w['ck_static'].get_active():
             if self.configure_static(data):
                 time.sleep(1)
-                self.exe_cmd("/etc/init.d/networking restart")
-                self.exe_cmd("ifconfig %s"%server_iface)
                 gtk.gdk.threads_enter()
                 self.w['lbl_dhcp'].set_text( _("Configured static network") )
+                gtk.gdk.threads_leave()
+                #self.exe_cmd("/etc/init.d/networking restart")
+                self.exe_cmd("ifdown --all --exclude=lo")
+                self.exe_cmd("ifdown --all --exclude=lo")
+                self.exe_cmd("ifdown --all --exclude=lo")
+                time.sleep(2)
+                self.exe_cmd("ifup --all --exclude=lo")
+                self.exe_cmd("ifconfig %s"%server_iface)
+                gtk.gdk.threads_enter()
+                self.w['lbl_dhcp'].set_text( _("<b>Done</b>") )
                 gtk.gdk.threads_leave()
                 time.sleep(2)
             else:
