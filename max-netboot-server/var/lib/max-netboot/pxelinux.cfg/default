@@ -1,4 +1,4 @@
-DEFAULT LOCAL
+DEFAULT menu.c32
 PROMPT 0
 TIMEOUT 200
 ONTIMEOUT LOCAL
@@ -8,7 +8,6 @@ MENU TITLE MaX Menu de arranque por red...
 
 LABEL LOCAL
        MENU LABEL ^Arranque desde el disco local
-       MENU INDENT 1
        LOCALBOOT 0x80
 
 LABEL TCOS
@@ -20,4 +19,3 @@ LABEL BACKHARDDI
        MENU LABEL Arranque BackHarddi (recuperacion del sistema)
        KERNEL menu.c32
        APPEND pxelinux.cfg/backharddi.menu
-

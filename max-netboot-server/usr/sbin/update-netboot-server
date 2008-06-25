@@ -29,6 +29,12 @@ search_file() {
 
 if [ -f /etc/tcos/tcos.conf ]; then
   . /etc/tcos/tcos.conf
+  if [ ! -e /boot/vmlinuz-${TCOS_KERNEL} ]; then
+    # update kernel
+    NEW_KERNEL=$(ls -1t /boot/vmlinuz*generic | head -1)
+    sed -i -e "s/${TCOS_KERNEL}/${NEW_KERNEL}/g" /etc/tcos/tcos.conf
+    . /etc/tcos/tcos.conf
+  fi
   echo " * Configurando NET-menu TCOS ... "
    sed -e "s/__TCOS_KERNEL__/${TCOS_KERNEL}/g" \
     /var/lib/max-netboot/pxelinux.cfg/tcos.menu.tpl > /var/lib/max-netboot/pxelinux.cfg/tcos.menu
@@ -115,5 +121,6 @@ if [ -x /usr/sbin/update-dpsyco-skel ]; then
   /usr/sbin/update-dpsyco-skel >/dev/null 2>&1
   # ATFTPD esta configurado como demonio no desde inetd
   update-inetd --disable tftp  >/dev/null 2>&1
+  invoke-rc.d atftpd restart
 fi
 

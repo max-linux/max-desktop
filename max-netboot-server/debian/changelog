@@ -1,3 +1,13 @@
+max-netboot-server (4.0.max0.9) max; urgency=low
+
+  * Fix var/lib/max-netboot/pxelinux.cfg/default:
+    - Delete ident menu line
+    - Change default menu.c32
+  * update-netboot-server:
+    - Update new kernel if older version is not found
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 23 Jun 2008 16:41:16 +0200
+
 max-netboot-server (4.0.max0.8) max; urgency=low
 
   * No cache already cached packages
