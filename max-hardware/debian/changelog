@@ -1,3 +1,9 @@
+max-hardware (4.0.max0.8) max; urgency=low
+
+  * TCOS images don't hace libz.so, hide error.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 23 Jun 2008 18:29:47 +0200
+
 max-hardware (4.0.max0.7) max; urgency=low
 
   * Change Elo detection, use 'lsusb|grep -q 04e7' instead of /proc/bus/usb/devices
