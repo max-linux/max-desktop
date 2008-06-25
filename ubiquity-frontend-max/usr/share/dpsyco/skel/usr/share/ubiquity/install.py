@@ -1731,8 +1731,10 @@ exit 0"""
                         if os.path.exists(os.path.join(self.target,
                                                        desktop_file)):
                             desktop_base = os.path.basename(desktop_file)
-                            self.chrex('install', '-D',
+                            self.chrex('install', '-d',
                                        '-o', 'oem', '-g', 'oem',
+                                       '/home/oem/Desktop')
+                            self.chrex('install', '-o', 'oem', '-g', 'oem',
                                        '/%s' % desktop_file,
                                        '/home/oem/Desktop/%s' % desktop_base)
                             break
