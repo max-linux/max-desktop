@@ -111,15 +111,6 @@ Description: The Max server metapackage
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
 
-Package: max-terminales
-Architecture: all
-Depends: max-server, max-netboot-server, tcos-configurator, tcosconfig, paman, pavumeter, pavucontrol
-Description: The Max NETBOOT server metapackage
- This package depends on max-server and max-netboot-server
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
 Package: max-drivers
 Architecture: all
 Depends: ${max-drivers:Depends}
