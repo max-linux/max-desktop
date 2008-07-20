@@ -22,3 +22,15 @@ Description: Configuración de tcosmonitor para equipos de profesores
  Contiene:
   * Parches para vlc sin MP3
   * Configuración de rsync
+
+Package: max-terminales
+Architecture: all
+Conflicts: max-tcos-alumno
+Provides: max-tcos-alumno
+Replace: max-tcos-alumno
+Depends: max-server, max-netboot-server, tcos-configurator, tcosconfig, paman, pavumeter, pavucontrol, max-tcos-profesor
+Description: The Max NETBOOT server metapackage
+ This package depends on max-server and max-netboot-server
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.

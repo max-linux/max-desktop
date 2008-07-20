@@ -1,3 +1,10 @@
+max-tcos (4.0.max2.1) max; urgency=low
+
+  * Move max-terminales package to this source tree
+  * Bump version to be bigger than max-meta
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 20 Jul 2008 18:09:30 +0200
+
 max-tcos (4.0.max0.2) max; urgency=low
 
   * Update lockscreen-custom.png with MaX 4.0 version
