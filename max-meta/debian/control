@@ -113,7 +113,7 @@ Description: The Max server metapackage
 
 Package: max-terminales
 Architecture: all
-Depends: max-server, max-netboot-server, tcos-configurator
+Depends: max-server, max-netboot-server, tcos-configurator, tcosconfig, paman, pavumeter, pavucontrol
 Description: The Max NETBOOT server metapackage
  This package depends on max-server and max-netboot-server
  .
