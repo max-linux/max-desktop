@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/dpatch.mk
+include /usr/share/dpatch/dpatch.make
+
+DIST=$(CURDIR)/dist
+
+clean::
+	if [ -d $(DIST) ]; then rm -f $(DIST)/*; fi
+
+build-stamp:
+	if [ ! -e $(CURDIR)/build-stamp ]; then \
+		mkdir -p dist ; \
+		cd $(DIST)/ && wget http://clic.xtec.net/dist/jclic/jmfhandlers.jar ;\
+		cd $(DIST)/ && wget http://clic.xtec.net/dist/jclic/jclicplugin.js ;\
+		sed -i -e 's|http://clic.xtec.net/dist/jclic|http://localhost/jclic|g' $(DIST)/jclicplugin.js ;\
+		touch $(CURDIR)/build-stamp; \
+	fi
+
+build/jclicmoodle:: build-stamp

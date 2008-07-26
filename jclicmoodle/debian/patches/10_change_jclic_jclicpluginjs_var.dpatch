@@ -1,0 +1,19 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 10_change_jclic_jclicpluginjs_var.dpatch by Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad jclicmoodle-0.1.0.7~/mod/jclic/lib.php jclicmoodle-0.1.0.7/mod/jclic/lib.php
+--- jclicmoodle-0.1.0.7~/mod/jclic/lib.php	2008-01-25 08:04:56.000000000 +0100
++++ jclicmoodle-0.1.0.7/mod/jclic/lib.php	2008-07-26 15:51:39.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ 
+ if (!isset($CFG->jclic_jclicpluginjs)) {
+-    set_config("jclic_jclicpluginjs", "http://clic.xtec.net/dist/jclic/jclicplugin.js");
++    set_config("jclic_jclicpluginjs", "http://".$_SERVER['SERVER_NAME']."/moodle/jclic/jclicplugin.js");
+ }
+ if (!isset($CFG->jclic_lap)) {
+     set_config("jclic_lap", "5");
