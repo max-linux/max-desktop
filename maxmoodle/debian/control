@@ -9,7 +9,7 @@ Package: maxmoodle
 Architecture: all
 Pre-Depends: maxmoodle-pressed
 Depends: apache2, mysql-server, php5-mysql, libapache2-mod-php5, 
-         mysql-client, moodle
+         mysql-client, moodle, jclicmoodle
 Description: Moodle para MaX
  Dependencias y lanzador para moodle
 
