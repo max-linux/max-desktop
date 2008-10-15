@@ -1,3 +1,9 @@
+max-netboot-server (4.0.max0.10) max; urgency=low
+
+  * Los ficheros de núcleo e initrd de backharddi se definen estáticamente
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Tue, 14 Oct 2008 13:03:10 +0200
+
 max-netboot-server (4.0.max0.9) max; urgency=low
 
   * Fix var/lib/max-netboot/pxelinux.cfg/default:
