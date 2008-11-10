@@ -6,7 +6,6 @@
  * Comprobado soporte para versiones 5.7 y 7.2, 05/07/07
  */
 
-#define _FILE_OFFSET_BITS 64
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -15,12 +14,13 @@
 #include <errno.h>
 #include <sys/types.h>
 
+#define _FILE_OFFSET_BITS 64 //Importante que esté después de los includes
 #define SECTOR_SIZE 512
 #define METADATA_SECTORS 12
 #define H 255
 #define S 63
 #define STI_V1_INIT_SECTOR -14079
-#define STI_V5_INIT_SECTOR -13766
+#define STI_V5_INIT_SECTOR 3335
 #define STI_V5_OFFSET -16065
 #define STI_V1_LEN 40
 #define STI_V5_LEN 32
@@ -61,8 +61,7 @@ struct sti_v5_ {
 int main(int argc, char **argv) {
 	int fd,version=0;
 	unsigned i,j,k;
-	off_t dev_size;
-	unsigned long long first,size,bsize,sec=0;
+	unsigned long long dev_size,offset=0,first,size,bsize,sec=0;
 	unsigned char buffer[SECTOR_SIZE*METADATA_SECTORS];
 	struct sti_v5_ sti_v5[STI_V5_LEN];
 	struct sti_v1_ sti_v1[STI_V1_LEN];
@@ -74,49 +73,48 @@ int main(int argc, char **argv) {
 	if (dev_size < 0)
 		fatal("Cannot get disk size", 2);
 
-	lseek(fd, STI_V5_INIT_SECTOR * SECTOR_SIZE, SEEK_END);
-	if (read(fd, buffer, SECTOR_SIZE * METADATA_SECTORS) != SECTOR_SIZE * METADATA_SECTORS)
+	lseek(fd, 8, SEEK_SET);
+	if (read(fd, (void *)&offset, 4) != 4)
 		fatal("Cannot read disk drive", 2);
-
-	for ( i=0; i < 4; i++ ) {
-		if (!memcmp(buffer, "K-10", 4)) {
-			version=5;
-			break;
-		}
-		else {
-			lseek(fd, (STI_V5_OFFSET * (int)i + STI_V5_INIT_SECTOR) * SECTOR_SIZE, SEEK_END);
-			if (read(fd, buffer, SECTOR_SIZE * METADATA_SECTORS) != SECTOR_SIZE * METADATA_SECTORS)
-				fatal("Cannot read disk drive", 2);
-		}
+	
+	if (offset < dev_size)
+	{
+		lseek(fd, (unsigned long long)(STI_V5_INIT_SECTOR + offset ) * SECTOR_SIZE, SEEK_SET);
+		if (read(fd, buffer, SECTOR_SIZE * METADATA_SECTORS) == SECTOR_SIZE * METADATA_SECTORS)
+			if (!memcmp(buffer, "K-10", 4))
+				version=5;
 	}
 
 	if ( !version )
 	{
-		lseek(fd, -METADATA_SECTORS * SECTOR_SIZE, SEEK_SET);
-		for ( i = 1; i <= 0x50000; i++ ) {
-			lseek(fd, -METADATA_SECTORS * SECTOR_SIZE * 2, SEEK_CUR);
+                for ( i = 1; i <= 0x10000; i++ ) {
+                        lseek(fd, -METADATA_SECTORS * SECTOR_SIZE * i, SEEK_END);
 			if (read(fd, buffer, SECTOR_SIZE * METADATA_SECTORS) != SECTOR_SIZE * METADATA_SECTORS)
 				fatal("Cannot read disk drive", 2);
 			for ( j = METADATA_SECTORS; j > 0; j-- ) {
 				if ( buffer[ j*SECTOR_SIZE - 2 ] == 0x55 && buffer[ j*SECTOR_SIZE - 1 ] == 0xaa ) {
 					lseek(fd, -(METADATA_SECTORS - j) * SECTOR_SIZE, SEEK_CUR);
-					goto found;
+					lseek(fd, STI_V1_INIT_SECTOR * SECTOR_SIZE, SEEK_CUR);
+					if (read(fd, buffer, SECTOR_SIZE * METADATA_SECTORS) != SECTOR_SIZE * METADATA_SECTORS)
+						fatal("Cannot read disk drive", 2);
+					for ( k = 0; k < SECTOR_SIZE * METADATA_SECTORS; k++ )
+						buffer[k] ^= 'U';
+					if (memcmp(buffer+4, "X-PARA10", 8)) {
+						lseek(fd, (-STI_V1_INIT_SECTOR-METADATA_SECTORS) * SECTOR_SIZE, SEEK_CUR);
+					}
+					else {
+						version=1;
+						goto found;
+					}
 				}
 			}
 		}
-		found:
-		lseek(fd, STI_V1_INIT_SECTOR * SECTOR_SIZE, SEEK_CUR);
-		if (read(fd, buffer, SECTOR_SIZE * METADATA_SECTORS) != SECTOR_SIZE * METADATA_SECTORS)
-			fatal("Cannot read disk drive", 2);
-		for ( i = 0; i < SECTOR_SIZE * METADATA_SECTORS; i++ )
-			buffer[i] ^= 'U';
-//		write(1, buffer, SECTOR_SIZE * METADATA_SECTORS);
-		if (memcmp(buffer+4, "X-PARA10", 8))
-			fatal("Not STI data", 2);
-		else
-			version=1;
 	}
 
+	found:
+	if ( !version )
+		fatal("Not STI data", 2);
+		
 	close(fd);
 	
 	printf("unit: sectors\n\n");
@@ -140,18 +138,18 @@ int main(int argc, char **argv) {
 			for (i=0; i<STI_V5_LEN; i++) {
 				if ( !sti_v5[i].size )
 					break;
-				fprintf(stderr,"%2u T%x %-11s %2x %6u %6u %2x\n",sti_v5[i].pos,sti_v5[i].sti_type,sti_v5[i].name,sti_v5[i].type,sti_v5[i].size,sti_v5[i].bsize,sti_v5[i].backup);
 				k=0;
 				j=0;
 				while (cil_to_meg(meg_to_cil(sti_v5[i].size+j)) != sti_v5[i].size + j + k ) {
 					sec=cil_to_sec( meg_to_cil(sti_v5[i].size+j) );
 					j+=0x10000;
-					if ( sec > dev_size) {
+					if ( (first + sec) > offset) {//Se asume que la última partición será la única que podrá superar el tamaño 0x10000. Se asume que los metadatos estarán después de la última partición.
 						k++;
 						j=0;
 					}
 				}
 				size=meg_to_cil(sti_v5[i].size+j)*H*S;
+				fprintf(stderr,"%2u T%x %-11s %2x %6u %6u %2x\n",sti_v5[i].pos,sti_v5[i].sti_type,sti_v5[i].name,sti_v5[i].type,(unsigned)sti_v5[i].size+j,sti_v5[i].bsize,sti_v5[i].backup);
 				bsize=0;
 				if ( sti_v5[i].sti_type == 2 )
 					bsize=size;
