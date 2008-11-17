@@ -6,6 +6,7 @@
  * Comprobado soporte para versiones 5.7 y 7.2, 05/07/07
  */
 
+#define _FILE_OFFSET_BITS 64
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -14,7 +15,6 @@
 #include <errno.h>
 #include <sys/types.h>
 
-#define _FILE_OFFSET_BITS 64 //Importante que esté después de los includes
 #define SECTOR_SIZE 512
 #define METADATA_SECTORS 12
 #define H 255
@@ -87,13 +87,13 @@ int main(int argc, char **argv) {
 
 	if ( !version )
 	{
-                for ( i = 1; i <= 0x10000; i++ ) {
-                        lseek(fd, -METADATA_SECTORS * SECTOR_SIZE * i, SEEK_END);
+                for ( i = 1; i <= 0x28000; i++ ) {
+                        lseek(fd, (unsigned long long)(-METADATA_SECTORS * SECTOR_SIZE * (unsigned long long)i * 2), SEEK_END);
 			if (read(fd, buffer, SECTOR_SIZE * METADATA_SECTORS) != SECTOR_SIZE * METADATA_SECTORS)
 				fatal("Cannot read disk drive", 2);
 			for ( j = METADATA_SECTORS; j > 0; j-- ) {
 				if ( buffer[ j*SECTOR_SIZE - 2 ] == 0x55 && buffer[ j*SECTOR_SIZE - 1 ] == 0xaa ) {
-					lseek(fd, -(METADATA_SECTORS - j) * SECTOR_SIZE, SEEK_CUR);
+					lseek(fd, -(METADATA_SECTORS - (unsigned long long)j) * SECTOR_SIZE, SEEK_CUR);
 					lseek(fd, STI_V1_INIT_SECTOR * SECTOR_SIZE, SEEK_CUR);
 					if (read(fd, buffer, SECTOR_SIZE * METADATA_SECTORS) != SECTOR_SIZE * METADATA_SECTORS)
 						fatal("Cannot read disk drive", 2);
