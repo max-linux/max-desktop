@@ -219,4 +219,25 @@ for group in $ALUMNO_GROUPS; do
   $log $chroot $ROOT adduser $ALUMNO_USERNAME $group || true
 done
 
+# add user profesor
+if [ -f /tmp/max_install_type ] && [ "$(grep -c profesor /tmp/max_install_type)" != "0" ]; then
+
+  $log $chroot $ROOT adduser --disabled-password --gecos "Profesor" "profesor" >/dev/null || true
+  setpassword "profesor" "profesor" "false" || true
+
+  for group in $ALUMNO_GROUPS; do
+    $log $chroot $ROOT adduser profesor $group || true
+  done
+
+  # add tcos group
+  if [ "$(grep -c tcos $ROOT/etc/group)" = "0" ];
+    $log $chroot $ROOT addgroup --quiet --system tcos
+  fi
+
+  # add profesor to tcos group
+  $log $chroot $ROOT adduser profesor tcos || true
+
+fi
+
+
 exit 0
