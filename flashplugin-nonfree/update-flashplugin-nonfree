@@ -1,0 +1,239 @@
+#!/bin/sh
+
+# Copyright (C) 2006-2008 Bart Martens <bartm@knars.be>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 as
+# published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+set -e
+
+die_hard() {
+	echo "$1"
+	exit 1
+}
+
+[ `whoami` = "root" ] || die_hard "must be root"
+
+show_usage() {
+	echo "Usage:"
+	echo "  update-flashplugin-nonfree --install"
+	echo "  update-flashplugin-nonfree --uninstall"
+	exit 1
+}
+
+getopt_temp=`getopt -o iufvq --long install,uninstall,fast,verbose,quiet -n 'update-flashplugin-nonfree' -- "$@"` || show_usage
+eval set -- "$getopt_temp" || show_usage
+
+ACTION=none
+fast=no
+verbose=no
+quiet=no
+
+while [ true ]
+do
+	case "$1" in
+		-i|--install)
+			ACTION="--install"
+			shift
+			;;
+		-u|--uninstall)
+			ACTION="--uninstall"
+			shift
+			;;
+		-f|--fast)
+			fast=yes
+			shift
+			;;
+		-v|--verbose)
+			verbose=yes
+			shift
+			;;
+		-q|--quiet)
+			quiet=yes
+			shift
+			;;
+		--)
+			shift
+			break
+			;;
+		*)
+			echo "Internal error!"
+			exit 1
+			;;
+	esac
+done
+
+[ "$ACTION" != "none" -a $# -eq 0 ] || show_usage
+[ "$quiet" != "yes" ] || verbose=no
+
+[ "$verbose" != "yes" ] || echo "options : $getopt_temp"
+
+UNPACKDIR=`mktemp -d /tmp/flashplugin-nonfree.XXXXXXXXXX` || die_hard "mktemp failed"
+echo "$UNPACKDIR" | grep -q "^/tmp/flashplugin-nonfree\." || die_hard "paranoia"
+cd "$UNPACKDIR" || die_hard "cd failed"
+
+[ "$verbose" != "yes" ] || echo "temporary directory: $UNPACKDIR"
+
+do_cleanup() {
+	[ "$verbose" != "yes" ] || echo "cleaning up temporary directory $UNPACKDIR ..."
+	cd /
+	echo "$UNPACKDIR" | grep -q "^/tmp/flashplugin-nonfree\." || die_hard "paranoia"
+	rm -rf "$UNPACKDIR"
+}
+
+die_hard_with_a_cleanup() {
+	do_cleanup
+	die_hard "$1"
+}
+
+warning_about_alternatives() {
+
+	letswarn="no"
+	LANG=C update-alternatives --display flash-mozilla.so \
+	| grep "link currently points to /usr/lib/flashplugin-nonfree/libflashplayer.so" \
+	> /dev/null 2>&1 || \
+	cat <<-EOF
+
+		How to use predefined priorities to
+		automatically select one implementation of "flash"
+		between the multiple installed alternatives :
+
+		 	update-alternatives --auto flash-mozilla.so
+
+		How to manually select one implementation of "flash"
+		between the multiple installed alternatives :
+
+		 	update-alternatives --config flash-mozilla.so
+
+	EOF
+}
+
+case "$ACTION" in
+
+	--install)
+		[ "$verbose" != "yes" ] || echo "selected action = $ACTION"
+
+		downloadfile=fp10.i386.pgp.asc
+		[ `dpkg --print-architecture` != "amd64" ] || downloadfile=fp10.amd64.pgp.asc
+		downloadurl=http://people.debian.org/~bartm/flashplugin-nonfree/$downloadfile
+		#[ `date --rfc-3339=date` != "2008-12-10" ] || downloadurl=http://127.0.0.1/flashplugin-nonfree/$downloadfile
+
+		wgetquiet=' -q '
+		wgetfast='-t 3 -T 15 '
+		wgetalways=' -nd -P . '
+		wgetprogress=' -v --progress=dot:default '
+
+		wgetoptions="$wgetquiet $wgetalways"
+		[ "$verbose" != "yes" ] || wgetoptions="$wgetalways $wgetprogress"
+		[ "$fast" != "yes" ] || wgetoptions="$wgetoptions $wgetfast"
+		[ "$verbose" != "yes" ] || echo "wgetoptions=$wgetoptions"
+
+		[ "$verbose" != "yes" ] || echo "downloading $downloadurl ..."
+		wget $wgetoptions $downloadurl \
+			|| die_hard_with_a_cleanup "wget failed to download $downloadurl"
+		[ "$verbose" != "yes" ] || echo "importing public key ..."
+		gpg -q --homedir "." --import /usr/lib/flashplugin-nonfree/pubkey.asc > /dev/null 2>&1 \
+			|| die_hard_with_a_cleanup "gpg failed to import /usr/lib/flashplugin-nonfree/pubkey.asc"
+		[ "$verbose" != "yes" ] || echo "verifying PGP $downloadfile ..."
+		gpg -q --homedir "." < $downloadfile > md5.txt 2> /dev/null \
+			|| die_hard_with_a_cleanup "gpg rejected signature of $downloadurl"
+
+		downloadfile=`head -n 1 < md5.txt | cut -c 35-`
+		cachedir=/var/cache/flashplugin-nonfree
+
+		[ "$verbose" != "yes" ] || [ ! -f $cachedir/$downloadfile ] || echo "copying $cachedir/$downloadfile ..."
+		[ ! -f $cachedir/$downloadfile ] || cp -p $cachedir/$downloadfile .
+		[ "$verbose" != "yes" ] || [ ! -f $downloadfile ] || echo "verifying MD5 $downloadfile ..."
+		[ ! -f $downloadfile ] || grep $downloadfile md5.txt | md5sum -c - > /dev/null 2>&1 || rm -f $downloadfile
+
+		downloaddir=`tail -n 1 < md5.txt`
+		downloadurl=$downloaddir/$downloadfile
+		#[ `date --rfc-3339=date` != "2008-12-10" ] || downloadurl=http://127.0.0.1/flashplugin-nonfree/$downloadfile
+
+		wgetoptions="$wgetalways $wgetprogress"
+		[ "$quiet" != "yes" ] || wgetoptions="$wgetquiet $wgetalways"
+		[ "$fast" != "yes" ] || wgetoptions="$wgetoptions $wgetfast"
+		[ "$verbose" != "yes" ] || echo "wgetoptions=$wgetoptions"
+
+		[ "$verbose" != "yes" ] || [ ! -f $downloadfile ] || echo "downloading $downloadurl ..."
+		[ -f $downloadfile ] || wget $wgetoptions $downloadurl \
+			|| die_hard_with_a_cleanup "wget failed to download $downloadurl"
+		[ "$verbose" != "yes" ] || echo "verifying MD5 $downloadfile ..."
+		grep tar.gz md5.txt | md5sum -c - > /dev/null 2>&1 \
+			|| die_hard_with_a_cleanup "md5sum rejected $downloadfile"
+		[ "$verbose" != "yes" ] || echo "unpacking $downloadfile ..."
+		tar xozf $downloadfile
+		[ "$verbose" != "yes" ] || echo "verifying MD5 contents of $downloadfile ..."
+		head -n 2 < md5.txt | md5sum -c - > /dev/null 2>&1 \
+			|| die_hard_with_a_cleanup "md5sum rejected a part of $downloadfile"
+
+		targetdir=/usr/lib/flashplugin-nonfree
+		libflashplayerdotso=`grep "  .*libflashplayer\.so$" md5.txt | cut -c 35-`
+
+		[ "$verbose" != "yes" ] || echo "moving $libflashplayerdotso to $targetdir ..."
+		rm -f $targetdir/flashplayer.xpt
+		mv -f $libflashplayerdotso $targetdir
+
+		[ "$verbose" != "yes" ] || echo "setting permissions and ownership of $targetdir/libflashplayer.so ..."
+		chown root:root $targetdir/libflashplayer.so
+		chmod 644 $targetdir/libflashplayer.so
+
+		[ "$verbose" != "yes" ] || echo "moving $downloadfile to $cachedir ..."
+		mv -f $downloadfile $cachedir
+
+		[ "$verbose" != "yes" ] || \
+		update-alternatives --display flash-mozilla.so || true
+
+		[ "$verbose" != "yes" ] || echo "calling update-alternatives ..."
+		update-alternatives --quiet --install \
+			/usr/lib/mozilla/plugins/flash-mozilla.so flash-mozilla.so \
+			/usr/lib/flashplugin-nonfree/libflashplayer.so 50 \
+			|| die_hard_with_a_cleanup "update-alternatives failed to install flash-mozilla.so"
+
+		[ "$verbose" != "yes" ] || \
+		update-alternatives --display flash-mozilla.so || true
+
+		[ "$quiet" != "no" ] || \
+		warning_about_alternatives
+
+		[ "$verbose" != "yes" ] || echo "end of action $ACTION"
+
+		;;
+
+	--uninstall)
+		[ "$verbose" != "yes" ] || echo "selected action = $ACTION"
+
+		[ "$verbose" != "yes" ] || echo "calling update-alternatives ..."
+		update-alternatives --quiet --remove flash-mozilla.so \
+			/usr/lib/flashplugin-nonfree/libflashplayer.so || true
+
+		[ "$verbose" != "yes" ] || echo "removing files ..."
+		rm -f /usr/lib/flashplugin-nonfree/flashplayer.xpt
+		rm -f /usr/lib/flashplugin-nonfree/libflashplayer.so
+
+		[ "$verbose" != "yes" ] || echo "end of action $ACTION"
+
+		;;
+
+	*)
+
+		do_cleanup
+		show_usage
+
+		;;
+
+esac
+
+do_cleanup
+
+[ "$verbose" != "yes" ] || echo "end of update-flashplugin-nonfree"
+
