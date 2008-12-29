@@ -1,11 +1,9 @@
-# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
-# newer versions of the distribution.
 #
 # sources.list for Max40 live session
 #
-deb http://uk.archive.ubuntu.com/ubuntu/ hardy main restricted universe multiverse
-deb http://uk.archive.ubuntu.com/ubuntu/ hardy-updates main restricted universe multiverse
-deb http://uk.archive.ubuntu.com/ubuntu/ hardy-security main restricted universe multiverse
+deb http://es.archive.ubuntu.com/ubuntu/ hardy main restricted universe multiverse
+deb http://es.archive.ubuntu.com/ubuntu/ hardy-updates main restricted universe multiverse
+deb http://es.archive.ubuntu.com/ubuntu/ hardy-security main restricted universe multiverse
 deb http://max.educa.madrid.org/max40 max main
 
 

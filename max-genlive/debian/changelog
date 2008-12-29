@@ -1,3 +1,16 @@
+max-genlive (4.0.max0.71) max; urgency=low
+
+  * Force upgrade with externar mirror
+  * Change main live mirror to es.archive.ubuntu.com
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 27 Dec 2008 16:22:54 +0100
+
+max-genlive (4.0.max0.70) max; urgency=low
+
+  * Update MaX kernel to 2.6.24-22-generic
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Nov 2008 14:25:34 +0100
+
 max-genlive (4.0.max0.69) max; urgency=low
 
   * Update MaX kernel to 2.6.24-21-generic
