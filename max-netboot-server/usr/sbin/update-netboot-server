@@ -122,5 +122,7 @@ if [ -x /usr/sbin/update-dpsyco-skel ]; then
   # ATFTPD esta configurado como demonio no desde inetd
   update-inetd --disable tftp  >/dev/null 2>&1
   invoke-rc.d atftpd restart
+  # force stop dropbear
+  invoke-rc.d dropbear stop >/dev/null 2>&1 || true
 fi
 
