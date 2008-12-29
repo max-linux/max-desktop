@@ -33,7 +33,7 @@ style "theme-default"
   GtkMenuBar	 ::shadow-type       = GTK_SHADOW_NONE
   GtkToolbar     ::shadow-type       = GTK_SHADOW_NONE
 
-  GtkWidget::link-color	        = "#000ff"
+  GtkWidget::link-color	        = "#0000ff"
   GtkWidget::visited-link-color	= "#7f007f"
 
   GtkTreeView::odd_row_color = "#F5F2ED"
