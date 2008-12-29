@@ -4,12 +4,12 @@ import os
 import sys
 
 ITEMS=[
-["Thunderbird", "http://www.tcosproject.org/max/max-win32-apps/Thunderbird_Setup_2.0.0.14.exe", "max-win32-apps/disctree/programs/thunderbird/Thunderbird_Setup_2.0.0.14.exe"],
-["Gimp", "http://www.tcosproject.org/max/max-win32-apps/gimp-2.4.5-i686-setup.exe", "max-win32-apps/disctree/programs/gimp+gtk/gimp-2.4.5-i686-setup.exe"],
+["Thunderbird", "http://www.tcosproject.org/max/max-win32-apps/Thunderbird_Setup_2.0.0.18.exe", "max-win32-apps/disctree/programs/thunderbird/Thunderbird_Setup_2.0.0.18.exe"],
+["Gimp", "http://www.tcosproject.org/max/max-win32-apps/gimp-2.6.3-i686-setup-1.exe", "max-win32-apps/disctree/programs/gimp+gtk/gimp-2.6.3-i686-setup-1.exe"],
 ["Qcad", "http://www.tcosproject.org/max/max-win32-apps/qcad_2_1_3_2_demo_win32.zip", "max-win32-apps/disctree/programs/qcad/qcad_2_1_3_2_demo_win32.zip"],
-["Firefox", "http://www.tcosproject.org/max/max-win32-apps/Firefox_Setup_3.0.exe", "max-win32-apps/disctree/programs/firefox/Firefox_Setup_3.0.exe"],
+["Firefox", "http://www.tcosproject.org/max/max-win32-apps/Firefox_Setup_3.0.5.exe", "max-win32-apps/disctree/programs/firefox/Firefox_Setup_3.0.5.exe"],
 ["Audacity", "http://www.tcosproject.org/max/max-win32-apps/audacity-win-1.2.6.exe", "max-win32-apps/disctree/programs/audacity/audacity-win-1.2.6.exe"],
-["OpenOffice.org", "http://www.tcosproject.org/max/max-win32-apps/OOo_2.4.1_Win32Intel_install_wJRE_es.exe", "max-win32-apps/disctree/programs/OpenOfice/OOo_2.4.1_Win32Intel_install_wJRE_es.exe"],
+["OpenOffice.org", "http://www.tcosproject.org/max/max-win32-apps/OOo_3.0.0_Win32Intel_install_wJRE_es.exe", "max-win32-apps/disctree/programs/OpenOfice/OOo_3.0.0_Win32Intel_install_wJRE_es.exe"],
 ["KompoZer", "http://www.tcosproject.org/max/max-win32-apps/kompozer-0.7.10-win32.zip", "max-win32-apps/disctree/programs/kompozer/kompozer-0.7.10-win32.zip"],
 ]
 

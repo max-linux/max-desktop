@@ -16,3 +16,4 @@ build/max-win32-apps::
 binary-install/max-win32-apps::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-win32-apps -type d -name .svn | xargs rm -rf --
+	rm -rf "$(CURDIR)/debian/max-win32-apps/usr/share/max-genlive/win32aps/disctree/programs/diccionarios OO/.svn/"
