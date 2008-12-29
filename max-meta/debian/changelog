@@ -1,3 +1,25 @@
+max-meta (4.0.max1.73) max; urgency=low
+
+  * Include testdisk (Closes: #142)
+  * Include ktechlab (Closes: #111)
+  * Include pseint (Closes: #143)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 25 Dec 2008 21:05:50 +0100
+
+max-meta (4.0.max1.72) max; urgency=low
+
+  * max-nanomax:
+    - Update kernel to 2.6.24-22-generic
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Nov 2008 14:28:27 +0100
+
+max-meta (4.0.max1.71) max; urgency=low
+
+  * max-nanomax:
+    - Update kernel to 2.6.24-21-generic
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 16 Nov 2008 18:07:05 +0100
+
 max-meta (4.0.max1.70) max; urgency=low
 
   * Add dvdrtools (complete qdvdauthor) (Closes: #141)
