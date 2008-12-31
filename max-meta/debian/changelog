@@ -1,3 +1,10 @@
+max-meta (4.0.max1.74) max; urgency=low
+
+  * Include system-config-samba (Closes: #150)
+  * Include openoffice.org-pdfimport (new in OOo 3.0)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 31 Dec 2008 13:17:58 +0100
+
 max-meta (4.0.max1.73) max; urgency=low
 
   * Include testdisk (Closes: #142)
