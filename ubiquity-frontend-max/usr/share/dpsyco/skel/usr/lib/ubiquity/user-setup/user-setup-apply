@@ -195,6 +195,14 @@ fi
 # MaX ensure to disable root password
 usermod -L root || true
 
+# add tcos group
+if [ "$(grep -c tcos $ROOT/etc/group)" = "0" ]; then
+  $log $chroot $ROOT addgroup --quiet --system tcos || true
+fi
+
+# add madrid to tcos group
+$log $chroot $ROOT adduser madrid tcos || true
+
 
 # MaX add alumno user
 
@@ -229,10 +237,6 @@ if [ -f /tmp/max_install_type ] && [ "$(grep -c profesor /tmp/max_install_type)"
     $log $chroot $ROOT adduser profesor $group || true
   done
 
-  # add tcos group
-  if [ "$(grep -c tcos $ROOT/etc/group)" = "0" ];
-    $log $chroot $ROOT addgroup --quiet --system tcos
-  fi
 
   # add profesor to tcos group
   $log $chroot $ROOT adduser profesor tcos || true

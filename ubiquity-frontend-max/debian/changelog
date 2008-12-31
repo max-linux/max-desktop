@@ -1,3 +1,12 @@
+ubiquity-frontend-max (4.0.max0.39) max; urgency=low
+
+  * usr/lib/ubiquity/user-setup/user-setup-apply:
+    - Always add tcos group
+    - Fix if; then fi
+    - Add user madrid to tcos group too
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 31 Dec 2008 16:13:50 +0100
+
 ubiquity-frontend-max (4.0.max0.38) max; urgency=low
 
   * usr/lib/ubiquity/user-setup/user-setup-apply:
