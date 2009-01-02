@@ -1,3 +1,9 @@
+max-hardware (4.0.max0.9) max; urgency=low
+
+  * Disable Elo Touch in this package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 02 Jan 2009 13:56:29 +0100
+
 max-hardware (4.0.max0.8) max; urgency=low
 
   * TCOS images don't hace libz.so, hide error.

@@ -29,23 +29,11 @@ enable_toshiba() {
 
 }
 
-# Elo TouchScreen
-enable_elo() {
-  # Detect Elo Touch
-  # $ grep ^04e7 /usr/share/misc/usb.ids 
-  #  => 04e7  Elo TouchSystems
-  if lsusb | grep -q "04e7" ; then
-    modprobe usbtouchscreen
-    ddcprobe > /tmp/ddcprobe 2>&1
-  fi
-}
-
 
 case "$1" in
 start)  
         log_begin_msg "Starting Max40 hardware hacks" "max-hardware"
           enable_toshiba
-          enable_elo
         log_end_msg $?
         ;;
 esac
