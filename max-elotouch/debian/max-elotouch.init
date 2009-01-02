@@ -1,0 +1,60 @@
+#!/bin/bash
+# Start/stop the max-elotouch hacks
+#
+
+. /lib/lsb/init-functions
+
+
+
+detect_elo() {
+  # EloTouch
+  #Bus 003 Device 003: ID 05ba:000a DigitalPersona, Inc. 
+  #Bus 003 Device 002: ID 04e7:0020 Elo TouchSystems 
+
+  det_elo=$( (lsusb -d 04e7: 2>&1; lsusb -d 05ba: 2>&1) | wc -l)
+
+  if [ "$det_elo" != "2" ]; then
+    #echo " * Not elotouch computer"
+    exit 0
+  fi
+}
+
+enable_elo() {
+  # quit usplash
+  /etc/init.d/usplash start
+  sleep 1
+
+  # call 2 times to ddcprobe (init intel BIOS)
+  /usr/sbin/ddcprobe > /tmp/ddcprobe 2>&1
+  /usr/sbin/ddcprobe >> /tmp/ddcprobe 2>&1
+
+  if ! grep -q "ELO" /etc/X11/xorg.conf ; then
+      # make a xorg.conf backup
+      bakfile="/etc/X11/xorg.conf.elo.$(date '+%Y%m%d_%H%M')"
+      # replace xorg.conf
+      cat /usr/share/max-elotouch/xorg.conf > /etc/X11/xorg.conf
+  fi
+
+
+  # link event device
+  device=$(readlink -e /dev/input/by-id/usb-Elo*-event-joystick)
+  if [ "$device" != "" ]; then
+    rm -f /dev/input/elo
+    ln -s $device /dev/input/elo
+  fi
+}
+
+
+case "$1" in
+start)  
+        detect_elo
+        log_begin_msg "Starting Max40 EloTouch hacks" "max-elotouch"
+          enable_elo
+        log_end_msg $?
+        ;;
+esac
+
+
+
+exit 0
+

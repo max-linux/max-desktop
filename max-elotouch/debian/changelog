@@ -1,0 +1,26 @@
+max-elotouch (4.0.max0.4) max; urgency=low
+
+  * Stop usplash before calling ddcprobe
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 02 Jan 2009 15:39:44 +0100
+
+max-elotouch (4.0.max0.3) max; urgency=low
+
+  * Delete /dev/input/elo if exists
+  * Use readlink -e to get abs path
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 02 Jan 2009 14:40:14 +0100
+
+max-elotouch (4.0.max0.2) max; urgency=low
+
+  * Create device link
+  * Fix enable_elo function
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 02 Jan 2009 14:33:28 +0100
+
+max-elotouch (4.0.max0.1) max; urgency=low
+
+  * Initial version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 02 Jan 2009 13:56:29 +0100
+

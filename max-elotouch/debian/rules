@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+# start before xserver-xorg-input-wacom
+DEB_UPDATE_RCD_PARAMS := "start 11 2 3 4 5 ."
+
+
+binary-install/max-elotouch::
+	# clean svn dirs
+	find $(CURDIR)/debian/max-elotouch -type d -name .svn | xargs rm -rf --

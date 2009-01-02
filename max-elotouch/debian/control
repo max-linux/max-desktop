@@ -1,0 +1,14 @@
+Source: max-elotouch
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs
+Standards-Version: 3.7.3
+
+Package: max-elotouch
+Architecture: all
+Depends: xresprobe, fprint-demo, libpam-fprint, xserver-xorg-input-evtouch
+Description: Some files to support EloTouch computers
+ Contains:
+  * xorg.conf for Elo Touch (calibration) and depends
+
