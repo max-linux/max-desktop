@@ -1,3 +1,10 @@
+max-genlive (4.0.max0.73) max; urgency=low
+
+  * usr/sbin/max-genlive
+    - Add to APT_OPTS '-o Dpkg::Options::=--force-confnew'
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 12 Jan 2009 21:00:56 +0100
+
 max-genlive (4.0.max0.72) max; urgency=low
 
   * Update MaX kernel to 2.6.24-23-generic
