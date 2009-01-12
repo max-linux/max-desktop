@@ -1,3 +1,10 @@
+max-meta (4.0.max1.76) max; urgency=low
+
+  * desktop-common-i386 nanomax-i386
+    - Remove odf-converter (not needed in OOo 3.0)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 12 Jan 2009 20:06:19 +0100
+
 max-meta (4.0.max1.75) max; urgency=low
 
   * max-nanomax:
