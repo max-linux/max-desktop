@@ -1,3 +1,10 @@
+max-meta (4.0.max1.75) max; urgency=low
+
+  * max-nanomax:
+    - Update kernel to 2.6.24-23-generic
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 Jan 2009 18:12:12 +0100
+
 max-meta (4.0.max1.74) max; urgency=low
 
   * Include system-config-samba (Closes: #150)
