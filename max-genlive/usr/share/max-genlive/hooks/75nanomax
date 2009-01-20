@@ -16,6 +16,129 @@ deb http://$MIRROR/mirror/ubuntu ${DISTRO}-security main universe multiverse res
 deb http://$MIRROR/mirror/max40 max main
 EOF
 
+cat << EOF > $NANOCHROOT/etc/apt/preferences
+Package: openoffice.org
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-base
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-base-core
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-calc
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-common
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-core
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-draw
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-filter-binfilter
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-filter-mobiledev
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-gnome
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-gtk
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-help-en-gb
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-help-en-us
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-help-es
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-impress
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-java-common
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-kde
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-l10n-common
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-l10n-en-gb
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-l10n-en-za
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-l10n-es
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-math
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-officebean
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-presentation-minimizer
+Pin: version 1.0+OOo2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-style-crystal
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-style-human
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: openoffice.org-writer
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: python-uno
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: ttf-opensymbol
+Pin: version 1:2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+Package: ure
+Pin: version 1.4+OOo2.4.1-1ubuntu2.1
+Pin-Priority: 1001
+
+EOF
+
   _echo "Configurando DEBCONF y zona horaria"
 
   LC_ALL=C LC_MESSAGES=C chroot $NANOCHROOT debconf-set-selections << EOF
@@ -105,6 +228,8 @@ EOC
 
   _echo "Deshabilitando contraseña de root (nanoMaX)"
   chroot $NANOCHROOT/ usermod -L root
+
+  rm -f $NANOCHROOT/etc/apt/preferences
 
   LZMA=""
   # ver si hay que desactivar LZMA

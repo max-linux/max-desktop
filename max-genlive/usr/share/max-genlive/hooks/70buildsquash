@@ -8,6 +8,7 @@ if [ ! $DISABLE_SQUASHFS ]; then
   _revert_invoke
 
   rm -rf $CHROOT/home/*
+  rm -f  $CHROOT/etc/apt/preferences
 
   LZMA=""
   # ver si hay que desactivar LZMA
