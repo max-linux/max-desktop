@@ -1,3 +1,32 @@
+max-meta (4.0.max1.78) max; urgency=low
+
+  * desktop-common-i386:
+    - Remove openoffice.org-ogltrans openoffice.org-pdfimport (live build with OOo 2.4.1)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 20 Jan 2009 15:35:26 +0100
+
+max-meta (4.0.max1.77) max; urgency=low
+
+  * desktop-common-i386 nanomax-i386:
+    - Add max-elotouch
+    - Add openchrome driver (replace xserver-xorg-video-opencrhome xserver-xorg-video-via)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 20 Jan 2009 14:24:27 +0100
+
+max-meta (4.0.max1.76) max; urgency=low
+
+  * desktop-common-i386 nanomax-i386
+    - Remove odf-converter (not needed in OOo 3.0)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 12 Jan 2009 20:06:19 +0100
+
+max-meta (4.0.max1.75) max; urgency=low
+
+  * max-nanomax:
+    - Update kernel to 2.6.24-23-generic
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 Jan 2009 18:12:12 +0100
+
 max-meta (4.0.max1.74) max; urgency=low
 
   * Include system-config-samba (Closes: #150)

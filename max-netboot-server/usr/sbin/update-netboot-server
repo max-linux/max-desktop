@@ -41,7 +41,7 @@ if [ -f /etc/tcos/tcos.conf ]; then
 
 
   # configurar XFS
-  if [ $(grep -c "^no-listen" /etc/X11/fs/config) != 0 ]; then
+  if [ -f /etc/X11/fs/config ] && [ "$(grep -c "^no-listen" /etc/X11/fs/config 2>/dev/null)" != "0" ]; then
     sed -i 's/no-listen/#no-listen/g' /etc/X11/fs/config
     invoke-rc.d xfs restart
   fi

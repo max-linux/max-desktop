@@ -1,3 +1,9 @@
+max-elotouch (4.0.max0.5) max; urgency=low
+
+  * Really backup xorg.conf
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 12 Jan 2009 12:40:48 +0100
+
 max-elotouch (4.0.max0.4) max; urgency=low
 
   * Stop usplash before calling ddcprobe

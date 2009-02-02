@@ -5,9 +5,14 @@
 DISTRO=hardy
 DISTRO_VERSION="8.04"
 ARCH=i386
-IMAGE_NAME="MaX-4.0-0-rev2"
+IMAGE_NAME="MaX-4.0-0-rev2.1"
 TITLE="MaX 4.0"
-MAXKERNEL=2.6.24-22-generic
+MAXKERNEL=2.6.24-23-generic
+
+unset HOME
+export LC_ALL=C
+export LANG=C
+
 
 stamp=$(date '+%Y%m%d_%H%M')
 created=$(date '+%Y%m%d')
@@ -50,7 +55,7 @@ PAQUETES_EXTRA="$PAQUETES_EXTRA discover libdiscover2 discover-data nvidia-glx-n
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
 GENLIVE=/usr/share/max-genlive
-APT_OPTS="-y --force-yes"
+APT_OPTS="-y --force-yes -o Dpkg::Options::=\"--force-confnew\""
 HOOKS=/usr/share/max-genlive/hooks/
 
 

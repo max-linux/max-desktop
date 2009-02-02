@@ -30,7 +30,8 @@ enable_elo() {
 
   if ! grep -q "ELO" /etc/X11/xorg.conf ; then
       # make a xorg.conf backup
-      bakfile="/etc/X11/xorg.conf.elo.$(date '+%Y%m%d_%H%M')"
+      backfile="/etc/X11/xorg.conf.elo.$(date '+%Y%m%d_%H%M')"
+      cp /etc/X11/xorg.conf $backfile
       # replace xorg.conf
       cat /usr/share/max-elotouch/xorg.conf > /etc/X11/xorg.conf
   fi

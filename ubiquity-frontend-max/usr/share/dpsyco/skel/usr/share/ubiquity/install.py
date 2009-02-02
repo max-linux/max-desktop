@@ -425,9 +425,11 @@ class Install:
             self.db.progress('INFO', 'ubiquity/install/installing')
             self.install_extras()
             self.install_max_extras()
+            # this upgrade OpenOffice.org to 3.0 version using DVD repos
+            self.do_cdrom_upgrade()
 
-            self.db.progress('SET', 95)
-            self.db.progress('REGION', 95, 99)
+            self.db.progress('SET', 97)
+            self.db.progress('REGION', 97, 99)
             self.db.progress('INFO', 'ubiquity/install/removing')
             self.remove_extras()
             # MaX exec apt-get autoremove --purge
@@ -1836,6 +1838,61 @@ exit 0"""
                 os.unlink("/target/usr/lib/libdebian-installer.so.4.0.6")
         except Exception,err:
             syslog.syslog("DEBUG: Exception in do_autoremove(): %s"%err)
+        self.chroot_cleanup()
+
+    # MaX
+    def do_cdrom_upgrade(self):
+        syslog.syslog("DEBUG do_cdrom_upgrade() init")
+        # if nanomax exit now
+        # edit sources.list with only cdrom line
+        shutil.copy("/target/etc/apt/sources.list", "/target/etc/apt/sources.list.original")
+        ####################################################
+        f=open(self.target + "/etc/apt/sources.list", 'r')
+        data=f.readlines()
+        f.close()
+
+        f=open(self.target + "/etc/apt/sources.list", 'w')
+        for line in data:
+            if "cdrom" in line:
+                f.write(line)
+        f.close()
+        ####################################################
+        self.chroot_setup()
+        delete_libdebian=False
+        try:
+            shutil.copy("/bin/log-output", "/target/bin/log-output")
+            if not os.path.exists("/usr/lib/libdebian-installer.so.4"):
+                delete_libdebian=True
+                shutil.copy("/usr/lib/libdebian-installer.so.4", "/target/usr/lib/libdebian-installer.so.4")
+                shutil.copy("/usr/lib/libdebian-installer.so.4.0.6", "/target/usr/lib/libdebian-installer.so.4.0.6")
+            subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
+                         'apt-get', 'update'],
+                        preexec_fn=debconf_disconnect, close_fds=True)
+            
+            subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
+                         'apt-get', 'dist-upgrade', '-y'],
+                        preexec_fn=debconf_disconnect, close_fds=True)
+            
+            # FIXME FIXME this is very ugly
+            subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
+                         'apt-get', 'install', '-y', 'openoffice.org-pdfimport'],
+                        preexec_fn=debconf_disconnect, close_fds=True)
+            
+            # restore original sources.list
+            shutil.copy("/target/etc/apt/sources.list.original", "/target/etc/apt/sources.list")
+            # do update again
+            
+            subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
+                         'apt-get', 'update'],
+                        preexec_fn=debconf_disconnect, close_fds=True)
+            ##############################################
+            self.chrex('update-dpsyco-skel' )
+            os.unlink("/target/bin/log-output")
+            if delete_libdebian:
+                os.unlink("/target/usr/lib/libdebian-installer.so.4")
+                os.unlink("/target/usr/lib/libdebian-installer.so.4.0.6")
+        except Exception,err:
+            syslog.syslog("DEBUG: Exception in do_cdrom_upgrade(): %s"%err)
         self.chroot_cleanup()
 
 
