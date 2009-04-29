@@ -1,3 +1,10 @@
+max-live (4.0.max0.31) max; urgency=low
+
+  * Add casper-bottom/60_fix_OOo_live:
+    - Delete soffice.bin launcher and create a link from /rofs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 29 Apr 2009 13:28:39 +0200
+
 max-live (4.0.max0.30) max; urgency=low
 
   * 11max:
