@@ -3,8 +3,8 @@
 #set -e
 
 # openjdk have priority 1061
-priority=1063
-basedir=/usr/lib/jvm/java-6-sun
+priority=2063
+basedir=/usr/lib/jvm/java-6-sun-max
 jre_tools='ControlPanel java java_vm javaws jcontrol keytool pack200 policytool rmid rmiregistry unpack200 orbd servertool tnameserv'
 
 

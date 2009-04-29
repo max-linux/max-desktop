@@ -1,3 +1,21 @@
+max-java (4.0.max9) max; urgency=low
+
+  * Add name to auto alternative
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 29 Apr 2009 14:38:40 +0200
+
+max-java (4.0.max8) max; urgency=low
+
+  * Fix PATH detection and really install alternatives
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 29 Apr 2009 14:31:14 +0200
+
+max-java (4.0.max7) max; urgency=low
+
+  * Create alternative java-6-sun-max with priority 2063
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 29 Apr 2009 14:17:19 +0200
+
 max-java (4.0.max6) max; urgency=low
 
   * Fix javaws.max arg detection

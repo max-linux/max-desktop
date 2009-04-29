@@ -2,7 +2,7 @@
 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 
-priority=1063
+priority=2063
 browser_dirs="xulrunner-addons"
 PLUGIN=libjavaplugin_oji.so
 PLUGINPTH=/usr/lib/jvm/java-6-sun/jre/plugin/i386/ns7/$PLUGIN
@@ -26,7 +26,7 @@ for browser_dir in $browser_dirs; do
 done
 
 
-update-java-alternatives --plugin --set java-6-sun || true
+update-java-alternatives --plugin --set java-6-sun-max || true
 
 
 #DEBHELPER#
