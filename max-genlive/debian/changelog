@@ -1,3 +1,9 @@
+max-genlive (4.0.max0.76) max; urgency=low
+
+  * Remove OpenOffice.org hack to install 2.4 (3.0.1 works in live mode)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 29 Apr 2009 13:36:32 +0200
+
 max-genlive (4.0.max0.75) max; urgency=low
 
   * Fix hooks/75nanomax apt preferences (install OOo 2.4.1)
