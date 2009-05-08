@@ -426,7 +426,7 @@ class Install:
             self.install_extras()
             self.install_max_extras()
             # this upgrade OpenOffice.org to 3.0 version using DVD repos
-            self.do_cdrom_upgrade()
+            #self.do_cdrom_upgrade()
 
             self.db.progress('SET', 97)
             self.db.progress('REGION', 97, 99)
