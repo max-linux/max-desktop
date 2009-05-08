@@ -1,3 +1,10 @@
+max-genlive (4.0.max0.77) max; urgency=low
+
+  * usr/share/max-genlive/hooks/20configurechroot:
+    - Preseed b43 firmware download
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 08 May 2009 15:21:41 +0200
+
 max-genlive (4.0.max0.76) max; urgency=low
 
   * Remove OpenOffice.org hack to install 2.4 (3.0.1 works in live mode)

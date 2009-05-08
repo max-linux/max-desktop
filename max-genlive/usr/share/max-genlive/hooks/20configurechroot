@@ -24,7 +24,7 @@ mount --bind /sys   $CHROOT/sys
 touch $CHROOT/etc/X11/xorg.conf
 
 
-_echo "Configurando DEBCONF: licencia JAVA..."
+_echo "Configurando DEBCONF: licencia JAVA... zona hoaria y firmware"
 chroot $CHROOT debconf-set-selections << EOF || _exit "No se ha podido aceptar la licencia JAVA"
 sun-java5-bin   shared/accepted-sun-dlj-v1-1    boolean true
 sun-java5-jdk   shared/accepted-sun-dlj-v1-1    boolean true
@@ -34,6 +34,7 @@ sun-java6-jre   shared/accepted-sun-dlj-v1-1    boolean true
 sun-java6-jdk   shared/accepted-sun-dlj-v1-1    boolean true
 tzdata  tzdata/Areas    select  Europe
 tzdata  tzdata/Zones/Europe     select  Madrid
+b43-fwcutter	b43-fwcutter/cut_firmware	boolean	true
 EOF
 
 echo "Europe/Madrid" > $CHROOT/etc/timezone
