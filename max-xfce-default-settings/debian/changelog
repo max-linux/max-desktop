@@ -1,3 +1,22 @@
+max-xfce-default-settings (5.0.max1) max; urgency=low
+
+  * Build in MaX 5.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 11 May 2009 17:13:22 +0200
+
+max-xfce-default-settings (4.0.max10) max; urgency=low
+
+  * Add /etc/xdg/xfce4/xfconf/xfce-perchannel-xml (xfconf new settings)
+  * Set xfwm4 theme to Daloa
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 04 May 2009 21:03:16 +0200
+
+max-xfce-default-settings (4.0.max9) max; urgency=low
+
+  * Move /etc to /usr/share/dpsyco/skel/etc
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 04 May 2009 20:38:14 +0200
+
 max-xfce-default-settings (4.0.max8) max; urgency=low
 
   * Change Xfce menu icon to maxtoon (48x48) max logo (without HDD image)
