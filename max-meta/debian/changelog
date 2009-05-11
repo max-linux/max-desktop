@@ -1,3 +1,29 @@
+max-meta (5.0.max1) max; urgency=low
+
+  * Build in MaX 5.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 11 May 2009 13:10:40 +0200
+
+max-meta (4.0.max1.81) max; urgency=low
+
+  * Delete:
+    - max-desktop-gnome: gtk2-engines-gtk-qt gtk2-engines-smoth gtk2-engines-ubuntulooks slocate
+    - max-desktop-xfce: xfce4-mcs-plugins xfce4-mixer-alsa
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 04 May 2009 20:18:07 +0200
+
+max-meta (4.0.max1.80) max; urgency=low
+
+  * Build in Ubuntu jaunty
+  * Delete:
+    - ttftools
+    - libtf-perl
+    - openchrome
+    - ttf-gentium
+    - xkeyboard-config
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 04 May 2009 15:47:09 +0200
+
 max-meta (4.0.max1.79) max; urgency=low
 
   * Add ntfs-config to desktop-common and nanoMAX
