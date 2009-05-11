@@ -109,23 +109,58 @@ class DM:
         # the effort for now.
         timeout = 60
         while not self.server_started:
+            status = server.poll()
+            if type(status) is int and status != 0:
+                raise XStartupError, "X server exited with return code " + str(status)
             if timeout == 0:
                 raise XStartupError, "X server failed to start after 60 seconds"
             time.sleep(1)
             timeout -= 1
 
+        # Session bus, apparently needed by most interfaces now
+        if ('DBUS_SESSION_BUS_ADDRESS' not in os.environ and
+            osextras.find_on_path('dbus-launch')):
+            dbus_subp = subprocess.Popen(
+                ['dbus-launch', '--exit-with-session'],
+                stdin=null, stdout=subprocess.PIPE, stderr=logfile,
+                preexec_fn=self.drop_privileges)
+            for line in dbus_subp.stdout:
+                try:
+                    name, value = line.rstrip('\n').split('=', 1)
+                    os.environ[name] = value
+                except ValueError:
+                    pass
+            dbus_subp.wait()
+
+        gconfd_running = False
+        if ((self.frontend == 'gtk_ui' or self.frontend == 'mythbuntu_ui') and
+            osextras.find_on_path('gconftool-2')):
+            subprocess.call(['gconftool-2', '--spawn'],
+                            stdin=null, stdout=logfile, stderr=logfile,
+                            preexec_fn=self.drop_privileges)
+            gconfd_running = True
+
         extras = []
         if self.frontend == 'gtk_ui' or self.frontend == 'max_ui' or self.frontend == 'mythbuntu_ui':
             # Accessibility infrastructure
             gconf_dir = ('xml:readwrite:%s' %
-                '/root/.gconf')
+                os.path.expanduser('~%s/.gconf' %
+                self.username))
             accessibility = 'false'
             if osextras.find_on_path('gconftool-2'):
+                subprocess.call(
+                    ['gconftool-2', '--config-source', gconf_dir,
+                     '--type', 'int', '--set',
+                     '/apps/metacity/general/num_workspaces', '1'],
+                    stdin=null, stdout=logfile, stderr=logfile,
+                    preexec_fn=self.drop_privileges)
                 subp = subprocess.Popen(
                     ['gconftool-2', '--config-source', gconf_dir,
                      '--get', '/desktop/gnome/interface/accessibility'],
-                    stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                    stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                    preexec_fn=self.drop_privileges)
                 accessibility = subp.communicate()[0].rstrip('\n')
+            # Accessibility infrastructure
             if accessibility == 'true':
                 if os.path.exists('/usr/lib/at-spi/at-spi-registryd'):
                     extras.append(subprocess.Popen(['/usr/lib/at-spi/at-spi-registryd'],
@@ -152,7 +187,7 @@ class DM:
             fp.close()
 
         if self.frontend in ('gtk_ui', 'max_ui', 'mythbuntu_ui'):
-            if osextras.find_on_path('metacity'):
+            if gconfd_running and osextras.find_on_path('metacity'):
                 wm = subprocess.Popen(['metacity', '--sm-disable'],
                     stdin=null, stdout=logfile, stderr=logfile,
                     **maybe_drop_privileges)
@@ -160,9 +195,13 @@ class DM:
                 wm = subprocess.Popen('xfwm4',
                     stdin=null, stdout=logfile, stderr=logfile,
                     **maybe_drop_privileges)
+            elif osextras.find_on_path('matchbox-window-manager'):
+                wm = subprocess.Popen('matchbox-window-manager',
+                    stdin=null, stdout=logfile, stderr=logfile,
+                    **maybe_drop_privileges)
             else:
                 raise MissingProgramError, \
-                    "No window manager found (tried metacity, xfwm4)"
+                    "No window manager found (tried metacity, xfwm4, matchbox-window-manager)"
 
             if os.path.exists('/usr/lib/gnome-settings-daemon/gnome-settings-daemon'):
                 extras.append(subprocess.Popen(['/usr/lib/gnome-settings-daemon/gnome-settings-daemon'],
@@ -178,15 +217,13 @@ class DM:
                 else:
                     if osextras.find_on_path('orca'):
                         time.sleep(15)
-                        extras.append(subprocess.Popen(['orca', '-n'],
+                        extras.append(subprocess.Popen(['orca', '-sudo', self.username, '-n'],
                             stdin=null, stdout=logfile, stderr=logfile))
                 fp.close()
         elif self.frontend == 'kde_ui':
+            extras.append(subprocess.Popen(['kwriteconfig', '--file', 'kwinrc', '--group', 'Compositing', '--key', 'Enabled', 'false'], stdin=null, stdout=logfile, stderr=logfile, preexec_fn=self.drop_privileges))
             wm = subprocess.Popen('kwin', stdin=null, stdout=logfile,
                 stderr=logfile, preexec_fn=self.drop_privileges)
-            extras.append(subprocess.Popen(['dcopserver', '--nosid'],
-                stdin=null, stdout=logfile, stderr=logfile,
-                preexec_fn=self.drop_privileges))
 
         greeter = subprocess.Popen(program, stdin=null, stdout=logfile, stderr=logfile)
         ret = greeter.wait()
@@ -199,6 +236,10 @@ class DM:
         os.kill(wm.pid, signal.SIGTERM)
         for extra in extras:
             os.kill(extra.pid, signal.SIGTERM)
+        if gconfd_running:
+            subprocess.call(['gconftool-2', '--shutdown'],
+                            stdin=null, stdout=logfile, stderr=logfile,
+                            preexec_fn=self.drop_privileges)
         signal.signal(signal.SIGALRM, sigalrm_handler)
         signal.alarm(1) # low patience with WMs failing to exit on demand
         processes = set(extras)
@@ -228,7 +269,10 @@ if len(sys.argv) < 3:
     sys.exit(1)
 
 vt, display = sys.argv[1:3]
-dm = DM(vt, display)
+try:
+    dm = DM(vt, display)
+except XStartupError:
+    sys.exit(1)
 proc = None
 if dm.frontend == 'gtk_ui' or dm.frontend == 'max_ui' or dm.frontend == 'mythbuntu_ui':
     proc = ['/etc/init.d/gdm', 'start']

@@ -3,7 +3,7 @@
 # «gtk_ui» - GTK user interface
 #
 # Copyright (C) 2005 Junta de Andalucía
-# Copyright (C) 2005, 2006, 2007 Canonical Ltd.
+# Copyright (C) 2005, 2006, 2007, 2008, 2009 Canonical Ltd.
 #
 # Authors:
 #
@@ -53,7 +53,7 @@ import debconf
 from subprocess import Popen, PIPE, STDOUT
 
 from ubiquity import filteredcommand, gconftool, i18n, osextras, validation, \
-                     zoommap
+                     timezone_map, segmented_bar, wrap_label
 from ubiquity.misc import *
 from ubiquity.components import grubinstaller, console_setup, language, timezone, usersetup, \
                                 partman, partman_commit, \
@@ -136,17 +136,20 @@ class Wizard(BaseFrontend):
                                    'oem_id_label',
                                    'release_notes_label', 'release_notes_url',
                                    'step_label',
-                                   'cancel', 'back', 'next',
+                                   'quit', 'back', 'next',
                                    'warning_dialog', 'warning_dialog_label',
                                    'cancelbutton', 'exitbutton')
         self.current_page = None
         self.first_seen_page = None
         self.backup = None
         self.allowed_change_step = True
+        self.allowed_go_backward = True
         self.allowed_go_forward = True
         self.stay_on_page = False
         self.progress_position = ubiquity.progressposition.ProgressPosition()
         self.progress_cancelled = False
+        self.default_keyboard_layout = None
+        self.default_keyboard_variant = None
         self.autopartition_extras = {}
         self.resize_min_size = None
         self.resize_max_size = None
@@ -163,6 +166,15 @@ class Wizard(BaseFrontend):
         self.installing = False
         self.installing_no_return = False
         self.returncode = 0
+        self.partition_bars = {}
+        # FIXME: Grab this from the GTK theme.
+        self.release_color = 'dd2928'
+        self.auto_colors = ['3465a4', '73d216', 'f57900']
+        self.dev_colors = {}
+        self.segmented_bar_vbox = None
+        self.format_warnings = {}
+        self.format_warning = None
+        self.format_warning_align = None
         # MaX
         os.popen("sudo debconf-set-selections < /cdrom/preseed/max.seed")
         self.install_types={"escritorio":1, "alumno":2, "profesor":3, "servidor":4, "terminales":5, "nanomax":5}
@@ -187,6 +199,9 @@ class Wizard(BaseFrontend):
         # set custom language
         self.set_locales()
 
+        gtk.window_set_default_icon_from_file('/usr/share/pixmaps/'
+                                              'ubiquity.png')
+
         # load the main interface
         self.glade = gtk.glade.XML('%s/ubiquity.glade' % GLADEDIR)
         add_widgets(self, self.glade)
@@ -194,6 +209,14 @@ class Wizard(BaseFrontend):
         steps = self.glade.get_widget("steps")
         for page in SUBPAGES:
             add_subpage(self, steps, page)
+
+        if 'UBIQUITY_MIGRATION_ASSISTANT' in os.environ:
+            self.pages = [console_setup.ConsoleSetup, partman.Partman,
+                migrationassistant.MigrationAssistant,
+                summary.Summary]
+        else:
+            self.pages = [console_setup.ConsoleSetup, partman.Partman,
+                summary.Summary]
 
         self.translate_widgets()
 
@@ -241,7 +264,7 @@ class Wizard(BaseFrontend):
                 self.verified_password.set_text(self.get_debconf_preseed("passwd/user-password"))
                 self.username_edited = True
                 #self.set_language("Spanish")
-                self.hostname.set_text("max40")
+                self.hostname.set_text("max50")
         else:
                 syslog.syslog("DEBUG: ERROR not debconf user forced !!!")
 
@@ -421,24 +444,9 @@ class Wizard(BaseFrontend):
         self.hostname_changed_id = self.hostname.connect(
             'changed', self.on_hostname_changed)
 
-        if 'UBIQUITY_MIGRATION_ASSISTANT' in os.environ:
-            #self.pages = [language.Language, timezone.Timezone,
-            #    console_setup.ConsoleSetup, partman.Partman,
-            #    usersetup.UserSetup, migrationassistant.MigrationAssistant,
-            #    summary.Summary]
-            self.pages = [console_setup.ConsoleSetup, partman.Partman,
-                migrationassistant.MigrationAssistant,
-                summary.Summary]
-        else:
-            #self.pages = [language.Language, timezone.Timezone,
-            #    console_setup.ConsoleSetup, partman.Partman,
-            #    usersetup.UserSetup, summary.Summary]
-            self.pages = [console_setup.ConsoleSetup, partman.Partman,
-                summary.Summary]
-            
         self.pagesindex = 0
         pageslen = len(self.pages)
-        
+
         if 'UBIQUITY_AUTOMATIC' in os.environ:
             got_intro = False
             self.debconf_progress_start(0, pageslen,
@@ -462,6 +470,10 @@ class Wizard(BaseFrontend):
             # removed, so we end up with no input focus and thus pressing
             # Enter doesn't activate the default widget. Work around this.
             self.next.grab_focus()
+        #else:
+        #    # Similarly, the Quit button seems to end up with focus by
+        #    # default, but we'd rather a navigable widget had it.
+        #    self.language_treeview.grab_focus()
 
         if not 'UBIQUITY_MIGRATION_ASSISTANT' in os.environ:
             self.steps.remove_page(self.steps.page_num(self.stepMigrationAssistant))
@@ -473,13 +485,15 @@ class Wizard(BaseFrontend):
 
         if got_intro:
             gtk.main()
-        
+
         while(self.pagesindex < pageslen):
             if self.current_page == None:
                 break
 
             old_dbfilter = self.dbfilter
             self.dbfilter = self.pages[self.pagesindex](self)
+
+            self.prepare_page()
 
             # Non-debconf steps are no longer possible as the interface is now
             # driven by whether there is a question to ask.
@@ -523,9 +537,6 @@ class Wizard(BaseFrontend):
     def customize_installer(self):
         """Initial UI setup."""
 
-        gtk.window_set_default_icon_from_file('/usr/share/pixmaps/'
-                                              'ubiquity.png')
-
         #PIXMAPSDIR = os.path.join(PATH, 'pixmaps', self.distro)
         PIXMAPSDIR = os.path.join(PATH, 'pixmaps', 'max')
 
@@ -545,7 +556,7 @@ class Wizard(BaseFrontend):
         self.photo.set_from_file(photo)
 
         if 'UBIQUITY_ONLY' in os.environ:
-            self.live_installer.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_DIALOG)
+            self.live_installer.fullscreen()
         
         # MaX Welcome logo
         if os.path.exists( os.path.join(PIXMAPSDIR, "logo.png") ):
@@ -568,6 +579,12 @@ class Wizard(BaseFrontend):
             self.username.set_editable(False)
             self.username.set_sensitive(False)
             self.username_edited = True
+            if self.laptop:
+                self.hostname.set_text('oem-laptop')
+            else:
+                self.hostname.set_text('oem-desktop')
+            self.hostname_edited = True
+            self.login_vbox.hide()
             # The UserSetup component takes care of preseeding passwd/user-uid.
             execute_root('apt-install', 'oem-config-gtk')
 
@@ -591,14 +608,30 @@ class Wizard(BaseFrontend):
         #    self.tzmap = TimezoneMap(self)
         #    self.tzmap.tzmap.show()
         #else:
-        #    pixmap = '/usr/share/ubiquity/pixmaps/earth.jpg'
-        #    full_zoom = True
-        #    font_selected = "white"
-        #    font_unselected = "orange"
-        #    args = (self, pixmap, full_zoom, font_selected, font_unselected)
-        #    self.tzmap = zoommap.ZoomMapWidget(*args)
+        #    self.tzdb = ubiquity.tz.Database()
+        #    self.tzmap = timezone_map.TimezoneMap(self.tzdb, '/usr/share/ubiquity/pixmaps/timezone')
+        #    self.tzmap.connect('city-selected', self.select_city)
+        #    self.timezone_map_window.add(self.tzmap)
+        #    self.setup_timezone_page()
         #    self.tzmap.show()
 
+        self.action_bar = segmented_bar.SegmentedBarSlider()
+        self.action_bar.h_padding = self.action_bar.bar_height / 2
+        sw = gtk.ScrolledWindow()
+        sw.add_with_viewport(self.action_bar)
+        sw.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_NEVER)
+        sw.child.set_shadow_type(gtk.SHADOW_NONE)
+        sw.show_all()
+        self.action_bar_eb.add(sw)
+        
+        self.before_bar = segmented_bar.SegmentedBar()
+        self.before_bar.h_padding = self.before_bar.bar_height / 2
+        sw = gtk.ScrolledWindow()
+        sw.add_with_viewport(self.before_bar)
+        sw.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_NEVER)
+        sw.child.set_shadow_type(gtk.SHADOW_NONE)
+        sw.show_all()
+        self.before_bar_eb.add(sw)
 
         if 'UBIQUITY_DEBUG' in os.environ:
             self.password_debug_warning_label.show()
@@ -607,7 +640,79 @@ class Wizard(BaseFrontend):
             self.steps.page_num(self.stepPartAuto)
 
         # set initial bottom bar status
-        self.back.hide()
+        self.allow_go_backward(False)
+
+    def setup_timezone_page(self):
+
+        renderer = gtk.CellRendererText()
+        self.timezone_zone_combo.pack_start(renderer, True)
+        self.timezone_zone_combo.add_attribute(renderer, 'text', 0)
+        list_store = gtk.ListStore(gobject.TYPE_STRING)
+        self.timezone_zone_combo.set_model(list_store)
+        self.timezone_zone_combo.connect('changed', self.zone_combo_selection_changed)
+        self.timezone_city_combo.connect('changed', self.city_combo_selection_changed)
+
+        renderer = gtk.CellRendererText()
+        self.timezone_city_combo.pack_start(renderer, True)
+        self.timezone_city_combo.add_attribute(renderer, 'text', 0)
+        city_store = gtk.ListStore(gobject.TYPE_STRING)
+        self.timezone_city_combo.set_model(city_store)
+        
+        self.regions = {}
+        for location in self.tzdb.locations:
+            region, city = location.zone.replace('_', ' ').split('/', 1)
+            if region in self.regions:
+                self.regions[region].append(city)
+            else:
+                self.regions[region] = [city]
+
+        r = self.regions.keys()
+        r.sort()
+        for region in r:
+            list_store.append([region])
+
+    def zone_combo_selection_changed(self, widget):
+        i = self.timezone_zone_combo.get_active()
+        m = self.timezone_zone_combo.get_model()
+        region = m[i][0]
+        
+        m = self.timezone_city_combo.get_model()
+        m.clear()
+        for city in self.regions[region]:
+            m.append([city])
+
+    def city_combo_selection_changed(self, widget):
+        i = self.timezone_zone_combo.get_active()
+        m = self.timezone_zone_combo.get_model()
+        region = m[i][0]
+        
+        i = self.timezone_city_combo.get_active()
+        if i < 0:
+            # There's no selection yet.
+            return
+        m = self.timezone_city_combo.get_model()
+        city = m[i][0].replace(' ', '_')
+        city = region + '/' + city
+        self.tzmap.select_city(city)
+
+    def select_city(self, widget, city):
+        region, city = city.replace('_', ' ').split('/', 1)
+        m = self.timezone_zone_combo.get_model()
+        iterator = m.get_iter_first()
+        while iterator:
+            if m[iterator][0] == region:
+                self.timezone_zone_combo.set_active_iter(iterator)
+                break
+            iterator = m.iter_next(iterator)
+        
+        m = self.timezone_city_combo.get_model()
+        iterator = m.get_iter_first()
+        while iterator:
+            if m[iterator][0] == city:
+                self.timezone_city_combo.set_active_iter(iterator)
+                break
+            iterator = m.iter_next(iterator)
+
 
     def poke_screensaver(self):
         """Attempt to make sure that the screensaver doesn't kick in."""
@@ -627,6 +732,13 @@ class Wizard(BaseFrontend):
                                    gobject.SPAWN_STDOUT_TO_DEV_NULL |
                                    gobject.SPAWN_STDERR_TO_DEV_NULL))
         return True
+
+
+    def set_window_hints(self, widget):
+        if 'UBIQUITY_ONLY' in os.environ:
+            # Disable minimise button.
+            widget.window.set_functions(
+                gtk.gdk.FUNC_RESIZE | gtk.gdk.FUNC_MOVE)
 
 
     def set_locales(self):
@@ -654,12 +766,12 @@ class Wizard(BaseFrontend):
 
         for widget in self.all_widgets:
             self.translate_widget(widget, self.locale)
-        
+
         self.partition_button_undo.set_label(
             self.get_string('partman/text/undo_everything'))
-        self.partition_button_new_label.set_label('Nueva tabla de particiones')
-        self.partition_button_new.set_label('Nueva partición')
-        self.partition_button_delete.set_label('Borrar partición')
+        #self.partition_button_new_label.set_label('Nueva tabla de particiones')
+        #self.partition_button_new.set_label('Nueva partición')
+        #self.partition_button_delete.set_label('Borrar partición')
 
     def translate_widget(self, widget, lang):
         if isinstance(widget, gtk.Button) and widget.get_use_stock():
@@ -692,7 +804,7 @@ class Wizard(BaseFrontend):
                 widget.set_attributes(attrs)
             elif 'extra_label' in name:
                 attrs = pango.AttrList()
-                attrs.insert(pango.AttrStyle(pango.STYLE_ITALIC, 0, textlen))
+                attrs.insert(pango.AttrScale(pango.SCALE_SMALL, 0, textlen))
                 widget.set_attributes(attrs)
             elif ('group_label' in name or 'warning_label' in name or
                   name in ('drives_label', 'partition_method_label')):
@@ -707,6 +819,11 @@ class Wizard(BaseFrontend):
 
             question = i18n.map_widget_name(widget.get_name())
             widget.set_label(text)
+            
+            # Workaround for radio button labels disappearing on second
+            # translate when not visible. LP: #353090
+            widget.realize()
+            
             if question.startswith('ubiquity/imported/'):
                 stock_id = question[18:]
                 widget.set_use_stock(False)
@@ -726,10 +843,11 @@ class Wizard(BaseFrontend):
             cursor = self.watch
         if self.live_installer.window:
             self.live_installer.window.set_cursor(cursor)
-        self.back.set_sensitive(allowed)
+        self.back.set_sensitive(allowed and self.allowed_go_backward)
         self.next.set_sensitive(allowed and self.allowed_go_forward)
         # Work around http://bugzilla.gnome.org/show_bug.cgi?id=56070
-        if self.back.get_property('visible') and allowed:
+        if (self.back.get_property('visible') and
+            allowed and self.allowed_go_backward):
             self.back.hide()
             self.back.show()
         if (self.next.get_property('visible') and
@@ -738,6 +856,15 @@ class Wizard(BaseFrontend):
             self.next.show()
             self.next.grab_default()
         self.allowed_change_step = allowed
+
+    def allow_go_backward(self, allowed):
+        self.back.set_sensitive(allowed and self.allowed_change_step)
+        # Work around http://bugzilla.gnome.org/show_bug.cgi?id=56070
+        if (self.back.get_property('visible') and
+            allowed and self.allowed_change_step):
+            self.back.hide()
+            self.back.show()
+        self.allowed_go_backward = allowed
 
     def allow_go_forward(self, allowed):
         self.next.set_sensitive(allowed and self.allowed_change_step)
@@ -783,7 +910,7 @@ class Wizard(BaseFrontend):
         if response == 1:
             return True
         elif response == gtk.RESPONSE_CLOSE:
-            self.quit()
+            self.quit_installer()
         else:
             step = self.step_name(self.steps.get_current_page())
             if step.startswith("stepPart"):
@@ -845,14 +972,14 @@ class Wizard(BaseFrontend):
         else:
             print >>sys.stderr, 'No page found for %s' % n
             return
-        
+
         self.set_current_page(self.steps.page_num(cur))
         if not self.first_seen_page:
             self.first_seen_page = n
         if self.first_seen_page == self.pages[self.pagesindex].__name__:
-            self.back.hide()
+            self.allow_go_backward(False)
         elif 'UBIQUITY_AUTOMATIC' not in os.environ:
-            self.back.show()
+            self.allow_go_backward(True)
 
     def set_current_page(self, current):
         # MaX debug        
@@ -935,16 +1062,16 @@ class Wizard(BaseFrontend):
         """reboot the system after installing process."""
 
         self.returncode = 10
-        self.quit()
+        self.quit_installer()
 
 
     def do_reboot(self):
         """Callback for main program to actually reboot the machine."""
 
-        if (os.path.exists("/usr/bin/gdm-signal") and
+        if (os.path.exists("/usr/lib/ubiquity/gdm-signal") and
             os.path.exists("/usr/bin/gnome-session-save") and
             'DESKTOP_SESSION' in os.environ):
-            execute("gdm-signal", "--reboot")
+            execute("/usr/lib/ubiquity/gdm-signal", "--reboot")
             if 'SUDO_UID' in os.environ:
                 user = '#%d' % int(os.environ['SUDO_UID'])
             else:
@@ -955,7 +1082,7 @@ class Wizard(BaseFrontend):
             execute("reboot")
 
 
-    def quit(self):
+    def quit_installer(self):
         """quit installer cleanly."""
 
         # exiting from application
@@ -967,13 +1094,13 @@ class Wizard(BaseFrontend):
 
 
     # Callbacks
-    def on_cancel_clicked(self, widget):
+    def on_quit_clicked(self, widget):
         self.warning_dialog.show()
         response = self.warning_dialog.run()
         self.warning_dialog.hide()
         if response == gtk.RESPONSE_CLOSE:
             self.current_page = None
-            self.quit()
+            self.quit_installer()
             return False
         else:
             return True # stop processing
@@ -990,7 +1117,7 @@ class Wizard(BaseFrontend):
 
 
     def on_live_installer_delete_event(self, widget, event):
-        return self.on_cancel_clicked(widget)
+        return self.on_quit_clicked(widget)
 
 
     def info_loop(self, widget):
@@ -1020,9 +1147,13 @@ class Wizard(BaseFrontend):
             self.hostname.handler_unblock(self.hostname_changed_id)
 
         complete = True
-        for name in ('username', 'password', 'verified_password', 'hostname'):
+        for name in ('username', 'hostname'):
             if getattr(self, name).get_text() == '':
                 complete = False
+        if not self.allow_password_empty:
+            for name in ('password', 'verified_password'):
+                if getattr(self, name).get_text() == '':
+                    complete = False
         self.allow_go_forward(complete)
 
     def on_username_changed(self, widget):
@@ -1041,7 +1172,14 @@ class Wizard(BaseFrontend):
 
         step = self.step_name(self.steps.get_current_page())
 
-        if step == "stepUserInfo":
+        # Beware that 'step' is the step we're leaving, not the one we're
+        # entering. At present it's a little awkward to define actions that
+        # occur upon entering a page without unwanted side-effects when the
+        # user tries to go forward but fails due to validation.
+        if step == "stepPartAuto":
+            self.part_advanced_warning_message.set_text('')
+            self.part_advanced_warning_hbox.hide()
+        if step in ("stepPartAuto", "stepPartAdvanced"):
             self.username_error_box.hide()
             self.password_error_box.hide()
             self.hostname_error_box.hide()
@@ -1052,6 +1190,9 @@ class Wizard(BaseFrontend):
             # debconffilter_done() to be called when the filter exits
         elif gtk.main_level() > 0:
             gtk.main_quit()
+
+        if not self.live_installer.get_focus():
+            self.live_installer.child_focus(gtk.DIR_TAB_FORWARD)
 
     def on_keyboardlayoutview_row_activated(self, treeview, path, view_column):
         self.next.activate()
@@ -1074,6 +1215,16 @@ class Wizard(BaseFrontend):
             if layout is not None and variant is not None:
                 self.dbfilter.apply_keyboard(layout, variant)
 
+    def prepare_page(self):
+        """Set up the frontend in preparation for running a step."""
+
+        # Note that self.current_page et al have not been updated for the
+        # new page yet, so we have to check self.dbfilter.
+
+        if isinstance(self.dbfilter, console_setup.ConsoleSetup):
+            self.default_keyboard_layout = None
+            self.default_keyboard_variant = None
+
     def process_step(self):
         """Process and validate the results of this step."""
         #MaX debug
@@ -1085,7 +1236,7 @@ class Wizard(BaseFrontend):
 
         if step.startswith("stepPart"):
             self.previous_partitioning_page = step_num
-        
+
         elif step == "stepLanguage":
             self.translate_widgets()
             # FIXME: needed anymore now that we're doing dbfilter first?
@@ -1100,7 +1251,7 @@ class Wizard(BaseFrontend):
                     line=p.stdout.readline()
                     syslog.syslog("DEBUG: %s"%line.strip())
                 # quit when done
-                self.quit()
+                self.quit_installer()
         # Automatic partitioning
         elif step == "stepPartAuto":
             self.process_autopartitioning()
@@ -1187,6 +1338,9 @@ class Wizard(BaseFrontend):
         elif gtk.main_level() > 0:
             gtk.main_quit()
 
+        if not self.live_installer.get_focus():
+            self.live_installer.child_focus(gtk.DIR_TAB_FORWARD)
+
 
     def selected_language (self, selection):
         (model, iterator) = selection.get_selected()
@@ -1219,11 +1373,35 @@ class Wizard(BaseFrontend):
 
     def on_steps_switch_page (self, foo, bar, current):
         self.current_page = current
-        self.translate_widget(self.step_label, self.locale)
+        # If we're on the language page, then we may not know the correct
+        # language yet.  But we still want to update the page number if the
+        # user hit back, so call on_language_treeview_selection_changed and if
+        # we have a language selection, the interface will be translated
+        # properly.
+        if self.step_name(current) != 'stepLanguage':
+            self.translate_widget(self.step_label, self.locale)
+        else:
+            selection = self.language_treeview.get_selection()
+            self.on_language_treeview_selection_changed(selection)
         syslog.syslog('switched to page %s' % self.step_name(current))
 
+    def on_extra_combo_changed (self, widget):
+        txt = widget.get_active_text()
+        for k in self.disk_layout:
+            disk = k
+            if disk.startswith('=dev='):
+                disk = disk[5:]
+            if '(%s)' % disk in txt:
+                self.before_bar.remove_all()
+                self.create_bar(k)
+                break
+        if txt in self.format_warnings:
+            self.format_warning.set_text(self.format_warnings[txt])
+            self.format_warning_align.show_all()
+        else:
+            self.format_warning_align.hide()
 
-    def on_autopartition_toggled (self, widget):
+    def on_autopartition_toggled (self, widget, extra_combo):
         """Update autopartitioning screen when a button is selected."""
 
         choice = unicode(widget.get_label(), 'utf-8', 'replace')
@@ -1234,6 +1412,33 @@ class Wizard(BaseFrontend):
             else:
                 element.set_sensitive(False)
 
+        if widget.get_active():
+            self.action_bar.remove_all()
+            self.action_bar.resize = -1
+            if choice == self.manual_choice:
+                self.action_bar.add_segment_rgb(self.manual_choice, -1, \
+                    self.release_color)
+            elif choice == self.resize_choice:
+                for k in self.disk_layout:
+                    for p in self.disk_layout[k]:
+                        if self.resize_path == p[0]:
+                            self.before_bar.remove_all()
+                            self.create_bar(k)
+                            self.create_bar(k, type=choice)
+                            return
+            elif choice == self.biggest_free_choice:
+                for k in self.disk_layout:
+                    for p in self.disk_layout[k]:
+                        if self.biggest_free_id == p[2]:
+                            self.before_bar.remove_all()
+                            self.create_bar(k)
+                            self.create_bar(k, type=choice)
+                            return
+            else:
+                # Use entire disk.
+                self.action_bar.add_segment_rgb(get_release_name(), -1, \
+                    self.release_color)
+                self.on_extra_combo_changed(extra_combo)
 
     # Callbacks provided to components.
 
@@ -1256,10 +1461,12 @@ class Wizard(BaseFrontend):
 
 
     def debconf_progress_start (self, progress_min, progress_max, progress_title):
-        if self.progress_cancelled:
-            return False
         if self.current_page is not None:
             self.debconf_progress_window.set_transient_for(self.live_installer)
+            # Metacity doesn't seem to respect the modal flag for normal
+            # windows when the parent window is fullscreened.
+            self.debconf_progress_window.set_type_hint(
+                gtk.gdk.WINDOW_TYPE_HINT_DIALOG)
         else:
             self.debconf_progress_window.set_transient_for(None)
         if progress_title is None:
@@ -1276,7 +1483,6 @@ class Wizard(BaseFrontend):
         self.debconf_progress_set(0)
         self.progress_info.set_text('')
         self.debconf_progress_window.show()
-        return True
 
     def debconf_progress_set (self, progress_val):
         if self.progress_cancelled:
@@ -1304,9 +1510,7 @@ class Wizard(BaseFrontend):
         return True
 
     def debconf_progress_stop (self):
-        if self.progress_cancelled:
-            self.progress_cancelled = False
-            return False
+        self.progress_cancelled = False
         self.progress_position.stop()
         if self.progress_position.depth() == 0:
             self.debconf_progress_window.hide()
@@ -1315,12 +1519,13 @@ class Wizard(BaseFrontend):
                 '<big><b>' +
                 xml.sax.saxutils.escape(self.progress_position.title()) +
                 '</b></big>')
-        return True
 
     def debconf_progress_region (self, region_start, region_end):
         self.progress_position.set_region(region_start, region_end)
 
     def debconf_progress_cancellable (self, cancellable):
+        # MaX don't show cancel button
+        return
         if cancellable:
             self.progress_cancel_button.show()
         else:
@@ -1375,7 +1580,7 @@ class Wizard(BaseFrontend):
             return 'C'
         else:
             value = unicode(model.get_value(iterator, 0))
-            return self.language_choice_map[value][0]
+            return self.language_choice_map[value][1]
 
 
     def get_oem_id (self):
@@ -1383,13 +1588,19 @@ class Wizard(BaseFrontend):
 
 
     def set_timezone (self, timezone):
-        self.tzmap.set_tz_from_name(timezone)
-
+        self.select_city(None, timezone)
 
     def get_timezone (self):
-        return self.tzmap.get_selected_tz_name()
-
-
+        i = self.timezone_zone_combo.get_active()
+        m = self.timezone_zone_combo.get_model()
+        region = m[i][0]
+        
+        i = self.timezone_city_combo.get_active()
+        m = self.timezone_city_combo.get_model()
+        city = m[i][0].replace(' ', '_')
+        city = region + '/' + city
+        return city
+    
     def set_keyboard_choices(self, choices):
         layouts = gtk.ListStore(gobject.TYPE_STRING)
         self.keyboardlayoutview.set_model(layouts)
@@ -1408,6 +1619,8 @@ class Wizard(BaseFrontend):
             self.set_keyboard(self.current_layout)
 
     def set_keyboard (self, layout):
+        if self.default_keyboard_layout is None:
+            self.default_keyboard_layout = layout
         BaseFrontend.set_keyboard(self, layout)
         model = self.keyboardlayoutview.get_model()
         if model is None:
@@ -1423,6 +1636,8 @@ class Wizard(BaseFrontend):
             iterator = model.iter_next(iterator)
 
     def get_keyboard (self):
+        if self.suggested_keymap.get_active():
+            return unicode(self.default_keyboard_layout)
         selection = self.keyboardlayoutview.get_selection()
         (model, iterator) = selection.get_selected()
         if iterator is None:
@@ -1445,6 +1660,14 @@ class Wizard(BaseFrontend):
                               self.on_keyboard_variant_selected)
 
     def set_keyboard_variant (self, variant):
+        if self.default_keyboard_variant is None:
+            self.default_keyboard_variant = variant
+        # Make sure the "suggested option" is selected, otherwise this will
+        # change every time the user selects a new keyboard in the manual
+        # choice selection boxes.
+        if self.suggested_keymap.get_active():
+            self.suggested_keymap_label.set_property('label', variant)
+            self.suggested_keymap.toggled()
         model = self.keyboardvariantview.get_model()
         if model is None:
             return
@@ -1459,6 +1682,8 @@ class Wizard(BaseFrontend):
             iterator = model.iter_next(iterator)
 
     def get_keyboard_variant (self):
+        if self.suggested_keymap.get_active():
+            return unicode(self.default_keyboard_variant)
         selection = self.keyboardvariantview.get_selection()
         (model, iterator) = selection.get_selected()
         if iterator is None:
@@ -1466,70 +1691,164 @@ class Wizard(BaseFrontend):
         else:
             return unicode(model.get_value(iterator, 0))
 
+    def on_suggested_keymap_toggled (self, widget):
+        if self.suggested_keymap.get_active():
+            self.keyboard_layout_hbox.set_sensitive(False)
+            if isinstance(self.dbfilter, console_setup.ConsoleSetup):
+                if (self.default_keyboard_layout is not None and
+                    self.default_keyboard_variant is not None):
+                    self.current_layout = self.default_keyboard_layout
+                    self.dbfilter.change_layout(self.default_keyboard_layout)
+                    self.dbfilter.apply_keyboard(self.default_keyboard_layout,
+                                                 self.default_keyboard_variant)
+
+        else:
+            self.keyboard_layout_hbox.set_sensitive(True)
+        
+    def set_disk_layout(self, layout):
+        self.disk_layout = layout
+
+    def create_bar(self, disk, type=None):
+        if type:
+            b = self.action_bar
+        else:
+            b = self.before_bar
+            ret = []
+            for part in self.disk_layout[disk]:
+                if part[0].startswith('/'):
+                    t = find_in_os_prober(part[0])
+                    if t and t != 'swap':
+                        ret.append(t)
+            if len(ret) == 0:
+                s = self.get_string('ubiquity/text/part_auto_comment_none')
+            elif len(ret) == 1:
+                s = self.get_string('ubiquity/text/part_auto_comment_one')
+                s = s.replace('${OS}', ret[0])
+            else:
+                s = self.get_string('ubiquity/text/part_auto_comment_many')
+            self.part_auto_comment_label.set_text(s)
+        i = 0
+        for part in self.disk_layout[disk]:
+            dev = part[0]
+            size = part[1]
+            if type == self.biggest_free_choice and part[2] == self.biggest_free_id:
+                b.add_segment_rgb(get_release_name(), size, self.release_color)
+            elif dev == 'free':
+                b.add_segment_rgb("Free Space", size, b.remainder_color)
+            else:
+                if dev in self.dev_colors:
+                    c = self.dev_colors[dev]
+                else:
+                    c = self.auto_colors[i]
+                    self.dev_colors[dev] = c
+                b.add_segment_rgb(dev, size, c)
+                if dev == self.resize_path and type == self.resize_choice:
+                    self.action_bar.add_segment_rgb(get_release_name(), -1,
+                        self.release_color)
+                i = (i + 1) % len(self.auto_colors)
+
+    def setup_format_warnings(self, extra_options):
+        for extra in extra_options:
+            for k in self.disk_layout:
+                disk = k
+                if disk.startswith('=dev='):
+                    disk = disk[5:]
+                if '(%s)' % disk not in extra:
+                    continue
+                l = []
+                for part in self.disk_layout[k]:
+                    if part[0] == 'free':
+                        continue
+                    ret = find_in_os_prober(part[0])
+                    if ret and ret != 'swap':
+                        l.append(ret)
+                if l:
+                    if len(l) == 1:
+                        l = l[0]
+                    elif len(l) > 1:
+                        l = ', '.join(l)
+                    txt = self.get_string('ubiquity/text/part_format_warning')
+                    txt = txt.replace('${RELEASE}', get_release_name())
+                    txt = txt.replace('${SYSTEMS}', l)
+                    self.format_warnings[extra] = txt
 
     def set_autopartition_choices (self, choices, extra_options,
-                                   resize_choice, manual_choice):
+                                   resize_choice, manual_choice,
+                                   biggest_free_choice):
         BaseFrontend.set_autopartition_choices(self, choices, extra_options,
-                                               resize_choice, manual_choice)
+                                               resize_choice, manual_choice,
+                                               biggest_free_choice)
 
-        for child in self.autopartition_vbox.get_children():
-            self.autopartition_vbox.remove(child)
+        if resize_choice in choices:
+            self.resize_min_size, self.resize_max_size, \
+                self.resize_orig_size, self.resize_path = \
+                    extra_options[resize_choice]
+            self.action_bar.set_part_size(self.resize_orig_size)
+            self.action_bar.set_min(self.resize_min_size)
+            self.action_bar.set_max(self.resize_max_size)
+            self.action_bar.set_device(self.resize_path)
+        if biggest_free_choice in choices:
+            self.biggest_free_id = extra_options[biggest_free_choice]
+
+        for child in self.autopartition_choices_vbox.get_children():
+            self.autopartition_choices_vbox.remove(child)
+        
+        text = self.get_string('ubiquity/text/part_auto_choices_label')
+        text = text.replace('${RELEASE}', get_release_name())
+        self.part_auto_choices_label.set_text(text)
 
         firstbutton = None
+        extra_combo = None
         for choice in choices:
             button = gtk.RadioButton(firstbutton, choice, False)
             if firstbutton is None:
                 firstbutton = button
-            self.autopartition_vbox.add(button)
+            self.autopartition_choices_vbox.add(button)
 
-            if choice in extra_options:
+            if choice in extra_options and choice != biggest_free_choice:
                 alignment = gtk.Alignment(xscale=1, yscale=1)
                 alignment.set_padding(0, 0, 12, 0)
-                if choice == resize_choice:
-                    hbox = gtk.HBox(spacing=6)
-                    alignment.add(hbox)
-                    new_size_label = gtk.Label("New partition size:")
-                    new_size_label.set_name('new_size_label')
-                    self.translate_widget(new_size_label, self.locale)
-                    new_size_label.set_selectable(True)
-                    new_size_label.set_property('can-focus', False)
-                    hbox.pack_start(new_size_label, expand=False, fill=False)
-                    self.new_size_scale = ResizeWidget()
-                    self.resize_min_size, self.resize_max_size, \
-                        self.resize_orig_size, self.resize_path = \
-                            extra_options[choice]
-                    self.new_size_scale.set_part_size(self.resize_orig_size)
-                    self.new_size_scale.set_min(self.resize_min_size)
-                    self.new_size_scale.set_max(self.resize_max_size)
-                    self.new_size_scale.set_device(self.resize_path)
-                    hbox.pack_start(self.new_size_scale, expand=True, fill=True)
-                elif choice != manual_choice:
+
+                if choice not in [resize_choice, manual_choice]:
+                    extra_combo = gtk.combo_box_new_text()
                     vbox = gtk.VBox(spacing=6)
                     alignment.add(vbox)
-                    extra_firstbutton = None
+                    vbox.add(extra_combo)
                     for extra in extra_options[choice]:
-                        extra_button = gtk.RadioButton(
-                            extra_firstbutton, extra, False)
-                        if extra_firstbutton is None:
-                            extra_firstbutton = extra_button
-                        vbox.add(extra_button)
-                self.autopartition_vbox.pack_start(alignment,
+                        extra_combo.append_text(extra)
+                    a = gtk.Alignment(xscale=1, yscale=1)
+                    a.set_padding(0, 0, 12, 0)
+                    a.hide()
+                    self.format_warning_align = a
+                    label = gtk.Label()
+                    self.format_warning = label
+                    hbox = gtk.HBox(spacing=6)
+                    img = gtk.Image()
+                    img.set_from_icon_name('gtk-dialog-warning', gtk.ICON_SIZE_BUTTON)
+                    hbox.pack_start(img, expand=False, fill=False)
+                    hbox.pack_start(label, expand=False, fill=False)
+                    a.add(hbox)
+                    vbox.add(a)
+                    
+                    self.setup_format_warnings(extra_options[choice])
+                    extra_combo.connect('changed', self.on_extra_combo_changed)
+                    extra_combo.set_active(0)
+                self.autopartition_choices_vbox.pack_start(alignment,
                                                    expand=False, fill=False)
                 self.autopartition_extras[choice] = alignment
+            button.connect('toggled', self.on_autopartition_toggled, extra_combo)
 
-                self.on_autopartition_toggled(button)
-                button.connect('toggled', self.on_autopartition_toggled)
         if firstbutton is not None:
             firstbutton.set_active(True)
-
-        self.autopartition_vbox.show_all()
+            self.on_autopartition_toggled(firstbutton, extra_combo)
+        self.autopartition_choices_vbox.show_all()
 
         # make sure we're on the autopartitioning page
         self.set_current_page(self.steps.page_num(self.stepPartAuto))
 
 
     def get_autopartition_choice (self):
-        for button in self.autopartition_vbox.get_children():
+        for button in self.autopartition_choices_vbox.get_children():
             if isinstance(button, gtk.Button):
                 if button.get_active():
                     choice = unicode(button.get_label(), 'utf-8', 'replace')
@@ -1539,20 +1858,24 @@ class Wizard(BaseFrontend):
 
         if choice == self.resize_choice:
             # resize_choice should have been hidden otherwise
-            assert self.new_size_scale is not None
-            return choice, self.new_size_scale.get_value()
+            assert self.action_bar.resize != -1
+            return choice, '%d B' % self.action_bar.get_size()
         elif (choice != self.manual_choice and
               choice in self.autopartition_extras):
             vbox = self.autopartition_extras[choice].child
-            for button in vbox.get_children():
-                if isinstance(button, gtk.Button):
-                    if button.get_active():
-                        return choice, unicode(button.get_label(),
-                                               'utf-8', 'replace')
+            for child in vbox.get_children():
+                if isinstance(child, gtk.ComboBox):
+                    return choice, unicode(child.get_active_text(),
+                                           'utf-8', 'replace')
             else:
                 return choice, None
         else:
             return choice, None
+
+
+    def installation_medium_mounted (self, message):
+        self.part_advanced_warning_message.set_text(message)
+        self.part_advanced_warning_hbox.show_all()
 
 
     def partman_column_name (self, column, cell, model, iterator):
@@ -1566,9 +1889,10 @@ class Wizard(BaseFrontend):
             unusable = self.get_string('partman/text/unusable')
             cell.set_property('text', '  %s' % unusable)
         else:
-            # TODO cjwatson 2006-10-30 i18n; partman uses "FREE SPACE" which
-            # feels a bit too SHOUTY for this interface.
-            cell.set_property('text', '  espacio libre')
+            # partman uses "FREE SPACE" which feels a bit too SHOUTY for
+            # this interface.
+            free_space = self.get_string('partition_free_space')
+            cell.set_property('text', '  %s' % free_space)
 
     def partman_column_type (self, column, cell, model, iterator):
         partition = model[iterator][1]
@@ -1638,8 +1962,8 @@ class Wizard(BaseFrontend):
         if 'id' not in partition or partition['parted']['fs'] == 'free':
             cell.set_property('text', '')
         elif 'resize_min_size' not in partition:
-            # TODO cjwatson 2007-03-26: i18n
-            cell.set_property('text', 'desconocido')
+            unknown = self.get_string('partition_used_unknown')
+            cell.set_property('text', unknown)
         else:
             # Yes, I know, 1000000 bytes is annoying. Sorry. This is what
             # partman expects.
@@ -1663,27 +1987,26 @@ class Wizard(BaseFrontend):
         partition_list_menu = gtk.Menu()
         for action in self.dbfilter.get_actions(devpart, partition):
             if action == 'new_label':
-                # TODO cjwatson 2006-12-21: i18n;
-                # partman-partitioning/text/label text is quite long?
-                new_label_item = gtk.MenuItem('Nueva tabla de particiones')
+                new_label_item = gtk.MenuItem(
+                    self.get_string('partition_button_new_label'))
                 new_label_item.connect(
                     'activate', self.on_partition_list_new_label_activate)
                 partition_list_menu.append(new_label_item)
             elif action == 'new':
-                # TODO cjwatson 2006-10-31: i18n
-                new_item = gtk.MenuItem('Nueva partición')
+                new_item = gtk.MenuItem(
+                    self.get_string('partition_button_new'))
                 new_item.connect(
                     'activate', self.on_partition_list_new_activate)
                 partition_list_menu.append(new_item)
             elif action == 'edit':
-                # TODO cjwatson 2006-10-31: i18n
-                edit_item = gtk.MenuItem('Edita partición')
+                edit_item = gtk.MenuItem(
+                    self.get_string('partition_button_edit'))
                 edit_item.connect(
                     'activate', self.on_partition_list_edit_activate)
                 partition_list_menu.append(edit_item)
             elif action == 'delete':
-                # TODO cjwatson 2006-10-31: i18n
-                delete_item = gtk.MenuItem('Borrar partición')
+                delete_item = gtk.MenuItem(
+                    self.get_string('partition_button_delete'))
                 delete_item.connect(
                     'activate', self.on_partition_list_delete_activate)
                 partition_list_menu.append(delete_item)
@@ -1716,12 +2039,12 @@ class Wizard(BaseFrontend):
         # question is going to be asked.
 
         if partition['parted']['type'] == 'pri/log':
-            # Is there already an extended partition?
+            # Is there already a primary partition?
             model = self.partition_list_treeview.get_model()
             for otherpart in [row[1] for row in model]:
                 if (otherpart['dev'] == partition['dev'] and
                     'id' in otherpart and
-                    otherpart['parted']['type'] == 'logical'):
+                    otherpart['parted']['type'] == 'primary'):
                     self.partition_create_type_logical.set_active(True)
                     break
             else:
@@ -1736,7 +2059,7 @@ class Wizard(BaseFrontend):
         max_size_mb = int(partition['parted']['size']) / 1000000
         self.partition_create_size_spinbutton.set_adjustment(
             gtk.Adjustment(value=max_size_mb, upper=max_size_mb,
-                           step_incr=1, page_incr=100, page_size=100))
+                           step_incr=1, page_incr=100))
         self.partition_create_size_spinbutton.set_value(max_size_mb)
 
         self.partition_create_place_beginning.set_active(True)
@@ -1841,7 +2164,7 @@ class Wizard(BaseFrontend):
             self.partition_edit_size_spinbutton.set_adjustment(
                 gtk.Adjustment(value=cur_size_mb, lower=min_size_mb,
                                upper=max_size_mb,
-                               step_incr=1, page_incr=100, page_size=100))
+                               step_incr=1, page_incr=100))
             self.partition_edit_size_spinbutton.set_value(cur_size_mb)
             current_size = str(self.partition_edit_size_spinbutton.get_value())
 
@@ -1941,7 +2264,7 @@ class Wizard(BaseFrontend):
         # If the selected method isn't a filesystem, then selecting a mount
         # point makes no sense. TODO cjwatson 2007-01-31: Unfortunately we
         # have to hardcode the list of known filesystems here.
-        known_filesystems = ('ext3', 'ext2', 'reiserfs', 'jfs', 'xfs',
+        known_filesystems = ('ext3', 'ext4', 'ext2', 'reiserfs', 'jfs', 'xfs',
                              'fat16', 'fat32', 'ntfs')
         if iterator is None or model[iterator][0] not in known_filesystems:
             self.partition_edit_mount_combo.child.set_text('')
@@ -1970,6 +2293,21 @@ class Wizard(BaseFrontend):
             self.partman_popup(widget, event)
             return True
 
+    def on_partition_list_treeview_key_press_event (self, widget, event):
+        if event.type != gtk.gdk.KEY_PRESS:
+            return False
+
+        if event.keyval == gtk.keysyms.Delete:
+            if not isinstance(self.dbfilter, partman.Partman):
+                return False
+            devpart, partition = self.partition_list_get_selection()
+            for action in self.dbfilter.get_actions(devpart, partition):
+                if action == 'delete':
+                    self.on_partition_list_delete_activate(widget)
+                    return True
+
+        return False
+
     def on_partition_list_treeview_popup_menu (self, widget):
         self.partman_popup(widget, None)
         return True
@@ -1989,6 +2327,13 @@ class Wizard(BaseFrontend):
         else:
             devpart = model[iterator][0]
             partition = model[iterator][1]
+            if 'id' not in partition:
+                dev = partition['device']
+            else:
+                dev = partition['parent']
+            for p in self.partition_bars.itervalues():
+                p.hide()
+            self.partition_bars[dev].show()
         for action in self.dbfilter.get_actions(devpart, partition):
             if action == 'new_label':
                 self.partition_button_new_label.set_sensitive(True)
@@ -2074,38 +2419,42 @@ class Wizard(BaseFrontend):
         self.dbfilter.undo()
 
     def update_partman (self, disk_cache, partition_cache, cache_order):
+        if self.partition_bars:
+            for p in self.partition_bars.itervalues():
+                self.segmented_bar_vbox.remove(p)
+                del p
+
         partition_tree_model = self.partition_list_treeview.get_model()
         if partition_tree_model is None:
             partition_tree_model = gtk.ListStore(gobject.TYPE_STRING,
                                                  gobject.TYPE_PYOBJECT)
-            for item in cache_order:
-                if item in disk_cache:
-                    partition_tree_model.append([item, disk_cache[item]])
-                else:
-                    partition_tree_model.append([item, partition_cache[item]])
 
-            # TODO cjwatson 2006-08-05: i18n
             cell_name = gtk.CellRendererText()
-            column_name = gtk.TreeViewColumn('Dispositivo', cell_name)
+            column_name = gtk.TreeViewColumn(
+                self.get_string('partition_column_device'), cell_name)
             column_name.set_cell_data_func(cell_name, self.partman_column_name)
             column_name.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
             self.partition_list_treeview.append_column(column_name)
 
             cell_type = gtk.CellRendererText()
-            column_type = gtk.TreeViewColumn('Tipo', cell_type)
+            column_type = gtk.TreeViewColumn(
+                self.get_string('partition_column_type'), cell_type)
             column_type.set_cell_data_func(cell_type, self.partman_column_type)
             column_type.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
             self.partition_list_treeview.append_column(column_type)
 
             cell_mountpoint = gtk.CellRendererText()
-            column_mountpoint = gtk.TreeViewColumn("Punto de montaje", cell_mountpoint)
+            column_mountpoint = gtk.TreeViewColumn(
+                self.get_string('partition_column_mountpoint'),
+                cell_mountpoint)
             column_mountpoint.set_cell_data_func(
                 cell_mountpoint, self.partman_column_mountpoint)
             column_mountpoint.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
             self.partition_list_treeview.append_column(column_mountpoint)
 
             cell_format = gtk.CellRendererToggle()
-            column_format = gtk.TreeViewColumn("¿Formatear?", cell_format)
+            column_format = gtk.TreeViewColumn(
+                self.get_string('partition_column_format'), cell_format)
             column_format.set_cell_data_func(
                 cell_format, self.partman_column_format)
             column_format.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
@@ -2114,13 +2463,15 @@ class Wizard(BaseFrontend):
             self.partition_list_treeview.append_column(column_format)
 
             cell_size = gtk.CellRendererText()
-            column_size = gtk.TreeViewColumn("Tamaño", cell_size)
+            column_size = gtk.TreeViewColumn(
+                self.get_string('partition_column_size'), cell_size)
             column_size.set_cell_data_func(cell_size, self.partman_column_size)
             column_size.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
             self.partition_list_treeview.append_column(column_size)
 
             cell_used = gtk.CellRendererText()
-            column_used = gtk.TreeViewColumn("Usado", cell_used)
+            column_used = gtk.TreeViewColumn(
+                self.get_string('partition_column_used'), cell_used)
             column_used.set_cell_data_func(cell_used, self.partman_column_used)
             column_used.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
             self.partition_list_treeview.append_column(column_used)
@@ -2133,12 +2484,47 @@ class Wizard(BaseFrontend):
         else:
             # TODO cjwatson 2006-08-31: inefficient, but will do for now
             partition_tree_model.clear()
-            for item in cache_order:
-                if item in disk_cache:
-                    partition_tree_model.append([item, disk_cache[item]])
-                else:
-                    partition_tree_model.append([item, partition_cache[item]])
 
+        partition_bar = None
+        dev = ''
+        total_size = {}
+        i = 0
+        if not self.segmented_bar_vbox:
+            sw = gtk.ScrolledWindow()
+            self.segmented_bar_vbox = gtk.VBox()
+            sw.add_with_viewport(self.segmented_bar_vbox)
+            sw.child.set_shadow_type(gtk.SHADOW_NONE)
+            sw.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_NEVER)
+            sw.show_all()
+            self.part_advanced_vbox.pack_start(sw, expand=False)
+            self.part_advanced_vbox.reorder_child(sw, 0)
+
+        for item in cache_order:
+            if item in disk_cache:
+                partition_tree_model.append([item, disk_cache[item]])
+                dev = disk_cache[item]['device']
+                self.partition_bars[dev] = segmented_bar.SegmentedBar()
+                partition_bar = self.partition_bars[dev]
+                self.segmented_bar_vbox.add(partition_bar)
+                total_size[dev] = 0.0
+            else:
+                partition_tree_model.append([item, partition_cache[item]])
+                size = int(partition_cache[item]['parted']['size'])
+                total_size[dev] = total_size[dev] + size
+                fs = partition_cache[item]['parted']['fs']
+                path = partition_cache[item]['parted']['path'].replace('/dev/','')
+                if fs == 'free':
+                    c = partition_bar.remainder_color
+                    # TODO evand 2008-07-27: i18n
+                    txt = 'Free space'
+                else:
+                    i = (i + 1) % len(self.auto_colors)
+                    c = self.auto_colors[i]
+                    txt = '%s (%s)' % (path, fs)
+                partition_bar.add_segment_rgb(txt, size, c)
+        sel = self.partition_list_treeview.get_selection()
+        if sel.count_selected_rows() == 0:
+            sel.select_path(0)
         # make sure we're on the advanced partitioning page
         self.set_current_page(self.steps.page_num(self.stepPartAdvanced))
 
@@ -2208,6 +2594,7 @@ class Wizard(BaseFrontend):
         # TODO evand 2007-01-11 I'm on the fence as to whether or not skipping
         # the page would be better than showing the user this error.
         if not choices:
+            # TODO cjwatson 2009-04-01: i18n
             msg = 'There were no users or operating systems suitable for ' \
                   'importing from.'
             liststore = gtk.ListStore(str)
@@ -2248,7 +2635,7 @@ class Wizard(BaseFrontend):
                     for item in choice['items']:
                         treestore.append(piter, [False, item])
                     choice['items'] = []
-            
+
             self.matreeview.set_model(treestore)
 
             renderer = gtk.CellRendererToggle()
@@ -2266,7 +2653,7 @@ class Wizard(BaseFrontend):
             self.matreeview.set_search_column(1)
 
         self.matreeview.show_all()
-        
+
         # Save the list so we can preserve state.
         self.ma_choices = choices
 
@@ -2288,6 +2675,27 @@ class Wizard(BaseFrontend):
     def get_verified_password(self):
         return self.verified_password.get_text()
 
+    def select_password(self):
+        # LP: 344402, the password should be selected if we just said "go back"
+        # to the weak password entry.
+        if self.password.get_text_length():
+            self.password.select_region(0, -1)
+            self.password.grab_focus()
+
+    def set_auto_login(self, value):
+        self.login_auto.set_active(value)
+
+    def get_auto_login(self):
+        return self.login_auto.get_active()
+
+    def set_encrypt_home(self, value):
+        if value:
+            self.login_encrypt.show()
+        self.login_encrypt.set_active(value)
+
+    def get_encrypt_home(self):
+        return self.login_encrypt.get_active()
+
     def username_error(self, msg):
         self.username_error_reason.set_text(msg)
         self.username_error_box.show()
@@ -2299,6 +2707,8 @@ class Wizard(BaseFrontend):
     def get_hostname (self):
         return self.hostname.get_text()
 
+    def set_hostname(self, value):
+        self.hostname.set_text(value)
 
     def set_summary_text (self, text):
         for child in self.ready_text.get_children():
@@ -2331,17 +2741,27 @@ class Wizard(BaseFrontend):
 
     def on_advanced_button_clicked (self, button):
         display = False
-        summary_device = self.get_summary_device()
         grub_en = self.get_grub()
-        
-        if summary_device is not None:
+        summary_device = self.get_summary_device()
+
+        if grub_en is not None:
             display = True
             self.bootloader_vbox.show()
+            self.grub_enable.set_active(grub_en)
+        else:
+            self.bootloader_vbox.hide()
+            summary_device = None
+
+        if summary_device is not None:
+            display = True
+            self.grub_device_label.show()
+            self.grub_device_entry.show()
             self.grub_device_entry.child.set_text(summary_device)
             self.grub_device_entry.set_sensitive(grub_en)
             self.grub_device_label.set_sensitive(grub_en)
         else:
-            self.bootloader_vbox.hide()
+            self.grub_device_label.hide()
+            self.grub_device_entry.hide()
 
         if self.popcon is not None:
             display = True
@@ -2366,7 +2786,8 @@ class Wizard(BaseFrontend):
         response = self.advanced_dialog.run()
         self.advanced_dialog.hide()
         if response == gtk.RESPONSE_OK:
-            self.set_summary_device(self.grub_device_entry.child.get_text())
+            if summary_device is not None:
+                self.set_summary_device(self.grub_device_entry.child.get_text())
             self.set_popcon(self.popcon_checkbutton.get_active())
             self.set_grub(self.grub_enable.get_active())
             self.set_proxy_host(self.proxy_host_entry.get_text())
@@ -2399,10 +2820,14 @@ class Wizard(BaseFrontend):
             self.translate_widget(self.next, self.locale)
             self.backup = True
             self.installing = False
-    
+
     def error_dialog (self, title, msg, fatal=True):
         # TODO: cancel button as well if capb backup
         self.run_automation_error_cmd()
+        # TODO cjwatson 2009-04-16: We need to call allow_change_step here
+        # to get a normal cursor, but that also enables the Back/Forward
+        # buttons. Cursor handling should be controllable independently.
+        saved_allowed_change_step = self.allowed_change_step
         self.allow_change_step(True)
         if self.current_page is not None:
             transient = self.live_installer
@@ -2414,12 +2839,17 @@ class Wizard(BaseFrontend):
                                    gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, msg)
         dialog.set_title(title)
         dialog.run()
+        self.allow_change_step(saved_allowed_change_step)
         dialog.hide()
         if fatal:
             self.return_to_partitioning()
 
     def question_dialog (self, title, msg, options, use_templates=True):
         self.run_automation_error_cmd()
+        # TODO cjwatson 2009-04-16: We need to call allow_change_step here
+        # to get a normal cursor, but that also enables the Back/Forward
+        # buttons. Cursor handling should be controllable independently.
+        saved_allowed_change_step = self.allowed_change_step
         self.allow_change_step(True)
         if self.current_page is not None:
             transient = self.live_installer
@@ -2449,6 +2879,7 @@ class Wizard(BaseFrontend):
         vbox.show_all()
         dialog.vbox.pack_start(vbox)
         response = dialog.run()
+        self.allow_change_step(saved_allowed_change_step)
         dialog.hide()
         if response < 0:
             # something other than a button press, probably destroyed
@@ -2721,115 +3152,5 @@ class TimezoneMap(object):
             self.frontend.allow_go_forward(self.location_selected is not None)
 
         return True
-
-class ResizeWidget(gtk.HPaned):
-    def __init__(self):
-        gtk.HPaned.__init__(self)
-        self.old_os = gtk.Label()
-        self.new_os = gtk.Label()
-        self.old_os.set_justify(gtk.JUSTIFY_CENTER)
-        self.new_os.set_justify(gtk.JUSTIFY_CENTER)
-        self.old_os.set_ellipsize(pango.ELLIPSIZE_END)
-        self.new_os.set_ellipsize(pango.ELLIPSIZE_END)
-        
-        color = gtk.gdk.color_parse('orange')
-        frame = gtk.Frame()
-        eb = gtk.EventBox()
-        eb.modify_bg(gtk.STATE_NORMAL, color)
-        eb.add(self.old_os)
-        frame.add(eb)
-        self.pack1(frame, shrink=False)
-        frame = gtk.Frame()
-        eb = gtk.EventBox()
-        eb.add(self.new_os)
-        frame.add(eb)
-        self.pack2(frame, shrink=False)
-        
-        self.part_size = 0
-        self.old_os_title = ''
-        self._set_new_os_title()
-        self.max_size = 0
-        self.min_size = 0
-
-        self.connect('expose_event', self.do_expose_event)
-
-    def do_expose_event(self, widget, event):
-        self._update_min()
-        self._update_max()
-
-        s1 = self.old_os.get_allocation().width
-        s2 = self.new_os.get_allocation().width
-        total = s1 + s2
-
-        percent = (float(s1) / float(total))
-        txt = '%s\n%.0f%% (%s)' % (self.old_os_title,
-            (percent * 100.0),
-            format_size(percent * self.part_size))
-        self.old_os.set_text(txt)
-        self.old_os.set_tooltip_text(txt)
-
-        percent = (float(s2) / float(total))
-        txt = '%s\n%.0f%% (%s)' % (self.new_os_title,
-            (percent * 100.0),
-            format_size(percent * self.part_size))
-        self.new_os.set_text(txt)
-        self.new_os.set_tooltip_text(txt)
-        
-    def set_min(self, size):
-        self.min_size = size
-
-    def set_max(self, size):
-        self.max_size = size
-
-    def set_part_size(self, size):
-        self.part_size = size
-
-    def _update_min(self):
-        total = self.new_os.get_allocation().width + self.old_os.get_allocation().width
-        tmp = self.min_size / self.part_size
-        pixels = int(tmp * total)
-        self.old_os.set_size_request(pixels, -1)
-
-    def _update_max(self):
-        total = self.new_os.get_allocation().width + self.old_os.get_allocation().width
-        tmp = ((self.part_size - self.max_size) / self.part_size)
-        pixels = int(tmp * total)
-        self.new_os.set_size_request(pixels, -1)
-
-    def _set_new_os_title(self):
-        self.new_os_title = ''
-        fp = None
-        try:
-            fp = open('/cdrom/.disk/info')
-            line = fp.readline()
-            if line:
-                self.new_os_title = ' '.join(line.split()[:2])
-        except:
-            syslog.syslog(syslog.LOG_ERR,
-                "Unable to determine the distribution name from /cdrom/.disk/info")
-        finally:
-            if fp is not None:
-                fp.close()
-        if not self.new_os_title:
-            self.new_os_title = 'Ubuntu'
-
-    def set_device(self, dev):
-        '''Sets the title of the old partition to the name found in os_prober.
-           On failure, sets the title to the device name or the empty string.'''
-        if dev:
-            self.old_os_title = find_in_os_prober(dev)
-        if dev and not self.old_os_title:
-            self.old_os_title = dev
-        elif not self.old_os_title:
-            self.old_os_title = ''
-            
-    def get_value(self):
-        '''Returns the percent the old partition is of the maximum size it can be.'''
-        s1 = self.old_os.get_allocation().width
-        s2 = self.new_os.get_allocation().width
-        totalwidth = s1 + s2
-        percentwidth = float(s1) / float(totalwidth)
-        percentpart = percentwidth * self.part_size
-        return int((percentpart / self.max_size) * 100)
 
 # vim:ai:et:sts=4:tw=80:sw=4:

@@ -5,6 +5,7 @@
 . /usr/share/debconf/confmodule
 
 if [ "$1" ]; then
+	export LANG=C # avoid locale errors from perl
 	ROOT="$1"
 	chroot=chroot
 	log='log-output -t user-setup'
@@ -22,31 +23,30 @@ fi
 # only called when first installing the system, when root has no
 # password at all, so that should be an unnecessary precaution).
 #
-# Pass in three arguments: the user, the password, and 'true' if the
-# password has been pre-crypted (by preseeding).
+# Pass in four arguments: the user, the password, 'true' if the
+# password has been pre-crypted (by preseeding), and a 'true' if
+# the home directory is encrypted
 setpassword () {
-	local USER
-	local PASSWD
-	local PRECRYPTED
+	local USER PASSWD OPTS
 	USER="$1"
 	PASSWD="$2"
 	if [ "$3" = true ]; then
-		PRECRYPTED=-e
+		OPTS=-e
 	fi
-	$chroot $ROOT chpasswd $PRECRYPTED -m <<EOF
+	$chroot $ROOT chpasswd $OPTS <<EOF
 $USER:$PASSWD
 EOF
-}
-
-add_to_aliases () {
-	if ! grep -qi ^root: $ROOT/etc/aliases 2>/dev/null; then
-		cat <<EOF >>$ROOT/etc/aliases
-# Added by installer for initial user
-root:	$1
+	if [ "$4" = true ]; then
+		local UNWRAPPED_PASSPHRASE_FILE WRAPPED_PASSPHRASE_FILE MOUNT_PASSPHRASE
+		UNWRAPPED_PASSPHRASE_FILE=/dev/shm/.ecryptfs-$USER
+		WRAPPED_PASSPHRASE_FILE=/home/$USER/.ecryptfs/wrapped-passphrase
+		MOUNT_PASSPHRASE=$($chroot $ROOT cat $UNWRAPPED_PASSPHRASE_FILE)
+		$chroot $ROOT ecryptfs-wrap-passphrase $WRAPPED_PASSPHRASE_FILE - <<EOF
+$MOUNT_PASSPHRASE
+$PASSWD
 EOF
-		if [ -x $ROOT/usr/bin/newaliases ]; then
-			$log $chroot $ROOT /usr/bin/newaliases || true
-		fi
+		$chroot $ROOT rm -f $UNWRAPPED_PASSPHRASE_FILE
+		$chroot $ROOT chown $USER:$USER $WRAPPED_PASSPHRASE_FILE
 	fi
 }
 
@@ -106,6 +106,22 @@ if [ "$RET" = true ] && ! is_system_user; then
 		UIDOPT=
 	fi
 
+	ENCRYPT_HOME="false"
+	ENCRYPT_HOME_OPT=
+	db_get user-setup/encrypt-home
+	if [ "$RET" = true ]; then
+		ENCRYPT_HOME="true"
+		ENCRYPT_HOME_OPT="--encrypt-home"
+		if type anna-install >/dev/null 2>&1 && [ -d /lib/debian-installer ]; then
+			ANNA_QUIET=1 DEBIAN_FRONTEND=none $log anna-install crypto-modules || true
+			depmod -a >/dev/null 2>&1 || true
+		fi
+		for module in aes cbc ecb; do
+			modprobe -q "$module" || true
+		done
+	fi
+
+
 	# Add the user to the database, using adduser in noninteractive
 	# mode.
 	db_get passwd/username
@@ -115,10 +131,17 @@ if [ "$RET" = true ] && ! is_system_user; then
 	HOME_EXISTED=
 	if [ -d "$ROOT/home/$USER" ]; then
 		HOME_EXISTED=1
+		# user-setup-ask shouldn't have allowed this, but for safety:
+		ENCRYPT_HOME="false"
+		ENCRYPT_HOME_OPT=
 	fi
 
+	if [ -n "$ENCRYPT_HOME_OPT" ]; then
+		$log $chroot $ROOT mount -t sysfs sysfs /sys
+		$log $chroot $ROOT mount -t tmpfs tmpfs /dev/shm
+	fi
 	if [ -x $ROOT/usr/sbin/adduser ]; then
-		$log $chroot $ROOT adduser --disabled-password --gecos "$RET" $UIDOPT "$USER" >/dev/null || true
+		$log $chroot $ROOT adduser --disabled-password --gecos "$RET" $UIDOPT $ENCRYPT_HOME_OPT "$USER" >/dev/null || true
 	else
 		$log $chroot $ROOT useradd -c "$RET" -m "$USER" $UIDOPT >/dev/null || true
 	fi
@@ -127,7 +150,11 @@ if [ "$RET" = true ] && ! is_system_user; then
 	db_set passwd/user-password-crypted ''
 	db_set passwd/user-password ''
 	db_set passwd/user-password-again ''
-	setpassword "$USER" "$USER_PW" "$USER_PW_CRYPTED"
+	setpassword "$USER" "$USER_PW" "$USER_PW_CRYPTED" "$ENCRYPT_HOME"
+	if [ -n "$ENCRYPT_HOME_OPT" ]; then
+		$log $chroot $ROOT umount /sys
+		$log $chroot $ROOT umount /dev/shm
+	fi
 
 	if [ "$HOME_EXISTED" ]; then
 		# The user's home directory already existed before we called
@@ -153,7 +180,41 @@ if [ "$RET" = true ] && ! is_system_user; then
 		for group in $RET; do
 			$log $chroot $ROOT adduser "$USER" $group >/dev/null 2>&1 || true
 		done
-		add_to_aliases "$USER"
+ 
+ 		# Configure desktop auto-login if instructed by preseeding
+ 		db_get passwd/auto-login
+ 		if [ "$RET" = true ]; then
+			db_get passwd/auto-login-backup
+			BACKUP="${RET:+.$RET}"
+
+			# chroot needed to handle symlinks correctly
+			if $chroot $ROOT [ -f /etc/gdm/gdm-cdd.conf ]; then
+				GDMCONF=/etc/gdm/gdm-cdd.conf
+			else
+				GDMCONF=/etc/gdm/gdm.conf
+			fi
+	 
+			# chroot needed to handle symlinks correctly
+			if $chroot $ROOT [ -f "$GDMCONF" ]; then
+				# Configure GDM autologin
+				$log $chroot $ROOT sed -i$BACKUP \
+					-e "s/^AutomaticLoginEnable=.*\$/AutomaticLoginEnable=true/" \
+					-e "s/^AutomaticLogin=.*\$/AutomaticLogin=$USER/" \
+					-e "s/^TimedLoginEnable=.*\$/TimedLoginEnable=true/" \
+					-e "s/^TimedLogin=.*\$/TimedLogin=$USER/" \
+					-e "s/^TimedLoginDelay=.*\$/TimedLoginDelay=10/" \
+					"$GDMCONF"
+			fi
+	 
+			if $chroot $ROOT [ -f /etc/kde4/kdm/kdmrc ]; then
+				# Configure KDM autologin
+				$log $chroot $ROOT sed -i$BACKUP -r \
+					-e "s/^#?AutoLoginEnable=.*\$/AutoLoginEnable=true/" \
+					-e "s/^#?AutoLoginUser=.*\$/AutoLoginUser=$USER/" \
+					-e "s/^#?AutoReLogin=.*\$/AutoReLogin=true/" \
+					/etc/kde4/kdm/kdmrc
+			fi
+		fi
 	fi
 
 	db_get passwd/root-login
@@ -181,9 +242,10 @@ EOF
 		# installed and the alternative is registered.
 		if $chroot $ROOT update-alternatives --display libgksu-gconf-defaults >/dev/null 2>&1; then
 			$log $chroot $ROOT update-alternatives --set libgksu-gconf-defaults /usr/share/libgksu/debian/gconf-defaults.libgksu-sudo
-			$log $chroot $ROOT update-gconf-defaults
+			$log $chroot $ROOT update-gconf-defaults || true
 		fi
 	fi
+
 else
 	# Just in case, clear any preseeded user password from the database
 	# anyway.

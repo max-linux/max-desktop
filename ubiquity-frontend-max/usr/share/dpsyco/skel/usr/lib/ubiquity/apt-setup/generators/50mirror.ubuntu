@@ -19,18 +19,12 @@ if [ -e /cdrom/.disk/base_installable ] || [ "$OVERRIDE_BASE_INSTALLABLE" ]; the
 		exit 1
 	fi
 
-	# Default to false if no network selected in netcfg
-	if db_get netcfg/dhcp_options && \
-	   [ "$RET" = "Do not configure the network at this time" ]; then
-		use_mirror=false
-	fi
-
 	# Set default if no value (see Debian mirror generator)
 	db_get apt-setup/use_mirror
 	[ "$RET" ] || db_set apt-setup/use_mirror true 
 
 	# Text is variable for Debian
-	db_metaget apt-mirror/use/netinst_old description
+	db_metaget apt-setup/use/netinst_old description
 	db_subst apt-setup/use_mirror EXPLANATION "$RET"
 
 	db_input medium apt-setup/use_mirror || [ $? -eq 30 ]
@@ -65,6 +59,12 @@ while :; do
 		4)
 			db_input low apt-setup/backports || true
 		;;
+		5)
+			if (db_get apt-setup/restricted && [ "$RET" = true ]) || \
+			   (db_get apt-setup/multiverse && [ "$RET" = true ]); then
+				db_input low apt-setup/partner || true
+			fi
+		;;
 		*)
 			break
 		;;
@@ -81,9 +81,19 @@ if [ $STATE -eq 0 ]; then
 fi
 
 dists="main"
+alldists="main"
 db_get apt-setup/restricted
 if [ "$RET" = true ]; then
 	dists="$dists restricted"
+	alldists="$alldists restricted"
+else
+	# Remove restricted from any previous cdrom entry if necessary.
+	for file in $ROOT/etc/apt/sources.list.base \
+		    $ROOT/etc/apt/sources.list.new; do
+		if [ -e "$file" ]; then
+			sed -i '/deb cdrom:/s/ restricted//g' "$file"
+		fi
+	done
 fi
 
 db_get mirror/protocol
@@ -95,7 +105,7 @@ hostname="$RET"
 db_get mirror/$protocol/directory
 directory="/${RET#/}"
 
-# MaX 4.0 configure main mirror
+# MaX 5.0 configure main mirror
 hostname=archive.ubuntu.com
 protocol=http
 
@@ -147,6 +157,7 @@ fi
 # Even if universe isn't enabled, we write example lines for it.
 echo >> $file
 if db_get apt-setup/universe && [ "$RET" = true ]; then
+	alldists="$alldists universe"
 	COMMENT=
 else
 	cat >> $file <<EOF
@@ -157,10 +168,8 @@ EOF
 fi
 cat >> $file <<EOF
 ## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
-## team, and may not be under a free licence. Please satisfy yourself as to
-## your rights to use the software. Also, please note that software in
-## universe WILL NOT receive any review or updates from the Ubuntu security
-## team.
+## team. Also, please note that software in universe WILL NOT receive any
+## review or updates from the Ubuntu security team.
 ${COMMENT}deb $protocol://$hostname$directory $codename universe
 ${COMMENT}#deb-src $protocol://$srchostname$srcdirectory $codename universe
 ${COMMENT}deb $protocol://$hostname$directory $codename-updates universe
@@ -175,6 +184,7 @@ fi
 
 # Multiverse is different, don't write anything unless enabled.
 if db_get apt-setup/multiverse && [ "$RET" = true ]; then
+	alldists="$alldists multiverse"
 	cat >> $file <<EOF
 
 ## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu 
@@ -218,15 +228,23 @@ ${COMMENT}#deb-src $protocol://$srchostname$srcdirectory $codename-backports mai
 EOF
 
 if (db_get apt-setup/restricted && [ "$RET" = true ]) || \
-   (db_get apt-setup/multiverse && [ "$RET" = true ]); then
-	cat >> $file <<EOF
-
+   (db_get apt-setup/multiverse && [ "$RET" = true ]) || \
+   (db_get apt-setup/partner && [ "$RET" = true ]); then
+	echo >> $file
+	if db_get apt-setup/partner && [ "$RET" = true ]; then
+		COMMENT=
+	else
+		cat >> $file <<EOF
 ## Uncomment the following two lines to add software from Canonical's
-## 'partner' repository. This software is not part of Ubuntu, but is
-## offered by Canonical and the respective vendors as a service to Ubuntu
-## users.
-# deb http://archive.canonical.com/ubuntu $codename partner
-# deb-src http://archive.canonical.com/ubuntu $codename partner
+## 'partner' repository.
+EOF
+		COMMENT='# '
+	fi
+	cat >> $file <<EOF
+## This software is not part of Ubuntu, but is offered by Canonical and the
+## respective vendors as a service to Ubuntu users.
+${COMMENT}deb http://archive.canonical.com/ubuntu $codename partner
+${COMMENT}#deb-src http://archive.canonical.com/ubuntu $codename partner
 EOF
 fi
 

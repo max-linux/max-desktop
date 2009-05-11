@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (C) 2005 Javier Carranza and others for Guadalinex
-# Copyright (C) 2005, 2006 Canonical Ltd.
+# Copyright (C) 2005, 2006, 2007, 2008, 2009 Canonical Ltd.
 # Copyright (C) 2007 Mario Limonciello
 #
 # This program is free software; you can redistribute it and/or modify
@@ -36,6 +36,8 @@ import traceback
 import syslog
 import gzip
 import debconf
+import warnings
+warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
 import apt_pkg
 from apt.cache import Cache
 from apt.progress import FetchProgress, InstallProgress
@@ -253,16 +255,10 @@ class DebconfInstallProgress(InstallProgress):
             self.started = False
 
 class InstallStepError(Exception):
-    """Raised when an install step fails.
-
-    Attributes:
-        message -- message returned with exception
-
-    """
+    """Raised when an install step fails."""
 
     def __init__(self, message):
         Exception.__init__(self, message)
-        self.message = message
 
 class Install:
 
@@ -280,6 +276,21 @@ class Install:
         self.target = '/target'
         self.kernel_version = platform.release()
         self.db = debconf.Debconf()
+
+        self.select_language_packs()
+        use_restricted = True
+        try:
+            if self.db.get('apt-setup/restricted') == 'false':
+                use_restricted = False
+        except debconf.DebconfError:
+            pass
+        if not use_restricted:
+            self.restricted_cache = Cache()
+        self.blacklist = {}
+        if self.db.get('ubiquity/install/generate-blacklist') == 'true':
+            self.db.progress('START', 0, 100, 'ubiquity/install/title')
+            self.db.progress('INFO', 'ubiquity/install/blacklist')
+            self.generate_blacklist()
 
         apt_pkg.InitConfig()
         apt_pkg.Config.Set("Dir", "/target")
@@ -415,6 +426,11 @@ class Install:
             self.db.progress('INFO', 'ubiquity/install/hardware')
             self.configure_hardware()
 
+            # Tell apt-install to install packages directly from now on.
+            apt_install_direct = open('/var/lib/ubiquity/apt-install-direct',
+                                      'w')
+            apt_install_direct.close()
+
             self.db.progress('SET', 93)
             self.db.progress('REGION', 93, 94)
             self.db.progress('INFO', 'ubiquity/install/bootloader')
@@ -435,6 +451,9 @@ class Install:
             # MaX exec apt-get autoremove --purge
             self.do_autoremove()
 
+            self.remove_broken_cdrom()
+
+            self.copy_dcd()
             self.db.progress('SET', 99)
             self.db.progress('INFO', 'ubiquity/install/log_files')
             self.copy_logs()
@@ -449,6 +468,180 @@ class Install:
             except:
                 pass
 
+
+    def copy_file(self, sourcepath, targetpath, md5_check):
+        sourcefh = None
+        targetfh = None
+        try:
+            while 1:
+                sourcefh = open(sourcepath, 'rb')
+                targetfh = open(targetpath, 'wb')
+                if md5_check:
+                    sourcehash = md5()
+                while 1:
+                    buf = sourcefh.read(16 * 1024)
+                    if not buf:
+                        break
+                    targetfh.write(buf)
+                    if md5_check:
+                        sourcehash.update(buf)
+
+                if not md5_check:
+                    break
+                targetfh.close()
+                targetfh = open(targetpath, 'rb')
+                if md5_check:
+                    targethash = md5()
+                while 1:
+                    buf = targetfh.read(16 * 1024)
+                    if not buf:
+                        break
+                    targethash.update(buf)
+                if targethash.digest() != sourcehash.digest():
+                    if targetfh:
+                        targetfh.close()
+                    if sourcefh:
+                        sourcefh.close()
+                    error_template = 'ubiquity/install/copying_error/md5'
+                    self.db.subst(error_template, 'FILE', targetpath)
+                    self.db.input('critical', error_template)
+                    self.db.go()
+                    response = self.db.get(error_template)
+                    if response == 'skip':
+                        break
+                    elif response == 'abort':
+                        syslog.syslog(syslog.LOG_ERR,
+                            'MD5 failure on %s' % targetpath)
+                        sys.exit(3)
+                    elif response == 'retry':
+                        pass
+                else:
+                    break
+        finally:
+            if targetfh:
+                targetfh.close()
+            if sourcefh:
+                sourcefh.close()
+
+    def find_cd_kernel(self):
+        """Find the boot kernel on the CD, if possible."""
+
+        release_bits = os.uname()[2].split('-')
+        if len(release_bits) >= 3:
+            subarch = release_bits[2]
+        else:
+            subarch = None
+
+        for prefix in ('vmlinux', 'vmlinuz'):
+            kernel = os.path.join('/cdrom/casper', prefix)
+            if os.path.exists(kernel):
+                return kernel
+
+            if subarch:
+                kernel = os.path.join('/cdrom/casper', subarch, prefix)
+                if os.path.exists(kernel):
+                    return kernel
+
+                kernel = os.path.join('/cdrom/casper',
+                                      '%s-%s' % (prefix, subarch))
+                if os.path.exists(kernel):
+                    return kernel
+
+        return None
+
+
+    def archdetect(self):
+        archdetect = subprocess.Popen(['archdetect'], stdout=subprocess.PIPE)
+        answer = archdetect.communicate()[0].strip()
+        try:
+            return answer.split('/', 1)
+        except ValueError:
+            return answer, ''
+
+
+    def generate_blacklist(self):
+        if (os.path.exists("/cdrom/casper/filesystem.manifest-desktop") and
+            os.path.exists("/cdrom/casper/filesystem.manifest")):
+            desktop_packages = set()
+            manifest = open("/cdrom/casper/filesystem.manifest-desktop")
+            for line in manifest:
+                if line.strip() != '' and not line.startswith('#'):
+                    desktop_packages.add(line.split()[0])
+            manifest.close()
+            live_packages = set()
+            manifest = open("/cdrom/casper/filesystem.manifest")
+            for line in manifest:
+                if line.strip() != '' and not line.startswith('#'):
+                    live_packages.add(line.split()[0])
+            manifest.close()
+            difference = live_packages - desktop_packages
+        else:
+            difference = set()
+
+        cache = Cache()
+
+        use_restricted = True
+        try:
+            if self.db.get('apt-setup/restricted') == 'false':
+                use_restricted = False
+        except debconf.DebconfError:
+            pass
+        if not use_restricted:
+            for pkg in cache.keys():
+                if (cache[pkg].isInstalled and
+                    cache[pkg].section.startswith('restricted/')):
+                    difference.add(pkg)
+
+        # Keep packages we explicitly installed.
+        keep = self.query_recorded_installed()
+        arch, subarch = self.archdetect()
+
+        # Less than ideal.  Since we cannot know which bootloader we'll need
+        # at file copy time, we should figure out why grub still fails when
+        # apt-install-direct is present during configure_bootloader (code
+        # removed).
+        if arch in ('amd64', 'i386', 'lpia'):
+            keep.add('grub')
+            keep.add('grub-pc')
+        elif (arch == 'armel' and
+              subarch in ('imx51', 'iop32x', 'ixp4xx', 'orion5x')):
+            keep.add('flash-kernel')
+        elif arch == 'powerpc' and subarch != 'ps3':
+            keep.add('yaboot')
+            keep.add('hfsutils')
+
+        difference -= self.expand_dependencies_simple(cache, keep, difference)
+
+        if len(difference) == 0:
+            del cache
+            self.blacklist = {}
+            return
+ 
+        confirmed_remove = set()
+        for pkg in sorted(difference):
+            if pkg in confirmed_remove:
+                continue
+            would_remove = self.get_remove_list(cache, [pkg], recursive=True)
+            if would_remove <= difference:
+                confirmed_remove |= would_remove
+                # Leave these marked for removal in the apt cache to speed
+                # up further calculations.
+            else:
+                for removedpkg in would_remove:
+                    cachedpkg = self.get_cache_pkg(cache, removedpkg)
+                    cachedpkg.markKeep()
+        difference = confirmed_remove
+        difference = set(filter(
+            lambda x: not os.path.exists('/var/lib/dpkg/info/%s.prerm' % x),
+            difference))
+        cmd = ['dpkg', '-L']
+        cmd.extend(difference)
+        subp = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        res = subp.communicate()[0].splitlines()
+        u = {}
+        for x in res:
+            u[x] = 1
+        self.blacklist = u
 
     def copy_all(self):
         """Core copy process. This is the most important step of this
@@ -480,10 +673,12 @@ class Install:
 
             for name in dirnames + filenames:
                 relpath = os.path.join(sourcepath, name)
-                fqpath = os.path.join(self.source, dirpath, name)
-
-                total_size += os.lstat(fqpath).st_size
-                files.append(relpath)
+                fqpath = os.path.join(dirpath, name)
+                # /etc/fstab was legitimately created by partman, and
+                # shouldn't be copied again.
+                if relpath != "etc/fstab":
+                    total_size += os.lstat(fqpath).st_size
+                    files.append(relpath)
 
         self.db.progress('SET', 10)
         self.db.progress('INFO', 'ubiquity/install/copying')
@@ -515,9 +710,10 @@ class Install:
             st = os.lstat(sourcepath)
             mode = stat.S_IMODE(st.st_mode)
             if stat.S_ISLNK(st.st_mode):
-                if not os.path.lexists(targetpath):
-                    linkto = os.readlink(sourcepath)
-                    os.symlink(linkto, targetpath)
+                if os.path.lexists(targetpath):
+                    os.unlink(targetpath)
+                linkto = os.readlink(sourcepath)
+                os.symlink(linkto, targetpath)
             elif stat.S_ISDIR(st.st_mode):
                 if not os.path.isdir(targetpath):
                     os.mkdir(targetpath, mode)
@@ -530,59 +726,12 @@ class Install:
             elif stat.S_ISSOCK(st.st_mode):
                 os.mknod(targetpath, stat.S_IFSOCK | mode)
             elif stat.S_ISREG(st.st_mode):
-                if not os.path.exists(targetpath):
-                    sourcefh = None
-                    targetfh = None
-                    try:
-                        while 1:
-                            sourcefh = open(sourcepath, 'rb')
-                            targetfh = open(targetpath, 'wb')
-                            if md5_check:
-                                sourcehash = md5()
-                            while 1:
-                                buf = sourcefh.read(16 * 1024)
-                                if not buf:
-                                    break
-                                targetfh.write(buf)
-                                if md5_check:
-                                    sourcehash.update(buf)
-
-                            if not md5_check:
-                                break
-                            targetfh.close()
-                            targetfh = open(targetpath, 'rb')
-                            if md5_check:
-                                targethash = md5()
-                            while 1:
-                                buf = targetfh.read(16 * 1024)
-                                if not buf:
-                                    break
-                                targethash.update(buf)
-                            if targethash.digest() != sourcehash.digest():
-                                if targetfh:
-                                    targetfh.close()
-                                if sourcefh:
-                                    sourcefh.close()
-                                error_template = 'ubiquity/install/copying_error/md5'
-                                self.db.subst(error_template, 'FILE', targetpath)
-                                self.db.input('critical', error_template)
-                                self.db.go()
-                                response = self.db.get(error_template)
-                                if response == 'skip':
-                                    break
-                                elif response == 'abort':
-                                    syslog.syslog(syslog.LOG_ERR,
-                                        'MD5 failure on %s' % targetpath)
-                                    sys.exit(3)
-                                elif response == 'retry':
-                                    pass
-                            else:
-                                break
-                    finally:
-                        if targetfh:
-                            targetfh.close()
-                        if sourcefh:
-                            sourcefh.close()
+                if '/%s' % path in self.blacklist:
+                    syslog.syslog('Not copying %s' % path)
+                    continue
+                if os.path.exists(targetpath):
+                    os.unlink(targetpath)
+                self.copy_file(sourcepath, targetpath, md5_check)
 
             copied_size += st.st_size
             os.lchown(targetpath, st.st_uid, st.st_gid)
@@ -627,11 +776,36 @@ class Install:
                 # about this failing, but I really don't care. Ignore it.
                 pass
 
+        # Try some possible locations for the kernel we used to boot. This
+        # lets us save a couple of megabytes of CD space.
+        bootdir = os.path.join(self.target, 'boot')
+        kernel = self.find_cd_kernel()
+        if kernel:
+            prefix = os.path.basename(kernel).split('-', 1)[0]
+            release = os.uname()[2]
+            target_kernel = os.path.join(bootdir, '%s-%s' % (prefix, release))
+            if os.path.exists(target_kernel):
+                os.unlink(target_kernel)
+            self.copy_file(kernel, target_kernel, md5_check)
+            os.lchown(target_kernel, 0, 0)
+            os.chmod(target_kernel, 0644)
+            st = os.lstat(kernel)
+            os.utime(target_kernel, (st.st_atime, st.st_mtime))
+
         os.umask(old_umask)
 
         self.db.progress('SET', 100)
         self.db.progress('STOP')
 
+
+    def copy_dcd(self):
+        """Copy the Distribution Channel Descriptor (DCD) file into the
+        installed system."""
+
+        dcd = '/cdrom/.disk/ubuntu_dist_channel'
+        if os.path.exists(dcd):
+            shutil.copy(dcd,
+                os.path.join(self.target, 'var/lib/ubuntu_dist_channel'))
 
     def copy_logs(self):
         """copy log files into installed system."""
@@ -644,10 +818,11 @@ class Install:
                          '/var/log/installer/version', '/var/log/casper.log'):
             target_log_file = os.path.join(target_dir,
                                            os.path.basename(log_file))
-            if not misc.execute('cp', '-a', log_file, target_log_file):
-                syslog.syslog(syslog.LOG_ERR,
-                              'Failed to copy installation log file')
-            os.chmod(target_log_file, stat.S_IRUSR | stat.S_IWUSR)
+            if os.path.isfile(log_file):
+                if not misc.execute('cp', '-a', log_file, target_log_file):
+                    syslog.syslog(syslog.LOG_ERR,
+                                  'Failed to copy installation log file')
+                os.chmod(target_log_file, stat.S_IRUSR | stat.S_IWUSR)
         try:
             status = open(os.path.join(self.target, 'var/lib/dpkg/status'))
             status_gz = gzip.open(os.path.join(target_dir,
@@ -665,7 +840,7 @@ class Install:
             if self.db.get('oem-config/enable') == 'true':
                 oem_id = self.db.get('oem-config/id')
                 oem_id_file = open(
-                    os.path.join(self.target, 'var/log/installer/oem-id'))
+                    os.path.join(self.target, 'var/log/installer/oem-id'), 'w')
                 print >>oem_id_file, oem_id
                 oem_id_file.close()
         except (debconf.DebconfError, IOError):
@@ -717,7 +892,10 @@ class Install:
             mountpoint = '/var/lib/ubiquity/%s' % sysloop
         if not os.path.isdir(mountpoint):
             os.mkdir(mountpoint)
-        misc.execute('mount', dev, mountpoint)
+        if not misc.execute('mount', dev, mountpoint):
+            misc.execute('losetup', '-d', dev)
+            misc.execute('mount', '-o', 'loop', fsfile, mountpoint)
+            dev = 'unused'
 
         return (dev, mountpoint)
 
@@ -748,7 +926,8 @@ class Install:
             # Manual detection on non-unionfs systems
             fsfiles = ['/cdrom/casper/filesystem.cloop',
                        '/cdrom/casper/filesystem.squashfs',
-                       '/cdrom/META/META.squashfs']
+                       '/cdrom/META/META.squashfs',
+                       '/live/image/live/filesystem.squashfs']
 
             for fsfile in fsfiles:
                 if fsfile != '' and os.path.isfile(fsfile):
@@ -798,7 +977,8 @@ class Install:
             if not misc.execute('umount', mountpoint):
                 raise InstallStepError("Failed to unmount %s" % mountpoint)
         for dev in devs:
-            if dev != '' and not misc.execute('losetup', '-d', dev):
+            if (dev != '' and dev != 'unused' and
+                not misc.execute('losetup', '-d', dev)):
                 raise InstallStepError(
                     "Failed to detach loopback device %s" % dev)
 
@@ -962,6 +1142,15 @@ exit 0"""
             }""")
         apt_conf_nmc.close()
 
+        # This will be reindexed after installation based on the full
+        # installed sources.list.
+        try:
+            shutil.rmtree(
+                os.path.join(self.target, 'var/lib/apt-xapian-index'),
+                ignore_errors=True)
+        except OSError:
+            pass
+
         dbfilter = apt_setup.AptSetup(None, self.db)
         ret = dbfilter.run_command(auto_process=True)
         if ret != 0:
@@ -1021,7 +1210,16 @@ exit 0"""
                 assert cache._depcache.BrokenCount == 0
 
 
-    def install_language_packs(self):
+    def select_language_packs(self):
+        try:
+            keep_packages = self.db.get('ubiquity/keep-installed')
+            keep_packages = keep_packages.replace(',', '').split()
+            syslog.syslog('keeping packages due to preseeding: %s' %
+                          ' '.join(keep_packages))
+            self.record_installed(keep_packages)
+        except debconf.DebconfError:
+            pass
+
         langpacks = []
         try:
             langpack_db = self.db.get('pkgsel/language-packs')
@@ -1060,7 +1258,42 @@ exit 0"""
             # More extensive language support packages.
             to_install.append('language-support-%s' % lp)
 
-        self.do_install(to_install, langpacks=True)
+        # Filter the list of language packs to include only language packs
+        # that exist in the live filesystem's apt cache, so that we can tell
+        # the difference between "no such language pack" and "language pack
+        # not retrievable given apt configuration in /target" later on.
+        cache = Cache()
+        to_install = [lp for lp in to_install
+                         if self.get_cache_pkg(cache, lp) is not None]
+        del cache
+
+        self.record_installed(to_install)
+        self.langpacks = to_install
+
+    def install_language_packs(self):
+        self.do_install(self.langpacks)
+
+        cache = Cache()
+        incomplete = False
+        for pkg in self.langpacks:
+            cachedpkg = self.get_cache_pkg(cache, pkg)
+            if cachedpkg is None or not cachedpkg.isInstalled:
+                incomplete = True
+                break
+        if incomplete:
+            language_support_dir = \
+                os.path.join(self.target, 'usr/share/language-support')
+            update_notifier_dir = \
+                os.path.join(self.target, 'var/lib/update-notifier/user.d')
+            for note in ('incomplete-language-support-gnome.note',
+                         'incomplete-language-support-qt.note'):
+                notepath = os.path.join(language_support_dir, note)
+                if os.path.exists(notepath):
+                    if not os.path.exists(update_notifier_dir):
+                        os.makedirs(update_notifier_dir)
+                    shutil.copy(notepath,
+                                os.path.join(update_notifier_dir, note))
+                    break
 
 
     def configure_timezone(self):
@@ -1115,6 +1348,10 @@ exit 0"""
         for line in swaps:
             words = line.split()
             if words[1] != 'partition':
+                continue
+            if not os.path.exists(words[0]):
+                continue
+            if words[0].startswith('/dev/ramzswap'):
                 continue
             size = int(words[2])
             if size > biggest_size:
@@ -1220,6 +1457,7 @@ exit 0"""
         packages = ['linux-image-' + self.kernel_version,
                     'linux-restricted-modules-' + self.kernel_version,
                     'usplash',
+                    'splashy',
                     'popularity-contest',
                     'libpaper1',
                     'ssl-cert']
@@ -1344,7 +1582,7 @@ exit 0"""
         print >>hosts, textwrap.dedent("""\
 
             # The following lines are desirable for IPv6 capable hosts
-            ::1     ip6-localhost ip6-loopback
+            ::1     localhost ip6-localhost ip6-loopback
             fe00::0 ip6-localnet
             ff00::0 ip6-mcastprefix
             ff02::1 ip6-allnodes
@@ -1416,25 +1654,32 @@ exit 0"""
             misc.execute('mount', '--bind', '/proc', self.target + '/proc')
             misc.execute('mount', '--bind', '/dev', self.target + '/dev')
 
-            archdetect = subprocess.Popen(['archdetect'], stdout=subprocess.PIPE)
-            subarch = archdetect.communicate()[0].strip()
+            arch, subarch = self.archdetect()
 
             try:
-                if subarch.startswith('amd64/') or subarch.startswith('i386/'):
+                if arch in ('amd64', 'i386', 'lpia'):
                     from ubiquity.components import grubinstaller
                     dbfilter = grubinstaller.GrubInstaller(None)
                     ret = dbfilter.run_command(auto_process=True)
                     if ret != 0:
                         raise InstallStepError(
                             "GrubInstaller failed with code %d" % ret)
-                elif subarch == 'powerpc/ps3':
+                elif (arch == 'armel' and
+                      subarch in ('imx51', 'iop32x', 'ixp4xx', 'orion5x')):
+                    from ubiquity.components import flash_kernel
+                    dbfilter = flash_kernel.FlashKernel(None)
+                    ret = dbfilter.run_command(auto_process=True)
+                    if ret != 0:
+                        raise InstallStepError(
+                            "FlashKernel failed with code %d" % ret)
+                elif arch == 'powerpc' and subarch == 'ps3':
                     from ubiquity.components import kbootinstaller
                     dbfilter = kbootinstaller.KbootInstaller(None)
                     ret = dbfilter.run_command(auto_process=True)
                     if ret != 0:
                         raise InstallStepError(
                             "KbootInstaller failed with code %d" % ret)
-                elif subarch.startswith('powerpc/'):
+                elif arch == 'powerpc':
                     from ubiquity.components import yabootinstaller
                     dbfilter = yabootinstaller.YabootInstaller(None)
                     ret = dbfilter.run_command(auto_process=True)
@@ -1451,27 +1696,27 @@ exit 0"""
 
 
     def broken_packages(self, cache):
+        expect_count = cache._depcache.BrokenCount
+        count = 0
         brokenpkgs = set()
         for pkg in cache.keys():
             try:
                 if cache._depcache.IsInstBroken(cache._cache[pkg]):
                     brokenpkgs.add(pkg)
+                    count += 1
             except KeyError:
                 # Apparently sometimes the cache goes a bit bonkers ...
                 continue
+            if count >= expect_count:
+                break
         return brokenpkgs
 
-    def do_install(self, to_install, langpacks=False):
-        if langpacks:
+    def do_install(self, to_install):
+        if self.langpacks:
             self.db.progress('START', 0, 10, 'ubiquity/langpacks/title')
         else:
             self.db.progress('START', 0, 10, 'ubiquity/install/title')
         self.db.progress('INFO', 'ubiquity/install/find_installables')
-
-        if langpacks:
-            # ... otherwise we're installing packages that have already been
-            # recorded
-            self.record_installed(to_install)
 
         self.db.progress('REGION', 0, 1)
         fetchprogress = DebconfFetchProgress(
@@ -1492,7 +1737,7 @@ exit 0"""
 
         self.db.progress('SET', 1)
         self.db.progress('REGION', 1, 10)
-        if langpacks:
+        if self.langpacks:
             fetchprogress = DebconfFetchProgress(
                 self.db, 'ubiquity/langpacks/title', None,
                 'ubiquity/langpacks/packages')
@@ -1548,23 +1793,62 @@ exit 0"""
         self.db.progress('STOP')
 
 
-    def do_remove(self, to_remove, recursive=False):
-        self.db.progress('START', 0, 5, 'ubiquity/install/title')
-        self.db.progress('INFO', 'ubiquity/install/find_removables')
+    def expand_dependencies_simple(self, cache, keep, to_remove,
+                                   recommends=True):
+        """Return the list of packages in to_remove that clearly cannot be
+        removed if we want to keep the set of packages in keep. Except in
+        the case of Recommends, this is not required for correctness (we
+        could just let apt figure it out), but it allows us to ask apt fewer
+        separate questions, and so is faster."""
 
-        fetchprogress = DebconfFetchProgress(
-            self.db, 'ubiquity/install/title',
-            'ubiquity/install/apt_indices_starting',
-            'ubiquity/install/apt_indices')
-        cache = Cache()
+        keys = ['Pre-Depends', 'Depends']
+        if recommends:
+            keys.append('Recommends')
 
-        if cache._depcache.BrokenCount > 0:
-            syslog.syslog(
-                'not processing removals, since there are broken packages: '
-                '%s' % ', '.join(self.broken_packages(cache)))
-            self.db.progress('STOP')
-            return
+        to_scan = set(keep)
+        to_scan_next = set()
+        expanded = set(keep)
+        while to_scan:
+            for pkg in to_scan:
+                cachedpkg = self.get_cache_pkg(cache, pkg)
+                if cachedpkg is None:
+                    continue
+                ver = cachedpkg._pkg.CurrentVer
+                if ver is None:
+                    continue
+                for key in keys:
+                    if key in ver.DependsList:
+                        for dep_or in ver.DependsList[key]:
+                            # Keep the first element of a disjunction that's
+                            # installed; this mirrors what 'apt-get install'
+                            # would do if you were installing the package
+                            # from scratch. This doesn't handle versioned
+                            # dependencies, but that's largely OK since apt
+                            # will spot those later; the only case I can
+                            # think of where this might have trouble is
+                            # "Recommends: foo (>= 2) | bar".
+                            for dep in dep_or:
+                                depname = dep.TargetPkg.Name
+                                cacheddep = self.get_cache_pkg(cache, depname)
+                                if cacheddep is None:
+                                    continue
+                                if cacheddep._pkg.CurrentVer is not None:
+                                    break
+                            else:
+                                continue
+                            if depname in expanded or depname not in to_remove:
+                                continue
+                            expanded.add(depname)
+                            to_scan_next.add(depname)
+            to_scan = to_scan_next
+            to_scan_next = set()
 
+        return expanded
+
+
+    def get_remove_list(self, cache, to_remove, recursive=False):
+        to_remove = set(to_remove)
+        all_removed = set()
         while True:
             removed = set()
             for pkg in to_remove:
@@ -1616,6 +1900,28 @@ exit 0"""
             if not removed:
                 break
             to_remove -= removed
+            all_removed |= removed
+        return all_removed
+
+
+    def do_remove(self, to_remove, recursive=False):
+        self.db.progress('START', 0, 5, 'ubiquity/install/title')
+        self.db.progress('INFO', 'ubiquity/install/find_removables')
+
+        fetchprogress = DebconfFetchProgress(
+            self.db, 'ubiquity/install/title',
+            'ubiquity/install/apt_indices_starting',
+            'ubiquity/install/apt_indices')
+        cache = Cache()
+
+        if cache._depcache.BrokenCount > 0:
+            syslog.syslog(
+                'not processing removals, since there are broken packages: '
+                '%s' % ', '.join(self.broken_packages(cache)))
+            self.db.progress('STOP')
+            return
+
+        self.get_remove_list(cache, to_remove, recursive)
 
         self.db.progress('SET', 1)
         self.db.progress('REGION', 1, 5)
@@ -1741,38 +2047,6 @@ exit 0"""
                                        '/home/oem/Desktop/%s' % desktop_base)
                             break
 
-                # Some serious horribleness is needed here to handle absolute
-                # symlinks.
-                for name in ('gdm-cdd.conf', 'gdm.conf'):
-                    gdm_conf = osextras.realpath_root(
-                        self.target, os.path.join('/etc/gdm', name))
-                    if os.path.isfile(gdm_conf):
-                        self.chrex('sed', '-i.oem',
-                                   '-e', 's/^AutomaticLoginEnable=.*$/AutomaticLoginEnable=true/',
-                                   '-e', 's/^AutomaticLogin=.*$/AutomaticLogin=oem/',
-                                   '-e', 's/^TimedLoginEnable=.*$/TimedLoginEnable=true/',
-                                   '-e', 's/^TimedLogin=.*$/TimedLogin=oem/',
-                                   '-e', 's/^TimedLoginDelay=.*$/TimedLoginDelay=10/',
-                                   os.path.join('/etc/gdm', name));
-                        break
-
-                kdmrc = os.path.join(self.target, 'etc/kde3/kdm/kdmrc')
-                if os.path.isfile(kdmrc):
-                    misc.execute('sed', '-i.oem', '-r',
-                                 '-e', 's/^#?AutoLoginEnable=.*$/AutoLoginEnable=true/',
-                                 '-e', 's/^#?AutoLoginUser=.*$/AutoLoginUser=oem/',
-                                 '-e', 's/^#?AutoReLogin=.*$/AutoReLogin=true/',
-                                 kdmrc)
-
-                if osextras.find_on_path_root(self.target, 'kpersonalizer'):
-                    kpersonalizerrc = os.path.join(self.target,
-                                                   'etc/kde3/kpersonalizerrc')
-                    if not os.path.isfile(kpersonalizerrc):
-                        kpersonalizerrc_file = open(kpersonalizerrc, 'w')
-                        print >>kpersonalizerrc_file, '[General]'
-                        print >>kpersonalizerrc_file, 'FirstLogin=false'
-                        kpersonalizerrc_file.close()
-                        open('%s.created-by-oem', 'w').close()
 		# Carry the locale setting over to the installed system.
 		# This mimics the behavior in 01oem-config-udeb.
                 di_locale = self.db.get('debian-installer/locale')
@@ -1781,9 +2055,6 @@ exit 0"""
         except debconf.DebconfError:
             pass
 
-        # Tell apt-install to install packages directly from now on.
-        apt_install_direct = open('/var/lib/ubiquity/apt-install-direct', 'w')
-        apt_install_direct.close()
 
     # MaX
     def killall_target_proc(self):
@@ -1967,7 +2238,21 @@ exit 0"""
             difference = set()
 
         # Keep packages we explicitly installed.
-        difference -= self.query_recorded_installed()
+        keep = self.query_recorded_installed()
+
+        arch, subarch = self.archdetect()
+
+        if arch in ('amd64', 'i386', 'lpia'):
+            if 'grub' not in keep:
+                difference.add('grub')
+            if 'grub-pc' not in keep:
+                difference.add('grub-pc')
+            if 'lilo' not in keep:
+                difference.add('lilo')
+
+        cache = Cache()
+        difference -= self.expand_dependencies_simple(cache, keep, difference)
+        del cache
 
         if len(difference) == 0:
             return
@@ -1979,7 +2264,7 @@ exit 0"""
         except debconf.DebconfError:
             pass
         if not use_restricted:
-            cache = Cache()
+            cache = self.restricted_cache
             for pkg in cache.keys():
                 if (cache[pkg].isInstalled and
                     cache[pkg].section.startswith('restricted/')):
@@ -1992,7 +2277,35 @@ exit 0"""
         # them automatically here.
         self.do_remove(difference)
 
-
+    def remove_broken_cdrom(self):
+        fstab = os.path.join(self.target, 'etc/fstab')
+        ret = []
+        try:
+            fp = open(fstab)
+            for line in fp:
+                l = line.split()
+                if len(l) > 2:
+                    if l[1].startswith('/cdrom') or l[1].startswith('/media/cdrom'):
+                        try:
+                            fstype = subprocess.Popen(
+                                ['vol_id', '--type', l[0]],
+                                stdout=subprocess.PIPE).communicate()[0].rstrip('\n')
+                            if fstype != 'iso9660' and fstype != 'udf':
+                                continue
+                        except OSError:
+                            pass
+                ret.append(line)
+            fp.close()
+            fp = open(fstab, 'w')
+            fp.writelines(ret)
+        except Exception, e:
+            syslog.syslog(syslog.LOG_ERR, 'Exception during installation:')
+            syslog.syslog(syslog.LOG_ERR,
+                'Unable to process /etc/fstab: ' + str(e))
+        finally:
+            if fp:
+                fp.close()
+            
     def cleanup(self):
         """Miscellaneous cleanup tasks."""
 

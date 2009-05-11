@@ -1,4 +1,18 @@
 #! /bin/sh
+### BEGIN INIT INFO
+# Provides:          ubiquity
+# Required-Start:    $remote_fs $syslog $time hal
+# Required-Stop:     $remote_fs $syslog $time hal
+# X-Start-Before:    gdm kdm xdm
+# X-Stop-After:      gdm kdm xdm
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Ubuntu live CD installer
+# Description:       Installs Ubuntu from a live CD. This only does anything
+#                    if told to do so by parameters on the kernel command
+#                    line; otherwise, the installer may be started manually
+#                    later.
+### END INIT INFO
 
 set -e
 
@@ -47,6 +61,11 @@ fi
 
 case "$1" in
 	start|force-start)
+		if [ -x /etc/init.d/NetworkManager ]; then
+			/etc/init.d/NetworkManager start
+		elif [ -x /etc/init.d/network-manager ]; then
+			/etc/init.d/network-manager start
+		fi
 		log_begin_msg "Starting Ubiquity..."
 		# if usplash is running, make sure to stop it now, yes "start" kills it.
 		if pidof usplash > /dev/null; then
@@ -67,6 +86,11 @@ case "$1" in
 		else
 			# Run in the foreground.
 			cmd="ubiquity-dm vt7 :0 /usr/bin/ubiquity max_ui $debug $automatic --only"
+			if ${cmd}; then
+				cmd="/bin/true"
+			else
+				cmd="ubiquity max_ui noninteractive"
+			fi
 		fi
 		if ${cmd}; then
 			$log_end_msg 0

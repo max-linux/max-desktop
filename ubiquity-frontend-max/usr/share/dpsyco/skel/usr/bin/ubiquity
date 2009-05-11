@@ -60,14 +60,26 @@ def main():
                     pass
 
         if frontend in ('gtk_ui', 'max_ui', 'mythbuntu_ui'):
-            toexec = ['gksudo']
+            toexec = ['gksudo', '--preserve-env']
             if desktop:
                 toexec.extend(['--desktop', desktop])
             toexec.append('--')
         elif frontend == 'kde_ui':
-            toexec = ['kdesu', '--nonewdcop', '--']
+            kdesu = None
+            if osextras.find_on_path('kdesu'):
+                kdesu = 'kdesu'
+            elif osextras.find_on_path('kdesudo'):
+                kdesu = 'kdesudo'
+            elif os.path.exists('/usr/lib/kde4/bin/kdesudo'):
+                kdesu = '/usr/lib/kde4/bin/kdesudo'
+            if kdesu:
+                toexec = [kdesu, '--nonewdcop', '--']
+            else:
+                toexec = ['sudo', '-E']
+            #temporarily force sudo until we work out why kdesudo stops it passing partitioning stage
+            toexec = ['sudo', '-E']
         else:
-            toexec = ['sudo']
+            toexec = ['sudo', '-E']
 
         # re-exec ourselves first time round, to cope with broken argument
         # handling in kdesu

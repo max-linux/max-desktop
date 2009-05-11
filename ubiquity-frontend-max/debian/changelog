@@ -1,3 +1,16 @@
+ubiquity-frontend-max (5.0.max0.1) max; urgency=low
+
+  * Merge ubiquity (version: 1.12.12)
+  * Provide ubiquity-gtkui.desktop and change NotShowIn=GNOME;XFCE;KDE;
+  * Change arch all => any (sti is compiled, depends on arch)
+  * Set hostname to max50 and change distro color to #dd2928
+  * usr/lib/os-probes/mounted/35detect_max:
+    - Hide kernel version in detection.
+  * usr/share/ubiquity/pixmaps/max/logo.png:
+    - Update MaX logo to new version number.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 09 May 2009 18:36:17 +0200
+
 ubiquity-frontend-max (4.0.max0.41) max; urgency=low
 
   * Disable OpenOffice.org upgrade (fixed in max-live)
