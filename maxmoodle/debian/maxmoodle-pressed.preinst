@@ -6,7 +6,7 @@
 
 if [ ! -e /var/cache/maxmoodle/mysql.pressed ]; then
   # preesed mysql-server-5.0 package
-  echo "maxmoodle-pressed: pressing mysql server"
+  echo " * maxmoodle-pressed: pressing mysql server"
   debconf-set-selections << END
 mysql-server-5.0	mysql-server/root_password	password	cmadrid
 mysql-server-5.0	mysql-server/root_password_again	password	cmadrid
@@ -21,7 +21,7 @@ fi
 
 if [ ! -e /var/cache/maxmoodle/moodle.pressed ]; then
   # preesed moodle package
-  echo "maxmoodle-pressed: pressing moodle"
+  echo " * maxmoodle-pressed: pressing moodle"
   debconf-set-selections << END
 moodle	moodle/dbu_password	password	cmadrid
 moodle	moodle/dba_password	password	cmadrid
