@@ -1,3 +1,10 @@
+max-tablet (5.0.max1) max; urgency=low
+
+  * Build in MaX 5.0
+  * Disable max-setup-tablet (with HAL+Xorg should work)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 11 May 2009 18:15:37 +0200
+
 max-tablet (4.0.max6) max; urgency=low
 
   * Add line break to touch section

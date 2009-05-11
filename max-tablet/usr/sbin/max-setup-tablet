@@ -27,6 +27,10 @@ import sys
 import time
 
 
+print " * MaX 5.0 disabled max-setup-tablet, HAL+Xorg should works"
+sys.exit(0)
+
+
 XORG="/etc/X11/xorg.conf"
 WACOM_DEV="/dev/input/wacom"
 FORCE=False
