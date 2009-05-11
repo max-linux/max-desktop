@@ -1,3 +1,17 @@
+max-dpsyco-custom (5.0.max1) max; urgency=low
+
+  * Build in MaX 5.0
+  * Remove usr/share/gnome-cups-manager/xd2-testpage-a4.eps
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 11 May 2009 17:07:14 +0200
+
+max-dpsyco-custom (4.0.max2.11) max; urgency=low
+
+  * Update usr/sbin/update-grub
+  * Fix netbeans launcher
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 05 May 2009 12:19:39 +0200
+
 max-dpsyco-custom (4.0.max2.10) max; urgency=low
 
   * Add NotShowIn=GNOME;XFCE;KDE; in openjdk-6-javaws.desktop

@@ -11,7 +11,7 @@ Pre-Depends: dpsyco-skel (>= 1.0.11)
 Conflicts: max-3.0-branding-conf
 Provides: max-3.0-branding-conf
 Replaces: max-3.0-branding-conf
-Description: Some diversion of installed files in MaX 3.1 based on dpsyco
+Description: Some diversion of installed files in MaX 5.0 based on dpsyco
  Contains:
   * /usr/sbin/update-grub
   * /usr/share/gnome-cups-manager/xd2-testpage-a4.eps
