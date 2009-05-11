@@ -5,11 +5,12 @@ set -e
 case "$1" in
     configure)
 
-    if [ -f /usr/lib/jvm/java-6-sun/jre/plugin/i386/ns7/libjavaplugin_oji.so ]; then
-       if [ ! -e /usr/lib/firefox-addons/plugins/libjavaplugin.so ]; then
-         ln -s /usr/lib/jvm/java-6-sun/jre/plugin/i386/ns7/libjavaplugin_oji.so /usr/lib/firefox-addons/plugins/libjavaplugin.so || true
-       fi
-    fi
+    # configured in max-java-plugin
+    #if [ -f /usr/lib/jvm/java-6-sun/jre/plugin/i386/ns7/libjavaplugin_oji.so ]; then
+    #   if [ ! -e /usr/lib/firefox-addons/plugins/libjavaplugin.so ]; then
+    #     ln -s /usr/lib/jvm/java-6-sun/jre/plugin/i386/ns7/libjavaplugin_oji.so /usr/lib/firefox-addons/plugins/libjavaplugin.so || true
+    #   fi
+    #fi
 
     if [ -e /usr/share/pixmaps/firefox-3.0.png ]; then
        if [ ! -e /usr/share/pixmaps/firefox.png ]; then

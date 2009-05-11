@@ -4,11 +4,13 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>ubufox@ubuntu.com</em:id>
     <em:name>Ubuntu Firefox Modifications</em:name>
-    <em:version>0.5~rc2</em:version>
+    <em:version>0.7</em:version>
     <em:creator>Canonical Ltd.</em:creator>
     <em:contributor>Alexander Sack &lt;asac@ubuntu.com&gt;</em:contributor>
     <em:contributor>Sasa Bodiroza &lt;jazzva@gmail.com&gt;</em:contributor>
     <em:contributor>Daniel Abramov &lt;ex@vingrad.ru&gt;</em:contributor>
+    <em:contributor>Arzhel Younsi &lt;xionox@gmail.com&gt;</em:contributor>
+    <em:contributor>Saïvann Carignan &lt;oxmosys@gmail.com&gt;</em:contributor>
     <em:description>Ubuntu configuration defaults and apt support for firefox extensions/plugins.</em:description>
     <em:iconURL>chrome://ubufox/content/ubuntulogo32.png</em:iconURL>
     <em:targetApplication>

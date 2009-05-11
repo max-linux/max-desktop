@@ -1,23 +1,36 @@
-content	ubufox	content/
-locale	ubufox	af-ZA	locale/af-ZA/
-locale	ubufox	cs-CZ	locale/cs-CZ/
-locale	ubufox	el-GR	locale/el-GR/
-locale	ubufox	en-US	locale/en-US/
-locale	ubufox	eu-ES	locale/eu-ES/
-locale	ubufox	fi-FI	locale/fi-FI/
-locale	ubufox	fr-CA	locale/fr-CA/
-locale	ubufox	fr-FR	locale/fr-FR/
-locale	ubufox	hu-HU	locale/hu-HU/
-locale	ubufox	it-IT	locale/it-IT/
-locale	ubufox	lt-LT	locale/lt-LT/
-locale	ubufox	pl-PL	locale/pl-PL/
-locale	ubufox	pt-BR	locale/pt-BR/
-locale	ubufox	ru-RU	locale/ru-RU/
-locale	ubufox	sl-SI	locale/sl-SI/
-locale	ubufox	sv-SE	locale/sv-SE/
-locale	ubufox	uk	locale/uk/
-skin	ubufox	classic/1.0	skin/
+content	ubufox	jar:chrome/ubufox.jar!/content/
+locale	ubufox	af-ZA	jar:chrome/ubufox.jar!/locale/af-ZA/
+locale	ubufox	ar	jar:chrome/ubufox.jar!/locale/ar/
+locale	ubufox	ca	jar:chrome/ubufox.jar!/locale/ca/
+locale	ubufox	cs-CZ	jar:chrome/ubufox.jar!/locale/cs-CZ/
+locale	ubufox	de-DE	jar:chrome/ubufox.jar!/locale/de-DE/
+locale	ubufox	el-GR	jar:chrome/ubufox.jar!/locale/el-GR/
+locale	ubufox	en-US	jar:chrome/ubufox.jar!/locale/en-US/
+locale	ubufox	es	jar:chrome/ubufox.jar!/locale/es/
+locale	ubufox	es_ES	jar:chrome/ubufox.jar!/locale/es_ES/
+locale	ubufox	eu	jar:chrome/ubufox.jar!/locale/eu/
+locale	ubufox	fi-FI	jar:chrome/ubufox.jar!/locale/fi-FI/
+locale	ubufox	fr	jar:chrome/ubufox.jar!/locale/fr/
+locale	ubufox	gl-ES	jar:chrome/ubufox.jar!/locale/gl-ES/
+locale	ubufox	hu-HU	jar:chrome/ubufox.jar!/locale/hu-HU/
+locale	ubufox	it-IT	jar:chrome/ubufox.jar!/locale/it-IT/
+locale	ubufox	ja	jar:chrome/ubufox.jar!/locale/ja/
+locale	ubufox	lt-LT	jar:chrome/ubufox.jar!/locale/lt-LT/
+locale	ubufox	pl-PL	jar:chrome/ubufox.jar!/locale/pl-PL/
+locale	ubufox	pt	jar:chrome/ubufox.jar!/locale/pt/
+locale	ubufox	pt-BR	jar:chrome/ubufox.jar!/locale/pt-BR/
+locale	ubufox	pt-PT	jar:chrome/ubufox.jar!/locale/pt/
+locale	ubufox	ro	jar:chrome/ubufox.jar!/locale/ro/
+locale	ubufox	ru-RU	jar:chrome/ubufox.jar!/locale/ru-RU/
+locale	ubufox	sl-SI	jar:chrome/ubufox.jar!/locale/sl-SI/
+locale	ubufox	sv-SE	jar:chrome/ubufox.jar!/locale/sv-SE/
+locale	ubufox	uk	jar:chrome/ubufox.jar!/locale/uk/
+locale	ubufox	zh-CN	jar:chrome/ubufox.jar!/locale/zh-CN/
+skin	ubufox	classic/1.0	jar:chrome/ubufox.jar!/skin/
 overlay	chrome://browser/content/browser.xul	chrome://ubufox/content/ubuntuHelpMenuOverlay.xul
+overlay	chrome://browser/content/browser.xul	chrome://ubufox/content/updateRestart.xul
 overlay chrome://mozapps/content/extensions/extensions.xul chrome://ubufox/content/ubuntuAddonsOverlay.xul appversion>=3.0b3
 overlay chrome://mozapps/content/extensions/extensions.xul chrome://ubufox/content/ubuntuAddonsOverlay.ffox2.xul appversion<2.0.0.*
+overlay chrome://browser/content/browser.xul chrome://ubufox/content/ubuntuAltpluginsOverlay.xul
+
 override chrome://mozapps/content/plugins/pluginInstallerWizard.xul chrome://ubufox/content/pluginInstallerWizard.xul

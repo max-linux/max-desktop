@@ -1,0 +1,64 @@
+<html>
+<head>
+<title></title>
+
+<script><!--
+
+var HOMEPAGE_ONLINE = "file:///usr/share/max-artwork/home/index.html";
+var HOMEPAGE_OFFLINE = "file:///usr/share/max-artwork/home/index.html"
+var HOMEPAGE_OFFLINE_TMPL = "/usr/share/ubuntu-artwork/home/locales/index-"
+
+var prefs = Components.classes["@mozilla.org/preferences-service;1"]
+           .getService(Components.interfaces.nsIPrefBranch);
+var userAgentLocale = null;
+try {
+  var userAgentLocaleLocalized = null;
+
+  try {
+    userAgentLocaleLocalized = prefs.getComplexValue("general.useragent.locale",
+                                                     Components.interfaces.nsIPrefLocalizedString);
+  } catch (e) {}
+
+  if (userAgentLocaleLocalized) {
+      userAgentLocale = userAgentLocaleLocalized.toString();
+  } else {
+      userAgentLocale = prefs.getCharPref("general.useragent.locale");
+  }
+} catch (e) { userAgentLocale = "en-US";}
+
+function get_valid_offlinehomepage() {
+   var canonicalLangCode = userAgentLocale.replace("-","_");
+
+   var preferredHomepage = HOMEPAGE_OFFLINE_TMPL + canonicalLangCode + ".html";
+
+   var file = Components.classes['@mozilla.org/file/local;1']
+              .createInstance(Components.interfaces.nsILocalFile);
+
+   file.initWithPath(preferredHomepage);
+
+   if (!file.exists())
+     return HOMEPAGE_OFFLINE;
+   return "file://"+preferredHomepage;
+}
+
+function getwebsite_async() {
+  var req = new XMLHttpRequest();
+  setTimeout("window.location=\""+get_valid_offlinehomepage()+"\"", 4000);
+  req.open('HEAD', HOMEPAGE_ONLINE, true);
+  req.onreadystatechange = function (aEvt) {
+
+    if (req.readyState > 1) {
+      if(req.status == 200)
+       window.location=HOMEPAGE_ONLINE;
+      else
+       window.location=get_valid_offlinehomepage();
+    }
+  };
+  req.send(null); 
+}
+--></script>
+
+</head>
+<body onload="getwebsite_async()">
+</body>
+</html>
