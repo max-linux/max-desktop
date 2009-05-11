@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 5), cdbs
 Standards-Version: 3.7.2
 
 Package: animalandia
-Architecture: any
+Architecture: all
 Depends: firefox
 Description: Lanzador de Animalandia
  Lanzadores de animalandia y el tutorial
