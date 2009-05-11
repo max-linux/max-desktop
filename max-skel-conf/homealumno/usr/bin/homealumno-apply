@@ -17,6 +17,11 @@ for user in $USERS; do
   fi
 done
 
+if [ "$GROUP" != "" ] && [ "$(getent group $GROUP | grep -c -i $USER)" != "0" ]; then
+        USER_FOUND=1
+fi
+
+
 if [ ! $USER_FOUND ]; then
   exit 0
 fi

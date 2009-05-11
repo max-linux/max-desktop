@@ -9,6 +9,12 @@ USERS="alumno"
 
 
 #
+# GROUP grupo al que pertenecen los usuarios para aplicar el perfil
+#              (ólo uno)
+GROUP=""
+
+
+#
 # EXCLUDE archivos que no se borraran
 #
 EXCLUDE=/etc/homealumno/exclude
