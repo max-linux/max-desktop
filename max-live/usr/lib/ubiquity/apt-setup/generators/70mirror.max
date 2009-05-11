@@ -6,7 +6,7 @@ file="$1"
 dists="main"
 codename="max"
 hostname="max.educa.madrid.org"
-directory="/max40"
+directory="/max50"
 protocol="http"
 
 
@@ -14,7 +14,7 @@ cat >> $file <<EOF
 
 
 #
-#  MaX 4.0 mirror
+#  MaX 5.0 mirror
 #
 
 deb $protocol://$hostname$directory $codename $dists
