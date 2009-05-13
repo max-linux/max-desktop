@@ -1,3 +1,11 @@
+max-meta (5.0.max2) max; urgency=low
+
+  * Remove:
+    - epson-alc1100-filter iscan iscan-plugins malted max-apt
+    - max-elotouch max-manuales max-squeak max-squeak-manual robolinux
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 13 May 2009 22:22:47 +0200
+
 max-meta (5.0.max1) max; urgency=low
 
   * Build in MaX 5.0
