@@ -10,8 +10,8 @@ Architecture: all
 Provides: openoffice.org2-thesaurus, openoffice.org2-thesaurus-es
 Depends: openoffice.org-core (>= 1.9) | language-support-es, dictionaries-common (>= 0.10) | openoffice.org-updatedicts
 Conflicts: openoffice.org (<< 1.9)
-Description: Spanish Thesaurus for OpenOffice.org 2
+Description: Spanish Thesaurus for OpenOffice.org
  This package contains an Spanish thesaurus for use with the
- OpenOffice.org 2 office suite.
+ OpenOffice.org office suite.
 
 
