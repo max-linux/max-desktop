@@ -18,9 +18,9 @@ build: clean
 		_size=`echo $$size | cut -dx -f1`;\
 		echo "Building theme for $$size size"; \
 		for _dir in $(shell find scalable -mindepth 1 -type d |grep -v ".svn"); do\
-			dir=`basename $$_dir`;\
-			echo "  ** Create dir $$dir";\
-			mkdir -p $$size/$$dir; \
+			dir=`echo $$_dir | sed "s|scalable/|$$size/|g"`; \
+			echo "    ** Create dir $$dir";\
+			mkdir -p $$dir; \
 		done; \
 		for _specialfile in $(shell find scalable -type f -not -name "*.svg"| grep -v svn); do\
 			dest=`echo $$_specialfile | sed "s|scalable/|$$size/|g"`; \

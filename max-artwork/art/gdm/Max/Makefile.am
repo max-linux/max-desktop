@@ -18,8 +18,7 @@ max_DATA = \
 	icon-shutdown-active.png \
 	icon-shutdown.png \
 	icon-shutdown-prelight.png \
-	screenshot.png \
-	max.png
+	screenshot.png
 
 @INTLTOOL_XML_RULE@
 @INTLTOOL_DESKTOP_RULE@
