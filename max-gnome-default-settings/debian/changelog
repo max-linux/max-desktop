@@ -1,3 +1,10 @@
+max-gnome-default-settings (5.0.max2) max; urgency=low
+
+  * max-gnome-default-settings.postinst:
+    - Chown only .gconf dir
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 13 May 2009 11:35:48 +0200
+
 max-gnome-default-settings (5.0.max1) max; urgency=low
 
   * Build in MaX 5.0

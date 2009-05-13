@@ -21,7 +21,7 @@ case $1 in
        for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
 	 username=$(basename $home)
          max_gconf_load "$home/.gconf" $_file
-         chown -R $username $home || true
+         chown -R $username $home/.gconf || true
        done
 
        # filename contain mandatory string
