@@ -5,10 +5,12 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 UBUNTU1=/usr/share/keyrings/ubuntu-archive-keyring.gpg
 UBUNTU2=/usr/share/keyrings/ubuntu-master-keyring.gpg
 MAX=usr/share/keyrings/max-archive-keyring.gpg
+MAX50=usr/share/keyrings/max50-archive-keyring.gpg
 DPSYCO=usr/share/dpsyco/skel/
 
 GPG_GET=gpg --list-options show-keyring
 KEY_MAX=$(shell $(GPG_GET) $(MAX)|awk '/^pub/ {print $$2}'| awk -F'/' '{print $$2}')
+KEY_MAX50=$(shell $(GPG_GET) $(MAX50)|awk '/^pub/ {print $$2}'| awk -F'/' '{print $$2}')
 KEY_UBUNTU1=$(shell $(GPG_GET) $(UBUNTU1)|awk '/^pub/ {print $$2}'| awk -F'/' '{print $$2}' | sed 's/\n//g')
 KEY_UBUNTU2=$(shell $(GPG_GET) $(UBUNTU2)|awk '/^pub/ {print $$2}'| awk -F'/' '{print $$2}' | sed 's/\n//g')
 
@@ -17,11 +19,12 @@ build/max-keyring::
 		gpg --import < $(UBUNTU1); \
 		gpg --import < $(UBUNTU2); \
 		gpg --import < $(MAX); \
+		gpg --import < $(MAX50); \
 		mkdir -p $(DPSYCO)/usr/share/keyrings ; \
 		echo "Export keys UBUNTU1=$(KEY_UBUNTU1)";\
 		echo "Export keys UBUNTU2=$(KEY_UBUNTU2)";\
-		gpg --export $(KEY_MAX) $(KEY_UBUNTU1) > $(DPSYCO)/$(UBUNTU1); \
-		gpg --export $(KEY_MAX) $(KEY_UBUNTU2) > $(DPSYCO)/$(UBUNTU2); \
+		gpg --export $(KEY_MAX) $(KEY_MAX50) $(KEY_UBUNTU1) > $(DPSYCO)/$(UBUNTU1); \
+		gpg --export $(KEY_MAX) $(KEY_MAX50) $(KEY_UBUNTU2) > $(DPSYCO)/$(UBUNTU2); \
 	fi
 	touch build-stamp
 
