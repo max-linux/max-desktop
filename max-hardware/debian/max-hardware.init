@@ -32,7 +32,7 @@ enable_toshiba() {
 
 case "$1" in
 start)  
-        log_begin_msg "Starting Max40 hardware hacks" "max-hardware"
+        log_begin_msg "Starting Max50 hardware hacks" "max-hardware"
           enable_toshiba
         log_end_msg $?
         ;;
