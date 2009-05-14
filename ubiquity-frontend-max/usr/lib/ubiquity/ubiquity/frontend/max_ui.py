@@ -1050,8 +1050,9 @@ class Wizard(BaseFrontend):
         self.run_success_cmd()
         # MaX change label here 
         self.finished_label.set_label("""La instalación ha finalizado. 
-Puede seguir probando MaX, pero recuerde que hasta que reinicie el equipo, 
-cualquier cambio que haga o documento que guarde no se conservará.""")
+Puede seguir probando MaX, pero recuerde que hasta que 
+reinicie el equipo, cualquier cambio que haga o 
+documento que guarde no se conservará.""")
         if not self.get_reboot_seen():
             if 'UBIQUITY_ONLY' in os.environ:
                 txt = self.get_string('ubiquity/finished_restart_only')

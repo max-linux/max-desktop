@@ -1566,14 +1566,14 @@ exit 0"""
         except debconf.DebconfError:
             domain = ''
         if hostname == '':
-            hostname = 'ubuntu'
+            hostname = 'max50'
 
         fp = open(os.path.join(self.target, 'etc/hostname'), 'w')
         print >>fp, hostname
         fp.close()
 
         hosts = open(os.path.join(self.target, 'etc/hosts'), 'w')
-        print >>hosts, "127.0.0.1\tlocalhost"
+        print >>hosts, "127.0.0.1\tlocalhost %s"%(hostname)
         if domain:
             print >>hosts, "127.0.1.1\t%s.%s\t%s" % (hostname, domain,
                                                      hostname)
