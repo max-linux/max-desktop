@@ -2,4 +2,12 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
+URL=http://download.moodle.org/lang16/es_utf8.zip
 
+build-stamp:
+	rm -rf tmp
+	mkdir tmp && cd tmp && wget $(URL)
+	cd tmp && unzip es_utf8.zip
+	touch build-stamp
+
+build/maxmoodle:: build-stamp

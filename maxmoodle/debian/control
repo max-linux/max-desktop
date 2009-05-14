@@ -2,7 +2,7 @@ Source: maxmoodle
 Section: max
 Priority: extra
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.0.0), cdbs
+Build-Depends: debhelper (>= 4.0.0), cdbs, wget, unzip
 Standards-Version: 3.7.2
 
 Package: maxmoodle

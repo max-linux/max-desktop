@@ -4,9 +4,4 @@
 #
 
 url_moodle='http://localhost/moodle/admin'
-#gksudo /etc/init.d/apache2 start
-#gksudo /etc/init.d/mysql start
-#gksudo "mv /etc/rc2.d/K20mysql /etc/rc2.d/S20mysql"
-#gksudo "mv /etc/rc2.d/K91apache2 /etc/rc2.d/S91apache2"
-#sleep 5;
 firefox $url_moodle &
