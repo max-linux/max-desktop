@@ -86,7 +86,7 @@ style "theme-default"
 		listviewheaderstyle = 0 # 0 = flat, 1 = glassy, 2 = raised
 		listviewstyle = 0 # 0 = nothing, 1 = dotted
 		scrollbarstyle = 2 # 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
-		hilight_ratio = 0.9555 # set the amount of buttons or widgets hilight
+		highlight_shade = 0.9555 # set the amount of buttons or widgets hilight
 		roundness = 2 # 0 = squared, 1 = old default, more will increase roundness
 		animation = TRUE # FALSE = disabled, TRUE = enabled
                 gradients = TRUE

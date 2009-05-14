@@ -1,4 +1,18 @@
-max-artwork (5.0.max0~x64.1) max; urgency=low
+max-artwork (5.0.max0.3) max; urgency=low
+
+  * Set usplash background to black
+  * Fix art/gtk/MaxColors/gtkrc
+  * Update MaX 5.0 svg file
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 14 May 2009 19:39:31 +0200
+
+max-artwork (5.0.max0.2) jaunty; urgency=low
+
+  * Don't set usplash size in max-artwork-usplash.post
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 13 May 2009 22:43:28 +0200
+
+max-artwork (5.0.max0.1) max; urgency=low
 
   * Build in MaX 5.0
   * New artwork (with 5.0)
