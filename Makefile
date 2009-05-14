@@ -2,5 +2,5 @@ all:
 	#none
 
 clean:
-	rm -f *.* 2>/dev/null || true
+	rm -f *.deb *.changes *.tar.gz *.diff.gz *.dsc *.build *.asc
 	find -name *~ | xargs rm -f 
