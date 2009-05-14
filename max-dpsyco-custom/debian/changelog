@@ -1,3 +1,10 @@
+max-dpsyco-custom (5.0.max2) max; urgency=low
+
+  * Update /etc/default/rcS
+    - Fix usplash mount / as read-only
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 14 May 2009 15:03:04 +0200
+
 max-dpsyco-custom (5.0.max1) max; urgency=low
 
   * Build in MaX 5.0
