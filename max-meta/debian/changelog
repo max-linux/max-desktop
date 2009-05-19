@@ -1,3 +1,23 @@
+max-meta (5.0.max5) max; urgency=low
+
+  * nanomax-i386:
+    - Replace hardcoded kernel version with metapackage
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 19 May 2009 12:59:25 +0200
+
+max-meta (5.0.max4) max; urgency=low
+
+  * Fix debian/rules and set arch to i386
+  * Replace w32codecs with non-free-codecs (arch depend package)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 18 May 2009 23:55:03 +0200
+
+max-meta (5.0.max3) max; urgency=low
+
+  * Install w32codecs in i386 and w64codecs in amd64
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 18 May 2009 23:26:15 +0200
+
 max-meta (5.0.max2) max; urgency=low
 
   * Remove:

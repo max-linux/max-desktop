@@ -14,7 +14,7 @@ rm -f desktop-dupli-all-i386
 for desktop in $DESKTOPS; do
   cat desktop-${desktop}-i386 >> desktop-all-i386
   for line in $(cat desktop-${desktop}-i386); do
-   [ "$line" != "" ] && echo -e "$line\t\t\t\t$desktop" >> desktop-dupli-i386
+   [ "$line" != "" ] && /bin/echo -e "$line\t\t\t\t$desktop" >> desktop-dupli-i386
   done
 done
 
@@ -26,10 +26,10 @@ done
 
   for line in $(seq $lines); do
     line=$(get_line $line desktop-dupli-i386)
-    pkg=$(echo $line| awk '{print $1}')
+    pkg=$(/bin/echo $line| awk '{print $1}')
     if [ "$pkg" = "$old_pkg" ]; then
      #echo "DUPLI: PKG= \"$pkg\" OLD-PKG=\"$old_pkg\" $line"
-     echo "DUPLI: $line ### $old_line"
+     /bin/echo "DUPLI: $line ### $old_line"
     fi
     old_pkg=$pkg
     old_line=$line
