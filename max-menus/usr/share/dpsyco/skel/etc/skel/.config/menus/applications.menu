@@ -184,18 +184,27 @@
 				<Filename>jclic.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>max-jclicauthor.desktop</Filename>
+				<Filename>jclicauthor.desktop</Filename>
 			</Include>
 			<Include>
 				<Filename>max-jcliccurso.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>max-jclicreports.desktop</Filename>
+				<Filename>jclicreports.desktop</Filename>
 			</Include>
 			<Include>
 				<Filename>max-jclicdescarga.desktop</Filename>
 			</Include>
 		</Menu>
+		<Exclude>
+			<Filename>jclic.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>jclicauthor.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>jclicreports.desktop</Filename>
+		</Exclude>
 		<Menu>
 			<Name>Matemáticas</Name>
 			<Directory>matematicas.directory</Directory>
@@ -515,7 +524,7 @@
 		</Include>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Include>
-			<Filename>ooo-draw.desktop</Filename>
+			<Filename>openoffice.org-draw.desktop</Filename>
 		</Include>
 		<AppDir>/usr/share/max/applications</AppDir>
 	</Menu>
@@ -585,6 +594,9 @@
 		<Exclude>
 			<Filename>bluetooth-analyzer.desktop</Filename>
 		</Exclude>
+		<Exclude>
+			<Filename>xfce4-screenshooter.desktop</Filename>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Games</Name>
@@ -614,7 +626,7 @@
 			<Filename>OpenOffice.org Dibujos.desktop</Filename>
 		</Include>
 		<Include>
-			<Filename>ooo-math.desktop</Filename>
+			<Filename>openoffice.org-math.desktop</Filename>
 		</Include>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
@@ -629,9 +641,6 @@
 		<Exclude>
 			<Filename>kde-kwifimanager.desktop</Filename>
 		</Exclude>
-		<Include>
-			<Filename>kde-wlassistant.desktop</Filename>
-		</Include>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
 			<Filename>openjdk-6-javaws.desktop</Filename>

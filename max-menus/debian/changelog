@@ -1,3 +1,33 @@
+max-menus (5.0.max7) max; urgency=low
+
+  * Delete some old launchers (ooo or AdobeReader8) and edit applications.menu
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 17:58:38 +0200
+
+max-menus (5.0.max6) max; urgency=low
+
+  * Fix again link
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 17:36:39 +0200
+
+max-menus (5.0.max5) max; urgency=low
+
+  * Rename adobe.pdf.png => acroread.png
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 17:32:25 +0200
+
+max-menus (5.0.max4) max; urgency=low
+
+  * Add usr/share/icons/crystalsvg/48x48/apps/adobe.pdf.png link too
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 17:28:12 +0200
+
+max-menus (5.0.max3) max; urgency=low
+
+  * Create link usr/share/icons/crystalsvg/64x64/apps/acroread.png
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 17:23:49 +0200
+
 max-menus (5.0.max2) max; urgency=low
 
   * Rename MaX 4.0 menu => MaX 5.0

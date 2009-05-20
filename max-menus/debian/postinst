@@ -4,9 +4,11 @@
 
 case "$1" in
     configure)
-        echo "Updating MaX menus..."
+        echo "Updating MaX menus and icon cache..."
 	maxmenus --update >> /tmp/maxmenus.log 2>&1 || true
 
+        # update icon cache
+        gtk-update-icon-cache /usr/share/icons/crystalsvg > /dev/null 2>&1|| true
 
     ;;
 
