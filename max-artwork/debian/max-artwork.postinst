@@ -48,6 +48,9 @@ case "$1" in
   mkdir -p /boot/grub
   cp /usr/share/max-artwork/grub/splash.xpm.gz /boot/grub/
 
+  # update icon cache
+  gtk-update-icon-cache /usr/share/icons/maxtoon > /dev/null 2>&1|| true
+
   ;;
 esac
 
