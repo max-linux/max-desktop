@@ -1,3 +1,10 @@
+max-elotouch (5.0.max0.1) max; urgency=low
+
+  * Build in MaX 5.0
+  * Disable HAL in xorg.conf
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 18:19:36 +0200
+
 max-elotouch (4.0.max0.5) max; urgency=low
 
   * Really backup xorg.conf
