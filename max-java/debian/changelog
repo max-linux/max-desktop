@@ -1,3 +1,10 @@
+max-java (5.0.max2) max; urgency=low
+
+  * Provide sun-java-6 [i386] ia32-java-6-sun [amd64]
+  * Switch packages to arch i386 or amd64 (not all)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 16:42:00 +0200
+
 max-java (5.0.max1) max; urgency=low
 
   * Build in MaX 5.0

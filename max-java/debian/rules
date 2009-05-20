@@ -2,6 +2,25 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
-binary-install/max-java::
-	# clean svn dirs
-	find $(CURDIR)/debian/max-java* -type d -name .svn | xargs rm -rf --
+binary-install/max-java-jre::
+
+	@echo "** Build ARCH: " $(DEB_BUILD_ARCH)
+
+	# create link
+	@if [ "$(DEB_BUILD_ARCH)" = "i386" ]; then \
+		echo "dh_link usr/lib/jvm/java-6-sun usr/lib/jvm/java-6-sun-max"; \
+		echo "cp debian/java-6-sun-max.jinfo.i386 $(CURDIR)/debian/max-java-jre/usr/lib/jvm/.java-6-sun-max.jinfo"; \
+		dh_link usr/lib/jvm/java-6-sun usr/lib/jvm/java-6-sun-max; \
+		cp debian/java-6-sun-max.jinfo.i386 $(CURDIR)/debian/max-java-jre/usr/lib/jvm/.java-6-sun-max.jinfo; \
+	fi
+
+	@if [ "$(DEB_BUILD_ARCH)" = "amd64" ]; then \
+		echo "dh_link usr/lib/jvm/ia32-java-6-sun usr/lib/jvm/java-6-sun-max"; \
+		echo "cp debian/java-6-sun-max.jinfo.amd64 $(CURDIR)/debian/max-java-jre/usr/lib/jvm/.java-6-sun-max.jinfo"; \
+		dh_link usr/lib/jvm/ia32-java-6-sun usr/lib/jvm/java-6-sun-max; \
+		cp debian/java-6-sun-max.jinfo.amd64 $(CURDIR)/debian/max-java-jre/usr/lib/jvm/.java-6-sun-max.jinfo; \
+	fi
+
+
+	@# clean svn dirs
+	@find $(CURDIR)/debian/max-java* -type d -name .svn | xargs rm -rf --
