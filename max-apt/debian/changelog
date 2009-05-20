@@ -1,3 +1,11 @@
+max-apt (5.0.max1) max; urgency=low
+
+  * Build in MaX 5.0
+  * Delete usr/share/update-manager channel (not needed)
+  * Add small script max-arch to know running arch (use file /sbin/mkfs)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 15:50:09 +0200
+
 max-apt (4.0.max1) max; urgency=low
 
   * Rebuild in MaX 4.0

@@ -7,6 +7,7 @@ Standards-Version: 3.7.2
 
 Package: max-apt
 Architecture: all
-Description: APT files from MaX 3.1
- update-manager URI for MaX 3.1 release
+Depends: file, util-linux
+Description: APT files from MaX 5.0
+ update-manager URI for MaX 5.0 release
 
