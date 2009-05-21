@@ -36,6 +36,7 @@ doc-base
 doc-debian
 dvdrtools
 dvd+rw-tools
+epson-alc1100-filter
 escritorio-movistar
 exim4 | postfix
 festvox-ellpc11k
@@ -71,6 +72,8 @@ homealumno
 hotkey-setup
 hplip
 hplip-ppds
+iscan
+iscan-plugins
 iaxcomm
 inkscape
 irssi
@@ -78,7 +81,8 @@ isdnutils-xtools
 istanbul
 jarnal
 javahotpot
-jclic
+jclic-max
+jmf
 josm
 josm-plugins
 kompozer
@@ -111,14 +115,17 @@ linux-headers-generic
 linuxprinting.org-ppds
 linuxprinting.org-ppds-extra
 make
+malted
 malted-linux-doc
 malted-projects
 maxima
 maxima-doc
+max-apt
 max-artwork
 max-artwork-usplash
 max-denemo-manual
 max-dpsyco-custom
+max-elotouch
 max-firefox-conf
 max-hardware
 max-java-jre
@@ -162,10 +169,12 @@ pppoe
 pppoeconf
 pseint
 psfontmgr
+python-exe
 qcad
 qca-tls
 qdvdauthor
 readahead
+robolinux
 rosegarden
 samba
 sane
