@@ -1,0 +1,41 @@
+[KSplash Theme: kubuntu]
+Name = Kubuntu O2
+Description = Kubuntu Edgy Splash
+Version = 1
+Author = Ken Wimer <kwwii@bootsplash.org>
+Homepage = http://bootsplash.org/
+Engine = Moodin
+KubuntuStyle = true
+
+BeginOpacity = 0.1
+Translate = true
+Background = Background.jpg
+ShowStatusText = true
+UseIconSet = true
+IconSetSize = 32
+ImageSpacer = 16
+LineUpImages = false
+BaseResolution = 1920,1200
+AppendX = true
+Labels = 2
+LabelShadow = false
+
+Image1 = kcmmemory
+Image2 = kcmsystem
+Image3 = printer1
+Image7 = kmenuedit
+Image8 = kmenu
+
+#ignored for kubuntu theme, coords are centred in the moodin code
+ImageCoords1 = 474,511
+ImageCoords2 = 524,511
+ImageCoords3 = 574,511
+ImageCoords4 = 624,511
+ImageCoords5 = 674,511
+ImageCoords6 = 724,511
+ImageCoords7 = 774,511
+ImageCoords8 = 624,651
+
+StatusFont = Sans Serif,9,-1,5,50,0
+StatusCoords = -1,580
+StatusColor = #000000

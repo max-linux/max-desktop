@@ -1,0 +1,2125 @@
+max-kde-default-settings (5.0max5) max; urgency=low
+
+  * Lock plasma-applets
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 21:05:48 +0200
+
+max-kde-default-settings (5.0max4) max; urgency=low
+
+  * Remade ksplash theme
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 20:48:02 +0200
+
+max-kde-default-settings (5.0max3) max; urgency=low
+
+  * Set ksplash theme to MaX
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 20:32:11 +0200
+
+max-kde-default-settings (5.0max2) max; urgency=low
+
+  * Update plasma-appletsrc and add ksplash MaX theme
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 20:27:10 +0200
+
+max-kde-default-settings (5.0max1) max; urgency=low
+
+  * Build in MaX 5.0, rename package
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 18:54:03 +0200
+
+kubuntu-default-settings (1:9.04.26) jaunty; urgency=low
+
+  * Have kubuntu-artwork-usplash provide usplash-theme so usplash-theme-ubuntu
+    is not pulled onto the Kubuntu CD
+
+ -- Scott Kitterman <scott@kitterman.com>  Wed, 08 Apr 2009 21:44:33 -0400
+
+kubuntu-default-settings (1:9.04.25) jaunty; urgency=low
+
+  * Remove KDE3 widget style definition in kde3/kdeglobals, we no longer use
+    it by default plus it causes issues (LP: #281016)
+  * Remove KDE3 amarok artwork since amarok is now KDE4.
+  * Remove various kde-rc-files of KDE3 apps that have been replaced with KDE4
+    ones
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Mon, 06 Apr 2009 21:31:32 -0400
+
+kubuntu-default-settings (1:9.04.24) jaunty; urgency=low
+
+  * Re-add kickoffrc, it is still used for favorite/recently used apps
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Mon, 06 Apr 2009 21:31:32 -0400
+
+kubuntu-default-settings (1:9.04.23) jaunty; urgency=low
+
+  * usplash/usplash-theme-kubuntu.c, t_animate_step_{16,32}: Use the correct
+    image's width for calculating the number of pulsating steps. Previously,
+    this triggered integer, and thus buffer overflows, which caused screen
+    corruption and sometimes complete corruption of the VTs. (LP: #345269)
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Thu, 19 Mar 2009 22:11:47 +0100
+
+kubuntu-default-settings (1:9.04.22) jaunty; urgency=low
+
+  [ Aurélien Gâteau ]
+  * add kconf_update/kubuntu-fix-kwin-default-size.upd to fix broken
+    window size rules
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 19 Mar 2009 17:20:18 +0000
+
+kubuntu-default-settings (1:9.04.21) jaunty; urgency=low
+
+  * Fixed kglobalshortcutsrc:
+    - Added action switch to next Desktop to ctrl+alt+right
+    - Added action switch to previous Desktop to ctrl+alt+left
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 19 Mar 2009 13:02:06 +0100
+
+kubuntu-default-settings (1:9.04.20) jaunty; urgency=low
+
+  * Add missing files
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Mar 2009 23:13:38 +0000
+
+kubuntu-default-settings (1:9.04.19) jaunty; urgency=low
+
+  [ Jonathan Riddell ]
+  * Revert plasma-appletsrc back to (near) empty version, 
+    it wrongly reappeared again
+
+  [ Anthony Mercatante ]
+  * Added digikamrc, to disable the tip of the day 
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Wed, 18 Mar 2009 21:57:39 +0100
+
+kubuntu-default-settings (1:9.04.18) jaunty; urgency=low
+
+  * New usplash from Ken Wimer
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Mar 2009 16:02:49 +0000
+
+kubuntu-default-settings (1:9.04.17) jaunty; urgency=low
+
+  * Disabled Nepomuk for now
+
+ -- Aurélien Gâteau <aurelien.gateau@canonical.com>  Wed, 18 Mar 2009 11:57:57 +0100
+
+kubuntu-default-settings (1:9.04.16) jaunty; urgency=low
+
+  * Set plasma defaults in kdebase-workspace not here, closes LP: #309419
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Mar 2009 00:04:34 +0000
+
+kubuntu-default-settings (1:9.04.15) jaunty; urgency=low
+
+  * Replaced gtk-qt-engines stuff by gtk2-engines-qtcurve stuff 
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 14 Mar 2009 18:58:55 +0100
+
+kubuntu-default-settings (1:9.04.14) jaunty; urgency=low
+
+  [ Jonathan Thomas ]
+  * Always ask to restore konqueror session to prevent infinite crash loops
+  * Add a Vcs-Bzr: field to debian/control so that people can actually be expected
+    to know that this is in bzr.
+
+  [ Alessandro Ghersi ]
+  * Merge usplash/usplash-theme-kubuntu.c with Ubuntu, usplash theme is stretched
+    vertically (instead of horizontally) (LP: #339386)
+
+  [ Guillaume Martres ]
+  * Removed kpatrc, hardcoding the default card theme is no longer needed and
+    prevent users from getting the new KDE 4.2 theme as default
+
+ -- Guillaume Martres <smarter@ubuntu.com>  Sun, 08 Mar 2009 19:20:36 +0100
+
+kubuntu-default-settings (1:9.04.13) jaunty; urgency=low
+
+  * Update for new usplash which supports explicit theme sizes and pixmap
+    positions; see LP #6417 for details.
+  * debian/control: bump usplash dependencies to >= 0.5.30 (THEME_VERSION==4).
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Wed, 04 Mar 2009 22:32:27 +0100
+
+kubuntu-default-settings (1:9.04.12) jaunty; urgency=low
+
+  * Set no hover on kickoff tabs, now in plasma-appletsrc not kickoffrc
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 27 Feb 2009 15:13:41 +0000
+
+kubuntu-default-settings (1:9.04.11) jaunty; urgency=low
+
+  * kglobalshortcutsrc: set media keys as shortcuts in Amarok
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 16 Feb 2009 21:54:46 +0000
+
+kubuntu-default-settings (1:9.04.10) jaunty; urgency=low
+
+  * amarokrc: turn off on screen display by default
+  * konquerorrc: make Google default search engine, currently is Google Lucky
+  * konquerorrc: Restore session when konqueror didn't close correctly=true (stop asking excessive questions)
+  * kdeglobals: confirmNewSession=false, don't show overly verbose and technical dialogue when changing user
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 16 Feb 2009 18:09:13 +0000
+
+kubuntu-default-settings (1:9.04.9) jaunty; urgency=low
+
+  * Fixed kopeterc, changed default behavior to "online" so
+    that connection works dynamically with kded network status 
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 14 Feb 2009 17:13:43 +0100
+
+kubuntu-default-settings (1:9.04.8) jaunty; urgency=low
+
+  * Fixed kwinrc, disabling UnredirectFullscreen:
+    - Closes LP: #327199
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 09 Feb 2009 17:15:45 +0100
+
+kubuntu-default-settings (1:9.04.7) jaunty; urgency=low
+
+  * Added KPackageKit default settings.
+  * Fixed Makefile so that it gets installed (name of the file
+    not ending with "rc")
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 05 Feb 2009 14:22:01 +0100
+
+kubuntu-default-settings (1:9.04.6) jaunty; urgency=low
+
+  * Fixed network manager plasmoid name in plasma-appletsrc.
+    name changed upstream.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Wed, 04 Feb 2009 14:24:55 +0100
+
+kubuntu-default-settings (1:9.04.5) jaunty; urgency=low
+
+  * Add network manager plasmoid
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 02 Feb 2009 21:13:24 +0000
+
+kubuntu-default-settings (1:9.04.4) jaunty; urgency=low
+
+  * Replace trash with battery applet
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 02 Feb 2009 11:04:50 +0000
+
+kubuntu-default-settings (1:9.04.3) jaunty; urgency=low
+
+  * Remove laptop-buttons support, X supports this directly now
+  * Add filetypesrc for embedding text and PDF files
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 02 Feb 2009 09:48:41 +0000
+
+kubuntu-default-settings (1:9.04.2) jaunty; urgency=low
+
+  [ Harald Sitter ]
+  * Add cubecap.png for cube branding (LP: #278105)
+  * Set cap color in kwinrc, as suggested by Martin Gräßlin
+  * Change kickoffrc to use Amarok 2 (KDE 4)
+  * Convert plasma's branding.svg to branding.svgz (KDE 4.2 expects a .svgz)
+
+  [ Anthony Mercatante ]
+  * Added kopeterc file, enabling tabs by default for the chat window.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Tue, 20 Jan 2009 14:03:27 +0100
+
+kubuntu-default-settings (1:9.04.1) jaunty; urgency=low
+
+  [ Guillaume Martres ]
+  * Added back kuriikwsfilterrc, changed the default search engine from strigi
+    to google_lucky, same change for the kuriikwsfilterrc of kde3/
+  * Reenabled installation of the contrastlarge cursor theme, ported
+    the accessibility config files to KDE4 but don't install them
+
+  [ Harald Sitter ]
+  * Use xdg-open as command for web browsers (LP: #271598)
+  * Add kde-rc-files/katemoderc to get syntax highlighting for pbuilderrc,
+    also set 'changelog' as pattern for Debian Changelog (the generic changelog
+    item uses ChangeLog as pattern anyway)
+  * Deactivate Boxswitch effect in favor of Coverswitch (LP: #291532)
+  * Don't update the x-cursor-theme alternative, there is no X cursor theme.
+  * Change version scheme to native package
+  * Remove ksvgplugin.rc - KSVG is no more
+  * Consistent spelling colour-schemes => color-schemes
+  * Farewell dirfilterplugin.rc! Directory filtering isn't a plugin anymore, but
+    directly implemented into the dolphinpart. It is, however, not as space
+    saving as the plugin for Konqueror, so activating it by default would be
+    rather annoying. It is very likely that upstream will turn it on by
+    default once Nepomuk is fully integrated though.
+  * Remove gwenviewui.rc, it breaks the menu and rather uggly cripples
+    Gwenview, which is especially awkward since in Gwenview 2.2 one doesn't
+    need the menu at all (except for advanced use cases).
+    + gvimagepart.rc
+  * Remove lipstikstylerc and polyesterstylerc (neither available for KDE 4)
+  * Add ${misc:Depends} to make lintian happy
+  * Fix changelog formatting to make lintian a bit happier
+  * Install gtk-qt-engine.rc.sh executable to make lintian completely happier
+  * Remove debian/dirs to make lintian the happiest ;-)
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Fri, 02 Jan 2009 08:50:20 +0100
+
+kubuntu-default-settings (1:8.10-13) intrepid; urgency=low
+
+  [ Ryan Kavanagh ]
+  * Set the default deck in lskat and kpat to the Oxygen White (SVG).
+    (LP: #277193, #277909)
+
+ -- Ryan Kavanagh <ryanakca@kubuntu.org>  Tue, 14 Oct 2008 16:17:11 -0400
+
+kubuntu-default-settings (1:8.10-12) intrepid; urgency=low
+
+  * Fix typo in kickoffrc (made Kontact unstartable)
+  * Add new branding for kickoff (thanks to kwwii!)
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Tue, 14 Oct 2008 15:15:59 +0200
+
+kubuntu-default-settings (1:8.10-11) intrepid; urgency=low
+
+  * Better background colour in kdeglobals, from apachelogger
+  * Replace kubuntuColours.kcsrc with Kubuntu.colors for KDE 4
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 10 Oct 2008 17:21:55 +0100
+
+kubuntu-default-settings (1:8.10-10) intrepid; urgency=low
+
+  * Add kickoffrc for default favorites
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Wed, 08 Oct 2008 18:11:25 +0200
+
+kubuntu-default-settings (1:8.10-9) intrepid; urgency=low
+
+  [ Jonathan Riddell ]
+  * Set sizerule=3 in kwinrulesrc, fixes maximise button not showing
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sun, 28 Sep 2008 20:25:21 +0200
+
+kubuntu-default-settings (1:8.10-8) intrepid; urgency=low
+
+  * laptop-buttons/kubuntu.xmodmap: Removed "keycode 118 = XF86Music", it's now used by
+    Xorg for the Insert key
+  * Add branding.svg used by kickoff
+
+ -- Guillaume Martres <smarter@ubuntu.com>  Wed, 24 Sep 2008 19:27:23 +0200
+
+kubuntu-default-settings (1:8.10-7) intrepid; urgency=low
+
+  * Add kde-rc-files/kwinrulesrc from Celeste to set default size of
+    various application windows
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 23 Sep 2008 01:04:24 +0100
+
+kubuntu-default-settings (1:8.10-6) intrepid; urgency=low
+
+  [ Harald Sitter ]
+  * Make Konqueror not identify as firefox, so that GMail directs to the HTML
+    interface, which can be rendered properly. (LP: #256039, #178827)
+  * Initialise Java properly. (LP: #138736)
+
+  [ Jonathan Riddell ]
+  * Turn on cover switcher in kwinrc
+	
+ -- Harald Sitter <apachelogger@ubuntu.com>  Fri, 19 Sep 2008 15:46:51 +0200
+
+kubuntu-default-settings (1:8.10-5) intrepid; urgency=low
+
+  * Update gtk-qt-engine-rc-files for Qt 4
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 09 Sep 2008 13:19:16 +0100
+
+kubuntu-default-settings (1:8.10-4) intrepid; urgency=low
+
+  * kdeglobals doesn't seem to work in our profile dir, also put a copy in /etc/kde4
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 09 Sep 2008 12:43:57 +0100
+
+kubuntu-default-settings (1:8.10-3) intrepid; urgency=low
+
+  [ Jonathan Thomas ]
+  * Add SwitchTabsOnHover setting in plasma-appletsrc to the right config 
+    section
+  * Add default shortcuts for switching desktops. (LP: #212796)
+  * Turn kblank screensaver on by default. (LP: #108355)
+  * Remove the Oxygen Konversation nicklist theme, which is included in 
+    upstream now.
+
+  [ Jonathan Riddell ]
+  * Set text alongside icons
+  * Lighter background colour
+
+ -- Jonathan Thomas (The man) <echidnaman@gmail.com>  Wed, 06 Aug 2008 21:15:20 -0400
+
+kubuntu-default-settings (1:8.10-2) intrepid; urgency=low
+
+  * Change some keycodes in kubuntu.xmodmap, Qt can't use
+    XF86LaunchE for no apparant reason
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 04 Aug 2008 20:45:10 +0100
+
+kubuntu-default-settings (1:8.10-1) intrepid; urgency=low
+
+  [ Jonathan Thomas ]
+  * Place contents of kde4/ in the root directory, move kde3 equivalents 
+    to kde3/
+  * Add new plasma-appletsrc
+  * Removed Kicker stuff from the Makefile
+
+  [ Jonathan Riddell ]
+  * Add laptop-buttons files for xmodmap
+
+  [ Harald Sitter ]
+  * Migrate KDE 3 configurations to KDE 4
+    + kontactrc
+    + ktiprc
+    + yakuakerc
+    + kgpgrc
+    + kbookmarkrc
+    + klaunchrc
+    + khelpcenterrc
+    + knotesrc
+    + kmailrc
+    + korgacrc
+  * Switch Oxygen theming to original instead of using these horrible lines
+  * Bump Standars-Version from 3.7.3 to 3.8.0
+  * Use Oxygen icon spec on kde-hidden
+  * Removed artwork:
+    + kubuntu-panel
+    + kubuntu-kmenu-side(-tile)
+    + metabar
+    + kubuntu-konqueror-background(-classic)
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Mon, 07 Jul 2008 11:59:06 +0200
+
+kubuntu-default-settings (1:8.04-20) hardy; urgency=low
+
+  * Fixed kubuntu-default-settings.postinst:
+    - Create the link properly for NTFS support
+    - Closes LP: #207380
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 18 Apr 2008 00:04:26 +0200
+
+kubuntu-default-settings (1:8.04-19) hardy; urgency=low
+
+  [ Guillaume Martres ]
+  * Use DejaVu Sans as default font to workaround #209358
+  * Fix kde4 kdeglobals installation path
+  * debian/kubuntu-default-settings.install:
+    - install /usr/lib/kde4
+
+  [ Jonathan Riddell ]
+  * Set ksplash theme to None
+	
+ -- Guillaume Martres <smarter@ubuntu.com>  Wed, 02 Apr 2008 14:32:51 +0200
+
+kubuntu-default-settings (1:8.04-18) hardy; urgency=low
+
+  * Stop April Fools sillyness
+  * Added klaunchrc file to limit jumping busy icon to 10 seconds:
+    - Workarrounds some gtk, java ant other apps to have their icon
+      jumping for ages when the applications is started.
+  * Fixed Makefile for konversation oxygen theme.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 28 Mar 2008 19:20:08 +0100
+
+kubuntu-default-settings (1:8.04-17) hardy; urgency=low
+
+  * April Fool
+
+ --  Michael Anderson <nosrednaekim@gmail.com>  Mon, 31 Mar 2008 23:18:42 +0100
+
+kubuntu-default-settings (1:8.04-16) hardy; urgency=low
+
+  [ Stefan Skotte ]
+  * Enable textshadow for Crystal windeco by default
+
+  [ Anthony Mercatante ]
+  * Replaced Konversation Tango theme by Oxygen
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 28 Mar 2008 12:26:54 +0100
+
+kubuntu-default-settings (1:8.04-15) hardy; urgency=low
+
+  * Set previews by default in file view (dolphin/konqueror KDE 4)
+  * Add information bar to Dolphin KDE 4
+  * Add KDE 4 cryptodefaults, don't ask when submitting to unencrypted
+  * Add KDE 4 kmixrc, don't show by default when restored
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 14 Mar 2008 18:02:43 +0000
+
+kubuntu-default-settings (1:8.04-14) hardy; urgency=low
+
+  * Enable KDE 4 settings
+  * Set KDE 4 mouse cursor to oxygen
+  * Remove depends on dmz-cursor-theme
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 13 Mar 2008 11:33:59 +0000
+
+kubuntu-default-settings (1:8.04-13) hardy; urgency=low
+
+  [ Jonathan Riddell ]
+  * Set style to qtcurve in kde-rc-files/kdeglobals
+
+  [ Daniel Hahler ]
+  * debian/kubuntu-default-settings.postrm:
+    - Do not bail out if "update-alternatives --remove" fails (LP: #194101)
+    - Add no-op case for "upgrade" action and mention unknown action in
+      catch-all case (LP: #65021)
+  * German translation for konqueror-profile/email.desktop
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Tue, 11 Mar 2008 18:29:03 +0100
+
+kubuntu-default-settings (1:8.04-12) hardy; urgency=low
+
+  [ Stefan Skotte ]
+  * Added new wallpaper from http://djmattricks.deviantart.com/art/Aquapattern-46516380
+
+  [ Anthony Mercatante ]
+  * Added Tango theme or konversation.
+  * Set Tango to be used by default
+  * Re-enables konversation systray by default, as discussed with
+    upstream
+  * Sort the userlist by level, and then alphabetically
+
+  [ Harald Sitter ]
+  * Fix and enable KDE 4 settings
+
+  [ Jonathan Riddell ]
+  * Remove install_flash_player_9_linux/flashplayer.xpt from konq_plugins config, file no longer exists
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Tue, 11 Mar 2008 15:15:58 +0100
+
+kubuntu-default-settings (1:8.04-11) hardy; urgency=low
+
+  [ Richard Johnson ]
+  * Disable KDE 4 settings for now, they break it
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 19 Feb 2008 00:14:56 +0000
+
+kubuntu-default-settings (1:8.04-10) hardy; urgency=low
+
+  [ Jonathan Riddell ]
+  * Remove speedcrunchrc, long since unused
+  * Remove depends on ksplash-engine-moodin
+	
+  [ Harald Sitter ]
+  * Added initial KDE 4 configuration set.
+
+  [ Stefan Skotte ]
+  * Make text darker in kdm/ksplash
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Sat, 09 Feb 2008 20:04:28 +0100
+
+kubuntu-default-settings (1:8.04-9) hardy; urgency=low
+
+  * Updated wallpaper from Vlad Gerasimov http://www.vladstudio.com
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 23 Jan 2008 15:48:01 +0000
+
+kubuntu-default-settings (1:8.04-8) hardy; urgency=low
+
+  * Add a new kubuntu-wallpaper.png
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 21 Jan 2008 17:31:44 +0000
+
+kubuntu-default-settings (1:8.04-7) hardy; urgency=low
+
+  * Add French translation to email.desktop
+
+ -- Anthony Mercatante <tonio@kubuntu.org>  Fri, 04 Jan 2008 16:02:42 +0100
+
+kubuntu-default-settings (1:8.04-6) hardy; urgency=low
+
+  * Fixed kdm-settings/20_kubuntu_default_settings, uses PreferUser to
+    match the user's choosen photo in KDM
+
+ -- Anthony Mercatante <tonio@kubuntu.org>  Fri, 04 Jan 2008 15:52:46 +0100
+
+kubuntu-default-settings (1:8.04-5) hardy; urgency=low
+
+  * Add Polish translation to email.desktop
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 14 Dec 2007 19:39:40 +0000
+
+kubuntu-default-settings (1:8.04-4) hardy; urgency=low
+
+  * Fixed name of hal policy and links for ntfs to make ntfs
+    drives to work.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 01 Dec 2007 14:55:03 +0100
+
+kubuntu-default-settings (1:8.04-3) hardy; urgency=low
+
+  * Reuploaded as the buildd seems to be fixed
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 12 Nov 2007 14:18:30 +0100
+
+kubuntu-default-settings (1:8.04-2) hardy; urgency=low
+
+  * Added hal/20-ntfs-config-write-policy.fdi, installed with
+    symlink to enable ntfs read/write support by default
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 10 Nov 2007 14:39:56 +0100
+
+kubuntu-default-settings (1:8.04-1) hardy; urgency=low
+
+  * Update kdeglobals to trust redirect from http and https
+    to apt protocol
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 26 Oct 2007 15:48:01 +0200
+
+kubuntu-default-settings (1:7.10-28) gutsy; urgency=low
+
+  * Add adept_notifierrc with Apport key
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 10 Oct 2007 16:40:39 +0100
+
+kubuntu-default-settings (1:7.10-27) gutsy; urgency=low
+
+  * Remove systray icon and tabs on side from konversationrc following
+    feedback from KDE usability
+  * In d3lphinrc make preview icon size same as normal icon size
+  * Update artwork/ksplash/Theme.rc for new icon spacing patch in moodin,
+    from David Solbach
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 01 Oct 2007 23:34:55 +0100
+
+kubuntu-default-settings (1:7.10-26) gutsy; urgency=low
+
+  * Fixed khtmlrc, now uses easylist instead of filterset.g. Fixes LP:
+    #99535
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 29 Sep 2007 11:41:52 +0200
+
+kubuntu-default-settings (1:7.10-25) gutsy; urgency=low
+
+  * Added artwork/kdm-theme-no-userlist and fixed Makefile for
+    installation.
+  * Re-added kdm-settings/ deleted by error
+
+ -- Anthony Mercatante <tonio@kubuntu.org>  Thu, 27 Sep 2007 09:48:48 +0200
+
+kubuntu-default-settings (1:7.10-24) gutsy; urgency=low
+
+  * Removed now useless KDM dependency
+
+ -- Anthony Mercatante <tonio@kubuntu.org>  Wed, 26 Sep 2007 13:49:47 +0200
+
+kubuntu-default-settings (1:7.10-23) gutsy; urgency=low
+
+  * Add kmplayerrc to stop volume being set on playing
+  * Merge usplash/usplash-theme-kubuntu.c with Ubuntu
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 21 Sep 2007 17:09:19 +0100
+
+kubuntu-default-settings (1:7.10-22) gutsy; urgency=low
+
+  * Make preview mode default in dolphin and set nice icon size
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 05 Sep 2007 17:51:30 +0100
+
+kubuntu-default-settings (1:7.10-21) gutsy; urgency=low
+
+  * Change kuriikwsfilterrc to use strigi search by default
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 31 Aug 2007 14:13:44 +0100
+
+kubuntu-default-settings (1:7.10-20) gutsy; urgency=low
+
+  * Set CFLAGS in debian/rules, fix fail to build on amd64
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 31 Aug 2007 10:34:57 +0100
+
+kubuntu-default-settings (1:7.10-19) gutsy; urgency=low
+
+  * Add the rest of the inode/directory items to
+    kde-rc-files/properties, maybe that'll convince it to use Dolphin
+    by default
+  * Fix colours and add missing image to usplash
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 30 Aug 2007 17:51:44 +0100
+
+kubuntu-default-settings (1:7.10-18) gutsy; urgency=low
+
+  * Updated colour scheme from Ken Wimer
+  * Sync usplash/usplash-theme-kubuntu.c with Ubuntu, hopefully closes 
+    https://bugs.launchpad.net/ubuntu/+source/casper/+bug/131209
+    "kubuntu verify CD just boots live system"
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 30 Aug 2007 14:05:18 +0100
+
+kubuntu-default-settings (1:7.10-17) gutsy; urgency=low
+
+  [Jonathan Riddell]
+  * Make Google suggest work
+
+  [Anthony Mercatante]
+  * Added kvkbd to minor-motor-difficulties accessibility
+    profile
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 28 Aug 2007 14:53:46 +0100
+
+kubuntu-default-settings (1:7.10-16) gutsy; urgency=low
+
+  * New ksplash Dialog.png from Ken Wimer
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 20 Aug 2007 11:32:48 +0200
+
+kubuntu-default-settings (1:7.10-15) gutsy; urgency=low
+
+  * New logo colours in kdm and ksplash Dialog.png from Ken Wimer
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 10 Aug 2007 13:02:45 +0100
+
+kubuntu-default-settings (1:7.10-14) gutsy; urgency=low
+
+  [ Jonathan Riddell ]
+  * Update colour scheme in kde-rc-files/kdeglobals
+
+  [ Sarah Hobbs ]
+  * Removed some of our kubuntu defaults for konversation, as
+    discussed in the last meeting.  Presumably all of this will
+    be rediscussed for KDE 4 anyway.
+
+ -- Sarah Hobbs <hobbsee@ubuntu.com>  Sun, 29 Jul 2007 22:14:31 +1000
+
+kubuntu-default-settings (1:7.10-13) gutsy; urgency=low
+
+  * Fixed makefile, causes FTBFS
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 19 Jul 2007 18:41:35 +0200
+
+kubuntu-default-settings (1:7.10-12) gutsy; urgency=low
+
+  * Added katapult back to ksmserverrc. Autostart is not good to let
+    katapult start without showing to the user. Katapult will be patch
+    instead to remove the autostart desktop file.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 19 Jul 2007 07:53:45 +0200
+
+kubuntu-default-settings (1:7.10-11) gutsy; urgency=low
+
+  * Remove katapult from session start, it is now in autostart
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 17 Jul 2007 09:42:09 +0100
+
+kubuntu-default-settings (1:7.10-10ubuntu1) gutsy; urgency=low
+
+  * Make dolphin default file browser
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 16 Jul 2007 13:54:49 +0100
+
+kubuntu-default-settings (1:7.10-10) gutsy; urgency=low
+
+  [ Jonathan Riddell ]
+  * Add depends on dmz-cursor-theme and remove local copy of theme
+
+  [ Anthony Mercatante ]
+  * Added new crystal theme and wallpaper by Ken Wimer
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Wed, 11 Jul 2007 14:17:22 +0200
+
+kubuntu-default-settings (1:7.10-9) gutsy; urgency=low
+
+  * Fixed d3lphinrc, put the text under the icons for the standard
+    toolbar
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 05 Jul 2007 09:34:24 +0200
+
+kubuntu-default-settings (1:7.10-8) gutsy; urgency=low
+
+  * Added d3lphinrc config file for dolphin
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 05 Jul 2007 01:17:54 +0200
+
+kubuntu-default-settings (1:7.10-7) gutsy; urgency=low
+
+  * Fixed profilerc so that deb files open with Gdebi by defualt
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 30 Jun 2007 02:04:39 +0200
+
+kubuntu-default-settings (1:7.10-6) gutsy; urgency=low
+
+  * Remove Kubuntu Servicemenu now we have gdebi
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 26 Jun 2007 00:22:27 +0100
+
+kubuntu-default-settings (1:7.10-5) gutsy; urgency=low
+
+  * Fixed kdm-settings/20_kubuntu_default_settings.
+    Sets a USESYSTEMLOCALE to "true" so that kdm init script
+    fixes kdm language to the system one
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 14 Jun 2007 18:56:22 +0100
+
+kubuntu-default-settings (1:7.10-4) gutsy; urgency=low
+
+  * Modify konqueror-profile/kubuntu-servicemenu.sh and
+    kubuntu-servicemenu.desktop to allow installing multiple 
+    packages when the path and or package names contains spaces. (LP: #108870)
+
+ -- Frode M. Døving <frode@ubuntu.com>  Sun, 10 Jun 2007 10:27:23 +0200
+
+kubuntu-default-settings (1:7.10-3) gutsy; urgency=low
+
+  * Remove KDM hacking from postinst and postrm
+  * Add kdm-settings/20_kubuntu_default_settings for
+    /etc/defaults/kdm.d/ for nice overloading of KDM settings
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 06 Jun 2007 17:55:53 +0100
+
+kubuntu-default-settings (1:7.10-2) gutsy; urgency=low
+
+  * Modify KDM theme to include user list, change by Timo Freyer lumpi_online@gmx.ch
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri,  1 Jun 2007 13:29:20 +0100
+
+kubuntu-default-settings (1:7.10-1) gutsy; urgency=low
+
+  * Removed khotkeysrc, activates the alt+print to take a window snapshot
+    with ksnapshot in kdebase-bin via a patch
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 31 May 2007 11:00:23 +0200
+
+kubuntu-default-settings (1:7.04-39) feisty; urgency=low
+
+  * Fixing a bug which prevents using packages that have spaces
+    in their paths. (LP: #57102)
+
+ -- Johnny Levai <nrg88hq@gmail.com>  Fri,  6 Apr 2007 21:44:17 +0300
+
+kubuntu-default-settings (1:7.04-38) feisty; urgency=low
+
+  * Update artwork/kdm-theme/kubuntu.xml.
+    - Fixes font size on the login window, as default is too large
+      for lots of languages except english.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 02 Apr 2007 03:54:23 +0100
+
+kubuntu-default-settings (1:7.04-37) feisty; urgency=low
+
+  * Update k3brc, Remove tip of the day.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 02 Apr 2007 01:27:34 +0100
+
+kubuntu-default-settings (1:7.04-36) feisty; urgency=low
+
+  * Update k3brc, disables the splash on program start up.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 29 Mar 2007 16:20:23 +0100
+
+kubuntu-default-settings (1:7.04-35) feisty; urgency=low
+
+  * Fixing a bug in the positions of the verbose messages in the kubuntu
+    usplash theme file 
+  * Updating colorscheme and kdeglobals file so that the new colors actually
+    appear 
+  * Updating the active progress bar pic to have the same line around the
+    outside as the background pic 
+
+ -- Kenneth Wimer <wimer@kde.org>  Tue, 20 Mar 2007 22:43:01 +0100
+
+kubuntu-default-settings (1:7.04-34ubuntu1) feisty; urgency=low
+
+  * Improve colours in usplash/usplash-theme-kubuntu.c to not have
+    black text on black background
+  * Fix text in mimetypes, comments now in English not French
+    closes https://launchpad.net/bugs/93686
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 19 Mar 2007 19:14:09 +0000
+
+kubuntu-default-settings (1:7.04-34) feisty; urgency=low
+
+  [ Kenneth Wimer ]
+  * Updating Dialog pic again, this time final 
+
+  [ Dennis Kaarsemaker ]
+  * Fix to usplash/usplash-theme-kubuntu.c
+
+ -- Kenneth Wimer <wimer@kde.org>  Thu, 15 Mar 2007 14:49:02 +0100
+
+kubuntu-default-settings (1:7.04-33) feisty; urgency=low
+
+  * Updating wallpaper, pics for kdm and ksplash and color scheme 
+
+ -- Kenneth Wimer <wimer@kde.org>  Thu, 15 Mar 2007 13:48:38 +0100
+
+kubuntu-default-settings (1:7.04-32) feisty; urgency=low
+
+  * Removed kopete/ folder for contact list theme, closes
+    Malone #90020
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 15 Mar 2007 11:44:22 +0100
+
+kubuntu-default-settings (1:7.04-31) feisty; urgency=low
+
+  * Fixing problems with progress bar animation
+
+ -- Kenneth Wimer <wimer@kde.org>  Tue, 13 Mar 2007 17:09:04 +0100
+
+kubuntu-default-settings (1:7.04-30) feisty; urgency=low
+
+  * Change usplash-dev build dependency to libusplash-dev to go with
+    renaming of package.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 14 Mar 2007 12:46:57 +0100
+
+kubuntu-default-settings (1:7.04-29) feisty; urgency=low
+
+  [ Kenneth Wimer ]
+  * Adding new logo and background for kdm, ksplash and desktop 
+
+  [ Jonathan Riddell ]
+  * Set Google as default search in konquerorrc and set Google 
+    suggest mode on
+
+ -- Kenneth Wimer <wimer@kde.org>  Mon, 12 Mar 2007 14:11:14 +0100
+
+kubuntu-default-settings (1:7.04-29) feisty; urgency=low
+
+  * Adding new logo and background for kdm, ksplash and desktop 
+
+ -- Kenneth Wimer <wimer@kde.org>  Mon, 12 Mar 2007 14:11:14 +0100
+
+kubuntu-default-settings (1:7.04-28) feisty; urgency=low
+
+  * fixing errors in config file 
+
+ -- Kenneth Wimer <wimer@kde.org>  Wed,  7 Mar 2007 21:53:09 +0100
+
+kubuntu-default-settings (1:7.04-27) feisty; urgency=low
+
+  * Adding new progress bar and config file 
+
+ -- Kenneth Wimer <wimer@kde.org>  Wed,  7 Mar 2007 01:07:20 +0100
+
+kubuntu-default-settings (1:7.04-26) feisty; urgency=low
+
+  * Adding new usplash pics for feisty 
+
+ -- Kenneth Wimer <wimer@kde.org>  Mon,  5 Mar 2007 14:56:34 +0100
+
+kubuntu-default-settings (1:7.04-25) feisty; urgency=low
+
+  * Fix confict lines in polyesterrc file
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sun,  4 Mar 2007 20:02:50 +0000
+
+kubuntu-default-settings (1:7.04-24) feisty; urgency=low
+
+  * Removed shadows on menu bar and button in polyester
+  * Removed make button darker on hover animation in polyester
+
+ -- Ryan Kavanagh <ryanakca@kubuntu.org>  Fri, 02 March 2007 14:14:28 -0500
+
+kubuntu-default-settings (1:7.04-23) feisty; urgency=low
+
+  * Added klipperrc, changed the default action for "jpg" files
+    to gwenview instead of kview. Closes Malone #70429
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 23 Feb 2007 14:03:45 +0100
+
+kubuntu-default-settings (1:7.04-22) feisty; urgency=low
+
+  * Fixed kwinrc, changed the default number of virtual desktops
+    to 2
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 23 Feb 2007 13:30:58 +0100
+
+kubuntu-default-settings (1:7.04-21) feisty; urgency=low
+
+  * Fixed gtk-qt-engine-rc-files to sync defaults with new
+    gtk-qt-engines package.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 23 Feb 2007 12:40:01 +0100
+
+kubuntu-default-settings (1:7.04-20) feisty; urgency=low
+
+  * Fixed kubuntu-default-settings.postinst and
+    kubuntu-default-settings.postrm, install and remove Kdm
+    wallpaper and theme, instead of patching Kdm. Closes Malone #58639
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 23 Feb 2007 10:45:21 +0100
+
+kubuntu-default-settings (1:7.04-19) feisty; urgency=low
+
+  * Removed kopete/styles and fixed kopeterc.
+    TotallyClear is now a variant of the Clear style and part
+    of kdenetwork
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Wed, 21 Feb 2007 10:52:31 +0100
+
+kubuntu-default-settings (1:7.04-18) feisty; urgency=low
+
+  [ Jonathan Riddell ]
+  * Change google http user agent to Firefox, makes gmail and calendar uncrippled
+
+  [ Sarah Hobbs ]
+  * Removed konversationui.rc - this was for 0.19, we are now on 1.0.1.
+     - Closes Malone #85948, and various other upstream bugs.
+  * Changed konversationrc
+     - Now defaults to port 8001 for freenode/ubuntu, to bypass an dcc exploit in
+       certain routers.
+
+ -- Sarah Hobbs <hobbsee@ubuntu.com>  Sun, 18 Feb 2007 15:54:26 +1100
+
+kubuntu-default-settings (1:7.04-17) feisty; urgency=low
+
+  * Changed default widget style to polyester
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Tue, 13 Feb 2007 23:34:23 +0100
+
+kubuntu-default-settings (1:7.04-16) feisty; urgency=low
+
+  * Fixed kubuntu-artwork-usplash.prerm to update-initramfs -u
+    on package remove
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 01 Feb 2007 23:31:47 +0100
+
+kubuntu-default-settings (1:7.04-15) feisty; urgency=low
+
+  * konqueror-profile/konq_plugins.xml
+    - Fixed URLs to install Flash9 instead of Flash7
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 01 Feb 2007 22:25:46 +0100
+
+kubuntu-default-settings (1:7.04-14) feisty; urgency=low
+
+  * Changed default Kmenu layout to "name (description)"
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 01 Feb 2007 18:06:21 +0100
+
+kubuntu-default-settings (1:7.04-13) feisty; urgency=low
+
+  * Added polyesterstylerc for polyester style
+  * Fixed kopete/images for better contact list theme
+  * Added new kicker layout
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 01 Feb 2007 12:16:32 +0100
+
+kubuntu-default-settings (1:7.04-12) feisty; urgency=low
+
+  * Removed konqueror profile files (filemanagement and webbrowsing)
+  * Added kopete/images for contact list theme
+  * Added kopete theme TotallyClear
+  * Changed kopeterc to use the new defaults
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 01 Feb 2007 18:09:21 +0100
+
+kubuntu-default-settings (1:7.04-11) feisty; urgency=low
+
+  * Fixed kwincrystal, bad version previously uploaded
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 22 Jan 2007 23:57:45 +0100
+
+kubuntu-default-settings (1:7.04-10) feisty; urgency=low
+
+  * Fixed kwincrystalrc to fit with new upstream release.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 22 Jan 2007 13:30:23 +0100
+
+kubuntu-default-settings (1:7.04-9) feisty; urgency=low
+
+  * Fixed ksmserverrc. Switch back to old katapult autostart,
+    since the new autostart create non-fixable issues.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 20 Jan 2007 09:54:22 +0100
+
+kubuntu-default-settings (1:7.04-8) feisty; urgency=low
+
+  * Fixed ksmserverrc. Katapult will now start via /usr/share/autostart
+    file
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 20 Jan 2007 01:35:22 +0100
+
+kubuntu-default-settings (1:7.04-7) feisty; urgency=low
+
+  * Removed knetworkmanager from ksmserver. There is a known bug
+    (see Debian #406162). That make knetworkmanager hangs on
+    session restore. Solution is to start it from autostart and patch
+    it to disable the session management, as debian does.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 19 Jan 2007 10:01:28 +0100
+
+kubuntu-default-settings (1:7.04-6) feisty; urgency=low
+
+  * kpart-rc-files/part.rc
+    - Removed the first useless separator on the context toolbar
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 19 Jan 2007 07:17:23 +0100
+
+kubuntu-default-settings (1:7.04-5) feisty; urgency=low
+
+  [ ZhengPeng Hou ]
+  * Switch all fonts configure to use Sans Serif.
+  * Add keyserver.ubuntu.com to kgpgrc, and make
+    it default. 
+
+  [ Jonathan Riddell ] 
+  * Add knetworkmanager to ksmserverrc for
+    startup by default, see NetworkRoaming spec
+
+ -- ZhengPeng Hou <zhengpeng-hou@ubuntu.com>  Sat, 16 Dec 2006 01:40:08 +0800
+
+kubuntu-default-settings (1:7.04-4) feisty; urgency=low
+
+  * Changed hidden-media, hide floppy.
+  * Added profilerc, since we can't get rid of kmplayer
+    for feisty
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Wed,  6 Dec 2006 14:14:32 +0100
+
+kubuntu-default-settings (1:7.04-3) feisty; urgency=low
+
+  [ ZhengPeng Hou ]
+  * Change gtk-qt-engine-rc-files/gtkrc-2.0 to use Sans
+    instead of DejaVu Sans
+
+  [ Jonathan Riddell ]
+  * Add .directory files in /home and /media for nice icons
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue,  5 Dec 2006 18:53:08 +0000
+
+kubuntu-default-settings (1:7.04-2) feisty; urgency=low
+
+  * Install ark_part_readonly.rc
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Tue, 7 Nov 2006 10:47:32 -0800
+
+kubuntu-default-settings (1:7.04-1) feisty; urgency=low
+
+  * Update konquerorrc for better session management
+    (workarround for kde bug #135999).
+  * Renamed konq_kubuntu.rc to konqueror.rc and set profiles
+    rc files to use it. (closes #41594)
+  * Replaced Stop and Reload buttons by a single one in
+    Konqueror
+  * Removed useless profilerc file.
+  * Add k3b.eventsrc and k3brc, activate overburning and
+    disable sound notifications.
+  * Add x-7z.desktop, x-bzip.desktop, x-pak.desktop, x-tzo.desktop
+    x-ace.desktop, x-compress.desktop, x-rar.desktop, x-zip.desktop
+    x-arc.desktop, x-cpio.desktop, x-tar.desktop, x-zoo.desktop
+    x-archive.desktop, x-gzip.desktop, x-tarz.desktop
+    x-arj.desktop, x-lha.desktop, x-tbz.desktop, x-bzip2.desktop,
+    x-lzop.desktop, x-tgz.desktop, use of ark_part by default
+  * Add arkrc file, to disable internal viewer
+  * Add knotesrc
+  * Removed .hidden file for /
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 23 Oct 2006 21:14:52 +0200
+
+kubuntu-default-settings (1:6.10-62) edgy; urgency=low
+
+  * ./cursors/default/index.theme,
+    ./cursors/index.theme: added  Directories=  entries. (Malone: #67631, #65870)
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Mon, 23 Oct 2006 12:34:09 +0200
+
+kubuntu-default-settings (1:6.10-61) edgy; urgency=low
+
+  * Update konquerorrc for better session management.
+    (workarround for kde bug #135999)
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 20 Oct 2006 04:46:52 +0200
+
+kubuntu-default-settings (1:6.10-60) edgy; urgency=low
+
+  * Add 640x400 theme to usplash, needed to allow AMD64 to boot
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Oct 2006 20:54:54 +0100
+
+kubuntu-default-settings (1:6.10-59) edgy; urgency=low
+
+  * Fix font name: Sans Mono to Monospace
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 16 Oct 2006 09:22:00 -0400
+
+kubuntu-default-settings (1:6.10-58) edgy; urgency=low
+
+  * Move adeptrc to adept_managerrc, closes malone 66040
+  * New kmenu sidebar artwork by Ken Wimer
+  * Change default font from DejaVu Sans to Sans Serif, closes malone 65697
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 13 Oct 2006 12:53:27 +0100
+
+kubuntu-default-settings (1:6.10-57) edgy; urgency=low
+
+  * Upgrade kpdf and gwenview partrc for compatibility with new
+    upstream releases (options renamed etc...)
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Tue, 10 Oct 2006 03:09:42 +0200
+
+kubuntu-default-settings (1:6.10-56) edgy; urgency=low
+
+  * Fix spelling of lesser-visual-imparement to lesser-visual-impairment
+    and moderate-visual-imparement to moderate-visual-impairment
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 10 Oct 2006 00:35:54 +0100
+
+kubuntu-default-settings (1:6.10-55) edgy; urgency=low
+
+  * Change the way k-d-s updates the alternatives for usplash so it is 
+    not re-set every time k-d-s is updated
+  * Closes Malone: #64175
+
+ -- Brandon Holtsclaw <imbrandon@kubuntu.org>  Sat,  7 Oct 2006 10:46:45 -0500
+
+kubuntu-default-settings (1:6.10-54) edgy; urgency=low
+
+  [ Stefan Potyra ]
+  * Install hidden-root and hidden-media to /etc/kubuntu-default-settings 
+    instead of putting these files to /.hidden and /media.hidden; 
+    create symlinks to these instead. (closes: lp #63048).
+
+  [ Anthony Mercatante ]
+  * Remove depends on kde-style-lipstik
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu,  5 Oct 2006 17:14:45 +0200
+
+kubuntu-default-settings (1:6.10-53) edgy; urgency=low
+
+  * Update adblock filters
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Wed, 04 Oct 2006 19:09:25 +0200
+
+kubuntu-default-settings (1:6.10-52) edgy; urgency=low
+
+  * added x86_64 directorys to kde-hidden/hidden-root
+
+ -- Brandon Holtsclaw <imbrandon@kubuntu.org>  Tue,  3 Oct 2006 22:04:55 -0500
+
+kubuntu-default-settings (1:6.10-51) edgy; urgency=low
+
+  * Fixed kubuntu-default-settings.postrm, closes 
+    Malone #63238
+  * Update Dialog.png in ksplash and kdm themes. Closes
+    Malone #40821
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 02 Oct 2006 15:16:25 +0200
+
+kubuntu-default-settings (1:6.10-50) edgy; urgency=low
+
+  * Update konq-kubuntu.rc. Add the viewmode actionlist to the
+    main toolbar.
+  * Update kcmnspluginrc and add konq_plugins for use with the
+    kdelibs flashinstaller patch.
+  * Added foomatic-cleanupdrivers in kubuntu-default-settings.postinst
+    since kdeprint sometimes gets lost with the driver cache.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Tue, 26 Sep 2006 11:54:25 +0200
+
+kubuntu-default-settings (1:6.10-49) edgy; urgency=low
+
+  * Changed hidden-media to hide cdrom link instead of cdrom0
+    and cdrom1 icons
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 23 Sep 2006 13:33:25 +0200
+
+kubuntu-default-settings (1:6.10-48) edgy; urgency=low
+
+  * Removed kdeprintrc file since socket connection to cups
+    now works. (Closes Malone #59502)
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 22 Sep 2006 23:03:25 +0200
+
+kubuntu-default-settings (1:6.10-47) edgy; urgency=low
+
+  * Improved uspash images from Ken Wimmer
+
+ -- Brandon Holtsclaw <imbrandon@kubuntu.org>  Thu, 21 Sep 2006 16:07:25 -0500
+
+kubuntu-default-settings (1:6.10-46) edgy; urgency=low
+
+  * Changed the update-alternatives postinstall to work on upgrades
+
+ -- Brandon Holtsclaw <imbrandon@kubuntu.org>  Thu, 21 Sep 2006 16:07:25 -0500
+
+kubuntu-default-settings (1:6.10-45) edgy; urgency=low
+
+  * Add lost+found to kde-hidden/hidden-root
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 21 Sep 2006 11:20:50 +0100
+
+kubuntu-default-settings (1:6.10-44) edgy; urgency=low
+
+  * Add kicker wallpaper from Ken Wimer
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 20 Sep 2006 23:22:53 +0100
+
+kubuntu-default-settings (1:6.10-43) edgy; urgency=low
+
+  * Improved kwincrystalrc from Ken Wimmer. 
+
+ -- Brandon Holtsclaw <imbrandon@kubuntu.org>  Wed, 20 Sep 2006 13:21:42 -0500
+
+kubuntu-default-settings (1:6.10-42) edgy; urgency=low
+
+  * Added new amarok theme, metabar theme, wallpaper and color
+    sheme by Ken Wimmer.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Wed, 20 Sep 2006 18:27:01 +0200
+
+kubuntu-default-settings (1:6.10-41) edgy; urgency=low
+
+  * Add .hidden files to kubuntu-default-settings.install
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 18 Sep 2006 14:47:01 +0100
+
+kubuntu-default-settings (1:6.10-40) edgy; urgency=low
+
+  * Add back KubuntuStyle setting in, fix BaseResolution and change
+    background to Background.png in ksplash Theme.rc
+  * Create symlink in ksplash theme to Kubuntu wallpaper
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 18 Sep 2006 13:14:57 +0100
+
+kubuntu-default-settings (1:6.10-39) edgy; urgency=low
+
+  * Added new amarok theme by Ken Wimmer.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 16 Sep 2006 18:57:01 +0200
+
+kubuntu-default-settings (1:6.10-38) edgy; urgency=low
+
+  * Removed artwork/kdm-theme/kubuntu folder. It shouldn't be
+    there and causes ftbfs.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 16 Sep 2006 17:21:01 +0200
+
+kubuntu-default-settings (1:6.10-37) edgy; urgency=low
+
+  * Improved ksplash/Theme.rc by Ken Wimmer
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 16 Sep 2006 15:50:01 +0200
+
+kubuntu-default-settings (1:6.10-36) edgy; urgency=low
+
+  * Added new ksplash and kdm themes by Ken Wimmer
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 16 Sep 2006 15:21:01 +0200
+
+kubuntu-default-settings (1:6.10-35) edgy; urgency=low
+
+  * Add "KubuntuStyle = true" to Theme.rc in the ksplash theme for compliance
+    with the patch in ksplash-engine-moodin.
+
+ -- Raphaël Pinson <raphink@ubuntu.com>  Sat, 16 Sep 2006 15:00:49 +0200
+
+kubuntu-default-settings (1:6.10-34) edgy; urgency=low
+
+  * Rounded window corners
+  * Use correct image for window shade gradient
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 12 Sep 2006 19:41:16 -0400
+
+kubuntu-default-settings (1:6.10-33) edgy; urgency=low
+
+  * Compile with -fPIC for AMD64
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 12 Sep 2006 18:05:40 +0000
+
+kubuntu-default-settings (1:6.10-32) edgy; urgency=low
+
+  * Improved background, colour scheme and window shade from Ken Wimer
+  * Remove shadow on window text and change border width to 3, changes by Ken Wimer
+  * Remove old usplash .so alternative in postinst
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 12 Sep 2006 13:27:35 +0100
+
+kubuntu-default-settings (1:6.10-31) edgy; urgency=low
+
+  * Removed kpersonalizerrc since that causes issues.
+    It is not installed by default now so that doesn't
+    impact Kubuntu (Closes Malone: #56206)
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 11 Sep 2006 17:54:01 +0200
+
+kubuntu-default-settings (1:6.10-30) edgy; urgency=low
+
+  * Changed konversationrc to use ubuntu irc server
+    (Closes Malone: #52690)
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu,  9 Sep 2006 08:36:01 +0200
+
+kubuntu-default-settings (1:6.10-29) edgy; urgency=low
+
+  * New usplash theme
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri,  8 Sep 2006 21:09:13 +0100
+
+kubuntu-default-settings (1:6.10-28) edgy; urgency=low
+
+  * Changed konquerorrc to make google bar back (closes #59393)
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu,  7 Sep 2006 19:17:01 +0200
+
+kubuntu-default-settings (1:6.10-27) edgy; urgency=low
+
+  * Added kscdrc with predefined settings (closes #30809)
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu,  7 Sep 2006 19:07:01 +0200
+
+kubuntu-default-settings (1:6.10-26) edgy; urgency=low
+
+  * Changed kicker size to 48 pix
+  * Changed amarokrc for OSD on top-left corner
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sun,  3 Sep 2006 17:04:01 +0200
+
+kubuntu-default-settings (1:6.10-25) edgy; urgency=low
+
+  * Added Backend=Sys to knemorc, reduces CPU usage
+    (tip from Achim Bohnet)
+  * Added yakuakerc config file
+  * Changed katapultrc to make usage of o2display theme
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sun,  3 Sep 2006 17:04:01 +0200
+
+kubuntu-default-settings (1:6.10-24) edgy; urgency=low
+
+  * Moved default Konversation tabs to the left side
+
+ -- Brandon Holtsclaw <imbrandon@kubuntu.org>  Fri,  1 Sep 2006 19:02:39 +0000
+
+kubuntu-default-settings (1:6.10-23) edgy; urgency=low
+
+  * Fix path to background image in KDM theme
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 30 Aug 2006 13:30:20 +0000
+
+kubuntu-default-settings (1:6.10-22) edgy; urgency=low
+
+  * KDM theme fixes from Ken Wimer
+  * New Konqueror background from Ken Wimer
+  * Add Edgy amarok theme
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 29 Aug 2006 11:43:43 +0100
+
+kubuntu-default-settings (1:6.10-21) edgy; urgency=low
+
+  * Altered wallpaper from Ken Wimer
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 24 Aug 2006 14:50:57 +0100
+
+kubuntu-default-settings (1:6.10-20) edgy; urgency=low
+
+  * Improved KDM theme from Ken Wimer
+  * New KSplash theme from Ken Wimer
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 24 Aug 2006 13:43:12 +0100
+
+kubuntu-default-settings (1:6.10-19) edgy; urgency=low
+
+  * Changed default style to plastik
+  * Improved adblock filters
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Wed, 23 Aug 2006 23:38:01 +0200
+
+kubuntu-default-settings (1:6.10-18) edgy; urgency=low
+
+  * Changed the default colour scheme name from "O2" to "Kubuntu O2"
+  * Changed the default bg colours to purple instead of the blue
+
+ -- Brandon Holtsclaw <imbrandon@kubuntu.org>  Wed, 23 Aug 2006 05:56:54 -0500
+
+kubuntu-default-settings (1:6.10-17) edgy; urgency=low
+
+  * Added default .hidden files to make use of the new patches to kdebase
+
+ -- Brandon Holtsclaw <imbrandon@kubuntu.org>  Wed, 23 Aug 2006 03:35:00 -0500
+
+kubuntu-default-settings (1:6.10-16) edgy; urgency=low
+
+  * Add window gradent and change border colours, from Ken Wimer
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 22 Aug 2006 18:01:50 +0100
+
+kubuntu-default-settings (1:6.10-15) edgy; urgency=low
+
+  * Fix Makefile for installing contrastcurors
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 22 Aug 2006 13:49:10 +0000
+
+kubuntu-default-settings (1:6.10-14) edgy; urgency=low
+
+  * Add contrastlarge cursor theme and set it in 
+    minor-visual-imparement 
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 22 Aug 2006 11:55:33 +0100
+
+kubuntu-default-settings (1:6.10-13) edgy; urgency=low
+
+  * Updated colour scheme from Ken Wimer
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 22 Aug 2006 11:10:31 +0100
+
+kubuntu-default-settings (1:6.10-12) edgy; urgency=low
+
+  * Improved khtmlrc for better adblock filters
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 20 Aug 2006 20:55:01 +0200
+
+kubuntu-default-settings (1:6.10-11) edgy; urgency=low
+
+  * Changed XftHintStyle to "hintfull" in kdeglobals to go back to both
+    gnome and kde setting on dapper. Avoids fonts to be fuzzy.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 20 Aug 2006 01:21:01 +0200
+
+kubuntu-default-settings (1:6.10-10) edgy; urgency=low
+
+  * Improved kontactrc to hide hide Synchronization since
+    kitchensyc isn't installed be default. Avoids an error message
+    when clicking on it.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sun, 20 Aug 2006 13:04:01 +0200
+
+kubuntu-default-settings (1:6.10-9) edgy; urgency=low
+
+  * Updated kdeglobals for antialiased fonts
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sun, 20 Aug 2006 10:39:01 +0200
+
+kubuntu-default-settings (1:6.10-8) edgy; urgency=low
+
+  * New KDM theme from Ken Wimer
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sat, 19 Aug 2006 22:05:11 +0100
+
+kubuntu-default-settings (1:6.10-7) edgy; urgency=low
+
+  * Removed unused function get_file in kubuntu-servicemenu.sh causing
+    the script to fail. The service menu now works properly
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 19 Aug 2006 14:31:01 +0200
+
+kubuntu-default-settings (1:6.10-6) edgy; urgency=low
+
+  * Changed konqueror's default icon size to default
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 18 Aug 2006 19:01:01 +0200
+
+kubuntu-default-settings (1:6.10-5) edgy; urgency=low
+
+  * Add kde-rc-files/kcminputrc for correct cursor theme
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 18 Aug 2006 14:26:01 +0200
+
+kubuntu-default-settings (1:6.10-4) edgy; urgency=low
+
+  * Add accessibility profiles for 
+    https://features.launchpad.net/distros/ubuntu/+spec/kubuntu-accessibility
+  * Turn off bookmark toolbar in konquerorrc
+  * Turn on OpenMiddleClick= in konquerorrc
+  * Turn off HoverCloseButton= in konquerorrc
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 17 Aug 2006 17:28:01 +0100
+
+kubuntu-default-settings (1:6.10-3) edgy; urgency=low
+
+  * Make kopete tabs not always show by default.  Closes Ubuntu #55079
+
+ -- Sarah Hobbs <hobbsee@ubuntu.com>  Tue,  8 Aug 2006 13:38:50 +1000
+
+kubuntu-default-settings (1:6.10-2) edgy; urgency=low
+
+  * Add default shortcuts for Amarok and Konqueror 
+    for kubuntu-laptop-buttons
+  * Don't warn when submitting data to a non-SSL site
+  * New wallpaper from Ken Wimer
+  * New purple colour scheme from Ken Wimer
+  * Update copyright file
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sat,  5 Aug 2006 23:37:29 +0100
+
+kubuntu-default-settings (1:6.10-1) edgy; urgency=low
+
+  * Changed konquerorrc to activate tab's hover close button option, and
+    activate scrolling on middle click
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri,  22 Jul 2006 22:21:43 +0200
+
+kubuntu-default-settings (1:6.06-23) edgy; urgency=low
+
+  * Changed Kubuntu wallpaper for Edgy Eft Development
+
+ -- Raphaël Pinson <raphink@ubuntu.com>  Sat,  1 Jul 2006 01:10:54 +0200
+
+kubuntu-default-settings (1:6.06-22) dapper-updates; urgency=low
+
+  * Updated profilerc for correct kmplayer integration regarding to Real
+    streaming and audio streaming
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon,  01 June 2006 01:31:35 +0100
+
+kubuntu-default-settings (1:6.06-21) dapper; urgency=low
+
+  * Add application/x-mplayer2 to profilerc to make KMPlayer 
+    the default Konqueror plugin
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sun, 28 May 2006 18:24:29 +0100
+
+kubuntu-default-settings (1:6.06-20) dapper; urgency=low
+
+  * Update preview image for kdm to match actual theme
+
+ -- Kenneth Wimer <kwwii@bootsplash.org>  Thu, 18 May 2006 23:26:46 +0200
+
+kubuntu-default-settings (1:6.06-19) dapper; urgency=low
+
+  * Revert previous change (usplash)
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 18 May 2006 12:38:34 +0100
+
+kubuntu-default-settings (1:6.06-18) dapper; urgency=low
+
+  * New usplash artwork from omeg.
+
+ -- Scott James Remnant <scott@ubuntu.com>  Thu, 18 May 2006 07:32:52 +0100
+
+kubuntu-default-settings (1:6.06-17) dapper; urgency=low
+
+  * Updated KDM artwork from Ken Wimer
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 17 May 2006 00:16:19 +0100
+
+kubuntu-default-settings (1:6.06-16) dapper; urgency=low
+
+  * Added kmailrc, to remove the "View/Total" column in folder list by default, 
+    change View/Unread count to "View After folder name" better for
+    usability/space usage (closes Malone #42486)
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Tue, 12 May 2006 02:25:34 +0100
+
+kubuntu-default-settings (1:6.06-15) dapper; urgency=low
+
+  [ javier ]
+  * Added email.desktop taken from http://www.kde-forum.org/post/56944/lastpost.html
+
+  [ Anthony Mercatante ]
+  * Add image preview on the desktop
+  * Add a set of alternate keyboard shortcut for Gwenview, to reproduce
+    those used by most image viewers
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sun,  7 May 2006 22:34:25 +0200
+
+kubuntu-default-settings (1:6.06-14) dapper; urgency=low
+
+  * Add cryptodefaults to enable SSLv2 with no cyphers, 
+    fixes http://bugs.kde.org/126620
+  * Fix old FSF address in debian/copyright
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue,  2 May 2006 15:50:35 +0100
+
+kubuntu-default-settings (1:6.06-13) dapper; urgency=low
+ 
+  * Add shortcut to Find file in konqueror. Closes malone #32350 
+ 
+ -- Frode M. Doeving <frode@lnix.net>  Fri, 28 Apr 2006 21:10:54 +0200
+
+kubuntu-default-settings (1:6.06-12) dapper; urgency=low
+
+  [ Anthony Mercatante ]
+  * Redefined first tab switching shortucuts for konversation, as
+    [ctrl]+[left/right] doesn't work (Malone 41582)
+
+  [ Raphaël Pinson ]
+  * Fix modes of files in debian directory
+
+ -- Raphaël Pinson <raphink@ubuntu.com>  Fri, 28 Apr 2006 23:48:37 +0200
+
+kubuntu-default-settings (1:6.06-11) dapper; urgency=low
+
+  * Defined secondary keyboard shortcuts to switch tabs in konqueror,
+    kopete, konversation and konsole
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Tue, 25 Apr 2006 18:22:21 +0200
+
+kubuntu-default-settings (1:6.06-10) dapper; urgency=low
+
+  * Switch to Kubuntu button theme in kwincrystalrc 
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 20 Apr 2006 00:13:26 +0200
+
+kubuntu-default-settings (1:6.06-9) dapper; urgency=low
+
+  * Exclude mounted NFS drives in kdesktoprc, stops 
+    livefs appearing on desktop
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 18 Apr 2006 21:14:14 +0100
+
+kubuntu-default-settings (1:6.06-8) dapper; urgency=low
+
+  * Enable suspend in kcmlaptop
+  * Add skimrc to add Quit option to Skim
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 18 Apr 2006 19:01:25 +0100
+
+kubuntu-default-settings (1:6.06-7) dapper; urgency=low
+
+  [ Jonathan Riddell ]
+  * Pre-scaled usplash image from Ken Wimer
+
+  [ Anthony Mercatante ]
+  * Improved profilerc to use Amarok as default for audio files instead
+    of Kaffeine
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 18 Apr 2006 01:02:41 +0100
+
+kubuntu-default-settings (1:6.06-6) dapper; urgency=low
+
+  * Add new colour scheme kubuntuColours.kcsrc from Ken Wimer and
+    update kdeglobals
+  * Update background image for new colour scheme, from Ken Wimer
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 14 Apr 2006 01:15:28 +0100
+
+kubuntu-default-settings (1:6.06-5) dapper; urgency=low
+
+  * 1920x1200 background for kdm/ksplash login screen
+    (Closes: Malone #35123 and #35133)
+
+ -- Luka Renko <lure.net@gmail.com>  Sat, 08 Apr 2006 22:25:33 +0200
+
+kubuntu-default-settings (1:6.06-4) dapper; urgency=low
+
+  * Turn on Hot New Stuff in Kopete
+  * Wallpaper reverted.  Most amusing.
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu,  6 Apr 2006 13:17:33 +0100
+
+kubuntu-default-settings (1:6.06-3) dapper; urgency=low
+
+  * Change wallpaper to 1st April special.
+
+ -- Raphaël Pinson <raphink@ubuntu.com>  Fri, 31 Mar 2006 13:15:53 +0200
+
+kubuntu-default-settings (1:6.06-2) dapper; urgency=low
+
+  * Disable transparency in kwincrystalrc
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 31 Mar 2006 02:02:11 +0100
+
+kubuntu-default-settings (1:6.06-1) dapper; urgency=low
+
+  * Make speedcrunchrc minimal and revert to default font size.
+  * Switch to 6.06 versioning.
+
+ -- Raphaël Pinson <raphink@ubuntu.com>  Wed, 29 Mar 2006 15:29:08 +0200
+
+kubuntu-default-settings (1:6.04-18) dapper; urgency=low
+
+  * Added AlwaysShowTabs=true to kopeterc so it behaves like other tabbed
+    programs in KDE.
+
+ -- Raphaël Pinson <raphink@ubuntu.com>  Tue, 28 Mar 2006 11:47:50 +0200
+
+kubuntu-default-settings (1:6.04-17) dapper; urgency=low
+
+  * Added profilerc to define video player priority between kaffeine
+    and kmplayer
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 27 Mar 2006 00:30:30 +0000
+
+
+kubuntu-default-settings (1:6.04-16) dapper; urgency=low
+
+  * Install kubuntu-kmenu-side-tile.png and set in kickerrc
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 15 Mar 2006 12:05:24 +0000
+
+kubuntu-default-settings (1:6.04-15) dapper; urgency=low
+
+  * Make default window style kwin3_crystal
+  * Give ksplash same background as KDM
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 13 Mar 2006 23:58:24 +0000
+
+kubuntu-default-settings (1:6.04-14) dapper; urgency=low
+
+  * Change default wallpaper to .png in kdesktoprc
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 13 Mar 2006 15:30:29 +0000
+
+kubuntu-default-settings (1:6.04-13) dapper; urgency=low
+
+   [ Tobi Vollebregt ]
+   * Turn off default KDE searchbar, turn on googlebar.
+
+   [ Jonathan Riddell ]
+   * Fix makefile to install correct wallpaper file
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 13 Mar 2006 12:22:25 +0000
+
+kubuntu-default-settings (1:6.04-12) dapper; urgency=low
+
+  * Change selected colours and button forground colour
+  * Dapper usplash image
+  * Dapper KDM theme
+  * Dapper KSplash Moodin theme
+  * Tweak lipstick settings
+  * Menu drop shadow in kstylerc
+  * Add kwincrystalrc
+  * Add depends on ksplash-engine-moodin and kwin-style-crystal
+  * New bubbles bling background
+  * Dapper kmenu side image
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed,  8 Mar 2006 14:47:56 +0000
+
+kubuntu-default-settings (1:6.04-11) dapper; urgency=low
+
+  * Added khtmlrc with a disabled list of filters for adblock
+  * Changed log directory for konversation, from $HOME to
+    $HOME/.kde/share/apps/konversation/logs
+  * knemorc improved with different iconsets depending the kind of connection.
+    Also added ppp0, ppp1, ath0 and ath1
+  * Added khotkeysrc with default entry for unused "Print" key set to ksnapshot
+  * Configured font for OSD in Amarok. Was previously using the first font in
+    the list, now "DejaVu Sans"
+  * Fixed tab placement for kopete (bad value in previous package version)
+  * Added kcmnspluginrc with autodetection of ns plugins and artsdsp activated
+    by default
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 06 Mar 2006 20:38:52 +0000
+
+kubuntu-default-settings (1:6.04-10) dapper; urgency=low
+
+  [ Anthony Mercatante ]
+  * Changed tab position to bottom for kopete and konsole to fit
+    konversation and keep tabs arround the focus
+  * Added dirfilterplugin.rc to make usage of dirfilter in konqueror's filemanagement
+    profile by default
+  * Added kwalletrc and kdewallet.kwl for confortable default config on new profiles
+  * Changed kdeprintrc to use localhost as default CUPS server
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 28 Feb 2006 15:38:52 +0000
+
+kubuntu-default-settings (1:6.04-9) dapper; urgency=low
+
+  [ Anthony Mercatante ]
+  * Updated kubuntu-kmenu-side.png to version 6.04
+  * Updated katerc to use only one session
+  * Added gtk_qt_engine_rc and gtkrc-2.0 to automate gtk_qt_engine
+    configuration within startkde
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 27 Feb 2006 18:23:34 +0000
+
+kubuntu-default-settings (1:6.04-8) dapper; urgency=low
+
+  * Remove Kontact tip of the day
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 23 Feb 2006 14:46:53 +0000
+
+kubuntu-default-settings (1:6.04-7) dapper; urgency=low
+
+  [ Anthony Mercatante ]
+  * Changed global font size to 9 for KDE and all applications
+  * Tabs activated by default for Kopete
+  * Changed a few event notifications (sounds)
+  * Added tabs on top for konversation and default theme set to "Square"
+    for better visibility
+  * Added ksvgplugin with integration set to "contextToolBar"
+  * Added new KDM theme and KSplash Moodin theme
+  * Changed font effect on the desktop for better visibility
+  * Correct amarok's kubuntu theme installation
+  * Added knemorc
+  * Add cursors/default/index.theme fix mouse theme for non-KDE apps
+
+  [ Jonathan Riddell ]
+  * Remove kaffeine/cr64-action-player_play.png, now upstream
+  * Add kaffeine/fileopen icons
+  * Update Kaffeine stamp to 0.7.1
+  * Add khelpcentrerc file to stop index popup
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 22 Feb 2006 15:47:38 +0000
+
+kubuntu-default-settings (1:6.04-6) dapper; urgency=low
+
+  * Fix kickerrc layout and spacing
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Jan 2006 14:37:14 +0000
+
+kubuntu-default-settings (1:6.04-5) dapper; urgency=low
+
+  [ Anthony Mercatante ]
+  * konq-kubuntu.rc rebuilt to modify menu structure :
+     - Window splitting options added in "View" menu
+     - "Fullscreen" option available in "View" menu
+     - "Show/Hide Sidebar" available in "View" menu
+     - "Bookmarks", "Most visited URLs" and "Historic" are grouped in a "Go" menu
+     - Search functions are back in the Edit menu (lors of complains about that)
+     - F9 Shortcut added to launch the embedded konsole.
+  * Added ark_part.rc, ark_part_readonly.rc, gvimagepart.rc, part.rc in folder
+    kpart-rc-files, with integration set to "contextToolBar"
+  * Updated konquerorrc, setting contextToolBar's "NewLine" value to "true"
+    (doesn't work if set in kparts' configuration files while clicking another tab and
+    coming back)
+    MediumFontSize set to 10
+  * Added khtml_browser.rc, removing DOM entries in the konq's "view" menu
+  * Updated filemagement profile, adding Sidebar by default
+  * Added x-tar.desktop, x-tarz.desktop, x-tbz.desktop, x-tgz.desktop, x-zip.desktop
+    in folder mimelnk, with blanked "LocalProtocol" value, to remove tar and zip
+    kioslaves default activation in order to have an homogenous ark integration in kde with
+    rar, 7z and other compressed files
+  * Makefile updated to install all new files
+  * Add postinst and postrm scripts to edit kdmrc for Kubuntu KDM theme, stops kdm 
+    having to depend on kubuntu-default-settings
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon,  9 Jan 2006 04:50:25 +0000
+
+kubuntu-default-settings (1:6.04-4) dapper; urgency=low
+
+  * Remove qtrc, now part of libqt3-mt
+  * Fix makefile to install uiserver file
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed,  4 Jan 2006 02:02:39 +0000
+
+kubuntu-default-settings (1:6.04-3) dapper; urgency=low
+
+  * Fix typo in default fixed font in kdeglobals
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon,  2 Jan 2006 19:39:13 +0000
+
+kubuntu-default-settings (1:6.04-2) dapper; urgency=low
+
+  * Set default kicker k-menu extensions to none
+  * Add katapultrc with SystrayIcon=false
+  * Hide splash screen in amarokrc
+  * Change order of kicker applets as per http://wiki.kubuntu.org/KubuntuSimplifyKDE
+  * Don't show kicker hide buttons
+  * Don't force Konqueror to use tabs
+  * Stop Kate showing its new startup dialogue
+  * Add Kubuntu metabar and amarok sidebar themes
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 15 Dec 2005 17:09:13 +0000
+
+kubuntu-default-settings (1:6.04-1) dapper; urgency=low
+
+  * Update usplash image with one munged for the 640x400 switch.  This isn't
+    the final artwork by any stretch, just a stopgap, so don't complain.
+  * Update initramfs when we're upgraded, to make sure we get the new image.
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Mon, 12 Dec 2005 18:49:09 +1100
+
+kubuntu-default-settings (1:5.10-18) breezy; urgency=low
+
+  * Change sizes on splash images to allow for larger fonts
+  * Remove unneeded files in kdm theme
+  * Use nicer shadow on desktop text
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 10 Oct 2005 21:26:09 +0100
+
+kubuntu-default-settings (1:5.10-17) breezy; urgency=low
+
+  * Add speedcrunchrc for larger fonts and more obvious colours
+  * Add adeptrc for text under toolbars
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 10 Oct 2005 18:37:29 +0100
+
+kubuntu-default-settings (1:5.10-16) breezy; urgency=low
+
+  * Update debian/copyright for CC-BY-SA 2.5
+  * Change default fonts to DejaVu for better i18n
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 10 Oct 2005 17:47:32 +0100
+
+kubuntu-default-settings (1:5.10-15) breezy; urgency=low
+
+  * Change palette order in kusplash.png to show text and progress bar
+    better
+  * Add copyright notice for sound file
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed,  5 Oct 2005 13:36:22 +0100
+
+kubuntu-default-settings (1:5.10-14) breezy; urgency=low
+
+  * Change amarokrc to default to alsasink
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue,  4 Oct 2005 03:45:55 +0100
+
+kubuntu-default-settings (1:5.10-13) breezy; urgency=low
+
+  * Correct name of knotifyrc to knotify.eventsrc
+  * Add kcmlaptoprc with default settings for power management
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon,  3 Oct 2005 19:26:10 +0100
+
+kubuntu-default-settings (1:5.10-12) breezy; urgency=low
+
+  * Add usplash graphics and kubuntu-artwork-usplash package
+  * Update standards version to 3.6.2
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 28 Sep 2005 17:20:20 +0100
+
+kubuntu-default-settings (1:5.10-11) breezy; urgency=low
+
+  * Add kio_httprc to make Konqueror identify as safari for gmail/google maps
+  * Add kuriikwsfilterrc to set default search engine to locate:/
+  * Fix name on filemanagement profile (was called filebrowsing)
+  * Set filemanagement profile to have $HOME as default
+  * Reduce Konqueror history entries to 1000
+  * Add Konqueror service menu for .deb files
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 26 Sep 2005 23:51:40 +0100
+
+kubuntu-default-settings (1:5.10-10) breezy; urgency=low
+
+  * Update KDM theme and add matching splash screen
+  * Add login sound
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sat, 24 Sep 2005 13:21:08 +0100
+
+kubuntu-default-settings (1:5.10-9) breezy; urgency=low
+
+  * Fix edges on wallpaper, closes http://bugzilla.ubuntu.com/15956
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 21 Sep 2005 13:39:35 +0100
+
+kubuntu-default-settings (1:5.10-8) breezy; urgency=low
+
+  * New KDM theme and background
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 19 Sep 2005 15:39:44 +0100
+
+kubuntu-default-settings (1:5.10-7) breezy; urgency=low
+
+  * Add Alt+o shortcut to Konqueror's location bar
+  * Add Amarok pause shortcut for users without a Win key
+  * Fix name of splash theme back to kubuntu
+  * Make desktop icons larger at 48 pixels
+  * Add spacer in window decoration between maximuse and close
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 16 Sep 2005 20:18:43 +0100
+
+kubuntu-default-settings (1:5.10-6) breezy; urgency=low
+
+  * Breezy artwork
+  * Load katapult in ksmserverrc
+  * Make Amarok and kgpg first run wizard not run
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 15 Sep 2005 20:34:45 +0100
+
+kubuntu-default-settings (1:5.10-5) breezy; urgency=low
+
+  * Add usr/X11R6/lib/X11/icons/default to debian/dirs, since we try to create
+    a symlink there and whichever X package used to ship it either doesn't, or
+    isn't an indirect dependency anymore
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 15 Aug 2005 20:55:52 -0700
+
+kubuntu-default-settings (1:5.10-4) breezy; urgency=low
+
+  * Add missing mouse cursor files
+  * Stop Kaffeine startup wizard from appearing
+  * Add 64x64 play icon used by Kaffeine
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sat, 13 Aug 2005 01:59:57 +0100
+
+kubuntu-default-settings (1:5.10-3) breezy; urgency=low
+
+  * Make Win key a shortcut for k-menu
+  * Add Kubuntu themed Konqueror throbber
+  * Use ASpell as default spellchecker
+  * Add Kubuntu Konqueror profile to simplify Konqueror UI
+  * Default print system to CUPS
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 19 Jul 2005 17:54:04 +0100
+
+kubuntu-default-settings (1:5.10-2) breezy; urgency=low
+
+  * Added kontactrc, newsreader (knoda) plugin enabled by default.
+    Fixes https://bugzilla.ubuntu.com/11130
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 30 Jun 2005 15:25:39 +0000
+
+kubuntu-default-settings (1:5.10-1) breezy; urgency=low
+
+  * Added kuserrc. default uid and gid settings for
+    new users.  Fix https://bugzilla.ubuntu.com/11854
+  * Add lipstik widget style settings
+  * uiserver: single download window
+  * kwin: allow resize on full screen windows
+  * konqueror: tabs always on
+
+ -- Jonathan Riddell <jr@jriddell.org>  Wed, 29 Jun 2005 17:22:08 +0200
+
+kubuntu-default-settings (1:5.04-11) hoary; urgency=low
+
+  * Remove inactiveForeground colour in kdeglobals, now patched in kdebase
+
+ -- Jonathan Riddell <jr@jriddell.org>  Wed,  6 Apr 2005 03:04:19 +0100
+
+kubuntu-default-settings (1:5.04-10) hoary; urgency=low
+
+  * Add konversationrc to connect to #kubuntu
+
+ -- Jonathan Riddell <jr@jriddell.org>  Mon,  4 Apr 2005 02:59:50 +0100
+
+kubuntu-default-settings (1:5.04-09) hoary; urgency=low
+
+  * Add Human mouse cursor theme from ubuntu-artwork
+
+ -- Jonathan Riddell <jr@jriddell.org>  Fri,  1 Apr 2005 02:33:40 +0100
+
+kubuntu-default-settings (1:5.04-08) hoary; urgency=low
+
+  * Set inactiveForeground colour in kdeglobals, fixes
+    https://bugzilla.ubuntu.com/7880 hard to see colours
+    for tab text
+
+ -- Jonathan Riddell <jr@jriddell.org>  Thu, 31 Mar 2005 23:29:04 +0100
+
+kubuntu-default-settings (1:5.04-07) hoary; urgency=low
+
+  * Turn on storage media icons on desktop
+  * Larger clock font size
+  * Swap wastebin and clock on panel
+
+ -- Jonathan Riddell <jr@jriddell.org>  Mon, 28 Mar 2005 18:28:56 +0100
+
+kubuntu-default-settings (1:5.04-06) hoary; urgency=low
+
+  * Fix broken NumVisibleEntries=0 in kickerrc
+  * Remove second ShowIconsOnPushButtons entry in kdeglobals
+
+ -- Jonathan Riddell <jr@jriddell.org>  Thu, 24 Mar 2005 04:47:05 +0000
+
+kubuntu-default-settings (1:5.04-05) hoary; urgency=low
+
+  * Add qtrc file to turn on anti-aliasing by default
+  * Konsole tabs in top by default
+  * Bitstream Vera Sans for all fonts by default
+
+ -- Jonathan Riddell <jr@jriddell.org>  Thu, 24 Mar 2005 03:20:49 +0000
+
+kubuntu-default-settings (1:5.04-04) hoary; urgency=low
+
+  * Add depends on kde-style-lipstik
+
+ -- Jonathan Riddell <jr@jriddell.org>  Thu, 17 Mar 2005 17:50:44 +0000
+
+kubuntu-default-settings (1:5.04-03) hoary; urgency=low
+
+  * Fix Makefile to install kdeglobals
+
+ -- Jonathan Riddell <jr@jriddell.org>  Thu, 17 Mar 2005 10:16:28 +0000
+
+kubuntu-default-settings (1:5.04-02) hoary; urgency=low
+
+  * Move rc files from /etc/kde-profile to /usr/share/kubuntu-default-settings
+  * Add kmixrc to hide kmix window by default
+
+ -- Jonathan Riddell <jr@jriddell.org>  Wed, 16 Mar 2005 21:52:11 +0000
+
+kubuntu-default-settings (1:5.04-01) hoary; urgency=low
+
+  * Add wallpaper, ksplash theme, kdm theme
+
+ -- Jonathan Riddell <jr@jriddell.org>  Tue, 15 Mar 2005 23:09:29 +0000
+
+kubuntu-default-settings (5.10.01) hoary; urgency=low
+
+  * Initial Release
+
+ -- Jonathan Riddell <jr@jriddell.org>  Mon, 14 Mar 2005 23:17:00 +0000
+

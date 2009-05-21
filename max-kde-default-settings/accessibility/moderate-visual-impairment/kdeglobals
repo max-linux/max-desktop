@@ -1,0 +1,69 @@
+[DesktopIcons]
+ActiveColor=255,255,102
+ActiveColor2=0,0,102
+DefaultColor=255,255,255
+DefaultColor2=0,0,0
+DisabledColor2=51,51,51
+Size=56
+
+[General]
+alternateBackground=0,0,40
+background=0,0,0
+buttonBackground=0,0,0
+buttonForeground=255,255,255
+fixed=DejaVu Sans Mono,20,-1,5,50,0,0,0,0,0
+font=DejaVu Sans,24,-1,5,50,0,0,0,0,0
+foreground=255,255,255
+linkColor=255,255,255
+menuFont=DejaVu Sans,24,-1,5,50,0,0,0,0,0
+selectBackground=0,0,90
+selectForeground=255,255,255
+taskbarFont=DejaVu Sans,22,-1,5,50,0,0,0,0,0
+toolBarFont=DejaVu Sans,24,-1,5,50,0,0,0,0,0
+visitedLinkColor=255,255,255
+windowBackground=0,0,0
+windowForeground=255,255,255
+
+[MainToolbarIcons]
+ActiveColor=255,255,102
+ActiveColor2=0,0,102
+DefaultColor=255,255,255
+DefaultColor2=0,0,0
+DisabledColor2=51,51,51
+Size=44
+
+[PanelIcons]
+ActiveColor=255,255,102
+ActiveColor2=0,0,102
+DefaultColor=255,255,255
+DefaultColor2=0,0,0
+DisabledColor2=51,51,51
+
+[SmallIcons]
+ActiveColor=255,255,102
+ActiveColor2=0,0,102
+DefaultColor=255,255,255
+DefaultColor2=0,0,0
+DisabledColor2=51,51,51
+DoublePixels=true
+
+[ToolbarIcons]
+ActiveColor=255,255,102
+ActiveColor2=0,0,102
+DefaultColor=255,255,255
+DefaultColor2=0,0,0
+DisabledColor2=51,51,51
+Size=44
+
+[WM]
+activeBackground=0,0,90
+activeBlend=0,0,90
+activeFont=DejaVu Sans,24,-1,5,75,0,0,0,0,0
+activeTitleBtnBg=255,255,255
+frame=0,0,133
+handle=0,0,133
+inactiveBackground=30,30,30
+inactiveBlend=30,30,30
+inactiveFrame=30,30,30
+inactiveHandle=30,30,30
+inactiveTitleBtnBg=170,170,170

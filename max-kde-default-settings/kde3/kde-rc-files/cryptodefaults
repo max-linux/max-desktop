@@ -1,0 +1,12 @@
+[SSLv2]
+Enabled=true
+cipher_DES-CBC-MD5=false
+cipher_DES-CBC3-MD5=false
+cipher_EXP-RC2-CBC-MD5=false
+cipher_EXP-RC4-MD5=false
+cipher_RC2-CBC-MD5=false
+cipher_RC4-64-MD5=false
+cipher_RC4-MD5=false
+
+[Warnings]
+OnUnencrypted=false

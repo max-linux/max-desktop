@@ -1,0 +1,29 @@
+[Channel 0]
+Name=#kubuntu
+
+[General Options]
+ShowTrayIcon=true
+TrayNotify=true
+TrayNotifyOnlyOwnNick=true
+
+[Path Settings]
+LogfilePath=$HOME/.kde/share/apps/konversation/logs
+
+[Server 0]
+Server=irc.ubuntu.com
+Port=8001
+
+[ServerGroup 0]
+AutoJoinChannels=Channel 0
+ServerList=Server 0
+Name=Ubuntu IRC
+
+[Sort Nicknames]
+SortByStatus=true
+
+[Themes]
+IconTheme=oxygen
+
+[Web Browser Settings]
+UseCustomBrowser=true
+WebBrowserCmd=xdg-open '%u'

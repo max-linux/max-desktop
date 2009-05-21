@@ -1,0 +1,16 @@
+[Compositing]
+UnredirectFullscreen=false
+
+[Desktops]
+Number=2
+
+[Effect-Cube]
+CapColor=0,0,0
+
+[Windows]
+TitlebarDoubleClickCommand=Maximize
+
+[Plugins]
+kwin4_effect_boxswitchEnabled=false
+kwin4_effect_coverswitchEnabled=true
+

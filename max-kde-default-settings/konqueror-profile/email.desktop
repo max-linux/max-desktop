@@ -1,0 +1,12 @@
+[Desktop Entry]
+Actions=Email
+Encoding=UTF-8
+ServiceTypes=allfiles
+
+[Desktop Action Email]
+Name=Email File
+Name[de]=Versenden als E-Mail
+Name[fr]=Envoyer par courriel
+Name[pl]=Wyślij plik w załączniku
+Exec=kmail --attach %F
+Icon=kmail

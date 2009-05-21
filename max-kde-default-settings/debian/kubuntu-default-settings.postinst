@@ -1,0 +1,41 @@
+#! /bin/sh
+set -e
+
+#DEBHELPER#
+
+case "$1" in
+  configure)
+    # clean the driver database for kdeprint
+    if [ -x /usr/sbin/foomatic-cleanupdrivers ]; then
+      foomatic-cleanupdrivers
+    fi
+
+	# create links for .hidden files, don't bail out if s.th. goes wrong.
+	if [ -d /media ]; then
+		if [ ! -e /media/.hidden ]; then
+			ln -s /etc/max-kde-default-settings/hidden-media /media/.hidden || \
+				echo "Could not create symlink /media/.hidden, skipping."
+		fi
+		if [ ! -e /media/.directory ]; then
+			ln -s /etc/max-kde-default-settings/directory-media /media/.directory || \
+				echo "Could not create symlink /media/.directory, skipping."
+		fi
+	fi 
+	if [ -d /home ]; then
+		if [ ! -e /home/.directory ]; then
+			ln -s /etc/max-kde-default-settings/directory-home /home/.directory || \
+				echo "Could not create symlink /home/.directory, skipping."
+		fi
+	fi
+
+	if [ -f /usr/share/max-kde-default-settings/hal-policy-ntfs-config-write-policy.fdi ]; then
+		if [ -d /usr/share/hal/fdi/policy/10osvendor ]; then
+			ln -sf /usr/share/max-kde-default-settings/hal-policy-ntfs-config-write-policy.fdi \
+				/usr/share/hal/fdi/policy/10osvendor/20-ntfs-config-write-policy.fdi || \
+				echo "Could not create symlink /usr/share/hal/fdi/policy/10osvendor/20-ntfs-config-write-policy.fdi, skipping."
+		fi
+	fi
+    ;;
+esac
+
+exit 0

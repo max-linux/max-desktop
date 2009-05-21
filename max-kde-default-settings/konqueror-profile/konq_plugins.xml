@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<arch architecture="ia32">
+    <os name="Linux">
+        <plugin mimetype="application/x-shockwave-flash">
+            <pluginname>Macromedia Flash Player 9.0</pluginname>
+            <pluginurl>http://fpdownload.macromedia.com/get/flashplayer/current/install_flash_player_9_linux.tar.gz</pluginurl>
+            <licenceurl>http://www.adobe.com/shockwave/download/license/desktop/ssi/eula_ssi.html</licenceurl>
+            <licence>this field appear if licenceurl doesn't exist</licence>
+            <pluginfile>install_flash_player_9_linux/libflashplayer.so</pluginfile>
+        </plugin>
+    </os>
+</arch>

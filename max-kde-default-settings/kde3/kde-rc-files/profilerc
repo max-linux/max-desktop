@@ -1,0 +1,384 @@
+[application/x-deb - 1]
+AllowAsDefault=true
+Application=kde-gdebi-kde.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=application/x-deb
+
+[application/x-deb - 2]
+AllowAsDefault=true
+Application=kde-ark.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=application/x-deb
+
+[video/avi - 1]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/avi
+
+[video/avi - 2]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/avi
+
+[video/avi - 3]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/avi
+
+[video/mp4 - 1]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/mp4
+
+[video/mp4 - 2]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/mp4
+
+[video/mp4 - 3]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/mp4
+
+[video/mpeg - 1]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/mpeg
+
+[video/mpeg - 2]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/mpeg
+
+[video/mpeg - 3]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/mpeg
+
+[video/quicktime - 1]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/quicktime
+
+[video/quicktime - 2]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/quicktime
+
+[video/quicktime - 3]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/quicktime
+
+[video/vnd.rn-realvideo - 1]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/vnd.rn-realvideo
+
+[video/vnd.rn-realvideo - 2]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/vnd.rn-realvideo
+
+[video/vnd.rn-realvideo - 3]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/vnd.rn-realvideo
+
+[video/x-flic - 1]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-flic
+
+[video/x-flic - 2]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-flic
+
+[video/x-flic - 3]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-flic
+
+[video/x-matroska - 1]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-matroska
+
+[video/x-matroska - 2]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-matroska
+
+[video/x-matroska - 3]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-matroska
+
+[video/x-ms-asf - 1]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-ms-asf
+
+[video/x-ms-asf - 2]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-ms-asf
+
+[video/x-ms-asf - 3]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-ms-asf
+
+[video/x-ms-wmp - 1]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-ms-wmp
+
+[video/x-ms-wmp - 2]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-ms-wmp
+
+[video/x-ms-wmp - 3]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-ms-wmp
+
+[video/x-ms-wmv - 1]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-ms-wmv
+
+[video/x-ms-wmv - 2]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-ms-wmv
+
+[video/x-ms-wmv - 3]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-ms-wmv
+
+[video/x-msvideo - 1]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-msvideo
+
+[video/x-msvideo - 2]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-msvideo
+
+[video/x-msvideo - 3]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-msvideo
+
+[video/x-ogm - 1]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-ogm
+
+[video/x-ogm - 2]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-ogm
+
+[video/x-ogm - 3]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-ogm
+
+[video/x-theora - 1]
+AllowAsDefault=true
+Application=kde-kaffeine.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=video/x-theora
+
+[video/x-theora - 2]
+AllowAsDefault=true
+Application=kmplayer_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=video/x-theora
+
+[video/x-theora - 3]
+AllowAsDefault=true
+Application=xine_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=video/x-theora
+
+[inode/directory - 1]
+AllowAsDefault=true
+Application=kde-d3lphin.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=inode/directory
+
+[inode/directory - 2]
+AllowAsDefault=true
+Application=kde-kfmclient_dir.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=inode/directory
+
+[inode/system_directory - 1]
+AllowAsDefault=true
+Application=kde-d3lphin.desktop
+GenericServiceType=Application
+Preference=2
+ServiceType=inode/system_directory
+
+[inode/system_directory - 2]
+AllowAsDefault=true
+Application=kde-kfmclient_dir.desktop
+GenericServiceType=Application
+Preference=1
+ServiceType=inode/system_directory
+
+[inode/directory - 10]
+AllowAsDefault=true
+Application=konsolepart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=3
+ServiceType=inode/directory
+
+[inode/directory - 11]
+AllowAsDefault=true
+Application=fsview_part.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=2
+ServiceType=inode/directory
+
+[inode/directory - 12]
+AllowAsDefault=true
+Application=konq_sidebartng.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=1
+ServiceType=inode/directory
+
+[inode/directory - 3]
+AllowAsDefault=true
+Application=konq_iconview.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=10
+ServiceType=inode/directory
+
+[inode/directory - 4]
+AllowAsDefault=true
+Application=konq_multicolumnview.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=9
+ServiceType=inode/directory
+
+[inode/directory - 5]
+AllowAsDefault=true
+Application=konq_treeview.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=8
+ServiceType=inode/directory
+
+[inode/directory - 6]
+AllowAsDefault=true
+Application=konq_infolistview.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=7
+ServiceType=inode/directory
+
+[inode/directory - 7]
+AllowAsDefault=true
+Application=konq_detailedlistview.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=6
+ServiceType=inode/directory
+
+[inode/directory - 8]
+AllowAsDefault=true
+Application=konq_textview.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=5
+ServiceType=inode/directory
+
+[inode/directory - 9]
+AllowAsDefault=true
+Application=gvdirpart.desktop
+GenericServiceType=KParts/ReadOnlyPart
+Preference=4
+ServiceType=inode/directory

@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE greeter SYSTEM "greeter.dtd">
+<greeter>
+  <item type="pixmap" >
+    <normal file="/usr/share/wallpapers/kubuntu-wallpaper.jpg" />
+    <pos width="100%" x="0" y="0" height="100%" />
+  </item>
+  <item type="pixmap" >
+    <normal file="Dialog.png" />
+    <pos width="462" x="50%" y="50%" anchor="c" height="324" />
+    <item type="label" id="clock" >
+	    <normal color="#000000" font="Sans Serif 11" />
+            <pos x="50%" y="145" anchor="c" />
+	    <text>%c</text>
+    </item>
+<!-- system button image -->
+    <item button="true" type="rect" id="system_button" >
+        <normal alpha="0.0" color="#00ff00" />
+        <pos width="box" x="75" y="198" anchor="c" height="box" />
+        <box xpadding="0" spacing="0" orientation="horizontal" >
+            <item type="pixmap">
+                <pos x="50%" y="50%" anchor="c" />
+                <normal file="system_normal.png" />
+                <prelight file="system_over.png" />
+                <active file="system_pressed.png" />
+            </item>
+        </box>
+	</item>
+<!-- login button -->
+          <item button="true" type="rect" id="login_button" >
+              <normal alpha="0.0" color="#00ff00" />
+              <pos width="box" x="390" y="198" anchor="c" height="box" />
+              <box xpadding="0" spacing="0" orientation="horizontal" >
+                  <item type="pixmap">
+                      <pos x="50%" y="50%" anchor="c" />
+                      <normal file="enter_normal.png" />
+                      <prelight file="enter_over.png" />
+                      <active file="enter_pressed.png" />
+                  </item>
+              </box>
+          </item>
+    <box xpadding="20" spacing="10" ypadding="20" orientation="vertical" min-width="340" >
+      <item type="rect" id="talker" >
+          <pos width="box" x="50%"  y="150" anchor="n" height="box" />
+	 <box xpadding="0" spacing="0" ypadding="0" orientation="horizontal" >
+          <item type="rect" >
+            <normal alpha="0.0" color="#000000" />
+            <pos width="box" y="50%" anchor="w" height="box" />
+            <box xpadding="10" spacing="10" ypadding="0" orientation="vertical" >
+              <item type="label" >
+                <pos x="100%" anchor="ne" />
+		<normal color="#000000" font="Sans Serif 10" />
+<!-- Stock label for: Username: -->
+		<stock type="username-label" />
+              </item>
+              <item type="label" >
+                <pos x="100%" anchor="ne" />
+		<normal color="#000000" font="Sans Serif 10" />
+<!-- Stock label for: Password: -->
+		<stock type="password-label" />
+              </item>
+            </box>
+          </item>
+          <item type="rect" >
+	  <normal alpha="0.0" color="#cccccc" />
+            <pos width="box" y="50%" anchor="w" height="box" />
+            <box xpadding="0" spacing="10" ypadding="0" orientation="vertical" >
+		<item type="entry" id="user-entry" >
+			<pos width="130" x="50%" anchor="n" height="21" />
+        	</item>
+        	<item type="entry" id="pw-entry" >
+                	<pos width="130" x="50%" anchor="n" height="21" />
+        	</item>
+            </box>
+          </item>
+        </box>
+      </item>
+    </box>
+    <fixed>
+      <item type="label" id="pam-error" >
+        <pos x="50%" y="260" anchor="n" />
+	<normal color="#CD0000" font="Sans Serif 12" />
+        <text/>
+      </item>
+    </fixed>
+    <fixed>
+      <item type="label" id="caps-lock-warning" >
+	      <normal color="#CD0000" font="Sans Serif 12" />
+        <pos x="50%" y="240" anchor="n" />
+        <stock type="caps-lock-warning" />
+      </item>
+    </fixed>
+  </item>
+</greeter>

@@ -1,0 +1,69 @@
+[DesktopIcons]
+Animated=true
+Size=48
+
+[General]
+XftAntialias=true
+XftHintStyle=hintfull
+XftSubPixel=none
+font=Sans Serif,9,-1,5,50,0,0,0,0,0
+fixed=Monospace,9,-1,5,50,0,0,0,0,0
+menuFont=Sans Serif,9,-1,5,50,0,0,0,0,0
+taskbarFont=Sans Serif,9,-1,5,50,0,0,0,0,0
+toolBarFont=Sans Serif,9,-1,5,50,0,0,0,0,0
+alternateBackground=220,228,249
+background=238,239,242
+buttonBackground=238,238,238
+buttonForeground=0,0,0
+foreground=0,0,0
+linkColor=0,0,238
+selectBackground=68,115,196
+visitedLinkColor=82,24,139
+windowBackground=255,255,255
+windowForeground=0,0,0
+shadeSortColumn=true
+
+[PreviewSettings]
+BoostSize=true
+MaximumSize=5242880
+
+[KDE]
+ShowIconsOnPushButtons=true
+ChangeCursor=true
+EffectAnimateCombo=true
+EffectFadeMenu=false
+EffectFadeTooltip=false
+EffectsEnabled=true
+OpaqueResize=true
+contrast=7
+
+[WM]
+activeFont=Sans Serif,9,-1,5,75,0,0,0,0,0
+activeBackground=82,139,239
+activeBlend=238,239,242
+activeForeground=255,255,255
+activeTitleBtnBg=220,220,220
+frame=239,239,239
+handle=239,239,239
+inactiveBackground=238,239,242
+inactiveBlend=238,239,242
+inactiveForeground=67,67,67
+inactiveFrame=239,239,239
+inactiveHandle=239,239,239
+inactiveTitleBtnBg=167,181,199
+selectBackground=68,115,196
+selectForeground=255,255,255
+
+[Global Shortcuts]
+Popup Launch Menu=default(Alt+F1);Win
+
+[KSpell]
+#ASpell
+KSpell_Client=1
+#UTF-8
+KSpell_Encoding=11
+
+[KDE URL Restrictions]
+rule_count=2
+rule_1=redirect,http,,,apt,,,true
+rule_2=redirect,https,,,apt,,,true

@@ -1,0 +1,31 @@
+#! /bin/sh
+set -e
+
+#DEBHELPER#
+
+case "$1" in
+  purge)
+		# remove symbolic links on purge again (careful, only if these *are* symlinks, 
+		# also don't bail out if s.th. goes wrong (e.g. /media mounted r.o.)
+		if [ -h /.hidden ]; then
+			rm /.hidden || \
+				echo "Could not remove symlink /.hidden, skipping."
+		fi
+		if [ -h /media/.hidden ]; then
+			rm /media/.hidden || \
+				echo "Could not remove symlink /media/.hidden, skipping."
+		fi
+		if [ -h /usr/share/hal/fdi/policy/10osvendor/home/20-ntfs-config-write-policy.fdi ]; then
+			rm /usr/share/hal/fdi/policy/10osvendor/home/20-ntfs-config-write-policy.fdi || \
+				echo "Could not remove symlink /usr/share/hal/fdi/policy/10osvendor/home/20-ntfs-config-write-policy.fdi, skipping."
+		fi
+	;;
+
+  upgrade)
+        ;;
+
+  *)
+	echo "Unknown argument ($1) for $0"
+    ;;
+
+esac

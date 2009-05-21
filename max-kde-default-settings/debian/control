@@ -1,0 +1,17 @@
+Source: max-kde-default-settings
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
+Build-Depends: debhelper (>= 5.0), cdbs
+Standards-Version: 3.8.0
+
+Package: max-kde-default-settings
+Architecture: all
+Depends: ${misc:Depends}, python
+Conflicts: kubuntu-default-settings
+Provides: kubuntu-default-settings
+Replaces: kubuntu-default-settings
+Description: Default settings and artwork for the MaX 5.0 (KDE) desktop
+ This package contains the default settings used by MaX 5.0.  It also
+ includes artwork and MaX 5.0 (KDE) branding.
+
