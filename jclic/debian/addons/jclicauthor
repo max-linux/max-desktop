@@ -1,28 +1,31 @@
 #!/bin/bash
 
+
 if [ ! -d $HOME/JClic ]; then
   cp -ra /usr/share/jclic/JClic $HOME/
-cat << EOF > $HOME/.edu.xtec.properties
+  cat << EOF > $HOME/.edu.xtec.properties
 #$(date)
 JClic=$HOME/JClic
 language=es
 EOF
 fi
 
-
 cd $HOME
 aux="java"
-CLASSPATH="$CLASSPATH:/usr/share/jclic"
+export JMF_HOME="/usr/lib/jvm/jmf/"
+export JAVA_HOME="/usr/lib/jvm/java-6-sun-max/jre"
+export CLASSPATH="${JMF_HOME}/lib/jmf.jar:${JMF_HOME}/lib/mp3plugin.jar:${JMF_HOME}/lib/mediaplayer.jar:/usr/share/java:${CLASSPATH}"
+export LD_LIBRARY_PATH="${JMF_HOME}/lib:${LD_LIBRARY_PATH}"
+
 
 # TCOS thin client
 REMOTE_DISPLAY=$(echo $DISPLAY| awk -F ":" '{print $1}')
 if [ "${REMOTE_DISPLAY}" != "" ]; then
   if [ -x /usr/bin/padsp ]; then
-     padsp -s "$REMOTE_DISPLAY" -n JClic -m JClic-stream $aux -cp $CLASSPATH -jar /usr/share/jclic/jclicauthor.jar "$@"
+     padsp -s "$REMOTE_DISPLAY" -n JClic -m JClic-stream $aux -cp $CLASSPATH -jar /usr/share/java/jclicauthor.jar "$@" 
      exit 0
   fi
 fi
 
-$aux -cp $CLASSPATH -jar /usr/share/jclic/jclicauthor.jar "$@"
-
+$aux -cp $CLASSPATH -jar /usr/share/java/jclicauthor.jar "$@" 
 

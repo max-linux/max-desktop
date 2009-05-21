@@ -1,3 +1,15 @@
+jclic-max (5.0.max2) max; urgency=low
+
+  * Change jclic.jar path from /usr/share/jclic to /usr/share/java
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 21 May 2009 14:51:43 +0200
+
+jclic-max (5.0.max1) max; urgency=low
+
+  * Rename package to jclic-max
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 21 May 2009 14:37:20 +0200
+
 jclic (0.2.0.3-1max5) max; urgency=low
 
   * Fix Pulseaudio jar name launchers

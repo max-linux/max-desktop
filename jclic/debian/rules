@@ -1,27 +1,16 @@
 #!/usr/bin/make -f
 
-# Some vars
-VERSION=0.2.0.3
-URL=http://clic.xtec.net/dist/jclic/jclic-$(VERSION).zip
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
-build-stamp:
-	rm -rf jclic-$(VERSION)/ tmp/
-	mkdir tmp && cd tmp && wget $(URL)
-	unzip -o tmp/jclic-$(VERSION).zip
-	rm -rf tmp
-	touch build-stamp
+install/jclic-max::
+	install -m 644 demo.jclic.zip debian/jclic-max/usr/share/jclic/demo
 
-build/jclic:: build-stamp
-
-
-install/jclic::
-	cp -ra jclic-$(VERSION)/* debian/jclic/usr/share/jclic
-	mv debian/jclic/usr/share/jclic/*[TtXxTt] debian/jclic/usr/share/doc/jclic/
-	install -m 644 demo.jclic.zip debian/jclic/usr/share/jclic/demo
+	install -m 755 debian/addons/jclic         debian/jclic-max/usr/share/dpsyco/skel/usr/bin/
+	install -m 755 debian/addons/jclicauthor   debian/jclic-max/usr/share/dpsyco/skel/usr/bin/
+	install -m 755 debian/addons/jclicreports  debian/jclic-max/usr/share/dpsyco/skel/usr/bin/
 	
-binary-install/jclic::
+binary-install/jclic-max::
 	# clean svn dirs
-	find $(CURDIR)/debian/jclic -type d -name .svn | xargs rm -rf --
+	find $(CURDIR)/debian/jclic-max -type d -name .svn | xargs rm -rf --
 
