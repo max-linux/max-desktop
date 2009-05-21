@@ -7,7 +7,8 @@ Standards-Version: 3.7.2
 
 Package: max-netboot-server
 Architecture: all
-Depends: syslinux, atftpd, dhcp3-server, tcos, backharddi-net
+#Depends: syslinux, atftpd, dhcp3-server, tcos, backharddi-net
+Depends: syslinux, atftpd, dhcp3-server, tcos
 Description: Configure MaX as netboot server
  Contains:
   * Configuration of DHCP server

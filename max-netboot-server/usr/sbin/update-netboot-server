@@ -22,17 +22,26 @@ search_file() {
 }
 
 
+if file /sbin/mkfs | grep -q "ELF 64-bit"; then
+  ARCH="amd64"
+elif file /sbin/mkfs | grep -q "ELF 32-bit"; then
+  ARCH="i386"
+else
+  ARCH="unknow"
+fi
+
+
 
 #
 # Configurar TCOS
 #
 
-if [ -f /etc/tcos/tcos.conf ]; then
+if [ "$ARCH" = "i386" ] && [ -f /etc/tcos/tcos.conf ]; then
   . /etc/tcos/tcos.conf
   if [ ! -e /boot/vmlinuz-${TCOS_KERNEL} ]; then
     # update kernel
-    NEW_KERNEL=$(ls -1t /boot/vmlinuz*generic | head -1)
-    sed -i -e "s/${TCOS_KERNEL}/${NEW_KERNEL}/g" /etc/tcos/tcos.conf
+    NEW_KERNEL=$(ls -1t /boot/vmlinuz*generic | head -1 | awk -F "vmlinuz-" '{print $2}')
+    sed -i -e s/"${TCOS_KERNEL}"/"${NEW_KERNEL}"/g /etc/tcos/tcos.conf
     . /etc/tcos/tcos.conf
   fi
   echo " * Configurando NET-menu TCOS ... "
@@ -51,7 +60,7 @@ if [ -f /etc/tcos/tcos.conf ]; then
   # generar imagenes de arranque
   if [ -x /usr/sbin/gentcos ]; then
     # cachear paquetes
-    PKGS="esound libesd0 discover libdiscover2 discover-data"
+    PKGS="esound libesd0"
     for pkg in $PKGS; do
          if [ -d /var/cache/tcos/packages/${pkg} ]; then
            # ya cacheado
@@ -61,7 +70,9 @@ if [ -f /etc/tcos/tcos.conf ]; then
            abspkg=$(find /cdrom/pool/max -name "${pkg}_*")
            echo "    *  Cacheando $pkg en /var/cache/tcos/packages/${pkg}"
            rm -rf /var/cache/tcos/packages/${pkg} ; mkdir -p /var/cache/tcos/packages/${pkg}
-           dpkg --extract ${abspkg} /var/cache/tcos/packages/${pkg}
+           if [ "${abspkg}" != "" ]; then
+             dpkg --extract ${abspkg} /var/cache/tcos/packages/${pkg}
+           fi
          else
            gentcos -instpkg $pkg
          fi
@@ -71,7 +82,10 @@ if [ -f /etc/tcos/tcos.conf ]; then
   fi
 fi
 
-
+if [ "$ARCH" = "amd64" ]; then
+    echo "   *  Detectado arquitectura AMD64, "
+    echo "      debe generar las imágenes de TCOS con TcosConfig"
+fi
 
 
 
