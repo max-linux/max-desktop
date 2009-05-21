@@ -1,3 +1,17 @@
+max-meta (5.0.max9) max; urgency=low
+
+  * Use postfix instead of exim4
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 22 May 2009 01:38:45 +0200
+
+max-meta (5.0.max8) max; urgency=low
+
+  * nanomax-i386: Remove
+    - displayconfig-gtk
+    - max-manuales
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 22 May 2009 01:38:15 +0200
+
 max-meta (5.0.max7) max; urgency=low
 
   * max-desktop-kde:
