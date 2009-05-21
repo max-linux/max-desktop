@@ -1,3 +1,9 @@
+max-live (5.0.max3) max; urgency=low
+
+  * Don't use Desktop dir (use Escritorio)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 22 May 2009 01:35:47 +0200
+
 max-live (5.0.max2) max; urgency=low
 
   * Remove examples.desktop in live session
