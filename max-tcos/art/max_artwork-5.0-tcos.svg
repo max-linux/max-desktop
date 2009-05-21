@@ -2,7 +2,7 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
@@ -13,9 +13,9 @@
    height="1024"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.45.1"
+   inkscape:version="0.46"
    sodipodi:docbase="/home/mario/MaX/svn/max/trunk/max-tcos/art"
-   sodipodi:docname="max_artwork-3.1-tcos.svg"
+   sodipodi:docname="max_artwork-5.0-tcos.svg"
    version="1.0"
    inkscape:export-filename="/home/n3st0rm/Proyectos/MAX/latest_0.3/gnome/background/background-mundo.png"
    inkscape:export-xdpi="90"
@@ -29,18 +29,19 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.69824219"
-     inkscape:cx="640"
-     inkscape:cy="512"
+     inkscape:cx="631.14251"
+     inkscape:cy="516.66668"
      inkscape:document-units="px"
-     inkscape:current-layer="layer9"
+     inkscape:current-layer="g2997"
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="1272"
      inkscape:window-height="935"
-     inkscape:window-x="0"
-     inkscape:window-y="41"
+     inkscape:window-x="132"
+     inkscape:window-y="45"
      width="1280px"
-     height="1024px">
+     height="1024px"
+     showgrid="false">
     <sodipodi:guide
        orientation="vertical"
        position="-1618.8236"
@@ -96,6 +97,13 @@
   </sodipodi:namedview>
   <defs
      id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 512 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="1280 : 512 : 1"
+       inkscape:persp3d-origin="640 : 341.33333 : 1"
+       id="perspective642" />
     <linearGradient
        gradientTransform="matrix(2.13612,0,0,1.82598,2.3487,-1.01283)"
        gradientUnits="userSpaceOnUse"
@@ -686,7 +694,7 @@
        cx="-1102.2507"
        fy="719.11603" />
     <radialGradient
-       gradientTransform="matrix(1.410517,0,0,0.171771,-2532.0043,341.0106)"
+       gradientTransform="matrix(1.410517,0,0,0.171771,-2534.8686,341.72668)"
        inkscape:collect="always"
        r="331.9577"
        gradientUnits="userSpaceOnUse"
@@ -1434,7 +1442,8 @@
          height="1024"
          inkscape:export-ydpi="90.353394"
          width="1280"
-         id="rect4905" />
+         id="rect4905"
+         inkscape:export-filename="/home/mario/MaX/svn/max/trunk/max-tcos/art/lockscreen-custom.png" />
       <rect
          style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5334);stroke-width:3.4440167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;display:inline"
          ry="9.8534431"
@@ -2279,7 +2288,10 @@
       <g
          style="opacity:1;display:inline"
          id="g6525"
-         transform="translate(-1.9678322e-6,3.5104895e-6)">
+         transform="translate(-1.9678322e-6,3.5104895e-6)"
+         inkscape:export-filename="/home/mario/MaX/svn/max/trunk/max-tcos/art/lockscreen-custom.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90">
         <path
            style="fill:url(#radialGradient5779);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4.00000048;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
            d="M 1285.4634,289.59915 L 1287.5513,332.89625 L 1287.5513,1020.7653 L 7.5515,1020.7653 L 7.5515,600.72815 C 227.2672,113.74835 1035.8435,145.48105 1285.4634,289.59915 z "
@@ -2310,7 +2322,7 @@
                  y="351.21106"
                  id="tspan4993"
                  style="letter-spacing:10.99878979;stroke-width:6.40046358"
-                 sodipodi:role="line">v.4.0</tspan></text>
+                 sodipodi:role="line">v.5.0</tspan></text>
             <text
                xml:space="preserve"
                id="text4995"
@@ -2323,7 +2335,7 @@
                  y="-364.13434"
                  id="tspan4997"
                  style="letter-spacing:10.99878407;fill:url(#linearGradient3618);fill-opacity:1;stroke:url(#linearGradient3620);stroke-width:6.40045881"
-                 sodipodi:role="line">v.4.0</tspan></text>
+                 sodipodi:role="line">v.5.0</tspan></text>
             <path
                d="M 562.23195,345.87336 L 605.8397,260.34623"
                sodipodi:nodetypes="cc"
@@ -2361,8 +2373,8 @@
              id="rect4725"
              width="936.46423"
              height="114.04139"
-             x="168.90356"
-             y="357.30679"
+             x="166.03923"
+             y="358.02289"
              style="fill:url(#radialGradient3604);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
         </g>
       </g>

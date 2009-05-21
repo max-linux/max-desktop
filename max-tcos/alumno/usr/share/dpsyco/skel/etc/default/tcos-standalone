@@ -10,3 +10,8 @@ TCOS_STANDALONE_START=1
 # set to 1 to enable very verbose log
 # /var/lib/tcos/standalone/log/tcos-standalone.log
 TCOS_DEBUG=0
+
+# set to 1 to enable SSL over XMLRPC
+# (you can make your custom SSL cert)
+# see /usr/share/doc/tcos-core/README.ssl
+TCOS_XMLRPC_SSL=0
