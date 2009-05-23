@@ -1,3 +1,11 @@
+max-meta (5.0.max10) max; urgency=low
+
+  * Add python-lxml (Closes: #153)
+  * Re-add backharddi backharddi-net and backharddi-kernel-i386
+  * Re-add max-manuales
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 23 May 2009 17:31:50 +0200
+
 max-meta (5.0.max9) max; urgency=low
 
   * Use postfix instead of exim4
