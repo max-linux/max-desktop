@@ -20,12 +20,15 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
+set -x
+
 # delete old ubiquity
-rm -f /root/home/$USERNAME/Desktop 2>/dev/null
+rm -f /root/home/$USERNAME/*/ubiquity*desktop 2>/dev/null
+
+chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Escritorio
 
 for file in /usr/share/applications/ubiquity-maxui.desktop /usr/share/max-manuales/manual.desktop /usr/share/max-manuales/install-manual.desktop /usr/share/max-manuales/creditos_max40.desktop; do
     if [ -f "/root/$file" ]; then
-        chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Escritorio
         chroot /root install -D -o $USERNAME -g $USERNAME $file /home/$USERNAME/Escritorio/$(basename "$file")
     fi
 done
@@ -34,7 +37,7 @@ done
 if [ -f /root/cdrom/casper/nanomax ]; then
   cat << EOF > /root/etc/skel/.dmrc
 [Desktop]
-Session=xfce4
+Session=xfce
 Language=es_ES.UTF-8
 EOF
   chroot /root install -D -o $USERNAME -g $USERNAME /etc/skel/.dmrc /home/$USERNAME/.dmrc
@@ -42,7 +45,7 @@ EOF
   # Xfce4 try to create Desktop dir
   chroot /root << EOF
 mkdir /home/$USERNAME/Desktop/
-cp /home/$USERNAME/Escritorio/* /home/$USERNAME/Desktop/
+mv /home/$USERNAME/Escritorio/* /home/$USERNAME/Desktop/
 rm -rf /home/$USERNAME/Escritorio
 ln -s /home/$USERNAME/Desktop /home/$USERNAME/Escritorio
 chown -R $USERNAME:$USERNAME /home/$USERNAME
