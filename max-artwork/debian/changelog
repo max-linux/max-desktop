@@ -1,8 +1,12 @@
 max-artwork (5.0.max0.4) max; urgency=low
 
+  [ Pedro Peña Pérez ]
   * Se genera el usplash a partir de un único svg
 
- -- Pedro Peña Pérez <pdropep@gmail.com>  Wed, 20 May 2009 19:33:27 +0200
+  [ Mario Izquierdo Rodríguez (Thinetic Systems SLNE) ]
+  * Add Build-Depends: imagemagick, librsvg2-bin
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 26 May 2009 14:51:30 +0200
 
 max-artwork (5.0.max0.3) max; urgency=low
 

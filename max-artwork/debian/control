@@ -2,7 +2,7 @@ Source: max-artwork
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.0.0), cdbs, intltool, libusplash-dev, librsvg2-bin, libglib2.0-dev, ubuntu-docs
+Build-Depends: debhelper (>= 4.0.0), cdbs, intltool, libusplash-dev, librsvg2-bin, libglib2.0-dev, ubuntu-docs, imagemagick, librsvg2-bin
 Standards-Version: 3.7.2
 
 Package: max-artwork
