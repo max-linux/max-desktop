@@ -10,7 +10,7 @@
 setup_nanomax() {
   [ ! -e /usr/bin/acroread ] && ln -s /usr/bin/evince /usr/bin/acroread
   [ ! -e /usr/share/pixmaps/acroread.png ] && ln -s /usr/share/icons/maxtoon/48x48/apps/xpdf.png /usr/share/pixmaps/acroread.png
-  [ ! -e /usr/share/xsessions/gnome.desktop ] && ln -s /usr/share/xsessions/xfce4.desktop /usr/share/xsessions/gnome.desktop
+  [ ! -e /usr/share/xsessions/gnome.desktop ] && ln -s /usr/share/xsessions/xfce.desktop /usr/share/xsessions/gnome.desktop
 }
 
 

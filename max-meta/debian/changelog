@@ -1,3 +1,36 @@
+max-meta (5.0.max13) max; urgency=low
+
+  * nanomax remove:
+    - kompoze kompozer-l10n-es
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 23 May 2009 21:58:09 +0200
+
+max-meta (5.0.max12) max; urgency=low
+
+  * debian/max-nanomax.init:
+    - Create link from /usr/share/xsession/xfce.desktop not xfce4.desktop
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 23 May 2009 21:46:38 +0200
+
+max-meta (5.0.max11) max; urgency=low
+
+  * nanomax, remove:
+    - backharddi-kernel-i386
+    - blender
+    - gimp-help-common
+    - gimp-help-es
+    - max-jclic-curso
+    - ubufox
+    - vlc
+    - vlc-nox
+    - xpdf
+    - xpdf-reader
+    - xpdf-utils
+    - xubuntu-docs
+
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 23 May 2009 20:27:07 +0200
+
 max-meta (5.0.max10) max; urgency=low
 
   * Add python-lxml (Closes: #153)
