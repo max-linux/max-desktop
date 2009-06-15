@@ -20,8 +20,8 @@ enable_toshiba() {
      max-setup-tablet /etc/X11/xorg.conf
 
      # enable sound device (Thanks to Ismail)
-     if [ "$(grep -c 'options snd-hda-intel model=toshiba' /etc/modprobe.d/alsa-base)" = "0" ]; then
-       echo "options snd-hda-intel model=toshiba" >> /etc/modprobe.d/alsa-base
+     if [ "$(grep -c 'options snd-hda-intel model=toshiba' /etc/modprobe.d/alsa-base.conf)" = "0" ]; then
+       echo "options snd-hda-intel enable_msi=1 model=toshiba" >> /etc/modprobe.d/alsa-base.conf
        rmmod snd-hda-intel 2>/dev/null
        modprobe snd-hda-intel
      fi
