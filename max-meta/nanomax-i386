@@ -7,7 +7,6 @@ audacity
 bash-completion
 backharddi
 binutils-static
-bsh
 busybox
 cupsys-client
 evince
@@ -24,7 +23,8 @@ gnome-system-tools
 gnome-utils
 gthumb
 gucharmap
-jclic-max
+kompozer
+kompozer-l10n-es
 language-pack-es
 language-pack-es-base
 language-pack-gnome-es
@@ -38,9 +38,6 @@ max-dpsyco-custom
 max-elotouch
 max-firefox-conf
 max-hardware
-max-java-jre
-max-java-plugin
-max-javahotpot-tutorial
 max-keyring
 max-manuales
 max-skel-conf
@@ -54,14 +51,11 @@ network-manager-gnome
 notification-daemon
 ntfs-config
 onboard
-openoffice.org-base
-openoffice.org-base-core
 openoffice.org-calc
 openoffice.org-common
 openoffice.org-core
 openoffice.org-draw
 openoffice.org-impress
-openoffice.org-java-common
 openoffice.org-l10n-common
 openoffice.org-l10n-es
 openoffice.org-math
@@ -88,7 +82,6 @@ totem-gstreamer
 totem-plugins
 ttf-bitstream-vera
 unzip
-vlc-plugin-pulse
 wget
 xfce4
 xfce4-battery-plugin

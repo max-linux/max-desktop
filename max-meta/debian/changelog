@@ -1,3 +1,29 @@
+max-meta (5.0.max17) max; urgency=low
+
+  * gnome-desktop:
+    - Add gnome-network-admin
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 15 Jun 2009 12:43:48 +0200
+
+max-meta (5.0.max16) max; urgency=low
+
+  * nanomax: Remove bsh
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 30 May 2009 12:01:11 +0200
+
+max-meta (5.0.max15) max; urgency=low
+
+  * nanomax: Remove openoffice.org-base openoffice.org-base-core
+    openoffice.org-java-common vlc-plugin-pulse
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 30 May 2009 11:43:42 +0200
+
+max-meta (5.0.max14) max; urgency=low
+
+  * nanomax: Add kompozer and delete jclic and java stuff
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 30 May 2009 01:16:32 +0200
+
 max-meta (5.0.max13) max; urgency=low
 
   * nanomax remove:
