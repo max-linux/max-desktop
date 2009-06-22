@@ -1,0 +1,11 @@
+DIST=$1
+ARCH=$2
+SRC=$(basename $3)
+BRANCH=${3%%/$SRC}
+MIRROR=http://archive.ubuntu.com/ubuntu
+BUILDDIR=../builder
+BUILDER=pbuilder
+BUILDEREXT=tar.gz
+BUILDERBASE=--basetgz
+BUILDEROPTS="--buildplace $BUILDDIR/build --hookdir $BUILDDIR/hooks"
+ROOTCMD=sudo

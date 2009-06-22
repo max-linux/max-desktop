@@ -1,0 +1,22 @@
+#!/bin/bash -e
+
+. ./toolchain/shared
+
+if [ ! -s $BUILDDIR/$DIST.$ARCH.$BUILDEREXT ]; then
+	echo "Construyendo $BUILDER para la distribución $DIST $ARCH"
+	install -d $BUILDDIR/build $BUILDDIR/aptcache/$DIST || true
+	$BUILDER --create $BUILDEROPTS --distribution $DIST $BUILDERBASE $BUILDDIR/$DIST.$ARCH.$BUILDEREXT --aptcache $BUILDDIR/aptcache/$DIST --mirror $MIRROR --debootstrap debootstrap --components main --debootstrapopts --arch --debootstrapopts $ARCH
+fi
+
+install -d $BUILDDIR/hooks || true
+cat <<EOT >$BUILDDIR/hooks/F01apt
+#!/bin/sh
+
+cat<<EOF >>/etc/apt/sources.list
+deb http://max.educa.madrid.org/$BRANCH max main
+EOF
+
+apt-get update
+EOT
+cp $BUILDDIR/hooks/F01apt $BUILDDIR/hooks/D01apt
+chmod 755 $BUILDDIR/hooks/*
