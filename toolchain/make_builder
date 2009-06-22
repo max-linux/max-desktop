@@ -5,7 +5,7 @@
 if [ ! -s $BUILDDIR/$DIST.$ARCH.$BUILDEREXT ]; then
 	echo "Construyendo $BUILDER para la distribución $DIST $ARCH"
 	install -d $BUILDDIR/build $BUILDDIR/aptcache/$DIST || true
-	$BUILDER --create $BUILDEROPTS --distribution $DIST $BUILDERBASE $BUILDDIR/$DIST.$ARCH.$BUILDEREXT --aptcache $BUILDDIR/aptcache/$DIST --mirror $MIRROR --debootstrap debootstrap --components main --debootstrapopts --arch --debootstrapopts $ARCH
+	$BUILDER --create $BUILDEROPTS --distribution $DIST $BUILDERBASE $BUILDDIR/$DIST.$ARCH.$BUILDEREXT --aptcache $BUILDDIR/aptcache/$DIST --mirror $MIRROR --debootstrap debootstrap --components "main universe" --debootstrapopts --arch --debootstrapopts $ARCH
 fi
 
 install -d $BUILDDIR/hooks || true
