@@ -1,0 +1,10 @@
+.. -*- mode: rst; encoding: utf-8 -*-
+
+===========
+Build Links
+===========
+
+Bitten supports the ability to link between any wiki-enabled objects in Trac.
+
+To link to a particular build, use the TracLink syntax ``build:N`` (where ``N`` is the number of the build)
+ 

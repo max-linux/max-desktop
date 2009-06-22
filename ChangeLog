@@ -1,0 +1,71 @@
+Version 0.6
+(?, from 0.6.x branch)
+http://svn.edgewall.org/repos/bitten/tags/0.6.0
+
+ * Switch to using HTTP for communication between the build master and build
+   slaves. This means the `build-master` executable is no longer needed or
+   installed, the build simply runs in the scope of the Trac site.
+ * Build recipes now need to include instructions for performing the checkout 
+   from the version control repository. The slave no longer receives a snapshot
+   archive of the code, but performs the checkout itself based on the 
+   instructions in the build recipe.
+ * Many fixes for compatibility with more recent versions of Trac.
+
+
+Version 0.5.3
+(18 April 2006, from 0.5.x branch)
+http://svn.edgewall.org/repos/bitten/tags/0.5.3
+
+ * Fix double-escaping of report summaries.
+ * Fix build master error when build log contains no messages.
+
+
+Version 0.5.2
+(17 January 2006, from 0.5.x branch)
+http://svn.edgewall.org/repos/bitten/tags/0.5.2
+
+ * Fixes the main navigation tab that was broken in 0.5.1.
+
+
+Version 0.5.1
+(10 January 2006, from 0.5.x branch)
+http://svn.edgewall.org/repos/bitten/tags/0.5.1
+
+ * Fixes compatibility with Trac 0.9.3 release, as well as the current trunk.
+   This also means that Bitten now longer works with versions of Trac earlier
+   than 0.9.3.
+ * Improves PostgreSQL compatibility.
+ * Fixes encoding of non-ASCII characters in command output.
+ * Fix for missing log output when using <java:ant> on Windows.
+
+
+Version 0.5
+(6 October 2005, from 0.5.x branch)
+http://svn.edgewall.org/repos/bitten/tags/0.5
+
+ * BDB XML is no longer being used for report storage. Instead,
+   collected metrics data is stored in the Trac database.
+ * Snapshot archives created by the master are checked for integrity
+   prior to their transmission to the slaves.
+ * Improvements to the build status presentation in Trac.
+ * Changes to the build recipe format. See the documentation on the web
+   site for details.
+ * New recipe commands: <sh:pipe>, <c:configure>, <c:cppunit>,
+   <java:ant>, <java:junit>, and <x:transform>. Various improvements to
+   the existing commands.
+ * Recipe commands and command attributes in recipes can now reference
+   slave configuration values.
+ * The names of the master and slaves scripts have changed: `bittend`
+   is now `bitten-master`, `bitten` is now `bitten-slave`.
+ * The build master can now handle multiple Trac environments.
+ * The build slave now by default removes any working directories when
+   done.
+ * Build configurations can now be completely deleted.
+ * Build configurations can now have a minimum and maximum revision
+   specified. Any revisions outside that range will not be built.
+ * The build configuration editor now validates the supplied values.
+ * Fix management of target platforms when running under mod_python.
+ * Improved performance of the build log formatter that is responsible
+   for linking file references in build logs to the repository browser.
+ * Add paging to the build configuration view.
+ * Fix compatibility with PySQLite2.

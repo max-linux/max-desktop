@@ -1,0 +1,27 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/" py:strip="">
+ <body py:strip="">
+  <h3>Code Coverage</h3>
+  <table class="listing coverage">
+   <thead><tr>
+    <th class="name">Unit</th><th class="loc">Lines of Code</th>
+    <th class="cov">Coverage</th>
+   </tr></thead>
+   <tbody><tr py:for="item in data.units">
+    <td class="name" py:choose="">
+     <a py:when="item.href" href="$item.href">$item.name</a>
+     <py:otherwise>$item.name</py:otherwise>
+    </td>
+    <td class="loc">$item.loc</td>
+    <td class="cov">${item.cov}%</td>
+   </tr></tbody>
+   <tbody class="totals"><tr py:with="totals = data.totals">
+    <th>Total</th><td>$totals.loc</td>
+    <td>${totals.cov}%</td>
+   </tr></tbody>
+  </table>
+ </body>
+</html>

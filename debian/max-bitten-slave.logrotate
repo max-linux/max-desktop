@@ -1,0 +1,7 @@
+/var/log/max-bitten-slave.log {
+	rotate 7
+	weekly
+	compress
+	copytruncate
+	missingok
+}

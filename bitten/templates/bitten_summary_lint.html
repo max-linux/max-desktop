@@ -1,0 +1,46 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/">
+
+<h3>Code Lint</h3>
+<table class="listing lint">
+ <thead>
+    <tr><th rowspan="2" class="file">File</th><th colspan="4" class="category">Problem Category Totals</th><th rowspan="2" class="total">Total</th></tr>
+    <tr>
+	<th class="category">Convention</th>
+	<th class="category">Refactor</th>
+	<th class="category">Warning</th>
+	<th class="category">Error</th>
+    </tr>
+ </thead>
+
+ <tbody><py:for each="item in data.data">
+ <tr>
+    <td class="file">
+    <a py:if="item.href" href="${item.href}">$item.file</a>
+    <span py:if="not item.href">$item.file</span>
+    </td>
+
+    <td class="category">$item.category.convention</td>
+    <td class="category">$item.category.refactor</td>
+    <td class="category">$item.category.warning</td>
+    <td class="category">$item.category.error</td>
+    <td class="category">$item.lines</td>
+
+  </tr>
+ </py:for>
+ </tbody>
+ <tbody class="totals" py:with="totals = data.totals"><tr>
+    <th>Total (in $totals.files files)</th>
+
+    <td class="category total">$totals.category.convention</td>
+    <td class="category total">$totals.category.refactor</td>
+    <td class="category total">$totals.category.warning</td>
+    <td class="category total">$totals.category.error</td>
+    <td class="total">$totals.lines</td>
+ </tr></tbody>
+</table>
+
+</html>

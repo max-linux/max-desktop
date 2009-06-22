@@ -1,0 +1,14 @@
+Source: python-max-bitten
+Section: max
+Priority: extra
+Maintainer: Pedro Peña Pérez <pdropep@gmail.com>
+Build-Depends: cdbs (>=0.4.43), debhelper (>= 7), python, python-support (>= 0.4), python-setuptools
+Standards-Version: 3.8.0
+Homepage: http://bitten.edgewall.org/
+
+Package: max-bitten-slave
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}
+Description: Bitten build slave for Max
+ Executes builds on behalf of the remote build master
+ at http://max.educa.madrid.org:8000/builds
