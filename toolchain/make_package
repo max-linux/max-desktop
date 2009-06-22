@@ -4,7 +4,7 @@
 
 BUILDDIR=../$BUILDDIR
 #En el entorno de bitten el paquete fuente se descarga en el directorio "src"
-mv src $SRC
+[ ! -d src ] || mv src $SRC
 cd $SRC
 BUILDEROPTS="--buildplace $BUILDDIR/build --hookdir $BUILDDIR/hooks"
 DEBBUILDOPTS="$([ $ARCH = i386 ] && echo "-b" || echo "-B")"
