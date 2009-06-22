@@ -3,6 +3,8 @@
 . ./toolchain/shared
 
 BUILDDIR=../$BUILDDIR
+#En el entorno de bitten el paquete fuente se descarga en el directorio "src"
+mv src $SRC
 cd $SRC
 BUILDEROPTS="--buildplace $BUILDDIR/build --hookdir $BUILDDIR/hooks"
 PDEBUILDOPTS="--pbuilderroot $ROOTCMD --buildsourceroot fakeroot --pbuilder $BUILDER --buildresult $BUILDDIR/result/$BRANCH/$DIST --debbuildopts -b" 
