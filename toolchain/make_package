@@ -10,5 +10,5 @@ BUILDEROPTS="--buildplace $BUILDDIR/build --hookdir $BUILDDIR/hooks"
 PDEBUILDOPTS="--pbuilderroot $ROOTCMD --buildsourceroot fakeroot --pbuilder $BUILDER --buildresult $BUILDDIR/result/$BRANCH/$DIST --debbuildopts -b" 
 echo "Construyendo paquete $SRC de la rama $BRANCH para la distribución $DIST $ARCH"
 install -d $BUILDDIR/result/$BRANCH/$DIST
-pdebuild $PDEBUILDOPTS -- $BUILDEROPTS --distribution $DIST --aptcache $BUILDDIR/aptcache/$DIST $BUILDERBASE $BUILDDIR/$DIST.$ARCH.$BUILDEREXT --mirror $MIRROR --components main universe
+pdebuild $PDEBUILDOPTS -- $BUILDEROPTS --distribution $DIST --aptcache $BUILDDIR/aptcache/$DIST $BUILDERBASE $BUILDDIR/$DIST.$ARCH.$BUILDEREXT --mirror $MIRROR --components "main universe"
 mv ../${SRC}_* $BUILDDIR/result/$BRANCH/$DIST
