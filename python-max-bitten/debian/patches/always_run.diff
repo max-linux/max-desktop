@@ -1,0 +1,22 @@
+diff --git a/bitten/slave.py b/bitten/slave.py
+index c69e2c3..f7d052f 100755
+--- a/bitten/slave.py
++++ b/bitten/slave.py
+@@ -181,7 +181,7 @@ class BuildSlave(object):
+                 except urllib2.HTTPError, e:
+                     # HTTPError doesn't have the "reason" attribute of URLError
+                     log.error(e)
+-                    raise ExitSlave(EX_UNAVAILABLE)
++                    #raise ExitSlave(EX_UNAVAILABLE)
+                 except urllib2.URLError, e:
+                     # Is this a temporary network glitch or something a bit
+                     # more severe?
+@@ -190,7 +190,7 @@ class BuildSlave(object):
+                         log.warning(e)
+                     else:
+                         log.error(e)
+-                        raise ExitSlave(EX_UNAVAILABLE)
++                        #raise ExitSlave(EX_UNAVAILABLE)
+             except ExitSlave, e:
+                 return e.exit_code
+             if self.no_loop:

@@ -1,0 +1,96 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/">
+  <xi:include href="admin.html" />
+  <head>
+    <title>Manage Build Master</title>
+  </head>
+  <body>
+    <h2>Manage Build Master</h2>
+
+    <form class="mod" id="bitten" method="post" action="">
+      <fieldset id="config">
+        <legend>Configuration Options</legend>
+        <div class="field">
+          <label>
+            <input type="checkbox" id="build_all" name="build_all"
+                   checked="${master.build_all and 'checked' or None}" />
+            Build all revisions
+          </label>
+        </div>
+        <p class="hint">
+          Whether to build older revisions even when a more recent
+          revision has already been built.
+        </p>
+        <div class="field">
+          <label>
+            <input type="checkbox" id="adjust_timestamps"
+                   name="adjust_timestamps"
+                   checked="${master.adjust_timestamps and 'checked'
+                              or None}" />
+            Adjust build timestamps
+          </label>
+        </div>
+        <p class="hint">
+          Whether the timestamps of builds should be adjusted to be
+          close to the timestamps of the corresponding changesets.
+        </p>
+        <hr />
+        <div class="field">
+          <label>
+            Time to wait for stabilization:
+            <input type="text" id="stabilize_wait" name="stabilize_wait"
+                   value="$master.stabilize_wait" size="5" />
+          </label>
+        </div>
+        <p class="hint">
+          The time in seconds to wait for the repository to stabilize
+          after a check-in before initiating a build.
+        </p>
+        <hr />
+        <div class="field">
+          <label>
+            Show quick status in main navigation bar:
+            <input type="checkbox" id="quick_status" name="quick_status"
+                   checked="${master.quick_status and 'checked'
+                                 or None}" />
+          </label>
+        </div>
+        <p class="hint">
+          Show the latest build status within the Trac navigation bar.<br/>
+          The Bitten button appearance reflects the build status.
+        </p>
+        <hr />
+        <div class="field">
+          <label>
+            Connection timeout for build slaves:
+            <input type="text" id="slave_timeout" name="slave_timeout"
+                   value="$master.slave_timeout" size="5" />
+          </label>
+        </div>
+        <p class="hint">
+          The timeout in seconds after which a build started by a slave
+          is considered aborted, in case there has been no activity from
+          that slave in that time.
+        </p>
+        <div class="field">
+          <label>
+            Directory for storing log files:
+            <input type="text" id="logs_dir" name="logs_dir"
+                   value="$master.logs_dir" size="100" />
+          </label>
+        </div>
+        <p class="hint">
+          The directory on the server in which client log files will be stored.
+        </p>
+      </fieldset>
+
+      <div class="buttons">
+        <input type="submit" value="Apply changes"/>
+      </div>
+    </form>
+  </body>
+</html>

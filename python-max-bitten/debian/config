@@ -1,0 +1,53 @@
+#!/bin/bash -e
+
+. /usr/share/debconf/confmodule
+
+CONFIGFILE=/etc/max-bitten-slave
+
+if [ -e $CONFIGFILE ]; then
+	USERNAME=$(grep ^username $CONFIGFILE | cut -d= -f 2 | tr -d " ")
+	PASSWORD=$(grep ^password $CONFIGFILE | cut -d= -f 2 | tr -d " ")
+	db_set max-bitten-slave/username "$USERNAME"
+	db_set max-bitten-slave/password "$PASSWORD"
+fi
+
+if [ "$1" = "configure" ] || [ "$1" = "reconfigure" ]; then
+  while :; do
+    RET=""
+    db_input critical max-bitten-slave/username || true
+    db_go
+    db_get max-bitten-slave/username
+    if [ -z "$RET" ]; then
+      db_input critical max-bitten-slave/username_empty || true
+      db_go
+      continue
+    fi
+    break;
+  done
+  while :; do
+    RET=""
+    db_input critical max-bitten-slave/password || true
+    db_go
+    db_get max-bitten-slave/password
+    if [ -z "$RET" ]; then
+      db_input critical max-bitten-slave/password_empty || true
+      db_go
+      continue
+    fi
+    PW="$RET"
+    db_input critical max-bitten-slave/password_again || true
+    db_go
+    db_get max-bitten-slave/password_again
+    if [ "$RET" == "$PW" ]; then
+      PW=''
+      break
+    fi
+    db_fset max-bitten-slave/password_mismatch seen false
+    db_input critical max-bitten-slave/password_mismatch
+    db_set max-bitten-slave/password "" 
+    db_set max-bitten-slave/password_again ""
+    db_go
+  done
+fi
+
+#DEBHELPER#

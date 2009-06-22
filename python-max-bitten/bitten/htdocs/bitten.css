@@ -1,0 +1,210 @@
+/* Timeline styles */
+#content.timeline dt.successbuild, #content.timeline dt.successbuild a {
+  background-image: url(bitten_build.png) !important;
+}
+#content.timeline dt.failedbuild, #content.timeline dt.failedbuild a {
+  background-image: url(bitten_buildf.png) !important;
+}
+
+#content.build h2.config, #content.build h2.step { background: #f7f7f7;
+  border-bottom: 1px solid #d7d7d7; margin: 2em 0 0;
+}
+#content.build h2.config :link, #content.build h2.config :visited {
+  color: #b00; display: block; border-bottom: none;
+}
+#content.build h2.deactivated { text-decoration: line-through; }
+#content.build #prefs { line-height: 1.4em; }
+
+#content.build h3.builds { font-weight: bold; text-align: left;
+  margin: 2em 0 0 2em;
+}
+#content.build table.builds { border-collapse: separate;
+  border-top: 1px solid #666; margin-left: 2em; table-layout: fixed;
+}
+#content.build table.builds th { padding: 0 1em 0 .25em; text-align: left;
+  vertical-align: top;
+}
+#content.build table.builds th p { color: #666; font-size: smaller;
+  margin-top: 0;
+}
+#content.build table.builds th p.message { font-style: italic; }
+#content.build table.builds td { color: #999; border: 1px solid;
+  padding: .25em .5em; vertical-align: top;
+}
+#content.build table.builds td :link, #content.build table.builds td :visited {
+  font-weight: bold;
+}
+#content.build table.builds td.completed { background: #9d9; border-color: #696;
+  color: #393;
+}
+#content.build table.builds td.failed { background: #d99; border-color: #966;
+  color: #933;
+}
+#content.build table.builds td.in-progress { background: #dd9;
+  border-color: #996; color: #993;
+}
+#content.build table.builds td p { font-size: smaller; margin-top: 0; }
+#content.build table.builds .status { color: #000; }
+#content.build table.builds .system { font-size: smaller; line-height: 1.2em;
+  margin: .5em 0;
+}
+
+#content.build form.config { margin-top: 1em; }
+#content.build form.config th { text-align: left; }
+#content.build form.config fieldset { margin-bottom: 1em; }
+#content.build div.platforms { margin-top: 2em; }
+#content.build form.platforms ul { list-style-type: none; padding-left: 1em; }
+
+#content.build p.path { color: #999; font-size: smaller; margin-top: 0; }
+
+#content.build #charts { clear: right; float: right; width: 44%; }
+
+#content.build #builds { clear: none; margin-top: 2em; table-layout: fixed;
+  width: 54%;
+}
+#content.build #builds tbody th, #content.build #builds tbody td {
+  background: #fff;
+}
+#content.build #builds th.chgset { width: 6em; }
+#content.build #builds td :link, #content.build #builds td :visited {
+  font-weight: bold;
+}
+#content.build #builds tbody td { background-position: 2px .5em;
+  background-repeat: no-repeat;
+}
+#content.build #builds td.completed {
+  background-color: #e8f6e8; background-image: url(bitten_build.png);
+}
+#content.build #builds td.failed {
+  background-color: #fbe8e7; background-image: url(bitten_buildf.png);
+}
+#content.build #builds td.in-progress {
+  background-color: #f6fae0; background-image: url(bitten_build.png);
+}
+#content.build #builds .info { margin-left: 16px; }
+#content.build #builds :link, #content.build #builds :visited {
+  text-decoration: none;
+}
+#content.build #builds .info .status { color: #000; }
+#content.build #builds .info .system { color: #999; font-size: smaller;
+  line-height: 1.2em; margin-top: .5em;
+}
+#content.build #builds ul.steps {
+  list-style-type: none; margin: .5em 0 0; padding: 0;
+}
+#content.build #builds ul.steps li.success,
+#content.build #builds ul.steps li.failed {
+  border: 1px solid; margin: 1px 0; padding: 0 2px 0 12px;
+}
+#content.build #builds ul.steps li.success {
+  background: #9d9; border-color: #696; color: #393;
+}
+#content.build #builds ul.steps li.failed {
+  background: #d99 url(failure.png) 2px .3em no-repeat; border-color: #966;
+  color: #933;
+}
+#content.build #builds ul.steps li :link,
+#content.build #builds ul.steps li :visited { border: none; color: inherit;
+  font-weight: bold; text-decoration: none;
+}
+#content.build #builds ul.steps li .duration { float: right;
+  font-size: smaller;
+}
+#content.build #builds ul.steps li.success .duration { color: #696; }
+#content.build #builds ul.steps li.failed .duration { color: #966; }
+#content.build #builds ul.steps li.failed ul { font-size: smaller;
+  line-height: 1.2em; list-style-type: square; margin: 0;
+  padding: 0 0 .5em 1.5em;
+}
+
+#content.build #overview { line-height: 130%; margin-top: 1em; padding: .5em; }
+#content.build #overview dt { font-weight: bold; padding-right: .25em;
+ position: absolute; left: 0; text-align: right; width: 11.5em;
+}
+#content.build #overview dd { margin-left: 12em; }
+#content.build #overview .slave { margin-top: 1em; }
+#content.build #overview .time { margin-top: 1em; }
+
+#content.build div.errors { background: #d99; border: 1px solid #966;
+  color: #933; float: right; margin: 1em;
+}
+#content.build div.errors h3 { background: #966; color: #fff; margin: 0;
+  padding: 0 .3em;
+}
+#content.build div.errors ul { list-style-image: url(failure.png); margin: 0;
+  padding: .5em 1.75em;
+}
+
+#content.build .tabs { clear: right; list-style: none; float: left; width: 100%;
+  margin: 0 1em; padding: 0;
+}
+#content.build .tabs li { cursor: pointer; float: left; }
+#content.build .tabs li a { background: #b9b9b9; color: #666; display: block;
+  margin: 2px 2px 0; padding: 3px 2em 0;
+}
+#content.build .tabs li a:hover { color: #333; text-decoration: none; }
+#content.build .tabs li.active a { background: #d7d7d7; border: 1px outset;
+  border-bottom: none; color: #333; font-weight: bold; margin-top: 0;
+  padding-bottom: 1px;
+}
+#content.build .tab-content { background: #f4f4f4; border: 1px outset;
+  clear: both; margin: 0 2em 0 1em; padding: 5px;
+}
+#content.build .tab-content table { margin: 0; }
+
+#content.build tbody.totals td, #content.build tbody.totals th {
+  font-weight: bold;
+}
+#content.build table.tests tr.failed { background: #d99; }
+#content.build table.tests tr.failed td { font-weight: bold; }
+#content.build table.tests tr.failed:hover th,
+#content.build table.tests tr.failed:hover td,
+#content.build table.tests tr.failed:hover tr { background: #966; }
+#content.build table.tests tr.failed :link,
+#content.build table.tests tr.failed :visited { color: #933 }
+#content.build table.tests tr.failed :link:hover,
+#content.build table.tests tr.failed :visited:hover { color: #fff; }
+
+#content.build .log { background: #fff; border: 1px inset; font-size: 90%;
+  overflow: auto; max-height: 20em; width: 100%; white-space: pre;
+}
+#content.build .log code { padding: 0 5px; }
+#content.build .log .warning { color: #660; font-weight: bold; }
+#content.build .log .error { color: #900; font-weight: bold; }
+
+#content.build table.listing th, #content.build table.listing td {
+  font-size: 95%;
+}
+#content.build table.listing tbody th, #content.build table.listing tbody td {
+  background: #fff; padding: .1em .3em;
+}
+#content.build table.listing :link, #content.build table.listing :visited {
+  border: none;
+}
+#mainnav .bitteninprogress, #mainnav .bitteninprogress :hover {
+  border-right: 4px solid #edd400 !important;
+}
+#mainnav .bittencompleted, #mainnav .bittencompleted :hover {
+  border-right: 4px solid #0b0 !important;
+}
+#mainnav .bittenfailed, #mainnav .bittenfailed :hover {
+  border-right: 4px hidden !important;
+  background-color: #d99;
+}
+#mainnav .bittenpending, #mainnav .bittenpending :hover {
+  border-right: 4px hidden !important;
+}
+.step-toc {
+ padding: .5em 1em;
+ margin: 1em 3em 2em 1em;
+ float: right;
+ border: 1px outset #ddc;
+ background: #ffd;
+ font-size: 85%;
+ position: relative;
+}
+.step-toc h4 { font-size: 12px; margin: 0 }
+.step-toc ul, .step-toc ol { list-style: none; padding: 0 0 0 1.2em; margin: 0 }
+.step-toc li { margin: 0; padding: 0 }
+.step-toc .active { background: #ff9; position: relative; }
+.step-toc li.failed a { color: #a00; font-weight: bold; }

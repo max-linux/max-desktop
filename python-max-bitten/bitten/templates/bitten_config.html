@@ -1,0 +1,204 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/">
+  <xi:include href="layout.html" />
+  <head>
+    <title>$title</title>
+  </head>
+  <body>
+    <strong py:def="build_status(status)" class="status">
+      <py:choose test="status">
+      <py:when test="'completed'">Success</py:when>
+      <py:when test="'failed'">Failed</py:when>
+      <py:when test="'in progress'">In-progress</py:when>
+      </py:choose>
+    </strong>
+    
+    <div py:def="slave_info(slave)" class="system">
+      <strong>$slave.name</strong> ($slave.ipnr)<br />
+      $slave.os_name $slave.os_version
+      <py:if test="slave.machine or slave.processor"> / </py:if>
+      ${slave.processor or slave.machine or ''}
+    </div>
+    
+    <ul py:def="build_steps(steps)" py:if="steps" class="steps">
+      <li py:for="step in steps"
+          class="${step.failed and 'failed' or 'success'}">
+        <span class="duration">$step.duration</span> 
+        <a href="$step.href" title="${step.description or None}">
+          $step.name
+        </a>
+        <ul py:if="step.failed and step.errors">
+          <li py:for="error in step.errors">$error</li>
+        </ul>
+      </li>
+    </ul>
+ 
+    <div id="content" class="build">
+      <h1>$title</h1><py:choose test="page_mode"><py:when test="'overview'">
+      <py:if test="builds_pending">
+	<div>$builds_pending pending build<py:if test="builds_pending > 1">s</py:if>
+       </div></py:if><py:if test="builds_inprogress">
+	<div>$builds_inprogress in-progress build<py:if test="builds_inprogress > 1">s</py:if>
+      </div></py:if>
+      <form id="prefs" method="get" action="">
+        <div>
+          <input type="checkbox" id="showall" name="show" value="all"
+                 checked="${show_all and 'checked' or None}" />
+          <label for="showall">Show deactivated configurations</label>
+        </div>
+        <div class="buttons">
+          <input type="submit" value="Update" />
+        </div>
+      </form><py:for each="config in configs">
+      <h2 class="config ${not config.active and 'deactivated' or ''}">
+        <a href="$config.href">$config.label</a>
+      </h2><py:if test="config.builds_pending">
+	<div>$config.builds_pending pending
+	build<py:if test="config.builds_pending > 1">s</py:if>&nbsp;<i>(<py:for each="platform in config.platforms">
+        <py:if test="platform.builds_pending">
+	$platform.name: $platform.builds_pending
+        </py:if></py:for>)</i>
+       </div></py:if><py:if test="config.builds_inprogress">
+	<div>$config.builds_inprogress in-progress
+	build<py:if test="config.builds_inprogress > 1">s</py:if>&nbsp;<i>(<py:for each="platform in config.platforms"><py:if test="platform.builds_inprogress">
+	$platform.name: $platform.builds_inprogress
+        </py:if></py:for>)</i>
+      </div></py:if>
+      <div py:if="config.description" class="description">
+        $config.description
+      </div><py:if test="len(config.builds)">
+      <h3 class="builds"><a href="$config.href">Latest builds</a></h3>
+      <table class="builds"><tbody><tr>
+        <th py:with="youngest_rev = config.youngest_rev">
+          <a href="$youngest_rev.href">[$youngest_rev.id]</a>
+          by $youngest_rev.author<p class="date">$youngest_rev.date</p>
+          <p class="message">$youngest_rev.message</p>
+        </th>
+        <td py:for="build in config.builds" class="$build.cls"><py:choose>
+        <py:when test="build.status != 'pending'">
+          <a href="$build.href">$build.platform</a>
+          <p class="date">$build.stopped</p>
+          ${slave_info(build.slave)}
+          ${build_status(build.status)}
+        </py:when><py:otherwise>
+          <strong>$build.platform</strong>
+          <p class="nobuild">No build yet</p>
+        </py:otherwise></py:choose>
+        </td>
+      </tr></tbody></table></py:if></py:for>
+
+    </py:when><py:when test="'view_config'">
+      <form py:if="config.can_modify" id="prefs" method="post"
+            class="activation"><py:choose>
+        <div py:when="not config.active" class="help">
+          This build configuration is currently inactive.<br />
+          No builds will be initiated for this configuration<br />
+          until it is activated.
+        </div>
+        <div py:otherwise="" class="help">
+          This configuration is currently active.
+        </div></py:choose>
+        <div class="buttons" py:choose="">
+          <input type="hidden" name="action" value="edit" />
+          <input py:when="config.active" type="submit" name="deactivate"
+                 value="Deactivate" />
+          <input py:otherwise="" type="submit" name="activate"
+                 value="Activate" />
+        </div>
+      </form>
+      <p class="path">
+        Repository path: 
+        <a py:if="config.path" href="$config.browser_href">$config.path</a>
+        ${not config.path and '&mdash;' or ''}
+        <py:if test="config.min_rev or config.max_rev">
+        (<py:if test="config.min_rev">starting at 
+         <a href="$config.min_rev_href">[$config.min_rev]</a></py:if>
+         <py:if test="config.min_rev and config.max_rev">, </py:if>
+         <py:if test="config.max_rev">up to 
+         <a href="$config.max_rev_href">[$config.max_rev]</a></py:if>)
+        </py:if>
+      </p>
+      <div py:if="config.description" class="description">
+        $config.description
+      </div>
+      <py:if test="config.builds_pending">
+	<div>$config.builds_pending pending build<py:if test="config.builds_pending > 1">s</py:if>&nbsp;<i>(<py:for each="platform in config.platforms">
+        <py:if test="platform.builds_pending">
+	$platform.name: $platform.builds_pending
+        </py:if></py:for>)</i>
+       </div></py:if><py:if test="config.builds_inprogress">
+	<div>$config.builds_inprogress in-progress build<py:if test="config.builds_inprogress > 1">s</py:if>&nbsp;<i>(<py:for each="platform in config.platforms"><py:if test="platform.builds_inprogress">
+	$platform.name: $platform.builds_inprogress
+        </py:if></py:for>)</i>
+      </div></py:if>
+      <div id="charts"><py:for each="chart in config.charts">
+        <object type="application/x-shockwave-flash"
+                width="320" height="240"
+                data="${href.chrome('bitten', 'charts.swf')}">
+          <param name="movie" value="${href.chrome('bitten', 'charts.swf')}" />
+          <param name="FlashVars"
+                 value="library_path=${href.chrome('bitten')}&amp;xml_source=$chart.href${config.charts_license and '&amp;license='+config.charts_license or ''}" />
+          <param name="wmode" value="transparent" />
+        </object><br /></py:for>
+      </div>
+
+      <table py:if="config.platforms and config.builds"
+             class="listing" id="builds">
+        <thead><tr>
+          <th class="chgset"><abbr title="Changeset">Chgset</abbr></th>
+          <th py:for="platform in config.platforms">$platform.name</th>
+        </tr></thead>
+        <tbody py:if="config.builds">
+          <tr py:for="rev_num in sorted(config.builds, reverse=True)"
+              py:with="rev = config.builds[rev_num]">
+            <th class="chgset" scope="row">
+              <a href="$rev.href" title="View Changeset">[$rev_num]</a>
+            </th><py:for each="platform in config.platforms"><py:choose>
+            <td py:when="platform.id in rev" py:with="build = rev[platform.id]"
+                class="$build.cls">
+              <div class="info">
+                <a href="$build.href" title="View build results">
+                  $build.id
+                  ${build_status(build.status)}
+                </a>
+                ${slave_info(build.slave)}
+              </div>
+              ${build_steps(build.steps)}
+            </td>
+            <td py:otherwise="">&mdash;</td></py:choose></py:for>
+          </tr>
+        </tbody>
+      </table>
+      <br style="clear: right"/>
+
+    </py:when><py:when test="'view-inprogress'">
+      <py:for each="config in configs">
+      <h2 class="config ${not config.active and 'deactivated' or ''}">
+        <a href="$config.href">$config.label</a>
+      </h2>
+      <table class="listing" id="builds">
+        <thead><tr>
+          <th class="chgset" abbrev="Changeset">Chgset</th><th>Build</th>
+        </tr></thead><tbody>
+        <tr py:for="build in config.builds">
+          <th class="chgset" scope="row">
+            <a href="$build.rev_href" title="View Changeset">[$build.rev]</a>
+          </th>
+          <td class="$build.cls">
+            <div class="info">
+              <a href="$build.href" title="View build results">
+                $build.id: <strong class="status">$build.platform</strong>
+              </a>
+              ${slave_info(build.slave)}
+            </div>
+            ${build_steps(build.steps)}
+          </td>
+        </tr></tbody>
+      </table></py:for></py:when>
+    </py:choose></div>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/">
+  <xi:include href="layout.html" />
+  <head>
+    <title>$title</title>
+  </head>
+  <body>
+    <div id="content" class="build">
+      <h1>$title</h1>
+      <div class="step-toc"><h4 id="step-toc-qj">Build steps</h4><ol>
+          <py:for each="step in build.steps">
+          <li class="${step.failed and 'failed' or 'success'}"><a 
+              href="#step_${step.name}">$step.name</a></li>
+          </py:for></ol>
+      </div>
+      <dl id="overview" py:with="slave = build.slave">
+        <dt class="config">Configuration:</dt>
+        <dd class="config">
+          <a href="$build.config.href">$build.config.name</a>
+        </dd>
+        <dt class="trigger">Triggered by:</dt>
+        <dd class="trigger">
+          Changeset <a href="$build.chgset_href">[$build.rev]</a> by 
+          $build.chgset_author
+        </dd>
+        <dt class="slave">Built by:</dt>
+        <dd class="slave">
+          <code>$slave.name</code> ($slave.ipnr)
+        </dd>
+        <dt class="os">Operating system:</dt>
+        <dd>$slave.os_name $slave.os_version ($slave.os_family)</dd>
+        <py:if test="slave.machine"><dt class="machine">Hardware:</dt>
+        <dd class="machine">
+          $slave.machine
+          <py:if test="slave.processor"> ($slave.processor)</py:if>
+        </dd></py:if>
+        <dt class="time">
+          ${build.stopped and 'Started:' or 'Building since:'}
+        </dt>
+        <dd class="time">$build.started ($build.started_delta ago)</dd>
+        <py:if test="build.stopped"><dt class="time">Stopped:</dt>
+        <dd class="time">$build.stopped ($build.stopped_delta ago)</dd></py:if>
+        <dt class="duration">Duration:</dt>
+        <dd class="duration">$build.duration</dd>
+      </dl>
+      <div py:if="build.can_delete" class="buttons">
+        <form method="post" action=""><div>
+          <input type="hidden" name="action" value="invalidate" />
+          <input type="submit" value="Invalidate build" />
+        </div></form>
+      </div><py:for each="step in build.steps">
+      <h2 class="step" id="step_${step.name}">$step.name ($step.duration)</h2>
+      <div py:if="step.errors" class="errors">
+        <h3>Errors</h3>
+        <ul>
+          <li py:for="error in step.errors">$error</li>
+        </ul>
+      </div>
+      <p>$step.description</p>
+      <div id="${step.name}_tabs">
+        <div class="tab">
+          <h3>Log</h3>
+          <div class="log"><py:for each="item in step.log"><code class="$item.level">$item.message</code><br /></py:for></div>
+        </div>
+        <div py:for="report in [r for r in step.reports if r.template]"
+             class="tab report $report.category">
+          <xi:include href="$report.template" py:with="data = report.data" />
+        </div>
+      </div>
+      <script type="text/javascript">
+        makeTabSet(document.getElementById("${step.name}_tabs"));
+      </script></py:for>
+    </div>
+  </body>
+</html>
