@@ -1,3 +1,11 @@
+python-max-bitten (0.6-3) max; urgency=low
+
+  * Se añade cadaver como dependencia para la subida de los paquetes compilados al repositorio apt
+  * Se añade subversion como dependencia para obtener los paquetes fuente
+  * Se añaden dependencias para que no haya problemas al hacer dh_clean al compilar ciertos paquetes
+
+ -- Pedro Peña Pérez <pdropep@gmail.com>  Tue, 23 Jun 2009 20:53:08 +0200
+
 python-max-bitten (0.6-2) max; urgency=low
 
   * Se pide nombre de usuario y contraseña de acceso al Trac mediante debconf.
