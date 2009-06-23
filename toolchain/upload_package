@@ -1,7 +1,8 @@
 #!/bin/bash -e
 
 DIST=$1
-BRANCH=$2
+SRC=$(basename $2)
+BRANCH=${2%%/$SRC}
 DEST=../builder/result/$BRANCH/$DIST
 NETRC=$HOME/.netrc
 CONFIGFILE=/etc/max-bitten-slave
