@@ -1,0 +1,25 @@
+#!/bin/bash -e
+
+DIST=$1
+BRANCH=$2
+DEST=../builder/result/$BRANCH/$DIST
+NETRC=$HOME/.netrc
+CONFIGFILE=/etc/max-bitten-slave
+USERNAME=$(grep ^username $CONFIGFILE | cut -d= -f 2 | tr -d " ")
+
+[ ! -f $NETRC ] || mv $NETRC ${NETRC}.bak
+cat > $NETRC <<EOT
+machine max.educa.madrid.org
+login $USERNAME
+passwd $(grep ^password $CONFIGFILE | cut -d= -f 2 | tr -d " ")
+EOT
+chmod 600 $NETRC
+cadaver http://max.educa.madrid.org:8000/incoming <<EOT
+mkdir $BRANCH
+mkdir $BRANCH/$USERNAME
+cd $BRANCH/$USERNAME
+lcd $DEST
+mput *
+EOT
+rm $DEST/*
+[ -f ${NETRC}.bak ] && mv ${NETRC}.bak $NETRC || rm $NETRC
