@@ -17,8 +17,7 @@ EOT
 chmod 600 $NETRC
 cadaver http://max.educa.madrid.org:8000/incoming <<EOT
 mkdir $BRANCH
-mkdir $BRANCH/$USERNAME
-cd $BRANCH/$USERNAME
+cd $BRANCH
 lcd $DEST
 mput *
 EOT
