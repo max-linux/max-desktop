@@ -1,5 +1,6 @@
 #!/bin/bash -e
 
+export HOME=/root
 DIST=$1
 SRC=$(basename $2)
 BRANCH=${2%%/$SRC}
