@@ -2,7 +2,7 @@ Source: mysql-connector-java
 Section: max
 Priority: extra
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 5), cdbs
+Build-Depends: debhelper (>= 5), cdbs, wget
 Standards-Version: 3.7.2
 
 Package: mysql-connector-java
