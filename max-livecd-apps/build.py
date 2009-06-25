@@ -3,8 +3,8 @@
 import os
 import sys
 
-#MIRROR="http://tcosproject.org/max/max-win32-apps/"
-MIRROR="http://192.168.0.3/mirror/max-win32-apps/"
+MIRROR="http://tcosproject.org/max/max-win32-apps/"
+#MIRROR="http://192.168.0.3/mirror/max-win32-apps/"
 
 ITEMS=[
 ["Thunderbird", MIRROR + "Thunderbird_Setup_2.0.0.21.exe", "max-win32-apps/disctree/programs/thunderbird/Thunderbird_Setup_2.0.0.21.exe"],
