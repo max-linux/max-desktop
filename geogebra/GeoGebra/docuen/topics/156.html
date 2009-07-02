@@ -1,9 +1,11 @@
+<!-- saved from url=(0014)about:internet -->
 <html>
 <head>
-  <title>4.3.5..9 InflectionPoint  - GeoGebra Help</title>
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-  <meta name="GENERATOR" content="Macrobject Word-2-Web Pro 2007.8.1.286">
-  <script language="javascript">if(parent==self)location.href='../index.html?i=155';</script>
+  <title>5.3..1 Creating a User Defined Tool - GeoGebra Help 3.2</title>
+  <meta name="GENERATOR" content="Macrobject Word-2-Web 2009 Pro 2009.2.410.1817">
+  <script language="javascript" src="../scripts/HelpNavigate.js"></script>
+  <script language="javascript">checkPage('../index.html?n=156.html');locate('156.html');</script>
   <link rel="stylesheet" href="../topics/document.css" type="text/css" />
     
   <link rel="stylesheet" href="../document.css" type="text/css" />
@@ -16,26 +18,104 @@
   </style>
 </head>
 
-<body>
+<body onload="javascript:checkPage('')">
 
-  <h4><a name=SECTION005341000000000000000></a><a name=cmdInflectionPoint></a>InflectionPoint </h4>
+
+  <h4>Creating a User Defined Tool</h4>
 
   
 
-<p class=StyleLeft0Hanging049><span class=commands>InflectionPoint[polynomial f]</span>:
-All inflection points of polynomial <i>f</i> </p>
+<p class=MsoNormal>First, create the construction your tool should be able to
+create later on. In the <a href="135.html#_Tools_Menu"><i style='mso-bidi-font-style:
+normal'>Tools</i> menu</a>, click on <span style='mso-fareast-language:EN-US;
+mso-no-proof:yes'><img border=0 width=16 height=16
+src="doc_files/image228.gif" alt=tool.png v:shapes="_x0000_i1258"></span><span
+style='mso-spacerun:yes'> </span><a href="136.html#_/_Create_New"><i style='mso-bidi-font-style:
+normal'>Create New Tool</i></a> in order to open the corresponding dialog box. Now
+you need to fill in the three tabs <i style='mso-bidi-font-style:normal'>Output
+Objects</i>, <i style='mso-bidi-font-style:normal'>Input Objects</i>, and <i
+style='mso-bidi-font-style:normal'>Name and Icon</i> in order to create your
+custom tool.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=UnderlinedChar>Example</span>: </p>
+
+<p class=MsoNormal>Create a Square-tool that creates a square whenever you
+click on two existing points or on two empty spots in the <a
+href="4.html#_Graphics_View"><i style='mso-bidi-font-style:normal'>Graphics View</i></a>.<u><o:p></o:p></u></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l48 level1 lfo74'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Construct a square starting with two points <i>A</i>
+and <i>B</i>. Construct the other vertices and connect them with the tool <span
+style='mso-fareast-language:EN-US;mso-no-proof:yes'><img border=0 width=16 height=16
+src="doc_files/image234.gif" alt="mode_polygon_16" v:shapes="Picture_x0020_129"></span><span
+style='mso-spacerun:yes'> </span><a href="29.html#modePolygon">Polygon</a> to get the
+square <i>poly1</i>.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l48 level1 lfo74'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Select <span style='mso-fareast-language:EN-US;
+mso-no-proof:yes'><img border=0 width=16 height=16
+src="doc_files/image228.gif" alt=tool.png v:shapes="_x0000_i1260"></span><span
+style='mso-spacerun:yes'> </span><a href="136.html#_Create_New_Tool…"><i
+style='mso-bidi-font-style:normal'>Create New Tool</i></a> in the <a
+href="135.html#_Tools_Menu"><i style='mso-bidi-font-style:normal'>Tools</i> menu</a>.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l48 level1 lfo74'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Specify the <i style='mso-bidi-font-style:normal'>Output
+Objects</i>: Click on the square or select it from the drop down menu. Also,
+specify the edges of the square as <i style='mso-bidi-font-style:normal'>Output
+Objects</i>.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l48 level1 lfo74'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Specify the <i style='mso-bidi-font-style:normal'>Input
+Objects</i>: GeoGebra automatically specifies the <i style='mso-bidi-font-style:
+normal'>Input Objects</i> for you (here: points <i style='mso-bidi-font-style:
+normal'>A</i> and <i style='mso-bidi-font-style:normal'>B</i>). You can also modify
+the selection of input objects using the drop down menu or by clicking on them
+in your construction.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l48 level1 lfo74'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Specify the <i style='mso-bidi-font-style:normal'>Tool
+Name</i> and <i style='mso-bidi-font-style:normal'>Command Name</i> for your
+new tool<i style='mso-bidi-font-style:normal'>.</i> <br>
+<span class=UnderlinedChar>Note</span>: The <i style='mso-bidi-font-style:normal'>Tool
+Name </i>will appear in GeoGebra’s <i style='mso-bidi-font-style:normal'>Toolbar</i>,
+while the <i style='mso-bidi-font-style:normal'>Command Name</i> can be used in
+GeoGebra’s <i style='mso-bidi-font-style:normal'>Input Bar</i>.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l48 level1 lfo74'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>You may also enter text to be shown in the <i
+style='mso-bidi-font-style:normal'>Toolbar Help</i>.</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l48 level1 lfo74'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>You can also choose an image from you computer
+for the <i style='mso-bidi-font-style:normal'>Toolbar</i> icon. GeoGebra
+resizes your image automatically to fit on a <i style='mso-bidi-font-style:
+normal'>Toolbar</i> button.</p>
 
 
 
-    <p class="msoNormal"><b>Related topics</b></p>
-    <p class="msoNormal" style="margin-left:24px"><a href="147.html">4.3.5. Point</a><br />
-</p>
 
-  <p><hr /><span class="copyright"><I><a href='http://www.geogebra.org/'>www.geogebra.org</a></I></span></p>
+    <p><hr /><span class="copyright"><I><a href="http://www.geogebra.org">www.geogebra.org</a></I></span></p>
+  
 
 </body>
 
-<script language="javascript" src="../scripts/HelpNavigate.js"></script>
 <script language="javascript" src="../scripts/HelpHighlight.js"></script>
 <script language="javascript">highlight();</script>
 

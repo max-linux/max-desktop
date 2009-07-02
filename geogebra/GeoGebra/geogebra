@@ -7,7 +7,7 @@
 #
 #  To run this script you will need to have the following:
 #	1) a Java VM installed (however, it will handle a lack of Java nicely).
-#	2) a Java-style properties file having the same name as this script 
+#	2) a Java-style properties file having the same name as this script
 #		with the suffix .lax.  If this script is appended to the
 #		self-extractor, it will look for the properties file in the
 #		directory specified by $seLaxPath; otherwise, it will look in
@@ -679,21 +679,6 @@ fi
 				cmdLineArgs="$cmdLineArgs -m CONSOLE"
 				uimode="console"
 			elif [ $lax_installer_unix_ui_default = GUI ]; then
-# Uncomment the following if statement and comment out the three lines after
-# this comment to enable failsafe operation of installers when X is missing
-# FAILSAFE
-#				if [ -z "$DISPLAY" ]; then
-#					isSilent="false"
-#					isConsole="true"
-#					cmdLineArgs="$cmdLineArgs -m CONSOLE"
-#					uimode="console"
-#					debugOut "[1mWARNING! DISPLAY variable not set. Will attempt to run installer in CONSOLE mode.[0m"
-#				else
-#					isSilent="false"
-#					isConsole="false"
-#					uimode="gui"
-#				fi
-# comment the following three lines out when changing to FAILSAFE
 				isSilent="false"
 				isConsole="false"
 				uimode="gui"
@@ -848,7 +833,7 @@ fi
 getJavaVersion()
 {
 	javaExe=$1
-	javaVersion=` $javaExe -version 2>&1 | $AWK '
+	javaVersion=` "${javaExe}" -version 2>&1 | $AWK '
 $3 ~ /"[0-9]\.[0-9]\.[0-9][^"]*"$/ {
 	gsub ("[^0-9._]", "", $3)
 	print $3
@@ -1067,40 +1052,20 @@ else
 		inspectVM "$abs_lax_nl_current_vm"
 		eval laxVMtype="$inspectedVMtype"
 		eval laxOldVMType="$inspectedOldVMtype"
-		# if the type of this vm is in the valid list, deem it valid
-
-		case "$validVMtypeList" in
-			*$laxVMtype*|*$laxOldVMType*)
-				laxVMisValid="true"
-			;;
-		esac
-		
-		if [ $laxVMisValid != 'true' ]; then
-			for validType in $validVMtypeList; do
-				getJavaVersion "$abs_lax_nl_current_vm"
-				if strictCheck "$javaVersion" "$validType" "$laxVMtype"; then
-						laxVMisValid="true"
-				fi
-				unset javaVersion
-				if [ "$laxVMisValid" = 'true' ]; then
-					break;
-				fi
-			done
-		fi
+	
+		# when VM is specified using the lax.nl.current.vm property or the
+		# LAX_VM command-line option, just accept that VM, no validation is required
+		laxVMisValid="true"
 	fi
 	# if the lax current vm is valid use it
-	 overwriteLaxVM="true"
 	if [ "$laxVMisValid" = "true" ]; then
 		# dont overwrite the lax.nl.current.vm  if this one works just fine
-		overwriteLaxVM="false"
 		actvm="$abs_lax_nl_current_vm"
 		actvmType="$laxVMtype"
 		debugOut "* Using VM.....(lax.nl.current.vm)...... $actvm"
 	else	
 	# other wise search the path
 		debugOut "[1mWARNING! No valid lax.nl.current.vm available.[0m"
-		# overwrite the lax.nl.current.vm  if the one in there didnt work
-		overwriteLaxVM="true"
 
 		# sift through the path to look for VMs
 
@@ -1194,19 +1159,6 @@ fi
 
 # write the current vm out to the environment properties
 echo "lax.nl.current.vm=$actvm" >> $envPropertiesFile
-
-# noLaxBackup is true for self-extractor, and the current vm should not
-# be changed if the LAX_VM tag is used
-noLaxBackup=${noLaxBackup:="false"}
-if [ "$overwriteLaxVM" = "true" -a "$lax_vm" != "LAX_VM" -a "$noLaxBackup" != "true" -a \
- -w "$propfname" ]
-then
-	sedscript="s;^lax.nl.current.vm.*;lax.nl.current.vm=$actvm;"
-	sed $sedscript "$propfname">file.lax 
-	mv "$propfname" "$propfname.bak" > /dev/null 2>&1
-	mv file.lax "$propfname" > /dev/null 2>&1
-	rm "$propfname.bak" > /dev/null 2>&1
-fi
 
 # set up a variable to esilty know if we are going to run 1.1 or 1.2 
 # for setting up VM cmd line options later on

@@ -1,7 +1,7 @@
 //=======================================================================//
 //                                                                       //
 //  Macrobject Software Code Library                                     //
-//  Copyright (c) 2004-2007 Macrobject Software, All Rights Reserved     //
+//  Copyright (c) 2004-2008 Macrobject Software, All Rights Reserved     //
 //  http://www.macrobject.com                                            //
 //                                                                       //
 //  Warning!!!                                                           //

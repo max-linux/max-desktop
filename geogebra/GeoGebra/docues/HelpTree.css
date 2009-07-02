@@ -6,9 +6,9 @@
 .Topic img.Icon {background:none; cursor:default;}
 
 #moCssTree ul {margin:0 0 0 0px;}
-#moCssTree a:link, #moCssTree a:visited {color:navy; text-decoration:none; }
-#moCssTree a:hover {color:blue; text-decoration:underline; }
-#moCssTree a.Current {font-weight:bold;}
+#moCssTree a:link, #moCssTree a:visited {color:Navy; text-decoration:none; }
+#moCssTree a:hover {color:Navy; text-decoration:underline; }
+#moCssTree a.Current, #moCssTree a.Current:visited {color:Navy; font-weight:bold;}
 #moCssTree ul li ul {margin:0 0 0 20px;}
 #moCssTree img.Icon {width:20px;height:18px;}
 #moCssTree .Expanded  img.Icon {background:url(images/-.gif) no-repeat 0 1px;}

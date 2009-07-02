@@ -1,4 +1,4 @@
-#   LaunchAnywhere (tm) Executable Properties File - Macrovision Corp.
+#   LaunchAnywhere (tm) Executable Properties File - Acresso Software Inc. and/or InstallShield Co. Inc.
 
 #   LAX.APPLICATION.NAME
 #   --------------------
@@ -12,7 +12,7 @@ lax.application.name=geogebra
 #   the Java classpath necessary to run this application
 #   Can be separated by colons (Mac OS/Unix) or semicolons (Windows)
 
-lax.class.path=geogebra.jar:lax.jar
+lax.class.path=/usr/share/geogebra/geogebra.jar:lax.jar
 
 
 #   LAX.COMMAND.LINE.ARGS
@@ -33,7 +33,7 @@ lax.dir=/usr/share/geogebra/
 #   --------------
 #   the class that contains the main method for the application
 
-lax.main.class=geogebra.gui.MyAppSplash
+lax.main.class=geogebra.GeoGebra
 
 
 #   LAX.MAIN.METHOD
@@ -47,7 +47,7 @@ lax.main.method=main
 #   -----------------
 #   the VM to use for the next launch
 
-lax.nl.current.vm=/usr/lib/jvm/java-6-sun-1.6.0.03/jre/bin/java
+lax.nl.current.vm=__JAVA__
 
 
 #   LAX.NL.JAVA.LAUNCHER.MAIN.CLASS
@@ -64,10 +64,14 @@ lax.nl.java.launcher.main.class=com.zerog.lax.LAX
 lax.nl.java.launcher.main.method=main
 
 
+
+lax.nl.java.option.additional=-Xmx1000m
+
+
 #   LAX.NL.VALID.VM.LIST
 #   --------------------
-#   a string containing one or more of [ ALL JDK JRE J1 J2 JRE_J1 JDK_J1 JRE_J2 JDK_J2 MSJ ]
-#    delimited by spaces or commas.  If the native launcher cannot find the current vm,
+#   Defines which VMs are valid for your project.
+#   If the native launcher cannot find the current vm,
 #   it will search for ones in this list
 
 lax.nl.valid.vm.list=1.4.2+
@@ -89,8 +93,8 @@ lax.root.install.dir=/usr/share/geogebra
 
 #   LAX.STDERR.REDIRECT
 #   -------------------
-#   leave blank for no input, "console" to read from the console window,
-#   and any path to a file to read from that file
+#   leave blank for no output, "console" to send to a console window,
+#   and any path to a file to save to the file
 
 lax.stderr.redirect=
 
@@ -105,8 +109,8 @@ lax.stdin.redirect=
 
 #   LAX.STDOUT.REDIRECT
 #   -------------------
-#   leave blank for no input, "console" to read from the console window,
-#   and any path to a file to read from that file
+#   leave blank for no output, "console" to send to a console window,
+#   and any path to a file to save to the file
 
 lax.stdout.redirect=
 
@@ -125,6 +129,6 @@ lax.user.dir=.
 #   -----------
 #   version of LaunchAnywhere that created this properties file
 
-lax.version=8.0
+lax.version=10.0
 
 

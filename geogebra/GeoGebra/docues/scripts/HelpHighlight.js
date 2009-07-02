@@ -1,7 +1,7 @@
 //=======================================================================//
 //                                                                       //
 //  Macrobject Software Code Library                                     //
-//  Copyright (c) 2004-2007 Macrobject Software, All Rights Reserved     //
+//  Copyright (c) 2004-2008 Macrobject Software, All Rights Reserved     //
 //  http://www.macrobject.com                                            //
 //                                                                       //
 //  Warning!!!                                                           //
@@ -16,13 +16,15 @@ function hl(n, k)
   {
     for(var i=0; i<n.childNodes.length; i++)
     {
-      hl(n.childNodes[i], k);
+      if (hl(n.childNodes[i], k)) break;
     }
   }
   if((n.nodeType == 3) && n.nodeValue.match(k))
   {
     n.parentNode.innerHTML = n.parentNode.innerHTML.replace(k, '$1<span class="hl">$2</span>');
+    return true;
   }
+  return false;
 }
 
 function highlight()

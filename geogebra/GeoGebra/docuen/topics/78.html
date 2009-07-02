@@ -1,9 +1,11 @@
+<!-- saved from url=(0014)about:internet -->
 <html>
 <head>
-  <title>3.2.10..5  Angle  - GeoGebra Help</title>
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-  <meta name="GENERATOR" content="Macrobject Word-2-Web Pro 2007.8.1.286">
-  <script language="javascript">if(parent==self)location.href='../index.html?i=77';</script>
+  <title>3.3.17. List and Sequence Commands - GeoGebra Help 3.2</title>
+  <meta name="GENERATOR" content="Macrobject Word-2-Web 2009 Pro 2009.2.410.1817">
+  <script language="javascript" src="../scripts/HelpNavigate.js"></script>
+  <script language="javascript">checkPage('../index.html?n=78.html');locate('78.html');</script>
   <link rel="stylesheet" href="../topics/document.css" type="text/css" />
     
   <link rel="stylesheet" href="../document.css" type="text/css" />
@@ -16,50 +18,420 @@
   </style>
 </head>
 
-<body>
+<body onload="javascript:checkPage('')">
 
-  <h4><a name=anglemode></a><a name=789></a><a name=modeAngle></a><img border=0 width=32 height=32 src="doc_files/image064.gif"> Angle </h4>
+
+  <h3><a name="_Toc228163530"></a><a name="_Toc217356162"></a><span style='mso-bookmark: _Toc228163530'><span style='mso-fareast-font-family:Calibri; mso-bidi-font-family:Calibri'><span style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'></span></span></span>List and Sequence Commands</span></h3>
 
   
 
-<p class=MsoNormal>This mode creates … </p>
+<h4>Append</h4>
 
-<p class=StyleTOC2Italic><span style='font-family:Symbol'>·<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span>angle between three points </p>
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Append[List,
+Object]</span></span>: Appends the object to the list.<span style='mso-tab-count:
+1'>           </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Append[{1,
+2, 3}, 4]</span></span> gives you <i style='mso-bidi-font-style:normal'>{1, 2,
+3, 4}</i>.</p>
 
-<p class=StyleTOC2Italic><span style='font-family:Symbol'>·<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span>angle between two segments </p>
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Append[Object,
+List]</span></span>: Appends the list to the object.<span style='mso-tab-count:
+1'>           </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Append[4,
+{1, 2, 3}]</span></span> gives you <i style='mso-bidi-font-style:normal'>{4, 1,
+2, 3}</i>.</p>
 
-<p class=StyleTOC2Italic><span style='font-family:Symbol'>·<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span>angle between two lines </p>
+<h4>CountIf</h4>
 
-<p class=StyleTOC2Italic><span style='font-family:Symbol'>·<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span>angle between two vectors </p>
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>CountIf[Condition,
+List]</span></span>: Counts the number of elements in the list satisfying the
+condition.<span style='mso-tab-count:1'>  </span><br>
+<span class=UnderlinedChar>Examples</span>:</p>
 
-<p class=StyleTOC2Italic><span style='font-family:Symbol'>·<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span>all interior angles of a polygon </p>
+<p class=MsoListParagraphCxSpFirst style='margin-left:71.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l65 level1 lfo62'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>CountIf[x
+&lt; 3, {1, 2, 3, 4, 5}]</span></span> gives you the number 2.</p>
 
-<p class=MsoNormal>&nbsp;</p>
+<p class=MsoListParagraphCxSpLast style='margin-left:71.4pt;mso-add-space:auto;
+text-indent:-18.0pt;mso-list:l65 level1 lfo62'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>CountIf[x&lt;3,
+A1:A10]</span></span> where <i style='mso-bidi-font-style:normal'>A1:A10</i> is
+a range of cells in the spreadsheet, counts all cells whose values are less
+than 3.</p>
 
-<p class=MsoNormal>All these angles are limited in size between 0 and 180°. If
-you want to <i>allow reflex angles</i>, choose the appropriate setting in the <i><a href="24.html#_Properties_Dialog">Properties dialog</a></i>. </p>
+<h4>Element</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Element[List,
+Number n]</span></span>: Yields the <i style='mso-bidi-font-style:normal'>n<sup>th</sup></i>
+element of the list.<i style='mso-bidi-font-style:normal'><span
+style='mso-tab-count:1'>           </span><br>
+</i><span class=UnderlinedChar>Note</span>: The list can contain only elements
+of one object type (e. g., only numbers or only points).</p>
+
+<h4>First</h4>
+
+<p class=MsoNormal><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>First[List]</span></span>:
+Returns the first element of the list.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>First[List,
+Number n of elements]</span></span>: Returns a new list that contains just the
+first <i style='mso-bidi-font-style:normal'>n</i> elements of the list.</p>
+
+<h4>Insert</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Insert[Object,
+List, Position]</span></span>: Inserts the object in the list at the given
+position.<br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Insert[x^2,
+{1, 2, 3, 4, 5}, 3]</span></span> places <i style='mso-bidi-font-style:normal'>x<sup>2</sup></i>
+at the third position and gives you the list <i style='mso-bidi-font-style:
+normal'>{1, 2, x<sup>2</sup>, 3, 4, 5}</i>.<span style='mso-tab-count:1'>  </span><br>
+<span class=UnderlinedChar>Note</span>: If the position is a negative number,
+then the position is counted from the right.<span style='mso-tab-count:1'>  </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Insert[x^2,
+{1, 2, 3, 4, 5}, -1]</span></span> places <i style='mso-bidi-font-style:normal'>x<sup>2</sup></i>
+at the end of the list and gives you the list <i style='mso-bidi-font-style:
+normal'>{1, 2, 3, 4, 5, x<sup>2</sup>}</i>.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Insert[List
+1, List 2, Position]</span></span>: Inserts all elements of <i
+style='mso-bidi-font-style:normal'>list1</i> in <i style='mso-bidi-font-style:
+normal'>list2</i> at the given position.<span style='mso-tab-count:1'>            </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Insert[{11,
+12}, {1, 2, 3, 4, 5}, 3]</span></span> places the elements of <i
+style='mso-bidi-font-style:normal'>list1</i> at the third (and following)
+position(s) of <i style='mso-bidi-font-style:normal'>list2</i> and gives you
+the list <br>
+<i style='mso-bidi-font-style:normal'>{1, 2, 11, 12, 3, 4, 5}</i>.<i
+style='mso-bidi-font-style:normal'><span style='mso-tab-count:1'>  </span><br>
+</i><span class=UnderlinedChar>Note</span>: If the position is a negative
+number, then the position is counted from the right.<span style='mso-tab-count:
+1'>  </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Insert[{11,
+12}, {1, 2, 3, 4, 5}, -2]</span></span> places the elements of <i
+style='mso-bidi-font-style:normal'>list1</i> at the end of <i style='mso-bidi-font-style:
+normal'>list2</i> before its last element and gives you <i style='mso-bidi-font-style:
+normal'>{1, 2, 3, 4, 11, 12, 5}</i>.</p>
+
+<h4>Intersection</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Intersection[List
+1, List 2]</span></span>: Gives you a new list containing all elements that are
+part of both lists.</p>
+
+<h4>IterationList</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>IterationList[Function,
+Number x0, Number n]</span></span>: <span style='mso-tab-count:1'>     </span><br>
+Gives you a list of length <i style='mso-bidi-font-style:normal'>n</i>+1 whose
+elements are iterations of the function starting with the value <i
+style='mso-bidi-font-style:normal'>x0.<span style='mso-tab-count:1'>            </span><br>
+</i><span class=UnderlinedChar>Example</span>: After defining function <span
+class=commands><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-bidi-font-family:"Times New Roman"'>f(x) = x^2</span></span> the command <span
+style='mso-tab-count:1'>     </span><br>
+<span class=commands><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-bidi-font-family:"Times New Roman"'>L = IterationList[f, 3, 2]</span></span>
+gives you the list <i style='mso-bidi-font-style:normal'>L = {3, 9, 81}</i>.</p>
+
+<h4>Join</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Join[List 1,
+List 2, ...]</span></span>: Joins the two (or more) lists. <span
+style='mso-tab-count:1'> </span><br>
+<span class=UnderlinedChar>Note</span>: The new list contains all elements of
+the initial lists even if they are the same. The elements of the new list are
+not re-ordered.<span style='mso-tab-count:1'>  </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Join[{5,
+4, 3}, {1, 2, 3}]</span></span> creates the list {<i style='mso-bidi-font-style:
+normal'>5, 4, 3, 1, 2, 3}</i>.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Join[List of
+lists]</span></span>: Joins the sub-lists into one longer list.<span
+style='mso-tab-count:1'> </span><br>
+<span class=UnderlinedChar>Note</span>: The new list contains all elements of
+the initial lists even if they are the same. The elements of the new list are
+not re-ordered.<span style='mso-tab-count:1'>  </span><br>
+<span class=UnderlinedChar>Examples</span>: </p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:71.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l17 level1 lfo63'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>Join[{{1,
+2}}]</span></span> creates the list <i style='mso-bidi-font-style:normal'>{1,
+2}</i>.</p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:71.4pt;mso-add-space:auto;
+text-indent:-18.0pt;mso-list:l17 level1 lfo63'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>Join[{{1,
+2, 3}, {3, 4}, {8, 7}}]</span></span> creates the list <br>
+<i style='mso-bidi-font-style:normal'>{1, 2, 3, 3, 4, 8, 7}</i>.</p>
+
+<h4>KeepIf</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>KeepIf[Condition,
+List]</span></span>: Creates a new list that only contains those elements of
+the initial list that fulfill the condition.<span style='mso-tab-count:1'> </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>KeepIf[x&lt;3,
+{1, 2, 3, 4, 1, 5, 6}]</span></span> returns the new list <i style='mso-bidi-font-style:
+normal'>{1, 2, 1}.</i></p>
+
+<h4>Last</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Last[List]</span></span>:
+Returns the last element of the list.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Last[List,
+Number n of Elements]</span></span>: Returns a list containing just the last <i
+style='mso-bidi-font-style:normal'>n</i> elements of the list.</p>
+
+<h4>Length</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Length[List]</span></span>:
+Yields the length of the list, which is the number of list elements<i
+style='mso-bidi-font-style:normal'>.</i></p>
+
+<h4>Min</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Min[List]</span></span>:
+Returns the minimal element of the list.<i style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<h4>Max</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Max[List]</span></span>:
+Returns the maximal element of the list.<i style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<h4>Product</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Product[List
+of Numbers]</span></span>: Calculates the product of all numbers in the list.</p>
+
+<h4>RemoveUndefined</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>RemoveUndefined[List]</span></span>:
+Removes undefined objects from a list.<span style='mso-tab-count:1'>     </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>RemoveUndefined[Sequence[(-1)^i,
+i, -3, -1, 0.5]]</span></span> removes the second and fourth element of the
+sequence which have a non-integer exponent and therefore, are undefined.</p>
+
+<h4>Reverse</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Reverse[List]</span></span>:
+Reverses the order of a list.</p>
+
+<h4><a name="_Sequence"></a>Sequence</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sequence[Expression,
+Variable i, Number a, Number b]</span></span>: Yields a list of objects created
+using the given expression and the index <i style='mso-bidi-font-style:normal'>i</i>
+that ranges from number <i style='mso-bidi-font-style:normal'>a</i> to number <i
+style='mso-bidi-font-style:normal'>b</i>.<span style='mso-tab-count:1'>          </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>L
+= Sequence[(2, i), i, 1, 5]</span></span> creates a list of points whose <i
+style='mso-bidi-font-style:normal'>y</i>-coordinates range from 1 to 5: <i
+style='mso-bidi-font-style:normal'>L = {(2, 1), (2, 2), (2, 3), (2, 4), (2, 5)}</i>.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sequence[Expression,
+Variable i, Number a, Number b, Increment]</span></span>: Yields a list of
+objects created using the given expression and the index <i style='mso-bidi-font-style:
+normal'>i</i> that ranges from number <i style='mso-bidi-font-style:normal'>a</i>
+to number <i style='mso-bidi-font-style:normal'>b</i> with given increment.<span
+style='mso-tab-count:1'>      </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>L
+= Sequence[(2, i), i, 1, 3, 0.5]</span></span> creates a list of points whose <i
+style='mso-bidi-font-style:normal'>y</i>-coordinates range from 1 to 3 with an
+increment of 0.5:<span style='mso-tab-count:1'>          </span><br>
+<i style='mso-bidi-font-style:normal'>L = {(2, 1), (2, 1.5), (2, 2), (2, 2.5),
+(2, 3)}</i>.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=UnderlinedChar>Note</span>: Since the parameters
+<i style='mso-bidi-font-style:normal'>a</i> and <i style='mso-bidi-font-style:
+normal'>b</i> are dynamic you could use <a href="33.html#786"><i style='mso-bidi-font-style:
+normal'>slider</i></a> variables as well.</p>
+
+<h4>Sort</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sort[List]</span></span>:
+Sorts a list of numbers, text objects, or points.<span style='mso-tab-count:
+1'>       </span><br>
+<span class=UnderlinedChar>Note</span>: Lists of points are sorted by <i
+style='mso-bidi-font-style:normal'>x</i>-coordinates.<span style='mso-tab-count:
+1'>    </span><br>
+<span class=UnderlinedChar>Examples</span>:</p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:71.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l15 level1 lfo64'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>Sort[{3,
+2, 1}]</span></span><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'> </span>gives you the list <i style='mso-bidi-font-style:
+normal'>{1, 2, 3}</i>.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:71.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l15 level1 lfo64'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>Sort[{&quot;pears&quot;,
+&quot;apples&quot;, &quot;figs&quot;}]</span></span> gives you the list elements
+in alphabetical order.</p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:71.4pt;mso-add-space:auto;
+text-indent:-18.0pt;mso-list:l15 level1 lfo64'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>Sort[{(3,
+2), (2, 5), (4, 1)}]</span></span> gives you <i style='mso-bidi-font-style:
+normal'>{(2, 5), (3, 2), (4, 1)}</i>.</p>
+
+<h4>Sum</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sum[List]</span></span>:
+Calculates the sum of all list elements. <span style='mso-tab-count:1'>        </span><br>
+<span class=UnderlinedChar>Note</span>: This command works for numbers, points,
+vectors, text, and functions.<br>
+<span class=UnderlinedChar>Examples</span>:</p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l44 level1 lfo65'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sum[{1,
+2, 3}]</span></span> gives you a number <i style='mso-bidi-font-style:normal'>a
+= 6</i>.</p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l44 level1 lfo65'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sum[{x^2,
+x^3}]</span></span><span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'> </span>gives you <i style='mso-bidi-font-style:normal'>f(x)
+= x<sup>2</sup> + x<sup>3</sup></i>.</p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l44 level1 lfo65'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sum[Sequence[i,i,1,100]]</span></span>
+gives you a number <i style='mso-bidi-font-style:normal'>a = 5050</i>.</p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l44 level1 lfo65'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sum[{(1,
+2), (2, 3)}]</span></span> gives you a point <i style='mso-bidi-font-style:
+normal'>A = (3, 5)</i>.</p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l44 level1 lfo65'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sum[{(1,
+2), 3}]</span></span> gives you point <i style='mso-bidi-font-style:normal'>B =
+(4, 2)</i>.</p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l44 level1 lfo65'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sum[{&quot;a&quot;,&quot;b&quot;,&quot;c&quot;}]</span></span>
+gives you the text <i style='mso-bidi-font-style:normal'>&quot;abc&quot;</i>.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sum[List,
+Number n of Elements]</span></span>: Calculates the sum of the first <i
+style='mso-bidi-font-style:normal'>n</i> list elements. <br>
+<span class=UnderlinedChar>Note</span>: This command works for numbers, points,
+vectors, text, and functions.<br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sum[{1,
+2, 3, 4, 5, 6}, 4]</span></span> gives you the number <i style='mso-bidi-font-style:
+normal'>a = 10</i>.</p>
+
+<h4>Take</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Take[List,
+Start Position m, End Position n]</span></span>: Returns a list containing the elements
+from positions <i style='mso-bidi-font-style:normal'>m</i> to <i
+style='mso-bidi-font-style:normal'>n</i> of the initial list.</p>
+
+<h4>Union</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Union[List 1,
+List 2]</span></span>: Joins the two lists and removes elements that appear
+multiple times.</p>
 
 
 
-    <p class="msoNormal"><b>Related topics</b></p>
-    <p class="msoNormal" style="margin-left:24px"><a href="73.html">3.2.10. Number and Angle</a><br />
-</p>
 
-  <p><hr /><span class="copyright"><I><a href='http://www.geogebra.org/'>www.geogebra.org</a></I></span></p>
+    <p><hr /><span class="copyright"><I><a href="http://www.geogebra.org">www.geogebra.org</a></I></span></p>
+  
 
 </body>
 
-<script language="javascript" src="../scripts/HelpNavigate.js"></script>
 <script language="javascript" src="../scripts/HelpHighlight.js"></script>
 <script language="javascript">highlight();</script>
 

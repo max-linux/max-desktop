@@ -1,9 +1,11 @@
+<!-- saved from url=(0014)about:internet -->
 <html>
 <head>
-  <title>3.2.11. Boolean - GeoGebra Help</title>
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-  <meta name="GENERATOR" content="Macrobject Word-2-Web Pro 2007.8.1.286">
-  <script language="javascript">if(parent==self)location.href='../index.html?i=79';</script>
+  <title>3.3.19. Statistics Commands - GeoGebra Help 3.2</title>
+  <meta name="GENERATOR" content="Macrobject Word-2-Web 2009 Pro 2009.2.410.1817">
+  <script language="javascript" src="../scripts/HelpNavigate.js"></script>
+  <script language="javascript">checkPage('../index.html?n=80.html');locate('80.html');</script>
   <link rel="stylesheet" href="../topics/document.css" type="text/css" />
     
   <link rel="stylesheet" href="../document.css" type="text/css" />
@@ -16,24 +18,473 @@
   </style>
 </head>
 
-<body>
+<body onload="javascript:checkPage('')">
 
-  <h3><a name="_Toc173683053"></a><a name="_Toc168329926"></a>3.2.11. <span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Boolean</h3>
+
+  <h3><a name="_Toc228163532"></a><a name="_Toc217356164"></a><a name=SECTION005315400000000000000></a><a name=cmdDilate></a><span style='mso-bookmark:_Toc228163532'><span style='mso-bookmark:_Toc217356164'><span style='mso-fareast-font-family:Calibri;mso-bidi-font-family:Calibri'><span style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'></span></span></span></span></span><span style='mso-bookmark:_Toc228163532'><span style='mso-bookmark:_Toc217356164'>Statistics Commands</span></span></h3>
 
   
 
+<h4>BarChart</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BarChart[Start
+Value, End Value, List of Heights]</span></span>: Creates a bar chart over the
+given interval where the number of bars is determined by the length of the list
+whose elements are the heights of the bars.<span style='mso-tab-count:1'>    </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BarChart[10,
+20, {1,2,3,4,5} ]</span></span> gives you a bar chart with five bars of
+specified height in the interval [<i style='mso-bidi-font-style:normal'>10, 20</i>].</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BarChart[Start
+Value a, End Value b, Expression, Variable k, From Number c, To Number d]</span></span>:
+Creates a bar chart over the given interval [<i style='mso-bidi-font-style:
+normal'>a, b</i>], that calculates the bars’ heights using the expression whose
+variable <i style='mso-bidi-font-style:normal'>k</i> runs from number <i
+style='mso-bidi-font-style:normal'>c</i> to number <i style='mso-bidi-font-style:
+normal'>d</i>.<span style='mso-tab-count:1'>     </span><br>
+<span class=UnderlinedChar>Example</span>: If <i style='mso-bidi-font-style:
+normal'>p = 0.1</i>, <i style='mso-bidi-font-style:normal'>q = 0.9</i>, and <i
+style='mso-bidi-font-style:normal'>n = 10</i> are numbers, then <br>
+<span class=commands><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-bidi-font-family:"Times New Roman"'>BarChart[ -0.5, n + 0.5, <br>
+BinomialCoefficient[n,k]*p^k*q^(n-k), k, 0, n ]</span></span> gives you a bar chart
+in the interval [<i style='mso-bidi-font-style:normal'>-0.5, n+0.5</i>]. The
+heights of the bars depend on the probabilities calculated using the given
+expression.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BarChart[Start
+Value a, End Value b, Expression, Variable k, From Number c, To Number d, Step Width
+s]</span></span>: Creates a bar chart over the given interval [<i
+style='mso-bidi-font-style:normal'>a, b</i>], that calculates the bars’ heights
+using the expression whose variable <i style='mso-bidi-font-style:normal'>k</i>
+runs from number <i style='mso-bidi-font-style:normal'>c</i> to number <i
+style='mso-bidi-font-style:normal'>d</i> using step width <i style='mso-bidi-font-style:
+normal'>s</i>.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BarChart[List
+of Raw Data, Width of Bars]</span></span>: Creates a bar chart using the given
+raw data whose bars have the given width.<span style='mso-tab-count:1'> </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BarChart[
+{1,1,1,2,2,2,2,2,3,3,3,5,5,5,5}, 1]</span></span></p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BarChart[List
+of Data, List of Frequencies]</span></span>: Creates a bar chart using the list
+of data with corresponding frequencies.<span style='mso-tab-count:1'>   </span><br>
+<span class=UnderlinedChar>Note</span>: The List of data must be a list where
+the numbers go up by a constant amount.<br>
+<span class=UnderlinedChar>Examples</span>: </p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l22 level1 lfo66'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BarChart[{10,11,12,13,14},
+{5,8,12,0,1}]</span></span></p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l22 level1 lfo66'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BarChart[{5,
+6, 7, 8, 9}, {1, 0, 12, 43, 3}]</span></span></p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l22 level1 lfo66'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BarChart[{0.3,
+0.4, 0.5, 0.6}, {12, 33, 13, 4}]</span></span></p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BarChart[List
+of Data , List of Frequencies, Width of Bars w]</span></span>: Creates a bar chart
+using the list of data and corresponding frequencies whose bars are of width <i
+style='mso-bidi-font-style:normal'>w</i>.<i style='mso-bidi-font-style:normal'><span
+style='mso-tab-count:1'>    </span><br>
+</i><span class=UnderlinedChar>Note</span>: The List of data must be a list
+where the numbers go up by a constant amount<br>
+<span class=UnderlinedChar>Examples</span>:</p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l16 level1 lfo67'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BarChart[{10,11,12,13,14},
+{5,8,12,0,1}, 0.5]</span></span> leaves gaps between bars.</p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l16 level1 lfo67'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BarChart[{10,11,12,13,14},
+{5,8,12,0,1}, 0]</span></span> produces a line graph.</p>
+
+<h4>BoxPlot</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BoxPlot[yOffset,
+yScale, List of Raw Data]</span></span>: Creates a box plot using the given raw
+data and whose vertical position in the coordinate system is controlled by
+variable <i style='mso-bidi-font-style:normal'>yOffset</i> and whose height is
+influenced by factor <i style='mso-bidi-font-style:normal'>yScale</i>.<br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BoxPlot[0,
+1, {2,2,3,4,5,5,6,7,7,8,8,8,9}]</span></span></p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>BoxPlot[yOffset,
+yScale, Start Value a, Q1, Median, Q3, End Value b]</span></span>: Creates a
+box plot for the given statistical data in interval [a, b]. </p>
+
+<h4>CorrelationCoefficient</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>CorrelationCoefficient[List
+of x-Coordinates, List of y-Coordinates]</span></span>: Calculates the product
+moment correlation coefficient using the given <i style='mso-bidi-font-style:
+normal'>x</i>- and <i style='mso-bidi-font-style:normal'>y</i>-coordinates.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>CorrelationCoefficient[List
+of Points]</span></span>: Calculates the product moment correlation coefficient
+using the coordinates of the given points.</p>
+
+<h4>Covariance</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Covariance[List
+1 of Numbers, List 2 of Numbers]</span></span>: Calculates the covariance using
+the elements of both lists.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Covariance[List
+of Points]</span></span>: Calculates the covariance using the x- and
+y-coordinates of the points.</p>
+
+<h4><a name="_FitLine"></a>FitLine</h4>
+
+<p class=MsoNormal><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>FitLine[List
+of Points]</span></span>: Calculates the <i style='mso-bidi-font-style:normal'>y</i>
+on <i style='mso-bidi-font-style:normal'>x</i> regression line of the points.</p>
+
+<p class=MsoNormal><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>FitLineX[List
+of Points]</span></span>: Calculates the <i style='mso-bidi-font-style:normal'>x</i>
+on <i style='mso-bidi-font-style:normal'>y</i> regression line of the points.</p>
+
+<p class=MsoNormal><u><o:p><span style='text-decoration:none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal><span class=UnderlinedChar>Note</span>: Also see tool <span
+style='mso-fareast-language:EN-US;mso-no-proof:yes'><img border=0 width=16 height=16
+src="doc_files/image199.jpg" alt="mode_fitline_32" v:shapes="_x0000_i1214"></span><span
+style='mso-spacerun:yes'> </span><a href="30.html#_Best_Fit_Line"><i style='mso-bidi-font-style:
+normal'>Best Fit Line</i></a></p>
+
+<h4>Other Fit Commands</h4>
+
+<p class=MsoNormal><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>FitExp[List
+of Points]</span></span>: Calculates the exponential regression curve.</p>
+
+<p class=MsoNormal><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>FitLog[List
+of Points]</span></span>: Calculates the logarithmic regression curve.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>FitLogistic[List
+of Points]</span></span>: Calculates the regression curve in the form <br>
+<i style='mso-bidi-font-style:normal'>a/(1+b x^(-kx))</i>.<span
+style='mso-tab-count:1'>          </span><br>
+<span class=UnderlinedChar>Note</span>: The first and last data point should be
+fairly close to the curve. The list should have at least 3 points, preferably
+more.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>FitPoly[List
+of Points, Degree n of Polynomial]</span></span>: Calculates the regression
+polynomial of degree <i style='mso-bidi-font-style:normal'>n</i>.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>FitPow[List
+of Points]</span></span>: Calculates the regression curve in the form <i
+style='mso-bidi-font-style:normal'>a x<sup>b</sup></i>. <span style='mso-tab-count:
+1'>          </span><br>
+<span class=UnderlinedChar>Note</span>: All points used need to be in the first
+quadrant of the coordinate system.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>FitSin[List
+of Points]</span></span>: Calculates the regression curve in the form <br>
+<i style='mso-bidi-font-style:normal'>a + b sin(cx + d)</i>.<span
+style='mso-tab-count:1'>         </span><br>
+<span class=UnderlinedChar>Note</span>: The list should have at least 4 points,
+preferably more. The list should cover at least two extremal points. The first
+two local extremal points should not be too different from the absolute
+extremal points of the curve.</p>
+
+<h4>Histogram</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Histogram[List
+of Class Boundaries, List of Heights]</span></span>: Creates a histogram with
+bars of the given heights. The class boundaries determine the width and
+position of each bar of the histogram.<span style='mso-tab-count:1'>    </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Histogram[{0,
+1, 2, 3, 4, 5}, {2, 6, 8, 3, 1}]</span></span> creates a histogram with 5 bars
+of the given heights. The first bar is positioned at the interval [<i
+style='mso-bidi-font-style:normal'>0, 1</i>], the second bar is positioned at
+the interval <br>
+[<i style='mso-bidi-font-style:normal'>1, 2</i>], and so on.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Histogram[List
+of Class Boundaries, List of Raw Data]</span></span>: Creates a histogram using
+the raw data. The class boundaries determine the width and position of each bar
+of the histogram and are used to determine how many data elements lie in each
+class.<span style='mso-tab-count:1'>        </span><br>
+<span class=UnderlinedChar>Example</span>: <span class=commands><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Histogram[{1,
+2, 3, 4},{1.0, 1.1, 1.1, 1.2, 1.7, 2.2, 2.5, 4.0}]</span></span> creates a
+histogram with 3 bars, with the heights 5 (first bar), 2 (second bar), and 1 (third
+bar).</p>
+
+<h4>InverseNormal</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>InverseNormal[Mean
+</span></span><span class=commands><span style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'>&#956;</span></span><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>, Standard Deviation
+</span></span><span class=commands><span style='font-size:11.0pt;mso-bidi-font-size:
+10.0pt'>&#963;</span></span><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>, Probability
+P]</span></span>: Calculates the function <i style='mso-bidi-font-style:normal'><span
+style='mso-bidi-font-family:Arial'>&#934;</span><sup>-1</sup>(P) * &#963; +
+&#956;</i> where <i style='mso-bidi-font-style:normal'><span style='mso-bidi-font-family:
+Arial'>&#934;</span><sup> -1</sup></i> is the inverse of the probability
+density function <i style='mso-bidi-font-style:normal'><span style='mso-bidi-font-family:
+Arial'>&#934;</span></i> for N(0,1).<span style='mso-tab-count:1'>      </span><br>
+<span class=UnderlinedChar>Note</span>: Returns the <i style='mso-bidi-font-style:
+normal'>x</i>-coordinate with the given probability to the left under the
+normal distribution curve.</p>
+
+<h4>Mean commands</h4>
+
+<p class=MsoNormal><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>Mean[List of
+Numbers]</span></span>: Calculates the mean of the list elements.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>MeanX[List of
+Points]</span></span>: Calculates the mean of the <i style='mso-bidi-font-style:
+normal'>x</i>-coordinates of the points in the list.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>MeanY[List of
+Points]</span></span>: Calculates the mean of the <i style='mso-bidi-font-style:
+normal'>y</i>-coordinates of the points in the list.</p>
+
+<h4>Median</h4>
+
+<p class=MsoNormal><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>Median[List
+of Numbers]</span></span>: Determines the median of the list elements.</p>
+
+<h4>Mode</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Mode[List of
+Numbers]</span></span>: Determines the mode(s) of the list elements.<span
+style='mso-tab-count:1'>       </span><br>
+<span class=UnderlinedChar>Examples</span>:</p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l26 level1 lfo68'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Mode[{1,2,3,4}]
+</span></span>returns an empty list <i style='mso-bidi-font-style:normal'>{}</i>.</p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l26 level1 lfo68'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Mode[{1,1,1,2,3,4}]</span></span>
+returns the list <i style='mso-bidi-font-style:normal'>{1} .</i></p>
+
+<p class=StyleLeft0Hanging049 style='margin-left:71.4pt;text-indent:-18.0pt;
+mso-list:l26 level1 lfo68'><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=commands><span style='font-size:
+11.0pt;mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Mode[{1,1,2,2,3,3,4}]</span></span>
+returns the list <i style='mso-bidi-font-style:normal'>{1, 2, 3}</i>.</p>
+
+<h4>Normal</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Normal[Mean </span></span><span
+class=commands><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>&#956;</span></span><span
+class=commands><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-bidi-font-family:"Times New Roman"'>, Standard Deviation </span></span><span
+class=commands><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt'>&#963;</span></span><span
+class=commands><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-bidi-font-family:"Times New Roman"'>, Variable Value x]</span></span>:
+Calculates the function <i style='mso-bidi-font-style:normal'><span
+style='mso-bidi-font-family:Arial'>&#934;</span>((x – &#956;) / &#963;)</i>
+where <i style='mso-bidi-font-style:normal'><span style='mso-bidi-font-family:
+Arial'>&#934;</span></i> is the probability density function for N(0,1) .<span
+style='mso-tab-count:1'>      </span><br>
+<span class=UnderlinedChar>Note</span>: Returns the probability for a given <i
+style='mso-bidi-font-style:normal'>x</i>-coordinate value (or area under the
+normal distribution curve to the left of the given <i style='mso-bidi-font-style:
+normal'>x</i>-coordinate).</p>
+
+<h4>Quartile commands</h4>
+
+<p class=MsoNormal><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>Q1[List of Numbers]</span></span>:
+Determines the lower quartile of the list elements.</p>
+
+<p class=MsoNormal><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>Q3[List of Numbers]</span></span>:
+Determines the upper quartile of the list elements.</p>
+
+<h4>SD</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>SD[List of
+Numbers]</span></span>: Calculates the standard deviation of the numbers in the
+list.</p>
+
+<h4>Sigma commands</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>SigmaXX[List
+of Numbers]</span></span>: Calculates the sum of squares of the given numbers.<span
+style='mso-tab-count:1'>            </span><br>
+<span class=UnderlinedChar>Example</span>: In order to work out the variance of
+a list you may use <span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>SigmaXX[list]/Length[list]
+- Mean[list]^2</span></span>.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>SigmaXX[List
+of Points]</span></span>: Calculates the sum of squares of the <i
+style='mso-bidi-font-style:normal'>x</i>-coordinates of the given points.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>SigmaXY[List
+of x-Coordinates, List of y-Coordinates]</span></span>: Calculates the sum of
+the products of the <i style='mso-bidi-font-style:normal'>x</i>- and <i
+style='mso-bidi-font-style:normal'>y</i>-coordinates.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>SigmaXY[List
+of Points]</span></span>: Calculates the sum of the products of the x- and y-coordinates.
+<span style='mso-tab-count:1'>        </span><br>
+<span class=UnderlinedChar>Example</span>: You can work out the covariance of a
+list of points using <span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>SigmaXY[list]/Length[list]
+- MeanX[list] * MeanY[list]</span></span>.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>SigmaYY[List
+of Points]</span></span>: Calculates the sum of squares of <i style='mso-bidi-font-style:
+normal'>y</i>-coordinates of the given points.</p>
+
+<h4>Commands for statistic quantities</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sxx[List of Numbers]</span></span>:
+Calculates the statistic <i style='mso-bidi-font-style:normal'><span
+style='mso-bidi-font-family:Arial'>&#931;</span>(x<sup>2</sup>) - </i><i
+style='mso-bidi-font-style:normal'><span style='mso-bidi-font-family:Arial'>&#931;</span>(x)</i>
+<span style='mso-bidi-font-family:Arial'>* <i style='mso-bidi-font-style:normal'>&#931;</i></span><i
+style='mso-bidi-font-style:normal'>(x)/n</i>.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sxx[List of Points]</span></span>:
+Calculates the statistic <i style='mso-bidi-font-style:normal'><span
+style='mso-bidi-font-family:Arial'>&#931;</span>(x<sup>2</sup>) - </i><i
+style='mso-bidi-font-style:normal'><span style='mso-bidi-font-family:Arial'>&#931;</span>(x)</i>
+<span style='mso-bidi-font-family:Arial'>*<i style='mso-bidi-font-style:normal'>
+&#931;</i></span><i style='mso-bidi-font-style:normal'>(x)/n</i> using the <i
+style='mso-bidi-font-style:normal'>x</i>-coordinates of the given points.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sxy[List of Numbers,
+List of Numbers]</span></span>: Calculates the statistic <span
+style='mso-tab-count:1'>       </span><br>
+<i style='mso-bidi-font-style:normal'><span style='mso-bidi-font-family:Arial'>&#931;</span>(xy)
+- </i><i style='mso-bidi-font-style:normal'><span style='mso-bidi-font-family:
+Arial'>&#931;</span>(x)</i> <span style='mso-bidi-font-family:Arial'>*<i
+style='mso-bidi-font-style:normal'> &#931;</i></span><i style='mso-bidi-font-style:
+normal'>(y)/n</i>.</p>
+
+<p class=MsoNormal><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>Sxy[List of Points]</span></span>:
+Calculates the statistic <i style='mso-bidi-font-style:normal'><span
+style='mso-bidi-font-family:Arial'>&#931;</span>(xy) - </i><i style='mso-bidi-font-style:
+normal'><span style='mso-bidi-font-family:Arial'>&#931;</span>(x)</i> <span
+style='mso-bidi-font-family:Arial'>*<i style='mso-bidi-font-style:normal'> &#931;</i></span><i
+style='mso-bidi-font-style:normal'>(y)/n</i>.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Syy[List of Points]</span></span>:
+Calculates the statistic <i style='mso-bidi-font-style:normal'><span
+style='mso-bidi-font-family:Arial'>&#931;</span>(y<sup>2</sup>) - </i><i
+style='mso-bidi-font-style:normal'><span style='mso-bidi-font-family:Arial'>&#931;</span>(y)
+</i><span style='mso-bidi-font-family:Arial'>*<i style='mso-bidi-font-style:
+normal'> &#931;</i></span><i style='mso-bidi-font-style:normal'>(y)/n</i> using
+the <i style='mso-bidi-font-style:normal'>y</i>-coordinates of the given
+points.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=UnderlinedChar>Note</span>: These quantities are
+simply unnormalized forms of the variances and covariance of <i
+style='mso-bidi-font-style:normal'>X</i> and <i style='mso-bidi-font-style:
+normal'>Y</i> given by <i style='mso-bidi-font-style:normal'>Sxx = N var(X)</i>,
+<i style='mso-bidi-font-style:normal'>Syy = N var(Y)</i>, and <i
+style='mso-bidi-font-style:normal'>Sxy = N cov(X, Y)</i>.<span
+style='mso-tab-count:1'>           </span><br>
+<span class=UnderlinedChar>Example</span>: You can work out the correlation
+coefficient for a list of points using <br>
+<span class=StyleCourierNew><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;mso-bidi-font-family:"Times New Roman"'>Sxy[list] / sqrt(Sxx[list]
+Syy[list])</span></span>.</p>
+
+<h4>Variance</h4>
+
+<p class=MsoNormal><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;mso-bidi-font-family:"Times New Roman"'>Variance[List
+of Numbers]</span></span>: Calculates the variance of list elements.</p>
 
 
-    <p class="msoNormal"><b>Related topics</b></p>
-    <p class="msoNormal" style="margin-left:24px"><a href="25.html">3.2. Modes</a><br />
-<a href="81.html"> Check box to show and hide objects</a><br />
-</p>
 
-  <p><hr /><span class="copyright"><I><a href='http://www.geogebra.org/'>www.geogebra.org</a></I></span></p>
+
+    <p><hr /><span class="copyright"><I><a href="http://www.geogebra.org">www.geogebra.org</a></I></span></p>
+  
 
 </body>
 
-<script language="javascript" src="../scripts/HelpNavigate.js"></script>
 <script language="javascript" src="../scripts/HelpHighlight.js"></script>
 <script language="javascript">highlight();</script>
 

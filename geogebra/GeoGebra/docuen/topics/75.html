@@ -1,9 +1,11 @@
+<!-- saved from url=(0014)about:internet -->
 <html>
 <head>
-  <title>3.2.10..2  Area - GeoGebra Help</title>
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-  <meta name="GENERATOR" content="Macrobject Word-2-Web Pro 2007.8.1.286">
-  <script language="javascript">if(parent==self)location.href='../index.html?i=74';</script>
+  <title>3.3.14. Arc and Sector Commands - GeoGebra Help 3.2</title>
+  <meta name="GENERATOR" content="Macrobject Word-2-Web 2009 Pro 2009.2.410.1817">
+  <script language="javascript" src="../scripts/HelpNavigate.js"></script>
+  <script language="javascript">checkPage('../index.html?n=75.html');locate('75.html');</script>
   <link rel="stylesheet" href="../topics/document.css" type="text/css" />
     
   <link rel="stylesheet" href="../document.css" type="text/css" />
@@ -16,26 +18,189 @@
   </style>
 </head>
 
-<body>
+<body onload="javascript:checkPage('')">
 
-  <h4><img border=0 width=32 height=32 src="doc_files/image060.gif"> Area</h4>
+
+  <h3><a name="_Toc228163527"></a><a name="_Toc217356159"></a><a name="_Toc168329960"></a><a name="_Toc168116244"></a><a name="_Toc167796180"></a><a name="_Toc162334066"></a><a name="_Toc158712887"></a><a name="_4.3.12_Arcand_Sector"></a><span style='mso-bookmark: _Toc228163527'><span style='mso-bookmark:_Toc217356159'><span style='mso-bookmark: _Toc168329960'><span style='mso-bookmark:_Toc168116244'><span style='mso-bookmark: _Toc167796180'><span style='mso-bookmark:_Toc162334066'><span style='mso-bookmark: _Toc158712887'><span style='mso-fareast-font-family:Calibri;mso-bidi-font-family: Calibri'><span style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'></span></span></span></span></span></span></span></span></span></span><span style='mso-bookmark:_Toc228163527'><span style='mso-bookmark:_Toc217356159'><span style='mso-bookmark:_Toc168329960'><span style='mso-bookmark:_Toc168116244'><span style='mso-bookmark:_Toc167796180'><span style='mso-bookmark:_Toc162334066'><span style='mso-bookmark:_Toc158712887'>Arc and Sector</span></span></span></span></span> Commands</span></span> </h3>
 
   
 
-<p class=MsoNormal>This mode gives you the area of a polygon, circle, or
-ellipse as a dynamic text in the geometry window.</p>
+<p class=MsoNormal><span class=UnderlinedChar>Note</span>: The algebraic value
+of an arc is its length and the value of a sector is its area. </p>
 
+<h4><a name=SECTION005312100000000000000></a><a name=cmdSemicircle></a>Arc</h4>
 
-
-    <p class="msoNormal"><b>Related topics</b></p>
-    <p class="msoNormal" style="margin-left:24px"><a href="73.html">3.2.10. Number and Angle</a><br />
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Arc[Conic,
+Point A, Point B]</span></span>: Returns a conic section arc between two points
+<i style='mso-bidi-font-style:normal'>A</i> and <i style='mso-bidi-font-style:
+normal'>B</i> on the conic section <i style='mso-bidi-font-style:normal'>c</i>.
+<span style='mso-tab-count:1'>       </span><br>
+<span class=UnderlinedChar>Note</span>: This only works for a circle or ellipse.
 </p>
 
-  <p><hr /><span class="copyright"><I><a href='http://www.geogebra.org/'>www.geogebra.org</a></I></span></p>
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Arc[Conic,
+Number t1, Number t2]</span></span>: Returns a conic section arc between two
+parameter values <i style='mso-bidi-font-style:normal'>t1</i> and <i
+style='mso-bidi-font-style:normal'>t2</i> on the conic section. <span
+style='mso-tab-count:1'> </span><br>
+<span class=UnderlinedChar>Note</span>: Internally the following parameter
+forms are used: </p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:71.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l21 level1 lfo56'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><i style='mso-bidi-font-style:normal'>Circle</i>:
+<i style='mso-bidi-font-style:normal'>(r cos(t), r sin(t))</i> where <i
+style='mso-bidi-font-style:normal'>r</i> is the circle's radius. </p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:71.4pt;mso-add-space:auto;
+text-indent:-18.0pt;mso-list:l21 level1 lfo56'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><i style='mso-bidi-font-style:normal'>Ellipse</i>:
+<i style='mso-bidi-font-style:normal'>(a cos(t), b sin(t))</i> where <i
+style='mso-bidi-font-style:normal'>a</i> and <i style='mso-bidi-font-style:
+normal'>b</i> are the lengths of the semimajor and semiminor axis. </p>
+
+<h4><a name=SECTION005312200000000000000></a><a name=cmdCircularArc></a><a name="_CircularArc"></a>CircularArc </h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>CircularArc[Point
+M, Point A, Point B]</span></span>: Creates a circular arc with midpoint <i
+style='mso-bidi-font-style:normal'>M</i> between points <i style='mso-bidi-font-style:
+normal'>A</i> and <i style='mso-bidi-font-style:normal'>B</i>. <span
+style='mso-tab-count:1'>        </span><u><br>
+</u><span class=UnderlinedChar>Note</span>: Point <i style='mso-bidi-font-style:
+normal'>B</i> does not have to lie on the arc. </p>
+
+<p class=StyleLeft0Hanging049><span class=UnderlinedChar><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></span></p>
+
+<p class=StyleLeft0Hanging049><span class=UnderlinedChar>Note</span>: Also see
+tool <span style='mso-fareast-language:EN-US;mso-no-proof:yes'><img border=0 width=16 height=16
+src="doc_files/image187.jpg" alt="mode_circlearc3_32" v:shapes="Picture_x0020_177"></span><span
+style='mso-spacerun:yes'> </span><a href="32.html#_Circular_Arc_with"><i
+style='mso-bidi-font-style:normal'>Circular Arc with Center between Two Points</i></a></p>
+
+<h4><a name="_CircularSector"></a>CircularSector </h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>CircularSector[Point
+M, Point A, Point B]</span></span>: Creates a circular sector with midpoint <i
+style='mso-bidi-font-style:normal'>M</i> between two points <i
+style='mso-bidi-font-style:normal'>A</i> and <i style='mso-bidi-font-style:
+normal'>B</i>. <span style='mso-tab-count:1'>          </span><u><br>
+</u><span class=UnderlinedChar>Note</span>: Point <i style='mso-bidi-font-style:
+normal'>B</i> does not have to lie on the arc of the sector. </p>
+
+<p class=StyleLeft0Hanging049><o:p>&nbsp;</o:p></p>
+
+<p class=StyleLeft0Hanging049><span class=UnderlinedChar>Note</span>: Also see
+tool <span style='mso-fareast-language:EN-US;mso-no-proof:yes'><img border=0 width=16 height=16
+src="doc_files/image188.jpg" alt="mode_circlesector3_32" v:shapes="Picture_x0020_178"></span><span
+style='mso-spacerun:yes'> </span><a href="32.html#_Circular_Sector_with"><i
+style='mso-bidi-font-style:normal'>Circular Sector with Center between Two
+Points</i></a></p>
+
+<h4><a name=SECTION005312300000000000000></a><a name=cmdCircumcircularArc></a><a name="_CircumcircularArc"></a>CircumcircularArc </h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>CircumcircularArc[Point
+A, Point B, Point C]</span></span>: Creates a circular arc through three points
+<i style='mso-bidi-font-style:normal'>A</i>, <i style='mso-bidi-font-style:
+normal'>B</i>, and <i style='mso-bidi-font-style:normal'>C</i>, where <i
+style='mso-bidi-font-style:normal'>A</i> is the starting point and <i
+style='mso-bidi-font-style:normal'>C</i> is the endpoint of the circumcircular
+arc.</p>
+
+<p class=StyleLeft0Hanging049><u><o:p><span style='text-decoration:none'>&nbsp;</span></o:p></u></p>
+
+<p class=StyleLeft0Hanging049><span class=UnderlinedChar>Note</span>: Also see
+tool <span style='mso-fareast-language:EN-US;mso-no-proof:yes'><img border=0 width=16 height=16
+src="doc_files/image189.jpg" alt="mode_circumcirclearc3_32" v:shapes="_x0000_i1204"></span><span
+style='mso-spacerun:yes'> </span><a href="32.html#SECTION00429400000000000000"><i
+style='mso-bidi-font-style:normal'>Circumcircular Arc through Three Points</i></a></p>
+
+<h4><a name=SECTION005312400000000000000></a><a name=cmdArc></a><a name=SECTION005312500000000000000></a><a name=cmdCircularSector></a><a name=SECTION005312600000000000000></a><a name=cmdCircumcircularSector></a><a name="_CircumcircularSector"></a>CircumcircularSector</h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>CircumcircularSector[Point
+A, Point B, Point C]</span></span>: Creates a circular sector whose arc runs
+through the three points <i style='mso-bidi-font-style:normal'>A</i>, <i
+style='mso-bidi-font-style:normal'>B</i>, and <i style='mso-bidi-font-style:
+normal'>C</i>. Point <i style='mso-bidi-font-style:normal'>A</i> is the
+starting point and point <i style='mso-bidi-font-style:normal'>C</i> is the
+endpoint of the arc.</p>
+
+<p class=StyleLeft0Hanging049><span class=UnderlinedChar><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></span></p>
+
+<p class=StyleLeft0Hanging049><span class=UnderlinedChar>Note</span>: Also see
+tool <span style='mso-fareast-language:EN-US;mso-no-proof:yes'><img border=0 width=16 height=16
+src="doc_files/image190.jpg" alt="mode_circumcirclesector3_32" v:shapes="Picture_x0020_180"></span><span
+style='mso-spacerun:yes'> </span><a href="32.html#_Circumcircular_Sector_through"><i
+style='mso-bidi-font-style:normal'>Circumcircular Sector through Three Points</i></a></p>
+
+<h4><a name=SECTION005312700000000000000></a><a name=cmdSector></a>Sector </h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sector[Conic,
+Point A, Point B]</span></span>: Yields a conic section sector between two
+points <i style='mso-bidi-font-style:normal'>A</i> and <i style='mso-bidi-font-style:
+normal'>B</i> on the conic section. <span style='mso-tab-count:1'>          </span><br>
+<span class=UnderlinedChar>Note</span>: This works only for a circle or ellipse.</p>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Sector[Conic,
+Number t1, Number t2]</span></span>: Yields a conic section sector between two
+parameter values <i style='mso-bidi-font-style:normal'>t1</i> and <i
+style='mso-bidi-font-style:normal'>t2</i> on the conic section.<br>
+<span class=UnderlinedChar>Note</span>: Internally the following parameter
+forms are used: </p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:71.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l56 level1 lfo57'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><i style='mso-bidi-font-style:normal'>Circle</i>:
+<i style='mso-bidi-font-style:normal'>(r cos(t), r sin(t))</i> where <i
+style='mso-bidi-font-style:normal'>r</i> is the circle's radius. </p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:71.4pt;mso-add-space:auto;
+text-indent:-18.0pt;mso-list:l56 level1 lfo57'><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><i style='mso-bidi-font-style:normal'>Ellipse</i>:
+<i style='mso-bidi-font-style:normal'>(a cos(t), b sin(t))</i> where <i
+style='mso-bidi-font-style:normal'>a</i> and <i style='mso-bidi-font-style:
+normal'>b</i> are the lengths of the semimajor and semiminor axis. </p>
+
+<h4><a name="_Semicircle"></a>Semicircle </h4>
+
+<p class=StyleLeft0Hanging049><span class=commands><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'>Semicircle[Point
+A, Point B]</span></span>: Creates a semicircle above the segment <i
+style='mso-bidi-font-style:normal'>AB</i>. </p>
+
+<p class=StyleLeft0Hanging049><u><o:p><span style='text-decoration:none'>&nbsp;</span></o:p></u></p>
+
+<p class=StyleLeft0Hanging049><span class=UnderlinedChar>Note</span>: Also see
+tool <span style='mso-fareast-language:EN-US;mso-no-proof:yes'><img border=0 width=16 height=16
+src="doc_files/image191.jpg" alt="mode_semicircle_32" v:shapes="Picture_x0020_181"></span><span
+style='mso-spacerun:yes'> </span><a href="32.html#_Semicircle_1"><i style='mso-bidi-font-style:
+normal'>Semicircle</i></a></p>
+
+
+
+
+    <p><hr /><span class="copyright"><I><a href="http://www.geogebra.org">www.geogebra.org</a></I></span></p>
+  
 
 </body>
 
-<script language="javascript" src="../scripts/HelpNavigate.js"></script>
 <script language="javascript" src="../scripts/HelpHighlight.js"></script>
 <script language="javascript">highlight();</script>
 

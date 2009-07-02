@@ -1,0 +1,293 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>3.2.9 Matrices como Objetos y Operaciones con Matrices - GeoGebra Help 3.2</title>
+  <meta name="GENERATOR" content="Macrobject Word-2-Web 2009 Pro 2009.2.410.1817">
+  <script language="javascript" src="../scripts/HelpNavigate.js"></script>
+  <script language="javascript">checkPage('../index.html?n=2102.html');locate('2102.html');</script>
+  <link rel="stylesheet" href="../topics/document.css" type="text/css" />
+    
+  <link rel="stylesheet" href="../document.css" type="text/css" />
+
+  <style type="text/css">
+    body { margin:5px 20px 5px 20px; }
+    .copyright {  font-family: Arial; font-size: 8pt; }
+    .hl        {  background-color: yellow; }
+    hr { border-bottom: 1px solid #999999; }
+  </style>
+</head>
+
+<body onload="javascript:checkPage('')">
+
+
+  <h3 align=left style='margin-top:24.0pt;margin-right:0cm;margin-bottom:12.0pt; margin-left:50.4pt;text-align:left;text-indent:-50.4pt;tab-stops:list 50.4pt'><span style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><a name="_Toc226032366"></a><a name="_Toc223248501"></a><a name="_Matrix_Objects_and"></a><span style='mso-bookmark:_Toc226032366'><span style='mso-bookmark:_Toc223248501'><span lang=ES style='mso-fareast-font-family:Arial;mso-ansi-language:ES'><span style='mso-list:Ignore'></span></span></span></span><span style='mso-bookmark:_Toc226032366'><span style='mso-bookmark:_Toc223248501'><span lang=ES style='mso-ansi-language:ES'>Matrices como Objetos</span></span></span></span></span></span></span></span><span style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><span style='mso-bookmark:_Toc226032366'></span></span></span></span></span></span><span style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><span style='mso-bookmark:_Toc226032366'></span></span></span></span></span></span><span style='mso-bookmark: _Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark: _Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark: _Toc158712866'><span style='mso-bookmark:_Toc226032366'><span lang=ES style='mso-ansi-language:ES'><span style='mso-spacerun:yes'> </span>y Operaciones con Matrices</span></span></span></span></span></span></span><span style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'></span></span></span></span></span><span style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'></span></span></span></span></span><span style='mso-bookmark: _Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark: _Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark: _Toc158712866'></span></span></span></span></span><span style='mso-bookmark: _Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark: _Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark: _Toc158712866'><span lang=ES style='mso-ansi-language:ES'><o:p></o:p></span></span></span></span></span></span></h3>
+
+  
+
+<p class=MsoNormal><span style='mso-bookmark:_Toc168329934'><span
+style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span
+style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><span
+lang=ES style='mso-ansi-language:ES'>GeoGebra también opera con matrices,
+representadas como una lista de listas, que contiene las filas de la matriz.<o:p></o:p></span></span></span></span></span></span></p>
+
+<p class=MsoNormal><span style='mso-bookmark:_Toc168329934'><span
+style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span
+style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><u><span
+lang=ES style='mso-ansi-language:ES'>Ejemplo</span></u></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>:
+En GeoGebra, <i style='mso-bidi-font-style:normal'>{{1, 2, 3}, {4, 5, 6}, {7,
+8, 9}}</i> representa la matriz </span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'><span
+style='position:relative;top:15.0pt;mso-text-raise:-15.0pt'><img border=0 width=71 height=51
+src="doc_files/image196.gif" v:shapes="_x0000_i1264"></span></span></span></span></span></span></span><span style='mso-bookmark:
+_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:
+_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:
+_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>.<o:p></o:p></span></span></span></span></span></span></p>
+
+<h4><span style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><a name="_Toc226032367"></a><span lang=ES style='mso-ansi-language:ES'>Operaciones con Matrices</span></span></span></span></span></span><span style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'></span></span></span></span></span><span style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'></span></span></span></span></span><span style='mso-bookmark: _Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark: _Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark: _Toc158712866'></span></span></span></span></span><span style='mso-bookmark: _Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark: _Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark: _Toc158712866'><span lang=ES style='mso-ansi-language:ES'><o:p></o:p></span></span></span></span></span></span></h4>
+
+<p class=MsoNormal><span style='mso-bookmark:_Toc168329934'><span
+style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span
+style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><u><span
+lang=ES style='mso-ansi-language:ES'>Sumas y Restas - Ejemplos</span></u></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>:<o:p></o:p></span></span></span></span></span></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l44 level1 lfo24'><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:ES'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span lang=ES style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:ES'>Matriz + Matriz</span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>:
+Suma uno a uno, cada par de elementos correspondientes de<span
+style='mso-spacerun:yes'>  </span>una y otra matriz.<o:p></o:p></span></span></span></span></span></span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l44 level1 lfo24'><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:ES'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span lang=ES style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:ES'>Matriz – Matriz</span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>:
+Resta uno a uno, cada par de elementos correspondientes de<span
+style='mso-spacerun:yes'>  </span>una y otra matriz, entre dos compatibles
+entre sí.<o:p></o:p></span></span></span></span></span></span></p>
+
+<p class=MsoNormal><span style='mso-bookmark:_Toc168329934'><span
+style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span
+style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><span
+lang=ES style='mso-ansi-language:ES'><o:p>&nbsp;</o:p></span></span></span></span></span></span></p>
+
+<p class=MsoNormal><span style='mso-bookmark:_Toc168329934'><span
+style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span
+style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><u><span
+lang=ES style='mso-ansi-language:ES'>Multiplicación - Ejemplos</span></u></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>:<o:p></o:p></span></span></span></span></span></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l8 level1 lfo23'><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:ES'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span lang=ES style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:ES'>Matrix * Número</span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>:
+Multiplica por el número, cada uno de los elementos de la lista. matriz.<o:p></o:p></span></span></span></span></span></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l8 level1 lfo23'><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:ES'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span lang=ES style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:ES'>Matriz * Matriz</span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>:
+Usa la multiplicación de matrices para calcular la matriz resultante.<span
+style='mso-tab-count:1'>      </span><br>
+<u>Atención</u>: Las filas de la primera y las columnas de la segunda matriz deben
+tener el mismo número de elementos.<span style='mso-tab-count:1'>       </span><br>
+<u>Ejemplo</u>: </span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:ES'>{{1, 2}, {3, 4},
+{5, 6}} * {{1, 2, 3}, {4, 5, 6}}</span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'> dan
+por resultado la matriz <i style='mso-bidi-font-style:normal'>{{9, 12, 15},
+{19, 26, 33}, {29, 40, 51}}.</i><o:p></o:p></span></span></span></span></span></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l8 level1 lfo23'><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:ES'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span lang=ES style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:ES'>2x2 Matriz * Punto
+(o Vector)</span></span></span></span></span></span><span style='mso-bookmark:
+_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:
+_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:
+_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>: Multiplica la matriz
+por el punto o vector y da por resultado un punto.<span style='mso-tab-count:
+1'>            </span><br>
+<u>Ejemplo</u>: </span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:ES'>{{1, 2}, {3, 4}} *
+(3, 4)</span></span></span></span></span></span><span style='mso-bookmark:_Toc168329934'><span
+style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span
+style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><span
+lang=ES style='mso-ansi-language:ES'> da por resultado el punto <i
+style='mso-bidi-font-style:normal'>A = (11, 25)</i>.<o:p></o:p></span></span></span></span></span></span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l8 level1 lfo23'><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:ES'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span lang=ES style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:ES'>3x3 Matriz * Punto
+(o Vector)</span></span></span></span></span></span><span style='mso-bookmark:
+_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:
+_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:
+_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>: Multiplica la
+matriz por el punto o vector y da por resultado un punto.<span
+style='mso-tab-count:1'>            </span><br>
+<u>Ejemplo</u>: </span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:ES'>{{1, 2, 3}, {4, 5,
+6}, {0, 0, 1}} * (1, 2)</span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'> da
+por resultado el punto <i style='mso-bidi-font-style:normal'>A = (8, 20)</i>.<span
+style='mso-tab-count:1'>           </span><br>
+<u>Atención</u>: Este es un caso especial de transformaciones afines donde las
+coordenadas homogéneas se usan (x, y, 1) para un punto y (x, y, 0) por un vector.
+Este ejemplo, es por lo tanto, equivalente a: <br>
+</span></span></span></span></span></span><span style='mso-bookmark:_Toc168329934'><span
+style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span
+style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><span
+lang=ES style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:ES'>{{1, 2, 3}, {4, 5, 6}, {0, 0, 1}} * {1, 2, 1}</span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>.<o:p></o:p></span></span></span></span></span></span></p>
+
+<p class=MsoNormal><span style='mso-bookmark:_Toc168329934'><span
+style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span
+style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><span
+lang=ES style='mso-ansi-language:ES'><o:p>&nbsp;</o:p></span></span></span></span></span></span></p>
+
+<p class=MsoNormal><span style='mso-bookmark:_Toc168329934'><span
+style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span
+style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><u><span
+lang=ES style='mso-ansi-language:ES'>Otros ejemplos:</span></u></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>
+(ver la sección </span></span></span></span></span></span><a
+href="2118.html#_Matrix_Commands"><span style='mso-bookmark:_Toc168329934'><span
+style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:_Toc167796159'><span
+style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:_Toc158712866'><span
+lang=ES style='mso-ansi-language:ES'>Comandos de Matriz</span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'></span></span></span></span></span></a><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><u><span lang=ES style='mso-ansi-language:
+ES'>)</span></u></span></span></span></span></span><span style='mso-bookmark:
+_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span style='mso-bookmark:
+_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span style='mso-bookmark:
+_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>:<o:p></o:p></span></span></span></span></span></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l36 level1 lfo25'><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES-TRAD
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:ES-TRAD'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span lang=ES style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:ES'>Determinante[Matriz]</span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>:
+Calcula el determinante de la matriz dada.<o:p></o:p></span></span></span></span></span></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l36 level1 lfo25'><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES-TRAD
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:ES-TRAD'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span lang=ES style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:ES'>Inversa[Matriz]</span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>:
+Invierte la matriz dada <o:p></o:p></span></span></span></span></span></span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l36 level1 lfo25'><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES-TRAD
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:ES-TRAD'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span lang=ES style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:ES'>Traspuesta[Matriz]</span></span></span></span></span></span><span
+style='mso-bookmark:_Toc168329934'><span style='mso-bookmark:_Toc168116223'><span
+style='mso-bookmark:_Toc167796159'><span style='mso-bookmark:_Toc162334045'><span
+style='mso-bookmark:_Toc158712866'><span lang=ES style='mso-ansi-language:ES'>:
+Traspone la matriz dada<o:p></o:p></span></span></span></span></span></span></p>
+
+
+
+
+    <p><hr /><span class="copyright"><I><a href="http://www.geogebra.org">www.geogebra.org</a></I></span></p>
+  
+
+</body>
+
+<script language="javascript" src="../scripts/HelpHighlight.js"></script>
+<script language="javascript">highlight();</script>
+
+</html>

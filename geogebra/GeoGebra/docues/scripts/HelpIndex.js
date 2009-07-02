@@ -1,7 +1,7 @@
 //=======================================================================//
 //                                                                       //
 //  Macrobject Software Code Library                                     //
-//  Copyright (c) 2004-2007 Macrobject Software, All Rights Reserved     //
+//  Copyright (c) 2004-2008 Macrobject Software, All Rights Reserved     //
 //  http://www.macrobject.com                                            //
 //                                                                       //
 //  Warning!!!                                                           //
@@ -16,6 +16,7 @@ function moHelpIndex(pages, titles, indexs)
   this.ts = titles;
   this.ti = indexs;
   this.ls = null;
+  this.lastCreated = -1;
   
   this.setListbox = function(listbox)
   {
@@ -24,13 +25,34 @@ function moHelpIndex(pages, titles, indexs)
 
   this.createIndex = function()
   {
-    this.ls.length = 0;
-    for(var i=0; i<ti.length; i++)
+    if (this.lastCreated < 0) this.ls.length = 0;
+    for(var i=this.lastCreated+1; i<ti.length; i++)
     {
+      var tii = ti[i];
+      var psi, tsi;
+      if (tii < 0) {
+        tii ++;
+        tii *= -1;
+        tsi = ts_extra[tii];
+        tii = ps_extra[tii];
+      }
+      else {
+        tsi = this.ts[tii];
+      }
+      psi = this.ps[tii];
+      if (psi == 'javascript:void(0)') continue;
+
       var o   = document.createElement("OPTION");
-      o.value = this.ps[ti[i]];
-      o.text  = this.ts[ti[i]];
       this.ls[this.ls.length] = o;
+      o.value = psi;
+      o.innerHTML = tsi;
+      o.pageIndex = tii;
+      
+      if (i >= this.lastCreated + 100) {
+        this.lastCreated = i;
+        setTimeout('hi.createIndex();', 5);
+        break;
+      }
     }
   }
   
@@ -58,9 +80,12 @@ function moHelpIndex(pages, titles, indexs)
   this.display = function()
   {
     if (this.ls.selectedIndex < 0) return;
-    var page = this.ls[this.ls.selectedIndex].value;
-    top.frames["content"].location = "topics/" + page;
-    if(moTop) moTop.curPageIndex = this.ti[this.ls.selectedIndex];
+    var item = this.ls[this.ls.selectedIndex];
+    var page = item.value;
+    if(moTop) {
+      getFrame("content").location = "topics/" + page;
+      moTop.curPageIndex = item.pageIndex;
+    }
   }  
 }
 
