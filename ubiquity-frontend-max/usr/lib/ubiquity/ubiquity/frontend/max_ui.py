@@ -177,7 +177,7 @@ class Wizard(BaseFrontend):
         self.format_warning_align = None
         # MaX
         os.popen("sudo debconf-set-selections < /cdrom/preseed/max.seed")
-        self.install_types={"escritorio":1, "alumno":2, "profesor":3, "servidor":4, "terminales":5, "nanomax":5}
+        self.install_types={"escritorio":1, "alumno":2, "profesor":3, "terminales":4, "nanomax":5}
         self.install_type="escritorio"
         self.install_type_file="/tmp/max_install_type"
 
@@ -224,14 +224,16 @@ class Wizard(BaseFrontend):
 
         # MaX set as default escritorio install
         install_type=self.get_debconf_preseed('ubiquity/max_install_type')
+
+        # disable nanoMaX if SQUASHFS is not found
+        if not os.path.isfile("/cdrom/nanomax/casper/filesystem.squashfs"):
+            self.install_type_nanomax.set_sensitive(False)
+
         if install_type == "alumno":
             self.install_type_alumno.set_active(True)
         
         elif install_type == "profesor":
             self.install_type_profesor.set_active(True)
-        
-        elif install_type == "servidor":
-            self.install_type_servidor.set_active(True)
         
         elif install_type == "terminales":
             self.install_type_terminales.set_active(True)
@@ -246,7 +248,6 @@ class Wizard(BaseFrontend):
             self.install_type_escritorio.set_sensitive(False)
             self.install_type_alumno.set_sensitive(False)
             self.install_type_profesor.set_sensitive(False)
-            self.install_type_servidor.set_sensitive(False)
             self.install_type_terminales.set_sensitive(False)
             self.install_type_nanomax.set_sensitive(False)
             self.install_warn_nano.show()

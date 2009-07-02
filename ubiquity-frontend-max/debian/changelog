@@ -1,3 +1,16 @@
+ubiquity-frontend-max (5.0.max0.6) max; urgency=low
+
+  * Remove servidor as install type
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 15 Jun 2009 13:47:48 +0200
+
+ubiquity-frontend-max (5.0.max0.5) max; urgency=low
+
+  * usr/lib/ubiquity/ubiquity/frontend/max_ui.py
+    - Disable nanoMaX if SQUASHFS is not found
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 30 May 2009 14:58:07 +0200
+
 ubiquity-frontend-max (5.0.max0.4) max; urgency=low
 
   * Change min size from 6GiB to 8 GiB in intro text
