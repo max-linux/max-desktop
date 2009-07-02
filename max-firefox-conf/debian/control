@@ -2,12 +2,14 @@ Source: max-firefox-conf
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.0.0), cdbs, dpatch, patchutils, mozilla-devscripts, zip, unzip
+Build-Depends: debhelper (>= 4.0.0), cdbs, dpatch, patchutils, mozilla-devscripts, zip, unzip, ca-certificates
 Standards-Version: 3.8.1
 
 Package: max-firefox-conf
 Architecture: all
-Depends: max-dpsyco-custom, max-java-plugin, firefox | firefox-3.0, apturl (>= 0.1.2ubuntu1)
+Recommends: max-java-plugin
+Depends: max-dpsyco-custom, firefox | firefox-3.0, apturl (>= 0.1.2ubuntu1)
+Conficts: firefox (<=3.0.10), firefox (>=3.0.12)
 Conflicts: max-3.0-firefox-conf, ubufox
 Replaces: max-3.0-firefox.conf, ubufox
 Provides: ubufox

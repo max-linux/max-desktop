@@ -1,3 +1,28 @@
+max-firefox-conf (5.0.max5) max; urgency=low
+
+  * Move script from usr/bin to usr/share/dpsyco/skel/usr/lib/firefox-3.0.11/firefox.sh
+  * Depend on 3.0.11 firefox version
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 02 Jul 2009 20:58:52 +0200
+
+max-firefox-conf (5.0.max4) max; urgency=low
+
+  * Fix firefox path
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 02 Jul 2009 20:21:30 +0200
+
+max-firefox-conf (5.0.max3) max; urgency=low
+
+  * Add FNMT CA certificate as cert8.db with new firefox launcher
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 02 Jul 2009 19:52:04 +0200
+
+max-firefox-conf (5.0.max2) max; urgency=low
+
+  * Downgrade max-java-plugin to Recommends
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 30 May 2009 11:36:02 +0200
+
 max-firefox-conf (5.0.max1) max; urgency=low
 
   * Build in MaX 5.0
