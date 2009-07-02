@@ -36,6 +36,18 @@ Description: The Max desktop system (KDE desktop)
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
 
+
+Package: max-desktop-kde-extra
+Architecture: all
+Depends:  max-desktop-common, ${max-desktop-kde:Depends}
+Recommends: ${max-desktop-kde:Recommends}
+Description: The Max desktop system (KDE desktop extra apps)
+ This package depends on all KDE extra packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+
 Package: max-desktop-xfce
 Architecture: all
 Depends: max-desktop-common, ${max-desktop-xfce:Depends}
@@ -68,7 +80,7 @@ Description: The Max desktop common packages to all desktops
 
 Package: max-desktop-all
 Architecture: all
-Depends: max-desktop-gnome, max-desktop-kde, max-desktop-xfce
+Depends: max-desktop-gnome, max-desktop-kde-extra, max-desktop-xfce
 Description: The Max desktop all metapackage
  This package depends on all desktop packages of MaX system
  .

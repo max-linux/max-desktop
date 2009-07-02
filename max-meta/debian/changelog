@@ -1,3 +1,10 @@
+max-meta (5.0.max18) max; urgency=low
+
+  * Make max-desktop-kde not installable by default
+  * New package max-desktop-kde-extras with KDE apps without KDE desktop
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 02 Jul 2009 13:25:40 +0200
+
 max-meta (5.0.max17) max; urgency=low
 
   * gnome-desktop:
