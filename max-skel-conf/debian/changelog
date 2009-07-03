@@ -1,3 +1,9 @@
+max-skel-conf (5.0.max2) max; urgency=low
+
+  * Don't delete kompozer dir in homealumno (close #179)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 03 Jul 2009 13:18:00 +0200
+
 max-skel-conf (5.0.max1) max; urgency=low
 
   * Build in MaX 5.0
