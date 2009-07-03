@@ -122,7 +122,7 @@
 				<Filename>max-robolinux-doc.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>kde-kturtle.desktop</Filename>
+				<Filename>kde4-kturtle.desktop</Filename>
 			</Include>
 		</Menu>
 		<AppDir>/usr/share/max/applications</AppDir>
@@ -130,13 +130,13 @@
 			<Name>Astronomía</Name>
 			<Directory>astronomia.directory</Directory>
 			<Include>
-				<Filename>kstars.desktop</Filename>
+				<Filename>kde4-kstars.desktop</Filename>
 			</Include>
 			<Include>
 				<Filename>starplot.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>celestia.desktop</Filename>
+				<Filename>kde4-celestia.desktop</Filename>
 			</Include>
 			<Include>
 				<Filename>stars.desktop</Filename>
@@ -215,16 +215,19 @@
 				<Filename>wxmaxima.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>kde-kbruch.desktop</Filename>
+				<Filename>kde4-kbruch.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>kde-kpercentage.desktop</Filename>
+				<Filename>kde4-kpercentage.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>kde-kig.desktop</Filename>
+				<Filename>kde4-kig.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>kde-kmplot.desktop</Filename>
+				<Filename>kde4-kmplot.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>kde4-kalgebra.desktop</Filename>
 			</Include>
 			<Include>
 				<Filename>tuxmath.desktop</Filename>
@@ -237,19 +240,25 @@
 			<Filename>jclic.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-kbruch.desktop</Filename>
+			<Filename>kde4-kbruch.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-kpercentage.desktop</Filename>
+			<Filename>kde4-kpercentage.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-kig.desktop</Filename>
+			<Filename>kde4-kig.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-kstars.desktop</Filename>
+			<Filename>kde4-kstars.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-kmplot.desktop</Filename>
+			<Filename>kde4-kmplot.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde4-kalgebra.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde4-kstarts.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>starplot.desktop</Filename>
@@ -279,25 +288,12 @@
 			<Filename>kstars.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>celestia.desktop</Filename>
+			<Filename>kde4-celestia.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>gcompris.desktop</Filename>
 		</Exclude>
-		<Menu>
-			<Name>Keduca</Name>
-			<Directory>keduca.directory</Directory>
-			<Include>
-				<Filename>KEduca.desktop</Filename>
-			</Include>
-			<Include>
-				<Filename>KEduca-Editor.desktop</Filename>
-			</Include>
-		</Menu>
 		<AppDir>/usr/share/max/applications</AppDir>
-		<Exclude>
-			<Filename>kde-keduca.desktop</Filename>
-		</Exclude>
 		<Menu>
 			<Name>Moodle</Name>
 			<Directory>moodle.directory</Directory>
@@ -340,13 +336,10 @@
 			<Filename>squeak.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-keducabuilder.desktop</Filename>
+			<Filename>kde4-kturtle.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-kturtle.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>kde-kiten.desktop</Filename>
+			<Filename>kde4-kiten.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>tuxpaint.desktop</Filename>
@@ -362,7 +355,7 @@
 				<Filename>MuseScore.desktop</Filename>
 			</Include>
 			<Include>
-				<Filename>kde-rosegarden.desktop</Filename>
+				<Filename>kde4-rosegarden.desktop</Filename>
 			</Include>
 		</Menu>
 		<AppDir>/usr/share/max/applications</AppDir>
@@ -428,19 +421,19 @@
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
-			<Filename>kde-audioencoding.desktop</Filename>
+			<Filename>kde4-audioencoding.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-kcm_knetworkconfmodule_ss.desktop</Filename>
+			<Filename>kde4-kcm_knetworkconfmodule_ss.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-clock.desktop</Filename>
+			<Filename>kde4-clock.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-kwalletmanager.desktop</Filename>
+			<Filename>kde4-kwalletmanager.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-medianotifications.desktop</Filename>
+			<Filename>kde4-medianotifications.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>tcospersonalize.desktop</Filename>
@@ -452,7 +445,7 @@
 			<Filename>manual.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>OpenOffice.org Dibujos.desktop</Filename>
+			<Filename>openoffice.org-draw.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>squeak-doc.desktop</Filename>
@@ -466,9 +459,6 @@
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
 			<Filename>Herramienta de gestión de cartera.desktop</Filename>
-		</Exclude>
-		<Exclude>
-			<Filename>Conexiones de red.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>Administrador de catálogos de KBabel.desktop</Filename>
@@ -514,7 +504,7 @@
 			<Filename>gqview.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-gwenview.desktop</Filename>
+			<Filename>kde4-gwenview.desktop</Filename>
 		</Exclude>
 		<Include>
 			<Filename>evince.desktop</Filename>
@@ -554,7 +544,7 @@
 			<Filename>gcalctool.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-kcalc.desktop</Filename>
+			<Filename>kde4-kcalc.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>xournal.desktop</Filename>
@@ -623,23 +613,29 @@
 	<Menu>
 		<Name>Office</Name>
 		<Include>
-			<Filename>OpenOffice.org Dibujos.desktop</Filename>
+			<Filename>openoffice.org-draw.desktop</Filename>
 		</Include>
 		<Include>
 			<Filename>openoffice.org-math.desktop</Filename>
 		</Include>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
-			<Filename>kde-knotes.desktop</Filename>
+			<Filename>kde4-knotes.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>kde4-korganizer.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>ooo-base.desktop</Filename>
 		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Internet</Name>
 		<Exclude>
-			<Filename>kde-Kontact.desktop</Filename>
+			<Filename>kde4-Kontact.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-kwifimanager.desktop</Filename>
+			<Filename>kde4-kwifimanager.desktop</Filename>
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
@@ -652,7 +648,7 @@
 	<Menu>
 		<Name>Multimedia</Name>
 		<Exclude>
-			<Filename>kde-audiocd.desktop</Filename>
+			<Filename>kde4-audiocd.desktop</Filename>
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
@@ -662,20 +658,20 @@
 		<Exclude>
 			<Filename>mscore.desktop</Filename>
 		</Exclude>
+		<Include>
+			<Filename>kde-k3b.desktop</Filename>
+		</Include>
 	</Menu>
 	<Menu>
 		<Name>System</Name>
 		<Exclude>
-			<Filename>kde-ksystemlog.desktop</Filename>
+			<Filename>kde4-ksystemlog.desktop</Filename>
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
 		<Exclude>
-			<Filename>kde-adept_manager.desktop</Filename>
+			<Filename>kde4-adept_manager.desktop</Filename>
 		</Exclude>
 		<AppDir>/usr/share/max/applications</AppDir>
-		<Exclude>
-			<Filename>Conexiones de red.desktop</Filename>
-		</Exclude>
 		<Include>
 			<Filename>gconf-editor.desktop</Filename>
 		</Include>
@@ -686,7 +682,7 @@
 			<Filename>Herramienta de gestión de cartera.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-kcron.desktop</Filename>
+			<Filename>kde4-kcron.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>Notificaciones de los medios de almacenamiento.desktop</Filename>
@@ -724,6 +720,12 @@
 			<Include>
 				<Filename>kde-kdevdesigner.desktop</Filename>
 			</Include>
+			<Include>
+				<Filename>assistant-qt3.desktop</Filename>
+			</Include>
+			<Include>
+				<Filename>designer-qt3.desktop</Filename>
+			</Include>
 		</Menu>
 		<Exclude>
 			<Filename>devhelp.desktop</Filename>
@@ -756,6 +758,12 @@
 		<Exclude>
 			<Filename>kde-kdevelop_c_cpp.desktop</Filename>
 		</Exclude>
+		<Exclude>
+			<Filename>assistant-qt3.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>designer-qt3.desktop</Filename>
+		</Exclude>
 		<Menu>
 			<Name>Traducción</Name>
 			<Directory>traduccion.directory</Directory>
@@ -770,13 +778,13 @@
 			</Include>
 		</Menu>
 		<Exclude>
-			<Filename>kde-catalogmanager.desktop</Filename>
+			<Filename>kde4-catalogmanager.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-kbabeldict.desktop</Filename>
+			<Filename>kde4-kbabeldict.desktop</Filename>
 		</Exclude>
 		<Exclude>
-			<Filename>kde-kbabel.desktop</Filename>
+			<Filename>kde4-kbabel.desktop</Filename>
 		</Exclude>
 		<Exclude>
 			<Filename>gtranslator.desktop</Filename>

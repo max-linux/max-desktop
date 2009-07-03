@@ -1,3 +1,32 @@
+max-menus (5.0.max11) max; urgency=low
+
+  * Move QT3 designer and assistant to kdevelop menu
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 02 Jul 2009 19:05:02 +0200
+
+max-menus (5.0.max10) max; urgency=low
+
+  * Move Kalgebra to Math menu
+  * Remove obsolete launchers
+  * Hide Korganizer
+  * Restore KDE3 Kdevelop
+  * Add K3b to Multimedia menu
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 02 Jul 2009 18:29:49 +0200
+
+max-menus (5.0.max9) max; urgency=low
+
+  * Delete old kde- launchers
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 02 Jul 2009 17:50:11 +0200
+
+max-menus (5.0.max8) max; urgency=low
+
+  * Delete Keduca menu
+  * Update KDE4 desktop menus
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 02 Jul 2009 17:40:45 +0200
+
 max-menus (5.0.max7) max; urgency=low
 
   * Delete some old launchers (ooo or AdobeReader8) and edit applications.menu
