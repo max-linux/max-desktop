@@ -10,7 +10,19 @@
 setup_nanomax() {
   [ ! -e /usr/bin/acroread ] && ln -s /usr/bin/evince /usr/bin/acroread
   [ ! -e /usr/share/pixmaps/acroread.png ] && ln -s /usr/share/icons/maxtoon/48x48/apps/xpdf.png /usr/share/pixmaps/acroread.png
-  [ ! -e /usr/share/xsessions/gnome.desktop ] && ln -s /usr/share/xsessions/xfce.desktop /usr/share/xsessions/gnome.desktop
+
+  if [ ! -e /usr/share/crystalsvg/48x48/apps/acroread.png ]; then
+    mkdir -p /usr/share/crystalsvg/48x48/apps
+    ln -s /usr/share/icons/maxtoon/48x48/apps/xpdf.png /usr/share/crystalsvg/48x48/apps/acroread.png
+  fi
+
+  if [ ! -e /usr/share/xsessions/gnome.desktop ]; then
+    [-e /usr/share/xsessions/LXDE.desktop ] && ln -s /usr/share/xsessions/LXDE.desktop /usr/share/xsessions/gnome.desktop
+  fi
+  
+  if [ ! -e /usr/share/xsessions/gnome.desktop ]; then
+    [-e /usr/share/xsessions/xfce.desktop ] && ln -s /usr/share/xsessions/xfce.desktop /usr/share/xsessions/gnome.desktop
+  fi
 }
 
 

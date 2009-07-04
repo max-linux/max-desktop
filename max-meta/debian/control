@@ -39,7 +39,7 @@ Description: The Max desktop system (KDE desktop)
 
 Package: max-desktop-kde-extra
 Architecture: all
-Depends:  max-desktop-common, ${max-desktop-kde:Depends}
+Depends:  max-desktop-common, ${max-desktop-kde-extra:Depends}
 Recommends: ${max-desktop-kde:Recommends}
 Description: The Max desktop system (KDE desktop extra apps)
  This package depends on all KDE extra packages in the Max desktop system

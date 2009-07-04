@@ -9,6 +9,7 @@ DEB_BUILD_ARCH=i386
 configure/max-desktop::
 	for seed in $(PACKAGES); do \
 		package=max-$$seed; \
+		echo " * Building depends of max-$$seed" ;\
 		(printf "$$package:Depends="; perl -pe 's/\n/, /g'  $$seed-$(DEB_BUILD_ARCH); echo) \
 			>> debian/$$package.substvars; \
 		#(printf "$$package:Recommends="; perl -pe 's/\n/, /g'  $$seed-recommends-$(DEB_BUILD_ARCH); echo) \
