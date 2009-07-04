@@ -89,6 +89,7 @@
     } ifelse
   } if
 
+  /keymap.explicit false def
 } def
 
 

@@ -6,13 +6,13 @@ msgstr ""
 "Project-Id-Version: bootloader\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2008-04-21 10:21+0000\n"
+"PO-Revision-Date: 2008-10-22 01:46+0000\n"
 "Last-Translator: Mantas Kriaučiūnas <mantas@akl.lt>\n"
 "Language-Team: Lithuanian <i18n@operis.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -37,7 +37,7 @@ msgstr "Tęsti"
 
 #. txt_bootoptions
 msgid "Boot Options"
-msgstr "Įkrovos parametrai"
+msgstr "Startavimo parametrai"
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
@@ -55,33 +55,6 @@ msgstr ""
 #. txt_help
 msgid "Help"
 msgstr "Pagalba"
-
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "Paleidžiama..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"Įkeliamas Linux branduolys\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"Įkeliamas memtest86\n"
-"\n"
-"\n"
 
 #. info box title
 #. txt_info_title
@@ -232,9 +205,8 @@ msgstr "Brailio terminalas"
 
 #. label for accessibility menu
 #. txt_access_m1
-#, fuzzy
 msgid "Keyboard Modifiers"
-msgstr "Klaviatūros keitikliai"
+msgstr ""
 
 #. label for accessibility menu
 #. txt_access_m2
@@ -271,15 +243,25 @@ msgstr "^Paleisti Edubuntu nekeičiant nieko jūsų kompiuteryje"
 msgid "^Try Xubuntu without any change to your computer"
 msgstr "^Paleisti Xubuntu nekeičiant nieko jūsų kompiuteryje"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr ""
+
 #. Installation mode.
 #. txt_menuitem_xforcevesa
 msgid "Safe graphics mode"
-msgstr "Paleisti Ubuntu alternatyviu ^grafiniu režimu"
+msgstr "Paleisti alternatyviu grafiniu režimu"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-msgid "Use driver update CD"
-msgstr "Naudoti ^valdyklių atnaujinimo CD"
+msgid "Use driver update disc"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
@@ -321,11 +303,30 @@ msgstr "Į^diegti Edubuntu"
 msgid "^Install Xubuntu"
 msgstr "Į^diegti Xubuntu"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr ""
+
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
-msgid "Install a ^workstation"
-msgstr "Įdiegti ^darbo vietos kompiuterį"
+msgid "Install a workstation"
+msgstr "Įdiegti darbo vietos variantą"
 
 #. Installation mode.
 #. txt_menuitem_server
@@ -354,32 +355,55 @@ msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
-msgstr "Įdiegti sistemą su ^komandinės eilutės aplinka"
+msgstr "Įdiegti sistemą su komandinės eilutės aplinka"
+
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
-msgstr "^Patikrinti, ar nėra CD defektų"
+msgid "^Check disc for defects"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
 msgid "^Rescue a broken system"
-msgstr "Iš^gelbėti sugadintą sistemą"
+msgstr "Pa^taisyti sugadintą sistemą"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
-msgstr "^Operatyviosios atminties (RAM) tikrinimas"
+msgstr "Patikrinti operatyviąją ^atmintį (RAM)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
-msgstr "Į^kelti iš pirmojo standaus disko"
+msgstr "Į^kelti iš pirmojo kompiuterio disko"
 
 #. Boot option.
 #. txt_option_free
 msgid "Free software only"
+msgstr "Tik laisva programinė įranga"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
 msgstr ""

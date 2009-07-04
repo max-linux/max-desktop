@@ -8,34 +8,36 @@ if (@ARGV != 1) {
 
 my $localechooser = $ARGV[0];
 
-# hardcoded for now because it's messy to work this out any other way
-my %langcode_override = (
-    'Chinese (Simplified)' => 'zh_CN',
-    'Chinese (Traditional)' => 'zh_TW',
-    'Portuguese (Brazil)' => 'pt_BR',
-    'Portuguese' => 'pt_PT',
+# Some special cases that are handled strangely either here or in
+# localechooser.
+my %langcode_overrides = (
+    'nb_NO' => 'nb',
+    'nn_NO' => 'nn',
+    'pt' => 'pt_PT',
+    'se_NO' => 'se',
 );
 
 # The real localised names for these languages use characters not present in
 # our font, or not rendered correctly for some other reason.
 my @langname_notranslate = (
-    'Arabic',
-    'Bengali',
-    'Dzongkha',
-    'Gujarati',
-    'Hebrew',
-    'Hindi',
-    'Khmer',
-    'Malayalam',
-    'Mongolian',
-    'Nepali',
-    'Punjabi (Gurmukhi)',
-    'Tamil',
-    'Thai',
+    'am',
+    'ar',
+    'bn',
+    'dz',
+    'gu',
+    'he',
+    'hi',
+    'km',
+    'ml',
+    'mr',
+    'ne',
+    'pa',
+    'ta',
+    'th',
 );
 my %langname_notranslate = map { $_ => 1 } @langname_notranslate;
 
-my %langcodes;
+my %langnames;
 my %locales;
 open LIST, '<:utf8', "$localechooser/languagelist"
     or die "$0: can't open $localechooser/languagelist: $!";
@@ -43,44 +45,22 @@ while (<LIST>) {
     chomp;
     next if /^#/ or not /\S/;
     my @bits = split /;/;
-    next if $bits[0] eq 'C';
-    my $lang;
-    if (exists $langcode_override{$bits[0]}) {
-	$lang = $langcode_override{$bits[0]};
+    my $lang = $bits[0];
+    next if $lang eq 'C';
+    $lang = $langcode_overrides{$lang} if exists $langcode_overrides{$lang};
+    if (exists $langname_notranslate{$lang}) {
+	$langnames{$lang} = $bits[1];
     } else {
-	$lang = $bits[2];
+	$langnames{$lang} = $bits[2];
     }
-    $langcodes{$bits[0]} = $lang;
-    $locales{$bits[0]} = "$bits[2]_$bits[3]";
+    ($locales{$lang} = "$bits[6]") =~ s/[.@].*//;
 }
 close LIST;
-
-my %langnames;
-open L10N, '<:utf8', "$localechooser/languagelist.l10n"
-    or die "$0: can't open $localechooser/languagelist.l10n: $!";
-while (<L10N>) {
-    chomp;
-    next if /^#/ or not /\S/;
-    next unless /(.*?): (.*?)\s*$/;
-    my ($lang_c, $lang_trans) = ($1, $2);
-    next if $lang_c eq 'C';
-    if (exists $langname_notranslate{$lang_c}) {
-	$langnames{$lang_c} = $lang_c;
-    } else {
-	$langnames{$lang_c} = $lang_trans;
-    }
-}
-close L10N;
 
 binmode STDOUT, ':utf8';
 
 print "/lang.defaultnames [\n";
-for my $lang_c (sort { $langcodes{$a} cmp $langcodes{$b} } keys %langcodes) {
-    print qq{  [ "$langcodes{$lang_c}" "$locales{$lang_c}" };
-    if (exists $langnames{$lang_c}) {
-	print qq{"$langnames{$lang_c}" ]\n};
-    } else {
-	print qq{"$lang_c" ]\n};
-    }
+for my $lang (sort keys %langnames) {
+    print qq{  [ "$lang" "$locales{$lang}" "$langnames{$lang}" ]\n};
 }
 print "] def\n";

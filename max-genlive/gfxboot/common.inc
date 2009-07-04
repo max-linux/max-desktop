@@ -311,13 +311,9 @@
       } { pop } ifelse
     } if
 
-    % find out splash size for kernel loading progress bar
-    add_suffix 1 add filesize dup .undef ne {
-      sectorsize 1 sub add sectorsize div /progress_extra exch def
-    } {
-      pop
+    add_suffix 1 add filesize .undef eq {
       add_suffix 0 0 put	% empty string
-    } ifelse
+    } if
 
     add_suffix {
       /bc.tmp cmdline.hidden length add_suffix length add string def
@@ -339,23 +335,15 @@
     } {
       cmdline.hidden "%s " bc.cmd dup length add sprintf
     } ifelse
-
-    % find out initrd size for kernel loading progress bar
-    "initrd" filesize dup .undef ne {
-      sectorsize 1 sub add sectorsize div /progress_extra exch progress_extra add def
-    } {
-      pop
-    } ifelse
-
   } if
+
+  bc.opts "%s " bc.cmd dup length add sprintf
 
   xmenu.fulloptions {
     fulloptions.option .undef ne {
       fulloptions.option "%s " bc.cmd dup length add sprintf
     } if
   } if
-
-  bc.opts "%s " bc.cmd dup length add sprintf
 
   syslinux {
     video.modes.list .undef ne {
@@ -378,23 +366,23 @@
       } if
     } if
 
-    config.keymap .km.name get dup "us" ne {
+    config.lang "en" ne config.keymap .km.name get "us" ne or {
+      /keymap.op keymap.explicit { "=" } { "?=" } ifelse def
+      config.keymap .km.name get
       dup "_" strstr dup 0 eq {
         pop
-        "console-setup/layoutcode=%s " bc.cmd dup length add sprintf
+        keymap.op "console-setup/layoutcode%s%s " bc.cmd dup length add sprintf
       } {
         over over 1 sub 0 put
-        over "console-setup/layoutcode=%s " bc.cmd dup length add sprintf
-        add "console-setup/variantcode=%s " bc.cmd dup length add sprintf
+        over keymap.op "console-setup/layoutcode%s%s " bc.cmd dup length add sprintf
+        add keymap.op "console-setup/variantcode%s%s " bc.cmd dup length add sprintf
       } ifelse
       config.keymap .km.model get dup {
-        "console-setup/modelcode=%s " bc.cmd dup length add sprintf
+        keymap.op "console-setup/modelcode%s%s " bc.cmd dup length add sprintf
       } {
         pop
       } ifelse
-    } {
-      pop
-    } ifelse
+    } if
 
     modes.selected.append .undef ne {
       modes.selected.append "%s " bc.cmd dup length add sprintf
@@ -463,7 +451,6 @@
 
   menuconfig.init
 
-  % keep in sync with menuconfig.inc:menuconfig.init
   "foreground" getgfxconfig dup .undef ne {
     strtol
     /menu.text.select over def
@@ -475,7 +462,6 @@
     strtol
     /menu.text.normal over def
     /panel.normal over def
-    /loading_color over def
     /title.bg exch def
   } { pop } ifelse
   "access-options" getgfxconfig dup .undef ne {
@@ -765,137 +751,6 @@
 
 } def
 
-
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-% progress bar code
-
-
-% Show percentage of progress bar.
-%
-% ( percentage ) ==> ( )
-%
-/progress.percent {
-  0 max 100 min		% so people don't ask silly questions...
-  "100%" strsize over neg progress.text.x add progress.text.y moveto
-  window.current .color.bg get setcolor
-  fillrect  
-
-  "%3u%%" 8 dup string dup 5 1 roll snprintf
-
-  dup strsize pop neg progress.text.x add progress.text.y moveto
-  window.current .color.fg get setcolor
-  dup show
-  free
-
-} def
-
-
-% Show n-th progress bar symbol.
-%
-% ( n ) ==> ( )
-%
-/progress.sym.show {
-  /progress.sym.current exch def
-
-  progress.bar.x progress.bar.y moveto
-  progress.sym.width progress.sym.current 1 sub mul 1 add 1 rmoveto
-  progress.sym.width 2 sub
-  progress.bar.height 2 sub
-  loading_color setcolor
-  fillrect
-
-} def
-
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-% ( kernel_name ) ==> ( )
-/ProgressInit {
-  /progress.kname exch def
-
-  boot.ed edit.hidecursor
-
-  /dia window.dialog def
-
-  dia .width.min 330 put
-  dia .position 10 put
-
-  dia .title txt_load_kernel_title put
-  dia .text
-    progress.kname "memtest" eq {
-      txt_load_memtest
-    } {
-      txt_load_kernel
-    } ifelse
-  put
-
-  dia window.init
-  dia window.show
-
-  % now add progress bar
-
-  dia .x get dia .y get moveto
-  dia .text.x get dia .text.y get 28 add rmoveto
-
-  /progress.bar.height 19 def
-  /progress.bar.width dia .width get 60 sub def
-
-  /progress.sym.width 10 def
-  /progress.bar.width
-    progress.bar.width progress.sym.width div
-    /progress.syms over def progress.sym.width mul
-  def
-
-  currentpoint over 1 sub over 2 sub moveto
-  black white progress.bar.width 2 add progress.bar.height 4 add drawborder
-
-  /progress.bar.y exch def
-  /progress.bar.x exch def
-
-  /progress.text.x progress.bar.x progress.bar.width 37 add add def
-  /progress.text.y progress.bar.y progress.bar.height fontheight sub 2 div add def
-
-  /progress.sym.current 0 def
-
-  0 progress.percent
-
-} def
-
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-% ( ) ==> ( )
-/ProgressDone {
-  window.done
-} def
-
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-% ( max current ) ==> ( )
-%
-% Note: max is just kernel size (in sectors).
-%
-/ProgressUpdate {
-  exch progress_extra add exch
-
-  over over 100 mul exch 1 max div progress.percent
-
-  progress.syms mul progress.syms 2 div add exch 1 max div
-
-  0 max progress.syms min
-
-  dup progress.sym.current gt {
-    progress.sym.current 1 add over 1 exch {
-      progress.sym.show
-    } for
-  } if
-  pop
-
-} def
-
-% initrd size (in sectors)
-/progress_extra 0 def
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

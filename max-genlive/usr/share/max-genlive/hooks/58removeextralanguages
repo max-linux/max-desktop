@@ -1,14 +1,4 @@
 
-#Removing max-desktop-all ...
-#Removing max-desktop-xfce ...
-#Removing max-desktop-kde ...
-#Removing max-desktop-gnome ...
-#Removing max-desktop-common ...
-#Removing ubuntu-desktop ...
-#Removing language-selector ...
-#Removing language-selector-qt ...
-#Removing language-selector-common ...
-
 
 
 _echo "Borrando paquetes de idioma extra"
@@ -21,10 +11,24 @@ export DEBIAN_FRONTEND="noninteractive"
 export UCF_FORCE_CONFFOLD=1
 export ERROR=0
 apt-get $APT_OPTS remove --purge \$(dpkg -l|awk '{print \$2}'| grep language-pack| grep -v -e "-es" -e "-en" -e "common" -e "selector") || ERROR=1
-apt-get $APT_OPTS install language-support-es max-desktop-all ubuntu-desktop language-selector || ERROR=1
-apt-get autoremove
+apt-get $APT_OPTS install language-support-es max-desktop-gnome ubuntu-desktop language-selector || ERROR=1
+apt-get $APT_OPTS autoremove --purge
 apt-get clean
 exit \$ERROR
 EOC
 
+_echo "Borrando paquetes no necesarios"
+DELETE_PACKAGES="jetty"
 
+chroot $CHROOT << EOC || _exit "No se han podido borrar paqquetes no necesarios"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+export ERROR=0
+apt-get $APT_OPTS remove --purge $DELETE_PACKAGES || ERROR=1
+apt-get $APT_OPTS autoremove --purge
+apt-get clean
+exit \$ERROR
+EOC

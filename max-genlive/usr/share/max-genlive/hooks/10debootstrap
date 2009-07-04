@@ -1,0 +1,44 @@
+
+
+mkdir -p $CDRW $CDRW/casper $CDRW/nanomax $CDRW/pool $CDRW/portables $CDRW/preseed $CDRW/.disk $CDRW/isolinux
+
+
+if [ ! -d $CHROOT ]; then
+    _echo "debootstrap --arch=$ARCH $DISTRO $CHROOT http://$MIRROR/mirror/ubuntu"
+    (debootstrap --arch=$ARCH $DISTRO $CHROOT http://$MIRROR/mirror/ubuntu || _exit "Error en el debootstrap")
+
+    cat << EOF > $CHROOT/etc/hosts
+127.0.0.1	localhost max50
+127.0.1.1	max50
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+EOF
+
+    echo "max50" > $CHROOT/etc/hostname
+    echo "max50" > $CHROOT/etc/mailname
+fi
+
+set -x
+chroot $CHROOT hostname max50
+set +x
+
+
+if [ "$(file $CHROOT/usr/bin/apt-get | grep -c "ELF 64-bit")" = "1" ]; then
+  CH_ARCH="amd64"
+elif [ "$(file $CHROOT/usr/bin/apt-get | grep -c "ELF 32-bit")" = "1" ]; then
+  CH_ARCH="i386"
+else
+  _exit "Arquitectura desconocida $(file $CHROOT/sbin/start-stop-daemon)"
+fi
+
+
+if [ "$CH_ARCH" != "$ARCH" ]; then
+  _exit "La arquitectura del chroot ($CH_ARCH) es distinta del comando de construcción ($ARCH)"
+fi
+

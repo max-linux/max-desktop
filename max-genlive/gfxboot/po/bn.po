@@ -8,18 +8,17 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2008-04-19 07:31+0000\n"
-"Last-Translator: শুভ্র প্রকাশ পাল <shuvro_paul@walla.com>\n"
+"PO-Revision-Date: 2008-11-05 17:17+0000\n"
+"Last-Translator: Saady Amin <saadyamin@gmail.com>\n"
 "Language-Team: Bengali <bn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
 #. txt_ok
-#, fuzzy
 msgid "OK"
 msgstr "ঠিক আছে"
 
@@ -58,33 +57,6 @@ msgstr ""
 #. txt_help
 msgid "Help"
 msgstr "সহায়িকা"
-
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "আরম্ভ হচ্ছে..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"লিনাক্স কার্নেল লোড হচ্ছে\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"memtest86 লোড হচ্ছে\n"
-"\n"
-"\n"
 
 #. info box title
 #. txt_info_title
@@ -188,17 +160,17 @@ msgstr "কী-ম্যাপ"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "পদ্ধতি"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
-msgstr ""
+msgstr "বিকল্প চালু এবং ইন্সটল পদ্ধতির জন্য F4 চাপুন।"
 
 #. label for modes menu
 #. txt_mode_normal
 msgid "Normal"
-msgstr ""
+msgstr "সাধারণ"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -218,32 +190,32 @@ msgstr "কোনটি নয়"
 #. label for accessibility menu
 #. txt_access_v1
 msgid "High Contrast"
-msgstr ""
+msgstr "উচ্চ পার্থক্য"
 
 #. label for accessibility menu
 #. txt_access_v2
 msgid "Magnifier"
-msgstr ""
+msgstr "বিবর্ধক"
 
 #. label for accessibility menu
 #. txt_access_v3
 msgid "Screen Reader"
-msgstr ""
+msgstr "পর্দা পাঠক"
 
 #. label for accessibility menu
 #. txt_access_brltty
 msgid "Braille Terminal"
-msgstr ""
+msgstr "ব্রেইল টার্মিনাল"
 
 #. label for accessibility menu
 #. txt_access_m1
 msgid "Keyboard Modifiers"
-msgstr ""
+msgstr "কিবোর্ড পরিবর্তক সমুহ"
 
 #. label for accessibility menu
 #. txt_access_m2
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "স্ক্রীনস্থিত কীবোর্ড"
 
 #. label for accessibility menu
 #. txt_access_m3
@@ -257,44 +229,48 @@ msgstr "সবকিছু"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "^উবুন্টু আরম্ভ করুন অথবা ইনস্টল করুন"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "কুবুন্টু ^আরম্ভ করুন অথবা ইনস্টল করুন"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "এডুবুন্টু ^আরম্ভ করুন অথবা ইনস্টল করুন"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "এক্সউবুন্টু ^আরম্ভ করুন অথবা ইনস্টল করুন"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "উবুন্টু নিরাপদ ^গ্রাফিক্স মোডে আরম্ভ করুন"
+msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-msgid "Use driver update CD"
+msgid "Use driver update disc"
 msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "টেক্সট মোডে ^ইনস্টাল করুন"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
@@ -331,11 +307,30 @@ msgstr ""
 msgid "^Install Xubuntu"
 msgstr ""
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr ""
+
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "একটি ^ওয়ার্কস্টেশন ইনস্টল করুন"
+msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_server
@@ -349,9 +344,8 @@ msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
-msgstr "একটি ^LAMP সার্ভার ইনস্টল করুন"
+msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_ltsp
@@ -365,14 +359,23 @@ msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
-msgid "Install a comm^and-line system"
-msgstr "একটি ^সার্ভার ইনস্টল করুন"
+msgid "Install a command-line system"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
-msgstr "ত্রুটির জন্য সিডি ^পরীক্ষা করুন"
+msgid "^Check disc for defects"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -381,9 +384,8 @@ msgstr "বিকল সিস্টেম ^উদ্ধার করুন"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
-msgstr "^মেমরী পরীক্ষা"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
@@ -393,4 +395,19 @@ msgstr "প্রথম হার্ড ডিস্ক থেকে ^বুট 
 #. Boot option.
 #. txt_option_free
 msgid "Free software only"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
 msgstr ""

@@ -6,13 +6,13 @@ msgstr ""
 "Project-Id-Version: bootloader\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2008-04-19 07:33+0000\n"
-"Last-Translator: Anthony Fok <foka@debian.org>\n"
+"PO-Revision-Date: 2009-03-30 12:20+0000\n"
+"Last-Translator: Timothy Qiu <Unknown>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -56,33 +56,6 @@ msgstr ""
 msgid "Help"
 msgstr "帮助"
 
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "正在启动..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"正在加载 Linux 内核\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"正在加载 memtest86\n"
-"\n"
-"\n"
-
 #. info box title
 #. txt_info_title
 msgid "Boot loader"
@@ -91,7 +64,7 @@ msgstr "引导装载程序"
 #. error box title
 #. txt_error_title
 msgid "I/O error"
-msgstr "I/O 错误"
+msgstr "I/O （即输入/输出）错误"
 
 #. boot disk change dialog title
 #. txt_change_disk_title
@@ -238,7 +211,7 @@ msgstr "修饰键"
 #. label for accessibility menu
 #. txt_access_m2
 msgid "On-Screen Keyboard"
-msgstr "屏幕上的键盘"
+msgstr "屏幕键盘"
 
 #. label for accessibility menu
 #. txt_access_m3
@@ -270,6 +243,16 @@ msgstr "试用 Edubuntu 而不改变计算机中的任何内容 (^T)"
 msgid "^Try Xubuntu without any change to your computer"
 msgstr "试用 Xubuntu 而不改变计算机中的任何内容 (^T)"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr ""
+
 #. Installation mode.
 #. txt_menuitem_xforcevesa
 msgid "Safe graphics mode"
@@ -277,8 +260,8 @@ msgstr "安全图形模式"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-msgid "Use driver update CD"
-msgstr "使用驱动更新光盘"
+msgid "Use driver update disc"
+msgstr "使用驱动程序更新盘"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
@@ -320,6 +303,26 @@ msgstr "安装 Edubuntu (^I)"
 msgid "^Install Xubuntu"
 msgstr "安装 Xubuntu (^I)"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "安装 Ubuntu 服务器 (^I)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr ""
+
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
@@ -355,20 +358,30 @@ msgstr "安装无盘映像服务器"
 msgid "Install a command-line system"
 msgstr "安装命令行系统"
 
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "最小化安装"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr "安装一个最小的虚拟机"
+
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
-msgstr "检查光盘是否损坏 (^C)"
+msgid "^Check disc for defects"
+msgstr "检测盘片是否有错误(^C)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
 msgid "^Rescue a broken system"
-msgstr "修复损坏的系统 (^R)"
+msgstr "挽救已损坏的系统(^R)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
 msgid "Test ^memory"
-msgstr "内存测试 (^M)"
+msgstr "测试内存(^M)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
@@ -378,4 +391,19 @@ msgstr "从第一块硬盘启动 (^B)"
 #. Boot option.
 #. txt_option_free
 msgid "Free software only"
-msgstr "仅安装自由软件"
+msgstr "仅限自由软件"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr "戴尔自动重新安装(^D)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "安装 Mythbuntu(^I)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
+msgstr "尝试 Mythbuntu 而不用改变你的电脑(^T)"

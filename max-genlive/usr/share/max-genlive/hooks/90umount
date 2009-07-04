@@ -1,6 +1,4 @@
 
-#echo "Desmontando directorio RW de la iso..."
-umount -l $CDRW 2>/dev/null
 
 
 _get_line() {
@@ -24,43 +22,45 @@ _desmontar() {
 }
 
 #echo "Desmontando la iso de ubuntu"
-if [ $(grep -c $CDRO /etc/mtab) != 0 ]; then
- _desmontar "$CDRO"
-fi
+#if [ $(grep -c $CDRO /etc/mtab) != 0 ]; then
+# _desmontar "$CDRO"
+#fi
 
 
 #echo "Desmontando proc y sys del chroot"
-if [ $(grep -c $CHROOT/proc /etc/mtab) != 0 ]; then
+if [ $(grep -c "$CHROOT/proc" /etc/mtab) != 0 ]; then
   _desmontar "$CHROOT/proc"
 fi
 
-if [ $(grep -c $CHROOT/sys /etc/mtab) != 0 ]; then
+if [ $(grep -c "$CHROOT/sys" /etc/mtab) != 0 ]; then
   _desmontar "$CHROOT/sys"
 fi
 
 #echo "Desmontando proc y sys del chroot"
-if [ $(grep -c $NANOCHROOT/proc /etc/mtab) != 0 ]; then
+if [ $(grep -c "$NANOCHROOT/proc" /etc/mtab) != 0 ]; then
   _desmontar "$NANOCHROOT/proc"
 fi
 
-if [ $(grep -c $NANOCHROOT/sys /etc/mtab) != 0 ]; then
+if [ $(grep -c "$NANOCHROOT/sys" /etc/mtab) != 0 ]; then
   _desmontar "$NANOCHROOT/sys"
 fi
 
 
-umount -l $CDRO 2>/dev/null
+#umount -l $CDRO 2>/dev/null
 
 # desmontando loops
-for loop in $(losetup -a | grep $ISO | awk -F':' '{print $1}'); do
-  losetup -d $loop 2>/dev/null
-done
+#for loop in $(losetup -a | grep $ISO | awk -F':' '{print $1}'); do
+#  losetup -d $loop 2>/dev/null
+#done
 
 _revert_invoke
 
 if [ ! $DISABLE_CLEAN ]; then
-  _echo "Limpiando temporales, excepto el chroot"
-  rm -rf $CDRW
+  _echo "Limpiando temporales, excepto el chroot y CDRW"
+  #rm -rf $CDRW
   rm -rf $CDRO
   rm -rf $CDTMP
 fi
 
+
+hostname $(cat /etc/hostname)

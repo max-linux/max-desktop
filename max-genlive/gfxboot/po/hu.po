@@ -11,13 +11,13 @@ msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2008-04-19 07:29+0000\n"
+"PO-Revision-Date: 2009-04-03 23:12+0000\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -42,7 +42,7 @@ msgstr "Folytatás"
 
 #. txt_bootoptions
 msgid "Boot Options"
-msgstr "Rendszerindítási paraméterek"
+msgstr "Paraméterek"
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
@@ -60,33 +60,6 @@ msgstr ""
 #. txt_help
 msgid "Help"
 msgstr "Súgó"
-
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "Indítás..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"A Linux rendszermag betöltése\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"A memtest86 program betöltése\n"
-"\n"
-"\n"
 
 #. info box title
 #. txt_info_title
@@ -276,15 +249,25 @@ msgstr "Az Edubuntu ^kipróbálása a számítógép módosítása nélkül"
 msgid "^Try Xubuntu without any change to your computer"
 msgstr "A Xubuntu ^kipróbálása a számítógép módosítása nélkül"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr "Az Ubuntu MID ^kipróbálása a számítógép módosítása nélkül"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr "Az Ubuntu Netbook Remix ^kipróbálása a számítógép módosítása nélkül"
+
 #. Installation mode.
 #. txt_menuitem_xforcevesa
 msgid "Safe graphics mode"
-msgstr "Csökkentett ^grafikus mód"
+msgstr "Csökkentett grafikus mód"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-msgid "Use driver update CD"
-msgstr "Meghajtófrissítés CD használata"
+msgid "Use driver update disc"
+msgstr "Meghajtófrissítő-lemez használata"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
@@ -326,6 +309,26 @@ msgstr "^Edubuntu telepítése"
 msgid "^Install Xubuntu"
 msgstr "^Xubuntu telepítése"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "^Ubuntu kiszolgáló telepítése"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr "Az Ubuntu ^Studio telepítése"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr "Az Ubuntu ^MID telepítése"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr "Az Ubuntu ^Netbook Remix telepítése"
+
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
@@ -361,10 +364,20 @@ msgstr "Lemez nélküli képkiszolgáló telepítése"
 msgid "Install a command-line system"
 msgstr "Parancssoros rendszer telepítése"
 
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "Minimális rendszer telepítése"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr "Minimális virtuális gép telepítése"
+
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
-msgstr "CD ^hibaellenőrzése"
+msgid "^Check disc for defects"
+msgstr "^Lemez hibaellenőrzése"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -385,3 +398,18 @@ msgstr "^Rendszerindítás az első merevlemezről"
 #. txt_option_free
 msgid "Free software only"
 msgstr "Csak szabad szoftver"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr "^Dell automatikus újratelepítés"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "^Mythbuntu telepítése"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
+msgstr "A Mythbuntu ^kipróbálása a számítógép módosítása nélkül"

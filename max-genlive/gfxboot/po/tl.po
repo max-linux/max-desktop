@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-08-22 03:43:17.138284+00:00\n"
-"PO-Revision-Date: 2008-04-19 07:31+0000\n"
+"PO-Revision-Date: 2008-10-22 01:46+0000\n"
 "Last-Translator: Donnie Lomat <indizero@gmail.com>\n"
 "Language-Team: Tagalog <tl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -43,9 +43,8 @@ msgstr "Mga Boot Options"
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
-#, fuzzy
 msgid "Exiting..."
-msgstr "Isinasara na..."
+msgstr ""
 
 #. txt_exit_dialog
 msgid ""
@@ -58,34 +57,6 @@ msgstr ""
 #. txt_help
 msgid "Help"
 msgstr "Tulong"
-
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "Nagsisimula na..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"Niloload na ang Linux Kernel\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-#, fuzzy
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"Sinisimulan ang memtest86\n"
-"\n"
-"\n"
 
 #. info box title
 #. txt_info_title
@@ -108,22 +79,18 @@ msgid "Insert boot disk %u."
 msgstr "Ipasok ang boot disk %u."
 
 #. txt_insert_disk2
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "This is boot disk %u.\n"
 "Insert boot disk %u."
 msgstr ""
-"Ito ay boot disk %u.\n"
-"Ipasok ang boot disk %u."
 
 #. txt_insert_disk3
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "This is not a suitable boot disk.\n"
 "Please insert boot disk %u."
 msgstr ""
-"Di ito tamang boot disk.\n"
-"Mangyaring ipasok ang boot disk %u."
 
 #. password dialog title
 #. txt_password_title
@@ -268,6 +235,16 @@ msgstr ""
 msgid "^Try Xubuntu without any change to your computer"
 msgstr ""
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr ""
+
 #. Installation mode.
 #. txt_menuitem_xforcevesa
 msgid "Safe graphics mode"
@@ -275,7 +252,7 @@ msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-msgid "Use driver update CD"
+msgid "Use driver update disc"
 msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
@@ -318,6 +295,26 @@ msgstr ""
 msgid "^Install Xubuntu"
 msgstr ""
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr ""
+
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
@@ -353,9 +350,19 @@ msgstr ""
 msgid "Install a command-line system"
 msgstr ""
 
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr ""
+
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
+msgid "^Check disc for defects"
 msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
@@ -376,4 +383,19 @@ msgstr ""
 #. Boot option.
 #. txt_option_free
 msgid "Free software only"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
 msgstr ""

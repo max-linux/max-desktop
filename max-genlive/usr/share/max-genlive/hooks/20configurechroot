@@ -10,7 +10,7 @@ deb http://$MIRROR/mirror/ubuntu ${DISTRO} main universe multiverse restricted
 deb http://$MIRROR/mirror/ubuntu ${DISTRO}-updates main universe multiverse restricted
 deb http://$MIRROR/mirror/ubuntu ${DISTRO}-security main universe multiverse restricted
 
-deb http://$MIRROR/mirror/max40 max main
+deb http://$MIRROR/mirror/max50 max main
 
 EOF
 else
@@ -24,7 +24,7 @@ mount --bind /sys   $CHROOT/sys
 touch $CHROOT/etc/X11/xorg.conf
 
 
-_echo "Configurando DEBCONF: licencia JAVA... zona hoaria y firmware"
+_echo "Configurando DEBCONF: licencia JAVA... zona horaria y firmware"
 chroot $CHROOT debconf-set-selections << EOF || _exit "No se ha podido aceptar la licencia JAVA"
 sun-java5-bin   shared/accepted-sun-dlj-v1-1    boolean true
 sun-java5-jdk   shared/accepted-sun-dlj-v1-1    boolean true

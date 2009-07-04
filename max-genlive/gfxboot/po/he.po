@@ -8,20 +8,19 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2008-04-19 07:31+0000\n"
-"Last-Translator: Launchpad Translations Administrators <rosetta@launchpad."
-"net>\n"
+"PO-Revision-Date: 2009-02-04 16:52+0000\n"
+"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
 #. txt_ok
 msgid "OK"
-msgstr "אוקיי"
+msgstr "אישור"
 
 #. cancel button label
 #. txt_cancel
@@ -52,39 +51,12 @@ msgid ""
 "You are leaving the graphical boot menu and\n"
 "starting the text mode interface."
 msgstr ""
-"הינך עוזב את תפריט האיתחול הגרפי\n"
-"מתחיל ממשק טקסטואלי"
+"הינכם עוזבים את תפריט האיתחול הגרפי\n"
+"ומפעילים את המנשק הטקסטואלי."
 
 #. txt_help
 msgid "Help"
 msgstr "עזרה"
-
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "מתחיל..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"טוען את ליבת הלינוקס\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"טוען memtest86\n"
-"\n"
-"\n"
 
 #. info box title
 #. txt_info_title
@@ -127,7 +99,7 @@ msgstr ""
 #. password dialog title
 #. txt_password_title
 msgid "Password"
-msgstr "סיסמא"
+msgstr "סיסמה"
 
 #. Keep the newlines and spaces after ':'!
 #. txt_password
@@ -194,7 +166,7 @@ msgstr "לחץ על F4 כדי לבחור מצבי טעינה והתקנה אלט
 #. label for modes menu
 #. txt_mode_normal
 msgid "Normal"
-msgstr ""
+msgstr "רגיל"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -271,6 +243,16 @@ msgstr "^ נסה את אדיובונטו מבלי לשנות דבר במחשבך
 msgid "^Try Xubuntu without any change to your computer"
 msgstr "^ נסה את קסובונטו מבלי לשנות דבר במחשבך"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr ""
+
 #. Installation mode.
 #. txt_menuitem_xforcevesa
 msgid "Safe graphics mode"
@@ -278,8 +260,8 @@ msgstr "מצב גרפי בטוח"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-msgid "Use driver update CD"
-msgstr "השתמש בתקליטור עדכון מנהלי התקנים"
+msgid "Use driver update disc"
+msgstr "השתמש בתיאור עדכון מנהל התקן"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
@@ -321,6 +303,26 @@ msgstr "^התקן את אדיובונטו"
 msgid "^Install Xubuntu"
 msgstr "^התקן את קסובונטו"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "^התקן את Ubuntu Server"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr ""
+
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
@@ -349,17 +351,27 @@ msgstr "התקן שרת LTSP"
 #. Installation mode.
 #. txt_menuitem_ltsp_mythbuntu
 msgid "Install a Diskless Image Server"
-msgstr ""
+msgstr "התקן שרת נטול דיסק דמות"
 
 #. Installation mode.
 #. txt_menuitem_cli
 msgid "Install a command-line system"
 msgstr "התקן מערת שורת פקודה"
 
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "התקן מערכת מינימאלית"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr "התקן מכונה וירטואלית מינימאלית"
+
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
-msgstr "בדיקת ^פגמים בתקליטור"
+msgid "^Check disc for defects"
+msgstr "^בדוק אחר פגמים בתקליטור"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -379,4 +391,19 @@ msgstr "^אתחול מהדיסק הקשיח הראשון"
 #. Boot option.
 #. txt_option_free
 msgid "Free software only"
-msgstr ""
+msgstr "תוכנה חופשית בלבד"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr "ה^תקנה חדשה אוטומטית של Dell"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "הת^קנת Mythbuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
+msgstr "^נסה את Mythbuntu ללא כל שינוי במחשב"

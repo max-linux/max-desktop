@@ -1,9 +1,9 @@
 #
-# sources.list for Max40 live session
+# sources.list for Max50 live session
 #
-deb http://es.archive.ubuntu.com/ubuntu/ hardy main restricted universe multiverse
-deb http://es.archive.ubuntu.com/ubuntu/ hardy-updates main restricted universe multiverse
-deb http://es.archive.ubuntu.com/ubuntu/ hardy-security main restricted universe multiverse
-deb http://max.educa.madrid.org/max40 max main
+deb http://archive.ubuntu.com/ubuntu/ jaunty main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ jaunty-updates main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ jaunty-security main restricted universe multiverse
+deb http://max.educa.madrid.org/max50 max main
 
 

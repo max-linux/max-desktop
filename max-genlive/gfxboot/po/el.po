@@ -10,13 +10,13 @@ msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2008-04-19 07:31+0000\n"
-"Last-Translator: Kostas Papadimas <pkst@gmx.net>\n"
+"PO-Revision-Date: 2009-04-07 19:22+0000\n"
+"Last-Translator: Thanos Lefteris <alefteris@gmail.com>\n"
 "Language-Team: Hellenic-Ελληνικά-Greek <hstg@billg.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -60,33 +60,6 @@ msgstr ""
 msgid "Help"
 msgstr "Βοήθεια"
 
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "Εκκίνηση..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"Γίνεται η φόρτωση του πυρήνα Linux\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"Το memtest86 φορτώνεται\n"
-"\n"
-"\n"
-
 #. info box title
 #. txt_info_title
 msgid "Boot loader"
@@ -128,7 +101,7 @@ msgstr ""
 #. password dialog title
 #. txt_password_title
 msgid "Password"
-msgstr "Κωδικός"
+msgstr "Κωδικός πρόσβασης"
 
 #. Keep the newlines and spaces after ':'!
 #. txt_password
@@ -137,7 +110,7 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-"Εισάγετε τον κωδικό σας:   \n"
+"Εισάγετε τον κωδικό πρόσβασης σας:   \n"
 "\n"
 "\n"
 
@@ -159,7 +132,7 @@ msgstr ""
 #. power off dialog title
 #. txt_power_off_title
 msgid "Power Off"
-msgstr "Διακοπή λειτουργίας"
+msgstr "Τερματισμός λειτουργίας"
 
 #. txt_power_off
 msgid "Halt the system now?"
@@ -167,7 +140,7 @@ msgstr "Θέλετε να σταματήσετε το σύστημα τώρα;"
 
 #. txt_password
 msgid "Password\n"
-msgstr "Κωδικός\n"
+msgstr "Κωδικός πρόσβασης\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -198,7 +171,7 @@ msgstr ""
 #. label for modes menu
 #. txt_mode_normal
 msgid "Normal"
-msgstr ""
+msgstr "Κανονική"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -248,7 +221,7 @@ msgstr "Πληκτρολόγιο στην οθόνη"
 #. label for accessibility menu
 #. txt_access_m3
 msgid "Motor Difficulties - switch devices"
-msgstr "Κινητικές δυσκολιές - συσκευές εναλλαγής"
+msgstr "Κινητικές δυσκολίες - συσκευές εναλλαγής"
 
 #. label for accessibility menu
 #. txt_access_all
@@ -258,40 +231,45 @@ msgstr "Όλα"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "Δοκιμή του ^Ubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+msgstr "^Δοκιμή του Ubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "Δοκιμή του ^Kubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+msgstr "^Δοκιμή του Kubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "Δοκιμή του ^Edubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+msgstr "^Δοκιμή του Edubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "Δοκιμή του ^Xubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+msgstr "^Δοκιμή του Xubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr "^Δοκιμή του Ubuntu MID χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr "^Δοκιμή του Ubuntu Netbook Remix χωρίς αλλαγές στον υπολογιστή σας"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "Εκκίνηση Ubuntu σε ασφαλή γραφική λειτουργία"
+msgstr "Εκκίνηση σε ασφαλή γραφική λειτουργία"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
-msgid "Use driver update CD"
-msgstr "Χρήση CD με ενημερωμένους οδηγούς συσκευών"
+msgid "Use driver update disc"
+msgstr "Χρήση δίσκου με ενημερώσεις προγραμμάτων οδήγησης"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
 msgstr "^Εγκατάσταση Ubuntu σε κατάσταση κειμένου"
 
@@ -330,16 +308,35 @@ msgstr "^Εγκατάσταση Edubuntu"
 msgid "^Install Xubuntu"
 msgstr "^Εγκατάσταση Xubuntu"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "^Εγκατάσταση Ubuntu Server"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr "^Εγκατάσταση Ubuntu Studio"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr "^Εγκατάσταση Ubuntu MID"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr "^Εγκατάσταση Ubuntu Netbook Remix"
+
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "Εγκατάσταση ^σταθμού εργασίας"
+msgstr "Εγκατάσταση ενός ^σταθμού εργασίας"
 
 #. Installation mode.
 #. txt_menuitem_server
 msgid "Install a server"
-msgstr "Εγκατάσταση εξυπηρετητή"
+msgstr "Εγκατάσταση εξυπηρετητή (server)"
 
 #. Installation mode.
 #. txt_menuitem_oem
@@ -348,7 +345,6 @@ msgstr "Εγκατάσταση ΟΕΜ (για κατασκευαστές)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
 msgstr "Εγκατάσταση εξυπηρετητή LAMP"
 
@@ -360,27 +356,35 @@ msgstr "Εγκατάσταση εξυπηρετητή LTSP"
 #. Installation mode.
 #. txt_menuitem_ltsp_mythbuntu
 msgid "Install a Diskless Image Server"
-msgstr ""
+msgstr "Εγκατάσταση εξυπηρετητή εικόνων (Image Server)"
 
 #. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
 msgstr "Εγκατάσταση συστήματος γραμμής εντολών"
 
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "Εγκατάσταση ελάχιστου συστήματος"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr "Εγκατάσταση ελάχιστης εικονικής μηχανής"
+
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
+msgid "^Check disc for defects"
 msgstr "Έλεγχος ^CD για ελαττώματα"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
 msgid "^Rescue a broken system"
-msgstr "Διάσωση προβληματικού συστήματος"
+msgstr "Διάσωση ^προβληματικού συστήματος"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
 msgstr "Έλεγχος ^μνήμης"
 
@@ -393,3 +397,18 @@ msgstr "Ε^κκίνηση από τον πρώτο σκληρό δίσκο"
 #. txt_option_free
 msgid "Free software only"
 msgstr "Μόνο ελεύθερο λογισμικό"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr "^Αυτόματη επανεγκατάσταση της Dell"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "^Εγκατάσταση Mythbuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
+msgstr "^Δοκιμή του Mythbuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"

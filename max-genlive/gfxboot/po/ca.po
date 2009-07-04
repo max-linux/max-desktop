@@ -9,13 +9,13 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2008-04-19 07:32+0000\n"
-"Last-Translator: Jordi Irazuzta <irazuzta@gmail.com>\n"
+"PO-Revision-Date: 2009-04-08 22:45+0000\n"
+"Last-Translator: David Planella <Unknown>\n"
 "Language-Team: Catalan <ubuntu-l10n-ca@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -58,33 +58,6 @@ msgstr ""
 #. txt_help
 msgid "Help"
 msgstr "Ajuda"
-
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "S'està iniciant..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"S'està carregant el nucli Linux\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"S'està carregant el memtext86\n"
-"\n"
-"\n"
 
 #. info box title
 #. txt_info_title
@@ -273,6 +246,16 @@ msgstr "^Proveu l'Edubuntu sense fer cap canvi al vostre ordinador"
 msgid "^Try Xubuntu without any change to your computer"
 msgstr "^Proveu el Xubuntu sense fer cap canvi al vostre ordinador"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr "^Proveu l'Ubuntu MID sense fer cap canvi al vostre ordinador"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr "^Proveu l'Ubuntu Netbook Remix sense fer cap canvi al vostre ordinador"
+
 #. Installation mode.
 #. txt_menuitem_xforcevesa
 msgid "Safe graphics mode"
@@ -280,7 +263,7 @@ msgstr "Inicia l'Ubuntu en el mode gràfic segur"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-msgid "Use driver update CD"
+msgid "Use driver update disc"
 msgstr "Instal·la amb el CD d'actualització de controladors"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
@@ -323,6 +306,26 @@ msgstr "^Instal·la l'Edubuntu"
 msgid "^Install Xubuntu"
 msgstr "^Instal·la el Xubuntu"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "^Instal·la l'Ubuntu per a un servidor"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr "^Instal·la l'Ubuntu Studio"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr "^Instal·la l'Ubuntu MID"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr "^Instal·la l'Ubuntu Netbook Remix"
+
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
@@ -358,9 +361,19 @@ msgstr "Instal·la un servidor d'imatges d'arrencada"
 msgid "Install a command-line system"
 msgstr "Instal·la un sistema de línia d'ordres"
 
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "Instal·la un sistema mínim"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr "Instal·la una màquina virtual mínima"
+
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
+msgid "^Check disc for defects"
 msgstr "^Comprova si el CD té defectes"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
@@ -382,3 +395,18 @@ msgstr "^Arrenca des del primer disc dur"
 #. txt_option_free
 msgid "Free software only"
 msgstr "Només programari lliure"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr "Reinstal·lació automàtica de ^Dell"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "^Instal·la el Mythbuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
+msgstr "^Proveu el Mythbuntu sense fer cap canvi al vostre ordinador"

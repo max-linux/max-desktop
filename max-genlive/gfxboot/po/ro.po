@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2008-04-20 19:29+0000\n"
-"Last-Translator: Ionuț Jula <ionutjula@gmail.com>\n"
+"PO-Revision-Date: 2009-02-23 19:05+0000\n"
+"Last-Translator: Andrei Brănescu <Unknown>\n"
 "Language-Team: Romanian <ro-kde@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -57,33 +57,6 @@ msgstr ""
 #. txt_help
 msgid "Help"
 msgstr "Ajutor"
-
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "Se pornește..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"Se încarcă kernelul Linux\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"Se încarcă memtest86\n"
-"\n"
-"\n"
 
 #. info box title
 #. txt_info_title
@@ -273,6 +246,16 @@ msgstr "Încercaţi Edubun^tu fără a modifica ceva la calculator"
 msgid "^Try Xubuntu without any change to your computer"
 msgstr "Încercaţi Xubun^tu fără a modifica ceva la calculator"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr ""
+
 #. Installation mode.
 #. txt_menuitem_xforcevesa
 msgid "Safe graphics mode"
@@ -280,8 +263,8 @@ msgstr "Mod grafic de siguranţă"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-msgid "Use driver update CD"
-msgstr "Foloseşte cu driver de CD actualizat"
+msgid "Use driver update disc"
+msgstr "Folosește discul de actualizare a driverelor"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
@@ -323,6 +306,26 @@ msgstr "^Instalează Edubuntu"
 msgid "^Install Xubuntu"
 msgstr "^Instalează Xubuntu"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "^Instalare Ubuntu Server"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr ""
+
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
@@ -350,19 +353,28 @@ msgstr "Instalează un server LTSP"
 
 #. Installation mode.
 #. txt_menuitem_ltsp_mythbuntu
-#, fuzzy
 msgid "Install a Diskless Image Server"
-msgstr "Instalează o imagine de server fără disc"
+msgstr "Instalează o imagine server fără disc"
 
 #. Installation mode.
 #. txt_menuitem_cli
 msgid "Install a command-line system"
 msgstr "Instalează un sistem fără mod grafic"
 
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "Instalează un sistem minimal"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr "Instalează o mașină virtuală minimală"
+
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
-msgstr "Verifică ^CD-ul pentru defecte"
+msgid "^Check disc for defects"
+msgstr "Verifi^că dacă discul are defecte"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -383,3 +395,18 @@ msgstr "^Pornește de pe primul hard disc"
 #. txt_option_free
 msgid "Free software only"
 msgstr "Doar software liber"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr "Reinstalare automată ^Dell"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "^Instalare Mythubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
+msgstr "Încearcă My^thubuntu fără nicio modificare computerului tău"

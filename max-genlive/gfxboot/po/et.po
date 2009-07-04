@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2008-04-19 07:30+0000\n"
-"Last-Translator: margus723 <margus723@hot.ee>\n"
+"PO-Revision-Date: 2009-04-03 11:09+0000\n"
+"Last-Translator: Laur Mõtus <vprints@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -57,33 +57,6 @@ msgstr ""
 #. txt_help
 msgid "Help"
 msgstr "Abiteave"
-
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "Alustamine..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"Linuxi Kerneli laadimine\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"memtest86 laadimine\n"
-"\n"
-"\n"
 
 #. info box title
 #. txt_info_title
@@ -190,12 +163,12 @@ msgstr "Režiimid"
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
-msgstr "Vajuta F4 kui valid alternatiivsema käivituse ja paigaldusmeetodi."
+msgstr "Vajuta F4 kui valid alternatiivse käivituse ja paigaldusmeetodi."
 
 #. label for modes menu
 #. txt_mode_normal
 msgid "Normal"
-msgstr ""
+msgstr "Tavaline"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -255,22 +228,32 @@ msgstr "Kõik"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "^Ubuntu käivitamine"
+msgstr "P^roovi Ubuntut ilma oma arvutit muutmata"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "^Kubuntu käivitamine"
+msgstr "P^roovi Kubuntut ilma oma arvutit muutmata"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "^Edubuntu käivitamine"
+msgstr "P^roovi Edubuntut ilma oma arvutit muutmata"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "^Xubuntu käivitamine"
+msgstr "P^roovi Xubuntut ilma oma arvutit muutmata"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
@@ -279,28 +262,28 @@ msgstr "Käivita Ubuntu turvalises ^graafilises laadis"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-msgid "Use driver update CD"
-msgstr "Paigalda koos draiveri ^uuenduste CD'ga"
+msgid "Use driver update disc"
+msgstr "Paigalda koos draiveri ^uuenduste plaadiga"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
 msgid "^Install Ubuntu in text mode"
-msgstr "^Paigalda tekstilaadis"
+msgstr "Paigalda Ubuntu ^tekstilaadis"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr "^Paigalda Kubuntu tekstilaadis"
+msgstr "Paigalda Kubuntu ^tekstilaadis"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr "^Paigalda Edubuntu tekstilaadis"
+msgstr "Paigalda Edubuntu ^tekstilaadis"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr "^Paigalda Xubuntu tekstilaadis"
+msgstr "Paigalda Xubuntu ^tekstilaadis"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
@@ -321,6 +304,26 @@ msgstr "^Paigalda Edubuntu"
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
 msgstr "^Paigalda Xubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "^Paigalda Ubuntu Server"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_workstation
@@ -357,10 +360,20 @@ msgstr ""
 msgid "Install a command-line system"
 msgstr "Paigalda k^äsurea süsteem"
 
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "Paigalda minimaalne süsteem"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr ""
+
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
-msgstr "Tee ^CDle vigade kontroll"
+msgid "^Check disc for defects"
+msgstr "Tee ^kettale vigade kontroll"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -380,4 +393,19 @@ msgstr "Tee alglaa^dimine esimeselt kõvakettalt"
 #. Boot option.
 #. txt_option_free
 msgid "Free software only"
+msgstr "Ainult vaba tarkvara"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
 msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "^Paigalda Mythbuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
+msgstr "P^roovi Mythbuntu't ilma oma arvutit muutmata"

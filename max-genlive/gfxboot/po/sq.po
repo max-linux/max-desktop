@@ -8,14 +8,13 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2008-04-19 07:32+0000\n"
-"Last-Translator: Launchpad Translations Administrators <rosetta@launchpad."
-"net>\n"
+"PO-Revision-Date: 2009-04-03 13:48+0000\n"
+"Last-Translator: Vilson Gjeci <Unknown>\n"
 "Language-Team: Albanian <sq@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -26,7 +25,7 @@ msgstr "Në rregull"
 #. cancel button label
 #. txt_cancel
 msgid "Cancel"
-msgstr "Anullo"
+msgstr "Anulo"
 
 #. reboot button label
 #. txt_reboot
@@ -57,33 +56,6 @@ msgstr ""
 #. txt_help
 msgid "Help"
 msgstr "Ndihmë"
-
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "Në nisje..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"Duke ngarkuar Bërthamën e Linutxit.\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"Ngarko memtest86\n"
-"\n"
-"\n"
 
 #. info box title
 #. txt_info_title
@@ -180,17 +152,17 @@ msgstr "Klasifikimi i tastires"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "Gjendjet"
 
 #. Shown on main menu to point out that more boot options are on F4.
 #. txt_modes_help
 msgid "Press F4 to select alternative start-up and installation modes."
-msgstr ""
+msgstr "Shtyp F4 për të një nisje tjetër dhe gjendje tjera të nisjes"
 
 #. label for modes menu
 #. txt_mode_normal
 msgid "Normal"
-msgstr ""
+msgstr "Normale"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -249,125 +221,153 @@ msgstr "Çdo gjë"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without any change to your computer"
-msgstr "^Starto ose Instalo Ubuntu"
+msgstr "^Provo Ubuntu-n pa asnjë ndryshim në kompjuterin tuaj"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "^Starto ose instalo Kubuntu"
+msgstr "^Provo Kubuntu-n pa asnjë ndryshim në kompjuterin tuaj"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without any change to your computer"
-msgstr "^Starto ose instalo Edubuntu"
+msgstr "^Provo Edubuntu-n pa asnjë ndryshim në kompjuterin tuaj"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without any change to your computer"
-msgstr "^Starto ose instalo Xubuntu"
+msgstr "^Provo Xubuntu-n pa asnjë ndryshim në kompjuterin tuaj"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr "^Provoni Ubuntu MID pa asnjë ndryshim për kompjuterin tuaj"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr "^Provoni Ubuntu Netbook Remix pa asnjë ndryshim për kompjuterin tuaj"
 
 #. Installation mode.
 #. txt_menuitem_xforcevesa
-#, fuzzy
 msgid "Safe graphics mode"
-msgstr "Starto Ubuntu në mënyrën ^grafike të sigurtë"
+msgstr "Gjendja e sigurtë grafike"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-#, fuzzy
-msgid "Use driver update CD"
-msgstr "Instalo me CD, me drejtues shtesë"
+msgid "Use driver update disc"
+msgstr "Përdor diskun për përmirësim të driverave"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
-#, fuzzy
 msgid "^Install Ubuntu in text mode"
-msgstr "^instalo në mënyrë tekstuale."
+msgstr "^Instalo Ubuntu-n në gjendje teksti"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "^Instalo Kubuntu-n në gjendje teksti"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "^Instalo Edubuntu-n në gjendje teksti"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "^Instalo Xubuntu-n në gjendje teksti"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "^Instalo Ubuntu-n"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "^Instalo Kubuntu-n"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "^Instalo Edubuntu-n"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "^Instalo Xubuntu-n"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "^Instalo Ubuntu Server"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr "^Instaloni Ubuntu Studio"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr "^Instaloni Ubuntu MID"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr "^Instaloni Ubuntu Netbook Remix"
 
 #. Installation mode.
 #. txt_menuitem_workstation
-#, fuzzy
 msgid "Install a workstation"
-msgstr "Instalo ^stacionin punues"
+msgstr "Instalo një stacion pune"
 
 #. Installation mode.
 #. txt_menuitem_server
-#, fuzzy
 msgid "Install a server"
-msgstr "Instalo ser^ver - in"
+msgstr "Instalo një shërbyes"
 
 #. Installation mode.
 #. txt_menuitem_oem
 msgid "OEM install (for manufacturers)"
-msgstr ""
+msgstr "Instalim për prodhues"
 
 #. Installation mode.
 #. txt_menuitem_lamp
-#, fuzzy
 msgid "Install a LAMP server"
-msgstr "Instalo ^LAMP serverin"
+msgstr "Instalo një LAMP shërbyes"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
-#, fuzzy
 msgid "Install an LTSP server"
-msgstr "Instalo ^LTSP server - in"
+msgstr "Instalo një LTSP shërbyes"
 
 #. Installation mode.
 #. txt_menuitem_ltsp_mythbuntu
 msgid "Install a Diskless Image Server"
-msgstr ""
+msgstr "Instalo një server imazh pa disk"
 
 #. Installation mode.
 #. txt_menuitem_cli
-#, fuzzy
 msgid "Install a command-line system"
-msgstr "^Instalo një server"
+msgstr "Instalo një sistem me bazë komande"
+
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "Instalo një sistem minimal"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr "Instalo një makinë virtuale minimale"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
-msgstr "^kontrollo CD për defekte"
+msgid "^Check disc for defects"
+msgstr "^Kontrollo diskun për defekte"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -376,9 +376,8 @@ msgstr "Një sistem të dëmtuar ^riparo"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
-#, fuzzy
 msgid "Test ^memory"
-msgstr "^Testimi i memorjes"
+msgstr "Testo ^memorjen"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
@@ -388,4 +387,19 @@ msgstr "^Boot nga disku i parë i ngurtë."
 #. Boot option.
 #. txt_option_free
 msgid "Free software only"
-msgstr ""
+msgstr "Vetëm programet falas"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr "^Riinstalim Automatik Dell"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "^Instalo Mythbuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
+msgstr "^Përdor Mythbuntu pa i bërë asnjë ndryshim kompjuterit"

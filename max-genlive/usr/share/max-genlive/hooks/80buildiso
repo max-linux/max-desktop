@@ -1,21 +1,24 @@
 
-_echo "Copiando archivos isolinux..."
 
-cp $GENLIVE/isolinux/* $CDRW/isolinux/ || _exit "No se puede sobreescribir isolinux"
+mkdir -p $CDRW/preseed $CDRW/.disk
 
 _echo "Copiando preseed"
 rm -f $CDRW/preseed/*
 cp $GENLIVE/preseed/* $CDRW/preseed/ || _exit "No se puede sobreescribir preseed"
 
-printf "%s - i386 (%s)" "$TITLE" "$created" > $CDRW/.disk/info
-printf "http://max.educa.madrid.org:8000/MaX40/NotasPublicacion" > $CDRW/.disk/release_notes_url
+printf "%s - $ARCH (%s)" "$TITLE" "$created" > $CDRW/.disk/info
+printf "http://max.educa.madrid.org:8000/MaX50/NotasPublicacion" > $CDRW/.disk/release_notes_url
+printf "full_cd/single" > $CDRW/.disk/cd_type
+touch $CDRW/.disk/base_installable 
+
+printf "d8ce36c5-3caf-4243-9dad-f8527accac3f" > $CDRW/.disk/casper-uuid-generic
 
 cat << EOF > $CDRW/README.diskdefines
-#define DISKNAME  $TITLE - Build i386 $created
+#define DISKNAME  $TITLE - Build $ARCH $created
 #define TYPE  binary
 #define TYPEbinary  1
-#define ARCH  i386
-#define ARCHi386  1
+#define ARCH  $ARCH
+#define ARCH$ARCH  1
 #define DISKNUM  1
 #define DISKNUM1  1
 #define TOTALNUM  0
@@ -33,15 +36,19 @@ if [ -d $GENLIVE/win32aps ]; then
   cp -ra $GENLIVE/win32aps/* $CDRW/
 fi
 
+# copiar memtest
+cp /boot/memtest86+.bin $CDRW/casper/memtest.bin
+
 _echo "Generando md5sum de archivos de dentro del DVD..."
-# FIXME no hay que hacer el md5 de boot.cat o isolinux.bin
-(cd $CDRW && find . -type f -print0 |xargs -0 md5sum > md5sum.txt)
+(cd $CDRW && find . -type f -print0 | grep -v boot.cat | grep -v isolinux.bin | xargs -0 md5sum > md5sum.txt)
 
-_echo "Generando ${IMAGE_NAME}-${stamp}.iso"
+ISO_FILE="${IMAGE_NAME}-DVDlive-$ARCH-${stamp}.iso"
 
-mkisofs -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \
+_echo "Generando ${ISO_FILE}"
+
+genisoimage -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \
      -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
-     -boot-info-table -o ${IMAGE_NAME}-DVDlive-${stamp}.iso $CDRW/ || _exit "Error generando la imagen ISO"
+     -boot-info-table -o ${ISO_FILE} $CDRW/ || _exit "Error generando la imagen ISO"
 
 _echo "Generando md5 del DVD"
-md5sum ${IMAGE_NAME}-DVDlive-${stamp}.iso > ${IMAGE_NAME}-DVDlive-${stamp}.iso.md5 || _exit "Error generando el md5"
+md5sum ${ISO_FILE} > ${ISO_FILE}.md5 || _exit "Error generando el md5"

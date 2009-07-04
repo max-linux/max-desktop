@@ -7,8 +7,8 @@ Standards-Version: 3.7.3
 
 Package: max-genlive
 Architecture: all
-Depends: mkisofs, squashfs-tools, max-win32-apps,
-         debootstrap, syslinux, mbr, tree, parted
+Depends: genisoimage, squashfs-tools, max-win32-apps,
+         debootstrap, syslinux, mbr, tree, parted, memtest86+
 Description: Tool to generate MaX live DVD, CD and nanoMaX
  Contains:
   * max-genlive

@@ -1,3 +1,13 @@
+max-genlive (5.0.max0.1) max; urgency=low
+
+  * Build in MaX 5.0
+  * gfxboot: Update to 0.8.0 version
+  * Refactorize hooks scripts (make base with debootstrap)
+  * Support build i386 and amd64 images
+  * Add packages from main and max
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 20 May 2009 13:40:33 +0200
+
 max-genlive (4.0.max0.77) max; urgency=low
 
   * usr/share/max-genlive/hooks/20configurechroot:

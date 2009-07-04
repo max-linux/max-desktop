@@ -9,13 +9,13 @@ msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2008-04-19 07:30+0000\n"
-"Last-Translator: Susana Pereira <susana.pereira@gmail.com>\n"
+"PO-Revision-Date: 2009-04-03 10:58+0000\n"
+"Last-Translator: nglnx <Unknown>\n"
 "Language-Team: portuguese\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -58,33 +58,6 @@ msgstr ""
 #. txt_help
 msgid "Help"
 msgstr "Ajuda"
-
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "A Iniciar..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"A Carregar o Kernel de Linux\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"A Carregar o memtest86\n"
-"\n"
-"\n"
 
 #. info box title
 #. txt_info_title
@@ -274,6 +247,17 @@ msgstr "^Experimentar Edubuntu sem fazer nenhuma alteração no seu computador"
 msgid "^Try Xubuntu without any change to your computer"
 msgstr "^Experimentar Xubuntu sem fazer nenhuma alteração no seu computador"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr "^Testar o Ubuntu MID sem efectuar alterações ao seu computador"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr ""
+"^Testar o Ubuntu Network Remix sem efectuar alterações ao seu computador"
+
 #. Installation mode.
 #. txt_menuitem_xforcevesa
 msgid "Safe graphics mode"
@@ -281,8 +265,8 @@ msgstr "Iniciar o Ubuntu com os gráfico em modo seguro"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-msgid "Use driver update CD"
-msgstr "Usar CD com controladores actualizados"
+msgid "Use driver update disc"
+msgstr "Use o disco de actualização de drivers"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
@@ -324,6 +308,26 @@ msgstr "^Instalar Edubuntu"
 msgid "^Install Xubuntu"
 msgstr "^Instalar Xubuntu"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "^Instalar Servidor Ubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr "^Instalar o Ubuntu Studio"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr "^Instalar o Ubuntu MID"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr "^Instalar o Ubuntu Netbook Remix"
+
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
@@ -359,10 +363,20 @@ msgstr "Instalar um Servidor de Imagem sem Disco"
 msgid "Install a command-line system"
 msgstr "Instalar um sistema de linha de comandos"
 
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "Instalar um sistema mínimo"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr "Instalar uma máquina virtual mínima"
+
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
-msgstr "^Verificar o CD por defeitos"
+msgid "^Check disc for defects"
+msgstr "^Verificar o disco por defeitos"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -383,3 +397,18 @@ msgstr "Iniciar do ^primeiro disco rígido"
 #. txt_option_free
 msgid "Free software only"
 msgstr "Apenas software livre"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr "Reinstalação Automatica da ^Dell"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "^Instalar o Mythbuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
+msgstr "Experimen^tar o Mythbuntu sem nenhuma alteração no seu computador"

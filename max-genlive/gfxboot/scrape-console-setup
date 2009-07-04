@@ -90,6 +90,7 @@ my @show_variants = (
 
 # Exclude these keymaps.
 my @exclude_keymaps = (
+    'braille',
     'fr',
     'nec/jp',
     'nec_vndr/jp',
@@ -102,7 +103,6 @@ my %description_overrides = (
     'cd' => 'Congo',
     'ch_fr' => 'Swiss French',
     'ch' => 'Swiss German',
-    'cs' => 'Serbia',
     'fi_smi' => 'Saami (Fin.)',
     'fo' => 'Faroes',
     'fr_oss' => 'France',
@@ -144,6 +144,7 @@ my @non_latin = (
     'iku',
     'kan',
     'kh',
+    'kz',
     'la',
     'lao',
     'lk',
@@ -211,7 +212,7 @@ my %spec_map = (
 sub map_keycode ($) {
     my $type = ($_[0] >> 8) & 0xff;
     my $code = $_[0] & 0xff;
-    if ($type == 0xf0 or $type == 0xfb) {
+    if ($type == 0x00 or $type == 0x0b or $type == 0xf0 or $type == 0xfb) {
 	# KT_LATIN or KT_LETTER
 	if ($code == 0x08 or $code == 0x7f) {
 	    # Backspace vs. Delete is a tricky case. gfxboot understands
@@ -269,9 +270,9 @@ for my $keymap (@keymaps) {
     }
     my $ckbcomp = "ckbcomp -model $model -layout \Q$layout\E";
     $ckbcomp .= " -variant \Q$variant\E" if defined $variant;
-    my $table = `$ckbcomp | sudo loadkeys -m 2>/dev/null`;
+    my $table = `$ckbcomp | sudo loadkeys -mu 2>/dev/null`;
     for my $map (qw(plain shift altgr)) {
-	if ($table =~ /${map}_map\[\] = {\s*(.*?)(?:\s|,)*}/s) {
+	if ($table =~ /${map}_map\[[^]]*\] = {\s*(.*?)(?:\s|,)*}/s) {
 	    $keycodes{$keymap}{$map} =
 		[map { map_keycode(hex) } split(/,\s+/, $1)];
 	} else {

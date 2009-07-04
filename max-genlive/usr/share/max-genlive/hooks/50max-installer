@@ -1,4 +1,5 @@
 
+if [ ! -d $CHROOT/var/lib/mysql/moodle ]; then
 _echo "Configurando entorno live"
 
 chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes para la versión live"
@@ -43,3 +44,5 @@ _add_invoke
 
 # start MySQL server in host
 [ -x /etc/init.d/mysql ] && /etc/init.d/mysql start || true
+
+fi

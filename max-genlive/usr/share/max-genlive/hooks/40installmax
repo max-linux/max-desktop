@@ -1,7 +1,6 @@
 
 
 
-
 _echo "Instalando paquetes de MaX"
 
 chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes de MaX"
@@ -14,9 +13,9 @@ export ERROR=0
 export MAX_ERROR=0
 apt-get $APT_OPTS install max-keyring || ERROR=1
 apt-get $APT_OPTS update || ERROR=1
-apt-get $APT_OPTS install max-desktop-all
+apt-get $APT_OPTS install max-desktop-gnome
+apt-get $APT_OPTS install max-desktop-gnome max-drivers || ERROR=1
 [ "\$(ls /home/)" != "" ] && rm -rf /home/* && apt-get $APT_OPTS -f install 
-apt-get $APT_OPTS install max-desktop-all max-drivers || ERROR=1
 apt-get clean
 exit \$ERROR
 EOC

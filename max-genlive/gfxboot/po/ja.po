@@ -6,13 +6,13 @@ msgstr ""
 "Project-Id-Version: bootloader\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2008-04-20 12:25+0000\n"
-"Last-Translator: Jun Kobayashi <kobayashi+ubuntu@junkobayashi.jp>\n"
+"PO-Revision-Date: 2009-03-11 11:46+0000\n"
+"Last-Translator: Y.Nishiwaki <ffiannkks@gmail.com>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -55,33 +55,6 @@ msgstr ""
 #. txt_help
 msgid "Help"
 msgstr "ヘルプ"
-
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "起動中..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"Linuxカーネルを読み込み中\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"memtest86を読み込み中\n"
-"\n"
-"\n"
 
 #. info box title
 #. txt_info_title
@@ -258,7 +231,7 @@ msgstr "コンピュータに変更を加えないでUbuntuを使ってみる(^T
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
 msgid "^Try Kubuntu without any change to your computer"
-msgstr "コンピュータに変更を加えないでUbuntuを使ってみる(^T)"
+msgstr "コンピュータに変更を加えないでKubuntuを使ってみる(^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
@@ -270,6 +243,16 @@ msgstr "コンピュータに変更を加えないでEdubuntuを使ってみる(
 msgid "^Try Xubuntu without any change to your computer"
 msgstr "コンピュータに変更を加えないでXubuntuを使ってみる(^T)"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr ""
+
 #. Installation mode.
 #. txt_menuitem_xforcevesa
 msgid "Safe graphics mode"
@@ -277,8 +260,8 @@ msgstr "セーフグラフィックスモードでUbuntuを起動"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-msgid "Use driver update CD"
-msgstr "ドライバアップデートCDを使用"
+msgid "Use driver update disc"
+msgstr "ドライバーアップデートディスクを使う"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
@@ -320,6 +303,26 @@ msgstr "Edubuntuをインストール(^I)"
 msgid "^Install Xubuntu"
 msgstr "Xubuntuをインストール(^I)"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "~Ubuntuサーバーをインストール"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr ""
+
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
@@ -332,9 +335,8 @@ msgstr "サーバのインストール"
 
 #. Installation mode.
 #. txt_menuitem_oem
-#, fuzzy
-msgid "^OEM install (for manufacturers)"
-msgstr "メーカー向けのテキストモードインストール"
+msgid "OEM install (for manufacturers)"
+msgstr "メーカー向けOEMインストール"
 
 #. Installation mode.
 #. txt_menuitem_lamp
@@ -356,10 +358,20 @@ msgstr "ディスクレスイメージサーバをインストール"
 msgid "Install a command-line system"
 msgstr "コマンドラインシステムのインストール"
 
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "最小限のシステムをインストール"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr "最小限の仮想マシンをインストール"
+
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
-msgstr "CDの異常をチェック(^C)"
+msgid "^Check disc for defects"
+msgstr "ディスクの破損をチェックする(^C)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -380,3 +392,18 @@ msgstr "一番目のハードディスクから起動(^B)"
 #. txt_option_free
 msgid "Free software only"
 msgstr "フリーソフトウェアのみ"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr "^Dell 自動再インストール"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "^インストールMythbuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
+msgstr "^コンピューターに変更を加えずに Mythbuntu を試してみる"

@@ -10,6 +10,7 @@ build/max-genlive::
 
 clean/max-genlive::
 	cd gfxboot && make clean
+	rm -f $(CURDIR)/gfxboot-build
 
 binary-install/max-genlive::
 	install -d $(CURDIR)/debian/max-genlive/usr/share/max-genlive/isolinux

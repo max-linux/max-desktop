@@ -10,13 +10,13 @@ msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2008-04-19 07:30+0000\n"
+"PO-Revision-Date: 2009-04-06 14:45+0000\n"
 "Last-Translator: Kamil Páral <ripper42@gmail.com>\n"
 "Language-Team: Czech <suse@suse.cz>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2008-04-21 14:04+0000\n"
+"X-Launchpad-Export-Date: 2009-04-09 00:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ok button label
@@ -59,33 +59,6 @@ msgstr ""
 #. txt_help
 msgid "Help"
 msgstr "Nápověda"
-
-#. window title for kernel loading (see txt_load_kernel)
-#. txt_load_kernel_title
-msgid "Starting..."
-msgstr "Spouští se..."
-
-#. Keep the three newlines!
-#. txt_load_kernel
-msgid ""
-"Loading Linux Kernel\n"
-"\n"
-"\n"
-msgstr ""
-"Zavádí se linuxové jádro\n"
-"\n"
-"\n"
-
-#. Keep the three newlines!
-#. txt_load_memtest
-msgid ""
-"Loading memtest86\n"
-"\n"
-"\n"
-msgstr ""
-"Zavádím memtest86\n"
-"\n"
-"\n"
 
 #. info box title
 #. txt_info_title
@@ -274,6 +247,16 @@ msgstr "^Vyzkoušet Edubuntu bez jakýchkoliv změn ve vašem počítači"
 msgid "^Try Xubuntu without any change to your computer"
 msgstr "^Vyzkoušet Xubuntu bez jakýchkoliv změn ve vašem počítači"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without any change to your computer"
+msgstr "^Vyzkoušet Ubuntu MID bez jakýchkoliv změn ve vašem počítači"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without any change to your computer"
+msgstr "^Vyzkoušet Ubuntu Netbook Remix bez jakýchkoliv změn ve vašem počítači"
+
 #. Installation mode.
 #. txt_menuitem_xforcevesa
 msgid "Safe graphics mode"
@@ -281,8 +264,8 @@ msgstr "Záchranný grafický režim"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
-msgid "Use driver update CD"
-msgstr "Použít CD s aktualizacemi ovladačů"
+msgid "Use driver update disc"
+msgstr "Použít disk s aktualizacemi ovladačů"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
@@ -324,6 +307,26 @@ msgstr "Na^instalovat Edubuntu"
 msgid "^Install Xubuntu"
 msgstr "Na^instalovat Xubuntu"
 
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "Na^instalovat server Ubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr "Na^instalovat Ubuntu Studio"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr "Na^instalovat Ubuntu MID"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr "Na^instalovat Ubuntu Netbook Remix"
+
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
@@ -359,10 +362,20 @@ msgstr "Nainstalovat bezdiskový obrazový server"
 msgid "Install a command-line system"
 msgstr "Nainstalovat systém jen s příkazovou řádkou"
 
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "Nainstalovat minimální systém"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr "Nainstalovat minimalistický virtuální stroj"
+
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
-msgid "^Check CD for defects"
-msgstr "Zkontrolovat, zda CD neobsahuje ^chyby"
+msgid "^Check disc for defects"
+msgstr "Zkontrolovat disk na ^chyby"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -383,3 +396,18 @@ msgstr "^Zavést systém z prvního pevného disku"
 #. txt_option_free
 msgid "Free software only"
 msgstr "Pouze svobodný software"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr "Automatická přeinstalace od ^Dell"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "Na^instalovat Mythbuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without any change to your computer"
+msgstr "Vyzkoušet My^thbuntu bez jakýchkoliv změn ve vašem počítači"

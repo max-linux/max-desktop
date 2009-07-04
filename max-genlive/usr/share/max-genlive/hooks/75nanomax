@@ -4,8 +4,12 @@
 
 if [ $ENABLE_NANO ]; then
 
-  rm -rf $NANOCHROOT
-  [ ! -d $NANOCHROOT ] && (debootstrap $DISTRO $NANOCHROOT http://$MIRROR/mirror/ubuntu || _exit "Error en el debootstrap")
+  #rm -rf $NANOCHROOT
+  # don't build nanoMaX for amd64, use i386 or nothing
+  if [ ! -d $NANOCHROOT ]; then
+    _echo "debootstrap --arch=$NANOARCH $DISTRO $NANOCHROOT http://$MIRROR/mirror/ubuntu"
+    (debootstrap --arch=$NANOARCH $DISTRO $NANOCHROOT http://$MIRROR/mirror/ubuntu || _exit "Error en el debootstrap")
+  fi
 
   # configurar sources.list
   cat << EOF > $NANOCHROOT/etc/apt/sources.list
@@ -13,9 +17,32 @@ deb http://$MIRROR/mirror/ubuntu ${DISTRO} main universe multiverse restricted
 deb http://$MIRROR/mirror/ubuntu ${DISTRO}-updates main universe multiverse restricted
 deb http://$MIRROR/mirror/ubuntu ${DISTRO}-security main universe multiverse restricted
 
-deb http://$MIRROR/mirror/max40 max main
+deb http://$MIRROR/mirror/max50 max main
 EOF
 
+  cat << EOF > $NANOCHROOT/etc/apt/apt.conf.d/06norecomends
+APT
+{
+	Install-Recommends "false";
+	Install-Suggests "false";
+};
+EOF
+
+cat << EOF > $NANOCHROOT/etc/hosts
+127.0.0.1       localhost max50
+127.0.1.1       max50
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+EOF
+
+   echo "max50" > $NANOCHROOT/etc/hostname
+   echo "max50" > $NANOCHROOT/etc/mailname
 
   _echo "Configurando DEBCONF y zona horaria"
 
@@ -53,15 +80,34 @@ export LC_MESSAGES=C
 export DEBCONF_FRONTEND="noninteractive"
 export DEBIAN_FRONTEND="noninteractive"
 export UCF_FORCE_CONFFOLD=1
+apt-get update
 apt-get $APT_OPTS install max-keyring
 yes | dpkg --configure -a
 apt-get $APT_OPTS -f install
 apt-get update
 apt-get $APT_OPTS upgrade
-yes| apt-get $APT_OPTS install xserver-xorg firefox ubiquity casper ubiquity-frontend-max user-setup max-live xfdesktop4
+yes| apt-get $APT_OPTS install xserver-xorg ubiquity casper ubiquity-frontend-max user-setup max-live
 apt-get $APT_OPTS install max-nanomax
 apt-get clean
 apt-get $APT_OPTS autoremove --purge
+EOC
+
+  # delete some not needed packages
+
+  NANO_DELETE_PACKAGES="evolution-documentation-en foomatic-db foomatic-db-engine foomatic-filters gimp-help-en fvwm1"
+  NANO_DELETE_PACKAGES="$NANO_DELETE_PACKAGES gnome-user-guide gnome-user-guide-es gnome-mag gnome-media gnome-mount usplash-theme-ubuntu openjdk-6-jre-headless"
+  NANO_DELETE_PACKAGES="$NANO_DELETE_PACKAGES ubuntu-gdm-themes bsh bsh-gcj libjline-java max-java-plugin sun-java6-bin sun-java6-jre sun-java6-plugin"
+
+  chroot $NANOCHROOT << EOC || _exit "Error limpiando paquetes no necesarios"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+yes| apt-get $APT_OPTS remove --purge $NANO_DELETE_PACKAGES
+apt-get $APT_OPTS autoremove --purge
+apt-get $APT_OPTS autoremove --purge
+apt-get $APT_OPTS install max-nanomax max-live
 EOC
 
   cp $GENLIVE/sources.list $NANOCHROOT/etc/apt/
@@ -102,17 +148,22 @@ EOC
   # borrar temporal
   rm -f $NANOMAX/casper/filesystem.manifest-desktope
 
+  # este archivo le indica al instalador que no hay seleccion de Escritorio, Alumno, Profesor, Servidor...
   touch $NANOMAX/casper/nanomax
 
   _echo "Deshabilitando contraseña de root (nanoMaX)"
   chroot $NANOCHROOT/ usermod -L root
 
+  _echo "Actualizando DPSYCO..."
+  chroot $NANOCHROOT/ /usr/sbin/update-dpsyco-skel
 
   LZMA=""
   # ver si hay que desactivar LZMA
   mksquashfs -help 2>&1 | grep -q nolzma && LZMA="-nolzma"
 
+  rm -f $NANOMAX/casper/filesystem.squashfs
   mksquashfs $NANOCHROOT/  $NANOMAX/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo NANOMAX squashfs"
+  chmod 644 $NANOMAX/casper/filesystem.squashfs || _exit "No se ha podido cambiar los permisos de NANOMAX squashfs"
 
 
   _echo "Copiando contenido live en nanomax..."
@@ -131,46 +182,52 @@ EOC
   echo "ubiquity ubiquity/max_install_type string no_type" >> $NANOMAX/preseed/max.seed
 
   mkdir -p $NANOMAX/.disk
-  printf "%s - i386 (%s)" "$TITLE" "$created" > $NANOMAX/.disk/info
-  printf "http://max.educa.madrid.org:8000/MaX40/NotasPublicacion" > $NANOMAX/.disk/release_notes_url
+
+  printf "%s - $NANOARCH (%s)" "$TITLE" "$created" > $NANOMAX/.disk/info
+  printf "http://max.educa.madrid.org:8000/MaX50/NotasPublicacion" > $NANOMAX/.disk/release_notes_url
+  printf "full_cd/single" > $NANOMAX/.disk/cd_type
+  rm -f $NANOMAX/.disk/base_installable
+  printf "d8ce36c5-3caf-4243-9dad-f8527accac3f" > $NANOMAX/.disk/casper-uuid-generic
 
   # kernel
-  cp $NANOCHROOT/boot/vmlinuz-${MAXKERNEL}    $NANOMAX/casper/vmlinuz
-  cp $NANOCHROOT/boot/initrd.img-${MAXKERNEL} $NANOMAX/casper/initrd.gz
+  KERNEL=$(basename $(ls $NANOCHROOT/boot/vmlinuz* -t| head -1)| sed 's/vmlinuz-//g')
+  cp $NANOCHROOT/boot/vmlinuz-${KERNEL}    $NANOMAX/casper/vmlinuz
+  cp $NANOCHROOT/boot/initrd.img-${KERNEL} $NANOMAX/casper/initrd.gz
 
   # backharddi
   cp $NANOCHROOT/boot/linux-2.6.22-3-486-backharddi     $NANOMAX/casper/vmback
   cp $NANOCHROOT/boot/minirt-2.6.22-3-486-backharddi.gz $NANOMAX/casper/minirt.gz
 
+  ISO_IMAGE="${IMAGE_NAME}-CDlive-$NANOARCH-${stamp}.iso"
 
-  _echo "Creando ISO CDLIVE"
-  mkisofs -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \
+  _echo "Creando ISO CDLIVE ${ISO_IMAGE}"
+  genisoimage -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \
      -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
-     -boot-info-table -o ${IMAGE_NAME}-CDlive-${stamp}.iso $NANOMAX/ || _exit "Error generando la imagen ISO"
+     -boot-info-table -o ${ISO_IMAGE} $NANOMAX/ || _exit "Error generando la imagen ISO"
 
   _echo "Generando md5 del CD"
-  md5sum ${IMAGE_NAME}-CDlive-${stamp}.iso > ${IMAGE_NAME}-CDlive-${stamp}.iso.md5 || _exit "Error generando el md5"
+  md5sum ${ISO_IMAGE} > ${ISO_IMAGE}.md5 || _exit "Error generando el md5"
 
 #==============================================
   # Fichero img final
-  IMG=Nano${IMAGE_NAME}-${stamp}.img
+  IMG=Nano${IMAGE_NAME}-$NANOARCH-${stamp}.img
 
-#Tamaño final del archivo img en megas
+# Tamaño final del archivo img en megas
 SIZE=1900
 
-#Porcentajes destinados a cada una de las particiones. Varialos según las necesidades. El total, siempre igual a 100.
+# Porcentajes destinados a cada una de las particiones. Varialos según las necesidades. El total, siempre igual a 100.
 P1=30
 P2=30
 P3=40
 
 
 _echo "Creando con ceros $IMG"
-dd if=/dev/zero of=$IMG count=$((SIZE*2**11))
+dd if=/dev/zero of=$IMG count=$((SIZE*2**11)) || _exit "No se pudo crear $IMG"
 
-losetup /dev/loop0 $IMG
+losetup /dev/loop0 $IMG || _exit "No se pudo montar $IMG"
 
 parted /dev/loop0 -s mklabel msdos mkpart primary fat16 0 $((SIZE*P1/100))MB
-parted /dev/loop0 -s mkpart primary ext3 $((SIZE*P1/100))MB $((SIZE*(P1+P2)/100))MB 
+parted /dev/loop0 -s mkpart primary ext3 $((SIZE*P1/100))MB $((SIZE*(P1+P2)/100))MB
 parted /dev/loop0 -s mkpart primary fat16 $((SIZE*(P1+P2)/100))MB ${SIZE}MB
 parted /dev/loop0 -s set 3 boot on
 
@@ -180,23 +237,30 @@ sfdisk -d /dev/loop0 | grep start | tr -d "," | while read device x1 x2 start x3
 	file=${IMG}.$num
 	dd if=/dev/zero of=$file count=$size
 	losetup /dev/loop$num $file
-done
+done || _exit "Error sfdisk"
 
-#La primera partición contendrá las portables. Utilizamos FAT16 por que aprovecha mejor el espacio
-mkdosfs -n "portables" -F 16 /dev/loop1
+# La primera partición contendrá las portables. Utilizamos FAT16 por que aprovecha mejor el espacio
+mkdosfs -n "portables" -F 16 /dev/loop1 || _exit "Error al formatear 1a part"
 
-#La segunda partición será la que aporte persistencia al sistema live
-mkfs.ext3 /dev/loop2 -L "casper-rw"
+# La segunda partición será la que aporte persistencia al sistema live
+mkfs.ext3 /dev/loop2 -L "casper-rw" || _exit "Error al formatear 2a part"
 
-#La tercera partición tendrá el sistema live
-mkdosfs -n "sistema" -F 16 /dev/loop3
+# La tercera partición tendrá el sistema live
+mkdosfs -n "sistema" -F 16 /dev/loop3 || _exit "Error al formatear 3a part"
 
 for i in 1 3; do
 	mkdir part$i
 	mount /dev/loop$i part$i
 done
 
-#Ahora mismo tenemos en el directorio part3 la tercera partición montada. Aqui pondremos el sistema live con la estructura normal: un directorio casper y dentro un el filesystem.squashfs, etc. En el raiz de esta partición tiene que haber un syslinux.cfg similar a isolinux.cfg. Los ficheros de núcleo, initrd y splash deben estar en el raiz, no pueden estar en ningún directorio (limitación de syslinux). Añade código aquí para copiar la estructura de ficheros necesaria.
+# Ahora mismo tenemos en el directorio part3 la tercera partición montada.
+# Aqui pondremos el sistema live con la estructura normal: un directorio 
+# casper y dentro un el filesystem.squashfs, etc.
+# En el raiz de esta partición tiene que haber un syslinux.cfg similar a 
+# isolinux.cfg. 
+# Los ficheros de núcleo, initrd y splash deben estar en el raiz, no pueden 
+# estar en ningún directorio (limitación de syslinux). 
+# Añade código aquí para copiar la estructura de ficheros necesaria.
 
 _echo "Copiando sistema"
 
@@ -213,16 +277,14 @@ done
 # Metemos syslinux en la tercera partición
 syslinux /dev/loop3
 
-tree part3/
-
 
 # En el directorio part1 está montada la partición de las portables. Añade código aquí para copiar la estructura de ficheros necesaria.
 _echo "Preparando aplicaciones portables"
 
 if [ $LOCAL_MIRROR ]; then
-  URL="http://$MIRROR/mirror/max40/portables.tar.gz"
+  URL="http://$MIRROR/mirror/max50/portables.tar.gz"
 else
-  URL="http://max.educa.madrid.org/max40/portables.tar.gz"
+  URL="http://max.educa.madrid.org/max50/portables.tar.gz"
 fi
 
 [ ! -f portables.tar.gz ] && wget $URL
@@ -247,7 +309,7 @@ sfdisk -d /dev/loop0 | grep start | tr -d "," | while read device x1 x2 start x3
 done
 
 
-#Para hacer limpieza
+# Para hacer limpieza
 for i in 0 1 2 3; do
 	losetup -d /dev/loop$i
 done

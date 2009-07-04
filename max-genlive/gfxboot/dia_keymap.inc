@@ -6,6 +6,7 @@
 
 
 /keymap.inited false def
+/keymap.explicit false def
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Build keymap list.
@@ -55,6 +56,7 @@
   /xmenu xmenu.keymap def
 
   /config.keymap keymaps xmenu .xm_current get get def
+  /keymap.explicit true def
 
   window.action actRedraw eq { pmenu.update } if
 } def

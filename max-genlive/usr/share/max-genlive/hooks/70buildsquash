@@ -1,7 +1,6 @@
 
 
 if [ ! $DISABLE_SQUASHFS ]; then
-  _echo "Creando archivo squashfs (tarda bastante)..."
 
   rm -f $CDRW/casper/filesystem.squashfs 
 
@@ -13,7 +12,10 @@ if [ ! $DISABLE_SQUASHFS ]; then
   # ver si hay que desactivar LZMA
   mksquashfs -help 2>&1 | grep -q nolzma && LZMA="-nolzma"
 
+  mkdir -p $CDRW/casper/
+  _echo "Creando archivo squashfs (tarda bastante)..."
   mksquashfs $CHROOT/  $CDRW/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo squashfs"
+  chmod 644 $CDRW/casper/filesystem.squashfs
 
 fi
 
