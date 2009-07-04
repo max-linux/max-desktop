@@ -1,0 +1,41 @@
+diff --git a/bitten/slave.py b/bitten/slave.py
+index c69e2c3..13fae37 100755
+--- a/bitten/slave.py
++++ b/bitten/slave.py
+@@ -117,7 +117,7 @@ class BuildSlave(object):
+         if name is None:
+             name = platform.node().split('.', 1)[0].lower()
+         self.name = name
+-        self.config = Configuration(config)
++        self.config_file = config
+         self.dry_run = dry_run
+         if not work_dir:
+             work_dir = tempfile.mkdtemp(prefix='bitten')
+@@ -130,7 +130,10 @@ class BuildSlave(object):
+         self.no_loop = no_loop
+         self.poll_interval = poll_interval
+         self.dump_reports = dump_reports
++        self.build_opener(username,password)
+ 
++    def build_opener(self,username=None,password=None):
++        self.config = Configuration(self.config_file)
+         if not self.local:
+             self.opener = urllib2.build_opener(SaneHTTPErrorProcessor)
+             password_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
+@@ -141,7 +144,7 @@ class BuildSlave(object):
+             self.config.packages.pop('authentication', None)
+             if username and password:
+                 log.debug('Enabling authentication with username %r', username)
+-                password_mgr.add_password(None, urls, username, password)
++                password_mgr.add_password(None, self.urls, username, password)
+             self.opener.add_handler(urllib2.HTTPBasicAuthHandler(password_mgr))
+             self.opener.add_handler(urllib2.HTTPDigestAuthHandler(password_mgr))
+ 
+@@ -181,6 +184,7 @@ class BuildSlave(object):
+                 except urllib2.HTTPError, e:
+                     # HTTPError doesn't have the "reason" attribute of URLError
+                     log.error(e)
++                    self.build_opener()
+                     raise ExitSlave(EX_UNAVAILABLE)
+                 except urllib2.URLError, e:
+                     # Is this a temporary network glitch or something a bit

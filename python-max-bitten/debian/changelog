@@ -1,3 +1,9 @@
+python-max-bitten (0.6-4) max; urgency=low
+
+  * Se arregla fallo del servicio por el cual dejaba de autenticar en hardy
+
+ -- Pedro Peña Pérez <pdropep@gmail.com>  Sat, 04 Jul 2009 09:22:43 +0200
+
 python-max-bitten (0.6-3) max; urgency=low
 
   * Se añade cadaver como dependencia para la subida de los paquetes compilados al repositorio apt
