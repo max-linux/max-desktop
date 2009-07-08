@@ -8,7 +8,7 @@ Homepage: http://bitten.edgewall.org/
 
 Package: max-bitten-slave
 Architecture: all
-Depends: cadaver, subversion, pbuilder (>= 0.181), debhelper, fakeroot, dpatch, quilt, cdbs, sudo, debootstrap (>= 1.0.10), ${python:Depends}, ${misc:Depends}
+Depends: cadaver, subversion, pbuilder (>= 0.181), debhelper, fakeroot, dpatch, quilt, cdbs, sudo, debootstrap (>= 1.0.10), python-setuptools, ${python:Depends}, ${misc:Depends}
 Description: Bitten build slave for Max
  Executes builds on behalf of the remote build master
  at http://max.educa.madrid.org:8000/builds
