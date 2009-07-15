@@ -1,3 +1,15 @@
+max-live (5.0.max6) max; urgency=low
+
+  * Set live desktop to LXDE if session file exists
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 03 Jul 2009 21:19:13 +0200
+
+max-live (5.0.max5) max; urgency=low
+
+  * Copy .desktop files in ~/Desktop too
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 30 May 2009 15:03:03 +0200
+
 max-live (5.0.max4) max; urgency=low
 
   * Remove casper script

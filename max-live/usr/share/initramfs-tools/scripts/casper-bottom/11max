@@ -26,18 +26,28 @@ set -x
 rm -f /root/home/$USERNAME/*/ubiquity*desktop 2>/dev/null
 
 chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Escritorio
+chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Desktop
 
 for file in /usr/share/applications/ubiquity-maxui.desktop /usr/share/max-manuales/manual.desktop /usr/share/max-manuales/install-manual.desktop /usr/share/max-manuales/creditos_max40.desktop; do
     if [ -f "/root/$file" ]; then
         chroot /root install -D -o $USERNAME -g $USERNAME $file /home/$USERNAME/Escritorio/$(basename "$file")
+        chroot /root install -D -o $USERNAME -g $USERNAME $file /home/$USERNAME/Desktop/$(basename "$file")
     fi
 done
 
 
+
 if [ -f /root/cdrom/casper/nanomax ]; then
+  if [ -e /usr/share/xsessions/LXDE.desktop ]; then
+    SESSION=LXDE
+  elif [ -e /usr/share/xsessions/xfce.desktop ]; then
+    SESSION=xfce
+  else
+    SESSION=default
+  fi
   cat << EOF > /root/etc/skel/.dmrc
 [Desktop]
-Session=xfce
+Session=$SESSION
 Language=es_ES.UTF-8
 EOF
   chroot /root install -D -o $USERNAME -g $USERNAME /etc/skel/.dmrc /home/$USERNAME/.dmrc
