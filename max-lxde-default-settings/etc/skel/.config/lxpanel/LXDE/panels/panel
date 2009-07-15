@@ -66,9 +66,11 @@ Plugin {
     Config {
         Button {
             id=firefox.desktop
+            image=/usr/share/pixmaps/firefox.png
         }
         Button {
             id=pcmanfm.desktop
+            image=gtk-directory
         }
         Button {
             id=openoffice.org-writer.desktop
@@ -113,11 +115,18 @@ Plugin {
 }
 
 Plugin {
-    type = pager
+    type = tray
 }
 
 Plugin {
-    type = tray
+    type = space
+    Config {
+        Size=4
+    }
+}
+
+Plugin {
+    type = pager
 }
 
 Plugin {
@@ -138,6 +147,7 @@ Plugin {
     Config {
         Button {
             id=lxrandr.desktop
+            image=display-capplet
         }
         Button {
             id=lxde-screenlock.desktop

@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 4.1.0), cdbs
 Standards-Version: 3.8.1
 
 Package: max-lxde-default-settings
-Depends: dmz-cursor-theme
+Depends: dmz-cursor-theme, openbox-themes
 Architecture: all 
 Description: LXDE default settings MAX 5.0
  Contains default LXDE settings for Ubuntu based MaX 5.0 distro
