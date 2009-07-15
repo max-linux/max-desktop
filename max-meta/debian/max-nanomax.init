@@ -17,12 +17,61 @@ setup_nanomax() {
   fi
 
   if [ ! -e /usr/share/xsessions/gnome.desktop ]; then
-    [-e /usr/share/xsessions/LXDE.desktop ] && ln -s /usr/share/xsessions/LXDE.desktop /usr/share/xsessions/gnome.desktop
+    [ -e /usr/share/xsessions/LXDE.desktop ] && ln -s /usr/share/xsessions/LXDE.desktop /usr/share/xsessions/gnome.desktop
   fi
   
   if [ ! -e /usr/share/xsessions/gnome.desktop ]; then
-    [-e /usr/share/xsessions/xfce.desktop ] && ln -s /usr/share/xsessions/xfce.desktop /usr/share/xsessions/gnome.desktop
+    [ -e /usr/share/xsessions/xfce.desktop ] && ln -s /usr/share/xsessions/xfce.desktop /usr/share/xsessions/gnome.desktop
   fi
+
+  # configure max-manual lxlauncher icons
+  FILES="/usr/share/max-manuales/manual.desktop /usr/share/max-manuales/install-manual.desktop /usr/share/max-manuales/creditos_max40.desktop"
+  FILES="$FILES /home/madrid/Desktop/manual.desktop /home/madrid/Desktop/install-manual.desktop /home/madrid/Desktop/creditos_max40.desktop"
+  for f in $FILES; do
+    if [ -e "$f" ]; then
+      sed -i -e '/Icon/d' $f
+      echo "Icon=acroread" >> $f
+    fi
+  done
+
+  # delete netbeans dosemu sun java webstart and WebHTTTrack
+  rm -f /usr/share/applications/netbeans.desktop /usr/share/dpsyco/skel/usr/share/applications/netbeans.desktop
+  rm -f /usr/share/applications/sun*.desktop /usr/share/dpsyco/skel/usr/share/applications/sun*.desktop
+  rm -f /usr/share/applications/Web*.desktop /usr/share/dpsyco/skel/usr/share/applications/Web*.desktop
+
+  # configure Firefox icon (lxlauncher split by dots "firefox-3.0" and don't found bitmap)
+  sed -i -e '/Icon/d' /usr/share/applications/firefox.desktop
+  echo "Icon=firefox" >> /usr/share/applications/firefox.desktop
+
+
+  # Set 80% and unmute volumes
+  amixer -c 0 sset 'Front' 80%             > /dev/null 2>&1
+  amixer -c 0 sset 'Front' on              > /dev/null 2>&1
+  amixer -c 0 sset 'PCM' 80%               > /dev/null 2>&1
+  amixer -c 0 sset 'PCM' on                > /dev/null 2>&1
+  amixer -c 0 sset 'Master' 80%            > /dev/null 2>&1
+  amixer -c 0 sset 'Master' on             > /dev/null 2>&1
+  amixer -c 0 sset 'Master Mono' 80%       > /dev/null 2>&1
+  amixer -c 0 sset 'Master Mono' on        > /dev/null 2>&1
+  amixer -c 0 sset 'Master Front' 80%      > /dev/null 2>&1
+  amixer -c 0 sset 'Master Front' on       > /dev/null 2>&1
+  amixer -c 0 sset 'Master Digital' 80%    > /dev/null 2>&1
+  amixer -c 0 sset 'Master Digital' on     > /dev/null 2>&1
+  #amixer -c 0 sset 'Mic' 80%               > /dev/null 2>&1
+  #amixer -c 0 sset 'Front Mic' 80%         > /dev/null 2>&1
+  #amixer -c 0 sset 'Rear Mic' 80%          > /dev/null 2>&1
+  #amixer -c 0 sset 'Mic' on                > /dev/null 2>&1
+  #amixer -c 0 sset 'Front Mic' on          > /dev/null 2>&1
+  #amixer -c 0 sset 'Rear Mic' on           > /dev/null 2>&1
+  #amixer -c 0 sset 'Mic Boost (+20dB)' off > /dev/null 2>&1
+  #amixer -c 0 sset 'Mic Boost' off         > /dev/null 2>&1
+  amixer -c 0 sset 'Headphone' 80%         > /dev/null 2>&1
+  amixer -c 0 sset 'Headphone' on          > /dev/null 2>&1
+  amixer -c 0 sset 'Speaker' on            > /dev/null 2>&1
+  #amixer -c 0 sset 'Capture,0' 100%        > /dev/null 2>&1
+  #amixer -c 0 sset 'Capture,1' 100%        > /dev/null 2>&1
+
+
 }
 
 

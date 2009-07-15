@@ -1,3 +1,74 @@
+max-meta (5.0.max31) max; urgency=low
+
+  * Add lemurae
+  * Add gnucap close #155
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 16 Jul 2009 01:01:02 +0200
+
+max-meta (5.0.max30) max; urgency=low
+
+  * Add shutter (very good tool) closes #184
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Jul 2009 21:36:17 +0200
+
+max-meta (5.0.max29) max; urgency=low
+
+  * Replace mplayer with mplayer-nogui, really fix #183
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Jul 2009 19:55:39 +0200
+
+max-meta (5.0.max28) max; urgency=low
+
+  * Delete:
+    - rosegarden close #191
+    - istanbul close #190
+    - dosemu and xfonts-dosemu close #188
+    - pitivi close #186
+  * Add:
+    - cheese close #185
+    - smplayer smplayer-themes smplayer-translations close #183
+    - winff close #182
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Jul 2009 18:05:23 +0200
+
+max-meta (5.0.max27) max; urgency=low
+
+  * debian/max-nanomax.init:
+    - Edit skel/Desktop launchers
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 05 Jul 2009 15:21:45 +0200
+
+max-meta (5.0.max26) max; urgency=low
+
+  * Fix Firefox desktop path
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 05 Jul 2009 00:16:41 +0200
+
+max-meta (5.0.max25) max; urgency=low
+
+  * debian/max-nanomax.init:
+    - Delete not needed desktop launchers
+    - Edit desktop Icons
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 04 Jul 2009 23:59:29 +0200
+
+max-meta (5.0.max24) max; urgency=low
+
+  * nanomax:
+    - Change lxnm by network-manager-gnome (+5 MiB)
+    - Add audacious and extra plugins (+18 MiB)
+    - Remove samba server (only provide client)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 04 Jul 2009 22:57:08 +0200
+
+max-meta (5.0.max23) max; urgency=low
+
+  * Fix typo in debian/max-nanomax.init
+  * nanomax:
+    - Add max-lxde-default-settings and language-pack-gnome-es-base Depends
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 04 Jul 2009 17:24:33 +0200
+
 max-meta (5.0.max22) max; urgency=low
 
   * debian/max-nanomax.init:
