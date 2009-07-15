@@ -6,7 +6,7 @@ DISTRO=jaunty
 DISTRO_VERSION="9.04"
 ARCH=i386
 NANOARCH=i386
-IMAGE_NAME="MaX-5.0-0-alpha1"
+IMAGE_NAME="MaX-5.0-beta1"
 TITLE="MaX 5.0"
 
 unset HOME
@@ -99,6 +99,8 @@ cat << EOF
 
     ENABLE_NANO=1 Generar NanoMax y CDlive
 
+    ONLY_NANO_CDROM=1 Generar CDROM NanoMax y salir
+
     AMD64=1 Build amd64 images (default i386)
 
 EOF
@@ -183,11 +185,12 @@ fi
 #. /usr/share/max-genlive/hooks/20configurechroot
 #. /usr/share/max-genlive/hooks/55addmaxpackages
 
-#. /usr/share/max-genlive/hooks/90umount
-#. /usr/share/max-genlive/hooks/75nanomax
-#. /usr/share/max-genlive/hooks/90umount
-#_exit "Fin de pruebas"
-
+if [ "$ONLY_NANO_CDROM" = "1" ]; then
+  . /usr/share/max-genlive/hooks/90umount
+  . /usr/share/max-genlive/hooks/75nanomax
+  . /usr/share/max-genlive/hooks/90umount
+  _exit "Fin de pruebas"
+fi
 
 for hook in $HOOKS/*; do
   #_echo "Cargando extension $hook"

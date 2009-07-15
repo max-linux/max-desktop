@@ -29,8 +29,10 @@ ubiquity countrychooser/countryname select Spain
 ubiquity countrychooser/country-name string Spain
 ubiquity console-keymaps-at/keymap select es
 ubiquity localechooser/supported-locales multiselect es_ES.UTF-8
+ubiquity localechooser/languagelist select es
 ubiquity tzconfig/gmt boolean false
 ubiquity time/zone select Europe/Madrid
+ubiquity debian-installer/locale select es_ES
 #
 #ubiquity ubiquity/stepLanguage boolean true
 #ubiquity ubiquity/stepLocation boolean true
@@ -79,6 +81,34 @@ ubiquity ubiquity/stepUserInfo boolean false
 #console-setup	console-setup/modelcode	select	pc105
 #console-setup	console-setup/layout	select	Spain
 #console-setup	console-setup/variant	select	Spain
+console-setup	console-setup/variant	select	Spain
+console-setup	console-setup/unsupported_options	boolean	true
+console-setup	console-setup/ctrl_alt_bksp	boolean	false
+console-setup	console-setup/modelcode	string	pc105
+console-setup	console-setup/fontsize	string	16
+console-setup	console-setup/unsupported_layout	boolean	true
+console-setup	console-setup/layoutcode	string	es
+console-setup	console-setup/detect	detect-keyboard	
+console-setup	console-setup/codesetcode	string	Lat15
+console-setup	console-setup/dont_ask_layout	error	
+console-setup	console-setup/altgr	select	Right Alt
+console-setup	console-setup/ttys	string	/dev/tty[1-6]
+console-setup	console-setup/codeset	select	# Latin1 and Latin5 - western Europe and Turkic languages
+console-setup	console-setup/toggle	select	No toggling
+console-setup	console-setup/fontface	select	Fixed
+console-setup	console-setup/compose	select	No compose key
+console-setup	console-setup/fontsize-text	select	16
+console-setup	console-setup/ask_detect	boolean	false
+console-setup	console-setup/switch	select	No temporary switch
+console-setup	console-setup/unsupported_config_layout	boolean	true
+console-setup	console-setup/charmap	select	UTF-8
+console-setup	console-setup/optionscode	string	lv3:ralt_switch
+console-setup	console-setup/unsupported_config_options	boolean	true
+console-setup	console-setup/layout	select	Spain
+console-setup	console-setup/detected	note	
+console-setup	console-setup/variantcode	string	
+console-setup	console-setup/model	select	Generic 105-key (Intl) PC
+console-setup	console-setup/fontsize-fb	select	16
 #
 #
 # ATFTPD necesita configurase sin inetd

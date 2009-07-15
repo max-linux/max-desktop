@@ -123,12 +123,35 @@ yes | apt-get $APT_OPTS -f install
 apt-get update
 EOC
 
-  umount -l $NANOCHROOT/proc
-  umount -l $NANOCHROOT/sys
-  umount -l $NANOCHROOT/lib/modules/*/volatile 2>/dev/null
 
   _revert_invoke $NANOCHROOT
 
+  # preseed console-setup
+  grep ^console-setup $GENLIVE/preseed/*.seed | chroot $NANOCHROOT debconf-set-selections || _exit "No se puede hacer preseed de console-setup"
+
+  # configure console-setup
+  chroot $NANOCHROOT << EOC || _exit "Error configurando console-setup"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+dpkg-reconfigure console-setup
+EOC
+
+
+  _echo "Configurando console-setup ... [antes]"
+  # overwrite console-setup config
+  grep ^XKB $NANOCHROOT/etc/default/console-setup
+
+  cat $GENLIVE/console-setup/console-setup > $NANOCHROOT/etc/default/console-setup
+  _echo "Configurando console-setup ... [despues]"
+  grep ^XKB $NANOCHROOT/etc/default/console-setup
+
+
+  umount -l $NANOCHROOT/proc
+  umount -l $NANOCHROOT/sys
+  umount -l $NANOCHROOT/lib/modules/*/volatile 2>/dev/null
 
   rm -rf $NANOCHROOT/home/*
 
@@ -169,8 +192,8 @@ EOC
   _echo "Copiando contenido live en nanomax..."
 
   mkdir -p $NANOMAX/isolinux
-  cp $CDRW/isolinux/*    $NANOMAX/isolinux || _exit "No se puede sobreescribir isolinux"
-  cp $GENLIVE/isolinux/* $NANOMAX/isolinux || _exit "No se puede sobreescribir isolinux"
+  cp $CDRW/isolinux/*    $NANOMAX/isolinux/ || _exit "No se puede sobreescribir isolinux"
+  cp $GENLIVE/isolinux/* $NANOMAX/isolinux/ || _exit "No se puede sobreescribir isolinux"
 
   cp $GENLIVE/nano/isolinux.cfg $NANOMAX/isolinux/
 
@@ -200,6 +223,9 @@ EOC
 
   ISO_IMAGE="${IMAGE_NAME}-CDlive-$NANOARCH-${stamp}.iso"
 
+  # delete *.cfg root files for CDROM
+  rm -f $NANOMAX/*.cfg
+
   _echo "Creando ISO CDLIVE ${ISO_IMAGE}"
   genisoimage -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \
      -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
@@ -207,6 +233,9 @@ EOC
 
   _echo "Generando md5 del CD"
   md5sum ${ISO_IMAGE} > ${ISO_IMAGE}.md5 || _exit "Error generando el md5"
+  if [ "$ONLY_NANO_CDROM" = "1" ]; then
+    _exit "Parando ... ONLY_NANO_CDROM=1"
+  fi
 
 #==============================================
   # Fichero img final

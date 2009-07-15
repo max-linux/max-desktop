@@ -18,7 +18,7 @@ exit \$ERROR
 EOC
 
 _echo "Borrando paquetes no necesarios"
-DELETE_PACKAGES="jetty"
+DELETE_PACKAGES="jetty gdesklets"
 
 chroot $CHROOT << EOC || _exit "No se han podido borrar paqquetes no necesarios"
 export LC_ALL=C

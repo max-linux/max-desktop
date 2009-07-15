@@ -3,6 +3,31 @@
 #bash
 
 
+# preseed console-setup
+grep ^console-setup $GENLIVE/preseed/*.seed | chroot $CHROOT debconf-set-selections || _exit "No se puede hacer preseed de console-setup"
+
+# configure console-setup
+chroot $CHROOT << EOC || _exit "Error configurando console-setup"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+dpkg-reconfigure console-setup
+EOC
+
+
+_echo "Configurando console-setup ... [antes]"
+# overwrite console-setup config
+grep ^XKB $CHROOT/etc/default/console-setup
+
+cat $GENLIVE/console-setup/console-setup > $CHROOT/etc/default/console-setup
+_echo "Configurando console-setup ... [despues]"
+grep ^XKB $CHROOT/etc/default/console-setup
+
+
+
+
 _echo "Actualizando imágenes de arranque"
 
 rm -f $CHROOT/etc/usplash.conf

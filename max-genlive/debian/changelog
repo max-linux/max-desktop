@@ -1,3 +1,14 @@
+max-genlive (5.0.max1) max; urgency=low
+
+  * Read 10debootstrap
+  * Configure console-setup
+  * Add langlist to preseed
+  * Don't include syslinux.cfg in CDlive
+  * Add file=max.preseed in nanoMaX and Cdlive syslinux.cfg
+  * Delete gdekslets package close #192
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 16 Jul 2009 01:08:38 +0200
+
 max-genlive (5.0.max0.1) max; urgency=low
 
   * Build in MaX 5.0
