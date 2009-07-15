@@ -687,12 +687,12 @@
 		<Exclude>
 			<Filename>Notificaciones de los medios de almacenamiento.desktop</Filename>
 		</Exclude>
-		<Include>
+		<Exclude>
 			<Filename>gdmflexiserver-xnest.desktop</Filename>
-		</Include>
-		<Include>
+		</Exclude>
+		<Exclude>
 			<Filename>gdmflexiserver.desktop</Filename>
-		</Include>
+		</Exclude>
 	</Menu>
 	<Menu>
 		<Name>Development</Name>
