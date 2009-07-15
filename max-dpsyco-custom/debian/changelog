@@ -1,3 +1,15 @@
+max-dpsyco-custom (5.0.max4) max; urgency=low
+
+  * Remove dosemu launcher close #188
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Jul 2009 18:08:46 +0200
+
+max-dpsyco-custom (5.0.max3) max; urgency=low
+
+  * Add NotShowIn=LXDe to some desktop files
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 04 Jul 2009 21:38:05 +0200
+
 max-dpsyco-custom (5.0.max2) max; urgency=low
 
   * Update /etc/default/rcS
