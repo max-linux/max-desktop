@@ -1,8 +1,0 @@
-Template: opensc-dnie/restart
-Type: note
-Description: After OpenSC-DNIe has been installed, please restart your session.
- In order to configure OpenSC PKCS#11 cryptographic module on
- Mozilla Firefox and Netscape web browsers, you need to restart
- your session.
-Description-es.UTF-8: Después de instalar el paquete OpenSC-DNIe, por favor reinicia la sesión.
- Para poder configurar el módulo criptográfico PKCS#11 del OpenSC en los navegadores Mozilla Firefox y Netscape es necesario reiniciar la sesión.
