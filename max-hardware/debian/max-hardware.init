@@ -13,10 +13,16 @@
 
 
 enable_toshiba() {
-  if [ "$(dmidecode --string system-product-name)" = "PORTEGE M700" ]; then
+  TOSH_MODEL=$(dmidecode --string system-product-name)
+  if [ "$TOSH_MODEL" = "PORTEGE M700" ] || [ "$TOSH_MODEL" = "PORTEGE M750" ]; then
+
+     # save model in /var/lib/max-hardware/model
+     echo "$TOSH_MODEL/tmp/toshiba-rotate-$(id -u)" > /var/lib/max-hardware/model
+
      mkdir -p /dev/input/
      [ ! -e /dev/input/wacom ]  && ln -s /dev/ttyS0 /dev/input/wacom
-     setserial /dev/ttyS0 port 0x338 autoconfig
+
+     setserial /dev/ttyS0 port 0x338 irq 4 autoconfig
      max-setup-tablet /etc/X11/xorg.conf
 
      # enable sound device (Thanks to Ismail)
@@ -30,7 +36,7 @@ enable_toshiba() {
 }
 
 enable_eeepc() {
-  if [ "$(lspci -n |grep -c '1bfd:1688')" = "1" ]; then
+  if [ "$(lsusb  |grep -c '1bfd:1688')" = "1" ]; then
     # input device detected
     if [ "$(grep -c '#EeePC' /etc/X11/xorg.conf 2>&1" = "0" ]; then
       # overwrite xorg.conf

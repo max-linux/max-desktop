@@ -7,7 +7,7 @@ Standards-Version: 3.7.3
 
 Package: max-hardware
 Architecture: all
-Depends: setserial, dmidecode, xresprobe
+Depends: setserial, dmidecode, xresprobe, usbutils, xbindkeys, wacom-tools
 Description: Some files to support max special devices and computers
  Contains:
   * Hooks and scripts of initramfs-tools

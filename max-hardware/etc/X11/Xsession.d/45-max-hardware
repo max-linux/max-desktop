@@ -1,0 +1,25 @@
+# $Id:$
+# Startup script for max-hardware
+
+# user can't run dmidecode, read /var/lib/max-hardware/model if exists
+
+if [ -e /var/lib/max-hardware/model ]; then
+  TOSH_MODEL=$(cat /var/lib/max-hardware/model)
+
+  if [ "$TOSH_MODEL" = "PORTEGE M700" ] || [ "$TOSH_MODEL" = "PORTEGE M750" ]; then
+    
+    # copy .xbindkeys to user $HOME and launch it
+    [ ! -f $HOME/.xbindkeysrc ] && cp /usr/share/max-hardware/xbindkeysrc $HOME/.xbindkeysrc
+
+    # copy autostart launcher
+    mkdir -p $HOME/.config/autostart/
+    cp /usr/share/max-hardware/xbindkeys.desktop $HOME/.config/autostart/
+
+  fi
+
+fi
+
+
+
+
+

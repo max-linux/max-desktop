@@ -1,3 +1,10 @@
+max-hardware (5.0.max4) max; urgency=low
+
+  * Change EeePC from PCI to USB
+  * Launch xbindkeys to trigger rotate screen with a script (max-toshiba-rotate)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 17 Jul 2009 23:58:21 +0200
+
 max-hardware (5.0.max3) max; urgency=low
 
   * Enable EeePC hack (thanks Alejando and Ismail)

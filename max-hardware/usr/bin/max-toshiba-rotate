@@ -1,0 +1,20 @@
+#!/bin/sh
+
+TMP_FILE="/tmp/toshiba-rotate-$(id -u)"
+
+
+
+if [ -f $TMP_FILE ]; then
+       xrandr -o normal
+       xsetwacom set "stylus" Rotate none
+       xsetwacom set "cursor" Rotate none
+       xsetwacom set "eraser" Rotate none
+       rm -f $TMP_FILE
+else
+       xrandr -o right
+       xsetwacom set "stylus" Rotate CW
+       xsetwacom set "cursor" Rotate CW
+       xsetwacom set "eraser" Rotate CW
+       echo 1 > $TMP_FILE
+fi
+
