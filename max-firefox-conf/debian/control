@@ -9,8 +9,7 @@ Package: max-firefox-conf
 Architecture: all
 Recommends: max-java-plugin
 Depends: max-dpsyco-custom, firefox | firefox-3.0, apturl (>= 0.1.2ubuntu1)
-Conficts: firefox (<=3.0.10), firefox (>=3.0.12)
-Conflicts: max-3.0-firefox-conf, ubufox
+Conflicts: max-3.0-firefox-conf, ubufox, firefox (<=3.0.11), firefox (>=3.0.13)
 Replaces: max-3.0-firefox.conf, ubufox
 Provides: ubufox
 Description: Configuración de firefox para Ubuntu/MAX.

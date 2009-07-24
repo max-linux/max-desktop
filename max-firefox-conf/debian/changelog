@@ -1,3 +1,9 @@
+max-firefox-conf (5.0.max6) max; urgency=low
+
+  * Update firefox 3.0.12
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 24 Jul 2009 13:27:11 +0200
+
 max-firefox-conf (5.0.max5) max; urgency=low
 
   * Move script from usr/bin to usr/share/dpsyco/skel/usr/lib/firefox-3.0.11/firefox.sh
