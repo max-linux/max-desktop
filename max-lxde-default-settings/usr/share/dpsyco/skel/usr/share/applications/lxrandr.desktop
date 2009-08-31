@@ -1,12 +1,8 @@
 [Desktop Entry]
-Name=Monitor Settings
-Name[es]=Configuración de pantalla
-Name[zh_TW]=螢幕設定
-Comment=Change screen resolution and configure external monitors
-Comment[es]=Configuración de pantalla y monitores externos
-Comment[zh_TW]=變更螢幕解析度以及設定外接顯示器
-Exec=lxrandr
+Name=Activar/Desactivar panel LXLAUNCHER
+Comment=Activar/Desactivar panel LXLAUNCHER
+Exec=switch-lxlauncher
 Encoding=UTF-8
-Icon=display-capplet
+Icon=emblem-noread
 Type=Applications
 Categories=Settings;

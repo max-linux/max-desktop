@@ -1,3 +1,9 @@
+max-lxde-default-settings (5.0.max11) max; urgency=low
+
+  * Add switch-lxlauncher script to hide/show lxlauncher. Closes #195
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 31 Aug 2009 18:52:54 +0200
+
 max-lxde-default-settings (5.0.max10) max; urgency=low
 
   * Rename lxsession-lite.po to lxsession.po

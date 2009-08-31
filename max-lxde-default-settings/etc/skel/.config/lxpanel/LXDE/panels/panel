@@ -75,6 +75,9 @@ Plugin {
         Button {
             id=openoffice.org-writer.desktop
         }
+        Button {
+            id=switch-lxlauncher.desktop
+        }
     }
 }
 
