@@ -17,7 +17,7 @@ enable_toshiba() {
   if [ "$TOSH_MODEL" = "PORTEGE M700" ] || [ "$TOSH_MODEL" = "PORTEGE M750" ]; then
 
      # save model in /var/lib/max-hardware/model
-     echo "$TOSH_MODEL/tmp/toshiba-rotate-$(id -u)" > /var/lib/max-hardware/model
+     echo "$TOSH_MODEL" > /var/lib/max-hardware/model
 
      mkdir -p /dev/input/
      [ ! -e /dev/input/wacom ]  && ln -s /dev/ttyS0 /dev/input/wacom
@@ -38,7 +38,7 @@ enable_toshiba() {
 enable_eeepc() {
   if [ "$(lsusb  |grep -c '1bfd:1688')" = "1" ]; then
     # input device detected
-    if [ "$(grep -c '#EeePC' /etc/X11/xorg.conf 2>&1" = "0" ]; then
+    if [ "$(grep -c '#EeePC' /etc/X11/xorg.conf 2>&1)" = "0" ]; then
       # overwrite xorg.conf
       cat /usr/share/max-hardware/EeePC/xorg.conf > /etc/X11/xorg.conf
     fi
@@ -49,7 +49,7 @@ enable_eeepc() {
 
 case "$1" in
 start)  
-        log_begin_msg "Starting Max50 hardware hacks" "max-hardware"
+        log_begin_msg "Starting Max50 hardware hacks"
           enable_toshiba
           enable_eeepc
         log_end_msg $?
