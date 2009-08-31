@@ -14,7 +14,8 @@ Depends: max-dpsyco-custom,
          firefox-greasemonkey, 
          firefox-webdeveloper, 
          firefox-downloadhelper, 
-         firefox-procon-latte
+         firefox-procon-latte,
+         firefox-stylish
 Conflicts: max-3.0-firefox-conf, ubufox, firefox (<=3.0.12), firefox (>=3.0.14)
 Replaces: max-3.0-firefox.conf, ubufox
 Provides: ubufox
