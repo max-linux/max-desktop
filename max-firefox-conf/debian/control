@@ -8,8 +8,14 @@ Standards-Version: 3.8.1
 Package: max-firefox-conf
 Architecture: all
 Recommends: max-java-plugin
-Depends: max-dpsyco-custom, firefox | firefox-3.0, apturl (>= 0.1.2ubuntu1)
-Conflicts: max-3.0-firefox-conf, ubufox, firefox (<=3.0.11), firefox (>=3.0.13)
+Depends: max-dpsyco-custom, 
+         firefox | firefox-3.0, 
+         apturl (>= 0.1.2ubuntu1),
+         firefox-greasemonkey, 
+         firefox-webdeveloper, 
+         firefox-downloadhelper, 
+         firefox-procon-latte
+Conflicts: max-3.0-firefox-conf, ubufox, firefox (<=3.0.12), firefox (>=3.0.14)
 Replaces: max-3.0-firefox.conf, ubufox
 Provides: ubufox
 Description: Configuración de firefox para Ubuntu/MAX.
