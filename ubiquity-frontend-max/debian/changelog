@@ -1,3 +1,10 @@
+ubiquity-frontend-max (5.0.max0.8) max; urgency=low
+
+  * usr/share/dpsyco/skel/usr/bin/ubiquity-dm:
+    - Locate metacity with absolute path, fix only-ubiquity install method
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 01 Sep 2009 21:12:06 +0200
+
 ubiquity-frontend-max (5.0.max0.7) max; urgency=low
 
   * Fix MaX desktop launcher and don't show original ubiquity launcher

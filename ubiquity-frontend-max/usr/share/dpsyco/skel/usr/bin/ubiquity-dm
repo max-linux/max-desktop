@@ -191,6 +191,12 @@ class DM:
                 wm = subprocess.Popen(['metacity', '--sm-disable'],
                     stdin=null, stdout=logfile, stderr=logfile,
                     **maybe_drop_privileges)
+            # add to MaX 5.0
+            elif os.path.isfile('/usr/bin/metacity'):
+                wm = subprocess.Popen(['metacity', '--sm-disable'],
+                    stdin=null, stdout=logfile, stderr=logfile,
+                    **maybe_drop_privileges)
+            # end added
             elif osextras.find_on_path('xfwm4'):
                 wm = subprocess.Popen('xfwm4',
                     stdin=null, stdout=logfile, stderr=logfile,
