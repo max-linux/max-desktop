@@ -1,3 +1,11 @@
+max-artwork (5.0.max0.5) max; urgency=low
+
+  * Revert usplash background to black.
+  * Add gimp pallete to generate usplash png
+  * Update GRUB splash.xpm.gz (Close: #203)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 02 Sep 2009 00:52:38 +0200
+
 max-artwork (5.0.max0.4) max; urgency=low
 
   [ Pedro Peña Pérez ]

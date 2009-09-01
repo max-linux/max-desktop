@@ -22,9 +22,9 @@ case "$1" in
 
 	echo "Moving Ubuntu firefox homepage back in place ..."
 	# move ubuntu homepage back in place
-	update-alternatives --remove firefox-homepage \
-		/usr/share/max-artwork/home/index.html
-	update-alternatives --auto firefox-homepage
+	#update-alternatives --remove firefox-homepage \
+	#	/usr/share/max-artwork/home/index.html
+	#update-alternatives --auto firefox-homepage
 	rm -f /usr/share/max-artwork/home/locales/max.css || true
 	rm -f /usr/share/max-artwork/home/locales/max-logo.png || true
 	

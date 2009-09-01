@@ -21,13 +21,13 @@ case "$1" in
   echo "Change GDM colors"
   change_gdm_colors
 
-  echo "Installing firefox homepage ..."
+  echo "* Installing firefox homepage ..."
   # link default homepage
-  update-alternatives \
-    --install /usr/share/ubuntu-artwork/home/index.html \
-    firefox-homepage /usr/share/max-artwork/home/index.html 75 \
-    --slave /usr/share/ubuntu-artwork/home/locales \
-    firefox-homepage-locales /usr/share/max-artwork/home/locales
+  #update-alternatives \
+  #  --install /usr/share/ubuntu-artwork/home/index.html \
+  #  firefox-homepage /usr/share/max-artwork/home/index.html 75 \
+  #  --slave /usr/share/ubuntu-artwork/home/locales \
+  #  firefox-homepage-locales /usr/share/max-artwork/home/locales
 
   if [ ! -L /usr/share/max-artwork/home/locales/max.css ]; then
   	ln -s /usr/share/max-artwork/home/max.css /usr/share/max-artwork/home/locales/max.css
@@ -49,7 +49,9 @@ case "$1" in
   cp /usr/share/max-artwork/grub/splash.xpm.gz /boot/grub/
 
   # update icon cache
+  echo -n " * Updating maxtoon icon cache ..."
   gtk-update-icon-cache /usr/share/icons/maxtoon > /dev/null 2>&1|| true
+  echo
 
   ;;
 esac

@@ -71,10 +71,10 @@ short getColorIndex(struct usplash_theme *theme, char *color){
 
 //#define BGCOLOR 27,52,56,58,**59**, 89, *91* /* #1675ce */
 /* rojo 129, 160, 192 */
-#define BGCOLOR 30/* #1675ce */
+#define BGCOLOR 0 /* #1675ce */
 #define TEXTFG 125
-#define PROBG -1
-#define PROFG -1
+#define PROBG 125
+#define PROFG 237
 
 /* Theme definition */
 struct usplash_theme usplash_theme = {
