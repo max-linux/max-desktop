@@ -17,13 +17,13 @@ dpkg-reconfigure console-setup
 EOC
 
 
-_echo "Configurando console-setup ... [antes]"
+_echo "Configurando console-setup ..."
 # overwrite console-setup config
-grep ^XKB $CHROOT/etc/default/console-setup
+#grep ^XKB $CHROOT/etc/default/console-setup
 
 cat $GENLIVE/console-setup/console-setup > $CHROOT/etc/default/console-setup
-_echo "Configurando console-setup ... [despues]"
-grep ^XKB $CHROOT/etc/default/console-setup
+#_echo "Configurando console-setup ... [despues]"
+#grep ^XKB $CHROOT/etc/default/console-setup
 
 
 

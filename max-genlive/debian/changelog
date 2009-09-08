@@ -1,3 +1,16 @@
+max-genlive (5.0.max3) max; urgency=low
+
+  * Change version to rc1
+  * Do autoremove before installing max packages
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 08 Sep 2009 16:34:49 +0200
+
+max-genlive (5.0.max2) max; urgency=low
+
+  * Hide some debug of console-setup preseed
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 08 Sep 2009 12:49:50 +0200
+
 max-genlive (5.0.max1) max; urgency=low
 
   * Read 10debootstrap
