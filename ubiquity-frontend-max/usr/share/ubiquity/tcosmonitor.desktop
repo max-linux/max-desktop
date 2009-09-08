@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=TcosMonitor (Classroom control)
+Name[es]=TcosMonitor (Control del aula)
+Comment=Thin client network monitor
+Comment[es]=Monitorizar aula de MaX
+Exec=/usr/bin/tcosmonitor
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/tcos-icon-32x32.png
+Categories=GNOME;Settings;System;DesktopSettings;Monitor

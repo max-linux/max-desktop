@@ -265,6 +265,13 @@ fi
 # add madrid to tcos group
 $log $chroot $ROOT adduser madrid tcos || true
 
+# copy tcosmonitor.desktop if install_type is profesor or terminales
+INSTALL_TYPE=$(cat /tmp/max_install_type 2>/dev/null)
+if [ "$INSTALL_TYPE" = "profesor" -o "$INSTALL_TYPE" = "terminales" ]; then
+  $log cp /usr/share/ubiquity/tcosmonitor.desktop $ROOT/home/madrid/Escritorio/ || true
+  $log chmod 755 $ROOT/home/madrid/Escritorio/tcosmonitor.desktop || true
+  $log $chroot $ROOT chown madrid:madrid /home/madrid/Escritorio/tcosmonitor.desktop || true
+fi
 
 # MaX add alumno user
 
