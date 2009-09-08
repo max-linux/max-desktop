@@ -1,3 +1,9 @@
+max-meta (5.0.max36) max; urgency=low
+
+  * Add language-pack-kde-es-base (kdeedu needs it)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 08 Sep 2009 21:52:35 +0200
+
 max-meta (5.0.max35) max; urgency=low
 
   * Add kdeedu to desktop-common (KDE is not installed by default)
