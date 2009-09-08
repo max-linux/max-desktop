@@ -1,3 +1,11 @@
+max-lxde-default-settings (5.0.max12) max; urgency=low
+
+  * Fix switch-lxlauncher command
+  * Add switch-lxlauncher.desktop
+  * Revert lxrandr.desktop
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 08 Sep 2009 12:34:17 +0200
+
 max-lxde-default-settings (5.0.max11) max; urgency=low
 
   * Add switch-lxlauncher script to hide/show lxlauncher. Closes #195

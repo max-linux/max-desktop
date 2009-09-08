@@ -1,8 +1,9 @@
 [Desktop Entry]
-Name=Activar/Desactivar panel LXLAUNCHER
-Comment=Activar/Desactivar panel LXLAUNCHER
-Exec=switch-lxlauncher
-Encoding=UTF-8
-Icon=emblem-noread
+Name=Monitor Settings
+Name[es]=Configuración de pantalla
+Comment=Change screen resolution and configure external monitors
+Comment[es]=Configuración de pantalla y monitores externos
+Exec=lxrandr
+Icon=display-capplet
 Type=Applications
 Categories=Settings;

@@ -3,7 +3,7 @@
 APP="lxlauncher"
 
 
-PID=$(ps aux| grep "^$USER" | grep "$APP" | grep -v grep | tail -1 | awk '{print $2}')
+PID=$(ps aux| grep "^$USER" | grep "$APP" | grep -v -e grep -e "$0" | tail -1 | awk '{print $2}')
 
 if [ "$PID" = "" ]; then
   exec $APP &
