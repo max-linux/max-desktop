@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Installed Documentation
+Name[es]=Documentación instalada (man)
+Comment=get help about MAX applications
+Comment[es]=Obtener ayuda sobre las aplicaciones de MAX
+TryExec=/usr/bin/yelp
+Exec=yelp x-yelp-toc:Man
+Icon=gnome-help.png
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Application;Core;

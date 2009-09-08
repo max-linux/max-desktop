@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Parley
+Name[es]=Parley (diccionario)
+MimeType=application/x-kvtml;
+TryExec=/usr/bin/parley
+Exec=parley %u
+Icon=parley
+X-DocPath=parley/index.html
+Type=Application
+Terminal=false
+Categories=Qt;KDE;Education;Languages;
+GenericName=Vocabulary Trainer
+GenericName[es]=Entrenar vocabulario
+Comment=Vocabulary Trainer
+Comment[es]=Entrenar vocabulario
+
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

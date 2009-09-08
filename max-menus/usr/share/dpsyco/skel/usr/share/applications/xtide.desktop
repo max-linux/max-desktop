@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=XTide Tide Predictor
+Name[es]=XTide (predicción de mareas)
+GenericName=Tide Predictor
+GenericName[es]=Predicción de mareas
+Comment=View tide and current predictions
+Comment[es]=Ver mareas y predicciones actuales
+Type=Application
+TryExec=/usr/bin/xtide
+Exec=xtide
+Icon=xtide
+Categories=Education;Science;

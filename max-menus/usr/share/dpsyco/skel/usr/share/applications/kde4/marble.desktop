@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Exec=marble
+TryExec=/usr/bin/marble
+Name=Marble
+Name[es]=Marble (google earth)
+GenericName=Atlas mundial
+GenericName[es]=Desktop Globe
+Comment=Desktop Globe
+Comment[es]=Desktop Globe
+Icon=marble
+Terminal=false
+Categories=Qt;KDE;Education;Science;
+X-DocPath=marble/index.html
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

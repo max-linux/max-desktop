@@ -1,0 +1,16 @@
+# KDE Config File
+[Desktop Entry]
+Type=Application
+TryExec=/usr/bin/ktouch
+Exec=ktouch -caption "%c" %i
+Icon=ktouch
+X-DocPath=ktouch/index.html
+Comment=Touch Typing Tutor
+Comment[es]=Tutor de mecanografía
+GenericName=Touch Typing Tutor
+GenericName[es]=Tutor de mecanografía
+Terminal=false
+Name=KTouch
+Name[es]=KTouch (mecanografía)
+Categories=Qt;KDE;Education;X-KDE-Edu-Misc;
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

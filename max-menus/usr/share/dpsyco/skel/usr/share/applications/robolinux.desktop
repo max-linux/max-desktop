@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=robolinux
+Name[es]=Robolinux
+GenericName=robolinux
+Comment=robolinux
+Comment[es]=Aplicación de gestión de Lego MindStorms
+Type=Application
+TryExec=/usr/bin/robolinux
+Exec=robolinux
+Icon=/usr/share/max/applications/gnome-applets.png
+Categories=Robolinux

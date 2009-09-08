@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=SpeedCrunch
+Name[es]=SpeedCrunch calculadora
+Comment=High precision calculator
+Comment[es]=Calculadora científica
+TryExec=/usr/bin/speedcrunch
+Exec=speedcrunch
+Icon=speedcrunch
+GenericName=Calculator
+Terminal=false
+Type=Application
+Categories=Qt;Utility

@@ -1,0 +1,16 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Orca Screen Reader and Magnifier
+Comment=Present on-screen information as speech or braille, or magnify the screen
+TryExec=/usr/bin/orca
+Exec=orca
+Icon=orca
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GTK;GNOME;Utility;Accessibility;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=orca
+X-GNOME-Bugzilla-Component=general
+
+X-Ubuntu-Gettext-Domain=orca

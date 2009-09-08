@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=gtk-recordMyDesktop
+Name[es]=gtk-recordMyDesktop (graba el escritorio)
+Comment=Frontend for recordMyDesktop
+Comment[es]=Interfaz para recordMyDesktop
+Comment[fr]=Interface pour recordmydesktop
+TryExec=/usr/bin/gtk-recordMyDesktop
+Exec=gtk-recordMyDesktop
+Terminal=false
+Type=Application
+Icon=gtk-recordmydesktop.png
+Categories=AudioVideo;Recorder;
+StartupNotify=false

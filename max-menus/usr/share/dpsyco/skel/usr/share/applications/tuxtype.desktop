@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Tux Typing
+Name[es]=Tux Typing (mecanografía)
+Name[fr]=Tux Typing
+Comment=Type Trainer Game
+Comment[fr]=Apprenez à taper au clavier en vous amusant
+Comment[es]=Juego para aprender mecanografía
+TryExec=/usr/games/tuxtype
+Exec=tuxtype
+Icon=tuxtype
+Terminal=false
+Type=Application
+Categories=Game;KidsGame;
+X-Ubuntu-Gettext-Domain=tuxtype

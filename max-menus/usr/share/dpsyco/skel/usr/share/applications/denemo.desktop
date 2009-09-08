@@ -1,0 +1,16 @@
+[Desktop Entry]
+Encoding=UTF-8
+TryExec=/usr/bin/denemo
+Exec=denemo
+Icon=denemo.png
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GNOME;Audio;AudioVideo;
+Name=GNU Denemo
+Name[en]=GNU Denemo
+Name[es]=GNU Denemo (editor de partituras)
+GenericName=Score Editor
+GenericName[es]=Editor de partituras GNU
+GenericName[en]=Score Editor
+Comment=Edit musical scores

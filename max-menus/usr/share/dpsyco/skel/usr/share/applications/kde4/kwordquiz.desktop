@@ -1,0 +1,19 @@
+# KDE Config File
+[Desktop Entry]
+Type=Application
+Tryexec=/usr/bin/kwordquiz
+Exec=kwordquiz -caption "%c" %i
+Icon=kwordquiz
+X-DocPath=kwordquiz/index.html
+MimeType=application/x-kvtml;
+Comment=A flashcard and vocabulary learning program
+Terminal=false
+Name=KWordQuiz
+Name[es]=KWordQuiz (vocabulario)
+GenericName=Flash Card Trainer
+GenericName[es]=Aprende vocabulario con tarjetas con dibujos
+Comment=Flash Card Trainer
+Comment[es]=Aprende vocabulario con tarjetas con dibujos
+Categories=Qt;KDE;Education;Languages;
+
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

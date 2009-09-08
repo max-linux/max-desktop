@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Name=Scribus
+Name[es]=Scribus (Publicaciones)
+GenericName=Page Layout
+GenericName[es]=Publicación de escritorio
+MimeType=application/vnd.scribus;
+Icon=scribus
+TryExec=/usr/bin/scribus
+Exec=scribus %f
+Categories=Graphics;
+Comment=Graphic Page Layout and Publication
+[X-Property::X-KDE-NativeExtension]
+Type=QString
+Value=.sla
+X-Ubuntu-Gettext-Domain=Scribus

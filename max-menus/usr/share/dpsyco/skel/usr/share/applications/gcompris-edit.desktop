@@ -1,0 +1,16 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GCompris Administration
+Name[es]=GCompris Administración
+Comment=Administration for gcompris
+Comment[es]=Administración de gcompris
+TryExec=/usr/bin/gcompris
+Exec=gcompris -a --nolockcheck
+Icon=gcompris-edit
+Terminal=false
+Type=Application
+Categories=Education;
+StartupNotify=true
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=gcompris
+X-GNOME-Bugzilla-Component=

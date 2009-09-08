@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Name=Josm
+Name[es]=Josm (editor de OpenStreetMap)
+Comment=Editor for OpenStreetMap.com
+Comment[es]=Josm (editor de OpenStreetMap)
+GenericName=Java OpenStreetMap Editor
+GenericName[es]=Josm (editor JAVA de OpenStreetMap)
+Tryexec=/usr/bin/josm
+Exec=josm
+Icon=josm-32
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Education;Science;Geoscience;

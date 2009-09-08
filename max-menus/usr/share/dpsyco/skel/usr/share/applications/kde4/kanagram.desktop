@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Kanagram
+Name[es]=Kanagram (ordena las letras)
+TryExec=/usr/bin/kanagram
+Exec=kanagram
+Icon=kanagram
+Type=Application
+X-DocPath=kanagram/index.html
+Comment=KDE Letter Order Game
+Comment[es]=Juego de ordenar letras de KDE
+GenericName=Letter Order Game
+GenericName[es]=Juego de letras
+Categories=Qt;KDE;Education;Languages;
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

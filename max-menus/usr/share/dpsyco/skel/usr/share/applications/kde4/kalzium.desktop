@@ -1,0 +1,17 @@
+# KDE Config File
+[Desktop Entry]
+Type=Application
+TryExec=/usr/bin/kalzium
+Exec=kalzium -caption "%c" %i
+Icon=kalzium
+X-DocPath=kalzium/index.html
+MimeType=chemical/x-cml;
+Comment=KDE Periodic Table of Elements
+Comment[es]=Tabla periódica de los elementos (KDE)
+Terminal=false
+Name=Kalzium
+Name[es]=Kalzium (tabla periódica)
+GenericName=Periodic Table of Elements
+GenericName[es]=Tabla periódica de los elementos
+Categories=Qt;KDE;Education;Science;
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

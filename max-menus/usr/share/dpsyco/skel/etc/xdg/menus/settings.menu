@@ -1,0 +1,72 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+ "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+
+<Menu>
+
+  <Name>Desktop</Name>
+  <Directory>X-GNOME-Menu-System.directory</Directory>
+
+  <!-- Ensure we read from the old capplets .desktop location -->
+  <LegacyDir>/usr/share/control-center-2.0/capplets</LegacyDir>
+
+  <!-- Read standard .directory and .desktop file locations -->
+  <DefaultAppDirs/>
+  <DefaultDirectoryDirs/>
+
+  <!-- Read in overrides and child menus from applications-merged/ -->
+  <DefaultMergeDirs/>
+
+  <!-- Add a link to the control center -->
+  <Include>
+    <Filename>gnomecc.desktop</Filename>
+  </Include>
+
+  <!-- Merge in these other files as submenus -->
+  <Menu>
+    <Name>Preferences</Name>
+    <Directory>Settings.directory</Directory>
+    <Include>
+      <And>
+        <Category>Settings</Category>
+        <Not>
+          <Or>
+            <Category>System</Category>
+            <Filename>gnomecc.desktop</Filename>
+          </Or>
+        </Not>
+      </And>
+    </Include>
+    <Include>
+        <Filename>gnomecc.desktop</Filename>
+    </Include>
+    <Exclude>
+        <Filename>kde-kdepasswd.desktop</Filename>
+    </Exclude>
+    <Exclude>
+        <Filename>openjdk-6-policytool.desktop</Filename>
+    </Exclude>
+    <Exclude>
+        <Filename>xscreensaver-properties.desktop</Filename>
+    </Exclude>
+  </Menu>
+
+  <!-- System Settings -->
+  <Menu>
+    <Name>Administration</Name>
+    <Directory>Settings-System.directory</Directory>
+    <Include>
+      <And>
+        <Category>Settings</Category>
+        <Category>System</Category>
+      </And>
+    </Include>
+  </Menu>     <!-- End System Settings -->
+
+  <Layout>
+    <Menuname>Preferences</Menuname>
+    <Menuname>Administration</Menuname>
+    <Merge type="menus"/>
+    <Merge type="files"/>
+  </Layout>
+
+</Menu> <!-- End Settings -->

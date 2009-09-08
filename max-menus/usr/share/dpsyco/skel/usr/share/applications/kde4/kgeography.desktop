@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=KGeography
+Name[es]=KGeography (geografía)
+GenericName=Geography Trainer
+GenericName[es]=El profesor de geografía
+Comment=A Geography Learning Program
+Comment[es]=Programa para aprender geografía
+TryExec=/usr/bin/kgeography
+Exec=kgeography
+Icon=kgeography
+Type=Application
+X-DocPath=kgeography/index.html
+Terminal=false
+Categories=Qt;KDE;Education;
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

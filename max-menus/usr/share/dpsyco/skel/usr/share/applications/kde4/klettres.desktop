@@ -1,0 +1,16 @@
+# KDE Config File
+[Desktop Entry]
+Type=Application
+TryExec=/usr/bin/klettres
+Exec=klettres -caption "%c" %i
+Icon=klettres
+X-DocPath=klettres/index.html
+Comment=a KDE program to learn the alphabet
+Comment[es]=un programa de KDE para aprender el abecedario
+Terminal=false
+Name=KLettres
+Name[es]=KLettres (asocia sonidos a letras)
+GenericName=Learn The Alphabet
+GenericName[es]=Aprender el abecedario
+Categories=Qt;KDE;Education;Languages;
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

@@ -1,0 +1,15 @@
+# KDE Config File
+[Desktop Entry]
+Type=Application
+TryExec=/usr/bin/step
+Exec=step -caption "%c" %i
+Icon=step
+X-DocPath=step/index.html
+Terminal=false
+Name=Step
+Name[es]=Step (Simulador Físico)
+GenericName=Interactive physical simulator
+Comment=Simulate physics experiments
+Comment[es]=Simulador físico de experimentos
+Categories=Qt;KDE;Education;Science;
+X-Ubuntu-Gettext-Domain=desktop_kdeedu
