@@ -63,7 +63,7 @@ PAQUETES_EXTRA_RESTRICTED="drdsl"
 #PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales max-nanomax virtualbox-ose backharddi backharddi-net"
 #PAQUETES_EXTRA="$PAQUETES_EXTRA discover libdiscover2 discover-data nvidia-glx-new avm-fritz-firmware 915resolution"
 
-PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales max-nanomax virtualbox-ose backharddi backharddi-net"
+PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales virtualbox-ose backharddi backharddi-net"
 PAQUETES_EXTRA="$PAQUETES_EXTRA nvidia-glx-180 linux-wlan-ng-firmware linux-firmware"
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux

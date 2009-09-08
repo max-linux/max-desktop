@@ -62,16 +62,16 @@ mkdir -p $CDRW/pool/max/
 chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA > /dev/null 2>&1 || _exit "Error buscando URIS de $PAQUETES_EXTRA"
 URIS=$(chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA | awk '{print $1}' | sed "s/'//g")
 
-# esound conclicts with pulseaudio-esound-compat
-for pkg in esound libesd0; do
-  tmp=`chroot $CHROOT/ apt-cache show $pkg| awk '/^Filename/ {print $2}'`
-  if [ $LOCAL_MIRROR ]; then
-    tmp="http://$MIRROR/mirror/ubuntu/$tmp"
-  else
-    tmp="http://archive.ubuntu.com/ubuntu/$tmp"
-  fi
-  URIS="$URIS $tmp"
-done
+## esound conclicts with pulseaudio-esound-compat
+#for pkg in esound libesd0; do
+#  tmp=`chroot $CHROOT/ apt-cache show $pkg| awk '/^Filename/ {print $2}'`
+#  if [ $LOCAL_MIRROR ]; then
+#    tmp="http://$MIRROR/mirror/ubuntu/$tmp"
+#  else
+#    tmp="http://archive.ubuntu.com/ubuntu/$tmp"
+#  fi
+#  URIS="$URIS $tmp"
+#done
 
 if [ "$URIS" = "" ]; then
   _exit "Error leyendo URIS de paquetes extra, conflictos o dependencias seguramente..."
@@ -225,6 +225,7 @@ apt-ftparchive -c $APTCONF release $CDRW/dists/$DISTRO > $CDRW/dists/$DISTRO/Rel
 sed -i '/Release/d' $CDRW/dists/$DISTRO/Release
 popd
 
+rm -f $CDRW/dists/$DISTRO/Release.gpg
 echo ""
 echo "  IMPORTANTE"
 echo ""
