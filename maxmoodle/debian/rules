@@ -10,4 +10,9 @@ build-stamp:
 	cd tmp && unzip es_utf8.zip
 	touch build-stamp
 
+
 build/maxmoodle:: build-stamp
+
+
+install/maxmoodle::
+	cd po && make install DESTDIR=$(CURDIR)/debian/maxmoodle PREFIX=/usr

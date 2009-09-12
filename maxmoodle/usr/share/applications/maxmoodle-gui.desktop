@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Configurar Moodle
+GenericName=Configurar Moodle
+Comment=Configurar Apache en Moodle
+Exec=maxmoodle-gui
+Icon=moodle.png
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Education;Entorno Moodle;

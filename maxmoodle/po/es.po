@@ -1,0 +1,51 @@
+# Translation template for maxmoodle
+# Copyright (C) 2008 Mario Izquierdo
+# This file is distributed under the same license as the maxmoodle package.
+# Mario Izquierdo <mariodebian@gmail.com>, 2008.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: maxmoodle 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-12 19:09+0200\n"
+"PO-Revision-Date: 2008-07-04 11:22+0200\n"
+"Last-Translator: mario <MarioIzquierdo@gmail.com>\n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../usr/share/maxmoodle/maxmoodle.glade:10
+msgid "Configure Moodle"
+msgstr "Configurar Moodle"
+
+#: ../usr/share/maxmoodle/maxmoodle.glade:54
+msgid "<span size=\"x-large\">Configure Moodle</span>"
+msgstr "<span size=\"x-large\">Configurar Moodle</span>"
+
+#: ../usr/share/maxmoodle/maxmoodle.glade:96
+msgid "Allow moodle from:"
+msgstr "Permitir el acceso\na moodle desde:"
+
+#: ../usr/share/maxmoodle/maxmoodle.glade:194
+msgid "Commit changes"
+msgstr "Guardar cambios"
+
+#: ../usr/share/maxmoodle/maxmoodle.py:175
+msgid "Only from this machine"
+msgstr "Sólo desde este equipo"
+
+#: ../usr/share/maxmoodle/maxmoodle.py:176
+msgid "Allow from any host"
+msgstr "Desde cualquier equipo"
+
+#: ../usr/share/maxmoodle/maxmoodle.py:255
+msgid "<b>Moodle configured</b>"
+msgstr "<b>Moodle configurado</b>"
+
+#: ../usr/share/maxmoodle/maxmoodle.py:257
+msgid "<b>Error configuring moodle.</b>"
+msgstr "<b>Error configurando moodle.</b>"
+
