@@ -23,3 +23,6 @@ binary-install/max-firefox-conf::
 #	install -m 644 xpi/chrome/ubufox.jar $(CURDIR)/debian/max-firefox-conf/usr/share/dpsyco/skel/usr/share/ubufox/chrome
 	# clean svn dirs
 	find $(CURDIR)/debian/max-firefox-conf -type d -name .svn | xargs rm -rf --
+
+
+	find $(CURDIR)/debian/max-firefox-conf -type d -empty | xargs rm -rf --

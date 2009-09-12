@@ -1,3 +1,15 @@
+max-firefox-conf (5.0.max12+3.0.14) max; urgency=low
+
+  * Upsss, update debian/control too
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 11 Sep 2009 16:27:56 +0200
+
+max-firefox-conf (5.0.max11) max; urgency=low
+
+  * Update firefox 3.0.14
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 11 Sep 2009 15:56:04 +0200
+
 max-firefox-conf (5.0.max10) max; urgency=low
 
   * Remove firefox-webdeveloper (Close: #197)

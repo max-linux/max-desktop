@@ -31,7 +31,7 @@ fi
 # License: GPLv2 or later
 
 MOZDIR=$HOME/.mozilla
-LIBDIR=/usr/lib/firefox-3.0.13
+LIBDIR=/usr/lib/firefox-3.0.14
 APPVER=3.0
 META_NAME=firefox
 GDB=/usr/bin/gdb
