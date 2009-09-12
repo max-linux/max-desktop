@@ -1,8 +1,10 @@
 #!/usr/bin/make -f
 
 include /usr/share/cdbs/1/rules/debhelper.mk
-VERSION=$(shell dpkg-parsechangelog -ldebian/changelog| awk '/^Version/ {print $2}')
+VERSION=$(shell dpkg-parsechangelog -ldebian/changelog| awk '/^Version/ {print $$2}')
 
+printversion:
+	@echo "VERSION="$(VERSION)
 
 binary-install/max-menus::
 	install -m 755 maxmenus.sh $(CURDIR)/debian/max-menus/usr/bin/maxmenus

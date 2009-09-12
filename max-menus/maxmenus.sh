@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=__VERSION__
+VERSION="__VERSION__"
 
 
 decho() {

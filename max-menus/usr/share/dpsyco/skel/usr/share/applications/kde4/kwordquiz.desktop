@@ -1,7 +1,7 @@
 # KDE Config File
 [Desktop Entry]
 Type=Application
-Tryexec=/usr/bin/kwordquiz
+TryExec=/usr/bin/kwordquiz
 Exec=kwordquiz -caption "%c" %i
 Icon=kwordquiz
 X-DocPath=kwordquiz/index.html

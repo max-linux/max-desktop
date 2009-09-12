@@ -1,3 +1,22 @@
+max-menus (5.0.max18) max; urgency=low
+
+  * Add MaXMoogle GUI menu
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 12 Sep 2009 19:47:39 +0200
+
+max-menus (5.0.max17) max; urgency=low
+
+  * Fix version parse and warning in script
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 08 Sep 2009 23:43:54 +0200
+
+max-menus (5.0.max16) max; urgency=low
+
+  * Fix some TryExec
+  * Rename maxmoodle-doc to max-moodle-doc
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 08 Sep 2009 23:39:19 +0200
+
 max-menus (5.0.max15) max; urgency=low
 
   * Purget /etc/skel dir from this package
