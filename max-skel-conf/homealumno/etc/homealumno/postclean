@@ -1,7 +1,6 @@
 # comandos ejecutados despues de la limpieza
 
 echo "homealumno: postclean configurando menus..."
-maxmenus --user
 
 
 echo "homealumno: deshabilitando compiz"
@@ -10,6 +9,9 @@ gconftool-2 --config-source xml:readwrite:$HOME/.gconf --type string \
 
 gconftool-2 --config-source xml:readwrite:$HOME/.gconf --type string \
 	    --set /desktop/gnome/applications/window_manager/default "/usr/bin/metacity"
+
+gconftool-2 --config-source xml:readwrite:$HOME/.gconf --type string \
+	    --set /desktop/gnome/session/required_components/windowmanager "metacity"
 
 
 #
