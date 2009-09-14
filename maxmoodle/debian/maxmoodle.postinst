@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$1" = "configure" ]; then
+  /usr/sbin/configure-moodle || true
+fi
+
+#DEBCONF#
+
+exit 0

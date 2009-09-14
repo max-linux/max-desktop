@@ -1,0 +1,60 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+################################################
+#
+#
+#  Allow URL config to be in != localhost
+#
+#
+################################################
+
+import sys
+
+CONFIG="/etc/moodle/config.php"
+REPLACES=" $CFG->wwwroot = 'http://'.$_SERVER['SERVER_NAME'].'/moodle';\n"
+
+APACHE="/etc/moodle/apache.conf"
+APACHE_ALLOW="allow from 127.0.0.0/255.0.0.0\nallow from 127.0.1.0/255.0.0.0\nallow from max50\n"
+
+
+def configure_apache():
+    f=open(APACHE, 'r')
+    data=f.readlines()
+    f.close()
+
+    for i in range(len(data)):
+        if "allow from" in data[i]:
+            data[i]=APACHE_ALLOW
+
+        if "# settings" in data[i]:
+            # file is edited with maxmoodle-gui
+            return
+
+    f=open(APACHE, 'w')
+    for line in data:
+        f.write(line)
+    f.close()
+
+
+def configure_moodle():
+    f=open(CONFIG, 'r')
+    data=f.readlines()
+    f.close()
+
+
+    for i in range(len(data)):
+        if "$CFG->wwwroot" in data[i]:
+            data[i]=REPLACES
+
+        if "?>" in data[i]:
+            data[i]="?>"
+
+    f=open(CONFIG, 'w')
+    for line in data:
+        f.write(line)
+    f.close()
+
+
+
+configure_moodle()
+configure_apache()
