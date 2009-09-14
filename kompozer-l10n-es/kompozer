@@ -2,7 +2,7 @@
 
 launch_es_install() {
 	zenity --info --text="Es la primera vez que ejecuta KompoZer.\n\nA continuación se instalará la traducción en español.\n\nReinicie KompoZer para poder usarlo en español."
-	kompozer.real /usr/share/kompozer-l10n-es/kompozer-0.7.10.es-ES.langpack.xpi
+	kompozer.real /usr/share/kompozer-l10n-es/kpz-langpack-esES.xpi
 }
 
 

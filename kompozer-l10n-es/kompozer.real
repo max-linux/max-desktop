@@ -33,7 +33,7 @@
 #set -x
 
 moz_libdir=/usr/lib/kompozer
-MRE_HOME=/usr/lib/mre/mre-0.7.10
+MRE_HOME=/usr/lib/mre/mre-0.8a4
 
 # honor MOZILLA_FIVE_HOME if it's there
 if [ -n "$MOZILLA_FIVE_HOME" ] ; then
