@@ -1,4 +1,4 @@
-bind9
+bind9|dnsmasq|pdnsd
 backharddi
 backharddi-net
 backharddi-kernel-i386
@@ -7,6 +7,7 @@ linux-image-server
 linux-headers-server
 maxmoodle
 max-gnome-default-settings
+max-mirror-utils
 max-tcos-profesor
 moodle
 mysql-server
