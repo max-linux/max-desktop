@@ -20,5 +20,6 @@ Description: Dependencias de máquina virtual java JDK para Max5.0
 Package: max-java-plugin
 Architecture: i386 amd64
 Depends: max-apt, sun-java6-plugin
+Conflicts: icedtea6-plugin, icedtea-6-jre-cacao
 Description: Dependencias de máquina virtual java (plugin mozilla) para Max5.0
  Máquina virtual java (plugin mozilla) para Max5.0

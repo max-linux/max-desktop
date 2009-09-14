@@ -1,3 +1,10 @@
+max-java (5.0.max3) max; urgency=low
+
+  * Conflicts with icedtea6-plugin, icedtea-6-jre-cacao
+    - Fix amd64 java plugin errors
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 14 Sep 2009 12:03:19 +0200
+
 max-java (5.0.max2) max; urgency=low
 
   * Provide sun-java-6 [i386] ia32-java-6-sun [amd64]
