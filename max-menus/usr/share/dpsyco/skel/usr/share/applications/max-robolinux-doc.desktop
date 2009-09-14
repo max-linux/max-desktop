@@ -1,6 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
+TryExec=/usr/bin/acroread
 Exec=/usr/bin/acroread "/usr/share/doc/robolinux/manual_robolinux.pdf"
 Icon=/usr/share/pixmaps/firefox.png
 X-GNOME-DocPath=

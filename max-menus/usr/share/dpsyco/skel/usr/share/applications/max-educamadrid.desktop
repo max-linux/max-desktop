@@ -4,6 +4,7 @@ Name=Educamdrid MAX
 Name[es]=MAX en Educamadrid
 Comment=Educamadrid link 
 Comment[es]= Enlace a la página oficial de MAX en Educamadrid
+TryExec=/usr/bin/firefox
 Exec=firefox http://www.educa.madrid.org/portal/c/portal/layout?p_l_id=10970.12&c=an
 Icon=firefox
 StartupNotify=true

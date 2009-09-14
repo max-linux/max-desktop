@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Version=1.0
 Type=Application
+TryExec=/usr/bin/firefox
 Exec=firefox file:///usr/share/jclic/curso/index.htm
 Icon=firefox
 X-GNOME-DocPath=

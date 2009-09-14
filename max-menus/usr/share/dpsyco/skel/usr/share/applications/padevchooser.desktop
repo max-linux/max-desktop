@@ -4,6 +4,7 @@ Encoding=UTF-8
 Name=PulseAudio Device Chooser
 GenericName=Device Chooser
 Comment=Change PulseAudio devices and their settings
+TryExec=/usr/bin/padevchooser
 Exec=padevchooser
 Icon=stock_line_in
 StartupNotify=true

@@ -6,6 +6,10 @@ VERSION=$(shell dpkg-parsechangelog -ldebian/changelog| awk '/^Version/ {print $
 printversion:
 	@echo "VERSION="$(VERSION)
 
+build/max-menus::
+	xmlstarlet val usr/share/dpsyco/skel/etc/xdg/menus/applications.menu
+	xmlstarlet val usr/share/dpsyco/skel/etc/xdg/menus/settings.menu
+
 binary-install/max-menus::
 	install -m 755 maxmenus.sh $(CURDIR)/debian/max-menus/usr/bin/maxmenus
 	sed -i "s|__VERSION__|$(VERSION)|g" $(CURDIR)/debian/max-menus/usr/bin/maxmenus

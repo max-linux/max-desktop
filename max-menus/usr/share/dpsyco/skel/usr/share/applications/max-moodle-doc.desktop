@@ -3,6 +3,7 @@ Encoding=UTF-8
 Name=Documentación de Moodle
 Name[es]=Documentación de Moodle
 Comment[es]=Documentación de Moodle
+TryExec=/usr/bin/firefox
 Exec=firefox http://docs.moodle.org/es/Portada
 Icon=firefox
 StartupNotify=true

@@ -5,4 +5,5 @@ Type=Application
 Terminal=false
 Icon=firefox
 Name=Tutorial de Squeak en html
+TryExec=/usr/bin/firefox
 Exec=firefox "/usr/share/doc/squeak/manual/index.html"

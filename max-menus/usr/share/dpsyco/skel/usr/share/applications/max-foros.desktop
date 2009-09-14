@@ -4,6 +4,7 @@ Name=MAX Forums
 Name[es]=Foro de MAX 
 Comment=get help about MAX at forums
 Comment[es]=Obtener ayuda en los foros de MAX
+TryExec=/usr/bin/firefox
 Exec=firefox http://herramientas.educa.madrid.org/foros/index.php
 Icon=firefox
 StartupNotify=true

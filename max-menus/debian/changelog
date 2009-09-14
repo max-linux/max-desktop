@@ -1,3 +1,23 @@
+max-menus (5.0.max21) max; urgency=low
+
+  * Recompress applications.menu
+  * Exec update-dpsyco-skel in postinst
+  * Fix some TryExec
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 14 Sep 2009 14:41:20 +0200
+
+max-menus (5.0.max20) max; urgency=low
+
+  * Move all generic Educational menus to new submenu
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 14 Sep 2009 12:38:25 +0200
+
+max-menus (5.0.max19) max; urgency=low
+
+  * Exclude maxmoodle-gui from educational menu
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 14 Sep 2009 11:27:13 +0200
+
 max-menus (5.0.max18) max; urgency=low
 
   * Add MaXMoogle GUI menu
