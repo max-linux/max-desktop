@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=NetBeans
 Comment=Entorno de desarrollo integrado
+TryExec=/usr/bin/netbeans
 Exec=/usr/bin/netbeans --jdkhome /usr/lib/jvm/java-6-sun-max/
 Icon=/usr/share/netbeans/6.5/nb6.5/netbeans.png
 Categories=Development;Java;IDE;

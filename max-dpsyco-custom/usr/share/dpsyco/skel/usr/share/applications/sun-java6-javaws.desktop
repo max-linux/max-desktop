@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Name=Sun Java 6 Web Start
 Comment=Sun Java 6 Web Start
+TryExec=/usr/bin/javaws.max
 Exec=javaws.max
 Terminal=false
 Type=Application
