@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+clean::
+	rm -f usr/share/max-mirror-utils/max-mirror-utils.glade.bak usr/share/max-mirror-utils/max-mirror-utils.gladep.bak usr/share/max-mirror-utils/max-mirror-utils.gladep
+
+binary-install/max-mirror-utils::
+	cd po && make install DESTDIR=$(CURDIR)/debian/max-mirror-utils PREFIX=/usr
+	find $(CURDIR)/debian/max-mirror-utils -type d -name .svn | xargs rm -rf --
+
+	rm -f $(CURDIR)/debian/max-mirror-utils/usr/share/max-mirror-utils/max-mirror-utils.glade.bak
+	rm -f $(CURDIR)/debian/max-mirror-utils/usr/share/max-mirror-utils/max-mirror-utils.gladep.bak
+	rm -f $(CURDIR)/debian/max-mirror-utils/usr/share/max-mirror-utils/max-mirror-utils.gladep
+
+

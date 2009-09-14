@@ -1,0 +1,3 @@
+#!/bin/sh
+
+gksu --description=/usr/share/applications/max-mirror-utils-gui.desktop python /usr/share/max-mirror-utils/max-mirror-utils.py

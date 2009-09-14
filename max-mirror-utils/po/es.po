@@ -1,0 +1,100 @@
+# Translation template for max-mirror-utils
+# Copyright (C) 2008 Mario Izquierdo
+# This file is distributed under the same license as the max-mirror-utils package.
+# Mario Izquierdo <mariodebian@gmail.com>, 2008.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: max-mirror-utils 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-12 23:18+0200\n"
+"PO-Revision-Date: 2008-07-04 11:22+0200\n"
+"Last-Translator: mario <MarioIzquierdo@gmail.com>\n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.glade:10
+msgid "Configure MaX Server mirror utils"
+msgstr "Configurar servidor de repositorios MaX"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.glade:57
+msgid "<span size=\"x-large\">Configure mirror proxy for MaX</span>"
+msgstr "<span size=\"x-large\">Configurar proxy de repositorio para MaX</span>"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.glade:99
+msgid "Select country mirror:"
+msgstr "Seleccionar país:"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.glade:197
+msgid "Commit changes"
+msgstr "Guardar cambios"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.glade:295
+msgid "Generate sources.list"
+msgstr "Generar sources.list"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.glade:334
+msgid "Select MaX version"
+msgstr "Versión de MaX"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.glade:424
+msgid "sources.list"
+msgstr "sources.list"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.py:147
+msgid "Main (recomended)"
+msgstr "Principal (recomendado)"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.py:148
+msgid "Spain"
+msgstr "España"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.py:149
+msgid "France"
+msgstr "Francia"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.py:150
+msgid "United Kingdom"
+msgstr "Reino Unido"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.py:151
+msgid "Germany"
+msgstr "Alemania"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.py:155
+msgid "MaX 4.0"
+msgstr "MaX 4.0"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.py:156
+msgid "MaX 5.0"
+msgstr "MaX 5.0"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.py:157
+msgid "MaX 4.0 and 5.0"
+msgstr "MaX 4.0 y 5.0"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.py:286
+msgid "<b>Proxy configured</b>"
+msgstr "<b>Proxy configurado</b>"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.py:288
+msgid "<b>Error configuring proxy.</b>"
+msgstr "<b>Error configurando proxy.</b>"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.py:305
+#, python-format
+msgid "Detected %s network interfaces, need only one."
+msgstr "Se han detectado %s interfaces de red, se necesita sólo una."
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.py:319
+#, python-format
+msgid "# sources.list for %s"
+msgstr "# sources.list para %s"
+
+#: ../usr/share/max-mirror-utils/max-mirror-utils.py:319
+msgid " and "
+msgstr " y "

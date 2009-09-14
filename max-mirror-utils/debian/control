@@ -1,0 +1,14 @@
+Source: max-mirror-utils
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs
+Standards-Version: 3.7.2
+
+Package: max-mirror-utils
+Architecture: all
+Depends: approx, python, python-gtk2, python-netifaces
+Description: Moodle para MaX
+ Dependencias y lanzador para moodle
+
+
