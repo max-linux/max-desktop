@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=KAlgebra
+GenericName=Graph Calculator
+GenericName[es]=Calculadora gráfica
+Comment=Math Expression Solver and Plotter
+Comment[es]=Resuelve ecuaciones matemáticas y dibújalas
+TryExec=/usr/bin/kalgebra
+Exec=kalgebra
+MimeType=application/x-kalgebra;
+Icon=kalgebra
+Type=Application
+X-DocPath=kalgebra/index.html
+Terminal=false
+Categories=Qt;KDE;Education;Math;
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

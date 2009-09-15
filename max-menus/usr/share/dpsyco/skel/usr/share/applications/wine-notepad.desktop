@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=Notepad
+Name[es]=Notepad (wine)
+Name[sv]=Anteckningar
+Name[de]=Editor
+Name[fi]=Muistio
+Name[pl]=Notatnik
+Name[ca]=Bloc de notes
+Comment=A clone of Windows Notepad
+Comment[es]=Un clon del Notepad de Windows
+Comment[sv]=En klon av Windows Anteckningar
+Comment[de]=Ein Windows Editor Klon
+Comment[fi]=Windows Muistio -klooni
+Comment[pl]=Klon Notatnika Windows
+Comment[ca]=Un clon del Windows Notepad
+TryExec=/usr/bin/notepad
+Exec=notepad
+Terminal=false
+Type=Application
+Icon=wine-notepad
+Categories=Wine-Programs-Accessories;

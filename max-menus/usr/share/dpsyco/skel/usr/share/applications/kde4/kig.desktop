@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Kig
+Name[es]=Kig (gemotría)
+GenericName=Interactive Geometry
+GenericName[es]=Geometría interactiva
+Comment=Explore Geometric Constructions
+Comment[es]=Explorar construcciones geométricas
+TryExec=/usr/bin/kig
+Exec=kig %i -caption "%c"
+MimeType=application/x-kig;application/x-kgeo;
+Icon=kig
+Type=Application
+X-DocPath=kig/index.html
+Terminal=false
+Categories=Qt;KDE;Education;Math;
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=KTurtle
+Name[es]=KTurtle (programación)
+GenericName=Educational Programming Environment
+GenericName[es]=Entorno de programación educativo
+Exec=/usr/bin/kturtle
+Exec=kturtle %i -caption "%c"
+Icon=kturtle
+X-DocPath=kturtle/index.html
+Type=Application
+Categories=Qt;KDE;Education;X-KDE-Edu-Misc;
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

@@ -1,0 +1,17 @@
+# KDE Config File
+[Desktop Entry]
+Type=Application
+TryExec=/usr/bin/kmplot
+Exec=kmplot
+Icon=kmplot
+X-DocPath=kmplot/index.html
+Comment=Function Plotter
+Comment[es]=Dibuja funciones
+Terminal=false
+Name=KmPlot
+Name[es]=KmPlot (gráficas)
+Categories=Qt;KDE;Education;Math;
+MimeType=application/x-kmplot;
+GenericName=Mathematical Function Plotter
+GenericName[es]=Dibujar gráficas de funciones matemáticas
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

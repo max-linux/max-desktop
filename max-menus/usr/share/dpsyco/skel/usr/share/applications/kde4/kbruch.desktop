@@ -1,0 +1,16 @@
+# KDE Config File
+[Desktop Entry]
+Type=Application
+TryExec=/usr/bin/kbruch
+Exec=kbruch -caption "%c" %i
+Icon=kbruch
+X-DocPath=kbruch/index.html
+GenericName=Exercise Fractions
+GenericName[es]=Practica con fracciones
+Comment=Practice exercises with fractions
+Comment[es]=Practica ejercicios con fracciones
+Terminal=false
+Name=KBruch
+Name=KBruch (fracciones)
+Categories=Qt;KDE;Education;Math;
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

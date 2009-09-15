@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=Configure Wine
+Name[es]=Configurar Wine
+Name[sv]=Konfigurera Wine
+Name[de]=Konfiguriere Wine
+Name[fi]=Winen asetukset
+Name[pl]=Konfiguracja Wine
+Name[ca]=Configureu el Wine
+Comment=Change application-specific and general Wine options
+Comment[es]=Cambiar opciones para cada aplicación y generales de Wine
+Comment[sv]=Ändra programspecifika och allmänna Wine-alternativ
+Comment[de]=Ändere Wine Optionen und Applikations-spezifische Einstellungen
+Comment[fi]=Muuta yleisiä ja sovelluskohtaisia Winen asetuksia
+Comment[pl]=Konfigurowanie ustawień aplikacji i ogólnych opcji Wine
+Comment[ca]=Canvieu la configuració general del Wine i especifiqueu opcions per a programes concrets
+TryExec=/usr/bin/winecfg
+Exec=winecfg
+Terminal=false
+Icon=wine-winecfg
+Type=Application
+Categories=Wine;

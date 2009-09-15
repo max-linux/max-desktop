@@ -1,0 +1,17 @@
+# KDE Config File
+[Desktop Entry]
+Type=Application
+TryExec=/usr/bin/kstars
+Exec=kstars -caption "%c" %i
+Icon=kstars
+X-DocPath=kstars/index.html
+Comment=Desktop Planetarium
+Comment[es]=Planetario en el escritorio
+Terminal=false
+Name=KStars
+Name[es]=KStars (planetario)
+GenericName=Desktop Planetarium
+GenericName[es]=Planetario en el escritorio
+X-DBUS-StartupType=Multi
+Categories=Qt;KDE;Education;Science;Astronomy;
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

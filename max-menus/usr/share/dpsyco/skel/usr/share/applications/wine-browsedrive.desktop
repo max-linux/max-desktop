@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=Browse C:\ Drive
+Name[es]=Explorar unidad C:\
+Name[sv]=Bläddra i C:\
+Name[de]=Durchsuche C:\ 
+Name[fi]=Selaa C:\-asemaa
+Name[pl]=Przeglądaj napęd C:\
+Name[ca]=Navegeu per l'unitat C:\
+Comment=Browse your virtual C:\ drive
+Comment[es]=Explorar la unidad virtual C:\
+Comment[sv]=Bläddra i virtuella enheten C:\
+Comment[de]=Durchsuche das virtuelle C:\ Laufwerk
+Comment[fi]=Selaa virtuaalista C:\-asemaa
+Comment[pl]=Przeglądanie wirtualnego napędu C:\
+Comment[ca]=Navegeu per la vostra unitat virtual C:\
+TryExec=/usr/bin/xdg-open
+Exec=xdg-open .wine/dosdevices/c:
+Terminal=false
+Type=Application
+Icon=wine-winefile
+Categories=Wine;

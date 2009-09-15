@@ -205,6 +205,7 @@
 			<Exclude><Filename>tuxpaint.desktop</Filename></Exclude>
 			<Exclude><Filename>denemo.desktop</Filename></Exclude>
 			<Exclude><Filename>josm.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-marble.desktop</Filename></Exclude>
 		</Menu>
 
 		<Menu>
@@ -313,6 +314,7 @@
 			<Directory>cartografia.directory</Directory>
 			<Include><Filename>josm.desktop</Filename></Include>
 			<Include><Filename>max-openstreetmap.desktop</Filename></Include>
+			<Include><Filename>kde4-marble.desktop</Filename></Include>
 		</Menu>
 	</Menu> <!-- End Education -->
 

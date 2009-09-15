@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=Uninstall Wine Software
+Name[es]=Desinstalar aplicaciones de Wine
+Name[sv]=Avinstallera Wine-programvara
+Name[de]=Deinstalliere Wine Applikationen 
+Name[fi]=Poista Wine-ohjelmien asennuksia
+Name[pl]=Deinstalacja oprogramowania Wine
+Name[ca]=Elimineu programes del Wine
+Comment=Uninstall Windows applications for Wine
+Comment[es]=Desinstala aplicaciones de Windows para Wine
+Comment[sv]=Avinstallera Windows-program för Wine
+Comment[de]=Wine Applikations Deinstallations Programm
+Comment[fi]=Poista Wineen asennettuja Windows-sovelluksia
+Comment[pl]=Deinstalowanie oprogramowania dla Wine
+Comment[ca]=Elimineu programes del Windows que hageu instaŀlat amb el Wine
+TryExec=/usr/bin/uninstaller
+Exec=uninstaller
+Terminal=false
+Type=Application
+Icon=wine-uninstaller
+Categories=Wine;

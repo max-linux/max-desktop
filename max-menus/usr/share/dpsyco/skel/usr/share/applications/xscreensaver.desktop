@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=XScreenSaver Setup
+TryExec=/usr/bin/xscreensaver-demo
 Exec=xscreensaver-demo
 Icon=xscreensaver
 Terminal=false

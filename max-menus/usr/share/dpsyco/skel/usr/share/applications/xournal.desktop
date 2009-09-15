@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+
+Name=Xournal
+Comment=Take handwritten notes
+Name[es]=Xournal
+Comment[es]=Tomar notas escritas a mano
+Name[fr]=Xournal
+Comment[fr]=Prise de notes manuscrites
+
+TryExec=/usr/bin/xournal
+Exec=xournal %f
+Terminal=false
+StartupNotify=true
+MimeType=application/x-xoj;application/pdf;
+Icon=xournal
+Categories=GNOME;GTK;Utility;TextEditor;
