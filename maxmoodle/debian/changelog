@@ -1,3 +1,16 @@
+maxmoodle (5.0.max6) max; urgency=low
+
+  * Remove not needed /usr/bin/maxmodle, now launch from desktop file
+  * Launch http://localhost/moodle not http://localhost/moodle/admin
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 14 Sep 2009 22:06:42 +0200
+
+maxmoodle (5.0.max5) max; urgency=low
+
+  * Add configure-moodle to package
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 14 Sep 2009 16:07:04 +0200
+
 maxmoodle (5.0.max4) max; urgency=low
 
   * Create configure-moodle script to edit config.php and apache.conf in postinst

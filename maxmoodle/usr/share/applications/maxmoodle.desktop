@@ -2,10 +2,10 @@
 Name=Moodle
 GenericName=Moodle
 Comment=Plataforma e-learning
-Comment[es]=Moodle
-Exec=maxmoodle
+TryExec=/usr/bin/firefox
+Exec=firefox http://localhost/moodle/
 Icon=moodle.png
 StartupNotify=false
 Terminal=false
 Type=Application
-Categories=Education
+Categories=Education;
