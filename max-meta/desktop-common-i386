@@ -24,10 +24,11 @@ cellwriter
 cdparanoia
 cdrdao
 cdrecord
-cupsys
-cupsys-bsd
-cupsys-client
-cupsys-driver-gutenprint
+cups
+cups-bsd
+cups-client
+cups-driver-gutenprint
+cups-pdf
 dc
 denemo
 devede
@@ -86,6 +87,7 @@ jmf
 josm
 josm-plugins
 kdeedu
+kdevelop
 kompozer
 kompozer-l10n-es
 ktechlab
@@ -154,6 +156,7 @@ myspell-es
 netbeans
 nfs-kernel-server
 ntfs-config
+ntfsprogs
 notelab
 non-free-codecs
 ocrad
@@ -238,6 +241,7 @@ vlc-plugin-pulse
 vorbis-tools
 wacom-tools
 webhttrack
+wine
 winff
 wvdial
 wxmaxima

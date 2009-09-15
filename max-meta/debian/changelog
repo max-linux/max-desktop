@@ -1,3 +1,10 @@
+max-meta (5.0.max38) max; urgency=low
+
+  * Add cups-pdf, wine, kdevelop and ntfsprogs
+  * Rename cupsys to cups
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 15 Sep 2009 16:58:39 +0200
+
 max-meta (5.0.max37) max; urgency=low
 
   * Add libxine1-ffmpeg to GNOME and KDE
