@@ -9,24 +9,24 @@ decho() {
 
 usage() {
   echo "$0 usage:"
-  echo "           $0 --update (update all home menus)"
-  echo "           $0 --user  (update current user menus)"
+  #echo "           $0 --update (update all home menus)"
+  #echo "           $0 --user  (update current user menus)"
   echo "           $0 --purge (try to remove all home menus)"
 }
 
 case $1 in
-   --update)
-     ACTION=update
-     ;;
+   #--update)
+   #  ACTION=update
+   #  ;;
    --purge)
      ACTION=purge
      ;;
-   --user)
-     ACTION=user
-     ;;
+   #--user)
+   #  ACTION=user
+   #  ;;
    *)
      usage
-     exit 1
+     exit 0
      ;;
 esac
 
@@ -74,7 +74,7 @@ fi
 # call update-dpsyco-skel
 [ -x /usr/sbin/update-dpsyco-skel ] && update-dpsyco-skel >/dev/null 2>&1
 
-for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
+for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d | grep -v "lost+found"); do
 
     user=$(basename $home)
     if [ "$user" = "ftp" ]; then
