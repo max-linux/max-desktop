@@ -1,3 +1,12 @@
+max-skel-conf (5.0.max5) max; urgency=low
+
+  * Clean epmty dirs
+  * Remove ooo-base from /etc/skel
+  * homealumno:
+    - Create /etc/homealumno/preclean.d/ and /etc/homealumno/postclean.d/ to put scripts
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 16 Sep 2009 17:01:02 +0200
+
 max-skel-conf (5.0.max4) max; urgency=low
 
   * Disable maxmenus in homealumno

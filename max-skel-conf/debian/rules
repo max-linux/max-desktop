@@ -4,7 +4,11 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 
 binary-install/max-skel-conf::
 	# clean svn dirs
-	find $(CURDIR)/debian/max-skel-conf -type d -name .svn | xargs rm -rf --
+	@find $(CURDIR)/debian/max-skel-conf -type d -name .svn | xargs rm -rf --
+	@for dir in `find $(CURDIR)/debian/max-skel-conf/usr -type d| grep -v "qdvdauthor"`; do \
+		rmdir --ignore-fail-on-non-empty $$dir 2>/dev/null || true; \
+                [ -d "$$dir" ] && echo "EMPTY DELETED: $$dir"; \
+	done
 
 binary-install/homealumno::
 	# clean svn dirs

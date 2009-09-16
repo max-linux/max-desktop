@@ -14,6 +14,15 @@ gconftool-2 --config-source xml:readwrite:$HOME/.gconf --type string \
 	    --set /desktop/gnome/session/required_components/windowmanager "metacity"
 
 
+# cargar scripts de /etc/homealumno/postclean.d/
+for f in /etc/homealumno/postclean.d/* ; do
+  if [ -f "$f" ]; then
+    . $f
+  fi
+done
+
+
+
 #
 # aqui se podría deshabilitar el menu de administración (que no se vea)
 #
