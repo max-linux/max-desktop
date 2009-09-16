@@ -1,3 +1,10 @@
+max-genlive (5.0.max6) max; urgency=low
+
+  * Update to MaX 5.0 rc2 version
+  * Exec update-dpsyco-skel in more places
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 15 Sep 2009 19:22:59 +0200
+
 max-genlive (5.0.max5) max; urgency=low
 
   * Don't cache esound package

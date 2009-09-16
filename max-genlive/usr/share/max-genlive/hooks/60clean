@@ -171,6 +171,7 @@ apt-get $APT_OPTS -f install
 apt-get $APT_OPTS upgrade || ERROR=1
 apt-get $APT_OPTS dist-upgrade || ERROR=1
 apt-get clean
+update-dpsyco-skel
 exit \$ERROR
 EOC
 rm $CHROOT/etc/resolv.conf

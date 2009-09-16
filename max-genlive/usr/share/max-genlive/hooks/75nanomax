@@ -122,6 +122,9 @@ export UCF_FORCE_CONFFOLD=1
 yes | dpkg --configure -a
 yes | apt-get $APT_OPTS -f install
 apt-get update
+apt-get $APT_OPTS dist-upgrade
+update-dpsyco-skel
+apt-get clean
 EOC
 
 
