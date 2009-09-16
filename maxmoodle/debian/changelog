@@ -1,3 +1,13 @@
+maxmoodle (5.0.max7) max; urgency=low
+
+  * configure-moodle:
+    - read /etc/hostname and use it
+    - only read one 'allow from' line and put our code
+  * maxmoodle.desktop:
+    - Launch with IP: 127.0.0.1
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 15 Sep 2009 18:30:06 +0200
+
 maxmoodle (5.0.max6) max; urgency=low
 
   * Remove not needed /usr/bin/maxmodle, now launch from desktop file
