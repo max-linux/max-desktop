@@ -60,7 +60,8 @@
 
 		<Include><Filename>file-roller.desktop</Filename></Include>
 		<Include><Filename>gnome-font-viewer.desktop</Filename></Include>
-		<Exclude><Filename>gcalctool.desktop</Filename></Exclude>
+		<Include><Filename>gcalctool.desktop</Filename></Include>
+
 		<Exclude><Filename>kde4-kcalc.desktop</Filename></Exclude>
 		<Exclude><Filename>xournal.desktop</Filename></Exclude>
 		<Exclude><Filename>jarnal.desktop</Filename></Exclude>
@@ -74,6 +75,7 @@
 		<Exclude><Filename>exe.desktop</Filename></Exclude>
 		<Exclude><Filename>bluetooth-analyzer.desktop</Filename></Exclude>
 		<Exclude><Filename>xfce4-screenshooter.desktop</Filename></Exclude>
+		<Exclude><Filename>speedcrunch.desktop</Filename></Exclude>
 	</Menu><!-- End Accessories -->
 	
 	
