@@ -295,6 +295,13 @@
        fx="-1102.2507"
        fy="719.11603"
        r="511.99985" />
+    <inkscape:perspective
+       id="perspective2645"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -303,16 +310,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-107.14285"
-     inkscape:cy="520"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="669.32093"
+     inkscape:cy="499.79804"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1280"
      inkscape:window-height="737"
      inkscape:window-x="0"
-     inkscape:window-y="0" />
+     inkscape:window-y="49" />
   <metadata
      id="metadata5106">
     <rdf:RDF>
@@ -332,13 +339,13 @@
     <rect
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
-       inkscape:export-filename="/home/mario/Desktop/usplash.png"
+       inkscape:export-filename="/home/pedro/Escritorio/Desarrollo/max/trunk/max-artwork/art/usplash/usplash2.png"
        id="rect4706"
        width="1280"
        height="1024"
        x="-242.897"
        y="23.548147"
-       style="fill:#0000f0;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4.00000047999999975;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;display:inline" />
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4.00000047999999975;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;display:inline" />
     <g
        transform="translate(-184.65528,-64.216829)"
        id="g3827"
@@ -1090,7 +1097,7 @@
     <g
        style="opacity:0.98999999;display:inline"
        id="g3730"
-       transform="matrix(0.1003255,0,0,0.1003255,898.1132,64.570171)">
+       transform="matrix(0.1003255,0,0,0.1003255,899.12335,55.983874)">
       <g
          id="g3732">
         <g
@@ -1224,5 +1231,13 @@
            id="tspan3782"
            sodipodi:role="line">s y s t e m s</tspan></text>
     </g>
+    <image
+       y="122.19149"
+       x="916.39355"
+       id="image2647"
+       height="45.311974"
+       width="65.333542"
+       sodipodi:absref="/home/pedro/Escritorio/open-phoenix.png"
+       xlink:href="/home/pedro/Escritorio/open-phoenix.png" />
   </g>
 </svg>
