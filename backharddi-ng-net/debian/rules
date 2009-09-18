@@ -1,0 +1,65 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+KVERSION = 2.6.22-3-486
+build: build-stamp
+
+build-stamp: 
+	dh_testdir
+	$(MAKE)
+	cd monitor; \
+	lrelease-qt4 src/src.pro; \
+	qmake-qt4; \
+	$(MAKE)
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	$(MAKE) clean
+	[ ! -f monitor/Makefile ] || $(MAKE) -C monitor distclean
+	rm -f build-stamp configure-stamp
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+	dh_install backharddi-ng_net.desktop usr/share/applications
+	dh_install backharddi-ng_net.png usr/share/pixmaps
+	dh_install monitor/bin/backharddi-ng-net-monitor backharddi-ng-net-ipsc backharddi-ng-net.py backharddi-ng-net.sh bxmlclient-ng usr/bin
+	dh_install pxelinux.0 menu.c32 usr/share/backharddi-ng/tftpboot
+	dh_install monitor/src/icons monitor/src/*.qm usr/share/backharddi-ng
+	dh_install monitor/qxmlrpc/libqxmlrpc-ng.so* usr/lib
+	find $(CURDIR)/debian/backharddi-ng-net/usr/share/backharddi-ng -name .svn | xargs rm -rf
+	dh_link boot/linux-$(KVERSION)-backharddi-ng usr/share/backharddi-ng/tftpboot/linux boot/minirt-$(KVERSION)-backharddi-ng.gz usr/share/backharddi-ng/tftpboot/initrd.gz tmp/backharddi-ng/tftpboot/pxelinux.cfg usr/share/backharddi-ng/tftpboot/pxelinux.cfg
+
+binary-indep: build install
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdebconf
+	dh_installdocs
+	dh_installinit -r -n
+	dh_link
+#	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install 

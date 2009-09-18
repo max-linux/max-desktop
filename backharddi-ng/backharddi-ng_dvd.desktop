@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Categories=Application;Accesories;GNOME;System
+Exec=gksudo --message "Para generar los DVD's de recuperación del sistema se necesitan privilegios de administración. Introduzca su contraseña para obtener dichos privilegios:" "/usr/bin/backharddi-ng-dvd.sh"
+Terminal=false
+Name=Backharddi NG CD/DVD's de Recuperación
+Comment=Herramienta para crear los CD/DVD's de Recuperación del Sistema con el sistema Backharddi NG
+Icon=backharddi-ng_dvd.svg

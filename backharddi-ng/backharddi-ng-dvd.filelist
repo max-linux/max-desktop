@@ -1,0 +1,17 @@
+boot/isolinux/16x16.fnt=/usr/share/backharddi-ng/common/16x16.fnt
+boot/isolinux/back.jpg=/usr/share/backharddi-ng/common/back.jpg
+boot/isolinux/bootlogo=/usr/share/backharddi-ng/common/bootlogo
+boot/isolinux/en.tr=/usr/share/backharddi-ng/common/en.tr
+boot/isolinux/es.tr=/usr/share/backharddi-ng/common/es.tr
+boot/isolinux/langlist=/usr/share/backharddi-ng/common/langlist
+boot/isolinux/ca.tr=/usr/share/backharddi-ng/common/ca.tr
+boot/isolinux/eu.tr=/usr/share/backharddi-ng/common/eu.tr
+boot/isolinux/gl.tr=/usr/share/backharddi-ng/common/gl.tr
+boot/isolinux/init=/usr/share/backharddi-ng/common/init
+boot/isolinux/lang=/usr/share/backharddi-ng/common/lang
+boot/isolinux/gfxboot.cfg=/usr/share/backharddi-ng/common/gfxboot.cfg
+boot/isolinux/isolinux.bin=/usr/lib/syslinux/isolinux.bin
+boot/isolinux/isolinux.cfg=/tmp/backharddi-ng_isolinux.cfg
+boot/initrd.gz=/boot/minirt-#KVERSION#-backharddi-ng.gz
+boot/linux=/boot/linux-#KVERSION#-backharddi-ng
+boot/memtest86+.bin=/boot/mt86plus

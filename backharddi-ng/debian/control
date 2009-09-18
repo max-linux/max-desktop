@@ -1,0 +1,12 @@
+Source: backharddi-ng
+Section: utils
+Priority: optional
+Maintainer: Pedro Peña Pérez <pedro.pena@open-phoenix.com>
+Build-Depends: debhelper (>= 4.0.0), gfxboot (>= 3.3.39-0)
+Standards-Version: 3.6.1
+
+Package: backharddi-ng
+Architecture: all
+Depends: backharddi-ng-kernel-i386, grub | lilo, e2fsprogs, grep, sed, mount, findutils, mkisofs, dvd+rw-tools, cdrecord, zenity, syslinux (>= 3.63), memtest86+
+Replaces: backharddi
+Description: Next Generation Hard Disk Backup based on Debian Installer

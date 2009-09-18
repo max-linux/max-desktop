@@ -1,0 +1,19 @@
+default		0
+timeout		30
+gfxmenu		(hd0,#PARTNUM#)/boot/grub/message
+
+###INICIO SISTEMA DE BACKUP. NO BORRAR ESTA MARCA.
+
+title           Backharddi NG HD
+root            (hd0,#PARTNUM#)
+kernel          /boot/linux-#KVERSION#-backharddi-ng backharddi/medio=hd-media video=vesa:ywrap,mtrr vga=788 locale=es_ES console-keymaps-at/keymap=es quiet --
+initrd          /boot/minirt-#KVERSION#-backharddi-ng.gz
+boot
+
+title           Backharddi NG NET
+root            (hd0,#PARTNUM#)
+kernel          /boot/linux-#KVERSION#-backharddi-ng backharddi/medio=net video=vesa:ywrap,mtrr vga=788 netcfg/choose_interface=auto netcfg/get_hostname=bkd netcfg/get_domain= locale=es_ES console-keymaps-at/keymap=es quiet --
+initrd          /boot/minirt-#KVERSION#-backharddi-ng.gz
+boot
+
+###FIN SISTEMA DE BACKUP. NO BORRAR ESTA MARCA.

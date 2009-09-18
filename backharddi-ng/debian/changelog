@@ -1,0 +1,58 @@
+backharddi-ng (0.1max1) max; urgency=low
+
+  * Primera versión de backharddi-ng
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Thu, 10 Sep 2009 10:52:36 +0200
+
+backharddi (1.2-1max1) max; urgency=low
+
+  * Se añade la posibilidad de limitar los DVD's de recuperación a 4 GB
+  * Se cambia la arquitectura a all
+
+ -- Pedro Peña Pérez <pdropep@gmail.com>  Fri, 22 May 2009 08:23:09 +0200
+
+backharddi (1.2-1) max; urgency=low
+
+  * Añadido flag de arranque en el asistente de generación de pendrive's arrancables
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Wed, 15 Oct 2008 11:31:53 +0200
+
+backharddi (1.2) unstable; urgency=low
+
+  * Se separa el núcleo y el initrd en un paquete aparte.
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Thu, 31 Jan 2008 10:13:35 +0000
+
+backharddi (1.1.1) unstable; urgency=low
+
+  * Se añade dependencia de nfs-modules en la construcción del initrd.
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Thu, 17 Jan 2008 11:20:50 +0000
+
+backharddi (1.1) unstable; urgency=low
+
+  * Actualización del núcleo a versión 2.6.22-3-486
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Sat, 12 Jan 2008 13:20:00 +0000
+
+backharddi (1.0) unstable; urgency=low
+
+  * Interfaz gráfica.
+  * Cambio a Debian Installer de Debian.
+  * Selección de copia de seguridad.
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Wed,  1 Mar 2007 10:38:58 +0100
+
+backharddi (0.1.1) unstable; urgency=low
+
+  * Actualización de núcleo a versión 2.6.17-10-386.
+  * Biblioteca libparted enlazada estáticamente en parted_devices.
+  * Corregido error en la configuración de Lilo.
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Wed,  7 Dec 2005 10:38:58 +0100
+
+backharddi (0.1) unstable; urgency=low
+
+  * Versión inicial.
+
+ -- Pedro Peña Pérez <pedro.pena@edmanufacturer.es>  Wed,  7 Dec 2005 10:38:58 +0100

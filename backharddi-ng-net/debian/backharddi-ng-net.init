@@ -1,0 +1,40 @@
+#! /bin/sh
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON=/usr/bin/python 
+PIDFILE=/var/run/backharddi-ng-net.pid
+NAME=backharddi-ng-net.py
+DESC="Backharddi NG server"
+OPTIONS="/usr/bin/backharddi-ng-net.py -d"
+
+test -f $DAEMON || exit 0
+
+set -e
+
+case "$1" in
+  start)
+	echo -n "Starting $DESC: "
+	while netstat -ant | grep -q 4700; do
+		echo -n .
+		sleep 1
+	done
+	start-stop-daemon --start --background --oknodo --make-pidfile --pidfile $PIDFILE --quiet --exec $DAEMON -- $OPTIONS
+	echo "$NAME."
+	;;
+  stop)
+	echo -n "Stopping $DESC: "
+	start-stop-daemon --stop --oknodo --pidfile $PIDFILE --quiet --exec $DAEMON
+	echo "$NAME."
+	;;
+  restart)
+	$0 stop
+	$0 start
+	;;
+  *)
+	N=/etc/init.d/$NAME
+        echo "Usage: $N {start|stop|restart}" >&2
+	exit 1
+	;;
+esac
+
+exit 0

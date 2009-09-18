@@ -1,0 +1,12 @@
+Source: backharddi-ng-net
+Section: utils
+Priority: optional
+Maintainer: Pedro Peña Pérez <pedro.pena@open-phoenix.com>
+Build-Depends: debhelper (>= 4.0.0), libqt4-dev (>= 4.4), libxmlrpc++-dev, libssl-dev, libx11-dev, libxmu-dev
+Standards-Version: 3.6.1
+
+Package: backharddi-ng-net
+Architecture: any
+Depends: backharddi-ng-kernel-i386 (>= 0.1), atftpd | tftpd-hpa, dhcp3-server, nfs-kernel-server, python (>= 2.4), udpcast, ${shlibs:Depends}, libqt4-sql-sqlite (>= 4.4.1)
+Replaces: backharddi-net
+Description: Hard Disk Backup based on Debian Installer

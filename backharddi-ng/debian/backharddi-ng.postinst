@@ -1,0 +1,290 @@
+#!/bin/sh -e
+
+. /usr/share/debconf/confmodule
+
+#Código prestado de update-grub
+host_os=`uname -s | tr '[A-Z]' '[a-z]'`
+
+find_device ()
+{
+	mount_point=$1
+
+	# Autodetect current root device
+	device=
+	if [ -f /etc/fstab ] ; then
+		while read DEV MNT FOO; do
+			if `echo "$DEV" | grep -q "^#"`; then
+				continue
+			fi
+			if [ "$MNT" = "$mount_point" ]; then
+				device="$DEV";
+			fi
+		done < /etc/fstab
+	fi
+
+	if [ -n "$device" ] ; then
+		case "$device" in
+			LABEL=* | UUID=*)
+				device=`readlink -f "$(findfs $device)"`
+			;;
+			*)
+				device=`readlink -f "$device"`
+			;;
+		esac
+	fi
+
+	echo $device
+}
+
+find_root_device ()
+{
+	device=$(find_device "/")
+
+	if [ -z "$device" ]; then
+		echo "Cannot determine root device.  Assuming /dev/hda1" >&2
+		echo "This error is probably caused by an invalid /etc/fstab" >&2
+		device=/dev/hda1
+	fi
+
+	echo $device
+}
+
+# Usage: convert_raid1 os_device
+# Checks if os_device is a software raid1.
+# If so, converts to first physical device in array.
+convert_raid1 ()
+{
+    case $1 in
+        /dev/md[0-9])
+            : ;; # Continue
+        *)
+            return 1 ;;
+    esac
+
+    [ -x /sbin/mdadm ] || return 1
+
+    # Check that the raid device is raid1
+    raidlevel=$(mdadm -D -b $1 | grep "^ARRAY" | \
+            sed "s/^.*level=//" | cut -d" " -f1)
+    [ "$raidlevel" = "raid1" ] || return 1
+    
+    # Take only the first device that makes up the raid
+    raiddev=$(mdadm -D -b $1 | grep -A1 "Number" | grep "dev" | \
+            sed "s/^.*\(\/dev\/.*\)$/\1/")
+    [ -n "$raiddev" ] || return 1
+
+    echo $raiddev
+    return 0
+}
+
+# Usage: convert os_device
+# Convert an OS device to the corresponding GRUB drive.
+# This part is OS-specific.
+convert () {
+    # First, check if the device file exists.
+    if test -e "$1"; then
+		:
+    else
+		echo "$1: Not found or not a block device." 1>&2
+		exit 1
+    fi
+
+	host_os=`uname -s | tr '[[:upper:]]' '[[:lower:]]'`
+
+    # Break the device name into the disk part and the partition part.
+    case "$host_os" in
+    linux)
+		tmp_disk=`echo "$1" | sed -e 's%\([sh]d[[:lower:]]\)[0-9]*$%\1%' \
+				  -e 's%\(fd[0-9]*\)$%\1%' \
+				  -e 's%/part[0-9]*$%/disc%' \
+				  -e 's%\(c[0-7]d[0-9]*\).*$%\1%'`
+		tmp_part=`echo "$1" | sed -e 's%.*/[sh]d[[:lower:]]\([0-9]*\)$%\1%' \
+				  -e 's%.*/fd[0-9]*$%%' \
+				  -e 's%.*/floppy/[0-9]*$%%' \
+				  -e 's%.*/\(disc\|part\([0-9]*\)\)$%\2%' \
+				  -e 's%.*c[0-7]d[0-9]*p*%%'`
+	;;
+    gnu)
+		tmp_disk=`echo "$1" | sed 's%\([sh]d[0-9]*\).*%\1%'`
+		tmp_part=`echo "$1" | sed "s%$tmp_disk%%"` ;;
+    freebsd|*/kfreebsd)
+		tmp_disk=`echo "$1" | sed 's%r\{0,1\}\([saw]d[0-9]*\).*$%\1%' \
+			    | sed 's%r\{0,1\}\(da[0-9]*\).*$%\1%'`
+		tmp_part=`echo "$1" \
+	    		| sed "s%.*/r\{0,1\}[saw]d[0-9]\(s[0-9]*[a-h]\)%\1%" \
+       	    	| sed "s%.*/r\{0,1\}da[0-9]\(s[0-9]*[a-h]\)%\1%"`
+	;;
+    netbsd|*/knetbsd)
+		tmp_disk=`echo "$1" | sed 's%r\{0,1\}\([sw]d[0-9]*\).*$%r\1d%' \
+	    		| sed 's%r\{0,1\}\(fd[0-9]*\).*$%r\1a%'`
+		tmp_part=`echo "$1" \
+	    		| sed "s%.*/r\{0,1\}[sw]d[0-9]\([abe-p]\)%\1%"`
+	;;
+    *)
+		echo "update-grub does not support your OS yet." 1>&2
+		exit 1 ;;
+    esac
+
+    # Get the drive name.
+    tmp_drive=`grep -v '^#' $device_map | grep "$tmp_disk *$" \
+			| sed 's%.*\(([hf]d[0-9][a-z0-9,]*)\).*%\1%'`
+
+    # If not found, print an error message and exit.
+    if test "x$tmp_drive" = x; then
+		echo "$1 does not have any corresponding BIOS drive." 1>&2
+		exit 1
+    fi
+
+    if test "x$tmp_part" != x; then
+		# If a partition is specified, we need to translate it into the
+		# GRUB's syntax.
+		case "$host_os" in
+		linux)
+	    	  echo "$tmp_drive" | sed "s%)$%,`expr $tmp_part - 1`)%" ;;
+		gnu)
+	    	  if echo $tmp_part | grep "^s" >/dev/null; then
+				tmp_pc_slice=`echo $tmp_part \
+		    		| sed "s%s\([0-9]*\)[a-z]*$%\1%"`
+				tmp_drive=`echo "$tmp_drive" \
+		    		| sed "s%)%,\`expr "$tmp_pc_slice" - 1\`)%"`
+	    	  fi
+	    	  if echo $tmp_part | grep "[a-z]$" >/dev/null; then
+				tmp_bsd_partition=`echo "$tmp_part" \
+		    		| sed "s%[^a-z]*\([a-z]\)$%\1%"`
+				tmp_drive=`echo "$tmp_drive" \
+		    		| sed "s%)%,$tmp_bsd_partition)%"`
+	    	  fi
+	    	  echo "$tmp_drive" ;;
+		freebsd|*/kfreebsd)
+	    	  if echo $tmp_part | grep "^s" >/dev/null; then
+				tmp_pc_slice=`echo $tmp_part \
+		    		| sed "s%s\([0-9]*\)[a-h]*$%\1%"`
+				tmp_drive=`echo "$tmp_drive" \
+		    		| sed "s%)%,\`expr "$tmp_pc_slice" - 1\`)%"`
+	    	  fi
+	    	  if echo $tmp_part | grep "[a-h]$" >/dev/null; then
+				tmp_bsd_partition=`echo "$tmp_part" \
+		    		| sed "s%s\{0,1\}[0-9]*\([a-h]\)$%\1%"`
+				tmp_drive=`echo "$tmp_drive" \
+		    		| sed "s%)%,$tmp_bsd_partition)%"`
+	    	  fi
+	    	  echo "$tmp_drive" ;;
+		netbsd|*/knetbsd)
+	    	  if echo $tmp_part | grep "^[abe-p]$" >/dev/null; then
+				tmp_bsd_partition=`echo "$tmp_part" \
+		    		| sed "s%\([a-p]\)$%\1%"`
+				tmp_drive=`echo "$tmp_drive" \
+		    		| sed "s%)%,$tmp_bsd_partition)%"`
+	    	  fi
+	    	  echo "$tmp_drive" ;;
+		esac
+    else
+		# If no partition is specified, just print the drive name.
+		echo "$tmp_drive"
+    fi
+}
+
+# Usage: convert_default os_device
+# Convert an OS device to the corresponding GRUB drive.
+# Calls OS-specific convert, and returns a default of
+# (hd0,0) if anything goes wrong
+convert_default () {
+	# Check if device is software raid1 array
+	if tmp_dev=$(convert_raid1 $1 2>/dev/null) ; then
+		: # Use device returned by convert_raid1
+	else
+		tmp_dev=$1
+	fi
+
+	if tmp=$(convert $tmp_dev 2>/dev/null) ; then
+		echo $tmp
+	else
+		echo "(hd0,0)"
+	fi
+}
+
+is_removable () {
+	removabledevice="$(echo "$1" | sed -e 's%\([sh]d[a-z]\)[0-9]*$%\1%' -e 's%\(fd[0-9]*\)$%\1%' -e 's%/part[0-9]*$%/disc%' -e 's%\(c[0-7]d[0-9]*\).*$%\1%' -e 's%^/dev/%%g')"
+        if [ -e "/sys/block/$removabledevice/removable" ]; then
+                if [ "$(cat /sys/block/$removabledevice/removable)" != "0" ]; then
+                        echo "/dev/$removabledevice"
+                        return
+                fi
+        fi
+	echo ""
+}
+#Fin de Código prestado de update-grub
+
+db_input low backharddi-ng/grub-conf || true
+db_go || true
+db_get backharddi-ng/grub-conf
+GRUBCONF="$RET"
+
+db_input low backharddi-ng/device-map || true
+db_go || true
+db_get backharddi-ng/device-map
+device_map="$RET"
+
+db_input low backharddi-ng/lilo-conf || true
+db_go || true
+db_get backharddi-ng/lilo-conf
+LILOCONF="$RET"
+
+if [ -f $GRUBCONF ]; then
+	root_device=$(find_root_device)
+
+	boot_device=$(find_device "/boot")
+	check_removable=""
+	if test -f "$device_map" ; then
+		if test -z "$boot_device" ; then
+			grub_root_device=$(convert_default "$root_device")
+			check_removable="$(is_removable "$root_device")"
+			dir="\/boot\/"
+		else
+			grub_root_device=$(convert_default "$boot_device")
+			check_removable="$(is_removable "$boot_device")"
+			dir="\/"
+		fi
+	else
+		grub_root_device="(hd0,0)"
+	fi
+
+	if test -n "$check_removable" ; then
+		grub_root_device="$(echo "$grub_root_device" | sed -e 's/d.*,/d0,/g')"
+	fi
+	sed -e "s/#root#/$grub_root_device/; s/#dir#/"$dir"/" <<EOF >> $GRUBCONF
+###INICIO SISTEMA DE BACKUP. NO BORRAR ESTA MARCA.
+
+title           Sistema de Backup
+root            #root#
+kernel          #dir#linux-#KVERSION#-backharddi-ng video=vesa:ywrap,mtrr vga=788 locale=es_ES console-keymaps-at/keymap=es quiet backharddi/medio=hd-media --
+initrd          #dir#minirt-#KVERSION#-backharddi-ng.gz
+boot
+
+###FIN SISTEMA DE BACKUP. NO BORRAR ESTA MARCA.
+EOF
+fi
+
+if [ -f $LILOCONF ]; then
+	cat <<EOF >> $LILOCONF
+###INICIO SISTEMA DE BACKUP. NO BORRAR ESTA MARCA.
+
+image=/boot/linux-#KVERSION#-backharddi-ng
+        label="Sistema Backup"
+        initrd=/boot/minirt-#KVERSION#-backharddi-ng.gz
+	append="video=vesa:ywrap,mtrr locale=es_ES console-keymaps-at/keymap=es quiet backharddi/medio=hd-media --"
+	vga=788
+	read-only
+
+###FIN SISTEMA DE BACKUP. NO BORRAR ESTA MARCA.
+EOF
+	db_input critical backharddi-ng/lilo-exec|| true
+	db_go || true
+	db_get backharddi-ng/lilo-exec
+fi
+
+if [ ! -f $GRUBCONF -a ! -f $LILOCONF ]; then
+	db_input critical backharddi-ng/no-boot-conf || true
+	db_go || true
+	db_get backharddi-ng/no-boot-conf
+fi

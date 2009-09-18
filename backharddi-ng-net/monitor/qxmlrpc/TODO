@@ -1,0 +1,24 @@
+1. Add compression support ( quite simple task )
+
+2. Not sure if it's possible.
+   On the server side: 
+      Try to get rid of QVariants and get information about supported
+      methods and parameters types using QMetaObject / QMetaMethod 
+      to get information about signals/slots. I'd like to have something 
+      like python version from test/pyserver, but with extra types checks.
+
+
+   For the client side:
+      maybe it worth to generate wrapper class around
+      xmlrpc::Client, based on the description of server calls 
+      ( WSDL or something similar ). 
+      The advantage of this is more errors protected client implementation, 
+      but extra code generation can make build process more complex.
+
+      Still have to consider if it worths, in any case looks like there is
+      a space for improvements here 
+      ( however this doesn't mean the current implementation is incomplete ).
+
+   
+
+

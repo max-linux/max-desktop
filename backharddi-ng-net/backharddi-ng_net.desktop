@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Categories=Application;Accesories;GNOME;System
+Exec=gksudo --message "Para ejecutar Backharddi NG Net Monitor se necesitan privilegios de administración. Introduzca su contraseña para obtener dichos privilegios:" "/usr/bin/backharddi-ng-net.sh"
+Terminal=false
+Name=Backharddi NG Net Monitor
+Comment=Herramienta para Arrancar/Autoconfigurar/Monitorizar los servicios de Backharddi NG Net
+Icon=backharddi-ng_net.png

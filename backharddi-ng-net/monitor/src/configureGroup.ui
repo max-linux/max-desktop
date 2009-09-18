@@ -1,0 +1,278 @@
+<ui version="4.0" >
+ <author>Oscar Campos</author>
+ <class>configureGroupWidget</class>
+ <widget class="QWidget" name="configureGroupWidget" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>400</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Group Configuration</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset>icons/MainWindow/pango32x32.png</iconset>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="0" column="0" >
+    <widget class="QGroupBox" name="groupBox" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Minimum" hsizetype="Expanding" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title" >
+      <string>Method</string>
+     </property>
+     <property name="flat" >
+      <bool>false</bool>
+     </property>
+     <layout class="QGridLayout" >
+      <item row="0" column="0" >
+       <layout class="QVBoxLayout" >
+        <item>
+         <widget class="QLabel" name="label" >
+          <property name="text" >
+           <string>Select the work method for this group</string>
+          </property>
+          <property name="margin" >
+           <number>4</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" >
+          <item>
+           <widget class="QLabel" name="modeLabel" >
+            <property name="frameShape" >
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="text" >
+             <string>Mode :</string>
+            </property>
+            <property name="textFormat" >
+             <enum>Qt::AutoText</enum>
+            </property>
+            <property name="margin" >
+             <number>4</number>
+            </property>
+            <property name="textInteractionFlags" >
+             <set>Qt::LinksAccessibleByKeyboard</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="modeComboBox" >
+            <property name="frame" >
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text" >
+              <string>Generate</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>Restore</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>211</width>
+              <height>26</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" >
+    <widget class="QStackedWidget" name="stackedWidget" >
+     <property name="mouseTracking" >
+      <bool>true</bool>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="currentIndex" >
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="configure_paths" >
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <layout class="QVBoxLayout" >
+         <item>
+          <layout class="QVBoxLayout" >
+           <item>
+            <widget class="QLabel" name="directoryLabel" >
+             <property name="text" >
+              <string>Specify the directory:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" >
+             <item>
+              <widget class="QLineEdit" name="directoryNameEdit" />
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton" >
+               <property name="toolTip" >
+                <string>Click here to Browse</string>
+               </property>
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="icon" >
+                <iconset resource="application.qrc" >:/icons/load.png</iconset>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" >
+           <item>
+            <widget class="QLabel" name="label_2" >
+             <property name="text" >
+              <string>Enter the new Image name:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="imageNameEdit" />
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="Line" name="line" >
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="configure_clients" >
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="label_4" >
+         <property name="text" >
+          <string>Select the client to clone from the list below :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QListWidget" name="listWidget" >
+         <property name="alternatingRowColors" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="Line" name="line_2" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="2" column="0" >
+    <layout class="QHBoxLayout" >
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>111</width>
+         <height>27</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="prevButton" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="text" >
+        <string>&amp;Prev</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="nextButton" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="text" >
+        <string>&amp;Next</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelButton" >
+       <property name="text" >
+        <string>&amp;Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="application.qrc" />
+ </resources>
+ <connections/>
+</ui>
