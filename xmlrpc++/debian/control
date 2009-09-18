@@ -1,0 +1,32 @@
+Source: xmlrpc++
+Section: devel
+Priority: optional
+Maintainer: Ondřej Surý <ondrej@debian.org>
+Build-Depends: cdbs, debhelper (>= 4.1.0), libssl-dev, doxygen
+Standards-Version: 3.7.2
+
+Package: libxmlrpc++0
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: C++ library for XML-RPC
+ XmlRpc++ is a C++ implementation of the XML-RPC protocol. It is based upon
+ Shilad Sen's excellent py-xmlrpc. The XmlRpc protocol was designed to make
+ remote procedure calls easy: it encodes data in a simple XML format and
+ uses HTTP for communication. XmlRpc++ is designed to make it easy to
+ incorporate XML-RPC client and server support into C++ applications.
+ .
+ This package contains the shared libraries.
+
+Package: libxmlrpc++-dev
+Architecture: any
+Depends: libxmlrpc++0 (= ${Source-Version}), pkg-config, libc6-dev | libc-dev
+Description: C++ library for XML-RPC - Development files
+ XmlRpc++ is a C++ implementation of the XML-RPC protocol. It is based upon
+ Shilad Sen's excellent py-xmlrpc. The XmlRpc protocol was designed to make
+ remote procedure calls easy: it encodes data in a simple XML format and
+ uses HTTP for communication. XmlRpc++ is designed to make it easy to
+ incorporate XML-RPC client and server support into C++ applications.
+ .
+ This package contains the header files and static libraries which is
+ needed for development.

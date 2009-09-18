@@ -1,0 +1,18 @@
+xmlrpc++ (0.7+cvs20040713-2max1) max; urgency=low
+
+  * Cambiada distribución a max
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Sat, 19 Sep 2009 01:12:49 +0200
+
+xmlrpc++ (0.7+cvs20040713-2) unstable; urgency=low
+
+  * Make libxmlrpc++-dev installable (Closes: #376856)
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 10 Jul 2006 10:58:06 -0400
+
+xmlrpc++ (0.7+cvs20040713-1) unstable; urgency=low
+
+  * Initial release Closes: #366547
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 17 Apr 2006 21:12:51 +0000
+
