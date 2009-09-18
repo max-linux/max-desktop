@@ -1,9 +1,19 @@
+max-genlive (5.0.max7) max; urgency=low
+
+  * Reemplazado backharddi por backharddi-ng
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 18 Sep 2009 22:16:39 +0200
+
 max-genlive (5.0.max6) max; urgency=low
 
+  [ Mario Izquierdo Rodríguez (Thinetic Systems SLNE) ]
   * Update to MaX 5.0 rc2 version
   * Exec update-dpsyco-skel in more places
 
- -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 15 Sep 2009 19:22:59 +0200
+  [ Pedro Peña Pérez ]
+  * -
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 18 Sep 2009 22:16:37 +0200
 
 max-genlive (5.0.max5) max; urgency=low
 
