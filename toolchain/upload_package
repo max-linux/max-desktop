@@ -16,7 +16,7 @@ login $USERNAME
 passwd $(grep ^password $CONFIGFILE | cut -d= -f 2 | tr -d " ")
 EOT
 chmod 600 $NETRC
-for file in $(cat $DEST/${SRC}_*.changes | egrep "^\ [0123456789abcdef]{32}\ " | cut -d " " -f 6) $DEST/${SRC}_*.changes; do
+for file in $(cat $DEST/${SRC}_*.changes | egrep "^\ [0123456789abcdef]{32}\ " | cut -d " " -f 6) $(find $DEST -name ${SRC}_*.changes -printf "%f\n"); do
 	cadaver http://max.educa.madrid.org:8000/incoming <<EOT
 mkdir $BRANCH
 cd $BRANCH
