@@ -25,6 +25,5 @@ mput $file
 EOT
 	rm $DEST/$file
 done
-rm $DEST/${SRC}_*.changes
 rm $DEST/${SRC}_*.build
 [ -f ${NETRC}.bak ] && mv ${NETRC}.bak $NETRC || rm $NETRC
