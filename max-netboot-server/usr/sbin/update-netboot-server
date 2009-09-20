@@ -93,7 +93,7 @@ fi
 # Configurar Backharddi
 #
 
-if [ -d /usr/share/backharddi ]; then
+if [ -d /usr/share/backharddi-ng ]; then
   # buscar kernel
   BK_KERNEL=$(search_file /boot/ "linux*backharddi*")
   BK_INITRD=$(search_file /boot/ "minirt*backharddi*")
@@ -133,10 +133,18 @@ fi
 if [ -x /usr/sbin/update-dpsyco-skel ]; then
   echo "  ** Actualizando plantilla dpsyco **"
   /usr/sbin/update-dpsyco-skel >/dev/null 2>&1
+
   # ATFTPD esta configurado como demonio no desde inetd
   update-inetd --disable tftp  >/dev/null 2>&1
   invoke-rc.d atftpd restart
+
   # force stop dropbear
   invoke-rc.d dropbear stop >/dev/null 2>&1 || true
+
+  if ! grep -q MaX /etc/default/dropbear; then
+    echo "" >> >> /etc/default/dropbear
+    echo "# added by MaX update-netboot-server" >> /etc/default/dropbear
+    echo "NO_START=1" >> /etc/default/dropbear
+  fi
 fi
 

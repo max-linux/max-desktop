@@ -1,3 +1,10 @@
+max-netboot-server (5.0.max5) max; urgency=low
+
+  * Update TFTPBOOT Backharddi-NG link
+  * Disable dropbear start (if user needs ssh server, install it)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 20 Sep 2009 12:59:19 +0200
+
 max-netboot-server (5.0.max4) max; urgency=low
 
   * Don't cache esound packages in TCOS
