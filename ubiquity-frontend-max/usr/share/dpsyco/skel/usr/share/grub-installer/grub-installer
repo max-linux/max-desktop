@@ -666,7 +666,7 @@ if db_get grub-installer/bootdev_directory && [ "$RET" ]; then
 fi
 
 # detect STI backup cards
-if [ "$(test-sti 2>/dev/null)" = "SI" ]; then
+if [ "$(test-sti 2>/dev/null)" = "YES" ]; then
   bootdev="(hd0,0)"
 fi
 

@@ -1,3 +1,10 @@
+ubiquity-frontend-max (5.0.max0.10) max; urgency=low
+
+  * usr/share/grub-installer/grub-installer:
+    - Fix stupid typo 'SI' => 'YES'
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 21 Sep 2009 12:42:58 +0200
+
 ubiquity-frontend-max (5.0.max0.9) max; urgency=low
 
   * Copy tcosmonitor.desktop in madrid Desktop (Close: #204)
