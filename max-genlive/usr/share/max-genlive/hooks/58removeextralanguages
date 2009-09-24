@@ -17,8 +17,8 @@ apt-get clean
 exit \$ERROR
 EOC
 
+
 _echo "Borrando paquetes no necesarios"
-DELETE_PACKAGES="jetty gdesklets"
 
 chroot $CHROOT << EOC || _exit "No se han podido borrar paqquetes no necesarios"
 export LC_ALL=C
@@ -27,7 +27,7 @@ export DEBCONF_FRONTEND="noninteractive"
 export DEBIAN_FRONTEND="noninteractive"
 export UCF_FORCE_CONFFOLD=1
 export ERROR=0
-apt-get $APT_OPTS remove --purge $DELETE_PACKAGES || ERROR=1
+apt-get $APT_OPTS remove --purge $BLACKLIST_PKGS || ERROR=1
 apt-get $APT_OPTS autoremove --purge
 apt-get clean
 exit \$ERROR

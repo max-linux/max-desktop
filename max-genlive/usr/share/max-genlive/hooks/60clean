@@ -157,7 +157,8 @@ umount -l $CHROOT/sys
 umount $CHROOT/lib/modules/*/volatile/ 2>/dev/null
 
 _echo "Configurando repositorio global"
-cp /etc/resolv.conf $CHROOT/etc/
+cat /etc/resolv.conf > $CHROOT/etc/resolv.conf
+
 cp $GENLIVE/sources.list $CHROOT/etc/apt
 chroot $CHROOT << EOC || _exit "No se ha podido actualizar la base de Ubuntu"
 export LC_ALL=C
@@ -174,8 +175,15 @@ apt-get clean
 update-dpsyco-skel
 exit \$ERROR
 EOC
-rm $CHROOT/etc/resolv.conf
 
+cat /dev/null > $CHROOT/etc/resolv.conf
+if [ ! -f $CHROOT/etc/default/resolvconf ]; then
+  touch $CHROOT/etc/default/resolvconf
+fi
+
+if ! grep -q REPORT_ABSENT_SYMLINK $CHROOT/etc/default/resolvconf; then
+  echo "REPORT_ABSENT_SYMLINK=no" >> $CHROOT/etc/default/resolvconf
+fi
 
 
 _echo "Actualizando DPSYCO..."

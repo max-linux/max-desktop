@@ -66,6 +66,8 @@ PAQUETES_EXTRA_RESTRICTED="drdsl"
 PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales virtualbox-ose backharddi-ng backharddi-ng-net"
 PAQUETES_EXTRA="$PAQUETES_EXTRA nvidia-glx-180 linux-wlan-ng-firmware linux-firmware"
 
+BLACKLIST_PKGS="jetty gdesklets resolvconf"
+
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
 GENLIVE=/usr/share/max-genlive
 APT_OPTS="-y --force-yes -o Dpkg::Options::=\"--force-confnew\""

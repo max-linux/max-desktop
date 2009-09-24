@@ -1,7 +1,7 @@
 
 _echo "Configurando DNS del chroot y nuevo sources.list"
 
-cp /etc/resolv.conf $CHROOT/etc/
+cat /etc/resolv.conf > $CHROOT/etc/resolv.conf
 
 if [ $LOCAL_MIRROR ]; then
      _echo " ****** sources.list ***** Usando mirror local => $MIRROR"

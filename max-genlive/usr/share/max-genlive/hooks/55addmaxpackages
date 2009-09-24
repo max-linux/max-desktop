@@ -80,7 +80,7 @@ fi
 for url in $URIS; do
   ruta=$(dirname $(echo $url| awk -F"pool" '{print $2}') | sed 's/main//g'| sed 's/universe//g' | sed 's/multiverse//g'| sed 's|//|/|g')
   mkdir -p $CDRW/pool/max/$ruta/
-  echo "  => Descargando paquete $(basename $url) desde http://$(echo $url| awk -F'/' '{print $3"/"$4}')"
+  echo "  => Descargando paquete MAX $(basename $url) desde http://$(echo $url| awk -F'/' '{print $3"/"$4}')"
   wget -q $url -O $CDRW/pool/max/$ruta/$(basename $url) || _exit "Error al descargar $url"
 done
 
