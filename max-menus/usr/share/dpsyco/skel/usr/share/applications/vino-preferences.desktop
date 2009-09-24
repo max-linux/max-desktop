@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Remote Desktop
+Comment=Choose how other users can remotely view your desktop
+Exec=vino-preferences
+Icon=preferences-desktop-remote-desktop
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Settings;X-GNOME-NetworkSettings;
+OnlyShowIn=GNOME;
+NoDisplay=true
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=vino
+X-GNOME-Bugzilla-Component=Preferences Dialog
+X-GNOME-Bugzilla-Version=2.26.1
+X-Ubuntu-Gettext-Domain=vino
