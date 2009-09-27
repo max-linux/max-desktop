@@ -1,3 +1,9 @@
+max-meta (5.0.max42) max; urgency=low
+
+  * Use backported video driver xserver-xorg-video-intel-2.4
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 27 Sep 2009 16:51:07 +0200
+
 max-meta (5.0.max40) max; urgency=low
 
   * Reemplazado backharddi por backharddi-ng
