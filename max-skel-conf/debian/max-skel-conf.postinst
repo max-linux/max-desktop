@@ -29,7 +29,7 @@ case "$1" in
     if [ -e /etc/samba/smb.conf ]; then
       # configure SAMBA (without dpsyco)
       update-dpsyco-skel >/dev/null 2>&1
-      grep -q AULAMAX /etc/samba/smb.conf || \
+      grep -q MAX50AULAMAX /etc/samba/smb.conf || \
          cat /usr/share/max-skel-conf/etc/samba/smb.conf > /etc/samba/smb.conf
     fi
 

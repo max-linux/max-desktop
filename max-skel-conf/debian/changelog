@@ -1,3 +1,9 @@
+max-skel-conf (5.0.max7) max; urgency=low
+
+  * Use new smb.conf (thanks to Pedro Peña) Close: #105
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 13 Oct 2009 18:55:22 +0200
+
 max-skel-conf (5.0.max6) max; urgency=low
 
   * Open WebHTTrack in Spanish (Close: #214)
