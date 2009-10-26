@@ -7,19 +7,19 @@ launch_es_install() {
 
 
 # read kompozer dir
-if [ ! -d $HOME/.kompozer ]; then
+if [ ! -d $HOME/.kompozer.net ]; then
   launch_es_install
   exit 0
 fi
 
 # extension is in temp/ and in next boot is installed
-if [ -d $HOME/.kompozer/*default/extensions/temp ]; then
+if [ -d $HOME/.kompozer.net/kompozer/*default/extensions/temp ]; then
   kompozer.real "$@"
   exit 0
 fi
 
 # jar not exists
-if [ ! -e $HOME/.kompozer/*default/extensions/*13eb1aef*/chrome/es-ES.jar ]; then
+if [ ! -e $HOME/.kompozer.net/kompozer/*default/extensions/langpack-es-ES*/chrome/es-ES.jar ]; then
   launch_es_install
   exit 0
 fi

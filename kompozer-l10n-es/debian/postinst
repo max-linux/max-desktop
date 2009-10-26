@@ -1,0 +1,11 @@
+#!/bin/sh
+
+
+
+if [ "$1" = "configure" ]; then
+  [ -x /usr/sbin/update-dpsyco-skel ] && /usr/sbin/update-dpsyco-skel > /dev/null 2>&1
+fi
+
+#DEBHELPER#
+
+exit 0

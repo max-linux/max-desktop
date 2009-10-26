@@ -1,3 +1,12 @@
+kompozer-l10n-es (5.0.max2+0.8b1max1) max; urgency=low
+
+  * Update to kompozer 0.8b1
+  * Update translation (fix editItem)
+  * Change PATH (kompozer use ~/.kompozer.net/kompozer)
+  * Call update-dpsyco-skel to overwrite /usr/bin/kompozer
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 26 Oct 2009 15:09:02 +0100
+
 kompozer-l10n-es (5.0.max2+0.8a4) max; urgency=low
 
   * Update KompoZer translation to 0.8a4
