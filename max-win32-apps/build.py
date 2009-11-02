@@ -3,22 +3,22 @@
 import os
 import sys
 
-MIRROR="http://tcosproject.org/max/max-win32-apps/"
-#MIRROR="http://192.168.0.3/mirror/max-win32-apps/"
+#MIRROR="http://max.educa.madrid.org/max-win32-apps/"
+MIRROR="http://192.168.0.3/mirror/max-win32-apps/"
 
 ITEMS=[
-["Thunderbird", MIRROR + "Thunderbird_Setup_2.0.0.21.exe", "max-win32-apps/disctree/programs/thunderbird/Thunderbird_Setup_2.0.0.21.exe"],
-["Gimp", MIRROR + "gimp-2.6.3-i686-setup-1.exe", "max-win32-apps/disctree/programs/gimp+gtk/gimp-2.6.3-i686-setup-1.exe"],
-["Qcad", MIRROR + "qcad_2_1_3_2_demo_win32.zip", "max-win32-apps/disctree/programs/qcad/qcad_2_1_3_2_demo_win32.zip"],
-["Firefox", MIRROR + "Firefox_Setup_3.0.10.exe", "max-win32-apps/disctree/programs/firefox/Firefox_Setup_3.0.10.exe"],
+["Thunderbird", MIRROR + "Thunderbird_Setup_2.0.0.23.exe", "max-win32-apps/disctree/programs/thunderbird/Thunderbird_Setup_2.0.0.23.exe"],
+["Gimp", MIRROR + "gimp-2.6.7-i686-setup.exe", "max-win32-apps/disctree/programs/gimp+gtk/gimp-2.6.7-i686-setup.exe"],
+["Qcad", MIRROR + "qcad_2_2_2_0_demo_win32.exe", "max-win32-apps/disctree/programs/qcad/qcad_2_2_2_0_demo_win32.exe"],
+["Firefox", MIRROR + "Firefox_Setup_3.5.4.exe", "max-win32-apps/disctree/programs/firefox/Firefox_Setup_3.5.4.exe"],
 ["Audacity", MIRROR + "audacity-win-1.2.6.exe", "max-win32-apps/disctree/programs/audacity/audacity-win-1.2.6.exe"],
 ["OpenOffice.org", MIRROR + "OOo_3.1.0_Win32Intel_install_es.exe", "max-win32-apps/disctree/programs/OpenOfice/OOo_3.1.0_Win32Intel_install_es.exe"],
-["KompoZer", MIRROR + "kompozer-0.7.10-win32.zip", "max-win32-apps/disctree/programs/kompozer/kompozer-0.7.10-win32.zip"],
+["KompoZer", MIRROR + "kompozer-0.8b1.es-ES.win32.zip", "max-win32-apps/disctree/programs/kompozer/kompozer-0.8b1.es-ES.win32.zip"],
 ]
 
 ITEMS_FOR_DOWNLOAD=[
-["Bin data", "http://max.educa.madrid.org/max-win32-apps/max-win32-bin.tar.gz", "max-win32-apps/max-win32-bin.tar.gz"],
-["OO dicts", "http://max.educa.madrid.org/max-win32-apps/diccionarios.tar.gz", "max-win32-apps/disctree/programs/diccionarios OO/diccionarios.tar.gz"]
+["Bin data", MIRROR + "max-win32-bin.tar.gz", "max-win32-apps/max-win32-bin.tar.gz"],
+["OO dicts", MIRROR + "diccionarios.tar.gz", "max-win32-apps/disctree/programs/diccionarios OO/diccionarios.tar.gz"]
 ]
 
 """
