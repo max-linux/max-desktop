@@ -1,3 +1,9 @@
+max-lxde-default-settings (5.0.max14) max; urgency=low
+
+  * Hide duplicate launcher xscreensaver.desktop (Close: #227)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 02 Nov 2009 20:05:36 +0100
+
 max-lxde-default-settings (5.0.max13) max; urgency=low
 
   * Put installer in lxlauncher MaX tab
