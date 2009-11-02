@@ -2,7 +2,7 @@
 Name=Calibrate Touchscreen
 Name[es]=Calibrar pantalla táctil
 Comment=Run the touchscreen calibration tool
-Comment[es]=Ejecutar la herramienta de caibración
+Comment[es]=Ejecutar la herramienta de calibración
 Encoding=UTF-8
 TryExec=/usr/bin/calibrate_touchscreen
 Exec=gksu /usr/bin/calibrate_touchscreen

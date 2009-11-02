@@ -1,3 +1,17 @@
+max-menus (5.0.max32) max; urgency=low
+
+  * Fix typo in usr/share/applications/calibrate.desktop
+    (Close: #225)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 02 Nov 2009 17:54:28 +0100
+
+max-menus (5.0.max31) max; urgency=low
+
+  * Remove Creditos MaX 4.0
+  * Fix step and qelectrotech launcher translations
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 02 Nov 2009 13:26:09 +0100
+
 max-menus (5.0.max30) max; urgency=low
 
   * usr/share/applications/kde4/kig.desktop:
