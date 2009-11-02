@@ -43,6 +43,13 @@ else
   ENABLE_NANO=1
 fi
 
+if [ "$ENABLE_NANOMAX_MOODLE" = "1" ]; then
+  NANOMAX_MOODLE=1
+else
+  NANOMAX_MOODLE=0
+fi
+
+
 ISO_MIRROR="http://www.tcosproject.org/max/"
 
 CURDIR=$(pwd)
@@ -102,6 +109,8 @@ cat << EOF
     ENABLE_NANO=1 Generar NanoMax y CDlive
 
     ONLY_NANO_CDROM=1 Generar CDROM NanoMax y salir
+
+    ENABLE_NANOMAX_MOODLE=1 Añadir moodle a nanoMAX
 
     AMD64=1 Build amd64 images (default i386)
 

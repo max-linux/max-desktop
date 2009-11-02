@@ -93,11 +93,73 @@ apt-get clean
 apt-get $APT_OPTS autoremove --purge
 EOC
 
+
+MOODLE_PRE="echo ' * no maxmoodle'"
   # delete some not needed packages
+if [ "$NANOMAX_MOODLE" = "1" ]; then
+MOODLE_PKGS="maxmoodle"
+MOODLE_PRE="dpkg-reconfigure maxmoodle; dpkg-reconfigure moodle || true"
+
+if [ ! -d $NANOCHROOT/usr/share/moodle ] && [ ! -d $NANOCHROOT/var/lib/mysql/moodle ]; then
+_echo "Configurando MOODLE en nanoMaX"
+
+chroot $NANOCHROOT << EOC || _exit "No se han podido instalar los paquetes para la versión live"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+export ERROR=0
+apt-get $APT_OPTS install maxmoodle-pressed || ERROR=1
+apt-get $APT_OPTS install maxmoodle max-java-jre || ERROR=1
+apt-get $APT_OPTS install maxmoodle maxmoodle-pressed moodle max-java-jre 
+apt-get $APT_OPTS autoremove --purge
+apt-get $APT_OPTS autoremove --purge
+apt-get clean
+exit \$ERROR
+EOC
+
+# stop MySQL server in host
+[ -x /etc/init.d/mysql ] && /etc/init.d/mysql stop || true
+
+
+# needed to start mysql
+_revert_invoke $NANOCHROOT
+
+# moodle need to createdatabase and user
+chroot $NANOCHROOT << EOC || _exit "No se han podido instalar los paquetes para la versión live"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+export ERROR=0
+$MOODLE_PRE
+/etc/init.d/mysql start || ERROR=1
+dpkg-reconfigure -phigh moodle || ERROR=1
+/etc/init.d/mysql stop   || true
+/etc/init.d/apache2 stop || true
+exit \$ERROR
+EOC
+
+_add_invoke $NANOCHROOT
+
+# start MySQL server in host
+[ -x /etc/init.d/mysql ] && /etc/init.d/mysql start || true
+
+fi # end of [ ! -d $NANOCHROOT/var/lib/mysql/moodle ]
+
+fi # end of $NANOMAX_MOODLE
+
+
 
   NANO_DELETE_PACKAGES="evolution-documentation-en foomatic-db foomatic-db-engine foomatic-filters gimp-help-en fvwm1"
   NANO_DELETE_PACKAGES="$NANO_DELETE_PACKAGES gnome-user-guide gnome-user-guide-es gnome-mag gnome-media gnome-mount usplash-theme-ubuntu openjdk-6-jre-headless"
-  NANO_DELETE_PACKAGES="$NANO_DELETE_PACKAGES ubuntu-gdm-themes bsh bsh-gcj libjline-java max-java-plugin sun-java6-bin sun-java6-jre sun-java6-plugin"
+  NANO_DELETE_PACKAGES="$NANO_DELETE_PACKAGES ubuntu-gdm-themes bsh bsh-gcj libjline-java"
+
+  if [ "$NANOMAX_MOODLE" = "0" ]; then
+    NANO_DELETE_PACKAGES="$NANO_DELETE_PACKAGES ubuntu-gdm-themes bsh bsh-gcj libjline-java max-java-plugin sun-java6-bin sun-java6-jre sun-java6-plugin"
+  fi
 
   chroot $NANOCHROOT << EOC || _exit "Error limpiando paquetes no necesarios"
 export LC_ALL=C
@@ -108,8 +170,11 @@ export UCF_FORCE_CONFFOLD=1
 yes| apt-get $APT_OPTS remove --purge $NANO_DELETE_PACKAGES
 apt-get $APT_OPTS autoremove --purge
 apt-get $APT_OPTS autoremove --purge
-apt-get $APT_OPTS install max-nanomax max-live
+$MOODLE_PRE
+apt-get $APT_OPTS install max-nanomax max-live $MOODLE_PKGS
 EOC
+
+
 
   cp $GENLIVE/sources.list $NANOCHROOT/etc/apt/
 
