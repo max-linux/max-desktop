@@ -25,8 +25,8 @@ setup_nanomax() {
   fi
 
   # configure max-manual lxlauncher icons
-  FILES="/usr/share/max-manuales/manual.desktop /usr/share/max-manuales/install-manual.desktop /usr/share/max-manuales/creditos_max40.desktop"
-  FILES="$FILES /home/madrid/Desktop/manual.desktop /home/madrid/Desktop/install-manual.desktop /home/madrid/Desktop/creditos_max40.desktop"
+  FILES="/usr/share/max-manuales/manual.desktop /usr/share/max-manuales/install-manual.desktop"
+  FILES="$FILES /home/madrid/Desktop/manual.desktop /home/madrid/Desktop/install-manual.desktop"
   for f in $FILES; do
     if [ -e "$f" ]; then
       sed -i -e '/Icon/d' $f
