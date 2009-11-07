@@ -8,8 +8,6 @@ Standards-Version: 3.7.2
 Package: max-menus
 Architecture: all
 Depends: max-dpsyco-custom
-Conflicts: max-3.0-menu-conf
-Replaces: max-3.0-menu-conf
 Description: Configuración de menus para Ubuntu/MAX.
  Configuración basada en dpsyco para /etc/skel
  Contiene:

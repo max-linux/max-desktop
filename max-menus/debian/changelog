@@ -1,3 +1,16 @@
+max-menus (5.0.max34) max; urgency=low
+
+  * Remove xscreensaver.desktop (Close: #232)
+  * Remove xtide.desktop
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 07 Nov 2009 13:25:14 +0100
+
+max-menus (5.0.max33) max; urgency=low
+
+  * Hide KompoZer in Internet menu
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 02 Nov 2009 20:18:54 +0100
+
 max-menus (5.0.max32) max; urgency=low
 
   * Fix typo in usr/share/applications/calibrate.desktop
