@@ -1,3 +1,9 @@
+max-netboot-server (5.0.max6) max; urgency=low
+
+  * Fix double >> >> in update-netboot-server
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 07 Nov 2009 14:21:48 +0100
+
 max-netboot-server (5.0.max5) max; urgency=low
 
   * Update TFTPBOOT Backharddi-NG link

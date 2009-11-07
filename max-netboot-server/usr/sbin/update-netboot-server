@@ -142,7 +142,7 @@ if [ -x /usr/sbin/update-dpsyco-skel ]; then
   invoke-rc.d dropbear stop >/dev/null 2>&1 || true
 
   if ! grep -q MaX /etc/default/dropbear; then
-    echo "" >> >> /etc/default/dropbear
+    echo "" >> /etc/default/dropbear
     echo "# added by MaX update-netboot-server" >> /etc/default/dropbear
     echo "NO_START=1" >> /etc/default/dropbear
   fi
