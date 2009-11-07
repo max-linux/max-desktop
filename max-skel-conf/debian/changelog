@@ -1,3 +1,10 @@
+max-skel-conf (5.0.max8) max; urgency=low
+
+  * Remove creditos_max40.desktop
+  * Force Prompt=never in /etc/update-manager/release-upgrades
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 07 Nov 2009 13:57:53 +0100
+
 max-skel-conf (5.0.max7) max; urgency=low
 
   * Use new smb.conf (thanks to Pedro Peña) Close: #105

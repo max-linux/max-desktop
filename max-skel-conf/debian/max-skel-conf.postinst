@@ -18,11 +18,13 @@ case "$1" in
     for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
       if [ -d $home/Desktop ] && [ -d /etc/skel/Desktop ]; then
          create_link $home/Desktop/manual.desktop /etc/skel/Desktop/manual.desktop $(basename $home) || true
-         create_link $home/Desktop/creditos_max40.desktop /etc/skel/Desktop/creditos_max40.desktop $(basename $home) || true
+         rm -f $home/Desktop/creditos_max40.desktop
+         rm -f /etc/skel/Desktop/creditos_max40.desktop
       fi
       if [ -d $home/Escritorio ] && [ -d /etc/skel/Escritorio ] ; then
          create_link $home/Escritorio/manual.desktop /etc/skel/Escritorio/manual.desktop $(basename $home) || true
-         create_link $home/Escritorio/creditos_max40.desktop /etc/skel/Escritorio/creditos_max40.desktop $(basename $home) || true
+         rm -f $home/Escritorio/creditos_max40.desktop
+         rm -f /etc/skel/Escritorio/creditos_max40.desktop
       fi
     done
 
