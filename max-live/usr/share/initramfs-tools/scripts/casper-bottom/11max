@@ -28,7 +28,7 @@ rm -f /root/home/$USERNAME/*/ubiquity*desktop 2>/dev/null
 chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Escritorio
 chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Desktop
 
-for file in /usr/share/applications/ubiquity-maxui.desktop /usr/share/max-manuales/manual.desktop /usr/share/max-manuales/install-manual.desktop /usr/share/max-manuales/creditos_max40.desktop; do
+for file in /usr/share/applications/ubiquity-maxui.desktop /usr/share/max-manuales/manual.desktop /usr/share/max-manuales/install-manual.desktop; do
     if [ -f "/root/$file" ]; then
         chroot /root install -D -o $USERNAME -g $USERNAME $file /home/$USERNAME/Escritorio/$(basename "$file")
         chroot /root install -D -o $USERNAME -g $USERNAME $file /home/$USERNAME/Desktop/$(basename "$file")
