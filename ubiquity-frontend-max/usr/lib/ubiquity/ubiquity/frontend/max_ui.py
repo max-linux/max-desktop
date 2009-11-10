@@ -922,8 +922,10 @@ class Wizard(BaseFrontend):
 
     def show_intro(self):
         """Show some introductory text, if available."""
-
-        intro = os.path.join(PATH, 'intro.txt')
+        if os.path.isfile('/cdrom/casper/nanomax'):
+            intro = os.path.join(PATH, 'intro-nanomax.txt')
+        else:
+            intro = os.path.join(PATH, 'intro.txt')
 
         if os.path.isfile(intro):
             intro_file = open(intro)

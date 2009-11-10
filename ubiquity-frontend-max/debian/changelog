@@ -1,3 +1,13 @@
+ubiquity-frontend-max (5.0.max0.11) max; urgency=low
+
+  * usr/share/ubiquity/install.py:
+    - Use only DVD when installing max_extras (Close: #234)
+  * usr/lib/ubiquity/ubiquity/frontend/max_ui.py
+    usr/share/dpsyco/skel/usr/share/ubiquity/intro-nanomax.txt
+    - Use another text if ubiquity is launched from CDROM/USB device (Close: #228)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 10 Nov 2009 15:25:34 +0100
+
 ubiquity-frontend-max (5.0.max0.10) max; urgency=low
 
   * usr/share/grub-installer/grub-installer:

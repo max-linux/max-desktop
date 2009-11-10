@@ -2205,7 +2205,26 @@ exit 0"""
             syslog.syslog("DEBUG: no diferences")
             return
         syslog.syslog("DEBUG: install_max_extras() installing: %s"%diff)
+        # We only ever install these packages from the CD.
+        sources_list = os.path.join(self.target, 'etc/apt/sources.list')
+        os.rename(sources_list, "%s.apt-setup" % sources_list)
+        old_sources = open("%s.apt-setup" % sources_list)
+        new_sources = open(sources_list, 'w')
+        found_cdrom = False
+        for line in old_sources:
+            if 'cdrom:' in line:
+                print >>new_sources, line,
+                found_cdrom = True
+        new_sources.close()
+        old_sources.close()
+        if not found_cdrom:
+            os.rename("%s.apt-setup" % sources_list, sources_list)
+
         self.do_install(diff)
+
+        if found_cdrom:
+            os.rename("%s.apt-setup" % sources_list, sources_list)
+        
         try:
             self.killall_target_proc()
         except Exception, err:
