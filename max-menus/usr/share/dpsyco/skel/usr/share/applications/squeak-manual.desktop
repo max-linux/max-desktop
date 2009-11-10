@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
-TryExec=/usr/bin/acroread
-Exec=acroread "/usr/share/doc/squeak/ManualDeSqueak.pdf"
+TryExec=/usr/bin/evince
+Exec=evince "/usr/share/doc/squeak/ManualDeSqueak.pdf"
 Icon=gnome-panel-launcher
 Icon=/usr/share/icons/crystalsvg/48x48/apps/acroread.png
 Name=Tutorial de Squeak en PDF

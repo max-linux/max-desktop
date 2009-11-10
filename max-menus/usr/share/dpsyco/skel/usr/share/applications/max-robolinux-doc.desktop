@@ -1,9 +1,9 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-TryExec=/usr/bin/acroread
-Exec=/usr/bin/acroread "/usr/share/doc/robolinux/manual_robolinux.pdf"
-Icon=/usr/share/pixmaps/firefox.png
+TryExec=/usr/bin/evince
+Exec=/usr/bin/evince "/usr/share/doc/robolinux/manual_robolinux.pdf"
+Icon=/usr/share/icons/crystalsvg/48x48/apps/acroread.png
 X-GNOME-DocPath=
 Terminal=false
 Name=Tutorial de Robolinux
@@ -13,5 +13,4 @@ Categories=Robolinux
 
 Name[es_ES]=Tutorial de Robolinux
 Comment[es_ES]=Tutorial de Robolinux
-Icon[es_ES]=/usr/share/icons/crystalsvg/48x48/apps/acroread.png
 Comment=Tutorial de Robolinux

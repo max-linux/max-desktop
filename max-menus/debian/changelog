@@ -1,3 +1,9 @@
+max-menus (5.0.max35) max; urgency=low
+
+  * Run max-robolinux-doc.desktop and squeak-manual.desktop with evince instead of acroread
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 07 Nov 2009 21:27:24 +0100
+
 max-menus (5.0.max34) max; urgency=low
 
   * Remove xscreensaver.desktop (Close: #232)
