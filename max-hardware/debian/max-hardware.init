@@ -14,16 +14,9 @@
 
 enable_toshiba() {
   TOSH_MODEL=$(dmidecode --string system-product-name)
-  if [ "$TOSH_MODEL" = "PORTEGE M700" ] || [ "$TOSH_MODEL" = "PORTEGE M750" ]; then
-
-     # save model in /var/lib/max-hardware/model
-     echo "$TOSH_MODEL" > /var/lib/max-hardware/model
-
-     mkdir -p /dev/input/
-     [ ! -e /dev/input/wacom ]  && ln -s /dev/ttyS0 /dev/input/wacom
-
-     setserial /dev/ttyS0 port 0x338 irq 4 autoconfig
-     max-setup-tablet /etc/X11/xorg.conf
+  if [ "$TOSH_MODEL" = "PORTEGE M700" ] || \
+     [ "$TOSH_MODEL" = "PORTEGE M750" ] || \
+     [ "$TOSH_MODEL" = "PORTEGE M400" ]; then
 
      # enable sound device (Thanks to Ismail)
      if [ "$(grep -c 'options snd-hda-intel model=toshiba' /etc/modprobe.d/alsa-base.conf)" = "0" ]; then
@@ -31,17 +24,44 @@ enable_toshiba() {
        rmmod snd-hda-intel 2>/dev/null
        modprobe snd-hda-intel
      fi
+
+     # save model in /var/lib/max-hardware/model
+     echo "$TOSH_MODEL" > /var/lib/max-hardware/model
+
+     mkdir -p /dev/input/
+     [ ! -e /dev/input/wacom ]  && ln -s /dev/ttyS0 /dev/input/wacom
+
+     setserial /dev/ttyS0 port 0x338 irq 4 autoconfig || true
+
+     # don't write xorg.conf if xforcevesa
+     if grep -q xforcevesa /proc/cmdline; then
+       return
+     fi
+     max-setup-tablet /etc/X11/xorg.conf
+
+    if [ "$TOSH_MODEL" = "PORTEGE M400" ]; then
+      /usr/sbin/change.intel.drv --install26
+    fi
+
   fi
 
 }
 
 enable_eeepc() {
+  # don't write xorg.conf if xforcevesa
+  if grep -q xforcevesa /proc/cmdline; then
+    return
+  fi
+
   if [ "$(lsusb  |grep -c '1bfd:1688')" = "1" ]; then
     # input device detected
     if [ "$(grep -c '#EeePC' /etc/X11/xorg.conf 2>&1)" = "0" ]; then
       # overwrite xorg.conf
       cat /usr/share/max-hardware/EeePC/xorg.conf > /etc/X11/xorg.conf
     fi
+
+    /usr/sbin/change.intel.drv --install26
+
   fi
 }
 

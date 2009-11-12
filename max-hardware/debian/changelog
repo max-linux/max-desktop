@@ -1,3 +1,10 @@
+max-hardware (5.0.max6) max; urgency=low
+
+  * Provide Intel 2,4 && 2.6 Xorg drivers and use 2.6 in EeeTop And Toshiba Portege M400
+  * Change package from all to any (Arch depend)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 12 Nov 2009 14:56:02 +0100
+
 max-hardware (5.0.max5) max; urgency=low
 
   * Fix init scripts typos

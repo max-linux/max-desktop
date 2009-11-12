@@ -1,0 +1,28 @@
+From fb6e00f40f713a87c760fc7603159ed11ea9b0d5 Mon Sep 17 00:00:00 2001
+From: Eric Anholt <eric@anholt.net>
+Date: Tue, 10 Mar 2009 03:06:30 +0000
+Subject: Fix XV with non-GEM kernels by allocating a larger fake bufmgr.
+
+Ideally we'd not be using the EXA offscreen memory manager and just hand all
+that memory to the fake bufmgr for non-GEM, but the fake bufmgr's too slow for
+that, at least currently.  So compromise and take enough memory that it will
+succeed at XV allocations but hopefully not anger tiny-aperture systems too
+much.
+
+Bug #20563.
+---
+diff --git a/src/i830_memory.c b/src/i830_memory.c
+index 361fff7..e98c914 100644
+--- a/src/i830_memory.c
++++ b/src/i830_memory.c
+@@ -1445,7 +1445,7 @@ i830_allocate_2d_memory(ScrnInfoPtr pScrn)
+ 
+     if (pI830->memory_manager == NULL) {
+ 	pI830->fake_bufmgr_mem = i830_allocate_memory(pScrn, "fake bufmgr",
+-						      MB(1), PITCH_NONE, GTT_PAGE_SIZE, 0,
++						      MB(8), PITCH_NONE, GTT_PAGE_SIZE, 0,
+ 						      TILE_NONE);
+ 	if (pI830->fake_bufmgr_mem == NULL) {
+ 	    xf86DrvMsg(pScrn->scrnIndex, X_WARNING,
+--
+cgit v0.8.2

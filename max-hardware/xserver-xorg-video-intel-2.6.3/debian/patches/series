@@ -1,0 +1,16 @@
+01_gen_pci_ids.diff
+103_quirk_intel_mb890.patch
+105_no_modesetting.diff
+106_remove_triple_buffering.diff
+107_remove_pageflipping.diff
+109_i830-fifo-watermark-conservative.patch
+110_quirk_hp_mini.patch
+112_num_used_fences.patch
+#114_fix_xv_with_non_gem.patch
+115_fix_crash_xv_overlay.patch
+116_8xx_disable_dri.patch
+117_quirk_thinkpad_x30.patch
+118_drop_legacy3d.patch
+119_drm_bo_unreference_needs_null.patch
+120_fix_vt_switch.patch
+121_reserve-unused-memory-at-end-of-aperture.patch

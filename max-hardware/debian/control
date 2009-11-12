@@ -2,12 +2,34 @@ Source: max-hardware
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.0.0), cdbs
+Build-Depends:
+ debhelper (>= 5),
+ cdbs,
+ quilt,
+ pkg-config,
+ xserver-xorg-dev (>= 2:1.5.99.901),
+ x11proto-gl-dev,
+ x11proto-video-dev,
+ libgl1-mesa-dev | libgl-dev,
+ libxvmc-dev (>= 1:1.0.1),
+ x11proto-core-dev,
+ x11proto-fonts-dev,
+ x11proto-randr-dev (>= 1.2),
+ x11proto-render-dev,
+ x11proto-xinerama-dev,
+ libdrm-dev (>= 2.4.5),
+ x11proto-xf86dri-dev,
+ libpciaccess-dev (>= 0.8.0+git20071002),
+ dpkg-dev (>= 1.14.17),
+ automake,
+ libtool,
+ xutils-dev
 Standards-Version: 3.7.3
 
 Package: max-hardware
-Architecture: all
-Depends: setserial, dmidecode, xresprobe, usbutils, xbindkeys, wacom-tools
+Architecture: any
+Depends: setserial, dmidecode, xresprobe, usbutils, xbindkeys, wacom-tools,
+         ${shlibs:Depends}, ${misc:Depends}
 Description: Some files to support max special devices and computers
  Contains:
   * Hooks and scripts of initramfs-tools

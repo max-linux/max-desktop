@@ -1,0 +1,22 @@
+From 2026c57cf0a352d9e6f9d208cfb7d4d550614477 Mon Sep 17 00:00:00 2001
+From: Kalev Lember <kalev@smartlink.ee>
+Date: Fri, 13 Mar 2009 19:32:08 +0000
+Subject: Fix Xv crash with overlay video.
+
+Bug #20585.
+---
+diff --git a/src/i830_video.c b/src/i830_video.c
+index daa2411..3c6fbf3 100644
+--- a/src/i830_video.c
++++ b/src/i830_video.c
+@@ -1382,7 +1382,7 @@ I830CopyPlanarData(ScrnInfoPtr pScrn, I830PortPrivPtr pPriv,
+ 	dst_base = pPriv->buf->virtual;
+     } else {
+ 	drm_intel_gem_bo_start_gtt_access(pPriv->buf, TRUE);
+-	dst_base = pI830->FbBase + pPriv->buf->offset;
++	dst_base = pI830->FbBase;
+     }
+ 
+     if (pPriv->currentBuf == 0)
+--
+cgit v0.8.2

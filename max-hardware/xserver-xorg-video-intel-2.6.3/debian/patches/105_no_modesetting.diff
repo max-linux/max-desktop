@@ -1,0 +1,14 @@
+diff --git a/configure.ac b/configure.ac
+index bb69f72..9a09d4b 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -222,7 +222,7 @@ fi
+ 
+ dnl exaGetPixmapDriverPrivate required for DRM_MODE.
+ PKG_CHECK_MODULES(DRM_MODE, [xorg-server >= 1.5],
+-		  [DRM_MODE=yes], [DRM_MODE=no])
++		  [DRM_MODE=no], [DRM_MODE=no])
+ if test "x$DRM_MODE" = xyes; then
+	AC_DEFINE(XF86DRM_MODE,1,[DRM kernel modesetting])
+ fi
+

@@ -1,0 +1,16 @@
+#01_fix_compiz_video.diff
+01_gen_pci_ids.diff
+05_disable_dri_mm.patch
+11_textured_video_option.patch
+20_thinkpad_g40_quirk.patch
+21_quirk_lenovo.patch
+22_no_pipe_for_hotplug_detection.patch
+23_quirks_studiohybrid_eeepc_and_w251u.patch
+24_no_render_suspend
+25_quirk_nc6110.patch
+26_i830-use-lfp-data-ptrs.patch
+27_disable_fbc_on_965.patch
+28_stolen_memory_counting_g4x.patch
+30_unbreak_libdrm_sarea_renaming.patch
+100_update_quirks_to_2.6.patch
+104_i830-vbt-timing-hack.patch

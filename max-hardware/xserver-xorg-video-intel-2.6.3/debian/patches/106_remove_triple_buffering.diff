@@ -1,0 +1,260 @@
+From e9860d4fc088bb78fd684d9996ef9185b647a1b4 Mon Sep 17 00:00:00 2001
+From: Owain G. Ainsworth <oga@openbsd.org>
+Date: Tue, 13 Jan 2009 17:09:00 +0000
+Subject: [PATCH] Remove triple-buffering support
+
+It never worked with any upstream linux kernel, and is quite heavily
+deprecated. A new solution based around DRI2 will probably be
+forthcoming. Pageflipping itself is next.
+---
+ man/intel.man     |   15 +--------------
+ src/i830.h        |    2 --
+ src/i830_accel.c  |    5 -----
+ src/i830_dri.c    |   32 +++++---------------------------
+ src/i830_driver.c |    8 --------
+ src/i830_memory.c |   11 -----------
+ src/i830_xaa.c    |    6 ------
+ 7 files changed, 6 insertions(+), 73 deletions(-)
+
+Index: xserver-xorg-video-intel-2.6.1/man/intel.man
+===================================================================
+--- xserver-xorg-video-intel-2.6.1.orig/man/intel.man	2009-01-21 00:07:39.000000000 +0200
++++ xserver-xorg-video-intel-2.6.1/man/intel.man	2009-01-23 10:59:33.000000000 +0200
+@@ -153,23 +153,10 @@
+ .BI "Option \*qPageFlip\*q \*q" boolean \*q
+ Enable support for page flipping. This should improve 3D performance at the
+ potential cost of worse performance with mixed 2D/3D. Also note that this gives
+-no benefit without corresponding support in the Mesa 3D driver and may not give
+-the full benefit without triple buffering (see
+-.B "Option \*qTripleBuffer\*q"
+-).
++no benefit without corresponding support in the Mesa 3D driver
+ Default for i810: The option is not used.
+ Default for i830 and above: Disabled (This option is currently unstable).
+ .TP
+-.BI "Option \*qTripleBuffer\*q \*q" boolean \*q
+-Enable support for triple buffering. This should improve 3D performance at the
+-potential cost of worse performance with mixed 2D/3D. Also note that this gives
+-no benefit without corresponding support in the Mesa 3D driver and may not give
+-any benefit without page flipping either (see
+-.B "Option \*qPageFlip\*q"
+-).
+-Default for i810: The option is not used.
+-Default for i830 and above: Disabled.
+-.TP
+ .BI "Option \*qAccelMethod\*q \*q" string \*q
+ Choose acceleration architecture, either "XAA" or "EXA".  XAA is the old
+ XFree86 based acceleration architecture.  EXA is a newer and simpler
+Index: xserver-xorg-video-intel-2.6.1/src/i830.h
+===================================================================
+--- xserver-xorg-video-intel-2.6.1.orig/src/i830.h	2009-01-22 00:02:00.000000000 +0200
++++ xserver-xorg-video-intel-2.6.1/src/i830.h	2009-01-23 10:59:33.000000000 +0200
+@@ -462,7 +462,6 @@
+ 
+ #ifdef XF86DRI
+    i830_memory *back_buffer;
+-   i830_memory *third_buffer;
+    i830_memory *depth_buffer;
+    i830_memory *textures;		/**< Compatibility texture memory */
+    i830_memory *memory_manager;		/**< DRI memory manager aperture */
+@@ -483,7 +482,6 @@
+ 
+    Bool NeedRingBufferLow;
+    Bool allowPageFlip;
+-   Bool TripleBuffer;
+    Bool tiling;
+    Bool fb_compression;
+ 
+Index: xserver-xorg-video-intel-2.6.1/src/i830_accel.c
+===================================================================
+--- xserver-xorg-video-intel-2.6.1.orig/src/i830_accel.c	2009-01-22 00:02:00.000000000 +0200
++++ xserver-xorg-video-intel-2.6.1/src/i830_accel.c	2009-01-23 10:59:08.000000000 +0200
+@@ -255,11 +255,6 @@
+       if (pI830->back_buffer->tiling == TILE_YMAJOR)
+ 	 return FALSE;
+       break;
+-   case I830_SELECT_THIRD:
+-      pI830->bufferOffset = pI830->third_buffer->offset;
+-      if (pI830->third_buffer->tiling == TILE_YMAJOR)
+-	 return FALSE;
+-      break;
+    case I830_SELECT_DEPTH:
+       pI830->bufferOffset = pI830->depth_buffer->offset;
+       if (pI830->depth_buffer->tiling == TILE_YMAJOR)
+Index: xserver-xorg-video-intel-2.6.1/src/i830_dri.c
+===================================================================
+--- xserver-xorg-video-intel-2.6.1.orig/src/i830_dri.c	2009-01-22 00:02:00.000000000 +0200
++++ xserver-xorg-video-intel-2.6.1/src/i830_dri.c	2009-01-23 10:59:33.000000000 +0200
+@@ -848,7 +848,6 @@
+    /* init to zero to be safe */
+    sarea->front_handle = 0;
+    sarea->back_handle = 0;
+-   sarea->third_handle = 0;
+    sarea->depth_handle = 0;
+    sarea->tex_handle = 0;
+ 
+@@ -1079,10 +1078,6 @@
+ 
+    I830DRIDoRefreshArea(pScrn, num, pbox, pI830->back_buffer->offset);
+ 
+-   if (pI830->third_buffer) {
+-      I830DRIDoRefreshArea(pScrn, num, pbox, pI830->third_buffer->offset);
+-   }
+-
+    DamageEmpty(pI830->pDamage);
+ }
+ #endif
+@@ -1169,14 +1164,14 @@
+ 
+ 	 if (sPriv->pf_current_page & (0x3 << 2)) {
+ 	    sPriv->pf_current_page = sPriv->pf_current_page & 0x3;
+-	    sPriv->pf_current_page |= (sPriv->third_handle ? 2 : 1) << 2;
++	    sPriv->pf_current_page |= 1 << 2;
+ 
+ 	    flip.pipes |= 0x2;
+ 	 }
+ 
+ 	 if (sPriv->pf_current_page & 0x3) {
+ 	    sPriv->pf_current_page = sPriv->pf_current_page & (0x3 << 2);
+-	    sPriv->pf_current_page |= sPriv->third_handle ? 2 : 1;
++	    sPriv->pf_current_page |= 1;
+ 
+ 	    flip.pipes |= 0x1;
+ 	 }
+@@ -1208,8 +1203,6 @@
+ 
+    first_buffer = I830_SELECT_BACK;
+    last_buffer = I830_SELECT_DEPTH;
+-   if (I830PTR(pScrn)->third_buffer)
+-      last_buffer = I830_SELECT_THIRD;
+ 
+    for (buffer = first_buffer; buffer <= last_buffer; buffer++) {
+       pbox = REGION_RECTS(prgn);
+@@ -1358,8 +1351,6 @@
+    I830EmitFlush(pScrn);
+    first_buffer = I830_SELECT_BACK;
+    last_buffer = I830_SELECT_DEPTH;
+-   if (pI830->third_buffer)
+-      last_buffer = I830_SELECT_THIRD;
+ 
+    for (buffer = first_buffer; buffer <= last_buffer; buffer++) {
+       if (!I830SelectBuffer(pScrn, buffer))
+@@ -1591,10 +1582,6 @@
+ 
+    sarea->front_tiled = (pI830->front_buffer->tiling != TILE_NONE);
+    sarea->back_tiled = (pI830->back_buffer->tiling != TILE_NONE);
+-   if (pI830->third_buffer != NULL)
+-       sarea->third_tiled = (pI830->third_buffer->tiling != TILE_NONE);
+-   else
+-       sarea->third_tiled = FALSE;
+    sarea->depth_tiled = (pI830->depth_buffer->tiling != TILE_NONE);
+    sarea->rotated_tiled = FALSE;
+ 
+@@ -1602,7 +1589,6 @@
+ 
+    sarea->front_bo_handle = i830_name_buffer (pScrn, pI830->front_buffer);
+    sarea->back_bo_handle = i830_name_buffer (pScrn, pI830->back_buffer);
+-   sarea->third_bo_handle = i830_name_buffer (pScrn, pI830->third_buffer);
+    sarea->depth_bo_handle = i830_name_buffer (pScrn, pI830->depth_buffer);
+ 
+    /* The rotation is now handled entirely by the X Server, so just leave the
+@@ -1695,17 +1681,9 @@
+        return FALSE;
+    }
+ 
+-   if (pI830->third_buffer) {
+-       if (!i830_do_addmap(pScrn, pI830->third_buffer, &sarea->third_handle,
+-			   &sarea->third_size, &sarea->third_offset)) {
+-	   xf86DrvMsg(pScrn->scrnIndex, X_INFO, "Disabling DRI.\n");
+-	   return FALSE;
+-       }
+-   } else {
+-       sarea->third_handle = 0;
+-       sarea->third_offset = 0;
+-       sarea->third_size = 0;
+-   }
++   sarea->third_handle = 0;
++   sarea->third_offset = 0;
++   sarea->third_size = 0;
+ 
+    if (!i830_do_addmap(pScrn, pI830->depth_buffer, &sarea->depth_handle,
+ 		       &sarea->depth_size, &sarea->depth_offset)) {
+Index: xserver-xorg-video-intel-2.6.1/src/i830_driver.c
+===================================================================
+--- xserver-xorg-video-intel-2.6.1.orig/src/i830_driver.c	2009-01-22 00:02:00.000000000 +0200
++++ xserver-xorg-video-intel-2.6.1/src/i830_driver.c	2009-01-23 10:59:33.000000000 +0200
+@@ -336,7 +336,6 @@
+    {OPTION_LEGACY3D,	"Legacy3D",     OPTV_BOOLEAN,	{0},	FALSE},
+ #endif
+    {OPTION_LVDSFIXEDMODE, "LVDSFixedMode", OPTV_BOOLEAN,	{0},	FALSE},
+-   {OPTION_TRIPLEBUFFER, "TripleBuffer", OPTV_BOOLEAN,	{0},	FALSE},
+    {OPTION_FORCEENABLEPIPEA, "ForceEnablePipeA", OPTV_BOOLEAN,	{0},	FALSE},
+ #ifdef INTEL_XVMC
+    {OPTION_XVMC,	"XvMC",		OPTV_BOOLEAN,	{0},	TRUE},
+@@ -1697,13 +1696,6 @@
+     xf86DrvMsg(pScrn->scrnIndex, from, "Will%s try to enable page flipping\n",
+ 	       pI830->allowPageFlip ? "" : " not");
+ 
+-    pI830->TripleBuffer = FALSE;
+-    from =  (pI830->directRenderingType != DRI_DISABLED &&
+-	     xf86GetOptValBool(pI830->Options, OPTION_TRIPLEBUFFER,
+-			       &pI830->TripleBuffer)) ? X_CONFIG : X_DEFAULT;
+-
+-    xf86DrvMsg(pScrn->scrnIndex, from, "Triple buffering %sabled\n",
+-	       pI830->TripleBuffer ? "en" : "dis");
+ #endif /* XF86DRI */
+ }
+ 
+Index: xserver-xorg-video-intel-2.6.1/src/i830_memory.c
+===================================================================
+--- xserver-xorg-video-intel-2.6.1.orig/src/i830_memory.c	2009-01-22 00:02:00.000000000 +0200
++++ xserver-xorg-video-intel-2.6.1/src/i830_memory.c	2009-01-23 10:59:08.000000000 +0200
+@@ -350,7 +350,6 @@
+     pI830->power_context = NULL;
+ #ifdef XF86DRI
+     pI830->back_buffer = NULL;
+-    pI830->third_buffer = NULL;
+     pI830->depth_buffer = NULL;
+     pI830->textures = NULL;
+ #endif
+@@ -366,8 +365,6 @@
+ #ifdef XF86DRI
+     i830_free_memory(pScrn, pI830->back_buffer);
+     pI830->back_buffer = NULL;
+-    i830_free_memory(pScrn, pI830->third_buffer);
+-    pI830->third_buffer = NULL;
+     i830_free_memory(pScrn, pI830->depth_buffer);
+     pI830->depth_buffer = NULL;
+     i830_free_memory(pScrn, pI830->textures);
+@@ -1773,14 +1770,6 @@
+     if (!i830_allocate_backbuffer(pScrn, &pI830->back_buffer, "back buffer"))
+ 	return FALSE;
+ 
+-    if (pI830->TripleBuffer && !i830_allocate_backbuffer(pScrn,
+-							 &pI830->third_buffer,
+-							 "third buffer")) {
+-       xf86DrvMsg(pScrn->scrnIndex, X_WARNING,
+-		  "Failed to allocate third buffer, triple buffering "
+-		  "inactive\n");
+-    }
+-
+     if (!i830_allocate_depthbuffer(pScrn))
+ 	return FALSE;
+ 
+Index: xserver-xorg-video-intel-2.6.1/src/i830_xaa.c
+===================================================================
+--- xserver-xorg-video-intel-2.6.1.orig/src/i830_xaa.c	2009-01-22 00:02:00.000000000 +0200
++++ xserver-xorg-video-intel-2.6.1/src/i830_xaa.c	2009-01-23 10:59:08.000000000 +0200
+@@ -292,12 +292,6 @@
+    {
+        return TRUE;
+    }
+-   if (pI830->third_buffer != NULL &&
+-       pI830->bufferOffset == pI830->third_buffer->offset &&
+-       pI830->third_buffer->tiling != TILE_NONE)
+-   {
+-       return TRUE;
+-   }
+ #endif
+ 
+    return FALSE;

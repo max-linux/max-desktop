@@ -1,0 +1,22 @@
+--- a/src/i830_video.c	2009-03-02 20:21:07.000000000 +0100
++++ b/src/i830_video.c	2009-04-06 19:11:59.000000000 +0200
+@@ -1078,11 +1078,14 @@
+ 	    if (pI830->entityPrivate)
+ 		pI830->entityPrivate->XvInUse = -1;
+ 	}
+-	if (!pPriv->textured)
+-	    drm_intel_bo_unpin(pPriv->buf);
+-	drm_intel_bo_unreference(pPriv->buf);
+-	pPriv->buf = NULL;
+-	pPriv->videoStatus = 0;
++
++	if (pPriv->buf) {
++	    if (!pPriv->textured)
++		drm_intel_bo_unpin(pPriv->buf);
++	    drm_intel_bo_unreference(pPriv->buf);
++	    pPriv->buf = NULL;
++	    pPriv->videoStatus = 0;
++	}
+     } else {
+ 	if (pPriv->videoStatus & CLIENT_VIDEO_ON) {
+ 	    pPriv->videoStatus |= OFF_TIMER;

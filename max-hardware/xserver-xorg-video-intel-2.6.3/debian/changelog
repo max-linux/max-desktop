@@ -1,0 +1,1771 @@
+xserver-xorg-video-intel (2:2.6.3-0ubuntu9.3) jaunty-proposed; urgency=low
+
+  * Add patch 121_reserve-unused-memory-at-end-of-aperture.patch. This
+    reserves a block of unused memory between the exa offscreen buffer and
+    end of aperture, to prevent freeze with EXA on GM965 cards
+    (LP: #359392).
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Sun, 07 Jun 2009 11:34:02 -0700
+
+xserver-xorg-video-intel (2:2.6.3-0ubuntu9) jaunty; urgency=low
+
+  * Add 120_fix_vt_switch.patch: Fix null pointer deref in
+    I830StopVideo(), which can lead to segfaults calling
+    drm_intel_bo_unpin or drm_intel_bo_unreference when entering DPMS.
+    Thanks to unggnu for shepherding this bug to solution!
+    (LP: #345796)
+  
+ -- Bryce Harrington <bryce@ubuntu.com>  Wed, 08 Apr 2009 19:12:39 -0700
+
+xserver-xorg-video-intel (2:2.6.3-0ubuntu8) jaunty; urgency=low
+
+  * Expand patch 116 and rename to 116_8xx_disable_dri.patch to 
+    fix freezing issue on i810 as well.
+    (LP: #279835)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Mon, 06 Apr 2009 18:18:46 -0700
+
+xserver-xorg-video-intel (2:2.6.3-0ubuntu7) jaunty; urgency=low
+
+  * Add 119_drm_bo_unreference_needs_null.patch:
+    - The first time through the Xv code, an allocated buffer is
+      unreferenced but the pointer is not reset to NULL.  Thus, the next time
+      a video is played, -intel thinks it has a valid buffer and crashes
+      when it tries to access the freed memory.  Fixes a number of crashes
+      reported since moving to the 2.6.3 driver.
+    - Fixes crash on i945 with frame buffer width > 2048.  DRI is disabled
+      on this chipset when the frame buffer exceeds this width.
+      (LP: #354688)
+    - Fixes crash on i865 where DRI is off because of patch 116
+      (LP: #352760)
+    - Fixes crash on i845 starting after 304871 was fixed
+      (LP: #354889)
+    - Fixes crash on i830 when manually disabling DRI
+      (LP: #347527)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Mon, 06 Apr 2009 14:28:29 -0700
+
+xserver-xorg-video-intel (2:2.6.3-0ubuntu6) jaunty; urgency=low
+
+  * Update 116_865g_disable_dri.patch: Permit DRI on 845.
+    Evidence so far suggests the freezes on 845 due to DRI are gone.
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Sat, 04 Apr 2009 12:49:38 -0700
+
+xserver-xorg-video-intel (2:2.6.3-0ubuntu5) jaunty; urgency=low
+
+  * Disable 114_fix_xv_with_non_gem.patch: At the time we accepted it, it
+    sounded a little risky, so I took it on the condition that it didn't
+    cause regressions, which apparently we have proof that it does.
+    (LP: #348428) (Reopen 344740)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 03 Apr 2009 20:03:39 -0700
+
+xserver-xorg-video-intel (2:2.6.3-0ubuntu4) jaunty; urgency=low
+
+  * Add 117_quirk_thinkpad_x30.patch:
+    - Pipe-A quirk to fix lid close freeze on Thinkpad X30
+      (LP: #304614)
+  * Add 118_drop_legacy3d.patch:
+    - Remove Legacy3D as a user-configurable option and force fallback to
+      legacy fixed textures when GEM is not being used.  Fixes "couldn't
+      bind memory for BO backbuffer" issue on at least i855 chipsets.
+      (LP: #322646)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Wed, 01 Apr 2009 00:25:55 -0700
+
+xserver-xorg-video-intel (2:2.6.3-0ubuntu3) jaunty; urgency=low
+
+  * Add 116_865g_disable_dri.patch:
+    - On 865G chipset, X freezes during boot with DRI enabled.  Disabling it
+      as a workaround until a better fix is found.
+      (LP: #317457)
+  * Drop explicit dependency on libdrm-intel1, as libdrm now provides
+    this properly (libdrm2 commit a87c1a081b77a29fe3430d).
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 31 Mar 2009 18:36:00 -0700
+
+xserver-xorg-video-intel (2:2.6.3-0ubuntu2) jaunty; urgency=low
+
+  * Add 114_fix_xv_with_non_gem.patch, 115_fix_crash_xv_overlay.patch:
+    - Fix green window when playing movies with Xv extension (LP: #344740)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Wed, 18 Mar 2009 17:05:09 -0700
+
+xserver-xorg-video-intel (2:2.6.3-0ubuntu1) jaunty; urgency=low
+
+  * New upstream release:
+    - Access the Xv buffer through the GTT for the non-KMS case.
+    - Fix i915 textured video to work with the i830_memory -> bo change.
+    - Make i830_allocate_memory take tiling parameters.
+    - Fixup bogus VBT when detected.  Causes incorrect video modes for
+      several Dell and Sony machines.
+    - Various KMS, BOs, UXA, and DRI2 fixes
+    - Various new hw quirks
+  * Add ChangeLog not included in upstream tarball (else FTBS)
+  * Add 112_num_used_fences.patch: Work around FTBS due to missing kernel
+    header changes (from drm commit 0f973f27888e4664b253ab2cf69c67c2eb80ab1b)
+  * debian/control:  Update libdrm2 dependency to 2.4.5
+  * Drop patches applied upstream:
+    - 104_i830-vbt-timing-hack.patch
+    - 108_dont_disable_vga_centering_bit.patch
+    - 111_quirks_march4_sync.patch (Fixes LP: #343577)
+  * Refresh 107_remove_pageflipping.diff to apply
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 17 Mar 2009 13:34:59 -0700
+
+xserver-xorg-video-intel (2:2.6.1-1ubuntu5) jaunty; urgency=low
+
+  * Add 111_quirks_march4_sync.patch: Cherrypick from upstream's quirks
+    - Fix LVDS issues on MSI IM-945GSE-A and all GM45 chips
+    - Fix lid close issue on Mirrus Centrino laptop
+    - Fix tv-out issue on HP Compaq nx6310 systems
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Wed, 04 Mar 2009 14:46:30 -0800
+
+xserver-xorg-video-intel (2:2.6.1-1ubuntu4) jaunty; urgency=low
+
+  * Add 110_quirk_hp_mini.patch: Pipe-A quirk for an HP Mini
+  * Renumber patch 02_i830-fifo-watermark-conservative.patch to
+    109_i830-fifo-watermark-conservative.patch
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Mon, 02 Mar 2009 21:52:04 -0800
+
+xserver-xorg-video-intel (2:2.6.1-1ubuntu3) jaunty; urgency=low
+
+  * Add 02_i830-fifo-watermark-conservative.patch: Avoid pipe underruns on
+    high graphics activity, which caused flicker and sometimes complete screen
+    corruption. (LP: #311895, fd.o #19304)
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Wed, 25 Feb 2009 08:26:35 +0100
+
+xserver-xorg-video-intel (2:2.6.1-1ubuntu2) jaunty; urgency=low
+
+  * Add 108_dont_disable_vga_centering_bit.patch.  Cherry-pick from
+    upstream commit 3aa8591abfbe8db0f13912910c850fdd748808df.
+    Don't disable vga centering bit.  Causes failure to display
+    lower resolutions on Eee PCs, etc.
+    (LP: #324913)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Mon, 09 Feb 2009 15:20:29 -0800
+
+xserver-xorg-video-intel (2:2.6.1-1ubuntu1) jaunty; urgency=low
+
+  * Merge with Debian experimental, remaining changes:
+    - debian/control:
+      + Add lpia to the list of architectures.
+      + Drop Vcs-* as we're not using these repos for -intel.
+    - debian/patches:
+      + 103_quirk_intel_mb890.patch
+        Add ignore lvds quirk for mb890 motherboards to fix issue where
+        display shows all in one color. (LP: 305269)
+      + 104_i830-vbt-timing-hack.patch
+        Adjust h and vblank end to fix issue on Dell Studio 15 and
+        other similar hardware. Fixes issue where X comes up with an
+        unusable white screen on the LVDS. (LP: 297245)
+  * Add 105_no_modesetting.diff
+    - 2.6.28 doesn't ship drm headers that support modesetting, so
+      disable it for the driver to build.
+  * Add 106_remove_triple_buffering.diff
+    - Obsolete code, prerequisite for the next patch.
+  * Add 107_remove_pageflipping.diff
+    - Remove pageflipping support. It never got in the kernel drm code,
+      so without this the build fails.
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Fri, 23 Jan 2009 10:41:27 +0200
+
+xserver-xorg-video-intel (2:2.6.1-1) experimental; urgency=low
+
+  * New upstream release.
+  * Build against xserver 1.6 rc1.
+
+ -- Julien Cristau <jcristau@debian.org>  Thu, 22 Jan 2009 00:18:25 +0100
+
+xserver-xorg-video-intel (2:2.6.0-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Brice Goglin <bgoglin@debian.org>  Thu, 15 Jan 2009 10:54:17 +0100
+
+xserver-xorg-video-intel (2:2.5.99.2-1) experimental; urgency=low
+
+  * New upstream release.
+    + doesn't crash on EnterVT with libdrm 2.4.3 (closes: #511263)
+  * Update libdrm-dev build-dep to 2.4.3.
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 14 Jan 2009 08:08:20 +0100
+
+xserver-xorg-video-intel (2:2.5.1-1ubuntu9) jaunty; urgency=low
+
+  * i830-vbt-timing-hack.patch: Adjust h and vblank end to fix issue on
+    Dell Studio 15 and other similar hardware.  Fixes issue where X 
+    comes up with an unusable white screen on the LVDS.
+    (LP: #297245)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 13 Jan 2009 16:18:19 -0800
+
+xserver-xorg-video-intel (2:2.5.1-1ubuntu8) jaunty; urgency=low
+
+  * 103_quirk_intel_mb890.patch: Add ignore lvds quirk for mb890
+    motherboards to fix issue where display shows all in one color.
+    (LP: #305269)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 13 Jan 2009 00:01:48 -0800
+
+xserver-xorg-video-intel (2:2.5.1-1ubuntu7) jaunty; urgency=low
+
+  * Also add lpia in the Architecture list of the -dbg package to clear it off
+    jaunty_outdate.txt (we have the -dbg on other arches anyway).
+
+ -- Loic Minier <lool@dooz.org>  Sat, 20 Dec 2008 21:38:09 +0100
+
+xserver-xorg-video-intel (2:2.5.1-1ubuntu6) jaunty; urgency=low
+
+  * Rebuild against the new xserver
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Mon, 15 Dec 2008 10:19:55 +0200
+
+xserver-xorg-video-intel (2:2.5.1-1ubuntu5) jaunty; urgency=low
+
+  * Add explicit Depends for libdrm-intel1 (LP: #303177)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 05 Dec 2008 20:03:20 +0000
+
+xserver-xorg-video-intel (2:2.5.1-1ubuntu4) jaunty; urgency=low
+
+  * Drop 111_textured_video_option.patch.  XvPreferOverlay (commit
+    24c34f02) now provides an equivalent capability for turning textured
+    video off, making this patch redundant.
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 02 Dec 2008 12:47:10 -0800
+
+xserver-xorg-video-intel (2:2.5.1-1ubuntu3) jaunty; urgency=low
+
+  * 102_quirk_hp_2730p.patch: pipea quirk for hp 2730p (LP: #291555)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 02 Dec 2008 11:47:28 -0800
+
+xserver-xorg-video-intel (2:2.5.1-1ubuntu2) jaunty; urgency=low
+
+  * Drop 128_stolen_memory_counting_g4x.patch (already upstream)
+  * Refresh and re-enable 111_textured_video_option.patch
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 02 Dec 2008 09:13:34 -0800
+
+xserver-xorg-video-intel (2:2.5.1-1ubuntu1) jaunty; urgency=low
+
+  * Merge with debian experimental.  Remaining changes:
+    - debian/control:
+      + Change the maintainer address.
+      + Add lpia to the list of architectures.
+      + Drop Vcs-* as we're not using these repos for -intel.
+    - debian/patches:
+      + Renumber Ubuntu patches +100
+      + 101_quirk_quanta_w251u.patch
+      + 111_textured_video_option.patch (disabled)
+      + 128_textured_video_option.patch (disabled)
+  * Drop 01_fix_compiz_video.diff.  Was already disabled in Ubuntu previously
+  * Drop 05_intel_exa_force_greedy.patch.  Should no longer be necessary.
+  * Drop patches already upstream:
+    - 20_thinkpad_g40_quirk.patch
+    - 21_quirk_lenovo.patch
+    - 22_no_pipe_for_hotplug_detection.patch
+    - 23_quirks_studiohybrid_eeepc_and_w251u.patch
+    - 24_no_render_suspend
+    - 25_quirk_nc6110.patch
+    - 26_i830-use-lfp-data-ptrs.patch
+    - 27_disable_fbc_on_965.patch
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Thu, 27 Nov 2008 10:46:18 -0800
+
+xserver-xorg-video-intel (2:2.5.1-1) experimental; urgency=low
+
+  * New upstream release.
+  * Wrap build-deps in debian/control.
+  * Build depend on libdrm-dev on all archs, since it's now required, and bump
+    the build dep to 2.4.1.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 23 Nov 2008 17:02:31 +0100
+
+xserver-xorg-video-intel (2:2.4.2-1) experimental; urgency=low
+
+  * Drop the xserver-xorg-video-i810 transitional package.
+  * Build against xorg-server 1.5.
+  * New upstream release (no changes from the previous snapshot other than the
+    version number).
+
+ -- Julien Cristau <jcristau@debian.org>  Thu, 04 Sep 2008 02:49:59 +0200
+
+xserver-xorg-video-intel (2:2.4.1-1ubuntu11) jaunty; urgency=low
+
+  * Re-enable 11_textured_video_option.patch, but change logic so it is
+    enabled by default.  This allows people seeing issues with it to
+    turn it off if they wish.  (LP: #278318)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 14 Nov 2008 14:55:33 -0800
+
+xserver-xorg-video-intel (2:2.4.1-1ubuntu10) intrepid; urgency=low
+
+  * 28_stolen_memory_counting_g4x.patch:
+    - Fixes freeze on login for G45 hardware when X.org runs in EXA mode.
+      Issue was fixed upstream in both the kernel and x driver.  This
+      patch is also in Debian.
+      (LP: #285572)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 21 Oct 2008 11:35:13 -0700
+
+xserver-xorg-video-intel (2:2.4.1-1ubuntu9) intrepid; urgency=low
+
+  * 27_disable_fbc_on_965.patch:
+    - Works around issue where flash videos freeze after playing for a few
+      moments on i965 chipset, by disabling Frame Buffer Compression, which
+      is not working reliably on this chipset.  It can be re-enabled via the
+      FrameBufferCompression option for testing purposes.
+      (LP: #275285)
+  
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 17 Oct 2008 18:11:03 -0700
+
+xserver-xorg-video-intel (2:2.4.1-1ubuntu8) intrepid; urgency=low
+
+  * 26_i830-use-lfp-data-ptrs.patch:
+    - Fixes fatal server error "Couldn't find PLL settings for mode"
+      on a 855GM chipset, due to having an inaccurate VBT LFP_DATA
+      section from the BIOS parser.  This pulls the info from a
+      different (more trustworthy) version of the data structure.
+      (LP: #274045)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Thu, 16 Oct 2008 12:38:19 -0700
+
+xserver-xorg-video-intel (2:2.4.1-1ubuntu7) intrepid; urgency=low
+
+  * Drop Vcs-* as we're not using these repos for -intel.
+
+ -- Loic Minier <lool@dooz.org>  Wed, 15 Oct 2008 13:24:36 +0200
+
+xserver-xorg-video-intel (2:2.4.1-1ubuntu6) intrepid; urgency=low
+
+  * 25_quirks_nx6110.patch:
+    - Fixes error msg that "Mode 1280x1024 does not fit virtual size"
+      (LP: #271707)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Sat, 20 Sep 2008 18:20:56 -0700
+
+xserver-xorg-video-intel (2:2.4.1-1ubuntu5) intrepid; urgency=low
+
+  * 24_no_render_suspend:
+    - Fix blank screen and crash on startup with x4500 (LP: #265119)
+
+ -- Christopher James Halse Rogers (RAOF) <chalserogers@gmail.com>  Fri, 19 Sep 2008 14:00:28 +1000
+
+xserver-xorg-video-intel (2:2.4.1-1ubuntu4) intrepid; urgency=low
+
+  * 23_quirks_studiohybrid_eeepc_and_w251u.patch:
+    - Fix blank screen on startup on Asus Eee PC due to LVDS
+      misconfiguration (LP: #233787)
+    - Fix blank screen on startup on Dell Studio Hybrid due to LVDS
+      misconfiguration (LP: #267945)
+    - Fix crash on lid close on Gigabyte W251U - pipeA quirk (LP: #244242)
+
+ -- Bryce Harrington <bryce@bryceharrington.org>  Fri, 12 Sep 2008 00:53:01 +0000
+
+xserver-xorg-video-intel (2:2.4.1-1ubuntu3) intrepid; urgency=low
+
+  * Rebuild against the new xserver-xorg-dev.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Fri, 12 Sep 2008 01:09:40 +0300
+
+xserver-xorg-video-intel (2:2.4.1-1ubuntu2) intrepid; urgency=low
+
+  * 22_no_pipe_for_hotplug_detection.patch: Don't allocate a pipe for
+    hotplug detection. (LP: #256142)
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 02 Sep 2008 16:13:52 +0300
+
+xserver-xorg-video-intel (2:2.4.1-1ubuntu1) intrepid; urgency=low
+
+  * New upstream version, this is basically version 2.4.2. (LP: #260603)
+  * Merge with debian experimental. Remaining changes:
+    - debian/patches
+      + 20_thinkpad_g40_quirk.patch:
+        Quirk for IBM Thinkpad G40
+      + 21_quirk_lenovo.patch:
+        Pipe-A quirks for Lenovo ThinkPad T60
+    - debian/control:
+      + Change the maintainer address.
+      + Add lpia to the list of architectures.
+  * Disable 01_fix_compiz_video.diff, since it appears to be obsolete
+    by now.
+  * Drop 05_intel_exa_force_greedy.patch, since it was not used (crash)
+    and the option doesn't seem to improve the performance anymore.
+  * Disable 11_textured_video_option.patch for now, textured video seems
+    to work just fine now.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 26 Aug 2008 14:19:55 +0300
+
+xserver-xorg-video-intel (2:2.4.1-1) experimental; urgency=low
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+
+  [ Julien Cristau ]
+  * Pull from 2.4-branch HEAD as of August 24th.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 24 Aug 2008 18:28:32 +0200
+
+xserver-xorg-video-intel (2:2.4.0-1ubuntu1) intrepid; urgency=low
+
+  * Merge with debian experimental.
+  * 20_thinkpad_g40_quirk.patch: don't remove another quirk, must've been
+    a mistake (and not related to G40).
+  * 21_quirk_lenovo.patch: rename and drop the HP quirk, since it's
+    upstream.
+  * rules: drop the change to not build intel_reg_dumper, libpciaccess is
+    in main now.
+  * changelog: bring back old entries lost during an old merge (ahem..).
+  * Fixes from upstream 2.4-branch:
+    30_update_dsparb.patch
+    - Update DSPARB while planes are still off.
+    31_reorder_visuals.patch
+    - Reorder visuals reported by the intel driver.
+    32_dont_program_dsparb.patch
+    - Don't program dsparb on new Intel chip.
+    33_fix_hp_pavilion_quirk.patch
+    - Fix up the HP Pavilion ze4944ea quirk. The chip is 855GM, not GM45.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Thu, 07 Aug 2008 14:38:09 +0300
+
+xserver-xorg-video-intel (2:2.4.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * Refresh patch 01_gen_pci_ids.diff.
+  * Don't handle the nostrip build option in debian/rules, dh_strip does that;
+    allow the parallel=n option.
+  * Run autoreconf at build-time; build-depend on automake, libtool and
+    xutils-dev.
+  * Drop the debian revision from the libxvmc-dev build-dep.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 27 Jul 2008 13:18:42 +0200
+
+xserver-xorg-video-intel (2:2.3.2-3) experimental; urgency=low
+
+  * Build against xserver 1.5 rc5.
+
+ -- Julien Cristau <jcristau@debian.org>  Mon, 14 Jul 2008 01:26:43 +0200
+
+xserver-xorg-video-intel (2:2.3.2-2+lenny1) unstable; urgency=low
+
+  * Cherry-pick patches from the 2.4.0 release:
+    - Add support for Intel 4 series chipsets
+    - add some quirks to force enable pipe A on some machines: in particular,
+      all 855GM (closes: #482819), and Lenovo T60 (closes: #487672)
+    - i810: Remove an effectively unused variable (only used in an incorrect
+      free())
+    - Give asus and eeepc backlight method higher priority
+    - Don't use the phase shift bits on GM45
+    - Fix official name for GM45 chipset
+    - Improve FBC size checking
+    - Only initialize integrated TV encoder for mobile chips
+    - Add no LVDS quirk for Transtec Senyo 610 mini PC
+    - Thinkpad R60e TV quirk via DMI info
+  * Fix debian/rules build/patch dependencies.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 27 Jul 2008 11:44:09 +0200
+
+xserver-xorg-video-intel (2:2.3.2-2ubuntu3) intrepid; urgency=low
+
+  * Remove 19_check_exa_pitch_to_fix_rotate_crash.patch, fixed upstream
+    using a different approach. (LP: #246835)
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Wed, 09 Jul 2008 15:31:08 +0300
+
+xserver-xorg-video-intel (2:2.3.2-2ubuntu2) intrepid; urgency=low
+
+  * Disable 05_intel_exa_force_greedy.patch, since it makes the driver
+    to segfault the xserver. (LP: #246581)
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 08 Jul 2008 18:31:22 +0300
+
+xserver-xorg-video-intel (2:2.3.2-2ubuntu1) intrepid; urgency=low
+
+  * Merge from debian unstable, remaining changes:
+    - debian/patches
+      + 01_fix_compiz_video.diff:
+        use xf86XVFillKeyHelperDrawable() to fix video playback with
+        compositing enabled.
+      + 05_intel_exa_force_greedy.patch:
+        Force use of greedy mode on intel hardware.
+        (LP: 177492, 148247, 152206)
+      + 11_textured_video_option.patch:
+        Renamed and reworked version of the old
+        11_hw_overlay_option.diff patch, to re-enable the textured video
+        option, to allow users to turn off textured video.
+      + 19_check_exa_pitch_to_fix_rotate_crash.patch:
+        Fixes crash on xrandr rotation by checking EXA pitch size.
+        (LP: #174745)
+      + debian/patches/20_thinkpad_g40_quirk.patch: Quirk for IBM Thinkpad G40
+        (LP: #240457)
+      + 21_quirk_lenovo_and_hp_pavilion.patch: Pipe-A quirks for Lenovo
+        ThinkPad T60 (LP: #243405) and HP Pavilion ze4944ea (LP: #242389)
+    - debian/control:
+      + Change the maintainer address.
+      + Add lpia to the list of architectures.
+      + Reduce build depends version of dpkg-dev to 1.14.16 to enable it to
+        build on Hardy.  The version change was to fix a bug we workaround
+        already in our rules change below.
+    - debian/rules:
+      + Don't build the intel_reg_dumper tool, since libpciaccess is in
+        universe.
+      + Drop dpkg-shlibdeps with --warnings=6 (FTBS)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Mon, 07 Jul 2008 21:10:38 -0700
+
+xserver-xorg-video-intel (2:2.3.2-2) unstable; urgency=high
+
+  * High urgency upload for RC bug fix.
+  * Update debian/copyright, thanks to Thomas Viehmann for reporting, and
+    Moritz Muehlenhoff for the thorough analysis (closes: #486340).
+  * Change the libdrm memory manager check in configure to look for 2.4.0
+    instead of 2.3.1, as libdrm 2.3.1 was released without it.
+
+ -- Julien Cristau <jcristau@debian.org>  Thu, 03 Jul 2008 16:55:05 +0200
+
+xserver-xorg-video-intel (2:2.3.2-1ubuntu3) intrepid; urgency=low
+
+  * debian/patches/21_quirk_lenovo_and_hp_pavilion.patch:
+    + Quirk for fixing lockup on lid close for the Lenovo ThinkPad T60
+      (LP: #243405)
+    + Quirk for fixing lockup on lid close for the HP Pavilion ze4944ea
+      (LP: #242389)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Thu, 26 Jun 2008 20:36:29 -0700
+
+xserver-xorg-video-intel (2:2.3.2-1ubuntu2) intrepid; urgency=low
+
+  * debian/patches/20_thinkpad_g40_quirk.patch: Quirk for IBM Thinkpad G40
+      (LP: #240457)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 20 Jun 2008 22:48:30 -0700
+
+xserver-xorg-video-intel (2:2.3.2-1ubuntu1) intrepid; urgency=low
+
+  * Merge from debian unstable, remaining changes:
+    - debian/patches
+      + 01_fix_compiz_video.diff:
+        use xf86XVFillKeyHelperDrawable() to fix video playback with
+        compositing enabled.
+      + 05_intel_exa_force_greedy.patch:
+        Force use of greedy mode on intel hardware.
+        (LP: 177492, 148247, 152206)
+      + 11_textured_video_option.patch:
+        Renamed and reworked version of the old
+        11_hw_overlay_option.diff patch, to re-enable the textured video
+        option, to allow users to turn off textured video.
+      + 19_check_exa_pitch_to_fix_rotate_crash.patch:
+        Fixes crash on xrandr rotation by checking EXA pitch size.
+        (LP: #174745)
+    - debian/control:
+      + Change the maintainer address.
+      + Add lpia to the list of architectures.
+      + Reduce build depends version of dpkg-dev to 1.14.16 to enable it to
+        build on Hardy.  The version change was to fix a bug we workaround
+        already in our rules change below.
+    - debian/rules:
+      + Don't build the intel_reg_dumper tool, since libpciaccess is in
+        universe.
+      + Drop dpkg-shlibdeps with --warnings=6 (FTBS)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Thu, 19 Jun 2008 22:36:51 -0700
+
+xserver-xorg-video-intel (2:2.3.2-1) unstable; urgency=low
+
+  * New upstream release.
+    + Revert "Add FIFO watermark regs to register dumper",
+      closes: #482369, #471413.
+    + Fix TV programming:  add vblank wait after TV_CTL writes,
+      closes: #485616.
+
+ -- Brice Goglin <bgoglin@debian.org>  Wed, 18 Jun 2008 07:16:05 +0200
+
+xserver-xorg-video-intel (2:2.3.1-1ubuntu1) intrepid; urgency=low
+
+  * Merge from debian unstable, remaining changes:
+    - debian/patches
+      + 01_fix_compiz_video.diff:
+        use xf86XVFillKeyHelperDrawable() to fix video playback with
+        compositing enabled.
+      + 05_intel_exa_force_greedy.patch:
+          Force use of greedy mode on intel hardware.
+          (LP: 177492, 148247, 152206)
+      + 19_check_exa_pitch_to_fix_rotate_crash.patch:
+        Fixes crash on xrandr rotation by checking EXA pitch size.
+        (LP: #174745)
+    - debian/control:
+      + Change the maintainer address.
+      + Add lpia to the list of architectures.
+      + Reduce build depends version of dpkg-dev to 1.14.16 to enable it to
+        build on Hardy.  The version change was to fix a bug we workaround
+        already in our rules change below.
+    - debian/rules:
+      + Don't build the intel_reg_dumper tool, since libpciaccess is in
+        universe.
+      + Drop dpkg-shlibdeps with --warnings=6 (FTBS)
+  * 11_textured_video_option.patch:
+    - Renamed and reworked version of the old 11_hw_overlay_option.diff
+      patch, to re-enable the textured video option, to allow users to
+      turn off textured video.
+  * Dropped patches that are now upstream
+  * Restore Debian's Conflicts/Replaces for -i810 and symlink i810 to
+    intel.  We are now following suit to Debian and X.org and fully
+    deprecating the i810 driver and with 915resolution with this
+    release; remaining issues requiring use of the i810 driver need to
+    be reported to Launchpad and upstream so they can finally all get
+    fixed.
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 06 Jun 2008 19:34:28 -0700
+
+xserver-xorg-video-intel (2:2.3.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Brice Goglin <bgoglin@debian.org>  Mon, 12 May 2008 03:55:45 +0200
+
+xserver-xorg-video-intel (2:2.3.0-1) experimental; urgency=low
+
+  * Build-depend on dpkg-dev >= 1.14.17 for dpkg-shlibdeps --warnings.
+  * New upstream release.
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 23 Apr 2008 17:53:26 +0200
+
+xserver-xorg-video-intel (2:2.2.99.903-1) experimental; urgency=low
+
+  * New upstream release candidate.
+    + Fix LVDS regression: disable panel fitting on 855GM,
+      and fix dither setting, closes: #473838.
+
+ -- Brice Goglin <bgoglin@debian.org>  Tue, 15 Apr 2008 15:04:32 +0200
+
+xserver-xorg-video-intel (2:2.2.99.902-1) experimental; urgency=low
+
+  * New upstream release candidate.
+    + Disable DRI earlier if fb width > 2048, closes: #465421, #452357. 
+
+ -- Brice Goglin <bgoglin@debian.org>  Mon, 31 Mar 2008 08:46:32 +0200
+
+xserver-xorg-video-intel (2:2.2.99.901-2) experimental; urgency=low
+
+  * Install libIntelXvMC.so.
+
+ -- Brice Goglin <bgoglin@debian.org>  Sat, 29 Mar 2008 12:15:14 +0100
+
+xserver-xorg-video-intel (2:2.2.99.901-1) experimental; urgency=low
+
+  [ Julien Cristau ]
+  * Add the ${shlibs:Depends} substvar to the -dbg package's dependencies, to
+    bring in libpciaccess0 (closes: #467215).
+  * Only build on x86, this package doesn't make sense anywhere else.
+  * The Vcs-* fields are now recognized by dpkg, so drop the XS- prefix.
+  * Bump Standards-Version to 3.7.3 (no changes).
+
+  [ Brice Goglin ]
+  * New upstream release.
+    + Fix pciaccess version check, closes: #470266.
+    + Fix crash on VT switch, closes: #469113.
+    + Fix video playback on rotated display, closes: #432157.
+
+ -- Brice Goglin <bgoglin@debian.org>  Fri, 21 Mar 2008 21:50:59 +0100
+
+xserver-xorg-video-intel (2:2.2.1-2ubuntu2) intrepid; urgency=low
+
+  * 20_dpll_prg_in_crtc_mode_set.patch:
+      - Fixes display problems caused by Jesse's force pipe A enablement
+        patch, which breaks DPLL programming.
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Wed, 28 May 2008 15:30:31 -0700
+
+xserver-xorg-video-intel (2:2.2.1-2ubuntu1) intrepid; urgency=low
+
+  * Merge from debian unstable, remaining changes:
+    - debian/patches
+      + 01_fix_compiz_video.diff:
+        use xf86XVFillKeyHelperDrawable() to fix video playback with
+        compositing enabled.
+      + 03_dell_1535_quirk.diff:
+        Add a quirk for Dell Inspiron 1535 so it does not configure
+        against the HDMI port instead of the LCD's native resolution
+        (LP: 187860).
+      + 04_dell_1735_quirk.diff:
+        Another HDMI port quirk, for the Dell Inspiron 1735.
+        (LP: 188204)
+      + 05_intel_exa_force_greedy.patch:
+        Force use of greedy mode on i965 hardware.
+        (LP: 177492, 148247, 152206)
+      + 08_945gm_quirk.diff:
+        Adds quirk for another laptop model with a tv out detection bug.
+        (LP: 152416)
+      + 10_hw_overlay.diff:
+        Replace explicit checks for G965 for having no overlay since it
+        has one, with general check for future chips that may have no
+        overlay. (LP: 201596, 152206)
+      + 11_hw_overlay_option.diff:
+        Add a Boolean "TexturedVideo" option with default 'true'  value
+        to be able to turn textured video off.
+        (LP: 201596, 152206)
+      + 12_quirk_sync.patch: Add some quirks from current git
+        upstream, and a quirk for Dell Latitude D630 (LP: 197740)
+      + 13_dpms_low_power_overlay.patch:
+        Fix crash triggered by dpms low power mode with hardware overlay
+        running (LP: 160309)
+      + 14_sysfs_fujitsu_backlight.patch:
+        Add sysfs backlight support for Fujitsu laptops (LP: 197620)
+      + 15_quirk_sony_vaio_vgn-sz4mn.patch:
+        Another Pipe A quirk - not already included - for the Sony Vaio
+        VGN-SZ4MN. (LP: 212163)
+      + 16_legacy_backlight_blc_pwn_ctl.patch:
+        Fixes issue where gdm, opengl apps, and vlc resets brightness to
+        xbacklight value on i915, by switching from BCM_LEGACY to
+        BCM_COMBO. (LP: 201933)
+      + 17_lockup_virtual_size_2048.patch:
+        Fixes crash if Virtual set to >2048 by disabling DRI in this case,
+        prior to initializing the DRI subsystem. (LP: 188178)
+    - debian/control:
+      + Change the maintainer address.
+      + Add lpia to the list of architectures.
+      + Nuke Conflicts and Replaces related to -i810.
+      + Nuke /usr/lib/xorg/modules/drivers/i810_drv.so symlink
+      + Nuke /usr/share/man/man4/i810.4 conflict
+      + Don't conflict with 915resolution, since it breaks upgrades
+        where people are still using i810 with widescreen resolutions.
+        (LP: 206167)
+    - debian/rules:
+      + Don't build the intel_reg_dumper tool, since libpciaccess is in
+        universe.
+      + Allow xserver-xorg-video-i810 and xserver-xorg-video-intel to
+        coexist until -intel is able to replace it completely.
+  * debian/patches/18_quirks.patch:
+    - Add quirks for pipe A and tv output bugs.
+      (Closes LP: #204603, #216490, #201257, #224102)
+  * debian/patches/19_check_exa_pitch_to_fix_rotate_crash.patch:
+    - Fixes crash on xrandr rotation by checking EXA pitch size.
+      EXA wasn't checking devKind in ModifyPixmapHeader, which
+      makes it impossible to check homemade pixmaps (like produced
+      by rotate_pixmap().  So this patch checks in all !965 cases now.
+      965G supports max pitch for current exa limit (128k) so doesn't
+      need checks.  (Closes LP: #174745)
+  * debian/rules:
+    - Drop dpkg-shlibdeps with --warnings=6 (FTBS), sounds just cosmetic
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 09 May 2008 00:22:45 -0700
+
+xserver-xorg-video-intel (2:2.2.1-2) unstable; urgency=low
+
+  * Add the ${shlibs:Depends} substvar to the -dbg package's dependencies, to
+    bring in libpciaccess0 (closes: #467215).
+  * Only build on x86, this package doesn't make sense anywhere else.
+  * The Vcs-* fields are now recognized by dpkg, so drop the XS- prefix.
+  * configure: check for pciaccess 0.10 instead of 0.10.0 (closes: #470266).
+  * Run dpkg-shlibdeps with --warnings=6.  Drivers reference symbols from
+    /usr/bin/Xorg and other modules, and that's not a bug, so we want
+    dpkg-shlibdeps to shut up about symbols it can't find.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 13 Apr 2008 02:10:18 +0200
+
+xserver-xorg-video-intel (2:2.2.1-1ubuntu12) hardy; urgency=low
+
+  * debian/patches/17_lockup_virtual_size_2048.patch:
+    - merging patch from http://bugs.freedesktop.org/show_bug.cgi?id=13376.
+      Fixes crash if Virtual set to >2048 by disabling DRI in this case,
+      prior to initializing the DRI subsystem.  (closes LP: #188178)
+
+ -- Emmanuel Bretelle <chantra@debuntu.org>  Sat, 29 Mar 2008 14:06:49 +0000
+
+xserver-xorg-video-intel (2:2.2.1-1ubuntu11) hardy; urgency=low
+
+  * debian/patches/16_legacy_backlight_blc_pwn_ctl.patch:
+    - Fixes issue where gdm, opengl apps, and vlc resets brightness to
+      xbacklight value on i915, by switching from BCM_LEGACY to BCM_COMBO.
+      This won't affect users using the kernel's /sys/class/backlight
+      interfaces for managing the backlight, but should produce better
+      results for the majority of legacy bit users. (LP: #201933)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Mon, 07 Apr 2008 23:41:38 -0700
+
+xserver-xorg-video-intel (2:2.2.1-1ubuntu10) hardy; urgency=low
+
+  * debian/patches/15_quirk_sony_vaio_vgn-sz4mn.patch:
+    - Another Pipe A quirk - not already included - for the Sony Vaio
+      VGN-SZ4MN. (LP: #212163)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Sat, 05 Apr 2008 13:00:38 -0700
+
+xserver-xorg-video-intel (2:2.2.1-1ubuntu9) hardy; urgency=low
+
+  * debian/patches/14_sysfs_fujitsu_backlight.patch:
+    - Add sysfs backlight support for Fujitsu laptops (LP: #197620)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 04 Apr 2008 20:02:03 -0700
+
+xserver-xorg-video-intel (2:2.2.1-1ubuntu8) hardy; urgency=low
+
+  * debian/patches/13_dpms_low_power_overlay.patch:
+    - Fix crash triggered by dpms low power mode with hardware overlay
+      running (LP: #160309)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 04 Apr 2008 16:33:51 -0700
+
+xserver-xorg-video-intel (2:2.2.1-1ubuntu7) hardy; urgency=low
+
+  * debian/patches/12_quirk_sync.patch: Add some quirks from current git
+    upstream, and a quirk for Dell Latitude D630 (LP: #197740)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 04 Apr 2008 14:02:07 -0700
+
+xserver-xorg-video-intel (2:2.2.1-1ubuntu6) hardy; urgency=low
+
+  [ Bryce Harrington ]
+  * debian/patches/05_intel_exa_force_greedy.patch: Another shot at the
+    greedy patch.  This time by slightly modifying the working patch by
+    moving its logic outside the i965 if loop, so it'll apply to all
+    hardware.  (LP: #177492)
+
+  [ Timo Aaltonen ]
+  * Don't conflict with 915resolution, since it breaks upgrades where
+    people are still using i810 with widescreen resolutions.
+    (LP: #206167)
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 25 Mar 2008 11:25:42 +0200
+
+xserver-xorg-video-intel (2:2.2.1-1ubuntu5) hardy; urgency=low
+
+  * Fix the overlay patch to really disable TexturedVideo by default.
+    (LP: #201596)
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Fri, 14 Mar 2008 11:01:09 +0200
+
+xserver-xorg-video-intel (2:2.2.1-1ubuntu4) hardy; urgency=low
+
+  * Revert the greedy change, use the old patch again since the new one
+    doesn't work right. (LP: #177492)
+  * Add patches to enable hardware overlay for i965, and disable textured
+    video by default. It can be enabled again by setting
+    'Option "TexturedVideo" "true"'. (LP: #152206)
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 11 Mar 2008 21:42:43 +0200
+
+xserver-xorg-video-intel (2:2.2.1-1ubuntu3) hardy; urgency=low
+
+  * Add 07_intel_exa_force_all_greedy.patch, to expand the fix from
+    05_intel_exa_force_greedy.patch to cover all Intel chipsets, not just
+    965.  (LP: #177492)
+  * Drop 05_intel_exa_force_greedy.patch, since 07 is a superset of it.
+  * Add 08_945gm_quirk.diff, to add quirk for another laptop model with a
+    tv out detection bug.  (LP: #152416)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 29 Feb 2008 15:52:16 -0800
+
+xserver-xorg-video-intel (2:2.2.1-1ubuntu2) hardy; urgency=low
+
+  * Don't build the intel_reg_dumper tool, since libpciaccess is in
+    universe.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Wed, 27 Feb 2008 00:04:15 +0200
+
+xserver-xorg-video-intel (2:2.2.1-1ubuntu1) hardy; urgency=low
+
+  * Merge from debian unstable (LP: #189868, #195424), remaining
+    changes:
+    - debian/patches
+      + 01_fix_compiz_video.diff:
+        use xf86XVFillKeyHelperDrawable() to fix video playback with
+        compositing enabled.
+      + 03_dell_1535_quirk.diff:
+        Add a quirk for Dell Inspiron 1535 so it does not configure
+        against the HDMI port instead of the LCD's native resolution
+        (LP: 187860).
+      + 04_dell_1735_quirk.diff:
+        Another HDMI port quirk, for the Dell Inspiron 1735.
+        (LP: 188204)
+      + 05_intel_exa_force_greedy.patch:
+        Force use of greedy mode on i965 hardware.
+        (LP: 177492, 148247, 152206)
+    - debian/control
+      + Change the maintainer address.
+      + Add lpia to the list of architectures.
+    - Allow xserver-xorg-video-i810 and xserver-xorg-video-intel to coexist
+      until -intel is able to replace it completely.
+      debian/control:
+      + Nuke Conflicts and Replaces related to -i810.
+      debian/rules:
+      + Nuke /usr/lib/xorg/modules/drivers/i810_drv.so symlink
+      + Nuke /usr/share/man/man4/i810.4 conflict
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 26 Feb 2008 14:04:11 +0200
+
+xserver-xorg-video-intel (2:2.2.1-1) unstable; urgency=low
+
+  [ Brice Goglin ]
+  * New upstream release.
+    + Fix some blinking pixels and unreadable text, closes: #465921.
+    + Fix i830 stolen memory mask, closes: #464661.
+    + Fix flickering on i855, closes: #443809, #435621.
+
+  [ Julien Cristau ]
+  * Build the intel_reg_dumper tool, and install it in the -dbg package.
+    Add build-dependency on libpciaccess-dev.
+
+ -- Brice Goglin <bgoglin@debian.org>  Sat, 23 Feb 2008 00:52:39 +0100
+
+xserver-xorg-video-intel (2:2.2.0.90-3) unstable; urgency=low
+
+  * Grab upstream commit 2c8f87be99957e0e18d8bcda46bd8706ab374253
+    to unbreak FramebufferCompression on i965.
+
+ -- Brice Goglin <bgoglin@debian.org>  Wed, 06 Feb 2008 21:29:44 +0100
+
+xserver-xorg-video-intel (2:2.2.0.90-2ubuntu7) hardy; urgency=low
+
+  * Drop the xaa-patch, as it turns out that not only i965 has issues 
+    with Xv & compiz.
+  * Bump the build-dep on xserver-xorg-dev to match the current version 
+    that is needed in order to default to greedy EXA.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Thu, 21 Feb 2008 09:00:53 +0200
+
+xserver-xorg-video-intel (2:2.2.0.90-2ubuntu6) hardy; urgency=low
+
+  * Add 06_xaa_as_default_except_i965.patch to switch us back to XAA by
+    default for intel chipsets for performance reasons, except for i965
+    which does not work as well with XAA (Xv video doesn't display
+    properly.)  This patch essentially just reverts upstream's 'Default to
+    EXA' patch, and adds a special case i965 to allow it to use EXA.
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 19 Feb 2008 14:27:18 -0800
+
+xserver-xorg-video-intel (2:2.2.0.90-2ubuntu5) hardy; urgency=low
+
+  * Add 05_intel_exa_force_greedy.patch to force use of greedy mode on
+    i965 hardware.  (closes LP: #177492, #148247, #152206)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 19 Feb 2008 13:48:02 -0800
+
+xserver-xorg-video-intel (2:2.2.0.90-2ubuntu4) hardy; urgency=low
+
+  * 04_dell_1735_quirk.patch: Another HDMI port quirk, for the Dell
+    Inspiron 1735. (LP: #188204)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Thu, 14 Feb 2008 18:08:47 -0800
+
+xserver-xorg-video-intel (2:2.2.0.90-2ubuntu3) hardy; urgency=low
+
+  * 03_dell_1535_quirk.patch: Add a quirk for Dell Inspiron 1535 so it
+    does not configure against the HDMI port instead of the LCD's native
+    resolution (LP: #187860).
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Thu, 14 Feb 2008 15:52:01 -0800
+
+xserver-xorg-video-intel (2:2.2.0.90-2ubuntu2) hardy; urgency=low
+
+  * 02_quick_fix.patch: Patch from upstream to prevent a crash on start.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Wed, 06 Feb 2008 19:04:04 +0200
+
+xserver-xorg-video-intel (2:2.2.0.90-2ubuntu1) hardy; urgency=low
+
+  * Merge from debian unstable, remaining changes:
+    - debian/patches
+      + 01_fix_compiz_video.diff:
+        use xf86XVFillKeyHelperDrawable() to fix video playback with
+        compositing enabled.
+    - debian/control
+      + Change the maintainer address.
+      + Add lpia to the list of architectures.
+    - Allow xserver-xorg-video-i810 and xserver-xorg-video-intel to coexist
+      until -intel is able to replace it completely.
+      debian/control:
+      + Nuke Conflicts and Replaces related to -i810.
+      debian/rules:
+      + Nuke /usr/lib/xorg/modules/drivers/i810_drv.so symlink
+      + Nuke /usr/share/man/man4/i810.4 conflict
+  * Drop 05_fix_xv_reset.diff, different implementation upstream.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Wed, 06 Feb 2008 18:03:24 +0200
+
+xserver-xorg-video-intel (2:2.2.0.90-2) unstable; urgency=low
+
+  * Actually pull the new upstream release candidate.
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 06 Feb 2008 10:27:18 +0100
+
+xserver-xorg-video-intel (2:2.2.0.90-1) unstable; urgency=low
+
+  * New upstream stable branch release candidate. Fixes the following bugs:
+    + server leaves pipe disabled at shutdown / vt switch ; closes: #453374
+    + [855GM] need to use BIOS for mode information ; closes: #437066
+    + Intel 2.2 crashes if playing a video then switching to another desktop;
+      closes: #452372
+    + [G33] 2.2.0 locks up X with error "First SDVO output reported failure to
+      sync" ; closes: #451917
+
+ -- David Nusinow <dnusinow@debian.org>  Tue, 05 Feb 2008 21:41:13 -0500
+
+xserver-xorg-video-intel (2:2.2.0+git20080107-1ubuntu2) hardy; urgency=low
+
+  * 10_merge_upstream.diff:
+    - Merge all upstream commits from the stable branch up to commit
+      103dc34f3afc17cea7e086927e124a30c605a686
+  * 02_force_16bit_i81x.diff
+    - Dropped, upstream now.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>   Tue, 29 Jan 2008 12:58:37 +0200
+
+xserver-xorg-video-intel (2:2.2.0+git20080107-1ubuntu1) hardy; urgency=low
+
+  * Merge from debian unstable, remaining changes:
+    - debian/patches
+      + 01_fix_compiz_video.diff:
+        use xf86XVFillKeyHelperDrawable() to fix video playback with
+        compositing enabled.
+      + 05_fix_xv_reset.diff
+        Playing Xv video after switching modes once the Xv driver is
+        initialised causes a lockup, as the overlay regisers need
+        re-programming. Ensure such a reset happens after a mode-switch.
+    - debian/control
+      + Change the maintainer address.
+      + Add lpia to the list of architectures.
+    - Allow xserver-xorg-video-i810 and xserver-xorg-video-intel to coexist
+      until -intel is able to replace it completely.
+      debian/control:
+      + Nuke Conflicts and Replaces related to -i810.
+      debian/rules:
+      + Nuke /usr/lib/xorg/modules/drivers/i810_drv.so symlink
+      + Nuke /usr/share/man/man4/i810.4 conflict
+  * debian/patches/02_force_16bit_i81x.diff:
+    - Force 16bit depth on i81{0,5} chips (LP: #178837)
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 08 Jan 2008 17:22:38 +0200
+
+xserver-xorg-video-intel (2:2.2.0+git20080107-1) experimental; urgency=low
+
+  * New upstream snapshot
+    + Clarifies backlight abilities in the manpage. Closes: #451847
+    + Will use a functional backlight on older chips now. Newer chips may
+      benefit from configured to use something other than the legacy setting
+      though. Closes: #451848
+    + Fixes exa rendering corruption on some 855GM laptops. Closes: #439210
+    + Xv window hidden for a little while no longer causes segfaults.
+      Closes: #457587
+
+ -- David Nusinow <dnusinow@debian.org>  Mon, 07 Jan 2008 22:41:51 -0500
+
+xserver-xorg-video-intel (2:2.2.0-2) UNRELEASED; urgency=low
+
+  * Conflict with 915resolution. This driver now handles all of this itself
+    and better. Closes: #452803
+
+ -- David Nusinow <dnusinow@debian.org>  Mon, 03 Dec 2007 21:35:07 -0500
+
+xserver-xorg-video-intel (2:2.2.0-1ubuntu1) hardy; urgency=low
+
+  * Merge from debian unstable, remaining changes:
+    - debian/patches
+      + 01_fix_compiz_video.diff:
+        use xf86XVFillKeyHelperDrawable() to fix video playback with
+        compositing enabled
+      + 05_fix_xv_reset.diff
+        Playing Xv video after switching modes once the Xv driver is
+        initialised causes a lockup, as the overlay regisers need
+        re-programming. Ensure such a reset happens after a mode-switch.
+    - debian/control
+      + Change the maintainer address.
+      + Add lpia to the list of architectures.
+    - Allow xserver-xorg-video-i810 and xserver-xorg-video-intel to coexist
+      until -intel is able to replace it completely.
+      debian/control:
+      + Nuke Conflicts and Replaces related to -i810.
+      debian/rules:
+      + Nuke /usr/lib/xorg/modules/drivers/i810_drv.so symlink
+      + Nuke /usr/share/man/man4/i810.4 conflict
+    - These patches have been disabled for now, since they don't apply
+      fully and need closer investigation:
+      + 03_fix_brightness_control.diff:
+        add code from upstream to avoid confusing the platform firmware
+        brightness control
+      + 04_fix_hw_restore.diff
+        Only restore PIPE[AB]CONF if the DPLL for that PIPE is running
+        and not in VGA pipeline mode.
+      + 07_fix_startup_blink.diff
+        Alter startup sequence to avoid blinking the display whilst
+        initialising the graphics chip.
+
+ -- Timo Aaltonen < tepsipakki@ubuntu.com>   Sat, 24 Nov 2007 19:35:11 +0200
+
+xserver-xorg-video-intel (2:2.2.0-1) unstable; urgency=low
+
+  * New upstream release.
+    + Also pull bugfix commit 4a2b0f340357c4ca58dc9586fad1337b83966362.
+    + Fix backlight problems on various chipsets,
+      closes: #443111, #438969, #439744.
+    + Fix some issues with high resolution, closes: #420840.
+  * Add myself to Uploaders and remove Branden with his permission.
+
+ -- Brice Goglin <bgoglin@debian.org>  Fri, 16 Nov 2007 09:30:26 +0100
+
+xserver-xorg-video-intel (2:2.1.99-1ubuntu1) hardy; urgency=low
+
+  * Merge from debian unstable, remaining changes:
+    - debian/patches
+      + 01_fix_compiz_video.diff:
+        use xf86XVFillKeyHelperDrawable() to fix video playback with
+        compositing enabled
+      + 05_fix_xv_reset.diff
+        Playing Xv video after switching modes once the Xv driver is
+        initialised causes a lockup, as the overlay regisers need
+        re-programming. Ensure such a reset happens after a mode-switch.
+    - debian/control
+      + Change the maintainer address.
+      + Add lpia to the list of architectures.
+    - Allow xserver-xorg-video-i810 and xserver-xorg-video-intel to coexist
+      until -intel is able to replace it completely.
+      debian/control:
+      + Nuke Conflicts and Replaces related to -i810.
+      debian/rules:
+      + Nuke /usr/lib/xorg/modules/drivers/i810_drv.so symlink
+      + Nuke /usr/share/man/man4/i810.4 conflict
+  * Drop patches 02, 06, 08 which have been merged upstream.
+  * These patches have been disabled for now, since they don't apply fully
+    and need closer investigation:
+    - 03_fix_brightness_control.diff:
+      add code from upstream to avoid confusing the platform firmware
+      brightness control
+    - 04_fix_hw_restore.diff
+      Only restore PIPE[AB]CONF if the DPLL for that PIPE is running
+      and not in VGA pipeline mode.
+    - 07_fix_startup_blink.diff
+      Alter startup sequence to avoid blinking the display whilst
+      initialising the graphics chip.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>   Thu, 15 Nov 2007 00:12:47 +0200
+
+xserver-xorg-video-intel (2:2.1.99-1) experimental; urgency=low
+
+  [ David Nusinow ]
+  * Make -i810 arch: all again
+
+  [ Julien Cristau ]
+  * New upstream release candidate
+    + fixes VT switch issues (closes: #431373, #436336)
+    + fixes memory allocation issues (closes: #423416)
+    + adds support for ch701x LVDS controllers (closes: #438650, #420350,
+      #424952)
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 11 Nov 2007 11:16:03 +0100
+
+xserver-xorg-video-intel (2:2.1.1-5) unstable; urgency=low
+
+  * Use the same architectures for the -dbg and i810 packages as -intel.
+    This should allow it to transition to testing. Closes: #449228
+
+ -- David Nusinow <dnusinow@debian.org>  Sun, 04 Nov 2007 09:10:31 -0500
+
+xserver-xorg-video-intel (2:2.1.1-4ubuntu2) hardy; urgency=low
+
+  * Duh, really nuke the i810 manpage conflict.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>   Thu, 08 Nov 2007 18:52:43 +0200
+
+xserver-xorg-video-intel (2:2.1.1-4ubuntu1) hardy; urgency=low
+
+  * Merge from debian unstable, remaining changes:
+    - debian/patches
+      + 01_fix_compiz_video.diff:
+        use xf86XVFillKeyHelperDrawable() to fix video playback with
+        compositing enabled
+      + 02_xps1330_tvout_quirk.diff:
+        add quirk, xps1330 has no tv out
+      + 03_fix_brightness_control.diff:
+        add code from upstream to avoid confusing the platform firmware
+        brightness control
+      + 04_fix_hw_restore.diff
+        Only restore PIPE[AB]CONF if the DPLL for that PIPE is running
+        and not in VGA pipeline mode.
+      + 05_fix_xv_reset.diff
+        Playing Xv video after switching modes once the Xv driver is
+        initialised causes a lockup, as the overlay regisers need
+        re-programming. Ensure such a reset happens after a mode-switch.
+      + 06_sync_quirks.diff:
+        Sync TV out quirks with upstream
+      + 07_fix_startup_blink.diff
+        Alter startup sequence to avoid blinking the display whilst
+        initialising the graphics chip.
+      + 08_fix_855_3D_state.diff
+        Emit the invariant 3D state to the GPU during EnterVT after
+        marking the 3D state as clobbered. This fixes / works around
+        textured surface corruption after resume on 855GM hardware.
+    - debian/control
+      + Change the maintainer address.
+      + Add lpia to the list of architectures.
+    - Allow xserver-xorg-video-i810 and xserver-xorg-video-intel to coexist
+      until -intel is able to replace it completely.
+      debian/control:
+      + Nuke Conflicts and Replaces related to -i810.
+      debian/rules:
+      + Nuke /usr/lib/xorg/modules/drivers/i810_drv.so symlink
+      + Nuke /usr/share/man/man4/i810.4 conflict
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>   Thu, 08 Nov 2007 08:53:28 +0200
+
+xserver-xorg-video-intel (2:2.1.1-4) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- David Nusinow <dnusinow@debian.org>  Sun, 16 Sep 2007 16:34:39 -0400
+
+xserver-xorg-video-intel (2:2.1.1-3) experimental; urgency=low
+
+  * Shorten the short description of the -dbg package a bit (thanks, Marc 'HE'
+    Brockschmidt).
+  * Rebuild for xserver 1.4.
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 12 Sep 2007 11:21:49 +0200
+
+xserver-xorg-video-intel (2:2.1.1-2) experimental; urgency=low
+
+  [ Julien Cristau ]
+  * Build against xserver 1.3.99.0.
+
+  [ David Nusinow ]
+  * Add 01_gen_pci_ids.diff.  This patch has the driver generate a list of pci
+    id's that it supports and installs it where the X server can find it. The
+    server with appropriate support will be able to automatically determine if
+    the intel driver is the proper driver to load when no driver is specified
+    in xorg.conf.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 19 Aug 2007 03:21:24 +0200
+
+xserver-xorg-video-intel (2:2.1.1-1) unstable; urgency=low
+
+  * New upstream release.
+    + manpage typo fixed (closes: #432061).  Thanks, A Costa!
+    + adds quirk for TV output on some 965-based laptops (closes: #434297).
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 14 Aug 2007 12:48:02 +0200
+
+xserver-xorg-video-intel (2:2.1.1-0ubuntu10) hardy; urgency=low
+
+  [ Bryce Harrington ]
+  [Peter Clifton]
+  * 08_fix_855_3D_state.diff
+    - Emit the invariant 3D state to the GPU during EnterVT after
+      marking the 3D state as clobbered. This fixes / works around
+      textured surface corruption after resume on 855GM hardware.
+      (Closes LP: #133118)
+  * 07_fix_startup_blink.diff
+    - Alter startup sequence to avoid blinking the display whilst
+      initialising the graphics chip.
+      (Closes LP: #148686)
+  * 04_fix_hw_restore.diff
+    - Only restore PIPE[AB]CONF if the DPLL for that PIPE is running
+      and not in VGA pipeline mode.
+      (Closes LP: #108056)
+
+  [Kyle McMartin, Bryce Harrington]
+  * 06_sync_quirks.diff:
+    - Sync TV out quirks with upstream
+
+ -- Timo Aaltonen < tepsipakki@ubuntu.com>   Thu, 01 Nov 2007 21:44:36 +0200
+
+xserver-xorg-video-intel (2:2.1.1-0ubuntu9) gutsy; urgency=low
+
+   [Peter Clifton]
+   * 01_fix_compiz_video.diff:
+     - Bracket second clause in test for textured video to avoid
+       compiler warning and possibly incorrect testing.
+   * 04_fix_hw_restore.diff
+     - Only restore palette registers for pipes which are enabled, or
+       the system may hard-lock. (Initial patch by Bryce Harrington).
+       (Closes LP: #127101)
+   * 05_fix_xv_reset.diff
+     - Playing Xv video after switching modes once the Xv driver is
+       initialised causes a lockup, as the overlay regisers need
+       re-programming. Ensure such a reset happens after a mode-switch.
+       (Closes LP: #141063)
+
+ -- Bryce Harrington <bryce@ubuntu.com>   Sat, 13 Oct 2007 12:58:07 -0700
+
+xserver-xorg-video-intel (2:2.1.1-0ubuntu8) gutsy; urgency=low
+
+  * Brown paper bag release.
+  * Uncomment dh_installchangelogs.
+
+ -- Kyle McMartin <kyle@ubunut.com>   Thu, 11 Oct 2007 13:05:43 -0400
+
+xserver-xorg-video-intel (2:2.1.1-0ubuntu7) gutsy; urgency=low
+
+  * 04-fix-g33-gtt-stolen-mem-range.diff:
+    - Nuke, caused graphics corruption on G33, reverted kernel code.
+
+ -- Kyle McMartin <kyle@ubuntu.com>   Tue, 09 Oct 2007 09:51:18 -0400
+
+xserver-xorg-video-intel (2:2.1.1-0ubuntu6) gutsy; urgency=low
+
+  * 04-fix-g33-gtt-stolen-mem-range.diff:
+    - Latest kernel release changes how stolen mem range is computed on
+      G33 hardware, needs this corresponding X change otherwise we die
+      trying to allocate GART memory.
+
+ -- Kyle McMartin <kyle@ubuntu.com>   Sat, 06 Oct 2007 10:01:17 -0400
+
+xserver-xorg-video-intel (2:2.1.1-0ubuntu5) gutsy; urgency=low
+
+  * 03_fix_brightness_control.diff:
+    - add code from upstream to avoid confusing the platform firmware
+      brightness control
+
+ -- Matthew Garrett <mjg59@srcf.ucam.org>   Thu, 04 Oct 2007 00:09:54 +0100
+
+xserver-xorg-video-intel (2:2.1.1-0ubuntu4) gutsy; urgency=low
+
+  * 02_xps1330_tvout_quirk.diff:
+    - add quirk, xps1330 has no tv out
+
+ -- Kyle McMartin < kyle@ubuntu.com>   Fri, 28 Sep 2007 09:45:48 -0400
+
+xserver-xorg-video-intel (2:2.1.1-0ubuntu3) gutsy; urgency=low
+
+  * debian/patches/01_fix_compiz_video.diff:
+    - default to overlay mode on hardware that supports it to
+      make compiz video work
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>   Tue, 18 Sep 2007 09:48:45 +0100
+
+xserver-xorg-video-intel (2:2.1.1-0ubuntu2) gutsy; urgency=low
+
+  * debian/patches/01_fix_compiz_video.diff:
+    - use xf86XVFillKeyHelperDrawable() to fix video playback with
+      compositing enabled
+
+ -- Michael Vogt < michael.vogt@ubuntu.com>   Tue, 14 Aug 2007 21:46:28 +0200
+
+xserver-xorg-video-intel (2:2.1.1-0ubuntu1) gutsy; urgency=low
+
+  * New upstream version.
+  * Drop ChangeLog since it isn't updated upstream and is just
+    needless diff.
+
+ -- Kyle McMartin <kyle@ubuntu.com>   Tue, 14 Aug 2007 02:38:09 -0400
+
+xserver-xorg-video-intel (2:2.1.0-2) unstable; urgency=low
+
+  [ Brice Goglin ]
+  * Fix XvMC support for only i810 and i815 in the long description.
+  * Build a xserver-xorg-video-intel-dbg package with debugging symbols.
+
+  [ Julien Cristau ]
+  * Add upstream URL in the copyright file (thanks, Loïc Minier).
+
+ -- Julien Cristau <jcristau@debian.org>  Mon, 09 Jul 2007 14:25:25 +0200
+
+xserver-xorg-video-intel (2:2.1.0-1ubuntu2) gutsy; urgency=low
+
+  * Add lpia to the list of architectures.
+
+ -- Matthias Klose <doko@ubuntu.com>   Tue, 07 Aug 2007 13:12:48 +0000
+
+xserver-xorg-video-intel (2:2.1.0-1ubuntu1) gutsy; urgency=low
+
+  [ Kyle McMartin ]
+
+  * Merge changes from 2.0.0-1ubuntu2.
+  * Set Maintainer to core-dev.
+  * Allow xserver-xorg-video-i810 and xserver-xorg-video-intel to coexist
+    until -intel is able to replace it completely.
+    - Nuke /usr/lib/xorg/modules/drivers/i810_drv.so symlink
+    - Nuke /usr/share/man/man4/i810.4 conflict
+    - Nuke Conflicts and Replaces related to -i810.
+
+ -- Kyle McMartin <kyle@ubuntu.com>   Tue, 03 Jul 2007 12:45:17 -0400
+
+xserver-xorg-video-intel (2:2.1.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Actually install the upstream README.
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 03 Jul 2007 11:19:48 +0200
+
+xserver-xorg-video-intel (2:2.0.0-6) experimental; urgency=low
+
+  * Update to latest upstream (commit 1e2e3013).
+  * Add myself to uploaders.
+
+ -- Julien Cristau <jcristau@debian.org>  Mon, 02 Jul 2007 03:08:51 +0200
+
+xserver-xorg-video-intel (2:2.0.0-5) experimental; urgency=low
+
+  [ Drew Parsons ]
+  * The upstream README file looks interesting, include it with docs.
+
+  [ Julien Cristau ]
+  * Pull in latest upstream git.
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 22 Jun 2007 03:58:48 +0100
+
+xserver-xorg-video-intel (2:2.0.0-4) experimental; urgency=low
+
+  [ Julien Cristau ]
+  * Update watch file (s/i810/intel/).
+
+  [ Drew Parsons ]
+  * Pull in latest upstream git (probably contains final Xv fix).
+    Closes: #417860.
+
+ -- Drew Parsons <dparsons@debian.org>  Tue, 05 Jun 2007 18:35:50 +1000
+
+xserver-xorg-video-intel (2:2.0.0-3) experimental; urgency=low
+
+  *  Pull in latest upstream git (updated Xv fix)
+
+ -- Drew Parsons <dparsons@debian.org>  Wed, 30 May 2007 12:20:45 +1000
+
+xserver-xorg-video-intel (2:2.0.0-2) experimental; urgency=low
+
+  [ Julien Cristau ]
+  * Build xserver-xorg-video-i810 in binary-indep instead of binary-arch
+    (closes: #420240).  Thanks, Aaron M. Ucko!
+  * Mention i965 chipsets in the long description.
+
+  [ Timo Aaltonen ]
+  * Replaces/Conflicts: xserver-xorg-driver-i810.
+
+  [ Drew Parsons ]
+  * Pull in latest upstream git
+    - Restores Xv video overlay. Closes: #417860, #420281
+  * autoreconf
+
+ -- Drew Parsons <dparsons@debian.org>  Sat, 26 May 2007 18:08:33 +1000
+
+xserver-xorg-video-intel (2:2.0.0-1ubuntu2) gutsy; urgency=low
+
+  * Set Maintainer to core-dev.
+  * Allow xserver-xorg-video-i810 and xserver-xorg-video-intel to coexist
+    until -intel is able to replace it completely.
+    - Nuke /usr/lib/xorg/modules/drivers/i810_drv.so symlink
+    - Nuke /usr/share/man/man4/i810.4 conflict
+    - Nuke Conflicts and Replaces related to -i810.
+
+ -- Kyle McMartin <kyle@ubuntu.com>   Tue, 22 May 2007 18:53:04 +0000
+
+xserver-xorg-video-intel (2:2.0.0-1ubuntu1) gutsy; urgency=low
+
+  * Merge with Debian unstable, remaining changes:
+    - debian/control:
+      + Stop building the transitional xserver-xorg-video-i810, so that
+        it doesnt overwrite the identically-named package in main
+      + Replace and Conflict xserver-xorg-driver-i810.
+      + Change Maintainer address.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>   Mon, 21 May 2007 12:54:24 +0300
+
+xserver-xorg-video-intel (2:2.0.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add XS-Vcs-*.
+  * Bump build-dep on xserver-xorg-dev to >= 2:1.3.0.0.
+  * Remove Fabio from Uploaders, with his permission.
+  * Install the bug script in the xserver-xorg-video-intel dir instead of
+    -i810.
+  * Install the upstream changelog.
+  * Upload to unstable.
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 20 Apr 2007 08:54:20 +0200
+
+xserver-xorg-video-intel (2:1.9.94-1ubuntu3) feisty; urgency=low
+
+  * Stop building the transitional xserver-xorg-video-i810, so that it doesnt
+    overwrite the identically-named package in main
+
+ -- Sarah Hobbs <hobbsee@ubuntu.com>   Tue, 17 Apr 2007 15:10:03 +1000
+
+xserver-xorg-video-intel (2:1.9.94-1ubuntu2) feisty; urgency=low
+
+  * src/ch7017/Makefile.{am,in}
+    - [FTBFS] Fix AM_CFLAGS to include '-I$(srcdir)/..' and
+      '-I$(srcdir)/../modes'.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>   Mon, 16 Apr 2007 15:47:59 +0300
+
+xserver-xorg-video-intel (2:1.9.94-1ubuntu1) feisty; urgency=low
+
+  * Merge with Debian, remaining changes:
+    debian/control
+    - Change the Maintainer address.
+    - Replace and Conflict xserver-xorg-driver-i810
+    - Ease the dependancy on xserver-xorg-dev.
+    debian/rules:
+    - Add '--with-xserver-source=/' so configure uses the included headers.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>   Wed,  4 Apr 2007 00:15:30 +0300
+
+xserver-xorg-video-intel (2:1.9.94-1) experimental; urgency=low
+
+  * New upstream release candidate.
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 03 Apr 2007 11:36:43 +0200
+
+xserver-xorg-video-intel (2:1.9.93-1) experimental; urgency=low
+
+  * New upstream release candidate.
+    + bump build-dep on xserver-xorg-dev to >= 2:1.2.99.903.
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 27 Mar 2007 08:25:39 +0200
+
+xserver-xorg-video-intel (2:1.9.92-1) experimental; urgency=low
+
+  * New upstream release candidate.
+  * Build-depend on xserver-xorg-dev 1.3rc2.
+
+ -- Julien Cristau <jcristau@debian.org>  Thu, 15 Mar 2007 14:38:06 +0100
+
+xserver-xorg-video-intel (2:1.9.91-2) experimental; urgency=low
+
+  * Revert commit c2c62559e702e7de1fa2ef309fa647ab13564dc3 "Move
+    single mode setting code to X server."  Brings i830PipeFindClosestMode
+    back into a consistent state.  Closes: #414612.
+  * autoreconf and git-add Makefile.in files in ./src subdirectories.
+
+ -- Drew Parsons <dparsons@debian.org>  Tue, 13 Mar 2007 22:49:18 +1100
+
+xserver-xorg-video-intel (2:1.9.91-1) experimental; urgency=low
+
+  * Bump build-dep on libdrm-dev to >= 2.2.  Thanks, Marc 'HE' Brockschmidt!
+  * New upstream release candidate.
+  * Rename from -i810 to -intel to follow upstream naming.
+  * (Build-)Depend on a newer xserver.
+
+ -- Julien Cristau <jcristau@debian.org>  Thu,  8 Mar 2007 18:55:05 +0100
+
+xserver-xorg-video-i810 (2:1.7.4-1) experimental; urgency=low
+
+  [ David Nusinow ]
+  * New upstream version
+  * Generate Provides: line automatically
+  * Bump xserver-xorg-core build-depend to 2:1.2.0-6 to handle this properly
+
+  [ Julien Cristau ]
+  * Drop duplicate build dependency on libdrm-dev, so this really
+    closes: #383918.
+  * Add support for the armeb and armel architectures, thanks to Riku Voipio
+    (closes: #408797).
+  * Drop all our patches, applied upstream.
+  * debian/rules clean needs to depend on xsfclean.
+  * Generate the dependency on xserver-xorg-core automatically.
+
+ -- David Nusinow <dnusinow@debian.org>  Sun,  4 Mar 2007 18:20:38 -0500
+
+xserver-xorg-video-i810 (2:1.7.2-4) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * Don't build-dep on libdrm-dev on hurd-i386, and don't try to install
+    the libI810XvMC library there, as it isn't built without drm.  Thanks to
+    Samuel Thibault for the patch! (closes: #383918)
+
+  [ Drew Parsons ]
+  * Apply patch 20-i915_bios.patch from upsteam (1.7.4) to help with faulty
+    BIOSes (where VBE initialization failed). Closes: #382120.
+
+ -- Drew Parsons <dparsons@debian.org>  Sat, 20 Jan 2007 02:29:30 +1100
+
+xserver-xorg-video-i810 (2:1.7.2-3) unstable; urgency=low
+
+  * Build-Depends: quilt, needed to apply patches.
+  * Replace the cvs source url in the long description with an XS-Vcs-Git
+    control field and a reference to the xf86-video-intel module.
+    Added a link to www.X.org.
+
+ -- Drew Parsons <dparsons@debian.org>  Wed,  6 Dec 2006 12:52:18 +1100
+
+xserver-xorg-video-i810 (2:1.7.2-2) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * Add link to xserver-xorg-core bug script, so that bugreports contain
+    the user's config and log files.
+  * Bump dependency on xserver-xorg-core to >= 2:1.1.1-11, as previous
+    versions don't have the bug script.
+
+  [ Drew Parsons ]
+  * Apply upstream patch 1-overlay_fix_lockup.patch (git commit
+    e065324661ad08b3b359136f48090232f6138959, upstream bug #5774).
+    Should remove remaining lockup problems in I830WaitLpRing().
+    Closes: #272294.
+  * While we're at it, apply upstream patch 11-xv_lockup.patch (git
+    commit fbb376bd1a4daad4c86e349df98438989ce173f1, upstream bug
+    #8594), fixing lockups related to Xv.  We'll have no lockup bugs
+    in etch, dammit!  Closes: #397485.
+
+ -- Drew Parsons <dparsons@debian.org>  Wed,  6 Dec 2006 11:50:10 +1100
+
+xserver-xorg-video-i810 (2:1.7.2-1) unstable; urgency=low
+
+  * New upstream version
+    + Shipping the git log as part of our diff.gz rather than a separate patch
+      since upstream didn't include an updated Changelog
+
+ -- David Nusinow <dnusinow@debian.org>  Fri, 13 Oct 2006 14:33:20 -0400
+
+xserver-xorg-video-i810 (2:1.6.5-4) UNRELEASED; urgency=low
+
+  * Typo fix in man page. Closes: #364559.
+
+ -- Drew Parsons <dparsons@debian.org>  Thu, 21 Sep 2006 23:21:14 +1000
+
+xserver-xorg-video-i810 (2:1.6.5-3) unstable; urgency=low
+
+  [ Steve Langasek ]
+  * Upload to unstable
+
+  [ Drew Parsons ]
+  * Standards version 3.7.2.
+  * Use debhelper 5.
+  * Use dh_installman to install man pages.
+  * Exclude .la from dh_install.
+
+ -- David Nusinow <dnusinow@debian.org>  Mon, 18 Sep 2006 19:57:38 -0400
+
+xserver-xorg-video-i810 (2:1.6.5-2) experimental; urgency=low
+
+  [ Drew Parsons ]
+  *  Provides: xserver-xorg-video-1.0 not xserver-xorg-video.
+
+  [ David Nusinow ]
+  * Bump xserver (build-)depends epochs to 2: to deal with botched
+    server upload
+
+ -- David Nusinow <dnusinow@debian.org>  Tue, 22 Aug 2006 23:46:32 +0000
+
+xserver-xorg-video-i810 (2:1.6.5-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- David Nusinow <dnusinow@debian.org>  Thu, 10 Aug 2006 22:53:34 +0000
+
+xserver-xorg-video-i810 (2:1.6.4-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- David Nusinow <dnusinow@debian.org>  Wed,  9 Aug 2006 22:37:24 +0000
+
+xserver-xorg-video-i810 (2:1.6.3-1) experimental; urgency=low
+
+  * New upstream release
+  * Add x11proto-xinerama-dev to build-dep
+
+ -- David Nusinow <dnusinow@debian.org>  Tue,  8 Aug 2006 22:01:43 +0000
+
+xserver-xorg-video-i810 (2:1.6.1-2) experimental; urgency=low
+
+  * Fix for botched upload. Identical to -1, which I built wrong.
+
+ -- David Nusinow <dnusinow@debian.org>  Sun,  6 Aug 2006 18:37:45 +0000
+
+xserver-xorg-video-i810 (2:1.6.1-1) experimental; urgency=low
+
+  [ Andres Salomon ]
+  * Test for obj-$(DEB_BUILD_GNU_TYPE) before creating it during build;
+    idempotency fix.
+  * Run dh_install w/ --list-missing.
+
+  [ David Nusinow ]
+  * New upstream version
+  * Bump dependency on xserver-xorg-core to >= 1:1.1.1. Do the same thing for
+    the build-dep on xserver-xorg-dev.
+
+ -- David Nusinow <dnusinow@debian.org>  Sun,  6 Aug 2006 17:29:12 +0000
+
+xserver-xorg-video-i810 (2:1.4.1.3-1) unstable; urgency=low
+
+  * Roll back the version to what was released with 7.0. Stupid ABI
+    incompatibilities. (closes: #359328)
+  * Add call to dh_makeshlibs. Reorder dh_installdeb and dh_shlibdeps so that
+    ldconfig is called during postinst. Thanks Justin Pryzby and Steve
+    Langasek. (closes: #364012)
+
+ -- David Nusinow <dnusinow@debian.org>  Sat, 22 Apr 2006 18:21:51 -0400
+
+xserver-xorg-video-i810 (1:1.5.1.0-2) unstable; urgency=low
+
+  * Upload to modular
+
+ -- David Nusinow <dnusinow@debian.org>  Sun, 26 Mar 2006 20:25:40 -0500
+
+xserver-xorg-video-i810 (1:1.5.1.0-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- David Nusinow <dnusinow@debian.org>  Tue, 21 Mar 2006 22:40:04 -0500
+
+xserver-xorg-video-i810 (1:1.4.1.3-3) experimental; urgency=low
+
+  * Version build dependency on libxvmc-dev. Thanks John Hughes.
+    (closes: #358165)
+
+ -- David Nusinow <dnusinow@debian.org>  Tue, 21 Mar 2006 20:49:27 -0500
+
+xserver-xorg-video-i810 (1:1.4.1.3-2) experimental; urgency=low
+
+  * Don't build on sparc. Partial port of
+    sparc/103_sparc_dont_build_useless_drivers.diff.
+
+ -- David Nusinow <dnusinow@debian.org>  Sun,  5 Mar 2006 20:32:01 -0500
+
+xserver-xorg-video-i810 (1:1.4.1.3-1) experimental; urgency=low
+
+  * First upload to Debian
+  * Change source package, package, and provides names to denote the
+    type of driver and that they are for xserver-xorg
+
+ -- David Nusinow <dnusinow@debian.org>  Fri, 13 Jan 2006 00:37:39 -0500
+
+xserver-xorg-driver-i810 (1:1.4.1.3-0ubuntu1) dapper; urgency=low
+
+  * New upstream release.
+  * Add provides on xserver-xorg-driver.
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Wed,  4 Jan 2006 19:57:22 +1100
+
+xserver-xorg-driver-i810 (1:1.4.1.2-0ubuntu1) dapper; urgency=low
+
+  * New upstream release.
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Mon, 19 Dec 2005 09:06:03 +1100
+
+xserver-xorg-driver-i810 (1:1.4.1.1-0ubuntu1) dapper; urgency=low
+
+  * New upstream release.
+  * Bump Build-Depends on libdrm-dev to >> 2.0.
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Mon, 12 Dec 2005 13:20:11 +1100
+
+xserver-xorg-driver-i810 (1:1.4.1-0ubuntu2) dapper; urgency=low
+
+  * Add missing Build-Depends (x11proto-core-dev, x11proto-fonts-dev,
+    x11proto-randr-dev, x11proto-render-dev, libdrm (>> 1.0.5),
+    x11proto-xf86dri-dev).
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Mon,  5 Dec 2005 12:54:24 +1100
+
+xserver-xorg-driver-i810 (1:1.4.1-0ubuntu1) dapper; urgency=low
+
+  * New upstream release.
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Tue, 22 Nov 2005 13:30:52 +1100
+
+xserver-xorg-driver-i810 (1:1.4.0.1-1) dapper; urgency=low
+
+  * New upstream version.
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Thu, 20 Oct 2005 13:37:40 +1000
+
+xserver-xorg-driver-i810 (1:1.4.0-1) breezy; urgency=low
+
+  * First xserver-xorg-driver-i810 release.
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Wed,  6 Jul 2005 15:48:17 +1000
+
