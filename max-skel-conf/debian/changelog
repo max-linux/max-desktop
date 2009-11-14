@@ -1,3 +1,9 @@
+max-skel-conf (5.0.max10) max; urgency=low
+
+  * Use hw:0 in mscore (Close: #239)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 14 Nov 2009 13:59:42 +0100
+
 max-skel-conf (5.0.max9) max; urgency=low
 
   * Change Guia version 4 => 5

@@ -1,0 +1,50 @@
+#!/bin/sh
+
+#
+#  create ~/.config/MusE/MuseScore.conf if not exists
+#  changing ALSA default => hw:0
+#
+#
+
+if [ ! -e $HOME/.config/MusE/MuseScore.conf ]; then
+  # copy
+  mkdir -p $HOME/.config/MusE/
+  cp /usr/share/max-skel-conf/MuseScore.conf $HOME/.config/MusE/MuseScore.conf
+fi
+
+
+if grep -q "alsaDevice=default" $HOME/.config/MusE/MuseScore.conf ; then
+  # overwrite
+  cp /usr/share/max-skel-conf/MuseScore.conf $HOME/.config/MusE/MuseScore.conf
+fi
+
+
+
+
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+MSCORE=$(which mscore.real)
+PULSEAUDIO=$(pgrep -f pulseaudio > /dev/null)
+
+if $PULSEAUDIO; then
+
+	PACTL=$(which pactl)
+	JACK=$($PACTL list | grep jack-sink)
+	PASUSPENDER=$(which pasuspender)
+
+	if [ $PACTL -a $JACK ]; then
+		echo "Using JACK for audio";
+		$MSCORE "$@";
+	elif [ $PASUSPENDER ]; then
+		echo "Suspending PulseAudio";
+		$PASUSPENDER -- $MSCORE "$@";
+	else
+		echo "Warning: Cannot suspend PulseAudio";
+		$MSCORE "$@";
+	fi
+
+else
+
+	$MSCORE "$@";
+
+fi
