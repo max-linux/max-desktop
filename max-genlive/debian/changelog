@@ -1,3 +1,16 @@
+max-genlive (5.0.max11) max; urgency=low
+
+  * Blacklist gdm-guest-session package
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 10 Nov 2009 11:24:38 +0100
+
+max-genlive (5.0.max10) max; urgency=low
+
+  * Change version to rc3
+  * Generate NANO only in i386
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 07 Nov 2009 15:12:08 +0100
+
 max-genlive (5.0.max9) max; urgency=low
 
   * New var to build nanoMaX with moodle (for MoodleMoot)

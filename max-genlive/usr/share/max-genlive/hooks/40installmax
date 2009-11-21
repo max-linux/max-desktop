@@ -22,3 +22,31 @@ EOC
 
 
 rm -rf $CHROOT/home/*
+
+
+
+EXTRA_DEBS=$(find /var/lib/max-genlive/dvd -type f -name *all.deb -o -name *$ARCH.deb 2>/dev/null)
+
+if [ "$EXTRA_DEBS" != "" ]; then
+_echo "Instalando paquetes EXTRA"
+
+mkdir -p $CHROOT/pkgs
+/bin/cp $EXTRA_DEBS $CHROOT/pkgs/
+
+chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes EXTRA"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+export ERROR=0
+export MAX_ERROR=0
+dpkg -i /pkgs/*deb
+apt-get $APT_OPTS -f install
+apt-get clean
+exit \$ERROR
+EOC
+
+rm -rf $CHROOT/pkgs/
+
+fi
