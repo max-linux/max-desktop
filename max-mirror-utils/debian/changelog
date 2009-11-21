@@ -1,3 +1,9 @@
+max-mirror-utils (5.0.max0.3) max; urgency=low
+
+  * Fix description (Close: #246)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 21 Nov 2009 18:49:58 +0100
+
 max-mirror-utils (5.0.max0.2) max; urgency=low
 
   * Fix Depends on python-netifaces
