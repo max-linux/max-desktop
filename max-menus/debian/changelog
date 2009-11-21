@@ -1,3 +1,9 @@
+max-menus (5.0.max36) max; urgency=low
+
+  * Launch Cellwriter in Keyboard only mode (Close: #240)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 21 Nov 2009 19:34:16 +0100
+
 max-menus (5.0.max35) max; urgency=low
 
   * Run max-robolinux-doc.desktop and squeak-manual.desktop with evince instead of acroread
