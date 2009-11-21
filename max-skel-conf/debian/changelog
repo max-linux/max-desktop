@@ -1,3 +1,9 @@
+max-skel-conf (5.0.max11) max; urgency=low
+
+  * Configure Audacity in Spanish and MP3 and FFmpeg paths
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 21 Nov 2009 19:28:53 +0100
+
 max-skel-conf (5.0.max10) max; urgency=low
 
   * Use hw:0 in mscore (Close: #239)
