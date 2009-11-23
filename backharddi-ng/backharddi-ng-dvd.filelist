@@ -14,4 +14,4 @@ boot/isolinux/isolinux.bin=/usr/lib/syslinux/isolinux.bin
 boot/isolinux/isolinux.cfg=/tmp/backharddi-ng_isolinux.cfg
 boot/initrd.gz=/boot/minirt-#KVERSION#-backharddi-ng.gz
 boot/linux=/boot/linux-#KVERSION#-backharddi-ng
-boot/memtest86+.bin=/boot/mt86plus
+boot/mt86plus=/boot/memtest86+.bin
