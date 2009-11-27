@@ -1,3 +1,9 @@
+backharddi-ng (0.1max3) max; urgency=low
+
+  * Configurar permisos de la ISO generada al UID del usuario sudo (Close: #247)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 27 Nov 2009 17:49:52 +0100
+
 backharddi-ng (0.1max2) max; urgency=low
 
   * Corregido fallo en la generación de CD/DVD's de Recuperación y dispositivos de arranque en CD
