@@ -6,7 +6,7 @@ DISTRO=jaunty
 DISTRO_VERSION="9.04"
 ARCH=i386
 NANOARCH=i386
-IMAGE_NAME="MaX-5.0-rc3"
+IMAGE_NAME="MaX-5.0-rc4"
 TITLE="MaX 5.0"
 
 unset HOME
@@ -71,6 +71,7 @@ PAQUETES_EXTRA_RESTRICTED="drdsl"
 #PAQUETES_EXTRA="$PAQUETES_EXTRA discover libdiscover2 discover-data nvidia-glx-new avm-fritz-firmware 915resolution"
 
 PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales virtualbox-ose backharddi-ng backharddi-ng-net"
+PAQUETES_EXTRA="$PAQUETES_EXTRA max-tcos-alumno max-tcos-profesor"
 PAQUETES_EXTRA="$PAQUETES_EXTRA nvidia-glx-180 linux-wlan-ng-firmware linux-firmware"
 
 BLACKLIST_PKGS="jetty gdesklets resolvconf gdm-guest-session"

@@ -1,3 +1,12 @@
+max-genlive (5.0.max12) max; urgency=low
+
+  * Set version to rc4
+  * Create MaX pool repos with every package instead of all at same time.
+  * Add extras: max-tcos-alumno max-tcos-profesor
+  * Update splash.pcx change logo open-phoenix
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 28 Nov 2009 13:50:50 +0100
+
 max-genlive (5.0.max11) max; urgency=low
 
   * Blacklist gdm-guest-session package

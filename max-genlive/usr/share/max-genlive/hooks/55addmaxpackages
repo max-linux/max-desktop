@@ -59,8 +59,13 @@ done
 rm -rf $CDRW/pool/max/
 mkdir -p $CDRW/pool/max/
 
-chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA > /dev/null 2>&1 || _exit "Error buscando URIS de $PAQUETES_EXTRA"
-URIS=$(chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA | awk '{print $1}' | sed "s/'//g")
+URIS=""
+for pkg in $PAQUETES_EXTRA; do
+ URIS=$URIS" "$(chroot $CHROOT apt-get --print-uris -qq install $pkg | awk '{print $1}' | sed "s/'//g")
+done
+
+#chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA > /dev/null 2>&1 || _exit "Error buscando URIS de $PAQUETES_EXTRA"
+#URIS=$(chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA | awk '{print $1}' | sed "s/'//g")
 
 ## esound conclicts with pulseaudio-esound-compat
 #for pkg in esound libesd0; do
@@ -80,6 +85,10 @@ fi
 for url in $URIS; do
   ruta=$(dirname $(echo $url| awk -F"pool" '{print $2}') | sed 's/main//g'| sed 's/universe//g' | sed 's/multiverse//g'| sed 's|//|/|g')
   mkdir -p $CDRW/pool/max/$ruta/
+  if [ -e $CDRW/pool/max/$ruta/$(basename $url) ]; then
+    echo "  => Ya existe paquete MAX $(basename $url)"
+    continue
+  fi
   echo "  => Descargando paquete MAX $(basename $url) desde http://$(echo $url| awk -F'/' '{print $3"/"$4}')"
   wget -q $url -O $CDRW/pool/max/$ruta/$(basename $url) || _exit "Error al descargar $url"
 done
