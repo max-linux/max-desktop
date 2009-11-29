@@ -1,3 +1,11 @@
+jclic-max (5.0.max4) max; urgency=low
+
+  * Fix jclicReports configuration
+  * Create database in init.d script
+  * Create link to mysql-connector in postinst
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 29 Nov 2009 13:25:31 +0100
+
 jclic-max (5.0.max3) max; urgency=low
 
   * Include curso and downloads links

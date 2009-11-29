@@ -1,0 +1,40 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          jclic-max
+# Required-Start:    $remote_fs $mysql
+# Required-Stop:     $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      
+# Short-Description: Create database in mysql
+# Description:       Create JClicReports database if not exists
+### END INIT INFO
+
+# Author: Mario Izquierdo <mariodebian@gmail.com>
+#
+
+# Do NOT "set -e"
+
+
+do_start()
+{
+	if [ -e /var/run/mysqld/mysqld.sock ]; then
+		if [ ! -d /var/lib/mysql/JClicReports ]; then
+			# connect to mysql
+			echo "CREATE DATABASE JClicReports;" | mysql -uroot -pcmadrid && \
+			echo "GRANT ALL PRIVILEGES ON JClicReports.* TO jclic IDENTIFIED BY 'cmadrid' WITH GRANT OPTION;" | mysql -uroot -pcmadrid
+		fi
+	fi
+
+}
+
+
+case "$1" in
+  start)
+	do_start
+	;;
+  *)
+	exit 0
+	;;
+esac
+
+:

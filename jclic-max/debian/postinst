@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+# create link in current java ext dir
+if [ ! -e /usr/lib/jvm/java-6-sun-max/jre/lib/ext/mysql-connector-java.jar ]; then
+  ln -s /usr/share/java/mysql-connector-java.jar /usr/lib/jvm/java-6-sun-max/jre/lib/ext/mysql-connector-java.jar || true
+fi
+
+
+#DEBHELPER#
