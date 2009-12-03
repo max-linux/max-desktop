@@ -314,7 +314,11 @@ class DeviceManager:
         #print "\n\nEVENT at UDI %s"%event_udi
         udis = self.hal.FindDeviceByCapability ('storage')
         for udi in udis:
-            tmp=self.get_udi_data(udi)
+            try:
+                tmp=self.get_udi_data(udi)
+            except Exception, err:
+                print "Exception when getting data from udi(%s) error=%s"%(udi,err)
+                continue
             if tmp and tmp['bus'] == self.event_bus:
                 devices.append(tmp)
         #for dev in devices:
@@ -340,8 +344,12 @@ class DeviceManager:
         if int( dev.GetProperty( 'storage.size') ) != 0:
             size=int( dev.GetProperty( 'storage.size') )
         else:
+            print "exec fdisk '%s'"%str(dev.GetProperty ('block.device'))
             p = Popen("LC_ALL=C /sbin/fdisk -l %s| awk '/^Disk*.*bytes/ {print $5}'"%str(dev.GetProperty ('block.device')), shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
-            size=int(p.stdout.readline().strip())
+            _size=p.stdout.readline().strip()
+            if _size == "":
+                return None
+            size=int(_size)
         return{
                 "udi": str(udi),
                 "device": str(dev.GetProperty ('block.device')),
