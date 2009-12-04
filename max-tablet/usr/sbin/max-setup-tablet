@@ -25,10 +25,25 @@
 import os
 import sys
 import time
-
+from subprocess import Popen, PIPE, STDOUT
 
 #print " * MaX 5.0 disabled max-setup-tablet, HAL+Xorg should works"
 #sys.exit(0)
+
+# test for HP
+# dmidecode | grep -e "Hewlett-Packard" -e "68YHV Ver. F.0B"
+#p = Popen("/usr/sbin/dmidecode | grep -c -e 'Dell Computer Corporation' -e 'A05'", shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+p = Popen("/usr/sbin/dmidecode | grep -c -e 'Hewlett-Packard' -e '68YHV Ver. F.0B'", shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+found=p.stdout.readline().strip()
+if found != "":
+    found_int=0
+    try:
+        found_int=int(found)
+    except:
+        pass
+    if found_int > 1:
+      print " * Hewlett-Packard tabletPC detected, no need to configure xorg.conf"
+      sys.exit(0)
 
 
 XORG="/etc/X11/xorg.conf"

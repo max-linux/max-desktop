@@ -1,3 +1,9 @@
+max-tablet (5.0.max3) max; urgency=low
+
+  * Disable xorg.conf hacks in HP tabletPC
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 04 Dec 2009 16:45:35 +0100
+
 max-tablet (5.0.max2) max; urgency=low
 
   * Add new sections to xorg.conf to support Toshiba M750
