@@ -1,3 +1,18 @@
+max-genlive (5.0.max14) max; urgency=low
+
+  * Revert version to rc5
+  * Don't stop if apparmor return errors
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 04 Dec 2009 17:12:31 +0100
+
+max-genlive (5.0.max13) max; urgency=low
+
+  * Fix cups-pdf install (use moodle like hack)
+  * Call aa-complain cupsd to enable cups-pdf ~/PDF bug
+  * Set version to rc6
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 04 Dec 2009 16:01:05 +0100
+
 max-genlive (5.0.max12) max; urgency=low
 
   * Set version to rc4
