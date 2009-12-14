@@ -1,0 +1,69 @@
+#! /bin/sh
+
+case $1 in
+prereqs)
+	exit 0
+	;;
+esac
+
+. /scripts/functions
+
+RAMSIZE=300m
+
+maybe_break ramusr_top
+
+
+revert_usr() {
+  if [ -d ${rootmnt}/.usr ]; then
+    mv ${rootmnt}/.usr ${rootmnt}/usr
+  fi
+}
+
+# check if ramusr is passed in cmdline
+if ! grep -q ramusr /proc/cmdline; then
+  revert_usr  
+  exit 0
+fi
+
+
+# remount /root to rw
+mount -o remount,rw ${rootmnt}
+
+# check /usr space and avalaible RAM in MB
+USRSIZE=$(df -k ${rootmnt} | grep ^/dev | awk '{print $3}')
+
+RAM=$(awk '/^MemTotal/ {print $2}' /proc/meminfo)
+
+if [ $$RAM -lt $RAMDISK ]; then
+   [ -x /sbin/usplash_write ] && /sbin/usplash_write "PROGRESS 0" \
+            "TEXT-URGENT No hay RAM para ramusr, se necesita $RAM KB" \
+            "INPUTCHAR" || true
+   revert_usr
+   exit 0
+fi
+
+
+# move ${rootmnt}/usr to ${rootmnt}/.usr
+if [ ! -d ${rootmnt}/.usr  ]; then
+  mv ${rootmnt}/usr ${rootmnt}/.usr
+fi
+
+# start usplash.sync
+#/sbin/usplash.sync &
+
+# sync
+#FIXME exclude share/doc ???
+mkdir  ${rootmnt}/usr/
+mount -t tmpfs -o size=$RAMSIZE,mode=0755 ramusr /usr
+
+maybe_break ramusr_pre
+
+rsync -Pavz ${rootmnt}/.usr/ ${rootmnt}/usr/ 
+
+
+maybe_break ramusr_bottom
+
+# remount /root to ro
+mount -o remount,ro ${rootmnt}
+
+exit 0

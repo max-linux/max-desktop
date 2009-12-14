@@ -1,3 +1,9 @@
+max-hardware (5.0.max7) max; urgency=low
+
+  * Add max-hardware hacks to TCOS images
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 14 Dec 2009 12:37:00 +0100
+
 max-hardware (5.0.max6) max; urgency=low
 
   * Provide Intel 2,4 && 2.6 Xorg drivers and use 2.6 in EeeTop And Toshiba Portege M400

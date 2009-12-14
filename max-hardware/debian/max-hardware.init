@@ -65,6 +65,17 @@ enable_eeepc() {
   fi
 }
 
+enable_tcos() {
+    # copy hacks in i386 chroot to build images
+    if [ -d /var/lib/tcos/chroot/etc/tcos/hacking ]; then
+        cp /usr/share/max-hardware/max-hardware-tcos /var/lib/tcos/chroot/etc/tcos/hacking/
+    fi
+
+    # and in normal dir too
+    if [ -d /etc/tcos/hacking ]; then
+        cp /usr/share/max-hardware/max-hardware-tcos /etc/tcos/hacking/
+    fi
+}
 
 
 case "$1" in
@@ -72,6 +83,7 @@ start)
         log_begin_msg "Starting Max50 hardware hacks"
           enable_toshiba
           enable_eeepc
+          enable_tcos
         log_end_msg $?
         ;;
 esac

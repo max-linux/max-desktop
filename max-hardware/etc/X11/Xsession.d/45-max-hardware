@@ -6,7 +6,9 @@
 if [ -e /var/lib/max-hardware/model ]; then
   TOSH_MODEL=$(cat /var/lib/max-hardware/model)
 
-  if [ "$TOSH_MODEL" = "PORTEGE M700" ] || [ "$TOSH_MODEL" = "PORTEGE M750" ]; then
+  if [ "$TOSH_MODEL" = "PORTEGE M700" ] || \
+     [ "$TOSH_MODEL" = "PORTEGE M750" ] || \
+     [ "$TOSH_MODEL" = "PORTEGE M400" ]; then
     
     # copy .xbindkeys to user $HOME and launch it
     [ ! -f $HOME/.xbindkeysrc ] && cp /usr/share/max-hardware/xbindkeysrc $HOME/.xbindkeysrc

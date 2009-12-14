@@ -35,3 +35,8 @@ binary-install/max-hardware::
 	find $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel24 -name "*.la" | xargs rm -f
 	find $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel24 -type l | xargs rm -f
 	rm -rf $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel24/usr/share/
+
+
+	# DISABLE (need testing)
+	rm -rf $(CURDIR)/debian/max-hardware/usr/share/initramfs-tools/scripts/init-bottom/ramusr
+	rm -rf $(CURDIR)/debian/max-hardware/usr/share/initramfs-tools/hooks/02ramusr

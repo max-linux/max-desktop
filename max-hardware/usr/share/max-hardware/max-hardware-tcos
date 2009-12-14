@@ -1,0 +1,107 @@
+
+if ! grep -q max50 /etc/apt/sources.list; then
+  wget -q http://max.educa.madrid.org:8000/svn/trunk/max-keyring/usr/share/keyrings/max50-archive-keyring.gpg -O- > /etc/apt/max.gpg
+  apt-key add /etc/apt/max.gpg
+  echo "deb http://max.educa.madrid.org/max50 max main" >> /etc/apt/sources.list
+  apt-get update
+fi
+
+
+mkdir -p /var/cache/tcos/packages/
+
+# cachear paquetes
+if [ ! -d /var/cache/tcos/packages/dmidecode ]; then
+  /usr/sbin/gentcos -instpkg dmidecode
+fi
+
+if [ ! -d /var/cache/tcos/packages/setserial ]; then
+  /usr/sbin/gentcos -instpkg setserial
+fi
+
+if [ ! -d /var/cache/tcos/packages/max-hardware ]; then
+  /usr/sbin/gentcos -instpkg max-hardware
+fi
+
+cpifexists /var/cache/tcos/packages/dmidecode/usr/sbin/dmidecode /usr/sbin/
+cpifexists /var/cache/tcos/packages/setserial/bin/setserial      /usr/bin/
+
+cp /var/cache/tcos/packages/max-hardware/usr/sbin/change.intel.drv $DESTDIR/usr/sbin/
+cpifexists /sbin/ldconfig.real /usr/sbin/
+cpifexists /usr/bin/strings    /usr/bin/
+
+# copiar driver intel 2.6
+mkdir -p $DESTDIR/usr/share/max-hardware/
+copydir /var/cache/tcos/packages/max-hardware/usr/share/max-hardware/intel26 /usr/share/max-hardware/
+
+# xorg.conf del EeePC
+mkdir -p $DESTDIR/usr/share/max-hardware/EeePC/
+cp /var/cache/tcos/packages/max-hardware/usr/share/max-hardware/EeePC/xorg.conf $DESTDIR/usr/share/max-hardware/EeePC/
+cp /var/cache/tcos/packages/max-hardware/etc/udev/rules.d/69-touchscreen.rules $DESTDIR/etc/udev/rules.d
+
+# xorg.conf de los tablet de Toshiba
+mkdir -p $DESTDIR/usr/share/max-hardware/TabletToshiba
+cp /var/cache/tcos/packages/max-hardware/usr/share/max-hardware/TabletToshiba/xorg.conf $DESTDIR/usr/share/max-hardware/TabletToshiba/
+
+# add wacom driver
+tcos_manual_add_modules wacom
+
+# lsusb
+cpifexists /usr/bin/lsusb /usr/bin/
+
+
+cat << EOF > $DESTDIR/scripts/tcos-bottom/15max-hardware
+#!/bin/sh
+
+
+# toshiba
+  TOSH_MODEL=\$(dmidecode --string system-product-name)
+  if [ "\$TOSH_MODEL" = "PORTEGE M700" ] || \
+     [ "\$TOSH_MODEL" = "PORTEGE M750" ] || \
+     [ "\$TOSH_MODEL" = "PORTEGE M400" ]; then
+
+     # enable sound device (Thanks to Ismail)
+     if [ "\$(grep -c 'options snd-hda-intel model=toshiba' /etc/modprobe.d/alsa-base.conf)" = "0" ]; then
+       echo "options snd-hda-intel enable_msi=1 model=toshiba" >> /etc/modprobe.d/alsa-base.conf
+       rmmod snd-hda-intel 2>/dev/null
+       modprobe snd-hda-intel
+     fi
+
+     # save model in /var/lib/max-hardware/model
+     mkdir -p /var/lib/max-hardware/model
+     echo "\$TOSH_MODEL" > /var/lib/max-hardware/model
+
+     modprobe wacom
+     mkdir -p /dev/input/
+     [ ! -e /dev/input/wacom ]  && ln -s /dev/ttyS0 /dev/input/wacom
+
+     setserial /dev/ttyS0 port 0x338 irq 4 autoconfig || true
+
+     #max-setup-tablet /etc/X11/xorg.conf
+     cat /usr/share/max-hardware/TabletToshiba/xorg.conf > /etc/X11/xorg.conf
+
+    if [ "\$TOSH_MODEL" = "PORTEGE M400" ]; then
+      /usr/sbin/change.intel.drv --install26
+    fi
+
+  fi
+
+
+# enable_eeepc
+
+  if [ "\$(lsusb  |grep -c '1bfd:1688')" = "1" ]; then
+    # input device detected
+    if [ "\$(grep -c '#EeePC' /etc/X11/xorg.conf 2>&1)" = "0" ]; then
+      # overwrite xorg.conf
+      cat /usr/share/max-hardware/EeePC/xorg.conf > /etc/X11/xorg.conf
+    fi
+
+    /usr/sbin/change.intel.drv --install26
+
+  fi
+
+
+
+
+
+
+chmod +x $DESTDIR/scripts/tcos-bottom/15max-hardware
