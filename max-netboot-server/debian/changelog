@@ -1,3 +1,9 @@
+max-netboot-server (5.0.max7) max; urgency=low
+
+  * Create TCOS menu if running in 64bit
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 18 Dec 2009 13:58:49 +0100
+
 max-netboot-server (5.0.max6) max; urgency=low
 
   * Fix double >> >> in update-netboot-server

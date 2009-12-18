@@ -83,8 +83,19 @@ if [ "$ARCH" = "i386" ] && [ -f /etc/tcos/tcos.conf ]; then
 fi
 
 if [ "$ARCH" = "amd64" ]; then
-    echo "   *  Detectado arquitectura AMD64, "
-    echo "      debe generar las imágenes de TCOS con TcosConfig"
+    echo "   *  Detectado arquitectura AMD64"
+    # generamos la plantilla de menu si existe
+    if [ -f /var/lib/tcos/chroot/tcos-buildchroot.conf ]; then
+
+      . /var/lib/tcos/chroot/tcos-buildchroot.conf
+      # gentcos -parse-pxelinuxcfg
+      echo "   * Configurando NET-menu TCOS ... "
+      sed -e "s/__TCOS_KERNEL__/${TCOS_KERNEL}/g" \
+          /var/lib/max-netboot/pxelinux.cfg/tcos.menu.tpl > /var/lib/max-netboot/pxelinux.cfg/tcos.menu
+
+    else
+      echo "   * ERROR: debe generar las imágenes de TCOS con TcosConfig"
+    fi
 fi
 
 
