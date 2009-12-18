@@ -18,7 +18,7 @@ stamp=$(date '+%Y%m%d_%H%M')
 created=$(date '+%Y%m%d')
 
 if [ "$MIRROR" = "" ]; then
-  MIRROR=192.168.0.3
+  MIRROR=192.168.0.3/mirror
 fi
 
 if [ "$AMD64" = "1" ]; then
@@ -49,8 +49,6 @@ else
   NANOMAX_MOODLE=0
 fi
 
-
-ISO_MIRROR="http://www.tcosproject.org/max/"
 
 CURDIR=$(pwd)
 
@@ -94,7 +92,7 @@ cat << EOF
 
     LOCAL_MIRROR=1 usará /usr/share/max-genlive/sources.list-local
                    como repositorio para hacer las descargas
-                   Viene configurado como $MIRROR/mirror/*
+                   Viene configurado como $MIRROR LOCAL_MIRROR=$LOCAL_MIRROR
 
     MIRROR=$MIRROR IP o nombre de equipo que se usará para el mirror
 

@@ -71,7 +71,7 @@ done
 #for pkg in esound libesd0; do
 #  tmp=`chroot $CHROOT/ apt-cache show $pkg| awk '/^Filename/ {print $2}'`
 #  if [ $LOCAL_MIRROR ]; then
-#    tmp="http://$MIRROR/mirror/ubuntu/$tmp"
+#    tmp="http://$MIRROR/ubuntu/$tmp"
 #  else
 #    tmp="http://archive.ubuntu.com/ubuntu/$tmp"
 #  fi

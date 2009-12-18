@@ -6,11 +6,11 @@ cat /etc/resolv.conf > $CHROOT/etc/resolv.conf
 if [ $LOCAL_MIRROR ]; then
      _echo " ****** sources.list ***** Usando mirror local => $MIRROR"
      cat << EOF > $CHROOT/etc/apt/sources.list
-deb http://$MIRROR/mirror/ubuntu ${DISTRO} main universe multiverse restricted
-deb http://$MIRROR/mirror/ubuntu ${DISTRO}-updates main universe multiverse restricted
-deb http://$MIRROR/mirror/ubuntu ${DISTRO}-security main universe multiverse restricted
+deb http://$MIRROR/ubuntu ${DISTRO} main universe multiverse restricted
+deb http://$MIRROR/ubuntu ${DISTRO}-updates main universe multiverse restricted
+deb http://$MIRROR/ubuntu ${DISTRO}-security main universe multiverse restricted
 
-deb http://$MIRROR/mirror/max50 max main
+deb http://$MIRROR/max50 max main
 
 EOF
 else

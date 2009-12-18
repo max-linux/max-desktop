@@ -4,8 +4,8 @@ mkdir -p $CDRW $CDRW/casper $CDRW/nanomax $CDRW/pool $CDRW/portables $CDRW/prese
 
 
 if [ ! -d $CHROOT ]; then
-    _echo "debootstrap --arch=$ARCH $DISTRO $CHROOT http://$MIRROR/mirror/ubuntu"
-    (debootstrap --arch=$ARCH $DISTRO $CHROOT http://$MIRROR/mirror/ubuntu || _exit "Error en el debootstrap")
+    _echo "debootstrap --arch=$ARCH $DISTRO $CHROOT http://$MIRROR/ubuntu"
+    (debootstrap --arch=$ARCH $DISTRO $CHROOT http://$MIRROR/ubuntu || _exit "Error en el debootstrap")
 
     cat << EOF > $CHROOT/etc/hosts
 127.0.0.1	localhost max50

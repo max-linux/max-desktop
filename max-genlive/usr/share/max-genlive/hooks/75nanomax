@@ -7,17 +7,17 @@ if [ "$ENABLE_NANO" = "1" ]; then
   #rm -rf $NANOCHROOT
   # don't build nanoMaX for amd64, use i386 or nothing
   if [ ! -d $NANOCHROOT ]; then
-    _echo "debootstrap --arch=$NANOARCH $DISTRO $NANOCHROOT http://$MIRROR/mirror/ubuntu"
-    (debootstrap --arch=$NANOARCH $DISTRO $NANOCHROOT http://$MIRROR/mirror/ubuntu || _exit "Error en el debootstrap")
+    _echo "debootstrap --arch=$NANOARCH $DISTRO $NANOCHROOT http://$MIRROR/ubuntu"
+    (debootstrap --arch=$NANOARCH $DISTRO $NANOCHROOT http://$MIRROR/ubuntu || _exit "Error en el debootstrap")
   fi
 
   # configurar sources.list
   cat << EOF > $NANOCHROOT/etc/apt/sources.list
-deb http://$MIRROR/mirror/ubuntu ${DISTRO} main universe multiverse restricted
-deb http://$MIRROR/mirror/ubuntu ${DISTRO}-updates main universe multiverse restricted
-deb http://$MIRROR/mirror/ubuntu ${DISTRO}-security main universe multiverse restricted
+deb http://$MIRROR/ubuntu ${DISTRO} main universe multiverse restricted
+deb http://$MIRROR/ubuntu ${DISTRO}-updates main universe multiverse restricted
+deb http://$MIRROR/ubuntu ${DISTRO}-security main universe multiverse restricted
 
-deb http://$MIRROR/mirror/max50 max main
+deb http://$MIRROR/max50 max main
 EOF
 
   cat << EOF > $NANOCHROOT/etc/apt/apt.conf.d/06norecomends
@@ -409,7 +409,7 @@ syslinux /dev/loop3
 _echo "Preparando aplicaciones portables"
 
 if [ $LOCAL_MIRROR ]; then
-  URL="http://$MIRROR/mirror/max50/portables.tar.gz"
+  URL="http://$MIRROR/max50/portables.tar.gz"
 else
   URL="http://max.educa.madrid.org/max50/portables.tar.gz"
 fi
