@@ -4,6 +4,11 @@ if ! grep -q max50 /etc/apt/sources.list; then
   apt-key add /etc/apt/max.gpg
   echo "deb http://max.educa.madrid.org/max50 max main" >> /etc/apt/sources.list
   apt-get update
+else
+  # forzar la actualización de max-hardware
+  apt-get update
+  rm -rf /var/cache/tcos/packages/max-hardware
+  /usr/sbin/gentcos -instpkg max-hardware
 fi
 
 
@@ -21,6 +26,7 @@ fi
 if [ ! -d /var/cache/tcos/packages/max-hardware ]; then
   /usr/sbin/gentcos -instpkg max-hardware
 fi
+
 
 cpifexists /var/cache/tcos/packages/dmidecode/usr/sbin/dmidecode /usr/sbin/
 cpifexists /var/cache/tcos/packages/setserial/bin/setserial      /usr/bin/
@@ -100,7 +106,15 @@ cat << EOF > $DESTDIR/scripts/tcos-bottom/15max-hardware
   fi
 
 
+# HP t5729 force VESA driver
 
+  if [ "\$(lspci -n | grep '1039:6330')" != "" ]; then
+    configurexorg --newsettings --xdriver=vesa >> /tmp/initramfs.debug 2>&1
+  fi
+
+
+
+EOF
 
 
 

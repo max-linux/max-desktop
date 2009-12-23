@@ -1,3 +1,9 @@
+max-hardware (5.0.max8) max; urgency=low
+
+  * Fix EOF in max-hardware-tcos and force VESA in HP t5729
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 23 Dec 2009 12:30:20 +0100
+
 max-hardware (5.0.max7) max; urgency=low
 
   * Add max-hardware hacks to TCOS images
