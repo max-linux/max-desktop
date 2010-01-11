@@ -15,7 +15,7 @@ Depends: max-dpsyco-custom,
          firefox-downloadhelper, 
          firefox-procon-latte,
          firefox-stylish
-Conflicts: max-3.0-firefox-conf, ubufox, firefox (<=3.0.14), firefox (>=3.0.16)
+Conflicts: max-3.0-firefox-conf, ubufox, firefox (<=3.0.16), firefox (>=3.0.18)
 Replaces: max-3.0-firefox.conf, ubufox
 Provides: ubufox
 Description: Configuración de firefox para Ubuntu/MAX.
