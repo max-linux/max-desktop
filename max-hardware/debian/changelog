@@ -1,3 +1,24 @@
+max-hardware (5.0.max11) max; urgency=low
+
+  * Configure keybouard and mouse in EeeTop with TCOS
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 12 Jan 2010 13:56:01 +0100
+
+max-hardware (5.0.max10) max; urgency=low
+
+  * Fix portege M750 13G wacom
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 29 Dec 2009 14:21:32 +0100
+
+max-hardware (5.0.max9) max; urgency=low
+
+  * max-hardware-tcos:
+    - Read vendor&product from /proc/bus/usb/devices
+    - Cache and copy evtouch input driver
+    - Remove lsusb (not needed)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 23 Dec 2009 16:12:12 +0100
+
 max-hardware (5.0.max8) max; urgency=low
 
   * Fix EOF in max-hardware-tcos and force VESA in HP t5729

@@ -27,6 +27,10 @@ if [ ! -d /var/cache/tcos/packages/max-hardware ]; then
   /usr/sbin/gentcos -instpkg max-hardware
 fi
 
+if [ ! -d /var/cache/tcos/packages/xserver-xorg-input-evtouch ]; then
+  /usr/sbin/gentcos -instpkg xserver-xorg-input-evtouch
+fi
+
 
 cpifexists /var/cache/tcos/packages/dmidecode/usr/sbin/dmidecode /usr/sbin/
 cpifexists /var/cache/tcos/packages/setserial/bin/setserial      /usr/bin/
@@ -44,6 +48,11 @@ mkdir -p $DESTDIR/usr/share/max-hardware/EeePC/
 cp /var/cache/tcos/packages/max-hardware/usr/share/max-hardware/EeePC/xorg.conf $DESTDIR/usr/share/max-hardware/EeePC/
 cp /var/cache/tcos/packages/max-hardware/etc/udev/rules.d/69-touchscreen.rules $DESTDIR/etc/udev/rules.d
 
+# driver evtouch
+mkdir -p $DESTDIR/usr/lib/xorg/modules/input/
+cp /var/cache/tcos/packages/xserver-xorg-input-evtouch/usr/lib/xorg/modules/input/evtouch_drv.so $DESTDIR/usr/lib/xorg/modules/input/
+
+
 # xorg.conf de los tablet de Toshiba
 mkdir -p $DESTDIR/usr/share/max-hardware/TabletToshiba
 cp /var/cache/tcos/packages/max-hardware/usr/share/max-hardware/TabletToshiba/xorg.conf $DESTDIR/usr/share/max-hardware/TabletToshiba/
@@ -51,8 +60,6 @@ cp /var/cache/tcos/packages/max-hardware/usr/share/max-hardware/TabletToshiba/xo
 # add wacom driver
 tcos_manual_add_modules wacom
 
-# lsusb
-cpifexists /usr/bin/lsusb /usr/bin/
 
 
 cat << EOF > $DESTDIR/scripts/tcos-bottom/15max-hardware
@@ -94,12 +101,10 @@ cat << EOF > $DESTDIR/scripts/tcos-bottom/15max-hardware
 
 # enable_eeepc
 
-  if [ "\$(lsusb  |grep -c '1bfd:1688')" = "1" ]; then
+  if [ "\$(grep -c 'Vendor=1bfd ProdID=1688' /proc/bus/usb/devices)" = "1" ]; then
     # input device detected
-    if [ "\$(grep -c '#EeePC' /etc/X11/xorg.conf 2>&1)" = "0" ]; then
-      # overwrite xorg.conf
-      cat /usr/share/max-hardware/EeePC/xorg.conf > /etc/X11/xorg.conf
-    fi
+    # overwrite xorg.conf
+    cat /usr/share/max-hardware/EeePC/xorg.conf > /etc/X11/xorg.conf
 
     /usr/sbin/change.intel.drv --install26
 

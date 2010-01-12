@@ -37,6 +37,12 @@ enable_toshiba() {
      if grep -q xforcevesa /proc/cmdline; then
        return
      fi
+
+     if [ "$(dmidecode | grep -c "Version: Version 1.80")" = "1" ]; then
+         # portege 750 13G configure wacom with hal
+         echo "#WACOM" > /etc/X11/xorg.conf
+     fi
+
      max-setup-tablet /etc/X11/xorg.conf
 
     if [ "$TOSH_MODEL" = "PORTEGE M400" ]; then
