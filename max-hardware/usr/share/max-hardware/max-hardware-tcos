@@ -62,7 +62,7 @@ tcos_manual_add_modules wacom
 
 
 
-cat << EOF > $DESTDIR/scripts/tcos-bottom/15max-hardware
+cat << EOF > $DESTDIR/scripts/tcos-bottom/22max-hardware
 #!/bin/sh
 
 
@@ -123,4 +123,4 @@ EOF
 
 
 
-chmod +x $DESTDIR/scripts/tcos-bottom/15max-hardware
+chmod +x $DESTDIR/scripts/tcos-bottom/22max-hardware
