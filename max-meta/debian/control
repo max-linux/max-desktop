@@ -59,6 +59,17 @@ Description: The Max desktop system (Xfce4 desktop)
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
 
+Package: max-desktop-lxde
+Architecture: all
+Depends: ${max-desktop-lxde:Depends}
+Recommends: ${max-desktop-lxde:Recommends}
+Provides: max-desktop
+Description: The Max desktop system (LXDE desktop)
+ This package depends on all LXDE packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
 Package: max-server
 Architecture: all
 Depends: max-desktop, ${max-server:Depends}
