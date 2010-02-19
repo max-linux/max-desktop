@@ -1,0 +1,20 @@
+Package: firefox
+Pin: version 3.0.18+build1+nobinonly-0ubuntu0.9.04.1
+Pin-Priority: 1001
+
+Package: firefox-3.0
+Pin: version 3.0.18+build1+nobinonly-0ubuntu0.9.04.1
+Pin-Priority: 1001
+
+Package: firefox-3.0-branding
+Pin: version 3.0.18+build1+nobinonly-0ubuntu0.9.04.1
+Pin-Priority: 1001
+
+Package: firefox-3.0-gnome-support
+Pin: version 3.0.18+build1+nobinonly-0ubuntu0.9.04.1
+Pin-Priority: 1001
+
+Package: firefox-gnome-support
+Pin: version 3.0.18+build1+nobinonly-0ubuntu0.9.04.1
+Pin-Priority: 1001
+
