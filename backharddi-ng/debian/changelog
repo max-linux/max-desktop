@@ -1,3 +1,9 @@
+backharddi-ng (0.1max4) max; urgency=low
+
+  * Se configuran permisos de la ISO generada también al generar DVD's de recuperación
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 19 Feb 2010 13:41:02 +0100
+
 backharddi-ng (0.1max3) max; urgency=low
 
   * Configurar permisos de la ISO generada al UID del usuario sudo (Close: #247)

@@ -199,6 +199,9 @@ while [ $medio -le $COUNT ]; do
 		zenity --entry --title $TITLE --text "Seleccione el nombre de la imagen para el $MEDIO número $medio:" --entry-text "$file" > $TMP_FILENAME || abort $?
 		{ mkisofs -r -iso-level 2 -V "Recuperación del Sistema $medio" -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -hide-rr-moved -graft-points -path-list $TMP_FILE_LIST$medio -o $(cat $TMP_FILENAME) 2>&1 || touch $ERROR; } | sed -u 's/^[\ \t]*//' | tee /dev/stderr | zenity --progress --width 400 --title $TITLE --text "Generando CD/DVD de recuperación número $medio..." --auto-close
 		[ -f $ERROR ] && { error; continue; }
+		if [ "$SUDO_UID" != "" ]; then
+			chmod ${SUDO_UID}:${SUDO_GID} $(cat $TMP_FILENAME) || true
+		fi
 		file="$(cat $TMP_FILENAME | sed "s/_${medio}\./_$((medio+1))\./")"
 	else
 		device=$(echo $grabador | cut -d" " -f 1) 
