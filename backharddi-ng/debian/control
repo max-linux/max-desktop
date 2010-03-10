@@ -7,6 +7,6 @@ Standards-Version: 3.6.1
 
 Package: backharddi-ng
 Architecture: all
-Depends: backharddi-ng-kernel-i386, grub | lilo, e2fsprogs, grep, sed, mount, findutils, mkisofs, dvd+rw-tools, cdrecord, zenity, syslinux (>= 3.63), memtest86+
+Depends: backharddi-ng-kernel-i386, grub-pc | grub | lilo, e2fsprogs, grep, sed, mount, findutils, mkisofs, dvd+rw-tools, cdrecord, zenity, syslinux (>= 3.63), memtest86+
 Replaces: backharddi
 Description: Next Generation Hard Disk Backup based on Debian Installer

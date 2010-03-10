@@ -32,6 +32,9 @@ install: build
 	rm -rf `find debian/backharddi-ng -name CVS`
 	rm -rf `find debian/backharddi-ng -name .svn`
 
+
+	dh_install debian/grub.d/55_backharddi-ng etc/grub.d/
+
 binary-indep: install
 
 binary-arch: install
