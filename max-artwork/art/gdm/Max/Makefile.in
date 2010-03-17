@@ -46,12 +46,14 @@ am__vpath_adj = case $$p in \
     *) f=$$p;; \
   esac;
 am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
-am__installdirs = "$(DESTDIR)$(maxdir)"
+am__installdirs = "$(DESTDIR)$(confdir)" "$(DESTDIR)$(logodir)" \
+	"$(DESTDIR)$(maxdir)"
+confDATA_INSTALL = $(INSTALL_DATA)
+logoDATA_INSTALL = $(INSTALL_DATA)
 maxDATA_INSTALL = $(INSTALL_DATA)
-DATA = $(max_DATA)
+DATA = $(conf_DATA) $(logo_DATA) $(max_DATA)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
-ALL_LINGUAS = @ALL_LINGUAS@
 AMTAR = @AMTAR@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
@@ -84,10 +86,6 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 INSTOBJEXT = @INSTOBJEXT@
 INTLLIBS = @INTLLIBS@
-INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@
-INTLTOOL_MERGE = @INTLTOOL_MERGE@
-INTLTOOL_PERL = @INTLTOOL_PERL@
-INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
 LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
@@ -101,7 +99,6 @@ MKDIR_P = @MKDIR_P@
 MKINSTALLDIRS = @MKINSTALLDIRS@
 MSGFMT = @MSGFMT@
 MSGFMT_OPTS = @MSGFMT_OPTS@
-MSGMERGE = @MSGMERGE@
 OBJEXT = @OBJEXT@
 PACKAGE = @PACKAGE@
 PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
@@ -162,32 +159,15 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-max_in_files = \
-	GdmGreeterTheme.desktop.in
-
-maxdir = $(datadir)/gdm/themes/Max
+maxdir = $(datadir)/images/gdm
 max_DATA = \
-	background.png \
-	GdmGreeterTheme.desktop \
-	Max.xml \
-	icon-language-active.png \
-	icon-language.png \
-	icon-language-prelight.png \
-	icon-reboot-active.png \
-	icon-reboot.png \
-	icon-reboot-prelight.png \
-	icon-session-active.png \
-	icon-session.png \
-	icon-session-prelight.png \
-	icon-shutdown-active.png \
-	icon-shutdown.png \
-	icon-shutdown-prelight.png \
-	screenshot.png
+	maxgdm.png
 
-EXTRA_DIST = $(max_DATA) $(max_in_files)
-DISTCLEANFILES = \
-	GdmGreeterTheme.desktop
-
+confdir = /usr/sbin
+conf_DATA = configure-max-gdm
+logodir = $(datadir)/pixmaps
+logo_DATA = max-logo.png max.png
+EXTRA_DIST = $(max_DATA) $(conf_DATA)
 all: all-am
 
 .SUFFIXES:
@@ -220,6 +200,40 @@ $(top_srcdir)/configure: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
+install-confDATA: $(conf_DATA)
+	@$(NORMAL_INSTALL)
+	test -z "$(confdir)" || $(MKDIR_P) "$(DESTDIR)$(confdir)"
+	@list='$(conf_DATA)'; for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  f=$(am__strip_dir) \
+	  echo " $(confDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(confdir)/$$f'"; \
+	  $(confDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(confdir)/$$f"; \
+	done
+
+uninstall-confDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(conf_DATA)'; for p in $$list; do \
+	  f=$(am__strip_dir) \
+	  echo " rm -f '$(DESTDIR)$(confdir)/$$f'"; \
+	  rm -f "$(DESTDIR)$(confdir)/$$f"; \
+	done
+install-logoDATA: $(logo_DATA)
+	@$(NORMAL_INSTALL)
+	test -z "$(logodir)" || $(MKDIR_P) "$(DESTDIR)$(logodir)"
+	@list='$(logo_DATA)'; for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  f=$(am__strip_dir) \
+	  echo " $(logoDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(logodir)/$$f'"; \
+	  $(logoDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(logodir)/$$f"; \
+	done
+
+uninstall-logoDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(logo_DATA)'; for p in $$list; do \
+	  f=$(am__strip_dir) \
+	  echo " rm -f '$(DESTDIR)$(logodir)/$$f'"; \
+	  rm -f "$(DESTDIR)$(logodir)/$$f"; \
+	done
 install-maxDATA: $(max_DATA)
 	@$(NORMAL_INSTALL)
 	test -z "$(maxdir)" || $(MKDIR_P) "$(DESTDIR)$(maxdir)"
@@ -274,7 +288,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(maxdir)"; do \
+	for dir in "$(DESTDIR)$(confdir)" "$(DESTDIR)$(logodir)" "$(DESTDIR)$(maxdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -297,7 +311,6 @@ clean-generic:
 
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
-	-test -z "$(DISTCLEANFILES)" || rm -f $(DISTCLEANFILES)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
@@ -320,7 +333,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-maxDATA
+install-data-am: install-confDATA install-logoDATA install-maxDATA
 
 install-dvi: install-dvi-am
 
@@ -354,24 +367,22 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-maxDATA
+uninstall-am: uninstall-confDATA uninstall-logoDATA uninstall-maxDATA
 
 .MAKE: install-am install-strip
 
 .PHONY: all all-am check check-am clean clean-generic distclean \
 	distclean-generic distdir dvi dvi-am html html-am info info-am \
-	install install-am install-data install-data-am install-dvi \
-	install-dvi-am install-exec install-exec-am install-html \
-	install-html-am install-info install-info-am install-man \
-	install-maxDATA install-pdf install-pdf-am install-ps \
-	install-ps-am install-strip installcheck installcheck-am \
-	installdirs maintainer-clean maintainer-clean-generic \
-	mostlyclean mostlyclean-generic pdf pdf-am ps ps-am uninstall \
-	uninstall-am uninstall-maxDATA
+	install install-am install-confDATA install-data \
+	install-data-am install-dvi install-dvi-am install-exec \
+	install-exec-am install-html install-html-am install-info \
+	install-info-am install-logoDATA install-man install-maxDATA \
+	install-pdf install-pdf-am install-ps install-ps-am \
+	install-strip installcheck installcheck-am installdirs \
+	maintainer-clean maintainer-clean-generic mostlyclean \
+	mostlyclean-generic pdf pdf-am ps ps-am uninstall uninstall-am \
+	uninstall-confDATA uninstall-logoDATA uninstall-maxDATA
 
-
-@INTLTOOL_XML_RULE@
-@INTLTOOL_DESKTOP_RULE@
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:

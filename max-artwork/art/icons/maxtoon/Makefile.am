@@ -1,6 +1,13 @@
 themedir = $(datadir)/icons/maxtoon
 
-SIZES=16x16 22x22 32x32 48x48 64x64 72x72 96x96 128x128
+#ls /mnt/distro/chroot.i386/usr/share/icons/gnome/
+#16x16  22x22  24x24  32x32  48x48  8x8  icon-theme.cache  index.theme  scalable
+
+#ls /mnt/distro/chroot.i386/usr/share/icons/hicolor/
+#128x128  16x16  192x192  20x20  22x22  24x24  256x256  32x32  36x36  48x48  64x64  72x72  96x96  icon-theme.cache  index.theme  scalable
+
+SIZES=16x16 22x22 24x24 32x32 48x48 64x64
+#SIZES=16x16 22x22 24x24 32x32 48x48 64x64 72x72 96x96 128x128
 #SIZES=16x16
 
 all: build
@@ -24,7 +31,7 @@ build: clean
 		done; \
 		for _specialfile in $(shell find scalable -type f -not -name "*.svg"| grep -v svn); do\
 			dest=`echo $$_specialfile | sed "s|scalable/|$$size/|g"`; \
-			echo "     ** Copy special file $$_specialfile";\
+			#echo "     ** Copy special file $$_specialfile";\
 			cp $$_specialfile $$dest || true ;\
 		done;\
 		echo "   ** Converting files at size $$size...";\

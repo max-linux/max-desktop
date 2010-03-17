@@ -4,12 +4,12 @@ include /usr/share/cdbs/1/class/gnome.mk
 
 DEB_INSTALL_DOCS_ALL :=
 
-common-binary-post-install-indep::
-	/usr/share/ubuntu-docs/common/prepare-firefox-startpage-translations \
-		art/homepage \
-		debian/max-artwork \
-		/usr/share/max-artwork/home/locales \
-		../index.html
-
-	# delete Tango-Brown icon theme
-	rm -rf $(CURDIR)/debian/max-artwork/usr/share/icons/Tango-Brown
+#common-binary-post-install-indep::
+#	#/usr/share/ubuntu-docs/common/prepare-firefox-startpage-translations \
+#	#	art/homepage \
+#	#	debian/max-artwork \
+#	#	/usr/share/max-artwork/home/locales \
+#	#	../index.html
+#
+#	# delete Tango-Brown icon theme
+#	rm -rf $(CURDIR)/debian/max-artwork/usr/share/icons/Tango-Brown

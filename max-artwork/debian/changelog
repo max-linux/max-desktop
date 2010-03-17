@@ -1,3 +1,86 @@
+max-artwork (6.0.max9) max; urgency=low
+
+  * Change plymouth fsck text colors and translate it to Spanish
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 11 Mar 2010 23:56:32 +0100
+
+max-artwork (6.0.max8) max; urgency=low
+
+  * Remove maxtoon icons sizes 72x72 96x96 128x128
+  * Add more icons for batteries
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 11 Mar 2010 21:33:31 +0100
+
+max-artwork (6.0.max7) max; urgency=low
+
+  * Add icons for battery and audio (needed by indicator applet)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 11 Mar 2010 21:02:21 +0100
+
+max-artwork (6.0.max6) max; urgency=low
+
+  * Move max-logo to art/gdm/Max and put another one
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 11 Mar 2010 18:51:19 +0100
+
+max-artwork (6.0.max5) max; urgency=low
+
+  * Put 6.0 in wallpapers and splash
+  * Add plymouth theme max-logo
+  * Add grub image (png format)
+  * Add GDM wallpaper
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 11 Mar 2010 17:33:37 +0100
+
+max-artwork (6.0.max4) max; urgency=low
+
+  * Fix and clean postinst script
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 11 Mar 2010 02:21:47 +0100
+
+max-artwork (6.0.max3) max; urgency=low
+
+  * Install start-here alternative
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 11 Mar 2010 01:51:08 +0100
+
+max-artwork (6.0.max2) max; urgency=low
+
+  * Fix gtkrc settings
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Mar 2010 02:33:44 +0100
+
+max-artwork (6.0.max1) max; urgency=low
+
+  * Change version to 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Mar 2010 11:58:24 +0100
+
+max-artwork (5.0.max6) max; urgency=low
+
+  * Change theme name to 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 05 Mar 2010 01:20:53 +0100
+
+max-artwork (5.0.max4) max; urgency=low
+
+  * Add xsplash theme
+  * Remove usplash package
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 05 Mar 2010 01:08:50 +0100
+
+max-artwork (5.0.max3) max; urgency=low
+
+  * Not install usplash by default
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Feb 2010 18:44:39 +0100
+
+max-artwork (5.0.max2) max; urgency=low
+
+  * Build in MaX 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 13 Feb 2010 16:58:49 +0100
+
 max-artwork (5.0.max1) max; urgency=low
 
   * Bad news: «Cese temporal de la convivencia en el escritorio»

@@ -1,5 +1,8 @@
-grubdir = $(datadir)/max-artwork/grub
-grub_DATA = \
-	splash.xpm.gz
+grubdir = $(datadir)/images/grub
+grub_DATA = maxgrub.png
 
-EXTRA_DIST = $(grub_DATA)
+confdir = $(datadir)/desktop-base
+
+conf_DATA = grub_background.sh
+
+EXTRA_DIST = $(grub_DATA) $(conf_DATA)

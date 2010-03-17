@@ -50,13 +50,12 @@ am__installdirs = "$(DESTDIR)$(humandir)"
 humanDATA_INSTALL = $(INSTALL_DATA)
 DATA = $(human_DATA)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/mario/MaX/build/max-artwork-4.0.max0.21/missing --run aclocal-1.10
-ALL_LINGUAS = 
-AMTAR = ${SHELL} /home/mario/MaX/build/max-artwork-4.0.max0.21/missing --run tar
-AUTOCONF = ${SHELL} /home/mario/MaX/build/max-artwork-4.0.max0.21/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/mario/MaX/build/max-artwork-4.0.max0.21/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/mario/MaX/build/max-artwork-4.0.max0.21/missing --run automake-1.10
-AWK = gawk
+ACLOCAL = ${SHELL} /home/mario/MaX/svn/max/trunk/max-artwork/missing --run aclocal-1.10
+AMTAR = ${SHELL} /home/mario/MaX/svn/max/trunk/max-artwork/missing --run tar
+AUTOCONF = ${SHELL} /home/mario/MaX/svn/max/trunk/max-artwork/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/mario/MaX/svn/max/trunk/max-artwork/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/mario/MaX/svn/max/trunk/max-artwork/missing --run automake-1.10
+AWK = mawk
 CATALOGS = 
 CATOBJEXT = .gmo
 CC = gcc
@@ -84,24 +83,19 @@ INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 INSTOBJEXT = .mo
 INTLLIBS = 
-INTLTOOL_EXTRACT = /usr/bin/intltool-extract
-INTLTOOL_MERGE = /usr/bin/intltool-merge
-INTLTOOL_PERL = /usr/bin/perl
-INTLTOOL_UPDATE = /usr/bin/intltool-update
 LDFLAGS = 
 LIBOBJS = 
 LIBS = 
 LTLIBOBJS = 
 MAINT = 
 MAJOR_VERSION = 0
-MAKEINFO = ${SHELL} /home/mario/MaX/build/max-artwork-4.0.max0.21/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/mario/MaX/svn/max/trunk/max-artwork/missing --run makeinfo
 MICRO_VERSION = 0
 MINOR_VERSION = 1
 MKDIR_P = /bin/mkdir -p
 MKINSTALLDIRS = ./mkinstalldirs
 MSGFMT = /usr/bin/msgfmt
 MSGFMT_OPTS = -c
-MSGMERGE = /usr/bin/msgmerge
 OBJEXT = o
 PACKAGE = max-artwork
 PACKAGE_BUGREPORT = 
@@ -115,15 +109,15 @@ POSUB = po
 PO_IN_DATADIR_FALSE = 
 PO_IN_DATADIR_TRUE = 
 SET_MAKE = 
-SHELL = /bin/sh
+SHELL = /bin/bash
 STRIP = 
 USE_NLS = yes
 VERSION = 0.1.0
 XGETTEXT = /usr/bin/xgettext
-abs_builddir = /home/mario/MaX/build/max-artwork-4.0.max0.21/art/gnome/MaxColors
-abs_srcdir = /home/mario/MaX/build/max-artwork-4.0.max0.21/art/gnome/MaxColors
-abs_top_builddir = /home/mario/MaX/build/max-artwork-4.0.max0.21
-abs_top_srcdir = /home/mario/MaX/build/max-artwork-4.0.max0.21
+abs_builddir = /home/mario/MaX/svn/max/trunk/max-artwork/art/gnome/MaxColors
+abs_srcdir = /home/mario/MaX/svn/max/trunk/max-artwork/art/gnome/MaxColors
+abs_top_builddir = /home/mario/MaX/svn/max/trunk/max-artwork
+abs_top_srcdir = /home/mario/MaX/svn/max/trunk/max-artwork
 ac_ct_CC = gcc
 am__include = include
 am__leading_dot = .
@@ -142,7 +136,7 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = $(SHELL) /home/mario/MaX/build/max-artwork-4.0.max0.21/install-sh
+install_sh = $(SHELL) /home/mario/MaX/svn/max/trunk/max-artwork/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -352,7 +346,7 @@ uninstall-am: uninstall-humanDATA
 	uninstall-am uninstall-humanDATA
 
 
-%.theme:     %.theme.in     $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; LC_ALL=C $(INTLTOOL_MERGE) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< $@
+@INTLTOOL_THEME_RULE@
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:

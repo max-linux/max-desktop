@@ -21,30 +21,32 @@ AM_MAINTAINER_MODE
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, max-artwork, [foo])
 GETTEXT_PACKAGE=max-artwork
 AC_SUBST(GETTEXT_PACKAGE)
-AC_PROG_INTLTOOL([0.1.0])
+#AC_PROG_INTLTOOL([0.1.0])
 AM_GLIB_GNU_GETTEXT
 
 AC_OUTPUT([
 Makefile
-art/Makefile
-art/gdm/Makefile
-art/gdm/Max/Makefile
-art/gnome/Makefile
-art/gnome/MaxColors/Makefile
-art/gnome/MaxPlain/Makefile
+art/theme/Makefile
+art/theme/Max60/Makefile
+art/wallpapers/Makefile
+art/plymouth/Makefile
+art/plymouth/max-logo/Makefile
 art/gtk/Makefile
 art/gtk/MaxColors/Makefile
-art/theme/Makefile
-art/theme/Max40/Makefile
-art/homepage/Makefile
-art/splash/Makefile
-art/wallpapers/Makefile
+art/gdm/Makefile
+art/gdm/Max/Makefile
+art/Makefile
 art/metacity/Makefile
 art/metacity/MaxColors/Makefile
-art/icons/Makefile
 art/icons/maxtoon/Makefile
+art/icons/Makefile
+art/splash/Makefile
+art/xsplash/Makefile
+art/gnome/MaxPlain/Makefile
+art/gnome/Makefile
+art/gnome/MaxColors/Makefile
 art/grub/Makefile
-po/Makefile.in
+po/Makefile
 ])
 
 echo "

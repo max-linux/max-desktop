@@ -42,7 +42,6 @@ SOURCES =
 DIST_SOURCES =
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
-ALL_LINGUAS = @ALL_LINGUAS@
 AMTAR = @AMTAR@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
@@ -75,10 +74,6 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 INSTOBJEXT = @INSTOBJEXT@
 INTLLIBS = @INTLLIBS@
-INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@
-INTLTOOL_MERGE = @INTLTOOL_MERGE@
-INTLTOOL_PERL = @INTLTOOL_PERL@
-INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
 LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
@@ -92,7 +87,6 @@ MKDIR_P = @MKDIR_P@
 MKINSTALLDIRS = @MKINSTALLDIRS@
 MSGFMT = @MSGFMT@
 MSGFMT_OPTS = @MSGFMT_OPTS@
-MSGMERGE = @MSGMERGE@
 OBJEXT = @OBJEXT@
 PACKAGE = @PACKAGE@
 PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
@@ -154,7 +148,13 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 themedir = $(datadir)/icons/maxtoon
-SIZES = 16x16 22x22 32x32 48x48 64x64 72x72 96x96 128x128
+
+#ls /mnt/distro/chroot.i386/usr/share/icons/gnome/
+#16x16  22x22  24x24  32x32  48x48  8x8  icon-theme.cache  index.theme  scalable
+
+#ls /mnt/distro/chroot.i386/usr/share/icons/hicolor/
+#128x128  16x16  192x192  20x20  22x22  24x24  256x256  32x32  36x36  48x48  64x64  72x72  96x96  icon-theme.cache  index.theme  scalable
+SIZES = 16x16 22x22 24x24 32x32 48x48 64x64
 all: all-am
 
 .SUFFIXES:
@@ -309,6 +309,7 @@ uninstall-am:
 	maintainer-clean maintainer-clean-generic mostlyclean \
 	mostlyclean-generic pdf pdf-am ps ps-am uninstall uninstall-am
 
+#SIZES=16x16 22x22 24x24 32x32 48x48 64x64 72x72 96x96 128x128
 #SIZES=16x16
 
 all: build
@@ -331,7 +332,7 @@ build: clean
 		done; \
 		for _specialfile in $(shell find scalable -type f -not -name "*.svg"| grep -v svn); do\
 			dest=`echo $$_specialfile | sed "s|scalable/|$$size/|g"`; \
-			echo "     ** Copy special file $$_specialfile";\
+			#echo "     ** Copy special file $$_specialfile";\
 			cp $$_specialfile $$dest || true ;\
 		done;\
 		echo "   ** Converting files at size $$size...";\

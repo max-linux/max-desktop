@@ -52,7 +52,6 @@ wallpaperDATA_INSTALL = $(INSTALL_DATA)
 DATA = $(props_DATA) $(wallpaper_DATA)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
-ALL_LINGUAS = @ALL_LINGUAS@
 AMTAR = @AMTAR@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
@@ -85,10 +84,6 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 INSTOBJEXT = @INSTOBJEXT@
 INTLLIBS = @INTLLIBS@
-INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@
-INTLTOOL_MERGE = @INTLTOOL_MERGE@
-INTLTOOL_PERL = @INTLTOOL_PERL@
-INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
 LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
@@ -102,7 +97,6 @@ MKDIR_P = @MKDIR_P@
 MKINSTALLDIRS = @MKINSTALLDIRS@
 MSGFMT = @MSGFMT@
 MSGFMT_OPTS = @MSGFMT_OPTS@
-MSGMERGE = @MSGMERGE@
 OBJEXT = @OBJEXT@
 PACKAGE = @PACKAGE@
 PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
@@ -167,17 +161,11 @@ wallpaperdir = $(datadir)/backgrounds
 wallpaper_DATA = \
 	max.png
 
-props_in_files = \
-	max-wallpapers.xml.in
-
 propsdir = $(datadir)/gnome-background-properties
 props_DATA = \
 	max-wallpapers.xml
 
-EXTRA_DIST = $(wallpaper_DATA) $(props_in_files) $(props_DATA)
-DISTCLEANFILES = \
-	max-wallpapers.xml
-
+EXTRA_DIST = $(wallpaper_DATA) $(props_DATA)
 all: all-am
 
 .SUFFIXES:
@@ -304,7 +292,6 @@ clean-generic:
 
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
-	-test -z "$(DISTCLEANFILES)" || rm -f $(DISTCLEANFILES)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
@@ -377,8 +364,6 @@ uninstall-am: uninstall-propsDATA uninstall-wallpaperDATA
 	pdf-am ps ps-am uninstall uninstall-am uninstall-propsDATA \
 	uninstall-wallpaperDATA
 
-
-@INTLTOOL_XML_RULE@
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:

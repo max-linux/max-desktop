@@ -89,7 +89,7 @@ style "theme-default"
 		highlight_shade = 0.9555 # set the amount of buttons or widgets hilight
 		roundness = 2 # 0 = squared, 1 = old default, more will increase roundness
 		animation = TRUE # FALSE = disabled, TRUE = enabled
-                gradients = TRUE
+                #gradients = TRUE
    }
 }
 

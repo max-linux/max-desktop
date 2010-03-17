@@ -1,29 +1,13 @@
-max_in_files = \
-	GdmGreeterTheme.desktop.in
-
-maxdir = $(datadir)/gdm/themes/Max
+maxdir = $(datadir)/images/gdm
 max_DATA = \
-	background.png \
-	GdmGreeterTheme.desktop \
-	Max.xml \
-	icon-language-active.png \
-	icon-language.png \
-	icon-language-prelight.png \
-	icon-reboot-active.png \
-	icon-reboot.png \
-	icon-reboot-prelight.png \
-	icon-session-active.png \
-	icon-session.png \
-	icon-session-prelight.png \
-	icon-shutdown-active.png \
-	icon-shutdown.png \
-	icon-shutdown-prelight.png \
-	screenshot.png
+	maxgdm.png
 
-@INTLTOOL_XML_RULE@
-@INTLTOOL_DESKTOP_RULE@
+confdir = /usr/sbin
+conf_DATA = configure-max-gdm
 
-EXTRA_DIST = $(max_DATA) $(max_in_files)
+logodir = $(datadir)/pixmaps
+logo_DATA= max-logo.png max.png
 
-DISTCLEANFILES = \
-	GdmGreeterTheme.desktop
+
+EXTRA_DIST = $(max_DATA) $(conf_DATA)
+

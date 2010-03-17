@@ -1,44 +1,25 @@
 #!/bin/sh
 
 
-change_gdm_colors() {
-  ORIG_COLOR="3B6242"
-  NEW_COLOR="dab082"
-  if [ -e /etc/gdm/gdm.conf ]; then           
-    sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/gdm.conf
-  fi
-  if [ -e /etc/gdm/PreSession/Default ]; then 
-    sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/PreSession/Default
-  fi
-  if [ -e /etc/gdm/factory-gdm.conf ]; then   
-    sed -i "s/$ORIG_COLOR/$NEW_COLOR/g" /etc/gdm/factory-gdm.conf
-  fi
-}
-
-
 
 case "$1" in
-    remove)
+    remove|purge)
 
-	echo "Moving Ubuntu firefox homepage back in place ..."
-	# move ubuntu homepage back in place
-	#update-alternatives --remove firefox-homepage \
-	#	/usr/share/max-artwork/home/index.html
-	#update-alternatives --auto firefox-homepage
-	rm -f /usr/share/max-artwork/home/locales/max.css || true
-	rm -f /usr/share/max-artwork/home/locales/max-logo.png || true
-	
+	# delete MaX start-here
+	update-alternatives --remove start-here.svg /usr/share/icons/maxtoon/scalable/places/max.svg 
 
-	echo "Reverting GDM changes ..."
-	update-alternatives --remove gdm-config-derivative /usr/share/max-artwork/gdm/gdm-cdd.conf
+        # reset plymouth
+        [ -x /usr/sbin/plymouth-set-default-theme ] && /usr/sbin/plymouth-set-default-theme -r -R
+
+	# update-grub
+	if [ -x "`which update-grub2 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
+	   update-grub2
+	fi
 
 	;;
     upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+        exit 0
 	;;
-    purge)
-        echo "Revert GDM colors"
-        change_gdm_colors
-        ;;
     *)
         echo "postrm called with unknown argument \`$1'" >&2
         exit 1

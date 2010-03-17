@@ -1,1 +1,1 @@
-SUBDIRS = Max50
+SUBDIRS = Max60
