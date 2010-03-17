@@ -1,3 +1,47 @@
+max-menus (6.0.max2) max; urgency=low
+
+  * Remove etc/xdg/autostart/gnome-volume-control-applet.desktop
+    Indicator applet provides volume control
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 11 Mar 2010 22:18:24 +0100
+
+max-menus (6.0.max1) max; urgency=low
+
+  * Change version to 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Mar 2010 12:17:40 +0100
+
+max-menus (5.0.max43) max; urgency=low
+
+  * Fix squeak categories
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 06 Mar 2010 19:23:23 +0100
+
+max-menus (5.0.max42) max; urgency=low
+
+  * Move some menus to other packages
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 06 Mar 2010 18:52:49 +0100
+
+max-menus (5.0.max41) max; urgency=low
+
+  * Rename MaX 5.0 => MaX 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 06 Mar 2010 17:55:46 +0100
+
+max-menus (5.0.max40) max; urgency=low
+
+  * Cache desktop files
+  * Move netbeans to this package
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 06 Mar 2010 17:40:28 +0100
+
+max-menus (5.0.max39) max; urgency=low
+
+  * Build in MaX 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Feb 2010 18:10:53 +0100
+
 max-menus (5.0.max38) max; urgency=low
 
   * cellwriter, add --show-window (Close: #249)

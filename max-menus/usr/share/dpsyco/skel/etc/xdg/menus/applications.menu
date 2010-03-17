@@ -165,6 +165,12 @@
 				<Category>Education</Category>
 				</And>
 			</Include>
+			<Exclude>
+				<And><Category>Atnag</Category></And>
+				<And><Category>Clic</Category></And>
+				<And><Category>Malted</Category></And>
+				<And><Category>Hotpot</Category></And>
+			</Exclude>
 
 			<!--include -->
 			<Include><Filename>exe.desktop</Filename></Include>
@@ -173,14 +179,28 @@
 			<Include><Filename>tuxtype.desktop</Filename></Include>
 
 			<!-- exclude -->
-			<Exclude><Filename>gcompris-edit.desktop</Filename></Exclude>
-			<Exclude><Filename>animalandia.desktop</Filename></Exclude>
-			<Exclude><Filename>animalandia-tutorial.desktop</Filename></Exclude>
 			<Exclude><Filename>jclic.desktop</Filename></Exclude>
 			<Exclude><Filename>jclicauthor.desktop</Filename></Exclude>
 			<Exclude><Filename>jclicreports.desktop</Filename></Exclude>
+
+			<Exclude><Filename>MuseCore.desktop</Filename></Exclude>
+
+			<Exclude><Filename>robolinux.desktop</Filename></Exclude>
+			<Exclude><Filename>max-robolinux-doc.desktop</Filename></Exclude>
+
+			<Exclude><Filename>squeak.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-atenex.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-doc.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-educarex.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-manual.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-scratch.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-small-land.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-small-land-plugin.desktop</Filename></Exclude>
+
+			<Exclude><Filename>gcompris-edit.desktop</Filename></Exclude>
+			<Exclude><Filename>animalandia.desktop</Filename></Exclude>
+			<Exclude><Filename>animalandia-tutorial.desktop</Filename></Exclude>
 			<Exclude><Filename>descartes.desktop</Filename></Exclude>
-			<Exclude><Filename>jclic.desktop</Filename></Exclude>
 			<Exclude><Filename>kde4-kbruch.desktop</Filename></Exclude>
 			<Exclude><Filename>kde4-kpercentage.desktop</Filename></Exclude>
 			<Exclude><Filename>kde4-kig.desktop</Filename></Exclude>
@@ -191,8 +211,6 @@
 			<Exclude><Filename>starplot.desktop</Filename></Exclude>
 			<Exclude><Filename>stars.desktop</Filename></Exclude>
 			<Exclude><Filename>stellarium.desktop</Filename></Exclude>
-			<Exclude><Filename>animalandia.desktop</Filename></Exclude>
-			<Exclude><Filename>animalandia-tutorial.desktop</Filename></Exclude>
 			<Exclude><Filename>tuxmath.desktop</Filename></Exclude>
 			<Exclude><Filename>wxmaxima.desktop</Filename></Exclude>
 			<Exclude><Filename>geogebra.desktop</Filename></Exclude>
@@ -449,18 +467,8 @@
 			<Not><Category>KDE</Category></Not>
 			</And>
 		</Include>
-		<Exclude><Filename>atnag.desktop</Filename></Exclude>
-		<Exclude><Filename>max-atnag-activ.desktop</Filename></Exclude>
-		<Exclude><Filename>max-atnag-juegos.desktop</Filename></Exclude>
-		<Exclude><Filename>max-malteddepurador.desktop</Filename></Exclude>
-		<Exclude><Filename>max-maltededitor.desktop</Filename></Exclude>
-		<Exclude><Filename>max-maltednavegador.desktop</Filename></Exclude>
-		<Exclude><Filename>max-malteddocwww.desktop</Filename></Exclude>
-		<Exclude><Filename>max-malteddocpdf.desktop</Filename></Exclude>
-		<Exclude><Filename>max-robolinux-doc.desktop</Filename></Exclude>
 		<Exclude><Filename>geogebra.desktop</Filename></Exclude>
 		<Exclude><Filename>javahotpot.desktop</Filename></Exclude>
-		<Exclude><Filename>wxmaxima.desktop</Filename></Exclude>
 		<Exclude><Filename>orage.desktop</Filename></Exclude>
 		<Exclude><Filename>kde4-audioencoding.desktop</Filename></Exclude>
 		<Exclude><Filename>kde4-kcm_knetworkconfmodule_ss.desktop</Filename></Exclude>
@@ -495,8 +503,8 @@
 
 
 	<Menu>
-		<Name>MaX 5.0</Name>
-		<Directory>max50.directory</Directory>
+		<Name>MaX 6.0</Name>
+		<Directory>max60.directory</Directory>
 		<Include><Filename>max-educamadrid.desktop</Filename></Include>
 		<Include><Filename>max-foros.desktop</Filename></Include>
 		<Include><Filename>max-installed-help.desktop</Filename></Include>

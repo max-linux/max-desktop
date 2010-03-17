@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=NetBeans
+Comment=Entorno de desarrollo integrado
+TryExec=/usr/bin/netbeans
+Exec=/usr/bin/netbeans --jdkhome /usr/lib/jvm/java-6-openjdk/
+Icon=/usr/share/netbeans/6.8/nb6.8/netbeans.png
+Categories=Development;Java;IDE;
+Terminal=false
+Type=Application
+StartupNotify=true
+NotShowIn=LXDE
