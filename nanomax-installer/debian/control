@@ -2,12 +2,12 @@ Source: nanomax-installer
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.0.0), cdbs
-Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 7.0.0), cdbs
+Standards-Version: 3.8.4
 
 Package: nanomax-installer
 Architecture: all
-Depends: syslinux, parted, mbr, zenity, rsync, dosfstools, e2fsprogs
+Depends: syslinux, parted, mbr, zenity, rsync, dosfstools, e2fsprogs,
          python-gtk2, python-glade2, python-dbus
 Description: PyGTK+ GUI Installer of nanoMaX
  Contains:
