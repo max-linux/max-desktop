@@ -2,8 +2,8 @@ Source: firefox-dictionary-es
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo Rodriguez (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4), cdbs
-Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 7), cdbs
+Standards-Version: 3.8.4
 
 Package: firefox-dictionary-es
 Architecture: all

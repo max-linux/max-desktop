@@ -1,2 +1,2 @@
 
-pref("spellchecker.dictionary", "es-ES");
+pref("spellchecker.dictionary", "es");
