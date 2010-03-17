@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: javahotpot
 Architecture: all
-Depends: sun-java5-bin | sun-java6-bin | sun-java5-jdk | sun-java6-jdk
+Depends: max-java-jre
 Recommends: jmf
 Description: Las "potatoes" son herramientas que permiten diseñar actividades educativas
  javahotpot es una aplicación diseñada en Java que permite el diseño  de diversos tipos de pruebas educativas:

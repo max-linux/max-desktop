@@ -6,8 +6,8 @@ configure/javahotpot::
 	if [ ! -d tmp ]; then mkdir tmp; fi
 
 build/javahotpot::
-	if [ ! -e tmp/javahotpot60.zip ]; then (cd tmp && wget http://web.uvic.ca/hrd/hotpot/javahotpot60.zip); fi
-	if [ ! -d tmp/JavaHotPot ]; then (cd tmp && unzip -o javahotpot60.zip); fi
+	if [ ! -e tmp/javahotpot61.zip ]; then (cd tmp && wget http://hotpot.uvic.ca/javahotpot61.zip); fi
+	if [ ! -d tmp/javahotpot ]; then (cd tmp && unzip -o javahotpot61.zip); fi
 
 binary-install/javahotpot::
 	# install shell script launcher

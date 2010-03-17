@@ -4,16 +4,17 @@ NOCONFIGURADO=1
 CADENA='<prefs-path-file></prefs-path-file>'
 FICHERO="$HOME/Library/Preferences/com.halfbakedsoftware/hotpot6prefs.xml"
 
-if [ ! -d $HOME/Library ]; then
+if [ ! -d $HOME/Library ] || [ $(grep -c Mozilla $HOME/Library/Preferences/com.halfbakedsoftware/hotpot6prefs.xml) != 0 ] ; then
+	rm -rf $HOME/Library
         cp -r /usr/share/javahotpot/Library $HOME/
-        cp /usr/share/applications/javahotpot.desktop $HOME/Desktop/
+        #cp /usr/share/applications/javahotpot.desktop $HOME/Desktop/
         cp -r /usr/share/javahotpot/interface $HOME/
 fi
 
 grep  -q "$CADENA" "$FICHERO"
 if [ $?  -ne $NOCONFIGURADO ];then
         arg=`echo $HOME | sed -e 's/\//+/g'`
-        
+
 	CAMBIO1="<prefs-path-file>'$arg'\/Library\/Preferences\/com.halfbakedsoftware\/hotpot6prefs.xml<\/prefs-path-file>"
         CAMBIO2="<interface-file>\/usr\/share\/javahotpot\/interface\/JHP6Spanish.xml<\/interface-file>"
         CAMBIO3="<config-file>\/usr\/share\/javahotpot\/config\/espanol6.cfg<\/config-file>"

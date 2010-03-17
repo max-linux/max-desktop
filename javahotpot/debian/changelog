@@ -1,9 +1,67 @@
-javahotpot (6.0.2.13-max5) max; urgency=low
+javahotpot (6.1.0.2-max1) max; urgency=low
 
-  * Se actualiza el nombre de fichero del README 
-  * Se actualiza el nombre de direcorio del fichero install 
+  * New upstream version
+  * Fix menu category
 
- -- Pedro Pe�a P�rez <pdropep@gmail.com>  Fri, 26 Jun 2009 12:20:42 +0200
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 06 Mar 2010 19:09:44 +0100
+
+javahotpot (6.1.0.1-max2) max; urgency=low
+
+  * Build in MaX 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 13 Feb 2010 15:06:20 +0100
+
+javahotpot (6.1.0.1-max1) max; urgency=low
+
+  * New upstream version
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 02 Nov 2009 20:36:04 +0100
+
+javahotpot (6.0.2.18-max1) max; urgency=low
+
+  * New upstream version
+  * Rebuild in MaX 5.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 11 May 2009 18:58:36 +0200
+
+javahotpot (6.0.2.14-max6) max; urgency=low
+
+  * Change depends on max-java-jre
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 15:16:36 +0100
+
+javahotpot (6.0.2.14-max5) max; urgency=low
+
+  * Depends on: openjdk-6-jre | java-runtime
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 29 Mar 2008 14:04:41 +0100
+
+javahotpot (6.0.2.14-max4) max; urgency=low
+
+  * javahotpot.sh:
+    - Don't copy launcher in Desktop (don't existe anymore)
+    - Delete Library dir if Mozilla found as default browser
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 15:35:30 +0100
+
+javahotpot (6.0.2.14-max3) max; urgency=low
+
+  * Change default browser to firefox
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 15:24:16 +0100
+
+javahotpot (6.0.2.14-max2) max; urgency=low
+
+  * Include source dir (needed to create exercises)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 27 Mar 2008 12:28:51 +0100
+
+javahotpot (6.0.2.14-max1) max; urgency=low
+
+  * New Upstream release
+  * Rebuild in MaX 4.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 21:23:40 +0100
 
 javahotpot (6.0.2.13-max4) max; urgency=low
 
