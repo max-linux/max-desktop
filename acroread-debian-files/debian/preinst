@@ -1,13 +1,10 @@
 #!/bin/sh -e
 
-if [ "$1" = upgrade ]; then
-	if [ -d /usr/lib/Acrobat5/Reader/intellinux/app-defaults ]; then
-		rm -rf /usr/lib/Acrobat5/Reader/intellinux/app-defaults
-	fi
-
-	if [ -d /usr/lib32/Adobe ]; then
-		rm -rf /usr/lib32/Adobe
-	fi
+if [ "${1}" = "upgrade" ]; then
+    if dpkg --compare-versions ${2} gt 0.3.5; then
+	update-alternatives --remove acroread \
+	/usr/lib/Adobe/Reader8/bin/acroread-en
+    fi
 fi
 
 #DEBHELPER#

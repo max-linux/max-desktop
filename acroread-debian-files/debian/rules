@@ -17,13 +17,15 @@ clean:
 install: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k
-	dh_installdirs
+	dh_prep
+	dh_installdirs usr/lib/Adobe/Reader8/bin usr/lib/Adobe/Reader9/bin
 
-	dh_install acroread-en usr/lib/Adobe/Reader8/bin
-	dh_install acroread-es usr/lib/Adobe/Reader8/bin
+	cp acroread-en-8.1.7 debian/acroread-debian-files/usr/lib/Adobe/Reader8/bin/acroread-en
+	cp acroread-en-9.3.0 debian/acroread-debian-files/usr/lib/Adobe/Reader9/bin/acroread-en
+	dh_install acroread		usr/bin
 	dh_install debian/acroread.xpm usr/share/pixmaps
-	dh_install adobe usr/share/acroread-debian-files
+	dh_install AcroReloadPDF.js	usr/lib/Adobe/Reader8/Reader/JavaScripts
+	dh_install AcroReloadPDF.js	usr/lib/Adobe/Reader9/Reader/JavaScripts
 
 # Build architecture-independent files here.
 binary-indep: build install

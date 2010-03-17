@@ -4,14 +4,16 @@ Priority: optional
 Maintainer: Christian Marillat <marillat@debian.org>
 Bugs: mailto:marillat@debian.org
 Homepage: http://www.debian-multimedia.org
-Standards-Version: 3.7.3
-Build-Depends: debhelper (>= 5)
+Standards-Version: 3.8.4
+Build-Depends: debhelper (>= 7)
 
 Package: acroread-debian-files
 Architecture: i386 amd64
-Depends: acroread (>= 8.1.2)
+Depends: acroread (>= 8.1.7), acroread (<= 9.3.1), ia32-libs-gtk [amd64], ${misc:Depends}
 Replaces: acroread (<= 7.0.9-0.2sarge1)
-Recommends: mime-support
+Recommends: mime-support, acroread-l10n-en | acroread-l10n, acroread-dictionary-en | acroread-dictionary
+Suggests: ia32-libs-xulrunner [amd64]
+Conflicts: adobereader-en
 Description: Debian specific parts of Adobe Acrobat Reader
  This package contains extra files supplied by Debian that are not part of
  the upstream source:

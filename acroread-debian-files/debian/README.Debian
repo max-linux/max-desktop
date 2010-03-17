@@ -1,29 +1,19 @@
-acroread for Debian
--------------------
+How to start acroread in your language ?
+--------------------------------------
 
-Here are a few "gotchas" that you may experience, but are easily solved.
+First you need to install an acroread-l10n-XX package were XX is your locale
+(fr for French, es for Spanish, etc ...).
 
- 1. "Let's hide ourselves till we've opened the doc!"
+If you install acroread for the first time, at startup a dialog box will ask
+you which language you want to use, select your language and voila.
 
-    Yes, acroread_5.06 does that.  Try running
+If you have already launched acroread you have two possibilities :
 
-	$ acroread
+1) Delete your ~/.adobe directory and select your language at the next startup.
 
-    with no document opened.  Then, on the menubar, go to Help->Reader Guide.
-    Watch in horror as acroread disappears as if it had crashed, then
-    a few seconds later, reappears with the Adobe Acrobat Reader 4.0 Guide
-    opened.  :-)  Yes, it is "normal" behaviour.
+2) If you don't want to lose your configuration, launch acroread go in the
+Edit menu then Preferences. Select International in Categories and then
+select "choose at application startup" in the Application Language popup
+menu, quit and restart acroread and then select your language.
 
-
- 2. "Where is the [Accept] button for the End User License Agreement (EULA)?"
-    "Why does the EULA screen pop up every time I start acroread?"
-
-    The EULA window is designed for a screen resolution of 1024×768 or
-    higher.  800×600 or less is too small to fit the EULA window.  Try to
-    move the EULA window until you see the [Accept] button, and click on
-    that; don't just close/kill the window.  That should solve your problem. 
-    :-)
-
-Special thanks to Peter Annema for the tips!  :-)
-
-Anthony Fok <foka@debian.org>, Fri, 21 Apr 2000 07:21:35 -0600
+Christian Marillat
