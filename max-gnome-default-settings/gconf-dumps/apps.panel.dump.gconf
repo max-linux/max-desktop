@@ -351,6 +351,104 @@
       </value>
     </entry>
     <entry>
+      <key>applets/applet_3/action_type</key>
+      <schema_key>/schemas/apps/panel/objects/action_type</schema_key>
+      <value>
+        <string>lock</string>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/applet_3/attached_toplevel_id</key>
+      <schema_key>/schemas/apps/panel/objects/attached_toplevel_id</schema_key>
+      <value>
+        <string></string>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/applet_3/bonobo_iid</key>
+      <schema_key>/schemas/apps/panel/objects/bonobo_iid</schema_key>
+      <value>
+        <string>OAFIID:GNOME_IndicatorApplet</string>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/applet_3/custom_icon</key>
+      <schema_key>/schemas/apps/panel/objects/custom_icon</schema_key>
+      <value>
+        <string></string>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/applet_3/launcher_location</key>
+      <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+      <value>
+        <string></string>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/applet_3/locked</key>
+      <schema_key>/schemas/apps/panel/objects/locked</schema_key>
+      <value>
+        <bool>false</bool>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/applet_3/menu_path</key>
+      <schema_key>/schemas/apps/panel/objects/menu_path</schema_key>
+      <value>
+        <string>applications:/</string>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/applet_3/object_type</key>
+      <schema_key>/schemas/apps/panel/objects/object_type</schema_key>
+      <value>
+        <string>bonobo-applet</string>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/applet_3/panel_right_stick</key>
+      <schema_key>/schemas/apps/panel/objects/panel_right_stick</schema_key>
+      <value>
+        <bool>false</bool>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/applet_3/position</key>
+      <schema_key>/schemas/apps/panel/objects/position</schema_key>
+      <value>
+        <int>922</int>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/applet_3/tooltip</key>
+      <schema_key>/schemas/apps/panel/objects/tooltip</schema_key>
+      <value>
+        <string></string>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/applet_3/toplevel_id</key>
+      <schema_key>/schemas/apps/panel/objects/toplevel_id</schema_key>
+      <value>
+        <string>top_panel_screen0</string>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/applet_3/use_custom_icon</key>
+      <schema_key>/schemas/apps/panel/objects/use_custom_icon</schema_key>
+      <value>
+        <bool>false</bool>
+      </value>
+    </entry>
+    <entry>
+      <key>applets/applet_3/use_menu_path</key>
+      <schema_key>/schemas/apps/panel/objects/use_menu_path</schema_key>
+      <value>
+        <bool>false</bool>
+      </value>
+    </entry>
+    <entry>
       <key>applets/clock_screen0/action_type</key>
       <schema_key>/schemas/apps/panel/objects/action_type</schema_key>
       <value>
@@ -1190,6 +1288,104 @@
     </entry>
     <entry>
       <key>default_setup/applets/fast_user_switch/use_menu_path</key>
+      <schema_key>/schemas/apps/panel/objects/use_menu_path</schema_key>
+      <value>
+        <bool>false</bool>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/action_type</key>
+      <schema_key>/schemas/apps/panel/objects/action_type</schema_key>
+      <value>
+        <string>lock</string>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/attached_toplevel_id</key>
+      <schema_key>/schemas/apps/panel/objects/attached_toplevel_id</schema_key>
+      <value>
+        <string></string>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/bonobo_iid</key>
+      <schema_key>/schemas/apps/panel/objects/bonobo_iid</schema_key>
+      <value>
+        <string>OAFIID:GNOME_IndicatorApplet</string>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/custom_icon</key>
+      <schema_key>/schemas/apps/panel/objects/custom_icon</schema_key>
+      <value>
+        <string></string>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/launcher_location</key>
+      <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+      <value>
+        <string></string>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/locked</key>
+      <schema_key>/schemas/apps/panel/objects/locked</schema_key>
+      <value>
+        <bool>true</bool>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/menu_path</key>
+      <schema_key>/schemas/apps/panel/objects/menu_path</schema_key>
+      <value>
+        <string>applications:/</string>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/object_type</key>
+      <schema_key>/schemas/apps/panel/objects/object_type</schema_key>
+      <value>
+        <string>bonobo-applet</string>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/panel_right_stick</key>
+      <schema_key>/schemas/apps/panel/objects/panel_right_stick</schema_key>
+      <value>
+        <bool>true</bool>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/position</key>
+      <schema_key>/schemas/apps/panel/objects/position</schema_key>
+      <value>
+        <int>4</int>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/tooltip</key>
+      <schema_key>/schemas/apps/panel/objects/tooltip</schema_key>
+      <value>
+        <string></string>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/toplevel_id</key>
+      <schema_key>/schemas/apps/panel/objects/toplevel_id</schema_key>
+      <value>
+        <string>top_panel</string>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/use_custom_icon</key>
+      <schema_key>/schemas/apps/panel/objects/use_custom_icon</schema_key>
+      <value>
+        <bool>false</bool>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/applets/indicator_applet/use_menu_path</key>
       <schema_key>/schemas/apps/panel/objects/use_menu_path</schema_key>
       <value>
         <bool>false</bool>
@@ -2339,6 +2535,13 @@
       </value>
     </entry>
     <entry>
+      <key>default_setup/toplevels/bottom_panel/animation_speed</key>
+      <schema_key>/schemas/apps/panel/toplevels/animation_speed</schema_key>
+      <value>
+        <string>fast</string>
+      </value>
+    </entry>
+    <entry>
       <key>default_setup/toplevels/bottom_panel/auto_hide</key>
       <schema_key>/schemas/apps/panel/toplevels/auto_hide</schema_key>
       <value>
@@ -2444,8 +2647,22 @@
       </value>
     </entry>
     <entry>
+      <key>default_setup/toplevels/bottom_panel/x_right</key>
+      <schema_key>/schemas/apps/panel/toplevels/x_right</schema_key>
+      <value>
+        <int>-1</int>
+      </value>
+    </entry>
+    <entry>
       <key>default_setup/toplevels/bottom_panel/y</key>
       <schema_key>/schemas/apps/panel/toplevels/y</schema_key>
+      <value>
+        <int>0</int>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/toplevels/bottom_panel/y_bottom</key>
+      <schema_key>/schemas/apps/panel/toplevels/y_bottom</schema_key>
       <value>
         <int>0</int>
       </value>
@@ -2504,6 +2721,13 @@
       <schema_key>/schemas/apps/panel/toplevels/background/type</schema_key>
       <value>
         <string>gtk</string>
+      </value>
+    </entry>
+    <entry>
+      <key>default_setup/toplevels/top_panel/animation_speed</key>
+      <schema_key>/schemas/apps/panel/toplevels/animation_speed</schema_key>
+      <value>
+        <string>fast</string>
       </value>
     </entry>
     <entry>
@@ -2713,6 +2937,9 @@
             </value>
             <value>
               <string>applet_2</string>
+            </value>
+            <value>
+              <string>applet_3</string>
             </value>
         </list>
       </value>
