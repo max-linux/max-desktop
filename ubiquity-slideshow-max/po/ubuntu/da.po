@@ -1,0 +1,494 @@
+# Danish translation for ubiquity-slideshow-ubuntu
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
+# Mads Lundby <lundbymads@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubiquity-slideshow-ubuntu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-17 20:58-0700\n"
+"PO-Revision-Date: 2010-02-22 15:43+0000\n"
+"Last-Translator: AJenbo <anders@jenbo.dk>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-02-26 13:24+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: slideshows/ubuntu/slides/accessibility.html:1
+msgid "Accessibility in Ubuntu"
+msgstr "Tilgængelighed i Ubuntu"
+
+#: slideshows/ubuntu/slides/accessibility.html:2
+msgid ""
+"We want to make computers work for everyone, whatever your physical "
+"circumstances. So, we provide tools that make Ubuntu one of the most "
+"accessible operating systems around."
+msgstr ""
+"Vi ønsker at lette brugen af computere for alle, uanset dine fysiske "
+"omstændigheder.  Derfor tilbyder vi værktøjer, som gør Ubuntu til et af de "
+"mest tilgængelige operativsystemer, der findes."
+
+#: slideshows/ubuntu/slides/accessibility.html:3
+msgid ""
+"You can get at these tools in one place: the <em>Assistive Technologies "
+"Preferences,</em> inside the System Menu. From there, you can turn on "
+"helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
+"click to press mouse buttons automatically."
+msgstr ""
+"Du kan finde disse værktøjer samlet på et sted: i <em>Hjælpeteknologier</em> "
+"under System-menuen. Herfra kan du aktivere nyttige værktøjer som <em>Orca</"
+"em> til oplæsning af tekst på skærmen, eller hvileklik til automatisk at "
+"klikke med museknapperne."
+
+#: slideshows/ubuntu/slides/accessibility.html:4
+msgid ""
+"Remember to check out the <em>Appearance Preferences</em>, too. You can "
+"choose between different visual styles and even change the fonts that are "
+"used by applications."
+msgstr ""
+"Husk også at se på <em>Tilgængelighed</em>. Du kan vælge mellem forskellige "
+"visuelle udtryk og også ændre den skrifttype, som bliver brugt af "
+"programmerne."
+
+#: slideshows/ubuntu/slides/documentation.html:1
+msgid "Getting Help with Ubuntu"
+msgstr "Få hjælp til Ubuntu"
+
+#: slideshows/ubuntu/slides/documentation.html:2
+msgid ""
+"If you need help, try <em>Help and Support</em> from the System menu, or the "
+"<em>Help</em> menu in most applications."
+msgstr ""
+"Hvis du har brug for hjælp, så prøv <em>Hjælp og support</em> fra "
+"Systemmenuen, eller menuen <em>Hjælp</em> der findes i de fleste programmer."
+
+#: slideshows/ubuntu/slides/documentation.html:3
+msgid ""
+"In addition to our extensive written help, the Ubuntu community provides "
+"free technical support in person and over the Internet. There is also "
+"commercial support available through Canonical, its partners and approved "
+"companies. Learn more at <a href=\"http://www.ubuntu.com/support\">ubuntu."
+"com/support</a>."
+msgstr ""
+"Ud over vores omfattende skriftlige hjælp, giver Ubuntu fællesskab gratis "
+"teknisk support menneske til menneske og over internettet. Der er også "
+"kommerciel support til rådighed via Canonical, dets partnere og godkendte "
+"virksomheder. Læs mere på <a href=\"http://www.ubuntu.com/support\">ubuntu."
+"com/support</a>."
+
+#: slideshows/ubuntu/slides/documentation.html:4
+msgid ""
+"Let us know about your Ubuntu experience at <a href=\"http://ubuntu.com/"
+"community\">ubuntu.com/community</a>!"
+msgstr ""
+"Fortæl os om din oplevelse med Ubuntu på <a href=\"http://ubuntu.com/"
+"community\">ubuntu.com/community</a>!"
+
+#: slideshows/ubuntu/slides/documentation.html:5
+msgid "The installation will finish soon. We hope you enjoy Ubuntu."
+msgstr ""
+"Installationen vil snart være færdig. Vi håber du vil få glæde af Ubuntu."
+
+#: slideshows/ubuntu/slides/empathy.html:1
+msgid "Keep in contact with Empathy"
+msgstr "Bevar kontakten med Empathy"
+
+#: slideshows/ubuntu/slides/empathy.html:2
+msgid ""
+"With <em>Empathy</em>, Ubuntu keeps you connected right from the start. It "
+"works with all the major instant messaging networks, including Google Talk, "
+"Windows Live and Jabber."
+msgstr ""
+"Med <em>Empathy</em> holder Ubuntu kontakten for dig lige fra starten. "
+"Programmet virker med alle de store chatnetværk, b.la. Google Talk, Windows "
+"Live og Jabber."
+
+#: slideshows/ubuntu/slides/empathy.html:3
+msgid ""
+"New messages appear in the envelope to the left of the clock, so you can see "
+"what's happening at a glance."
+msgstr ""
+"Nye beskeder bliver vist i kuverten til venstre for uret, så du med et "
+"enkelt blik kan se, hvad der sker lige nu."
+
+#: slideshows/ubuntu/slides/empathy.html:4
+msgid ""
+"Choose <em>Empathy IM Client</em> from the Internet Applications menu to set "
+"up your accounts."
+msgstr ""
+"Vælg <em>Empathy IM-klient</em> i Internet-menuen under Programmer for at "
+"indstille dine konti."
+
+#: slideshows/ubuntu/slides/evolution.html:1
+msgid "Control your digital life with Evolution"
+msgstr "Hold styr på dit digitale liv med Evolution"
+
+#: slideshows/ubuntu/slides/evolution.html:2
+msgid ""
+"<em>Evolution Mail</em> is the fully-featured email and calendar software "
+"that comes with Ubuntu. It connects to most email services, for example "
+"Gmail and Yahoo."
+msgstr ""
+"<em>Evolution e-post</em> er et fuldt udstyret e-post- og kalenderprogram, "
+"der følger med Ubuntu. Det kan forbinde til de fleste e-mail-tjenester, for "
+"eksempel Gmail og Yahoo."
+
+#: slideshows/ubuntu/slides/evolution.html:3
+msgid ""
+"Advanced junk filtering and search tools make managing your mail a breeze."
+msgstr ""
+"Avanceret spamfiltrering  og søgeværktøjer som gør håndteringen af din e-"
+"mail til en leg."
+
+#: slideshows/ubuntu/slides/evolution.html:4
+msgid ""
+"Add your favorite Web calendars to see upcoming games or movie releases. To "
+"see your daily schedule, just click the clock at the top of your screen."
+msgstr ""
+"Tilføj dine foretrukne web-kalendere for at se kommende kampe eller "
+"filmudgivelser. Hvis du vil se din daglige tidsplan, skal du blot klikke på "
+"uret øverst på skærmen."
+
+#: slideshows/ubuntu/slides/firefox.html:1
+msgid "Browse the web with Firefox"
+msgstr "Gå på nettet med Firefox"
+
+#: slideshows/ubuntu/slides/firefox.html:2
+#, fuzzy
+msgid "Ubuntu comes with the widely acclaimed <em>Firefox web browser</em>."
+msgstr ""
+"Ubuntu leveres med den meget anerkendte <em>Firefox 3.5</em>-internetbrowser."
+
+#: slideshows/ubuntu/slides/firefox.html:3
+msgid ""
+"It protects your privacy and personal information so you can surf worry free."
+msgstr ""
+"Den beskytter dit privatliv og dine personlige informationer, så du kan gå "
+"på nettet uden bekymringer."
+
+#: slideshows/ubuntu/slides/firefox.html:4
+#, fuzzy
+msgid ""
+"Add your own personal note with add-ons. You can choose from thousands of "
+"themes and extensions that tailor Firefox to how you use the web."
+msgstr ""
+"Tilføj dit eget personlige strejf. Vælg mellem tusindvis af temaer og "
+"tilføjelser, som skræddersyr Firefox til den måde, du bruger internettet."
+
+#: slideshows/ubuntu/slides/fspot.html:1
+msgid "Organize, enjoy, and share your photos"
+msgstr "Organisér, nyd og del dine fotos"
+
+#: slideshows/ubuntu/slides/fspot.html:2
+msgid ""
+"With <em>F-Spot Photo Manager</em>, it is really easy to share, touch-up and "
+"organize digital photos."
+msgstr ""
+"Med <em>F-spot fotohåndtering</em> er det meget let at dele, forbedre og få "
+"styr på digitale fotos."
+
+#: slideshows/ubuntu/slides/fspot.html:3
+msgid ""
+"Use tags to describe your photos so that they are easy to find later on."
+msgstr ""
+"Brug mærker til at beskrive dine fotos så de er letter at finde senere."
+
+#: slideshows/ubuntu/slides/fspot.html:4
+msgid ""
+"Use the Export option to write your photos to CDs, email them to friends or "
+"share them online."
+msgstr ""
+"Brug eksportfunktionen til at skrive dine fotos til cd'er, sende dem til "
+"venner med e-post eller dele dem på nettet."
+
+#: slideshows/ubuntu/slides/fspot.html:5
+msgid ""
+"To get started, choose F-Spot from the Graphics Applications menu or attach "
+"a digital camera and follow the prompts."
+msgstr ""
+"Start ved at vælge F-Spot fra programmenuen Grafik eller tilslut et "
+"digitalkamera og følg vejledningen."
+
+#: slideshows/ubuntu/slides/installing-software.html:1
+msgid "Installing additional software"
+msgstr "Installation af yderligere software"
+
+#: slideshows/ubuntu/slides/installing-software.html:2
+msgid ""
+"Take a look at the <em>Ubuntu Software Center</em> to install (and remove) "
+"software from our online repository, which we carefully organize to be safe "
+"and up to date."
+msgstr ""
+"Tag et kig på <em>Ubuntu Softwarecenteret</em> for at installere (og fjerne) "
+"software fra vores arkiv på nettet, som vi omhyggeligt organiserer, så det "
+"er sikkert og ajourført."
+
+#: slideshows/ubuntu/slides/installing-software.html:3
+msgid ""
+"There is great software for everything from creating music and movies to "
+"producing 3D models and exploring the universe."
+msgstr ""
+"Der er gode programmer til alle formål, fra fremstilling af musik og film "
+"til fremstilling af 3D-modeller og udforskning af universet."
+
+#: slideshows/ubuntu/slides/installing-software.html:4
+msgid ""
+"If you need something that isn't available through us, find out if there is "
+"a Debian package or another repository available. That way, it will be "
+"really easy to install and you will receive automatic updates."
+msgstr ""
+"Hvis du har brug for noget, som ikke er tilgængeligt gennem os, kan du "
+"undersøge, om der er en Debian-pakke eller et andet arkiv til rådighed. På "
+"den måde vil det være meget nemt at installere, og du vil modtage "
+"automatiske opdateringer."
+
+#: slideshows/ubuntu/slides/openoffice.html:1
+msgid "Office tools at your fingertips"
+msgstr "Kontorværktøjer lige ved hånden"
+
+#: slideshows/ubuntu/slides/openoffice.html:2
+msgid ""
+"<em>OpenOffice.org</em> is a powerful office software suite that is very "
+"easy to learn."
+msgstr ""
+"<em>OpenOffice.org</em> er en funktionsrig kontorpakke, der er meget let at "
+"lære at bruge."
+
+#: slideshows/ubuntu/slides/openoffice.html:3
+msgid ""
+"It is useful to create letters, presentations and spreadsheets, as well as "
+"diagrams and databases."
+msgstr ""
+"Det er nyttigt til at skabe breve, præsentationer og regneark samt "
+"diagrammer og databaser."
+
+#: slideshows/ubuntu/slides/openoffice.html:4
+#, fuzzy
+msgid ""
+"<em>OpenOffice.org</em> works with documents from other popular office "
+"applications including WordPerfect and Microsoft Office. It uses the "
+"standard OpenDocument format."
+msgstr ""
+"<em>OpenOffice.org</em> kan arbejde med dokumenter fra andre populære Office-"
+"programmer, herunder WordPerfect og Microsoft Office. Som standard bruges "
+"den internationale standard OpenDocument."
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:1
+msgid "Music and movies in Ubuntu"
+msgstr "Musik og film i Ubuntu"
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:2
+msgid ""
+"Ubuntu is ready to play videos and music from the web, from CDs and DVDs."
+msgstr ""
+"Ubuntu er klar til at afspille videoer og musik fra internettet, fra cd'er "
+"og dvd'er."
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:3
+msgid ""
+"<em>Rhythmbox Music Player</em> lets you organize your music and listen to "
+"Internet radio. It also keeps track of podcasts, to download new episodes of "
+"a show automatically."
+msgstr ""
+"Med <em>Rhythmbox-musikafspiller</em> kan du organisere din musik og lytte "
+"til internetradio. Den holder også styr på podcasts og henter automatisk nye "
+"episoder af et show."
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:4
+msgid ""
+"Plug in an MP3 player to start synchronizing your music collection, or "
+"insert a CD to copy its music to your computer."
+msgstr ""
+"Tilslut en MP3-afspiller for at begynde at synkronisere din musiksamling, "
+"eller indsæt en cd for at kopiere musikken til din computer."
+
+#: slideshows/ubuntu/slides/translations.html:1
+msgid "Ubuntu speaks fluently"
+msgstr "Ubuntu taler dit sprog flydende"
+
+#: slideshows/ubuntu/slides/translations.html:2
+msgid "Ubuntu is available in many different languages."
+msgstr "Ubuntu er tilgængelig i mange forskellige sprog."
+
+#: slideshows/ubuntu/slides/translations.html:3
+msgid "Simply select your language in Language Support Administration"
+msgstr "Vælg ganske enkelt dit sprog i Sprogunderstøttelses-håndteringen"
+
+#: slideshows/ubuntu/slides/translations.html:4
+msgid ""
+"Ubuntu's translations are contributed by our generous users. Feel free to "
+"help out at <a href=\"http://translations.launchpad.net/ubuntu\">launchpad."
+"net</a>."
+msgstr ""
+"Ubuntus oversættelser er lavet af vores gavmilde brugere. Du er velkommen "
+"til at hjælpe til på <a href=\"http://translations.launchpad.net/ubuntu"
+"\">launchpad.net</a>."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:1
+msgid "Store, sync and share with Ubuntu One"
+msgstr "Opbevar, synkronisér og del med Ubuntu One"
+
+#: slideshows/ubuntu/slides/ubuntuone.html:2
+msgid ""
+"<em>Ubuntu One</em> is your personal cloud, providing 2 GB of essential "
+"storage (and more if you need it)."
+msgstr ""
+"<em>Ubuntu One</em> er din personlige sky, som giver dig 2 GB basislager (og "
+"mere, hvis du har brug for det)."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:3
+msgid ""
+"Use it to back up, store and sync your files, as well as share them with "
+"other Ubuntu One users."
+msgstr ""
+"Brug den til sikkerhedskopiering, lagring og synkronisering af dine filer og "
+"del filerne med andre Ubuntu One-brugere."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:4
+msgid ""
+"Your Tomboy notes and Evolution contacts are synced automatically across all "
+"of your computers."
+msgstr ""
+"Dine Tomboy-notater og Evolution-kontakter synkroniseres automatisk på tværs "
+"af alle dine computere."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:5
+msgid "Integration with your Ubuntu desktop makes sharing files easy."
+msgstr "Integration med dit Ubuntu-skrivebord gør det let at dele dine filer."
+
+#: slideshows/ubuntu/slides/welcome.html:1
+msgid "Welcome"
+msgstr "Velkommen"
+
+#: slideshows/ubuntu/slides/welcome.html:2
+#, fuzzy
+msgid "Thank you for choosing Ubuntu 10.04."
+msgstr "Tak fordi du valgte Ubuntu 9.10."
+
+#: slideshows/ubuntu/slides/welcome.html:3
+msgid ""
+"We believe that every computer user should be able to work in the "
+"environment of their choice and be free to download, change, study and share "
+"this software for any purpose, without paying licensing fees."
+msgstr ""
+"Vi mener, at alle computerbrugere bør kunne arbejde i et miljø efter eget "
+"valg og have friheden til at hente, ændre, studere og dele denne software "
+"til ethvert formål, uden at betale licensafgifter."
+
+#: slideshows/ubuntu/slides/welcome.html:4
+msgid ""
+"As part of our promise, we want Ubuntu to work as well for you as possible. "
+"So, while it installs, this slideshow will give you a quick introduction."
+msgstr ""
+"Som en del af vores løfte, ønsker vi at Ubuntu skal virke så godt som muligt "
+"for dig. Så imens det installeres, vil dette diasshow give dig en hurtig "
+"introduktion."
+
+#: slideshows/ubuntu/slides/welcome.html:5
+msgid "Ubuntu is designed to be easy. Feel free to explore!"
+msgstr "Ubuntu er designet til at være nemt at bruge. Så udforsk det endelig!"
+
+#~ msgid ""
+#~ "You can get at these tools in one place: the <em>Assistive Technologies "
+#~ "Preferences,</em> inside the System Menu. From there, you can turn on "
+#~ "helpful tools like <em>Orca,</em> to speak text on the screen, or dwell "
+#~ "click to press mouse buttons automatically."
+#~ msgstr ""
+#~ "Du kan finde disse værktøjer samlet på et sted: i <em>Hjælpeteknologier</"
+#~ "em> under System-menuen. Herfra kan du aktivere nyttige værktøjer som "
+#~ "<em>Orca</em> til oplæsning af tekst på skærmen, eller hvileklik til "
+#~ "automatisk at klikke med museknapperne."
+
+#~ msgid ""
+#~ "<i>Need help?</i> Just click the blue question mark at the top of the "
+#~ "screen to access the Ubuntu Help Center."
+#~ msgstr ""
+#~ "<i>Brug for hjælp?</i> Klik blot på det blå spørgsmålstegn øverst på "
+#~ "skærmen, for at få adgang til Ubuntus hjælpecenter."
+
+#~ msgid ""
+#~ "<i>Can't find the answer?</i> The Ubuntu community provides extensive "
+#~ "free technical support. There is also commercial support available "
+#~ "through Canonical, its partners and approved companies. Learn more at <a "
+#~ "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
+#~ msgstr ""
+#~ "<i>Kan du ikke finde svaret?</i> Ubuntu-fællesskabet yder omfattende "
+#~ "gratis teknisk hjælp. Der er også kommerciel hjælp til rådighed via "
+#~ "Canonical, dets partnere og godkendte virksomheder. Læs mere på <a href="
+#~ "\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
+
+#~ msgid ""
+#~ "Let us know about your Ubuntu Experience, or learn how to help out, at <a "
+#~ "href=\"http://ubuntu.com/community\">ubuntu.com/community</a>!"
+#~ msgstr ""
+#~ "Fortæl os om din oplevelse med Ubuntu, eller læs om hvordan du kan hjælpe "
+#~ "til på <a href=\"http://ubuntu.com/community\">ubuntu.com/community</a>!"
+
+#~ msgid ""
+#~ "Choose Empathy from the Internet Applications menu to set up your "
+#~ "accounts."
+#~ msgstr ""
+#~ "Vælg Empathy i Internet-menuen under Programmer for at indstille dine "
+#~ "konti."
+
+#~ msgid ""
+#~ "With <em>Empathy IM</em>, Ubuntu keeps you connected right from the "
+#~ "start. It works with all the major instant messaging networks, including "
+#~ "Google Talk, Windows Live and Jabber."
+#~ msgstr ""
+#~ "Med <em>Empathy-chat</em> holder Ubuntu kontakten for dig lige fra "
+#~ "starten. Programmet virker med alle de store chatnetværk, b.la. Google "
+#~ "Talk, Windows Live og Jabber."
+
+#~ msgid ""
+#~ "<em>Evolution</em> is the fully-featured email and calendar software that "
+#~ "comes with Ubuntu. It connects to most email services, for example Gmail "
+#~ "and Yahoo."
+#~ msgstr ""
+#~ "<em>Evolution</em> er et fuldt udstyret e-post- og kalenderprogram, der "
+#~ "følger med Ubuntu. Det kan forbinde til de fleste e-mail-tjenester, for "
+#~ "eksempel Gmail og Yahoo."
+
+#~ msgid ""
+#~ "Use tags to describe your photos. Later on, you can use the tags to find "
+#~ "a particular one."
+#~ msgstr ""
+#~ "Brug mærker til at beskrive dine fotos. Senere kan du bruge mærkerne til "
+#~ "at finde bestemte fotos."
+
+#~ msgid ""
+#~ "Take a look at the <em>Software Center</em> to install (and uninstall) "
+#~ "software from our online repository, which we carefully organize to be "
+#~ "safe and up to date."
+#~ msgstr ""
+#~ "Tag et kig på <em>Softwarecenteret</em> for at installere (og "
+#~ "afinstallere) software fra vores arkiv på nettet, som vi omhyggeligt "
+#~ "organiserer, så det er sikkert og ajourført."
+
+#~ msgid ""
+#~ "OpenOffice.org works with documents for all the popular office "
+#~ "applications including WordPerfect and Microsoft Office. It uses the ISO "
+#~ "standard OpenDocument format by default."
+#~ msgstr ""
+#~ "OpenOffice.org virker med dokumenter fra alle de populære Office-"
+#~ "programmer, herunder WordPerfect og Microsoft Office. Som standard bruges "
+#~ "ISO-standarden OpenDocument."
+
+#~ msgid ""
+#~ "Ubuntu is ready to play videos and music from the web and from DVDs. It "
+#~ "works straight away for the free and popular formats that people can use "
+#~ "without paying license fees."
+#~ msgstr ""
+#~ "Ubuntu er klar til at afspille videoer og musik fra internettet og "
+#~ "dvd'er. Det virker med det samme for de frie og populære formater, som "
+#~ "folk kan bruge uden at betale licensafgifter."
+
+#~ msgid ""
+#~ "Ubuntu One is your personal cloud, providing 2 GB of essential storage "
+#~ "(and more if you need it)."
+#~ msgstr ""
+#~ "Ubuntu One er din personlige sky, som giver dig 2 GB basislager (og mere, "
+#~ "hvis du har brug for det)."

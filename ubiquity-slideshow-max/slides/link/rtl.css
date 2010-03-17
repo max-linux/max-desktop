@@ -1,0 +1,41 @@
+body
+{
+	direction:rtl;
+}
+
+.title
+{
+	right:10px;
+}
+
+.icon
+{
+	left:10px;
+	right:auto;
+}
+
+.main
+{
+	right:0px;
+	padding-right:0px;
+	padding-left:60px;
+}
+
+.content ul
+{
+	list-style-image:url("bullet-point.rtl.png");
+}
+
+/*
+This rule applies to an img of class menu-arrow. It appears as a nice
+looking arrow that can separate items in a menu much like how submenus
+look in Ubuntu's GTK theme.
+*/
+.menu-item img.menu-arrow
+{
+	display:inline-block;
+	content:url('menu-arrow.png');
+	
+	padding-left:2px;
+	padding-right:5px;
+}

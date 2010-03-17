@@ -1,0 +1,473 @@
+# Vietnamese translation for ubiquity-slideshow-ubuntu
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubiquity-slideshow-ubuntu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-17 20:58-0700\n"
+"PO-Revision-Date: 2010-01-20 12:28+0000\n"
+"Last-Translator: Vu Do Quynh <vdquynh@gmail.com>\n"
+"Language-Team: Vietnamese <vi@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-02-26 13:24+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: slideshows/ubuntu/slides/accessibility.html:1
+msgid "Accessibility in Ubuntu"
+msgstr "Tiếp cận với Ubuntu"
+
+#: slideshows/ubuntu/slides/accessibility.html:2
+msgid ""
+"We want to make computers work for everyone, whatever your physical "
+"circumstances. So, we provide tools that make Ubuntu one of the most "
+"accessible operating systems around."
+msgstr ""
+"Chúng tôi mong muốn tất cả mọi người trong bất kỳ tình trạng thể chất nào "
+"cũng đều có thể sử dụng máy vi tính được. Vì thế chúng tôi cung cấp những "
+"công cụ khiến cho Ubuntu trở thành một trong những hệ điều hành thân thiện "
+"người dùng nhất hiện nay."
+
+#: slideshows/ubuntu/slides/accessibility.html:3
+msgid ""
+"You can get at these tools in one place: the <em>Assistive Technologies "
+"Preferences,</em> inside the System Menu. From there, you can turn on "
+"helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
+"click to press mouse buttons automatically."
+msgstr ""
+
+#: slideshows/ubuntu/slides/accessibility.html:4
+msgid ""
+"Remember to check out the <em>Appearance Preferences</em>, too. You can "
+"choose between different visual styles and even change the fonts that are "
+"used by applications."
+msgstr ""
+"Đừng quên xem qua mục <em>Tùy chỉnh Thể hiện</em> nhé. Ở đó bạn có thể chọn "
+"các phong cách thể hiện khác nhau và thậm chí thay đổi phông chữ các ứng "
+"dụng dùng."
+
+#: slideshows/ubuntu/slides/documentation.html:1
+msgid "Getting Help with Ubuntu"
+msgstr "Trợ giúp về Ubuntu"
+
+#: slideshows/ubuntu/slides/documentation.html:2
+msgid ""
+"If you need help, try <em>Help and Support</em> from the System menu, or the "
+"<em>Help</em> menu in most applications."
+msgstr ""
+
+#: slideshows/ubuntu/slides/documentation.html:3
+msgid ""
+"In addition to our extensive written help, the Ubuntu community provides "
+"free technical support in person and over the Internet. There is also "
+"commercial support available through Canonical, its partners and approved "
+"companies. Learn more at <a href=\"http://www.ubuntu.com/support\">ubuntu."
+"com/support</a>."
+msgstr ""
+
+#: slideshows/ubuntu/slides/documentation.html:4
+msgid ""
+"Let us know about your Ubuntu experience at <a href=\"http://ubuntu.com/"
+"community\">ubuntu.com/community</a>!"
+msgstr ""
+
+#: slideshows/ubuntu/slides/documentation.html:5
+msgid "The installation will finish soon. We hope you enjoy Ubuntu."
+msgstr ""
+"Quá trình cài đặt sắp kết thúc. Chúng tôi hy vọng bạn sẽ có những giây phút "
+"tuyệt vời với Ubuntu."
+
+#: slideshows/ubuntu/slides/empathy.html:1
+msgid "Keep in contact with Empathy"
+msgstr "Dùng Empathy để giữ liên hệ với nhau"
+
+#: slideshows/ubuntu/slides/empathy.html:2
+msgid ""
+"With <em>Empathy</em>, Ubuntu keeps you connected right from the start. It "
+"works with all the major instant messaging networks, including Google Talk, "
+"Windows Live and Jabber."
+msgstr ""
+"Dùng <em>Empathy</em>, Ubuntu sẽ giúp bạn được nối với bạn bè ngay từ đầu. "
+"Nó thích hợp với những mạng trao đổi tin chủ yếu, kể cả Google Talk, Windows "
+"Live và Jabber."
+
+#: slideshows/ubuntu/slides/empathy.html:3
+msgid ""
+"New messages appear in the envelope to the left of the clock, so you can see "
+"what's happening at a glance."
+msgstr ""
+"Tin nhắn mới sẽ xuất hiện ở biểu tượng phong thư bên trái đồng hồ, giúp bạn "
+"nhận được ngay."
+
+#: slideshows/ubuntu/slides/empathy.html:4
+msgid ""
+"Choose <em>Empathy IM Client</em> from the Internet Applications menu to set "
+"up your accounts."
+msgstr ""
+"Chọn <em>Empathy IM Client</em> từ thực đơn Ưng dụng mạng để cấu hình lại "
+"các tài khoản của bạn."
+
+#: slideshows/ubuntu/slides/evolution.html:1
+msgid "Control your digital life with Evolution"
+msgstr "Hãy làm chủ cuốc sống kỹ thuật số với Evolution"
+
+#: slideshows/ubuntu/slides/evolution.html:2
+msgid ""
+"<em>Evolution Mail</em> is the fully-featured email and calendar software "
+"that comes with Ubuntu. It connects to most email services, for example "
+"Gmail and Yahoo."
+msgstr ""
+"<em>Evolution Mail</em> là phần mềm lịch và gửi thư điện tử đi kèm với "
+"Ubuntu. Nó có thể tương thích với đa số các dịch vụ thư điện tử như của "
+"Gmail và Yahoo."
+
+#: slideshows/ubuntu/slides/evolution.html:3
+msgid ""
+"Advanced junk filtering and search tools make managing your mail a breeze."
+msgstr ""
+"Những tiện ích lọc thư rác và tìm kiếm sẽ giúp bạn quản lý thư nhẹ nhàng."
+
+#: slideshows/ubuntu/slides/evolution.html:4
+msgid ""
+"Add your favorite Web calendars to see upcoming games or movie releases. To "
+"see your daily schedule, just click the clock at the top of your screen."
+msgstr ""
+"Bạn có thể bổ sùng các lịch trên web để biết những sự kiện sắp đến như phim, "
+"chò trơi mới. Để xem được lịch hằng ngày, chỉ cần nhấn vào biểu tượng đồng "
+"hồ ở phía trên màn hình."
+
+#: slideshows/ubuntu/slides/firefox.html:1
+msgid "Browse the web with Firefox"
+msgstr "Duyệt web với Firefox"
+
+#: slideshows/ubuntu/slides/firefox.html:2
+#, fuzzy
+msgid "Ubuntu comes with the widely acclaimed <em>Firefox web browser</em>."
+msgstr "Ubuntu tích hợp trình duyệt web nổi tiếng <em>Firefox 3.5</em>."
+
+#: slideshows/ubuntu/slides/firefox.html:3
+msgid ""
+"It protects your privacy and personal information so you can surf worry free."
+msgstr ""
+"Bạn có thể duyệt web thoải mái vì Firefox bảo vệ mọi thông tin cá nhân."
+
+#: slideshows/ubuntu/slides/firefox.html:4
+#, fuzzy
+msgid ""
+"Add your own personal note with add-ons. You can choose from thousands of "
+"themes and extensions that tailor Firefox to how you use the web."
+msgstr ""
+"Bạn có thể cá thể hóa Firefox bằng cách chọn vào hàng nghìn kiểu xếp đặt và "
+"phần mềm mở rộng chức năng cho Firefox để thuận lợi duyệt web."
+
+#: slideshows/ubuntu/slides/fspot.html:1
+msgid "Organize, enjoy, and share your photos"
+msgstr "Tổ chức, thưởng thức  và chia sẻ ảnh chụp của bạn"
+
+#: slideshows/ubuntu/slides/fspot.html:2
+msgid ""
+"With <em>F-Spot Photo Manager</em>, it is really easy to share, touch-up and "
+"organize digital photos."
+msgstr ""
+"Dùng <em>F-Spot Photo Manager</em>, việc chia sẻ, chỉnh lại và tổ chức ảnh "
+"só trở nên thực sự dễ dàng."
+
+#: slideshows/ubuntu/slides/fspot.html:3
+msgid ""
+"Use tags to describe your photos so that they are easy to find later on."
+msgstr ""
+
+#: slideshows/ubuntu/slides/fspot.html:4
+msgid ""
+"Use the Export option to write your photos to CDs, email them to friends or "
+"share them online."
+msgstr ""
+"Với động tác xuất khẩu, bạn có thể ghi ảnh vào đĩa CD, gửi ảnh cho bạn bè "
+"bằng email hoặc đưa ảnh lên mạng."
+
+#: slideshows/ubuntu/slides/fspot.html:5
+msgid ""
+"To get started, choose F-Spot from the Graphics Applications menu or attach "
+"a digital camera and follow the prompts."
+msgstr ""
+"Để bắt đầu, chọ F-Spot từ trình đơn Ứng dụng, Đồ họa, hoặc cứ cắm một máy "
+"ảnh vào và làm theo các bước hướng dẫn."
+
+#: slideshows/ubuntu/slides/installing-software.html:1
+msgid "Installing additional software"
+msgstr "Cài đặt thêm phần mềm"
+
+#: slideshows/ubuntu/slides/installing-software.html:2
+msgid ""
+"Take a look at the <em>Ubuntu Software Center</em> to install (and remove) "
+"software from our online repository, which we carefully organize to be safe "
+"and up to date."
+msgstr ""
+
+#: slideshows/ubuntu/slides/installing-software.html:3
+msgid ""
+"There is great software for everything from creating music and movies to "
+"producing 3D models and exploring the universe."
+msgstr ""
+"Bạn sẽ tìm thấy phần mềm cho mọi việc từ sáng tác nhạc, tạo phim cho đến mô "
+"hình 3 chiều và khám phá vuc trụ."
+
+#: slideshows/ubuntu/slides/installing-software.html:4
+msgid ""
+"If you need something that isn't available through us, find out if there is "
+"a Debian package or another repository available. That way, it will be "
+"really easy to install and you will receive automatic updates."
+msgstr ""
+"Nếu bạn cần một phần mềm không có sẵn trong kho phần mềm, bạn hãy tìm liệu "
+"có một gói dạng .deb cho Debian hoặc một kho phần mềm khác. Như thế, việc "
+"cài đặt sẽ thật đơn giản và bạn cũng sẽ nhận các thông tin để cập nhật "
+"thường xuyến."
+
+#: slideshows/ubuntu/slides/openoffice.html:1
+msgid "Office tools at your fingertips"
+msgstr "Tiện ích văn phòng dành cho bạn"
+
+#: slideshows/ubuntu/slides/openoffice.html:2
+msgid ""
+"<em>OpenOffice.org</em> is a powerful office software suite that is very "
+"easy to learn."
+msgstr ""
+"<em>OpenOffice.org</em> là một phần mềm văn phòng rất mạnh và rất dễ sử dụng."
+
+#: slideshows/ubuntu/slides/openoffice.html:3
+msgid ""
+"It is useful to create letters, presentations and spreadsheets, as well as "
+"diagrams and databases."
+msgstr ""
+"Có thể dùng nó để viết thư, tạo trình diễn và bảng tính, cũng như biểu đồ "
+"thị và cơ sở dữ liệu."
+
+#: slideshows/ubuntu/slides/openoffice.html:4
+#, fuzzy
+msgid ""
+"<em>OpenOffice.org</em> works with documents from other popular office "
+"applications including WordPerfect and Microsoft Office. It uses the "
+"standard OpenDocument format."
+msgstr ""
+"<em>OpenOffice.org</em> làm việc với các tài liệu của nhiều phần mềm ứng "
+"dụng văn phòng phổ biến, bao gồm cả WordPerfect và Microsoft Office. Nó dùng "
+"chuẩn tài liệu mở quốc tế ODF làm định dạng mặc định cho các tài liệu được "
+"soạn ra."
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:1
+msgid "Music and movies in Ubuntu"
+msgstr "Nhạc và phim với Ubuntu"
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:2
+msgid ""
+"Ubuntu is ready to play videos and music from the web, from CDs and DVDs."
+msgstr "Ubuntu sẵn sàng chơi phim và nhạc từ web, CD và DVD."
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:3
+msgid ""
+"<em>Rhythmbox Music Player</em> lets you organize your music and listen to "
+"Internet radio. It also keeps track of podcasts, to download new episodes of "
+"a show automatically."
+msgstr ""
+"<em>Bộ phát nhạc Rhythmbox</em> cho phép tổ chức lại các tệp nhạc và nghe "
+"đài trên internet. Bạn có thể dùng nó để lưu lại các podcasts, tải các bản "
+"phát mới một cách tự động."
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:4
+msgid ""
+"Plug in an MP3 player to start synchronizing your music collection, or "
+"insert a CD to copy its music to your computer."
+msgstr ""
+"Bạn có thể cắm vào một máy nghe nhạc MP3 và làm đồng bộ các tập nhạc của "
+"bạn, hoặc đưa một CD vào để chép nhạc vào máy tính."
+
+#: slideshows/ubuntu/slides/translations.html:1
+msgid "Ubuntu speaks fluently"
+msgstr "Ubuntu biết nhiều thứ tiếng"
+
+#: slideshows/ubuntu/slides/translations.html:2
+msgid "Ubuntu is available in many different languages."
+msgstr "Ubuntu có sẵn nhiều ngôn ngữ."
+
+#: slideshows/ubuntu/slides/translations.html:3
+msgid "Simply select your language in Language Support Administration"
+msgstr "Chỉ cần chọn ngôn ngữ của bạn trong Trình Quản lý Hỗ trợ Ngôn ngữ"
+
+#: slideshows/ubuntu/slides/translations.html:4
+msgid ""
+"Ubuntu's translations are contributed by our generous users. Feel free to "
+"help out at <a href=\"http://translations.launchpad.net/ubuntu\">launchpad."
+"net</a>."
+msgstr ""
+"Những bản dịch Ubuntu là sự đóng góp của những người dùng. Hãy tham gia giúp "
+"đỡ dịch tại <a href=\"http://translations.launchpad.net/ubuntu\">launchpad."
+"net</a>."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:1
+msgid "Store, sync and share with Ubuntu One"
+msgstr "Lưu và chia sẽ tệp với Ubuntu One"
+
+#: slideshows/ubuntu/slides/ubuntuone.html:2
+msgid ""
+"<em>Ubuntu One</em> is your personal cloud, providing 2 GB of essential "
+"storage (and more if you need it)."
+msgstr ""
+"<em>Ubuntu One</em> là đám mây của riêng bạn, cung cấp một không gian lưu "
+"trữ 2 GB (và hơn nữa, nếu bạn cần)."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:3
+msgid ""
+"Use it to back up, store and sync your files, as well as share them with "
+"other Ubuntu One users."
+msgstr ""
+"Bạn có thể dùng Ubuntu One để sao lưu tệp, sync lại tệp cũng như chia sẽ tệp "
+"với những người khác."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:4
+msgid ""
+"Your Tomboy notes and Evolution contacts are synced automatically across all "
+"of your computers."
+msgstr ""
+"Các tập tin Tomboy và địa chỉ trong Evolution sẽ được tự động thống nhất "
+"giữa các máy tính của bạn."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:5
+msgid "Integration with your Ubuntu desktop makes sharing files easy."
+msgstr "Sự kết hợp với máy tính Ubuntu sẽ giúp bạn chia sẽ tệp với người khác."
+
+#: slideshows/ubuntu/slides/welcome.html:1
+msgid "Welcome"
+msgstr "Chào mừng"
+
+#: slideshows/ubuntu/slides/welcome.html:2
+#, fuzzy
+msgid "Thank you for choosing Ubuntu 10.04."
+msgstr "Cảm ơn bạn đã chọn Ubuntu 9.10."
+
+#: slideshows/ubuntu/slides/welcome.html:3
+msgid ""
+"We believe that every computer user should be able to work in the "
+"environment of their choice and be free to download, change, study and share "
+"this software for any purpose, without paying licensing fees."
+msgstr ""
+"Chúng tôi tin rằng mỗi người dùng máy tính nên làm việc trong một môi trường "
+"mà tự họ chọn và được tự do để tải, thay đổi, học tập và chia sẻ phần mềm "
+"này cho bất kì mục đích nào, mà không cần trả phí giấy phép."
+
+#: slideshows/ubuntu/slides/welcome.html:4
+msgid ""
+"As part of our promise, we want Ubuntu to work as well for you as possible. "
+"So, while it installs, this slideshow will give you a quick introduction."
+msgstr ""
+"Như một phần lời hứa, chúng tôi mong muốn Ubuntu làm được việc tốt nhất cho "
+"bạn. Vì thế, trong khi cài đặt, slideshow này sẽ giới thiệu nhanh Ubuntu cho "
+"bạn."
+
+#: slideshows/ubuntu/slides/welcome.html:5
+msgid "Ubuntu is designed to be easy. Feel free to explore!"
+msgstr "Ubuntu dùng rất dễ. Bạn đừng ngại khám phá nó một cách thọai mãi!"
+
+#~ msgid ""
+#~ "You can get at these tools in one place: the <em>Assistive Technologies "
+#~ "Preferences,</em> inside the System Menu. From there, you can turn on "
+#~ "helpful tools like <em>Orca,</em> to speak text on the screen, or dwell "
+#~ "click to press mouse buttons automatically."
+#~ msgstr ""
+#~ "Bạn có thể dùng những công cụ này ở cùng một nơi: mục <em>Tùy chỉnh Công "
+#~ "nghệ Tiếp cận,</em> trong trình đơn Hệ thống. Từ đó bạn có thể cho chạy "
+#~ "các công cụ hữu ích như <em>Orca,</em> để đọc văn bản trên màn hình hoặc "
+#~ "nhấp giữ để tự động nhấn nút chuột."
+
+#~ msgid ""
+#~ "Let us know about your Ubuntu Experience, or learn how to help out, at <a "
+#~ "href=\"http://ubuntu.com/community\">ubuntu.com/community</a>!"
+#~ msgstr ""
+#~ "Bạn muốn chia sẻ về những trải nghiệm của bạn với Ubuntu, hoặc muốn giúp "
+#~ "đỡ những người khác, hãy truy cập trang web <a href=\"http://ubuntu.com/"
+#~ "community\">ubuntu.com/community</a>!"
+
+#~ msgid ""
+#~ "<i>Need help?</i> Just click the blue question mark at the top of the "
+#~ "screen to access the Ubuntu Help Center."
+#~ msgstr ""
+#~ "<i>Bạn cần trợ giúp?</i> Chỉ cần nhấn vào dấu hỏi màu xanh trời ở phía "
+#~ "trên màn hình để truy cập vào Trung tâm Trợ giúp Ubuntu."
+
+#~ msgid ""
+#~ "<i>Can't find the answer?</i> The Ubuntu community provides extensive "
+#~ "free technical support. There is also commercial support available "
+#~ "through Canonical, its partners and approved companies. Learn more at <a "
+#~ "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
+#~ msgstr ""
+#~ "<i>Không tìm thấy câu trả lời?</i> Cộng đồng người dùng Ubuntu cung cấp "
+#~ "hỗ trợ kỹ thuật miễn phí. Ngoài ra, Canonical cùng các đối tác của mình "
+#~ "cũng cung cấp hỗ trợ thương mai. Để biết thêm, bạn có thể truy cập trang "
+#~ "web <a href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
+
+#~ msgid ""
+#~ "With <em>Empathy IM</em>, Ubuntu keeps you connected right from the "
+#~ "start. It works with all the major instant messaging networks, including "
+#~ "Google Talk, Windows Live and Jabber."
+#~ msgstr ""
+#~ "Dùng <em>Empathy IM</em>, Ubuntu giúp mọi người nối với nhau ngay lập "
+#~ "tức. Nó tương thích với các mạng trao đổi thông tin chính, như Google "
+#~ "Talk, Windows Live và Jabber."
+
+#~ msgid ""
+#~ "Choose Empathy from the Internet Applications menu to set up your "
+#~ "accounts."
+#~ msgstr "Chọn Empathy từ mục Ứng dụng - Mạng để thiết lập các tài khoản."
+
+#~ msgid ""
+#~ "<em>Evolution</em> is the fully-featured email and calendar software that "
+#~ "comes with Ubuntu. It connects to most email services, for example Gmail "
+#~ "and Yahoo."
+#~ msgstr ""
+#~ "<em>Evolution</em> là phần mềm gửi thư và lịch điện tử đi kèm với Ubuntu. "
+#~ "Nó có thể khai thác đa số các dịch điện thư, ví dụ như Gmail và Yahoo."
+
+#~ msgid ""
+#~ "Use tags to describe your photos. Later on, you can use the tags to find "
+#~ "a particular one."
+#~ msgstr ""
+#~ "Hãy dùng từ khóa với các ảnh chụp. Sau đó, nhờ các từ khóa bạn sẽ tìm lại "
+#~ "được một ảnh cụ thể."
+
+#~ msgid ""
+#~ "Take a look at the <em>Software Center</em> to install (and uninstall) "
+#~ "software from our online repository, which we carefully organize to be "
+#~ "safe and up to date."
+#~ msgstr ""
+#~ "Hãy mở <em>Trung tâm Phần mềm</em> để cài đặt (và gỡ bỏ) phần mềm từ các "
+#~ "kho phần mềm trực tuyến, là những kho phần mềm được tổ chức để bảo đảm "
+#~ "tính an tòan và cập nhật."
+
+#~ msgid ""
+#~ "OpenOffice.org works with documents for all the popular office "
+#~ "applications including WordPerfect and Microsoft Office. It uses the ISO "
+#~ "standard OpenDocument format by default."
+#~ msgstr ""
+#~ "OpenOffice.org có thể mở các tập tin đã được tạo ra bằng các ứng dụng văn "
+#~ "phòng chủ yếu, bao gồm Wordperfect và Microsoft Office. Định dạng tài "
+#~ "liệu mặc định của nó là định dạng tài liệu mở ODF, là một chuẩn quốc tế "
+#~ "ISO."
+
+#~ msgid ""
+#~ "Ubuntu is ready to play videos and music from the web and from DVDs. It "
+#~ "works straight away for the free and popular formats that people can use "
+#~ "without paying license fees."
+#~ msgstr ""
+#~ "Ubuntu sẵn chơi được video và nhạc trên web và từ DVD. Có thể dùng ngay "
+#~ "lập tức đối với các tệp định dạng mở phổ biến mà mọi người có thể dùng "
+#~ "không phải trả phí bản quyền."
+
+#~ msgid ""
+#~ "Ubuntu One is your personal cloud, providing 2 GB of essential storage "
+#~ "(and more if you need it)."
+#~ msgstr ""
+#~ "Ubuntu One dành cho bạn không gian cá nhân 2 GB (và hơn nếu cần) để bạn "
+#~ "lưư lại tệp trên mạng."

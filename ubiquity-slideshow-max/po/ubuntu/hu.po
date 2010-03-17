@@ -1,0 +1,470 @@
+# Hungarian translation for ubiquity-slideshow-ubuntu
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubiquity-slideshow-ubuntu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-17 20:58-0700\n"
+"PO-Revision-Date: 2010-02-12 21:33+0000\n"
+"Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-02-26 13:24+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: slideshows/ubuntu/slides/accessibility.html:1
+msgid "Accessibility in Ubuntu"
+msgstr "Akadálymentesítés az Ubuntuban"
+
+#: slideshows/ubuntu/slides/accessibility.html:2
+msgid ""
+"We want to make computers work for everyone, whatever your physical "
+"circumstances. So, we provide tools that make Ubuntu one of the most "
+"accessible operating systems around."
+msgstr ""
+"Azt szeretnénk, hogy a számítógépeket bárki használhassa, fizikai "
+"állapotától függetlenül. Ezért olyan eszközöket biztosítunk, amelyek az "
+"Ubuntut a legjobban akadálymentesített operációs rendszerek egyikévé teszik."
+
+#: slideshows/ubuntu/slides/accessibility.html:3
+msgid ""
+"You can get at these tools in one place: the <em>Assistive Technologies "
+"Preferences,</em> inside the System Menu. From there, you can turn on "
+"helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
+"click to press mouse buttons automatically."
+msgstr ""
+"Ezeket az eszközöket egy helyen érheti el: a Rendszer menü "
+"<em>Akadálymentesítési technológiák</em> pontjában. Itt bekapcsolhat olyan "
+"hasznos eszközöket, mint például az <em>Orca</em> képernyőolvasót a képernyő "
+"felolvasásához, vagy az elidőzési kattintást az egérgombok automatikus "
+"megnyomásához."
+
+#: slideshows/ubuntu/slides/accessibility.html:4
+msgid ""
+"Remember to check out the <em>Appearance Preferences</em>, too. You can "
+"choose between different visual styles and even change the fonts that are "
+"used by applications."
+msgstr ""
+"Ne feledje megnézni a <em>Megjelenés</em> beállítóeszközt sem. Ezzel "
+"különböző vizuális stílusok között válogathat, és módosíthatja az "
+"alkalmazások által használt betűkészleteket is."
+
+#: slideshows/ubuntu/slides/documentation.html:1
+msgid "Getting Help with Ubuntu"
+msgstr "Hogyan kaphat segítséget az Ubuntuhoz?"
+
+#: slideshows/ubuntu/slides/documentation.html:2
+msgid ""
+"If you need help, try <em>Help and Support</em> from the System menu, or the "
+"<em>Help</em> menu in most applications."
+msgstr ""
+
+#: slideshows/ubuntu/slides/documentation.html:3
+msgid ""
+"In addition to our extensive written help, the Ubuntu community provides "
+"free technical support in person and over the Internet. There is also "
+"commercial support available through Canonical, its partners and approved "
+"companies. Learn more at <a href=\"http://www.ubuntu.com/support\">ubuntu."
+"com/support</a>."
+msgstr ""
+
+#: slideshows/ubuntu/slides/documentation.html:4
+msgid ""
+"Let us know about your Ubuntu experience at <a href=\"http://ubuntu.com/"
+"community\">ubuntu.com/community</a>!"
+msgstr ""
+
+#: slideshows/ubuntu/slides/documentation.html:5
+msgid "The installation will finish soon. We hope you enjoy Ubuntu."
+msgstr ""
+"A telepítés a végéhez közeledik. Reméljük, élvezni fogja az Ubuntu "
+"használatát!"
+
+#: slideshows/ubuntu/slides/empathy.html:1
+msgid "Keep in contact with Empathy"
+msgstr "Maradjon kapcsolatban az Empathy segítségével"
+
+#: slideshows/ubuntu/slides/empathy.html:2
+msgid ""
+"With <em>Empathy</em>, Ubuntu keeps you connected right from the start. It "
+"works with all the major instant messaging networks, including Google Talk, "
+"Windows Live and Jabber."
+msgstr ""
+
+#: slideshows/ubuntu/slides/empathy.html:3
+msgid ""
+"New messages appear in the envelope to the left of the clock, so you can see "
+"what's happening at a glance."
+msgstr ""
+"Az új üzenetek az órától balra lévő borítékban jelennek meg, így mindig "
+"azonnal láthatja, mi történik."
+
+#: slideshows/ubuntu/slides/empathy.html:4
+msgid ""
+"Choose <em>Empathy IM Client</em> from the Internet Applications menu to set "
+"up your accounts."
+msgstr ""
+
+#: slideshows/ubuntu/slides/evolution.html:1
+msgid "Control your digital life with Evolution"
+msgstr "Irányítsa digitális életét az Evolutionnel"
+
+#: slideshows/ubuntu/slides/evolution.html:2
+msgid ""
+"<em>Evolution Mail</em> is the fully-featured email and calendar software "
+"that comes with Ubuntu. It connects to most email services, for example "
+"Gmail and Yahoo."
+msgstr ""
+
+#: slideshows/ubuntu/slides/evolution.html:3
+msgid ""
+"Advanced junk filtering and search tools make managing your mail a breeze."
+msgstr ""
+"A továbbfejlesztett levélszemét-szűrő és kereső gyerekjátékká teszi "
+"leveleinek kezelését."
+
+#: slideshows/ubuntu/slides/evolution.html:4
+msgid ""
+"Add your favorite Web calendars to see upcoming games or movie releases. To "
+"see your daily schedule, just click the clock at the top of your screen."
+msgstr ""
+"Vegye fel kedvenc webes naptárát a soron következő játék- vagy filmpremierek "
+"megjelenítéséhez. A napi időbeosztásának megtekintéséhez csak kattintson a "
+"képernyő tetején látható órára."
+
+#: slideshows/ubuntu/slides/firefox.html:1
+msgid "Browse the web with Firefox"
+msgstr "Szörfözzön az interneten a Firefox böngészővel"
+
+#: slideshows/ubuntu/slides/firefox.html:2
+#, fuzzy
+msgid "Ubuntu comes with the widely acclaimed <em>Firefox web browser</em>."
+msgstr ""
+"Az Ubuntu a széles körben használt <em>Firefox 3.5</em> böngészőprogramot "
+"kínálja."
+
+#: slideshows/ubuntu/slides/firefox.html:3
+msgid ""
+"It protects your privacy and personal information so you can surf worry free."
+msgstr ""
+"A Firefox megvédi magánszféráját és személyes adatait, így gondtalanul "
+"szörfözhet az interneten."
+
+#: slideshows/ubuntu/slides/firefox.html:4
+#, fuzzy
+msgid ""
+"Add your own personal note with add-ons. You can choose from thousands of "
+"themes and extensions that tailor Firefox to how you use the web."
+msgstr ""
+"Szabja testre ízlése szerint. A Firefox böngészőhöz ezernyi témát és "
+"kiegészítőt talál, amelyekkel internethasználati szokásaihoz igazíthatja."
+
+#: slideshows/ubuntu/slides/fspot.html:1
+msgid "Organize, enjoy, and share your photos"
+msgstr "Rendezze, élvezze és ossza meg fényképeit"
+
+#: slideshows/ubuntu/slides/fspot.html:2
+msgid ""
+"With <em>F-Spot Photo Manager</em>, it is really easy to share, touch-up and "
+"organize digital photos."
+msgstr ""
+"Az <em>F-Spot fotókezelő</em> segítségével könnyedén megoszthatja, "
+"feljavíthatja és rendszerezheti digitális fényképeit."
+
+#: slideshows/ubuntu/slides/fspot.html:3
+msgid ""
+"Use tags to describe your photos so that they are easy to find later on."
+msgstr ""
+
+#: slideshows/ubuntu/slides/fspot.html:4
+msgid ""
+"Use the Export option to write your photos to CDs, email them to friends or "
+"share them online."
+msgstr ""
+"Az exportálás funkció segítségével fotóit CD-re írhatja, elküldheti "
+"barátainak e-mailben, vagy megoszthatja az interneten."
+
+#: slideshows/ubuntu/slides/fspot.html:5
+msgid ""
+"To get started, choose F-Spot from the Graphics Applications menu or attach "
+"a digital camera and follow the prompts."
+msgstr ""
+"Az elinduláshoz válassza az „F-Spot fotókezelő” alkalmazást a „Grafika” "
+"menüből, vagy csatlakoztassa digitális fényképezőgépét, és kövesse a "
+"megjelenő utasításokat."
+
+#: slideshows/ubuntu/slides/installing-software.html:1
+msgid "Installing additional software"
+msgstr "További programok telepítése"
+
+#: slideshows/ubuntu/slides/installing-software.html:2
+msgid ""
+"Take a look at the <em>Ubuntu Software Center</em> to install (and remove) "
+"software from our online repository, which we carefully organize to be safe "
+"and up to date."
+msgstr ""
+
+#: slideshows/ubuntu/slides/installing-software.html:3
+msgid ""
+"There is great software for everything from creating music and movies to "
+"producing 3D models and exploring the universe."
+msgstr ""
+"Számos kiváló szoftver érhető el, a zene- és filmkészítő programoktól kezdve "
+"a térbeli modellezőkön át az univerzumot felfedező alkalmazásokig."
+
+#: slideshows/ubuntu/slides/installing-software.html:4
+msgid ""
+"If you need something that isn't available through us, find out if there is "
+"a Debian package or another repository available. That way, it will be "
+"really easy to install and you will receive automatic updates."
+msgstr ""
+"Ha tárolóinkban nem találja, amire szüksége van, akkor is elérhető lehet "
+"külső tárolóból. Ilyen módon a telepítés egyszerű marad, és automatikus "
+"frissítéseket is kap."
+
+#: slideshows/ubuntu/slides/openoffice.html:1
+msgid "Office tools at your fingertips"
+msgstr "A mindig elérhető irodai programcsomag"
+
+#: slideshows/ubuntu/slides/openoffice.html:2
+msgid ""
+"<em>OpenOffice.org</em> is a powerful office software suite that is very "
+"easy to learn."
+msgstr ""
+"Az <em>OpenOffice.org</em> egy hatékony irodai programcsomag, amelynek "
+"használatát igen könnyű elsajátítani."
+
+#: slideshows/ubuntu/slides/openoffice.html:3
+msgid ""
+"It is useful to create letters, presentations and spreadsheets, as well as "
+"diagrams and databases."
+msgstr ""
+"Egyszerűen hozhat létre vele leveleket, előadásokat és táblázatokat, "
+"valamint diagramokat és adatbázisokat is."
+
+#: slideshows/ubuntu/slides/openoffice.html:4
+#, fuzzy
+msgid ""
+"<em>OpenOffice.org</em> works with documents from other popular office "
+"applications including WordPerfect and Microsoft Office. It uses the "
+"standard OpenDocument format."
+msgstr ""
+"Az OpenOffice.org kezeli az összes elterjedt irodai alkalmazás "
+"dokumentumait, mint például a WordPerfect és a Microsoft Office. "
+"Alapértelmezett dokumentumformátuma az ISO szabványként elismert "
+"OpenDocument formátum."
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:1
+msgid "Music and movies in Ubuntu"
+msgstr "Zenék és filmek Ubuntu alatt"
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:2
+msgid ""
+"Ubuntu is ready to play videos and music from the web, from CDs and DVDs."
+msgstr ""
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:3
+msgid ""
+"<em>Rhythmbox Music Player</em> lets you organize your music and listen to "
+"Internet radio. It also keeps track of podcasts, to download new episodes of "
+"a show automatically."
+msgstr ""
+"A <em>Rhythmbox zenelejátszó</em> segítségével rendszerezheti kedvenc "
+"zenéit, hallgathatja internetes rádióit. A program segítségével követheti "
+"kedvenc podcastjait, és automatikusan letöltheti az új epizódokat."
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:4
+msgid ""
+"Plug in an MP3 player to start synchronizing your music collection, or "
+"insert a CD to copy its music to your computer."
+msgstr ""
+"Csatlakoztassa MP3 lejátszóját zenegyűjteményének szinkronizálásához, vagy "
+"helyezzen be egy CD-t a rajta lévő zene számítógépére másolásához."
+
+#: slideshows/ubuntu/slides/translations.html:1
+msgid "Ubuntu speaks fluently"
+msgstr "Az Ubuntu folyékonyan beszél magyarul"
+
+#: slideshows/ubuntu/slides/translations.html:2
+msgid "Ubuntu is available in many different languages."
+msgstr "Az Ubuntu számos különböző nyelven elérhető el."
+
+#: slideshows/ubuntu/slides/translations.html:3
+msgid "Simply select your language in Language Support Administration"
+msgstr ""
+"Egyszerűen válassza ki a kívánt nyelvet a Nyelvi támogatás alkalmazásban."
+
+#: slideshows/ubuntu/slides/translations.html:4
+msgid ""
+"Ubuntu's translations are contributed by our generous users. Feel free to "
+"help out at <a href=\"http://translations.launchpad.net/ubuntu\">launchpad."
+"net</a>."
+msgstr ""
+"Az Ubuntu fordításához nagylelkű felhasználóink járultak hozzá. A magyar "
+"fordítócsapat <a href=\"https://wiki.ubuntu.com/HungarianTeam/Translation"
+"\">wiki oldalán</a> megtudhatja, hogyan segíthet."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:1
+msgid "Store, sync and share with Ubuntu One"
+msgstr "Tárolja, szinkronizálja, és ossza meg fájljait az Ubuntu One-nal"
+
+#: slideshows/ubuntu/slides/ubuntuone.html:2
+msgid ""
+"<em>Ubuntu One</em> is your personal cloud, providing 2 GB of essential "
+"storage (and more if you need it)."
+msgstr ""
+
+#: slideshows/ubuntu/slides/ubuntuone.html:3
+msgid ""
+"Use it to back up, store and sync your files, as well as share them with "
+"other Ubuntu One users."
+msgstr ""
+"Használja biztonsági mentéshez, tároláshoz, szinkronizáláshoz, és ossza meg "
+"fájljait a többi Ubuntu One felhasználóval."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:4
+msgid ""
+"Your Tomboy notes and Evolution contacts are synced automatically across all "
+"of your computers."
+msgstr ""
+"A Tomboy jegyzettömb feljegyzései és az Evolution névjegyek automatikusan "
+"szinkronizálódnak az Ön által használt összes gépen."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:5
+msgid "Integration with your Ubuntu desktop makes sharing files easy."
+msgstr ""
+"Az Ubuntu asztali környezetébe épített támogatás egyszerűvé teszi a "
+"fájlmegosztást."
+
+#: slideshows/ubuntu/slides/welcome.html:1
+msgid "Welcome"
+msgstr "Üdvözöljük!"
+
+#: slideshows/ubuntu/slides/welcome.html:2
+#, fuzzy
+msgid "Thank you for choosing Ubuntu 10.04."
+msgstr "Köszönjük, hogy az Ubuntu 9.10 verzióját választotta."
+
+#: slideshows/ubuntu/slides/welcome.html:3
+msgid ""
+"We believe that every computer user should be able to work in the "
+"environment of their choice and be free to download, change, study and share "
+"this software for any purpose, without paying licensing fees."
+msgstr ""
+"Hiszünk benne, hogy minden felhasználó a saját maga által választott "
+"környezetben dolgozhat. Ez a szoftver a felhasználás céljától függetlenül, "
+"licencdíj fizetése nélkül szabadon letölthető, megváltoztatható, "
+"tanulmányozható és megosztható."
+
+#: slideshows/ubuntu/slides/welcome.html:4
+msgid ""
+"As part of our promise, we want Ubuntu to work as well for you as possible. "
+"So, while it installs, this slideshow will give you a quick introduction."
+msgstr ""
+"Ígéretünk részeként szeretnénk, ha az Ubuntu olyan jól működne Önnél, "
+"amennyire csak lehetséges. Tekintse meg a telepítés közben megjelenő "
+"bemutatót."
+
+#: slideshows/ubuntu/slides/welcome.html:5
+msgid "Ubuntu is designed to be easy. Feel free to explore!"
+msgstr ""
+"Az Ubuntut könnyen használhatónak terveztük. Fedezze fel a lehetőségeket!"
+
+#~ msgid ""
+#~ "You can get at these tools in one place: the <em>Assistive Technologies "
+#~ "Preferences,</em> inside the System Menu. From there, you can turn on "
+#~ "helpful tools like <em>Orca,</em> to speak text on the screen, or dwell "
+#~ "click to press mouse buttons automatically."
+#~ msgstr ""
+#~ "Ezek az eszközök egy központi helyről érhetők el: a fő rendszermenü "
+#~ "<em>Akadálymentesítési technológiák</em> menüpontjából."
+
+#~ msgid ""
+#~ "<i>Need help?</i> Just click the blue question mark at the top of the "
+#~ "screen to access the Ubuntu Help Center."
+#~ msgstr ""
+#~ "<i>Segítségre van szüksége?</i> Csak kattintson a képernyő tetején lévő "
+#~ "kék kérdőjelre az Ubuntu súgóközpont megnyitásához."
+
+#~ msgid ""
+#~ "Let us know about your Ubuntu Experience, or learn how to help out, at <a "
+#~ "href=\"http://ubuntu.com/community\">ubuntu.com/community</a>!"
+#~ msgstr ""
+#~ "Ossza meg velünk Ubuntuval szerzett tapasztalatait és ismerje meg, hogyan "
+#~ "segíthet másoknak. Látogassa meg a <a href=\"http://ubuntu.com/community"
+#~ "\">nemzetközi</a> vagy a <a href=\"http://ubuntu.hu/kozosseg\">magyar</a> "
+#~ "közösség weboldalát."
+
+#~ msgid ""
+#~ "<i>Can't find the answer?</i> The Ubuntu community provides extensive "
+#~ "free technical support. There is also commercial support available "
+#~ "through Canonical, its partners and approved companies. Learn more at <a "
+#~ "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
+#~ msgstr ""
+#~ "<i>Nem találja a választ?</i> Az  Ubuntu közösség kimerítő ingyenes "
+#~ "technikai támogatást biztosít. A Canonicalon, partnerein és a jóváhagyott "
+#~ "cégeken keresztül kereskedelmi támogatás is elérhető. További "
+#~ "információkért keresse fel az <a href=\"http://www.ubuntu.com/support"
+#~ "\">ubuntu.com/support</a> oldalt."
+
+#~ msgid ""
+#~ "Choose Empathy from the Internet Applications menu to set up your "
+#~ "accounts."
+#~ msgstr ""
+#~ "A fiókjainak beállításához válassza az Internet menü Empathy üzenetküldő "
+#~ "pontját."
+
+#~ msgid ""
+#~ "With <em>Empathy IM</em>, Ubuntu keeps you connected right from the "
+#~ "start. It works with all the major instant messaging networks, including "
+#~ "Google Talk, Windows Live and Jabber."
+#~ msgstr ""
+#~ "Az <em>Empathy üzenetküldő</em> segítségével az Ubuntu mindig kapcsolódva "
+#~ "tartja. Minden jelentős azonnaliüzenő-hálózattal működik, beleértve a "
+#~ "Google Talkot, az MSN-t és a Jabbert."
+
+#~ msgid ""
+#~ "<em>Evolution</em> is the fully-featured email and calendar software that "
+#~ "comes with Ubuntu. It connects to most email services, for example Gmail "
+#~ "and Yahoo."
+#~ msgstr ""
+#~ "Az Ubuntu által szállított <em>Evolution</em> egy teljes körű e-mail és "
+#~ "naptárprogram. Képes a legtöbb levelezési szolgáltatás, például a Gmail "
+#~ "és Yahoo rendszerek használatára is."
+
+#~ msgid ""
+#~ "Use tags to describe your photos. Later on, you can use the tags to find "
+#~ "a particular one."
+#~ msgstr ""
+#~ "Címkézze fel képeit. A későbbiekben a címkék segítségével gyorsan "
+#~ "megtalálhatók a kívánt fotók."
+
+#~ msgid ""
+#~ "Take a look at the <em>Software Center</em> to install (and uninstall) "
+#~ "software from our online repository, which we carefully organize to be "
+#~ "safe and up to date."
+#~ msgstr ""
+#~ "Vessen egy pillantást az <em>Ubuntu szoftverközpontra</em>, és telepítsen "
+#~ "számítógépére programokat online szoftvertárolónkból, amelyet "
+#~ "biztonságosan és naprakészen tartunk."
+
+#~ msgid ""
+#~ "Ubuntu is ready to play videos and music from the web and from DVDs. It "
+#~ "works straight away for the free and popular formats that people can use "
+#~ "without paying license fees."
+#~ msgstr ""
+#~ "Az Ubuntu képes az interneten és a DVD-ken található videók és zenék "
+#~ "lejátszására. A licencdíj fizetése nélkül is használható szabad és "
+#~ "népszerű formátumok azonnal lejátszhatók."
+
+#~ msgid ""
+#~ "Ubuntu One is your personal cloud, providing 2 GB of essential storage "
+#~ "(and more if you need it)."
+#~ msgstr ""
+#~ "Az Ubuntu One az Ön személyes adattároló felhője, amely 2 GB tárhelyet "
+#~ "biztosít (vagy igény esetén többet)."

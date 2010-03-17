@@ -1,0 +1,198 @@
+Ubuntu slideshow for Ubuntu ubiquity-slideshow-ubuntu
+
+Slideshow to display with the Ubiquity GTK front-end for Ubuntu
+<http://launchpad.net/ubiquity-slideshow-ubuntu>
+
+-----
+
+This project maintains slideshows which appear while installing Ubuntu
+or its derivatives. The one source package provides a number of Debian
+packages for Ubuntu, including ubiquity-slideshow-ubuntu,
+ubiquity-slideshow-ubuntu-upgrade and ubiquity-slideshow-kubuntu.
+
+This is associated with the ubiquity-slideshow group on Launchpad at
+<https://launchpad.net/~ubiquity-slideshow>.
+
+Constructive feedback on the group mailing list is always appreciated!
+
+Please also note the "COPYING", "AUTHORS" and "TODO" files in this
+directory, which all have cool stuff.
+
+
+----- Testing the slideshow
+
+The easiest way to test changes to the slideshow is to run
+./test-slideshow.sh. (Note: needs zenity, which is probably already
+installed). This will quickly build the slideshow with your changes and
+play it. Note that the test-slideshow script does not do localization.
+Testing localization is currently a more involved process.
+
+If you are using the awesome Ground Control, there will be a Test option
+and a (full) Build option when you open this project in Nautilus.
+Check out <http://launchpad.net/groundcontrol> for more information.
+
+
+----- Embedding a slideshow
+      (For example, in an installer)
+
+./Slideshow.py contains an example implementation. Slideshows are simple
+HTML documents and can be embedded with WebKit, Mozilla or any other
+browser widget that supports Javascript and CSS.
+
+The slideshow can be given some information via its URL. Append "#" and
+add attributes as key=value pairs, separated by "?". The following are
+recognized:
+
+?controls                Enables debugging controls
+?locale=LANG             Sets the locale. For example, locale=en_CA.
+?rtl                     Specifies whether to display text right-to-left.
+
+The slideshow expects to be passed a locale parameter, based on the
+current locale. It may fall back to English if the requested locale is not
+available.
+
+The rtl parameter should be added if that is the current text direction,
+since the slideshow will not do this automatically based on the locale.
+
+There is also an ini-style file (see ConfigParser) for each slideshow,
+called slideshow.conf. This contains two important variables inside the
+Slideshow section: width and height. This way, your implementation can
+find the specific size for its web widget and can choose whether to
+display a slideshow based on the available screen space.
+
+
+----- Editing slideshow content
+
+Each slideshow is inside the ./slideshows directory. These are created
+with HTML, CSS and Javascript. They all share the link-core directory in
+common. This directory has some Javascript files which should be used.
+Most important is slideshow.js, which makes some assumptions about the
+structure of the HTML file it is in to create a slideshow that follows the
+conventions outlined previously.
+
+To actually edit a slideshow, simply open up the appropriate directory for
+the slideshow, then slides. Each slide will be its own file — for example,
+ubuntu/slides/welcome.html. The file index.html will contain a list of
+these slides. If a slide is added or removed, that file should be edited
+as well.
+
+Just pull open a slide in your favourite text editor and have fun.
+
+Be sure to test out your creations! The easiest way is to open up
+index.html in your web browser, then add #controls to the end of the URL
+and refresh. Note that generated images (the fancy icons) will not appear
+like this, but you can get a feel for how text fits in.
+
+In the end, you can build the slideshow using the make command from the
+base of this project (where this README is). The results should appear
+inside the ./build directory.
+
+You may notice some HTML comments (<!-- comment -->) in existing slides.
+These curently do nothing, but in the future they will appear as notes for
+translators. If you write something that may be confusing for them, please
+leave a comment in the same fashion.
+
+
+----- Editing slideshow design
+
+For each slideshow, the visual design can be customized. First of all,
+notice that each slideshow inside the ./slideshows directory has a file
+called slideshow.conf. If you change the dimensions of the slideshow, make
+sure to edit this.
+
+Each slideshow also (usually) has a slides/link directory with a CSS file
+and some graphics that can be customized.
+
+Of course, the entire thing can be completely redone, too! For more in
+depth tinkering, you can edit index.html. Just make sure the general
+structure of the document is the same.
+
+In the <head>, we need a link to directory.js and every js file in
+link-core.
+
+index.html also needs a block called container, containing another block
+named slideshow, which lists all the slides as
+<div><a href="slide" class="load"></a></div>
+
+A block with id="debug-controls", and widgets with id="prev-slide" and
+id="next-slide" will be handled automatically to produce the debugging
+controls that appear when #?controls is added to the url.
+
+Outside of those requirements, this should be fairly flexible. Have fun!
+
+
+----- Adding / editing images
+
+Adding images is something that individual slideshows have a lot of
+freedom with; the underlying system doesn't mind how this happens. There
+are a few things to note, though:
+
+* It is nice to have the source of each image (eg: SVG file) in the
+images-source directory if we are making any changes.
+
+* If an image comes from an external source, please attribute its author
+and specify its license in debian/copyright.
+
+* If a common effect is being applied to multiple images, consider
+creating an automated script and placing it under the images-source
+directory. For example, with the Ubuntu slideshow we have a script called
+generate-reflected-pngs.sh which, with a GIMP script, adds a fuzzy
+reflection to some SVG images and exports them as PNGs.
+
+
+----- Localization
+
+A .pot file is generated for each slideshow. One .pot file contains
+the strings from every slide in the slideshow.
+We routinely gather the translations (in the form of .po files) and add
+them to the ./po directory. The build script in ./generate-local-slides.sh
+automatically generates slides for each translation using po2html.
+
+The underlying structure is a bit convoluted, but the good news is this:
+Actually making translations for this project is very conventional. You
+can simply head over to the Ubuntu source package on Launchpad and submit
+new strings.
+<http://translations.launchpad.net/ubuntu/+source/ubiquity-slideshow-ubuntu>
+We will gather the results and merge them back into the project for
+releases.
+
+
+----- Other handy scripts
+
+First of all, the slideshow can be built by running make. This uses the
+Makefile, which in our case is a fairly straight-forward shell script.
+Each slideshow gets its own rule in the Makefile which runs the
+appropriate other scripts for the final output to ./build.
+
+./Slideshow.py: Tests the slideshow (after it has been built) in a GUI
+similar to Ubiquity's installation progress window.
+Run ./Slideshow.py --help from a command line to see some additional
+parameters it will take.
+By default, opens the slideshow in ./build/ubuntu.
+
+./test-slideshow.sh: Slightly easier way of running Slideshow.py, for
+quick tests.
+
+./generate-pot-files.sh: When slideshow content has been edited, this can
+be run to produce new .pot files (for translators) reflecting that
+content. There is probably no need to do this yourself, though; the people
+who push those .pot files to Rosetta will do it.
+
+
+----- Musing on writing style
+
+* We can assume that the user has chosen to install Ubuntu willingly. That
+person is now an Ubuntu user and doesn't need to be sold on it further.
+The sales-person voice should not exist here. If you start to hear that
+voice, file a bug immediately.
+
+* Avoid the car instruction manual voice where possible. That is, try not
+to tell people where specific features are, but what they can expect to
+find. This is because the slideshow won't follow our users everywhere,
+so we have to answer a different question: "What next?"
+If we fixate on pressing buttons, the lessons will not stick :)
+
+* Please try to keep things neat, tidy and short. In a lot of cases we can
+trust our viewers to find things on their own as long as we show them
+where to start, so it's possible for a single slide to do quite a bit.
+

@@ -1,0 +1,466 @@
+# Polish translation for ubiquity-slideshow-ubuntu
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubiquity-slideshow-ubuntu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-17 20:58-0700\n"
+"PO-Revision-Date: 2009-12-10 12:05+0000\n"
+"Last-Translator: Tomasz Dominikowski <dominikowski@gmail.com>\n"
+"Language-Team: Polish <pl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-02-26 13:24+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: slideshows/ubuntu/slides/accessibility.html:1
+msgid "Accessibility in Ubuntu"
+msgstr "Dostępność w Ubuntu"
+
+#: slideshows/ubuntu/slides/accessibility.html:2
+msgid ""
+"We want to make computers work for everyone, whatever your physical "
+"circumstances. So, we provide tools that make Ubuntu one of the most "
+"accessible operating systems around."
+msgstr ""
+"Chcemy, aby komputery były dostępne dla każdego, niezależnie od warunków "
+"fizycznych. Dostarczamy więc narzędzia, które sprawiają, że Ubuntu jest "
+"jednym z najbardziej dostępnych systemów operacyjnych na rynku."
+
+#: slideshows/ubuntu/slides/accessibility.html:3
+msgid ""
+"You can get at these tools in one place: the <em>Assistive Technologies "
+"Preferences,</em> inside the System Menu. From there, you can turn on "
+"helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
+"click to press mouse buttons automatically."
+msgstr ""
+
+#: slideshows/ubuntu/slides/accessibility.html:4
+msgid ""
+"Remember to check out the <em>Appearance Preferences</em>, too. You can "
+"choose between different visual styles and even change the fonts that are "
+"used by applications."
+msgstr ""
+"Proszę też pamiętać o preferencjach <em>Wyglądu</em>. Można wybierać spośród "
+"różnych motywów graficznych, a także zmienić czcionki używane przez programy."
+
+#: slideshows/ubuntu/slides/documentation.html:1
+msgid "Getting Help with Ubuntu"
+msgstr "Uzyskiwanie pomocy z Ubuntu"
+
+#: slideshows/ubuntu/slides/documentation.html:2
+msgid ""
+"If you need help, try <em>Help and Support</em> from the System menu, or the "
+"<em>Help</em> menu in most applications."
+msgstr ""
+
+#: slideshows/ubuntu/slides/documentation.html:3
+msgid ""
+"In addition to our extensive written help, the Ubuntu community provides "
+"free technical support in person and over the Internet. There is also "
+"commercial support available through Canonical, its partners and approved "
+"companies. Learn more at <a href=\"http://www.ubuntu.com/support\">ubuntu."
+"com/support</a>."
+msgstr ""
+
+#: slideshows/ubuntu/slides/documentation.html:4
+msgid ""
+"Let us know about your Ubuntu experience at <a href=\"http://ubuntu.com/"
+"community\">ubuntu.com/community</a>!"
+msgstr ""
+
+#: slideshows/ubuntu/slides/documentation.html:5
+msgid "The installation will finish soon. We hope you enjoy Ubuntu."
+msgstr ""
+"Instalacja zostanie wkrótce ukończona. Mamy nadzieję, że używanie Ubuntu "
+"sprawi tobie wiele radości."
+
+#: slideshows/ubuntu/slides/empathy.html:1
+msgid "Keep in contact with Empathy"
+msgstr "W kontakcie dzięki komunikatorowi Empathy"
+
+#: slideshows/ubuntu/slides/empathy.html:2
+msgid ""
+"With <em>Empathy</em>, Ubuntu keeps you connected right from the start. It "
+"works with all the major instant messaging networks, including Google Talk, "
+"Windows Live and Jabber."
+msgstr ""
+
+#: slideshows/ubuntu/slides/empathy.html:3
+msgid ""
+"New messages appear in the envelope to the left of the clock, so you can see "
+"what's happening at a glance."
+msgstr ""
+"Nowe wiadomości pojawiają się jako koperta obok zegara, więc można od razu "
+"zorientować się w sytuacji."
+
+#: slideshows/ubuntu/slides/empathy.html:4
+msgid ""
+"Choose <em>Empathy IM Client</em> from the Internet Applications menu to set "
+"up your accounts."
+msgstr ""
+
+#: slideshows/ubuntu/slides/evolution.html:1
+msgid "Control your digital life with Evolution"
+msgstr "Zarządzanie cyfrowym życiem z programem Evolution"
+
+#: slideshows/ubuntu/slides/evolution.html:2
+msgid ""
+"<em>Evolution Mail</em> is the fully-featured email and calendar software "
+"that comes with Ubuntu. It connects to most email services, for example "
+"Gmail and Yahoo."
+msgstr ""
+
+#: slideshows/ubuntu/slides/evolution.html:3
+msgid ""
+"Advanced junk filtering and search tools make managing your mail a breeze."
+msgstr ""
+"Zaawansowane filtrowanie niechcianej poczty i narzędzia do wyszukiwania "
+"sprawiają, że zarządzanie pocztą to pestka."
+
+#: slideshows/ubuntu/slides/evolution.html:4
+msgid ""
+"Add your favorite Web calendars to see upcoming games or movie releases. To "
+"see your daily schedule, just click the clock at the top of your screen."
+msgstr ""
+"Można dodawać swoje ulubione kalendarze z usług sieciowych, aby dodać "
+"nadchodzące wydania gier lub filmów. Aby wyświetlić swój dzienny rozkład "
+"zajęć wystarczy kliknąć na zegar u góry ekranu."
+
+#: slideshows/ubuntu/slides/firefox.html:1
+msgid "Browse the web with Firefox"
+msgstr "Przeglądanie stron WWW z przeglądarką Firefox"
+
+#: slideshows/ubuntu/slides/firefox.html:2
+#, fuzzy
+msgid "Ubuntu comes with the widely acclaimed <em>Firefox web browser</em>."
+msgstr ""
+"System Ubuntu jest dostarczany z szeroko rozpowszechnioną przeglądarką stron "
+"WWW <em>Firefox 3.5</em>."
+
+#: slideshows/ubuntu/slides/firefox.html:3
+msgid ""
+"It protects your privacy and personal information so you can surf worry free."
+msgstr ""
+"Przeglądarka ta chroni prywatność i dane prywatne użytkownika, dzięki czemu "
+"można przeglądać strony bez dodatkowych zmartwień."
+
+#: slideshows/ubuntu/slides/firefox.html:4
+#, fuzzy
+msgid ""
+"Add your own personal note with add-ons. You can choose from thousands of "
+"themes and extensions that tailor Firefox to how you use the web."
+msgstr ""
+"Przeglądarce Firefox można nadać własny akcent. Można wybierać spośród "
+"tysięcy motywów i dodatków, aby dopasować ją do własnych wymagań."
+
+#: slideshows/ubuntu/slides/fspot.html:1
+msgid "Organize, enjoy, and share your photos"
+msgstr "Organizowanie i dzielenie się swoimi zdjęciami"
+
+#: slideshows/ubuntu/slides/fspot.html:2
+msgid ""
+"With <em>F-Spot Photo Manager</em>, it is really easy to share, touch-up and "
+"organize digital photos."
+msgstr ""
+"Za pomocą <em>Menedżera zdjęć F-Spot</em> można w łatwy sposób współdzielić, "
+"edytować i organizować swoje cyfrowe zdjęcia."
+
+#: slideshows/ubuntu/slides/fspot.html:3
+msgid ""
+"Use tags to describe your photos so that they are easy to find later on."
+msgstr ""
+
+#: slideshows/ubuntu/slides/fspot.html:4
+msgid ""
+"Use the Export option to write your photos to CDs, email them to friends or "
+"share them online."
+msgstr ""
+"Można używać opcji eksportowania do nagrywania zdjęć na płyty CD, wysyłania "
+"ich pocztą e-mail do znajomych lub współdzielenia w Internecie."
+
+#: slideshows/ubuntu/slides/fspot.html:5
+msgid ""
+"To get started, choose F-Spot from the Graphics Applications menu or attach "
+"a digital camera and follow the prompts."
+msgstr ""
+"Aby rozpocząć zabawę z programem należy wybrać Menedżer zdjęć F-Spot z menu "
+"Programy - Grafika lub podłączyć aparat cyfrowy do komputera."
+
+#: slideshows/ubuntu/slides/installing-software.html:1
+msgid "Installing additional software"
+msgstr "Instalowanie dodatkowego oprogramowania"
+
+#: slideshows/ubuntu/slides/installing-software.html:2
+msgid ""
+"Take a look at the <em>Ubuntu Software Center</em> to install (and remove) "
+"software from our online repository, which we carefully organize to be safe "
+"and up to date."
+msgstr ""
+
+#: slideshows/ubuntu/slides/installing-software.html:3
+msgid ""
+"There is great software for everything from creating music and movies to "
+"producing 3D models and exploring the universe."
+msgstr ""
+"Dostępne są świetne programy do każdego zastosowania, od tworzenia muzyki i "
+"filmów, po projektowanie modeli 3D i odkrywanie wszechświata."
+
+#: slideshows/ubuntu/slides/installing-software.html:4
+msgid ""
+"If you need something that isn't available through us, find out if there is "
+"a Debian package or another repository available. That way, it will be "
+"really easy to install and you will receive automatic updates."
+msgstr ""
+"Jeśli jakiegoś programu nie ma w naszych repozytoriach, to wystarczy "
+"odszukać jego pakiet Debiana lub sprawdzić, czy dostępne jest inne "
+"repozytorium. W ten sposób naprawdę łatwo zainstalować oprogramowanie i "
+"otrzymywać automatyczne aktualizacje."
+
+#: slideshows/ubuntu/slides/openoffice.html:1
+msgid "Office tools at your fingertips"
+msgstr "Narzędzia biurowe w zasięgu ręki"
+
+#: slideshows/ubuntu/slides/openoffice.html:2
+msgid ""
+"<em>OpenOffice.org</em> is a powerful office software suite that is very "
+"easy to learn."
+msgstr ""
+"<em>OpenOffice.org</em> to potężny pakiet biurowy, którego obsługi łatwo się "
+"nauczyć."
+
+#: slideshows/ubuntu/slides/openoffice.html:3
+msgid ""
+"It is useful to create letters, presentations and spreadsheets, as well as "
+"diagrams and databases."
+msgstr ""
+"Można go używać do tworzenia listów, prezentacji, arkuszy kalkulacyjnych, a "
+"także diagramów i baz danych."
+
+#: slideshows/ubuntu/slides/openoffice.html:4
+#, fuzzy
+msgid ""
+"<em>OpenOffice.org</em> works with documents from other popular office "
+"applications including WordPerfect and Microsoft Office. It uses the "
+"standard OpenDocument format."
+msgstr ""
+"Pakiet OpenOffice.org współpracuje z dokumentami innych popularnych "
+"programów biurowych, takich jak WordPerfect i Microsoft Office. Domyślnie "
+"używa formatu OpenDocument, który jest standardem ISO."
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:1
+msgid "Music and movies in Ubuntu"
+msgstr "Muzyka i filmy w Ubuntu"
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:2
+msgid ""
+"Ubuntu is ready to play videos and music from the web, from CDs and DVDs."
+msgstr ""
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:3
+msgid ""
+"<em>Rhythmbox Music Player</em> lets you organize your music and listen to "
+"Internet radio. It also keeps track of podcasts, to download new episodes of "
+"a show automatically."
+msgstr ""
+"<em>Odtwarzacz muzyki Rhythmbox</em> pozwala na organizowanie muzyki i "
+"odtwarzanie radia internetowego. Śledzi także źródła podcastów i pobiera "
+"nowe odcinki automatycznie."
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:4
+msgid ""
+"Plug in an MP3 player to start synchronizing your music collection, or "
+"insert a CD to copy its music to your computer."
+msgstr ""
+"Podłącz odtwarzacz MP3, aby rozpocząć synchronizację kolekcji muzycznej lub "
+"wsuń płytę CD, aby skopiować jej zawartość do komputera."
+
+#: slideshows/ubuntu/slides/translations.html:1
+msgid "Ubuntu speaks fluently"
+msgstr "Ubuntu mówi płynnie"
+
+#: slideshows/ubuntu/slides/translations.html:2
+msgid "Ubuntu is available in many different languages."
+msgstr "System Ubuntu jest dostępny w wielu językach."
+
+#: slideshows/ubuntu/slides/translations.html:3
+msgid "Simply select your language in Language Support Administration"
+msgstr ""
+"Wystarczy wybrać żądany język w menu Administracja - Języki (Administration "
+"- Language Support)."
+
+#: slideshows/ubuntu/slides/translations.html:4
+msgid ""
+"Ubuntu's translations are contributed by our generous users. Feel free to "
+"help out at <a href=\"http://translations.launchpad.net/ubuntu\">launchpad."
+"net</a>."
+msgstr ""
+"Tłumaczenia systemu Ubuntu są dostarczane przez naszych hojnych "
+"użytkowników. Można im pomóc, więcej informacji znajduje się na stronie <a "
+"href=\"http://translations.launchpad.net/ubuntu\">launchpad.net</a>."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:1
+msgid "Store, sync and share with Ubuntu One"
+msgstr "Przechowywanie, synchronizowanie i współdzielenie z usługą Ubuntu One"
+
+#: slideshows/ubuntu/slides/ubuntuone.html:2
+msgid ""
+"<em>Ubuntu One</em> is your personal cloud, providing 2 GB of essential "
+"storage (and more if you need it)."
+msgstr ""
+
+#: slideshows/ubuntu/slides/ubuntuone.html:3
+msgid ""
+"Use it to back up, store and sync your files, as well as share them with "
+"other Ubuntu One users."
+msgstr ""
+"Można jej używać do przechowywania, synchronizowania i współdzielenia plików "
+"z innymi użytkownikami usługi Ubuntu One."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:4
+msgid ""
+"Your Tomboy notes and Evolution contacts are synced automatically across all "
+"of your computers."
+msgstr ""
+"Notatki Tomboy i kontakty z programu Evolution są automatycznie "
+"synchronizowane z każdym komputerem użytkownika."
+
+#: slideshows/ubuntu/slides/ubuntuone.html:5
+msgid "Integration with your Ubuntu desktop makes sharing files easy."
+msgstr ""
+"Integracja z systemem Ubuntu powoduje, że współdzielenie plików jest łatwe."
+
+#: slideshows/ubuntu/slides/welcome.html:1
+msgid "Welcome"
+msgstr "Witamy"
+
+#: slideshows/ubuntu/slides/welcome.html:2
+#, fuzzy
+msgid "Thank you for choosing Ubuntu 10.04."
+msgstr "Dziękujemy za wybranie Ubuntu 9.10."
+
+#: slideshows/ubuntu/slides/welcome.html:3
+msgid ""
+"We believe that every computer user should be able to work in the "
+"environment of their choice and be free to download, change, study and share "
+"this software for any purpose, without paying licensing fees."
+msgstr ""
+"Sądzimy, że każdy użytkownik komputera powinien mieć możliwość pracy w "
+"wybranym przez siebie środowisku, a środowisko to powinno być dostępne do "
+"pobrania za darmo oraz zmieniane, analizowane i współdzielone w dowolnym "
+"celu, bez opłat licencyjnych."
+
+#: slideshows/ubuntu/slides/welcome.html:4
+msgid ""
+"As part of our promise, we want Ubuntu to work as well for you as possible. "
+"So, while it installs, this slideshow will give you a quick introduction."
+msgstr ""
+"Jako część naszej obietnicy pragniemy, aby Ubuntu działało jak najlepiej to "
+"tylko możliwe. Podczas instalacji ten pokaz slajdów będzie wyświetlany jako "
+"krótki wstęp do systemu."
+
+#: slideshows/ubuntu/slides/welcome.html:5
+msgid "Ubuntu is designed to be easy. Feel free to explore!"
+msgstr ""
+"Ubuntu zostało zaprojektowane tak, aby było proste w użytkowaniu. Droga do "
+"eksploracji jest wolna!"
+
+#~ msgid ""
+#~ "You can get at these tools in one place: the <em>Assistive Technologies "
+#~ "Preferences,</em> inside the System Menu. From there, you can turn on "
+#~ "helpful tools like <em>Orca,</em> to speak text on the screen, or dwell "
+#~ "click to press mouse buttons automatically."
+#~ msgstr ""
+#~ "Dostęp do tych narzędzi można uzyskać w jednym miejscu: <em>Technologie "
+#~ "wspierające</em> w menu systemowym. Tam też można włączyć takie pomocne "
+#~ "narzędzia jak syntezator mowy <em>Orca</em> lub klikanie spoczynkowe do "
+#~ "automatycznego naciskania przycisków myszy."
+
+#~ msgid ""
+#~ "<i>Need help?</i> Just click the blue question mark at the top of the "
+#~ "screen to access the Ubuntu Help Center."
+#~ msgstr ""
+#~ "<i>Potrzebna pomoc?</i> Wystarczy kliknąć na niebieski znak zapytania na "
+#~ "górze ekranu, aby uzyskać dostęp do Centrum pomocy Ubuntu."
+
+#~ msgid ""
+#~ "<i>Can't find the answer?</i> The Ubuntu community provides extensive "
+#~ "free technical support. There is also commercial support available "
+#~ "through Canonical, its partners and approved companies. Learn more at <a "
+#~ "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
+#~ msgstr ""
+#~ "<i>Brak odpowiedzi na pytanie?</i> Społeczność Ubuntu dostarcza obszerną, "
+#~ "darmową pomoc techniczną. Dostępna jest także pomoc komercyjna poprzez "
+#~ "Canonical, jej partnerów i zatwierdzone firmy. Więcej informacji znajduje "
+#~ "się na stronie <a href=\"http://www.ubuntu.com/support\">ubuntu.com/"
+#~ "support</a>."
+
+#~ msgid ""
+#~ "Let us know about your Ubuntu Experience, or learn how to help out, at <a "
+#~ "href=\"http://ubuntu.com/community\">ubuntu.com/community</a>!"
+#~ msgstr ""
+#~ "Daj nam znać o własnych doświadczeniach z Ubuntu lub dowiedz się jak nam "
+#~ "pomóc na stronie <a href=\"http://ubuntu.com/community\">ubuntu.com/"
+#~ "community</a>!"
+
+#~ msgid ""
+#~ "Choose Empathy from the Internet Applications menu to set up your "
+#~ "accounts."
+#~ msgstr ""
+#~ "Aby ustawić konta należy wybrać Komunikator Empathy z menu Programy - "
+#~ "Internet."
+
+#~ msgid ""
+#~ "With <em>Empathy IM</em>, Ubuntu keeps you connected right from the "
+#~ "start. It works with all the major instant messaging networks, including "
+#~ "Google Talk, Windows Live and Jabber."
+#~ msgstr ""
+#~ "Za pomocą programu <em>Empathy</em> Ubuntu umożliwia łączność od samego "
+#~ "początku. Działa z większością popularnych sieci, włącznie z Google Talk, "
+#~ "Windows Live i Jabber."
+
+#~ msgid ""
+#~ "<em>Evolution</em> is the fully-featured email and calendar software that "
+#~ "comes with Ubuntu. It connects to most email services, for example Gmail "
+#~ "and Yahoo."
+#~ msgstr ""
+#~ "<em>Evolution</em> to w pełni wyposażone oprogramowanie do obsługi poczty "
+#~ "e-mail oraz zarządzania kalendarzem, dołączane do systemu Ubuntu.  Łączy "
+#~ "się z większością usług poczty e-mail, np. z Gmail i Yahoo."
+
+#~ msgid ""
+#~ "Use tags to describe your photos. Later on, you can use the tags to find "
+#~ "a particular one."
+#~ msgstr ""
+#~ "Można używać etykiet do opisywania swoich zdjęć. Później można ich używać "
+#~ "w trakcie wyszukiwania."
+
+#~ msgid ""
+#~ "Take a look at the <em>Software Center</em> to install (and uninstall) "
+#~ "software from our online repository, which we carefully organize to be "
+#~ "safe and up to date."
+#~ msgstr ""
+#~ "Proponujemy zajrzeć do <em>Centrum oprogramowania</em>, aby zainstalować "
+#~ "(lub odinstalować) oprogramowanie z repozytorium online. Oprogramowanie "
+#~ "zostało dobrane tak, aby było bezpieczne i aktualne."
+
+#~ msgid ""
+#~ "Ubuntu is ready to play videos and music from the web and from DVDs. It "
+#~ "works straight away for the free and popular formats that people can use "
+#~ "without paying license fees."
+#~ msgstr ""
+#~ "System Ubuntu jest gotowy do odtwarzania filmów i muzyki ze stron WWW, a "
+#~ "także z płyt DVD. Funkcjonalność ta jest dostępna standardowo w przypadku "
+#~ "wolnych i popularnych formatów, które mogą być używane bez płacenia za "
+#~ "licencje."
+
+#~ msgid ""
+#~ "Ubuntu One is your personal cloud, providing 2 GB of essential storage "
+#~ "(and more if you need it)."
+#~ msgstr ""
+#~ "Usługa Ubuntu One to osobista przestrzeń w Internecie, zapewniająca 2 GB "
+#~ "miejsca (i więcej, jeśli potrzeba)."

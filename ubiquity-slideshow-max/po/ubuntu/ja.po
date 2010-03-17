@@ -1,0 +1,459 @@
+# Japanese translation for ubiquity-slideshow-ubuntu
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubiquity-slideshow-ubuntu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-17 20:58-0700\n"
+"PO-Revision-Date: 2009-12-10 12:05+0000\n"
+"Last-Translator: Fumihito YOSHIDA <hito@kugutsu.org>\n"
+"Language-Team: Japanese <ja@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-02-26 13:24+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: slideshows/ubuntu/slides/accessibility.html:1
+msgid "Accessibility in Ubuntu"
+msgstr "Ubuntuのアクセシビリティ"
+
+#: slideshows/ubuntu/slides/accessibility.html:2
+msgid ""
+"We want to make computers work for everyone, whatever your physical "
+"circumstances. So, we provide tools that make Ubuntu one of the most "
+"accessible operating systems around."
+msgstr ""
+"私たちは、身体的な事情を抱えていても、誰もがコンピュータを利用できるよう願っ"
+"ています。そのため、私たちはツールを提供し、Ubuntu を世の中で最もアクセシブル"
+"なオペレーティングシステムとして送り出しています。"
+
+#: slideshows/ubuntu/slides/accessibility.html:3
+msgid ""
+"You can get at these tools in one place: the <em>Assistive Technologies "
+"Preferences,</em> inside the System Menu. From there, you can turn on "
+"helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
+"click to press mouse buttons automatically."
+msgstr ""
+
+#: slideshows/ubuntu/slides/accessibility.html:4
+msgid ""
+"Remember to check out the <em>Appearance Preferences</em>, too. You can "
+"choose between different visual styles and even change the fonts that are "
+"used by applications."
+msgstr ""
+"<em>外観の設定</em> も忘れずに確認してください。見た目の変更が行えます。ま"
+"た、アプリケーションで使用するフォントの変更なども、ここから行うことができま"
+"す。"
+
+#: slideshows/ubuntu/slides/documentation.html:1
+msgid "Getting Help with Ubuntu"
+msgstr "Ubuntuに関するヘルプ"
+
+#: slideshows/ubuntu/slides/documentation.html:2
+msgid ""
+"If you need help, try <em>Help and Support</em> from the System menu, or the "
+"<em>Help</em> menu in most applications."
+msgstr ""
+
+#: slideshows/ubuntu/slides/documentation.html:3
+msgid ""
+"In addition to our extensive written help, the Ubuntu community provides "
+"free technical support in person and over the Internet. There is also "
+"commercial support available through Canonical, its partners and approved "
+"companies. Learn more at <a href=\"http://www.ubuntu.com/support\">ubuntu."
+"com/support</a>."
+msgstr ""
+
+#: slideshows/ubuntu/slides/documentation.html:4
+msgid ""
+"Let us know about your Ubuntu experience at <a href=\"http://ubuntu.com/"
+"community\">ubuntu.com/community</a>!"
+msgstr ""
+
+#: slideshows/ubuntu/slides/documentation.html:5
+msgid "The installation will finish soon. We hope you enjoy Ubuntu."
+msgstr "まもなくインストールは終了します。Ubuntuを楽しんで頂ければ幸いです。"
+
+#: slideshows/ubuntu/slides/empathy.html:1
+msgid "Keep in contact with Empathy"
+msgstr "Empathyで連絡を取り合いましょう"
+
+#: slideshows/ubuntu/slides/empathy.html:2
+msgid ""
+"With <em>Empathy</em>, Ubuntu keeps you connected right from the start. It "
+"works with all the major instant messaging networks, including Google Talk, "
+"Windows Live and Jabber."
+msgstr ""
+
+#: slideshows/ubuntu/slides/empathy.html:3
+msgid ""
+"New messages appear in the envelope to the left of the clock, so you can see "
+"what's happening at a glance."
+msgstr ""
+"時計の左にある封筒アイコンに新しいメッセージが表示されますので、一目見ただけ"
+"で何が起こったか判ります。"
+
+#: slideshows/ubuntu/slides/empathy.html:4
+msgid ""
+"Choose <em>Empathy IM Client</em> from the Internet Applications menu to set "
+"up your accounts."
+msgstr ""
+
+#: slideshows/ubuntu/slides/evolution.html:1
+msgid "Control your digital life with Evolution"
+msgstr "Evolutionでデジタルライフを管理する"
+
+#: slideshows/ubuntu/slides/evolution.html:2
+msgid ""
+"<em>Evolution Mail</em> is the fully-featured email and calendar software "
+"that comes with Ubuntu. It connects to most email services, for example "
+"Gmail and Yahoo."
+msgstr ""
+
+#: slideshows/ubuntu/slides/evolution.html:3
+msgid ""
+"Advanced junk filtering and search tools make managing your mail a breeze."
+msgstr ""
+"先進的なスパムメールフィルタと検索ツールを利用することで、メールが整理しきれ"
+"ない状態になることを防ぎます。"
+
+#: slideshows/ubuntu/slides/evolution.html:4
+msgid ""
+"Add your favorite Web calendars to see upcoming games or movie releases. To "
+"see your daily schedule, just click the clock at the top of your screen."
+msgstr ""
+"好きなWebカレンダーを追加して、ゲームの発売日や映画の公開日をチェックできま"
+"す。毎日のスケジュールを参照するには、画面上部の時計をクリックするだけです。"
+
+#: slideshows/ubuntu/slides/firefox.html:1
+msgid "Browse the web with Firefox"
+msgstr "Firefoxによるウェブブラウジング"
+
+#: slideshows/ubuntu/slides/firefox.html:2
+#, fuzzy
+msgid "Ubuntu comes with the widely acclaimed <em>Firefox web browser</em>."
+msgstr ""
+"Ubuntu は広く絶賛されている <em>Firefox 3.5</em> ウェブブラウザを採用していま"
+"す。"
+
+#: slideshows/ubuntu/slides/firefox.html:3
+msgid ""
+"It protects your privacy and personal information so you can surf worry free."
+msgstr ""
+"プライバシーと個人情報が守られるため、安心してネットサーフィンすることができ"
+"ます。"
+
+#: slideshows/ubuntu/slides/firefox.html:4
+#, fuzzy
+msgid ""
+"Add your own personal note with add-ons. You can choose from thousands of "
+"themes and extensions that tailor Firefox to how you use the web."
+msgstr ""
+"Firefox には数千ものテーマとアドオンが用意されており、あなたに合わせてカスタ"
+"マイズできることを覚えておいてください。"
+
+#: slideshows/ubuntu/slides/fspot.html:1
+msgid "Organize, enjoy, and share your photos"
+msgstr "写真を整理し、楽しみ、共有しましょう"
+
+#: slideshows/ubuntu/slides/fspot.html:2
+msgid ""
+"With <em>F-Spot Photo Manager</em>, it is really easy to share, touch-up and "
+"organize digital photos."
+msgstr ""
+"<em>F-Spot フォトマネージャ</em> を使うと、デジタル写真の共有・修正・整理がと"
+"ても簡単に行えます。"
+
+#: slideshows/ubuntu/slides/fspot.html:3
+msgid ""
+"Use tags to describe your photos so that they are easy to find later on."
+msgstr ""
+
+#: slideshows/ubuntu/slides/fspot.html:4
+msgid ""
+"Use the Export option to write your photos to CDs, email them to friends or "
+"share them online."
+msgstr ""
+"写真を CD に書き込んだり、友達にメールで送信したり、オンラインで共有する場合"
+"は出力オプションを利用してください。"
+
+#: slideshows/ubuntu/slides/fspot.html:5
+msgid ""
+"To get started, choose F-Spot from the Graphics Applications menu or attach "
+"a digital camera and follow the prompts."
+msgstr ""
+"始めるには、アプリケーションのグラフィックのメニューから F-Spot を選択する"
+"か、デジカメを接続して指示に従ってください。"
+
+#: slideshows/ubuntu/slides/installing-software.html:1
+msgid "Installing additional software"
+msgstr "ソフトウェアの追加インストール"
+
+#: slideshows/ubuntu/slides/installing-software.html:2
+msgid ""
+"Take a look at the <em>Ubuntu Software Center</em> to install (and remove) "
+"software from our online repository, which we carefully organize to be safe "
+"and up to date."
+msgstr ""
+
+#: slideshows/ubuntu/slides/installing-software.html:3
+msgid ""
+"There is great software for everything from creating music and movies to "
+"producing 3D models and exploring the universe."
+msgstr ""
+"Ubuntuには、音楽や動画の作成に始まり、3Dモデル製作や宇宙探索に至るまで、各種"
+"のすばらしいソフトウェアが用意されています。"
+
+#: slideshows/ubuntu/slides/installing-software.html:4
+msgid ""
+"If you need something that isn't available through us, find out if there is "
+"a Debian package or another repository available. That way, it will be "
+"really easy to install and you will receive automatic updates."
+msgstr ""
+"私たちの提供していない何らかのソフトウェアが必要であれば、Debian パッケージま"
+"たは他のリポジトリが利用できないか探してみてください。パッケージを使うこと"
+"で、とても簡単にインストールしたり自動的にアップデートを受け取ることができま"
+"す。"
+
+#: slideshows/ubuntu/slides/openoffice.html:1
+msgid "Office tools at your fingertips"
+msgstr "すぐに使い始められるオフィスソフトウェア"
+
+#: slideshows/ubuntu/slides/openoffice.html:2
+msgid ""
+"<em>OpenOffice.org</em> is a powerful office software suite that is very "
+"easy to learn."
+msgstr ""
+"<em>OpenOffice.org</em> はとても習得しやすい強力なオフィスソフトウェア・ス"
+"イートです。"
+
+#: slideshows/ubuntu/slides/openoffice.html:3
+msgid ""
+"It is useful to create letters, presentations and spreadsheets, as well as "
+"diagrams and databases."
+msgstr ""
+"文章やプレゼンテーションやスプレッドシート、さらには図形やデータベースを作成"
+"するのにも役立ちます。"
+
+#: slideshows/ubuntu/slides/openoffice.html:4
+#, fuzzy
+msgid ""
+"<em>OpenOffice.org</em> works with documents from other popular office "
+"applications including WordPerfect and Microsoft Office. It uses the "
+"standard OpenDocument format."
+msgstr ""
+"OpenOffice.org は WordPerfect や Microsoft Office を含む、多くの有名なオフィ"
+"スアプリケーションの文書ファイルを扱えます。標準では ISO標準 OpenDocument 形"
+"式で保存されます。"
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:1
+msgid "Music and movies in Ubuntu"
+msgstr "Ubuntu での音楽/動画再生"
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:2
+msgid ""
+"Ubuntu is ready to play videos and music from the web, from CDs and DVDs."
+msgstr ""
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:3
+msgid ""
+"<em>Rhythmbox Music Player</em> lets you organize your music and listen to "
+"Internet radio. It also keeps track of podcasts, to download new episodes of "
+"a show automatically."
+msgstr ""
+"<em>Rhythmbox ミュージック・プレイヤー</em> では音楽を整理したりインターネッ"
+"トラジオを聞くことができます。また、新しいエピソードを自動的にダウンロードし"
+"て Podcast を最新に保つこともできます。"
+
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:4
+msgid ""
+"Plug in an MP3 player to start synchronizing your music collection, or "
+"insert a CD to copy its music to your computer."
+msgstr ""
+"音楽コレクションの同期を開始するには、お使いの携帯 MP3 プレイヤーを接続してく"
+"ださい。また、コンピュータに音楽を取り込みたければ、CDを挿入してください。"
+
+#: slideshows/ubuntu/slides/translations.html:1
+msgid "Ubuntu speaks fluently"
+msgstr "Ubuntuは流暢です"
+
+#: slideshows/ubuntu/slides/translations.html:2
+msgid "Ubuntu is available in many different languages."
+msgstr "Ubuntuは、多くの異なる言語に対応しています。"
+
+#: slideshows/ubuntu/slides/translations.html:3
+msgid "Simply select your language in Language Support Administration"
+msgstr ""
+"設定は簡単で、［言語サポート］の管理画面で、使いたい言語を選択するだけです。"
+
+#: slideshows/ubuntu/slides/translations.html:4
+msgid ""
+"Ubuntu's translations are contributed by our generous users. Feel free to "
+"help out at <a href=\"http://translations.launchpad.net/ubuntu\">launchpad."
+"net</a>."
+msgstr ""
+"Ubuntuの翻訳は、多くのユーザーの手で行われています。<a href=\"http://"
+"translations.launchpad.net/ubuntu\">launchpad.net</a>上で、気軽に翻訳を行うこ"
+"とができます。"
+
+#: slideshows/ubuntu/slides/ubuntuone.html:1
+msgid "Store, sync and share with Ubuntu One"
+msgstr "Ubuntu One で保存・同期・共有しましょう"
+
+#: slideshows/ubuntu/slides/ubuntuone.html:2
+msgid ""
+"<em>Ubuntu One</em> is your personal cloud, providing 2 GB of essential "
+"storage (and more if you need it)."
+msgstr ""
+
+#: slideshows/ubuntu/slides/ubuntuone.html:3
+msgid ""
+"Use it to back up, store and sync your files, as well as share them with "
+"other Ubuntu One users."
+msgstr ""
+"これを利用してあなたのファイルをバックアップ・保存・同期できますし、他の "
+"Ubuntu One ユーザ とファイルを共有することもできます。"
+
+#: slideshows/ubuntu/slides/ubuntuone.html:4
+msgid ""
+"Your Tomboy notes and Evolution contacts are synced automatically across all "
+"of your computers."
+msgstr ""
+"Tomboy のメモや Evolution のコンタクトは、あなたの全てのコンピュータ間で自動"
+"的に同期されます。"
+
+#: slideshows/ubuntu/slides/ubuntuone.html:5
+msgid "Integration with your Ubuntu desktop makes sharing files easy."
+msgstr "Ubuntu デスクトップに統合すれば、ファイルを簡単に共有できます。"
+
+#: slideshows/ubuntu/slides/welcome.html:1
+msgid "Welcome"
+msgstr "ようこそ"
+
+#: slideshows/ubuntu/slides/welcome.html:2
+#, fuzzy
+msgid "Thank you for choosing Ubuntu 10.04."
+msgstr "Ubuntu 9.10を手にとって頂き、ありがとうございます。"
+
+#: slideshows/ubuntu/slides/welcome.html:3
+msgid ""
+"We believe that every computer user should be able to work in the "
+"environment of their choice and be free to download, change, study and share "
+"this software for any purpose, without paying licensing fees."
+msgstr ""
+"全てのコンピュータのユーザは、自分が利用する環境として、自分の選んだものを使"
+"う自由があります。私たちは、どんな目的であれ、ライセンス料なしにこのソフト"
+"ウェアを自由にダウンロード・改変・学習・共有ができるべきだと考えています。"
+
+#: slideshows/ubuntu/slides/welcome.html:4
+msgid ""
+"As part of our promise, we want Ubuntu to work as well for you as possible. "
+"So, while it installs, this slideshow will give you a quick introduction."
+msgstr ""
+"私たちの希望のひとつは、「Ubuntu ができる限りあなたにとって役立つこと」です。"
+"\r\n"
+"インストール中に表示されるこのスライドショーが、あなたの作業の助けになること"
+"を願っています。"
+
+#: slideshows/ubuntu/slides/welcome.html:5
+msgid "Ubuntu is designed to be easy. Feel free to explore!"
+msgstr "Ubuntuは簡単に扱えるように設計されています。探検してみてください！"
+
+#~ msgid ""
+#~ "You can get at these tools in one place: the <em>Assistive Technologies "
+#~ "Preferences,</em> inside the System Menu. From there, you can turn on "
+#~ "helpful tools like <em>Orca,</em> to speak text on the screen, or dwell "
+#~ "click to press mouse buttons automatically."
+#~ msgstr ""
+#~ "これらのツールは、次の場所にまとめられています: システムメニューの中の "
+#~ "<em>支援技術</em>。ここから、画面上のテキストを読み上げる <em>Orca</em> "
+#~ "や、マウスボタンを自動的に押す自動クリック といった役立つツールを有効にす"
+#~ "ることができます。"
+
+#~ msgid ""
+#~ "<i>Need help?</i> Just click the blue question mark at the top of the "
+#~ "screen to access the Ubuntu Help Center."
+#~ msgstr ""
+#~ "<i>ヘルプが必要ですか?</i> 画面の上部にある青いクエスチョンマークをクリッ"
+#~ "クしてUbuntuヘルプセンターを参照してください。"
+
+#~ msgid ""
+#~ "Let us know about your Ubuntu Experience, or learn how to help out, at <a "
+#~ "href=\"http://ubuntu.com/community\">ubuntu.com/community</a>!"
+#~ msgstr ""
+#~ "<a href=\"http://ubuntu.com/community\">ubuntu.com/community</a>であなたが"
+#~ "Ubuntuで体験したことを知らせたり、どのような協力ができるか知ってみましょ"
+#~ "う！"
+
+#~ msgid ""
+#~ "<i>Can't find the answer?</i> The Ubuntu community provides extensive "
+#~ "free technical support. There is also commercial support available "
+#~ "through Canonical, its partners and approved companies. Learn more at <a "
+#~ "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
+#~ msgstr ""
+#~ "<i>答えが見つかりませんか?</i> Ubuntuコミュニティは、多くのテクニカルサ"
+#~ "ポートを提供します。Canonicalやそのパートナー、および認可された会社を通じ"
+#~ "て利用可能な商用サポートもあります。<a href=\"http://www.ubuntu.com/"
+#~ "support\">ubuntu.com/support</a> でより詳しい内容を知ることができます。"
+
+#~ msgid ""
+#~ "Choose Empathy from the Internet Applications menu to set up your "
+#~ "accounts."
+#~ msgstr ""
+#~ "メニューのアプリケーション → インターネットから Empathy を選択してアカウン"
+#~ "トを設定してください。"
+
+#~ msgid ""
+#~ "With <em>Empathy IM</em>, Ubuntu keeps you connected right from the "
+#~ "start. It works with all the major instant messaging networks, including "
+#~ "Google Talk, Windows Live and Jabber."
+#~ msgstr ""
+#~ "<em>Empathy インスタント・メッセンジャー</em> を使うと、Ubuntuで最初からす"
+#~ "ぐに連絡を取り合うことができます。Empathy は Google Talk や Windows Live、"
+#~ "Jabber を含む、すべての主要なインスタント・メッセージネットワークも利用で"
+#~ "きます。"
+
+#~ msgid ""
+#~ "<em>Evolution</em> is the fully-featured email and calendar software that "
+#~ "comes with Ubuntu. It connects to most email services, for example Gmail "
+#~ "and Yahoo."
+#~ msgstr ""
+#~ "<em>Evolution</em> は Ubuntu で提供されている多機能な Eメールとカレンダー"
+#~ "ソフトウェアです。Gmail や Yahooといった、多くのEメールサービスに接続でき"
+#~ "ます。"
+
+#~ msgid ""
+#~ "Use tags to describe your photos. Later on, you can use the tags to find "
+#~ "a particular one."
+#~ msgstr ""
+#~ "自分の写真についてのタグを付けてください。あとで特定の写真を探すときには、"
+#~ "付けたタグで検索することができます。"
+
+#~ msgid ""
+#~ "Take a look at the <em>Software Center</em> to install (and uninstall) "
+#~ "software from our online repository, which we carefully organize to be "
+#~ "safe and up to date."
+#~ msgstr ""
+#~ "<em>ソフトウェアセンター</em> を起動してみてください。オンラインリポジトリ"
+#~ "からソフトウェアをインストール(アンインストール)できます。リポジトリは安全"
+#~ "で最新なものであるよう、慎重に構築しています。"
+
+#~ msgid ""
+#~ "Ubuntu is ready to play videos and music from the web and from DVDs. It "
+#~ "works straight away for the free and popular formats that people can use "
+#~ "without paying license fees."
+#~ msgstr ""
+#~ "Ubuntu は ウェブ や DVD から映像や音楽を再生することができます。フリーある"
+#~ "いは一般的なフォーマット形式で、ライセンス料を払わずに誰でも利用できるもの"
+#~ "なら、そのままの状態で利用することができます。"
+
+#~ msgid ""
+#~ "Ubuntu One is your personal cloud, providing 2 GB of essential storage "
+#~ "(and more if you need it)."
+#~ msgstr ""
+#~ "Ubuntu One は個人向けのクラウドサービスで、初期容量として 2 GB が提供され"
+#~ "ます。(必要なら、より多くの容量に増強もできます)"
