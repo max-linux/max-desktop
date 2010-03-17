@@ -1,3 +1,16 @@
+max-tablet (6.0.max1) max; urgency=low
+
+  * Change verison to 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Mar 2010 12:13:44 +0100
+
+max-tablet (5.0.max4) max; urgency=low
+
+  * Build in MaX 6.0
+  * Depends => Recomends wacom-tools (not avalaible in lucid)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Feb 2010 19:32:47 +0100
+
 max-tablet (5.0.max3) max; urgency=low
 
   * Disable xorg.conf hacks in HP tabletPC
