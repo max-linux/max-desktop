@@ -2,8 +2,8 @@ Source: max-java
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.0.0), cdbs
-Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 7.0.0), cdbs
+Standards-Version: 3.8.4
 
 Package: max-java-jre
 Architecture: i386 amd64
