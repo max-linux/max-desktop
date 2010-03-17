@@ -1,0 +1,424 @@
+max-ubufox (0.8-0ubuntumax5) max; urgency=low
+
+  * Fix homepage about:home
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 06 Mar 2010 17:08:52 +0100
+
+max-ubufox (0.8-0ubuntumax4) max; urgency=low
+
+  * Fix content css path
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 06 Mar 2010 15:30:24 +0100
+
+max-ubufox (0.8-0ubuntumax3) max; urgency=low
+
+  * Not conflicts with max-firefox-conf
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 15 Feb 2010 15:51:33 +0100
+
+max-ubufox (0.8-0ubuntumax2) max; urgency=low
+
+  * Install bookmarsk with dpsyco
+  * Include MaX startpage.html in chrome
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 15 Feb 2010 15:47:27 +0100
+
+max-ubufox (0.8-0ubuntumax1) max; urgency=low
+
+  * Build for MaX 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 15 Feb 2010 14:45:20 +0100
+
+ubufox (0.8-0ubuntu1) karmic; urgency=low
+
+  New upstream release 0.8:
+  * fix LP: #437604 - [pl-PL] Polish translation update for ubufox [attached];
+    applying translations submitted by Tomasz Dominikowski
+  * fix LP: #427697 - Ubufox links to Firefox 3.0 bugs and answers
+    on Karmic; the fix involves replacing all hard coded firefox
+    version strings in overlay.js with getAppVersion(); this fixes
+    "get help", "translate ..." and "report a problem" menu items.
+  * fix LP: #447148 - Manage Content Plugins menu item disabled when no
+    plugins active; never disable the menu item and open the wizard with
+    "All plugins" radio preselected if there are no plugins in use on the
+    current active tab
+  * fix LP:# 440987 - add ubuntu 9.10 to plugin db creation script and drop 7.10
+  * move plugin finder webservice to mozilla-pfs.ubuntu.com
+
+ -- Alexander Sack <asac@ubuntu.com>  Mon, 12 Oct 2009 16:02:46 +0200
+
+ubufox (0.8~b1-0ubuntu1) karmic; urgency=low
+
+  New upstream release 0.8b1 fixes:
+  * fix: LP: #365965 - installing firefox pulls in ubufox and all gnome depends
+    through apturl; we add alternative Depends on apturl-kde to make ubufox kde
+    friendlier
+    - update debian/control
+  * fix LP: #423438 - ubufox can't use apturl on karmic; honour shebang by
+    calling command directly rather than the python interpreter. Thx to Micah
+    Gersten who provided the upstream fix.
+    - update content/pluginInstallerService.js
+  * fix LP: #403581 - restart required notification and button not shown
+    in ffox 3.5; support multiple versions of in updateRestart.js; we use runtime
+    application info from extIApplication.version
+    - update content/updateRestart.js
+  * fix LP: #411222 - restart required notification should be shown with
+    less delay; checking for restart notification every 5 seconds (was 10 before) now
+    - update content/updateRestart.js
+  * fix LP: #429937 - plugin alternative wizard not available if there is no
+    plugin content detected; don't disable "Manage Content Addons" initially;
+    the dialog even makes sense if there is plugin content used atm.
+    - update content/ubuntuAltpluginsOverlay.xul
+  * fix LP: #399229 - update ubufox strings from 9.04 to 9.10 in various places
+    + update releasenotes url in locale/*/ubufox.properties
+    + update HOMEPAGE_ONLINE in startpage.html
+    + update plugin finder service database url in ubufox-pfs.js
+    + update gethelp and translate urls in overlay.js
+    + update execute command to use firefox rather than firefox-3.0 in overlay.js
+    + include karmic sources in plugin db creation
+      - add pfs/db/sources.list.9.10
+  * support firefox 3.6 and 3.7 restart required feature and set maxVersion
+    to 3.7.*
+    - update content/updateRestart.js
+    - update install.rdf   
+
+ -- Alexander Sack <asac@ubuntu.com>  Tue, 15 Sep 2009 12:18:32 +0200
+
+ubufox (0.8~a1-0ubuntu1) karmic; urgency=low
+
+  * new upstream snapshot 0.8a1 for karmic; fixes:
+    - LP: #363798 - ubufox can't install adobe flash plugin on 64-bit jaunty live-cd
+    - LP: #371800 - Ubufox should list Adobe flash as first choice
+    - LP: #347972 - Does not work with Shiretoko Web Browser (Firefox 3.5)
+    - LP: #394737 - Cannot be installed with firefox-3.5
+  * LP: #399227 - update karmic homepage to http://start.ubuntu.com/9.10
+    - update content/startpage.html
+
+ -- Alexander Sack <asac@ubuntu.com>  Tue, 14 Jul 2009 13:05:08 +0200
+
+ubufox (0.7-0ubuntu1) jaunty; urgency=low
+
+  * ubufox 0.7 final release
+    + fix plugin finder urls to properly point to 9.04 distributionID
+      - update ./defaults/preferences/ubufox-pfs.js
+    + using the localstore.rdf in the users profile as a source for the startup
+      time turned out to be too unreliable; we drop that approach and use nsCategoryManager singleton to
+      store a timestamp pretty close to the actual startup time; this fixes the infamous infinit startup
+      notification bug (LP: #270303)
+      - update content/updateRestart.js
+    + add pfsdb meta file sources.list for 9.04 (jaunty)
+      - add pfs/db/sources.list.9.04
+    + revert changes from revno 149 to ubuntu-mods.js preferences that broke
+      localization of websites (LP: #353924)
+      - update defaults/preferences/ubuntu-mods.js
+    + properly fallback to not-localized useragent.locale pref
+      - update content/startpage.html
+
+ -- Alexander Sack <asac@ubuntu.com>  Tue, 14 Apr 2009 12:00:58 +0200
+
+ubufox (0.7~rc1-0ubuntu1) jaunty; urgency=low
+
+  * new upstream release 0.7rc1 for jaunty
+
+ -- Alexander Sack <asac@ubuntu.com>  Thu, 19 Mar 2009 00:02:39 +0100
+
+ubufox (0.7~b1-0ubuntu1) jaunty; urgency=low
+
+  * new upstream snapshot 0.7b1 for jaunty
+  * add .bzr-builddeb/default.conf and define proper upstream revid for
+    easy tarball export
+
+ -- Alexander Sack <asac@ubuntu.com>  Wed, 18 Feb 2009 21:41:40 +0100
+
+ubufox (0.6-0ubuntu3) UNRELEASED; urgency=low
+
+  * LP: #281348 - Firefox only shows default icons in toolbars with tabmixplus
+    and ubufox installed; we cherry pick rev 148 from lp:ubufox tree
+    - update content/alternatePlugins.js
+
+ -- Alexander Sack <asac@ubuntu.com>  Tue, 02 Dec 2008 01:34:17 +0100
+
+ubufox (0.6-0ubuntu2) jaunty; urgency=low
+
+    + LP: #291417 - Installing Plugins on LiveCD - No description found in
+      plugin database; we fix distributionID in pfs.datasource.url pref.
+      - update defaults/preferences/ubufox-pfs.js
+
+ -- Alexander Sack <asac@ubuntu.com>  Mon, 01 Dec 2008 11:43:28 +0100
+
+ubufox (0.6-0ubuntu1) intrepid; urgency=low
+
+  * ubufox release 0.6 (lp:ubufox / bzr 145)
+    + point gethelp and translate help menu entries to intrepid
+      - update content/overlay.js
+    + Fix LP: #283517; ubufox 0.6pre lacks translations for new strings;
+      update all translations sent in for 0.6 release; thanks to all
+      translators and a special thank to Saïvann Carignan <oxmosys@gmail.com>
+      for his work on verifying and driving the contributions.
+
+  * fix LP: #259914 - prefs in ubufox extension override system prefs;
+    to fix we ship /etc/firefox-3.0/pref/ubufox.js where admins can place their
+    system prefs and link it properly to the global ubufox defaults
+    preferences directory
+    - add debian/ubufox.js
+    - update debian/rules
+  * more for fix LP: #259914: we ship proper example for global homepage and
+    adjust the example in the global ubufox.js accordingly
+    - add debian/docs
+    - add debian/example-homepage.properties
+    - update debian/ubufox.js
+
+ -- Alexander Sack <asac@ubuntu.com>  Tue, 21 Oct 2008 16:29:49 +0200
+
+ubufox (0.6~pre+bzr141-0ubuntu1) intrepid; urgency=low
+
+  * ubufox release candidate 0.6 (lp:ubufox / bzr 139);
+  * New features in ubufox 0.6:
+    - firefox restart notification on upgrade
+    - improved plugin wizard
+    - plugin alternative wizard lets you select a preferred plugin
+      for a specific mime-type
+  * elminate all cherry picked changes since beta1
+    - (cherry-pick rev 111 from lp:ubufox)
+    - (cherry-pick rev 112 from lp:ubufox)
+    - (cherry-pick rev 113 from lp:ubufox)
+    - (cherry-pick rev 114 from lp:ubufox)
+    - (cherry-pick rev 116 from lp:ubufox)
+    - (cherry-pick rev 115 from lp:ubufox)
+
+ -- Alexander Sack <asac@ubuntu.com>  Wed, 15 Oct 2008 00:34:23 +0200
+
+ubufox (0.6~b1-0ubuntu4) intrepid; urgency=low
+
+  (cherry-pick rev 116 from lp:ubufox)
+  * fix LP: #273948 - restart notification broken for locales that lack
+    restart notification string translation; we put 'restart' notification
+    strings in their own .properties file to prevent breakage due to partial
+    ubufox.properties files for non en-US languages and adjust files that
+    refernce the new strings accordingly.
+    - add locale/en-US/ubufox-restart.properties
+    - update content/updateRestart.js
+    - update content/updateRestart.xul
+    - update locale/en-US/ubufox.properties
+
+ -- Alexander Sack <asac@ubuntu.com>  Wed, 24 Sep 2008 18:50:51 +0200
+
+ubufox (0.6~b1-0ubuntu3) intrepid; urgency=low
+
+  (cherry-pick rev 112 from lp:ubufox)
+  * fix LP: #269656 - AN IRRELEVANT LICENSE IS PRESENTED TO YOU
+    FREE-OF-CHARGE ON STARTUP; we backout the infamous firstrun feature 
+    (reverse apply rev 103)
+    - update content/overlay.js
+    - update defaults/preferences/ubufox.js
+    - remove content/mozeula.html
+
+  * fix LP: #272772: packages that Depend/Recommend/Suggest firefox
+    (meta-package) must alternatively Depend/Recommend/Suggest abrowser
+    - update debian/control
+
+  (cherry-pick rev 113 from lp:ubufox)
+  * set all translations for startup.homepage_override_url and
+    startup.homepage_welcome_url to about:blank; this prevents firstrun
+    and milestone pages to appear
+    - update locale/*/ubufox.properties
+
+  (cherry-pick rev 114 from lp:ubufox)
+  * HOMEPAGE_ONLINE now points to ubuntu 8.10 release startpage
+    - update content/startpage.html
+
+  (cherry-pick rev 115 from lp:ubufox)
+  * dont make alternate plugin binding break flashblock; our
+    bindings are not \!important anymore
+    - update content/alternatePluginsBinding.css
+
+ -- Alexander Sack <asac@ubuntu.com>  Tue, 23 Sep 2008 17:48:53 +0200
+
+ubufox (0.6~b1-0ubuntu2) intrepid; urgency=low
+
+  (cherry-pick rev 111 from lp:ubufox)
+  * reintroduce general.useragent.locale pref dropped in 0.6~b1.
+    Without that pref the current startpage.html
+    breaks and displays a blank page. LP: #271443
+    - update defaults/preferences/ubuntu-mods.js
+
+ -- Alexander Sack <asac@ubuntu.com>  Wed, 17 Sep 2008 20:53:43 +0200
+
+ubufox (0.6~b1-0ubuntu1) intrepid; urgency=low
+
+  [ Luis Arias ]
+  * MERGE 0.6~b1 release from lp:ubufox
+
+ -- Alexander Sack <asac@ubuntu.com>  Fri, 12 Sep 2008 12:02:19 +0200
+
+ubufox (0.5-0ubuntu1) hardy; urgency=low
+
+  * bump version to 0.5 final
+    - update install.rdf
+
+ -- Alexander Sack <asac@ubuntu.com>  Sun, 20 Apr 2008 14:17:40 +0200
+
+ubufox (0.5~rc2-0ubuntu1) hardy; urgency=low
+
+  * New ubufox release 0.5~rc2:
+    - ships a hybrid startpage that reliably detects online/offline state
+      and redirects to online/offline version of startpage accordingly.
+    - use distributionID in pfs url to allow plugin finder web service to
+      return distinct results depending on the distro the user is running.
+    - add uk (ukrainian) translation
+    - fix locale mapping for italian language (LP: #212446) by Damiano
+      Dallatana
+      + update chrome.manifest
+ 
+ -- Alexander Sack <asac@ubuntu.com>  Mon, 14 Apr 2008 09:59:02 +0200
+
+ubufox (0.5~rc1-0ubuntu1) hardy; urgency=low
+
+  Upstream Changes integrated
+  * make apturl dependency versioned (>= 0.1.2ubuntu1) - LP: #162609
+  * multi distro capability of DB creation script and web service
+    (LP: #204435, #177514)
+  * simplify ffox 3 code for dispatching NewPluginInstalled events
+  * fix plugin Installer Wizard for ffox 3 (LP: #202790)
+  * point ubufoxReportBug to firefox-3.0 source package
+  * point online help and translate menu entry to firefox-3.0 package and hardy
+    distribution (LP: #138968, #203729)
+  * merge greek-translation contributed by Athanasios Lefteris
+  * LP: #139380, #175969 - merge translations contributed by ubuntu community;
+    thanks to Saïvann Carignan for his work on collecting and integrating most
+    of them.
+    - Added Greek locale - submitted by Athanasios Lefteris (LP: #211404)
+    - add Slovenian locale
+    - add Swedish locale (LP: #207666)
+    - add Portuguese locale
+    - add Lithuanian locale (LP: #206133)
+    - add Italian locale (LP: #207372)
+      + fix mispelled word in Italian translation
+    - add Afrikaans locale (LP: #206733)
+    - add fr-FR and fr-CA translations
+    - add polish translations (LP: #202248)
+  * merge fix for LP: #176658 - by Saïvann Carignan <oxmosys@gmail.com>
+    - fix ubufox to use the png icon
+
+  Package changes:
+  * append &distributionID=8.04 to pfs.datasource.url shipped as defaults
+    preference
+    - update defaults/preferences/ubufox-pfs.js
+
+ -- Alexander Sack <asac@ubuntu.com>  Sat, 05 Apr 2008 06:35:40 +0200
+
+ubufox (0.5~beta2.1-0ubuntu1) hardy; urgency=low
+
+  * merge 0.5 beta 2.1 from upstream branch
+   - backout hybrid startup page to fix alternating home page for users with
+     high latency connections
+
+ -- Alexander Sack <asac@ubuntu.com>  Thu, 13 Mar 2008 22:15:39 +0100
+
+ubufox (0.5~beta2-0ubuntu3) hardy; urgency=low
+
+  * remove ubufox@ubuntu.com directories in /usr/lib/firefox/extensions
+    and /usr/lib/firefox-addons/extensions to prepare the install of links
+    to /usr/share/ubufox/ instead
+    - add debian/preinst
+
+ -- Alexander Sack <asac@ubuntu.com>  Thu, 13 Mar 2008 16:59:38 +0100
+
+ubufox (0.5~beta2-0ubuntu2) hardy; urgency=low
+
+  * fix ftbfs: add zip to build dependencies
+    - update debian/control
+
+ -- Alexander Sack <asac@ubuntu.com>  Thu, 13 Mar 2008 15:40:37 +0100
+
+ubufox (0.5~beta2-0ubuntu1) hardy; urgency=low
+
+  * new upstream release v0.5 beta2
+    - includes ask.com as searchplugin
+    - redirects to (localized) hybrid igoogle default startpage if user is
+      online.
+  * switch to mozilla-devscripts xpi.mk for building this extension
+    - update debian/control
+    - update debian/rules
+  * xpi.mk automizes all; drop debhelper files
+    - remove debian/ubufox.install
+    - remove debian/ubufox.dirs
+  * added translations fi-FI and ru-RU (thanks to Daniel Abramov)
+
+ -- Alexander Sack <asac@ubuntu.com>  Thu, 13 Mar 2008 12:19:52 +0100
+
+ubufox (0.5~beta1-0ubuntu1) hardy; urgency=low
+
+  * support firefox 3 and 2 from the same package
+    - update debian/ubufox.dirs
+    - update debian/ubufox.install
+    - update debian/control
+  * drop All patches shipped in ubuntu diff.gz
+    - drop debian/patches/lp139380_ubufox_add_finnish_translation.patch
+    - drop debian/patches/lp134426_prepatch_fix_pluginfinder_runs_forever.patch
+    - drop debian/patches/lp123713_addon_description_fix.patch
+    - drop debian/patches/fix_broken_radiobutton_command.patch
+    - update debian/patches/series
+
+ -- Alexander Sack <asac@ubuntu.com>  Wed, 13 Feb 2008 18:53:15 +0100
+
+ubufox (0.4~beta1-0ubuntu4) gutsy; urgency=low
+
+  * Improve Description of package/extension (LP: #123713):
+    - debian/patches/lp123713_addon_description_fix.patch,series: patch
+      install.rdf to improve description in addons dialog.
+    - debian/control: improve package description.
+  * debian/patches/lp139380_ubufox_add_finnish_translation.patch,series:
+    - add finish translation to ubufox (LP: #139380).
+
+ -- Alexander Sack <asac@ubuntu.com>  Mon, 08 Oct 2007 14:29:05 +0200
+
+ubufox (0.4~beta1-0ubuntu3) gutsy; urgency=low
+
+  * debian/rules, debian/control, debian/patches/: setup quilt patchsystem for
+    ubuntu package.
+  * debian/patches/lp134426_prepatch_fix_pluginfinder_runs_forever.patch,
+    debian/patches/series: fix pluginfinder runs forever (LP: #134426); patch
+    by Sasa Bodiroza <jazzva@gmail.com>.
+  * debian/patches/fix_broken_radiobutton_command.patch, debian/patches/series:
+    add patch that fixes broken plugin selection - prefetched from ubufox
+    development branch.
+
+ -- Alexander Sack <asac@ubuntu.com>  Mon, 27 Aug 2007 11:26:13 +0200
+
+ubufox (0.4~beta1-0ubuntu2) gutsy; urgency=low
+
+  * debian/control: add apturl as binary depends
+
+ -- Alexander Sack <asac@ubuntu.com>  Thu, 16 Aug 2007 20:53:49 +0200
+
+ubufox (0.4~beta1-0ubuntu1) gutsy; urgency=low
+
+  * ubufox 0.4~beta1 release that ships features for
+    https://blueprints.launchpad.net/ubuntu/+spec/firefox-distro-addon-support:
+    - new plugin finder wizard that allows to install apt packages
+    - new "Get Ubuntu Addons" link in Tools -> Addons dialog that will
+      bring up gnome-app-install with available xul-extension packages.
+  * credits go to Sasa Bodiroza <jazzva@gmail.com> who helped
+    implementing 0.4~beta1 features.
+
+ -- Alexander Sack <asac@ubuntu.com>  Thu, 16 Aug 2007 15:12:56 +0200
+
+ubufox (0.3-0ubuntu1) gutsy; urgency=low
+
+  * ubufox 0.3 featuring ubuntu help menu overlays
+
+ -- Alexander Sack <asac@ubuntu.com>  Tue, 31 Jul 2007 13:35:25 +0000
+
+ubufox (0.2-0ubuntu2) gutsy; urgency=low
+
+  * defaults/preferences/ubuntu-mods.js: reestablish ubuntu
+    behaviour ... ensure that new links are opened in tabs" 
+
+ -- Alexander Sack <asac@ubuntu.com>  Thu, 19 Jul 2007 11:32:01 +0200
+
+ubufox (0.2-0ubuntu1) gutsy; urgency=low
+
+  * Initial release of ubufox extension package.
+
+ -- Alexander Sack <asac@ubuntu.com>  Mon, 02 Jul 2007 16:20:20 +0200

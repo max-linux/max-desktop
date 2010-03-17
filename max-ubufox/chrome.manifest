@@ -1,0 +1,35 @@
+content	ubufox	content/
+locale	ubufox	af-ZA	locale/af-ZA/
+locale	ubufox	ar	locale/ar/
+locale	ubufox	ca	locale/ca/
+locale	ubufox	cs-CZ	locale/cs-CZ/
+locale	ubufox	de-DE	locale/de-DE/
+locale	ubufox	el-GR	locale/el-GR/
+locale	ubufox	en-US	locale/en-US/
+locale	ubufox	es	locale/es/
+locale	ubufox	eu	locale/eu/
+locale	ubufox	fi-FI	locale/fi-FI/
+locale	ubufox	fr	locale/fr/
+locale	ubufox	gl-ES	locale/gl-ES/
+locale	ubufox	hu-HU	locale/hu-HU/
+locale	ubufox	it-IT	locale/it-IT/
+locale	ubufox	ja	locale/ja/
+locale	ubufox	lt-LT	locale/lt-LT/
+locale	ubufox	pl-PL	locale/pl-PL/
+locale	ubufox	pt	locale/pt/
+locale	ubufox	pt-BR	locale/pt-BR/
+locale	ubufox	pt-PT	locale/pt/
+locale	ubufox	ro	locale/ro/
+locale	ubufox	ru-RU	locale/ru-RU/
+locale	ubufox	sl-SI	locale/sl-SI/
+locale	ubufox	sv-SE	locale/sv-SE/
+locale	ubufox	uk	locale/uk/
+locale	ubufox	zh-CN	locale/zh-CN/
+skin	ubufox	classic/1.0	skin/
+overlay	chrome://browser/content/browser.xul	chrome://ubufox/content/ubuntuHelpMenuOverlay.xul
+overlay	chrome://browser/content/browser.xul	chrome://ubufox/content/updateRestart.xul
+overlay chrome://mozapps/content/extensions/extensions.xul chrome://ubufox/content/ubuntuAddonsOverlay.xul appversion>=3.0b3
+overlay chrome://mozapps/content/extensions/extensions.xul chrome://ubufox/content/ubuntuAddonsOverlay.ffox2.xul appversion<2.0.0.*
+overlay chrome://browser/content/browser.xul chrome://ubufox/content/ubuntuAltpluginsOverlay.xul
+
+override chrome://mozapps/content/plugins/pluginInstallerWizard.xul chrome://ubufox/content/pluginInstallerWizard.xul
