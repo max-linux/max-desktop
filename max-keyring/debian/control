@@ -2,8 +2,8 @@ Source: max-keyring
 Section: misc
 Priority: optional
 Maintainer: Pedro Peña Pérez <pedro.pena@edmanufacturer.es>
-Build-Depends: debhelper (>= 4.0.0), cdbs, gnupg, ubuntu-keyring
-Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 7.0.0), cdbs, gnupg, ubuntu-keyring
+Standards-Version: 3.8.4
 
 Package: max-keyring
 Priority: important
