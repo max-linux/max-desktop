@@ -2,12 +2,12 @@
 
 # Hacer el cd de MaX remasterizando el de Ubuntu
 
-DISTRO=jaunty
-DISTRO_VERSION="9.04"
+DISTRO=lucid
+DISTRO_VERSION="10.04"
 ARCH=i386
 NANOARCH=i386
-IMAGE_NAME="MaX-5.0-rc5"
-TITLE="MaX 5.0"
+IMAGE_NAME="MaX-6.0-alpha1"
+TITLE="MaX 6.0"
 
 unset HOME
 export LC_ALL=C
@@ -18,7 +18,7 @@ stamp=$(date '+%Y%m%d_%H%M')
 created=$(date '+%Y%m%d')
 
 if [ "$MIRROR" = "" ]; then
-  MIRROR=192.168.0.3/mirror
+  MIRROR=192.168.0.2/mirror
 fi
 
 if [ "$AMD64" = "1" ]; then
@@ -56,8 +56,9 @@ CHROOT=$CURDIR/chroot.${ARCH}
 NANOCHROOT=$CURDIR/nanochroot.${ARCH}
 CDRW=$CURDIR/cdimage.${ARCH}
 NANOMAX=$CDRW/nanomax
+MKSQUASHFS=/usr/local/bin/mksquashfs
 
-PAQUETES_EXTRA_MAIN="b43-fwcutter bpalogin build-essential dpkg-dev fakeroot g++-4.3 libstdc++6-4.3-dev g++ capiutils ipppd "
+PAQUETES_EXTRA_MAIN="b43-fwcutter build-essential dpkg-dev fakeroot g++-4.3 libstdc++6-4.3-dev g++ capiutils ipppd "
 PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN isdnutils-base isdnutils-xtools libcapi20-3 libcapi20-dev pppdcapiplugin libatm1 "
 PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN linux-wlan-ng-doc linux-wlan-ng localechooser-data lupin-support mouseemu ndisgtk "
 PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN ndiswrapper-common ndiswrapper-utils-1.9 oem-config-gtk oem-config patch pptp-linux setserial"
@@ -72,7 +73,9 @@ PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales virtual
 PAQUETES_EXTRA="$PAQUETES_EXTRA max-tcos-alumno max-tcos-profesor"
 PAQUETES_EXTRA="$PAQUETES_EXTRA nvidia-glx-180 linux-wlan-ng-firmware linux-firmware"
 
-BLACKLIST_PKGS="jetty gdesklets resolvconf gdm-guest-session"
+BLACKLIST_PKGS="jetty gdesklets resolvconf gdm-guest-session emacs22 emacs22-bin-common emacs22-common emacsen-common"
+BLACKLIST_PKGS="$BLACKLIST_PKGS python-ubuntuone python-ubuntuone-client python-ubuntuone-storageprotocol ubuntuone-client"
+BLACKLIST_PKGS="$BLACKLIST_PKGS ubuntuone-client-gnome rhythmbox-ubuntuone-music-store libubuntuone-1.0-1"
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
 GENLIVE=/usr/share/max-genlive
@@ -146,6 +149,10 @@ _revert_invoke() {
  if [ -e $DIR/sbin/start-stop-daemon.REAL ]; then
    _echo "Revirtiendo /sbin/start-stop-daemon"
    mv $DIR/sbin/start-stop-daemon.REAL $DIR/sbin/start-stop-daemon
+ fi
+ if [ -e $DIR/sbin/initctl.distrib ]; then
+   rm $DIR/sbin/initctl
+   chroot $DIR dpkg-divert --local --rename --remove /sbin/initctl
  fi
 }
 

@@ -10,10 +10,8 @@ export DEBIAN_FRONTEND="noninteractive"
 export UCF_FORCE_CONFFOLD=1
 export ERROR=0
 apt-get $APT_OPTS install maxmoodle-pressed || ERROR=1
+apt-get $APT_OPTS install mysql-server || ERROR=1
 apt-get $APT_OPTS install maxmoodle || ERROR=1
-apt-get $APT_OPTS install language-support-es || ERROR=1
-apt-get $APT_OPTS install max-live || ERROR=1
-apt-get $APT_OPTS autoremove
 apt-get clean
 exit \$ERROR
 EOC
@@ -26,17 +24,27 @@ EOC
 _revert_invoke
 
 # moodle need to createdatabase and user
-chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes para la versión live"
-export LC_ALL=C
-export LC_MESSAGES=C
-export DEBCONF_FRONTEND="noninteractive"
-export DEBIAN_FRONTEND="noninteractive"
-export UCF_FORCE_CONFFOLD=1
-export ERROR=0
-/etc/init.d/mysql start || ERROR=1
+#chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes para la versión live"
+#export LC_ALL=C
+#export LC_MESSAGES=C
+#export DEBCONF_FRONTEND="noninteractive"
+#export DEBIAN_FRONTEND="noninteractive"
+#export UCF_FORCE_CONFFOLD=1
+#export ERROR=0
+#/etc/init.d/mysql start || ERROR=1
+#dpkg-reconfigure -phigh moodle || ERROR=1
+#/etc/init.d/mysql stop   || true
+#/etc/init.d/apache2 stop || true
+##exit \$ERROR
+#EOC
+
+chroot $CHROOT << EOC || _exit "No se han podido configurar moodle"
+export LC_ALL=C LC_MESSAGES=C DEBCONF_FRONTEND="noninteractive" DEBIAN_FRONTEND="noninteractive" UCF_FORCE_CONFFOLD=1 ERROR=0
+[ -d /var/run/mysqld ] || install -m 755 -o mysql -g root -d /var/run/mysqld
+/usr/sbin/mysqld &
+while ! /usr/bin/mysqladmin --defaults-file=/etc/mysql/debian.cnf ping; do sleep 1 ; echo " * wait for mysqld ..." ; done
 dpkg-reconfigure -phigh moodle || ERROR=1
-/etc/init.d/mysql stop   || true
-/etc/init.d/apache2 stop || true
+killall -15 mysqld
 exit \$ERROR
 EOC
 
@@ -48,6 +56,20 @@ _add_invoke
 fi # fin de [ ! -d $CHROOT/var/lib/mysql/moodle ]
 
 
+
+chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes para la versión live"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+export ERROR=0
+apt-get $APT_OPTS install language-support-es || ERROR=1
+apt-get $APT_OPTS install max-live || ERROR=1
+apt-get $APT_OPTS autoremove
+apt-get clean
+exit \$ERROR
+EOC
 
 
 # configurar cups-pdf
@@ -65,14 +87,14 @@ export DEBCONF_FRONTEND="noninteractive"
 export DEBIAN_FRONTEND="noninteractive"
 export UCF_FORCE_CONFFOLD=1
 export ERROR=0
-cat /proc/mounts
+#cat /proc/mounts
 /etc/init.d/apparmor start || true
 /etc/init.d/cups start || ERROR=1
 dpkg-reconfigure -phigh cups-pdf || ERROR=1
 aa-complain cupsd || true
 /etc/init.d/cups stop   || true
 /etc/init.d/apparmor stop || true
-exit \$ERROR
+#exit \$ERROR
 EOC
 
 

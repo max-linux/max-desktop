@@ -1,0 +1,405 @@
+# Malayalam translation for gfxboot-theme-ubuntu
+# Copyright (c) 2007 Rosetta Contributors and Canonical Ltd 2007
+# This file is distributed under the same license as the gfxboot-theme-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gfxboot-theme-ubuntu\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2007-02-28 07:00:57.592902+00:00\n"
+"PO-Revision-Date: 2009-10-22 04:43+0000\n"
+"Last-Translator: Naseef <Unknown>\n"
+"Language-Team: Malayalam <ml@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2009-10-26 12:28+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. ok button label
+#. txt_ok
+msgid "OK"
+msgstr "ശരി"
+
+#. cancel button label
+#. txt_cancel
+msgid "Cancel"
+msgstr "റദ്ദാക്കുക"
+
+#. reboot button label
+#. txt_reboot
+msgid "Reboot"
+msgstr "വീണ്ടും തുടങ്ങുക"
+
+#. continue button label
+#. txt_continue
+msgid "Continue"
+msgstr "തുടരൂ"
+
+#. txt_bootoptions
+msgid "Boot Options"
+msgstr "ബൂട്ടു് ഓപ്ഷനുകള്"
+
+#. window title for exit dialog
+#. txt_exit_title (see txt_exit_dialog)
+msgid "Exiting..."
+msgstr "വിടവാങ്ങുന്നു..."
+
+#. txt_exit_dialog
+msgid ""
+"You are leaving the graphical boot menu and\n"
+"starting the text mode interface."
+msgstr ""
+"നിങ്ങള് 'വസ്തുചിത്റപരമായ' 'ബൂട്ടു്' െമനു വിട്ടു്\n"
+" സാദാ 'െടക്സ്ട്' രീതിയിേലക്കു കടക്കുകയാണ്."
+
+#. txt_help
+msgid "Help"
+msgstr "സഹായം"
+
+#. info box title
+#. txt_info_title
+msgid "Boot loader"
+msgstr "ബൂട്ട് ലോഡര്‍"
+
+#. error box title
+#. txt_error_title
+msgid "I/O error"
+msgstr "I/O പിശക്"
+
+#. boot disk change dialog title
+#. txt_change_disk_title
+msgid "Change Boot Disk"
+msgstr "ബൂട്ടു് ഡിസ്ക് മാറ്റി പകരം വക്കുക"
+
+#. txt_insert_disk
+#, c-format
+msgid "Insert boot disk %u."
+msgstr "%u എന്ന ബൂട്ടു് ഡിസ്ക് ഇടുക"
+
+#. txt_insert_disk2
+#, c-format
+msgid ""
+"This is boot disk %u.\n"
+"Insert boot disk %u."
+msgstr ""
+"ഇത് %u എന്ന ബൂട്ടു് ഡിസ്ക് ആണ്.\n"
+"%u എന്ന ബൂട്ടു് ഡിസ്ക് ഇടുക."
+
+#. txt_insert_disk3
+#, c-format
+msgid ""
+"This is not a suitable boot disk.\n"
+"Please insert boot disk %u."
+msgstr ""
+"ഇതു ശരിയായ ബൂട്ടു് ഡിസ്ക് അല്ല.\n"
+"ദയവായി %u ഇടുക"
+
+#. password dialog title
+#. txt_password_title
+msgid "Password"
+msgstr "അടയാളവാക്യം"
+
+#. Keep the newlines and spaces after ':'!
+#. txt_password
+msgid ""
+"Enter your password:   \n"
+"\n"
+"\n"
+msgstr ""
+"അടയാള വാചകം ഉപേയാഗിക്കുക:   \n"
+"\n"
+"\n"
+
+#. dvd warning title
+#. txt_dvd_warning_title
+msgid "DVD Error"
+msgstr "ഡി.വി.ഡി -പിശകു്"
+
+#. txt_dvd_warning2
+msgid ""
+"This is a two-sided DVD. You have booted from the second side.\n"
+"\n"
+"Turn the DVD over then continue."
+msgstr ""
+"ഈ 'ഡി.വി.ഡി' രണ്ടു വശങ്ങളുള്ളതാണ്.\n"
+"മറുവശം ഉപേയാഗിക്കുക."
+
+#. power off dialog title
+#. txt_power_off_title
+msgid "Power Off"
+msgstr ""
+
+#. txt_power_off
+msgid "Halt the system now?"
+msgstr "സിസ്റ്റം ഇേപ്പാളു് ഹാള്ട്ട് (halt now) െചയ്േതാെട്ട ?"
+
+#. txt_password
+msgid "Password\n"
+msgstr "അടയാളവാക്ക്\n"
+
+#. button label for other/more options
+#. txt_other_options
+msgid "Other Options"
+msgstr ""
+
+#. label for language selection
+#. txt_language
+msgid "Language"
+msgstr "ഭാഷ"
+
+#. label for keymap selection
+#. txt_keymap
+msgid "Keymap"
+msgstr "'കീ' വിന്യാസം."
+
+#. label for installation mode selection
+#. txt_modes
+msgid "Modes"
+msgstr ""
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "സാധാരണ"
+
+#. label for d-i mode menu
+#. txt_expert_mode
+msgid "Expert mode"
+msgstr "വിദഗ്ധ രീതി"
+
+#. title for accessibility menu
+#. txt_access
+msgid "Accessibility"
+msgstr "സാമീപ്യത (accessibility)"
+
+#. label for accessibility menu
+#. txt_access_none
+msgid "None"
+msgstr "ശൂന്യം (none)"
+
+#. label for accessibility menu
+#. txt_access_v1
+msgid "High Contrast"
+msgstr "മിഴിവുറ്റ (High Contrast)"
+
+#. label for accessibility menu
+#. txt_access_v2
+msgid "Magnifier"
+msgstr "ഭൂതകണ്ണാടി (Magnifier)"
+
+#. label for accessibility menu
+#. txt_access_v3
+msgid "Screen Reader"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_brltty
+msgid "Braille Terminal"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_m1
+msgid "Keyboard Modifiers"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_m2
+msgid "On-Screen Keyboard"
+msgstr ""
+
+#. label for accessibility menu
+#. txt_access_m3
+msgid "Motor Difficulties - switch devices"
+msgstr "'േമാേട്ടാറു്' (Motor)ബുധിമുട്ടുകളു് - സ്വിച്ചു് ഉപകരണങ്ങളുെട"
+
+#. label for accessibility menu
+#. txt_access_all
+msgid "Everything"
+msgstr "ഇെതല്ലാം (Everything)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu
+msgid "^Try Ubuntu without installing"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu
+msgid "^Try Kubuntu without installing"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_edubuntu
+msgid "^Try Edubuntu without installing"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_xubuntu
+msgid "^Try Xubuntu without installing"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+msgid "^Try Ubuntu MID without installing"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+msgid "^Try Ubuntu Netbook Remix without installing"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_driverupdates
+msgid "Use driver update disc"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_ubuntu
+msgid "^Install Ubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_kubuntu
+msgid "^Install Kubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_edubuntu
+msgid "^Install Edubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_xubuntu
+msgid "^Install Xubuntu in text mode"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu
+msgid "^Install Ubuntu"
+msgstr "ഉബുണ്ടു ഇന്‍സ്റ്റാള്‍ ചെയ്യുക"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu
+msgid "^Install Kubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_edubuntu
+msgid "^Install Edubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_xubuntu
+msgid "^Install Xubuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_enterprise_cloud
+msgid "Install Ubuntu ^Enterprise Cloud"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_workstation
+msgid "Install a workstation"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_server
+msgid "Install a server"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_oem
+msgid "OEM install (for manufacturers)"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_lamp
+msgid "Install a LAMP server"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_ltsp
+msgid "Install an LTSP server"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_cli
+msgid "Install a command-line system"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr ""
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_check
+msgid "^Check disc for defects"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_rescue
+msgid "^Rescue a broken system"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_memtest
+msgid "Test ^memory"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_hd
+msgid "^Boot from first hard disk"
+msgstr ""
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+msgid "^Try Mythbuntu without installing"
+msgstr ""

@@ -13,6 +13,7 @@ export ERROR=0
 export MAX_ERROR=0
 apt-get $APT_OPTS install max-keyring || ERROR=1
 apt-get $APT_OPTS update || ERROR=1
+apt-get $APT_OPTS install max-desktop-common
 apt-get $APT_OPTS install max-desktop-gnome
 apt-get $APT_OPTS install max-desktop-gnome max-drivers || ERROR=1
 [ "\$(ls /home/)" != "" ] && rm -rf /home/* && apt-get $APT_OPTS -f install 

@@ -1,9 +1,9 @@
 #
-# sources.list for Max50 live session
+# sources.list for Max60 live session
 #
-deb http://archive.ubuntu.com/ubuntu/ jaunty main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ jaunty-updates main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ jaunty-security main restricted universe multiverse
-deb http://max.educa.madrid.org/max50 max main
+deb http://archive.ubuntu.com/ubuntu/ lucid main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ lucid-updates main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ lucid-security main restricted universe multiverse
+#deb http://max.educa.madrid.org/max60 max main
 
 

@@ -17,7 +17,7 @@ deb http://$MIRROR/ubuntu ${DISTRO} main universe multiverse restricted
 deb http://$MIRROR/ubuntu ${DISTRO}-updates main universe multiverse restricted
 deb http://$MIRROR/ubuntu ${DISTRO}-security main universe multiverse restricted
 
-deb http://$MIRROR/max50 max main
+deb http://$MIRROR/max60 max main
 EOF
 
   cat << EOF > $NANOCHROOT/etc/apt/apt.conf.d/06norecomends
@@ -29,8 +29,8 @@ APT
 EOF
 
 cat << EOF > $NANOCHROOT/etc/hosts
-127.0.0.1       localhost max50
-127.0.1.1       max50
+127.0.0.1       localhost max60
+127.0.1.1       max60
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
@@ -41,8 +41,8 @@ ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 EOF
 
-   echo "max50" > $NANOCHROOT/etc/hostname
-   echo "max50" > $NANOCHROOT/etc/mailname
+   echo "max60" > $NANOCHROOT/etc/hostname
+   echo "max60" > $NANOCHROOT/etc/mailname
 
   _echo "Configurando DEBCONF y zona horaria"
 
@@ -280,10 +280,10 @@ EOC
 
   LZMA=""
   # ver si hay que desactivar LZMA
-  mksquashfs -help 2>&1 | grep -q nolzma && LZMA="-nolzma"
+  $MKSQUASHFS -help 2>&1 | grep -q nolzma && LZMA="-nolzma"
 
   rm -f $NANOMAX/casper/filesystem.squashfs
-  mksquashfs $NANOCHROOT/  $NANOMAX/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo NANOMAX squashfs"
+  $MKSQUASHFS $NANOCHROOT/  $NANOMAX/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo NANOMAX squashfs"
   chmod 644 $NANOMAX/casper/filesystem.squashfs || _exit "No se ha podido cambiar los permisos de NANOMAX squashfs"
 
 
@@ -305,7 +305,7 @@ EOC
   mkdir -p $NANOMAX/.disk
 
   printf "%s - $NANOARCH (%s)" "$TITLE" "$created" > $NANOMAX/.disk/info
-  printf "http://max.educa.madrid.org:8000/MaX50/NotasPublicacion" > $NANOMAX/.disk/release_notes_url
+  printf "http://max.educa.madrid.org:8000/MaX60/NotasPublicacion" > $NANOMAX/.disk/release_notes_url
   printf "full_cd/single" > $NANOMAX/.disk/cd_type
   rm -f $NANOMAX/.disk/base_installable
   printf "d8ce36c5-3caf-4243-9dad-f8527accac3f" > $NANOMAX/.disk/casper-uuid-generic
@@ -409,9 +409,9 @@ syslinux /dev/loop3
 _echo "Preparando aplicaciones portables"
 
 if [ $LOCAL_MIRROR ]; then
-  URL="http://$MIRROR/max50/portables.tar.gz"
+  URL="http://$MIRROR/max60/portables.tar.gz"
 else
-  URL="http://max.educa.madrid.org/max50/portables.tar.gz"
+  URL="http://max.educa.madrid.org/max60/portables.tar.gz"
 fi
 
 [ ! -f portables.tar.gz ] && wget $URL

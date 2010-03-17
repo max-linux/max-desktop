@@ -50,13 +50,13 @@ ubiquity ubiquity/max_install_type string escritorio
 #
 #
 #  Create user madrid
-passwd passwd/user-fullname string Usuario Madrid
+passwd passwd/user-fullname string Madrid
 passwd passwd/username string madrid
 passwd passwd/user-password password cmadrid
 passwd passwd/user-password-again password cmadrid
 passwd passwd/user-default-groups string adm audio cdrom dialout floppy video dip lpadmin plugdev fuse scanner vboxusers sambashare
 #
-passwd passwd/alumno-userfullname string Alumno Madrid
+passwd passwd/alumno-userfullname string Alumno
 passwd passwd/alumno-username string alumno
 passwd passwd/alumno-password password alumno
 passwd passwd/alumno-default-groups string audio cdrom floppy video plugdev scanner vboxusers sambashare

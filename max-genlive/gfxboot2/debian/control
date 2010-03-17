@@ -1,0 +1,17 @@
+Source: gfxboot-theme-ubuntu
+Section: utils
+Priority: optional
+Maintainer: Colin Watson <cjwatson@ubuntu.com>
+Build-Depends: debhelper (>= 7.0.0), gfxboot (>= 3.3.28), cpio, libfribidi0
+Standards-Version: 3.6.2
+Vcs-Bzr: http://bazaar.launchpad.net/~ubuntu-core-dev/gfxboot-theme-ubuntu/mainline
+
+Package: gfxboot-theme-ubuntu
+Architecture: amd64 i386 lpia
+Depends: ${misc:Depends}, gfxboot (>= 3.3.28)
+Description: Ubuntu theme for gfxboot-compliant boot loaders
+ This is an Ubuntu theme for the gfxboot graphical boot loader extension. It
+ should be suitable for Ubuntu derivatives as well as Ubuntu itself.
+ .
+ This theme does not include any help texts or logos itself. Those should be
+ provided by other packages, and may be specific to Ubuntu derivatives.

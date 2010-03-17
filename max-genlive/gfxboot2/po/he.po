@@ -1,0 +1,411 @@
+# Hebrew translation for gfxboot-theme-ubuntu
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the gfxboot-theme-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gfxboot-theme-ubuntu\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2007-10-09 09:00+0000\n"
+"PO-Revision-Date: 2009-10-01 14:31+0000\n"
+"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. ok button label
+#. txt_ok
+msgid "OK"
+msgstr "אישור"
+
+#. cancel button label
+#. txt_cancel
+msgid "Cancel"
+msgstr "ביטול"
+
+#. reboot button label
+#. txt_reboot
+msgid "Reboot"
+msgstr "הפעלה מחדש"
+
+#. continue button label
+#. txt_continue
+msgid "Continue"
+msgstr "המשך"
+
+#. txt_bootoptions
+msgid "Boot Options"
+msgstr "אפשרויות איתחול"
+
+#. window title for exit dialog
+#. txt_exit_title (see txt_exit_dialog)
+msgid "Exiting..."
+msgstr "יציאה..."
+
+#. txt_exit_dialog
+msgid ""
+"You are leaving the graphical boot menu and\n"
+"starting the text mode interface."
+msgstr ""
+"הינכם עוזבים את תפריט האיתחול הגרפי\n"
+"ומפעילים את המנשק הטקסטואלי."
+
+#. txt_help
+msgid "Help"
+msgstr "עזרה"
+
+#. info box title
+#. txt_info_title
+msgid "Boot loader"
+msgstr "מנהל איתחול"
+
+#. error box title
+#. txt_error_title
+msgid "I/O error"
+msgstr "שגיאת קלט/פלט"
+
+#. boot disk change dialog title
+#. txt_change_disk_title
+msgid "Change Boot Disk"
+msgstr "שנה את דיסק האתחול"
+
+#. txt_insert_disk
+#, c-format
+msgid "Insert boot disk %u."
+msgstr "הכנס את דיסק האתחול %u."
+
+#. txt_insert_disk2
+#, c-format
+msgid ""
+"This is boot disk %u.\n"
+"Insert boot disk %u."
+msgstr ""
+"זה דיסק האתחול %u.\n"
+"הכנס את דיסק האתחול %u."
+
+#. txt_insert_disk3
+#, c-format
+msgid ""
+"This is not a suitable boot disk.\n"
+"Please insert boot disk %u."
+msgstr ""
+"דיסק אתחול זה אינו מתאים.\n"
+"נא הכנס את דיסק האתחול %u."
+
+#. password dialog title
+#. txt_password_title
+msgid "Password"
+msgstr "סיסמה"
+
+#. Keep the newlines and spaces after ':'!
+#. txt_password
+msgid ""
+"Enter your password:   \n"
+"\n"
+"\n"
+msgstr ""
+"הזן את סיסמתך:   \n"
+"\n"
+"\n"
+
+#. dvd warning title
+#. txt_dvd_warning_title
+msgid "DVD Error"
+msgstr "שגיאת DVD"
+
+#. txt_dvd_warning2
+msgid ""
+"This is a two-sided DVD. You have booted from the second side.\n"
+"\n"
+"Turn the DVD over then continue."
+msgstr ""
+"זהו DVD דו-צדדי. ביצעת את האתחול מהצד השני. יש להפוך את ה-DVD ואז להמשיך."
+
+#. power off dialog title
+#. txt_power_off_title
+msgid "Power Off"
+msgstr "כיבוי"
+
+#. txt_power_off
+msgid "Halt the system now?"
+msgstr "לכבות את המערכת כעת?"
+
+#. txt_password
+msgid "Password\n"
+msgstr "סיסמא\n"
+
+#. button label for other/more options
+#. txt_other_options
+msgid "Other Options"
+msgstr "אפשרויות נוספות"
+
+#. label for language selection
+#. txt_language
+msgid "Language"
+msgstr "שפה"
+
+#. label for keymap selection
+#. txt_keymap
+msgid "Keymap"
+msgstr "פריסת מקשים"
+
+#. label for installation mode selection
+#. txt_modes
+msgid "Modes"
+msgstr "מצבים"
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "רגיל"
+
+#. label for d-i mode menu
+#. txt_expert_mode
+msgid "Expert mode"
+msgstr "מצב מומחה"
+
+#. title for accessibility menu
+#. txt_access
+msgid "Accessibility"
+msgstr "נגישות"
+
+#. label for accessibility menu
+#. txt_access_none
+msgid "None"
+msgstr "כלום"
+
+#. label for accessibility menu
+#. txt_access_v1
+msgid "High Contrast"
+msgstr "ניגודיות גבוהה"
+
+#. label for accessibility menu
+#. txt_access_v2
+msgid "Magnifier"
+msgstr "זכוכית מגדלת"
+
+#. label for accessibility menu
+#. txt_access_v3
+msgid "Screen Reader"
+msgstr "מקריא מסך"
+
+#. label for accessibility menu
+#. txt_access_brltty
+msgid "Braille Terminal"
+msgstr "מסוף ברייל"
+
+#. label for accessibility menu
+#. txt_access_m1
+msgid "Keyboard Modifiers"
+msgstr "משני מקלדת"
+
+#. label for accessibility menu
+#. txt_access_m2
+msgid "On-Screen Keyboard"
+msgstr "מקלדת על המסך"
+
+#. label for accessibility menu
+#. txt_access_m3
+msgid "Motor Difficulties - switch devices"
+msgstr "קשיים מוטוריים - החלף התקנים"
+
+#. label for accessibility menu
+#. txt_access_all
+msgid "Everything"
+msgstr "הכל"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu
+#, fuzzy
+msgid "^Try Ubuntu without installing"
+msgstr "^ נסה את אובונטו מבלי לשנות דבר במחשבך"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu
+#, fuzzy
+msgid "^Try Kubuntu without installing"
+msgstr "^ נסה את קובונטו מבלי לשנות דבר במחשבך"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_edubuntu
+#, fuzzy
+msgid "^Try Edubuntu without installing"
+msgstr "^ נסה את אדיובונטו מבלי לשנות דבר במחשבך"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_xubuntu
+#, fuzzy
+msgid "^Try Xubuntu without installing"
+msgstr "^ נסה את קסובונטו מבלי לשנות דבר במחשבך"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+#, fuzzy
+msgid "^Try Ubuntu MID without installing"
+msgstr "^נסה את גירסת Mobile Internet Device מבלי לשנות את המחשב שלך"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+#, fuzzy
+msgid "^Try Ubuntu Netbook Remix without installing"
+msgstr "^נסה את אובונטו במהדורת הנטבוק מבלי לשנות דבר במחשבך"
+
+#. Installation mode.
+#. txt_menuitem_driverupdates
+msgid "Use driver update disc"
+msgstr "השתמש בתיאור עדכון מנהל התקן"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_ubuntu
+msgid "^Install Ubuntu in text mode"
+msgstr "^התקן את אובונטו במצב טקסטואלי"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_kubuntu
+msgid "^Install Kubuntu in text mode"
+msgstr "^התקן את קובונטו במצב טקסטואלי"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_edubuntu
+msgid "^Install Edubuntu in text mode"
+msgstr "^התקן את אדיובונטו במצב טקסטואלי"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_xubuntu
+msgid "^Install Xubuntu in text mode"
+msgstr "^התקן את קסובונטו במצב טקסטואלי"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu
+msgid "^Install Ubuntu"
+msgstr "^התקן את אובונטו"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu
+msgid "^Install Kubuntu"
+msgstr "^התקן את קובונטו"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_edubuntu
+msgid "^Install Edubuntu"
+msgstr "^התקן את אדיובונטו"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_xubuntu
+msgid "^Install Xubuntu"
+msgstr "^התקן את קסובונטו"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "^התקן את Ubuntu Server"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_enterprise_cloud
+msgid "Install Ubuntu ^Enterprise Cloud"
+msgstr "התקן את Ubuntu ^Enterprise Cloud"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr "^התקן אובונטו סטודיו"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr "^התקן אובונטו גרסת Mobile Internet Device"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr "^התקן את אובונטו במהדורת הנטבוק"
+
+#. Installation mode.
+#. txt_menuitem_workstation
+msgid "Install a workstation"
+msgstr "התקן תחנת עבודה"
+
+#. Installation mode.
+#. txt_menuitem_server
+msgid "Install a server"
+msgstr "התקן שרת"
+
+#. Installation mode.
+#. txt_menuitem_oem
+msgid "OEM install (for manufacturers)"
+msgstr "התקנת OEM (לייצרנים)"
+
+#. Installation mode.
+#. txt_menuitem_lamp
+msgid "Install a LAMP server"
+msgstr "התקן שרת LAMP"
+
+#. Installation mode.
+#. txt_menuitem_ltsp
+msgid "Install an LTSP server"
+msgstr "התקן שרת LTSP"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "התקן שרת נטול דיסק דמות"
+
+#. Installation mode.
+#. txt_menuitem_cli
+msgid "Install a command-line system"
+msgstr "התקן מערכת שורת פקודה"
+
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "התקן מערכת מינימאלית"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr "התקן מכונה וירטואלית מינימאלית"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_check
+msgid "^Check disc for defects"
+msgstr "^בדוק אחר פגמים בתקליטור"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_rescue
+msgid "^Rescue a broken system"
+msgstr "^הצלת מערכת פגומה"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_memtest
+msgid "Test ^memory"
+msgstr "בדוק את הזיכרון"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_hd
+msgid "^Boot from first hard disk"
+msgstr "^אתחול מהדיסק הקשיח הראשון"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "תוכנה חופשית בלבד"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr "ה^תקנה חדשה אוטומטית של Dell"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "הת^קנת Mythbuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+#, fuzzy
+msgid "^Try Mythbuntu without installing"
+msgstr "^נסה את Mythbuntu ללא כל שינוי במחשב"

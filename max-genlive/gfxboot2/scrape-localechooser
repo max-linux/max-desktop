@@ -1,0 +1,73 @@
+#! /usr/bin/perl -w
+use strict;
+
+if (@ARGV != 1) {
+    print STDERR "Usage: $0 localechooser-source-tree\n";
+    exit 1;
+}
+
+my $localechooser = $ARGV[0];
+
+# Some special cases that are handled strangely either here or in
+# localechooser.
+my %langcode_overrides = (
+    'nb_NO' => 'nb',
+    'nn_NO' => 'nn',
+    'pt' => 'pt_PT',
+    'se_NO' => 'se',
+);
+
+# The real localised names for these languages use characters not present in
+# our font, or not rendered correctly for some other reason.
+my @langname_notranslate = (
+    'am',
+    'ar',
+    'bn',
+    'dz',
+    'gu',
+    'hi',
+    'km',
+    'ml',
+    'mr',
+    'ne',
+    'pa',
+    'ta',
+    'th',
+);
+my %langname_notranslate = map { $_ => 1 } @langname_notranslate;
+
+# Adjust the sort order slightly. (The values are not real language codes;
+# they're just there to make the sort unambiguous.)
+my %sort_ids = (
+    'nb' => 'no_NB',
+    'nn' => 'no_NN',
+);
+
+my %langnames;
+my %locales;
+open LIST, '<:utf8', "$localechooser/languagelist"
+    or die "$0: can't open $localechooser/languagelist: $!";
+while (<LIST>) {
+    chomp;
+    next if /^#/ or not /\S/;
+    my @bits = split /;/;
+    my $lang = $bits[0];
+    next if $lang eq 'C';
+    $lang = $langcode_overrides{$lang} if exists $langcode_overrides{$lang};
+    if (exists $langname_notranslate{$lang}) {
+	$langnames{$lang} = $bits[1];
+    } else {
+	$langnames{$lang} = $bits[2];
+    }
+    ($locales{$lang} = "$bits[6]") =~ s/[.@].*//;
+    $sort_ids{$lang} = $lang unless exists $sort_ids{$lang};
+}
+close LIST;
+
+binmode STDOUT, ':utf8';
+
+print "/lang.defaultnames [\n";
+for my $lang (sort { $sort_ids{$a} cmp $sort_ids{$b} } keys %langnames) {
+    print qq{  [ "$lang" "$locales{$lang}" "$langnames{$lang}" ]\n};
+}
+print "] def\n";

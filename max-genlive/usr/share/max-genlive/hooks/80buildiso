@@ -7,7 +7,7 @@ rm -f $CDRW/preseed/*
 cp $GENLIVE/preseed/* $CDRW/preseed/ || _exit "No se puede sobreescribir preseed"
 
 printf "%s - $ARCH (%s)" "$TITLE" "$created" > $CDRW/.disk/info
-printf "http://max.educa.madrid.org:8000/MaX50/NotasPublicacion" > $CDRW/.disk/release_notes_url
+printf "http://max.educa.madrid.org:8000/MaX60/NotasPublicacion" > $CDRW/.disk/release_notes_url
 printf "full_cd/single" > $CDRW/.disk/cd_type
 touch $CDRW/.disk/base_installable 
 
@@ -40,7 +40,14 @@ fi
 cp /boot/memtest86+.bin $CDRW/casper/memtest.bin
 
 _echo "Generando md5sum de archivos de dentro del DVD..."
-(cd $CDRW && find . -type f -print0 | grep -v boot.cat | grep -v isolinux.bin | xargs -0 md5sum > md5sum.txt)
+#(cd $CDRW && find . -type f -print0 | grep -v boot.cat | grep -v isolinux.bin | xargs -0 md5sum > md5sum.txt)
+(cd $CDRW && find . -type f -print0 | xargs -0 md5sum > md5sum.txt)
+# delete boot.cat and isolinux.bin
+grep -e -v "boot.cat" -e "isolinux.bin" md5sum.txt > md5sum.txt.new
+mv md5sum.txt.new md5sum.txt
+
+#(cd debian/python-exe >/dev/null ; find . -type f  ! -regex '.*/DEBIAN/.*' -printf '%P\0' | xargs -r0 md5sum > DEBIAN/md5sums)
+
 
 ISO_FILE="${IMAGE_NAME}-DVDlive-$ARCH-${stamp}.iso"
 

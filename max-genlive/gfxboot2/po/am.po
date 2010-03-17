@@ -1,0 +1,413 @@
+# Amharic translation for gfxboot-theme-ubuntu
+# Copyright (c) 2006 Rosetta Contributors and Canonical Ltd 2006
+# This file is distributed under the same license as the gfxboot-theme-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gfxboot-theme-ubuntu\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2009-03-27 22:16+0000\n"
+"PO-Revision-Date: 2009-10-21 04:12+0000\n"
+"Last-Translator: samson <Unknown>\n"
+"Language-Team: Amharic <am@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2009-10-26 12:28+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. ok button label
+#. txt_ok
+msgid "OK"
+msgstr "መግጠም"
+
+#. cancel button label
+#. txt_cancel
+msgid "Cancel"
+msgstr "ስርዝ"
+
+#. reboot button label
+#. txt_reboot
+msgid "Reboot"
+msgstr "እንደገና ማስነሳት"
+
+#. continue button label
+#. txt_continue
+msgid "Continue"
+msgstr "ቅጥል"
+
+#. txt_bootoptions
+msgid "Boot Options"
+msgstr "የአነሳሰ ምርጫዎች"
+
+#. window title for exit dialog
+#. txt_exit_title (see txt_exit_dialog)
+msgid "Exiting..."
+msgstr "አወጣጥ"
+
+#. txt_exit_dialog
+msgid ""
+"You are leaving the graphical boot menu and\n"
+"starting the text mode interface."
+msgstr ""
+"የግራፊካል ቡት ዝርዝርን እየተዉት ነው እና\n"
+"ወደ ቴክስት ሞድ እየሄዱ ነው"
+
+#. txt_help
+msgid "Help"
+msgstr "እርዳታ"
+
+#. info box title
+#. txt_info_title
+msgid "Boot loader"
+msgstr "ቡት ሎደር"
+
+#. error box title
+#. txt_error_title
+msgid "I/O error"
+msgstr "I/O ስህተት"
+
+#. boot disk change dialog title
+#. txt_change_disk_title
+msgid "Change Boot Disk"
+msgstr "ቡት ዲስክ መቀየር"
+
+#. txt_insert_disk
+#, c-format
+msgid "Insert boot disk %u."
+msgstr "ቡት ዲስክ ያስገቡ %u."
+
+#. txt_insert_disk2
+#, c-format
+msgid ""
+"This is boot disk %u.\n"
+"Insert boot disk %u."
+msgstr ""
+"ይህ ቡት ዲስክ ነው %u.\n"
+"ቡት ዲስክ ያስገቡ %u."
+
+#. txt_insert_disk3
+#, c-format
+msgid ""
+"This is not a suitable boot disk.\n"
+"Please insert boot disk %u."
+msgstr ""
+"ይህ ቡት ዲስክ ተስማሚ አይደለም.\n"
+"እባክዎ ቡት ዲስክ ያስገቡ %u."
+
+#. password dialog title
+#. txt_password_title
+msgid "Password"
+msgstr "መግቢያ ቃል"
+
+#. Keep the newlines and spaces after ':'!
+#. txt_password
+msgid ""
+"Enter your password:   \n"
+"\n"
+"\n"
+msgstr ""
+"መግቢያ ቃልዎን ያስገቡ   \n"
+"\n"
+"\n"
+
+#. dvd warning title
+#. txt_dvd_warning_title
+msgid "DVD Error"
+msgstr "የዲቪዲ ስህተት"
+
+#. txt_dvd_warning2
+msgid ""
+"This is a two-sided DVD. You have booted from the second side.\n"
+"\n"
+"Turn the DVD over then continue."
+msgstr ""
+"ይህ ዲቪዲ በሁለት በኩል የሚጫወት ነው የጀመሩት ከክፍል ሁለት ነው.\n"
+"\n"
+"ዲቪዲውን ይገልብጡና ይቀጥሉ."
+
+#. power off dialog title
+#. txt_power_off_title
+msgid "Power Off"
+msgstr "ሀይሉን ማጥፋት"
+
+#. txt_power_off
+msgid "Halt the system now?"
+msgstr "ሲስተሙን አሁን ላቁመው?"
+
+#. txt_password
+msgid "Password\n"
+msgstr "መግቢያ ቃል\n"
+
+#. button label for other/more options
+#. txt_other_options
+msgid "Other Options"
+msgstr "ሌሎች ምርጫዎች"
+
+#. label for language selection
+#. txt_language
+msgid "Language"
+msgstr "ቋንቋ"
+
+#. label for keymap selection
+#. txt_keymap
+msgid "Keymap"
+msgstr "ኪማፕ"
+
+#. label for installation mode selection
+#. txt_modes
+msgid "Modes"
+msgstr "ዘዴዎች"
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "መደበኛ"
+
+#. label for d-i mode menu
+#. txt_expert_mode
+msgid "Expert mode"
+msgstr "የባለሞያ ዘዴ"
+
+#. title for accessibility menu
+#. txt_access
+msgid "Accessibility"
+msgstr "በቀላሉ የሚደርስ"
+
+#. label for accessibility menu
+#. txt_access_none
+msgid "None"
+msgstr "ምንም"
+
+#. label for accessibility menu
+#. txt_access_v1
+msgid "High Contrast"
+msgstr "ከፍተኛ አነጻጻሪ"
+
+#. label for accessibility menu
+#. txt_access_v2
+msgid "Magnifier"
+msgstr "አጉልቶ ማሳያ"
+
+#. label for accessibility menu
+#. txt_access_v3
+msgid "Screen Reader"
+msgstr "ስክሪን አንባቢ"
+
+#. label for accessibility menu
+#. txt_access_brltty
+msgid "Braille Terminal"
+msgstr "ብሬይል ተርሚናል"
+
+#. label for accessibility menu
+#. txt_access_m1
+msgid "Keyboard Modifiers"
+msgstr "የፊደል ገበታ ማሻሻያ"
+
+#. label for accessibility menu
+#. txt_access_m2
+msgid "On-Screen Keyboard"
+msgstr "የስክሪን ላይ ፊደል ገበታ"
+
+#. label for accessibility menu
+#. txt_access_m3
+msgid "Motor Difficulties - switch devices"
+msgstr "የሞተር ችግር - መሳሪያውን ይቀይሩ"
+
+#. label for accessibility menu
+#. txt_access_all
+msgid "Everything"
+msgstr "ሁሉም ነገር"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu
+#, fuzzy
+msgid "^Try Ubuntu without installing"
+msgstr "^ኡቡንቱን ይሞክሩ ምንም ነገር ኮምፒዩተሮትን ሳይቀይሩ"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu
+#, fuzzy
+msgid "^Try Kubuntu without installing"
+msgstr "^ኩኡቡንቱን ይሞክሩ ምንም ነገር ኮምፒዩተሮትን ሳይቀይሩ"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_edubuntu
+#, fuzzy
+msgid "^Try Edubuntu without installing"
+msgstr "^ኤድኡቡንቱን ይሞክሩ ምንም ነገር ኮምፒዩተሮትን ሳይቀይሩ"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_xubuntu
+#, fuzzy
+msgid "^Try Xubuntu without installing"
+msgstr "^ዙኡቡንቱን ይሞክሩ ምንም ነገር ኮምፒዩተሮትን ሳይቀይሩ"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+#, fuzzy
+msgid "^Try Ubuntu MID without installing"
+msgstr "^ኡቡንቱ መሃከልን ይሞክሩ ምንም ነገር ኮምፒዩተሮትን ሳይቀይሩ"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+#, fuzzy
+msgid "^Try Ubuntu Netbook Remix without installing"
+msgstr "^ኡቡንቱ ኔትቡክ ሪሚክስን ይሞክሩ ምንም ነገር ኮምፒዩተሮትን ሳይቀይሩ"
+
+#. Installation mode.
+#. txt_menuitem_driverupdates
+msgid "Use driver update disc"
+msgstr "የድራይቨር ማሻሻያ ዲስክን ይጠቀሙ"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_ubuntu
+msgid "^Install Ubuntu in text mode"
+msgstr "^ኡቡንቱን በቴክስት ዘዴ ይግጠሙ"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_kubuntu
+msgid "^Install Kubuntu in text mode"
+msgstr "^መግጠም ኩቡንቱን በጽሁፍ ዘዴ"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_edubuntu
+msgid "^Install Edubuntu in text mode"
+msgstr "^መግጠም ኤድቡንቱን በጽሁፍ ዘዴ"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_xubuntu
+msgid "^Install Xubuntu in text mode"
+msgstr "^መግጠም ዙቡንቱን በጽሁፍ ዘዴ"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu
+msgid "^Install Ubuntu"
+msgstr "^መግጠም ኡቡንቱን"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu
+msgid "^Install Kubuntu"
+msgstr "^መግጠም ኩቡንቱን"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_edubuntu
+msgid "^Install Edubuntu"
+msgstr "^መግጠም ኤድቡንቱን"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_xubuntu
+msgid "^Install Xubuntu"
+msgstr "^መግጠም ዙቡንቱን"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "^መግጠም ኡቡንቱ ሰርቨርን"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_enterprise_cloud
+msgid "Install Ubuntu ^Enterprise Cloud"
+msgstr "መግጠም ኡቡንቱ ^ኢንተርፕራይስ ክላውድን"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr "^መግጠም ኡቡንቱ ስቱዲዮን"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr "^መግጠም ኡቡንቱ መካከለኛን"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr "^መግጠም ኡቡንቱ ኔትቡክ ሪሚክስ"
+
+#. Installation mode.
+#. txt_menuitem_workstation
+msgid "Install a workstation"
+msgstr "መግጠም የስራ ጣቢያ"
+
+#. Installation mode.
+#. txt_menuitem_server
+msgid "Install a server"
+msgstr "መግጠም ስርቨር"
+
+#. Installation mode.
+#. txt_menuitem_oem
+msgid "OEM install (for manufacturers)"
+msgstr "መግጠም ኦኢኤም"
+
+#. Installation mode.
+#. txt_menuitem_lamp
+msgid "Install a LAMP server"
+msgstr "መግጠም ላምፕ ሰርቨር"
+
+#. Installation mode.
+#. txt_menuitem_ltsp
+msgid "Install an LTSP server"
+msgstr "መግጠም ኤልቲኤስፒ ስርቨር"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "መግጠም ዲስክለስ ኢሜጅ ስርቨር"
+
+#. Installation mode.
+#. txt_menuitem_cli
+msgid "Install a command-line system"
+msgstr "መግጠም የትእዛዝ-መስመር ሲስተም"
+
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "መግጠም አነስተኛ ሲስተም"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr "መግጠም አነስተኛ ቪርቹአል ማሺን"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_check
+msgid "^Check disc for defects"
+msgstr "^መሞከር ዲስክን ለጉድለት"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_rescue
+msgid "^Rescue a broken system"
+msgstr "^የተስበረ ሲስተምን ማዳን"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_memtest
+msgid "Test ^memory"
+msgstr "መሞከር ^ሜሞሪ"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_hd
+msgid "^Boot from first hard disk"
+msgstr "^መጀምሪያ ከሃርድ ዲስክ ቡት ማአድረግ"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "ነጻ ሶፍትዌር ብቻ"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr "^ዴል ራስ በራሱ እንደገና መግጠም"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "^መግጠም ሚይትቡንቱን"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+#, fuzzy
+msgid "^Try Mythbuntu without installing"
+msgstr "^ይሞክሩ ሚይትቡንቱን ኮምፒዩተሮትን ምንም ሳይቀይሩ"

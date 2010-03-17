@@ -1,6 +1,8 @@
 
-
-
+if [ ! -e /sbin/initctl.distrib ]; then
+  chroot $CHROOT dpkg-divert --local --rename --add /sbin/initctl
+  chroot $CHROOT ln -s /bin/true /sbin/initctl
+fi
 
 chroot $CHROOT << EOC || _exit "No se ha podido instalar sysv-rc y dpkg"
 export LC_ALL=C
@@ -41,12 +43,15 @@ EOC
 
 
 
-UBUNTU_PACKAGES="deskbar-applet dkms gnome-netstatus-applet gnome-spell "
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnome-themes gnome-volume-manager gnupg-agent gparted gpgsm gtk-qt-engine "
+#UBUNTU_PACKAGES="deskbar-applet dkms gnome-netstatus-applet gnome-spell "
+#UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnome-themes gnome-volume-manager gnupg-agent gparted gpgsm gtk-qt-engine "
+
+UBUNTU_PACKAGES="dkms gnome-netstatus-applet "
+UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnome-themes gnupg-agent gparted gpgsm "
 UBUNTU_PACKAGES="$UBUNTU_PACKAGES ispanish ispell jfsutils language-pack-gnome-es language-pack-gnome-es-base "
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES lua50 mdetect mii-diag mysql-client openssl-blacklist "
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES util-linux-locales valgrind xfsprogs xserver-xorg-input-evtouch"
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES xserver-xorg-input-vmmouse network-manager-openvpn network-manager-vpnc network-manager-pptp"
+UBUNTU_PACKAGES="$UBUNTU_PACKAGES mdetect mii-diag mysql-client openssl-blacklist "
+UBUNTU_PACKAGES="$UBUNTU_PACKAGES util-linux-locales valgrind xfsprogs"
+UBUNTU_PACKAGES="$UBUNTU_PACKAGES network-manager-openvpn network-manager-vpnc network-manager-pptp"
 
 _echo "Instalando ubuntu-desktop"
 
@@ -57,7 +62,7 @@ export DEBCONF_FRONTEND="noninteractive"
 export DEBIAN_FRONTEND="noninteractive"
 export UCF_FORCE_CONFFOLD=1
 export ERROR=0
-apt-get $APT_OPTS install ubuntu-minimal ubuntu-desktop ubuntu-standard grub || ERROR=1
+apt-get $APT_OPTS install ubuntu-minimal ubuntu-desktop ubuntu-standard || ERROR=1
 apt-get $APT_OPTS install $UBUNTU_PACKAGES || ERROR=1
 apt-get clean
 exit \$ERROR

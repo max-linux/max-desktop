@@ -1,0 +1,415 @@
+# translation of el.po to Hellenic-Ελληνικά-Greek
+# translation of el.po to Hellenic
+# LANGUAGE translations for boot loader
+# Copyright (C) 2004 SUSE LINUX AG
+# Hellenic SuSE Translators Group <hstg@billg.gr>, 2004, 2005.
+# Hellenic SuSE Translation Team <hstg@billg.gr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: el\n"
+"Report-Msgid-Bugs-To:  \n"
+"POT-Creation-Date: 2007-10-09 09:00+0000\n"
+"PO-Revision-Date: 2009-10-20 11:32+0000\n"
+"Last-Translator: Thanos Lefteris <alefteris@gmail.com>\n"
+"Language-Team: Hellenic-Ελληνικά-Greek <hstg@billg.gr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2009-10-26 12:28+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. ok button label
+#. txt_ok
+msgid "OK"
+msgstr "Εντάξει"
+
+#. cancel button label
+#. txt_cancel
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#. reboot button label
+#. txt_reboot
+msgid "Reboot"
+msgstr "Επανεκκίνηση"
+
+#. continue button label
+#. txt_continue
+msgid "Continue"
+msgstr "Συνέχεια"
+
+#. txt_bootoptions
+msgid "Boot Options"
+msgstr "Ρυθμ.Εκκίνησης"
+
+#. window title for exit dialog
+#. txt_exit_title (see txt_exit_dialog)
+msgid "Exiting..."
+msgstr "Γίνεται τερματισμός..."
+
+#. txt_exit_dialog
+msgid ""
+"You are leaving the graphical boot menu and\n"
+"starting the text mode interface."
+msgstr ""
+"Εγκαταλείπετε το μενού γραφικής εκκίνησης και\n"
+"ξεκινάτε το περιβάλλον κατάστασης κειμένου."
+
+#. txt_help
+msgid "Help"
+msgstr "Βοήθεια"
+
+#. info box title
+#. txt_info_title
+msgid "Boot loader"
+msgstr "Εκκινητής συστήματος"
+
+#. error box title
+#. txt_error_title
+msgid "I/O error"
+msgstr "Σφάλμα I/O"
+
+#. boot disk change dialog title
+#. txt_change_disk_title
+msgid "Change Boot Disk"
+msgstr "Αλλαγή δίσκου εκκίνησης"
+
+#. txt_insert_disk
+#, c-format
+msgid "Insert boot disk %u."
+msgstr "Παρακαλώ εισάγετε το δίσκο εκκίνησης %u."
+
+#. txt_insert_disk2
+#, c-format
+msgid ""
+"This is boot disk %u.\n"
+"Insert boot disk %u."
+msgstr ""
+"Αυτός είναι ο δίσκος εκκίνησης %u.\n"
+"Παρακαλώ εισάγετε τον δίσκο εκκίνησης %u."
+
+#. txt_insert_disk3
+#, c-format
+msgid ""
+"This is not a suitable boot disk.\n"
+"Please insert boot disk %u."
+msgstr ""
+"Αυτή δεν είναι ο κατάλληλος δίσκος εκκίνησης.\n"
+"Παρακαλώ εισάγετε το δίσκο εκκίνησης %u."
+
+#. password dialog title
+#. txt_password_title
+msgid "Password"
+msgstr "Κωδικός πρόσβασης"
+
+#. Keep the newlines and spaces after ':'!
+#. txt_password
+msgid ""
+"Enter your password:   \n"
+"\n"
+"\n"
+msgstr ""
+"Εισάγετε τον κωδικό πρόσβασης σας:   \n"
+"\n"
+"\n"
+
+#. dvd warning title
+#. txt_dvd_warning_title
+msgid "DVD Error"
+msgstr "Σφάλμα DVD"
+
+#. txt_dvd_warning2
+msgid ""
+"This is a two-sided DVD. You have booted from the second side.\n"
+"\n"
+"Turn the DVD over then continue."
+msgstr ""
+"Αυτό είναι DVD δύο πλευρών. Έχετε κάνει εκκίνηση από την δεύτερη πλευρά.\n"
+"\n"
+"Γυρίστε το DVD και συνεχίστε."
+
+#. power off dialog title
+#. txt_power_off_title
+msgid "Power Off"
+msgstr "Τερματισμός λειτουργίας"
+
+#. txt_power_off
+msgid "Halt the system now?"
+msgstr "Θέλετε να σταματήσετε το σύστημα τώρα;"
+
+#. txt_password
+msgid "Password\n"
+msgstr "Κωδικός πρόσβασης\n"
+
+#. button label for other/more options
+#. txt_other_options
+msgid "Other Options"
+msgstr "Επιλογές"
+
+#. label for language selection
+#. txt_language
+msgid "Language"
+msgstr "Γλώσσα"
+
+#. label for keymap selection
+#. txt_keymap
+msgid "Keymap"
+msgstr "Πληκτρολόγιο"
+
+#. label for installation mode selection
+#. txt_modes
+msgid "Modes"
+msgstr "Λειτουργία"
+
+#. label for modes menu
+#. txt_mode_normal
+msgid "Normal"
+msgstr "Κανονική"
+
+#. label for d-i mode menu
+#. txt_expert_mode
+msgid "Expert mode"
+msgstr "Λειτουργία για προχωρημένους"
+
+#. title for accessibility menu
+#. txt_access
+msgid "Accessibility"
+msgstr "Προσιτότητα"
+
+#. label for accessibility menu
+#. txt_access_none
+msgid "None"
+msgstr "Καμία"
+
+#. label for accessibility menu
+#. txt_access_v1
+msgid "High Contrast"
+msgstr "Υψηλή Αντίθεση"
+
+#. label for accessibility menu
+#. txt_access_v2
+msgid "Magnifier"
+msgstr "Μεγεθυντής"
+
+#. label for accessibility menu
+#. txt_access_v3
+msgid "Screen Reader"
+msgstr "Εφαρμογή ανάγνωσης οθόνης"
+
+#. label for accessibility menu
+#. txt_access_brltty
+msgid "Braille Terminal"
+msgstr "Τερματικό Braille"
+
+#. label for accessibility menu
+#. txt_access_m1
+msgid "Keyboard Modifiers"
+msgstr "Τροποποιητές πληκτρολογίου"
+
+#. label for accessibility menu
+#. txt_access_m2
+msgid "On-Screen Keyboard"
+msgstr "Πληκτρολόγιο στην οθόνη"
+
+#. label for accessibility menu
+#. txt_access_m3
+msgid "Motor Difficulties - switch devices"
+msgstr "Κινητικές δυσκολίες - συσκευές εναλλαγής"
+
+#. label for accessibility menu
+#. txt_access_all
+msgid "Everything"
+msgstr "Όλα"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu
+#, fuzzy
+msgid "^Try Ubuntu without installing"
+msgstr "^Δοκιμή του Ubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu
+#, fuzzy
+msgid "^Try Kubuntu without installing"
+msgstr "^Δοκιμή του Kubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_edubuntu
+#, fuzzy
+msgid "^Try Edubuntu without installing"
+msgstr "^Δοκιμή του Edubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_xubuntu
+#, fuzzy
+msgid "^Try Xubuntu without installing"
+msgstr "^Δοκιμή του Xubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_mid
+#, fuzzy
+msgid "^Try Ubuntu MID without installing"
+msgstr "^Δοκιμή του Ubuntu MID χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_ubuntu_netbook_remix
+#, fuzzy
+msgid "^Try Ubuntu Netbook Remix without installing"
+msgstr "^Δοκιμή του Ubuntu Netbook Remix χωρίς αλλαγές στον υπολογιστή σας"
+
+#. Installation mode.
+#. txt_menuitem_driverupdates
+msgid "Use driver update disc"
+msgstr "Χρήση δίσκου με ενημερώσεις προγραμμάτων οδήγησης"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_ubuntu
+msgid "^Install Ubuntu in text mode"
+msgstr "^Εγκατάσταση Ubuntu σε κατάσταση κειμένου"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_kubuntu
+msgid "^Install Kubuntu in text mode"
+msgstr "^Εγκατάσταση Kubuntu σε κατάσταση κειμένου"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_edubuntu
+msgid "^Install Edubuntu in text mode"
+msgstr "^Εγκατάσταση Edubuntu σε κατάσταση κειμένου"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_text_xubuntu
+msgid "^Install Xubuntu in text mode"
+msgstr "^Εγκατάσταση Xubuntu σε κατάσταση κειμένου"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu
+msgid "^Install Ubuntu"
+msgstr "^Εγκατάσταση Ubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu
+msgid "^Install Kubuntu"
+msgstr "^Εγκατάσταση Kubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_edubuntu
+msgid "^Install Edubuntu"
+msgstr "^Εγκατάσταση Edubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_xubuntu
+msgid "^Install Xubuntu"
+msgstr "^Εγκατάσταση Xubuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_server
+msgid "^Install Ubuntu Server"
+msgstr "^Εγκατάσταση Ubuntu Server"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_enterprise_cloud
+msgid "Install Ubuntu ^Enterprise Cloud"
+msgstr "Εγκατάσταση Ubuntu ^Enterprise Cloud"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntustudio
+msgid "^Install Ubuntu Studio"
+msgstr "^Εγκατάσταση Ubuntu Studio"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_mid
+msgid "^Install Ubuntu MID"
+msgstr "^Εγκατάσταση Ubuntu MID"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_ubuntu_netbook_remix
+msgid "^Install Ubuntu Netbook Remix"
+msgstr "^Εγκατάσταση Ubuntu Netbook Remix"
+
+#. Installation mode.
+#. txt_menuitem_workstation
+msgid "Install a workstation"
+msgstr "Εγκατάσταση ενός ^σταθμού εργασίας"
+
+#. Installation mode.
+#. txt_menuitem_server
+msgid "Install a server"
+msgstr "Εγκατάσταση εξυπηρετητή (server)"
+
+#. Installation mode.
+#. txt_menuitem_oem
+msgid "OEM install (for manufacturers)"
+msgstr "Εγκατάσταση ΟΕΜ (για κατασκευαστές)"
+
+#. Installation mode.
+#. txt_menuitem_lamp
+msgid "Install a LAMP server"
+msgstr "Εγκατάσταση εξυπηρετητή LAMP"
+
+#. Installation mode.
+#. txt_menuitem_ltsp
+msgid "Install an LTSP server"
+msgstr "Εγκατάσταση εξυπηρετητή LTSP"
+
+#. Installation mode.
+#. txt_menuitem_ltsp_mythbuntu
+msgid "Install a Diskless Image Server"
+msgstr "Εγκατάσταση εξυπηρετητή εικόνων (Image Server)"
+
+#. Installation mode.
+#. txt_menuitem_cli
+msgid "Install a command-line system"
+msgstr "Εγκατάσταση συστήματος γραμμής εντολών"
+
+#. Installation mode.
+#. txt_menuitem_minimal
+msgid "Install a minimal system"
+msgstr "Εγκατάσταση ελάχιστου συστήματος"
+
+#. Installation mode.
+#. txt_menuitem_minimalvm
+msgid "Install a minimal virtual machine"
+msgstr "Εγκατάσταση ελάχιστης εικονικής μηχανής"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_check
+msgid "^Check disc for defects"
+msgstr "Έλεγχος ^CD για ελαττώματα"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_rescue
+msgid "^Rescue a broken system"
+msgstr "Διάσωση ^προβληματικού συστήματος"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_memtest
+msgid "Test ^memory"
+msgstr "Έλεγχος ^μνήμης"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_hd
+msgid "^Boot from first hard disk"
+msgstr "Ε^κκίνηση από τον πρώτο σκληρό δίσκο"
+
+#. Boot option.
+#. txt_option_free
+msgid "Free software only"
+msgstr "Μόνο ελεύθερο λογισμικό"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_dell_factory_recovery
+msgid "^Dell Automatic Reinstall"
+msgstr "^Αυτόματη επανεγκατάσταση της Dell"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_mythbuntu
+msgid "^Install Mythbuntu"
+msgstr "^Εγκατάσταση Mythbuntu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_mythbuntu
+#, fuzzy
+msgid "^Try Mythbuntu without installing"
+msgstr "^Δοκιμή του Mythbuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"

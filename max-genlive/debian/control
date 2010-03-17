@@ -2,7 +2,7 @@ Source: max-genlive
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.0.0), cdbs, gfxboot
+Build-Depends: debhelper (>= 4.0.0), cdbs, gfxboot, nasm, xmlto
 Standards-Version: 3.7.3
 
 Package: max-genlive

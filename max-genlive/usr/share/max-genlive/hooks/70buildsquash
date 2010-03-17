@@ -10,12 +10,19 @@ if [ ! $DISABLE_SQUASHFS ]; then
 
   LZMA=""
   # ver si hay que desactivar LZMA
-  mksquashfs -help 2>&1 | grep -q nolzma && LZMA="-nolzma"
+  $MKSQUASHFS -help 2>&1 | grep -q nolzma && LZMA="-nolzma"
 
   mkdir -p $CDRW/casper/
   _echo "Creando archivo squashfs (tarda bastante)..."
-  mksquashfs $CHROOT/  $CDRW/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo squashfs"
+  $MKSQUASHFS $CHROOT/  $CDRW/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo squashfs"
   chmod 644 $CDRW/casper/filesystem.squashfs
+
+  _echo "Calculando tamaño filesystem.size..."
+
+  unsquashfs -lls $CDRW/casper/filesystem.squashfs | grep -v " inodes " | grep -v "unsquashfs:" | awk '{print $3}' | grep -v "," > /tmp/size.tmp
+  for i in `cat /tmp/size.tmp`; do a=$(($a+$i)); done
+  echo $a > $CDRW/casper/filesystem.size
+
 
 fi
 
