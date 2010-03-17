@@ -157,12 +157,17 @@ UBUNTU_MIRRORS=[
                 [ _("France"), 'fr.' ],
                 [ _("United Kingdom"), 'uk.' ],
                 [ _("Germany"), 'de.' ],
+                [ _("Finland"), 'fi.' ],
                 ]
 
 DISTROS=[
           [ _("MaX 4.0"), ['hardy', 'hardy-updates', 'hardy-security'], ['max40'] ],
           [ _("MaX 5.0"), ['jaunty', 'jaunty-updates', 'jaunty-security'], ['max50'] ],
-          [ _("MaX 4.0 and 5.0"), ['hardy', 'hardy-updates', 'hardy-security', 'jaunty', 'jaunty-updates', 'jaunty-security'], ['max40', 'max50'] ],
+          [ _("MaX 6.0"), ['lucid', 'lucid-updates', 'lucid-security'], ['max60'] ],
+          [ _("MaX 4.0, 5.0 and 6.0"), ['hardy', 'hardy-updates', 'hardy-security', 
+                                        'jaunty', 'jaunty-updates', 'jaunty-security', 
+                                        'lucid', 'lucid-updates', 'lucid-security'], 
+                                       ['max40', 'max50', 'max60'] ],
         ]
 
 
