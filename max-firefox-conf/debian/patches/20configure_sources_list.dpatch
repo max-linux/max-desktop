@@ -11,7 +11,7 @@ diff -urNad max-firefox-conf~/ubufox/pfs/db/sources.list.8.04 max-firefox-conf/u
 @@ -1,2 +1,4 @@
 -deb http://archive.ubuntu.com/ubuntu/ gutsy main restricted universe multiverse
 -# deb http://archive.ubuntu.com/ubuntu/ gutsy restricted
-+deb http://archive.ubuntu.com/ubuntu/ hardy main restricted universe multiverse
-+deb http://archive.ubuntu.com/ubuntu/ hardy restricted
++deb http://archive.ubuntu.com/ubuntu/ lucid main restricted universe multiverse
++deb http://archive.ubuntu.com/ubuntu/ lucid restricted
 +
-+deb http://max.educa.madrid.org/max40 max main
++deb http://max.educa.madrid.org/max60 max main

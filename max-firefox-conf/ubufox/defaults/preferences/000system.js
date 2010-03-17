@@ -1,1 +1,0 @@
-/etc/firefox-3.0/pref/ubufox.js

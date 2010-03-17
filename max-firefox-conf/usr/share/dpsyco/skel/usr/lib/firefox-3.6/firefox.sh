@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# MAX 5.0 install FNMT CA certificate
+# MAX 6.0 install FNMT CA certificate
 
 if [ -e $HOME/.mozilla/firefox/profiles.ini ]; then
 
@@ -21,6 +21,8 @@ fi
 
 
 
+
+
 # Firefox launcher containing a Profile migration helper for
 # temporary profiles used during alpha and beta phases.
 
@@ -30,14 +32,21 @@ fi
 #  Steve Langasek <steve.langasek@canonical.com>
 # License: GPLv2 or later
 
+## profile migration disabled for now, instead, resurrect the previous code
+
+# If there's still no ~/mozilla/firefox-3.5 profile, try to find a previous
+# firefox profile and initialize with that.
+# If nothing is found, we'll go for a fresh run and let firefox create a
+# default profile for us.
+
 MOZDIR=$HOME/.mozilla
-LIBDIR=/usr/lib/firefox-3.0.17
-APPVER=3.0
+LIBDIR=/usr/lib/firefox-3.6
+APPVER=
 META_NAME=firefox
 GDB=/usr/bin/gdb
 DROPPED=abandoned
 
-NAME="$0"
+NAME=`which "$0"`
 if [ "x$META_NAME" != "x" ] ; then
   NAME="${NAME%%-$APPVER}"
 fi
@@ -82,14 +91,13 @@ while [ $# -gt 0 ]; do
   esac
 done
 
-# if there exists a beta profile (first found: $MOZDIR/firefox-3.0,
-# $MOZDIR/firefox-trunk, $MOZDIR/granparadiso) and there is a standard
-# firefox profile as well, ask the user what to do. In case he decides to
-# import the firefox 2 profile settings, we keep the firefox directory
-# untouched, but rename the beta profile by appending the suffix
-# |.abandoned|. In case the user decides to keep using the firefox 3
-# profile, we will rename the original firefox profile to firefox.2-replaced
-# and rename the beta profile to be |.mozilla/firefox|.
+# if there exists a beta profile (first found: $MOZDIR/firefox-3.5,
+# $MOZDIR/firefox-3.1) and there is a standard firefox profile as well, ask the
+# user what to do. In case he decides to import the firefox 3.0 profile
+# settings, we keep the firefox directory untouched, but rename the beta
+# profile by appending the suffix |.abandoned|. In case the user decides to
+# keep using the firefox 3.5 profile, we rename the original firefox profile to
+# firefox.3.0-replaced and rename the beta profile to be |.mozilla/firefox|.
 #
 # as a third option the user can defer his final decision. This will leave the
 # directories untouched, thus making the user use the old firefox profile by
@@ -105,7 +113,7 @@ fi
 
 FOUND_BETA=""
 BETA_LIST=""
-for betaname in granparadiso firefox-trunk firefox-3.0; do
+for betaname in firefox-3.1 firefox-3.5 firefox-3.6; do
   if [ -d $MOZDIR/$betaname ]; then
     BETA_LIST="$BETA_LIST $betaname"
     FOUND_BETA=$betaname
@@ -114,10 +122,10 @@ done
 
 if [ "$FOUND" != "" -a "$FOUND_BETA" != "" ] ; then
   echo -n "Found Beta Participation ..."
-  $LIBDIR/ffox-3-beta-profile-migration-dialog
+  $LIBDIR/ffox-beta-profile-migration-dialog
   result=$?
   if [ $result = 1 ]; then
-     mv $MOZDIR/$FOUND $MOZDIR/$FOUND.2-replaced
+     mv $MOZDIR/$FOUND $MOZDIR/$FOUND.3.5-replaced
      mv $MOZDIR/$FOUND_BETA $MOZDIR/$FOUND
      for beta in $BETA_LIST ; do
        if [ $beta != $FOUND_BETA ] ; then
@@ -129,9 +137,9 @@ if [ "$FOUND" != "" -a "$FOUND_BETA" != "" ] ; then
      for beta in $BETA_LIST ; do
        mv $MOZDIR/$beta $MOZDIR/$beta.$DROPPED
      done
-     echo " use firefox 2 profile."
+     echo " use firefox 3.5 profile."
   else
-     echo " use firefox 2 profile, but will ask again next time."
+     echo " use firefox 3.5 profile, but will ask again next time."
   fi
   echo " ... will check again next time."
 elif [ "$FOUND_BETA" != "" -a "$FOUND" = "" ]; then
@@ -155,9 +163,13 @@ if [ $want_debug -eq 1 ] ; then
   tmpfile=`mktemp /tmp/mozargs.XXXXXX` || { echo "Cannot create temporary file" >&2; exit 1; }
   trap " [ -f \"$tmpfile\" ] && /bin/rm -f -- \"$tmpfile\"" 0 1 2 3 13 15
   echo "set args ${1+"$@"}" > $tmpfile
-  echo "$GDB $LIBDIR/$APPNAME -x $tmpfile"
-  $GDB "$LIBDIR/$APPNAME" -x $tmpfile
+  echo "sh $LIBDIR/run-mozilla.sh $GDB "$LIBDIR/$META_NAME"-bin -x $tmpfile"
+  # force command name to be firefox for run-mozilla.sh
+  # see abrowser_run_mozilla.patch
+  CMDNAME_USER=firefox sh $LIBDIR/run-mozilla.sh $GDB "$LIBDIR/$META_NAME" -x $tmpfile
   exit $?
 else
-  exec $LIBDIR/$APPNAME "$@"
+  # force command name to be firefox for run-mozilla.sh
+  # see abrowser_run_mozilla.patch
+  CMDNAME_USER=firefox exec $LIBDIR/$META_NAME "$@"
 fi

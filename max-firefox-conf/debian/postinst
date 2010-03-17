@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+#set -e
 
 case "$1" in
     configure)
@@ -11,6 +11,15 @@ case "$1" in
          ln -s /usr/share/pixmaps/firefox-3.0.png /usr/share/pixmaps/firefox.png || true
        fi
     fi
+
+    if [ ! -e /usr/lib/firefox-addons/extensions/langpack-es@firefox-3.6.ubuntu.com ]; then
+       if [ -d /usr/lib/firefox-addons/extensions/langpack-es-ES@firefox-3.6.ubuntu.com  ]; then
+         ln -s /usr/lib/firefox-addons/extensions/langpack-es-ES@firefox-3.6.ubuntu.com \
+		/usr/lib/firefox-addons/extensions/langpack-es@firefox-3.6.ubuntu.com || true
+       fi
+    fi
+
+    
 
     ;;
 
