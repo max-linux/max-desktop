@@ -2,8 +2,8 @@ Source: max-kde-default-settings
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
-Build-Depends: debhelper (>= 5.0), cdbs
-Standards-Version: 3.8.0
+Build-Depends: debhelper (>= 7.0), cdbs
+Standards-Version: 3.8.4
 
 Package: max-kde-default-settings
 Architecture: all
