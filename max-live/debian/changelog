@@ -1,3 +1,33 @@
+max-live (6.0.max1) max; urgency=low
+
+  * Change version to 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Mar 2010 12:21:09 +0100
+
+max-live (5.0.max11) max; urgency=low
+
+  * Remove apt-setup security generator
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 04 Mar 2010 16:51:01 +0100
+
+max-live (5.0.max10) max; urgency=low
+
+  * Update vars to max60
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 15 Feb 2010 12:20:45 +0100
+
+max-live (5.0.max9) max; urgency=low
+
+  * Remove pcmcia-cs and change grub => grub-pc
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Feb 2010 22:01:51 +0100
+
+max-live (5.0.max8) max; urgency=low
+
+  * Build in MaX 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Feb 2010 22:00:02 +0100
+
 max-live (5.0.max7) max; urgency=low
 
   * Remove creditos_max40

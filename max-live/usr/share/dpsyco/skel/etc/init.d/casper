@@ -2,10 +2,11 @@
 ### BEGIN INIT INFO
 # Provides:          casper
 # Required-Start:    $syslog
-# Required-Stop:     $syslog
+# Required-Stop:
 # Should-Start:      $local_fs
-# Should-Stop:       $local_fs
-# Default-Start:     1 2 3 4 5
+# Should-Stop:       halt reboot
+# X-Stop-After:      umountroot
+# Default-Start:
 # Default-Stop:      0 6
 # Short-Description: Casper init script
 # Description:       Resyncs snapshots, evantually caches files in order
@@ -70,6 +71,19 @@ do_stop ()
         return 0
     fi
 
+    # Don't prompt to eject the SD card on Babbage board, where we reuse it
+    # as a quasi-boot-floppy. Technically this uses a bit of ubiquity
+    # (archdetect), but since this is mostly only relevant for
+    # installations, who cares ...
+    if type archdetect >/dev/null 2>&1; then
+	subarch="$(archdetect)"
+	case $subarch in
+	    arm*/imx51)
+		return 0
+		;;
+	esac
+    fi
+
     prompt=1
     if grep -qs noprompt /proc/cmdline; then
 	prompt=
@@ -100,10 +114,11 @@ do_stop ()
 }
 
 case "$1" in
-    start|restart|reload|force-reload|status)
+    restart|reload|force-reload|status)
         [ "$VERBOSE" != no ] && log_end_msg 0
         ;;
-    stop)
+    # We normally run on start; stop is just for backwards compatibility.
+    start|stop)
         log_begin_msg "${NAME} is resyncing snapshots and caching reboot files..."
         do_stop
         case "$?" in

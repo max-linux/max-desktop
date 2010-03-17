@@ -2,12 +2,12 @@ Source: max-live
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.0.0), cdbs
-Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 7.0.0), cdbs
+Standards-Version: 3.8.4
 
 Package: max-live
 Architecture: all
-Depends: ubiquity-frontend-max, grub, language-pack-es, language-pack-kde-es, language-support-es, laptop-detect, ntfsprogs, pcmcia-cs, xresprobe
+Depends: ubiquity-frontend-max, grub-pc, language-pack-es, language-pack-kde-es, language-support-es, laptop-detect, ntfsprogs, xresprobe
 Provides: max-install
 Replaces: max-install
 Conflicts: max-install
