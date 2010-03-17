@@ -1,3 +1,15 @@
+max-lxde-default-settings (6.0.max1) max; urgency=low
+
+  * Change version to 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Mar 2010 12:20:44 +0100
+
+max-lxde-default-settings (5.0.max16) max; urgency=low
+
+  * Build in Max 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 15 Feb 2010 16:30:44 +0100
+
 max-lxde-default-settings (5.0.max15) max; urgency=low
 
   * Remove xscreensaver.desktop (Close: #232)

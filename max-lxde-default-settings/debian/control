@@ -2,8 +2,8 @@ Source: max-lxde-default-settings
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.1.0), cdbs
-Standards-Version: 3.8.1
+Build-Depends: debhelper (>= 7.0.0), cdbs
+Standards-Version: 3.8.4
 
 Package: max-lxde-default-settings
 Depends: dmz-cursor-theme, openbox-themes
