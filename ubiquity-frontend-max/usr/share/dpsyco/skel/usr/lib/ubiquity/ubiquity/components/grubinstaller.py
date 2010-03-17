@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8; Mode: Python; indent-tabs-mode: nil; tab-width: 4 -*-
 
 # Copyright (C) 2006 Canonical Ltd.
 # Written by Colin Watson <cjwatson@ubuntu.com>.
@@ -18,32 +18,16 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 from ubiquity.filteredcommand import FilteredCommand
-import os
+from ubiquity import misc
 import syslog
 
 class GrubInstaller(FilteredCommand):
     def prepare(self):
         syslog.syslog("DEBUG GRUBINSTALLER dir(self)=%s"%dir(self) )
-        #self.detect_sti()
         return (['/usr/share/grub-installer/grub-installer', '/target'],
                 ['^grub-installer/bootdev$', 'ERROR'],
                 {'OVERRIDE_UNSUPPORTED_OS': '1'})
 
-    def detect_sti(self):
-        self.preseed('grub-installer/bootdev', '(hd0)')
-        syslog.syslog("DEBUG: GRUBINSTALLER detect_sti()")
-        pin,pout,perr=os.popen3("sudo /usr/bin/test-sti")
-        pin.close()
-        perr.close()
-        response=pout.readline().strip()
-        pout.close()
-        syslog.syslog("DEBUG: GRUBINSTALLER detect_sti() response=%s"%response)
-        if response == "YES":
-            syslog.syslog("DEBUG: GRUBINSTALLER preseeding bootdev to (hd0,0)")
-            self.preseed('grub-installer/bootdev', '(hd0,0)')
-        else:
-            syslog.syslog("DEBUG: GRUBINSTALLER no STI card found")
-        
 
     def error(self, priority, question):
         self.frontend.error_dialog(self.description(question),
@@ -52,10 +36,9 @@ class GrubInstaller(FilteredCommand):
 
     def run(self, priority, question):
         syslog.syslog("DEBUG GRUBINSTALLER run() prio=%s question=%s" %(priority, question) )
-        #self.detect_sti()
         if question == 'grub-installer/bootdev':
-            # Force to (hd0) in the case of an unsupported OS.
+            # Force to the default in the case of an unsupported OS.
             if self.db.get(question) == '':
-                self.preseed(question, '(hd0)')
+                self.preseed(question, misc.grub_default())
 
         return FilteredCommand.run(self, priority, question)

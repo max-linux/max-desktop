@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy toplevel-contextual -->
+  <object class="GtkVBox" id="stepWelcome">
+    <property name="visible">True</property>
+    <property name="border_width">6</property>
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkImage" id="intro_image">
+        <property name="visible">True</property>
+        <property name="ypad">15</property>
+        <property name="stock">gtk-missing-image</property>
+      </object>
+      <packing>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkLabel" id="intro_label">
+        <property name="visible">True</property>
+        <property name="label" translatable="yes">label</property>
+        <property name="use_markup">True</property>
+        <property name="wrap">True</property>
+        <property name="max_width_chars">70</property>
+      </object>
+      <packing>
+        <property name="position">1</property>
+      </packing>
+    </child>
+    <child>
+      <placeholder/>
+    </child>
+  </object>
+</interface>

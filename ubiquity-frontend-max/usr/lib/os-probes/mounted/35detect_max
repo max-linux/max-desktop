@@ -21,5 +21,18 @@ if [ -f $dir/boot/grub/menu.lst ]; then
   fi
 fi
 
+if [ -f $dir/boot/grub/grub.cfg ]; then
+  first_entry=$(grep ^menuentry $dir/boot/grub/grub.cfg | head -1 | awk -F'"' '{print $2}')
+  if [ "$(echo $first_entry | grep -c -i max)" != "0" ]; then
+    # is MaX example: (MaX 6.0, with Linux 2.6.32-15-generic)
+    short=$(echo $first_entry| awk -F"," '{print $1}')
+    long=$first_entry
+    label=$(count_next_label $short)
+    result "$partition:$short:$label:linux"
+    #result "$partition:$long:$label:linux"
+    exit 0
+  fi
+fi
+
 exit 1
 

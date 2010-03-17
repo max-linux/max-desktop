@@ -1,3 +1,70 @@
+ubiquity-frontend-max (6.0.max8) max; urgency=low
+
+  * Sync again with 2.1.35 and make DVD and CDROM minsizes to 8.5 GB and 2.5 GB
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Mar 2010 19:31:02 +0100
+
+ubiquity-frontend-max (6.0.max7) max; urgency=low
+
+  * Re-sync with ubiquity 2.1.35
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 12 Mar 2010 13:58:11 +0100
+
+ubiquity-frontend-max (6.0.max6) max; urgency=low
+
+  * Fix stop_progress num args
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 11 Mar 2010 00:55:25 +0100
+
+ubiquity-frontend-max (6.0.max5) max; urgency=low
+
+  * call max-update-post-inst instead of update-dpsyco-skel
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Mar 2010 16:50:11 +0100
+
+ubiquity-frontend-max (6.0.max4) max; urgency=low
+
+  * Call do_autoremove() with subprocess to not loss debconf connection
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Mar 2010 16:16:07 +0100
+
+ubiquity-frontend-max (6.0.max3) max; urgency=low
+
+  * Update install.py to save wallpaper cache
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Mar 2010 15:16:32 +0100
+
+ubiquity-frontend-max (6.0.max2) max; urgency=low
+
+  * Add support for STI detection and GRUB preseed
+  * Sync with ubiquity 2.1.33
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Mar 2010 02:27:56 +0100
+
+ubiquity-frontend-max (6.0.max1) max; urgency=low
+
+  * Change version to 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Mar 2010 12:25:37 +0100
+
+ubiquity-frontend-max (5.0.max0.14) max; urgency=low
+
+  * Remove GRUB INSTALLER
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 04 Mar 2010 19:32:42 +0100
+
+ubiquity-frontend-max (5.0.max0.13) max; urgency=low
+
+  * New version based on ubiquity 2.1.30
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 04 Mar 2010 16:53:16 +0100
+
+ubiquity-frontend-max (5.0.max0.12) max; urgency=low
+
+  * Build in MaX 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Feb 2010 22:03:41 +0100
+
 ubiquity-frontend-max (5.0.max0.11) max; urgency=low
 
   * usr/share/ubiquity/install.py:
