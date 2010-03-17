@@ -1,3 +1,123 @@
+max-meta (6.0.max9) max; urgency=low
+
+  * Add netspeed applet
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 11 Mar 2010 20:17:48 +0100
+
+max-meta (6.0.max8) max; urgency=low
+
+  * Remove hal (deprecated)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Mar 2010 20:10:14 +0100
+
+max-meta (6.0.max7) max; urgency=low
+
+  * nanomax, remove:
+    - linux-restricted-modules-generic
+    - max-artwork-usplash
+    - ttf-bitstream-vera
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Mar 2010 19:51:07 +0100
+
+max-meta (6.0.max6) max; urgency=low
+
+  * Replace gFTP => Filezilla close: #267, #270
+  * Add Tuxguitar close: #268
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Mar 2010 18:40:12 +0100
+
+max-meta (6.0.max5) max; urgency=low
+
+  * Add gedit-plugins and meld
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Mar 2010 17:20:08 +0100
+
+max-meta (6.0.max4) max; urgency=low
+
+  * Add max-java-plugin
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Mar 2010 12:35:48 +0100
+
+max-meta (6.0.max3) max; urgency=low
+
+  * Remove libjpeg-progs
+  * Re-add iscan and iscan-plugins
+  * Re-add epson-alc1100-filter
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Mar 2010 12:30:57 +0100
+
+max-meta (6.0.max2) max; urgency=low
+
+  * Remove intel 2.4 driver
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Mar 2010 12:11:54 +0100
+
+max-meta (6.0.max1) max; urgency=low
+
+  * Change version to 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Mar 2010 11:54:24 +0100
+
+max-meta (5.0.max54) max; urgency=low
+
+  * Add spanish packages of gimp kde and thunderbird
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 04 Mar 2010 18:49:26 +0100
+
+max-meta (5.0.max53) max; urgency=low
+
+  * Remove postfix|exim4 from desktop-common
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 04 Mar 2010 13:55:57 +0100
+
+max-meta (5.0.max52) max; urgency=low
+
+  * desktop-common, remove kdevelop
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 04 Mar 2010 11:30:37 +0100
+
+max-meta (5.0.max51) max; urgency=low
+
+  * Remove more packages:
+    -abiword-plugins
+    -grip
+    -monodoc
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Feb 2010 21:12:40 +0100
+
+max-meta (5.0.max50) max; urgency=low
+
+  * Remove more packages:
+    -max-artwork-usplash
+    -mkisofs
+    -mozilla-mplayer
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Feb 2010 21:02:43 +0100
+
+max-meta (5.0.max49) max; urgency=low
+
+  * Remove (MaX 6.0): desktop-common-i386
+    -epson-alc1100-filter
+    -escritorio-movistar
+    -foomatic-db-hpijs
+    -hotkey-setup
+    -iscan
+    -iscan-plugins
+    -libstdc++5
+    -openclipart-openoffice.org
+    -ttf-bitstream-vera
+    -usplash
+    -wacom-tools
+    -xserver-xorg-video-intel-2.4
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Feb 2010 17:51:19 +0100
+
+max-meta (5.0.max48) max; urgency=low
+
+  * Build in MaX 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 13 Feb 2010 16:55:00 +0100
+
 max-meta (5.0.max47) max; urgency=low
 
   * Add max-desktop-lxde package

@@ -1,5 +1,4 @@
 abiword
-abiword-plugins
 anjuta
 audacity
 blender
@@ -19,6 +18,7 @@ ekiga
 eog
 evince
 evolution
+filezilla
 firestarter
 freemind
 pidgin
@@ -26,8 +26,9 @@ gdebi
 gdeskcal
 gdm
 gedit
-gftp
+gedit-plugins
 gimp
+gimp-help-es
 glade
 gnome-control-center
 system-config-printer-gnome
@@ -36,10 +37,10 @@ gnome-media
 gnome-network-admin
 gnome-system-monitor
 gnome-terminal
+gnome-user-guide-es
 gnumeric-doc
 gnumeric-gtk
 gqview
-grip
 groff
 gstreamer0.10-ffmpeg
 gstreamer0.10-plugins-bad
@@ -53,15 +54,15 @@ gtk2-engines-xfce
 gtk-sharp2
 gucharmap
 gwenview
-hal
 libxine1-ffmpeg
 max-gnome-default-settings
+meld
 min12xxw
-monodoc
 nautilus
 nautilus-filename-repairer
 nautilus-mount-image
 nautilus-open-terminal
+netspeed
 openoffice.org-gnome
 openoffice.org-gtk
 pmount
@@ -71,5 +72,6 @@ synaptic
 tango-icon-theme
 tango-icon-theme-common
 totem-gstreamer
+tuxguitar
 update-manager
 xchat

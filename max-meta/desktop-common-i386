@@ -38,8 +38,6 @@ doc-debian
 dvdrtools
 dvd+rw-tools
 epson-alc1100-filter
-escritorio-movistar
-postfix | exim4
 festvox-ellpc11k
 firefox
 firefox-dictionary-es
@@ -50,7 +48,6 @@ foo2zjs
 foomatic-db
 foomatic-db-engine
 foomatic-db-gutenprint
-foomatic-db-hpijs
 foomatic-filters
 fortune-mod
 freepats
@@ -71,14 +68,13 @@ gpsd
 gs-esp
 gtk-recordmydesktop
 homealumno
-hotkey-setup
 hplip
 hplip-ppds
-iscan
-iscan-plugins
 iaxcomm
 inkscape
 irssi
+iscan
+iscan-plugins
 jarnal
 javahotpot
 jclic-max
@@ -86,7 +82,7 @@ jmf
 josm
 josm-plugins
 kdeedu
-kdevelop
+kde-l10n-es
 kompozer
 kompozer-l10n-es
 ktechlab
@@ -105,12 +101,10 @@ libgl1-mesa-dri
 libglib2.0-data
 libglut3
 libjcode-pm-perl
-libjpeg-progs
 libnss-mdns
 libpam-foreground
 libsasl2-modules
 libsox-fmt-all
-libstdc++5
 libtool
 libxp6
 lilypond
@@ -126,13 +120,13 @@ maxima
 maxima-doc
 max-apt
 max-artwork
-max-artwork-usplash
 max-denemo-manual
 max-dpsyco-custom
 max-elotouch
 max-firefox-conf
 max-hardware
 max-java-jre
+max-java-plugin
 max-javahotpot-tutorial
 max-jclic-curso
 max-keyring
@@ -145,9 +139,7 @@ max-skel-conf
 max-tablet
 min12xxw
 mjpegtools
-mkisofs
 mozilla-acroread
-mozilla-mplayer
 mplayer-nogui
 mplayer-fonts
 mscore
@@ -160,7 +152,6 @@ notelab
 non-free-codecs
 ocrad
 openclipart-png
-openclipart-openoffice.org
 openoffice.org
 openoffice.org-help-es
 openoffice.org-l10n-es
@@ -205,13 +196,13 @@ testdisk
 thunderbird
 thunderbird-gnome-support
 thunderbird-locale-es-es
+thunderbird-locale-es-ar
 timidity
 tree
 ttf-arabeyes
 ttf-arphic-ukai
 ttf-arphic-uming
 ttf-baekmuk
-ttf-bitstream-vera
 ttf-dejavu
 ttf-dustin
 ttf-freefont
@@ -234,11 +225,9 @@ ubuntu-docs
 ubuntu-restricted-extras
 unifont
 unzip
-usplash
 vlc
 vlc-plugin-pulse
 vorbis-tools
-wacom-tools
 webhttrack
 winff
 wvdial
@@ -249,7 +238,6 @@ xscreensaver
 xscreensaver-data
 xscreensaver-gl
 xserver-xorg-input-synaptics
-xserver-xorg-video-intel-2.4
 xterm
 x-ttcidfont-conf
 xournal
