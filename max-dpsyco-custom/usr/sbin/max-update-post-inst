@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# called from /etc/apt/apt.conf.d/92update-dpsyco-skel
+#
+
+echo "Procesando disparadores para max ..."
+
+if [ -x /usr/bin/update-gnome-menus-cache ]; then
+  LC_ALL=C update-gnome-menus-cache /usr/share/applications > /usr/share/applications/desktop.C.cache
+  LC_ALL=es_ES.UTF-8 update-gnome-menus-cache /usr/share/applications > /usr/share/applications/desktop.es_ES.utf8.cache
+fi
+
+
+if ! grep -q "MaX-6.0" /etc/default/grub 2>/dev/null; then
+  #cat /usr/share/max/grub.default > /etc/default/grub
+  echo '' >> /etc/default/grub
+  echo 'GRUB_DISTRIBUTOR="MaX-6.0"' >> /etc/default/grub
+
+  if [ -x "`which update-grub2 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
+      update-grub2
+  fi
+fi
+
+
+/usr/sbin/update-dpsyco-skel > /dev/null 2>&1 || true
