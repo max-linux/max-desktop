@@ -17,6 +17,7 @@
 #               * restore backup from /var/lib/max-hardware/intel24
 #         
 
+exit 0
 
 CP="cp"
 MKDIR="mkdir"

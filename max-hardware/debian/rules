@@ -5,7 +5,7 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 # start before xserver-xorg-input-wacom
 DEB_UPDATE_RCD_PARAMS := "start 10 2 3 4 5 ."
 
-build/max-hardware::
+build/max2-hardware::
 	cd xserver-xorg-video-intel-2.6.3 && \
 	debian/rules build
 
@@ -13,7 +13,7 @@ build/max-hardware::
 	cd xserver-xorg-video-intel-2.4-2.4.1 && \
 	debian/rules build
 
-binary-install/max-hardware::
+binary-install/max2-hardware::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-hardware -type d -name .svn | xargs rm -rf --
 

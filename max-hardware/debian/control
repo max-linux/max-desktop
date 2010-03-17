@@ -3,7 +3,7 @@ Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
 Build-Depends:
- debhelper (>= 5),
+ debhelper (>= 7),
  cdbs,
  quilt,
  pkg-config,
@@ -24,11 +24,11 @@ Build-Depends:
  automake,
  libtool,
  xutils-dev
-Standards-Version: 3.7.3
+Standards-Version: 3.8.4
 
 Package: max-hardware
 Architecture: any
-Depends: setserial, dmidecode, xresprobe, usbutils, xbindkeys, wacom-tools,
+Depends: setserial, dmidecode, xresprobe, usbutils, xbindkeys,
          ${shlibs:Depends}, ${misc:Depends}
 Description: Some files to support max special devices and computers
  Contains:

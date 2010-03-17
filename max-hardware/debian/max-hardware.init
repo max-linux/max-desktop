@@ -19,7 +19,11 @@ enable_toshiba() {
      [ "$TOSH_MODEL" = "PORTEGE M400" ]; then
 
      # enable sound device (Thanks to Ismail)
-     if [ "$(grep -c 'options snd-hda-intel model=toshiba' /etc/modprobe.d/alsa-base.conf)" = "0" ]; then
+     if [ "$(grep -c 'options snd-hda-intel enable_msi=1 model=toshiba' /etc/modprobe.d/alsa-base.conf)" = "0" ]; then
+       # delete old lines
+       grep -v "model=toshiba" /etc/modprobe.d/alsa-base.conf > /etc/modprobe.d/alsa-base.conf.new
+       mv /etc/modprobe.d/alsa-base.conf.new /etc/modprobe.d/alsa-base.conf
+       # add model
        echo "options snd-hda-intel enable_msi=1 model=toshiba" >> /etc/modprobe.d/alsa-base.conf
        rmmod snd-hda-intel 2>/dev/null
        modprobe snd-hda-intel
