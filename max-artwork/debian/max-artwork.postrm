@@ -8,9 +8,6 @@ case "$1" in
 	# delete MaX start-here
 	update-alternatives --remove start-here.svg /usr/share/icons/maxtoon/scalable/places/max.svg 
 
-        # reset plymouth
-        [ -x /usr/sbin/plymouth-set-default-theme ] && /usr/sbin/plymouth-set-default-theme -r -R
-
 	# update-grub
 	if [ -x "`which update-grub2 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
 	   update-grub2

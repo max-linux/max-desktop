@@ -24,9 +24,6 @@ case "$1" in
     # install max start-here
     install_alternative
 
-    # install plymouth theme
-    [ -x /usr/sbin/plymouth-set-default-theme ] && /usr/sbin/plymouth-set-default-theme max-logo -R
-
     # update-grub
     if [ -x "`which update-grub2 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
       update-grub2

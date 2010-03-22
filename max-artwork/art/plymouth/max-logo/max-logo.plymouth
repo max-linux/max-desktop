@@ -1,8 +1,0 @@
-[Plymouth Theme]
-Name=MaX Logo
-Description=A theme that features a blank background with a logo.
-ModuleName=script
-
-[script]
-ImageDir=/lib/plymouth/themes/max-logo
-ScriptFile=/lib/plymouth/themes/max-logo/max-logo.script

@@ -1,1 +1,0 @@
-SUBDIRS = max-logo

@@ -1,3 +1,9 @@
+max-artwork (6.0.max10) max; urgency=low
+
+  * Move plymouth to her own package: plymouth-max and depends on it
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 22 Mar 2010 21:41:57 +0100
+
 max-artwork (6.0.max9) max; urgency=low
 
   * Change plymouth fsck text colors and translate it to Spanish
