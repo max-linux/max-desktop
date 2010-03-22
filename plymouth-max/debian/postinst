@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+if [ "$1" = "configure" ]; then
+  [ -x /usr/sbin/plymouth-set-default-theme ] && /usr/sbin/plymouth-set-default-theme max-logo -R
+fi
+
+#DEBHELPER#

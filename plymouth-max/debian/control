@@ -1,0 +1,14 @@
+Source: plymouth-max
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 7.0.0), cdbs, libplymouth-dev
+Standards-Version: 3.8.4
+XS-Vcs-Browser: http://max.educa.madrid.org:8000/browser/trunk/plymouth-max
+
+Package: plymouth-max
+Architecture: any
+Depends: plymouth, ${shlibs:Depends}, ${misc:Depends}
+Conflicts: max-artwork (<<6.0.max9)
+Description: Plymouth theme of MaX 6.0
+ This package contains plymouth MaX 6.0 theme and text.so file

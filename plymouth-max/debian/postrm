@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$1" = "remove" ]; then
+    dpkg-divert --package plymouth-max --rename --remove /lib/plymouth/text.so.ubuntu || true
+fi
+
+if [ "$1" = "purge" ]; then
+  [ -x /usr/sbin/plymouth-set-default-theme ] && /usr/sbin/plymouth-set-default-theme ubuntu-logo -R
+fi
+
+#DEBHELPER#

@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+clean::
+	cd plugins/text && make clean
+
+build:
+	cd plugins/text && make
+
+install/plymouth-max::
+	cd plugins/text && make install DESTDIR=$(CURDIR)/debian/plymouth-max
+
+
