@@ -76,6 +76,7 @@ PAQUETES_EXTRA="$PAQUETES_EXTRA nvidia-glx-180 linux-wlan-ng-firmware linux-firm
 BLACKLIST_PKGS="jetty gdesklets resolvconf gdm-guest-session emacs22 emacs22-bin-common emacs22-common emacsen-common"
 BLACKLIST_PKGS="$BLACKLIST_PKGS python-ubuntuone python-ubuntuone-client python-ubuntuone-storageprotocol ubuntuone-client"
 BLACKLIST_PKGS="$BLACKLIST_PKGS ubuntuone-client-gnome rhythmbox-ubuntuone-music-store libubuntuone-1.0-1"
+BLACKLIST_PKGS="$BLACKLIST_PKGS icedtea6-plugin icedtea-6-jre-cacao"
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
 GENLIVE=/usr/share/max-genlive
