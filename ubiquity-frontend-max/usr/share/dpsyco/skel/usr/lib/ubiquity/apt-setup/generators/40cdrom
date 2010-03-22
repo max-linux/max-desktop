@@ -48,7 +48,7 @@ bail_out() {
 	done
 	rm -f /var/lib/install-cd.id
 
-        # MaX disable show error (needed to nanoMaX)
+    # MaX disable show error (needed to nanoMaX)
 	# db_input critical apt-setup/cdrom/failed || true
 	# db_go || exit 10
 	exit 1

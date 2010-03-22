@@ -268,18 +268,18 @@ class PageKde2(PluginUI):
             if self.keyboardDisplay:
                 ly = keyboard_names.lang[l]['layouts'][unicode(layout)]
                 self.keyboardDisplay.setLayout(ly)
-            
+
                 #no variants, force update by setting none
                 #if not keyboard_names.lang[l]['variants'].has_key(ly):
                 #    self.keyboardDisplay.setVariant(None)
-            
+
             self.current_layout = layout
             self.controller.dbfilter.change_layout(layout)
 
     def on_keyboard_variant_selected(self):
         layout = self.get_keyboard()
         variant = self.get_keyboard_variant()
-        
+
         if self.keyboardDisplay:
             var = None
             l = self.controller.dbfilter.get_locale()
@@ -287,9 +287,9 @@ class PageKde2(PluginUI):
             if variant and keyboard_names.lang[l]['variants'].has_key(ly):
                 variantMap = keyboard_names.lang[l]['variants'][ly]
                 var = variantMap[unicode(variant)]
-            
+
             self.keyboardDisplay.setVariant(var)
-        
+
         if layout is not None and variant is not None:
             self.controller.dbfilter.apply_keyboard(layout, variant)
 
@@ -305,10 +305,10 @@ class PageKde2(PluginUI):
     def set_keyboard (self, layout):
         from PyQt4.QtCore import QString
         index = self.page.keyboard_layout_combobox.findText(QString(unicode(layout)))
-        
+
         if index > -1:
             self.page.keyboard_layout_combobox.setCurrentIndex(index)
-        
+
         if self.keyboardDisplay:
             l = self.controller.dbfilter.get_locale()
             ly = keyboard_names.lang[l]['layouts'][unicode(layout)]
@@ -317,22 +317,22 @@ class PageKde2(PluginUI):
     def get_keyboard(self):
         if self.page.keyboard_layout_combobox.currentIndex() < 0:
             return None
-            
+
         return unicode(self.page.keyboard_layout_combobox.currentText())
 
     def set_keyboard_variant_choices(self, choices):
         from PyQt4.QtCore import QString
-        self.page.keyboard_variant_combobox.clear();
+        self.page.keyboard_variant_combobox.clear()
         for choice in sorted(choices):
             self.page.keyboard_variant_combobox.addItem(QString(unicode(choice)))
 
     def set_keyboard_variant(self, variant):
         from PyQt4.QtCore import QString
         index = self.page.keyboard_variant_combobox.findText(QString(unicode(variant)))
-        
+
         if index > -1:
             self.page.keyboard_variant_combobox.setCurrentIndex(index)
-        
+
         if self.keyboardDisplay:
             var = None
             l = self.controller.dbfilter.get_locale()
@@ -340,13 +340,13 @@ class PageKde2(PluginUI):
             if variant and keyboard_names.lang[l]['variants'].has_key(layout):
                 variantMap = keyboard_names.lang[l]['variants'][layout]
                 var = variantMap[unicode(variant)]
-            
+
             self.keyboardDisplay.setVariant(var)
-    
+
     def get_keyboard_variant(self):
         if self.page.keyboard_variant_combobox.currentIndex() < 0:
             return None
-            
+
         return unicode(self.page.keyboard_variant_combobox.currentText())
 
 class PageDebconf(PluginUI):

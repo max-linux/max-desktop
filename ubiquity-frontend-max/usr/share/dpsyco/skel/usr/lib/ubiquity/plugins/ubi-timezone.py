@@ -172,7 +172,7 @@ class PageGtk2(PluginUI):
         self.city_combo.set_text_column(0)
         city_store = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING)
         self.city_combo.set_model(city_store)
-        
+
         completion = gtk.EntryCompletion()
         entry = self.city_combo.child
         entry.set_completion(completion)
@@ -241,18 +241,18 @@ class PageKde2(PluginUI):
         try:
             from PyQt4 import uic
             from ubiquity.frontend.kde_components.Timezone import TimezoneMap
-            
+
             self.page = uic.loadUi('/usr/share/ubiquity/qt/stepLocation.ui')
             self.tzmap = TimezoneMap(self.page.map_frame)
             self.page.map_frame.layout().addWidget(self.tzmap)
-            
+
             self.tzmap.zoneChanged.connect(self.mapZoneChanged)
             self.page.timezone_zone_combo.currentIndexChanged[int].connect(self.regionChanged)
             self.page.timezone_city_combo.currentIndexChanged[int].connect(self.cityChanged)
         except Exception, e:
             self.debug('Could not create timezone page: %s', e)
             self.page = None
-            
+
         self.plugin_widgets = self.page
 
     def refresh_timezones(self):
@@ -441,7 +441,7 @@ class Page(Plugin):
         continents = self.choices_display_map('localechooser/continentlist')
         names, codes = zip(*continents.items())
         codes = [c.replace(' ', '_') for c in codes]
-        
+
         nones = [None for _ in continents]
         pairs = zip(names, nones, codes)
         pairs.sort(key=self.collation_key)
@@ -470,12 +470,12 @@ class Page(Plugin):
             shortlist = self.build_shortlist_timezone_pairs(country_codes[0])
         else:
             shortlist = []
-        
+
         longlist = []
         for country_code in country_codes:
             longlist += self.build_longlist_timezone_pairs(country_code, sort=False)
         longlist.sort(key=self.collation_key)
-        
+
         # There may be duplicate entries in the shortlist and longlist.
         # Basically, the shortlist is most useful when there are non-city
         # timezones that may be more familiar to denizens of that country.
@@ -490,7 +490,7 @@ class Page(Plugin):
                 if short_item[1] == long_item[1]:
                     shortlist.remove(short_item)
                     break
-        
+
         return (shortlist, longlist)
 
     def build_shortlist_timezone_pairs(self, country_code):

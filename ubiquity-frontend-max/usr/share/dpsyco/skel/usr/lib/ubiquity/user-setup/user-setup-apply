@@ -318,6 +318,10 @@ EOF
 		# Zero out all encrypted swap partitions.  It is assumed that
 		# passwords are not used beyond this point in the install.
 		# cryptswap0 /dev/sda5 /dev/urandom swap,cipher=aes-cbc-essiv:sha256
+		# Ideally we would set up a new progress bar here, but we're
+		# inside finish-install's and cdebconf doesn't support nested
+		# progress bars.
+		db_progress INFO user-setup/progress/wipe-swap
 		while read name device source options; do
 			if echo "$options" | grep -q "swap"; then
 				if swapoff $device; then

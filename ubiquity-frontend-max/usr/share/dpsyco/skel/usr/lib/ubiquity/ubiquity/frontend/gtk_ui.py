@@ -146,7 +146,7 @@ class Controller(ubiquity.frontend.base.Controller):
         else:
             self._wizard.live_installer.show()
         self._wizard.refresh()
-    
+
     def get_string(self, name, lang=None, prefix=None):
         return self._wizard.get_string(name, lang, prefix)
 
@@ -586,15 +586,13 @@ documento que guarde no se conservará.""")
             self.previous_partitioning_page = \
                 self.steps.page_num(self.stepPartAuto)
 
-        self.grub_new_device_entry.clear()
-        renderer = gtk.CellRendererText()
-        self.grub_new_device_entry.pack_start(renderer, True)
-        self.grub_new_device_entry.add_attribute(renderer, 'text', 0)
+        # The default instantiation of GtkComboBoxEntry creates a
+        # GtkCellRenderer, so reuse it.
+        self.grub_new_device_entry.set_model(self.grub_options)
+        self.grub_new_device_entry.set_text_column(0)
         renderer = gtk.CellRendererText()
         self.grub_new_device_entry.pack_start(renderer, True)
         self.grub_new_device_entry.add_attribute(renderer, 'text', 1)
-        self.grub_new_device_entry.set_model(self.grub_options)
-        self.grub_new_device_entry.set_text_column(0)
 
         # set initial bottom bar status
         self.allow_go_backward(False)
@@ -1038,6 +1036,7 @@ documento que guarde no se conservará.""")
 
         # exiting from application
         self.current_page = None
+        self.warning_dialog.hide()
         if self.dbfilter is not None:
             self.dbfilter.cancel_handler()
         self.quit_main_loop()
@@ -1046,13 +1045,9 @@ documento que guarde no se conservará.""")
 
     def on_quit_clicked(self, unused_widget):
         self.warning_dialog.show()
-        response = self.warning_dialog.run()
+
+    def on_quit_cancelled(self, unused_widget):
         self.warning_dialog.hide()
-        if response == gtk.RESPONSE_CLOSE:
-            self.quit_installer()
-            return False
-        else:
-            return True # stop processing
 
     def on_live_installer_delete_event(self, widget, unused_event):
         return self.on_quit_clicked(widget)
@@ -1100,7 +1095,7 @@ documento que guarde no se conservará.""")
 
         if step.startswith("stepPart"):
             self.previous_partitioning_page = step_num
-        
+
         # Ready to install
         if self.pages[self.pagesindex].ui.get('plugin_is_install'):
             self.progress_loop()

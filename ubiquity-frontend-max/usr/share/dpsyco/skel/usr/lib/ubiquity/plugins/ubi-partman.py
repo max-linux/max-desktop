@@ -36,11 +36,14 @@ WEIGHT = 11
 OEM = False
 
 class PageBase(PluginUI):
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         PluginUI.__init__(self)
         self.resize_choice = None
         self.manual_choice = None
         self.biggest_free_choice = None
+        pass
+
+    def show_page_advanced(self):
         pass
 
     def set_disk_layout(self, layout):
@@ -158,6 +161,9 @@ class PageGtk(PageBase):
             self.page = None
         self.plugin_widgets = self.page
 
+    def show_page_advanced(self):
+        self.current_page = self.page_advanced
+
     def progress_start(self, progress_title):
         self.partition_list_buttonbox.set_sensitive(False)
         self.part_advanced_recalculating_label.set_text(progress_title)
@@ -166,7 +172,7 @@ class PageGtk(PageBase):
 
     def progress_info(self, progress_info):
         self.part_advanced_recalculating_label.set_text(progress_info)
-    
+
     def progress_stop(self):
         self.partition_list_buttonbox.set_sensitive(True)
         self.part_advanced_recalculating_spinner.stop()
@@ -1061,7 +1067,7 @@ class PageGtk(PageBase):
         if sel.count_selected_rows() == 0:
             sel.select_path(0)
         # make sure we're on the advanced partitioning page
-        self.current_page = self.page_advanced
+        self.show_page_advanced()
 
     def installation_medium_mounted (self, message):
         self.part_advanced_warning_message.set_text(message)
@@ -1085,6 +1091,9 @@ class PageKde(PageBase):
         self.plugin_widgets = self.page
         self.plugin_optional_widgets = self.page_advanced
         self.current_page = self.page
+
+    def show_page_advanced(self):
+        self.current_page = self.page_advanced
 
     # provides the basic disk layout
     def set_disk_layout(self, layout):
@@ -1110,7 +1119,7 @@ class PageKde(PageBase):
     def update_partman (self, disk_cache, partition_cache, cache_order):
         self.partMan.update(disk_cache, partition_cache, cache_order)
         # make sure we're on the advanced partitioning page
-        self.current_page = self.page_advanced
+        self.show_page_advanced()
 
     def plugin_get_current_page(self):
         return self.current_page
@@ -1670,7 +1679,7 @@ class Page(Plugin):
                         self.building_cache = False
                         self.progress_stop()
                         self.frontend.refresh()
-                        self.ui.current_page = self.ui.page_advanced
+                        self.ui.show_page_advanced()
                         self.ui.update_partman(
                             self.disk_cache, self.partition_cache,
                             self.cache_order)
@@ -1770,7 +1779,7 @@ class Page(Plugin):
 
                     drop_privileges()
                     # We want to immediately show the UI.
-                    self.ui.current_page = self.ui.page_advanced
+                    self.ui.show_page_advanced()
                     self.frontend.set_page(NAME)
                     self.progress_start(0, len(self.update_partitions),
                         'partman/progress/init/parted')
@@ -1805,14 +1814,14 @@ class Page(Plugin):
             elif self.creating_partition:
                 devpart = self.creating_partition['devpart']
                 if devpart in self.partition_cache:
-                    self.ui.current_page = self.ui.page_advanced
+                    self.ui.show_page_advanced()
                     self.ui.update_partman(
                         self.disk_cache, self.partition_cache,
                         self.cache_order)
             elif self.editing_partition:
                 devpart = self.editing_partition['devpart']
                 if devpart in self.partition_cache:
-                    self.ui.current_page = self.ui.page_advanced
+                    self.ui.show_page_advanced()
                     self.ui.update_partman(
                         self.disk_cache, self.partition_cache,
                         self.cache_order)
