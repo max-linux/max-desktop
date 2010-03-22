@@ -3,7 +3,6 @@
 PREREQ=""
 DESCRIPTION="Configuring MaX user live HOME..."
 
-. /scripts/casper-functions
 
 prereqs()
 {
@@ -17,6 +16,8 @@ prereqs)
        exit 0
        ;;
 esac
+
+. /scripts/casper-functions
 
 log_begin_msg "$DESCRIPTION"
 

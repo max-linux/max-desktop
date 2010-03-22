@@ -3,7 +3,6 @@
 PREREQ=""
 DESCRIPTION="Fix OpenOffice.org in live mode..."
 
-. /scripts/casper-functions
 
 prereqs()
 {
@@ -17,6 +16,11 @@ prereqs)
        exit 0
        ;;
 esac
+
+# disabled
+exit 0
+
+. /scripts/casper-functions
 
 log_begin_msg "$DESCRIPTION"
 
