@@ -8,18 +8,17 @@ Standards-Version: 3.8.4
 Package: max-java-jre
 Architecture: i386 amd64
 Depends: max-apt, ia32-sun-java6-bin [amd64], sun-java6-jre [i386]
-Description: Dependencias de máquina virtual java JRE para Max5.0
- Máquina virtual java JRE para Max5.0
+Description: Dependencias de máquina virtual java JRE para Max6.0
+ Máquina virtual java JRE para Max6.0
 
 Package: max-java-jdk
 Architecture: i386 amd64
 Depends: max-apt, sun-java6-jdk
-Description: Dependencias de máquina virtual java JDK para Max5.0
- Máquina virtual java JDK para Max5.0
+Description: Dependencias de máquina virtual java JDK para Max6.0
+ Máquina virtual java JDK para Max6.0
 
 Package: max-java-plugin
 Architecture: i386 amd64
 Depends: max-apt, sun-java6-plugin
-Conflicts: icedtea6-plugin, icedtea-6-jre-cacao
-Description: Dependencias de máquina virtual java (plugin mozilla) para Max5.0
- Máquina virtual java (plugin mozilla) para Max5.0
+Description: Dependencias de máquina virtual java (plugin mozilla) para Max6.0
+ Máquina virtual java (plugin mozilla) para Max6.0
