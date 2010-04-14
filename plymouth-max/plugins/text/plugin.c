@@ -1,5 +1,6 @@
-/* text.c - boot splash plugin
+/* text.c - boot splash plugin (based on ubuntu-text.c)
  *
+ * Copyright (C) 2010 Canonical Ltd.
  * Copyright (C) 2008 Red Hat, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -17,7 +18,8 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
  * 02111-1307, USA.
  *
- * Written by: Adam Jackson <ajax@redhat.com>
+ * Written by: Scott James Remnant <scott@ubuntu.com>
+ *             Adam Jackson <ajax@redhat.com>
  *             Ray Strode <rstrode@redhat.com>
  */
 /*#include "config.h"*/
@@ -81,7 +83,6 @@ typedef struct
 {
   ply_boot_splash_plugin_t *plugin;
   ply_text_display_t *display;
-  //ply_text_progress_bar_t *progress_bar;
 
 } view_t;
 
@@ -98,16 +99,12 @@ view_new (ply_boot_splash_plugin_t *plugin,
   view->plugin = plugin;
   view->display = display;
 
-  //  view->progress_bar = ply_text_progress_bar_new ();
-
   return view;
 }
 
 static void
 view_free (view_t *view)
 {
-  //  ply_text_progress_bar_free (view->progress_bar);
-
   free (view);
 }
 
@@ -153,10 +150,9 @@ view_show_prompt (view_t     *view,
                   const char *prompt,
                   const char *entered_text)
 {
-
   ply_boot_splash_plugin_t *plugin;
   int display_width, display_height;
-  /*int i;*/
+  int i;
 
   plugin = view->plugin;
 
@@ -189,20 +185,13 @@ view_start_animation (view_t *view)
 
   ply_terminal_set_color_hex_value (terminal,
                                     PLY_TERMINAL_COLOR_BLACK,
-                                    0x0075bf); /* MaX blue */ 
-  //                                    0x2c001e); 
-  //                                    0x000000);
+                                    0x0075bf); /* MaX blue original 0x2c001e*/ 
   ply_terminal_set_color_hex_value (terminal,
                                     PLY_TERMINAL_COLOR_WHITE,
                                     0xffffff);
-  //  ply_terminal_set_color_hex_value (terminal,
-  //                                    PLY_TERMINAL_COLOR_BLUE,
-  //0x0073B3);
   ply_terminal_set_color_hex_value (terminal,
                                     PLY_TERMINAL_COLOR_BROWN,
-                                    0xa1bbcf); /* MaX blue light */
-  //                                    0xff4012);
-  //                                    0x00457E);
+                                    0xa1bbcf); /* MaX blue light original 0xff4012 */
   ply_terminal_set_color_hex_value (terminal,
                                     PLY_TERMINAL_COLOR_BLUE,
                                     0xa1bbcf); /* MaX blue light */
@@ -212,17 +201,6 @@ view_start_animation (view_t *view)
                                          PLY_TERMINAL_COLOR_BLACK);
   ply_text_display_clear_screen (view->display);
   ply_text_display_hide_cursor (view->display);
-
-  /*
-  if (plugin->mode == PLY_BOOT_SPLASH_MODE_SHUTDOWN)
-    {
-      ply_text_progress_bar_hide (view->progress_bar);
-      return;
-    }
-
-  ply_text_progress_bar_show (view->progress_bar,
-                              view->display);
-  */
 }
 
 static void
@@ -393,8 +371,6 @@ destroy_plugin (ply_boot_splash_plugin_t *plugin)
   /* It doesn't ever make sense to keep this plugin on screen
    * after exit
    */
-  //err, but hiding the splash screen will reset the terminal back into
-  //unbuffered mode, thus made into canonical mode *while X is running!*
   hide_splash_screen (plugin, plugin->loop);
 
   free_views (plugin);
@@ -559,8 +535,6 @@ stop_animation (ply_boot_splash_plugin_t *plugin)
       view = ply_list_node_get_data (node);
       next_node = ply_list_get_next_node (plugin->views, node);
 
-      //ply_text_progress_bar_hide (view->progress_bar);
-
       node = next_node;
     }
 
@@ -579,7 +553,6 @@ on_draw (view_t                   *view,
          int                       width,
          int                       height)
 {
-  //  ply_text_display_clear_screen (view->display);
 }
 
 static void
@@ -592,7 +565,11 @@ add_text_display (ply_boot_splash_plugin_t *plugin,
   view = view_new (plugin, display);
 
   terminal = ply_text_display_get_terminal (view->display);
-  ply_terminal_activate_vt (terminal);
+  if (ply_terminal_open (terminal))
+    {
+      ply_terminal_set_mode (terminal, PLY_TERMINAL_MODE_TEXT);
+      ply_terminal_activate_vt (terminal);
+    }
 
   ply_text_display_set_draw_handler (view->display,
                                      (ply_text_display_draw_handler_t)
@@ -659,37 +636,6 @@ update_status (ply_boot_splash_plugin_t *plugin,
 }
 
 static void
-on_boot_progress (ply_boot_splash_plugin_t *plugin,
-                  double                    duration,
-                  double                    percent_done)
-{
-  ply_list_node_t *node;
-  double total_duration;
-
-  total_duration = duration / percent_done;
-
-  /* Fun made-up smoothing function to make the growth asymptotic:
-   * fraction(time,estimate)=1-2^(-(time^1.45)/estimate) */
-  percent_done = 1.0 - pow (2.0, -pow (duration, 1.45) / total_duration) * (1.0 - percent_done);
-
-  node = ply_list_get_first_node (plugin->views);
-
-  while (node != NULL)
-    {
-      ply_list_node_t *next_node;
-      view_t *view;
-
-      view = ply_list_node_get_data (node);
-      next_node = ply_list_get_next_node (plugin->views, node);
-
-      //      ply_text_progress_bar_set_percent_done (view->progress_bar, percent_done);
-      //ply_text_progress_bar_draw (view->progress_bar);
-
-      node = next_node;
-    }
-}
-
-static void
 hide_splash_screen (ply_boot_splash_plugin_t *plugin,
                     ply_event_loop_t         *loop)
 {
@@ -711,15 +657,6 @@ hide_splash_screen (ply_boot_splash_plugin_t *plugin,
   hide_views (plugin);
   ply_show_new_kernel_messages (true);
 }
-
-//static void
-//become_idle (ply_boot_splash_plugin_t *plugin,
-//             ply_trigger_t            *idle_trigger)
-//{
-//  stop_animation (plugin);
-//
-//  ply_trigger_pull (idle_trigger, NULL);
-//}
 
 static void
 display_normal (ply_boot_splash_plugin_t *plugin)
@@ -847,13 +784,11 @@ ply_boot_splash_plugin_get_interface (void)
       .remove_text_display = remove_text_display,
       .show_splash_screen = show_splash_screen,
       .update_status = update_status,
-      .on_boot_progress = on_boot_progress,
       .hide_splash_screen = hide_splash_screen,
-      //      .become_idle = become_idle,
       .display_normal = display_normal,
       .display_message = display_message,
       .display_password = display_password,
-      .display_question = display_question
+      .display_question = display_question,
     };
 
   return &plugin_interface;

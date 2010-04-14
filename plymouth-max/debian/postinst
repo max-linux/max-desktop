@@ -1,8 +1,30 @@
 #!/bin/sh
 
 
-if [ "$1" = "configure" ]; then
-  [ -x /usr/sbin/plymouth-set-default-theme ] && /usr/sbin/plymouth-set-default-theme max-logo -R
-fi
+case "$1" in
+    configure)
+        update-alternatives \
+                --install /lib/plymouth/themes/default.plymouth default.plymouth \
+                /lib/plymouth/themes/max-logo/max-logo.plymouth 200
+
+        [ -e /usr/sbin/plymouth-set-default-theme ] && rm -f /usr/sbin/plymouth-set-default-theme
+
+        if which update-initramfs >/dev/null 2>&1
+        then
+            update-initramfs -u
+        fi
+        ;;
+
+    abort-upgrade|abort-deconfigure|abort-remove)
+        ;;
+
+    *)
+        echo "$0 called with unknown argument \`$1'" 1>&2
+        exit 1
+        ;;
+esac
+
 
 #DEBHELPER#
+
+exit 0

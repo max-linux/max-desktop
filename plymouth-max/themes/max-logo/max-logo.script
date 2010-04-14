@@ -47,6 +47,9 @@ debugsprite = Sprite();
 debugsprite_bottom = Sprite();
 debugsprite_medium = Sprite();
 
+# are we currently prompting for a password?
+prompt_active = 0;
+
 # General purpose function to create text
 fun WriteText (text, colour) {
     image = Image.Text (text, colour.red, colour.green, colour.blue);
@@ -80,6 +83,25 @@ fun DebugBottom(text) {
 fun DebugMedium(text) {
     debugsprite_medium.SetImage(ImageToText (text));
     debugsprite_medium.SetPosition(0, (Window.GetHeight (0) - 60), 1);
+}
+
+fun TextYOffset() {
+    local.y;
+    local.text_height;
+    local.min_height;
+
+    # Put the 1st line below the logo + some spacing 
+    y = logo.y + logo.height + (progress_indicator.bullet_height * 7 ); # + logo_spacing;
+
+    text_height = first_line_height * 7.5;
+
+    min_height = Window.GetHeight();
+    if (y + text_height > min_height)
+        y = min_height - text_height;
+
+    if (y < progress_indicator.y + progress_indicator.height)
+        return progress_indicator.y + progress_indicator.height;
+    return y;
 }
 
 #------------------------------String functions-------------------------------
@@ -140,21 +162,17 @@ fun StringToInteger (str) {
 Window.SetBackgroundTopColor (0.00, 0.46, 0.81);     # Nice colour on top of the screen fading to
 Window.SetBackgroundBottomColor (0.00, 0.46, 0.81);  # an equally nice colour on the bottom
 
-screen_width = Window.GetWidth (0);
-screen_height = Window.GetHeight (0);
-
 logo.image = Image ("max_logo.png"); # "special://logo" is a special keyword which finds the logo image
 logo.sprite = Sprite ();
 logo.sprite.SetImage (logo.image);
 logo.width = logo.image.GetWidth ();
 logo.height = logo.image.GetHeight ();
-logo.x = (Window.GetWidth (0) / 2) - (logo.width  / 2); # + 16;
-#logo.y = Window.GetHeight (0) / 2 - logo.height / 2;
-logo.y = (Window.GetHeight (0) / 2) - (logo.height / 2) - 40;
+logo.x = (Window.GetX () + Window.GetWidth () / 2) - (logo.width  / 2);
+logo.y = (Window.GetY () + Window.GetHeight () / 2) - (logo.height / 2) - 40;
 logo.z = 1000;
 logo.sprite.SetX (logo.x);
 logo.sprite.SetY (logo.y);
-logo.sprite.SetY (logo.z);
+logo.sprite.SetZ (logo.z);
 logo.sprite.SetOpacity (1);
 
 
@@ -168,7 +186,7 @@ emlogo.y = 15;
 emlogo.z = 1000;
 emlogo.sprite.SetX (emlogo.x);
 emlogo.sprite.SetY (emlogo.y);
-emlogo.sprite.SetY (emlogo.z);
+emlogo.sprite.SetZ (emlogo.z);
 emlogo.sprite.SetOpacity (1);
 
 cmlogo.image = Image ("logo_cm.png");
@@ -176,12 +194,12 @@ cmlogo.sprite = Sprite ();
 cmlogo.sprite.SetImage (cmlogo.image);
 cmlogo.width = cmlogo.image.GetWidth ();
 cmlogo.height = cmlogo.image.GetHeight ();
-cmlogo.x = Window.GetWidth (0) - cmlogo.width - 15;
+cmlogo.x = (Window.GetX () + Window.GetWidth ()) - cmlogo.width - 15;
 cmlogo.y = 15;
 cmlogo.z = 1000;
 cmlogo.sprite.SetX (cmlogo.x);
 cmlogo.sprite.SetY (cmlogo.y);
-cmlogo.sprite.SetY (cmlogo.z);
+cmlogo.sprite.SetZ (cmlogo.z);
 cmlogo.sprite.SetOpacity (1);
 
 # Spacing below the logo - in pixels
@@ -201,7 +219,17 @@ progress_indicator.bullet_hspacing = progress_indicator.bullet_width * 1.1;
 progress_indicator.width = progress_indicator.bullet_width * 5;
 progress_indicator.height = progress_indicator.bullet_height;
 progress_indicator.y = logo.y + logo.height + (logo.height / 4);
-progress_indicator.x = (screen_width / 2) - (progress_indicator.width / 2); # logo.x + 26;
+progress_indicator.x = Window.GetX () + Window.GetWidth () / 2 - progress_indicator.width / 2; # logo.x + 26;
+
+# use a fixed string with ascending and descending stems to calibrate the
+# bounding box for the first message, so the messages below don't move up
+# and down according to *their* height.
+first_line_height = ImageToTintedText ("AfpqtM").GetHeight();
+
+# if the user has a 640x480 or 800x600 display, we can't quite fit everything
+# (including passphrase prompts) with the target spacing, so scoot the text up
+# a bit if needed.
+top_of_the_text = TextYOffset();
 
 #-----------------------------------------Logo functions------------------------------
 
@@ -357,64 +385,43 @@ fun animate_progress_indicator (progress, time) {
 #
 fun get_message_label (label, is_fake, is_action_line) {
     # Debug("Get Label position");
-    screen_width = Window.GetWidth (0);
-    screen_height = Window.GetHeight (0);
     local.message_label;
     
-    local.labels_number = 2;
-    
-    # Create 2 labels (either fake or real) just to get the width
-    # and height and to initialise them
-    for (index = 0; index < labels_number; index++) {
-        if (is_fake) {
-            # Create a fake label so as to get the y coordinate of
-            # a standard-lenght label.
-            # This is useful when prompting without providing a
-            # message
-            local.message_image = ImageToTintedText ("This is a fake message");
-            message_label[index].width = message_image.GetWidth ();
-            message_label[index].height = message_image.GetHeight ();
-        }
-        else {
-            local.message_image = (is_action_line) && ImageToActionText (label) || ImageToTintedText (label);
-            message_label[index].width = message_image.GetWidth ();
-            message_label[index].height = message_image.GetHeight ();
-        }
-    }
-    
-    # Centre the 1st line horizontally
-    message_label[0].x = (screen_width / 2) - (message_label[0].width / 2);
+    if (is_fake)
+        # Create a fake label so as to get the y coordinate of
+        # a standard-length label.
+        local.message_image = ImageToTintedText ("This is a fake message");
+    else
+        local.message_image = (is_action_line) && ImageToActionText (label) || ImageToTintedText (label);
         
-    # Put the 1st line below the logo + some spacing 
-    message_label[0].y = logo.y + logo.height + (progress_indicator.bullet_height * 7 ); # + logo_spacing;
+    message_label.width = message_image.GetWidth ();
+    message_label.height = message_image.GetHeight ();
 
+    # Center the line horizontally
+    message_label.x = Window.GetX () + Window.GetWidth () / 2 - message_label.width / 2;
 
-    local.fsck_label.y = message_label[0].y + (message_label[0].height + message_label[0].height / 2);
+    message_label.y = top_of_the_text;
 
-    # Centre the 2nd line horizontally
-    message_label[1].x = (screen_width / 2) - (message_label[1].width / 2);
-    
     # Put the 2nd line below the fsck line
-    message_label[1].y = local.fsck_label.y + (message_label[0].height * 2);
+    if (is_action_line) {
+        local.fsck_label.y = message_label.y + (first_line_height + first_line_height / 2);
+        message_label.y = local.fsck_label.y + (first_line_height * 2);
+    }
 
-    # Debug("action label x = " + message_label[1].x + " y = " + message_label[1].y );
+    # Debug("action label x = " + message_label.x + " y = " + message_label.y );
 
 #    message_debug = "msg_x = " + message_label.x + " msg_y = " + message_label.y +
 #                    "msg_width = " + message_label.width + " msg_height = " +
 #                    message_label.height + " message = " + label;
 #    Debug(message_debug);
     
-    # What label are we returning?
-    local.final_label = (is_action_line) && message_label[1] || message_label[0];
-    
-    return final_label;
+    return message_label;
+
 }
 
 # Create an fsck label and/or get its position
 fun get_fsck_label (label, is_fake) {
     # Debug("Get Label position");
-    screen_width = Window.GetWidth (0);
-    screen_height = Window.GetHeight (0);
     local.fsck_label = global.progress_label;
     
     if (is_fake)
@@ -426,7 +433,7 @@ fun get_fsck_label (label, is_fake) {
     fsck_label.height = fsck_label.image.GetHeight ();
     
     # Centre the label horizontally
-    fsck_label.x = (screen_width / 2) - (fsck_label.width / 2);
+    fsck_label.x = Window.GetX () + Window.GetWidth () / 2 - fsck_label.width / 2;
     
     local.first_label = get_message_label (label, 1, 0);
     
@@ -501,7 +508,10 @@ fun message_callback (message)
     label.z = 10000;
     
     setup_message (message, label.x, label.y, label.z, is_action_line);
-    show_message (is_action_line);
+    if (prompt_active && local.is_action_line)
+        hide_message (is_action_line);
+    else
+        show_message (is_action_line);
 
 }
 
@@ -518,33 +528,27 @@ fun password_dialogue_setup (message_label) {
     bullet_image = Image ("progress_dot_off.png");
     entry.image = Image ("password_field.png");
     
-    # Create empty label on the 1st line
-    message_callback ("");
+    # Hide the normal labels
+    prompt_active = 1;
+    if (message_notification[1].sprite) hide_message (1);
     
-    # Hide the 1st label
-    hide_message (0);
+    # Set the prompt label
+    label = get_message_label(message_label, 0, 1);
+    label.z = 10000;
     
-    # Set the 2nd (action) label
-    local.prefixed_message_label = "keys:" + message_label;
-    
-    # Show the action label
-    message_callback (local.prefixed_message_label);
+    setup_message (message_label, label.x, label.y, label.z, 2);
+    show_message (2);
 
     # Set up the text entry which contains the bullets
     entry.sprite = Sprite ();
     entry.sprite.SetImage (entry.image);
     
     # Centre the box horizontally
-    entry.x = (Window.GetWidth (0) / 2) - (entry.image.GetWidth () / 2);
-    
-    # Put the entry exactly where the 1st label (which is now hidden) should be.
-    if (message_notification[0].y != NULL) {
-        local.tmp_label = get_message_label (message_label, 1, 0);
-        entry.y = local.tmp_label.y;
-    }
-    else {
-        entry.y = message_notification[0].y;
-    }
+    entry.x = Window.GetX () + Window.GetWidth () / 2 - entry.image.GetWidth () / 2;
+
+    # Put the entry below the second label.
+    entry.y = message_notification[2].y + label.height;
+
     #Debug ("entry x = " + entry.x + ", y = " + entry.y);
     entry.z = 10000;
     entry.sprite.SetX (entry.x);
@@ -588,7 +592,7 @@ fun display_password_callback (prompt, bullets) {
     spaces = Math.Int( (password_dialogue.entry.image.GetWidth () - (margin * 2)) / (bullet_width / 2 ) );
     #Debug ("spaces = " + spaces + ", bullets = " + bullets);
     bullets_area.width = margin + spaces * (bullet_width / 2);
-    bullets_area.x = Window.GetWidth (0) / 2 - bullets_area.width / 2;
+    bullets_area.x = Window.GetX () + Window.GetWidth () / 2 - bullets_area.width / 2;
     #DebugBottom ("pwd_entry x = " + password_dialogue.entry.x + ", bullets_area.x = " + bullets_area.x + ", bullets_area.width = " + bullets_area.width);
     if (bullets > spaces)
         bullets = spaces;
@@ -1036,10 +1040,14 @@ Plymouth.SetRefreshFunction (refresh_callback);
 fun display_normal_callback ()
 {
     global.status = "normal";
-    if (global.password_dialogue) password_dialogue_opacity (0);
+    if (global.password_dialogue) {
+        password_dialogue_opacity (0);
+        global.password_dialogue = NULL;
+        if (message_notification[2].sprite) hide_message(2);
+        prompt_active = 0;
+    }
     
-    for (index = 0; index <= 1; index++)
-        if (message_notification[index].sprite) hide_message (index);
+    if (message_notification[1].sprite) show_message (1);
     
     
 }
