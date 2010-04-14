@@ -21,7 +21,6 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
-set -x
 
 # delete old ubiquity
 rm -f /root/home/$USERNAME/*/ubiquity*desktop 2>/dev/null
