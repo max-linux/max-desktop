@@ -1,8 +1,8 @@
 
-if ! grep -q max50 /etc/apt/sources.list; then
+if ! grep -q max60 /etc/apt/sources.list; then
   wget -q http://max.educa.madrid.org:8000/svn/trunk/max-keyring/usr/share/keyrings/max50-archive-keyring.gpg -O- > /etc/apt/max.gpg
   apt-key add /etc/apt/max.gpg
-  echo "deb http://max.educa.madrid.org/max50 max main" >> /etc/apt/sources.list
+  echo "deb http://max.educa.madrid.org/max60 max main" >> /etc/apt/sources.list
   apt-get update
 else
   # forzar la actualización de max-hardware
@@ -35,13 +35,13 @@ fi
 cpifexists /var/cache/tcos/packages/dmidecode/usr/sbin/dmidecode /usr/sbin/
 cpifexists /var/cache/tcos/packages/setserial/bin/setserial      /usr/bin/
 
-cp /var/cache/tcos/packages/max-hardware/usr/sbin/change.intel.drv $DESTDIR/usr/sbin/
+#cp /var/cache/tcos/packages/max-hardware/usr/sbin/change.intel.drv $DESTDIR/usr/sbin/
 cpifexists /sbin/ldconfig.real /usr/sbin/
 cpifexists /usr/bin/strings    /usr/bin/
 
 # copiar driver intel 2.6
-mkdir -p $DESTDIR/usr/share/max-hardware/
-copydir /var/cache/tcos/packages/max-hardware/usr/share/max-hardware/intel26 /usr/share/max-hardware/
+#mkdir -p $DESTDIR/usr/share/max-hardware/
+#copydir /var/cache/tcos/packages/max-hardware/usr/share/max-hardware/intel26 /usr/share/max-hardware/
 
 # xorg.conf del EeePC
 mkdir -p $DESTDIR/usr/share/max-hardware/EeePC/
@@ -92,9 +92,9 @@ cat << EOF > $DESTDIR/scripts/tcos-bottom/22max-hardware
      #max-setup-tablet /etc/X11/xorg.conf
      cat /usr/share/max-hardware/TabletToshiba/xorg.conf > /etc/X11/xorg.conf
 
-    if [ "\$TOSH_MODEL" = "PORTEGE M400" ]; then
-      /usr/sbin/change.intel.drv --install26
-    fi
+    #if [ "\$TOSH_MODEL" = "PORTEGE M400" ]; then
+    #  /usr/sbin/change.intel.drv --install26
+    #fi
 
   fi
 
@@ -106,7 +106,7 @@ cat << EOF > $DESTDIR/scripts/tcos-bottom/22max-hardware
     # overwrite xorg.conf
     cat /usr/share/max-hardware/EeePC/xorg.conf > /etc/X11/xorg.conf
 
-    /usr/sbin/change.intel.drv --install26
+    #/usr/sbin/change.intel.drv --install26
 
   fi
 

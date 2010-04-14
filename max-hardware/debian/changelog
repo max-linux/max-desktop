@@ -1,3 +1,10 @@
+max-hardware (6.0.max2) max; urgency=low
+
+  * Update max-hardware-tcos to max60
+  * Change arch to all (no INTEL driver hacks)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 29 Mar 2010 19:41:36 +0200
+
 max-hardware (6.0.max1) max; urgency=low
 
   * Change verison to 6.0

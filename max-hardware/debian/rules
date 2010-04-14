@@ -5,38 +5,38 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 # start before xserver-xorg-input-wacom
 DEB_UPDATE_RCD_PARAMS := "start 10 2 3 4 5 ."
 
-build/max2-hardware::
-	cd xserver-xorg-video-intel-2.6.3 && \
-	debian/rules build
+#build/max2-hardware::
+#	cd xserver-xorg-video-intel-2.6.3 && \
+#	debian/rules build
+#
+#
+#	cd xserver-xorg-video-intel-2.4-2.4.1 && \
+#	debian/rules build
 
-
-	cd xserver-xorg-video-intel-2.4-2.4.1 && \
-	debian/rules build
-
-binary-install/max2-hardware::
+binary-install/max-hardware::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-hardware -type d -name .svn | xargs rm -rf --
-
-	mkdir -p $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel26
-	cd xserver-xorg-video-intel-2.6.3 && \
-		cd obj-$(DEB_BUILD_GNU_TYPE) && \
-		$(MAKE) DESTDIR=$(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel26 install
-
-	find $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel26 -name "*.la" | xargs rm -f
-	find $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel26 -type l | xargs rm -f
-	rm -rf $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel26/usr/share/
-
-
-	mkdir -p $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel24
-	cd xserver-xorg-video-intel-2.4-2.4.1 && \
-		cd obj-$(DEB_BUILD_GNU_TYPE) && \
-		$(MAKE) DESTDIR=$(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel24 install
-
-	find $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel24 -name "*.la" | xargs rm -f
-	find $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel24 -type l | xargs rm -f
-	rm -rf $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel24/usr/share/
-
-
+#
+#	mkdir -p $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel26
+#	cd xserver-xorg-video-intel-2.6.3 && \
+#		cd obj-$(DEB_BUILD_GNU_TYPE) && \
+#		$(MAKE) DESTDIR=$(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel26 install
+#
+#	find $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel26 -name "*.la" | xargs rm -f
+#	find $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel26 -type l | xargs rm -f
+#	rm -rf $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel26/usr/share/
+#
+#
+#	mkdir -p $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel24
+#	cd xserver-xorg-video-intel-2.4-2.4.1 && \
+#		cd obj-$(DEB_BUILD_GNU_TYPE) && \
+#		$(MAKE) DESTDIR=$(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel24 install
+#
+#	find $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel24 -name "*.la" | xargs rm -f
+#	find $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel24 -type l | xargs rm -f
+#	rm -rf $(CURDIR)/debian/max-hardware/usr/share/max-hardware/intel24/usr/share/
+#
+#
 	# DISABLE (need testing)
 	rm -rf $(CURDIR)/debian/max-hardware/usr/share/initramfs-tools/scripts/init-bottom/ramusr
 	rm -rf $(CURDIR)/debian/max-hardware/usr/share/initramfs-tools/hooks/02ramusr
