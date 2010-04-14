@@ -1,3 +1,39 @@
+max-dpsyco-custom (6.0.max12) max; urgency=low
+
+  * Move WebHTTrack.desktop WebHTTrack-Websites.desktop to Internet folder
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 05 Apr 2010 00:19:05 +0200
+
+max-dpsyco-custom (6.0.max11) max; urgency=low
+
+  * Fix GRUB_HIDDEN grep
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 29 Mar 2010 12:43:29 +0200
+
+max-dpsyco-custom (6.0.max10) max; urgency=low
+
+  * Show GRUB2 by default (comment GRUB_HIDDEN entries)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 29 Mar 2010 12:00:42 +0200
+
+max-dpsyco-custom (6.0.max9) max; urgency=low
+
+  * Be silent when watchig at update-manager/release-upgrade
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 28 Mar 2010 20:14:04 +0200
+
+max-dpsyco-custom (6.0.max8) max; urgency=low
+
+  * Configure update-manager to not update (Prompt=never)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 28 Mar 2010 20:08:31 +0200
+
+max-dpsyco-custom (6.0.max7) max; urgency=low
+
+  * Update path of update-gnome-menus-cache usr/bin => usr/share/gnome-menus
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 26 Mar 2010 22:41:35 +0100
+
 max-dpsyco-custom (6.0.max6) max; urgency=low
 
   * Don't overwrite /etc/default/grub, simply add GRUB_DISTRIBUTOR=MaX-6.0 at end
