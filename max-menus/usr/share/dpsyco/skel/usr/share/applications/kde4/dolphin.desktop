@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Dolphin
+TryExec=/usr/bin/dolphin
 Exec=dolphin %i -caption "%c" %u
 Icon=system-file-manager
 Type=Application
