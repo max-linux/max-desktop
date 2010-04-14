@@ -7,7 +7,16 @@ Build-Depends: debhelper (>= 4), cdbs
 
 Package: max-desktop
 Architecture: all
-Depends: max-desktop-common, max-desktop-gnome | max-desktop-kde | max-desktop-xfce
+Recommends: max-desktop-common, max-desktop-gnome | max-desktop-kde | max-desktop-xfce
+Description: The Max desktop system
+ This package depends on all of the packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-desktop-deps
+Architecture: all
+Depends: max-desktop, max-desktop-common, max-desktop-gnome | max-desktop-kde | max-desktop-xfce
 Description: The Max desktop system
  This package depends on all of the packages in the Max desktop system
  .
@@ -16,8 +25,19 @@ Description: The Max desktop system
 
 Package: max-desktop-gnome
 Architecture: all
-Depends: max-desktop-common, ${max-desktop-gnome:Depends}
-Recommends: ${max-desktop-gnome:Recommends}
+Recommends: ${max-desktop-gnome:Recommends} max-desktop-common, ${max-desktop-gnome:Depends}
+Provides: max-desktop
+Description: The Max desktop system (GNOME desktop)
+ This package depends on all GNOME packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+
+Package: max-desktop-gnome-deps
+Architecture: all
+Depends: max-desktop-gnome, max-desktop-common, ${max-desktop-gnome-deps:Depends}
+Recommends: ${max-desktop-gnome-deps:Recommends}
 Provides: max-desktop
 Description: The Max desktop system (GNOME desktop)
  This package depends on all GNOME packages in the Max desktop system
@@ -27,8 +47,18 @@ Description: The Max desktop system (GNOME desktop)
 
 Package: max-desktop-kde
 Architecture: all
-Depends:  max-desktop-common, ${max-desktop-kde:Depends}
-Recommends: ${max-desktop-kde:Recommends}
+Recommends: ${max-desktop-kde:Recommends}, max-desktop-common, ${max-desktop-kde:Depends}
+Provides: max-desktop
+Description: The Max desktop system (KDE desktop)
+ This package depends on all KDE packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-desktop-kde-deps
+Architecture: all
+Depends:  max-desktop-kde, max-desktop-common, ${max-desktop-kde-deps:Depends}
+Recommends: ${max-desktop-kde-deps:Recommends}
 Provides: max-desktop
 Description: The Max desktop system (KDE desktop)
  This package depends on all KDE packages in the Max desktop system
@@ -40,7 +70,7 @@ Description: The Max desktop system (KDE desktop)
 Package: max-desktop-kde-extra
 Architecture: all
 Depends:  max-desktop-common, ${max-desktop-kde-extra:Depends}
-Recommends: ${max-desktop-kde:Recommends}
+Recommends: ${max-desktop-kde-extra:Recommends}
 Description: The Max desktop system (KDE desktop extra apps)
  This package depends on all KDE extra packages in the Max desktop system
  .
@@ -50,8 +80,18 @@ Description: The Max desktop system (KDE desktop extra apps)
 
 Package: max-desktop-xfce
 Architecture: all
-Depends: max-desktop-common, ${max-desktop-xfce:Depends}
-Recommends: ${max-desktop-xfce:Recommends}
+Recommends: ${max-desktop-xfce:Recommends}, max-desktop-common, ${max-desktop-xfce:Depends}
+Provides: max-desktop
+Description: The Max desktop system (Xfce4 desktop)
+ This package depends on all Xfce4 packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-desktop-xfce-deps
+Architecture: all
+Depends: max-desktop-xfce, max-desktop-common, ${max-desktop-xfce-deps:Depends}
+Recommends: ${max-desktop-xfce-deps:Recommends}
 Provides: max-desktop
 Description: The Max desktop system (Xfce4 desktop)
  This package depends on all Xfce4 packages in the Max desktop system
@@ -61,8 +101,18 @@ Description: The Max desktop system (Xfce4 desktop)
 
 Package: max-desktop-lxde
 Architecture: all
-Depends: ${max-desktop-lxde:Depends}
-Recommends: ${max-desktop-lxde:Recommends}
+Recommends: ${max-desktop-lxde:Recommends}, ${max-desktop-lxde:Depends}
+Provides: max-desktop
+Description: The Max desktop system (LXDE desktop)
+ This package depends on all LXDE packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-desktop-lxde-deps
+Architecture: all
+Depends: max-desktop-lxde, ${max-desktop-lxde-deps:Depends}
+Recommends: ${max-desktop-lxde-deps:Recommends}
 Provides: max-desktop
 Description: The Max desktop system (LXDE desktop)
  This package depends on all LXDE packages in the Max desktop system
@@ -72,8 +122,18 @@ Description: The Max desktop system (LXDE desktop)
 
 Package: max-server
 Architecture: all
-Depends: max-desktop, ${max-server:Depends}
-Recommends: ${max-server:Recommends}
+Recommends: ${max-server:Recommends}, max-desktop, ${max-server:Depends}
+Description: The Max server system
+ This package depends on all of the packages in the Max server system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+
+Package: max-server-deps
+Architecture: all
+Depends: max-server, max-desktop, ${max-server-deps:Depends}
+Recommends: ${max-server-deps:Recommends}
 Description: The Max server system
  This package depends on all of the packages in the Max server system
  .
@@ -82,7 +142,16 @@ Description: The Max server system
 
 Package: max-desktop-common
 Architecture: all
-Depends: ${max-desktop-common:Depends}
+Recommends: ${max-desktop-common:Depends}
+Description: The Max desktop common packages to all desktops
+ This package depends on all of the packages in the Max server system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-desktop-common-deps
+Architecture: all
+Depends: max-desktop-common-deps, ${max-desktop-common-deps:Depends}
 Description: The Max desktop common packages to all desktops
  This package depends on all of the packages in the Max server system
  .
@@ -91,7 +160,16 @@ Description: The Max desktop common packages to all desktops
 
 Package: max-desktop-all
 Architecture: all
-Depends: max-desktop-gnome, max-desktop-kde-extra, max-desktop-xfce
+Recommends: max-desktop-gnome, max-desktop-kde-extra, max-desktop-xfce
+Description: The Max desktop all metapackage
+ This package depends on all desktop packages of MaX system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-desktop-all-deps
+Architecture: all
+Depends: max-desktop-all-deps, max-desktop-gnome-deps, max-desktop-kde-extra-deps, max-desktop-xfce-deps
 Description: The Max desktop all metapackage
  This package depends on all desktop packages of MaX system
  .
@@ -100,7 +178,16 @@ Description: The Max desktop all metapackage
 
 Package: max-alumno
 Architecture: all
-Depends: max-tcos-alumno
+Recommends: max-tcos-alumno
+Description: The Max desktop alumno metapackage
+ This package depends on max-tcos-alumno
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-alumno-deps
+Architecture: all
+Depends: max-alumno, max-tcos-alumno
 Description: The Max desktop alumno metapackage
  This package depends on max-tcos-alumno
  .
@@ -109,7 +196,16 @@ Description: The Max desktop alumno metapackage
 
 Package: max-profesor
 Architecture: all
-Depends: max-tcos-profesor
+Recommends: max-tcos-profesor
+Description: The Max desktop profesor metapackage
+ This package depends on max-tcos-profesor
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-profesor-deps
+Architecture: all
+Depends: max-profesor, max-tcos-profesor
 Description: The Max desktop profesor metapackage
  This package depends on max-tcos-profesor
  .
@@ -118,7 +214,16 @@ Description: The Max desktop profesor metapackage
 
 Package: max-nanomax
 Architecture: all
-Depends: ${max-nanomax:Depends}
+Recommends: ${max-nanomax:Depends}
+Description: The Max nanoMaX metapackage
+ This package depends on all nanomax installed packages and live-system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-nanomax-deps
+Architecture: all
+Depends: max-nanomax, ${max-nanomax-deps:Depends}
 Description: The Max nanoMaX metapackage
  This package depends on all nanomax installed packages and live-system
  .
@@ -127,7 +232,16 @@ Description: The Max nanoMaX metapackage
 
 Package: max-servidor
 Architecture: all
-Depends: max-server
+Recommends: max-server
+Description: The Max server metapackage
+ This package depends on max-server
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-servidor-deps
+Architecture: all
+Depends: max-servidor, max-server
 Description: The Max server metapackage
  This package depends on max-server
  .
@@ -136,8 +250,17 @@ Description: The Max server metapackage
 
 Package: max-drivers
 Architecture: all
-Depends: ${max-drivers:Depends}
-Recommends: ${max-drivers:Recommends}
+Recommends: ${max-drivers:Recommends}, ${max-drivers:Depends}
+Description: The Max drivers metapackage
+ This package depends on all drivers used in the Max system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: max-drivers-deps
+Architecture: all
+Depends: max-drivers, ${max-drivers-deps:Depends}
+Recommends: ${max-drivers-deps:Recommends}
 Description: The Max drivers metapackage
  This package depends on all drivers used in the Max system
  .

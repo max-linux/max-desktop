@@ -1,3 +1,61 @@
+max-meta (6.0.max17) max; urgency=low
+
+  * Remove not avalaible brickos (gcc-h8300-hms don't compile)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 04 Apr 2010 20:33:18 +0200
+
+max-meta (6.0.max16) max; urgency=low
+
+  * Add kino, close #262
+  * Add flegita-gimp, close #272
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 29 Mar 2010 12:02:16 +0200
+
+max-meta (6.0.max15) max; urgency=low
+
+  * Add network-manager-openvpn-gnome network-manager-vpnc-gnome
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 29 Mar 2010 00:35:41 +0200
+
+max-meta (6.0.max14) max; urgency=low
+
+  * Add nmap
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 29 Mar 2010 00:05:16 +0200
+
+max-meta (6.0.max13) max; urgency=low
+
+  * desktop-gnome, add:
+    - gnome-audio
+    - gnome-backgrounds
+    - gnome-desktop-environment
+    - gnome-photo-printer
+    - gnome-themes-extras
+    - gnome-translate
+    - gnome-xcf-thumbnailer
+    - xulrunner-1.9.2-gnome-support
+
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 26 Mar 2010 22:27:46 +0100
+
+max-meta (6.0.max12) max; urgency=low
+
+  * Change depends => recomends (new packages *-deps with depends)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 26 Mar 2010 21:32:04 +0100
+
+max-meta (6.0.max11) max; urgency=low
+
+  * Remove gtk-sharp
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 22 Mar 2010 23:49:10 +0100
+
+max-meta (6.0.max10) max; urgency=low
+
+  * Remove devel packages from GNOME and KDE
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 22 Mar 2010 23:38:19 +0100
+
 max-meta (6.0.max9) max; urgency=low
 
   * Add netspeed applet

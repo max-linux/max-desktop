@@ -12,6 +12,8 @@ configure/max-desktop::
 		echo " * Building depends of max-$$seed" ;\
 		(printf "$$package:Depends="; perl -pe 's/\n/, /g'  $$seed-$(DEB_BUILD_ARCH); echo) \
 			>> debian/$$package.substvars; \
+		(printf "$$package-deps:Depends="; perl -pe 's/\n/, /g'  $$seed-$(DEB_BUILD_ARCH); echo) \
+			>> debian/$$package-deps.substvars; \
 		#(printf "$$package:Recommends="; perl -pe 's/\n/, /g'  $$seed-recommends-$(DEB_BUILD_ARCH); echo) \
 		#	>> debian/$$package.substvars; \
 	done
