@@ -31,3 +31,7 @@ pref("general.useragent.locale", "chrome://global/locale/intl.properties");
 // kerberos-for-https
 pref("network.negotiate-auth.trusted-uris", "https://");
 
+// Yahoo by default
+//pref("browser.search.defaultenginename", "chrome://ubufox/locale/ubufox-search.properties");
+//pref("browser.search.order.1", "chrome://ubufox/locale/ubufox-search.properties");
+//pref("browser.search.order.2", "chrome://ubufox/locale/ubufox-search.properties");

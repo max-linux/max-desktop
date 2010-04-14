@@ -43,18 +43,26 @@ function getAppVersion ()
   }
 
   if (versionString == null)
-    return NULL;
+    return null;
 
   if (String_startsWith (versionString, "3.0"))
     versionString = "3.0";
   else if (String_startsWith (versionString, "3.5"))
     versionString = "3.5";
-  else if (String_startsWith (versionString, "3.6"))
-    versionString = "3.6";
-  else if (String_startsWith (versionString, "3.7"))
-    versionString = "3.7";
+  else // Return null for > 3.6 as firefox is unversioned now
+    versionString = null;
 
   return versionString;
+}
+
+function getSourcePackageName ()
+{
+  var sourcePackageName = "firefox";
+  var versionString = getAppVersion();
+  if (versionString)
+    sourcePackageName = sourcePackageName + "-" + versionString;
+
+  return sourcePackageName;
 }
 
 var ubufox = {
@@ -157,10 +165,7 @@ function ubufoxReportBug(event) {
   procUtil.init(executable);
 
   var args = null;
-  if (getAppVersion())
-    args = new Array("-p", "firefox-" + getAppVersion());
-  else
-    args = new Array("-p", "firefox" );
+  args = new Array("-p", getSourcePackageName());
 
   var res = procUtil.run(false, args, args.length);
 }
@@ -168,13 +173,13 @@ function ubufoxReportBug(event) {
 
 function ubufoxGetHelpOnline(event)
 {
-  var getHelpUrl = "https://launchpad.net/distros/ubuntu/lucid/+sources/firefox-" + getAppVersion () + "/+gethelp";
+  var getHelpUrl = "https://launchpad.net/distros/ubuntu/lucid/+sources/" + getSourcePackageName() + "/+gethelp";
   openUILink(getHelpUrl, event, false, true);
 }
 
 function ubufoxHelpTranslateLaunchpad(event)
 {
-  var translateUrl = "https://launchpad.net/distros/ubuntu/lucid/+sources/firefox-" + getAppVersion () + "/+translate";
+  var translateUrl = "https://launchpad.net/distros/ubuntu/lucid/+sources/" + getSourcePackageName() + "/+translate";
   openUILink(translateUrl, event, false, true);
 }
 
