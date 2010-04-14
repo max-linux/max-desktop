@@ -60,6 +60,7 @@ class PageGtk2(PluginUI):
             self.page = None
         self.plugin_widgets = self.page
 
+    @only_this_page
     def calculate_result(self, w, keymap):
         l = self.controller.dbfilter.get_locale()
         keymap = keymap.split(':')
@@ -74,6 +75,7 @@ class PageGtk2(PluginUI):
         self.calculate_keymap_label.set_label(variant)
         self.calculate_variant = variant
         self.calculate_layout = layout
+        self.controller.dbfilter.change_layout(layout)
         self.controller.dbfilter.apply_keyboard(layout, variant)
         self.controller.allow_go_forward(True)
 
@@ -95,6 +97,7 @@ class PageGtk2(PluginUI):
     def on_keyboardlayoutview_row_activated(self, *args):
         self.controller.go_forward()
 
+    @only_this_page
     def on_keyboard_layout_selected(self, *args):
         layout = self.get_keyboard()
         if layout is not None:
@@ -104,6 +107,7 @@ class PageGtk2(PluginUI):
     def on_keyboardvariantview_row_activated(self, *args):
         self.controller.go_forward()
 
+    @only_this_page
     def on_keyboard_variant_selected(self, *args):
         layout = self.get_keyboard()
         variant = self.get_keyboard_variant()
@@ -125,8 +129,12 @@ class PageGtk2(PluginUI):
             selection.connect('changed',
                               self.on_keyboard_layout_selected)
 
-        if self.current_layout is not None:
-            self.set_keyboard(self.current_layout)
+        if self.calculate_keymap.get_active():
+            if self.calculate_layout is not None:
+                self.set_keyboard(self.calculate_layout)
+        else:
+            if self.current_layout is not None:
+                self.set_keyboard(self.current_layout)
 
     def set_keyboard(self, layout):
         if self.default_keyboard_layout is None:
@@ -213,6 +221,7 @@ class PageGtk2(PluginUI):
         else:
             return unicode(model.get_value(iterator, 0))
 
+    @only_this_page
     def on_keymap_toggled(self, widget):
         self.controller.allow_go_forward(True)
         self.calculate_keymap_button.set_sensitive(False)
@@ -221,6 +230,7 @@ class PageGtk2(PluginUI):
         if self.calculate_keymap.get_active():
             self.calculate_keymap_button.set_sensitive(True)
             if self.calculate_variant:
+                self.controller.dbfilter.change_layout(self.calculate_layout)
                 self.controller.dbfilter.apply_keyboard(self.calculate_layout,
                                                         self.calculate_variant)
             else:
@@ -234,6 +244,11 @@ class PageGtk2(PluginUI):
                 self.controller.dbfilter.change_layout(self.default_keyboard_layout)
                 self.controller.dbfilter.apply_keyboard(self.default_keyboard_layout,
                                                         self.default_keyboard_variant)
+
+def utf8(str):
+    if isinstance(str, unicode):
+        return str
+    return unicode(str, 'utf-8')
 
 class PageKde2(PluginUI):
     plugin_breadcrumb = 'ubiquity/text/breadcrumb_keyboard'
@@ -260,13 +275,14 @@ class PageKde2(PluginUI):
             self.page = None
         self.plugin_widgets = self.page
 
-    def on_keyboard_layout_selected(self):
+    @only_this_page
+    def on_keyboard_layout_selected(self, *args):
         layout = self.get_keyboard()
         l = self.controller.dbfilter.get_locale()
         if layout is not None:
             #skip updating keyboard if not using display
             if self.keyboardDisplay:
-                ly = keyboard_names.lang[l]['layouts'][unicode(layout)]
+                ly = keyboard_names.lang[l]['layouts'][utf8(layout)]
                 self.keyboardDisplay.setLayout(ly)
 
                 #no variants, force update by setting none
@@ -276,7 +292,8 @@ class PageKde2(PluginUI):
             self.current_layout = layout
             self.controller.dbfilter.change_layout(layout)
 
-    def on_keyboard_variant_selected(self):
+    @only_this_page
+    def on_keyboard_variant_selected(self, *args):
         layout = self.get_keyboard()
         variant = self.get_keyboard_variant()
 
@@ -286,7 +303,7 @@ class PageKde2(PluginUI):
             ly = keyboard_names.lang[l]['layouts'][layout]
             if variant and keyboard_names.lang[l]['variants'].has_key(ly):
                 variantMap = keyboard_names.lang[l]['variants'][ly]
-                var = variantMap[unicode(variant)]
+                var = variantMap[utf8(variant)]
 
             self.keyboardDisplay.setVariant(var)
 
@@ -297,21 +314,22 @@ class PageKde2(PluginUI):
         from PyQt4.QtCore import QString
         self.page.keyboard_layout_combobox.clear()
         for choice in sorted(choices):
-            self.page.keyboard_layout_combobox.addItem(QString(unicode(choice)))
+            self.page.keyboard_layout_combobox.addItem(QString(utf8(choice)))
 
         if self.current_layout is not None:
             self.set_keyboard(self.current_layout)
 
+    @only_this_page
     def set_keyboard (self, layout):
         from PyQt4.QtCore import QString
-        index = self.page.keyboard_layout_combobox.findText(QString(unicode(layout)))
+        index = self.page.keyboard_layout_combobox.findText(QString(utf8(layout)))
 
         if index > -1:
             self.page.keyboard_layout_combobox.setCurrentIndex(index)
 
         if self.keyboardDisplay:
             l = self.controller.dbfilter.get_locale()
-            ly = keyboard_names.lang[l]['layouts'][unicode(layout)]
+            ly = keyboard_names.lang[l]['layouts'][utf8(layout)]
             self.keyboardDisplay.setLayout(ly)
 
     def get_keyboard(self):
@@ -324,11 +342,12 @@ class PageKde2(PluginUI):
         from PyQt4.QtCore import QString
         self.page.keyboard_variant_combobox.clear()
         for choice in sorted(choices):
-            self.page.keyboard_variant_combobox.addItem(QString(unicode(choice)))
+            self.page.keyboard_variant_combobox.addItem(QString(utf8(choice)))
 
+    @only_this_page
     def set_keyboard_variant(self, variant):
         from PyQt4.QtCore import QString
-        index = self.page.keyboard_variant_combobox.findText(QString(unicode(variant)))
+        index = self.page.keyboard_variant_combobox.findText(QString(utf8(variant)))
 
         if index > -1:
             self.page.keyboard_variant_combobox.setCurrentIndex(index)
@@ -339,7 +358,7 @@ class PageKde2(PluginUI):
             layout = keyboard_names.lang[l]['layouts'][self.get_keyboard()]
             if variant and keyboard_names.lang[l]['variants'].has_key(layout):
                 variantMap = keyboard_names.lang[l]['variants'][layout]
-                var = variantMap[unicode(variant)]
+                var = variantMap[utf8(variant)]
 
             self.keyboardDisplay.setVariant(var)
 

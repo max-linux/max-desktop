@@ -30,6 +30,13 @@ NAME = 'language'
 AFTER = None
 WEIGHT = 10
 
+try:
+    import lsb_release
+    _ver = lsb_release.get_distro_information()['RELEASE']
+except:
+    _ver = '10.04'
+_wget_url = 'http://changelogs.ubuntu.com/ubiquity/%s-update-available' % _ver
+
 _release_notes_url_path = '/cdrom/.disk/release_notes_url'
 
 class PageBase(PluginUI):
@@ -115,12 +122,55 @@ class PageGtk2(PageBase):
                 # it's ready.
                 for w in self.page.get_children():
                     w.hide()
+                if self.update_installer:
+                    self.setup_network_watch()
 
         except Exception, e:
             self.debug('Could not create language page: %s', e)
             self.page = None
         self.plugin_widgets = self.page
 
+    def setup_network_watch(self):
+        import dbus
+        from dbus.mainloop.glib import DBusGMainLoop
+        DBusGMainLoop(set_as_default=True)
+        bus = dbus.SystemBus()
+        bus.add_signal_receiver(self.network_change, 'DeviceNoLongerActive',
+                                'org.freedesktop.NetworkManager',
+                                'org.freedesktop.NetworkManager',
+                                '/org/freedesktop/NetworkManager')
+        bus.add_signal_receiver(self.network_change, 'StateChange',
+                                'org.freedesktop.NetworkManager',
+                                'org.freedesktop.NetworkManager',
+                                '/org/freedesktop/NetworkManager')
+        self.timeout_id = None
+        self.wget_retcode = None
+        self.wget_proc = None
+        self.network_change()
+
+    def network_change(self, state=None):
+        import gobject
+        if state and (state != 4 and state != 3):
+            return
+        if self.timeout_id:
+            gobject.source_remove(self.timeout_id)
+        self.timeout_id = gobject.timeout_add(300, self.check_returncode)
+
+    def check_returncode(self, *args):
+        import subprocess
+        if self.wget_retcode is not None or self.wget_proc is None:
+            self.wget_proc = subprocess.Popen(
+                ['wget', '-q', _wget_url, '--timeout=15'])
+        self.wget_retcode = self.wget_proc.poll()
+        if self.wget_retcode is None:
+            return True
+        else:
+            if self.wget_retcode == 0:
+                self.release_notes_label.show()
+            else:
+                self.release_notes_label.hide()
+
+    @only_this_page
     def on_try_ubuntu_clicked(self, *args):
         # Spinning cursor.
         self.controller.allow_change_step(False)
@@ -206,19 +256,17 @@ class PageGtk2(PageBase):
 
     def on_language_selection_changed(self, *args, **kwargs):
         lang = self.get_language()
-        if lang:
-            # strip encoding; we use UTF-8 internally no matter what
-            lang = lang.split('.')[0].lower()
-            self.controller.translate(lang)
-            import gtk
-            ltr = i18n.get_string('default-ltr', lang, 'ubiquity/imported')
-            if ltr == 'default:RTL':
-                gtk.widget_set_default_direction(gtk.TEXT_DIR_RTL)
-            else:
-                gtk.widget_set_default_direction(gtk.TEXT_DIR_LTR)
+        if not lang:
+            return
+        # strip encoding; we use UTF-8 internally no matter what
+        lang = lang.split('.')[0]
+        self.controller.translate(lang)
+        import gtk
+        ltr = i18n.get_string('default-ltr', lang, 'ubiquity/imported')
+        if ltr == 'default:RTL':
+            gtk.widget_set_default_direction(gtk.TEXT_DIR_RTL)
         else:
-            lang = 'C'
-
+            gtk.widget_set_default_direction(gtk.TEXT_DIR_LTR)
         if not self.only:
             release_name = misc.get_release_name()
             install_medium = misc.get_install_medium()
@@ -289,7 +337,7 @@ class PageKde2(PageBase):
             self.page = uic.loadUi('/usr/share/ubiquity/qt/stepLanguage.ui')
             self.combobox = self.page.language_combobox
             self.combobox.currentIndexChanged[str].connect(self.on_language_selection_changed)
-
+            
             def inst(*args):
                 self.try_ubuntu.setEnabled(False)
                 self.controller.go_forward()
@@ -306,14 +354,32 @@ class PageKde2(PageBase):
                 self.release_notes_url = release_notes.read().rstrip('\n')
                 release_notes.close()
             except (KeyboardInterrupt, SystemExit):
+                raise
+            except:
                 pass
 
-            self.page.release_notes_label.linkActivated.connect(self.on_release_notes_link)
+            if self.release_notes_url:
+                self.page.release_notes_label.linkActivated.connect(
+                    self.on_release_notes_link)
+            else:
+                self.page.release_notes_label.hide()
 
             if not 'UBIQUITY_GREETER' in os.environ:
                 self.page.try_ubuntu.hide()
                 self.page.try_text_label.hide()
                 self.page.begin_install_button.hide()
+
+            if self.only:
+                self.page.alpha_warning_label.hide()
+
+            # We do not want to show the yet to be substituted strings
+            # (${MEDIUM}, etc), so don't show the core of the page until
+            # it's ready.
+            self.widgetHidden = []
+            for w in self.page.children():
+                if isinstance(w, QWidget) and not w.isHidden():
+                    self.widgetHidden.append(w)
+                    w.hide()
 
         except Exception, e:
             self.debug('Could not create language page: %s', e)
@@ -321,17 +387,20 @@ class PageKde2(PageBase):
 
         self.plugin_widgets = self.page
 
+    @only_this_page
     def on_try_ubuntu_clicked(self, *args):
         # Spinning cursor.
         self.controller.allow_change_step(False)
         # Queue quit.
-        self.begin_install_button.setEnabled(False)
+        self.page.begin_install_button.setEnabled(False)
         self.controller._wizard.current_page = None
         self.controller.dbfilter.ok_handler()
 
     def set_alpha_warning(self, show):
         if not show and not self.only:
             self.page.alpha_warning_label.hide()
+            if self.page.alpha_warning_label in self.widgetHidden:
+                self.widgetHidden.remove(self.page.alpha_warning_label)
 
     def on_release_notes_link(self, link):
         lang = self.selected_language()
@@ -340,7 +409,6 @@ class PageKde2(PageBase):
                lang = lang.split('.')[0].lower()
                url = self.release_notes_url.replace('${LANG}', lang)
                self.openURL(url)
-            pass
         elif link == "update":
             if not auto_update.update(self.controller._wizard):
                 # no updates, so don't check again
@@ -382,20 +450,18 @@ class PageKde2(PageBase):
 
     def selected_language(self):
         lang = self.combobox.currentText()
-        if lang.isNull():
+        if lang.isNull() or not hasattr(self, 'language_choice_map'):
             return None
         else:
             return self.language_choice_map[unicode(lang)][1]
 
     def on_language_selection_changed(self):
         lang = self.selected_language()
-        if lang:
-            # strip encoding; we use UTF-8 internally no matter what
-            lang = lang.split('.')[0].lower()
-            self.controller.translate(lang)
-        else:
-            lang = 'C'
-
+        if not lang:
+            return
+        # strip encoding; we use UTF-8 internally no matter what
+        lang = lang.split('.')[0]
+        self.controller.translate(lang)
         if not self.only:
             release_name = misc.get_release_name()
             install_medium = misc.get_install_medium()
@@ -408,6 +474,10 @@ class PageKde2(PageBase):
                 text = text.replace('${RELEASE}', release_name)
                 text = text.replace('${MEDIUM}', install_medium)
                 widget.setText(text)
+                
+        for w in self.widgetHidden:
+            w.show()
+        self.widgetHidden = []
 
     def set_oem_id(self, text):
         return self.page.oem_id_entry.setText(text)
@@ -448,9 +518,8 @@ class Page(Plugin):
             except debconf.DebconfError:
                 pass
 
-        if not self.ui.controller.oem_config:
-            show = self.db.get('ubiquity/show_alpha_warning') == 'true'
-            self.ui.set_alpha_warning(show)
+        show = self.db.get('ubiquity/show_alpha_warning') == 'true'
+        self.ui.set_alpha_warning(show)
 
         localechooser_script = '/usr/lib/ubiquity/localechooser/localechooser'
         if ('UBIQUITY_FRONTEND' in os.environ and

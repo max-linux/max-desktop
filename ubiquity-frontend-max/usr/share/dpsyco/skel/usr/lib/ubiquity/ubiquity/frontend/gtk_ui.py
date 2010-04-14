@@ -14,6 +14,7 @@
 # - Colin Watson <cjwatson@ubuntu.com>
 # - Evan Dandrea <evand@ubuntu.com>
 # - Mario Limonciello <superm1@ubuntu.com>
+# - Mario Izquierdo <mariodebian@gmail.com>
 #
 # This file is part of Ubiquity.
 #
@@ -230,6 +231,9 @@ class Wizard(BaseFrontend):
 
         # load the main interface
         self.builder.add_from_file('%s/ubiquity.ui' % UIDIR)
+        
+        # load the main install window
+        self.builder.add_from_file('%s/install_window.ui' % UIDIR)
 
         self.builders = [self.builder]
         self.pages = []
@@ -301,11 +305,22 @@ class Wizard(BaseFrontend):
             pages = [current_page]
         else:
             pages = self.pages
+
+        if reget:
+            self.translate_reget(lang)
+
         widgets = []
         for p in pages:
             # There's no sense retranslating the page we're leaving.
             if not_current and p == current_page:
                 continue
+            # Allow plugins to provide a hook for translation.
+            if hasattr(p.ui, 'plugin_translate'):
+                try:
+                    p.ui.plugin_translate(lang or self.locale)
+                except Exception, e:
+                    print >>sys.stderr, 'Could not translate page (%s): %s' \
+                                        % (p.module.NAME, str(e))
             prefix = p.ui.get('plugin_prefix')
             for w in p.all_widgets:
                 for c in self.all_children(w):
@@ -315,7 +330,7 @@ class Wizard(BaseFrontend):
                 if toplevel.name != 'live_installer':
                     for c in self.all_children(toplevel):
                         widgets.append((c, None))
-        self.translate_widgets(lang=lang, widgets=widgets, reget=reget)
+        self.translate_widgets(lang=lang, widgets=widgets, reget=False)
 
     def excepthook(self, exctype, excvalue, exctb):
         """Crash handler."""
@@ -456,6 +471,8 @@ class Wizard(BaseFrontend):
                 self.get_string('ubiquity/install/checking'))
             self.debconf_progress_window.set_title(
                 self.get_string('ubiquity/install/title'))
+            self.install_progress_window.set_title(
+                self.get_string('ubiquity/install/title'))
             self.refresh()
 
         self.set_current_page(0)
@@ -479,8 +496,6 @@ class Wizard(BaseFrontend):
                 self.start_debconf()
                 self.dbfilter = self.pages[self.pagesindex].filter_class(self, ui=ui)
 
-                # Non-debconf steps are no longer possible as the interface is now
-                # driven by whether there is a question to ask.
                 if self.dbfilter is not None and self.dbfilter != old_dbfilter:
                     self.allow_change_step(False)
                     glib.idle_add(lambda: self.dbfilter.start(auto_process=True))
@@ -521,6 +536,8 @@ documento que guarde no se conservará.""")
                 txt = self.get_string('ubiquity/finished_restart_only')
                 self.finished_label.set_label(txt)
                 self.quit_button.hide()
+            with raised_privileges():
+                open('/var/run/reboot-required', "w").close()
             self.finished_dialog.set_keep_above(True)
             self.finished_dialog.run()
         elif self.get_reboot():
@@ -575,7 +592,6 @@ documento que guarde no se conservará.""")
         elif self.oem_user_config:
             self.live_installer.set_title(self.get_string('oem_user_config_title'))
             self.live_installer.set_icon_name("preferences-system")
-            self.live_installer.window.set_functions(gtk.gdk.FUNC_RESIZE | gtk.gdk.FUNC_MOVE)
             self.quit.hide()
 
         if not 'UBIQUITY_AUTOMATIC' in os.environ:
@@ -596,7 +612,7 @@ documento que guarde no se conservará.""")
 
         # set initial bottom bar status
         self.allow_go_backward(False)
-
+        
     def poke_screensaver(self):
         """Attempt to make sure that the screensaver doesn't kick in."""
         if os.path.exists('/usr/bin/gnome-screensaver-command'):
@@ -617,10 +633,13 @@ documento que guarde no se conservará.""")
         return True
 
     def set_window_hints(self, widget):
-        if 'UBIQUITY_ONLY' in os.environ:
-            # Disable minimise button.
-            widget.window.set_functions(
-                gtk.gdk.FUNC_RESIZE | gtk.gdk.FUNC_MOVE)
+        if (self.oem_user_config or
+            'UBIQUITY_ONLY' in os.environ or
+            'UBIQUITY_GREETER' in os.environ):
+            f = gtk.gdk.FUNC_RESIZE | gtk.gdk.FUNC_MAXIMIZE | gtk.gdk.FUNC_MOVE
+            if not self.oem_user_config and not 'progress' in widget.get_name():
+                f |= gtk.gdk.FUNC_CLOSE
+            widget.window.set_functions(f)
 
     def set_locales(self):
         """internationalization config. Use only once."""
@@ -631,35 +650,41 @@ documento que guarde no se conservará.""")
         gettext.textdomain(domain)
         gettext.install(domain, LOCALEDIR, unicode=1)
 
+    def translate_reget(self, lang):
+        if lang is None:
+            lang = self.locale
+        if lang is None:
+            languages = []
+        else:
+            languages = [lang]
+
+        core_names = ['ubiquity/text/%s' % q for q in self.language_questions]
+        core_names.append('ubiquity/text/oem_config_title')
+        core_names.append('ubiquity/text/oem_user_config_title')
+        core_names.append('ubiquity/imported/default-ltr')
+        for stock_item in ('cancel', 'close', 'go-back', 'go-forward',
+                            'ok', 'quit'):
+            core_names.append('ubiquity/imported/%s' % stock_item)
+        prefixes = []
+        for p in self.pages:
+            prefix = p.ui.get('plugin_prefix')
+            if not prefix:
+                prefix = 'ubiquity/text'
+            if p.ui.get('plugin_is_language'):
+                children = reduce(lambda x,y: x + self.all_children(y), p.all_widgets, [])
+                core_names.extend([prefix+'/'+c.get_name() for c in children])
+            prefixes.append(prefix)
+        i18n.get_translations(languages=languages, core_names=core_names, extra_prefixes=prefixes)
+
     # widgets is a set of (widget, prefix) pairs
     def translate_widgets(self, lang=None, widgets=None, reget=True):
         if lang is None:
             lang = self.locale
         if widgets is None:
             widgets = [(x, None) for x in self.all_widgets]
-        if lang is None:
-            languages = []
-        else:
-            languages = [lang]
 
         if reget:
-            core_names = ['ubiquity/text/%s' % q for q in self.language_questions]
-            core_names.append('ubiquity/text/oem_config_title')
-            core_names.append('ubiquity/text/oem_user_config_title')
-            core_names.append('ubiquity/imported/default-ltr')
-            for stock_item in ('cancel', 'close', 'go-back', 'go-forward',
-                                'ok', 'quit'):
-                core_names.append('ubiquity/imported/%s' % stock_item)
-            prefixes = []
-            for p in self.pages:
-                prefix = p.ui.get('plugin_prefix')
-                if not prefix:
-                    prefix = 'ubiquity/text'
-                if p.ui.get('plugin_is_language'):
-                    children = reduce(lambda x,y: x + self.all_children(y), p.all_widgets, [])
-                    core_names.extend([prefix+'/'+c.get_name() for c in children])
-                prefixes.append(prefix)
-            i18n.get_translations(languages=languages, core_names=core_names, extra_prefixes=prefixes)
+            self.translate_reget(lang)
 
         # We always translate always-visible widgets
         for q in self.language_questions:
@@ -682,8 +707,8 @@ documento que guarde no se conservará.""")
             if name == 'step_label':
                 text = text.replace('${INDEX}', str(min(self.user_pageslen, max(1, len(self.history)))))
                 text = text.replace('${TOTAL}', str(self.user_pageslen))
-            elif name == 'welcome_text_label' and self.oem_user_config:
-                text = self.get_string('welcome_text_oem_user_label', lang)
+            elif name == 'ready_text_label' and self.oem_user_config:
+                text = self.get_string('ready_text_oem_user_label', lang)
             widget.set_markup(text)
 
             # Ideally, these attributes would be in the ui file (and can be if
@@ -775,7 +800,7 @@ documento que guarde no se conservará.""")
         self.dbfilter_status = None
         label = gtk.Label(text)
         label.set_line_wrap(True)
-        label.set_selectable(True)
+        label.set_selectable(False)
         dialog.vbox.add(label)
         dialog.show_all()
         response = dialog.run()
@@ -805,6 +830,14 @@ documento que guarde no se conservará.""")
     def add_history(self, page, widget):
         history_entry = (page, widget)
         if self.history:
+            # We may have skipped past child pages of the component.  Remove
+            # the history between the page we're on and the end of the list in
+            # that case.
+            if history_entry in self.history:
+                idx = self.history.index(history_entry)
+                if idx + 1 < len(self.history):
+                    self.history = self.history[:idx+1]
+                    return # The page is now effectively a dup
             # We may have either jumped backward or forward over pages.
             # Correct history in that case
             new_index = self.pages.index(page)
@@ -875,6 +908,7 @@ documento que guarde no se conservará.""")
             self.allow_go_backward(False)
         elif 'UBIQUITY_AUTOMATIC' not in os.environ:
             self.allow_go_backward(True)
+        return True
 
     def set_focus(self):
         # Make sure that something reasonable has the focus.  If the first
@@ -902,6 +936,34 @@ documento que guarde no se conservará.""")
 
     # Methods
 
+    def switch_progress_windows(self, use_install_window=True):
+        self.debconf_progress_window.hide()
+        if use_install_window:
+            self.old_progress_window = self.debconf_progress_window
+            self.old_progress_info = self.progress_info
+            self.old_progress_bar = self.progress_bar
+            self.old_progress_cancel_button = self.progress_cancel_button
+            
+            self.debconf_progress_window = self.install_progress_window
+            self.progress_info = self.install_progress_info
+            self.progress_bar = self.install_progress_bar
+            self.progress_cancel_button = self.install_progress_cancel_button
+            self.progress_cancel_button.set_label(
+                self.old_progress_cancel_button.get_label())
+            
+            # Set the install window to the (presumably dark) theme colors.
+            a = gtk.Menu().rc_get_style()
+            bg = a.bg[gtk.STATE_NORMAL]
+            fg = a.fg[gtk.STATE_NORMAL]
+            self.install_progress_window.modify_bg(gtk.STATE_NORMAL, bg)
+            self.install_progress_info.modify_fg(gtk.STATE_NORMAL, fg)
+
+        else:
+            self.debconf_progress_window = self.old_progress_window
+            self.progress_info = self.old_progress_info
+            self.progress_bar = self.old_progress_bar
+            self.progress_cancel_button = self.old_progress_cancel_button
+
     def progress_loop(self):
         """prepare, copy and config the system in the core install process."""
         self.installing = True
@@ -909,6 +971,7 @@ documento que guarde no se conservará.""")
         syslog.syslog('progress_loop()')
 
         self.live_installer.hide()
+        self.switch_progress_windows(use_install_window=True)
 
         slideshow_dir = '/usr/share/ubiquity-slideshow'
         slideshow_locale = self.slideshow_get_available_locale(slideshow_dir, self.locale)
@@ -935,11 +998,22 @@ documento que guarde no se conservará.""")
                     # such as creating a XMLHttpRequest, will fail unless this
                     # is disabled.
                     # http://www.gitorious.org/webkit/webkit/commit/624b9463c33adbffa7f6705210384d0d7cf122d6
-                    webview.get_settings().set_property(
-                        'enable-file-access-from-file-uris', True)
+                    s = webview.get_settings()
+                    s.set_property('enable-file-access-from-file-uris', True)
+                    s.set_property('enable-default-context-menu', False)
                     webview.open(slides)
                     self.slideshow_frame.add(webview)
-                    webview.set_size_request(700, 420)
+                    try:
+                        import ConfigParser
+                        cfg = ConfigParser.ConfigParser()
+                        cfg.read(os.path.join(slideshow_dir, 'slideshow.conf'))
+                        config_width = int(cfg.get('Slideshow','width'))
+                        config_height = int(cfg.get('Slideshow','height'))
+                    except:
+                        config_width = 798
+                        config_height = 451
+
+                    webview.set_size_request(config_width, config_height)
                     webview.connect('new-window-policy-decision-requested',
                                     self.on_slideshow_link_clicked)
                     self.slideshow_frame.show_all()
@@ -1034,6 +1108,12 @@ documento que guarde no se conservará.""")
     def quit_installer(self, *args):
         """quit installer cleanly."""
 
+        # Let the user know we're shutting down.
+        self.finished_dialog.window.set_cursor(self.watch)
+        self.quit_button.set_sensitive(False)
+        self.reboot_button.set_sensitive(False)
+        self.refresh()
+
         # exiting from application
         self.current_page = None
         self.warning_dialog.hide()
@@ -1045,6 +1125,8 @@ documento que guarde no se conservará.""")
 
     def on_quit_clicked(self, unused_widget):
         self.warning_dialog.show()
+        # Stop processing.
+        return True
 
     def on_quit_cancelled(self, unused_widget):
         self.warning_dialog.hide()
@@ -1075,7 +1157,6 @@ documento que guarde no se conservará.""")
             options = grub_options()
             self.grub_options.clear()
             for opt in options:
-                syslog.syslog("DEBUG: gtk_ui.py grub_options append=%s"%opt)
                 self.grub_options.append(opt)
 
         if self.dbfilter is not None:
@@ -1260,6 +1341,7 @@ documento que guarde no se conservará.""")
         if self.installing and not self.installing_no_return:
             # Go back to the partitioner and try again.
             self.slideshow_frame.hide()
+            self.switch_progress_windows(use_install_window=False)
             self.live_installer.show()
             self.pagesindex = -1
             for page in self.pages:
@@ -1363,7 +1445,7 @@ documento que guarde no se conservará.""")
         vbox.set_border_width(5)
         label = gtk.Label(msg)
         label.set_line_wrap(True)
-        label.set_selectable(True)
+        label.set_selectable(False)
         vbox.pack_start(label)
         vbox.show_all()
         dialog.vbox.pack_start(vbox)

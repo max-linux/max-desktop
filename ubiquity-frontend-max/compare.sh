@@ -1,8 +1,7 @@
 #!/bin/sh
 
-#ORIG_PATH=/home/mario/MaX/build/ubiquity/ubiquity-2.1.35/
-#ORIG_PATH=/home/mario/MaX/build/ubiquity/ubiquity-2.2.4/
-ORIG_PATH=/home/mario/MaX/build/ubiquity/ubiquity-2.2.6/
+#ORIG_PATH=/home/mario/MaX/build/ubiquity/ubiquity-2.2.15/
+ORIG_PATH=/home/mario/MaX/build/ubiquity/ubiquity-2.2.16/
 
 #for f in $(find usr/ -type f -name "*py"); do
 for f in $(find usr/ -type f | grep -v ".svn"); do
@@ -17,7 +16,7 @@ for f in $(find usr/ -type f | grep -v ".svn"); do
   fi
 
   if [ "$orig" = "" ]; then
-    echo "WARNING: orig not found $f" >&2
+    #echo "WARNING: orig not found $f" >&2
     continue
   fi
   #echo diff -ur $orig $f >&2

@@ -443,13 +443,11 @@ class PageGtk(PageBase):
         else:
             cell.set_property('text', partition['method'])
 
+    @only_this_page
     def partman_column_mountpoint (self, unused_column, cell, model, iterator):
         partition = model[iterator][1]
-        if isinstance(self.controller.dbfilter, Page):
-            mountpoint = self.controller.dbfilter.get_current_mountpoint(partition)
-            if mountpoint is None:
-                mountpoint = ''
-        else:
+        mountpoint = self.controller.dbfilter.get_current_mountpoint(partition)
+        if mountpoint is None:
             mountpoint = ''
         cell.set_property('text', mountpoint)
 
@@ -468,10 +466,9 @@ class PageGtk(PageBase):
             cell.set_property('active', False)
             cell.set_property('activatable', False)
 
+    @only_this_page
     def partman_column_format_toggled (self, unused_cell, path, user_data):
         if not self.controller.allowed_change_step():
-            return
-        if not isinstance(self.controller.dbfilter, Page):
             return
         model = user_data
         devpart = model[path][0]
@@ -504,11 +501,10 @@ class PageGtk(PageBase):
             size_mb = int(partition['resize_min_size']) / 1000000
             cell.set_property('text', '%d MB' % size_mb)
 
+    @only_this_page
     def partman_popup (self, widget, event):
         import gtk
         if not self.controller.allowed_change_step():
-            return
-        if not isinstance(self.controller.dbfilter, Page):
             return
 
         model, iterator = widget.get_selection().get_selected()
@@ -561,11 +557,10 @@ class PageGtk(PageBase):
             time = 0
         partition_list_menu.popup(None, None, None, button, time)
 
+    @only_this_page
     def partman_create_dialog (self, devpart, partition):
         import gtk, gobject
         if not self.controller.allowed_change_step():
-            return
-        if not isinstance(self.controller.dbfilter, Page):
             return
 
         self.partition_create_dialog.show_all()
@@ -623,8 +618,7 @@ class PageGtk(PageBase):
         response = self.partition_create_dialog.run()
         self.partition_create_dialog.hide()
 
-        if (response == gtk.RESPONSE_OK and
-            isinstance(self.controller.dbfilter, Page)):
+        if (response == gtk.RESPONSE_OK):
             if partition['parted']['type'] == 'primary':
                 prilog = PARTITION_TYPE_PRIMARY
             elif partition['parted']['type'] == 'logical':
@@ -655,6 +649,7 @@ class PageGtk(PageBase):
                 str(self.partition_create_size_spinbutton.get_value()),
                 prilog, place, method, mountpoint)
 
+    @only_this_page
     def on_partition_create_use_combo_changed (self, combobox):
         model = combobox.get_model()
         iterator = combobox.get_active_iter()
@@ -665,20 +660,18 @@ class PageGtk(PageBase):
             self.partition_create_mount_combo.set_sensitive(False)
         else:
             self.partition_create_mount_combo.set_sensitive(True)
-            if isinstance(self.controller.dbfilter, Page):
-                mount_model = self.partition_create_mount_combo.get_model()
-                if mount_model is not None:
-                    fs = model[iterator][1]
-                    mount_model.clear()
-                    for mp, choice_c, choice in \
-                        self.controller.dbfilter.default_mountpoint_choices(fs):
-                        mount_model.append([mp])
+            mount_model = self.partition_create_mount_combo.get_model()
+            if mount_model is not None:
+                fs = model[iterator][1]
+                mount_model.clear()
+                for mp, choice_c, choice in \
+                    self.controller.dbfilter.default_mountpoint_choices(fs):
+                    mount_model.append([mp])
 
+    @only_this_page
     def partman_edit_dialog (self, devpart, partition):
         import gtk, gobject
         if not self.controller.allowed_change_step():
-            return
-        if not isinstance(self.controller.dbfilter, Page):
             return
 
         self.partition_edit_dialog.show_all()
@@ -759,8 +752,7 @@ class PageGtk(PageBase):
         response = self.partition_edit_dialog.run()
         self.partition_edit_dialog.hide()
 
-        if (response == gtk.RESPONSE_OK and
-            isinstance(self.controller.dbfilter, Page)):
+        if (response == gtk.RESPONSE_OK):
             size = None
             if current_size is not None:
                 size = str(self.partition_edit_size_spinbutton.get_value())
@@ -795,6 +787,7 @@ class PageGtk(PageBase):
                     edits['fmt'] = 'dummy'
                 self.controller.dbfilter.edit_partition(devpart, **edits)
 
+    @only_this_page
     def on_partition_edit_use_combo_changed (self, combobox):
         model = combobox.get_model()
         iterator = combobox.get_active_iter()
@@ -810,14 +803,13 @@ class PageGtk(PageBase):
         else:
             self.partition_edit_mount_combo.set_sensitive(True)
             self.partition_edit_format_checkbutton.set_sensitive(True)
-            if isinstance(self.controller.dbfilter, Page):
-                mount_model = self.partition_edit_mount_combo.get_model()
-                if mount_model is not None:
-                    fs = model[iterator][0]
-                    mount_model.clear()
-                    for mp, choice_c, choice in \
-                        self.controller.dbfilter.default_mountpoint_choices(fs):
-                        mount_model.append([mp, choice])
+            mount_model = self.partition_edit_mount_combo.get_model()
+            if mount_model is not None:
+                fs = model[iterator][0]
+                mount_model.clear()
+                for mp, choice_c, choice in \
+                    self.controller.dbfilter.default_mountpoint_choices(fs):
+                    mount_model.append([mp, choice])
 
     def on_partition_list_treeview_button_press_event (self, widget, event):
         import gtk
@@ -831,14 +823,13 @@ class PageGtk(PageBase):
             self.partman_popup(widget, event)
             return True
 
+    @only_this_page
     def on_partition_list_treeview_key_press_event (self, widget, event):
         import gtk
         if event.type != gtk.gdk.KEY_PRESS:
             return False
 
         if event.keyval == gtk.keysyms.Delete:
-            if not isinstance(self.controller.dbfilter, Page):
-                return False
             devpart, partition = self.partition_list_get_selection()
             for action in self.controller.dbfilter.get_actions(devpart, partition):
                 if action == 'delete':
@@ -851,13 +842,12 @@ class PageGtk(PageBase):
         self.partman_popup(widget, None)
         return True
 
+    @only_this_page
     def on_partition_list_treeview_selection_changed (self, selection):
         self.partition_button_new_label.set_sensitive(False)
         self.partition_button_new.set_sensitive(False)
         self.partition_button_edit.set_sensitive(False)
         self.partition_button_delete.set_sensitive(False)
-        if not isinstance(self.controller.dbfilter, Page):
-            return
 
         model, iterator = selection.get_selected()
         if iterator is None:
@@ -884,6 +874,7 @@ class PageGtk(PageBase):
                 self.partition_button_delete.set_sensitive(True)
         self.partition_button_undo.set_sensitive(True)
 
+    @only_this_page
     def on_partition_list_treeview_row_activated (self, treeview,
                                                   path, unused_view_column):
         if not self.controller.allowed_change_step():
@@ -903,8 +894,6 @@ class PageGtk(PageBase):
                 if otherpart['dev'] == partition['dev'] and 'id' in otherpart:
                     break
             else:
-                if not isinstance(self.controller.dbfilter, Page):
-                    return
                 self.controller.allow_change_step(False)
                 self.controller.dbfilter.create_label(devpart)
         elif partition['parted']['fs'] == 'free':
@@ -923,10 +912,9 @@ class PageGtk(PageBase):
             partition = model[iterator][1]
         return (devpart, partition)
 
+    @only_this_page
     def on_partition_list_new_label_activate (self, unused_widget):
         if not self.controller.allowed_change_step():
-            return
-        if not isinstance(self.controller.dbfilter, Page):
             return
         self.controller.allow_change_step(False)
         devpart, partition = self.partition_list_get_selection()
@@ -940,19 +928,17 @@ class PageGtk(PageBase):
         devpart, partition = self.partition_list_get_selection()
         self.partman_edit_dialog(devpart, partition)
 
+    @only_this_page
     def on_partition_list_delete_activate (self, unused_widget):
         if not self.controller.allowed_change_step():
-            return
-        if not isinstance(self.controller.dbfilter, Page):
             return
         self.controller.allow_change_step(False)
         devpart, partition = self.partition_list_get_selection()
         self.controller.dbfilter.delete_partition(devpart)
 
+    @only_this_page
     def on_partition_list_undo_activate (self, unused_widget):
         if not self.controller.allowed_change_step():
-            return
-        if not isinstance(self.controller.dbfilter, Page):
             return
         self.controller.allow_change_step(False)
         self.controller.dbfilter.undo()

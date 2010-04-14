@@ -82,10 +82,6 @@ class PageBase(PluginUI):
         """Get the user's password confirmation."""
         raise NotImplementedError('get_verified_password')
 
-    def select_password(self):
-        """Select the text in the first password entry widget."""
-        raise NotImplementedError('select_password')
-
     def set_auto_login(self, value):
         """Set whether the user should be automatically logged in."""
         raise NotImplementedError('set_auto_login')
@@ -141,6 +137,7 @@ class PageGtk2(PageBase):
         self.hostname_edited = False
 
         import gtk
+        from ubiquity.frontend.gtk_components.labelled_entry import LabelledEntry
         builder = gtk.Builder()
         self.controller.add_builder(builder)
         builder.add_from_file('/usr/share/ubiquity/gtk/stepUserInfo.ui')
@@ -163,9 +160,9 @@ class PageGtk2(PageBase):
         self.scrolledwin = builder.get_object('userinfo_scrolledwindow')
 
         self.username_valid_image = builder.get_object('username_valid_image')
-        self.password_valid_image = builder.get_object('password_valid_image')
         self.hostname_valid_image = builder.get_object('hostname_valid_image')
         self.fullname_valid_image = builder.get_object('fullname_valid_image')
+        self.password_valid = builder.get_object('password_valid')
 
         # Some signals need to be connected by hand so that we have the
         # handler ids.
@@ -198,6 +195,19 @@ class PageGtk2(PageBase):
             self.scrolledwin.set_policy(gtk.POLICY_NEVER, gtk.POLICY_AUTOMATIC)
         self.plugin_widgets = self.page
 
+    def plugin_translate(self, lang):
+        user = self.controller.get_string('username_inactive_label', lang)
+        full = self.controller.get_string('fullname_inactive_label', lang)
+        pasw = self.controller.get_string('password_inactive_label', lang)
+        host = self.controller.get_string('hostname_inactive_label', lang)
+        vpas = self.controller.get_string('password_again_inactive_label',
+                                          lang)
+        self.username.set_inactive_message(user)
+        self.fullname.set_inactive_message(full)
+        self.password.set_inactive_message(pasw)
+        self.verified_password.set_inactive_message(vpas)
+        self.hostname.set_inactive_message(host)
+
     # Functions called by the Page.
 
     def set_fullname(self, value):
@@ -218,13 +228,6 @@ class PageGtk2(PageBase):
     def get_verified_password(self):
         return self.verified_password.get_text()
 
-    def select_password(self):
-        # LP: 344402, the password should be selected if we just said "go back"
-        # to the weak password entry.
-        if self.password.get_text_length():
-            self.password.select_region(0, -1)
-            self.password.grab_focus()
-
     def set_auto_login(self, value):
         self.login_auto.set_active(value)
 
@@ -243,7 +246,7 @@ class PageGtk2(PageBase):
         self.username_error_box.show()
 
     def password_error(self, msg):
-        self.password_valid_image.hide()
+        self.password_valid.hide()
         self.password_error_reason.set_text(msg)
         self.password_error_box.show()
 
@@ -311,11 +314,22 @@ class PageGtk2(PageBase):
         passw = self.password.get_text()
         vpassw = self.verified_password.get_text()
         allow_empty = self.allow_password_empty
-        if (passw and vpassw) and (allow_empty or (passw == vpassw)):
-            self.password_error_box.hide()
-            self.password_valid_image.show()
+        if allow_empty:
+            self.password_valid.hide()
+        elif passw and vpassw:
+            if passw == vpassw:
+                self.password_error_box.hide()
+                (txt, color) = validation.human_password_strength(passw)
+                txt = self.controller.get_string('ubiquity/text/password/' + txt)
+                txt = '<small><span foreground="%s"><b>%s</b></span></small>' \
+                      % (color, txt)
+                self.password_valid.set_markup(txt)
+                self.password_valid.show()
+            else:
+                self.password_valid.hide()
+                complete = False
         else:
-            self.password_valid_image.hide()
+            self.password_valid.hide()
             complete = False
 
         txt = self.hostname.get_text()
@@ -442,9 +456,6 @@ class PageKde2(PageBase):
 
     def get_verified_password(self):
         return unicode(self.page.verified_password.text())
-
-    def select_password(self):
-        self.page.password.selectAll()
 
     def set_auto_login(self, value):
         return self.page.login_auto.setChecked(value)
@@ -575,6 +586,7 @@ class Page2(Plugin):
     def prepare(self, unfiltered=False):
         if ('UBIQUITY_FRONTEND' not in os.environ or
             os.environ['UBIQUITY_FRONTEND'] != 'debconf_ui'):
+            self.preseed_bool('user-setup/allow-password-weak', True)
             if self.ui.get_hostname() == '':
                 try:
                     seen = self.db.fget('netcfg/get_hostname', 'seen') == 'true'
@@ -617,12 +629,15 @@ class Page2(Plugin):
             empty = False
         self.ui.set_allow_password_empty(empty)
 
+        # We need to call info_loop as we switch to the page so the next button
+        # gets disabled.
+        self.ui.info_loop(None)
+
         # We intentionally don't listen to passwd/auto-login or
         # user-setup/encrypt-home because we don't want those alone to force
         # the page to be shown, if they're the only questions not preseeded.
         questions = ['^passwd/user-fullname$', '^passwd/username$',
                      '^passwd/user-password$', '^passwd/user-password-again$',
-                     '^user-setup/password-weak$',
                      'ERROR']
         if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
             environ = {'OVERRIDE_SYSTEM_USER': '1'}
@@ -638,26 +653,6 @@ class Page2(Plugin):
                 self.ui.set_username(value)
 
     def run(self, priority, question):
-        if question.startswith('user-setup/password-weak'):
-            # A dialog is a bit clunky, but workable for now. Perhaps it would
-            # be better to display some text in the style of password_error,
-            # and then let the user carry on anyway by clicking next again?
-            response = self.frontend.question_dialog(
-                self.description(question),
-                self.extended_description(question),
-                ('ubiquity/text/choose_another_password',
-                 'ubiquity/text/continue'))
-            if response is None or response == 'ubiquity/text/continue':
-                self.preseed(question, 'true')
-            else:
-                self.preseed(question, 'false')
-                self.succeeded = False
-                self.done = False
-                self.ui.select_password()
-            return True
-        # We need to call info_loop as we switch to the page so the next button
-        # gets disabled.
-        self.ui.info_loop(None)
         return Plugin.run(self, priority, question)
 
     def ok_handler(self):
