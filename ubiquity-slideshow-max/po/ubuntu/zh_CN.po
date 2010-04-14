@@ -1,27 +1,30 @@
-# Simplified Chinese translation for ubiquity-slideshow-ubuntu
-# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# Chinese (Simplified) translation for ubiquity-slideshow-ubuntu
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
 # This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-17 20:58-0700\n"
-"PO-Revision-Date: 2009-12-10 12:06+0000\n"
-"Last-Translator: Aron Xu <Unknown>\n"
-"Language-Team: Simplified Chinese <zh_CN@li.org>\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-03-26 17:47+0000\n"
+"PO-Revision-Date: 2010-04-04 05:32+0000\n"
+"Last-Translator: Xhacker Liu <liu.dongyuan@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-02-26 13:24+0000\n"
+"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/accessibility.html:1
 msgid "Accessibility in Ubuntu"
 msgstr "Ubuntu 的辅助功能"
 
-#: slideshows/ubuntu/slides/accessibility.html:2
+#.  "your" refers to a large group that includes the reader. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/accessibility.html:6
 msgid ""
 "We want to make computers work for everyone, whatever your physical "
 "circumstances. So, we provide tools that make Ubuntu one of the most "
@@ -30,15 +33,24 @@ msgstr ""
 "我们致力于使电脑能为每一个人服务，而无论其身体情况如何。因此，我们提供多种辅"
 "助工具使 Ubuntu 成为最容易使用的操作系统之一。"
 
-#: slideshows/ubuntu/slides/accessibility.html:3
+#.  The string "Assistive Technologies Preferences" is describing a particular menu item: System >
+#.  Preferences > Assistive Technologies, and the string "System menu" describes that section of the main menu. Note that certain words are kept the same to make the menu items discoverable. It is intentional that we are using soft descriptions instead of mapping out a rigid path for the user to follow. Please, if it is natural for your locale, consider the same convention. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/accessibility.html:7
 msgid ""
 "You can get at these tools in one place: the <em>Assistive Technologies "
-"Preferences,</em> inside the System Menu. From there, you can turn on "
+"Preferences</em>, inside the System Menu. From there, you can turn on "
 "helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
 "click to press mouse buttons automatically."
 msgstr ""
+"您可以在同一个地方找到这些工具：系统 菜单中的 <em>辅助技术</em>。在那里，您可"
+"以打开有用的工具，如 <em>Orca</em>，可以朗读屏幕上的文字，或者点击并保持来自"
+"动按下鼠标键。"
 
-#: slideshows/ubuntu/slides/accessibility.html:4
+#.  As before, the string "Appearance Preferences" is describing a particular menu item: System >
+#.  Preferences > Appearance. Certain words were kept the same to make the menu item discoverable. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/accessibility.html:8
 msgid ""
 "Remember to check out the <em>Appearance Preferences</em>, too. You can "
 "choose between different visual styles and even change the fonts that are "
@@ -47,17 +59,24 @@ msgstr ""
 "也请记得查看 <em>外观首选项</em>。您可以选择不同的视觉样式，或者更改应用程序"
 "所使用的字体。"
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/documentation.html:1
 msgid "Getting Help with Ubuntu"
 msgstr "获得 Ubuntu 的使用帮助"
 
-#: slideshows/ubuntu/slides/documentation.html:2
+#.  The string "Help and Support" should be exactly as it appears in the System menu. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/documentation.html:6
 msgid ""
 "If you need help, try <em>Help and Support</em> from the System menu, or the "
 "<em>Help</em> menu in most applications."
 msgstr ""
+"如果需要帮助，尝试下系统菜单中的 <em>帮助和支持</em>，或者很多应用程序中都有"
+"的 <em>帮助</em>  菜单。"
 
-#: slideshows/ubuntu/slides/documentation.html:3
+#.  The url "ubuntu.com/support" should not be translated 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/documentation.html:7
 msgid ""
 "In addition to our extensive written help, the Ubuntu community provides "
 "free technical support in person and over the Internet. There is also "
@@ -65,360 +84,325 @@ msgid ""
 "companies. Learn more at <a href=\"http://www.ubuntu.com/support\">ubuntu."
 "com/support</a>."
 msgstr ""
+"除了大量的帮助文档，Ubuntu 社区还通过网络提供免费的技术支持，同时也有 "
+"Canonical及其合作伙伴、经许可的企业提供的商业支持。请访问 <a href=\"http://"
+"www.ubuntu.com/support\">ubuntu.com/support</a> 以查看更多信息。"
 
-#: slideshows/ubuntu/slides/documentation.html:4
+#.  The url "ubuntu.com/community" should not be translated 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/documentation.html:8
 msgid ""
 "Let us know about your Ubuntu experience at <a href=\"http://ubuntu.com/"
 "community\">ubuntu.com/community</a>!"
 msgstr ""
+"您可以通过 <a href=\"http://ubuntu.com/community\">ubuntu.com/community</a> "
+"让我们了解您的使用感受！"
 
-#: slideshows/ubuntu/slides/documentation.html:5
+#. type: Content of: <div><div><p>
+#: slideshows/ubuntu/slides/documentation.html:10
 msgid "The installation will finish soon. We hope you enjoy Ubuntu."
-msgstr "安装即将结束。我们衷心希望您会喜欢 Ubuntu ！"
+msgstr "安装即将结束。我们衷心希望您会喜欢 Ubuntu！"
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/empathy.html:1
-msgid "Keep in contact with Empathy"
-msgstr "Empathy - 即时沟通零距离"
+msgid "Social from the start"
+msgstr "集成的社交功能"
 
-#: slideshows/ubuntu/slides/empathy.html:2
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/empathy.html:6
 msgid ""
-"With <em>Empathy</em>, Ubuntu keeps you connected right from the start. It "
-"works with all the major instant messaging networks, including Google Talk, "
-"Windows Live and Jabber."
+"From the start, Ubuntu connects to online chat and broadcast services "
+"including Facebook, Twitter, Windows Live and Google Talk."
 msgstr ""
+"从一开始，Ubuntu 就可以连接到 Facebook、Twitter、Windows Live 和 Google Talk "
+"这些在线聊天和广播服务。"
 
-#: slideshows/ubuntu/slides/empathy.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/empathy.html:7
 msgid ""
-"New messages appear in the envelope to the left of the clock, so you can see "
-"what's happening at a glance."
-msgstr "新消息显示在时钟面板的左侧，使您可以轻松知晓最新动态。"
-
-#: slideshows/ubuntu/slides/empathy.html:4
-msgid ""
-"Choose <em>Empathy IM Client</em> from the Internet Applications menu to set "
-"up your accounts."
+"Click the envelope near the clock to log in to your accounts. New messages "
+"appear there, too, so you can see what's happening at a glance."
 msgstr ""
+"点击时钟旁边的信封来登录您的帐户。新的消息也会出现在那里，所以您只要扫一眼就"
+"能知道有没有新动静。"
 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/empathy.html:8
+msgid ""
+"If you're busy, click your name at the top of the screen to change your "
+"status."
+msgstr "如果您很忙，点击屏幕上方您的名字来改变自己的状态。"
+
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/evolution.html:1
-msgid "Control your digital life with Evolution"
-msgstr "Evolution - 数字生活随心掌控"
+msgid "Control your digital life"
+msgstr "掌控你的数字生活"
 
-#: slideshows/ubuntu/slides/evolution.html:2
+#.  "Evolution Mail" should be the exact name of the Evolution launcher inside the Internet menu or the indicator applet. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/evolution.html:6
 msgid ""
 "<em>Evolution Mail</em> is the fully-featured email and calendar software "
-"that comes with Ubuntu. It connects to most email services, for example "
-"Gmail and Yahoo."
+"that comes with Ubuntu. Just enter your email account information and it "
+"will download new messages automatically."
 msgstr ""
+"<em>Evolution 邮件</em> 是 Ubuntu 自带的功能完善的电子邮件和日历软件。输入您"
+"的电子邮件账户信息，它就可以自动下载新的信息。"
 
-#: slideshows/ubuntu/slides/evolution.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/evolution.html:7
 msgid ""
-"Advanced junk filtering and search tools make managing your mail a breeze."
-msgstr "先进的垃圾过滤器和搜索工具使您的邮件管理变得轻而易举。"
+"Evolution has a powerful junk mail filter. You can use the search box, or "
+"create your own filters, to make sorting mail quick and easy."
+msgstr ""
+"Evolution 拥有强大的垃圾邮件过滤器。您可以使用搜索框或者创建自己的过滤器来简"
+"单快速地对电子邮件进行归类。"
 
-#: slideshows/ubuntu/slides/evolution.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/evolution.html:8
 msgid ""
 "Add your favorite Web calendars to see upcoming games or movie releases. To "
 "see your daily schedule, just click the clock at the top of your screen."
 msgstr ""
-"您可以添加喜欢的网络日历，以便查看即将到来的游戏或电影发行。要查看您的日程安"
-"排，只需轻点屏幕上方的时钟即可。"
+"添加您喜欢的网络日历，以便查看即将发行的游戏或电影。若要查看您的日程安排，单"
+"击屏幕上方的时钟即可。"
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/firefox.html:1
 msgid "Browse the web with Firefox"
 msgstr "使用 Firefox 畅游网际"
 
-#: slideshows/ubuntu/slides/firefox.html:2
-#, fuzzy
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/firefox.html:6
 msgid "Ubuntu comes with the widely acclaimed <em>Firefox web browser</em>."
-msgstr "Ubuntu 配备了广受好评的 <em>Firefox 3.5</em> 网页浏览器。"
+msgstr "Ubuntu 包含了广受欢迎的 <em>Firefox 网页浏览器</em>。"
 
-#: slideshows/ubuntu/slides/firefox.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/firefox.html:7
 msgid ""
 "It protects your privacy and personal information so you can surf worry free."
 msgstr "它可以保护您的隐私和个人信息，以便您自在无忧地畅游网际。"
 
-#: slideshows/ubuntu/slides/firefox.html:4
-#, fuzzy
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/firefox.html:8
 msgid ""
-"Add your own personal note with add-ons. You can choose from thousands of "
-"themes and extensions that tailor Firefox to how you use the web."
+"Give Firefox your own personal touch with addons. You can choose from "
+"thousands of themes and extensions that tailor it to how you use the web."
 msgstr ""
-"添加您自己的个人特色。您可以从成千上万的主题和附加组件中选择，从而定制出符合"
-"您特有使用习惯的 Firefox。"
+"用附加组件打造适合您的 Firefox。您可以用数以千计的主题和扩展来改造它，以配合"
+"您的上网方式。"
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/fspot.html:1
-msgid "Organize, enjoy, and share your photos"
-msgstr "组织、欣赏并分享您的照片"
+msgid "Share and enjoy your photos"
+msgstr "分享和欣赏您的照片"
 
-#: slideshows/ubuntu/slides/fspot.html:2
+#.  "F-Spot Photo Manager" should be the exact name that is used for F-Spot in the Applications menu 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/fspot.html:6
 msgid ""
 "With <em>F-Spot Photo Manager</em>, it is really easy to share, touch-up and "
 "organize digital photos."
-msgstr ""
-"借助 <em>F-Spot 照片管理器</em>，分享、润色和组织数码照片将变得非常轻松。"
+msgstr "借助 <em>F-Spot 照片管理器</em>，轻松分享、润色和组织数码照片。"
 
-#: slideshows/ubuntu/slides/fspot.html:3
+#.  Instead of directly translating the word "tags," please use the exact name of the feature in F-Spot for your locale. (Tags are used to label photos). 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/fspot.html:7
 msgid ""
 "Use tags to describe your photos so that they are easy to find later on."
-msgstr ""
+msgstr "使用标签描述您的相片，日后更容易找到它们。"
 
-#: slideshows/ubuntu/slides/fspot.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/fspot.html:8
 msgid ""
 "Use the Export option to write your photos to CDs, email them to friends or "
 "share them online."
 msgstr ""
 "您可以使用导出选项将照片写入 CD、通过 Email 发送给朋友或者通过在线方式分享。"
 
-#: slideshows/ubuntu/slides/fspot.html:5
+#.  Graphics Applications refers to the Graphics submenu, and then the main Applications menu. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/fspot.html:9
 msgid ""
 "To get started, choose F-Spot from the Graphics Applications menu or attach "
 "a digital camera and follow the prompts."
 msgstr ""
-"您可以从图形应用程序菜单选择 F-Spot 以开始使用它，或者连接一台数码相机并按提"
-"示操作。"
+"要使用 F-Spot，可以从图形应用程序菜单选择，或者直接将数码相机连接到计算机上并"
+"按提示操作。"
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/installing-software.html:1
-msgid "Installing additional software"
-msgstr "安装附加软件"
+msgid "Getting more software"
+msgstr "获取更多软件"
 
-#: slideshows/ubuntu/slides/installing-software.html:2
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/installing-software.html:6
 msgid ""
-"Take a look at the <em>Ubuntu Software Center</em> to install (and remove) "
-"software from our online repository, which we carefully organize to be safe "
-"and up to date."
+"If you need something else, try the <em>Ubuntu Software Center</em> to "
+"choose from thousands of extras you can download for free."
 msgstr ""
+"如果您需要更多软件，请尝试从 Ubuntu 软件中心的上千个额外软件中免费下载。"
 
-#: slideshows/ubuntu/slides/installing-software.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/installing-software.html:7
 msgid ""
-"There is great software for everything from creating music and movies to "
-"producing 3D models and exploring the universe."
+"There are powerful applications for all sorts of interests, from programming "
+"to creating music and exploring the universe. Take a look at the "
+"<em>Featured Applications</em> section for some of our favourites!"
 msgstr ""
-"有众多的优秀软件可供您选择。无论是制作音乐和电影，还是生成 3D 模型甚至探索宇"
-"宙，您都可以找到合适的答案。"
+"这里有能满足您各种各样的需要的强大软件，从编程到创建音乐和探索宇宙。去 <em>特"
+"色应用程序</em> 部分，看看我们精选的一些吧！"
 
-#: slideshows/ubuntu/slides/installing-software.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/installing-software.html:8
 msgid ""
-"If you need something that isn't available through us, find out if there is "
-"a Debian package or another repository available. That way, it will be "
-"really easy to install and you will receive automatic updates."
+"Everything in Software Center is stored in our online repository. We are "
+"careful to keep it safe and updates will be delivered directly to you."
 msgstr ""
-"如果我们无法直接给您提供所需要的一些软件，请到 Debian 或其他可用的软件包仓库"
-"中寻找。这样您同样可以轻易将其安装并得到自动更新支持。"
+"软件中心中的所有软件都存放在我们的在线仓库中。我们仔细维护它们，保证其安全并"
+"将更新直接传送给您。"
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/openoffice.html:1
 msgid "Office tools at your fingertips"
 msgstr "OpenOffice - 便捷办公近在指尖"
 
-#: slideshows/ubuntu/slides/openoffice.html:2
+#.  "OpenOffice.org" does not refer to a particular menu item, but it a name shared in common between all of the OpenOffice components in the Applications menu. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/openoffice.html:6
 msgid ""
-"<em>OpenOffice.org</em> is a powerful office software suite that is very "
-"easy to learn."
-msgstr "OpenOffice.org 是一款功能强大的办公应用程序，非常易于掌握和使用。"
+"Ubuntu comes with <em>OpenOffice.org</em>, a powerful office software suite "
+"that is easy to understand."
+msgstr "Ubuntu 自带 <em>OpenOffice.org</em>，一个易用的强大办公软件套装。"
 
-#: slideshows/ubuntu/slides/openoffice.html:3
-msgid ""
-"It is useful to create letters, presentations and spreadsheets, as well as "
-"diagrams and databases."
-msgstr "OpenOffice.org 可以轻松用于创建信件、报告、电子表格以及绘图和数据库。"
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/openoffice.html:7
+msgid "It helps you create documents, presentations, diagrams and databases."
+msgstr "它可以帮您制作文档、演示文稿、图表和数据库。"
 
-#: slideshows/ubuntu/slides/openoffice.html:4
-#, fuzzy
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/openoffice.html:8
 msgid ""
-"<em>OpenOffice.org</em> works with documents from other popular office "
-"applications including WordPerfect and Microsoft Office. It uses the "
-"standard OpenDocument format."
+"OpenOffice.org uses the standard OpenDocument file format. It opens files "
+"from other office applications like Microsoft Office and WordPerfect."
 msgstr ""
-"OpenOffice.org 可以轻松处理包括 Microsoft Office 和 WordPerfect 在内的所有主"
-"流办公应用的文档格式。它默认使用作为 ISO 标准的 OpenDocument 格式。"
+"OpenOffice.org 使用 OpenDocument (开放文档) 文件格式。它可以打开 Microsoft "
+"Office 和 WordPerfect 等其他办公程序的文件。"
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:1
-msgid "Music and movies in Ubuntu"
-msgstr "Ubuntu 为您带来的视听享受"
+msgid "Entertainment with music and movies"
+msgstr "通过音乐和电影来娱乐休闲"
 
-#: slideshows/ubuntu/slides/rhythmbox-totem.html:2
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:6
 msgid ""
-"Ubuntu is ready to play videos and music from the web, from CDs and DVDs."
-msgstr ""
+"Ubuntu is ready to play music and videos from the web, from CDs and DVDs."
+msgstr "Ubuntu 可以直接播放来自网络、CD 和 DVD 的音乐和视频。"
 
-#: slideshows/ubuntu/slides/rhythmbox-totem.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:7
 msgid ""
-"<em>Rhythmbox Music Player</em> lets you organize your music and listen to "
-"Internet radio. It also keeps track of podcasts, to download new episodes of "
-"a show automatically."
+"The <em>Rhythmbox Music Player</em> lets you organize your music, listen to "
+"Internet radio, and purchase a variety of songs. Manage your podcast "
+"subscriptions and automatically download new episodes."
 msgstr ""
-"<em>Rhythmbox 音乐播放器</em> 使您可以轻松管理音乐和所收听的 Internet 广播，"
-"同时它也可以帮助您保持对播客的跟踪，并自动下载新的播客视频。"
+"<em>Rhythmbox 音乐播放器</em> 让您可以组织自己的音乐、收听互联网电台和购买各"
+"类歌曲。还可以管理您的播客订阅、自动下载新的短片。"
 
-#: slideshows/ubuntu/slides/rhythmbox-totem.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:8
+msgid ""
+"Discover popular, DRM-free music available for purchase from the <em>Ubuntu "
+"One Music Store</em>, a cloud-enabled digital music store. Purchases are "
+"automatically stored in the cloud and synchronised across all of your "
+"computers."
+msgstr ""
+"在 <em>Ubuntu One 音乐商店</em> 中选购流行的、无 DRM 版权限制的音乐。这是一个"
+"启动了云技术的数字音乐商店，购买的音乐自动保存在云端，在您所有的计算机间同"
+"步。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:9
 msgid ""
 "Plug in an MP3 player to start synchronizing your music collection, or "
-"insert a CD to copy its music to your computer."
+"insert a CD to copy songs to your computer."
 msgstr ""
-"您可以轻松地插入 MP3 播放器并同步您的音乐珍藏，或插入一张 CD 将音乐复制到计算"
-"机。"
+"插入一台 MP3 播放器来同步您的音乐收藏，或者插入一张 CD 复制音乐到计算机上。"
 
-#: slideshows/ubuntu/slides/translations.html:1
-msgid "Ubuntu speaks fluently"
-msgstr "卓越的语言支持"
-
-#: slideshows/ubuntu/slides/translations.html:2
-msgid "Ubuntu is available in many different languages."
-msgstr "Ubuntu 支持数量众多的语言。"
-
-#: slideshows/ubuntu/slides/translations.html:3
-msgid "Simply select your language in Language Support Administration"
-msgstr "只需在 <b>语言支持管理</b> 中选择要使用的语言即可。"
-
-#: slideshows/ubuntu/slides/translations.html:4
-msgid ""
-"Ubuntu's translations are contributed by our generous users. Feel free to "
-"help out at <a href=\"http://translations.launchpad.net/ubuntu\">launchpad."
-"net</a>."
-msgstr ""
-"Ubuntu 优秀的多国言支持来自于社区用户的慷慨奉献。欢迎您到 <a href=\"http://"
-"translations.launchpad.net/ubuntu\">launchpad.net</a> 上参与这项工作，并在社"
-"区中欢度快乐时光！"
-
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/ubuntuone.html:1
-msgid "Store, sync and share with Ubuntu One"
-msgstr "借助 Ubuntu One 存储、同步以及分享"
+msgid "Keep your digital life in sync"
+msgstr "让您的数字生活保持同步"
 
-#: slideshows/ubuntu/slides/ubuntuone.html:2
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/ubuntuone.html:6
 msgid ""
-"<em>Ubuntu One</em> is your personal cloud, providing 2 GB of essential "
-"storage (and more if you need it)."
+"Shuffle between your laptop, netbook, and company desktop and find "
+"everything you need automatically synchronised. Your documents, music, "
+"bookmarks, address book, and notes – everything goes where you go with "
+"<em>Ubuntu One</em>."
 msgstr ""
-"<em>Ubuntu One</em>是您个人的云存储，提供了2G的基本存储（如果您需要还可以增"
-"加）。"
+"打破您的笔记本、上网本和公司电脑之间的界限，一切自动同步。您的文档、音乐、书"
+"签、地址薄和笔记 - 有了 <em>Ubuntu One</em>，一切跟您走。"
 
-#: slideshows/ubuntu/slides/ubuntuone.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/ubuntuone.html:7
 msgid ""
-"Use it to back up, store and sync your files, as well as share them with "
-"other Ubuntu One users."
+"Want a safe home for your important files? All Ubuntu users get 2 GB of "
+"personal cloud storage for free (and more if you need it)."
 msgstr ""
-"您可以用它来备份、存储以及同步您的文档，也可以通过它与其它 Ubuntu One 用户分"
-"享。"
+"想为您的重要文件找个安全的家？所有的 Ubuntu 用户免费拥有 2GB 的个人云存储空"
+"间 (若需要可以扩容)。"
 
-#: slideshows/ubuntu/slides/ubuntuone.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/ubuntuone.html:8
 msgid ""
-"Your Tomboy notes and Evolution contacts are synced automatically across all "
-"of your computers."
+"Share folders using your synchronised address book. Project collaboration "
+"has never been easier."
+msgstr "使用您的同步地址薄来共享文件夹。项目协作从未如此容易过。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/ubuntuone.html:9
+msgid ""
+"Sign-up by launching the <em>Ubuntu One Preferences</em> application or "
+"going to <a href=\"http://one.ubuntu.com/\">http://one.ubuntu.com/</a>."
 msgstr ""
-"您的 Tomboy 笔记和 Evolution 通讯录，将会自动同步到您的所有计算机并保持一致。"
+"通过启动 <em>Ubuntu One 首选项</em> 应用程序或打开 <a href=\"http://one."
+"ubuntu.com/\">http://one.ubuntu.com/</a> 注册。"
 
-#: slideshows/ubuntu/slides/ubuntuone.html:5
-msgid "Integration with your Ubuntu desktop makes sharing files easy."
-msgstr "与您的 Ubuntu 桌面整合，让文件共享更便捷。"
-
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/welcome.html:1
 msgid "Welcome"
 msgstr "欢迎"
 
-#: slideshows/ubuntu/slides/welcome.html:2
-#, fuzzy
-msgid "Thank you for choosing Ubuntu 10.04."
-msgstr "感谢您选择 Ubuntu 9.10。"
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/welcome.html:6
+msgid "Thank you for choosing Ubuntu 10.04 LTS."
+msgstr "感谢您选用 Ubuntu 10.04 LTS。"
 
-#: slideshows/ubuntu/slides/welcome.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/welcome.html:7
 msgid ""
-"We believe that every computer user should be able to work in the "
-"environment of their choice and be free to download, change, study and share "
-"this software for any purpose, without paying licensing fees."
+"This release marks a major milestone in the Ubuntu project. It is easier and "
+"more reliable than ever, with hundreds of improvements including a new video "
+"editor, integrated social networking and a growing selection of extra "
+"software."
 msgstr ""
-"我们坚信每个计算机用户都能够自由选择自己满意的工作环境，并可以自由地下载、修"
-"改、学习和分享本软件，而无需支付任何许可费用。"
+"这一发行版对 Ubuntu 项目有着里程碑式的意义。它比以往的版本更容易和可靠，拥有"
+"数百项改进，包括新的视频编辑器、集成的社交网络和仍在不断增加的外部软件集。"
 
-#: slideshows/ubuntu/slides/welcome.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/welcome.html:8
 msgid ""
-"As part of our promise, we want Ubuntu to work as well for you as possible. "
-"So, while it installs, this slideshow will give you a quick introduction."
+"Whether you're new to Ubuntu or a long-time user, we're sure there is "
+"something you will enjoy. While Ubuntu is installed, this slideshow will "
+"show you around."
 msgstr ""
-"作为我们承诺的一部分，我们希望 Ubuntu 能尽可能更好地为您工作。因此，在安装的"
-"同时，本幻灯片将为您进行简单介绍。"
+"我们相信，无论您是 Ubuntu 的新手还是老用户，都会找到自己喜欢的东西。在 "
+"Ubuntu 安装时，这组幻灯片将带您浏览一下。"
 
-#: slideshows/ubuntu/slides/welcome.html:5
+#. type: Content of: <div><div><p>
+#: slideshows/ubuntu/slides/welcome.html:10
 msgid "Ubuntu is designed to be easy. Feel free to explore!"
 msgstr "Ubuntu 设计的宗旨是易于使用。一起来自由地探索吧！"
-
-#~ msgid ""
-#~ "You can get at these tools in one place: the <em>Assistive Technologies "
-#~ "Preferences,</em> inside the System Menu. From there, you can turn on "
-#~ "helpful tools like <em>Orca,</em> to speak text on the screen, or dwell "
-#~ "click to press mouse buttons automatically."
-#~ msgstr ""
-#~ "您可以在一个地方获取这些工具：系统菜单里面的 <em>辅助技术首选项</em> 。从"
-#~ "那里，您可以打开有用的工具比如 <em>Orca</em> 来朗读屏幕上的文本，或悬停点"
-#~ "击功能以自动按下鼠标按钮。"
-
-#~ msgid ""
-#~ "Let us know about your Ubuntu Experience, or learn how to help out, at <a "
-#~ "href=\"http://ubuntu.com/community\">ubuntu.com/community</a>!"
-#~ msgstr ""
-#~ "请到 <a href=\"http://forum.ubuntu.org.cn\">Ubuntu 中文社区</a>，让我们了"
-#~ "解您的 Ubuntu 使用体验，或了解如何帮助您解决问题。"
-
-#~ msgid ""
-#~ "<i>Need help?</i> Just click the blue question mark at the top of the "
-#~ "screen to access the Ubuntu Help Center."
-#~ msgstr ""
-#~ "<i>需要帮助？</i>只要点击屏幕上方的蓝色问号标记即可访问 Ubuntu 帮助中心。"
-
-#~ msgid ""
-#~ "<i>Can't find the answer?</i> The Ubuntu community provides extensive "
-#~ "free technical support. There is also commercial support available "
-#~ "through Canonical, its partners and approved companies. Learn more at <a "
-#~ "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
-#~ msgstr ""
-#~ "<i>找不到到答案？</i> Ubuntu 社区提供了广泛的免费技术支持。同时 Canonical "
-#~ "的合作者和认证的公司也提供商业支持。您可以在 <a href=\"http://www.ubuntu."
-#~ "org.cn/support\">ubuntu.org.cn/support</a> 上获得更多信息。"
-
-#~ msgid ""
-#~ "Choose Empathy from the Internet Applications menu to set up your "
-#~ "accounts."
-#~ msgstr ""
-#~ "从 Internet 应用程序菜单中选择 Empathy 以设定您的帐户，从此开始畅快地即时"
-#~ "互通。"
-
-#~ msgid ""
-#~ "With <em>Empathy IM</em>, Ubuntu keeps you connected right from the "
-#~ "start. It works with all the major instant messaging networks, including "
-#~ "Google Talk, Windows Live and Jabber."
-#~ msgstr ""
-#~ "借助 <em>Empathy</em>，Ubuntu 从一开始就维护了您与他人自由沟通的权利。它能"
-#~ "工作于所有主要的即时通讯网络，包括 Google Talk、Windows Live 和 Jabber。"
-
-#~ msgid ""
-#~ "<em>Evolution</em> is the fully-featured email and calendar software that "
-#~ "comes with Ubuntu. It connects to most email services, for example Gmail "
-#~ "and Yahoo."
-#~ msgstr ""
-#~ "<em>Evolution</em> 是 Ubuntu 所配备的全功能的 Email 和日历软件。它可以连接"
-#~ "到绝大多数的 Email 服务器，例如 Gmail 和 雅虎。"
-
-#~ msgid ""
-#~ "Use tags to describe your photos. Later on, you can use the tags to find "
-#~ "a particular one."
-#~ msgstr ""
-#~ "使用标签来描述您的照片。标签可以帮助您迅速找到特定的一张或者一组照片。"
-
-#~ msgid ""
-#~ "Take a look at the <em>Software Center</em> to install (and uninstall) "
-#~ "software from our online repository, which we carefully organize to be "
-#~ "safe and up to date."
-#~ msgstr ""
-#~ "使用 <em>软件中心</em> 从在线软件仓库安装或卸载软件，我们的精心组织确保了"
-#~ "它们是安全且最新的。"
-
-#~ msgid ""
-#~ "Ubuntu is ready to play videos and music from the web and from DVDs. It "
-#~ "works straight away for the free and popular formats that people can use "
-#~ "without paying license fees."
-#~ msgstr ""
-#~ "Ubuntu 可以播来自 Web 或 DVD 的视频与音乐。您可以直接播放主流的开放音视频"
-#~ "格式文件而无需支付任何许可费用。"
-
-#~ msgid ""
-#~ "Ubuntu One is your personal cloud, providing 2 GB of essential storage "
-#~ "(and more if you need it)."
-#~ msgstr "Ubuntu One 是您的个人云存储，提供 2GB 的基本空间 (可付费扩展)。"

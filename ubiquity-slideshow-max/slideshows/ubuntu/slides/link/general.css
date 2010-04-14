@@ -1,9 +1,8 @@
-html, body
-{
+html, body {
 	margin:0;
 	padding:0;
 	
-	background-color:#2e3436;
+	background-color:#393834;
 	
 	font-family:sans-serif;
 	color:#000000;
@@ -12,193 +11,174 @@ html, body
 /*
 Hyperlink-style text
 */
-a
-{
-	color:blue;
+a {
+	color:#731444;
 	font-style:italic;
+	text-decoration:none;
 }
 
-#container
-{
+#container {
 	position:absolute;
 	
-	width:700px;
-	height:420px;
+	width:798px;
+	height:451px;
 	
 	overflow:hidden;
 	
-	background-image:url('background.jpg');
+	background-image:url('background.png');
 	background-repeat:no-repeat;
-	background-position:top left;
+	background-position:top right;
 	
-	background-color:#fdfdfd;
+	background-color:#EFEEED;
 	
 	/*cursor:default;*/
 }
 
-#debug-controls
-{
+#debug-controls {
 	display:none;
 	position:absolute;
-	top: 440px;
-	width:700px;
+	top:470px;
+	width:798px;
 	text-align:center;
 }
 
-#debug-controls input
-{
+#debug-controls input {
 	width:40px;
 }
 
-#debug-controls input#current-slide
-{
-	width:600px;
+#debug-controls input#current-slide {
+	width:680px;
 }
 
-/*
-Title block is positioned at the top of a slide.
-*/
-.title
-{
-	position:absolute;
-	top:15px;
-	left:10px;
+/* fixed container to align title */
+.header {
+	position:fixed; /* FIXME: This is a terrible hack to keep the header from moving during a transition */
+	top:0px;
+	height:176px;
+}
 
-	font-size:20px;
+/* title block is positioned at the bottom of its parent, which should be .header */
+.title {
+	position:absolute;
+	
+	bottom:12px;
+	width:385px; /* the ideal width would leave more space on the right */
+	left:36px; /* matches padding of .content and .content ul: 16 + 20 */
+	
+	font-size:20px; /* applies to all lines except first */
 	font-weight:normal;
-
-	padding:0;
-	margin:0;
+	
+	letter-spacing:-1px;
+	
+	color:#ffffff;
+	
+	padding:0px;
+	margin:0px;
+}
+.title:first-line {
+	font-size:28px;
 }
 
 /*
-Typically an image. This is positioned at the top
-right of a slide and is given a size of 64x64 pixels.
+Typically an image. This is positioned at the top right of a slide.
+Icons should be 215x156 pixels tall, though some can overflow with a height
+of 215px. The actual content should be 128x128px. (The rest is padding).
 */
-.icon
-{
-	position:absolute;
+.icon {
+	/* FIXME: This is a horrible hack to keep the title from moving during slide transition */
+	position:fixed; /* was position:absolute */
 	
-	width:auto;
+	top:20px;
+	left:549px;
+	width:215px;
 	height:auto;
-	
-	bottom:-420px;
-	right:10px;
 	
 	z-index:11;
 	border:0px;
 }
+.icon#firefox {
+	top:47px;
+	left:590px;
+	width:128px;
+	height:auto;
+}
 
 /*
-#content expects to be contained in here. #main
+.content expects to be contained in here. .main
 creates a nice, plain surface upon which it can
-appear :)
+appear, spaced appropriately from .title.
 */
-.main
-{
+.main {
 	position:absolute;
 	
-	top:50px;
+	top:163px;
 	left:0px;
 	
-	padding-right:60px;
+	width:100%;
+	height:288px;
 	
-	font-size:14px;
+	padding-right:60px;
 	
 	z-index:12;
 }
 
 /*
-Slide's body text goes here. It appears right below
-the title, at the top of the white area with heavy
-margins around it.
+Slide's body text goes inside here.
 */
-.main .content
-{
-	padding-left:16px;
-	padding-right:16px;
+.content {
+	padding:16px;
+	padding-top:32px;
 	
-	width:490px;
+	font-size:14px;
+	color:#484848;
 }
 
-.content ul
-{
+.content ul {
 	margin-top:0px;
-	padding-left:1.8em;
+	padding-left:20px;
 	
-	height:230px;
+	width:726px; /* was 650px */
+	height:223px;
+
+	line-height:1.4em;
 	
 	overflow:auto;
 	
+	list-style-type:none;
 	list-style-image:url("bullet-point.png");
 }
 
-.content li
-{
-	padding:0.6em;
+.content li {
+	padding:8px;
+	padding-left:0px;
+}
+/* hack to get the text wrapping around the icon. If we could do this for
+ul :first-line, there would be less room for failure. */
+.content.wrap-top li:first-child {
+	width:550px;
 }
 
-.content .special
-{
-	position:absolute;
-	top:240px;
-	left:50px;
-	width:440px;
+.content .footer {
+	position:relative;
+	width:100%;
+	padding:0px;
+	margin:0px;
+	bottom:10px;
+	text-align:right;
 	
 	font-weight:bold;
+	color:#333333;
 }
 
-.content img.inline
-{
+.content img.inline {
 	height:14px;
 	width:auto;
 }
 
 /*
-The menu-item style is a descriptive aid for pointing the end user at,
-for example, a place in either the system menu or an application menu.
-This way we can provide clear visual cues with minimal babbling.
-*/
-.menu-item
-{
-	display:inline-block;
-	
-	border-radius:3px;
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;
-	
-	height:16px;
-	padding:1px;
-	
-	padding-left:3px;
-	padding-right:3px;
-	
-	border-style:solid;
-	border-width:1px;
-	border-color:#a89a8d;
-	
-	background-color:#f7f5f3;
-}
-
-/*
-This rule applies to an img of class menu-arrow. It appears as a nice
-looking arrow that can separate items in a menu much like how submenus
-look in Ubuntu's GTK theme.
-*/
-.menu-item img.menu-arrow
-{
-	display:inline-block;
-	content:url('menu-arrow.png');
-	
-	padding-left:2px;
-	padding-right:5px;
-}
-
-/*
 This rule disables drag-and-drop for images.  See bug #448703.
 */
-img
-{
+img {
  	-webkit-user-drag: none;
 }
 
@@ -208,18 +188,29 @@ img
 .rtl {
 	direction:rtl;
 }
+.rtl #container {
+	background-image:url('background.rtl.png');
+	background-repeat:no-repeat;
+	background-position:top left;
+}
+/* TODO: NEED reversed title and icon for RTL */
 .rtl .title {
-	right:10px;
+	left:377px;
 }
 .rtl .icon {
-	left:10px;
-	right:auto;
+	/* FIXME: This is a horrible hack to keep the title from moving during slide transition */
+	position:fixed; /* was position:absolute */
+	
+	left:34px;
+}
+.rtl .icon#firefox {
+	left:80px;
 }
 .rtl .main {
 	right:0px;
 	padding-right:0px;
 	padding-left:60px;
 }
-.rtl .content ul {
-	list-style-image:url("bullet-point.rtl.png");
+.rtl .content .footer {
+    text-align:left;
 }

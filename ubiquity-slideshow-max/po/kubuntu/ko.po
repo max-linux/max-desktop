@@ -6,261 +6,423 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-17 20:58-0700\n"
-"PO-Revision-Date: 2010-02-16 03:20+0000\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-03-26 17:48+0000\n"
+"PO-Revision-Date: 2010-03-31 20:35+0000\n"
 "Last-Translator: Bundo <bundo@bundo.biz>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-02-26 13:25+0000\n"
+"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
+#. type: Content of: <h1>
 #: slideshows/kubuntu/slides/accessibility.html:1
 msgid "Accessibility in Kubuntu"
-msgstr "쿠분투에서의 접근성"
+msgstr "쿠분투의 접근성을 확인 해보세요."
 
-#: slideshows/kubuntu/slides/accessibility.html:2
-msgid "Kubuntu makes computing easy, no matter your circumstances."
-msgstr "당신의 환경이 어떻든, 쿠분투는 컴퓨팅을 쉽게 만들어 줍니다."
-
-#: slideshows/kubuntu/slides/accessibility.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/accessibility.html:6
 msgid ""
-"A range of assistive technologies make Kubuntu one of the most accessible "
-"operating systems around."
+"We want to make computers work for everyone, whatever your physical "
+"circumstances. So, we provide tools that make Kubuntu one of the most "
+"accessible operating systems around."
 msgstr ""
-"다양한 보조 기술들은 쿠분투를 가장 접근하기 쉬운 운영체제 중 하나로 만듭니다."
+"우리는 어떠한 환경하 에서도 컴퓨터가 모든이를 위해서 동작 하기를 원합니다. 그"
+"래서, 쿠분투를 사용자들이 가장 접근하기 쉽도록 만드는 도구들을 제공합니다."
 
-#: slideshows/kubuntu/slides/accessibility.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/accessibility.html:9
 msgid ""
-"Whether you need slow key support, desktop magnification, braille, or more, "
-"Kubuntu has you covered!"
+"You can get at these tools in one place: the <em>Accessibility</em> "
+"preferences, inside the System Settings application from the menu. From "
+"there, you can turn on helpful tools like <em>Modifier Keys</em>, "
+"<em>Keyboard Filters</em>, and <em>Activation Gestures</em>."
 msgstr ""
-"당신이 느린 키 지원, 데스크톱 확대, 점자, 혹은 그 이상의 어떤 것들을 필요로 "
-"하든지, 쿠분투는 당신이 필요한 것들을 포함합니다."
+"당신은 그 도구들을 한자리에서 만날 수 있습니다. < em>접근성</em> 항목입니"
+"다.  메뉴로부터 시스템 설정 도구로 들어가면, 당신을 도와줄 도구들을 사용할 "
+"수 있습니다. 가령 <em>키 바꾸기</em>,<em>키보드 필터</em>, 그리고 <em>제스쳐 "
+"활성화</em> 등이 있습니다."
 
-#: slideshows/kubuntu/slides/chat.html:1
-msgid "Chat with friends and family"
-msgstr "친구와 가족들과 함께 대화해 보세요."
-
-#: slideshows/kubuntu/slides/chat.html:2
-msgid "Kubuntu features Kopete, the instant messaging client for KDE."
-msgstr "쿠분투는 KDE를 위한 인스턴트 메신저 클라이언트인 Kopete를 포함합니다."
-
-#: slideshows/kubuntu/slides/chat.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/accessibility.html:14
 msgid ""
-"Kopete supports AIM, ICQ, Windows Live Messenger, Yahoo, Jabber, and more."
+"Remember to also look over the <em>Appearance Preferences</em>, too. You can "
+"choose between different visual styles and even change the fonts that are "
+"used by applications."
 msgstr ""
-"Kopete는 AIM, ICQ, Windows 라이브 메신저, 야후, Jabber 등을 지원합니다."
+"<em>보여주기 설정</em>또한 한번 짚어봐야합니다. 여기서 다양한 시각적 효과를 "
+"고를 수 있고, 프로그램에서 사용되는 글씨체를 변경할 수 있습니다."
 
-#: slideshows/kubuntu/slides/chat.html:4
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/games.html:1
+msgid "Get your game on with Kubuntu"
+msgstr "쿠분투와 함께 게임하기"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/games.html:6
 msgid ""
-"Kopete is designed to be a flexible and extensible multi-protocol system "
-"suitable for personal and enterprise use."
+"With hundreds of game titles in our online repository, Kubuntu allows you to "
+"not be all about work, but also allows you to play."
 msgstr ""
-"Kopete는 개인과 기업의 용도에 맞도록 유연하고, 확장 가능한 다중 프로토콜 시스"
-"템으로 설계되었습니다."
+"온라인 저장소에 있는 수백여개의 게임 타이틀과 함께, 쿠분투는 당신이 일만 하"
+"지 않고 노는것도 할 수 있게 합니다."
 
-#: slideshows/kubuntu/slides/getinvolved.html:1
-msgid "Helping Kubuntu"
-msgstr "쿠분투 돕기"
-
-#: slideshows/kubuntu/slides/getinvolved.html:2
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/games.html:9
 msgid ""
-"Kubuntu is developed and maintained by a group of community volunteers, "
-"become one of those volunteers today!"
+"The <em>KDE Software Compilation</em> has quite a few games ranging from "
+"card games to logic games and board games."
 msgstr ""
-"쿠분투는 커뮤니티 자원 봉사자 그룹에 의해 개발되고 유지보수 됩니다. 오늘, 그 "
-"자원 봉사자들 중의 한 명이 되세요!"
+"<em>KDE 소프트웨어 통합</em>은 약간의 카드게임에서 논리 게임과 보드게임등을 "
+"포함합니다."
 
-#: slideshows/kubuntu/slides/getinvolved.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/games.html:11
 msgid ""
-"Support, documentation, artwork, coding, packaging, and more are just some "
-"of the ways to get involved."
-msgstr "지원, 문서화, 아트웍, 코딩, 패키징 등이 참여하는 몇 가지 방법들입니다."
-
-#: slideshows/kubuntu/slides/getinvolved.html:4
-msgid "No matter your skill level, there is a task waiting for you."
-msgstr "당신의 숙련도가 어느 정도이든지, 당신을 기다리고 있는 작업이 있습니다."
-
-#: slideshows/kubuntu/slides/getinvolved.html:5
-msgid ""
-"Visit the <a href=\"https://wiki.ubuntu.com/Kubuntu/GettingInvolved"
-"\">Getting Involved</a> page for more information."
+"First Person Shooters, Role Play Games, and more are also available in the "
+"repositories."
 msgstr ""
-"더 많은 정보를 보기 위해 <a href=\"https://wiki.ubuntu.com/Kubuntu/"
-"GettingInvolved\">참여하기</a> 페이지를 방문해 보세요."
+"처음의 차는사람, 롤 플레잉 게임(RPG), 그리고 다른 많은 게임들이 저장소에서 이"
+"용 가능합니다."
 
-#: slideshows/kubuntu/slides/getinvolved.html:6
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/get-help.html:1
+msgid "Getting help with Kubuntu"
+msgstr "우분투에서 도움 얻기"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/get-help.html:6
 msgid ""
-"The installation will finish soon, we hope that you enjoy using Kubuntu."
-msgstr "설치가 곧 끝납니다. 즐거운 쿠분투 사용이 되기를 희망합니다."
+"If you need help, try <em>Help</em> from the menu, or the <em>Help</em> menu "
+"in most applications."
+msgstr ""
+"만약에 도움이 필요하다면 메뉴의 <em>도움말</em> 를 사용하거나, 프로그램의 "
+"<em>도움말</em>  을참조하세요."
 
-#: slideshows/kubuntu/slides/installing.html:1
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/get-help.html:8
+msgid ""
+"In addition to our extensive written help, the Kubuntu community in "
+"conjunction with the Ubuntu community, provides free technical support in "
+"person and over the Internet. There is also commercial support available "
+"through Canonical, its partners and approved companies. Learn more at <a "
+"href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
+msgstr ""
+"방대하게 지필된 도움말의 경우 우분투 커뮤니티에 같이 연결된 쿠분투 커뮤니티"
+"에 있으며,  인터넷을 이용한 개개인에 대한 자유로운 기술 지원을 보장합니다. 기"
+"술 지원은 상업 사용자 또한 파트너와  등록된 회사의 경우 캐노니컬을 통해 지원"
+"받으실 수 있습니다.  <a href=\"http://www.ubuntu.com/support\">ubuntu.com/"
+"support</a>. 에서 좀 더 자세히 알아봅시다."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/get-help.html:14
+msgid ""
+"Let us know about your Kubuntu experience at <a href=\"http://www.ubuntu.com/"
+"community\">ubuntu.com/community</a>!"
+msgstr ""
+"우리는 당신의 쿠분투에 대한 경험을 <a href=\"http://www.ubuntu.com/community"
+"\">ubuntu.com/community</a> 에서 좀 더 알 필요가 있습니다!"
+
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/get-involved.html:1
+msgid "Get involved and contribute to Kubuntu"
+msgstr "참여하시고 쿠분투에 기여해주십시오."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/get-involved.html:6
+msgid ""
+"The Kubuntu community consists of a group of individuals, who make up one of "
+"the greatest teams in the open source community, work on various aspects of "
+"the distribution, providing advice and technical support, as well as helping "
+"to promote Kubuntu to a wider audience."
+msgstr ""
+"쿠분투 커뮤니티는 개인들의 그룹으로 구성되어졌습니다. 개개인들은  매우 괭장"
+"한 오픈소스 커뮤니티들 중 하나를 만들었으며, 여러 측면에서 기여를 하고 있"
+"고,  조언과 기술 지원을 제공하며, 우분투를 많은 관중들에게 선보이는데 좋은 도"
+"움을 주고 있습니다."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/get-involved.html:11
+msgid ""
+"No matter your skill level, getting involved and helping to mold the future "
+"of Kubuntu is easy, and you are more than welcome to help out."
+msgstr ""
+"당신의 기술적 수준은 문제가 되지 않습니다. 커뮤니티에 참여하시고 쿠분투가 더"
+"욱 쉬워지도록 도와주십시오. 그리고 당신은 도움을 주는 것을 더 즐길 것입니다."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/get-involved.html:14
+msgid ""
+"Look over <a href=\"https://wiki.kubuntu.org/Kubuntu/GettingInvolved\">wiki."
+"kubuntu.org/Kubuntu/GettingInvolved</a> and see where you might be able to "
+"help out. Remember, it is easy to get involved and the work you do will be "
+"seen by millions of people around the world."
+msgstr ""
+"<a href=\"https://wiki.kubuntu.org/Kubuntu/GettingInvolved\">wiki.kubuntu."
+"org/Kubuntu/GettingInvolved</a> 를 둘러보시고 당신이 어떤 일을 할 수 있는지"
+"를 짐작해 보시기 바랍니다.  기억하십시요. 참가는 쉬우며 당신이 하는 일은 전세"
+"계의 수천만에 있는 사람들에게 보여질 것입니다."
+
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/get-involved.html:20
+msgid "The installation will finish soon. We hope you enjoy Kubuntu."
+msgstr ""
+"설치 과정이 곧 종료될 것입니다. 우리는 당신이 우분투를 즐기기를 바랍니다."
+
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/graphics.html:1
+msgid "Organize, enjoy, and share your photos"
+msgstr "여러분의 사진을 관리하고 공유하세요"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/graphics.html:5
+msgid ""
+"With <em>Gwenview</em>, it is really easy to organize and share your photos."
+msgstr ""
+"<em>Gwenview</em>와 화 함께라면, 사진을 정리하고 공유하는 일이 매우 쉬워질 것"
+"입니다."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/graphics.html:7
+msgid ""
+"Use the Export option to copy your photos to a remote computer, iPod, a "
+"custom HTML gallery, or to export to services such as Flickr, SmugMug, "
+"PicasaWeb, and more."
+msgstr ""
+"출력 선택사향은 당신의 사진을 원격 컴퓨터, 아이팟, 별도의 HTML 갤러리, 또는 "
+"플리커나 SmugMug,피카사 웹 과 다른 곳에 복사하기 위해 사용합니다."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/graphics.html:10
+msgid ""
+"For more advanced organization and editing features, <em>digiKam</em> is "
+"available for installation."
+msgstr ""
+"더 진보된 관리와 기능 편집을 위해서는 <em>digiKam</em> 가 설치시에 이용 가능"
+"합니다."
+
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/installing-software.html:1
 msgid "Installing additional software"
-msgstr "추가 소프트웨어 설치"
+msgstr "부가 소프트웨어 설치"
 
-#: slideshows/kubuntu/slides/installing.html:2
-msgid "Installing additional software has never been easier with Kubuntu."
-msgstr "추가 소프트웨어 설치가 쿠분투에서 만큼이나 더 쉬울 수는 없습니다."
-
-#: slideshows/kubuntu/slides/installing.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/installing-software.html:6
 msgid ""
-"Simply utilize the <em>Add/Remove...</em> application to install and "
-"uninstall your applications."
+"Take a look at <em>Software Management</em> application in the menu under "
+"the System tab. Software Management will allow you to install (and remove) "
+"software from our online repositories, which we carefully organize to be "
+"safe and up to date."
 msgstr ""
-"응용 프로그램을 설치하거나 제거하기 위해서 간단히 <em>추가/제거...</em> 응용 "
-"프로그램을 사용하세요."
+"시스템 탭 아래의 어플리케이션 매뉴에 있는<em>소프트웨어 관리</em>를 살펴보시"
+"기 바랍니다. 소프트웨어 관리는 온라인 저장소를 통해 당신이 프로그램을 설치(혹"
+"은 제거)할 수 있도록 해 줍니다. 이것은 안전하며 최신으로 유지되도록 설계되었"
+"습니다."
 
-#: slideshows/kubuntu/slides/installing.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/installing-software.html:10
 msgid ""
-"With tens of thousands of applications to chose from, Kubuntu has you "
-"covered!"
+"There is great software for everything from creating music and movies to "
+"producing 3D models and exploring the universe."
 msgstr ""
-"쿠분투는 선택할 수 있는 수많은 응용 프로그램들로 당신의 용도가 포함될 수 있도"
-"록 합니다."
+"음악과 영화를 만드는 것부터, 3D 모델을 만들고 우주를 탐사하는 것까지 모든 분"
+"야에 사용할 수 있는 좋은 소프트웨어들이 있습니다."
 
-#: slideshows/kubuntu/slides/installing.html:5
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/installing-software.html:12
 msgid ""
-"The Kubuntu community makes sure these packages are polished and virus-free "
-"to make your life easier and safer."
+"If you need something that isn't available through us, find out if there is "
+"a Debian package or another repository available. That way, it will be "
+"really easy to install and you will receive automatic updates."
 msgstr ""
-"쿠분투 공동체는 당신의 삶이 더욱 쉽고 안전하게 하기 위해, 이러한 패키지들이 "
-"잘 다듬어 지고, 바이러스가 없도록 합니다."
+"만약 기본적으로 제공되지 않는 소프트웨어가 필요하다면, 데비안 패키지나 다른 "
+"저장소를 사용할 수 있는지 확인해보십시오. 저장소를 추가하면, 여러분은 정말 쉽"
+"게 프로그램을 설치하고 자동 업데이트를 받을 수 있습니다."
 
-#: slideshows/kubuntu/slides/installing.html:6
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/internet.html:1
+msgid "The Internet, your way"
+msgstr "인터넷을 마음데로 다니기"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/internet.html:5
 msgid ""
-"Regular updates keep you up-to-date when improvements and new versions "
-"become available."
+"Kubuntu ships software necessary to utilize the Internet for many different "
+"situations."
 msgstr ""
-"정기적인 업데이트는 개선 사항이 발생하거나 새 버전이 사용 가능할 때 당신을 항"
-"상 최신 상태로 유지하게끔 합니다."
-
-#: slideshows/kubuntu/slides/media.html:1
-msgid "Watch videos, listen to music, view and edit photographs"
-msgstr "비디오와 음악을 감상하고, 사진을 보고 편집하세요."
-
-#: slideshows/kubuntu/slides/media.html:2
-msgid "Watch videos the way they were meant to be watched with Kaffeine."
-msgstr "Kaffeine으로 비디오들이 재생될 수 있는 갖가지 방법으로 감상하세요."
-
-#: slideshows/kubuntu/slides/media.html:3
-msgid "Rediscover your music with Amarok, a powerful music player for KDE."
-msgstr "강력한 KDE 용 음악 재생기인 Amarok으로 당신의 음악을 재발견하세요."
-
-#: slideshows/kubuntu/slides/media.html:4
-msgid "Manage your photographs like a professional with the power of digiKam."
-msgstr "digiKam의 능력으로 당신의 사진들을 전문가처럼 관리하세요."
-
-#: slideshows/kubuntu/slides/pim.html:1
-msgid "Personal Information Management"
-msgstr "개인 정보 관리"
-
-#: slideshows/kubuntu/slides/pim.html:2
-msgid "Kontact unites mature and proven KDE PIM applications under one roof."
-msgstr ""
-"Kontact 통합 응용 프로그램은 원숙하고 검증된 KDE 용 종합 PIM 응용 프로그램입"
+"쿠분투의 인터넷 항해 소프트웨어는  여러 인터넷 상황에서 활용되기 위해 필요합"
 "니다."
 
-#: slideshows/kubuntu/slides/pim.html:3
-msgid "KMail - emailing has never been easier or more fun."
-msgstr "KMail - 메일 주고 받기가 이보다 더 쉽고 즐거울 수는 없습니다."
-
-#: slideshows/kubuntu/slides/pim.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/internet.html:7
 msgid ""
-"KOrganizer - More than just a calendar with amazing scheduling and "
-"journaling options."
+"Browse the web, share your files, software, and multimedia, send and receive "
+"e-mail, and communicate with friends and family."
 msgstr ""
-"KOrganizer - 놀라운 일정 관리와 일정 기록 옵션을 가진, 달력 그 이상의 것."
+"웹 브라우징, 당신의 파일,프로그램,멀티미디어 공유, 메일 주고받기, 그리고 친구"
+"나 가족과 대화를 할 수 있습니다."
 
-#: slideshows/kubuntu/slides/pim.html:5
-msgid "KAddressBook - Manage all aspects of your contacts with ease."
-msgstr "KAddressBook - 당신의 연락처와 관련된 모든 면을 손쉽게 관리하세요."
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/internet.html:10
+msgid ""
+"Web browsers such as <em>Firefox</em> and Google's <em>Chromium</em> are "
+"easily installable."
+msgstr ""
+"<em>Firefox</em>나 구글의 <em>Chromium</em>  같은 브라우저는 설치하기 쉽습니"
+"다."
 
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/multimedia.html:1
+msgid "Music and movies in Kubuntu"
+msgstr "쿠분투에서 음악과 영상"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/multimedia.html:5
+msgid ""
+"Kubuntu is ready to play videos and music from the web, from CDs and DVDs."
+msgstr "쿠분투는 CD ,DVD, 웹 으로부터 음악과 영상을 재생 할 준비가 되었습니다."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/multimedia.html:7
+msgid ""
+"<em>Amarok</em> audio player lets you organize your music and listen to "
+"Internet radio, podcasts, and more, as well as synchronizes your audio "
+"collection to a portable audio player."
+msgstr ""
+"<em>Amarok</em>  음악 재생기는 정리해둔 음악과 인터넷 라디오, 팟캐스트들을 들"
+"을 수 있게 해줍니다. 이것은 당신의 휴대용 음악 재생기와 당신의 음악 모음과의 "
+"동기화도 잘 됩니다."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/multimedia.html:10
+msgid ""
+"<em>Dragon Player</em> allows you to easily watch videos from your computer, "
+"DVD, or streamed over the Internet."
+msgstr ""
+"<em>Dragon Player</em>는 인터넷에서 흐르거나, DVD 혹은 컴퓨터에 있는 비디오"
+"를 쉽게 보도록 해줍니다."
+
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/office.html:1
+msgid "Office tools at your fingertips"
+msgstr "손쉬운 오피스 도구"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/office.html:5
+msgid ""
+"<em>OpenOffice.org</em> is a powerful office software suite that is very "
+"easy to learn and use."
+msgstr ""
+"<em>OpenOffice.org</em> 는 배우고 쓰기 쉬운 고성능 사무용 프로그램 통합본 입"
+"니다."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/office.html:7
+msgid ""
+"Use it to create letters, presentations and spreadsheets, as well as "
+"diagrams and databases."
+msgstr ""
+"펀지를 만들기 위해 쓸수도 있고, 스프레드 쉬트나 프레젠테이션을 할 때도 쓸 수 "
+"있습니다. 다이어그램이나 DB 도 마찬가지입니다."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/office.html:9
+msgid ""
+"<em>OpenOffice.org</em> works with documents from other popular office "
+"applications include WordPerfect and Microsoft Office. It uses the standard "
+"OpenDocument format."
+msgstr ""
+"<em>OpenOffice.org</em> 는 다른 유명한 사무용 프로그램들 (WordPerfect and "
+"Microsoft Office 같은) 의 문서로도 작업이 가능합니다. 이것은 표준 공개문서 양"
+"식을 사용합니다."
+
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/pim.html:1
+msgid "Manage your contacts, dates, and e-mail"
+msgstr "연락처, 일정,이메일 관리하기"
+
+#. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:6
-msgid "Read RSS feeds, jot down notes in a notebook, sticky notes, and more."
-msgstr "RSS 피드를 구독하고, 공책이나 접착식 메모지 등에 재빨리 노트해 보세요."
-
-#: slideshows/kubuntu/slides/support.html:1
-msgid "Free and Commercial Support Available"
-msgstr "무상 및 유상 지원 가능"
-
-#: slideshows/kubuntu/slides/support.html:2
 msgid ""
-"Commercial support is available for Kubuntu by <a href=\"http://www."
-"canonical.com/\">Canonical</a>."
+"<em>Kontact</em> is the fully-featured personal information management "
+"software that comes with Kubuntu. It contains applications for E-mail, "
+"Calendar, Address Book, and more."
 msgstr ""
-"<a href=\"http://www.canonical.com/\">Canonical</a>를 통해 쿠분투의 유상 지원"
-"이 가능합니다."
+"<em>Kontact</em> 쿠분투에 같이 포함된 모든 기능을 같춘 개인용 정보관리 프로그"
+"램입니다. 이것은 이메일,달려,주소록과 다른 것들을 위한 어플리케이션을 포함합"
+"니다."
 
-#: slideshows/kubuntu/slides/support.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/pim.html:9
 msgid ""
-"Utilize the <a href=\"http://ubuntuforums.org\">Ubuntu Forums</a> or the <a "
-"href=\"http://www.kubuntuforums.net\">Kubuntu Forums</a> for free."
+"Send e-mail with <em>KMail</em> from services such as Yahoo, GMail, and "
+"various groupware services."
 msgstr ""
-"무상 지원을 위해 <a href=\"http://ubuntuforums.org\">Ubuntu Forums</a> 또는 "
-"<a href=\"http://www.kubuntuforums.net\">Kubuntu Forums</a>를 활용하세요."
+"<em>KMail</em> 로  야후나 G-메일 등의 그룹웨어 서비스를 통해 이메일을 보네보"
+"세요."
 
-#: slideshows/kubuntu/slides/support.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/pim.html:11
 msgid ""
-"Other forms of free, community based, support include IRC, mailing lists, "
-"and <a href=\"https://launchpad.net\">Launchpad</a>."
+"Organize your calendar and scheduling with <em>KOrganizer</em> and "
+"synchronize with services such as Google's Calendar."
 msgstr ""
-"다른 형태의 무상 지원으로는, IRC와 메일링 리스트, 그리고 <a href=\"https://"
-"launchpad.net\">Launchpad</a> 등이 있습니다."
+"당신의 달력과 계획을  <em>KOrganizer</em> 를 통해 조직하시고 구글 켈린더 등"
+"의 서비스와 동기화 해보십시요."
 
-#: slideshows/kubuntu/slides/support.html:5
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/pim.html:13
 msgid ""
-"Use your system's help center which contains locally installed documentation."
+"Keep your contacts organized with <em>KAddressBook</em> and import or export "
+"your contacts with nearly every address book standard as well synchronize "
+"with various groupware services."
 msgstr ""
-"시스템의 도움 센터를 사용해 보세요. 도움 센터는 로컬 시스템에 설치된 문서를 "
-"담고 있습니다."
+"<em>KAddressBook</em>  를 통해 당신의 연락처를 유지하시고,  다른 그룹웨어 서"
+"비스와 연동 가능한 표준의 주소록 형태로 당신의 연락처를 추가하거나 출력할 수 "
+"있습니다."
 
-#: slideshows/kubuntu/slides/web.html:1
-msgid "The World Wide Web Your Way"
-msgstr "당신의 영역으로서의 월드 와이드 웹"
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/pim.html:16
+msgid ""
+"<em>Kontact</em> is the perfect personal information management integration "
+"for you!"
+msgstr ""
+"<em>Kontact</em> 는 당신에게 부합되는 완벽한 개인 정보 관리 도구입니다!"
 
-#: slideshows/kubuntu/slides/web.html:2
-msgid "Browse the Internet securely with the Konqueror web browser."
-msgstr "Konqueror 웹 브라우저를 이용하여 인터넷을 안전하게 돌아다니세요."
-
-#: slideshows/kubuntu/slides/web.html:3
-msgid "Surf the web without the worry of viruses, spyware, and adware."
-msgstr "바이러스와 스파이웨어, 그리고 애드웨어의 걱정 없이 웹 서핑하세요."
-
-#: slideshows/kubuntu/slides/web.html:4
-msgid "Navigate the world wide web with blazing speeds."
-msgstr "맹렬한 속도로 월드 와이드 웹을 탐험하세요."
-
+#. type: Content of: <h1>
 #: slideshows/kubuntu/slides/welcome.html:1
 msgid "Welcome"
-msgstr "환영사"
+msgstr "환영합니다"
 
-#: slideshows/kubuntu/slides/welcome.html:2
-#, fuzzy
-msgid "Thank you for choosing Kubuntu 10.04, the Lucid Lynx!"
-msgstr "Kubuntu 10.04 루시드 링스를 선택해 주셔서 감사합니다!"
-
-#: slideshows/kubuntu/slides/welcome.html:3
-msgid ""
-"Kubuntu is based on Ubuntu and features the K Desktop Environment (KDE)."
-msgstr "쿠분투는 우분투와 K 데스크톱 환경 (KDE)에 기반하고 있습니다."
-
-#: slideshows/kubuntu/slides/welcome.html:4
-msgid ""
-"Kubuntu is released biannually with at least 18 months of free security "
-"updates."
-msgstr ""
-"쿠분투는 적어도 18개월 간의 무상 보안 업데이트와 함께 반년마다 한 번씩 배포됩"
-"니다."
-
-#: slideshows/kubuntu/slides/welcome.html:5
-msgid ""
-"While Kubuntu is installing, we invite you to explore your new operating "
-"system."
-msgstr "쿠분투가 설치되는 동안에, 당신의 새 운영체제 탐험에 당신을 초대합니다."
-
+#. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:6
-msgid "Kubuntu is built to be safe. Feel free to explore!"
-msgstr "쿠분투는 안전하게 구축됩니다. 마음껏 탐험해 보세요!"
+msgid "Thank you for choosing Kubuntu 10.04 LTS."
+msgstr "Kubuntu 10.04 LTS를 선택하여 주어 감사합니다."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/welcome.html:7
+msgid ""
+"We believe every computer user should be free to work in the environment of "
+"their choice and to download, change, study and share their software for any "
+"purpose."
+msgstr ""
+"우리는 모든 컴퓨터가 여러분이 환경을 고를 수 있고, 다운로드 할 수 있고, 바꿀 "
+"수 있고, 공부하여 다른 사람과 그 소프트웨어를 나눌수 있는 자유로운 환경이 되"
+"기를 바랍니다."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/welcome.html:10
+msgid ""
+"As part of our promise, we want Kubuntu to work as well for you as possible. "
+"So while it installs, this slideshow will provide a quick introduction."
+msgstr ""
+"우리의 확신 중 한 부분으로 우리는 쿠분투가 당신이 하는 것에 가능한한 잘 동작"
+"하기를 바랍니다. 그래서 쿠분투를 설치할 때 슬라이드 쇼 가 간단한 정보를 보여 "
+"줄 것입니다."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/welcome.html:13
+msgid "Kubuntu is designed to be easy. Feel free to explore!"
+msgstr "쿠분투는 쉽게 사용 가능하도록 설계되었습니다. 자유를 만끽하세요!"

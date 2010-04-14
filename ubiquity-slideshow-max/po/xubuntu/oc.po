@@ -1,0 +1,388 @@
+# Occitan (post 1500) translation for ubiquity-slideshow-ubuntu
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubiquity-slideshow-ubuntu\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-03-25 16:22+0000\n"
+"PO-Revision-Date: 2010-03-31 08:57+0000\n"
+"Last-Translator: Cédric VALMARY (Per Tot en òc) <cvalmary@yahoo.fr>\n"
+"Language-Team: Occitan (post 1500) <oc@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/app-menu.html:1
+msgid "The Applications Menu"
+msgstr "Lo menut Aplicacions"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:6
+msgid ""
+"In the Applications menu on the left corner of the top panel, you can find..."
+msgstr ""
+"Dins lo menut Aplicacions dins lo canton a esquèrra del tablèu de bòrd "
+"d'amont, poiretz trobar..."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:7
+msgid ""
+"<em>Ubuntu Software Center</em>, which lets you add or remove applications "
+"as you desire."
+msgstr ""
+"La <em>Logitèca Ubuntu</em>, que vos permetrà d'apondre o suprimir las "
+"aplicacions que desiratz."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:8
+msgid ""
+"<em>Settings menu</em>, where you can control how your desktop works and "
+"looks."
+msgstr ""
+"Lo <em>Menut Preferéncias</em>, ont podètz contrarotlar l'aparéncia e lo "
+"compòrtament del burèu."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:9
+msgid "All the applications installed in your system organized by category."
+msgstr ""
+"Totas las aplicacions installadas sus vòstre ordenador son organizadas per "
+"categoria."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/games.html:1
+msgid "Games in Xubuntu"
+msgstr "Jòcs dins Xubuntu"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:6
+msgid ""
+"Xubuntu comes to you with a fantastic selection of games. While many of the "
+"names may be unknown to you, the games will not be."
+msgstr ""
+"Xubuntu es provesit amb una seleccion de jòcs fantastica. Quitament se fòrça "
+"noms vos semblaràn desconeguts, los jòcs lo seràn pas."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:7
+msgid ""
+"Take a look at <em>Quadrapassel</em> (Applications &rarr; Games) for a "
+"Tetris look-alike."
+msgstr ""
+"Donatz una ulhada a <em>Quadrapassel</em> (Aplicacions &rarr; Jòcs) per un "
+"equivalent a Tetris."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:8
+msgid ""
+"<em>AisleRiot Solitaire</em> allows you to select from 35 different types of "
+"solitaire! Surely there is one you will enjoy?"
+msgstr ""
+"<em>Solitari AisleRiot</em> vos permet de causir demest 35 tipes de "
+"solitaris diferents ! N'i aurà segurament un que vos agradarà, non ?"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:9
+msgid ""
+"There are many more games in the Ubuntu repositories to install – see the "
+"Games category in <em>Ubuntu Software Center</em>."
+msgstr ""
+"I a plan mai de jòcs dins los depauses Ubuntu d'installar - consultatz la "
+"categoria Jòcs dins la <em>Logitèca Ubuntu</em>."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/games.html:11
+msgid ""
+"There are a bunch of games available on the live CD as well, which you can "
+"enjoy while installing. Have fun!"
+msgstr ""
+"Fòrça jòcs son tanben presents sul « live CD ». Los podètz ensajar pendent "
+"l'installacion. Passatz de bon temps !"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/getting-help.html:1
+msgid "Getting help with Xubuntu"
+msgstr "Trobar d'ajuda dins Xubuntu"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/getting-help.html:6
+msgid ""
+"If you need help, try <em>Help</em> in the Applications menu, or the help "
+"menu available in most applications."
+msgstr ""
+"S'avètz besonh d'ajuda, ensajatz <em>Ajuda</em> dins lo menut Aplicacions o "
+"lo menut <em>Ajuda</em> present dins la màger part dels logicials."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/getting-help.html:7
+msgid ""
+"There are more ways to get help, including our IRC channel <em>#xubuntu</em> "
+"on the <a href=\"http://freenode.net/\">Freenode</a> IRC network, which you "
+"can join by <a href=\"http://webchat.freenode.net/?"
+"channels=xubuntu&nick=xubuntu...&prompt=1\">clicking here</a>."
+msgstr ""
+"Existisson de mejans mai per obténer d'ajuda coma lo canal IRC <em>#ubuntu-"
+"oc</em> sus la ret <a href=\"http://freenode.net/\">Freenode</a>. I podètz "
+"accedir en <a href=\"http://webchat.freenode.net/?channels=ubuntu-"
+"oc&nick=xubuntu...&prompt=1\">clicant aicí</a>."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/getting-help.html:9
+msgid ""
+"For a complete list of support methods, see the <a href=\"http://xubuntu.org/"
+"help\">Help & Support page</a> on our website."
+msgstr ""
+"Per mai d'entresenhas suls mejans d'assisténcia consultatz lo site Web <a "
+"href=\"http://ubuntu-oc.org\">Ubuntu-oc</a> de la comunautat francofòna."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/more-apps.html:1
+msgid "Multimedia applications"
+msgstr "Aplicacions multimèdia"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:6
+msgid ""
+"<em>GIMP</em> (listed under Applications &rarr; Graphics) is an image editor "
+"that allows as much or as little manipulation of the images as you choose. "
+"It can be used to construct images or modify photos and images."
+msgstr ""
+"<em>GIMP</em> (disponible jos Aplicacions &rarr; Grafisme) es un esplech de "
+"grafisme e de manipulacion d'imatges. Pòt èsser utilizat per la creacion "
+"grafica o per de retòcas mai o mens importantas sus de fòtos."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:7
+msgid ""
+"For your listening pleasure, give <em>Exaile Music Player</em> a spin. It is "
+"capable of playing all your music, from mp3 to CD to live radio on the "
+"internet."
+msgstr ""
+"Los afogats de musica deuriàn gaitar lo lector àudio <em>Exaile</em>. Permet "
+"de legir tota vòstra musica : fichièrs MP3, CD àudio o ràdios en linha sus "
+"l'Internet."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:8
+msgid ""
+"If you need to burn a CD or DVD, check out <em>Brasero</em>. It is very easy "
+"to use and will even burn the Xubuntu image for you."
+msgstr ""
+"<em>Brasero</em> vos permetrà de gravar vòstres CD e DVD. Es de fòrt bon "
+"utilizar e poirà quitament vos gravar un imatge Xubuntu."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/more-apps.html:10
+#: slideshows/xubuntu/slides/tips-beginners.html:10
+msgid ""
+"All of these applications are available on the live CD, even while "
+"installing. Be adventurous!"
+msgstr ""
+"Totas aquelas aplicacions son disponiblas sul « live cd ». Trantalhetz pas a "
+"las testar pendent l'installacion !"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/new-to-linux.html:1
+msgid "New to Linux?"
+msgstr "Novèl sus Linux ?"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:6
+msgid ""
+"If you are new to linux and Xubuntu, you probably wonder how to find all the "
+"drivers and programs you will need. Please do not do that. The drivers "
+"needed for your system are being installed as you read this."
+msgstr ""
+"Se fasètz vòstres primièrs pases jos Linux e Xubuntu, vos demandatz "
+"segurament cossí trobar totes los pilòts e los programas que n'avètz besonh. "
+"Es pas la pena de los cercar. Los pilòts necessaris per vòstre ordenador son "
+"ja en cors d'installacion."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:7
+msgid ""
+"After the installation completes, take a few minutes, hours, or even days to "
+"try out the new software. We think you will be amazed at the few things you "
+"need to add."
+msgstr ""
+"Un còp l'installacion acabada, prenètz lo temps que vos caldrà per ensajar "
+"vòstres logicials novèls. Seretz segurament estabosits pel pauc "
+"d'aplicacions qu'auretz d'apondre."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:8
+msgid ""
+"If you find yourself wanting something else, please check the <em>Ubuntu "
+"Software Center</em> out. It is much easier than searching the internet."
+msgstr ""
+"Se vos manca una aplicacion, cercatz-la dins la <em>logitèca Ubuntu</em>. Es "
+"fòrça mai simple e fòrça mai segur que de las cercar sus Internet."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/office.html:1
+msgid "Lighter alternatives for your office"
+msgstr "De logicials de burotica mai leugièrs"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:6
+msgid ""
+"<em>Abiword</em> is a word processor, which can read almost all known "
+"document formats. You will have access to any fonts installed in your system "
+"and editing documents is a breeze."
+msgstr ""
+"<em>Abiword</em> es un tractament de tèxte capable de legir la màger part "
+"dels formats de documents. Auretz accès a totas las poliças installadas "
+"vòstre ordenador e l'edicion de documents serà un jòc d'enfant."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:7
+msgid ""
+"<em>Gnumeric</em> is a spreadsheet program with an emphasis on accuracy. It "
+"can also be used to merge mathematical data into Abiword documents."
+msgstr ""
+"<em>Gnumeric</em> es un tablador que met l'accent sus la precision. Pòt "
+"èsser utilizat per integrar de donadas matematicas dins un document Abiword."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:8
+msgid ""
+"While Abiword and Gnumeric are considered lightweight, they provide almost "
+"all of the functions of the OpenOffice suite."
+msgstr ""
+"Abiword e Gnumeric son fòrça leugièrs e vos ofrisson las foncions "
+"essencialas d'una seguida burotica."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/office.html:10
+msgid ""
+"For power users, the OpenOffice.org suite is available in just a few clicks "
+"– just install it from the Ubuntu Software Center."
+msgstr ""
+"Per de foncions mai ricas, la seguida burotica OpenOffice.org es disponibla "
+"en qualques clics a partir de la logitèca Ubuntu."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/tips-beginners.html:1
+msgid "Few good tips for beginners"
+msgstr "Qualques bons conselhs pels debutants."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:6
+msgid ""
+"Use the Application Finder (under Applications &rarr; Accessories) to launch "
+"any program on your system – one you lost on the menu or even one you didn't "
+"know existed!"
+msgstr ""
+"Utilizatz la Lista de las Aplicacions (dins Aplicacions &rarr; Accessòris) "
+"per aviar un programa quin que siá s'es installat sus vòstre ordenador. Vos "
+"ajudarà a trobar las aplicacions que n'avètz doblidat lo nom, e mai las que "
+"ner sospechatz quitament pas l'existéncia !"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:7
+msgid ""
+"Catfish is a great application for finding those files you lost on your "
+"harddrive. It is quick and easy to use for beginners and experts alike."
+msgstr ""
+"Catfish es una excellenta aplicacion per trobar los fichièrs perduts sus "
+"vòstre disc dur. Es rapida e de bon utilizar pels debutants coma pels "
+"expèrts."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:8
+msgid ""
+"Also in the accessories, you can find a slick calculator. Need to calculate "
+"disk partitions? Use the calculator, it couldn't be easier."
+msgstr ""
+"Encara dins los accessòris, trobaretz una pichona calculadoira. Besonh de "
+"calcular la talha de vòstras particions ? Utilizatz la calculadoira, aquò "
+"poiriá pas èsser mai aisit."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/welcome.html:1
+msgid "Congratulations!"
+msgstr "Òsca !"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:6
+msgid "You have chosen to install the latest version of Xubuntu, 10.04."
+msgstr "Avètz causit d'installar la tota darrièra version de Xubuntu : 10.04"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:7
+msgid ""
+"This exciting software is brought to you free of any fees, for your use and "
+"any others you want to share it with."
+msgstr ""
+"Aqueste logicial fabulós vos es provesit gratuitament, per vòstre usatge e "
+"lo de tota persona amb la quala lo volètz partejar."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:8
+msgid ""
+"Since you are installing this software using the Xubuntu Desktop CD, feel "
+"free to examine things as it installs. After the installation, the desktop "
+"will look much the same as it does now."
+msgstr ""
+"Pendent lo debanament de l'installacion de Xubuntu, trantalhetz pas a testar "
+"vòstre sistèma. Un còp l'installacion acabada, vòstre environament serà "
+"practicament identic a çò qu'es actualament."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/welcome.html:10
+msgid ""
+"We truly hope that you enjoy using this distribution as much as we enjoy "
+"bringing it to you."
+msgstr ""
+"Esperam que l'usatge d'aquela distribucion vos aportarà tant de satisfaccion "
+"coma n'avèm agut a la vos provesir."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/xfce.html:1
+msgid "Xfce Desktop Environment"
+msgstr "Environament de burèu Xfce"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:6
+msgid ""
+"Xubuntu uses the <em>Xfce desktop environment</em>. This allows the "
+"developers to bring you a system which is sleek and useful."
+msgstr ""
+"Xubuntu utiliza <em>l'environament de burèu Xfce</em>. Aquò permet als "
+"desvolopaires de vos ofrir un sistèma elegant, leugièr e util."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:7
+msgid ""
+"Xfce is a collection of programs that together provide a full-featured "
+"desktop environment."
+msgstr ""
+"Xfce es un ensemble de programas que, ensemble, provesisson un environament "
+"de burèu complet."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:8
+msgid ""
+"Xfce is also a development platform providing several libraries, that help "
+"programmers create applications that fit in well with the desktop "
+"environment."
+msgstr ""
+"Xfce es tanben una plataforma de desvolopament qu'ofrís mantuna bibliotècas "
+"que permeton als programaires de crear d'aplicacions plan integradas amb "
+"l'environament de burèu."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:9
+msgid ""
+"To learn more about Xfce, look in <em>Applications &rarr; About Xfce &rarr; "
+"Info</em> or on the <a href=\"http://xfce.org/\">Xfce website</a>."
+msgstr ""
+"Per ne saber mai sus Xfce, anatz dins <em>Aplicacions &rarr; A prepaus de "
+"Xfce &rarr; Info</em> o consultatz lo <a href=\"http://xfce.org/?lang=fr"
+"\">site Web de Xfce</a>."

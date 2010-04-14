@@ -1,0 +1,352 @@
+# Chinese (Simplified) translation for ubiquity-slideshow-ubuntu
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubiquity-slideshow-ubuntu\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-03-25 16:22+0000\n"
+"PO-Revision-Date: 2010-04-02 07:40+0000\n"
+"Last-Translator: 英华 <wantinghard@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/app-menu.html:1
+msgid "The Applications Menu"
+msgstr "程序菜单"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:6
+msgid ""
+"In the Applications menu on the left corner of the top panel, you can find..."
+msgstr "在顶端面板左端的应用程序菜单中，您可以找到..."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:7
+msgid ""
+"<em>Ubuntu Software Center</em>, which lets you add or remove applications "
+"as you desire."
+msgstr "<em>Ubuntu 软件中心 </em>，让您自由添加或删除程序。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:8
+msgid ""
+"<em>Settings menu</em>, where you can control how your desktop works and "
+"looks."
+msgstr "<em>设置菜单</em>，您能在此设置您的桌面的工作方式和外观。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:9
+msgid "All the applications installed in your system organized by category."
+msgstr "您系统上安装的所有程序都被分类管理。"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/games.html:1
+msgid "Games in Xubuntu"
+msgstr "Xubuntu 中的游戏"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:6
+msgid ""
+"Xubuntu comes to you with a fantastic selection of games. While many of the "
+"names may be unknown to you, the games will not be."
+msgstr ""
+"Xubuntu 包含一系列非常棒的游戏。虽然很多游戏的名字可能对您来说是很陌生的，但"
+"游戏本身却不一定。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:7
+msgid ""
+"Take a look at <em>Quadrapassel</em> (Applications &rarr; Games) for a "
+"Tetris look-alike."
+msgstr "看看<em>Quadrapassel</em> (程序 (&r); 游戏) 里面和 Tetris 相似的游戏。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:8
+msgid ""
+"<em>AisleRiot Solitaire</em> allows you to select from 35 different types of "
+"solitaire! Surely there is one you will enjoy?"
+msgstr ""
+"<em>AisleRiot Solitaire</em>为您准备了35种不同类型的纸牌，相信您一定会喜欢！"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:9
+msgid ""
+"There are many more games in the Ubuntu repositories to install – see the "
+"Games category in <em>Ubuntu Software Center</em>."
+msgstr ""
+"Ubuntu 的软件仓库还有更多可以安装的游戏 - 浏览<em>Ubuntu 软件中心</em> 的游戏"
+"目录。"
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/games.html:11
+msgid ""
+"There are a bunch of games available on the live CD as well, which you can "
+"enjoy while installing. Have fun!"
+msgstr "Live CD 上也有一大堆游戏，您可以在安装时娱乐一下。去享受吧！"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/getting-help.html:1
+msgid "Getting help with Xubuntu"
+msgstr "获得 Xubuntu 的帮助"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/getting-help.html:6
+msgid ""
+"If you need help, try <em>Help</em> in the Applications menu, or the help "
+"menu available in most applications."
+msgstr ""
+"如果您需要帮助，试试 应用程序 菜单中的 <em>帮助</em> 或绝大多数应用程序中的 "
+"帮助 菜单。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/getting-help.html:7
+msgid ""
+"There are more ways to get help, including our IRC channel <em>#xubuntu</em> "
+"on the <a href=\"http://freenode.net/\">Freenode</a> IRC network, which you "
+"can join by <a href=\"http://webchat.freenode.net/?"
+"channels=xubuntu&nick=xubuntu...&prompt=1\">clicking here</a>."
+msgstr ""
+"还有更多求助方式，包括 <a href=\"http://freenode.net/\">Freenode</a> IRC 网络"
+"上我们的 IRC 频道 <em>#xubuntu</em>，您可以通过 <a href=\"http://webchat."
+"freenode.net/?channels=xubuntu&nick=xubuntu...&prompt=1\">点击这里</a> 加入。"
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/getting-help.html:9
+msgid ""
+"For a complete list of support methods, see the <a href=\"http://xubuntu.org/"
+"help\">Help & Support page</a> on our website."
+msgstr ""
+"至于支持途径的完整列表，参见我们网站上的 <a href=\"http://xubuntu.org/help\">"
+"帮助和支持页面</a>。"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/more-apps.html:1
+msgid "Multimedia applications"
+msgstr "多媒体应用程序"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:6
+msgid ""
+"<em>GIMP</em> (listed under Applications &rarr; Graphics) is an image editor "
+"that allows as much or as little manipulation of the images as you choose. "
+"It can be used to construct images or modify photos and images."
+msgstr ""
+"<em>GIMP</em>  (位于应用程序 &rarr; 图像) 是一个允许你对所选图片进行或多或少"
+"修改的图像编辑器。它可以用来创建图形或修改照片和图片。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:7
+msgid ""
+"For your listening pleasure, give <em>Exaile Music Player</em> a spin. It is "
+"capable of playing all your music, from mp3 to CD to live radio on the "
+"internet."
+msgstr ""
+"想来点听觉享受，试试 <em>Exaile 音乐播放器</em> 吧。它可以播放您所有的音乐，"
+"从 mp3 到 CD到 网上的直播电台。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:8
+msgid ""
+"If you need to burn a CD or DVD, check out <em>Brasero</em>. It is very easy "
+"to use and will even burn the Xubuntu image for you."
+msgstr ""
+"如果您要刻录 CD 或 DVD，找 <em>Brasero</em> 吧。它非常好用，甚至还能刻录 "
+"Xubuntu 镜像呢。"
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/more-apps.html:10
+#: slideshows/xubuntu/slides/tips-beginners.html:10
+msgid ""
+"All of these applications are available on the live CD, even while "
+"installing. Be adventurous!"
+msgstr "所有这些应用程序都能在 Live CD 上用，甚至在安装时也行。大胆尝试吧！"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/new-to-linux.html:1
+msgid "New to Linux?"
+msgstr "刚接触 Linux？"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:6
+msgid ""
+"If you are new to linux and Xubuntu, you probably wonder how to find all the "
+"drivers and programs you will need. Please do not do that. The drivers "
+"needed for your system are being installed as you read this."
+msgstr ""
+"如果您是 linux 和 Xubuntu 新手，您很可能想着要怎么找到所有您需要的驱动程序与"
+"软件。请不用想了，当您读到这里时，您系统所需要的驱动程序正在安装中。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:7
+msgid ""
+"After the installation completes, take a few minutes, hours, or even days to "
+"try out the new software. We think you will be amazed at the few things you "
+"need to add."
+msgstr ""
+"安装完成后，花上几分钟、几小时乃至几天的工夫去尝试这些新软件。我们觉得您肯定"
+"为事后需要添加的东西如此少而惊奇。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:8
+msgid ""
+"If you find yourself wanting something else, please check the <em>Ubuntu "
+"Software Center</em> out. It is much easier than searching the internet."
+msgstr ""
+"如果您需要其他东西，光顾一下 <em>Ubuntu 软件中心</em> 吧。它比上网搜索容易得"
+"多。"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/office.html:1
+msgid "Lighter alternatives for your office"
+msgstr "您办公软件的轻巧替代品"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:6
+msgid ""
+"<em>Abiword</em> is a word processor, which can read almost all known "
+"document formats. You will have access to any fonts installed in your system "
+"and editing documents is a breeze."
+msgstr ""
+"<em>Abiword</em> 是一套字处理程序，可以读取几乎所有已知的文件格式。您可以使用"
+"系统内任何安装的字体，而用它编辑文件如微风般轻快。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:7
+msgid ""
+"<em>Gnumeric</em> is a spreadsheet program with an emphasis on accuracy. It "
+"can also be used to merge mathematical data into Abiword documents."
+msgstr ""
+"<em>Gnumeric</em> 是一款注重精确的电子表格程序。也可以用它将数学数据插入 "
+"Abiword 文档中。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:8
+msgid ""
+"While Abiword and Gnumeric are considered lightweight, they provide almost "
+"all of the functions of the OpenOffice suite."
+msgstr ""
+"虽然 Abiword 与 Gnumeric 被认为是轻量级的办公软件，但它们却能提供 OpenOffice "
+"办公组合的绝大多数功能。"
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/office.html:10
+msgid ""
+"For power users, the OpenOffice.org suite is available in just a few clicks "
+"– just install it from the Ubuntu Software Center."
+msgstr ""
+"对熟练的用户来说，安装 OpenOffice.org 办公套件就是点几下鼠标的事 - 从 Ubuntu "
+"软件中心安装就行了。"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/tips-beginners.html:1
+msgid "Few good tips for beginners"
+msgstr "一些给新手的小技巧"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:6
+msgid ""
+"Use the Application Finder (under Applications &rarr; Accessories) to launch "
+"any program on your system – one you lost on the menu or even one you didn't "
+"know existed!"
+msgstr ""
+"使用应用查找器 (菜单位于应用程序 &rarr; 附件) 来启动您系统上的任何程序 – 没出"
+"现在菜单上的甚至是您都不知道是否存在的！"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:7
+msgid ""
+"Catfish is a great application for finding those files you lost on your "
+"harddrive. It is quick and easy to use for beginners and experts alike."
+msgstr ""
+"Catfish 是一个很棒的查找您硬盘上未知位置文件的应用。它反应迅速且易于使用，对"
+"初学者和专家都是一样的。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:8
+msgid ""
+"Also in the accessories, you can find a slick calculator. Need to calculate "
+"disk partitions? Use the calculator, it couldn't be easier."
+msgstr ""
+"在附件里您也能找到一个灵巧的计算器。需要计算磁盘分区？用用它吧，没有比这更简"
+"单的了。"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/welcome.html:1
+msgid "Congratulations!"
+msgstr "恭喜您！"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:6
+msgid "You have chosen to install the latest version of Xubuntu, 10.04."
+msgstr "您已选定安装 Xubuntu 的最新版本，10.04。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:7
+msgid ""
+"This exciting software is brought to you free of any fees, for your use and "
+"any others you want to share it with."
+msgstr "这套激动人心的软件是免费给您的，供您及您想与之共享的任何其它人使用。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:8
+msgid ""
+"Since you are installing this software using the Xubuntu Desktop CD, feel "
+"free to examine things as it installs. After the installation, the desktop "
+"will look much the same as it does now."
+msgstr ""
+"由于是从 Xubuntu 桌面 CD 中安装该软件，安装过程中您可以随意察看。安装后，桌面"
+"将与现在很相似。"
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/welcome.html:10
+msgid ""
+"We truly hope that you enjoy using this distribution as much as we enjoy "
+"bringing it to you."
+msgstr "我们真心地希望您乐于使用这个发行版，就像我们乐于将它带到您身边一样。"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/xfce.html:1
+msgid "Xfce Desktop Environment"
+msgstr "Xfce 桌面环境"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:6
+msgid ""
+"Xubuntu uses the <em>Xfce desktop environment</em>. This allows the "
+"developers to bring you a system which is sleek and useful."
+msgstr ""
+"Xubuntu 使用 <em>Xfce 桌面环境</em>。这让开发者能带给你一套别致且实用的系统。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:7
+msgid ""
+"Xfce is a collection of programs that together provide a full-featured "
+"desktop environment."
+msgstr "Xfce 是一个程序集，一起提供一个全功能的桌面环境。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:8
+msgid ""
+"Xfce is also a development platform providing several libraries, that help "
+"programmers create applications that fit in well with the desktop "
+"environment."
+msgstr ""
+"Xfce 也是一个提供多种库的开发平台，可以帮助程序员开发出与桌面环境相适应的应"
+"用。"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:9
+msgid ""
+"To learn more about Xfce, look in <em>Applications &rarr; About Xfce &rarr; "
+"Info</em> or on the <a href=\"http://xfce.org/\">Xfce website</a>."
+msgstr ""
+"要了解更多有关 Xfce 的信息，察看 <em>应用程序 &rarr; 关于 Xfce &rarr; 信息</"
+"em> 或访问 <a href=\"http://xfce.org/\">Xfce 网站</a>。"

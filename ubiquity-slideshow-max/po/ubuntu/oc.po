@@ -1,27 +1,30 @@
 # Occitan (post 1500) translation for ubiquity-slideshow-ubuntu
-# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
 # This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-17 20:58-0700\n"
-"PO-Revision-Date: 2010-02-05 14:16+0000\n"
-"Last-Translator: Cédric VALMARY <cvalmary@yahoo.fr>\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-03-26 17:47+0000\n"
+"PO-Revision-Date: 2010-04-01 06:26+0000\n"
+"Last-Translator: Cédric VALMARY (Per Tot en òc) <cvalmary@yahoo.fr>\n"
 "Language-Team: Occitan (post 1500) <oc@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-02-26 13:24+0000\n"
+"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/accessibility.html:1
 msgid "Accessibility in Ubuntu"
 msgstr "Ubuntu, un sistèma operatiu accessible a totes"
 
-#: slideshows/ubuntu/slides/accessibility.html:2
+#.  "your" refers to a large group that includes the reader. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/accessibility.html:6
 msgid ""
 "We want to make computers work for everyone, whatever your physical "
 "circumstances. So, we provide tools that make Ubuntu one of the most "
@@ -32,15 +35,26 @@ msgstr ""
 "Ubuntu mantun esplech per ne far un dels sistèmas operatius mai accessibles "
 "que sián."
 
-#: slideshows/ubuntu/slides/accessibility.html:3
+#.  The string "Assistive Technologies Preferences" is describing a particular menu item: System >
+#.  Preferences > Assistive Technologies, and the string "System menu" describes that section of the main menu. Note that certain words are kept the same to make the menu items discoverable. It is intentional that we are using soft descriptions instead of mapping out a rigid path for the user to follow. Please, if it is natural for your locale, consider the same convention. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/accessibility.html:7
 msgid ""
 "You can get at these tools in one place: the <em>Assistive Technologies "
-"Preferences,</em> inside the System Menu. From there, you can turn on "
+"Preferences</em>, inside the System Menu. From there, you can turn on "
 "helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
 "click to press mouse buttons automatically."
 msgstr ""
+"Podètz accedir a aqueles espleches dempuèi un meteis endrech : <em>Espleches "
+"d'accessibilitat,</em> a l'interior del menut Sistèma. D'aquí, podètz "
+"activar d'espleches fòrça practics coma <em>Orca</em> per legir lo tèxte "
+"afichat a l'ecran o <em>Accessibilitat de la mirga</em> per clicar suls "
+"botons de la mirga automaticament."
 
-#: slideshows/ubuntu/slides/accessibility.html:4
+#.  As before, the string "Appearance Preferences" is describing a particular menu item: System >
+#.  Preferences > Appearance. Certain words were kept the same to make the menu item discoverable. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/accessibility.html:8
 msgid ""
 "Remember to check out the <em>Appearance Preferences</em>, too. You can "
 "choose between different visual styles and even change the fonts that are "
@@ -50,17 +64,24 @@ msgstr ""
 "em>. I poiretz causir diferents tèmas visuals e quitament modificar las "
 "poliças de caractèrs utilizadas per las aplicacions."
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/documentation.html:1
 msgid "Getting Help with Ubuntu"
 msgstr "Obténer d'ajuda a prepaus d'Ubuntu"
 
-#: slideshows/ubuntu/slides/documentation.html:2
+#.  The string "Help and Support" should be exactly as it appears in the System menu. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/documentation.html:6
 msgid ""
 "If you need help, try <em>Help and Support</em> from the System menu, or the "
 "<em>Help</em> menu in most applications."
 msgstr ""
+"S'avètz besonh d'ajuda, ensajatz <em>Ajuda e sosten</em> dins lo menut "
+"Sistèma, o lo menut <em>Ajuda</em> dins la màger part de las aplicacions."
 
-#: slideshows/ubuntu/slides/documentation.html:3
+#.  The url "ubuntu.com/support" should not be translated 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/documentation.html:7
 msgid ""
 "In addition to our extensive written help, the Ubuntu community provides "
 "free technical support in person and over the Internet. There is also "
@@ -68,68 +89,90 @@ msgid ""
 "companies. Learn more at <a href=\"http://www.ubuntu.com/support\">ubuntu."
 "com/support</a>."
 msgstr ""
+"A mai de l'ajuda escricha extensiva, la comunautat Ubuntu provesís un supòrt "
+"tecnic gratuit en persona o a travèrs Internet. Existís tanben un supòrt "
+"comercial disponible a travèrs Canonical, sos partenaris e d'entrepresas "
+"aprovadas."
 
-#: slideshows/ubuntu/slides/documentation.html:4
+#.  The url "ubuntu.com/community" should not be translated 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/documentation.html:8
 msgid ""
 "Let us know about your Ubuntu experience at <a href=\"http://ubuntu.com/"
 "community\">ubuntu.com/community</a>!"
 msgstr ""
+"Fasètz-nos part de vòstra experiéncia sus Ubuntu sus <a href=\"http://ubuntu."
+"com/community\">ubuntu.com/community</a>!"
 
-#: slideshows/ubuntu/slides/documentation.html:5
+#. type: Content of: <div><div><p>
+#: slideshows/ubuntu/slides/documentation.html:10
 msgid "The installation will finish soon. We hope you enjoy Ubuntu."
 msgstr ""
 "L'installacion s'acabarà lèu : esperam qu'Ubuntu respondrà a vòstres espèrs, "
 "e quitament mai !"
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/empathy.html:1
-msgid "Keep in contact with Empathy"
-msgstr "Comunicatz amb Empathy !"
+msgid "Social from the start"
+msgstr "Vòstras rets socialas tre l'aviada"
 
-#: slideshows/ubuntu/slides/empathy.html:2
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/empathy.html:6
 msgid ""
-"With <em>Empathy</em>, Ubuntu keeps you connected right from the start. It "
-"works with all the major instant messaging networks, including Google Talk, "
-"Windows Live and Jabber."
+"From the start, Ubuntu connects to online chat and broadcast services "
+"including Facebook, Twitter, Windows Live and Google Talk."
 msgstr ""
+"Tre l'aviada, Ubuntu se connècta als servicis de microblogatge e de "
+"discussion en linha coma Facebook, Twitter, Windows Live o Google Talk."
 
-#: slideshows/ubuntu/slides/empathy.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/empathy.html:7
 msgid ""
-"New messages appear in the envelope to the left of the clock, so you can see "
-"what's happening at a glance."
+"Click the envelope near the clock to log in to your accounts. New messages "
+"appear there, too, so you can see what's happening at a glance."
 msgstr ""
-"Los messatges novèls apareisson al nivèl de l'envolopa situada a esquèrra "
-"del relòtge. Atal, sètz assabentat d'una sola ulhada."
+"Clicatz sus l'envolopa prèo de le relòtge per vos connectar a vòstres "
+"diferents comptes. Los messatges novèls i apareisson tanben. Atal, ne sètz "
+"assabentat d'una sola ulhada."
 
-#: slideshows/ubuntu/slides/empathy.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/empathy.html:8
 msgid ""
-"Choose <em>Empathy IM Client</em> from the Internet Applications menu to set "
-"up your accounts."
+"If you're busy, click your name at the top of the screen to change your "
+"status."
 msgstr ""
-"Causissètz <em>Messatjariá instantanèa Empathy</em> dins lo menut "
-"Aplicacions, Internet per configurar vòstres comptes."
+"Se sètz ocupat(ada), clicatz sus vòstre nom amont de l'ecran per modificar "
+"vòstre estat."
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/evolution.html:1
-msgid "Control your digital life with Evolution"
-msgstr "Vòstra vida numerica en qualques clics gràcias a Evolution"
+msgid "Control your digital life"
+msgstr "Organizatz vòstra vida numerica"
 
-#: slideshows/ubuntu/slides/evolution.html:2
+#.  "Evolution Mail" should be the exact name of the Evolution launcher inside the Internet menu or the indicator applet. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/evolution.html:6
 msgid ""
 "<em>Evolution Mail</em> is the fully-featured email and calendar software "
-"that comes with Ubuntu. It connects to most email services, for example "
-"Gmail and Yahoo."
+"that comes with Ubuntu. Just enter your email account information and it "
+"will download new messages automatically."
 msgstr ""
-"<em>Evolution</em> es lo logicial complet de gestion de corrièls e de "
-"calendièrs provesit amb Ubuntu. Se connècta a la màger part dels servicis, "
-"tals coma Gmail, Yahoo…"
+"<em>Evolution</em> es lo client de corrièl e d'agènda complet provesit amb "
+"Ubuntu. Completatz los paramètres de vòstre compte e vòstres messatges "
+"novèls seràn telecargats automaticament."
 
-#: slideshows/ubuntu/slides/evolution.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/evolution.html:7
 msgid ""
-"Advanced junk filtering and search tools make managing your mail a breeze."
+"Evolution has a powerful junk mail filter. You can use the search box, or "
+"create your own filters, to make sorting mail quick and easy."
 msgstr ""
-"La gestion de vòstres corrièls ven un jòc d'enfant gràcias als filtres "
-"antispam e als espleches de recèrca."
+"<em>Evolution</em> dispausa d'un filtre anti-spam poderós. Utilizatz lo camp "
+"de recèrca o creatz vòstres filtres pròpris per triar simplament e "
+"eficaçament vòstres corrièls."
 
-#: slideshows/ubuntu/slides/evolution.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/evolution.html:8
 msgid ""
 "Add your favorite Web calendars to see upcoming games or movie releases. To "
 "see your daily schedule, just click the clock at the top of your screen."
@@ -138,37 +181,42 @@ msgstr ""
 "jòcs. Per veire vòstres prètzfaches quotidians, clicatz simplament sul "
 "relòtge en naut de vòstre ecran."
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/firefox.html:1
 msgid "Browse the web with Firefox"
 msgstr "Tornatz descobrir lo Web amb Firefox !"
 
-#: slideshows/ubuntu/slides/firefox.html:2
-#, fuzzy
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/firefox.html:6
 msgid "Ubuntu comes with the widely acclaimed <em>Firefox web browser</em>."
-msgstr "Ubuntu es provesit amb lo celèbre navigador Web <em>Firefox 3.5</em>."
+msgstr "Ubuntu es liurat amb lo famós <em>Navigateur Web Firefox</em>."
 
-#: slideshows/ubuntu/slides/firefox.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/firefox.html:7
 msgid ""
 "It protects your privacy and personal information so you can surf worry free."
 msgstr ""
 "Protegís vòstra vida privada e vòstras informacions personalas. Podètz "
 "navigar en tota serenitat."
 
-#: slideshows/ubuntu/slides/firefox.html:4
-#, fuzzy
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/firefox.html:8
 msgid ""
-"Add your own personal note with add-ons. You can choose from thousands of "
-"themes and extensions that tailor Firefox to how you use the web."
+"Give Firefox your own personal touch with addons. You can choose from "
+"thousands of themes and extensions that tailor it to how you use the web."
 msgstr ""
-"Apondètz vòstra tòca personala. Causissètz demest los milierats de tèmas e "
-"de moduls complementaris per adaptar <em>Firefox</em> a vòstre usatge pròpri "
-"del Web."
+"Apondètz vòstra tòca personala amb los moduls complementaris. Podètz causir "
+"demest de milierats de tèmas o d'extensions qu'adaptan <em>Firefox</em> a "
+"vòstre biais d'utilizar lo Web."
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/fspot.html:1
-msgid "Organize, enjoy, and share your photos"
-msgstr "Organizatz, partejatz e aprofechatz de vòstras fòtos"
+msgid "Share and enjoy your photos"
+msgstr "Profiechatz plenament de vòstras fòtos"
 
-#: slideshows/ubuntu/slides/fspot.html:2
+#.  "F-Spot Photo Manager" should be the exact name that is used for F-Spot in the Applications menu 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/fspot.html:6
 msgid ""
 "With <em>F-Spot Photo Manager</em>, it is really easy to share, touch-up and "
 "organize digital photos."
@@ -176,12 +224,17 @@ msgstr ""
 "Amb lo <em>gestionari de fòtos F-Spot</em>, es de fòrt bon organizar, "
 "retocar e partejar vòstras fòtos numericas."
 
-#: slideshows/ubuntu/slides/fspot.html:3
+#.  Instead of directly translating the word "tags," please use the exact name of the feature in F-Spot for your locale. (Tags are used to label photos). 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/fspot.html:7
 msgid ""
 "Use tags to describe your photos so that they are easy to find later on."
 msgstr ""
+"Utilizatz d'etiquetas per descriure vòstras fòtos. Atal, seràn de melhor "
+"retrobar ulteriorament."
 
-#: slideshows/ubuntu/slides/fspot.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/fspot.html:8
 msgid ""
 "Use the Export option to write your photos to CDs, email them to friends or "
 "share them online."
@@ -189,7 +242,9 @@ msgstr ""
 "Utilizatz la foncion d'exportacion per gravar vòstras fòtos sus un CD, las "
 "mandar per corrièl a d'amics o las partejar en linha."
 
-#: slideshows/ubuntu/slides/fspot.html:5
+#.  Graphics Applications refers to the Graphics submenu, and then the main Applications menu. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/fspot.html:9
 msgid ""
 "To get started, choose F-Spot from the Graphics Applications menu or attach "
 "a digital camera and follow the prompts."
@@ -197,254 +252,205 @@ msgstr ""
 "Per aviar <em>F-Spot</em>, anatz dins lo menut <em>Aplicacions Grafisme</em> "
 "o brancatz tot simplament vòstre aparelh de fòto numeric !"
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/installing-software.html:1
-msgid "Installing additional software"
-msgstr "Installatz de logicials suplementaris"
+msgid "Getting more software"
+msgstr "Obténer de logicials suplementaris"
 
-#: slideshows/ubuntu/slides/installing-software.html:2
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/installing-software.html:6
 msgid ""
-"Take a look at the <em>Ubuntu Software Center</em> to install (and remove) "
-"software from our online repository, which we carefully organize to be safe "
-"and up to date."
+"If you need something else, try the <em>Ubuntu Software Center</em> to "
+"choose from thousands of extras you can download for free."
 msgstr ""
+"S'avètz besonh de mai de logicials, ensajatz la <em>Logitèca Ubuntu</em>. I "
+"poiretz far vòstra causida demest de milierats d'aplicacions suplementàrias "
+"de telecargar a gratis."
 
-#: slideshows/ubuntu/slides/installing-software.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/installing-software.html:7
 msgid ""
-"There is great software for everything from creating music and movies to "
-"producing 3D models and exploring the universe."
+"There are powerful applications for all sorts of interests, from programming "
+"to creating music and exploring the universe. Take a look at the "
+"<em>Featured Applications</em> section for some of our favourites!"
 msgstr ""
-"I trobaretz d'excellentas aplicacions per totes los usatges, dempuèi "
-"l'enregistrament de musica a la creacion de filmes en passant per "
-"l'animacion 3D o l'exploracion de l'univèrs."
+"Existisson d'aplicacions de tota mena, que van de la programacion fins a la "
+"creacion musicala o l'exploracion de l'univèrs. Gaitatz doncas  la seccion "
+"<em>Aplicacions màgers</em> que recampa nòstras aplicacions favoritas !"
 
-#: slideshows/ubuntu/slides/installing-software.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/installing-software.html:8
 msgid ""
-"If you need something that isn't available through us, find out if there is "
-"a Debian package or another repository available. That way, it will be "
-"really easy to install and you will receive automatic updates."
+"Everything in Software Center is stored in our online repository. We are "
+"careful to keep it safe and updates will be delivered directly to you."
 msgstr ""
-"S'i trobatz pas una aplicacion que n'avètz besonh, verificatz s'existís pas "
-"un paquet Debian per aquela o s'es pas presenta dins un autre depaus. Atal, "
-"vos serà fòrça aisit de l'installar e de beneficiar de mesas a jorn "
-"automaticas."
+"Tot lo contenu de la <em>Logitèca Ubuntu</em> es emmagazinat sus nòstre "
+"depaus en linha qu'entretenam menimosament per que siá segur e a jorn."
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/openoffice.html:1
 msgid "Office tools at your fingertips"
 msgstr "Tota la burotica a portada de man !"
 
-#: slideshows/ubuntu/slides/openoffice.html:2
+#.  "OpenOffice.org" does not refer to a particular menu item, but it a name shared in common between all of the OpenOffice components in the Applications menu. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/openoffice.html:6
 msgid ""
-"<em>OpenOffice.org</em> is a powerful office software suite that is very "
-"easy to learn."
+"Ubuntu comes with <em>OpenOffice.org</em>, a powerful office software suite "
+"that is easy to understand."
 msgstr ""
-"<em>OpenOffice.org</em> es una seguida burotica completa, poderosa e de fòrt "
-"bon mestrejar."
+"Ubuntu es liurat amb <em>OpenOffice.org</em>, una seguida burotica a l'encòp "
+"poderosa e de fòrt bon utilizar."
 
-#: slideshows/ubuntu/slides/openoffice.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/openoffice.html:7
+msgid "It helps you create documents, presentations, diagrams and databases."
+msgstr ""
+"Vos permet de redigir de documents, de crear de presentacions, de diagramas "
+"o de bancas de donadas."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/openoffice.html:8
 msgid ""
-"It is useful to create letters, presentations and spreadsheets, as well as "
-"diagrams and databases."
+"OpenOffice.org uses the standard OpenDocument file format. It opens files "
+"from other office applications like Microsoft Office and WordPerfect."
 msgstr ""
-"Vos permet de redigir de letras, metre al punt de presentacions, crear de "
-"fuèlhs de calcul o encara de concebre de diagramas o de bancas de donadas."
+"<em>OpenOffice.org</em> utiliza lo format estandard OpenDocument. Tanben, es "
+"compatible amb los documents eissits de las autras seguidas buroticas coma "
+"WordPerfect e Microsoft Office."
 
-#: slideshows/ubuntu/slides/openoffice.html:4
-#, fuzzy
-msgid ""
-"<em>OpenOffice.org</em> works with documents from other popular office "
-"applications including WordPerfect and Microsoft Office. It uses the "
-"standard OpenDocument format."
-msgstr ""
-"<em>OpenOffice.org</em> impòrta los documents d'autras seguidas buroticas "
-"talas coma WordPerfect o Microsoft Office. Utiliza l'estandard internacional "
-"OpenDocument per defaut."
-
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:1
-msgid "Music and movies in Ubuntu"
-msgstr "Musica e vidèos amb Ubuntu"
+msgid "Entertainment with music and movies"
+msgstr "Divertiment multimèdia"
 
-#: slideshows/ubuntu/slides/rhythmbox-totem.html:2
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:6
 msgid ""
-"Ubuntu is ready to play videos and music from the web, from CDs and DVDs."
+"Ubuntu is ready to play music and videos from the web, from CDs and DVDs."
 msgstr ""
-"Ubuntu pòt legir de vidèo e de musica dempuèi lo Web, de CDs o de DVDs."
+"Ubuntu es prèst per la musica e las vidèos en provenéncia del Web o de "
+"vòstres CD e DVD."
 
-#: slideshows/ubuntu/slides/rhythmbox-totem.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:7
 msgid ""
-"<em>Rhythmbox Music Player</em> lets you organize your music and listen to "
-"Internet radio. It also keeps track of podcasts, to download new episodes of "
-"a show automatically."
+"The <em>Rhythmbox Music Player</em> lets you organize your music, listen to "
+"Internet radio, and purchase a variety of songs. Manage your podcast "
+"subscriptions and automatically download new episodes."
 msgstr ""
-"Lo <em>lector de musica Rhythmbox</em> vos permet d'organizar vòstras "
-"musicas, d'escotar de ràdios sus Internet e d'accedir a de podcasts."
+"Lo lector àudio <em>Rhythmbox</em> vos permet d'organizar vòstras musicas, "
+"d'escotar de ràdios sus Internet e de crompar de tròces en linha. "
+"Configuratz-lo e recuperarà tanben los darrièrs podcasts als quals sètz "
+"abonat."
 
-#: slideshows/ubuntu/slides/rhythmbox-totem.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:8
+msgid ""
+"Discover popular, DRM-free music available for purchase from the <em>Ubuntu "
+"One Music Store</em>, a cloud-enabled digital music store. Purchases are "
+"automatically stored in the cloud and synchronised across all of your "
+"computers."
+msgstr ""
+"Gràcias a la <em>Botiga Ubuntu One</em>, podètz crompar vòstras cançons e "
+"albums preferits sens cap de varrolh numeric. Totas vòstras crompas son "
+"emmagazinadas automaticament en linha e sincronizadas entre vòstres "
+"diferents ordenadors."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:9
 msgid ""
 "Plug in an MP3 player to start synchronizing your music collection, or "
-"insert a CD to copy its music to your computer."
+"insert a CD to copy songs to your computer."
 msgstr ""
-"Brancatz vòstre lector de MP3 per sincronizar vòstra bibliotèca musicala o "
-"inserissètz un CD per ne copiar la musica sus vòstre ordenador."
+"Brancatz vòstre lector numeric portable per lo sincronizar amb vòstra "
+"bibliotèca musicala o inserissètz un CD per ne copiar los tròces sus vòstre "
+"ordenador."
 
-#: slideshows/ubuntu/slides/translations.html:1
-msgid "Ubuntu speaks fluently"
-msgstr "Ubuntu es poliglòt"
-
-#: slideshows/ubuntu/slides/translations.html:2
-msgid "Ubuntu is available in many different languages."
-msgstr "Ubuntu existís dins una multitud de lengas."
-
-#: slideshows/ubuntu/slides/translations.html:3
-msgid "Simply select your language in Language Support Administration"
-msgstr ""
-"Causissètz la que volètz en clicant sus <em>Presa en carga lingüistica</em> "
-"dins lo menut <em>Sistèma Administracion</em>."
-
-#: slideshows/ubuntu/slides/translations.html:4
-msgid ""
-"Ubuntu's translations are contributed by our generous users. Feel free to "
-"help out at <a href=\"http://translations.launchpad.net/ubuntu\">launchpad."
-"net</a>."
-msgstr ""
-"Ubuntu es traduch gràcias als esfòrces de nòstres generoses utilizaires. Vos "
-"tanben, podètz contribuir sus <a href=\"http://translations.launchpad.net/"
-"ubuntu\">launchpad.net</a> !"
-
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/ubuntuone.html:1
-msgid "Store, sync and share with Ubuntu One"
-msgstr "Estocatz, sincronizatz e partejatz amb Ubuntu One"
+msgid "Keep your digital life in sync"
+msgstr "Vòstra vida numerica en fasa"
 
-#: slideshows/ubuntu/slides/ubuntuone.html:2
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/ubuntuone.html:6
 msgid ""
-"<em>Ubuntu One</em> is your personal cloud, providing 2 GB of essential "
-"storage (and more if you need it)."
+"Shuffle between your laptop, netbook, and company desktop and find "
+"everything you need automatically synchronised. Your documents, music, "
+"bookmarks, address book, and notes – everything goes where you go with "
+"<em>Ubuntu One</em>."
 msgstr ""
-"<em>Ubuntu One</em> es vòstre espaci personal sus l'Internet, d'una "
-"capacitat de 2Go (o quitament mai se n'avètz besonh)."
+"Passatz d'un ordenador a l'autre e constatatz que totas vòstras donadas son "
+"sincronizadas entre vòstre portable, vòstre netbook o lo de vòstre trabalh. "
+"Totes vòstres documents, musicas, favorits, quasernets d'adreças e nòtas vos "
+"acompanhan gràcias a <em>Ubuntu One</em>."
 
-#: slideshows/ubuntu/slides/ubuntuone.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/ubuntuone.html:7
 msgid ""
-"Use it to back up, store and sync your files, as well as share them with "
-"other Ubuntu One users."
+"Want a safe home for your important files? All Ubuntu users get 2 GB of "
+"personal cloud storage for free (and more if you need it)."
 msgstr ""
-"Utilizatz-lo per salvar, emmagazinar e sincronizar vòstres fichièrs o per "
-"los partejar amb d'autres utilizaires <em>Ubuntu One</em>."
+"Avètz besonh d'un endrech segur ont ammagazinar vòstres fichièrs mai "
+"importants ? Cada utilizaire d'Ubuntu dispausa gratuitament d'un espaci "
+"d'emmagazinatge en linha de 2 Go (e mai encara se volètz)."
 
-#: slideshows/ubuntu/slides/ubuntuone.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/ubuntuone.html:8
 msgid ""
-"Your Tomboy notes and Evolution contacts are synced automatically across all "
-"of your computers."
+"Share folders using your synchronised address book. Project collaboration "
+"has never been easier."
 msgstr ""
-"Vòstras nòtas <em>Tomboy</em> e vòstres contactes <em>Evolution</em> son "
-"sincronizats automaticament entre totes vòstres ordenadors."
+"Partejatz de dorsièrs amb vòstres contactes. Collaboratz dins lo quadre d'un "
+"projècte es pas jamai estat tant simple."
 
-#: slideshows/ubuntu/slides/ubuntuone.html:5
-msgid "Integration with your Ubuntu desktop makes sharing files easy."
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/ubuntuone.html:9
+msgid ""
+"Sign-up by launching the <em>Ubuntu One Preferences</em> application or "
+"going to <a href=\"http://one.ubuntu.com/\">http://one.ubuntu.com/</a>."
 msgstr ""
-"L'integracion amb vòstre burèu Ubuntu facilita bravament lo partiment de "
-"fichièrs."
+"Inscrivètz-vos en clicant sus <em>Ubuntu One</em> dins lo menut de las "
+"preferéncias del sistèma o en anant sus <a href=\"http://one.ubuntu.com/"
+"\">http://one.ubuntu.com/</a>."
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/welcome.html:1
 msgid "Welcome"
 msgstr "Benvenguda"
 
-#: slideshows/ubuntu/slides/welcome.html:2
-#, fuzzy
-msgid "Thank you for choosing Ubuntu 10.04."
-msgstr "Mercés per vòstre interès per Ubuntu 9.10."
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/welcome.html:6
+msgid "Thank you for choosing Ubuntu 10.04 LTS."
+msgstr "Mercés d'aver causit Ubuntu 10.04 LTS."
 
-#: slideshows/ubuntu/slides/welcome.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/welcome.html:7
 msgid ""
-"We believe that every computer user should be able to work in the "
-"environment of their choice and be free to download, change, study and share "
-"this software for any purpose, without paying licensing fees."
+"This release marks a major milestone in the Ubuntu project. It is easier and "
+"more reliable than ever, with hundreds of improvements including a new video "
+"editor, integrated social networking and a growing selection of extra "
+"software."
 msgstr ""
-"Pensam que cada utilizaire deuriá poder trabalhar dins l'environament que li "
-"agrada mai e èsser liure de telecargar, modificar, estudiar e partejar "
-"aqueste logicial, quina que ne siá l'utilizacion, sens aver de pagar de "
-"dreches de licéncia."
+"Aquesta version es una version màger d'Ubuntu. Es de melhor utilizar e mai "
+"fisabla que non pas jamai. Apòrta tanben fòrça melhoraments dont un editor "
+"vidèo, una integracion en estandard de las rets socialas e una importanta "
+"seleccion de logicials complementaris."
 
-#: slideshows/ubuntu/slides/welcome.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/welcome.html:8
 msgid ""
-"As part of our promise, we want Ubuntu to work as well for you as possible. "
-"So, while it installs, this slideshow will give you a quick introduction."
+"Whether you're new to Ubuntu or a long-time user, we're sure there is "
+"something you will enjoy. While Ubuntu is installed, this slideshow will "
+"show you around."
 msgstr ""
-"Un de nòstres objectius es qu'Ubuntu vos balhe entièra satisfaccion. Atal, "
-"aqueste diaporamà vos ne prepausarà una presentacion brèva pendent que lo "
-"sistèma s'installa."
+"Qu'utilizetz Ubuntu pel primièr còp o dempuèi longtemps, esperam sincèrament "
+"que vos agradarà. Aqueste diaporama ne vos prepausarà una brèva presentacion "
+"pendent que lo sistèma s'installa."
 
-#: slideshows/ubuntu/slides/welcome.html:5
+#. type: Content of: <div><div><p>
+#: slideshows/ubuntu/slides/welcome.html:10
 msgid "Ubuntu is designed to be easy. Feel free to explore!"
 msgstr ""
-"Ubuntu es concebuda per èsser de bon utilizar. Començatz-ne doncas "
+"Ubuntu es concebut per èsser de bon utilizar. Començatz-ne doncas "
 "l'exploracion !"
-
-#~ msgid ""
-#~ "<i>Can't find the answer?</i> The Ubuntu community provides extensive "
-#~ "free technical support. There is also commercial support available "
-#~ "through Canonical, its partners and approved companies. Learn more at <a "
-#~ "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
-#~ msgstr ""
-#~ "<i>Trobatz pas vòstra responsa ?</i> La comunautat Ubuntu prepausa una "
-#~ "ajuda gratuita e completa. Un supòrt comercial tanben es prepausat per "
-#~ "Canonical e sos partenaris e mai per d'entrepresas certificadas. Mai "
-#~ "d'informacions sus <a href=\"http://www.ubuntu.com/support\">ubuntu.com/"
-#~ "support</a> (en anglés)."
-
-#~ msgid ""
-#~ "Choose Empathy from the Internet Applications menu to set up your "
-#~ "accounts."
-#~ msgstr ""
-#~ "Per configurar vòstres comptes, seleccionatz <em>Messatjariá instantanèa "
-#~ "Empathy</em> dins lo menut <em>Aplicacions Internet</em>."
-
-#~ msgid ""
-#~ "With <em>Empathy IM</em>, Ubuntu keeps you connected right from the "
-#~ "start. It works with all the major instant messaging networks, including "
-#~ "Google Talk, Windows Live and Jabber."
-#~ msgstr ""
-#~ "Amb la <em>messatjariá instantanèa Empathy</em>, Ubuntu vos permet de "
-#~ "comunicar tre l'amodament. Fonciona amb las rets principalas de "
-#~ "messatjariá instantanèa : Google Talk, Windows Live (MSN) e Jabber."
-
-#~ msgid ""
-#~ "Use tags to describe your photos. Later on, you can use the tags to find "
-#~ "a particular one."
-#~ msgstr ""
-#~ "Servissètz-vos de las etiquetas per descriure vòstras fòtos. Atal poiretz "
-#~ "tornar trobar mai tard las que cercatz."
-
-#~ msgid ""
-#~ "Take a look at the <em>Software Center</em> to install (and uninstall) "
-#~ "software from our online repository, which we carefully organize to be "
-#~ "safe and up to date."
-#~ msgstr ""
-#~ "Rendètz-vos dins la <em>logitèca Ubuntu</em> per installar e desinstallar "
-#~ "de milierats d'aplicacions dempuèi nòstres depauses en linha securizats e "
-#~ "mantenguts a jorn."
-
-#~ msgid ""
-#~ "OpenOffice.org works with documents for all the popular office "
-#~ "applications including WordPerfect and Microsoft Office. It uses the ISO "
-#~ "standard OpenDocument format by default."
-#~ msgstr ""
-#~ "Los fichièrs d'<em>OpenOffice.org</em> son compatibles amb los de las "
-#~ "seguidas buroticas mai popularas, incluses WordPerfect e Microsoft "
-#~ "Office. Utilizan per defaut lo format OpenDocument qu'es un estandard ISO "
-#~ "reconegut."
-
-#~ msgid ""
-#~ "Ubuntu is ready to play videos and music from the web and from DVDs. It "
-#~ "works straight away for the free and popular formats that people can use "
-#~ "without paying license fees."
-#~ msgstr ""
-#~ "Ubuntu legís las vidèos e la musica dempuèi lo Web o un DVD. Los formats "
-#~ "liures e mai los que son pas someses a de dreches de licéncia son preses "
-#~ "en carga dirèctament."
-
-#~ msgid ""
-#~ "Ubuntu One is your personal cloud, providing 2 GB of essential storage "
-#~ "(and more if you need it)."
-#~ msgstr ""
-#~ "<em>Ubuntu One</em> es vòstre nívol personal, que vos provesís 2 Go "
-#~ "d'emmagazinatge dins sa version gratuita (e mai se n'avètz besonh)."

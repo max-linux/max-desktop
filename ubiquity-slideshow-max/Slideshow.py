@@ -22,7 +22,7 @@ class SlideshowViewer(webkit.WebView):
 	@param  locale  Ideal locale to use for the slideshow
 	@param  rtl  True if the given locale should be displayed right-to-left
 	'''
-	def __init__(self, path, locale='c', rtl=False):
+	def __init__(self, path, locale='c', rtl=False, controls=False):
 		self.path = path
 		
 		config = ConfigParser.ConfigParser()
@@ -31,30 +31,32 @@ class SlideshowViewer(webkit.WebView):
 		self.locale = self._find_available_locale(locale)
 		
 		slideshow_main = 'file://' + os.path.join(self.path, 'slides', 'index.html')
+		
 		parameters = ''
+		
+		if controls:
+			parameters += "?controls"
 		if self.locale != 'c': #slideshow will use default automatically
 			parameters += '?locale=' + self.locale
 			if rtl:
 				parameters += '?rtl'
 		
 		webkit.WebView.__init__(self)
-		
 		self.open(slideshow_main+'#'+parameters)
 		
 		settings = self.get_settings()
 		#settings.set_property("enable-default-context-menu", False)
-		#TODO: enable-default-context-menu doesn't work yet but should land in the future. See <http://trac.webkit.org/changeset/52087>.
-		settings.set_property("enable-universal-access-from-file-uris", True)
+		#Recent webkit feature. See <http://trac.webkit.org/changeset/52087>.
+		#settings.set_property("enable-file-access-from-file-uris", True)
 		
 		config_width = int(config.get('Slideshow','width'))
 		config_height = int(config.get('Slideshow','height'))
 		self.set_size_request(config_width,config_height)
 		
-		self.connect('populate-popup', self._on_populate_popup) #TODO: remove this when the enable-default-context-menu setting reaches us
-		self.connect('navigation-policy-decision-requested', self._on_navigate_decision)
-		self.connect('navigation-requested', self._on_navigate)
-		self.connect('new-window-policy-decision-requested', self._on_new_window_decision)
-		self.connect('create-web-view', self._on_new_window)
+		#self.connect('navigation-policy-decision-requested', self._on_navigate_decision)
+		#self.connect('navigation-requested', self._on_navigate)
+		#self.connect('new-window-policy-decision-requested', self._on_new_window_decision)
+		#self.connect('create-web-view', self._on_new_window)
 	
 	'''
 	Determines the ideal locale for the slideshow, based on the given locale,
@@ -106,11 +108,6 @@ class SlideshowViewer(webkit.WebView):
 	
 	def _on_new_window(self, view, frame):
 		return True
-	
-	def _on_populate_popup(self, view, menu):
-		for item in menu:
-			item.destroy()
-
 
 
 def progress_increment(progressbar, fraction):
@@ -136,6 +133,7 @@ default_rtl = False
 parser = OptionParser(usage="usage: %prog [options] [slideshow]")
 parser.add_option("-l", "--locale", help="LOCALE to use for the slideshow", metavar="LOCALE", default=default_locale)
 parser.add_option("-r", "--rtl", action="store_true", help="use output in right-to-left format", default=default_rtl)
+parser.add_option("-c", "--controls", help="True or False to enable controls in the slideshow (you may need to resize the window)", default=True)
 parser.add_option("-p", "--path", help="path to the SLIDESHOW which will be presented", metavar="SLIDESHOW", default=default_path)
 
 (options, args) = parser.parse_args()
@@ -151,16 +149,11 @@ slideshow_window = gtk.Window()
 slideshow_window.set_title("Ubiquity Slideshow with Webkit")
 slideshow_window.connect('destroy',gtk.main_quit)
 
-slideshow_window_align = gtk.Alignment()
-slideshow_window_align.set_padding(8,8,8,8)
-#Note there's probably a convention for padding that I'm forgetting here
-slideshow_window.add(slideshow_window_align)
-
 slideshow_container = gtk.VBox()
 slideshow_container.set_spacing(8)
-slideshow_window_align.add(slideshow_container)
+slideshow_window.add(slideshow_container)
 
-slideshow = SlideshowViewer(options.path, locale=options.locale, rtl=options.rtl)
+slideshow = SlideshowViewer(options.path, locale=options.locale, rtl=options.rtl, controls=options.controls)
 
 install_progressbar = gtk.ProgressBar()
 install_progressbar.set_size_request(-1,30)
@@ -168,8 +161,10 @@ install_progressbar.set_text("Pretending to install. Please wait...")
 install_progressbar.set_fraction(0)
 
 
-slideshow_container.add(install_progressbar)
 slideshow_container.add(slideshow)
+slideshow_container.add(install_progressbar)
+
+slideshow_container.set_child_packing(install_progressbar, True, False, 0, 0)
 
 
 slideshow_window.show_all()

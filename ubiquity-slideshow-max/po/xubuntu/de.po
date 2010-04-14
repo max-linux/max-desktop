@@ -1,0 +1,396 @@
+# German translation for ubiquity-slideshow-ubuntu
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubiquity-slideshow-ubuntu\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-03-25 16:22+0000\n"
+"PO-Revision-Date: 2010-03-28 17:16+0000\n"
+"Last-Translator: Martin Lettner <m.lettner@gmail.com>\n"
+"Language-Team: German <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/app-menu.html:1
+msgid "The Applications Menu"
+msgstr "Das Menü »Anwendungen«"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:6
+msgid ""
+"In the Applications menu on the left corner of the top panel, you can find..."
+msgstr "Im Menü »Anwendungen« in der linken Ecke der oberen Leiste finden Sie …"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:7
+msgid ""
+"<em>Ubuntu Software Center</em>, which lets you add or remove applications "
+"as you desire."
+msgstr ""
+"das <em>Software-Center</em>, welches es Ihnen erlaubt, Anwendungen "
+"entsprechend Ihren Wünschen hinzuzufügen und zu entfernen."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:8
+msgid ""
+"<em>Settings menu</em>, where you can control how your desktop works and "
+"looks."
+msgstr ""
+"das <em>Menü »Einstellungen«</em>, in dem Sie festlegen können, wie sich Ihre "
+"Arbeitsumgebung darstellt und verhält."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:9
+msgid "All the applications installed in your system organized by category."
+msgstr ""
+"Alle auf Ihrem System installierten Anwendungen, sortiert nach Kategorien."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/games.html:1
+msgid "Games in Xubuntu"
+msgstr "Spiele in Xubuntu"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:6
+msgid ""
+"Xubuntu comes to you with a fantastic selection of games. While many of the "
+"names may be unknown to you, the games will not be."
+msgstr ""
+"Xubuntu beinhaltet eine fantastische Auswahl an Spielen. Vielleicht sagen "
+"Ihnen die Namen nichts, aber die Spiele werden Ihnen bekannt sein."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:7
+msgid ""
+"Take a look at <em>Quadrapassel</em> (Applications &rarr; Games) for a "
+"Tetris look-alike."
+msgstr ""
+"Probieren Sie mit <em>Quadrapassel</em> (Anwendungen &rarr; Spiele), ein "
+"Tetris-ähnliches Spiel, aus."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:8
+msgid ""
+"<em>AisleRiot Solitaire</em> allows you to select from 35 different types of "
+"solitaire! Surely there is one you will enjoy?"
+msgstr ""
+"<em>AisleRiot Solitaire</em> bietet Ihnen eine Auswahl an 35 verschiedenen "
+"Solitaire-Arten! Darunter finden Sie bestimmt eine die Ihnen besonders gut "
+"gefällt!"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:9
+msgid ""
+"There are many more games in the Ubuntu repositories to install – see the "
+"Games category in <em>Ubuntu Software Center</em>."
+msgstr ""
+"In den Ubuntu-Paketquellen finden sich viele weitere Spiele zur Installation "
+"– sehen Sie in der Spiele-Kategorie im <em>Software-Center</em> nach."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/games.html:11
+msgid ""
+"There are a bunch of games available on the live CD as well, which you can "
+"enjoy while installing. Have fun!"
+msgstr ""
+"Auf der Live-CD sind auch eine Menge Spiele verfügbar, welche Sie schon "
+"während der Installation ausprobieren können. Viel Spaß!"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/getting-help.html:1
+msgid "Getting help with Xubuntu"
+msgstr "Hilfe zu Xubuntu erhalten"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/getting-help.html:6
+msgid ""
+"If you need help, try <em>Help</em> in the Applications menu, or the help "
+"menu available in most applications."
+msgstr ""
+"Wenn Sie Hilfe benötigen, probieren Sie <em>Hilfe</em> im Menü »Anwendungen«, "
+"oder wählen Sie das Hilfe-Menü, welches in den meisten Anwendungen angeboten "
+"wird."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/getting-help.html:7
+msgid ""
+"There are more ways to get help, including our IRC channel <em>#xubuntu</em> "
+"on the <a href=\"http://freenode.net/\">Freenode</a> IRC network, which you "
+"can join by <a href=\"http://webchat.freenode.net/?"
+"channels=xubuntu&nick=xubuntu...&prompt=1\">clicking here</a>."
+msgstr ""
+"Es gibt viele weitere Arten, Unterstützung zu erhalten – einschließlich "
+"unserem IRC-Kanal <em>#xubuntu</em> im IRC-Netzwerk <a href=\"http://"
+"freenode.net/\">Freenode</a>, dem Sie beitreten können indem Sie <a href="
+"\"http://webchat.freenode.net/?channels=xubuntu&nick=xubuntu...&prompt=1"
+"\">hier klicken</a>."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/getting-help.html:9
+msgid ""
+"For a complete list of support methods, see the <a href=\"http://xubuntu.org/"
+"help\">Help & Support page</a> on our website."
+msgstr ""
+"Eine vollständige Liste an Unterstützungsmöglichkeiten finden Sie unter <a "
+"href=\"http://xubuntu.org/help\">Hilfe & Unterstützung</a> auf unserer "
+"Webseite."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/more-apps.html:1
+msgid "Multimedia applications"
+msgstr "Multimedia-Anwendungen"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:6
+msgid ""
+"<em>GIMP</em> (listed under Applications &rarr; Graphics) is an image editor "
+"that allows as much or as little manipulation of the images as you choose. "
+"It can be used to construct images or modify photos and images."
+msgstr ""
+"<em>GIMP</em> (unter Applikationen &rarr; Grafik aufgeführt) ist eine "
+"Bildbearbeitung, die es Ihnen erlaubt, Bilder so viel oder so wenig zu "
+"bearbeiten, wie Sie es wünschen. Es kann verwendet werden, um Bilder zu "
+"erstellen oder Bilder und Fotos zu bearbeiten."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:7
+msgid ""
+"For your listening pleasure, give <em>Exaile Music Player</em> a spin. It is "
+"capable of playing all your music, from mp3 to CD to live radio on the "
+"internet."
+msgstr ""
+"Für Ihren Musikgenuss bietet Xubuntu Ihnen den <em>Exaile Music Player</em>. "
+"Er ist im Stande, all Ihre Musik von MP3 über CDs bis hin zu Internetradio "
+"abzuspielen."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:8
+msgid ""
+"If you need to burn a CD or DVD, check out <em>Brasero</em>. It is very easy "
+"to use and will even burn the Xubuntu image for you."
+msgstr ""
+"Wenn Sie eine CD oder DVD brennen möchten, wählen Sie <em>Brasero</em>. Es "
+"ist sehr einfach zu bedienen und übernimmt auch das Brennen des Xubuntu-"
+"Abbildes für Sie."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/more-apps.html:10
+#: slideshows/xubuntu/slides/tips-beginners.html:10
+msgid ""
+"All of these applications are available on the live CD, even while "
+"installing. Be adventurous!"
+msgstr ""
+"All diese Anwendungen sind auf der Live-CD verfügbar, sogar während der "
+"Installation. Probieren Sie es aus!"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/new-to-linux.html:1
+msgid "New to Linux?"
+msgstr "Neu bei Linux?"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:6
+msgid ""
+"If you are new to linux and Xubuntu, you probably wonder how to find all the "
+"drivers and programs you will need. Please do not do that. The drivers "
+"needed for your system are being installed as you read this."
+msgstr ""
+"Wenn Sie Linux und Xubuntu zum ersten Mal ausprobieren, fragen Sie sich "
+"vermutlich, wo Sie all die Treiber und Programme finden, die Sie brauchen. "
+"Seien Sie unbesorgt, sie werden installiert, während Sie dies lesen."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:7
+msgid ""
+"After the installation completes, take a few minutes, hours, or even days to "
+"try out the new software. We think you will be amazed at the few things you "
+"need to add."
+msgstr ""
+"Nachdem die Installation abgeschlossen ist, nehmen Sie sich ein paar "
+"Minuten, Stunden oder auch Tage Zeit, die neue Software auszuprobieren. Wir "
+"denken, dass Sie erstaunt sein werden, wie wenig Sie selbst zusätzlich "
+"installieren müssen."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:8
+msgid ""
+"If you find yourself wanting something else, please check the <em>Ubuntu "
+"Software Center</em> out. It is much easier than searching the internet."
+msgstr ""
+"Wenn Sie zusätzliche Software benötigen, probieren Sie das <em>Software-"
+"Center</em> aus. Es ist weitaus einfacher als das Internet zu durchsuchen."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/office.html:1
+msgid "Lighter alternatives for your office"
+msgstr "Leichtgewichtige Alternativen für Ihr Büro"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:6
+msgid ""
+"<em>Abiword</em> is a word processor, which can read almost all known "
+"document formats. You will have access to any fonts installed in your system "
+"and editing documents is a breeze."
+msgstr ""
+"<em>Abiword</em> ist eine Textverarbeitungsanwendung, die nahezu alle "
+"Dokumentformate lesen kann. Sie haben Zugriff auf alle in Ihrem System "
+"installierten Schriftarten. Dokumente zu bearbeiten ist damit ein "
+"Kinderspiel."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:7
+msgid ""
+"<em>Gnumeric</em> is a spreadsheet program with an emphasis on accuracy. It "
+"can also be used to merge mathematical data into Abiword documents."
+msgstr ""
+"<em>Gnumeric</em> ist eine Tabellenkalkulationsanwendung mit Schwerpunkt auf "
+"Genauigkeit. Es kann auch verwendet werden, um mathematische Daten in "
+"Abiword-Dokumente einzufügen."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:8
+msgid ""
+"While Abiword and Gnumeric are considered lightweight, they provide almost "
+"all of the functions of the OpenOffice suite."
+msgstr ""
+"Obwohl Abiword und Gnumeric als leichtgewichtig gelten, stellen sie jedoch "
+"nahezu alle Funktionen der OpenOffice-Suite bereit."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/office.html:10
+msgid ""
+"For power users, the OpenOffice.org suite is available in just a few clicks "
+"– just install it from the Ubuntu Software Center."
+msgstr ""
+"Falls Sie mehr benötigen, die OpenOffice.org-Suite ist mit nur wenigen "
+"Klicks verfügbar – installieren Sie es einfach über das Software-Center."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/tips-beginners.html:1
+msgid "Few good tips for beginners"
+msgstr "Einige nützliche Hinweise für Einsteiger"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:6
+msgid ""
+"Use the Application Finder (under Applications &rarr; Accessories) to launch "
+"any program on your system – one you lost on the menu or even one you didn't "
+"know existed!"
+msgstr ""
+"Benutzen Sie den Anwendungs-Finder (unter Anwendungen &rarr; Zubehör) um "
+"jedes beliebige Programm auf ihrem System zu starten – eines, das Sie im "
+"Menü nicht finden können oder sogar eines, von dem Sie nicht wussten, dass "
+"es existiert!"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:7
+msgid ""
+"Catfish is a great application for finding those files you lost on your "
+"harddrive. It is quick and easy to use for beginners and experts alike."
+msgstr ""
+"Catfish ist eine großartige Anwendung um Dateien, die in den Tiefen Ihrer "
+"Festplatte verloren gegangen sind, wiederzufinden. Es ist schnell und "
+"einfach zu bedienen – sowohl für Anfänger als auch für Experten."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:8
+msgid ""
+"Also in the accessories, you can find a slick calculator. Need to calculate "
+"disk partitions? Use the calculator, it couldn't be easier."
+msgstr ""
+"Im Zubehör können Sie außerdem einen professionellen Taschenrechner finden. "
+"Sie müssen eine Festplattenpartition berechnen? Benutzen Sie den "
+"Taschenrechner. Es könnte nicht einfacher sein."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/welcome.html:1
+msgid "Congratulations!"
+msgstr "Herzlichen Glückwunsch!"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:6
+msgid "You have chosen to install the latest version of Xubuntu, 10.04."
+msgstr ""
+"Sie haben sich entschlossen, die aktuelle Version von Xubuntu, 10.04, zu "
+"installieren."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:7
+msgid ""
+"This exciting software is brought to you free of any fees, for your use and "
+"any others you want to share it with."
+msgstr ""
+"Diese aufregende Software wird Ihnen und jeden anderen Benutzer, an den Sie "
+"diese weitergeben möchten, kostenlos und frei zur Verfügung gestellt."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:8
+msgid ""
+"Since you are installing this software using the Xubuntu Desktop CD, feel "
+"free to examine things as it installs. After the installation, the desktop "
+"will look much the same as it does now."
+msgstr ""
+"Da Sie diese Software mit der Xubuntu-Desktop-CD installieren, können Sie "
+"sich während der Installation ruhig etwas umsehen. Nach der Installation "
+"wird die Arbeitsumgebung fast genauso aussehen, wie jetzt."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/welcome.html:10
+msgid ""
+"We truly hope that you enjoy using this distribution as much as we enjoy "
+"bringing it to you."
+msgstr ""
+"Wir hoffen, dass es Ihnen so viel Spaß macht, diese Distribution zu nutzen, "
+"wie es uns Freude bereitet hat, sie Ihnen zur Verfügung zu stellen."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/xfce.html:1
+msgid "Xfce Desktop Environment"
+msgstr "Xfce-Arbeitsumgebung"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:6
+msgid ""
+"Xubuntu uses the <em>Xfce desktop environment</em>. This allows the "
+"developers to bring you a system which is sleek and useful."
+msgstr ""
+"Xubuntu beinhaltet die <em>Xfce-Arbeitsumgebung</em>. Es erlaubt den "
+"Entwicklern Ihnen ein System bereitzustellen, welches schlank und nützlich "
+"ist."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:7
+msgid ""
+"Xfce is a collection of programs that together provide a full-featured "
+"desktop environment."
+msgstr ""
+"Xfce ist eine Sammlung von Programmen. die eine voll ausgestattete "
+"Arbeitsumgebung bereitstellt."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:8
+msgid ""
+"Xfce is also a development platform providing several libraries, that help "
+"programmers create applications that fit in well with the desktop "
+"environment."
+msgstr ""
+"Xfce ist auch eine Entwicklungsplattform, die mehrere Bibliotheken zur "
+"Verfügung stellt. Dies erlaubt es Programmierern, Anwendungen zu erstellen, "
+"die sich gut in die Arbeitsumgebung einfügen."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:9
+msgid ""
+"To learn more about Xfce, look in <em>Applications &rarr; About Xfce &rarr; "
+"Info</em> or on the <a href=\"http://xfce.org/\">Xfce website</a>."
+msgstr ""
+"Weitere Informationen über Xfce finden Sie unter <em>Anwendungen &rarr; Über "
+"Xfce &rarr; Info</em> oder im Internet auf der <a href=\"http://xfce.org/"
+"\">Xfce-Website</a>."

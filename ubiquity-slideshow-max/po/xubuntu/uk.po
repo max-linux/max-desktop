@@ -1,0 +1,384 @@
+# Ukrainian translation for ubiquity-slideshow-ubuntu
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+# Vadim Mikhalets <Unknown>, 2010.
+# Sergiy Gavrylov <sergiovana@bigmir.net>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: ubiquity-slideshow-ubuntu\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-03-25 16:22+0000\n"
+"PO-Revision-Date: 2010-04-05 16:20+0000\n"
+"Last-Translator: Sergiy Gavrylov <sergiovana@bigmir.net>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/app-menu.html:1
+msgid "The Applications Menu"
+msgstr "Меню «Програми»"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:6
+msgid ""
+"In the Applications menu on the left corner of the top panel, you can find..."
+msgstr "В лівому кутку верхньої панелі, в меню «Програми», ви можете знайти..."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:7
+msgid ""
+"<em>Ubuntu Software Center</em>, which lets you add or remove applications "
+"as you desire."
+msgstr ""
+"<em>Центр програм Ubuntu</em>, який дає змогу додавати та вилучати бажані "
+"програми."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:8
+msgid ""
+"<em>Settings menu</em>, where you can control how your desktop works and "
+"looks."
+msgstr ""
+"<em>Меню «Параметри»</em>, з якого ви можете керувати зовнішнім виглядом та "
+"роботою стільниці."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:9
+msgid "All the applications installed in your system organized by category."
+msgstr "Всі програми, встановлені в системі, упорядковані за категоріями."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/games.html:1
+msgid "Games in Xubuntu"
+msgstr "Ігри в Xubuntu"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:6
+msgid ""
+"Xubuntu comes to you with a fantastic selection of games. While many of the "
+"names may be unknown to you, the games will not be."
+msgstr ""
+"Xubuntu містить фантастичний набір ігор. І хоч назви, можливо, будуть не "
+"знайомі для вас, але самі ігри ви обов'язково згадаєте."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:7
+msgid ""
+"Take a look at <em>Quadrapassel</em> (Applications &rarr; Games) for a "
+"Tetris look-alike."
+msgstr ""
+"Спробуйте <em>Quadrapassel</em> (Програми &rarr; Ігри) — дуже схожа на "
+"оригінальну гру «Тетрис»."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:8
+msgid ""
+"<em>AisleRiot Solitaire</em> allows you to select from 35 different types of "
+"solitaire! Surely there is one you will enjoy?"
+msgstr ""
+"<em>Пасьянс Айслеріот</em> дає змогу вибрати з 35 різних типів пасьянсів! "
+"Безумовно, знайдеться хоч один, який вам сподобається?"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:9
+msgid ""
+"There are many more games in the Ubuntu repositories to install – see the "
+"Games category in <em>Ubuntu Software Center</em>."
+msgstr ""
+"В репозиторіях Ubuntu багато інших ігор, доступних для встановлення — "
+"дивіться розділ «Ігри» в <em>Центрі програм Ubuntu</em>."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/games.html:11
+msgid ""
+"There are a bunch of games available on the live CD as well, which you can "
+"enjoy while installing. Have fun!"
+msgstr ""
+"На live CD також доступні кілька ігор, якими ви зможете насолоджуватись під "
+"час встановлення операційної системи. Успіхів вам!"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/getting-help.html:1
+msgid "Getting help with Xubuntu"
+msgstr "Отримання довідки в Xubuntu"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/getting-help.html:6
+msgid ""
+"If you need help, try <em>Help</em> in the Applications menu, or the help "
+"menu available in most applications."
+msgstr ""
+"Якщо потребуєте допомоги, виберіть пункт<em>Довідка</em> в меню «Програми», "
+"або довідку, доступну в більшості програм."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/getting-help.html:7
+msgid ""
+"There are more ways to get help, including our IRC channel <em>#xubuntu</em> "
+"on the <a href=\"http://freenode.net/\">Freenode</a> IRC network, which you "
+"can join by <a href=\"http://webchat.freenode.net/?"
+"channels=xubuntu&nick=xubuntu...&prompt=1\">clicking here</a>."
+msgstr ""
+"Існує багато способів отримання допомоги, включаючи IRC-канал <em>#xubuntu</"
+"em> в IRC-мережі <a href=\"http://freenode.net/\">Freenode</a> до якої ви "
+"можете приєднатись <a href=\"http://webchat.freenode.net/?"
+"channels=xubuntu&nick=xubuntu...&prompt=1\">натиснувши тут</a>."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/getting-help.html:9
+msgid ""
+"For a complete list of support methods, see the <a href=\"http://xubuntu.org/"
+"help\">Help & Support page</a> on our website."
+msgstr ""
+"Щоб отримати повний перелік способів підтримки, відвідайте сторінку <a href="
+"\"http://xubuntu.org/help\">Допомога та підтримка</a> на нашому веб-сайті."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/more-apps.html:1
+msgid "Multimedia applications"
+msgstr "Мультимедійні програми"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:6
+msgid ""
+"<em>GIMP</em> (listed under Applications &rarr; Graphics) is an image editor "
+"that allows as much or as little manipulation of the images as you choose. "
+"It can be used to construct images or modify photos and images."
+msgstr ""
+"<em>GIMP</em> (Програми &rarr; Графіка) — це редактор зображень, який дає "
+"змогу виконувати значну чи не дуже обробку зображень, а також для створення "
+"малюнків, чи для редагування фотографій та зображень."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:7
+msgid ""
+"For your listening pleasure, give <em>Exaile Music Player</em> a spin. It is "
+"capable of playing all your music, from mp3 to CD to live radio on the "
+"internet."
+msgstr ""
+"Музичний програвач<em>Exaile</em> принесе вам задоволення від "
+"прослуховування музики. Він здатен відтворювати різноманітну музику, від "
+"формату mp3 до прослуховування CD та інтернет-радіостанцій."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:8
+msgid ""
+"If you need to burn a CD or DVD, check out <em>Brasero</em>. It is very easy "
+"to use and will even burn the Xubuntu image for you."
+msgstr ""
+"Якщо вам потрібно записати CD або DVD, спробуйте програму <em>Brasero</em>. "
+"Вона дуже проста у використанні і навіть зможе записати образ Xubuntu для "
+"вас."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/more-apps.html:10
+#: slideshows/xubuntu/slides/tips-beginners.html:10
+msgid ""
+"All of these applications are available on the live CD, even while "
+"installing. Be adventurous!"
+msgstr ""
+"Всі ці програми доступні на live CD, навіть під час встановлення. Дійте "
+"сміливіше!"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/new-to-linux.html:1
+msgid "New to Linux?"
+msgstr "Новачок в Linux?"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:6
+msgid ""
+"If you are new to linux and Xubuntu, you probably wonder how to find all the "
+"drivers and programs you will need. Please do not do that. The drivers "
+"needed for your system are being installed as you read this."
+msgstr ""
+"Якщо ви новачок в Linux та Xubuntu, ви, ймовірно, задаєте собі питання, де "
+"знайти всі потрібні драйвери та програми. Не хвилюйтесь, необхідні для вашої "
+"системи драйвери встановлюються якраз зараз, коли ви це читаєте."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:7
+msgid ""
+"After the installation completes, take a few minutes, hours, or even days to "
+"try out the new software. We think you will be amazed at the few things you "
+"need to add."
+msgstr ""
+"Після завершення установки, витратьте декілька хвилин, годин або навіть "
+"днів, щоб випробувати нове програмне забезпечення. Думаємо, ви будете "
+"здивовані числом програм, доступних для встановлення."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:8
+msgid ""
+"If you find yourself wanting something else, please check the <em>Ubuntu "
+"Software Center</em> out. It is much easier than searching the internet."
+msgstr ""
+"Якщо ви потребуєте чогось іншого, будь ласка, пошукайте в <em>Центрі програм "
+"Ubuntu</em>. Це набагато простіше, ніж довготривалий пошук в інтернеті."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/office.html:1
+msgid "Lighter alternatives for your office"
+msgstr "Проста альтернатива для вашого офісу"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:6
+msgid ""
+"<em>Abiword</em> is a word processor, which can read almost all known "
+"document formats. You will have access to any fonts installed in your system "
+"and editing documents is a breeze."
+msgstr ""
+"<em>Abiword</em> — текстовий процесор, який дає змогу читати практично всі "
+"відомі формати тексту. Ви будете мати доступ до всіх шрифтів, встановлених у "
+"вашій системі і зможете редагувати документи на одному диханні."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:7
+msgid ""
+"<em>Gnumeric</em> is a spreadsheet program with an emphasis on accuracy. It "
+"can also be used to merge mathematical data into Abiword documents."
+msgstr ""
+"<em>Gnumeric</em> — електронна таблиця з акцентом на точність. Також корисна "
+"під час об’єднання математичних даних з документами підготовленими в Abiword."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:8
+msgid ""
+"While Abiword and Gnumeric are considered lightweight, they provide almost "
+"all of the functions of the OpenOffice suite."
+msgstr ""
+"Хоча програми Abiword та Gnumeric вважаються «легкими», вони надають майже "
+"всі функції подібних офісних програм з набору OpenOffice."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/office.html:10
+msgid ""
+"For power users, the OpenOffice.org suite is available in just a few clicks "
+"– just install it from the Ubuntu Software Center."
+msgstr ""
+"Для досвідчених користувачів, пакунок OpenOffice.org доступний всього за "
+"кілька клацань кнопкою миші — досить просто встановити його з «Центру програм "
+"Ubuntu»."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/tips-beginners.html:1
+msgid "Few good tips for beginners"
+msgstr "Кілька хороших порад для початківців"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:6
+msgid ""
+"Use the Application Finder (under Applications &rarr; Accessories) to launch "
+"any program on your system – one you lost on the menu or even one you didn't "
+"know existed!"
+msgstr ""
+"Використовуйте пошуковик програм (відповідно Програми &rarr; Стандартні) для "
+"запуску будь-якої програми в системі — тієї, яку ви втратили в меню або "
+"навіть тієї, про існування якої ви вже й забули!"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:7
+msgid ""
+"Catfish is a great application for finding those files you lost on your "
+"harddrive. It is quick and easy to use for beginners and experts alike."
+msgstr ""
+"Catfish — чудова програма для пошуку загублених файлів на твердому диску. "
+"Швидка та проста у використанні як для початківців, так і для досвідчених "
+"користувачів."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:8
+msgid ""
+"Also in the accessories, you can find a slick calculator. Need to calculate "
+"disk partitions? Use the calculator, it couldn't be easier."
+msgstr ""
+"Також серед стандартних програм знаходиться зручний калькулятор. Потрібно "
+"розрахувати розбивку диска на розділи? Скористуйтесь калькулятором — що може "
+"бути простіше?"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/welcome.html:1
+msgid "Congratulations!"
+msgstr "Вітаємо!"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:6
+msgid "You have chosen to install the latest version of Xubuntu, 10.04."
+msgstr "Ви вибрали для встановлення останню версію Xubuntu, 10.04."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:7
+msgid ""
+"This exciting software is brought to you free of any fees, for your use and "
+"any others you want to share it with."
+msgstr ""
+"Це цікаве програмне забезпечення надається вам безкоштовно — для вас та "
+"ваших друзів, з якими ви хотіли би ним поділитись."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:8
+msgid ""
+"Since you are installing this software using the Xubuntu Desktop CD, feel "
+"free to examine things as it installs. After the installation, the desktop "
+"will look much the same as it does now."
+msgstr ""
+"Під час встановлення операційної системи з інсталяційного диска CD Xubuntu "
+"Desktop, почувайте себе вільно вивчаючи її. Після встановлення, стільниця "
+"буде виглядати так само, як і зараз."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/welcome.html:10
+msgid ""
+"We truly hope that you enjoy using this distribution as much as we enjoy "
+"bringing it to you."
+msgstr ""
+"Ми щиро сподіваємось, що ви отримаєте стільки ж задоволення від використання "
+"цього дистрибутиву, скільки отримуємо ми, готуючи його для вас."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/xfce.html:1
+msgid "Xfce Desktop Environment"
+msgstr "Середовище Xfce"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:6
+msgid ""
+"Xubuntu uses the <em>Xfce desktop environment</em>. This allows the "
+"developers to bring you a system which is sleek and useful."
+msgstr ""
+"Xubuntu використовує середовище <em>Xfce desktop environment</em>, що дає "
+"змогу розробникам зробити систему успішною та зручною."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:7
+msgid ""
+"Xfce is a collection of programs that together provide a full-featured "
+"desktop environment."
+msgstr ""
+"Xfce — це набір програм, які разом забезпечують повнофункціональне робоче "
+"середовище."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:8
+msgid ""
+"Xfce is also a development platform providing several libraries, that help "
+"programmers create applications that fit in well with the desktop "
+"environment."
+msgstr ""
+"Xfce — це також і платформа для розробки, яка надає кілька бібліотек, які "
+"допомагають програмістам створювати програми, що добре взаємодіють з робочим "
+"середовищем."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:9
+msgid ""
+"To learn more about Xfce, look in <em>Applications &rarr; About Xfce &rarr; "
+"Info</em> or on the <a href=\"http://xfce.org/\">Xfce website</a>."
+msgstr ""
+"Щоб дізнатися більше про Xfce, загляньте в меню <em>Програми &rarr; Про Xfce "
+"&rarr; Інфо</em> або на <a href=\"http://xfce.org/\">веб-сайт Xfce</a>."

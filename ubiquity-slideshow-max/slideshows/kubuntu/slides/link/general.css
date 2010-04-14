@@ -144,7 +144,7 @@ margins around it.
 .content .special
 {
 	position:absolute;
-	top:240px;
+	top:290px;
 	left:50px;
 	width:440px;
 	
@@ -155,46 +155,6 @@ margins around it.
 {
 	height:auto;
 	width:auto;
-}
-
-/*
-The menu-item style is a descriptive aid for pointing the end user at,
-for example, a place in either the system menu or an application menu.
-This way we can provide clear visual cues with minimal babbling.
-*/
-.menu-item
-{
-	display:inline-block;
-	
-	border-radius:3px;
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;
-	
-	height:16px;
-	padding:1px;
-	
-	padding-left:3px;
-	padding-right:3px;
-	
-	border-style:solid;
-	border-width:1px;
-	border-color:#a89a8d;
-	
-	background-color:#f7f5f3;
-}
-
-/*
-This rule applies to an img of class menu-arrow. It appears as a nice
-looking arrow that can separate items in a menu much like how submenus
-look in Ubuntu's GTK theme.
-*/
-.menu-item img.menu-arrow
-{
-	display:inline-block;
-	content:url('menu-arrow.png');
-	
-	padding-left:2px;
-	padding-right:5px;
 }
 
 /*
@@ -225,4 +185,8 @@ img
 }
 .rtl .content ul {
 	list-style-image:url("bullet-point.rtl.png");
+}
+.rtl .content .special {
+	right:50px;
+	left:auto;
 }

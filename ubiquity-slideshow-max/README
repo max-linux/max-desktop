@@ -137,7 +137,8 @@ and specify its license in debian/copyright.
 creating an automated script and placing it under the images-source
 directory. For example, with the Ubuntu slideshow we have a script called
 generate-reflected-pngs.sh which, with a GIMP script, adds a fuzzy
-reflection to some SVG images and exports them as PNGs.
+reflection to some SVG images and exports them as PNGs. This will help
+people working on the project in the future.
 
 
 ----- Localization
@@ -172,6 +173,10 @@ By default, opens the slideshow in ./build/ubuntu.
 
 ./test-slideshow.sh: Slightly easier way of running Slideshow.py, for
 quick tests.
+
+./images-source/*.sh: As mentioned in the "Adding / editing images"
+section, scripts are placed here that apply common effects to source
+images. This makes it easier to add images to some slideshows.
 
 ./generate-pot-files.sh: When slideshow content has been edited, this can
 be run to produce new .pot files (for translators) reflecting that

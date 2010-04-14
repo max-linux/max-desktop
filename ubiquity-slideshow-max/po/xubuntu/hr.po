@@ -1,0 +1,381 @@
+# Croatian translation for ubiquity-slideshow-ubuntu
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubiquity-slideshow-ubuntu\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-03-25 16:22+0000\n"
+"PO-Revision-Date: 2010-03-28 20:08+0000\n"
+"Last-Translator: Saša Teković <Unknown>\n"
+"Language-Team: Croatian <hr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/app-menu.html:1
+msgid "The Applications Menu"
+msgstr "Izbornik programa"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:6
+msgid ""
+"In the Applications menu on the left corner of the top panel, you can find..."
+msgstr ""
+"U izborniku \"Programi\" u gornjem lijevom kutu vašeg ekrana možete "
+"pronaći..."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:7
+msgid ""
+"<em>Ubuntu Software Center</em>, which lets you add or remove applications "
+"as you desire."
+msgstr ""
+"<em>Ubuntu centar softvera</em>, koji vam omogućava dodavanje i uklanjanje "
+"aplikacija prema vašim željama."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:8
+msgid ""
+"<em>Settings menu</em>, where you can control how your desktop works and "
+"looks."
+msgstr ""
+"<em>Izbornik postavki</em>, gdje možete upravljati kako vaša radna površina "
+"radi i izgleda."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/app-menu.html:9
+msgid "All the applications installed in your system organized by category."
+msgstr "Sve aplikacije instalirane na vašem računalu su kategorizirane."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/games.html:1
+msgid "Games in Xubuntu"
+msgstr "Igre u Xubuntuu"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:6
+msgid ""
+"Xubuntu comes to you with a fantastic selection of games. While many of the "
+"names may be unknown to you, the games will not be."
+msgstr ""
+"Xubuntu vam dolazi s fantastičnom kolekcijom igara. Iako vam brojni nazivi "
+"neće biti poznati, igre hoće."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:7
+msgid ""
+"Take a look at <em>Quadrapassel</em> (Applications &rarr; Games) for a "
+"Tetris look-alike."
+msgstr ""
+"Isprobajte <em>Quadrapassel</em> (Programi &rarr; Igre) - igru nalik Tetrisu."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:8
+msgid ""
+"<em>AisleRiot Solitaire</em> allows you to select from 35 different types of "
+"solitaire! Surely there is one you will enjoy?"
+msgstr ""
+"<em>AisleRiot pasijans</em> vam omogućuje odabir između 35 različitih vrsta "
+"pasijansa! U jednog ćete zasigurno uživati."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/games.html:9
+msgid ""
+"There are many more games in the Ubuntu repositories to install – see the "
+"Games category in <em>Ubuntu Software Center</em>."
+msgstr ""
+"U Ubuntuovim repozitorijima postoje brojne igre koje možete instalirati – "
+"provjerite kategoriju Igre u <em>Ubuntu centru softvera</em>."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/games.html:11
+msgid ""
+"There are a bunch of games available on the live CD as well, which you can "
+"enjoy while installing. Have fun!"
+msgstr ""
+"Na live CD-u su također dostupne brojne igre u kojima možete uživati dok "
+"traje instalacija. Zabavite se!"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/getting-help.html:1
+msgid "Getting help with Xubuntu"
+msgstr "Dobivanje pomoći uz Xubuntu"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/getting-help.html:6
+msgid ""
+"If you need help, try <em>Help</em> in the Applications menu, or the help "
+"menu available in most applications."
+msgstr ""
+"Ako vam je potrebna pomoć, isprobajte <em>Pomoć</em> u izborniku Programi "
+"ili izborniku Pomoć u većini aplikacija."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/getting-help.html:7
+msgid ""
+"There are more ways to get help, including our IRC channel <em>#xubuntu</em> "
+"on the <a href=\"http://freenode.net/\">Freenode</a> IRC network, which you "
+"can join by <a href=\"http://webchat.freenode.net/?"
+"channels=xubuntu&nick=xubuntu...&prompt=1\">clicking here</a>."
+msgstr ""
+"Postoji više načina da biste došli do pomoći, uključujući naš IRC kanal "
+"<em>#xubuntu</em> na <a href=\"http://freenode.net/\">Freenode</a> IRC "
+"mreži, kojoj se možete pridružiti tako da <a href=\"http://webchat.freenode."
+"net/?channels=xubuntu&nick=xubuntu...&prompt=1\">kliknete ovdje</a>."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/getting-help.html:9
+msgid ""
+"For a complete list of support methods, see the <a href=\"http://xubuntu.org/"
+"help\">Help & Support page</a> on our website."
+msgstr ""
+"Za potpuni popis metoda, pogledajte našu web stranicu <a href=\"http://"
+"xubuntu.org/help\">Pomoć i podrška</a>"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/more-apps.html:1
+msgid "Multimedia applications"
+msgstr "Multimedijske aplikacije"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:6
+msgid ""
+"<em>GIMP</em> (listed under Applications &rarr; Graphics) is an image editor "
+"that allows as much or as little manipulation of the images as you choose. "
+"It can be used to construct images or modify photos and images."
+msgstr ""
+"<em>GIMP</em> (smješten pod Programi &rarr; Grafika) je uređivač slika koji "
+"vam, ovisno o odabiru, omogućava veliku ili malu manipulaciju slikama. "
+"Možete ga upotrijebiti za stvaranje slika ili modifikaciju fotografija."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:7
+msgid ""
+"For your listening pleasure, give <em>Exaile Music Player</em> a spin. It is "
+"capable of playing all your music, from mp3 to CD to live radio on the "
+"internet."
+msgstr ""
+"Za uživanje u glazbi, isprobajte <em>Exaile svirač glazbe</em>, koji je "
+"sposoban reproducirati svu vašu glazbu, od mp3-ca do CD-a Internet radija "
+"uživo."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/more-apps.html:8
+msgid ""
+"If you need to burn a CD or DVD, check out <em>Brasero</em>. It is very easy "
+"to use and will even burn the Xubuntu image for you."
+msgstr ""
+"Ako trebate snimiti CD ili DVD, provjerite <em>Brasero</em>. Veoma je "
+"jednostavan za korištenje i za vas će čak snimiti Xubuntu ISO sliku."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/more-apps.html:10
+#: slideshows/xubuntu/slides/tips-beginners.html:10
+msgid ""
+"All of these applications are available on the live CD, even while "
+"installing. Be adventurous!"
+msgstr ""
+"Sve ove aplikacije su dostupne na live CD-u,  čak dok traje instalacija. "
+"Istražite!"
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/new-to-linux.html:1
+msgid "New to Linux?"
+msgstr "Novi ste u Linuxu?"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:6
+msgid ""
+"If you are new to linux and Xubuntu, you probably wonder how to find all the "
+"drivers and programs you will need. Please do not do that. The drivers "
+"needed for your system are being installed as you read this."
+msgstr ""
+"Ako ste novi u Linuxu i Xubuntuu, vjerojatno se pitate gdje ćete pronaći sve "
+"upravljačke programe i aplikacije koje vam trebaju. Molimo vas da se ne "
+"brinete. Svi potrebni upravljački programi se instaliraju dok čitate ovu "
+"poruku."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:7
+msgid ""
+"After the installation completes, take a few minutes, hours, or even days to "
+"try out the new software. We think you will be amazed at the few things you "
+"need to add."
+msgstr ""
+"Nakon završetka instalacije, isprobavanje novih programa traje nekoliko "
+"minuta, sati ili čak dana. Mislimo da ćete se iznenaditi što ćete možda "
+"dodati tek nekoliko dodatnih stvari."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/new-to-linux.html:8
+msgid ""
+"If you find yourself wanting something else, please check the <em>Ubuntu "
+"Software Center</em> out. It is much easier than searching the internet."
+msgstr ""
+"Ako vam zatreba nešto drugi, molimo vas da provjerite <em>Ubuntu centar "
+"softvera</em>. Puno je jednostavnije od pretraživanja Interneta."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/office.html:1
+msgid "Lighter alternatives for your office"
+msgstr "Lakše alternative za vaš ured"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:6
+msgid ""
+"<em>Abiword</em> is a word processor, which can read almost all known "
+"document formats. You will have access to any fonts installed in your system "
+"and editing documents is a breeze."
+msgstr ""
+"<em>Abiword</em> je obrađivač teksta koji može čitati gotovo sve poznate "
+"formate dokumenata. Imat ćete pristup bilo kojem fontu instaliranom na "
+"računalu i uređivat ćete dokumente bez imalo muke."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:7
+msgid ""
+"<em>Gnumeric</em> is a spreadsheet program with an emphasis on accuracy. It "
+"can also be used to merge mathematical data into Abiword documents."
+msgstr ""
+"<em>Gnumeric</em> je program za izradu proračunskih tablica s naglaskom na "
+"preciznost. Također se može koristiti za spajanje matematičkih podataka u  "
+"Abiwordove dokumente."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/office.html:8
+msgid ""
+"While Abiword and Gnumeric are considered lightweight, they provide almost "
+"all of the functions of the OpenOffice suite."
+msgstr ""
+"Iako se Abiword i Gnumeric smatraju perolakim, krase ih gotovo sve funkcije "
+"OpenOffice paketa."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/office.html:10
+msgid ""
+"For power users, the OpenOffice.org suite is available in just a few clicks "
+"– just install it from the Ubuntu Software Center."
+msgstr ""
+"Za napredne korisnike, OpenOffice.org paket je dostupan u svega nekoliko "
+"klikova – jednostavno ga instalirajte iz Ubuntu centra softvera."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/tips-beginners.html:1
+msgid "Few good tips for beginners"
+msgstr "Nekoliko dobrih savjeta za početnike"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:6
+msgid ""
+"Use the Application Finder (under Applications &rarr; Accessories) to launch "
+"any program on your system – one you lost on the menu or even one you didn't "
+"know existed!"
+msgstr ""
+"Za pokretanje bilo kojeg programa – bilo da ste ga izgubili u izborniku ili "
+"uopće niste znali da postoji – koristite Application Finder (pod Programi "
+"&rarr; Pomagala)."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:7
+msgid ""
+"Catfish is a great application for finding those files you lost on your "
+"harddrive. It is quick and easy to use for beginners and experts alike."
+msgstr ""
+"Catfish je sjajan program za pronalazak datoteka koje ste izgubili na tvrdom "
+"disku. Jednostavan je za korištenje, kako početnicima tako i naprednima."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/tips-beginners.html:8
+msgid ""
+"Also in the accessories, you can find a slick calculator. Need to calculate "
+"disk partitions? Use the calculator, it couldn't be easier."
+msgstr ""
+"Među pomagalima također možete pronaći bogato opremljeni kalkulator. Trebate "
+"izračunati diskovne particije? Koristite kalkulator, ne može biti lakše."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/welcome.html:1
+msgid "Congratulations!"
+msgstr "Čestitamo!"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:6
+msgid "You have chosen to install the latest version of Xubuntu, 10.04."
+msgstr "Odlučili ste instalirati najnoviju inačicu Xubuntua, 10.04."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:7
+msgid ""
+"This exciting software is brought to you free of any fees, for your use and "
+"any others you want to share it with."
+msgstr ""
+"Ovaj uzbudljivi softver vam je stigao besplatan, bez ikakvih naknada, te ga "
+"možete slobodno koristiti i dijeliti s ostalima."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/welcome.html:8
+msgid ""
+"Since you are installing this software using the Xubuntu Desktop CD, feel "
+"free to examine things as it installs. After the installation, the desktop "
+"will look much the same as it does now."
+msgstr ""
+"S obzirom da ovaj softver instalirate koristeći Xubuntu CD, slobodno "
+"isprobajte stvari dok traje instalacija. Nkon instalacije, radna površina će "
+"izgledati gotovo isto kao i sada."
+
+#. type: Content of: <div><div><p>
+#: slideshows/xubuntu/slides/welcome.html:10
+msgid ""
+"We truly hope that you enjoy using this distribution as much as we enjoy "
+"bringing it to you."
+msgstr ""
+"Iskreno se nadamo da ćete uživati koristeći ovu distribuciju koliko smo mi "
+"uživali da bi ona stigla do vas."
+
+#. type: Content of: <h1>
+#: slideshows/xubuntu/slides/xfce.html:1
+msgid "Xfce Desktop Environment"
+msgstr "Xfce radno okružje"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:6
+msgid ""
+"Xubuntu uses the <em>Xfce desktop environment</em>. This allows the "
+"developers to bring you a system which is sleek and useful."
+msgstr ""
+"Xubuntu koristi <em>Xfce radno okružje</em>. Ono omogućuje razvijateljima da "
+"vam isporuče dotjeran i koristan sustav."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:7
+msgid ""
+"Xfce is a collection of programs that together provide a full-featured "
+"desktop environment."
+msgstr ""
+"Xfce je skup programa koji zajedno čine potpuno opremljeno radno okružje."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:8
+msgid ""
+"Xfce is also a development platform providing several libraries, that help "
+"programmers create applications that fit in well with the desktop "
+"environment."
+msgstr ""
+"Xfce je također razvojna platforma koja donosi nekoliko biblioteka koje "
+"programerima pomažu stvoriti aplikacije koje se dobro uklapaju u radno "
+"okružje."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/xubuntu/slides/xfce.html:9
+msgid ""
+"To learn more about Xfce, look in <em>Applications &rarr; About Xfce &rarr; "
+"Info</em> or on the <a href=\"http://xfce.org/\">Xfce website</a>."
+msgstr ""
+"Da biste saznali više o Xfceu, pogledajte <em>Programi &rarr; O Xfceu &rarr; "
+"Informacije</em> ili <a href=\"http://xfce.org/\">Xfce web stranicu</a>."

@@ -6,229 +6,428 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-17 20:58-0700\n"
-"PO-Revision-Date: 2010-02-08 08:20+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-03-26 17:48+0000\n"
+"PO-Revision-Date: 2010-04-01 19:15+0000\n"
+"Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-02-26 13:25+0000\n"
+"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
+#. type: Content of: <h1>
 #: slideshows/kubuntu/slides/accessibility.html:1
 msgid "Accessibility in Kubuntu"
-msgstr ""
+msgstr "Akadálymentesítés a Kubuntuban"
 
-#: slideshows/kubuntu/slides/accessibility.html:2
-msgid "Kubuntu makes computing easy, no matter your circumstances."
-msgstr ""
-
-#: slideshows/kubuntu/slides/accessibility.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/accessibility.html:6
 msgid ""
-"A range of assistive technologies make Kubuntu one of the most accessible "
-"operating systems around."
+"We want to make computers work for everyone, whatever your physical "
+"circumstances. So, we provide tools that make Kubuntu one of the most "
+"accessible operating systems around."
 msgstr ""
+"Szeretnénk mindenki számára lehetővé tenni a számítógép használatát, "
+"függetlenül a fizikai lehetőségeitől. Ezért olyan eszközöket biztosítunk, "
+"amelyek a világ egyik legjobban akadálymentesített operációs rendszerévé "
+"teszi a Kubuntut."
 
-#: slideshows/kubuntu/slides/accessibility.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/accessibility.html:9
 msgid ""
-"Whether you need slow key support, desktop magnification, braille, or more, "
-"Kubuntu has you covered!"
+"You can get at these tools in one place: the <em>Accessibility</em> "
+"preferences, inside the System Settings application from the menu. From "
+"there, you can turn on helpful tools like <em>Modifier Keys</em>, "
+"<em>Keyboard Filters</em>, and <em>Activation Gestures</em>."
 msgstr ""
+"Ezeket az eszközöket egy helyen találhatja meg: a Rendszerbeállítások "
+"alkalmazás <em>Kezelési segítség</em> beállításaiban. Itt bekapcsolhat olyan "
+"hasznos eszközöket, mint a <em>Módosító billentyűk</em>, a "
+"<em>Billentyűzetszűrők</em>, és az <em>Aktiválási sorozat</em>."
 
-#: slideshows/kubuntu/slides/chat.html:1
-msgid "Chat with friends and family"
-msgstr ""
-
-#: slideshows/kubuntu/slides/chat.html:2
-msgid "Kubuntu features Kopete, the instant messaging client for KDE."
-msgstr ""
-
-#: slideshows/kubuntu/slides/chat.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/accessibility.html:14
 msgid ""
-"Kopete supports AIM, ICQ, Windows Live Messenger, Yahoo, Jabber, and more."
+"Remember to also look over the <em>Appearance Preferences</em>, too. You can "
+"choose between different visual styles and even change the fonts that are "
+"used by applications."
 msgstr ""
+"Ne felejtsen el egy pillantást vetni a <em>Megjelenésre</em> sem, ahol "
+"különböző megjelenési stílusok között választhat, és akár az alkalmazások "
+"által használt betűkészleteket is megváltoztathatja."
 
-#: slideshows/kubuntu/slides/chat.html:4
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/games.html:1
+msgid "Get your game on with Kubuntu"
+msgstr "Kezdjen játszani Kubuntuval"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/games.html:6
 msgid ""
-"Kopete is designed to be a flexible and extensible multi-protocol system "
-"suitable for personal and enterprise use."
+"With hundreds of game titles in our online repository, Kubuntu allows you to "
+"not be all about work, but also allows you to play."
 msgstr ""
+"A tárolókban lévő játékok százaival a Kubuntu nem csak a munkát, de a "
+"játékot is lehetővé teszi."
 
-#: slideshows/kubuntu/slides/getinvolved.html:1
-msgid "Helping Kubuntu"
-msgstr ""
-
-#: slideshows/kubuntu/slides/getinvolved.html:2
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/games.html:9
 msgid ""
-"Kubuntu is developed and maintained by a group of community volunteers, "
-"become one of those volunteers today!"
+"The <em>KDE Software Compilation</em> has quite a few games ranging from "
+"card games to logic games and board games."
 msgstr ""
+"A <em>KDE szoftvergyűjtemény</em> szép számmal tartalmaz játékokat a "
+"kártyajátékoktól kezdve a logikai- és táblajátékokig."
 
-#: slideshows/kubuntu/slides/getinvolved.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/games.html:11
 msgid ""
-"Support, documentation, artwork, coding, packaging, and more are just some "
-"of the ways to get involved."
+"First Person Shooters, Role Play Games, and more are also available in the "
+"repositories."
 msgstr ""
+"Lövöldözős játékok, szerepjátékok, és még sok más is elérhető a tárolókban."
 
-#: slideshows/kubuntu/slides/getinvolved.html:4
-msgid "No matter your skill level, there is a task waiting for you."
-msgstr ""
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/get-help.html:1
+msgid "Getting help with Kubuntu"
+msgstr "Segítség a Kubuntuhoz"
 
-#: slideshows/kubuntu/slides/getinvolved.html:5
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/get-help.html:6
 msgid ""
-"Visit the <a href=\"https://wiki.ubuntu.com/Kubuntu/GettingInvolved"
-"\">Getting Involved</a> page for more information."
+"If you need help, try <em>Help</em> from the menu, or the <em>Help</em> menu "
+"in most applications."
 msgstr ""
+"Ha segítségre van szüksége, próbálja a <em>Súgót</em> a menüből, vagy a "
+"<em>Súgó</em> menüt az egyes alkalmazásokban."
 
-#: slideshows/kubuntu/slides/getinvolved.html:6
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/get-help.html:8
 msgid ""
-"The installation will finish soon, we hope that you enjoy using Kubuntu."
+"In addition to our extensive written help, the Kubuntu community in "
+"conjunction with the Ubuntu community, provides free technical support in "
+"person and over the Internet. There is also commercial support available "
+"through Canonical, its partners and approved companies. Learn more at <a "
+"href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
 msgstr ""
+"Az átfogó írott súgó mellett a Kubuntu közösség az Ubuntu közösséggel együtt "
+"ingyenes terméktámogatást biztosít személyesen és az interneten keresztül. "
+"Kereskedelmi támogatás is elérhető a Canonicalon, a partnerein és a "
+"jóváhagyott cégeken keresztül. Tudjon meg többet  az <a href=\"http://www."
+"ubuntu.com/support\">ubuntu.com/support</a> oldalon."
 
-#: slideshows/kubuntu/slides/installing.html:1
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/get-help.html:14
+msgid ""
+"Let us know about your Kubuntu experience at <a href=\"http://www.ubuntu.com/"
+"community\">ubuntu.com/community</a>!"
+msgstr ""
+"Ossza meg velünk a tapasztalatait a Kubunturól az <a href=\"http://www."
+"ubuntu.com/community\">ubuntu.com/community</a> oldalon."
+
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/get-involved.html:1
+msgid "Get involved and contribute to Kubuntu"
+msgstr "Vegyen részt munkánkban, és járuljon hozzá a Kubuntuhoz"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/get-involved.html:6
+msgid ""
+"The Kubuntu community consists of a group of individuals, who make up one of "
+"the greatest teams in the open source community, work on various aspects of "
+"the distribution, providing advice and technical support, as well as helping "
+"to promote Kubuntu to a wider audience."
+msgstr ""
+"A Kubuntu közösség olyan személyek csoportja, akik a disztribúció különböző "
+"területein dolgozva, tanácsokat és terméktámogatást biztosítva, valamint a "
+"Kubuntut a szélesebb közönségnek népszerűsítve a nyílt forrású közösség "
+"egyik legnagyszerűbb csapatát alkotják."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/get-involved.html:11
+msgid ""
+"No matter your skill level, getting involved and helping to mold the future "
+"of Kubuntu is easy, and you are more than welcome to help out."
+msgstr ""
+"A közreműködés a Kubuntuban, és a Kubuntu jövőjének alakítása a "
+"szakértelmétől függetlenül egyszerű. Segítségét szívesen vesszük!"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/get-involved.html:14
+msgid ""
+"Look over <a href=\"https://wiki.kubuntu.org/Kubuntu/GettingInvolved\">wiki."
+"kubuntu.org/Kubuntu/GettingInvolved</a> and see where you might be able to "
+"help out. Remember, it is easy to get involved and the work you do will be "
+"seen by millions of people around the world."
+msgstr ""
+"A <a href=\"https://wiki.kubuntu.org/Kubuntu/GettingInvolved\">wiki.kubuntu."
+"org/Kubuntu/GettingInvolved</a> oldalon megtudhatja, miben tudna segíteni. "
+"Ne feledje, hogy közreműködni egyszerű, és a munkájának eredményét milliók "
+"fogják látni szerte a világon."
+
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/get-involved.html:20
+msgid "The installation will finish soon. We hope you enjoy Kubuntu."
+msgstr ""
+"A telepítés hamarosan véget ér. Reméljük élvezni fogja a Kubuntu használatát."
+
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/graphics.html:1
+msgid "Organize, enjoy, and share your photos"
+msgstr "Rendezze, élvezze és ossza meg fényképeit"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/graphics.html:5
+msgid ""
+"With <em>Gwenview</em>, it is really easy to organize and share your photos."
+msgstr ""
+"A <em>Gwenview-val</em> igazán egyszerű a fényképeinek rendszerezése és "
+"megosztása."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/graphics.html:7
+msgid ""
+"Use the Export option to copy your photos to a remote computer, iPod, a "
+"custom HTML gallery, or to export to services such as Flickr, SmugMug, "
+"PicasaWeb, and more."
+msgstr ""
+"Használja az Exportálás lehetőséget a fényképeinek távoli számítógépre, "
+"iPodra, egyéni HTML galériába másolására vagy exportálására olyan "
+"szolgáltatásokra, mint a Flickr, a SmugMug, a PicasaWeb és hasonlók."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/graphics.html:10
+msgid ""
+"For more advanced organization and editing features, <em>digiKam</em> is "
+"available for installation."
+msgstr ""
+"További speciális rendezési és szerkesztési funkciók eléréséhez telepítse a "
+"<em>digiKamet</em>."
+
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/installing-software.html:1
 msgid "Installing additional software"
-msgstr ""
+msgstr "További programok telepítése"
 
-#: slideshows/kubuntu/slides/installing.html:2
-msgid "Installing additional software has never been easier with Kubuntu."
-msgstr ""
-
-#: slideshows/kubuntu/slides/installing.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/installing-software.html:6
 msgid ""
-"Simply utilize the <em>Add/Remove...</em> application to install and "
-"uninstall your applications."
+"Take a look at <em>Software Management</em> application in the menu under "
+"the System tab. Software Management will allow you to install (and remove) "
+"software from our online repositories, which we carefully organize to be "
+"safe and up to date."
 msgstr ""
+"Vessen egy pillantást a <em>Csomagkezelő</em> alkalmazásra a menü Számítógép "
+"lapján. A Csomagkezelő lehetővé teszi szoftverek telepítését (és "
+"eltávolítását) az internetes tárolóinkból, amelyeket körültekintően "
+"szervezünk, hogy biztonságosak és naprakészek legyenek."
 
-#: slideshows/kubuntu/slides/installing.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/installing-software.html:10
 msgid ""
-"With tens of thousands of applications to chose from, Kubuntu has you "
-"covered!"
+"There is great software for everything from creating music and movies to "
+"producing 3D models and exploring the universe."
 msgstr ""
+"Számos kiváló szoftver érhető el, a zene- és filmkészítő programoktól kezdve "
+"a térbeli modellezőkön át az univerzumot felfedező alkalmazásokig."
 
-#: slideshows/kubuntu/slides/installing.html:5
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/installing-software.html:12
 msgid ""
-"The Kubuntu community makes sure these packages are polished and virus-free "
-"to make your life easier and safer."
+"If you need something that isn't available through us, find out if there is "
+"a Debian package or another repository available. That way, it will be "
+"really easy to install and you will receive automatic updates."
 msgstr ""
+"Ha tárolóinkban nem találja, amire szüksége van, akkor is elérhető lehet "
+"külső tárolóból. Ilyen módon a telepítés egyszerű marad, és automatikus "
+"frissítéseket is kap."
 
-#: slideshows/kubuntu/slides/installing.html:6
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/internet.html:1
+msgid "The Internet, your way"
+msgstr "Internet, ahogy Ön akarja"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/internet.html:5
 msgid ""
-"Regular updates keep you up-to-date when improvements and new versions "
-"become available."
+"Kubuntu ships software necessary to utilize the Internet for many different "
+"situations."
 msgstr ""
+"A Kubuntu tartalmazza az internet lehetőségeinek kihasználásához szükséges "
+"szoftvereket."
 
-#: slideshows/kubuntu/slides/media.html:1
-msgid "Watch videos, listen to music, view and edit photographs"
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/internet.html:7
+msgid ""
+"Browse the web, share your files, software, and multimedia, send and receive "
+"e-mail, and communicate with friends and family."
 msgstr ""
+"Böngéssze a webet, ossza meg fájljait, szoftvereit és multimédiás anyagait, "
+"küldjön és fogadjon e-maileket, kommunikáljon a barátaival és családjával."
 
-#: slideshows/kubuntu/slides/media.html:2
-msgid "Watch videos the way they were meant to be watched with Kaffeine."
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/internet.html:10
+msgid ""
+"Web browsers such as <em>Firefox</em> and Google's <em>Chromium</em> are "
+"easily installable."
 msgstr ""
+"A <em>Firefox</em> és a Google <em>Chromium</em> webböngészők egyszerűen "
+"telepíthetők."
 
-#: slideshows/kubuntu/slides/media.html:3
-msgid "Rediscover your music with Amarok, a powerful music player for KDE."
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/multimedia.html:1
+msgid "Music and movies in Kubuntu"
+msgstr "Zene és filmek Kubuntu alatt"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/multimedia.html:5
+msgid ""
+"Kubuntu is ready to play videos and music from the web, from CDs and DVDs."
 msgstr ""
+"A Kubuntu felkészült a videóinak és zenéinek lejátszására a webről, CD-kről "
+"és DVD-kről."
 
-#: slideshows/kubuntu/slides/media.html:4
-msgid "Manage your photographs like a professional with the power of digiKam."
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/multimedia.html:7
+msgid ""
+"<em>Amarok</em> audio player lets you organize your music and listen to "
+"Internet radio, podcasts, and more, as well as synchronizes your audio "
+"collection to a portable audio player."
 msgstr ""
+"Rendszerezze zenéit az <em>Amarokkal</em>, hallgasson internetes rádiókat, "
+"podcasteket, valamint szinkronizálja gyűjteményét hordozható "
+"zenelejátszójával."
 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/multimedia.html:10
+msgid ""
+"<em>Dragon Player</em> allows you to easily watch videos from your computer, "
+"DVD, or streamed over the Internet."
+msgstr ""
+"Nézzen videókat a számítógépéről, DVD-ről, vagy internetes műsorokat a "
+"<em>Dragon Playerrel</em>."
+
+#. type: Content of: <h1>
+#: slideshows/kubuntu/slides/office.html:1
+msgid "Office tools at your fingertips"
+msgstr "A mindig elérhető irodai programcsomag"
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/office.html:5
+msgid ""
+"<em>OpenOffice.org</em> is a powerful office software suite that is very "
+"easy to learn and use."
+msgstr ""
+"Az <em>OpenOffice.org</em> egy hatékony, egyszerűen tanulható és használható "
+"irodai programcsomag."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/office.html:7
+msgid ""
+"Use it to create letters, presentations and spreadsheets, as well as "
+"diagrams and databases."
+msgstr ""
+"Segítségével dokumentumokat, bemutatókat, diagramokat és adatbázisokat is "
+"készíthet."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/office.html:9
+msgid ""
+"<em>OpenOffice.org</em> works with documents from other popular office "
+"applications include WordPerfect and Microsoft Office. It uses the standard "
+"OpenDocument format."
+msgstr ""
+"Az <em>OpenOffice.org</em>  képes kezelni más népszerű irodai alkalmazások, "
+"például a WordPerfect és a Microsoft Office dokumentumait. Az <em>OpenOffice."
+"org</em> a szabványos OpenDocument formátumot használja."
+
+#. type: Content of: <h1>
 #: slideshows/kubuntu/slides/pim.html:1
-msgid "Personal Information Management"
-msgstr ""
+msgid "Manage your contacts, dates, and e-mail"
+msgstr "Kezelje a névjegyeit, találkozóit és e-mailjeit"
 
-#: slideshows/kubuntu/slides/pim.html:2
-msgid "Kontact unites mature and proven KDE PIM applications under one roof."
-msgstr ""
-
-#: slideshows/kubuntu/slides/pim.html:3
-msgid "KMail - emailing has never been easier or more fun."
-msgstr ""
-
-#: slideshows/kubuntu/slides/pim.html:4
-msgid ""
-"KOrganizer - More than just a calendar with amazing scheduling and "
-"journaling options."
-msgstr ""
-
-#: slideshows/kubuntu/slides/pim.html:5
-msgid "KAddressBook - Manage all aspects of your contacts with ease."
-msgstr ""
-
+#. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:6
-msgid "Read RSS feeds, jot down notes in a notebook, sticky notes, and more."
-msgstr ""
-
-#: slideshows/kubuntu/slides/support.html:1
-msgid "Free and Commercial Support Available"
-msgstr ""
-
-#: slideshows/kubuntu/slides/support.html:2
 msgid ""
-"Commercial support is available for Kubuntu by <a href=\"http://www."
-"canonical.com/\">Canonical</a>."
+"<em>Kontact</em> is the fully-featured personal information management "
+"software that comes with Kubuntu. It contains applications for E-mail, "
+"Calendar, Address Book, and more."
 msgstr ""
+"A <em>Kontact</em> a Kubuntu teljes felszereltségű személyi "
+"információkezelője, amely az e-mailek, naptárak, címjegyzékek és sok más "
+"információ kezeléséhez is tartalmaz alkalmazásokat."
 
-#: slideshows/kubuntu/slides/support.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/pim.html:9
 msgid ""
-"Utilize the <a href=\"http://ubuntuforums.org\">Ubuntu Forums</a> or the <a "
-"href=\"http://www.kubuntuforums.net\">Kubuntu Forums</a> for free."
+"Send e-mail with <em>KMail</em> from services such as Yahoo, GMail, and "
+"various groupware services."
 msgstr ""
+"A <em>KMaillel</em> olyan szolgáltatóktól küldhet e-mailt, mint a Yahoo, a "
+"GMail, és a különböző csoportmunka-szolgáltatások."
 
-#: slideshows/kubuntu/slides/support.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/pim.html:11
 msgid ""
-"Other forms of free, community based, support include IRC, mailing lists, "
-"and <a href=\"https://launchpad.net\">Launchpad</a>."
+"Organize your calendar and scheduling with <em>KOrganizer</em> and "
+"synchronize with services such as Google's Calendar."
 msgstr ""
+"Szervezze naptárát és időbeosztását a <em>KOrganizerrel</em>, és "
+"szinkronizálja olyan szolgáltatásokkal, mint például a Google Calendar."
 
-#: slideshows/kubuntu/slides/support.html:5
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/pim.html:13
 msgid ""
-"Use your system's help center which contains locally installed documentation."
+"Keep your contacts organized with <em>KAddressBook</em> and import or export "
+"your contacts with nearly every address book standard as well synchronize "
+"with various groupware services."
 msgstr ""
+"Tartsa rendszerezve névjegyeit a <em>KAddressBookkal</em>, és importálja "
+"vagy exportálja névjegyeit közel bármely címjegyzék-szabványba, valamint "
+"szinkronizálja azokat különböző csoportmunka-szolgáltatásokkal."
 
-#: slideshows/kubuntu/slides/web.html:1
-msgid "The World Wide Web Your Way"
-msgstr ""
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/pim.html:16
+msgid ""
+"<em>Kontact</em> is the perfect personal information management integration "
+"for you!"
+msgstr "A <em>Kontact</em> a tökéletes integrált személyes információkezelő."
 
-#: slideshows/kubuntu/slides/web.html:2
-msgid "Browse the Internet securely with the Konqueror web browser."
-msgstr ""
-
-#: slideshows/kubuntu/slides/web.html:3
-msgid "Surf the web without the worry of viruses, spyware, and adware."
-msgstr ""
-
-#: slideshows/kubuntu/slides/web.html:4
-msgid "Navigate the world wide web with blazing speeds."
-msgstr ""
-
+#. type: Content of: <h1>
 #: slideshows/kubuntu/slides/welcome.html:1
 msgid "Welcome"
-msgstr ""
+msgstr "Üdvözöljük"
 
-#: slideshows/kubuntu/slides/welcome.html:2
-msgid "Thank you for choosing Kubuntu 10.04, the Lucid Lynx!"
-msgstr ""
-
-#: slideshows/kubuntu/slides/welcome.html:3
-msgid ""
-"Kubuntu is based on Ubuntu and features the K Desktop Environment (KDE)."
-msgstr ""
-
-#: slideshows/kubuntu/slides/welcome.html:4
-msgid ""
-"Kubuntu is released biannually with at least 18 months of free security "
-"updates."
-msgstr ""
-
-#: slideshows/kubuntu/slides/welcome.html:5
-msgid ""
-"While Kubuntu is installing, we invite you to explore your new operating "
-"system."
-msgstr ""
-
+#. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:6
-msgid "Kubuntu is built to be safe. Feel free to explore!"
+msgid "Thank you for choosing Kubuntu 10.04 LTS."
+msgstr "Köszönjük, hogy a Kubuntu 10.04 LTS-t választotta."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/welcome.html:7
+msgid ""
+"We believe every computer user should be free to work in the environment of "
+"their choice and to download, change, study and share their software for any "
+"purpose."
 msgstr ""
+"Fontosnak tartjuk, hogy minden felhasználó szabadon választhassa meg "
+"munkakörnyezetét, illetve szoftvereit bármilyen célra letölthesse, "
+"módosíthassa, valamint megoszthassa."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/welcome.html:10
+msgid ""
+"As part of our promise, we want Kubuntu to work as well for you as possible. "
+"So while it installs, this slideshow will provide a quick introduction."
+msgstr ""
+"Ígéretünk részeként szeretnénk, ha a Kubuntu olyan jól működne Önnél, "
+"amennyire csak lehetséges.  Tekintse meg a telepítés közben megjelenő "
+"bemutatót."
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/kubuntu/slides/welcome.html:13
+msgid "Kubuntu is designed to be easy. Feel free to explore!"
+msgstr ""
+"A Kubuntut egyszerűen használhatónak terveztük. Fedezze fel a lehetőségeket!"

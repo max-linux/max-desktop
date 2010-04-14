@@ -19,10 +19,8 @@ if ! which po4a-translate >/dev/null; then
 	exit 1
 fi
 
-ALL_LOCALE="po/ubuntu/es.po po/ubuntu/uk.po"
 
-#for locale in $PODIR/*.po; do
-for locale in $ALL_LOCALE; do
+for locale in $PODIR/es.po $PODIR/en.po; do
 	if [ -e $locale ]; then
 		localename=$(basename $locale .po)
 		localeslides=$BUILDSLIDES/loc.$localename
@@ -39,7 +37,7 @@ for locale in $ALL_LOCALE; do
 			[ ! -e $localeslides ] && mkdir -p $localeslides
 			
 			# -k 1 -> if there are any translations at all, keep it.
-			po4a-translate -f xhtml -m $slide -p $locale -l $outputslide -k 1
+			po4a-translate -M UTF-8 -f xhtml -m $slide -p $locale -l $outputslide -k 1
 			if ! [ -e "$outputslide" ]; then
 				rmdir $localeslides 2>/dev/null || true
 				echo "              $slidename was not translated for locale $localename"

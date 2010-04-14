@@ -249,8 +249,10 @@ Crossfade.Transition.Cover = {
 		
 		show.effect = new Effect.Parallel([
 			new Effect.Move(prev, {x:prev_new_x, y:0, mode:'absolute', sync:true}),
-			new Effect.Appear(next, {sync:true}),
-			new Effect.Move(next, {x:next_new_x, y:0, mode:'absolute', sync:true})],
+			new Effect.Fade(prev, {sync:true}),
+			new Effect.Move(next, {x:next_new_x, y:0, mode:'absolute', sync:true}),
+			new Effect.Appear(next, {sync:true})],
+			
 			{ duration: opt.duration,
 			  queue : 'Crossfade',
 			  afterFinish:function(){

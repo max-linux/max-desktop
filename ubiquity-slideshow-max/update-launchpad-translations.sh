@@ -21,32 +21,33 @@
 # 
 # You should have received a copy of the GNU General Public License along with
 # this program.  If not, see <http://www.gnu.org/licenses/>.
+set -e
 
 WORKING_DIR="/tmp/launchpad-export"
-if [ -z "$1" ] || [ -z "$2" ]; then
+repo="$2"
+repo=$(readlink -e "$repo") || repo=
+if [ -z "$1" ] || [ -z "$repo" ]; then
 	echo "$0 launchpad-export.tar.gz path-to-slideshow-repo"
 	exit 1
 fi
 rm -rf $WORKING_DIR
 mkdir -p $WORKING_DIR
-tar -C $WORKING_DIR -zxvf $1
+tar -C $WORKING_DIR -zxvf "$1" 1>/dev/null
 save="$pwd"
 cd $WORKING_DIR/po
-for distro in ubuntu kubuntu; do
-	cd $distro
-	for d in *; do
-		cd $d; rename 's/.*-//' *.po; cd ..
-	done
-	rm */*.pot
-	for d in $(find -name *.po | sed "s,.*/\(.*\)\.po$,\1," | sort | uniq); do
-		msgcat --use-first */$d.po > $2/po/$distro/$d.po
+for distro in *; do
+	cd "$distro"
+	rename 's/.*-//' *.po
+	rm -f *.pot
+	for d in $(find -name "*.po" | sed "s,.*/\(.*\)\.po$,\1," | sort | uniq); do
+		msgcat --use-first $d.po > "$repo/po/$distro/$d.po"
 	done
 	cd ..
 done
 cd $save
 rm -rf $WORKING_DIR
 
-for d in $2/po/*; do
+for d in $repo/po/*; do
 	[ -d $d ] || continue
 	for p in $d/*.po; do
 		[ -e $p ] || continue

@@ -1,27 +1,30 @@
 # Romanian translation for ubiquity-slideshow-ubuntu
-# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
 # This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-17 20:58-0700\n"
-"PO-Revision-Date: 2010-02-06 10:58+0000\n"
-"Last-Translator: marianvasile <marianvasile@upcmail.ro>\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-03-26 17:47+0000\n"
+"PO-Revision-Date: 2010-04-05 08:47+0000\n"
+"Last-Translator: Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
 "Language-Team: Romanian <ro@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-02-26 13:24+0000\n"
+"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/accessibility.html:1
 msgid "Accessibility in Ubuntu"
 msgstr "Accesibilitate în Ubuntu"
 
-#: slideshows/ubuntu/slides/accessibility.html:2
+#.  "your" refers to a large group that includes the reader. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/accessibility.html:6
 msgid ""
 "We want to make computers work for everyone, whatever your physical "
 "circumstances. So, we provide tools that make Ubuntu one of the most "
@@ -31,41 +34,52 @@ msgstr ""
 "circumstanțele fizice. De aceea, oferim instrumente care fac Ubuntu unul "
 "dintre cele mai accesibile sisteme de operare."
 
-#: slideshows/ubuntu/slides/accessibility.html:3
+#.  The string "Assistive Technologies Preferences" is describing a particular menu item: System >
+#.  Preferences > Assistive Technologies, and the string "System menu" describes that section of the main menu. Note that certain words are kept the same to make the menu items discoverable. It is intentional that we are using soft descriptions instead of mapping out a rigid path for the user to follow. Please, if it is natural for your locale, consider the same convention. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/accessibility.html:7
 msgid ""
 "You can get at these tools in one place: the <em>Assistive Technologies "
-"Preferences,</em> inside the System Menu. From there, you can turn on "
+"Preferences</em>, inside the System Menu. From there, you can turn on "
 "helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
 "click to press mouse buttons automatically."
 msgstr ""
-"Puteți avea toate aceste utilitare într-un singur loc: <em>Preferințe pentru "
-"utilitarele de asistență</em>, în interiorul meniului Sistem. De aici puteți "
-"porni utilitare precum <em>Orca</em>, pentru redarea audio a textului de pe "
-"ecran, sau puteți utiliza clicul automat pentru mouse."
+"Puteți găsi toate aceste unelte într-un singur loc: submeniul <em>Tehnologii "
+"asistative</em>, din meniul Sistem. De acolo, puteți porni unelte ajutătoare "
+"precum <em>Orca</em>, care citește textele de pe ecran, sau clic staționar "
+"ce apasă automat butoanele mausului."
 
-#: slideshows/ubuntu/slides/accessibility.html:4
+#.  As before, the string "Appearance Preferences" is describing a particular menu item: System >
+#.  Preferences > Appearance. Certain words were kept the same to make the menu item discoverable. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/accessibility.html:8
 msgid ""
 "Remember to check out the <em>Appearance Preferences</em>, too. You can "
 "choose between different visual styles and even change the fonts that are "
 "used by applications."
 msgstr ""
-"Nu uitați să verificați și Preferințele de <em>Aspect</em>. Puteți să "
+"Nu uitați să verificați și <em>Preferințele pentru aspect</em>. Puteți să "
 "alegeți dintre diferite stiluri vizuale și chiar să modificați fonturile "
 "folosite de aplicații."
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/documentation.html:1
 msgid "Getting Help with Ubuntu"
 msgstr "Obțineți ajutor pentru Ubuntu"
 
-#: slideshows/ubuntu/slides/documentation.html:2
+#.  The string "Help and Support" should be exactly as it appears in the System menu. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/documentation.html:6
 msgid ""
 "If you need help, try <em>Help and Support</em> from the System menu, or the "
 "<em>Help</em> menu in most applications."
 msgstr ""
-"Daca aveți nevoie de ajutor, incercați <em>Ajutor și suport</em> din meniul "
-"Sistem sau meniul <em>Ajutor</em> din majoritatea aplicațiilor."
+"Dacă ai nevoie de ajutor, încearcă <em>Ajutor și asistență</em> din meniul "
+"Sistem, sau meniul <em>Ajutor</em> din majoritatea aplicațiilor."
 
-#: slideshows/ubuntu/slides/documentation.html:3
+#.  The url "ubuntu.com/support" should not be translated 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/documentation.html:7
 msgid ""
 "In addition to our extensive written help, the Ubuntu community provides "
 "free technical support in person and over the Internet. There is also "
@@ -73,78 +87,82 @@ msgid ""
 "companies. Learn more at <a href=\"http://www.ubuntu.com/support\">ubuntu."
 "com/support</a>."
 msgstr ""
-"În plus față de documentația scrisă, comunitatea Ubuntu oferă suport tehnic "
-"în persoană sau pe Internet. De asemenea, este disponibil și suport "
-"comercial oferit de Canonical, partenerii săi și alte companii autorizate. "
-"Aflați  mai multe la <a href=\"http://www.ubuntu.com/support\">ubuntu.com/"
-"support</a>."
+"Completând ghidul de ajutor scris, comunitatea Ubuntu oferă suport tehnic "
+"gratuit în persoană sau prin Internet. De asemenea, Canonical, partenerii "
+"săi și companii autorizate oferă suport comercial. Puteți afla mai multe la "
+"<a href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
 
-#: slideshows/ubuntu/slides/documentation.html:4
+#.  The url "ubuntu.com/community" should not be translated 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/documentation.html:8
 msgid ""
 "Let us know about your Ubuntu experience at <a href=\"http://ubuntu.com/"
 "community\">ubuntu.com/community</a>!"
 msgstr ""
-"Împărtășiți experiențele dumneavoastră despre Ubuntu la <a href=\"http://"
-"ubuntu.com/community\">ubuntu.com/community</a>!"
+"Informați-ne cu privire la experiența dumneavoastră Ubuntu la <a href="
+"\"http://ubuntu.com/community\">ubuntu.com/community</a>!"
 
-#: slideshows/ubuntu/slides/documentation.html:5
+#. type: Content of: <div><div><p>
+#: slideshows/ubuntu/slides/documentation.html:10
 msgid "The installation will finish soon. We hope you enjoy Ubuntu."
 msgstr ""
 "Instalarea se va încheia în curând. Sperăm că vă veți bucura de experiența "
 "Ubuntu!"
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/empathy.html:1
-msgid "Keep in contact with Empathy"
-msgstr "Țineți legătura prin intermediul Empathy"
-
-#: slideshows/ubuntu/slides/empathy.html:2
-msgid ""
-"With <em>Empathy</em>, Ubuntu keeps you connected right from the start. It "
-"works with all the major instant messaging networks, including Google Talk, "
-"Windows Live and Jabber."
+msgid "Social from the start"
 msgstr ""
-"Cu <em>Empathy</em>, Ubuntu vă pune în legătură cu prietenii din primul "
-"moment. Funcționează pe majoritatea rețelelor de mesagerie instant, inclusiv "
-"Google Talk, Windows Live și Jabber."
 
-#: slideshows/ubuntu/slides/empathy.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/empathy.html:6
 msgid ""
-"New messages appear in the envelope to the left of the clock, so you can see "
-"what's happening at a glance."
+"From the start, Ubuntu connects to online chat and broadcast services "
+"including Facebook, Twitter, Windows Live and Google Talk."
 msgstr ""
-"Mesajele noi apar în plicul din partea stângă a ceasului, astfel încât știți "
-"ce e nou dintr-o singură privire."
+"De la început, Ubuntu se conectează la servicii de conversații sau difuzare "
+"precum Facebook, Twitter, Windows Live, Google Talk sau Yahoo! Messenger."
 
-#: slideshows/ubuntu/slides/empathy.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/empathy.html:7
 msgid ""
-"Choose <em>Empathy IM Client</em> from the Internet Applications menu to set "
-"up your accounts."
+"Click the envelope near the clock to log in to your accounts. New messages "
+"appear there, too, so you can see what's happening at a glance."
 msgstr ""
-"Alegeți <em>Empathy IM Client</em> din meniul Aplicații Internet pentru a "
-"configura conturile."
 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/empathy.html:8
+msgid ""
+"If you're busy, click your name at the top of the screen to change your "
+"status."
+msgstr ""
+
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/evolution.html:1
-msgid "Control your digital life with Evolution"
-msgstr "Preluați controlul activității dvs. digitale cu Evolution"
+msgid "Control your digital life"
+msgstr "Controlați-vă viața digitală"
 
-#: slideshows/ubuntu/slides/evolution.html:2
+#.  "Evolution Mail" should be the exact name of the Evolution launcher inside the Internet menu or the indicator applet. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/evolution.html:6
 msgid ""
 "<em>Evolution Mail</em> is the fully-featured email and calendar software "
-"that comes with Ubuntu. It connects to most email services, for example "
-"Gmail and Yahoo."
+"that comes with Ubuntu. Just enter your email account information and it "
+"will download new messages automatically."
 msgstr ""
-"<em>Evolution Mail</em> este un program complet pentru e-mail, calendar și "
-"planificare de sarcini, inclus în Ubuntu. Se poate conecta la majoritatea "
-"furnizorilor de servicii e-mail, precum Gmail sau Yahoo."
+"Clientul de email <em>Evolution</em> este aplicația completă ce vă oferă "
+"accesul la mesaje și calendar. Trebuie doar să introduceți informațiile "
+"legate de contul de email și mesajele noi vor fi descărcate automat."
 
-#: slideshows/ubuntu/slides/evolution.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/evolution.html:7
 msgid ""
-"Advanced junk filtering and search tools make managing your mail a breeze."
+"Evolution has a powerful junk mail filter. You can use the search box, or "
+"create your own filters, to make sorting mail quick and easy."
 msgstr ""
-"Instrumentele avansate de filtrare pentru spam și de căutare vă ușurează "
-"gestionarea mesajelor."
 
-#: slideshows/ubuntu/slides/evolution.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/evolution.html:8
 msgid ""
 "Add your favorite Web calendars to see upcoming games or movie releases. To "
 "see your daily schedule, just click the clock at the top of your screen."
@@ -153,36 +171,40 @@ msgstr ""
 "sau filme. Pentru a vedea calendarul zilei, faceți clic pe ceasul din partea "
 "de sus a ecranului."
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/firefox.html:1
 msgid "Browse the web with Firefox"
 msgstr "Navigați pe Internet folosind Firefox"
 
-#: slideshows/ubuntu/slides/firefox.html:2
-#, fuzzy
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/firefox.html:6
 msgid "Ubuntu comes with the widely acclaimed <em>Firefox web browser</em>."
-msgstr "Ubuntu include și mult apreciatul navigator web <em>Firefox 3.5</em>."
+msgstr ""
+"Ubuntu vine însoțit de celebrul navigator de internet <em>Firefox</em>."
 
-#: slideshows/ubuntu/slides/firefox.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/firefox.html:7
 msgid ""
 "It protects your privacy and personal information so you can surf worry free."
 msgstr ""
 "Vă protejează intimitatea și informațiile personale pentru a putea naviga "
 "fără griji."
 
-#: slideshows/ubuntu/slides/firefox.html:4
-#, fuzzy
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/firefox.html:8
 msgid ""
-"Add your own personal note with add-ons. You can choose from thousands of "
-"themes and extensions that tailor Firefox to how you use the web."
+"Give Firefox your own personal touch with addons. You can choose from "
+"thousands of themes and extensions that tailor it to how you use the web."
 msgstr ""
-"Adăugați o notă personală. Alegeți dintre miile de teme și module de "
-"extensie pentru a adapta Firefox nevoilor dumneavoastră."
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/fspot.html:1
-msgid "Organize, enjoy, and share your photos"
-msgstr "Organizați-vă fotografiile, admirați-le și prezentați-le și altora"
+msgid "Share and enjoy your photos"
+msgstr ""
 
-#: slideshows/ubuntu/slides/fspot.html:2
+#.  "F-Spot Photo Manager" should be the exact name that is used for F-Spot in the Applications menu 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/fspot.html:6
 msgid ""
 "With <em>F-Spot Photo Manager</em>, it is really easy to share, touch-up and "
 "organize digital photos."
@@ -190,22 +212,27 @@ msgstr ""
 "Cu <em>F-Spot Photo Manager</em>, este foarte simplu să partajați, să "
 "retușați și să organizați fotografiile digitale."
 
-#: slideshows/ubuntu/slides/fspot.html:3
+#.  Instead of directly translating the word "tags," please use the exact name of the feature in F-Spot for your locale. (Tags are used to label photos). 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/fspot.html:7
 msgid ""
 "Use tags to describe your photos so that they are easy to find later on."
 msgstr ""
-"Utilizați etichete pentru a descrie fotografiile dumneavoastră, în acest mod "
-"fotografiile fiind mai ușor de găsit pe viitor."
+"Descrieți fotografiile utilizând etichete pentru a le găsi cu ușurință mai "
+"târziu."
 
-#: slideshows/ubuntu/slides/fspot.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/fspot.html:8
 msgid ""
 "Use the Export option to write your photos to CDs, email them to friends or "
 "share them online."
 msgstr ""
-"Folosiți opțiunea de export pentru a inscripționa fotografiile pe CD-uri, "
-"pentru a le trimite prietenilor prin email sau a le prezenta online."
+"Folosiți opțiunea de export pentru a scrie fotografiile pe CD-uri, pentru a "
+"le trimite prietenilor prin email sau a le prezenta online."
 
-#: slideshows/ubuntu/slides/fspot.html:5
+#.  Graphics Applications refers to the Graphics submenu, and then the main Applications menu. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/fspot.html:9
 msgid ""
 "To get started, choose F-Spot from the Graphics Applications menu or attach "
 "a digital camera and follow the prompts."
@@ -213,240 +240,158 @@ msgstr ""
 "Pentru a începe, alegeți F-Spot din meniul Aplicații Grafică sau conectați "
 "un aparat foto digital și urmați indicațiile ce vor apărea."
 
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/installing-software.html:1
-msgid "Installing additional software"
-msgstr "Instalarea programelor suplimentare"
-
-#: slideshows/ubuntu/slides/installing-software.html:2
-msgid ""
-"Take a look at the <em>Ubuntu Software Center</em> to install (and remove) "
-"software from our online repository, which we carefully organize to be safe "
-"and up to date."
+msgid "Getting more software"
 msgstr ""
-"Mergeți la <em>Ubuntu Software Center</em> pentru a instala (și dezinstala) "
-"software din depozitele pe care le organizăm cu grijă pentru a fi sigure și "
-"actualizate."
 
-#: slideshows/ubuntu/slides/installing-software.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/installing-software.html:6
 msgid ""
-"There is great software for everything from creating music and movies to "
-"producing 3D models and exploring the universe."
+"If you need something else, try the <em>Ubuntu Software Center</em> to "
+"choose from thousands of extras you can download for free."
 msgstr ""
-"Există programe excelente pentru orice, de la realizarea de muzică și filme, "
-"până la producerea de modele 3D și explorarea universului."
 
-#: slideshows/ubuntu/slides/installing-software.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/installing-software.html:7
 msgid ""
-"If you need something that isn't available through us, find out if there is "
-"a Debian package or another repository available. That way, it will be "
-"really easy to install and you will receive automatic updates."
+"There are powerful applications for all sorts of interests, from programming "
+"to creating music and exploring the universe. Take a look at the "
+"<em>Featured Applications</em> section for some of our favourites!"
 msgstr ""
-"Dacă aveți nevoie de ceva ce nu este disponibil prin intermediul nostru, "
-"căutați un pachet Debian sau alte arhive online. În acest fel, va fi foarte "
-"ușor de instalat și veți primi actualizări automate."
 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/installing-software.html:8
+msgid ""
+"Everything in Software Center is stored in our online repository. We are "
+"careful to keep it safe and updates will be delivered directly to you."
+msgstr ""
+
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/openoffice.html:1
 msgid "Office tools at your fingertips"
 msgstr "Instrumente de birou la dispoziția dumneavoastră"
 
-#: slideshows/ubuntu/slides/openoffice.html:2
+#.  "OpenOffice.org" does not refer to a particular menu item, but it a name shared in common between all of the OpenOffice components in the Applications menu. 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/openoffice.html:6
 msgid ""
-"<em>OpenOffice.org</em> is a powerful office software suite that is very "
-"easy to learn."
+"Ubuntu comes with <em>OpenOffice.org</em>, a powerful office software suite "
+"that is easy to understand."
 msgstr ""
-"<em>OpenOffice.org</em> este o suită de aplicații pentru birou eficientă și "
-"ușor de folosit."
 
-#: slideshows/ubuntu/slides/openoffice.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/openoffice.html:7
+msgid "It helps you create documents, presentations, diagrams and databases."
+msgstr ""
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/openoffice.html:8
 msgid ""
-"It is useful to create letters, presentations and spreadsheets, as well as "
-"diagrams and databases."
+"OpenOffice.org uses the standard OpenDocument file format. It opens files "
+"from other office applications like Microsoft Office and WordPerfect."
 msgstr ""
-"Este utilă pentru a realiza scrisori, prezentări sau calcule tabelare, "
-"precum și diagrame și baze de date."
 
-#: slideshows/ubuntu/slides/openoffice.html:4
-#, fuzzy
-msgid ""
-"<em>OpenOffice.org</em> works with documents from other popular office "
-"applications including WordPerfect and Microsoft Office. It uses the "
-"standard OpenDocument format."
-msgstr ""
-"<em>OpenOffice.org</em> lucrează și cu documente realizate cu alte aplicații "
-"cunoscute pentru birou, cum ar fi WordPerfect și Microsoft Office. "
-"Utilizează ca format implicit standardul internațional OpenDocument."
-
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:1
-msgid "Music and movies in Ubuntu"
-msgstr "Muzică și filme în Ubuntu"
-
-#: slideshows/ubuntu/slides/rhythmbox-totem.html:2
-msgid ""
-"Ubuntu is ready to play videos and music from the web, from CDs and DVDs."
+msgid "Entertainment with music and movies"
 msgstr ""
-"Ubuntu poate reda filme și muzică de pe Internet, de pe CD-uri sau DVD-uri."
 
-#: slideshows/ubuntu/slides/rhythmbox-totem.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:6
 msgid ""
-"<em>Rhythmbox Music Player</em> lets you organize your music and listen to "
-"Internet radio. It also keeps track of podcasts, to download new episodes of "
-"a show automatically."
+"Ubuntu is ready to play music and videos from the web, from CDs and DVDs."
 msgstr ""
-"<em>Rhythmbox Music Player</em> vă permite să vă organizați melodiile și să "
-"ascultați posturi de radio pe Internet. De asemenea, poate urmări podcasturi "
-"pentru a descărca automat episoade noi."
 
-#: slideshows/ubuntu/slides/rhythmbox-totem.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:7
+msgid ""
+"The <em>Rhythmbox Music Player</em> lets you organize your music, listen to "
+"Internet radio, and purchase a variety of songs. Manage your podcast "
+"subscriptions and automatically download new episodes."
+msgstr ""
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:8
+msgid ""
+"Discover popular, DRM-free music available for purchase from the <em>Ubuntu "
+"One Music Store</em>, a cloud-enabled digital music store. Purchases are "
+"automatically stored in the cloud and synchronised across all of your "
+"computers."
+msgstr ""
+
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/rhythmbox-totem.html:9
 msgid ""
 "Plug in an MP3 player to start synchronizing your music collection, or "
-"insert a CD to copy its music to your computer."
+"insert a CD to copy songs to your computer."
 msgstr ""
-"Conectați un MP3 player pentru a iniția sincronizarea colecției de muzică "
-"sau introduceți un CD pentru a copia muzica pe calculator."
 
-#: slideshows/ubuntu/slides/translations.html:1
-msgid "Ubuntu speaks fluently"
-msgstr "Ubuntu vorbește fluent"
-
-#: slideshows/ubuntu/slides/translations.html:2
-msgid "Ubuntu is available in many different languages."
-msgstr "Ubuntu este disponibil în multe limbi."
-
-#: slideshows/ubuntu/slides/translations.html:3
-msgid "Simply select your language in Language Support Administration"
-msgstr ""
-"Alegeți limba dumneavoastră de la <em>Suport limbă</em> din meniul de "
-"administrare a sistemului"
-
-#: slideshows/ubuntu/slides/translations.html:4
-msgid ""
-"Ubuntu's translations are contributed by our generous users. Feel free to "
-"help out at <a href=\"http://translations.launchpad.net/ubuntu\">launchpad."
-"net</a>."
-msgstr ""
-"Traducerile Ubuntu sunt realizate de utilizatorii noștri. Puteți ajuta cu "
-"traduceri în <a href=\"http://translations.launchpad.net/ubuntu\">launchpad."
-"net</a>."
-
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/ubuntuone.html:1
-msgid "Store, sync and share with Ubuntu One"
-msgstr "Stocați, sincronizați și partajați cu Ubuntu One"
-
-#: slideshows/ubuntu/slides/ubuntuone.html:2
-msgid ""
-"<em>Ubuntu One</em> is your personal cloud, providing 2 GB of essential "
-"storage (and more if you need it)."
+msgid "Keep your digital life in sync"
 msgstr ""
-"<em>Ubuntu One</em> este spațiul dumneavoastră personal din așa-numitul "
-"cloud computing, care vă asigură un spațiu de stocare de 2 GO pe Internet "
-"(și chiar mai mult, dacă aveți nevoie)."
 
-#: slideshows/ubuntu/slides/ubuntuone.html:3
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/ubuntuone.html:6
 msgid ""
-"Use it to back up, store and sync your files, as well as share them with "
-"other Ubuntu One users."
+"Shuffle between your laptop, netbook, and company desktop and find "
+"everything you need automatically synchronised. Your documents, music, "
+"bookmarks, address book, and notes – everything goes where you go with "
+"<em>Ubuntu One</em>."
 msgstr ""
-"Folosiți-l pentru a arhiva, a stoca și a sincroniza fișierele, precum și "
-"pentru a le partaja cu alți utilizatori Ubuntu One."
 
-#: slideshows/ubuntu/slides/ubuntuone.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/ubuntuone.html:7
 msgid ""
-"Your Tomboy notes and Evolution contacts are synced automatically across all "
-"of your computers."
+"Want a safe home for your important files? All Ubuntu users get 2 GB of "
+"personal cloud storage for free (and more if you need it)."
 msgstr ""
-"Notițele Tomboy și contactele Evolution sunt sincronizate automat pe toate "
-"calculatoarele dumneavoastră."
 
-#: slideshows/ubuntu/slides/ubuntuone.html:5
-msgid "Integration with your Ubuntu desktop makes sharing files easy."
-msgstr "Integrarea cu desktopul Ubuntu facilitează partajarea fișierelor."
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/ubuntuone.html:8
+msgid ""
+"Share folders using your synchronised address book. Project collaboration "
+"has never been easier."
+msgstr ""
 
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/ubuntuone.html:9
+msgid ""
+"Sign-up by launching the <em>Ubuntu One Preferences</em> application or "
+"going to <a href=\"http://one.ubuntu.com/\">http://one.ubuntu.com/</a>."
+msgstr ""
+
+#. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/welcome.html:1
 msgid "Welcome"
-msgstr "Bun venit"
+msgstr "Bine ați venit"
 
-#: slideshows/ubuntu/slides/welcome.html:2
-#, fuzzy
-msgid "Thank you for choosing Ubuntu 10.04."
-msgstr "Vă mulțumim că ați ales Ubuntu 9.10."
-
-#: slideshows/ubuntu/slides/welcome.html:3
-msgid ""
-"We believe that every computer user should be able to work in the "
-"environment of their choice and be free to download, change, study and share "
-"this software for any purpose, without paying licensing fees."
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/welcome.html:6
+msgid "Thank you for choosing Ubuntu 10.04 LTS."
 msgstr ""
-"Noi considerăm că fiecare utilizator ar trebui să lucreze în mediul său "
-"preferat și să fie liber să descarce, să modifice, să studieze și să "
-"împărtășească programele în orice scop, fără a plăti taxe de licență."
 
-#: slideshows/ubuntu/slides/welcome.html:4
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/welcome.html:7
 msgid ""
-"As part of our promise, we want Ubuntu to work as well for you as possible. "
-"So, while it installs, this slideshow will give you a quick introduction."
+"This release marks a major milestone in the Ubuntu project. It is easier and "
+"more reliable than ever, with hundreds of improvements including a new video "
+"editor, integrated social networking and a growing selection of extra "
+"software."
 msgstr ""
-"Ca parte a promisiunii noastre, ne dorim ca Ubuntu să funcționeze pe măsura "
-"așteptărilor dumneavoastră. În timp ce se instalează, vă vom prezenta o "
-"scurtă introducere."
 
-#: slideshows/ubuntu/slides/welcome.html:5
+#. type: Content of: <div><div><ul><li>
+#: slideshows/ubuntu/slides/welcome.html:8
+msgid ""
+"Whether you're new to Ubuntu or a long-time user, we're sure there is "
+"something you will enjoy. While Ubuntu is installed, this slideshow will "
+"show you around."
+msgstr ""
+
+#. type: Content of: <div><div><p>
+#: slideshows/ubuntu/slides/welcome.html:10
 msgid "Ubuntu is designed to be easy. Feel free to explore!"
 msgstr ""
 "Ubuntu este conceput pentru a fi ușor de utilizat. Nu ezitați să îl "
 "explorați!"
-
-#~ msgid ""
-#~ "Let us know about your Ubuntu Experience, or learn how to help out, at <a "
-#~ "href=\"http://ubuntu.com/community\">ubuntu.com/community</a>!"
-#~ msgstr ""
-#~ "Împărtășiți-ne experiența dumneavoastră Ubuntu sau aflați despre cum "
-#~ "puteți ajuta, la <a href=\"http://www.ubuntu.ro/participa\">ubuntu.ro/"
-#~ "participă</a>!"
-
-#~ msgid ""
-#~ "<i>Need help?</i> Just click the blue question mark at the top of the "
-#~ "screen to access the Ubuntu Help Center."
-#~ msgstr ""
-#~ "<i>Aveți nevoie de ajutor?</i> Apăsați semnul de întrebare albastru din "
-#~ "partea de sus a ecranului, pentru a accesa centrul de ajutor Ubuntu."
-
-#~ msgid ""
-#~ "With <em>Empathy IM</em>, Ubuntu keeps you connected right from the "
-#~ "start. It works with all the major instant messaging networks, including "
-#~ "Google Talk, Windows Live and Jabber."
-#~ msgstr ""
-#~ "Cu <em>Empathy</em>, Ubuntu vă ține conectat încă de la început. "
-#~ "Funcționează cu toate rețele mari de mesagerie instant, incluzând Yahoo "
-#~ "Messenger, Google Talk, Windows Live și Jabber."
-
-#~ msgid ""
-#~ "Use tags to describe your photos. Later on, you can use the tags to find "
-#~ "a particular one."
-#~ msgstr ""
-#~ "Folosiți etichetele pentru a descrie fotografiile. Mai târziu, puteți "
-#~ "folosi etichetele pentru a găsi o anumită fotografie."
-
-#~ msgid ""
-#~ "Take a look at the <em>Software Center</em> to install (and uninstall) "
-#~ "software from our online repository, which we carefully organize to be "
-#~ "safe and up to date."
-#~ msgstr ""
-#~ "Folosiți <em>Centrul software</em> pentru a instala (sau dezinstala) "
-#~ "programe din arhiva noastră online, organizată cu atenție pentru a fi "
-#~ "sigură și actuală."
-
-#~ msgid ""
-#~ "Ubuntu is ready to play videos and music from the web and from DVDs. It "
-#~ "works straight away for the free and popular formats that people can use "
-#~ "without paying license fees."
-#~ msgstr ""
-#~ "Ubuntu este pregătit pentru a reda filme și muzică de pe web și de pe DVD-"
-#~ "uri. Funcționează direct cu formatele libere și populare ce pot fi "
-#~ "folosite fără a plăti licențe."
-
-#~ msgid ""
-#~ "Ubuntu One is your personal cloud, providing 2 GB of essential storage "
-#~ "(and more if you need it)."
-#~ msgstr ""
-#~ "Ubuntu One este depozitul dumneavoastră personal, oferind 2GO de stocare "
-#~ "(și mai mult dacă aveți nevoie)."

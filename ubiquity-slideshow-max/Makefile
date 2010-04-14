@@ -12,14 +12,12 @@ build_init:
 
 build_ubuntu: build_init
 	cp -rL $(SOURCESLIDES)/ubuntu $(BUILD)
-	images-source/generate-reflected-pngs.sh ubuntu $(BUILD)/ubuntu/slides/icons
 
 build_ubuntu-upgrade: build_init
 	cp -rL $(SOURCESLIDES)/ubuntu-upgrade $(BUILD)
 
 build_kubuntu: build_init
 	cp -rL $(SOURCESLIDES)/kubuntu $(BUILD)
-	images-source/generate-reflected-pngs.sh kubuntu $(BUILD)/kubuntu/slides/icons
 
 build_xubuntu: build_init
 	cp -rL $(SOURCESLIDES)/xubuntu $(BUILD)
