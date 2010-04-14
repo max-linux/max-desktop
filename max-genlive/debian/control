@@ -2,12 +2,12 @@ Source: max-genlive
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.0.0), cdbs, gfxboot, nasm, xmlto
+Build-Depends: debhelper (>= 4.0.0), cdbs, gfxboot, nasm, xmlto, cpio, libfribidi0
 Standards-Version: 3.7.3
 
 Package: max-genlive
 Architecture: all
-Depends: genisoimage, squashfs-tools, max-win32-apps,
+Depends: genisoimage, squashfs-tools, max-win32-apps, equivs,
          debootstrap, syslinux, mbr, tree, parted, memtest86+
 Description: Tool to generate MaX live DVD, CD and nanoMaX
  Contains:

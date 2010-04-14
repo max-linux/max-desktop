@@ -1,3 +1,39 @@
+max-genlive (6.0.max10) max; urgency=low
+
+  * Don't use noextraubuntu
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 12 Apr 2010 17:04:03 +0200
+
+max-genlive (6.0.max9) max; urgency=low
+
+  * Remove mythbuntu-gdm-theme from BLACKLIST
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 04 Apr 2010 23:05:07 +0200
+
+max-genlive (6.0.max8) max; urgency=low
+
+  * Use equivs and noextraubuntu package instead of apt preferences
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 04 Apr 2010 18:54:23 +0200
+
+max-genlive (6.0.max7) max; urgency=low
+
+  * Create file in etc/apt/preferences.d to not install BLACKLIST packages
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 04 Apr 2010 18:11:18 +0200
+
+max-genlive (6.0.max6) max; urgency=low
+
+  * Reorder clean and repo packages hooks
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 31 Mar 2010 20:14:05 +0200
+
+max-genlive (6.0.max5) max; urgency=low
+
+  * Blacklist more packages
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 29 Mar 2010 12:05:11 +0200
+
 max-genlive (6.0.max4) max; urgency=low
 
   * Blacklist icedtea packages and clean gfxboot2 dir

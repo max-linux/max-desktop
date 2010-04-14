@@ -73,10 +73,16 @@ PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales virtual
 PAQUETES_EXTRA="$PAQUETES_EXTRA max-tcos-alumno max-tcos-profesor"
 PAQUETES_EXTRA="$PAQUETES_EXTRA nvidia-glx-180 linux-wlan-ng-firmware linux-firmware"
 
-BLACKLIST_PKGS="jetty gdesklets resolvconf gdm-guest-session emacs22 emacs22-bin-common emacs22-common emacsen-common"
+BLACKLIST_PKGS="jetty resolvconf gdm-guest-session emacs22 emacs22-bin-common emacs22-common emacsen-common"
 BLACKLIST_PKGS="$BLACKLIST_PKGS python-ubuntuone python-ubuntuone-client python-ubuntuone-storageprotocol ubuntuone-client"
 BLACKLIST_PKGS="$BLACKLIST_PKGS ubuntuone-client-gnome rhythmbox-ubuntuone-music-store libubuntuone-1.0-1"
-BLACKLIST_PKGS="$BLACKLIST_PKGS icedtea6-plugin icedtea-6-jre-cacao"
+BLACKLIST_PKGS="$BLACKLIST_PKGS icedtea6-plugin icedtea-6-jre-cacao kpackagekit arora openjdk-6-doc"
+BLACKLIST_PKGS="$BLACKLIST_PKGS x11proto-core-dev x11proto-composite-dev python2.6-dev python-dev libglade2.0-cil-dev xtrans-dev"
+BLACKLIST_PKGS="$BLACKLIST_PKGS x11proto-kb-dev x11proto-input-dev x11proto-core-dev libxt-dev libxdmcp-dev libxcb1-dev libxau-dev"
+BLACKLIST_PKGS="$BLACKLIST_PKGS libx11-dev libltdl-dev libplymouth-dev libpthread-stubs0-dev"
+BLACKLIST_PKGS="$BLACKLIST_PKGS mythbuntu-default-settings xfce4-panel xfce4-settings xfce4-utils"
+BLACKLIST_PKGS="$BLACKLIST_PKGS freemind-doc libatk1.0-doc libglib2.0-doc libgtk2.0-doc libpango1.0-doc lilypond-doc winff-doc xorg-docs-core"
+
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
 GENLIVE=/usr/share/max-genlive
