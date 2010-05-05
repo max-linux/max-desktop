@@ -1,0 +1,20 @@
+#!/bin/bash
+# Start/stop the max-elotouch hacks
+#
+
+. /lib/lsb/init-functions
+
+
+
+case "$1" in
+start)
+        log_begin_msg "Starting Multiseat" "max-multiseat"
+          /usr/bin/start-multiseat
+        log_end_msg 0
+        ;;
+esac
+
+
+
+exit 0
+

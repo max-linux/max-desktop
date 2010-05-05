@@ -1,0 +1,60 @@
+
+oldIFS=$IFS
+IFS=:
+set $DISPLAY
+IFS=.
+set $2
+SEAT_ID=$1
+LN=`ls -al /dev/usbseat/$SEAT_ID/sound`
+IFS=C
+set $LN
+CARD_ID=$2
+export ALSA_CARD=$2
+export ALSA_PCM_CARD=$2
+IFS=$oldIFS
+
+if [ "$DISPLAY" != ":0" ] || [ "$DISPLAY" != ":0.0" ]; then
+  export SEAT_ID=$(echo $DISPLAY | awk -F":" '{print $2}'| awk -F"." '{print $1}')
+fi
+
+# overwrite PULSEAUDIO sink and source files
+DEV_CONTROL=$(basename $(readlink /dev/usbseat/$SEAT_ID/sound))
+DEV_NAME=$(for f in `/sbin/udevadm info --query=env --name=/dev/usbseat/2/sound| grep ^DEVLINKS`; do echo $f| grep by-id; done)
+DEV_ID=$(cat /sys/class/sound/$DEV_CONTROL/device/id)
+
+DEV_OUTPUT="alsa_output.$(basename ${DEV_NAME})-${DEV_ID}.analog-stereo"
+DEV_INPUT="alsa_input.$(basename ${DEV_NAME})-${DEV_ID}.analog-mono"
+
+#echo
+#echo
+#echo $DEV_OUTPUT
+#echo "alsa_output.usb-C-Media_Electronics_Inc._USB_PnP_Sound_Device-00-default_1.analog-stereo"
+
+#echo
+#echo
+#echo $DEV_INPUT
+#echo "alsa_input.usb-C-Media_Electronics_Inc._USB_PnP_Sound_Device-00-default_1.analog-mono"
+
+
+#find /home/alumno/.pulse/ -name "*-default-*"
+#/home/alumno/.pulse/986b82686bfedffb8c1e6b974bd9d245-default-source
+#/home/alumno/.pulse/986b82686bfedffb8c1e6b974bd9d245-default-sink
+
+if [ ! -d $HOME/.pulse ]; then
+  # pulse not started, use ALSA_CARD
+  exit 0
+fi
+
+OUT=$(find $HOME/.pulse/ -name "*-default-sink")
+IN=$(find $HOME/.pulse/ -name "*-default-source")
+
+[ -n $IN ] && [ -f $IN ]  && echo $DEV_INPUT > $IN
+[ -n $OUT] && [ -f $OUT ] && echo $DEV_INPUT > $OUT
+
+INDEX=$(grep "\[$DEV_ID " /proc/asound/cards | awk '{print $1}')
+
+#exec pacmd
+pacmd << EOF
+set-default-sink $INDEX
+set-default-source $INDEX
+EOF
