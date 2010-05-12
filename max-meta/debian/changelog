@@ -1,3 +1,16 @@
+max-meta (6.0.max20) max; urgency=low
+
+  * Depends on gdm or gdm-2.20
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 10 May 2010 13:27:38 +0200
+
+max-meta (6.0.max19) max; urgency=low
+
+  * Add mesa-utils mktemp gtranslator and policykit-gnome
+  * Remove audacious-plugins-extra
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 14 Apr 2010 20:10:31 +0200
+
 max-meta (6.0.max18) max; urgency=low
 
   * max-desktop-common, add:
