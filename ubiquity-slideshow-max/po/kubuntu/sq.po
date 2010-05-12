@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:48+0000\n"
-"PO-Revision-Date: 2010-04-01 12:41+0000\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-12 12:57+0000\n"
 "Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -29,6 +29,9 @@ msgid ""
 "circumstances. So, we provide tools that make Kubuntu one of the most "
 "accessible operating systems around."
 msgstr ""
+"Ne duam t'i bëjmë kompjuterat të punojnë për gjithkënd, pavarësisht nga "
+"rrethanat fizike. Këshut që ne ju ofrojmë mjete që e bëjnë Kubuntu një nga "
+"sistemet e operimit më të përdorshme që ekzistojnë."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:9
@@ -38,6 +41,10 @@ msgid ""
 "there, you can turn on helpful tools like <em>Modifier Keys</em>, "
 "<em>Keyboard Filters</em>, and <em>Activation Gestures</em>."
 msgstr ""
+"Ju mund t'i gjeni këto mjete në një vend: preferencat e <em>Përdorshmërisë</"
+"em>, brenda programit Parametrat e Sistemit nga menuja. Nga këtu ju mund të "
+"nisni programe ndihmëse si <em>Çelësat Modifikues</em>, <em>Filtrat e "
+"Tastierës</em>, dhe <em>Mjetet e Aktivizimit</em>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:14
@@ -46,6 +53,9 @@ msgid ""
 "choose between different visual styles and even change the fonts that are "
 "used by applications."
 msgstr ""
+"Mbani mend që të shikoni edhe <em>Preferencat e Pamjes</em>. Ju mund të "
+"zgjidhni midis stileve të ndryshme të pamjes dhe madje të ndryshoni edhe "
+"gërmat e përdorura nga programet."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/games.html:1
@@ -58,6 +68,8 @@ msgid ""
 "With hundreds of game titles in our online repository, Kubuntu allows you to "
 "not be all about work, but also allows you to play."
 msgstr ""
+"Me qindra tituj lojërash në magazinën tonë në internet. Kubuntu ju lejon që "
+"të mos lidheni vetëm pas punës, por ju lejon edhe të luani."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:9
@@ -65,6 +77,8 @@ msgid ""
 "The <em>KDE Software Compilation</em> has quite a few games ranging from "
 "card games to logic games and board games."
 msgstr ""
+"<em>Përmbledhja e Programeve KDE</em> ka disa lojëra që shkojnë nga lojërat "
+"me letra në ato logjike dhe në lojërat e bordit."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:11
@@ -72,6 +86,8 @@ msgid ""
 "First Person Shooters, Role Play Games, and more are also available in the "
 "repositories."
 msgstr ""
+"Qëlluesit e Drejtpërdrejtë, Lojërat me Luajtje Rolesh dhe më tepër janë "
+"gjithashtu të disponueshme në magazina."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-help.html:1
@@ -313,8 +329,8 @@ msgid ""
 "with various groupware services."
 msgstr ""
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/pim.html:16
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/pim.html:17
 msgid ""
 "<em>Kontact</em> is the perfect personal information management integration "
 "for you!"
@@ -345,8 +361,8 @@ msgid ""
 "So while it installs, this slideshow will provide a quick introduction."
 msgstr ""
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/welcome.html:13
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/welcome.html:14
 msgid "Kubuntu is designed to be easy. Feel free to explore!"
 msgstr ""
 "Kubuntu është dizenjuar për të qenë i lehtë. Ndihuni të lirshëm që të "

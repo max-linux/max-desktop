@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:47+0000\n"
-"PO-Revision-Date: 2010-03-17 14:55+0000\n"
-"Last-Translator: Iryna Nikanchuk <defragbrain@gmail.com>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-12 23:49+0000\n"
+"Last-Translator: Alex Nyakhaychyk <nyakhaychyk@gmail.com>\n"
 "Language-Team: Belarusian <be@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <div><h1>
@@ -69,6 +69,8 @@ msgid ""
 "If you need help, try <em>Help and Support</em> from the System menu, or the "
 "<em>Help</em> menu in most applications."
 msgstr ""
+"Калі вам патрэбна дапамога, пстрыкніце <em>Дапамога й падтрымка</em> ў мэню "
+"Сыстэма ці пункт мэню <em>Даведка</em> ў большасьці дастасаваньняў"
 
 #.  The url "ubuntu.com/support" should not be translated 
 #. type: Content of: <div><div><ul><li>
@@ -88,6 +90,8 @@ msgid ""
 "Let us know about your Ubuntu experience at <a href=\"http://ubuntu.com/"
 "community\">ubuntu.com/community</a>!"
 msgstr ""
+"Паведаміце нам аб вашым вопыце Ubuntu на <a href=\"http://ubuntu.com/"
+"community\">ubuntu.com/community</a>!"
 
 #. type: Content of: <div><div><p>
 #: slideshows/ubuntu/slides/documentation.html:10
@@ -97,7 +101,7 @@ msgstr "Інсталяцыя хутка скончыцца. Спадзяемся
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/empathy.html:1
 msgid "Social from the start"
-msgstr ""
+msgstr "Сацыяльны ад пачатку"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:6
@@ -105,6 +109,8 @@ msgid ""
 "From the start, Ubuntu connects to online chat and broadcast services "
 "including Facebook, Twitter, Windows Live and Google Talk."
 msgstr ""
+"Ад пачатку Ubuntu далучаецца да анлайн чатаў і сацыяльных сетак, у тым ліку "
+"Facebook, Twitter, Windows Live і Google Talk."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:7
@@ -119,11 +125,13 @@ msgid ""
 "If you're busy, click your name at the top of the screen to change your "
 "status."
 msgstr ""
+"Калі Вы нечым занятыя, пстрыкніце вашае імя ў верхняй частцы экрана, каб "
+"зьмяніць ваш стан."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/evolution.html:1
 msgid "Control your digital life"
-msgstr ""
+msgstr "Кантралюйце вашую лічбавае жыццё"
 
 #.  "Evolution Mail" should be the exact name of the Evolution launcher inside the Internet menu or the indicator applet. 
 #. type: Content of: <div><div><ul><li>
@@ -147,19 +155,16 @@ msgid ""
 "Add your favorite Web calendars to see upcoming games or movie releases. To "
 "see your daily schedule, just click the clock at the top of your screen."
 msgstr ""
-"Вы можаце дадаць у Evolution свае любімыя вэб-календары, каб глядзець даты "
-"выпуску новых фільмаў і гульняў. Для прагляду вашага раскладу, пстрыкніце "
-"кнопкай мышы па гадзіньніку ў верхняй частцы экрана."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/firefox.html:1
 msgid "Browse the web with Firefox"
-msgstr "Праглядайце Інтэрнэт з Firefox"
+msgstr "Гартайце вэб-старонкі ў Firefox"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/firefox.html:6
 msgid "Ubuntu comes with the widely acclaimed <em>Firefox web browser</em>."
-msgstr ""
+msgstr "Ubuntu пастаўляецца з шырока вядомым <em>вэб-гартачом Firefox</em>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/firefox.html:7

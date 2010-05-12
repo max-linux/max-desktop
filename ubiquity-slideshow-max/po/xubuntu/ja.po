@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-03-25 16:22+0000\n"
-"PO-Revision-Date: 2010-04-06 20:36+0000\n"
+"PO-Revision-Date: 2010-04-13 02:09+0000\n"
 "Last-Translator: Shushi Kurose <md81bird@hitaki.net>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -48,11 +48,13 @@ msgstr "<em>設定メニュー</em> では、デスクトップの挙動や外�
 #: slideshows/xubuntu/slides/app-menu.html:9
 msgid "All the applications installed in your system organized by category."
 msgstr ""
+"システムにインストールされたすべてのアプリケーションはカテゴリーごとに整理さ"
+"れています。"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/games.html:1
 msgid "Games in Xubuntu"
-msgstr ""
+msgstr "Xubuntu向けゲーム"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/games.html:6
@@ -110,6 +112,8 @@ msgid ""
 "If you need help, try <em>Help</em> in the Applications menu, or the help "
 "menu available in most applications."
 msgstr ""
+"ヘルプが必要な場合は、アプリケーションメニューにある <em>ヘルプ</em> か、ほと"
+"んどのアプリケーションで利用可能な ヘルプ メニューを参照してみてください。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/getting-help.html:7
@@ -157,6 +161,9 @@ msgid ""
 "capable of playing all your music, from mp3 to CD to live radio on the "
 "internet."
 msgstr ""
+"音楽を聴いて楽しみたいのであれば、<em>Exaile ミュージック・プレイヤー</em> を"
+"動かしてください。MP3からCDやインターネットラジオにいたるまで、あらゆる音楽を"
+"演奏することができます。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/more-apps.html:8
@@ -164,6 +171,8 @@ msgid ""
 "If you need to burn a CD or DVD, check out <em>Brasero</em>. It is very easy "
 "to use and will even burn the Xubuntu image for you."
 msgstr ""
+"CD や DVD に書き込む場合は <em>Brasero</em> が便利です。使い方はとても簡単で "
+"Xubuntu イメージさえ焼くことができます。"
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/more-apps.html:10
@@ -172,11 +181,13 @@ msgid ""
 "All of these applications are available on the live CD, even while "
 "installing. Be adventurous!"
 msgstr ""
+"これらのすべてのアプリケーションは Live CD で利用でき、インストール中でも利用"
+"することができます。探求心を持って試してください！"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/new-to-linux.html:1
 msgid "New to Linux?"
-msgstr ""
+msgstr "Linux は初めてですか?"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/new-to-linux.html:6
@@ -196,6 +207,9 @@ msgid ""
 "try out the new software. We think you will be amazed at the few things you "
 "need to add."
 msgstr ""
+"インストールが完了したら、数分、数時間、さらに数日かけて新しいソフトウェアを"
+"試してください。きっと、追加しなくてはならないソフトウェアが少ないことに驚く"
+"と思います。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/new-to-linux.html:8
@@ -209,7 +223,7 @@ msgstr ""
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/office.html:1
 msgid "Lighter alternatives for your office"
-msgstr ""
+msgstr "軽量な代替オフィスツール"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/office.html:6
@@ -218,6 +232,9 @@ msgid ""
 "document formats. You will have access to any fonts installed in your system "
 "and editing documents is a breeze."
 msgstr ""
+"<em>Abiword</em> は、既存のほぼすべての形式のドキュメントを読むことができる"
+"ワープロソフトです。システムにインストールされているすべてのフォントが利用で"
+"き、ドキュメントの編集が簡単に行えます。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/office.html:7
@@ -225,6 +242,8 @@ msgid ""
 "<em>Gnumeric</em> is a spreadsheet program with an emphasis on accuracy. It "
 "can also be used to merge mathematical data into Abiword documents."
 msgstr ""
+"<em>Gnumeric</em> は正確さに重点をおいた表計算プログラムです。Abiword ドキュ"
+"メントに数学的データをマージして利用することもできます。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/office.html:8
@@ -232,6 +251,8 @@ msgid ""
 "While Abiword and Gnumeric are considered lightweight, they provide almost "
 "all of the functions of the OpenOffice suite."
 msgstr ""
+"Abiword と Gnumeric は軽量なソフトウェアだと考えられていますが、OpenOffice ス"
+"イートのほぼ全ての機能を備えています。"
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/office.html:10
@@ -239,11 +260,13 @@ msgid ""
 "For power users, the OpenOffice.org suite is available in just a few clicks "
 "– just install it from the Ubuntu Software Center."
 msgstr ""
+"上級者であれば、OpenOffice.org スイートは Ubuntuソフトウェアセンターからイン"
+"ストールを行い、数回クリックするだけで利用できます。"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/tips-beginners.html:1
 msgid "Few good tips for beginners"
-msgstr ""
+msgstr "初心者のための役立つヒント"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/tips-beginners.html:6
@@ -252,6 +275,9 @@ msgid ""
 "any program on your system – one you lost on the menu or even one you didn't "
 "know existed!"
 msgstr ""
+"ファイルの検索(アプリケーション &rarr; アクセサリにある) を使うと、システムに"
+"ある任意のアプリケーションを起動することができます - どこにあるか分からなく"
+"なったものや、存在を知らなかったものでさえ!"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/tips-beginners.html:7
@@ -259,6 +285,9 @@ msgid ""
 "Catfish is a great application for finding those files you lost on your "
 "harddrive. It is quick and easy to use for beginners and experts alike."
 msgstr ""
+"Catfish はハードディスク上で見失ってしまったファイルを検索するための素晴らし"
+"いアプリケーションです。初心者でも上級者と同じように素早く簡単に利用できま"
+"す。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/tips-beginners.html:8
@@ -266,16 +295,18 @@ msgid ""
 "Also in the accessories, you can find a slick calculator. Need to calculate "
 "disk partitions? Use the calculator, it couldn't be easier."
 msgstr ""
+"アクセサリの中にも、素晴らしい電卓があります。ディスクパーティションの計算を"
+"したい場合は、簡単ではありませんが電卓を利用してください。"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/welcome.html:1
 msgid "Congratulations!"
-msgstr ""
+msgstr "おめでとうございます!"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/welcome.html:6
 msgid "You have chosen to install the latest version of Xubuntu, 10.04."
-msgstr ""
+msgstr "最新バージョンの Xubuntu 10.04 のインストールが選択されました。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/welcome.html:7
@@ -283,6 +314,8 @@ msgid ""
 "This exciting software is brought to you free of any fees, for your use and "
 "any others you want to share it with."
 msgstr ""
+"このわくわくするようなソフトウェアは、あなたが利用したり他人と共有する際にい"
+"かなる料金もかかりません。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/welcome.html:8
@@ -302,7 +335,7 @@ msgstr ""
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/xfce.html:1
 msgid "Xfce Desktop Environment"
-msgstr ""
+msgstr "Xfce デスクトップ環境"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/xfce.html:6
@@ -310,13 +343,15 @@ msgid ""
 "Xubuntu uses the <em>Xfce desktop environment</em>. This allows the "
 "developers to bring you a system which is sleek and useful."
 msgstr ""
+"Xubuntu は <em>Xfce デスクトップ環境</em> を使用しています。開発者がかっこよ"
+"く使いやすいシステムをあなたに届けます。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/xfce.html:7
 msgid ""
 "Xfce is a collection of programs that together provide a full-featured "
 "desktop environment."
-msgstr ""
+msgstr "Xfce は多機能なデスクトップ環境と共に提供されているプログラム集です。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/xfce.html:8
@@ -325,6 +360,8 @@ msgid ""
 "programmers create applications that fit in well with the desktop "
 "environment."
 msgstr ""
+"Xfce は、プログラマがデスクトップに合わせたアプリケーションを作成するための、"
+"複数のライブラリを提供しているデスクトッププラットフォームでもあります。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/xfce.html:9

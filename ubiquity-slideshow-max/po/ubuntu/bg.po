@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:47+0000\n"
-"PO-Revision-Date: 2010-04-06 06:49+0000\n"
-"Last-Translator: Krasimir Chonov <mk2616@abv.bg>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-14 20:03+0000\n"
+"Last-Translator: Boyan Sotirov <lz1dsb@abv.bg>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <div><h1>
@@ -30,7 +30,7 @@ msgid ""
 "circumstances. So, we provide tools that make Ubuntu one of the most "
 "accessible operating systems around."
 msgstr ""
-"Нашето желание е компютърите да служат на всеки, независимо от физическите "
+"Нашето желание е компютрите да служат на всеки, независимо от физическите "
 "обстоятелства. Затова разработваме инструменти, които правят Убунту една от "
 "най-достъпните операционни системи."
 
@@ -64,7 +64,7 @@ msgstr ""
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/documentation.html:1
 msgid "Getting Help with Ubuntu"
-msgstr "Получаване на помощ за Ubuntu"
+msgstr "Получаване на помощ за Убунту"
 
 #.  The string "Help and Support" should be exactly as it appears in the System menu. 
 #. type: Content of: <div><div><ul><li>
@@ -154,8 +154,8 @@ msgid ""
 "will download new messages automatically."
 msgstr ""
 "<em>Поща на Evolution</em> е напълно функционален пощенски клиент и "
-"календар, който идва в заедно с Убунту. Просто въведете информацията за "
-"вашата регистрация на е-поща и вашите писма ще бъдат изтеглени автоматично."
+"календар, който идва заедно с Убунту. Просто въведете информацията за вашата "
+"регистрация на е-поща и вашите писма ще бъдат изтеглени автоматично."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/evolution.html:7
@@ -270,7 +270,7 @@ msgid ""
 msgstr ""
 "Можете да намерите мощни програми за всички видове интереси, от програмиране "
 "и създаване на музика до разглеждане на космоса. Погледнете раздела <em>Топ "
-"програми</em>, з ада видите някои от нашите любими!"
+"програми</em>, за да видите някои от нашите любими!"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/installing-software.html:8
@@ -342,6 +342,9 @@ msgid ""
 "automatically stored in the cloud and synchronised across all of your "
 "computers."
 msgstr ""
+"Открийте популярна, DRM свободна музика, достъпна за закупуване от "
+"<em>Ubuntu One Music Store</em>, онлайн магазин за цифрова музика. Поръчките "
+"автоматично се запазват на сървъра и се синхронизират с всички ваши компютри."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:9
@@ -365,6 +368,10 @@ msgid ""
 "bookmarks, address book, and notes – everything goes where you go with "
 "<em>Ubuntu One</em>."
 msgstr ""
+"Независимо дали използвате вашия преносим компютър, нетбук или фирмен "
+"компютър, ще откриете, че всичко е синхронизирано автоматично. Вашите "
+"документи, музика, отметки, адресна книга и бележки - всичко е там, където "
+"има <em>Ubuntu One</em>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:7
@@ -391,6 +398,8 @@ msgid ""
 "Sign-up by launching the <em>Ubuntu One Preferences</em> application or "
 "going to <a href=\"http://one.ubuntu.com/\">http://one.ubuntu.com/</a>."
 msgstr ""
+"Регистрирайте се като стартирате <em>Ubuntu One</em> или като отидете на  <a "
+"href=\"http://one.ubuntu.com/\">http://one.ubuntu.com/</a>."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/welcome.html:1
@@ -422,6 +431,9 @@ msgid ""
 "something you will enjoy. While Ubuntu is installed, this slideshow will "
 "show you around."
 msgstr ""
+"Независимо дали сте нови в Убунту или дълговременен потребител, ние сме "
+"сигурни, че има нещо на което ще се насладите. Докато Убунту се инсталира, "
+"тази презентация ще ви разкаже повече."
 
 #. type: Content of: <div><div><p>
 #: slideshows/ubuntu/slides/welcome.html:10

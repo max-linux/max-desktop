@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:47+0000\n"
-"PO-Revision-Date: 2010-04-02 14:05+0000\n"
-"Last-Translator: Moritz Baumann <Unknown>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-12 19:50+0000\n"
+"Last-Translator: Martin Lettner <m.lettner@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <div><h1>
@@ -45,9 +45,9 @@ msgid ""
 "helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
 "click to press mouse buttons automatically."
 msgstr ""
-"Alle diese Werkzeuge befinden sich im Einstellungsmenü unter dem Punkt "
-"<em>Hilfstechnologien</em> . Von dort aus können Sie hilfreiche Werkzeuge "
-"wie <em>Orca</em> zur Sprachausgabe oder das automatische Ausführen von "
+"Alle diese Werkzeuge befinden sich im Menü Einstellungen unter dem Punkt "
+"<em>Hilfstechnologien</em>. Von dort aus können Sie hilfreiche Werkzeuge wie "
+"<em>Orca</em> zur Sprachausgabe oder das automatische Ausführen von "
 "Mausklicks aktivieren."
 
 #.  As before, the string "Appearance Preferences" is describing a particular menu item: System >
@@ -132,9 +132,9 @@ msgid ""
 "Click the envelope near the clock to log in to your accounts. New messages "
 "appear there, too, so you can see what's happening at a glance."
 msgstr ""
-"Über den Briefumschlag neben der Uhr können Sie sich über Ihre Konten "
-"anmelden. Neue Nachrichten werden dort angezeigt, sodass Sie auf einen Blick "
-"sehen können, was los ist."
+"Über den Briefumschlag neben der Uhr können Sie sich bei Ihren Konten "
+"anmelden. Neue Nachrichten werden ebenfalls dort angezeigt, sodass Sie auf "
+"einen Blick sehen können, was los ist."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:8
@@ -148,7 +148,7 @@ msgstr ""
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/evolution.html:1
 msgid "Control your digital life"
-msgstr "Regeln Sie Ihre Kommunikation im Internet"
+msgstr "Verwalten Sie Ihr digitales Leben"
 
 #.  "Evolution Mail" should be the exact name of the Evolution launcher inside the Internet menu or the indicator applet. 
 #. type: Content of: <div><div><ul><li>
@@ -303,7 +303,7 @@ msgid ""
 "that is easy to understand."
 msgstr ""
 "Ubuntu beinhaltet mit <em>OpenOffice.org</em> eine leistungsstarke "
-"Büroanwendung, die einfach benutzt werden kann."
+"Büroanwendung, die sehr einfach zu bedienen ist."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/openoffice.html:7
@@ -343,9 +343,9 @@ msgid ""
 "subscriptions and automatically download new episodes."
 msgstr ""
 "Mit dem <em>Rhythmbox Musik-Wiedergabeprogramm</em> können Sie Ihre "
-"Musiksammlung verwalten, Internetradio hören und Muisk kaufen. Verwalten Sie "
-"Ihre Podcasts und lassen Sie sich sodass neue Folgen einer Sendung "
-"automatisch herunterladen."
+"Musiksammlung verwalten, Internetradio hören und Musik kaufen. Verwalten Sie "
+"Ihre Podcasts und lassen Sie neue Folgen einer Sendung automatisch "
+"herunterladen."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:8
@@ -355,9 +355,9 @@ msgid ""
 "automatically stored in the cloud and synchronised across all of your "
 "computers."
 msgstr ""
-"Entdecken Sie beliebte, DRM-freie Musik, die über den digitalen, cloud-"
-"fähigen Musikhandel <em>Ubuntu One Music Store</em>, zum Kauf bereitsteht. "
-"Erworbene Musik werden in Ihrer Cloud gespeichert und auf alle Computer "
+"Entdecken Sie beliebte, DRM-freie Musik, die über den digitalen, Cloud-"
+"fähigen Musikladen <em>Ubuntu One Music Store</em> zum Kauf bereitsteht. "
+"Erworbene Titel werden in Ihrer Cloud gespeichert und auf alle Computer "
 "synchronisiert."
 
 #. type: Content of: <div><div><ul><li>

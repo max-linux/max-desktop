@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:48+0000\n"
-"PO-Revision-Date: 2010-03-27 10:09+0000\n"
-"Last-Translator: David Planella <Unknown>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-14 21:22+0000\n"
+"Last-Translator: Joan Duran <jodufi@gmail.com>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -29,6 +29,9 @@ msgid ""
 "circumstances. So, we provide tools that make Kubuntu one of the most "
 "accessible operating systems around."
 msgstr ""
+"Volem que els ordinadors siguin útils per a tothom, independentment de les "
+"vostres circumstàncies físiques. Per això oferim eines que fan del Kubuntu "
+"un dels sistemes operatius més accessibles."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:9
@@ -38,6 +41,10 @@ msgid ""
 "there, you can turn on helpful tools like <em>Modifier Keys</em>, "
 "<em>Keyboard Filters</em>, and <em>Activation Gestures</em>."
 msgstr ""
+"Podeu accedir a aquestes eines des d'un sol lloc: les preferències "
+"d'<em>Accessibilitat</em, a l'aplicació Arranjament del sistema des del "
+"menú. Des d'allà, podeu iniciar eines útils com <em>Tecles modificadores</"
+"em>, <em>Filtres de teclat</em>, i <em>Gestos d'activació</em>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:14
@@ -46,11 +53,14 @@ msgid ""
 "choose between different visual styles and even change the fonts that are "
 "used by applications."
 msgstr ""
+"Recordeu que també podeu mirar les <em>Preferències d'aparença</em>. Podeu "
+"escollir entre diferents estils visuals i fins i tot canviar els tipus de "
+"lletra que usen les aplicacions."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/games.html:1
 msgid "Get your game on with Kubuntu"
-msgstr ""
+msgstr "Jugueu amb el Kubuntu"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:6
@@ -58,6 +68,8 @@ msgid ""
 "With hundreds of game titles in our online repository, Kubuntu allows you to "
 "not be all about work, but also allows you to play."
 msgstr ""
+"Amb centenars de jocs al nostre dipòsit, el Kubuntu no és només per a "
+"treballar, també us permet jugar."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:9
@@ -65,6 +77,8 @@ msgid ""
 "The <em>KDE Software Compilation</em> has quite a few games ranging from "
 "card games to logic games and board games."
 msgstr ""
+"La <em>compilació de programari del KDE</em> té un gran nombre de jocs, que "
+"van des de cartes a jocs de lògica i de tauler."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:11
@@ -72,11 +86,13 @@ msgid ""
 "First Person Shooters, Role Play Games, and more are also available in the "
 "repositories."
 msgstr ""
+"També hi ha disponibles jocs de trets en primera persona, jocs de rol i més "
+"als nostres dipòsits."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-help.html:1
 msgid "Getting help with Kubuntu"
-msgstr ""
+msgstr "Com obtenir ajuda per al Kubuntu"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:6
@@ -84,6 +100,8 @@ msgid ""
 "If you need help, try <em>Help</em> from the menu, or the <em>Help</em> menu "
 "in most applications."
 msgstr ""
+"Si us cal ajuda, proveu <em>Ajuda</em> des del menú, o el menú <em>Ajuda</"
+"em> a la majoria d'aplicacions."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:8
@@ -94,6 +112,12 @@ msgid ""
 "through Canonical, its partners and approved companies. Learn more at <a "
 "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
 msgstr ""
+"A més de la nostra extensa documentació d'ajuda, la comunitat del Kubuntu, "
+"juntament amb la comunitat de l'Ubuntu, proporciona assistència tècnica en "
+"persona i per Internet. També hi ha disponible assistència comercial a "
+"través de Canonical, els seus associats i empreses aprovades. En trobareu "
+"més informació a <a href=\"http://www.ubuntu.com/support\">ubuntu.com/"
+"support</a>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:14
@@ -101,11 +125,13 @@ msgid ""
 "Let us know about your Kubuntu experience at <a href=\"http://www.ubuntu.com/"
 "community\">ubuntu.com/community</a>!"
 msgstr ""
+"Expliqueu-nos les vostres experiències amb el Kubuntu a <a href=\"http://www."
+"ubuntu.com/community\">ubuntu.com/community</a>!"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-involved.html:1
 msgid "Get involved and contribute to Kubuntu"
-msgstr ""
+msgstr "Involucreu-vos i col·laboreu en el Kubuntu"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:6
@@ -115,6 +141,11 @@ msgid ""
 "the distribution, providing advice and technical support, as well as helping "
 "to promote Kubuntu to a wider audience."
 msgstr ""
+"La comunitat del Kubuntu consisteix en un grup de persones que formen un "
+"dels millors equips de la comunitat del programari lliure, que treballen en "
+"diversos aspectes de la distribució, proporcionant consell i recolzament "
+"tècnic, així com ajudant a promoure el Kubuntu per a una audiència més "
+"àmplia."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:11
@@ -122,6 +153,9 @@ msgid ""
 "No matter your skill level, getting involved and helping to mold the future "
 "of Kubuntu is easy, and you are more than welcome to help out."
 msgstr ""
+"Tant se val el vostre nivell de coneixement. Participar i ajudar a modelar "
+"el futur del Kubuntu és fàcil, i sereu més que benvingut a donar-hi un cop "
+"de mà."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:14
@@ -131,22 +165,28 @@ msgid ""
 "help out. Remember, it is easy to get involved and the work you do will be "
 "seen by millions of people around the world."
 msgstr ""
+"Feu una ullada a <a href=\"https://wiki.kubuntu.org/Kubuntu/GettingInvolved"
+"\">wiki.kubuntu.org/Kubuntu/GettingInvolved</a> i decidiu on podríeu ajudar. "
+"Recordeu que és fàcil participar-hi, i la feina que feu la veuran milions de "
+"persones d'arreu del món."
 
 #. type: Content of: <div><div><p>
 #: slideshows/kubuntu/slides/get-involved.html:20
 msgid "The installation will finish soon. We hope you enjoy Kubuntu."
-msgstr ""
+msgstr "La instal·lació acabarà aviat. Esperem que gaudiu del Kubuntu."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/graphics.html:1
 msgid "Organize, enjoy, and share your photos"
-msgstr ""
+msgstr "Organitzeu, gaudiu i compartiu fotografies"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:5
 msgid ""
 "With <em>Gwenview</em>, it is really easy to organize and share your photos."
 msgstr ""
+"Amb el <em>Gwenview</em>, és realment fàcil organitzar i compartir les "
+"vostres fotos."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:7
@@ -155,6 +195,9 @@ msgid ""
 "custom HTML gallery, or to export to services such as Flickr, SmugMug, "
 "PicasaWeb, and more."
 msgstr ""
+"Useu l'opció d'exportació per a copiar les fotos a un ordinador remot, un "
+"iPod, una galeria HTML personalitzada, o per a exportar-les a serveis com el "
+"Flickr, SmugMug, PicasaWeb i d'altres."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:10
@@ -162,6 +205,8 @@ msgid ""
 "For more advanced organization and editing features, <em>digiKam</em> is "
 "available for installation."
 msgstr ""
+"Podeu instal·lar el <em>digiKam</em> per a una organització i "
+"característiques d'edició més avançades."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/installing-software.html:1
@@ -176,6 +221,10 @@ msgid ""
 "software from our online repositories, which we carefully organize to be "
 "safe and up to date."
 msgstr ""
+"Doneu un cop d'ull a l'aplicació <em>Gestor de programari</em> al menú de la "
+"pestanya Sistema. El Gestor de programari us permetrà instal·lar (i "
+"eliminar) programari dels nostres dipòsits, que organitzem amb cura per tal "
+"que siguin segurs i estiguin actualitzats."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:10
@@ -183,6 +232,8 @@ msgid ""
 "There is great software for everything from creating music and movies to "
 "producing 3D models and exploring the universe."
 msgstr ""
+"Hi ha programari excel·lent per a tot allò que us pugueu imaginar: des de "
+"crear música i pel·lícules fins a produir models 3D i explorar l'univers."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:12
@@ -191,11 +242,14 @@ msgid ""
 "a Debian package or another repository available. That way, it will be "
 "really easy to install and you will receive automatic updates."
 msgstr ""
+"Si us cal alguna cosa que no tinguem, cerqueu si hi ha un paquet Debian o un "
+"altre dipòsit disponible. D'aquesta manera serà fàcil instal·lar-lo i en "
+"rebreu actualitzacions automàtiques."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/internet.html:1
 msgid "The Internet, your way"
-msgstr ""
+msgstr "Internet a la vostra manera"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:5
@@ -203,6 +257,8 @@ msgid ""
 "Kubuntu ships software necessary to utilize the Internet for many different "
 "situations."
 msgstr ""
+"El Kubuntu proporciona el programari necessari per a utilitzar Internet de "
+"maneres molt diferents."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:7
@@ -210,6 +266,8 @@ msgid ""
 "Browse the web, share your files, software, and multimedia, send and receive "
 "e-mail, and communicate with friends and family."
 msgstr ""
+"Navegueu el web, compartiu els vostres fitxers, programari i multimèdia, "
+"envieu i rebeu correu electrònic i comuniqueu-vos amb amics i família."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:10
@@ -217,17 +275,21 @@ msgid ""
 "Web browsers such as <em>Firefox</em> and Google's <em>Chromium</em> are "
 "easily installable."
 msgstr ""
+"Els navegadors com el <em>Firefox</em> i el <em>Chromium</em> de Google són "
+"fàcilment instal·lables."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/multimedia.html:1
 msgid "Music and movies in Kubuntu"
-msgstr ""
+msgstr "Música i pel·lícules al Kubuntu"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:5
 msgid ""
 "Kubuntu is ready to play videos and music from the web, from CDs and DVDs."
 msgstr ""
+"El Kubuntu està preparat per a reproduir vídeos i música des del web, des de "
+"CD i DVD."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:7
@@ -236,6 +298,9 @@ msgid ""
 "Internet radio, podcasts, and more, as well as synchronizes your audio "
 "collection to a portable audio player."
 msgstr ""
+"El reproductor d'àudio <em>Amarok</em> us permet organitzar la vostra música "
+"i escoltar la ràdio per Internet, els podcasts i més coses, així com "
+"sincronitzar la vostra col·lecció d'àudio a un reproductor d'àudio portàtil."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:10
@@ -243,11 +308,13 @@ msgid ""
 "<em>Dragon Player</em> allows you to easily watch videos from your computer, "
 "DVD, or streamed over the Internet."
 msgstr ""
+"El <em>Dragon Player</em> us permet visualitzar vídeos de manera senzilla "
+"des del vostre ordinador, DVD o transmissions per Internet."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/office.html:1
 msgid "Office tools at your fingertips"
-msgstr ""
+msgstr "Eines ofimàtiques al vostre abast"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:5
@@ -255,6 +322,8 @@ msgid ""
 "<em>OpenOffice.org</em> is a powerful office software suite that is very "
 "easy to learn and use."
 msgstr ""
+"L'<em>OpenOffice.org</em> és una potent suite ofimàtica molt fàcil "
+"d'aprendre i d'utilitzar."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:7
@@ -262,6 +331,8 @@ msgid ""
 "Use it to create letters, presentations and spreadsheets, as well as "
 "diagrams and databases."
 msgstr ""
+"Utilitzeu-la per crear cartes, presentacions i fulls de càlcul, així com "
+"diagrames i bases de dades."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:9
@@ -270,11 +341,14 @@ msgid ""
 "applications include WordPerfect and Microsoft Office. It uses the standard "
 "OpenDocument format."
 msgstr ""
+"L'<em>OpenOffice.org</em> pot treballar amb documents d'altres aplicacions "
+"ofimàtiques populars, com ara el WordPerfect i el Microsoft Office. Utilitza "
+"el format estàndard OpenDocument."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/pim.html:1
 msgid "Manage your contacts, dates, and e-mail"
-msgstr ""
+msgstr "Gestioneu els vostres contactes, cites i correu electrònic"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:6
@@ -283,6 +357,9 @@ msgid ""
 "software that comes with Kubuntu. It contains applications for E-mail, "
 "Calendar, Address Book, and more."
 msgstr ""
+"El <em>Kontact</em> és una completa aplicació de gestió d'informació "
+"personal que trobareu al Kubuntu. Conté aplicacions per a correu electrònic, "
+"calendari, llibreta d'adreces i més."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:9
@@ -290,6 +367,8 @@ msgid ""
 "Send e-mail with <em>KMail</em> from services such as Yahoo, GMail, and "
 "various groupware services."
 msgstr ""
+"Envieu correu electrònic amb el <em>KMail</em> per a serveis com el Yahoo, "
+"el GMail i diversos serveis de treball en grup."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:11
@@ -297,6 +376,8 @@ msgid ""
 "Organize your calendar and scheduling with <em>KOrganizer</em> and "
 "synchronize with services such as Google's Calendar."
 msgstr ""
+"Organitzeu el vostre calendari i planificacions amb el <em>KOrganizer</em> i "
+"sincronitzeu-lo amb serveis com el Google Calendar."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:13
@@ -305,13 +386,19 @@ msgid ""
 "your contacts with nearly every address book standard as well synchronize "
 "with various groupware services."
 msgstr ""
+"Manteniu els vostres contactes organitzats amb el <em>KAdressBook/em> i "
+"importeu o exporteu els vostres contactes amb gairebé tots els estàndards de "
+"llibretes d'adreces. Sincronitzeu-los amb diversos serveis de treball en "
+"grup."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/pim.html:16
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/pim.html:17
 msgid ""
 "<em>Kontact</em> is the perfect personal information management integration "
 "for you!"
 msgstr ""
+"El <em>Kontact</em> és l'eina d'integració de gestió d'informació personal "
+"perfecta!"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/welcome.html:1
@@ -321,7 +408,7 @@ msgstr "Us donem la benvinguda"
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:6
 msgid "Thank you for choosing Kubuntu 10.04 LTS."
-msgstr ""
+msgstr "Us agraïm que hàgiu escollir el Kubuntu 10.04 LTS"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:7
@@ -330,6 +417,9 @@ msgid ""
 "their choice and to download, change, study and share their software for any "
 "purpose."
 msgstr ""
+"Creiem que cada usuari d'ordinador ha de ser lliure de treballar en l'entorn "
+"que esculli i baixar, canviar, estudiar i compartir el seu programari per "
+"qualsevol propòsit."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:10
@@ -337,8 +427,11 @@ msgid ""
 "As part of our promise, we want Kubuntu to work as well for you as possible. "
 "So while it installs, this slideshow will provide a quick introduction."
 msgstr ""
+"Com a part de la nostra promesa, volem que el Kubuntu us funcioni tan bé com "
+"sigui possible. De manera que mentre s'instal·la, aquesta presentació de "
+"diapositives us n'ensenyarà una petita introducció."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/welcome.html:13
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/welcome.html:14
 msgid "Kubuntu is designed to be easy. Feel free to explore!"
-msgstr ""
+msgstr "El Kubuntu està dissenyat per ser fàcil. Exploreu-lo!"

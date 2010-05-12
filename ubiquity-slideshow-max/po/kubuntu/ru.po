@@ -7,20 +7,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:48+0000\n"
-"PO-Revision-Date: 2010-04-02 13:10+0000\n"
-"Last-Translator: Yuri Efremov <yur.arh@gmail.com>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-17 07:10+0000\n"
+"Last-Translator: Vadim Rutkovsky <roignac@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/accessibility.html:1
 msgid "Accessibility in Kubuntu"
-msgstr "Работа в Kubuntu для людей с ограниченными возможностями"
+msgstr "Для людей с ограниченными возможностями"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:6
@@ -42,7 +42,7 @@ msgid ""
 "<em>Keyboard Filters</em>, and <em>Activation Gestures</em>."
 msgstr ""
 "Эти инструменты собраны в одном месте: <em>Специальные возможности</em>, "
-"которые находятся в Параметрах системы. Там вы можете включить такие "
+"которые находятся в меню \"Параметры системы\". Там вы можете включить такие "
 "полезные возможности, как <em>Клавиши-модификаторы</em>, <em>Фильтры "
 "клавиатуры</em>, и <em>Жесты активации</em>."
 
@@ -59,7 +59,7 @@ msgstr ""
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/games.html:1
 msgid "Get your game on with Kubuntu"
-msgstr "Скачай свою игру для Kubuntu"
+msgstr "Игры для Kubuntu"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:6
@@ -67,7 +67,7 @@ msgid ""
 "With hundreds of game titles in our online repository, Kubuntu allows you to "
 "not be all about work, but also allows you to play."
 msgstr ""
-"Сотни игр в нашем онлайн хранилище, позволяют Kubuntu быть не только "
+"Сотни игр в нашем онлайн репозитории позволяют Kubuntu быть не только "
 "системой для работы, но и для развлечений."
 
 #. type: Content of: <div><div><ul><li>
@@ -76,7 +76,7 @@ msgid ""
 "The <em>KDE Software Compilation</em> has quite a few games ranging from "
 "card games to logic games and board games."
 msgstr ""
-"В <em>KDE SC</em> довольно много игр, от карточных до логических и "
+"В <em>KDE SC</em> довольно много игр - от карточных до логических и "
 "настольных."
 
 #. type: Content of: <div><div><ul><li>
@@ -99,8 +99,8 @@ msgid ""
 "If you need help, try <em>Help</em> from the menu, or the <em>Help</em> menu "
 "in most applications."
 msgstr ""
-"Если вам нужна помощь, выберите в меню <em>Справка</em> , или <em>Справка</"
-"em> в меню большинства программ."
+"Если вам нужна помощь, выберите <em>Справка</em> в главном меню или "
+"<em>Руководство пользователя</em> в меню большинства программ."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:8
@@ -164,7 +164,7 @@ msgid ""
 msgstr ""
 "Перейдите на <a href=\"https://wiki.kubuntu.org/Kubuntu/GettingInvolved"
 "\">wiki.kubuntu.org/Kubuntu/GettingInvolved</a> и посмотрите, где бы вы "
-"смогли помочь. Помните, что принять участие легко и вашу работу увидят "
+"смогли помочь. Помните, что принять участие легко, и вашу работу увидят "
 "миллионы людей по всему миру."
 
 #. type: Content of: <div><div><p>
@@ -176,14 +176,14 @@ msgstr ""
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/graphics.html:1
 msgid "Organize, enjoy, and share your photos"
-msgstr "Просматривайте, управляйте и обменивайтесь вашими фотографиями"
+msgstr "Просматривайте, управляйте и обменивайтесь фотографиями"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:5
 msgid ""
 "With <em>Gwenview</em>, it is really easy to organize and share your photos."
 msgstr ""
-"C помощью <em>Gwenview</em> очень легко управлять и поделиться своими "
+"C помощью <em>Gwenview</em> очень легко управлять и делиться своими "
 "фотографиями."
 
 #. type: Content of: <div><div><ul><li>
@@ -203,13 +203,13 @@ msgid ""
 "For more advanced organization and editing features, <em>digiKam</em> is "
 "available for installation."
 msgstr ""
-"Для более продвинутых возможностей управления и редактирования, доступен для "
-"установки <em>digiKam</em>."
+"Для более продвинутых возможностей управления и редактирования установите "
+"<em>digiKam</em>."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/installing-software.html:1
 msgid "Installing additional software"
-msgstr "Установка дополнительного программного обеспечения"
+msgstr "Установка дополнительных программ"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:6
@@ -219,10 +219,10 @@ msgid ""
 "software from our online repositories, which we carefully organize to be "
 "safe and up to date."
 msgstr ""
-"Обратите внимание на приложение <em>Управление программами</em> в меню на "
-"вкладке \"Система\". <em>Управление программами</em> позволит вам "
-"устанавливать (и удалять) программное обеспечение из наших онлайн-хранилищ, "
-"которое мы тщательно поддерживаем в безопасном и актуальном состоянии."
+"Обратите внимание на приложение <em>Управление программами</em> в главном "
+"меню. <em>Управление программами</em> позволит вам устанавливать (и удалять) "
+"программное обеспечение из репозитория, которое мы тщательно поддерживаем в "
+"безопасном и актуальном состоянии."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:10
@@ -242,13 +242,13 @@ msgid ""
 msgstr ""
 "Если вам всё же понадобится какая-либо программа, недоступная через "
 "\"Управление программами\", проверьте, нет ли в сети готового deb-пакета или "
-"иного хранилища. Установка программ таким способом очень проста и "
+"иного репозитория. Установка программ таким способом очень проста и "
 "обеспечивает их автоматическое обновление."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/internet.html:1
 msgid "The Internet, your way"
-msgstr "Интернет, ваш путь"
+msgstr "Ваш путь в интернет"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:5
@@ -256,8 +256,8 @@ msgid ""
 "Kubuntu ships software necessary to utilize the Internet for many different "
 "situations."
 msgstr ""
-"Kubuntu содержит необходимое программное обеспечение для использования "
-"интернета в различных ситуациях."
+"Kubuntu содержит всё необходимое программное обеспечение для различной "
+"работы в интернете."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:7
@@ -275,8 +275,8 @@ msgid ""
 "Web browsers such as <em>Firefox</em> and Google's <em>Chromium</em> are "
 "easily installable."
 msgstr ""
-"Веб-браузеры, такие как <em>Firefox</em> и <em>Chromium</em> компании "
-"Google, могут быть легко установлены."
+"Можно легко установить такие веб-браузеры, как <em>Firefox</em> и "
+"<em>Chromium</em>."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/multimedia.html:1
@@ -298,10 +298,9 @@ msgid ""
 "Internet radio, podcasts, and more, as well as synchronizes your audio "
 "collection to a portable audio player."
 msgstr ""
-"<em>Amarok</em> аудиопроигрыватель, с помощью которого вы можете управлять "
-"вашей музыкальной коллекцией, слушать интернет-радио, подкастинг и многое "
-"другое. Он также позволяет синхронизировать вашу музыку с портативным "
-"аудиоплеером."
+"Аудиопроигрыватель <em>Amarok</em> позволит вам управлять вашей музыкальной "
+"коллекцией, слушать интернет-радио, подкастинг и многое другое. Он также "
+"позволяет синхронизировать вашу музыку с портативным аудиоплеером."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:10
@@ -310,7 +309,7 @@ msgid ""
 "DVD, or streamed over the Internet."
 msgstr ""
 "<em>Dragon Player</em> позволяет вам легко просматривать видео на вашем "
-"компьютере, DVD, или прямо из интернета."
+"компьютере, DVD или прямо из интернета."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/office.html:1
@@ -350,7 +349,7 @@ msgstr ""
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/pim.html:1
 msgid "Manage your contacts, dates, and e-mail"
-msgstr "Управляйте вашими контактами, встречами и электронной почтой"
+msgstr "Управляйте вашими контактами, встречами и эл. почтой"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:6
@@ -359,9 +358,9 @@ msgid ""
 "software that comes with Kubuntu. It contains applications for E-mail, "
 "Calendar, Address Book, and more."
 msgstr ""
-"<em>Kontact</em> - это средство управления персональной информацией, "
-"входящее в Kubuntu. Он включает в себя приложения для работы с эл. почтой, "
-"календарь, контактную книгу и многое другое."
+"<em>Kontact</em> - это менеджер персональной информации. Он включает в себя "
+"приложения для работы с эл. почтой, календарь, контактную книгу и многое "
+"другое."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:9
@@ -369,8 +368,8 @@ msgid ""
 "Send e-mail with <em>KMail</em> from services such as Yahoo, GMail, and "
 "various groupware services."
 msgstr ""
-"Отправляйте электронные письма, используя <em>KMail</em> с такими службами, "
-"как Yahoo, GMail и различными совместными почтовыми службами."
+"Отправляйте письма, используя <em>KMail</em> с такими почтовыми службами как "
+"Yahoo, GMail и различными службами для совместной работы."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:11
@@ -379,7 +378,7 @@ msgid ""
 "synchronize with services such as Google's Calendar."
 msgstr ""
 "Организуйте свой календарь и расписание вместе с <em>KOrganizer</em>, и "
-"синхронизируйте его с сервисами наподобие Календарь Google."
+"синхронизируйте его с сервисами, наподобие, Календарь Google."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:13
@@ -388,19 +387,18 @@ msgid ""
 "your contacts with nearly every address book standard as well synchronize "
 "with various groupware services."
 msgstr ""
-"Храните ваши контакты организованно, с помощью <em>KAddressBook</em>. "
-"Импортируйте или экспортируйте контакты практически в любой стандарт записей "
-"адресных книг, а также синхронизируйте их с различными службами для "
-"совместной работы."
+"Организуйте ваши контакты с помощью <em>KAddressBook</em>, импортируйте или "
+"экспортируйте контакты практически в любой формат адресных книг, а также "
+"синхронизируйте их с различными службами для совместной работы."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/pim.html:16
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/pim.html:17
 msgid ""
 "<em>Kontact</em> is the perfect personal information management integration "
 "for you!"
 msgstr ""
-"<em>Kontact</em> это идеальное средство объединения и управления "
-"персональными данными для вас!"
+"<em>Kontact</em> - это идеальное средство объединения и управления "
+"персональными данными!"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/welcome.html:1
@@ -429,12 +427,11 @@ msgid ""
 "As part of our promise, we want Kubuntu to work as well for you as possible. "
 "So while it installs, this slideshow will provide a quick introduction."
 msgstr ""
-"В рамках нашего обещания, мы хотим, чтобы ваша работа в Kubuntu была "
-"эффективной. Поэтому во время установки будет показано слайд-шоу в качестве "
-"краткого введения в работу."
+"Мы хотим, чтобы ваша работа в Kubuntu была эффективной. Поэтому во время "
+"установки будет показано слайд-шоу в качестве краткого введения в работу."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/welcome.html:13
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/welcome.html:14
 msgid "Kubuntu is designed to be easy. Feel free to explore!"
 msgstr ""
 "Kubuntu задумана быть максимально простой. Почувствуйте свободу и легкость "

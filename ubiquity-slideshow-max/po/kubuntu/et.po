@@ -7,20 +7,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:48+0000\n"
-"PO-Revision-Date: 2010-03-22 08:29+0000\n"
-"Last-Translator: mahfiaz <mahfiaz@gmail.com>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-14 11:06+0000\n"
+"Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/accessibility.html:1
 msgid "Accessibility in Kubuntu"
-msgstr "Kubuntu kättesaadavus"
+msgstr "Hõlbustusfunktsioonid Kubuntus"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:6
@@ -29,6 +29,9 @@ msgid ""
 "circumstances. So, we provide tools that make Kubuntu one of the most "
 "accessible operating systems around."
 msgstr ""
+"Me tahame arvutid kõigi heaks tööle rakendada, sõltumata sinu võimalikest "
+"füüsilistest piirangutest. Seega pakume töövahendeid, mis teevad Kubuntust "
+"ühe hõlpsamini kasutatava operatsioonisüsteemi, mis olemas on."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:9
@@ -38,6 +41,10 @@ msgid ""
 "there, you can turn on helpful tools like <em>Modifier Keys</em>, "
 "<em>Keyboard Filters</em>, and <em>Activation Gestures</em>."
 msgstr ""
+"Kõik need töövahendid leiad ühest kohast: <em>Hõlbustuse</em> eelistustest "
+"Süsteemi seadistustes, kuhu pääsed menüü kaudu. Seal saad sisse lülitada "
+"abistavad vahendid nagu näiteks <em>Muuteklahvid</em>, <em>Klaviatuuri "
+"filtrid</em> ja <em>Aktiveerimistoimingud</em>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:14
@@ -46,11 +53,13 @@ msgid ""
 "choose between different visual styles and even change the fonts that are "
 "used by applications."
 msgstr ""
+"Ära unusta ka <em>Välimuse seadistusi</em> vaatamata. Saad valida erinevate "
+"visuaalsete stiilide vahel ja muuta isegi rakendustes kasutatavaid fonte."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/games.html:1
 msgid "Get your game on with Kubuntu"
-msgstr ""
+msgstr "Mängi Kubuntuga"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:6
@@ -58,6 +67,8 @@ msgid ""
 "With hundreds of game titles in our online repository, Kubuntu allows you to "
 "not be all about work, but also allows you to play."
 msgstr ""
+"Meie tarkvarahoidlas on sadu mänge, nii et lisaks töötegemisele saab "
+"Kubuntus ka mängida."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:9
@@ -65,18 +76,20 @@ msgid ""
 "The <em>KDE Software Compilation</em> has quite a few games ranging from "
 "card games to logic games and board games."
 msgstr ""
+"<em>KDE tarkvarakogus</em> on päris palju mänge kaardimängudest loogika- ja "
+"lauamängudeni."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:11
 msgid ""
 "First Person Shooters, Role Play Games, and more are also available in the "
 "repositories."
-msgstr ""
+msgstr "Tarkvarahoidlates leidub lisaks ka tulistamis-, rolli- ja muid mänge."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-help.html:1
 msgid "Getting help with Kubuntu"
-msgstr ""
+msgstr "Abi otsimine Kubuntus"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:6
@@ -84,6 +97,8 @@ msgid ""
 "If you need help, try <em>Help</em> from the menu, or the <em>Help</em> menu "
 "in most applications."
 msgstr ""
+"Kui vajad abi, proovi <em>Abi</em> menüüvalikut või enamikus rakendustes "
+"olevat <em>Abi</em> menüüd."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:8
@@ -94,6 +109,11 @@ msgid ""
 "through Canonical, its partners and approved companies. Learn more at <a "
 "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
 msgstr ""
+"Lisaks laialdasele kirjapandud abile pakuvad Kubuntu ja Ubuntu kogukonnad ka "
+"tasuta tehnilist abi nii isiklikult kui ka üle võrgu. Samuti on Canonicali, "
+"selle partnerite ja tunnustatud firmade poolt saadaval tasuline abiteenus. "
+"Rohkem teavet leiad aadressilt <a href=\"http://www.ubuntu.com/support"
+"\">ubuntu.com/support</a>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:14
@@ -101,11 +121,13 @@ msgid ""
 "Let us know about your Kubuntu experience at <a href=\"http://www.ubuntu.com/"
 "community\">ubuntu.com/community</a>!"
 msgstr ""
+"Jutusta meile oma Kubuntu kogemusest lehel <a href=\"http://www.ubuntu.com/"
+"community\">ubuntu.com/community</a>!"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-involved.html:1
 msgid "Get involved and contribute to Kubuntu"
-msgstr ""
+msgstr "Aita kaasa Kubuntu arendamisele"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:6
@@ -115,6 +137,10 @@ msgid ""
 "the distribution, providing advice and technical support, as well as helping "
 "to promote Kubuntu to a wider audience."
 msgstr ""
+"Kubuntu kogukond koosneb üksikisikutest, kes moodustavad ühe suurima "
+"meeskonna vaba tarkvara kogukonnas. Nad töötavad distributsiooni erinevate "
+"külgedega, annavad nõu ja tehnilist tuge, samuti aitavad nad Kubuntut "
+"suuremale rahvahulgale tutvustada."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:11
@@ -122,6 +148,9 @@ msgid ""
 "No matter your skill level, getting involved and helping to mold the future "
 "of Kubuntu is easy, and you are more than welcome to help out."
 msgstr ""
+"Olenemata sinu praegustest oskustest on arendamisele kaasaaitamine ja "
+"Kubuntu tuleviku kujundamine lihtne ning abistajad on alati vägagi "
+"teretulnud."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:14
@@ -131,22 +160,28 @@ msgid ""
 "help out. Remember, it is easy to get involved and the work you do will be "
 "seen by millions of people around the world."
 msgstr ""
+"Vaata <a href=\"https://wiki.kubuntu.org/Kubuntu/GettingInvolved\">wiki."
+"kubuntu.org/Kubuntu/GettingInvolved</a>  ja uuri, millega saad aidata. Pea "
+"meeles, et projektiga liitumine on lihtne ja sinu tehtud tööd näevad "
+"miljonid inimesed üle maailma."
 
 #. type: Content of: <div><div><p>
 #: slideshows/kubuntu/slides/get-involved.html:20
 msgid "The installation will finish soon. We hope you enjoy Kubuntu."
-msgstr ""
+msgstr "Paigaldamine jõuab varsti lõpule. Loodame, et naudid Kubuntut."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/graphics.html:1
 msgid "Organize, enjoy, and share your photos"
-msgstr ""
+msgstr "Korralda, naudi ja jaga oma fotosid"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:5
 msgid ""
 "With <em>Gwenview</em>, it is really easy to organize and share your photos."
 msgstr ""
+"<em>Gwenview</em>'ga on väga lihtne oma fotokogu korraldada ja fotosid "
+"jagada."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:7
@@ -155,6 +190,9 @@ msgid ""
 "custom HTML gallery, or to export to services such as Flickr, SmugMug, "
 "PicasaWeb, and more."
 msgstr ""
+"Oma fotode Flickrisse, SmugMugi, PicasaWebi või teistesse keskkondadesse "
+"eksportimiseks või kaugarvutisse, iPodi või kohandatud HTML-galeriisse "
+"kopeerimiseks kasuta eksportimise valikut."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:10
@@ -162,6 +200,8 @@ msgid ""
 "For more advanced organization and editing features, <em>digiKam</em> is "
 "available for installation."
 msgstr ""
+"Kui vajad põhjalikumaid fotode korraldamise ja redigeerimise funktsioone, "
+"siis võid paigaldada programmi <em>digiKam</em>."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/installing-software.html:1
@@ -176,6 +216,9 @@ msgid ""
 "software from our online repositories, which we carefully organize to be "
 "safe and up to date."
 msgstr ""
+"Vaata menüü Süsteemi alajaotises rakendust <em>Tarkvara haldamine</em>. "
+"Selle abil saad paigaldada (ja eemaldada) tarkvara meie turvalistest ja "
+"ajakohastest tarkvarahoidlatest."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:10
@@ -183,6 +226,8 @@ msgid ""
 "There is great software for everything from creating music and movies to "
 "producing 3D models and exploring the universe."
 msgstr ""
+"Seal leidub tarkvara kõige jaoks, alates muusika ja filmide loomisest kuni "
+"3D-modelleerimise ja universumi uurimiseni."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:12
@@ -191,11 +236,15 @@ msgid ""
 "a Debian package or another repository available. That way, it will be "
 "really easy to install and you will receive automatic updates."
 msgstr ""
+"Kui vajad siiski midagi, mida meie tarkvarahoidlates pole, siis loodetavasti "
+"leiad selle kas mõnest muust hoidlast (nt kellegi PPA-st) või Debiani "
+"paketina tarkvara kodulehelt. Nii on paigaldamine endiselt väga lihtne ja ka "
+"lisahoidlatest pärit tarkvara uuendatakse automaatselt."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/internet.html:1
 msgid "The Internet, your way"
-msgstr ""
+msgstr "Internet, sinu moodi"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:5
@@ -203,6 +252,8 @@ msgid ""
 "Kubuntu ships software necessary to utilize the Internet for many different "
 "situations."
 msgstr ""
+"Kubuntus sisalduva tarkvaraga saab Internetti kasutada paljudel eri "
+"otstarvetel."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:7
@@ -210,6 +261,8 @@ msgid ""
 "Browse the web, share your files, software, and multimedia, send and receive "
 "e-mail, and communicate with friends and family."
 msgstr ""
+"Lehitse veebi, jaga oma faile, tarkvara ja multimeediat, saada ja võta vastu "
+"e-posti ning suhtle oma sõprade ja perekonnaga."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:10
@@ -217,17 +270,21 @@ msgid ""
 "Web browsers such as <em>Firefox</em> and Google's <em>Chromium</em> are "
 "easily installable."
 msgstr ""
+"Veebilehitsejad nagu <em>Firefox</em> ja Google'i <em>Chromium</em> on "
+"hõlpsasti paigaldatavad."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/multimedia.html:1
 msgid "Music and movies in Kubuntu"
-msgstr ""
+msgstr "Muusika ja filmid Kubuntus"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:5
 msgid ""
 "Kubuntu is ready to play videos and music from the web, from CDs and DVDs."
 msgstr ""
+"Kubuntu on valmis mängima videoid ja muusikat veebist ning CD- ja DVD-"
+"plaatidelt."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:7
@@ -236,6 +293,9 @@ msgid ""
 "Internet radio, podcasts, and more, as well as synchronizes your audio "
 "collection to a portable audio player."
 msgstr ""
+"Muusikamängija <em>Amarok</em> võimaldab sul korrastada oma muusikafaile ja "
+"kuulata veebiraadioid, taskuhäälinguid ning palju muud. Samuti sünkroonib "
+"see su muusikakogu kaasaskantavasse muusikamängijasse."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:10
@@ -243,11 +303,13 @@ msgid ""
 "<em>Dragon Player</em> allows you to easily watch videos from your computer, "
 "DVD, or streamed over the Internet."
 msgstr ""
+"<em>Dragoni mängija</em> võimaldab sul hõlpsasti vaadata videoid oma "
+"arvutist, DVD-lt või striimida Internetist."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/office.html:1
 msgid "Office tools at your fingertips"
-msgstr ""
+msgstr "Kontoritarkvara sinu käeulatuses"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:5
@@ -255,6 +317,8 @@ msgid ""
 "<em>OpenOffice.org</em> is a powerful office software suite that is very "
 "easy to learn and use."
 msgstr ""
+"<em>OpenOffice.org</em> on võimekas kontoritarkvara pakett, mida on väga "
+"lihtne kasutama õppida ja kasutada."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:7
@@ -262,6 +326,8 @@ msgid ""
 "Use it to create letters, presentations and spreadsheets, as well as "
 "diagrams and databases."
 msgstr ""
+"Seda saad kasutada kirjade, esitluste, tabelite, diagrammide ja andmebaaside "
+"loomiseks."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:9
@@ -270,11 +336,14 @@ msgid ""
 "applications include WordPerfect and Microsoft Office. It uses the standard "
 "OpenDocument format."
 msgstr ""
+"Lisaks standardiseeritud OpenDocument-vormingule võimaldab <em>OpenOffice."
+"org</em> avada ja redigeerida ka teiste populaarsete kontoritarkvarade (nt "
+"WordPerfecti ja Microsoft Office'i) failivorminguid."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/pim.html:1
 msgid "Manage your contacts, dates, and e-mail"
-msgstr ""
+msgstr "Halda oma kontakte, kohtumisi ja e-kirju"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:6
@@ -283,6 +352,9 @@ msgid ""
 "software that comes with Kubuntu. It contains applications for E-mail, "
 "Calendar, Address Book, and more."
 msgstr ""
+"<em>Kontact</em> on Kubuntu koosseisus olev täisväärtuslik isikliku teabe "
+"haldamise tarkvara. See sisaldab rakendusi e-posti, kalendri, "
+"aadressiraamatu ja muu jaoks."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:9
@@ -290,6 +362,8 @@ msgid ""
 "Send e-mail with <em>KMail</em> from services such as Yahoo, GMail, and "
 "various groupware services."
 msgstr ""
+"<em>KMail</em>iga saad e-kirju saata nt Yahoo!, Gmaili ja erinevate "
+"rühmatarkvarateenuste kaudu."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:11
@@ -297,6 +371,8 @@ msgid ""
 "Organize your calendar and scheduling with <em>KOrganizer</em> and "
 "synchronize with services such as Google's Calendar."
 msgstr ""
+"<em>KOrganizer</em>iga saad planeerida oma kalendrit ja ajakava ning "
+"sünkroonida teenustega nagu Google'i kalender."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:13
@@ -305,13 +381,16 @@ msgid ""
 "your contacts with nearly every address book standard as well synchronize "
 "with various groupware services."
 msgstr ""
+"<em>KAddressBook</em> võimaldab sul oma kontakte korrastada ning neid "
+"importida ja eksportida peaaegu kõigi aadressiraamatu standardite vahel, "
+"samuti saad neid erinevate rühmatarkvarateenustega sünkroonida."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/pim.html:16
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/pim.html:17
 msgid ""
 "<em>Kontact</em> is the perfect personal information management integration "
 "for you!"
-msgstr ""
+msgstr "<em>Kontact</em> on täiuslik isikliku teabe haldamise tarkvara!"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/welcome.html:1
@@ -321,7 +400,7 @@ msgstr "Tere tulemast!"
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:6
 msgid "Thank you for choosing Kubuntu 10.04 LTS."
-msgstr ""
+msgstr "Täname Kubuntu 10.04 LTS-i valimise eest."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:7
@@ -330,6 +409,9 @@ msgid ""
 "their choice and to download, change, study and share their software for any "
 "purpose."
 msgstr ""
+"Me usume, et iga arvutikasutaja peaks saama töötada vabalt valitud "
+"keskkonnas ja oma tarkvara ükskõik mis eesmärgil alla laadida, uurida, muuta "
+"ja jagada."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:10
@@ -337,8 +419,11 @@ msgid ""
 "As part of our promise, we want Kubuntu to work as well for you as possible. "
 "So while it installs, this slideshow will provide a quick introduction."
 msgstr ""
+"Osana oma lubadusest tahame, et Kubuntu töötaks sinu heaks nii hästi kui "
+"võimalik. Niisiis kuni Kubuntut paigaldadakse, tutvustab see slaidiseanss "
+"lühidalt uut süsteemi."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/welcome.html:13
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/welcome.html:14
 msgid "Kubuntu is designed to be easy. Feel free to explore!"
-msgstr ""
+msgstr "Kubuntu on kujundatud olema lihtne. Võid vabalt seda uurida!"

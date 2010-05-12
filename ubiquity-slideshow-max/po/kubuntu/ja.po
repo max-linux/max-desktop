@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:48+0000\n"
-"PO-Revision-Date: 2010-04-06 21:25+0000\n"
-"Last-Translator: Shushi Kurose <md81bird@hitaki.net>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-12 02:55+0000\n"
+"Last-Translator: Fumihito YOSHIDA <hito@kugutsu.org>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -41,6 +41,10 @@ msgid ""
 "there, you can turn on helpful tools like <em>Modifier Keys</em>, "
 "<em>Keyboard Filters</em>, and <em>Activation Gestures</em>."
 msgstr ""
+"これらのツールはメニューにあるシステム設定アプリケーション内の <em>アクセシビ"
+"リティ</em> 項目より利用することができます。ここから <em>修飾キー</em> や "
+"<em>キーボードフィルタ</em>、<em>有効にするジェスチャー</em> といった役に立つ"
+"ツールを使用することができます。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:14
@@ -212,6 +216,10 @@ msgid ""
 "software from our online repositories, which we carefully organize to be "
 "safe and up to date."
 msgstr ""
+"メニューのシステム項目にある <em>Software Management</em> に注目してくださ"
+"い。Software Management によって私たちのオンライン･レポジトリからソフトウェア"
+"をインストール（あるいは削除）できます。私たちはレポジトリ内のソフトウェアを"
+"注意を払って安全かつ最新に保っています。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:10
@@ -374,9 +382,12 @@ msgid ""
 "your contacts with nearly every address book standard as well synchronize "
 "with various groupware services."
 msgstr ""
+"連絡先を <em>連絡先マネージャ</em> を使って整理しましょう。ほぼすべての一般的"
+"なアドレス帳管理ソフトウェアとの間で連絡先をインポートやエクスポートすること"
+"ができますし、様々なグループウェアサービスと同期することもできます。"
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/pim.html:16
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/pim.html:17
 msgid ""
 "<em>Kontact</em> is the perfect personal information management integration "
 "for you!"
@@ -414,8 +425,8 @@ msgstr ""
 "私たちの約束の一環として、Kubuntuを最大限に活用していただきたいと願っておりま"
 "す。そのため、インストール中にこのスライドショーでは簡単な紹介を行います。"
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/welcome.html:13
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/welcome.html:14
 msgid "Kubuntu is designed to be easy. Feel free to explore!"
 msgstr ""
 "Kubuntu は「簡単に扱える」ことを目指しました。いろいろなものに触ってみてくだ"

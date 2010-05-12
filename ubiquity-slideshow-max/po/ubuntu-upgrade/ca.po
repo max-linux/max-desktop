@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-03-26 17:48+0000\n"
-"PO-Revision-Date: 2010-03-01 16:12+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-04-13 05:36+0000\n"
+"Last-Translator: Orestes Mas <orestes@caliu.cat>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
 #: slideshows/ubuntu-upgrade/slides/welcome.html:1
 msgid "Welcome to Ubuntu 10.04 LTS"
-msgstr ""
+msgstr "Benvinguts a l'Ubuntu 10.04 LTS"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu-upgrade/slides/welcome.html:6
@@ -29,6 +29,9 @@ msgid ""
 "term support release, culminating two significant years of work. It will be "
 "supported for three years &mdash; until April, 2013."
 msgstr ""
+"S'està actualitzant l'Ubuntu a la versió 10.04 LTS. Aquesta és una versió "
+"amb suport de llarga durada, que culmina dos anys de treball. Tindrà suport "
+"durant tres anys &mdash; fins l'abril de 2013."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu-upgrade/slides/welcome.html:8
@@ -36,3 +39,6 @@ msgid ""
 "This upgrade process may take a while. Meanwhile, we would like to tell you "
 "about some new features you'll see when the upgrade is complete."
 msgstr ""
+"Aquest procés d'actualització pot trigar una bona estona. Mentrestant, ens "
+"agradaria informar-vos sobre algunes de les característiques noves que "
+"podreu veure quan hagi finalitzat l'actualització."

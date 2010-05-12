@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:48+0000\n"
-"PO-Revision-Date: 2010-03-01 22:23+0000\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-11 02:21+0000\n"
 "Last-Translator: AJenbo <anders@jenbo.dk>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -140,7 +140,7 @@ msgstr ""
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/graphics.html:1
 msgid "Organize, enjoy, and share your photos"
-msgstr ""
+msgstr "Organisér, nyd og del dine fotos"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:5
@@ -183,6 +183,8 @@ msgid ""
 "There is great software for everything from creating music and movies to "
 "producing 3D models and exploring the universe."
 msgstr ""
+"Der er gode programmer til alle formål, fra fremstilling af musik og film "
+"til fremstilling af 3D-modeller og udforskning af universet."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:12
@@ -191,6 +193,10 @@ msgid ""
 "a Debian package or another repository available. That way, it will be "
 "really easy to install and you will receive automatic updates."
 msgstr ""
+"Hvis du har brug for noget, som ikke er tilgængeligt gennem os, kan du "
+"undersøge, om der er en Debian-pakke eller et andet arkiv til rådighed. På "
+"den måde vil det være meget nemt at installere, og du vil modtage "
+"automatiske opdateringer."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/internet.html:1
@@ -247,7 +253,7 @@ msgstr ""
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/office.html:1
 msgid "Office tools at your fingertips"
-msgstr ""
+msgstr "Kontorværktøjer lige ved hånden"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:5
@@ -306,8 +312,8 @@ msgid ""
 "with various groupware services."
 msgstr ""
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/pim.html:16
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/pim.html:17
 msgid ""
 "<em>Kontact</em> is the perfect personal information management integration "
 "for you!"
@@ -338,7 +344,7 @@ msgid ""
 "So while it installs, this slideshow will provide a quick introduction."
 msgstr ""
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/welcome.html:13
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/welcome.html:14
 msgid "Kubuntu is designed to be easy. Feel free to explore!"
 msgstr ""

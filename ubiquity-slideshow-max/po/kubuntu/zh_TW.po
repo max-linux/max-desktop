@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:48+0000\n"
-"PO-Revision-Date: 2010-04-07 03:41+0000\n"
-"Last-Translator: zerng07 <Unknown>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-09 04:43+0000\n"
+"Last-Translator: Cheng-Chia Tseng <Unknown>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -82,12 +82,13 @@ msgstr ""
 msgid ""
 "First Person Shooters, Role Play Games, and more are also available in the "
 "repositories."
-msgstr "第一人稱射擊遊戲、角色扮演遊戲，除此之外套件庫內還有更多可把玩的遊戲。"
+msgstr ""
+"第一人稱射擊遊戲、角色扮演遊戲，除此之外套件庫內還有更多可供把玩的遊戲。"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-help.html:1
 msgid "Getting help with Kubuntu"
-msgstr "取得 Kubuntu 相關的幫助"
+msgstr "取得 Kubuntu 的相關幫助"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:6
@@ -107,8 +108,8 @@ msgid ""
 "through Canonical, its partners and approved companies. Learn more at <a "
 "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
 msgstr ""
-"除了我們寫好的廣泛幫助文件外，遍布網際網路的 Kubuntu 社群連同 Ubuntu 社群成"
-"員，會親自提供免費的技術支援。而 Canonical 、其合作夥伴以及核可的公司也提供可"
+"除了我們寫好的大量幫助文件外，遍布網際網路的 Kubuntu 社群連同 Ubuntu 社群成"
+"員，會親自提供免費的技術支援。而 Canonical 、其合作夥伴以及核可的公司都提供可"
 "用的商業支援。請前往 <a href=\"http://www.ubuntu.com/support\">ubuntu.com/"
 "support (英文)</a> 瞭解更多資訊。"
 
@@ -124,7 +125,7 @@ msgstr ""
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-involved.html:1
 msgid "Get involved and contribute to Kubuntu"
-msgstr "參與以及提供貢獻給 Kubuntu"
+msgstr "參與以及為 Kubuntu 貢獻"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:6
@@ -135,8 +136,8 @@ msgid ""
 "to promote Kubuntu to a wider audience."
 msgstr ""
 "Kubuntu 社群是由一群獨立的參與者所構成。這些參與者組成的團隊是開放源碼社群內"
-"最棒的團隊之一，他們各個專注於這個發行版本的不同層面，像是提供建議與技術支"
-"援，或是協助宣傳 Kububuntu 給更多使用者。"
+"最棒的團隊之一，他們各各專注於這個發行版本的不同層面，像是提供建議與技術支"
+"援，或是協助宣傳 Kubuntu 給更多使用者。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:11
@@ -144,8 +145,8 @@ msgid ""
 "No matter your skill level, getting involved and helping to mold the future "
 "of Kubuntu is easy, and you are more than welcome to help out."
 msgstr ""
-"無論您的技術到什麼等級，參與並幫助打造 Kubuntu 的未來是相當容易的，對於您的協"
-"助我們不勝感激。"
+"無論您的技術到達什麼等級，參與並協助打造 Kubuntu 的未來是相當容易的。對於您的"
+"協助我們不勝感激！"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:14
@@ -155,7 +156,7 @@ msgid ""
 "help out. Remember, it is easy to get involved and the work you do will be "
 "seen by millions of people around the world."
 msgstr ""
-"仔細閱讀 <a href=\"https://wiki.kubuntu.org/Kubuntu/GettingInvolved\">wiki."
+"請仔細閱讀 <a href=\"https://wiki.kubuntu.org/Kubuntu/GettingInvolved\">wiki."
 "kubuntu.org/Kubuntu/GettingInvolved (英文)</a>，並看看有什麼地方是您可以提供"
 "協助的。請您記住，參與我們相當容易，而您的貢獻將會被全世界上百萬人所共賭。"
 
@@ -206,16 +207,15 @@ msgid ""
 "safe and up to date."
 msgstr ""
 "看一下「系統」分頁選單內的 <em>軟體管理</em> 應用程式。「軟體管理」讓您從我們"
-"的線上套件庫安裝（與移除）軟體；這些線上套件庫都是我們精心整理的，不僅安全且"
-"軟體都是最新版本。"
+"的線上套件庫安裝（與移除）軟體；這些線上套件庫都是我們精心整理的；除了安全之"
+"外，軟體更是最新版本。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:10
 msgid ""
 "There is great software for everything from creating music and movies to "
 "producing 3D models and exploring the universe."
-msgstr ""
-"有著各式各樣很棒的軟體，從創作音樂與電影，到製作 3D 模型與探索宇宙都有。"
+msgstr "有一些很棒的軟體，從創建音樂和電影製作3D模型，探索宇宙等等。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:12
@@ -224,8 +224,8 @@ msgid ""
 "a Debian package or another repository available. That way, it will be "
 "really easy to install and you will receive automatic updates."
 msgstr ""
-"如果您需要某些我們沒有提供的軟體，請找看看是否有 Debian 套件，或是其他套件庫"
-"是否有提供。那樣一來，安裝會相當容易，並且您可以接收到軟體的自動更新。"
+"如果您需要一些軟體但是並沒有看到，請連繫我們。找一下Debian套件或者是其他套件"
+"庫是否有提供。有的話，這將會很簡單的就可以安裝與自動升級了。"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/internet.html:1
@@ -254,12 +254,12 @@ msgid ""
 "Web browsers such as <em>Firefox</em> and Google's <em>Chromium</em> are "
 "easily installable."
 msgstr ""
-"像是 <em>Firefox</em> 與 Google 的 <em>Chromium</em> 網路瀏覽器都能簡易安裝。"
+"像是 <em>Firefox</em> 與 Google 的 <em>Chromium</em> 網路瀏覽器都能輕鬆安裝。"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/multimedia.html:1
 msgid "Music and movies in Kubuntu"
-msgstr "Kubuntu 世界內的音樂與影片"
+msgstr "Kubuntu 世界內的音樂與電影"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:5
@@ -357,8 +357,8 @@ msgstr ""
 "利用 <em>KAddressBook</em> 來收藏您的聯絡人，還能以幾乎每種通訊錄標準格式匯入"
 "或匯出聯絡人，甚至能與各種群組軟體服務進行同步處理。"
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/pim.html:16
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/pim.html:17
 msgid ""
 "<em>Kontact</em> is the perfect personal information management integration "
 "for you!"
@@ -372,7 +372,7 @@ msgstr "歡迎"
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:6
 msgid "Thank you for choosing Kubuntu 10.04 LTS."
-msgstr "感謝您選擇 Kubuntu 10.04 長期支援版本。"
+msgstr "感謝您選擇 Kubuntu 10.04 長期支援版。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:7
@@ -382,7 +382,7 @@ msgid ""
 "purpose."
 msgstr ""
 "我們相信每位電腦使用者都應該自由地在他們所選的環境內工作，並且不管任何用途都"
-"能下載、交換、學習並分享他們的軟體。"
+"能下載、變更、學習並分享他們的軟體。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:10
@@ -393,7 +393,7 @@ msgstr ""
 "作為我們承諾中的一部分，我們想要讓 Kubuntu 盡可能地符合您的需求。所以當它在安"
 "裝的這段期間內，本投影片將提供一系列的快速導覽。"
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/welcome.html:13
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/welcome.html:14
 msgid "Kubuntu is designed to be easy. Feel free to explore!"
 msgstr "Kubuntu 以簡單好用為設計理念。請恣意地盡情探索吧！"

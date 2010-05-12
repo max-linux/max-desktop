@@ -7,20 +7,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:47+0000\n"
-"PO-Revision-Date: 2010-03-11 09:15+0000\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-13 15:33+0000\n"
 "Last-Translator: Aurimas Fišeras <Unknown>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/accessibility.html:1
 msgid "Accessibility in Ubuntu"
-msgstr "Ubuntu pritaikymas neįgaliesiems"
+msgstr "Ubuntu pritaikyta neįgaliesiems"
 
 #.  "your" refers to a large group that includes the reader. 
 #. type: Content of: <div><div><ul><li>
@@ -30,9 +30,9 @@ msgid ""
 "circumstances. So, we provide tools that make Ubuntu one of the most "
 "accessible operating systems around."
 msgstr ""
-"Mes norime, kad kompiuteriais galėtų naudotis visi, kad ir kokia jų fizinė "
-"būklė, todėl pateikiame įrankius, kurie padaro Ubuntu operacinę sistemą "
-"viena iš geriausiai pritaikytų neįgaliesiems."
+"Norime, kad kompiuteriais galėtų naudotis visi, nesvarbu kokia yra jūsų "
+"fizinė būklė. Todėl kartu su Ubuntu pateikiame specialius įrankius, kad ši "
+"operacinė sistema būtų viena iš geriausiai pritaikytų neįgaliesiems."
 
 #.  The string "Assistive Technologies Preferences" is describing a particular menu item: System >
 #.  Preferences > Assistive Technologies, and the string "System menu" describes that section of the main menu. Note that certain words are kept the same to make the menu items discoverable. It is intentional that we are using soft descriptions instead of mapping out a rigid path for the user to follow. Please, if it is natural for your locale, consider the same convention. 
@@ -44,6 +44,10 @@ msgid ""
 "helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
 "click to press mouse buttons automatically."
 msgstr ""
+"Šiuos įrankius rasite vienoje vietoje: <em>Pagalbinių technologijų "
+"nuostatose</em>, kurios yra Sistemos meniu. Iš čia galėsite įjungti tokius "
+"įrankius, kaip <em>Orca</em>, kurie perskaitys ekrane rodomą tekstą arba "
+"automatiškai paspaus pelės mygtuką."
 
 #.  As before, the string "Appearance Preferences" is describing a particular menu item: System >
 #.  Preferences > Appearance. Certain words were kept the same to make the menu item discoverable. 
@@ -54,14 +58,14 @@ msgid ""
 "choose between different visual styles and even change the fonts that are "
 "used by applications."
 msgstr ""
-"Taip pat nepamirškite patikrinti <em>Išvaizdos nustatymų</em>. Jūs galite "
-"pasirinkti tarp skirtingų išvaizdos stilių ir net pakeisti programų "
-"naudojamus šriftus."
+"Nepamirškite peržiūrėti ir <em>Išvaizdos nuostatų</em>. Čia galima "
+"išsirinkti kitokį išvaizdos stilių ir netgi pakeisti programų naudojamus "
+"šriftus."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/documentation.html:1
 msgid "Getting Help with Ubuntu"
-msgstr "Pagalba Ubuntu sistemos naudotojams"
+msgstr "Pagalba Ubuntu"
 
 #.  The string "Help and Support" should be exactly as it appears in the System menu. 
 #. type: Content of: <div><div><ul><li>
@@ -70,8 +74,8 @@ msgid ""
 "If you need help, try <em>Help and Support</em> from the System menu, or the "
 "<em>Help</em> menu in most applications."
 msgstr ""
-"Jei jums reikia pagalbos, mėginkite sistemos meniu <em>Pagalba ir "
-"palaikymas</em>, arba daugelio programų meniu <em>Žinynas</em>."
+"Jei reikia pagalbos, išbandykite Sistemos meniu esančias <em>Pagalbą ir "
+"palaikymą</em>, arba meniu <em>Žinynas</em>, esantį daugumoje programų."
 
 #.  The url "ubuntu.com/support" should not be translated 
 #. type: Content of: <div><div><ul><li>
@@ -83,6 +87,10 @@ msgid ""
 "companies. Learn more at <a href=\"http://www.ubuntu.com/support\">ubuntu."
 "com/support</a>."
 msgstr ""
+"Be plataus žinyno, Ubuntu dar turi nemokamą bendruomenės techninę pagalbą "
+"arba komercinę Canonical, jos partnerių ir aprobuotų kompanijų pagalbą. "
+"Plačiau apie tai: <a href=\"http://www.ubuntu.com/support\">ubuntu.com/"
+"support</a>."
 
 #.  The url "ubuntu.com/community" should not be translated 
 #. type: Content of: <div><div><ul><li>
@@ -91,20 +99,20 @@ msgid ""
 "Let us know about your Ubuntu experience at <a href=\"http://ubuntu.com/"
 "community\">ubuntu.com/community</a>!"
 msgstr ""
-"Praneškite mums apie savo Ubuntu patirtį čia <a href=\"http://ubuntu.com/"
-"community\">ubuntu.com/community</a>!"
+"Pasidalinkite patirtimi, kurią įgijote naudodamiesi Ubuntu, čia: <a href="
+"\"http://ubuntu.com/community\">ubuntu.com/community</a>!"
 
 #. type: Content of: <div><div><p>
 #: slideshows/ubuntu/slides/documentation.html:10
 msgid "The installation will finish soon. We hope you enjoy Ubuntu."
 msgstr ""
-"Sistema neužilgo bus įdiegta į jūsų kompiuterį. Tikimės, Jums bus malonu "
-"naudotis Ubuntu sistema."
+"Diegimas netrukus bus baigtas. Tikimės, kad Jums bus malonu naudotis Ubuntu "
+"sistema."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/empathy.html:1
 msgid "Social from the start"
-msgstr ""
+msgstr "Iškart socialinis"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:6
@@ -112,6 +120,9 @@ msgid ""
 "From the start, Ubuntu connects to online chat and broadcast services "
 "including Facebook, Twitter, Windows Live and Google Talk."
 msgstr ""
+"Ubuntu be papildomų programų jungiasi prie internetinių pokalbių ir "
+"transliavimo paslaugų tokių, kaip Facebook, Twitter, Windows Live ir Google "
+"Talk."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:7
@@ -119,6 +130,9 @@ msgid ""
 "Click the envelope near the clock to log in to your accounts. New messages "
 "appear there, too, so you can see what's happening at a glance."
 msgstr ""
+"Spragtelėkite voko piktogramą, kuri yra netoli laikrodžio, ir prisijungsite "
+"prie savo paskyrų. Atėjusias žinutes rasite ten pat, todėl suprasti, kas "
+"vyksta, užteks vieno žvilgsnio."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:8
@@ -126,11 +140,13 @@ msgid ""
 "If you're busy, click your name at the top of the screen to change your "
 "status."
 msgstr ""
+"Kai būsite užsiėmęs, ekrano viršuje spragtelėkite savo vardą ir pakeiskite "
+"savo būseną."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/evolution.html:1
 msgid "Control your digital life"
-msgstr ""
+msgstr "Kontroliuokite gyvenimą skaitmeninėje erdvėje"
 
 #.  "Evolution Mail" should be the exact name of the Evolution launcher inside the Internet menu or the indicator applet. 
 #. type: Content of: <div><div><ul><li>
@@ -140,6 +156,9 @@ msgid ""
 "that comes with Ubuntu. Just enter your email account information and it "
 "will download new messages automatically."
 msgstr ""
+"<em>Evolution paštas</em> yra visavertė Ubuntu pašto ir kalendoriaus "
+"programa. Įveskite savo pašto paskyros duomenis ir ji automatiškai atsiųs "
+"naujas žinutes."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/evolution.html:7
@@ -147,6 +166,8 @@ msgid ""
 "Evolution has a powerful junk mail filter. You can use the search box, or "
 "create your own filters, to make sorting mail quick and easy."
 msgstr ""
+"Evolution turi galingą šlamšto filtrą, o kad pašto rūšiavimas taptų greitas "
+"ir paprastas, naudokite paieškos laukelį arba sukurkite savo filtrus."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/evolution.html:8
@@ -154,27 +175,28 @@ msgid ""
 "Add your favorite Web calendars to see upcoming games or movie releases. To "
 "see your daily schedule, just click the clock at the top of your screen."
 msgstr ""
-"Naudokitės mėgstamais internetiniais kalendoriais ir laiku pastebėkite jums "
-"rūpimų naujų filmų ar žaidimų anonsus. Savo darbų tvarkaraštį peržiūrėti "
-"galite tiesiog paspausdami ant ekrano viršuje esančio laikrodžio."
+"Naudokitės pamėgtais internetiniais kalendoriais ir nepraleiskite kito naujo "
+"žaidimo ar filmo išleidimo.  Savo kasdienį tvarkaraštį peržiūrėsite "
+"spragtelėję laikrodį, esantį ekrano viršuje."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/firefox.html:1
 msgid "Browse the web with Firefox"
-msgstr "Naršykite internete su Firefox"
+msgstr "Naršykite su Firefox"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/firefox.html:6
 msgid "Ubuntu comes with the widely acclaimed <em>Firefox web browser</em>."
 msgstr ""
+"Ubuntu yra įdiegiama kartu su pripažinimą pelniusia <em>Firefox naršykle</"
+"em>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/firefox.html:7
 msgid ""
 "It protects your privacy and personal information so you can surf worry free."
 msgstr ""
-"Ši naršyklė saugo Jūsų privatumą bei asmeninę informaciją - naršykite "
-"žiniatinklį be rūpesčių."
+"Ji saugo jūsų privatumą ir asmeninę informaciją, tad naršykite be rūpesčių."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/firefox.html:8
@@ -182,11 +204,13 @@ msgid ""
 "Give Firefox your own personal touch with addons. You can choose from "
 "thousands of themes and extensions that tailor it to how you use the web."
 msgstr ""
+"Kad Firefox taptų artimesnė, naudokite priedus. Rinkitės iš tūkstančių temų "
+"ir plėtinių, kurie padės naudotis internetu taip, kaip norite jūs."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/fspot.html:1
 msgid "Share and enjoy your photos"
-msgstr ""
+msgstr "Dalinkitės ir džiaukitės nuotraukomis"
 
 #.  "F-Spot Photo Manager" should be the exact name that is used for F-Spot in the Applications menu 
 #. type: Content of: <div><div><ul><li>
@@ -204,6 +228,7 @@ msgstr ""
 msgid ""
 "Use tags to describe your photos so that they are easy to find later on."
 msgstr ""
+"Naudokite žymas nuotraukoms apibūdinti, kad vėliau jas paprasčiau rastumėte."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/fspot.html:8
@@ -211,8 +236,8 @@ msgid ""
 "Use the Export option to write your photos to CDs, email them to friends or "
 "share them online."
 msgstr ""
-"Naudokite eksporto įrankį savo fotografijoms įrašyti į CD, siųsti jas "
-"draugams ar dalintis jomis internete."
+"Naudokitės eksporto galimybe: įrašykite nuotraukas į CD, siųskite draugams "
+"arba dalinkitės internete."
 
 #.  Graphics Applications refers to the Graphics submenu, and then the main Applications menu. 
 #. type: Content of: <div><div><ul><li>
@@ -221,11 +246,13 @@ msgid ""
 "To get started, choose F-Spot from the Graphics Applications menu or attach "
 "a digital camera and follow the prompts."
 msgstr ""
+"Pradėkite naudotis F-Spot iš meniu Grafika arba prijungę skaitmeninį "
+"fotoaparatą sekite nuorodomis."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/installing-software.html:1
 msgid "Getting more software"
-msgstr ""
+msgstr "Dar daugiau programų"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/installing-software.html:6
@@ -233,6 +260,8 @@ msgid ""
 "If you need something else, try the <em>Ubuntu Software Center</em> to "
 "choose from thousands of extras you can download for free."
 msgstr ""
+"Jei ko nors pasigedote, išbandykite <em>Ubuntu programų centrą</em>. Čia iš "
+"tūkstančių nemokamų papildomų programų išsirinksite sau tinkamą."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/installing-software.html:7
@@ -241,6 +270,9 @@ msgid ""
 "to creating music and exploring the universe. Take a look at the "
 "<em>Featured Applications</em> section for some of our favourites!"
 msgstr ""
+"Galingų programų asortimentas pritaikytas įvairiausiems pomėgiams: nuo "
+"programavimo iki muzikos kūrimo ir netgi Visatos tyrinėjimo. Užmeskite akį į "
+"<em>Svarbias programas</em> – ten yra mūsų mėgstamiausios."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/installing-software.html:8
@@ -248,11 +280,13 @@ msgid ""
 "Everything in Software Center is stored in our online repository. We are "
 "careful to keep it safe and updates will be delivered directly to you."
 msgstr ""
+"Viskas, kas yra Programų centre, yra laikoma mūsų saugykloje. Ne tik "
+"rūpestingai ją saugome, bet ir pristatome atnaujinimus – tiesiai jums."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/openoffice.html:1
 msgid "Office tools at your fingertips"
-msgstr "Biuro programos visiems poreikiams"
+msgstr "Biuro įrankiai – po ranka"
 
 #.  "OpenOffice.org" does not refer to a particular menu item, but it a name shared in common between all of the OpenOffice components in the Applications menu. 
 #. type: Content of: <div><div><ul><li>
@@ -261,11 +295,13 @@ msgid ""
 "Ubuntu comes with <em>OpenOffice.org</em>, a powerful office software suite "
 "that is easy to understand."
 msgstr ""
+"Ubuntu yra įdiegiamas kartu su <em>OpenOffice.org</em> – galingu, bet "
+"nesunkiai perprantamu, biuro programų paketu."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/openoffice.html:7
 msgid "It helps you create documents, presentations, diagrams and databases."
-msgstr ""
+msgstr "Jis padeda kurti dokumentus, pateiktis, diagramas ir duomenų bazes."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/openoffice.html:8
@@ -273,17 +309,21 @@ msgid ""
 "OpenOffice.org uses the standard OpenDocument file format. It opens files "
 "from other office applications like Microsoft Office and WordPerfect."
 msgstr ""
+"OpenOffice.org naudoja standartinį atvirųjų dokumentų failų formatą, be to, "
+"atidaro failus, sukurtus kitomis biuro programomis, pavyzdžiui, Microsoft "
+"Office arba WordPerfect."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:1
 msgid "Entertainment with music and movies"
-msgstr ""
+msgstr "Pramogaukite su muzika ir filmais"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:6
 msgid ""
 "Ubuntu is ready to play music and videos from the web, from CDs and DVDs."
 msgstr ""
+"Ubuntu paruoštas groti muziką ir leisti filmus iš interneto, CD ir DVD."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:7
@@ -292,6 +332,9 @@ msgid ""
 "Internet radio, and purchase a variety of songs. Manage your podcast "
 "subscriptions and automatically download new episodes."
 msgstr ""
+"<em>Rhythmbox grotuvas</em> padeda tvarkyti muziką, klausytis internetinio "
+"radijo, nusipirkti įvairiausių dainų. Tvarkykite radijo laidų prenumeratas "
+"ir automatiškai gaukite naujausias."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:8
@@ -301,6 +344,9 @@ msgid ""
 "automatically stored in the cloud and synchronised across all of your "
 "computers."
 msgstr ""
+"Atraskite populiarią muziką be DRM užraktų, kurią galite "
+"nusipirkti<em>Ubuntu One muzikos parduotuvėje</em>. Pirkiniai automatiškai "
+"išsaugomi „debesyje‟ ir sinchronizuojami su visais jūsų kompiuteriais."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:9
@@ -308,11 +354,13 @@ msgid ""
 "Plug in an MP3 player to start synchronizing your music collection, or "
 "insert a CD to copy songs to your computer."
 msgstr ""
+"Prijunkite MP3 grotuvą ir sinchronizuokite savo muzikos kolekciją arba "
+"įdėkite CD ir nukopijuokite dainas į kompiuterį."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/ubuntuone.html:1
 msgid "Keep your digital life in sync"
-msgstr ""
+msgstr "Sinchronizuokite gyvenimą skaitmeninėje erdvėje"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:6
@@ -322,6 +370,10 @@ msgid ""
 "bookmarks, address book, and notes – everything goes where you go with "
 "<em>Ubuntu One</em>."
 msgstr ""
+"Dirbkite su keliais kompiuteriais: nešiojamuoju, internetiniu, darbovietėje "
+"esančiu staliniu, ir viską raskite automatiškai sinchronizuota. Dokumentai, "
+"muzika, nuorodos, adresų knygelė ir užrašai – viskas eina ten, kur einate "
+"jūs su <em>Ubuntu One</em>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:7
@@ -329,6 +381,8 @@ msgid ""
 "Want a safe home for your important files? All Ubuntu users get 2 GB of "
 "personal cloud storage for free (and more if you need it)."
 msgstr ""
+"Svarbiems failams reikia saugių namų? Visi Ubuntu naudotojai gauna 2 GB "
+"asmeninės vietos serveryje nemokamai (ir daugiau, jei tik reikia)."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:8
@@ -336,6 +390,8 @@ msgid ""
 "Share folders using your synchronised address book. Project collaboration "
 "has never been easier."
 msgstr ""
+"Dalinkitės aplankais naudodamiesi savo sinchronizuota adresų knygele. "
+"Bendradarbiavimas projektinėje veikloje dar niekada nebuvo toks paprastas."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:9
@@ -343,6 +399,8 @@ msgid ""
 "Sign-up by launching the <em>Ubuntu One Preferences</em> application or "
 "going to <a href=\"http://one.ubuntu.com/\">http://one.ubuntu.com/</a>."
 msgstr ""
+"Prisijunkite paleisdami <em>Ubuntu One nuostatų</em> programą arba <a href="
+"\"http://one.ubuntu.com/\">http://one.ubuntu.com/</a>."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/welcome.html:1
@@ -352,7 +410,7 @@ msgstr "Sveiki"
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/welcome.html:6
 msgid "Thank you for choosing Ubuntu 10.04 LTS."
-msgstr ""
+msgstr "Ačiū, kad pasirinkote Ubuntu 10.04 LTS."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/welcome.html:7
@@ -362,6 +420,10 @@ msgid ""
 "editor, integrated social networking and a growing selection of extra "
 "software."
 msgstr ""
+"Ši operacinės sistemos laida žymi svarbų Ubuntu projekto etapą. Ji "
+"paprastesnė ir patikimesnė nei bet kada anksčiau, turi šimtus patobulinimų. "
+"Tarp jų ir nauja vaizdo įrašų redagavimo programa, ir integracija su "
+"socialiniais tinklais, ir išaugęs papildomų programų asortimentas."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/welcome.html:8
@@ -370,9 +432,11 @@ msgid ""
 "something you will enjoy. While Ubuntu is installed, this slideshow will "
 "show you around."
 msgstr ""
+"Nesvarbu, ar esate Ubuntu naujokas, ar senas šios operacinės sistemos "
+"vilkas, esame tikri, kad rasite kažką, kas jums patiks. Kol Ubuntu bus "
+"diegiamas, ši pateiktis supažindins su Ubuntu."
 
 #. type: Content of: <div><div><p>
 #: slideshows/ubuntu/slides/welcome.html:10
 msgid "Ubuntu is designed to be easy. Feel free to explore!"
-msgstr ""
-"Ubuntu sistema sukurta lengvam naudojimui. Jauskis laisvai tyrinėdamas!"
+msgstr "Ubuntu sukurta, kad būtų paprasta. Tyrinėk!"

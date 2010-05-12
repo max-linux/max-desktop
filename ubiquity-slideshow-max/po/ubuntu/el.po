@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:47+0000\n"
-"PO-Revision-Date: 2010-03-23 22:30+0000\n"
-"Last-Translator: j0hn aka c7p <c7p.admin@gmail.com>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-10 18:05+0000\n"
+"Last-Translator: Thanos Lefteris <alefteris@gmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <div><h1>
@@ -44,6 +44,11 @@ msgid ""
 "helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
 "click to press mouse buttons automatically."
 msgstr ""
+"Θα βρείτε αυτά τα εργαλεία στο <em>Βοηθητικές τεχνολογίες</em>, μέσα στο "
+"μενού Σύστημα. Από εκεί μπορείτε να ενεργοποιήσετε τα βοηθητικά εργαλεία "
+"όπως το <em>Orca</em>, για να εκφωνείται το κείμενο στην οθόνη ή το dwell "
+"κλικ για να πιέζονται αυτόματα τα κουμπιά του ποντικιού όπου σταθεροποιείται "
+"το κέρσορας."
 
 #.  As before, the string "Appearance Preferences" is describing a particular menu item: System >
 #.  Preferences > Appearance. Certain words were kept the same to make the menu item discoverable. 
@@ -54,7 +59,7 @@ msgid ""
 "choose between different visual styles and even change the fonts that are "
 "used by applications."
 msgstr ""
-"Θυμηθείτε να ελέγξετε τις <em>Ρυθμίσεις Εμφάνισης</em>. Μπορείτε να "
+"Θυμηθείτε να ελέγξετε και τις ρυθμίσεις <em>Εμφάνισης</em>. Μπορείτε να "
 "επιλέξετε ανάμεσα σε διάφορα θέματα και να αλλάξετε τη γραμματοσειρά που "
 "χρησιμοποιείται από τις εφαρμογές."
 
@@ -107,7 +112,7 @@ msgstr "Η εγκατάσταση θα τελειώσει σύντομα. Ευχ
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/empathy.html:1
 msgid "Social from the start"
-msgstr ""
+msgstr "Κοινωνικό από την αρχή"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:6
@@ -115,6 +120,9 @@ msgid ""
 "From the start, Ubuntu connects to online chat and broadcast services "
 "including Facebook, Twitter, Windows Live and Google Talk."
 msgstr ""
+"Από την αρχή, με το Ubuntu μπορείτε να συνδεθείτε σε υπηρεσίες άμεσων "
+"μηνυμάτων και κοινωνικά δίκτυα όπως το Facebook, Twitter, Windows Live και "
+"Google Talk."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:7
@@ -122,6 +130,9 @@ msgid ""
 "Click the envelope near the clock to log in to your accounts. New messages "
 "appear there, too, so you can see what's happening at a glance."
 msgstr ""
+"Πατήστε στο φάκελο, δίπλα από το ρολόι, για να συνδεθείτε στους λογαριασμούς "
+"σας. Τα νέα μηνύματα θα εμφανίζονται εκεί επίσης, ώστε να βλέπετε τι "
+"συμβαίνει με μια ματιά."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:8
@@ -129,11 +140,13 @@ msgid ""
 "If you're busy, click your name at the top of the screen to change your "
 "status."
 msgstr ""
+"Αν είστε απασχολημένος, πατήστε στο όνομα σας στο επάνω μέρος της οθόνης, "
+"ώστε να αλλάξετε την κατάσταση σας."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/evolution.html:1
 msgid "Control your digital life"
-msgstr ""
+msgstr "Πάρτε τον έλεγχο της ψηφιακής σας ζωής"
 
 #.  "Evolution Mail" should be the exact name of the Evolution launcher inside the Internet menu or the indicator applet. 
 #. type: Content of: <div><div><ul><li>
@@ -143,6 +156,10 @@ msgid ""
 "that comes with Ubuntu. Just enter your email account information and it "
 "will download new messages automatically."
 msgstr ""
+"Το <em>Evolution</em> είναι μια πλήρης εφαρμογή ηλεκτρονικής αλληλογραφίας "
+"και ημερολογίου, που έρχεται με το Ubuntu. Απλά, εισάγετε τις πληροφορίες "
+"του λογαριασμού αλληλογραφίας σας ώστε να κατεβούν τα νέα μηνύματα σας "
+"αυτόματα."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/evolution.html:7
@@ -150,6 +167,9 @@ msgid ""
 "Evolution has a powerful junk mail filter. You can use the search box, or "
 "create your own filters, to make sorting mail quick and easy."
 msgstr ""
+"Το Evolution έχει ένα εξελιγμένο φίλτρο για ανεπιθύμητα μηνύματα. Μπορείτε "
+"επίσης να χρησιμοποιήσετε την αναζήτηση και να δημιουργήσετε δικά σας φίλτρα "
+"για να κάνετε την διαχείριση των μηνυμάτων ευκολότερη."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/evolution.html:8
@@ -157,9 +177,9 @@ msgid ""
 "Add your favorite Web calendars to see upcoming games or movie releases. To "
 "see your daily schedule, just click the clock at the top of your screen."
 msgstr ""
-"Προσθέστε δικτυακά ημερολόγια και να δείτε επερχόμενα παιχνίδια ή "
-"κυκλοφορίες ταινιών. Για να δείτε το καθημερινό σας πρόγραμμα, κάντε κλικ "
-"στο ρολόι, στο επάνω μέρος της οθόνης σας."
+"Προσθέστε δικτυακά ημερολόγια και να ενημερωθείτε για τα επερχόμενα "
+"βιντεοπαιχνίδια ή κυκλοφορίες νέων ταινιών. Για να δείτε το πρόγραμμα σας "
+"για την ημέρα, κάντε κλικ στο ρολόι, στο επάνω μέρος της οθόνης σας."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/firefox.html:1
@@ -187,11 +207,14 @@ msgid ""
 "Give Firefox your own personal touch with addons. You can choose from "
 "thousands of themes and extensions that tailor it to how you use the web."
 msgstr ""
+"Προσθέστε στον Firefox το δικό σας προσωπικό στίγμα με τα πρόσθετα. Μπορείτε "
+"να επιλέξετε ανάμεσα σε χιλιάδες θέματα και πρόσθετα, τα οποία προσαρμόζουν "
+"τον Firefox για τον τρόπο που χρησιμοποιείτε το διαδίκτυο."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/fspot.html:1
 msgid "Share and enjoy your photos"
-msgstr ""
+msgstr "Μοιραστείτε και απολαύστε τις φωτογραφίες σας"
 
 #.  "F-Spot Photo Manager" should be the exact name that is used for F-Spot in the Applications menu 
 #. type: Content of: <div><div><ul><li>
@@ -200,8 +223,8 @@ msgid ""
 "With <em>F-Spot Photo Manager</em>, it is really easy to share, touch-up and "
 "organize digital photos."
 msgstr ""
-"Με τον <em>Διαχειριστή φωτογραφιών F-Spot</em> μπορείτε εύκολα να μοιράσετε, "
-"να επεξεργαστείτε και να οργανώσετε τις ψηφιακές φωτογραφίες σας."
+"Με την <em>Διαχείριση φωτογραφιών</em> μπορείτε εύκολα να μοιράσετε, να "
+"επεξεργαστείτε και να οργανώσετε τις ψηφιακές φωτογραφίες σας."
 
 #.  Instead of directly translating the word "tags," please use the exact name of the feature in F-Spot for your locale. (Tags are used to label photos). 
 #. type: Content of: <div><div><ul><li>
@@ -209,8 +232,8 @@ msgstr ""
 msgid ""
 "Use tags to describe your photos so that they are easy to find later on."
 msgstr ""
-"Χρησιμοποιήστε τις ταμπέλες (tags ) για να περιγράψετε τις φωτογραφίες σας "
-"έτσι ώστε να βρίσκονται εύκολα."
+"Χρησιμοποιήστε ετικέτες για να περιγράψετε τις φωτογραφίες σας έτσι ώστε να "
+"τις βρίσκετε εύκολα."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/fspot.html:8
@@ -228,13 +251,13 @@ msgid ""
 "To get started, choose F-Spot from the Graphics Applications menu or attach "
 "a digital camera and follow the prompts."
 msgstr ""
-"Ξεκινήστε επιλέγοντας τον Διαχειριστή φωτογραφιών F-Spot από το μενού "
-"Γραφικά ή συνδέστε μια φωτογραφική μηχανή και ακολουθήστε τις οδηγίες."
+"Ξεκινήστε επιλέγοντας Διαχείριση φωτογραφιών από το μενού Γραφικά ή συνδέστε "
+"μια φωτογραφική μηχανή και ακολουθήστε τις οδηγίες."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/installing-software.html:1
 msgid "Getting more software"
-msgstr ""
+msgstr "Εγκατάσταση λογισμικού"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/installing-software.html:6
@@ -242,6 +265,8 @@ msgid ""
 "If you need something else, try the <em>Ubuntu Software Center</em> to "
 "choose from thousands of extras you can download for free."
 msgstr ""
+"Αν χρειαστείτε κάποια άλλη εφαρμογή, χρησιμοποιήστε το <em>Κέντρο λογισμικού "
+"Ubuntu</em> και επιλέξτε μεταξύ εκατοντάδων δωρεάν εφαρμογών για εγκατάσταση."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/installing-software.html:7
@@ -250,6 +275,9 @@ msgid ""
 "to creating music and exploring the universe. Take a look at the "
 "<em>Featured Applications</em> section for some of our favourites!"
 msgstr ""
+"Υπάρχουν εφαρμογές για διάφορες δραστηριότητες, από προγραμματισμό έως "
+"δημιουργία μουσικής και εξερεύνηση του διαστήματος. Δείτε την κατηγορία "
+"\"Προτεινόμενες εφαρμογές\" για μερικές από τις αγαπημένες μας!"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/installing-software.html:8
@@ -257,6 +285,9 @@ msgid ""
 "Everything in Software Center is stored in our online repository. We are "
 "careful to keep it safe and updates will be delivered directly to you."
 msgstr ""
+"Όλες οι εφαρμογές στο Κέντρο λογισμικού είναι αποθηκευμένες στο διαδικτυακό "
+"αποθετήριό μας. Προσέχουμε ώστε να το διατηρούμε ασφαλές και ενημερωμένο με "
+"τις τελευταίες εκδόσεις."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/openoffice.html:1
@@ -270,11 +301,15 @@ msgid ""
 "Ubuntu comes with <em>OpenOffice.org</em>, a powerful office software suite "
 "that is easy to understand."
 msgstr ""
+"Το Ubuntu έρχεται με το <em>OpenOffice.org</em>, μια άριστη σουίτα γραφείου "
+"που είναι και εύκολη στην εκμάθηση."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/openoffice.html:7
 msgid "It helps you create documents, presentations, diagrams and databases."
 msgstr ""
+"Είναι χρήσιμο για να δημιουργείτε έγγραφα, παρουσιάσεις, διαγράμματα και "
+"βάσεις δεδομένων."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/openoffice.html:8
@@ -282,17 +317,22 @@ msgid ""
 "OpenOffice.org uses the standard OpenDocument file format. It opens files "
 "from other office applications like Microsoft Office and WordPerfect."
 msgstr ""
+"Το OpenOffice.org χρησιμοποιεί την μορφή αρχείων OpenDocument. Αλλά μπορεί "
+"να ανοίγει και αρχεία από άλλες εφαρμογές γραφείου, όπως το Microsoft Office "
+"και WordPerfect."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:1
 msgid "Entertainment with music and movies"
-msgstr ""
+msgstr "Διασκέδαση με μουσική και ταινίες"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:6
 msgid ""
 "Ubuntu is ready to play music and videos from the web, from CDs and DVDs."
 msgstr ""
+"Το Ubuntu είναι έτοιμο για να παίξει βίντεο και μουσική από το διαδίκτυο, "
+"από CD και DVD."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:7
@@ -301,6 +341,9 @@ msgid ""
 "Internet radio, and purchase a variety of songs. Manage your podcast "
 "subscriptions and automatically download new episodes."
 msgstr ""
+"Με την <em>Αναπαραγωγή μουσικής</em> μπορείτε να οργανώνετε την μουσική σας, "
+"να ακούτε διαδικτυακό ραδιόφωνο και να αγοράσετε τραγούδια. Επίσης "
+"διαχειρίζεται φορητές εκπομπές και κατεβάζει αυτόματα τα νέα επεισόδια."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:8
@@ -310,6 +353,10 @@ msgid ""
 "automatically stored in the cloud and synchronised across all of your "
 "computers."
 msgstr ""
+"Ανακαλύψτε διάσημα, απαλλαγμένα από  DRM τραγούδια προς πώληση στο "
+"<em>Κατάστημα μουσικής Ubuntu One</em>, ένα διαδικτυακό κατάστημα ψηφιακής "
+"μουσικής. Οι αγορές σας αποθηκεύονται στον λογαριασμό σας στο διαδίκτυο και "
+"συγχρονίζονται με όλους τους υπολογιστές σας."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:9
@@ -317,11 +364,14 @@ msgid ""
 "Plug in an MP3 player to start synchronizing your music collection, or "
 "insert a CD to copy songs to your computer."
 msgstr ""
+"Συνδέστε την συσκευή αναπαραγωγής MP3 για να συγχρονίσετε την μουσική σας "
+"συλλογή ή εισάγετε ένα CD για να αντιγράψετε τα τραγούδια στον υπολογιστή "
+"σας."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/ubuntuone.html:1
 msgid "Keep your digital life in sync"
-msgstr ""
+msgstr "Συγχρονίστε την ψηφιακή σας ζωή"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:6
@@ -331,6 +381,11 @@ msgid ""
 "bookmarks, address book, and notes – everything goes where you go with "
 "<em>Ubuntu One</em>."
 msgstr ""
+"Αλλάξτε από τον φορητό, στο netbook σας και από εκεί στον υπολογιστή της "
+"δουλεία σας και βρείτε τα πάντα που χρειάζεστε συγχρονισμένα αυτόματα. Τα "
+"έγγραφά σας, η μουσική, οι σελιδοδείκτες, το βιβλίο διευθύνσεων, οι "
+"σημειώσεις - όλα βρίσκονται όπου βρίσκεστε και εσείς με την υπηρεσία "
+"<em>Ubuntu One</em>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:7
@@ -338,6 +393,9 @@ msgid ""
 "Want a safe home for your important files? All Ubuntu users get 2 GB of "
 "personal cloud storage for free (and more if you need it)."
 msgstr ""
+"Θέλετε ένα ασφαλές σπίτι για τα σημαντικά αρχεία σας; Όλοι οι χρήστες του "
+"Ubuntu έχουν 2 GB προσωπικού αποθηκευτικού χώρου στο διαδίκτυο (και "
+"περισσότερο αν χρειαστείτε)."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:8
@@ -345,6 +403,8 @@ msgid ""
 "Share folders using your synchronised address book. Project collaboration "
 "has never been easier."
 msgstr ""
+"Μοιραστείτε φακέλους χρησιμοποιώντας το συγχρονισμένο βιβλίο διευθύνσεων "
+"σας. Η συνεργασία ποτέ δεν ήταν ευκολότερη."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:9
@@ -352,6 +412,9 @@ msgid ""
 "Sign-up by launching the <em>Ubuntu One Preferences</em> application or "
 "going to <a href=\"http://one.ubuntu.com/\">http://one.ubuntu.com/</a>."
 msgstr ""
+"Κάντε εγγραφή ξεκινώντας την εφαρμογή <em>Υπηρεσία Ubuntu One</em> ή "
+"πηγαίνοντας στο <a href=\"http://one.ubuntu.com/\">http://one.ubuntu.com/</"
+"a>."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/welcome.html:1
@@ -361,7 +424,7 @@ msgstr "Καλώς ήρθατε"
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/welcome.html:6
 msgid "Thank you for choosing Ubuntu 10.04 LTS."
-msgstr ""
+msgstr "Ευχαριστούμε για την επιλογή του Ubuntu 10.04 LTS."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/welcome.html:7
@@ -371,6 +434,10 @@ msgid ""
 "editor, integrated social networking and a growing selection of extra "
 "software."
 msgstr ""
+"Αυτή η έκδοση αντιπροσωπεύει ένα μεγάλο σταθμό στο έργο Ubuntu. Είναι πιο "
+"εύκολο και σταθερό από ποτέ, με εκατοντάδες βελτιώσεις στις οποίες "
+"περιλαμβάνεται μια νέα εφαρμογή επεξεργασίας βίντεο, μια εφαρμογή κοινωνικής "
+"δικτύωσης και μια αυξανόμενη συλλογή από επιπρόσθετο λογισμικό."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/welcome.html:8
@@ -379,9 +446,13 @@ msgid ""
 "something you will enjoy. While Ubuntu is installed, this slideshow will "
 "show you around."
 msgstr ""
+"Είτε είστε νέος(α) στο Ubuntu είτε έμπειρος χρήστης, είμαστε σίγουροι ότι θα "
+"βρείτε κάτι που θα σας ενθουσιάσει. Καθώς το Ubuntu εγκαθίσταται, αυτή η "
+"παρουσίαση θα σας κάνει μια γρήγορη εισαγωγή."
 
 #. type: Content of: <div><div><p>
 #: slideshows/ubuntu/slides/welcome.html:10
 msgid "Ubuntu is designed to be easy. Feel free to explore!"
 msgstr ""
-"Το Ubuntu είναι σχεδιασμένο έτσι ώστε να είναι εύκολο. Εξερευνήστε ελεύθερα!"
+"Το Ubuntu είναι σχεδιασμένο με γνώμονα την ευκολία χρήσης. Εξερευνήστε "
+"ελεύθερα!"

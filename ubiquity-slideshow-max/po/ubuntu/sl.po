@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:47+0000\n"
-"PO-Revision-Date: 2010-03-22 16:00+0000\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-14 22:16+0000\n"
 "Last-Translator: Dražen Matešić <crazy@ludni.ca>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <div><h1>
@@ -31,8 +31,8 @@ msgid ""
 "accessible operating systems around."
 msgstr ""
 "Radi bi, da bi bili računalniki uporabni za vsakogar izmed vas, ne glede na "
-"vaše danosti. Zato nudimo orodja, s pomočjo katerih je Ubuntu eden najbolj "
-"dostopnih operacijskih sistemov."
+"vaše telesne sposobnosti. Zato nudimo orodja, s pomočjo katerih je Ubuntu "
+"eden najbolj dostopnih operacijskih sistemov."
 
 #.  The string "Assistive Technologies Preferences" is describing a particular menu item: System >
 #.  Preferences > Assistive Technologies, and the string "System menu" describes that section of the main menu. Note that certain words are kept the same to make the menu items discoverable. It is intentional that we are using soft descriptions instead of mapping out a rigid path for the user to follow. Please, if it is natural for your locale, consider the same convention. 
@@ -44,6 +44,10 @@ msgid ""
 "helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
 "click to press mouse buttons automatically."
 msgstr ""
+"Ta orodja lahko dobite na enem mestu: v <em>Možnostih Pomožnih tehnologij</"
+"em>, znotraj menija Sistem. Od tam, lahko vključite koristna orodja kot je "
+"<em>Orka</em>, govorjenje besedila z zaslona ali zadržati klik  za samodejni "
+"pritisk miškinih gumbov."
 
 #.  As before, the string "Appearance Preferences" is describing a particular menu item: System >
 #.  Preferences > Appearance. Certain words were kept the same to make the menu item discoverable. 
@@ -107,7 +111,7 @@ msgstr "Namestitev se bo kmalu končala. Upamo, da vam bo Ubuntu v užitek."
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/empathy.html:1
 msgid "Social from the start"
-msgstr ""
+msgstr "Družaben od začetka"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:6
@@ -115,6 +119,8 @@ msgid ""
 "From the start, Ubuntu connects to online chat and broadcast services "
 "including Facebook, Twitter, Windows Live and Google Talk."
 msgstr ""
+"Od začetka, Ubuntu se poveže na spletne klepete ter oddaja storitve "
+"vključujoč Facebook, Twitter, Windows Live ter Google Talk."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:7
@@ -122,6 +128,8 @@ msgid ""
 "Click the envelope near the clock to log in to your accounts. New messages "
 "appear there, too, so you can see what's happening at a glance."
 msgstr ""
+"Kliknite na kuverto zraven ure, da bi se prijavili v vaše račune. Tudi novo "
+"sporočilo se bo tam prikazalo, tako da lahko v hipu vidite, kaj se dogaja."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:8
@@ -129,11 +137,13 @@ msgid ""
 "If you're busy, click your name at the top of the screen to change your "
 "status."
 msgstr ""
+"Če ste zaposleni, kliknite vaše ime na zgornjem delu zaslona za spremembo "
+"vašega stanja."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/evolution.html:1
 msgid "Control your digital life"
-msgstr ""
+msgstr "Nadzirajte vaše digitalno življenje"
 
 #.  "Evolution Mail" should be the exact name of the Evolution launcher inside the Internet menu or the indicator applet. 
 #. type: Content of: <div><div><ul><li>
@@ -143,6 +153,9 @@ msgid ""
 "that comes with Ubuntu. Just enter your email account information and it "
 "will download new messages automatically."
 msgstr ""
+"<em>Evolution</em> je polno podprta poštna ter koledarska programska oprema, "
+"katera pride z Ubuntujem. Samo vpišete vaše podatke o poštnem računu in bo "
+"prejel nova sporočila samodejno."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/evolution.html:7
@@ -150,6 +163,9 @@ msgid ""
 "Evolution has a powerful junk mail filter. You can use the search box, or "
 "create your own filters, to make sorting mail quick and easy."
 msgstr ""
+"Evolution ima zmogljiv filter nezaželene pošte. Lahko uporabite iskalno "
+"polje ali pa ustvarite lastne filtre, da bi bilo razvrščanje hitro in "
+"preprosto."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/evolution.html:8
@@ -186,11 +202,13 @@ msgid ""
 "Give Firefox your own personal touch with addons. You can choose from "
 "thousands of themes and extensions that tailor it to how you use the web."
 msgstr ""
+"Dodajte Firefox-u vaš osebni dotik z dodatki. Lahko izbirate med tisočimi "
+"temami in razširitvami, katere krojijo vašo uporabo spleta."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/fspot.html:1
 msgid "Share and enjoy your photos"
-msgstr ""
+msgstr "Delite in uživajte v vaših fotografijah"
 
 #.  "F-Spot Photo Manager" should be the exact name that is used for F-Spot in the Applications menu 
 #. type: Content of: <div><div><ul><li>
@@ -233,7 +251,7 @@ msgstr ""
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/installing-software.html:1
 msgid "Getting more software"
-msgstr ""
+msgstr "Pridobivanje še več programske opreme"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/installing-software.html:6
@@ -241,6 +259,9 @@ msgid ""
 "If you need something else, try the <em>Ubuntu Software Center</em> to "
 "choose from thousands of extras you can download for free."
 msgstr ""
+"Če potrebujete nekaj drugega, poizkusite <em>Programsko središče Ubuntu</"
+"em>, kjer lahko izbirate med tisočimi dodatki, katere lahko prenesete "
+"brezplačno."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/installing-software.html:7
@@ -249,6 +270,9 @@ msgid ""
 "to creating music and exploring the universe. Take a look at the "
 "<em>Featured Applications</em> section for some of our favourites!"
 msgstr ""
+"Obstajajo zmogljive aplikacije za vse vrste interesov, od programiranja do "
+"ustvarjanja glasbe in raziskovanja vesolja. Poglejte  v odsek "
+"<em>Priporočljivi programi</em>, kjer je nekaj naših najljubših!"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/installing-software.html:8
@@ -256,6 +280,9 @@ msgid ""
 "Everything in Software Center is stored in our online repository. We are "
 "careful to keep it safe and updates will be delivered directly to you."
 msgstr ""
+"Vse v Programskem središču je shranjeno v našem spletnem repozitoriju. "
+"Skrbimo za to, da je varno in da bodo posodobitve dostavljene neposredno k "
+"vam."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/openoffice.html:1
@@ -269,11 +296,14 @@ msgid ""
 "Ubuntu comes with <em>OpenOffice.org</em>, a powerful office software suite "
 "that is easy to understand."
 msgstr ""
+"Ubuntu prihaja z <em>OpenOffice.org</em>, zmogljivo zbirko pisarniške "
+"programske opreme, katera je preprosta za razumeti."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/openoffice.html:7
 msgid "It helps you create documents, presentations, diagrams and databases."
 msgstr ""
+"Pomaga vam ustvariti dokumente, predstavitve, diagrame in podatkovne baze."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/openoffice.html:8
@@ -281,17 +311,22 @@ msgid ""
 "OpenOffice.org uses the standard OpenDocument file format. It opens files "
 "from other office applications like Microsoft Office and WordPerfect."
 msgstr ""
+"OpenOffice.org uporablja standardno OpenDocument vrsto datotek. Odpira "
+"datoteke iz drugih pisarniških aplikacij kot so Microsoft Office ter "
+"WordPerfect."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:1
 msgid "Entertainment with music and movies"
-msgstr ""
+msgstr "Zabava z glasbo ter filmi"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:6
 msgid ""
 "Ubuntu is ready to play music and videos from the web, from CDs and DVDs."
 msgstr ""
+"Ubuntu je pripravljen predvajati glasbo in posnetke s spleta, CD ter DVD "
+"zgoščenk."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:7
@@ -300,6 +335,10 @@ msgid ""
 "Internet radio, and purchase a variety of songs. Manage your podcast "
 "subscriptions and automatically download new episodes."
 msgstr ""
+"<em>Rhythmbox glasbeni predvajalnik</em> vam omogoča organizacijo vaše "
+"glasbe, poslušanje medmrežnega radia ter nakup raznovrstnih skladb. "
+"Upravljajte z vašimi podcast naročninami ter samodejno prejmite nove "
+"nanizanke."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:8
@@ -309,6 +348,9 @@ msgid ""
 "automatically stored in the cloud and synchronised across all of your "
 "computers."
 msgstr ""
+"Odkrijte priljubljeno glasbo brez DRM-ja, na voljo za nakup prek <em>Ubuntu "
+"One Music Store</em>, digitalne glasbene trgovine. Nakupi so samodejno "
+"shranjeni v t.i. oblaku in sinhronizirani z vsemi vašimi računalniki."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:9
@@ -316,11 +358,13 @@ msgid ""
 "Plug in an MP3 player to start synchronizing your music collection, or "
 "insert a CD to copy songs to your computer."
 msgstr ""
+"Priklopite vaš MP3 predvajalnik, za sinhronizacije vaše glasbene zbirke ali "
+"pa vstavite CD zgoščenko, da prekopirate vaše skladbe z vašega računalnika."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/ubuntuone.html:1
 msgid "Keep your digital life in sync"
-msgstr ""
+msgstr "Obdržite vaše digitalno življenje sinhronizirano"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:6
@@ -330,6 +374,10 @@ msgid ""
 "bookmarks, address book, and notes – everything goes where you go with "
 "<em>Ubuntu One</em>."
 msgstr ""
+"Uporabljajte vaš prenosnik,  mali prenosnik in delovni računalnik ter "
+"najdite vse kar potrebujete samodejno sinhronizirano. Vaši dokumetni, "
+"glasba, zaznamki, imenik ter zapiski - vse gre, kamor greste vi z <em>Ubuntu "
+"One</em>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:7
@@ -337,6 +385,8 @@ msgid ""
 "Want a safe home for your important files? All Ubuntu users get 2 GB of "
 "personal cloud storage for free (and more if you need it)."
 msgstr ""
+"Želite varen dom za vaše pomembne datoteke? Vsi Ubuntu uporabniki dobijo 2 "
+"GB osebne t.i. oblačne shrambe brezplačno (še več po potrebi)."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:8
@@ -344,6 +394,8 @@ msgid ""
 "Share folders using your synchronised address book. Project collaboration "
 "has never been easier."
 msgstr ""
+"Delite mape z uporabo vašega sinhroniziranega imenika. Projektno sodelovanje "
+"ni bilo nikoli lažje."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:9
@@ -351,6 +403,8 @@ msgid ""
 "Sign-up by launching the <em>Ubuntu One Preferences</em> application or "
 "going to <a href=\"http://one.ubuntu.com/\">http://one.ubuntu.com/</a>."
 msgstr ""
+"Prijavite se z zagonom aplikacije <em>Ubuntu One</em> ali pa tako, da greste "
+"na naslov <a href=\"http://one.ubuntu.com/\">http://one.ubuntu.com/</a>."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/welcome.html:1
@@ -360,7 +414,7 @@ msgstr "Dobrodošli"
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/welcome.html:6
 msgid "Thank you for choosing Ubuntu 10.04 LTS."
-msgstr ""
+msgstr "Hvala, ker ste izbrali Ubuntu 10.04 LTS."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/welcome.html:7
@@ -370,6 +424,10 @@ msgid ""
 "editor, integrated social networking and a growing selection of extra "
 "software."
 msgstr ""
+"Ta izdaja označuje velik mejnik v Ubuntu projektu. Lažji je in bolj  "
+"zanesljiv kot kdajkoli, s stotinami izboljšav, vključno z novim "
+"urejevalnikom posnetkov, integriranim socialnim mreženjem in naraščajočo "
+"izbiro dodatne programske opreme."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/welcome.html:8
@@ -378,6 +436,9 @@ msgid ""
 "something you will enjoy. While Ubuntu is installed, this slideshow will "
 "show you around."
 msgstr ""
+"Če ste novi v Ubuntu ali ste dolgoletni uporabnik, prepričani smo, da boste "
+"našli nekaj v čemur boste uživali. Medtem, ko je Ubuntu nameščen, vam bo ta "
+"predstavitev vse razkazala."
 
 #. type: Content of: <div><div><p>
 #: slideshows/ubuntu/slides/welcome.html:10

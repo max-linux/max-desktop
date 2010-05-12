@@ -69,49 +69,32 @@ the BSD licence.
 
 --
 
-The following icon sources, placed in ./icons-source, are created
-externally. These files are available with the source package or from
-our source code repository mentioned above. The icons placed in
-./slides/icons are derived works of those by the same name in
-./images-source (where foo-icon.svg becomes foo-icon.png). Therefore,
-they are also released under the same license as their predecessors.
+This project ships with many images which are from outside sources.
+This is a list of those images with their respective license details.
+Note that empty padding is often added to the images.
+Work whose content has been modified is marked with an asterisk (*)
 
-ubuntu/ubuntu-logo.svg
-	From the Human Icon Theme <launchpad.net/human-icon-theme>
-	Creative Commons Attribution-ShareAlike 2.5 License Agreement
-	(CC-BY-SA-2.5)
 
-ubuntu/accessibility.svg, ubuntu/evolution.svg, ubuntu/help.svg,
-ubuntu/openoffice.svg, ubuntu/web.svg
-	From the Humanity Icon Set <http://launchpad.net/humanity>
-	GNU General Public License Version 2 or later (GPL-2)
+In slideshows/ubuntu/slides/icons:
 
-ubuntu/ubuntuone.svg
-	From the Ubuntu One Client <http://launchpad.net/ubuntuone-client>
-	Creative Comons Attribution-ShareAlike 3.0 (CC-BY-SA-3.0)
+	accessibility.png, evolution.png, openoffice.png, media.png, 
+	personalize.png
+		From the Humanity Icon Set <http://launchpad.net/humanity>
+		GNU General Public License Version 2 or later (GPL-2)
 
-ubuntu/empathy.svg
-	From the Empathy project <http://live.gnome.org/Empathy>
-	GNU General Public License Version 2 or later (GPL-2)
+	empathy.png
+		From the Empathy project <http://live.gnome.org/Empathy>
+		GNU General Public License Version 2 or later (GPL-2)
 
-ubuntu/web.png
-	Via <http://en.wikipedia.org/wiki/File:Deer_Park_Globe.png>, 
-	originally by the Mozilla Founation.
-	GNU General Public License Version 2 or later (GPL-2).
+	fspot.png
+		From the F-Spot project <http://f-spot.org>
+		GNU General Public License Version 2 or later (GPL-2).
 
-ubuntu/fspot.svg
-	From the F-Spot project <http://f-spot.org>
-	GNU General Public License Version 2 or later (GPL-2).
-
-ubuntu/rhythmbox.svg
-	From the Breathe Icon Set <launchpad.net/breathe-icon-set>
-	Creative Common Attribution-ShareAlike 3.0 (CC-BY-SA-3.0)
-
-ubuntu/softwarestore.svg
-	From the Software Store project. <launchpad.net/software-store>
-	Copyright: © 2009 Canonical,
-	           © 2006 Sebastian Heinlein <glatzor@ubuntu.com>
-	GNU General Public License Version 2 or later (GPL-2)
+	softwarecenter.png
+		From the Software Center project. <launchpad.net/software-center>
+		Copyright: © 2009 Canonical,
+		           © 2006 Sebastian Heinlein <glatzor@ubuntu.com>
+		GNU General Public License Version 2 or later (GPL-2)
 
 -----
 

@@ -1,4 +1,4 @@
-# Malay translation for ubiquity-slideshow-ubuntu
+# Estonian translation for ubiquity-slideshow-ubuntu
 # Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
 # This file is distributed under the same license as the ubiquity-slideshow-ubuntu package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
@@ -8,25 +8,25 @@ msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-03-25 16:22+0000\n"
-"PO-Revision-Date: 2010-04-06 00:15+0000\n"
-"Last-Translator: wan_ubuntuseekers <jipang_menjerit@ubuntuseekers.com>\n"
-"Language-Team: Malay <ms@li.org>\n"
+"PO-Revision-Date: 2010-04-14 11:38+0000\n"
+"Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
+"Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/app-menu.html:1
 msgid "The Applications Menu"
-msgstr "Menu Aplikasi"
+msgstr "Rakenduste menüü"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/app-menu.html:6
 msgid ""
 "In the Applications menu on the left corner of the top panel, you can find..."
-msgstr "Dalam menu Aplikasi pada panel atas sebelah kiri, anda akan jumpa..."
+msgstr "Ülemise paneeli vasakus nurgas asuvas rakenduste menüüs on..."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/app-menu.html:7
@@ -34,8 +34,8 @@ msgid ""
 "<em>Ubuntu Software Center</em>, which lets you add or remove applications "
 "as you desire."
 msgstr ""
-"<em>Ubuntu Software Center</em>, dimana membenarkan anda menambah atau "
-"membuang aplikasi mengikut kehendak anda."
+"<em>Ubuntu tarkvarakeskus</em>, mis võimaldab sul rakendusi oma soovi järgi "
+"lisada või eemaldada."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/app-menu.html:8
@@ -43,19 +43,19 @@ msgid ""
 "<em>Settings menu</em>, where you can control how your desktop works and "
 "looks."
 msgstr ""
-"<em>Menu Aturan</em>, dimana membenarkan anda untuk mengubah rupa dan "
-"penggunaan <i>desktop</i> anda."
+"<em>Seadistuste menüü</em>, kus saad määrata, kuidas töölaud toimib ja välja "
+"näeb."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/app-menu.html:9
 msgid "All the applications installed in your system organized by category."
 msgstr ""
-"Semua aplikasi yang dipasang di dalam sistem akan disusun mengikut kategori."
+"Kõik su süsteemi paigaldatud rakendused järjestatuna kategooriate järgi."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/games.html:1
 msgid "Games in Xubuntu"
-msgstr "Permainan dalam Xubuntu"
+msgstr "Mängud Xubuntus"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/games.html:6
@@ -63,13 +63,15 @@ msgid ""
 "Xubuntu comes to you with a fantastic selection of games. While many of the "
 "names may be unknown to you, the games will not be."
 msgstr ""
+"Xubuntus on fantastiline mängude valik. Paljud nimed võivad olla tundmatud, "
+"aga mängud ise vaevalt."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/games.html:7
 msgid ""
 "Take a look at <em>Quadrapassel</em> (Applications &rarr; Games) for a "
 "Tetris look-alike."
-msgstr ""
+msgstr "Tetrise teisik on <em>Quadrapassel</em> (Rakendused &rarr; Mängud)."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/games.html:8
@@ -77,6 +79,8 @@ msgid ""
 "<em>AisleRiot Solitaire</em> allows you to select from 35 different types of "
 "solitaire! Surely there is one you will enjoy?"
 msgstr ""
+"<em>AisleRiot Solitaire</em> võimaldab valida 35 erineva pasjansitüübi "
+"hulgast! Kindlasti leiad mõne meeldiva."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/games.html:9
@@ -84,6 +88,8 @@ msgid ""
 "There are many more games in the Ubuntu repositories to install – see the "
 "Games category in <em>Ubuntu Software Center</em>."
 msgstr ""
+"Ubuntu paketivaramutes on paigaldamiseks veel palju rohkem mänge – vaata "
+"mängude kategooriat <em>Ubuntu tarkvarakeskuses</em>."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/games.html:11
@@ -91,11 +97,13 @@ msgid ""
 "There are a bunch of games available on the live CD as well, which you can "
 "enjoy while installing. Have fun!"
 msgstr ""
+"Live CD-l on samuti hunnik mänge, mida saad paigaldamise ajal nautida. "
+"Lõbutse hästi!"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/getting-help.html:1
 msgid "Getting help with Xubuntu"
-msgstr ""
+msgstr "Xubuntus abi saamine"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/getting-help.html:6
@@ -103,6 +111,8 @@ msgid ""
 "If you need help, try <em>Help</em> in the Applications menu, or the help "
 "menu available in most applications."
 msgstr ""
+"Kui vajad abi, siis proovi rakenduste menüü valikut <em>Abi</em> või "
+"enamikus rakendustes saadaolevat abimenüüd."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/getting-help.html:7
@@ -112,6 +122,10 @@ msgid ""
 "can join by <a href=\"http://webchat.freenode.net/?"
 "channels=xubuntu&nick=xubuntu...&prompt=1\">clicking here</a>."
 msgstr ""
+"Abi saab ka mujalt, s.h <a href=\"http://freenode.net/\">Freenode'i</a> IRC "
+"võrgus meie kanalilt <em>#xubuntu</em>, millega saad liituda <a href="
+"\"http://webchat.freenode.net/?channels=xubuntu&nick=xubuntu...&prompt=1"
+"\">klõpsates siin</a>."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/getting-help.html:9
@@ -119,11 +133,13 @@ msgid ""
 "For a complete list of support methods, see the <a href=\"http://xubuntu.org/"
 "help\">Help & Support page</a> on our website."
 msgstr ""
+"Täielikku toetusmeetodite loendit vaata leheküljelt <a href=\"http://xubuntu."
+"org/help\">Abi & tugi</a> meie veebisaidil."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/more-apps.html:1
 msgid "Multimedia applications"
-msgstr ""
+msgstr "Multimeediarakendused"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/more-apps.html:6
@@ -132,6 +148,9 @@ msgid ""
 "that allows as much or as little manipulation of the images as you choose. "
 "It can be used to construct images or modify photos and images."
 msgstr ""
+"<em>GIMP</em> (menüüs Rakendused &rarr; Graafika) on pildiredaktor, mis "
+"võimaldab neid töödelda nii palju või vähe, kui ise soovid. Seda saab "
+"kasutada nii piltide loomiseks kui ka fotode ja piltide muutmiseks."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/more-apps.html:7
@@ -140,6 +159,9 @@ msgid ""
 "capable of playing all your music, from mp3 to CD to live radio on the "
 "internet."
 msgstr ""
+"Kuulamisrõõmuks proovi <em>Exaile muusikamängijat</em>. See suudab mängida "
+"kogu su muusikat, alates MP3-failidest ja CD-plaatidest kuni "
+"Internetiraadioteni."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/more-apps.html:8
@@ -147,6 +169,9 @@ msgid ""
 "If you need to burn a CD or DVD, check out <em>Brasero</em>. It is very easy "
 "to use and will even burn the Xubuntu image for you."
 msgstr ""
+"Kui on vaja CD-d või DVD-d kirjutada, kasuta programmi <em>Brasero</em>. "
+"Seda on väga lihtne kasutada ja kirjutab sinu jaoks isegi Xubuntu tõmmise "
+"plaadile."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/more-apps.html:10
@@ -155,11 +180,13 @@ msgid ""
 "All of these applications are available on the live CD, even while "
 "installing. Be adventurous!"
 msgstr ""
+"Kõik need rakendused on saadaval live CD-l, isegi paigaldamise ajal. Otsi "
+"põnevust!"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/new-to-linux.html:1
 msgid "New to Linux?"
-msgstr ""
+msgstr "Uus Linuxi kasutaja?"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/new-to-linux.html:6
@@ -168,6 +195,9 @@ msgid ""
 "drivers and programs you will need. Please do not do that. The drivers "
 "needed for your system are being installed as you read this."
 msgstr ""
+"Kui oled uus Linuxi ja Xubuntu kasutaja, siis ilmselt muretsed, kuidas leida "
+"kõik vajalikud programmid ja draiverid. Reeglina pole seda vaja. Sinu "
+"süsteemi jaoks vajalikke draivereid paigaldatakse just praegu."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/new-to-linux.html:7
@@ -176,6 +206,9 @@ msgid ""
 "try out the new software. We think you will be amazed at the few things you "
 "need to add."
 msgstr ""
+"Kui paigaldamine on valmis, võta paar minutit, tundi või isegi päeva aega "
+"uue tarkvara proovimiseks. Me arvame, et hämmastud, kui vähe asju on vaja "
+"lisada."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/new-to-linux.html:8
@@ -183,11 +216,14 @@ msgid ""
 "If you find yourself wanting something else, please check the <em>Ubuntu "
 "Software Center</em> out. It is much easier than searching the internet."
 msgstr ""
+"Kui aga leiad, et soovid lisa, siis vaata palun <em>Ubuntu "
+"tarkvarakeskusesse</em>. Selle abil tarkvara paigaldamine on lihtsam kui "
+"Internetist otsimine."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/office.html:1
 msgid "Lighter alternatives for your office"
-msgstr ""
+msgstr "Kergemad alternatiivid sinu kontoritöö jaoks"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/office.html:6
@@ -196,6 +232,9 @@ msgid ""
 "document formats. You will have access to any fonts installed in your system "
 "and editing documents is a breeze."
 msgstr ""
+"<em>Abiword</em> on tekstitöötlusprogramm, mis suudab lugeda peaaegu kõiki "
+"tuntud dokumendivorminguid. Sul on ligipääs kõigile süsteemi paigaldatud "
+"fontidele ja dokumentide redigeerimine sujub raskusteta."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/office.html:7
@@ -203,6 +242,8 @@ msgid ""
 "<em>Gnumeric</em> is a spreadsheet program with an emphasis on accuracy. It "
 "can also be used to merge mathematical data into Abiword documents."
 msgstr ""
+"<em>Gnumeric</em> on tabelarvutusprogram, mis rõhub täpsusele. Seda saab "
+"kasutada ka matemaatilste andmete liitmiseks Abiwordi dokumentidele."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/office.html:8
@@ -210,6 +251,8 @@ msgid ""
 "While Abiword and Gnumeric are considered lightweight, they provide almost "
 "all of the functions of the OpenOffice suite."
 msgstr ""
+"Kuigi Abiwordi ja Gnumericut loetakse kergekaalulisteks, pakuvad need siiski "
+"peaaegu kõiki OpenOffice'i paketi funktsioone."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/office.html:10
@@ -217,11 +260,13 @@ msgid ""
 "For power users, the OpenOffice.org suite is available in just a few clicks "
 "– just install it from the Ubuntu Software Center."
 msgstr ""
+"Suuremate vajadustega kasutajatele on ainult mõne klõpsu kaugusel saadaval "
+"OpenOffice.org pakett – lihtsalt paigalda see Ubuntu tarkvarakeskusest."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/tips-beginners.html:1
 msgid "Few good tips for beginners"
-msgstr ""
+msgstr "Mõned head nõuanded algajatele"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/tips-beginners.html:6
@@ -248,12 +293,12 @@ msgstr ""
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/welcome.html:1
 msgid "Congratulations!"
-msgstr ""
+msgstr "Õnnitlused!"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/welcome.html:6
 msgid "You have chosen to install the latest version of Xubuntu, 10.04."
-msgstr ""
+msgstr "Sa oled paigaldamiseks valinud Xubuntu uusima versiooni, 10.04."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/welcome.html:7
@@ -261,6 +306,8 @@ msgid ""
 "This exciting software is brought to you free of any fees, for your use and "
 "any others you want to share it with."
 msgstr ""
+"See huvitav tarkvara on sinuni toodud tasuta, kasuta ise ja jaga, kellega "
+"soovid."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/welcome.html:8
@@ -276,11 +323,13 @@ msgid ""
 "We truly hope that you enjoy using this distribution as much as we enjoy "
 "bringing it to you."
 msgstr ""
+"Me loodame, et naudid selle distributsiooni kasutamist sama palju kui meie "
+"selle sinuni toomist."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/xfce.html:1
 msgid "Xfce Desktop Environment"
-msgstr ""
+msgstr "Xfce töölauakeskkond"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/xfce.html:6
@@ -288,6 +337,8 @@ msgid ""
 "Xubuntu uses the <em>Xfce desktop environment</em>. This allows the "
 "developers to bring you a system which is sleek and useful."
 msgstr ""
+"Xubuntu kasutab <em>Xfce töölauakeskkonda</em>. See võimaldab arendajatel "
+"pakkuda sulle ilusat ja kasulikku süsteemi."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/xfce.html:7
@@ -295,6 +346,7 @@ msgid ""
 "Xfce is a collection of programs that together provide a full-featured "
 "desktop environment."
 msgstr ""
+"Xfce on programmide kogum, mis koos annavad täisväärtusliku töölauakeskkonna."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/xfce.html:8
@@ -303,6 +355,8 @@ msgid ""
 "programmers create applications that fit in well with the desktop "
 "environment."
 msgstr ""
+"Xfce on ka arendusplatvorm, mis pakub erinevaid teeke, mis aitavad "
+"programmeerijatel luua töölauakeskkonda hästi sobivaid rakendusi."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/xfce.html:9

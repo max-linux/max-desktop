@@ -7,20 +7,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:47+0000\n"
-"PO-Revision-Date: 2010-03-31 23:45+0000\n"
-"Last-Translator: Sergiy Gavrylov <sergiovana@bigmir.net>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-16 21:09+0000\n"
+"Last-Translator: Anton Gladky <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/accessibility.html:1
 msgid "Accessibility in Ubuntu"
-msgstr "Доступність для людей з обмеженими можливостями в Ubuntu"
+msgstr "Робота в Ubuntu для людей з обмеженими можливостями"
 
 #.  "your" refers to a large group that includes the reader. 
 #. type: Content of: <div><div><ul><li>
@@ -65,7 +65,7 @@ msgstr ""
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/documentation.html:1
 msgid "Getting Help with Ubuntu"
-msgstr "Отримання довідки з Ubuntu"
+msgstr "Отримання довідки в Ubuntu"
 
 #.  The string "Help and Support" should be exactly as it appears in the System menu. 
 #. type: Content of: <div><div><ul><li>
@@ -90,7 +90,7 @@ msgstr ""
 "На додаток до нашої вичерпної довідки, спільнота Ubuntu надає безкоштовну "
 "технічну підтримку особисто та через Інтернет. Також наявна комерційна "
 "підтримка через компанію Canonical, її партнерів та довірені компанії. "
-"Більше про це, на веб-сайті <a href=\"http://www.ubuntu.com/support\">ubuntu."
+"Дізнайтеся більше про це на <a href=\"http://www.ubuntu.com/support\">ubuntu."
 "com/support</a>."
 
 #.  The url "ubuntu.com/community" should not be translated 
@@ -100,20 +100,20 @@ msgid ""
 "Let us know about your Ubuntu experience at <a href=\"http://ubuntu.com/"
 "community\">ubuntu.com/community</a>!"
 msgstr ""
-"Повідомте нам про свій досвід роботи в Ubuntu на веб-сторінку <a href="
-"\"http://ubuntu.com/community\">ubuntu.com/community</a>!"
+"Повідомте нам про свій досвід роботи в Ubuntu на <a href=\"http://ubuntu.com/"
+"community\">ubuntu.com/community</a>!"
 
 #. type: Content of: <div><div><p>
 #: slideshows/ubuntu/slides/documentation.html:10
 msgid "The installation will finish soon. We hope you enjoy Ubuntu."
 msgstr ""
-"Встановлення завершиться найближчим часом. Сподіваємося, вам сподобається "
+"Встановлення завершиться найближчим часом. Сподіваємося, що вам сподобається "
 "Ubuntu."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/empathy.html:1
 msgid "Social from the start"
-msgstr "Соціальні мережі від самого старту"
+msgstr "Готовність для роботи у соціальних мережах"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:6
@@ -121,8 +121,8 @@ msgid ""
 "From the start, Ubuntu connects to online chat and broadcast services "
 "including Facebook, Twitter, Windows Live and Google Talk."
 msgstr ""
-"Від самого старту, Ubuntu під’єднується до онлайн чату та служб мовлення, у "
-"тому числі Facebook, Twitter, Windows Live та Google Talk."
+"Одразу після установки Ubuntu готова для роботи у соціальних мережах, "
+"включаючи Facebook, Twitter, Windows Live та Google Talk."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:7
@@ -131,8 +131,8 @@ msgid ""
 "appear there, too, so you can see what's happening at a glance."
 msgstr ""
 "Натисніть на конверт поряд з годинником, щоб увійти у свій обліковий запис. "
-"Нові повідомлення з'являються там теж, і ви можете бачити з першого погляду, "
-"що відбувається."
+"Нові повідомлення будуть з'являтися там, так що ви зможете бути у курсі "
+"подій."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:8
@@ -141,7 +141,7 @@ msgid ""
 "status."
 msgstr ""
 "Якщо ви не хочете, щоб вас турбували, натисніть на своє ім'я у верхній "
-"частині екрана і змініть свій статус."
+"частині екрану і змініть свій статус."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/evolution.html:1
@@ -156,8 +156,8 @@ msgid ""
 "that comes with Ubuntu. Just enter your email account information and it "
 "will download new messages automatically."
 msgstr ""
-"З Ubuntu поставляється <em>Evolution Mail</em> — повнофункціональна програма "
-"для електронної пошти та календар. Просто введіть інформацію про свій "
+"<em>Поштова програма Evolution</em> — повнофункціональна програма для роботи "
+"з електронною поштою та календарем. Просто введіть інформацію про свій "
 "обліковий запис і нові повідомлення автоматично будуть завантажуватись."
 
 #. type: Content of: <div><div><ul><li>
@@ -227,7 +227,7 @@ msgstr ""
 #: slideshows/ubuntu/slides/fspot.html:7
 msgid ""
 "Use tags to describe your photos so that they are easy to find later on."
-msgstr "Використовуйте позначки для опису фото, щоб пізніше легко знайти їх."
+msgstr "Використовуйте теги для опису фото, щоб пізніше легко знайти їх."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/fspot.html:8
@@ -270,7 +270,7 @@ msgid ""
 "to creating music and exploring the universe. Take a look at the "
 "<em>Featured Applications</em> section for some of our favourites!"
 msgstr ""
-"Він містить програми на всі смаки, від програмування до створення музики та "
+"Там э програми на всі смаки, від програмування до створення музики та "
 "вивчення Всесвіту. Зверніть увагу на розділ <em>Рекомендовані програми</em>, "
 "щоб побачити деякі найкращі з наших програм!"
 
@@ -326,7 +326,8 @@ msgstr "Розваги з музикою і фільмами"
 msgid ""
 "Ubuntu is ready to play music and videos from the web, from CDs and DVDs."
 msgstr ""
-"Ubuntu готова до відтворення музики та відео з Інтернету та з компакт-дисків."
+"Ubuntu готова до програвання музики та відео з Інтернету, а також з CD та "
+"DVD дисків."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:7
@@ -335,7 +336,7 @@ msgid ""
 "Internet radio, and purchase a variety of songs. Manage your podcast "
 "subscriptions and automatically download new episodes."
 msgstr ""
-"Музичний програвач <em>Rhythmbox</em> дає змогу упорядкувати вашу музичну "
+"<em>Музичний програвач Rhythmbox</em> дає змогу упорядкувати вашу музичну "
 "колекцію, слухати Інтернет-радіо а також придбати різноманітні музичні "
 "композиції. Керуйте підписками на подкаст-канали та автоматично завантажуйте "
 "нові епізоди."
@@ -348,10 +349,10 @@ msgid ""
 "automatically stored in the cloud and synchronised across all of your "
 "computers."
 msgstr ""
-"Відкрийте для себе популярну, безкоштовну музику, захищену технологією DRM, "
-"яку можна придбати через магазин цифрової музики <em>Ubuntu One Music Store</"
-"em>. Покупки автоматично зберігаються в хмарі та синхронізуються на всіх "
-"ваших комп'ютерах."
+"Відкрийте для себе вільну від захисту DRM музику, яку можна придбати через "
+"магазин цифрової музики <em>Ubuntu One Music Store</em>, заснованому на "
+"хмарних технологіях. Покупки автоматично зберігаються в «хмарі» та "
+"синхронізуються на всіх ваших комп'ютерах."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:9
@@ -359,13 +360,13 @@ msgid ""
 "Plug in an MP3 player to start synchronizing your music collection, or "
 "insert a CD to copy songs to your computer."
 msgstr ""
-"Під’єднайте MP3-плеєр для синхронізації вашої музичної колекції, або вставте "
-"компакт-диск, щоб скопіювати композиції з нього, на свій комп'ютер."
+"Під’єднайте MP3-плеєр для синхронізації вашої музичної колекції або вставте "
+"компакт-диск, щоб скопіювати композиції на ваш комп'ютер."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/ubuntuone.html:1
 msgid "Keep your digital life in sync"
-msgstr "Тримайте свої цифрові ресурси синхронізованими"
+msgstr "Синхронізуйте свої данні"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:6
@@ -396,8 +397,8 @@ msgid ""
 "Share folders using your synchronised address book. Project collaboration "
 "has never been easier."
 msgstr ""
-"Спільно використовуйте теки за допомогою синхронізованої адресної книги. "
-"Проект співпраці ніколи ще не був простішим."
+"Спільно використовуйте папки за допомогою синхронізованої адресної книги. "
+"Сумісна робота над проектами ніколи ще не була простішою."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:9
@@ -417,7 +418,7 @@ msgstr "Ласкаво просимо!"
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/welcome.html:6
 msgid "Thank you for choosing Ubuntu 10.04 LTS."
-msgstr "Дякуємо Вам за вибір Ubuntu 10,04 LTS."
+msgstr "Дякуємо Вам за вибір Ubuntu 10.04 LTS."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/welcome.html:7
@@ -427,7 +428,7 @@ msgid ""
 "editor, integrated social networking and a growing selection of extra "
 "software."
 msgstr ""
-"Цей випуск знаменує важливу віху в рамках проекту Ubuntu. Операційна система "
+"Цей реліз знаменує важливу віху в рамках проекту Ubuntu. Операційна система "
 "стала простішою і надійнішою, ніж будь-коли, з сотнями удосконалень, "
 "включаючи новий відео-редактор, інтегровані соціальні мережі та зростаючий "
 "вибір додаткового програмного забезпечення."
@@ -439,13 +440,11 @@ msgid ""
 "something you will enjoy. While Ubuntu is installed, this slideshow will "
 "show you around."
 msgstr ""
-"Чи ви новачок в Ubuntu, чи досвідчений користувач, ми впевнені, що вона вам "
-"сподобається. Поки Ubuntu встановлюється, це слайд-шоу коротко ознайомить "
-"вас з нею."
+"Неважливо, новачок в Ubuntu, чи досвідчений користувач, ми впевнені — вам "
+"сподобається. Поки Ubuntu встановлюється, це слайд-шоу допоможе вам "
+"ознайомитися з системою."
 
 #. type: Content of: <div><div><p>
 #: slideshows/ubuntu/slides/welcome.html:10
 msgid "Ubuntu is designed to be easy. Feel free to explore!"
-msgstr ""
-"Ubuntu розроблена щоб бути простою в застосуванні. Не бійтесь досліджувати "
-"її!"
+msgstr "Ubuntu розроблена бути простою в застосуванні. Насолоджуйтесь роботою!"

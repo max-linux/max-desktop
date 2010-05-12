@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:48+0000\n"
-"PO-Revision-Date: 2010-04-02 07:14+0000\n"
-"Last-Translator: 英华 <wantinghard@gmail.com>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-15 17:12+0000\n"
+"Last-Translator: Aron Xu <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -29,8 +29,8 @@ msgid ""
 "circumstances. So, we provide tools that make Kubuntu one of the most "
 "accessible operating systems around."
 msgstr ""
-"我们致力于让计算机为所有人服务，不管您身处何处。因此，我们提供了许多工具，使 "
-"Kubuntu 成为最好用的操作系统之一。"
+"我们致力于使电脑能为每一个人服务，而无论其身体情况如何。因此，我们提供多种辅"
+"助工具使 Kubuntu 成为最易用的操作系统之一。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:9
@@ -40,9 +40,8 @@ msgid ""
 "there, you can turn on helpful tools like <em>Modifier Keys</em>, "
 "<em>Keyboard Filters</em>, and <em>Activation Gestures</em>."
 msgstr ""
-"您可以在同一个位置找到这些工具：菜单中系统设置应用程序中的 <em>辅助功能</em> "
-"首选项。在那里您可以打开一些有用的工具，如<em>修饰键</em>、<em>键盘过滤器</"
-"em>和<em>激活手势</em>。"
+"您可以在 <em>系统</em> 菜单中的 <em>辅助技术</em> 这一中心位置找到这些工具："
+"如<em>修饰键</em>、<em>键盘过滤器</em>和<em>激活手势</em>。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:14
@@ -51,20 +50,20 @@ msgid ""
 "choose between different visual styles and even change the fonts that are "
 "used by applications."
 msgstr ""
-"同时也不要忘了看一下<em>外观首选项</em>。您可以选择不同的视觉风格，甚至改变应"
-"用程序使用的字体。"
+"在 <em>外观首选项</em> 中，您可以选择不同的视觉风格、改变应用程序使用的字体。"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/games.html:1
 msgid "Get your game on with Kubuntu"
-msgstr "在 kubuntu上玩游戏"
+msgstr "在 Kubuntu上玩游戏"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:6
 msgid ""
 "With hundreds of game titles in our online repository, Kubuntu allows you to "
 "not be all about work, but also allows you to play."
-msgstr "我们的在线仓库中有数以百计的游戏，Kubuntu 让您不仅能工作，还能娱乐。"
+msgstr ""
+"我们的在线仓库中有数以百计的游戏，Kubuntu 让您在工作之余尽享娱乐的美妙。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:9
@@ -72,20 +71,20 @@ msgid ""
 "The <em>KDE Software Compilation</em> has quite a few games ranging from "
 "card games to logic games and board games."
 msgstr ""
-"<em>KDE Software Compilation</em> 中有不少游戏，从牌类游戏到逻辑游戏和棋类游"
-"戏。"
+"<em>KDE 软件集合</em> 中有很多游戏，包含从牌类游戏到逻辑和棋类游戏等各种类"
+"型。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:11
 msgid ""
 "First Person Shooters, Role Play Games, and more are also available in the "
 "repositories."
-msgstr "软件仓库中还可以找到第一人称射击、角色扮演和更多类型的游戏。"
+msgstr "软件仓库中还可以找到第一人称射击、角色扮演和更多其他类型的游戏。"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-help.html:1
 msgid "Getting help with Kubuntu"
-msgstr "获得 Kubuntu 的帮助"
+msgstr "获得 Kubuntu 的使用帮助"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:6
@@ -93,8 +92,8 @@ msgid ""
 "If you need help, try <em>Help</em> from the menu, or the <em>Help</em> menu "
 "in most applications."
 msgstr ""
-"如果您需要帮助，尝试菜单中的 <em>帮助</em>，或者绝大多数应用程序中的 <em>帮助"
-"</em> 菜单。"
+"如果需要帮助，尝试下系统菜单中的 <em>帮助和支持</em>，或者很多应用程序中都有"
+"的 <em>帮助</em> 菜单。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:8
@@ -105,9 +104,10 @@ msgid ""
 "through Canonical, its partners and approved companies. Learn more at <a "
 "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
 msgstr ""
-"除了我们编写的大量帮助外，Kubuntu 社区与 Ubuntu 社区一道，提供免费的个人和联"
-"网技术支持。Canonical、它的合作伙伴和授权公司 还提供商业支持。从 <a href="
-"\"http://www.ubuntu.com/support\">ubuntu.com/support</a> 了解更多内容。"
+"除了我们编写的大量帮助外，Kubuntu 社区与 Ubuntu 社区一道为用户提供免费的个人"
+"和在线技术支持。Canonical 同它的合作伙伴，及其他被授权的公司还提供商业支持。"
+"您可以在 <a href=\"http://www.ubuntu.org.cn/support\">ubuntu.org.cn/support</"
+"a> 了解更多内容。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:14
@@ -115,8 +115,8 @@ msgid ""
 "Let us know about your Kubuntu experience at <a href=\"http://www.ubuntu.com/"
 "community\">ubuntu.com/community</a>!"
 msgstr ""
-"在这里告诉我们您的 Kubuntu 体会 <a href=\"http://www.ubuntu.com/community"
-"\">ubuntu.com/community</a>！"
+"您可以通过 <a href=\"http://forum.ubuntu.org.cn\">forum.ubuntu.org.cn</a> 让"
+"我们了解您的使用感受！"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-involved.html:1
@@ -131,8 +131,9 @@ msgid ""
 "the distribution, providing advice and technical support, as well as helping "
 "to promote Kubuntu to a wider audience."
 msgstr ""
-"一群个人组成了 Kubuntu 社区，并把它发展成最棒的开源社区之一。社区进行发行版各"
-"方面的工作、提供建议和技术支持，同时也帮忙推广 Kubuntu 给更多受众。"
+"无数团队和个人组成了 Kubuntu 社区，并把它发展成最出色的开源社区之一。社区在包"
+"括开发、提供建议和技术支持在内的各方面工作中起到了决定性的作用，它本身的不断"
+"发展也让越来越多的人发现它并参与其中。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:11
@@ -140,8 +141,8 @@ msgid ""
 "No matter your skill level, getting involved and helping to mold the future "
 "of Kubuntu is easy, and you are more than welcome to help out."
 msgstr ""
-"不管您的技术手平如何，参与 Kubuntu 并帮助它成长发展很容易，我们无比欢迎您的帮"
-"助。"
+"不管您的技术水平如何，都可以找到您参与 Kubuntu 并帮助它成长的方式，我们热情地"
+"欢迎您的加入！"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:14
@@ -158,7 +159,7 @@ msgstr ""
 #. type: Content of: <div><div><p>
 #: slideshows/kubuntu/slides/get-involved.html:20
 msgid "The installation will finish soon. We hope you enjoy Kubuntu."
-msgstr "安装即将结束。我们希望您喜欢 Kubuntu。"
+msgstr "安装即将结束。我们衷心希望您会喜欢 Kubuntu！"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/graphics.html:1
@@ -169,7 +170,7 @@ msgstr "组织、欣赏和共享您的照片"
 #: slideshows/kubuntu/slides/graphics.html:5
 msgid ""
 "With <em>Gwenview</em>, it is really easy to organize and share your photos."
-msgstr "通过 <em>Gwenview</em>，您可以很容易地组织和分享自己的照片。"
+msgstr "通过 <em>Gwenview</em>，您可以便捷地组织和分享自己的照片。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:7
@@ -179,14 +180,14 @@ msgid ""
 "PicasaWeb, and more."
 msgstr ""
 "通过导出选项来复制您的照片到远程计算机、iPod、自己的 HTML 画廊上，或导出到 "
-"Flickr、SmugMug、PicasaWeb和更多其他服务中。"
+"Flickr、SmugMug、PicasaWeb 等更多其他服务中。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:10
 msgid ""
 "For more advanced organization and editing features, <em>digiKam</em> is "
 "available for installation."
-msgstr "对于更高级的组织和编辑特性，可以安装 <em>digiKam</em>。"
+msgstr "若需要更高级的组织和编辑特性，可以安装 <em>digiKam</em>。"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/installing-software.html:1
@@ -201,8 +202,9 @@ msgid ""
 "software from our online repositories, which we carefully organize to be "
 "safe and up to date."
 msgstr ""
-"察看 系统 标签下的 <em>软件管理</em> 应用程序。软件管理允许您安装(和卸载)我们"
-"在线仓库中的软件。这些软件经过我们仔细维护，安全和最新。"
+"察看 <em>系统</em> 标签下的 <em>软件管理</em> 应用程序。您可以在此处您安装或"
+"卸载我们在线仓库中的软件。通过精心的维护，我们可以保证它们的安全性，并将更新"
+"直接推送到您眼前。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:10
@@ -220,13 +222,13 @@ msgid ""
 "a Debian package or another repository available. That way, it will be "
 "really easy to install and you will receive automatic updates."
 msgstr ""
-"如果您需要我们没有提供的软件，可以找找有没有 Debian 包或其他软件仓库中的版"
-"本。这种方式安装也很容易，并且您可以获取自动更新。"
+"如果我们无法直接给您提供所需要的一些软件，请到 Debian 或其他可用的软件包仓库"
+"中寻找。这样您同样可以轻易将其安装并得到自动更新支持。"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/internet.html:1
 msgid "The Internet, your way"
-msgstr "Internet，您的沟通方式"
+msgstr "畅游网际，自在沟通"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:5
@@ -241,8 +243,8 @@ msgid ""
 "Browse the web, share your files, software, and multimedia, send and receive "
 "e-mail, and communicate with friends and family."
 msgstr ""
-"浏览网页，分享您的文件、软件和多媒体资料，发送和接收电子邮件，和朋友及家人交"
-"流。"
+"不论是浏览网页，还是分享文件和多媒体资料，或者是发送和接收电子邮件、与朋友及"
+"家人交流——这一切您都可以轻松搞定。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:10
@@ -250,12 +252,13 @@ msgid ""
 "Web browsers such as <em>Firefox</em> and Google's <em>Chromium</em> are "
 "easily installable."
 msgstr ""
-"网络浏览器如 <em>Firefox</em> 和 Google 的 <em>Chromium</em> 很容易安装。"
+"您可以非常容易地安装各种网页浏览器，例如 <em>Firefox</em> 和 <em>Chromium</"
+"em>。"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/multimedia.html:1
 msgid "Music and movies in Kubuntu"
-msgstr "Kubuntu 中的音乐和电影"
+msgstr "影音娱乐更胜一筹"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:5
@@ -284,7 +287,7 @@ msgstr ""
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/office.html:1
 msgid "Office tools at your fingertips"
-msgstr "近在指尖的办公工具"
+msgstr "便捷办公近在指尖"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:5
@@ -298,7 +301,8 @@ msgstr "<em>OpenOffice.org</em> 是一组强大的办公软件套装，好学易
 msgid ""
 "Use it to create letters, presentations and spreadsheets, as well as "
 "diagrams and databases."
-msgstr "用它写信、制作演示和表格，还有图表和数据库。"
+msgstr ""
+"您可以使用它制作文档、演示文稿和电子表格，以及其他各种图表和办公数据库。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:9
@@ -307,8 +311,8 @@ msgid ""
 "applications include WordPerfect and Microsoft Office. It uses the standard "
 "OpenDocument format."
 msgstr ""
-"<em>OpenOffice.org</em> 可以处理其他常见办公程序如 WordPerfect 和 Microsoft "
-"Office 生成的文档。它使用标准的 OpenDocument(开放文档) 格式。"
+"OpenOffice.org 使用标准的 OpenDocument (开放文档)文件格式。它可以打开 "
+"Microsoft Office 和 WordPerfect 等其他办公程序创建的文件。"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/pim.html:1
@@ -351,8 +355,8 @@ msgstr ""
 "用 <em>KAddressBook</em> 组织您的联系人，以多种地址薄格式导入和导出您的联系"
 "人，还可以与各种群组服务同步。"
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/pim.html:16
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/pim.html:17
 msgid ""
 "<em>Kontact</em> is the perfect personal information management integration "
 "for you!"
@@ -375,8 +379,8 @@ msgid ""
 "their choice and to download, change, study and share their software for any "
 "purpose."
 msgstr ""
-"我们坚信，每位计算机用户都应该有选择工作环境的自由和任意下载、修改、学习、分"
-"享他们的软件的权利。"
+"我们坚信，每位计算机用户都应该有选择工作环境的自由，以及任意下载、修改、学习"
+"和分享他们的软件的权利。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:10
@@ -387,7 +391,7 @@ msgstr ""
 "作为我们承诺的一部分，我们希望 Kubuntu 尽可能好地为您服务。因此在安装时，这组"
 "幻灯片将给您作一个简要介绍。"
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/welcome.html:13
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/welcome.html:14
 msgid "Kubuntu is designed to be easy. Feel free to explore!"
-msgstr "Kubuntu 设计得易于使用。尽情探索吧！"
+msgstr "Kubuntu 设计的宗旨是易于使用。一起来自由地探索吧！"

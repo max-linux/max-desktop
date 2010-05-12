@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:48+0000\n"
-"PO-Revision-Date: 2010-03-23 19:40+0000\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-08 18:41+0000\n"
 "Last-Translator: Adrian Guniš <andygun696@gmail.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -29,6 +29,9 @@ msgid ""
 "circumstances. So, we provide tools that make Kubuntu one of the most "
 "accessible operating systems around."
 msgstr ""
+"Chceme umožnit práci na počítači každému bez ohledu na jeho fyzická omezení. "
+"Proto poskytujeme nástroje, které činí Kubuntu jedním z nejpřístupnějších "
+"operačních systémů."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:9
@@ -38,6 +41,10 @@ msgid ""
 "there, you can turn on helpful tools like <em>Modifier Keys</em>, "
 "<em>Keyboard Filters</em>, and <em>Activation Gestures</em>."
 msgstr ""
+"Tyto nástroje můžete najít na jednom místě:  v ovládacím modulu "
+"<em>Zpřístupnění</em>, který naleznete v nabídce Nastavení systému. Odtud "
+"můžete zapnout pomocné nástroje jako <em>Modifikátory klávesnice</em>, "
+"<em>Filtrování kláves</em> a <em>Aktivační gesta</em>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:14
@@ -46,11 +53,14 @@ msgid ""
 "choose between different visual styles and even change the fonts that are "
 "used by applications."
 msgstr ""
+"Nezapomeňte se také podívat do nabídky <em>Vzhled</em>. Můžete si vybrat z "
+"několika motivů vzhledu stejně jako změnit písmo, které je použité v "
+"aplikacích."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/games.html:1
 msgid "Get your game on with Kubuntu"
-msgstr ""
+msgstr "Zahrajte si hry v Kubuntu"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:6
@@ -58,6 +68,8 @@ msgid ""
 "With hundreds of game titles in our online repository, Kubuntu allows you to "
 "not be all about work, but also allows you to play."
 msgstr ""
+"Kubuntu není jenom o práci, ale stovky her v našem internetovém zdroji vám "
+"umožní si i zahrát."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:9
@@ -65,6 +77,8 @@ msgid ""
 "The <em>KDE Software Compilation</em> has quite a few games ranging from "
 "card games to logic games and board games."
 msgstr ""
+"<em>Pracovní prostředí KDE</em> obsahuje několik her se zaměřením na "
+"karetní, logické nebo deskové hry."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:11
@@ -72,11 +86,13 @@ msgid ""
 "First Person Shooters, Role Play Games, and more are also available in the "
 "repositories."
 msgstr ""
+"Ve zdrojích naleznete střílečky z pohledu první osoby, hry na hrdiny a mnoho "
+"dalších herních žánrů."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-help.html:1
 msgid "Getting help with Kubuntu"
-msgstr ""
+msgstr "Získání pomoci v Kubuntu"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:6
@@ -84,6 +100,8 @@ msgid ""
 "If you need help, try <em>Help</em> from the menu, or the <em>Help</em> menu "
 "in most applications."
 msgstr ""
+"Pokud potřebujete pomoc, zkuste <em>Nápovědu</em> z hlavní nabídky nebo "
+"nabídku <em>Nápověda</em> dostupnou ve většině aplikací."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:8
@@ -94,6 +112,11 @@ msgid ""
 "through Canonical, its partners and approved companies. Learn more at <a "
 "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
 msgstr ""
+"Kromě naší rozsáhle nápovědy v písemné formě poskytuje komunita Kubuntu ve "
+"spojení s komunitou Ubuntu také bezplatnou technickou podporu osobně nebo "
+"přes internet. Také můžete využít komerční podporu poskytovanou společností "
+"Canonical, jejími partnery a ověřenými společnostmi. Více se dočtete na "
+"stránce <a href=\"http://www.ubuntu.cz/podpora\">ubuntu.cz/podpora</a>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:14
@@ -101,11 +124,13 @@ msgid ""
 "Let us know about your Kubuntu experience at <a href=\"http://www.ubuntu.com/"
 "community\">ubuntu.com/community</a>!"
 msgstr ""
+"Podělte se s námi o svých zkušenostech s Kubuntu na stránce <a href=\"http://"
+"www.ubuntu.cz/komunita\">ubuntu.cz/komunita</a>!"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-involved.html:1
 msgid "Get involved and contribute to Kubuntu"
-msgstr ""
+msgstr "Zapojte se a přispějte do Kubuntu"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:6
@@ -115,6 +140,10 @@ msgid ""
 "the distribution, providing advice and technical support, as well as helping "
 "to promote Kubuntu to a wider audience."
 msgstr ""
+"Komunita Kubuntu se skládá ze skupiny jednotlivců, kteří tvoří jeden z "
+"největších týmů ve světě open source, pracují na různých částech distribuce, "
+"poskytují poradenství a technickou podporu a tím pomáhají prosazovat Kubuntu "
+"širší veřejnosti."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:11
@@ -122,6 +151,9 @@ msgid ""
 "No matter your skill level, getting involved and helping to mold the future "
 "of Kubuntu is easy, and you are more than welcome to help out."
 msgstr ""
+"Bez ohledu na úroveň vašich dovedností je vaše výpomoc vždy vítána. Zapojte "
+"se tedy a pomozte utvářet budoucnost Kubuntu, aby bylo ještě více "
+"uživatelsky přívětivější."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:14
@@ -131,22 +163,30 @@ msgid ""
 "help out. Remember, it is easy to get involved and the work you do will be "
 "seen by millions of people around the world."
 msgstr ""
+"Prohlédněte si stránku <a href=\"https://wiki.kubuntu.org/Kubuntu/"
+"GettingInvolved\">wiki.kubuntu.org/Kubuntu/GettingInvolved</a> a zvažte, kde "
+"byste mohli pomoci. Uvědomte si, že je snadné se zapojit a že vaši odvedenou "
+"práci ocení mnoho lidí po celém světě."
 
 #. type: Content of: <div><div><p>
 #: slideshows/kubuntu/slides/get-involved.html:20
 msgid "The installation will finish soon. We hope you enjoy Kubuntu."
 msgstr ""
+"Instalace bude za chvíli dokončena. Doufáme, že používání Kubuntu bude pro "
+"vás příjemným zážitkem!"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/graphics.html:1
 msgid "Organize, enjoy, and share your photos"
-msgstr ""
+msgstr "Organizujte, prohlížejte a sdílejte vaše fotografie"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:5
 msgid ""
 "With <em>Gwenview</em>, it is really easy to organize and share your photos."
 msgstr ""
+"Pomocí <em>Gwenview</em> můžete jednoduše organizovat a sdílet vaše "
+"fotografie."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:7
@@ -155,6 +195,9 @@ msgid ""
 "custom HTML gallery, or to export to services such as Flickr, SmugMug, "
 "PicasaWeb, and more."
 msgstr ""
+"Využijte volbu Export pro zkopírování vašich fotografií na vzdálený počítač, "
+"iPod, vlastní HTML galerii nebo k exportu na služby jako Flickr, SmugMug, "
+"PicasaWeb a další."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:10
@@ -162,6 +205,8 @@ msgid ""
 "For more advanced organization and editing features, <em>digiKam</em> is "
 "available for installation."
 msgstr ""
+"Pro pokročilejší organizování a úpravy můžete nainstalovat aplikaci "
+"<em>digiKam</em>."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/installing-software.html:1
@@ -176,6 +221,10 @@ msgid ""
 "software from our online repositories, which we carefully organize to be "
 "safe and up to date."
 msgstr ""
+"Podívejte se na aplikaci <em>Správce softwaru</em> v hlavní nabídce na kartě "
+"Systém. Pomocí Správce softwaru můžete přidávat (a odstraňovat) software z "
+"našich internetových zdrojů, které pečlivě sestavujeme s ohledem na "
+"bezpečnost a aktuálnost vašeho systému."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:10
@@ -183,6 +232,8 @@ msgid ""
 "There is great software for everything from creating music and movies to "
 "producing 3D models and exploring the universe."
 msgstr ""
+"K dispozici máte mnoho skvělých aplikací pro vše: od vytváření hudby a filmů "
+"po tvorbu 3D modelů a objevování vesmíru."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:12
@@ -191,18 +242,21 @@ msgid ""
 "a Debian package or another repository available. That way, it will be "
 "really easy to install and you will receive automatic updates."
 msgstr ""
+"Pokud potřebujete aplikaci, která není v systému dostupná, zjistěte, zda "
+"neexistuje balík DEB nebo jiný zdroj softwaru. Takto ji můžete opravdu "
+"jednoduše nainstalovat a přijímat automatické aktualizace."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/internet.html:1
 msgid "The Internet, your way"
-msgstr ""
+msgstr "Internet"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:5
 msgid ""
 "Kubuntu ships software necessary to utilize the Internet for many different "
 "situations."
-msgstr ""
+msgstr "Kubuntu nabízí software nezbytný k plnohodnotnému využití internetu."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:7
@@ -210,6 +264,8 @@ msgid ""
 "Browse the web, share your files, software, and multimedia, send and receive "
 "e-mail, and communicate with friends and family."
 msgstr ""
+"Brouzdejte internetem, sdílejte své soubory, software a multimédia, "
+"posílejte a přijímejte e-maily a komunikujte s přáteli a rodinou."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:10
@@ -217,17 +273,19 @@ msgid ""
 "Web browsers such as <em>Firefox</em> and Google's <em>Chromium</em> are "
 "easily installable."
 msgstr ""
+"Webové prohlížeče jako <em>Firefox</em> a <em>Chromium</em> od společnosti "
+"Google je snadné doinstalovat."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/multimedia.html:1
 msgid "Music and movies in Kubuntu"
-msgstr ""
+msgstr "Hudba a filmy v Kubuntu"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:5
 msgid ""
 "Kubuntu is ready to play videos and music from the web, from CDs and DVDs."
-msgstr ""
+msgstr "Kubuntu je připraveno přehrávat videa a hudbu z internetu, CD a DVD."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:7
@@ -236,6 +294,9 @@ msgid ""
 "Internet radio, podcasts, and more, as well as synchronizes your audio "
 "collection to a portable audio player."
 msgstr ""
+"<em>Přehrávač zvuků Amarok</em> vám umožní spravovat vaši hudbu a poslouchat "
+"internetová rádia, podcasty a více jakož i synchronizovat vaši sbírku "
+"skladeb s přenosným audio přehrávačem."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:10
@@ -243,11 +304,13 @@ msgid ""
 "<em>Dragon Player</em> allows you to easily watch videos from your computer, "
 "DVD, or streamed over the Internet."
 msgstr ""
+"<em>Přehrávač Dragon</em> vám umožní snadno přehrávat videa z počítače, "
+"disku DVD nebo Internetu."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/office.html:1
 msgid "Office tools at your fingertips"
-msgstr ""
+msgstr "Kancelářské nástroje pro každodenní použití"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:5
@@ -255,6 +318,8 @@ msgid ""
 "<em>OpenOffice.org</em> is a powerful office software suite that is very "
 "easy to learn and use."
 msgstr ""
+"<em>OpenOffice.org</em> je výkonný kancelářský balík navržený pro snadné "
+"použití."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:7
@@ -262,6 +327,8 @@ msgid ""
 "Use it to create letters, presentations and spreadsheets, as well as "
 "diagrams and databases."
 msgstr ""
+"Použijte jej při tvorbě dopisů, prezentací a tabulek a jakož i diagramů a "
+"databází."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:9
@@ -270,11 +337,14 @@ msgid ""
 "applications include WordPerfect and Microsoft Office. It uses the standard "
 "OpenDocument format."
 msgstr ""
+"OpenOffice.org pracuje s dokumenty všech oblíbených kancelářských aplikací "
+"včetně WordPerfect a Microsoft Office. Používá standardní formát "
+"OpenDocument."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/pim.html:1
 msgid "Manage your contacts, dates, and e-mail"
-msgstr ""
+msgstr "Spravujte svoje kontakty, schůzky a e-maily"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:6
@@ -283,6 +353,8 @@ msgid ""
 "software that comes with Kubuntu. It contains applications for E-mail, "
 "Calendar, Address Book, and more."
 msgstr ""
+"<em>Kontact</em> je plnohodnotný správce osobních informací. Obsahuje "
+"aplikace pro e-mail, kalendář, adresář a další."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:9
@@ -290,6 +362,8 @@ msgid ""
 "Send e-mail with <em>KMail</em> from services such as Yahoo, GMail, and "
 "various groupware services."
 msgstr ""
+"Posílejte e-maily pomocí <em>KMail</em> ze služeb jako Yahoo, GMail a "
+"různých služeb groupware."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:11
@@ -297,6 +371,8 @@ msgid ""
 "Organize your calendar and scheduling with <em>KOrganizer</em> and "
 "synchronize with services such as Google's Calendar."
 msgstr ""
+"Organizujte svůj kalendář a úkoly pomocí <em>KOrganizer</em> a "
+"synchronizujte je se službami jako Kalendář Google."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:13
@@ -305,13 +381,16 @@ msgid ""
 "your contacts with nearly every address book standard as well synchronize "
 "with various groupware services."
 msgstr ""
+"Udržujte své kontakty organizované pomocí <em>KAddressBook</em> a importujte "
+"nebo exportujte své kontakty téměř se všemi standardními adresáři jakož i "
+"synchronizované s různými službami groupware."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/pim.html:16
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/pim.html:17
 msgid ""
 "<em>Kontact</em> is the perfect personal information management integration "
 "for you!"
-msgstr ""
+msgstr "<em>Kontact</em> je dokonalý správce osobních informací právě pro vás!"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/welcome.html:1
@@ -321,7 +400,7 @@ msgstr "Vítejte"
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:6
 msgid "Thank you for choosing Kubuntu 10.04 LTS."
-msgstr ""
+msgstr "Děkujeme že jste si vybrali Kubuntu 10.04 LTS."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:7
@@ -330,6 +409,9 @@ msgid ""
 "their choice and to download, change, study and share their software for any "
 "purpose."
 msgstr ""
+"Věříme, že každý uživatel počítače by měl mít možnost svobodně pracovat ve "
+"svém zvoleném prostředí jakož i stahovat, měnit, zkoumat nebo sdílet tento "
+"software za jakýmkoli účelem."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:10
@@ -337,8 +419,10 @@ msgid ""
 "As part of our promise, we want Kubuntu to work as well for you as possible. "
 "So while it installs, this slideshow will provide a quick introduction."
 msgstr ""
+"Jako součást našeho slibu si přejeme, aby vám Kubuntu sloužilo co nejlépe. "
+"Takže během instalace vám jej stručně představíme."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/welcome.html:13
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/welcome.html:14
 msgid "Kubuntu is designed to be easy. Feel free to explore!"
-msgstr ""
+msgstr "Kubuntu je tu pro vás, nebojte se ho prozkoumat!"

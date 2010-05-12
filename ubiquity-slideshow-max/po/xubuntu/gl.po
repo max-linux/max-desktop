@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-03-25 16:22+0000\n"
-"PO-Revision-Date: 2010-03-25 21:46+0000\n"
-"Last-Translator: Francisco Diéguez <Unknown>\n"
+"PO-Revision-Date: 2010-04-11 15:17+0000\n"
+"Last-Translator: Manuel Xosé Lemos <Unknown>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -64,8 +64,8 @@ msgid ""
 "Xubuntu comes to you with a fantastic selection of games. While many of the "
 "names may be unknown to you, the games will not be."
 msgstr ""
-"Xubuntu chégalle a vostede cunha excelente selección de xogos. É probábel "
-"que os nomes lle resulten descoñecidos, mais os xogos non o serán."
+"Xubuntu vén cunha excelente selección de xogos. É probábel que os nomes lle "
+"resulten descoñecidos, mais os xogos non o serán."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/games.html:7
@@ -73,8 +73,8 @@ msgid ""
 "Take a look at <em>Quadrapassel</em> (Applications &rarr; Games) for a "
 "Tetris look-alike."
 msgstr ""
-"Vote unha ollada a <em>Quadrapassel</em> (Aplicativos &rarr; Xogos) un xogo "
-"similar ao Tetris."
+"Bótelle unha ollada a <em>Quadrapassel</em> (Aplicativos &rarr; Xogos) un "
+"xogo similar ao Tetris."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/games.html:8
@@ -100,13 +100,13 @@ msgid ""
 "There are a bunch of games available on the live CD as well, which you can "
 "enjoy while installing. Have fun!"
 msgstr ""
-"Tamén hai un feixe de xogos dispoñíbeis no CD vivo aos que pode xugar "
+"Tamén hai un feixe de xogos dispoñíbeis no CD vivo aos que pode xogar "
 "durante a instalación. Páseo ben!"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/getting-help.html:1
 msgid "Getting help with Xubuntu"
-msgstr "Conseguir axuda en Xubuntu"
+msgstr "Conseguir axuda sobre Xubuntu"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/getting-help.html:6
@@ -114,8 +114,8 @@ msgid ""
 "If you need help, try <em>Help</em> in the Applications menu, or the help "
 "menu available in most applications."
 msgstr ""
-"Se necesita axuda prema <em>Axuda</em> no menú de aplicativos ou no menú de "
-"axuda dispoñíbel na maioría de aplicativos."
+"Se necesita axuda prema en <em>Axuda</em> no menú de aplicativos ou no menú "
+"de axuda dispoñíbel na maioría de aplicativos."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/getting-help.html:7
@@ -125,10 +125,10 @@ msgid ""
 "can join by <a href=\"http://webchat.freenode.net/?"
 "channels=xubuntu&nick=xubuntu...&prompt=1\">clicking here</a>."
 msgstr ""
-"Hai máis formas de obter axuda incluíndo a nosa canle IRC <em>#xubuntu</em> "
-"na rede <a href=\"http://freenode.net/\">Freenode</a>, ao que pode entrar <a "
-"href=\"http://webchat.freenode.net/?channels=xubuntu&nick=xubuntu...&prompt=1"
-"\">premendo aquí</a>."
+"Hai máis formas de obter axuda, tanto na nosa canle IRC <em>#xubuntu</em> "
+"coma na rede <a href=\"http://freenode.net/\">Freenode</a>, ás que pode "
+"entrar <a href=\"http://webchat.freenode.net/?"
+"channels=xubuntu&nick=xubuntu...&prompt=1\">premendo aquí</a>."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/getting-help.html:9
@@ -136,7 +136,7 @@ msgid ""
 "For a complete list of support methods, see the <a href=\"http://xubuntu.org/"
 "help\">Help & Support page</a> on our website."
 msgstr ""
-"Para ver unha lista completa de métodos admitidos, consulte a <a href="
+"Para ver unha lista completa de métodos compatíbeis, consulte a <a href="
 "\"http://xubuntu.org/help\">páxina de Axuda e asistencia técnica</a> no noso "
 "sitio web."
 
@@ -153,8 +153,9 @@ msgid ""
 "It can be used to construct images or modify photos and images."
 msgstr ""
 "<em>GIMP</em> (mostrado baixo Aplicativos &rarr; Gráficos) é un editor de "
-"imaxes que lle permíte a modificación pequena ou grande das súas imaxes. "
-"Pode usarse para construir imaxes ou modificar fotos e imaxes."
+"imaxes que lle permíte tanto unha pequena como unha profunda manipulación "
+"das súas imaxes. Pode usarse para compoñer imaxes ou para modificar fotos e "
+"imaxes."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/more-apps.html:7
@@ -163,9 +164,9 @@ msgid ""
 "capable of playing all your music, from mp3 to CD to live radio on the "
 "internet."
 msgstr ""
-"Para o seu deleite musical, vote un vistazo ao <em>Reprodutor de música "
-"Exaile</em>. Pode reproducir toda a súa música, desde mp3 a CD ou emisoras "
-"de radio por Internet."
+"Para o seu deleite musical, bótelle unha ollada a <em>Reprodutor de música "
+"Exaile</em>. Pode reproducir toda a súa música, de mp3 a CD ou a emisoras de "
+"radio por Internet."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/more-apps.html:8
@@ -174,7 +175,7 @@ msgid ""
 "to use and will even burn the Xubuntu image for you."
 msgstr ""
 "Se necesita gravar un CD ou un DVD, use <em>Brasero</em>. É moi sinxelo de "
-"usar e até pode gravar a súa imaxe de Xubuntu."
+"usar e ata pode gravar a imaxe de Xubuntu por vostede."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/more-apps.html:10
@@ -184,12 +185,12 @@ msgid ""
 "installing. Be adventurous!"
 msgstr ""
 "Todos estes aplicativos encóntranse dispoñíbeis no CD vivo, incluso mentres "
-"se instala Aventúrese!"
+"se instala. Aventúrese!"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/new-to-linux.html:1
 msgid "New to Linux?"
-msgstr "Novo en Linux?"
+msgstr "Novato en Linux?"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/new-to-linux.html:6
@@ -198,8 +199,8 @@ msgid ""
 "drivers and programs you will need. Please do not do that. The drivers "
 "needed for your system are being installed as you read this."
 msgstr ""
-"Se vostede é novo en linux e Xubuntu, probabelmente se pregunte onde atopar "
-"todos os controladores e programas que necesita. Non o faga. Os "
+"Se vostede é novato en linux e Xubuntu, probabelmente se pregunte onde "
+"atopar todos os controladores e programas que necesita. Non o faga. Os "
 "controladores necesarios para o seu sistema están sendo instalados mentres "
 "lee isto."
 
@@ -210,8 +211,8 @@ msgid ""
 "try out the new software. We think you will be amazed at the few things you "
 "need to add."
 msgstr ""
-"Cando se complete a instalación, adique uns cantos minutos, horas ou incluso "
-"días a probar os novos programas. Cremos que se sorprenderá das poucas "
+"Cando se complete a instalación, dedique uns cantos minutos, horas ou "
+"incluso días a probar novos programas. Cremos que se sorprenderá das poucas "
 "cousas que terá que engadir."
 
 #. type: Content of: <div><div><ul><li>
@@ -221,7 +222,7 @@ msgid ""
 "Software Center</em> out. It is much easier than searching the internet."
 msgstr ""
 "Se vai necesitar algo máis, consulte o <em>Centro de software de Ubuntu</"
-"em>. É moito máis fácil que buscar por Internet."
+"em>. É moito máis fácil que buscar pola Internet."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/office.html:1
@@ -235,9 +236,9 @@ msgid ""
 "document formats. You will have access to any fonts installed in your system "
 "and editing documents is a breeze."
 msgstr ""
-"<em>Abiword</em> é procesador de textos, que pode ler case todos os formatos "
-"de documentos coñecidos. Vostede ten acceso a calquera tipo de letra "
-"instalado no seu sistema e poderá editar documentos ao instante."
+"<em>Abiword</em> é un procesador de textos, que pode ler case todos os "
+"formatos de documentos coñecidos. Terá acceso a calquera tipo de letra "
+"instalado no seu sistema e poderá editar documentos de contado."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/office.html:7
@@ -245,7 +246,7 @@ msgid ""
 "<em>Gnumeric</em> is a spreadsheet program with an emphasis on accuracy. It "
 "can also be used to merge mathematical data into Abiword documents."
 msgstr ""
-"<em>Gnumeric</em> é un programa de follas de cálculo destacado pola súa "
+"<em>Gnumeric</em> é un programa de follas de cálculo especializado en "
 "precisión. Tamén se pode usar para combinar datos matemáticos en documentos "
 "de Abiword."
 
@@ -256,7 +257,7 @@ msgid ""
 "all of the functions of the OpenOffice suite."
 msgstr ""
 "Aínda que Abiword e Gnumeric son considerados liviáns, fornecen a meirande "
-"parte das funcións do paquete OpenOffice.org."
+"parte das funcións da suite OpenOffice.org."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/office.html:10
@@ -264,9 +265,8 @@ msgid ""
 "For power users, the OpenOffice.org suite is available in just a few clicks "
 "– just install it from the Ubuntu Software Center."
 msgstr ""
-"Para os usuarios avanzados, o paquete OpenOffice.org está dispoñíbel a só "
-"unhas cantas pulsacións de ratón de distancia - simplemente instáleo desde o "
-"Centro de software de Ubuntu."
+"Para os usuarios avanzados, a suite OpenOffice.org está dispoñíbel cuns "
+"cantos clics - simplemente instáleo desde o Centro de software de Ubuntu."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/tips-beginners.html:1
@@ -291,8 +291,8 @@ msgid ""
 "harddrive. It is quick and easy to use for beginners and experts alike."
 msgstr ""
 "Catfish é un excelente aplicativo para encontrar eses ficheiros que ten "
-"perdidos no seu disco ríxido. É rápido e sinxelo de usar tanto para novatos "
-"e como para expertos."
+"perdidos no seu disco ríxido. É rápido e sinxelo de usar tanto para "
+"principiantes e como para expertos."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/tips-beginners.html:8
@@ -300,7 +300,7 @@ msgid ""
 "Also in the accessories, you can find a slick calculator. Need to calculate "
 "disk partitions? Use the calculator, it couldn't be easier."
 msgstr ""
-"Ademais, nos accesorios, tamén pode encontrar unha inxeniosa calculadora. "
+"Ademais, nos accesorios, tamén pode encontrar unha enxeñosa calculadora. "
 "Necesita calcular particións do disco? Use a calculadora, non pode ser máis "
 "sinxelo."
 
@@ -320,8 +320,8 @@ msgid ""
 "This exciting software is brought to you free of any fees, for your use and "
 "any others you want to share it with."
 msgstr ""
-"Estes incríbeis programas sonlle fornecidos de balde, para qu vostede os use "
-"e todo aquel co que desexe compatilos."
+"Estes incríbeis programas sonlle fornecidos de balde, para que  os use "
+"vostede e todo aquel co que desexe compartilos."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/welcome.html:8
@@ -330,9 +330,9 @@ msgid ""
 "free to examine things as it installs. After the installation, the desktop "
 "will look much the same as it does now."
 msgstr ""
-"Xa que está instalando este software mediante o Desktop CD de Ubuntu, "
-"síntase libre de explorar cousas novas mentres se instala. Tras a "
-"instalación, o escritorio terá un aspecto moi similar ao que ten agora."
+"Xa que está instalando este software mediante o CD de Escritorio de Xubuntu, "
+"aproveite para explorar cousas novas mentres se instala. Tras a instalación, "
+"o escritorio terá un aspecto moi semellante ao que ten agora."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/welcome.html:10
@@ -340,7 +340,7 @@ msgid ""
 "We truly hope that you enjoy using this distribution as much as we enjoy "
 "bringing it to you."
 msgstr ""
-"Agardamos que desfrute usando esta distribución tanto como nos desfrutamos "
+"Confiamos en que goce usando esta distribución tanto como nós gozamos "
 "fornecéndolla."
 
 #. type: Content of: <h1>
@@ -374,8 +374,8 @@ msgid ""
 "environment."
 msgstr ""
 "Xfce tamén é unha plataforma de desenvolvemento que fornece varias "
-"bibliotecas que axudan aos programadores a crear aplicativos que se axustan "
-"perfectamente ao contorno de escritorio."
+"bibliotecas como axuda aos programadores para crear aplicativos que se "
+"axustan perfectamente ao contorno de escritorio."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/xfce.html:9

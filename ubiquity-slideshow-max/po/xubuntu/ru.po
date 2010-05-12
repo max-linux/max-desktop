@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-03-25 16:22+0000\n"
-"PO-Revision-Date: 2010-04-05 16:10+0000\n"
-"Last-Translator: LithiUm <Unknown>\n"
+"PO-Revision-Date: 2010-04-17 06:55+0000\n"
+"Last-Translator: Vadim Rutkovsky <roignac@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -63,8 +63,8 @@ msgid ""
 "Xubuntu comes to you with a fantastic selection of games. While many of the "
 "names may be unknown to you, the games will not be."
 msgstr ""
-"Xubuntu поставляется с фантастическим выбором игр. Хотя многие названия "
-"могут быть Вам незнакомы, но не сами игры."
+"Xubuntu поставляется с превосходным набором игр. Многие названия могут быть "
+"Вам незнакомы, но не сами игры."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/games.html:7
@@ -72,8 +72,8 @@ msgid ""
 "Take a look at <em>Quadrapassel</em> (Applications &rarr; Games) for a "
 "Tetris look-alike."
 msgstr ""
-"Взгляните на <em> Quadrapassel </em> (Приложения &rarr;  Игры) для сравнения "
-"взгляните на Тетрис они похоже друг на друга."
+"Взгляните на <em> Quadrapassel </em> (Приложения &rarr; Игры) - клон игры "
+"\"Тетрис\"."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/games.html:8
@@ -90,8 +90,8 @@ msgid ""
 "There are many more games in the Ubuntu repositories to install – see the "
 "Games category in <em>Ubuntu Software Center</em>."
 msgstr ""
-"В репозиториях Ubuntu есть еще больше игр - взгляните на категорию Игры в "
-"<em>Центре Приложений Ubuntu</em>"
+"В репозиториях Ubuntu есть еще больше игр - взгляните на категорию \"Игры\" "
+"в <em>Центре Приложений Ubuntu</em>."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/games.html:11
@@ -112,8 +112,8 @@ msgid ""
 "If you need help, try <em>Help</em> in the Applications menu, or the help "
 "menu available in most applications."
 msgstr ""
-"Если вам нужна  помощь,  используйте пункт  <em>Справка</em>  меню "
-"Приложения, или, доступное в большинстве приложений, меню Справка."
+"Если вам нужна помощь, используйте пункт \"<em>Справка</em>\" меню "
+"\"Приложения\" или меню \"Справка\", доступное в большинстве приложений."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/getting-help.html:7
@@ -124,9 +124,9 @@ msgid ""
 "channels=xubuntu&nick=xubuntu...&prompt=1\">clicking here</a>."
 msgstr ""
 "Существует множество путей для получения помощи, например наш IRC канал "
-"<em>#xubuntu</em> в <a href=\"http://freenode.net/\">Freenode</a> сети IRC, "
-"к котрому можно подключиться, используя  <a href=\"http://webchat.freenode."
-"net/?channels=xubuntu&nick=xubuntu...&prompt=1\">эту ссылку</a>."
+"<em>#xubuntu</em> в сети <a href=\"http://freenode.net/\">Freenode</a> к "
+"которому можно подключиться используя <a href=\"http://webchat.freenode.net/?"
+"channels=xubuntu&nick=xubuntu...&prompt=1\">эту ссылку</a>."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/getting-help.html:9
@@ -233,9 +233,9 @@ msgid ""
 "document formats. You will have access to any fonts installed in your system "
 "and editing documents is a breeze."
 msgstr ""
-"<em>Abiword</em> это текстовый процессов,который может читать практически "
+"<em>Abiword</em> это текстовый процессор, который может читать практически "
 "все известные форматы документов. Вы будете иметь доступ к любому шрифту, "
-"установленному в вашей системе и с легкостью редактировать документы."
+"установленному в вашей системе, и можете с легкостью редактировать документы."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/office.html:7
@@ -254,7 +254,7 @@ msgid ""
 "all of the functions of the OpenOffice suite."
 msgstr ""
 "Хотя Abiword и Gnumeric считаются легкими, они обеспечивают практически весь "
-"набор функции OpenOffice."
+"набор функций OpenOffice."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/office.html:10
@@ -277,9 +277,9 @@ msgid ""
 "any program on your system – one you lost on the menu or even one you didn't "
 "know existed!"
 msgstr ""
-"Используйте Поиск приложений (Приложения &rarr; Акссесуары) для запуска "
-"любой программы на вашей системе, если вы потеряли ее в меню или не знаете о "
-"его существовании!"
+"Используйте утилиту \"Поиск приложений\" (Приложения &rarr; Акссесуары) для "
+"запуска любой программы в вашей системе, если вы потеряли её в меню или не "
+"знаете о её существовании!"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/tips-beginners.html:7
@@ -297,9 +297,9 @@ msgid ""
 "Also in the accessories, you can find a slick calculator. Need to calculate "
 "disk partitions? Use the calculator, it couldn't be easier."
 msgstr ""
-"Так же в комплектации, Вы можете найти отличный калькулятор. Необходимо "
-"рассчитать разделы на диске? Используйте калькулятор, ничего легче этого "
-"быть не может."
+"Так же в комплектации Вы можете найти отличный калькулятор. Необходимо "
+"рассчитать размер разделов на диске? Используйте калькулятор, нет ничего "
+"проще."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/welcome.html:1
@@ -327,9 +327,9 @@ msgid ""
 "free to examine things as it installs. After the installation, the desktop "
 "will look much the same as it does now."
 msgstr ""
-"Так как вы устанавливаете это программное обеспечение, используя CD Xubuntu "
-"Desktop, не стесняйтесь изучать его. После установки на рабочем столе все "
-"будет выглядеть точно так же."
+"Не стесняйтесь изучать рабочую среду Xubuntu во время её установки с компакт-"
+"диска на Ваш компьютер. После установки Ваш рабочий стол будет выглядеть "
+"точно так же."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/welcome.html:10
@@ -380,5 +380,6 @@ msgid ""
 "To learn more about Xfce, look in <em>Applications &rarr; About Xfce &rarr; "
 "Info</em> or on the <a href=\"http://xfce.org/\">Xfce website</a>."
 msgstr ""
-"Чтобы узнать больше о среде Xfce, смотрите <em>Приложения &rarr; О Xfct "
-"&rarr; Информация</em>  или <a href=\"http://xfce.org/\">на сайте Xfce </a>."
+"Чтобы узнать больше о среде Xfce, посмотрите \"<em>Приложения &rarr; О Xfce "
+"&rarr; Информация</em>\" или посетите <a href=\"http://xfce.org/\">сайт "
+"Xfce</a>."

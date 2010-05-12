@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:47+0000\n"
-"PO-Revision-Date: 2010-04-05 09:01+0000\n"
-"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-11 10:34+0000\n"
+"Last-Translator: Francisco Diéguez <Unknown>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <div><h1>
@@ -30,8 +30,8 @@ msgid ""
 "circumstances. So, we provide tools that make Ubuntu one of the most "
 "accessible operating systems around."
 msgstr ""
-"Queremos que os nosos equipos sexan útiles para todos, sen importar as súas "
-"circunstancias físicas. Para iso, fornecemos ferramentas que fan de Ubuntu "
+"Queremos que os nosos computadores sexan útiles para todos, sen importar as "
+"súas capacidades físicas. Para iso, fornecemos utilidades que fan de Ubuntu "
 "un dos sistemas operativos máis accesíbeis que existen."
 
 #.  The string "Assistive Technologies Preferences" is describing a particular menu item: System >
@@ -44,10 +44,11 @@ msgid ""
 "helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
 "click to press mouse buttons automatically."
 msgstr ""
-"Pode dispor de todas estas ferramentas nun único lugar: as <em>Preferencias "
+"Pode dispor de todas estas utilidades nun único lugar: as <em>Preferencias "
 "de Tecnoloxías adaptadas</em> dentro do menú Sistema. Desde aí poderá "
-"activar ferramentas útiles como <em>Orca</em> (para escoit o texto da "
-"pantalla) ou dwell click (para premer os botóns do ratón automáticamente)."
+"activar utilidades tan prácticas como <em>Orca</em> (para escoitar o texto "
+"da pantalla) ou clic en pausa (para premer os botóns do rato "
+"automaticamente)."
 
 #.  As before, the string "Appearance Preferences" is describing a particular menu item: System >
 #.  Preferences > Appearance. Certain words were kept the same to make the menu item discoverable. 
@@ -65,7 +66,7 @@ msgstr ""
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/documentation.html:1
 msgid "Getting Help with Ubuntu"
-msgstr "Como obter axuda con Ubuntu"
+msgstr "Como obter axuda sobre Ubuntu"
 
 #.  The string "Help and Support" should be exactly as it appears in the System menu. 
 #. type: Content of: <div><div><ul><li>
@@ -74,8 +75,8 @@ msgid ""
 "If you need help, try <em>Help and Support</em> from the System menu, or the "
 "<em>Help</em> menu in most applications."
 msgstr ""
-"Se precisa axuda, probe con <em>Axuda e asistencia</em> no menú Sistema, ou "
-"o menú de <em>Axuda</em> na maioría dos aplicativos."
+"Se precisa axuda, probe en <em>Axuda e asistencia técnica</em> no menú "
+"Sistema, ou no menú de <em>Axuda</em> na maioría dos aplicativos."
 
 #.  The url "ubuntu.com/support" should not be translated 
 #. type: Content of: <div><div><ul><li>
@@ -87,11 +88,11 @@ msgid ""
 "companies. Learn more at <a href=\"http://www.ubuntu.com/support\">ubuntu."
 "com/support</a>."
 msgstr ""
-"Ademáis da nosa extensa axuda escrita, a comunidade de Ubuntu fornece "
-"asistencia técnica de balde en persoa e a través da Internet. Tamén se "
-"ofrece sistencia comercial dispoñíbel a través de Canonical, os seus sus "
-"socios e empresas aprobadas. Aprenda máis en <a href=\"http://www.ubuntu.com/"
-"support\">ubuntu.com/support</a>."
+"Ademais da nosa extensa axuda escrita, a comunidade de Ubuntu fornece "
+"asistencia técnica de balde en persoa e a través da Internet. Tamén conta "
+"con asistencia comercial dispoñíbel a través de Canonical, os seus socios e "
+"empresas homologadas. Saiba máis en <a href=\"http://www.ubuntu.com/support"
+"\">ubuntu.com/support</a>."
 
 #.  The url "ubuntu.com/community" should not be translated 
 #. type: Content of: <div><div><ul><li>
@@ -106,7 +107,7 @@ msgstr ""
 #. type: Content of: <div><div><p>
 #: slideshows/ubuntu/slides/documentation.html:10
 msgid "The installation will finish soon. We hope you enjoy Ubuntu."
-msgstr "A instalación rematará en breve. Agardamos que desfrute de Ubuntu."
+msgstr "A instalación logo rematará. Agardamos que goce de Ubuntu."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/empathy.html:1
@@ -119,7 +120,7 @@ msgid ""
 "From the start, Ubuntu connects to online chat and broadcast services "
 "including Facebook, Twitter, Windows Live and Google Talk."
 msgstr ""
-"Desde o arranque, Ubuntu conecta con conversas en liña e servizos de "
+"Desde o arranque, Ubuntu pode conectarse a conversas en liña e a servizos de "
 "difusión como Facebook, Twitter, Windows Live e Google Talk."
 
 #. type: Content of: <div><div><ul><li>
@@ -128,9 +129,9 @@ msgid ""
 "Click the envelope near the clock to log in to your accounts. New messages "
 "appear there, too, so you can see what's happening at a glance."
 msgstr ""
-"Prema no sobre situado cerca do reloxo para iniciar a sesión coas súas "
+"Prema no sobre situado preto do reloxo para iniciar a sesión nas súas "
 "contas. As mensaxes novas tamén aparecerán alí, polo que poderá ver dunha "
-"sóa ollada todo o que está pasando."
+"soa ollada todo o que está pasando."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:8
@@ -154,9 +155,9 @@ msgid ""
 "that comes with Ubuntu. Just enter your email account information and it "
 "will download new messages automatically."
 msgstr ""
-"O <em>Correo de Evolution</em> é un completo programa de correo e calendario "
-"fornecido con Ubuntu. Só ten que introducir a información da súa conta de "
-"correo e descargará as súa mensaxes novas automaticamente."
+"O <em>Correo de Evolution</em> é un programa completo de correo e calendario "
+"fornecido con Ubuntu. Só ten que inserir a información da súa conta de "
+"correo e as súas novas mensaxes descargaranse automaticamente."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/evolution.html:7
@@ -175,7 +176,7 @@ msgid ""
 "see your daily schedule, just click the clock at the top of your screen."
 msgstr ""
 "Engada os seus calendarios web preferidos para estar atento ás futuras "
-"publicacións de xogos ou filmes. Para ver a súa planificación diaria, "
+"edicións de xogos ou filmes. Para ver a súa planificación diaria, "
 "simplemente prema sobre o reloxo situado na parte superior da súa pantalla."
 
 #. type: Content of: <div><h1>
@@ -186,7 +187,7 @@ msgstr "Navegue pola Internet con Firefox"
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/firefox.html:6
 msgid "Ubuntu comes with the widely acclaimed <em>Firefox web browser</em>."
-msgstr "Ubuntu ven co mundialmente recoñecido <em>Navegador web Firefox</em>."
+msgstr "Ubuntu vén co mundialmente recoñecido <em>Navegador web Firefox</em>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/firefox.html:7
@@ -202,14 +203,14 @@ msgid ""
 "Give Firefox your own personal touch with addons. You can choose from "
 "thousands of themes and extensions that tailor it to how you use the web."
 msgstr ""
-"Dealle a Firefox o seu propio estilo persoal cos complementos. Pode elixir "
+"Déalle a Firefox o seu propio estilo persoal con complementos. Pode elixir "
 "entre milleiros de temas e extensións que o adaptarán ao xeito no que "
 "vostede usa o web."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/fspot.html:1
 msgid "Share and enjoy your photos"
-msgstr "Comparta e desfrute as súas fotos"
+msgstr "Comparta e goce das súas fotos"
 
 #.  "F-Spot Photo Manager" should be the exact name that is used for F-Spot in the Applications menu 
 #. type: Content of: <div><div><ul><li>
@@ -218,7 +219,7 @@ msgid ""
 "With <em>F-Spot Photo Manager</em>, it is really easy to share, touch-up and "
 "organize digital photos."
 msgstr ""
-"Co <em>Xestor de fotos F-Spot</em>, é realmente doado compartir, modificar e "
+"Co <em>Xestor de fotos F-Spot</em> é realmente doado compartir, modificar e "
 "organizar fotografías dixitais."
 
 #.  Instead of directly translating the word "tags," please use the exact name of the feature in F-Spot for your locale. (Tags are used to label photos). 
@@ -227,8 +228,8 @@ msgstr ""
 msgid ""
 "Use tags to describe your photos so that they are easy to find later on."
 msgstr ""
-"Use etiquetas para describir as súas fotografías para que logo lle resulte "
-"máis sinxelo encontralas."
+"Use etiquetas para describir as súas fotografías de modo que lle resulte "
+"logo máis sinxelo encontralas."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/fspot.html:8
@@ -246,7 +247,7 @@ msgid ""
 "To get started, choose F-Spot from the Graphics Applications menu or attach "
 "a digital camera and follow the prompts."
 msgstr ""
-"Para empezar a usalo, seleccione F-Spot no menú Aplicativos -> Gráficos, ou "
+"Para comezar a usalo, seleccione F-Spot no menú Aplicativos -> Gráficos, ou "
 "conecte unha cámara dixital e siga as instrucións."
 
 #. type: Content of: <div><h1>
@@ -270,9 +271,10 @@ msgid ""
 "to creating music and exploring the universe. Take a look at the "
 "<em>Featured Applications</em> section for some of our favourites!"
 msgstr ""
-"Hai aplicativos excelentes para todo tipo de intereses, desde programación "
-"ata crear música ou explorar o Universo. Botelle un ollo á sección "
-"<em>Aplicativos destacados</em> para ver algún dos nosos preferidos."
+"Hai aplicativos excelentes para todo tipo de intereses, tanto para a "
+"programación como para crear música ou explorar o universo. Bótelle un ollo "
+"á sección <em>Aplicativos destacados</em> para ver algún dos nosos "
+"preferidos."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/installing-software.html:8
@@ -280,14 +282,14 @@ msgid ""
 "Everything in Software Center is stored in our online repository. We are "
 "careful to keep it safe and updates will be delivered directly to you."
 msgstr ""
-"Todo o que hai no Centro de software atopase almacenado no noso repositorio "
-"en liña. Temos moito coidado en mantelo seguro e enviaranselle, directamente "
-"a vostede,  as actualizacións."
+"Todo o que hai no Centro de software atópase almacenado no noso repositorio "
+"en liña. Temos moito coidado de mantelo seguro e recibirá vostede "
+"directamente as actualizacións."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/openoffice.html:1
 msgid "Office tools at your fingertips"
-msgstr "Ferramentas ofimáticas nas súas máns"
+msgstr "Ferramentas ofimáticas nas súas mans"
 
 #.  "OpenOffice.org" does not refer to a particular menu item, but it a name shared in common between all of the OpenOffice components in the Applications menu. 
 #. type: Content of: <div><div><ul><li>
@@ -296,7 +298,7 @@ msgid ""
 "Ubuntu comes with <em>OpenOffice.org</em>, a powerful office software suite "
 "that is easy to understand."
 msgstr ""
-"Ubuntu ven con <em>OpenOffice.org</em>, un potente paquete ofimático doado "
+"Ubuntu vén con <em>OpenOffice.org</em>, unha potente suite ofimática doada "
 "de usar."
 
 #. type: Content of: <div><div><ul><li>
@@ -311,7 +313,7 @@ msgid ""
 "OpenOffice.org uses the standard OpenDocument file format. It opens files "
 "from other office applications like Microsoft Office and WordPerfect."
 msgstr ""
-"OpenOffice.org usa o formato de ficheiro estándar OpenDocument. Pode abrir "
+"OpenOffice.org usa o formato de ficheiro estándar OpenDocument. Abre "
 "ficheiros doutros aplicativos ofimáticos como Microsoft Office e WordPerfect."
 
 #. type: Content of: <div><h1>
@@ -324,7 +326,8 @@ msgstr "Entretemento con música e filmes"
 msgid ""
 "Ubuntu is ready to play music and videos from the web, from CDs and DVDs."
 msgstr ""
-"Ubuntu está preparado para reproducir música e vídeos desde o web, CD e DVD."
+"Ubuntu está preparado para reproducir música e vídeos desde a web, de CD e "
+"de DVD."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:7
@@ -333,8 +336,8 @@ msgid ""
 "Internet radio, and purchase a variety of songs. Manage your podcast "
 "subscriptions and automatically download new episodes."
 msgstr ""
-"O <em>Reprodutor de música Rhythmbox</em> permitelle organizar a súa música, "
-"escoitar a radio en Internet e mercar cancións. Xestione as súas "
+"O <em>Reprodutor de música Rhythmbox</em> permítelle organizar a súa música, "
+"escoitar a radio na Internet e comprar cancións variadas. Xestione as súas "
 "subscricións de «podcast» e descargue automaticamente episodios novos."
 
 #. type: Content of: <div><div><ul><li>
@@ -345,9 +348,9 @@ msgid ""
 "automatically stored in the cloud and synchronised across all of your "
 "computers."
 msgstr ""
-"Descobra a música libre de DRM dispoñíbel para a compra na <em>Tenda de "
+"Descubra a música libre de DRM dispoñíbel para a compra na <em>Tenda de "
 "música Ubuntu One</em>, unha tenda de música dixital activa na nube. As "
-"compras almacenanse automaticamente na nube e sincronizase con todos os seus "
+"compras almacénanse automaticamente na nube e sincronízase con todos os seus "
 "computadores."
 
 #. type: Content of: <div><div><ul><li>
@@ -357,7 +360,7 @@ msgid ""
 "insert a CD to copy songs to your computer."
 msgstr ""
 "Conecte o reprodutor MP3 para iniciar a sincronización da súa colección de "
-"música, ou insira un CD para copiar as cancións ao seu computador,"
+"música ou insira un CD para copiar as cancións no seu computador,"
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/ubuntuone.html:1
@@ -372,9 +375,9 @@ msgid ""
 "bookmarks, address book, and notes – everything goes where you go with "
 "<em>Ubuntu One</em>."
 msgstr ""
-"Comparta, de vez,  entre o seu computador portátil, netbook, e computador do "
-"traballo e atopará todo o necesario sincronizado automaticamente. Os seus "
-"documentos, música, preferidos, caderno de enderezos e notas - todo vai onde "
+"Cambie entre o seu computador portátil, netbook, e computador do traballo e "
+"atopará todo o que necesita sincronizado automaticamente. Os seus "
+"documentos, música, marcadores, caderno de enderezos e notas - todo vai onde "
 "vostede vaia con <em>Ubuntu One</em>."
 
 #. type: Content of: <div><div><ul><li>
@@ -383,9 +386,9 @@ msgid ""
 "Want a safe home for your important files? All Ubuntu users get 2 GB of "
 "personal cloud storage for free (and more if you need it)."
 msgstr ""
-"Precisa un fogar seguro para os seus ficheiros importantes? Todos os "
-"usuarios de Ubuntu poden obtener 2 GB de almacenamento na súa nube persoal "
-"de balde (e máis de precisalo)."
+"Precisa un lugar seguro para os seus ficheiros importantes? Todos os "
+"usuarios de Ubuntu poden ter 2 GB de almacenamento na súa nube persoal de "
+"balde (e máis, de precisalo)."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:8
@@ -393,8 +396,8 @@ msgid ""
 "Share folders using your synchronised address book. Project collaboration "
 "has never been easier."
 msgstr ""
-"Compartir cartafoles empregando a sincronización do seu caderno de "
-"enderezos. A colaboración en proxectos nunca foi maís doado."
+"Comparta cartafoles empregando a sincronización do seu caderno de enderezos. "
+"A colaboración en proxectos nunca foi tan doada."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:9
@@ -402,8 +405,8 @@ msgid ""
 "Sign-up by launching the <em>Ubuntu One Preferences</em> application or "
 "going to <a href=\"http://one.ubuntu.com/\">http://one.ubuntu.com/</a>."
 msgstr ""
-"Subscribase executando o aplicativo <em>Preferencias de Ubuntu One</ em> ou "
-"indoa á páxina <a href=\"http://one.ubuntu.com/\">http://one.ubuntu.com/</a>."
+"Subscríbase executando o aplicativo <em>Preferencias de Ubuntu One</ em> ou "
+"indo á páxina <a href=\"http://one.ubuntu.com/\">http://one.ubuntu.com/</a>."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/welcome.html:1
@@ -423,10 +426,10 @@ msgid ""
 "editor, integrated social networking and a growing selection of extra "
 "software."
 msgstr ""
-"Esta versión representa un fito fundamental no proxecto Ubuntu. É máis doada "
-"e máis fiable que nunca, con centos de melloras incluíndo un novo editor de "
-"vídeo, integración con redes sociais e unha crecente selección de software "
-"adicional."
+"Esta edición representa un fito fundamental no proxecto Ubuntu. É máis doada "
+"e máis fiábel ca nunca, con centos de melloras nas que se inclúe un novo "
+"editor de vídeo, a integración coas redes sociais e unha crecente selección "
+"de software adicional."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/welcome.html:8
@@ -435,11 +438,11 @@ msgid ""
 "something you will enjoy. While Ubuntu is installed, this slideshow will "
 "show you around."
 msgstr ""
-"Xa sexa vostede un recén chegado a Ubuntu ou un usuario veterano, estamos "
-"seguros de que terá motivos para desfrutar. Mentres se instala Ubuntu, esta "
-"presentación ofrecerlle unha ollada xeral."
+"Tanto se acaba de chegar a Ubuntu como se é veterano, estamos seguros de que "
+"terá motivos para gozar de Ubuntu. Mentres se instala Ubuntu, esta "
+"presentación ofreceralle unha panorámica."
 
 #. type: Content of: <div><div><p>
 #: slideshows/ubuntu/slides/welcome.html:10
 msgid "Ubuntu is designed to be easy. Feel free to explore!"
-msgstr "Ubuntu está deseñado para ser sinxelo. Síntase libre para explorar!"
+msgstr "Ubuntu está deseñado para ser sinxelo. Síntase libre para exploralo!"

@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:47+0000\n"
-"PO-Revision-Date: 2010-04-02 13:36+0000\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-11 21:47+0000\n"
 "Last-Translator: Daniel Nylander <yeager@ubuntu.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <div><h1>
@@ -30,9 +30,9 @@ msgid ""
 "circumstances. So, we provide tools that make Ubuntu one of the most "
 "accessible operating systems around."
 msgstr ""
-"Vi vill göra så att alla kan använda datorer, oavsett dina fysiska förmågor. "
-"Därför tillhandahåller vi verktyg som gör Ubuntu till en av de mest "
-"tillgängliga operativsystemen på marknaden."
+"Vi vill att alla ska kunna använda datorer, oavsett fysiska förmågor. Därför "
+"tillhandahåller vi verktyg som gör Ubuntu till ett av de mest tillgängliga "
+"operativsystemen på marknaden."
 
 #.  The string "Assistive Technologies Preferences" is describing a particular menu item: System >
 #.  Preferences > Assistive Technologies, and the string "System menu" describes that section of the main menu. Note that certain words are kept the same to make the menu items discoverable. It is intentional that we are using soft descriptions instead of mapping out a rigid path for the user to follow. Please, if it is natural for your locale, consider the same convention. 
@@ -44,9 +44,9 @@ msgid ""
 "helpful tools like <em>Orca</em>, to speak text on the screen, or dwell "
 "click to press mouse buttons automatically."
 msgstr ""
-"Du kan komma åt dessa verktyg på samma plats: <em>Hjälpmedelsteknik</em> i "
-"System-menyn. Därifrån kan du aktivera behjälpliga verktyg såsom <em>Orca</"
-"em> för att läsa upp text på skärmen, eller uppehållsklick för att "
+"Du kan komma åt alla dessa verktyg från samma plats: <em>Hjälpmedelsteknik</"
+"em> i System-menyn. Därifrån kan du aktivera behjälpliga verktyg såsom "
+"<em>Orca</em> för att läsa upp text på skärmen, eller uppehållsklick för att "
 "automatiskt trycka ner musknappar."
 
 #.  As before, the string "Appearance Preferences" is describing a particular menu item: System >
@@ -87,11 +87,11 @@ msgid ""
 "companies. Learn more at <a href=\"http://www.ubuntu.com/support\">ubuntu."
 "com/support</a>."
 msgstr ""
-"I tillägg till vår stora mängd av skriven dokumentation så tillhandahåller "
-"Ubuntus gemenskap kostnadsfri teknisk support direkt till dig över Internet. "
-"Det finns även kommersiell support tillgänglig genom Canonical, dess "
-"partners och godkända företag. Läs mer på <a href=\"http://www.ubuntu.com/"
-"support\">ubuntu.com/support</a>."
+"Utöver vår stora mängd dokumentation tillhandahåller Ubuntus gemenskap "
+"kostnadsfri teknisk support direkt till dig över Internet. Det finns även "
+"kommersiell support tillgänglig genom Canonical, dess partners och godkända "
+"företag. Läs mer på <a href=\"http://www.ubuntu.com/support\">ubuntu.com/"
+"support</a>."
 
 #.  The url "ubuntu.com/community" should not be translated 
 #. type: Content of: <div><div><ul><li>
@@ -100,8 +100,8 @@ msgid ""
 "Let us know about your Ubuntu experience at <a href=\"http://ubuntu.com/"
 "community\">ubuntu.com/community</a>!"
 msgstr ""
-"Informera oss om dina erfarenheter med Ubuntu på <a href=\"http://ubuntu.com/"
-"community\">ubuntu.com/community</a>!"
+"Berätta för oss om dina erfarenheter med Ubuntu på <a href=\"http://ubuntu."
+"com/community\">ubuntu.com/community</a>!"
 
 #. type: Content of: <div><div><p>
 #: slideshows/ubuntu/slides/documentation.html:10
@@ -128,7 +128,7 @@ msgid ""
 "Click the envelope near the clock to log in to your accounts. New messages "
 "appear there, too, so you can see what's happening at a glance."
 msgstr ""
-"Klicka på kuvertet nära klockan för att logga in med dina konton. Nya "
+"Klicka på kuvertet nära klockan för att logga in på dina konton. Nya "
 "meddelanden kommer även att visas där så att du kan se vad som händer direkt "
 "när det händer."
 
@@ -138,8 +138,8 @@ msgid ""
 "If you're busy, click your name at the top of the screen to change your "
 "status."
 msgstr ""
-"Om du är upptagen så klicka på ditt namn överst i skärmen för att ändra din "
-"status."
+"Om du är upptagen så klicka på ditt namn längst upp på skärmen för att ändra "
+"din status."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/evolution.html:1
@@ -155,8 +155,8 @@ msgid ""
 "will download new messages automatically."
 msgstr ""
 "<em>Evolution e-post</em> är den funktionsrika programvaran för e-post och "
-"kalendrar som levereras med Ubuntu. Ange dina uppgifterna för ditt e-"
-"postkonto och det kommer att hämta nya meddelanden med automatik."
+"kalendrar som levereras med Ubuntu. Ange dina uppgifter för ditt e-postkonto "
+"och det kommer att hämta nya meddelanden med automatik."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/evolution.html:7
@@ -164,8 +164,9 @@ msgid ""
 "Evolution has a powerful junk mail filter. You can use the search box, or "
 "create your own filters, to make sorting mail quick and easy."
 msgstr ""
-"Evolution har ett kraftfullt skräppostfilter. Du kan använda sökfunktionen "
-"eller skapa dina egna filter för att snabbt och enkelt sortera din post."
+"Evolution har ett kraftfullt skräppostfilter. Du kan även använda "
+"sökfunktionen eller skapa dina egna filter för att snabbt och enkelt sortera "
+"din post."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/evolution.html:8
@@ -173,9 +174,9 @@ msgid ""
 "Add your favorite Web calendars to see upcoming games or movie releases. To "
 "see your daily schedule, just click the clock at the top of your screen."
 msgstr ""
-"Lägg till dina favoritkalendrar på webben för att se kommande lanseringar av "
-"spel eller filmer. Klicka på klockan längst upp i skärmen för att se ditt "
-"schema för dagen."
+"Lägg till dina favoritkalendrar från webben för att se kommande lanseringar "
+"av spel eller filmer. Klicka på klockan längst upp till höger på skärmen för "
+"att se ditt schema för dagen."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/firefox.html:1
@@ -192,8 +193,8 @@ msgstr "Ubuntu levereras med den välkända <em>webbläsaren Firefox</em>."
 msgid ""
 "It protects your privacy and personal information so you can surf worry free."
 msgstr ""
-"Den skyddar din integritet och personliga information så att du kan surfa "
-"utan att oroa dig."
+"Firefox skyddar din integritet och personliga information så att du kan "
+"surfa utan att oroa dig."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/firefox.html:8
@@ -201,8 +202,8 @@ msgid ""
 "Give Firefox your own personal touch with addons. You can choose from "
 "thousands of themes and extensions that tailor it to how you use the web."
 msgstr ""
-"Ge Firefox din egna personliga prägel med tillägg. Du kan välja från "
-"tusentals av teman och tillägg som skräddarsyr din upplevelse på webben."
+"Ge Firefox din egna personliga prägel med hjälp av tillägg. Du kan välja "
+"bland tusentals teman och tillägg som skräddarsyr din upplevelse på webben."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/fspot.html:1
@@ -217,7 +218,7 @@ msgid ""
 "organize digital photos."
 msgstr ""
 "Med <em>Fotohanteraren F-Spot</em> är det mycket enkelt att dela, fräscha "
-"till och organisera digitalfoton."
+"upp och organisera digitala bilder."
 
 #.  Instead of directly translating the word "tags," please use the exact name of the feature in F-Spot for your locale. (Tags are used to label photos). 
 #. type: Content of: <div><div><ul><li>
@@ -258,9 +259,8 @@ msgid ""
 "If you need something else, try the <em>Ubuntu Software Center</em> to "
 "choose from thousands of extras you can download for free."
 msgstr ""
-"Om du behöver någonting annat så prova <em>Programcentral för Ubuntu</em> "
-"för att välja från tusentals av extraprogram som du kan hämta hem "
-"kostnadsfritt."
+"Om du behöver något mer kan du prova <em>Programcentral för Ubuntu</em> där "
+"du kan välja bland tusentals extraprogram som du kan hämta hem kostnadsfritt."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/installing-software.html:7
@@ -279,7 +279,7 @@ msgid ""
 "Everything in Software Center is stored in our online repository. We are "
 "careful to keep it safe and updates will be delivered directly to you."
 msgstr ""
-"Allting i Programcentral lagras i vårt programförråd på Internet. Vi är "
+"Allting i programcentralen lagras i vårt programförråd på Internet. Vi är "
 "mycket noga med att hålla det säkert och uppdateringar kommer att levereras "
 "direkt till dig."
 
@@ -310,13 +310,13 @@ msgid ""
 "OpenOffice.org uses the standard OpenDocument file format. It opens files "
 "from other office applications like Microsoft Office and WordPerfect."
 msgstr ""
-"OpenOffice.org använder standardformatet OpenDocument. Det kan öppna filer "
-"från andra kontorsprogram som Microsoft Office och WordPerfect."
+"OpenOffice.org använder standardformatet OpenDocument, men kan även öppna "
+"filer från andra kontorsprogram som Microsoft Office och WordPerfect."
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:1
 msgid "Entertainment with music and movies"
-msgstr "Nöje med musik och filmer"
+msgstr "Nöje med musik och film"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:6
@@ -335,7 +335,7 @@ msgid ""
 msgstr ""
 "<em>Musikspelaren Rhythmbox</em> låter dig organisera din musik, lyssna på "
 "internetradio samt köpa en mängd olika låtar. Hantera dina poddsändningar "
-"och hämta automatiskt nya avsnitt."
+"och hämta nya avsnitt automatiskt."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:8
@@ -423,10 +423,10 @@ msgid ""
 "editor, integrated social networking and a growing selection of extra "
 "software."
 msgstr ""
-"Denna utgåva markerar en stor milstolpe i Ubuntu-projektet. Det är enklare "
-"och mer tillförlitligt än någonsin, med hundratals förbättringar och "
-"inkluderar en ny videoredigerare, integrerade funktioner för socialt "
-"nätverkande och ett växande urval av programvara."
+"Denna utgåva utgör en viktig milstolpe i Ubuntu-projektet. Det är nu enklare "
+"och mer tillförlitligt än någonsin, med hundratals förbättringar och en ny "
+"videoredigerare, integrerade funktioner för sociala nätverk och ett växande "
+"urval av programvara."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/welcome.html:8
@@ -442,4 +442,4 @@ msgstr ""
 #. type: Content of: <div><div><p>
 #: slideshows/ubuntu/slides/welcome.html:10
 msgid "Ubuntu is designed to be easy. Feel free to explore!"
-msgstr "Ubuntu är designat till att vara enkelt. Känn dig fri att utforska!"
+msgstr "Ubuntu är designat för att vara enkelt. Sätt igång att utforska!"

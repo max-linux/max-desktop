@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-03-25 16:22+0000\n"
-"PO-Revision-Date: 2010-04-03 20:35+0000\n"
-"Last-Translator: Boyan Sotirov <lz1dsb@abv.bg>\n"
+"PO-Revision-Date: 2010-04-11 21:57+0000\n"
+"Last-Translator: Miro Hadzhiev (Хаджиев) <extigyro@gmail.com>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -125,6 +125,10 @@ msgid ""
 "can join by <a href=\"http://webchat.freenode.net/?"
 "channels=xubuntu&nick=xubuntu...&prompt=1\">clicking here</a>."
 msgstr ""
+"Има много начини да получите помощ, включително нашият IRC канал "
+"<em>#xubuntu</em> на <a href=\"http://freenode.net/\">Freenode</a> IRC "
+"мрежа, на който може да се присъедините на <a href=\"http://webchat.freenode."
+"net/?channels=xubuntu&nick=xubuntu...&prompt=1\">clicking here</a>."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/getting-help.html:9
@@ -147,6 +151,10 @@ msgid ""
 "that allows as much or as little manipulation of the images as you choose. "
 "It can be used to construct images or modify photos and images."
 msgstr ""
+"<em>GIMP</em> (вписано под Приложения &rarr; Графика) е редактор на "
+"изображения, който Ви позволява такава обработка на изображенията, каквато "
+"Ви е нужна. Той може да бъде използван за създаване на изображения или за "
+"редактиране на снимки или изображения."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/more-apps.html:7
@@ -155,6 +163,9 @@ msgid ""
 "capable of playing all your music, from mp3 to CD to live radio on the "
 "internet."
 msgstr ""
+"За Ваша собствена наслада, изпробвайте <em>Exaile Music Player</em>. Той е "
+"способен да просвири цялата Ви музикална библиотека, от mp3 до CD, до "
+"директно излъчвано чрез Интернет и в реално време радио на живо."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/more-apps.html:8
@@ -162,6 +173,8 @@ msgid ""
 "If you need to burn a CD or DVD, check out <em>Brasero</em>. It is very easy "
 "to use and will even burn the Xubuntu image for you."
 msgstr ""
+"Ако изникне нужда да запишете CD или DVD, погледнете <em>Brasero</em>. Той е "
+"крайно лесен за употреба и дори ще запише изображението на Ксубунту за вас."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/more-apps.html:10
@@ -170,6 +183,8 @@ msgid ""
 "All of these applications are available on the live CD, even while "
 "installing. Be adventurous!"
 msgstr ""
+"Всички тези приложения са достъпни на \"живото\" CD, дори и докато "
+"инсталирате Ксубунту. Бъдете авантюристични!"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/new-to-linux.html:1
@@ -195,6 +210,9 @@ msgid ""
 "try out the new software. We think you will be amazed at the few things you "
 "need to add."
 msgstr ""
+"След като инсталацията приключи, отделете няколко минути, часове или дори "
+"дни, за да разгледате новия софтуер. Ние смятаме, че ще бъдете изумени от "
+"няколкото неща, които ще можете да добавите съвсем сами."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/new-to-linux.html:8
@@ -217,6 +235,10 @@ msgid ""
 "document formats. You will have access to any fonts installed in your system "
 "and editing documents is a breeze."
 msgstr ""
+"<em>Abiword</em> е текстообработваща програма, която може да отвори почти "
+"всички известни документни формати. Ще имате достъп до всички инсталирани "
+"шрифтове на Вашата система, а редактирането на документи ще се превърне в "
+"лесна и бърза работа."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/office.html:7
@@ -243,6 +265,8 @@ msgid ""
 "For power users, the OpenOffice.org suite is available in just a few clicks "
 "– just install it from the Ubuntu Software Center."
 msgstr ""
+"За опитните потребители OpenOffice.org офис пакет е достъпен само с няколко "
+"щраквания - просто го инсталирайте от Софтуерния център на Убунту."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/tips-beginners.html:1
@@ -256,6 +280,9 @@ msgid ""
 "any program on your system – one you lost on the menu or even one you didn't "
 "know existed!"
 msgstr ""
+"Използвайте Търсачката за приложения (под Приложения &rarr; Аксесоари), за "
+"да стартирате, която и да е програма на Вашата система - такава, която сте "
+"изгубили от менюто, или дори такава, която не сте знаели, че съществува!"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/tips-beginners.html:7
@@ -292,6 +319,8 @@ msgid ""
 "This exciting software is brought to you free of any fees, for your use and "
 "any others you want to share it with."
 msgstr ""
+"Този интересен софтуер се предоставя освободен от всякакви такси, за да го "
+"употребявате лично и безплатно и от всеки, с който решите да го споделите."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/welcome.html:8
@@ -300,6 +329,10 @@ msgid ""
 "free to examine things as it installs. After the installation, the desktop "
 "will look much the same as it does now."
 msgstr ""
+"Тъй като Вие инсталирате софтуера, като използвате компакт диска на Ксубунту "
+"за настолна употреба, свободно разгледайте средата, докато тече "
+"инсталацията. След инсталацията, работният плот ще изглежда по начина, по "
+"който изглежда сега."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/welcome.html:10
@@ -307,6 +340,8 @@ msgid ""
 "We truly hope that you enjoy using this distribution as much as we enjoy "
 "bringing it to you."
 msgstr ""
+"Ние наистина се надяваме, че ще се насладите на тази дистрибуция по начина, "
+"по който, ние се наслаждаваме, докато я създаваме за Вас."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/xfce.html:1
@@ -338,6 +373,9 @@ msgid ""
 "programmers create applications that fit in well with the desktop "
 "environment."
 msgstr ""
+"Xfce е също така платформа за разработка, предоставяща няколко библиотеки, "
+"които помагат на програмистите да създават приложения, които добре се "
+"вписват в настолната среда."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/xfce.html:9
@@ -345,3 +383,6 @@ msgid ""
 "To learn more about Xfce, look in <em>Applications &rarr; About Xfce &rarr; "
 "Info</em> or on the <a href=\"http://xfce.org/\">Xfce website</a>."
 msgstr ""
+"За да научите повече за Xfce, хвърлете един поглед в <em>Приложения &rarr; "
+"За Xfce &rarr; Информация</em>, или на <a href=\"http://xfce.org/"
+"\">официалния уебсайт на Xfce</a>."

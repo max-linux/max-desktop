@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:48+0000\n"
-"PO-Revision-Date: 2010-04-04 07:38+0000\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-11 21:53+0000\n"
 "Last-Translator: Daniel Nylander <yeager@ubuntu.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -41,6 +41,10 @@ msgid ""
 "there, you can turn on helpful tools like <em>Modifier Keys</em>, "
 "<em>Keyboard Filters</em>, and <em>Activation Gestures</em>."
 msgstr ""
+"Du kan komma åt dessa verktyg på ett ställe: inställningar för "
+"<em>Hjälpmedel</em>, inuti programmet Systeminställningar från menyn. "
+"Därifrån kan du aktivera hjälpfulla verktyg såsom <em>Modifierartangenter</"
+"em>, <em>Tangentbordsfilter</em> och <em>Aktiveringsgester</em>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:14
@@ -49,11 +53,14 @@ msgid ""
 "choose between different visual styles and even change the fonts that are "
 "used by applications."
 msgstr ""
+"Kom även ihåg att se över <em>Inställningar för utseende</em>. Du kan välja "
+"mellan olika visuella stilar och även ändra typsnitten som används av "
+"programmen."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/games.html:1
 msgid "Get your game on with Kubuntu"
-msgstr "Spela med Kubuntu."
+msgstr "Spela med Kubuntu"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:6
@@ -61,6 +68,8 @@ msgid ""
 "With hundreds of game titles in our online repository, Kubuntu allows you to "
 "not be all about work, but also allows you to play."
 msgstr ""
+"Med hundratals speltitlar i vårt programförråd så kan du inte bara använda "
+"Kubuntu i ditt arbete utan även för att spela dina favoritspel."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:9
@@ -68,6 +77,8 @@ msgid ""
 "The <em>KDE Software Compilation</em> has quite a few games ranging from "
 "card games to logic games and board games."
 msgstr ""
+"<em>KDE Software Compilation</em> innehåller ett större antal spel, allt "
+"från kortspel till logiska spel och brädspel."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:11
@@ -75,6 +86,8 @@ msgid ""
 "First Person Shooters, Role Play Games, and more are also available in the "
 "repositories."
 msgstr ""
+"Skjutarspel, rollspel och mycket annat finns även tillgängliga i "
+"programförråden."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-help.html:1
@@ -99,6 +112,11 @@ msgid ""
 "through Canonical, its partners and approved companies. Learn more at <a "
 "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
 msgstr ""
+"I tillägg till vår hjälpdokumentation så tillhandahåller Kubuntu-"
+"gemenskapen, i samarbete med Ubuntu-gemenskapen, kostnadsfri teknisk och "
+"personlig support över Internet. Det finns även kommersiell support "
+"tillgänglig genom Canonical, dess partners och godkända företag. Läs mer på "
+"<a href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:14
@@ -122,6 +140,10 @@ msgid ""
 "the distribution, providing advice and technical support, as well as helping "
 "to promote Kubuntu to a wider audience."
 msgstr ""
+"Kubuntu-gemenskapen består av en grupp individer som har skapat en av de "
+"bästa grupperna inom öppen källkod. De arbetar med olika delar av "
+"distributionen, allt från att ge råd och teknisk support till att hjälpa "
+"till med att sprida Kubuntu till den breda massan."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:11
@@ -129,6 +151,8 @@ msgid ""
 "No matter your skill level, getting involved and helping to mold the future "
 "of Kubuntu is easy, and you are more than welcome to help out."
 msgstr ""
+"Oavsett erfarenhet är det lätt att hjälpa till att forma Kubuntus framtid "
+"och din insats är mer än välkommen."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:14
@@ -138,6 +162,10 @@ msgid ""
 "help out. Remember, it is easy to get involved and the work you do will be "
 "seen by millions of people around the world."
 msgstr ""
+"Ta en titt på <a href=\"https://wiki.kubuntu.org/Kubuntu/GettingInvolved"
+"\">wiki.kubuntu.org/Kubuntu/GettingInvolved</a> och se vad du kan hjälpa "
+"till med. Kom ihåg att det är enkelt att hjälpa till och arbetet som du gör "
+"kommer att ses av miljontals användare över hela världen."
 
 #. type: Content of: <div><div><p>
 #: slideshows/kubuntu/slides/get-involved.html:20
@@ -328,6 +356,9 @@ msgid ""
 "software that comes with Kubuntu. It contains applications for E-mail, "
 "Calendar, Address Book, and more."
 msgstr ""
+"<em>Kontakt</em> är det funktionsrika programmet för personlig "
+"informationshantering som levereras med Kubuntu. Det innehåller program för "
+"e-post, kalender, adressbok och mycket mer."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:9
@@ -354,13 +385,18 @@ msgid ""
 "your contacts with nearly every address book standard as well synchronize "
 "with various groupware services."
 msgstr ""
+"Håll dina kontakter uppdaterade med <em>Kadressbok</em>, importera eller "
+"exportera dina kontakter med nästan alla standarder för adressböcker och "
+"synkronisera med olika grupprogramtjänster."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/pim.html:16
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/pim.html:17
 msgid ""
 "<em>Kontact</em> is the perfect personal information management integration "
 "for you!"
 msgstr ""
+"<em>Kontakt</em> ger den perfekta integrationen för personlig "
+"informationshantering!"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/welcome.html:1
@@ -380,8 +416,8 @@ msgid ""
 "purpose."
 msgstr ""
 "Vi är av uppfattningen att alla datoranvändare ska få arbeta i en miljö som "
-"de själva väljer och att hämta, ändra, studera och dela med sig av sin "
-"programvara oavsett syfte."
+"de själva väljer och att alla ska få hämta, ändra, studera och dela med sig "
+"av sin programvara oavsett syfte."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:10
@@ -389,11 +425,11 @@ msgid ""
 "As part of our promise, we want Kubuntu to work as well for you as possible. "
 "So while it installs, this slideshow will provide a quick introduction."
 msgstr ""
-"Som en del av vårt löfte så vill vi att Kubuntu ska fungera så bra som "
-"möjligt för dig. Så under tiden det installeras kommer detta bildspel att "
-"visa dig en snabbintroduktion."
+"Som en del av vårt löfte vill vi att Kubuntu ska fungera så bra som möjligt "
+"för dig. Därför kommer detta bildspel att ge dig en snabbintroduktion till "
+"Kubuntu under tiden installationen pågår."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/welcome.html:13
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/welcome.html:14
 msgid "Kubuntu is designed to be easy. Feel free to explore!"
 msgstr "Kubuntu är designat till att vara enkelt. Känn dig fri att utforska!"

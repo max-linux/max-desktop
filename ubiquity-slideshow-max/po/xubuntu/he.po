@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-03-25 16:22+0000\n"
-"PO-Revision-Date: 2010-03-06 22:24+0000\n"
+"PO-Revision-Date: 2010-04-10 19:34+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -97,6 +97,8 @@ msgid ""
 "There are a bunch of games available on the live CD as well, which you can "
 "enjoy while installing. Have fun!"
 msgstr ""
+"כמו כן, ישנם כמה משחקים הזמינים בתקליטור החי, בהם ניתן לשחק בעת ההתקנה. "
+"קדימה לבלות!"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/getting-help.html:1
@@ -109,6 +111,8 @@ msgid ""
 "If you need help, try <em>Help</em> in the Applications menu, or the help "
 "menu available in most applications."
 msgstr ""
+"אם יש לך צורך בעזרה, ניתן לפנות אל ה<em>עזרה</em> שבתפריט היישומים או אל "
+"תפריט העזרה המופיע ברוב היישומים."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/getting-help.html:7
@@ -118,6 +122,10 @@ msgid ""
 "can join by <a href=\"http://webchat.freenode.net/?"
 "channels=xubuntu&nick=xubuntu...&prompt=1\">clicking here</a>."
 msgstr ""
+"ישנן דרכים נוספות לקבלת עזרה, כולל ערוץ ה־IRC שלנו <em>#xubuntu</em> ברשת "
+"ה־IRC ‏<a href=\"http://freenode.net/\">Freenode</a>, אליה תוכלו להצטרף על "
+"ידי <a href=\"http://webchat.freenode.net/?channels=xubuntu&nick=xubuntu..."
+"&prompt=1\">לחיצה כאן</a>."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/getting-help.html:9
@@ -125,6 +133,8 @@ msgid ""
 "For a complete list of support methods, see the <a href=\"http://xubuntu.org/"
 "help\">Help & Support page</a> on our website."
 msgstr ""
+"לרשימה מלאה של השיטות לקבלת התמיכה, עיינו בעמוד <a href=\"http://xubuntu.org/"
+"help\">עזרה ותמיכה</a> באתר שלנו."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/more-apps.html:1
@@ -149,6 +159,8 @@ msgid ""
 "capable of playing all your music, from mp3 to CD to live radio on the "
 "internet."
 msgstr ""
+"כדי להנעים את זמנכם תוכלו לעשות סיבוב על <em>נגן המוזיקה Exaile</em>. הנגן "
+"מסוגל לנגן את כל סוגי המוזיקה החל מ־mp3 דרך תקליטורים ועד תחנות רדיו מקוונות."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/more-apps.html:8
@@ -156,6 +168,8 @@ msgid ""
 "If you need to burn a CD or DVD, check out <em>Brasero</em>. It is very easy "
 "to use and will even burn the Xubuntu image for you."
 msgstr ""
+"אם תזדקקו לצרוב תקליטור או DVD, נסו את <em>Brasero</em>. התכנה קלה מאוד "
+"לשימוש ואפילו תאפשר לכם לצרוב לעצמכם תקליטור של זובונטו."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/more-apps.html:10
@@ -163,7 +177,7 @@ msgstr ""
 msgid ""
 "All of these applications are available on the live CD, even while "
 "installing. Be adventurous!"
-msgstr ""
+msgstr "כל היישומים האלו זמינים בתקליטור החי, אפילו בזמן ההתקנה. היו הרפתקנים!"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/new-to-linux.html:1
@@ -188,6 +202,8 @@ msgid ""
 "try out the new software. We think you will be amazed at the few things you "
 "need to add."
 msgstr ""
+"לאחר סיום ההתקנה, הקדישו מספר דקות, שעות ואפילו ימים כדי לחקור את התוכנות "
+"החדשות שהותקנו. אנו מאמינים שאתם תידהמו כמה מעט דברים עליכם להוסיף."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/new-to-linux.html:8
@@ -195,6 +211,8 @@ msgid ""
 "If you find yourself wanting something else, please check the <em>Ubuntu "
 "Software Center</em> out. It is much easier than searching the internet."
 msgstr ""
+"אם תמצאו עצמכם מעוניינים במשהו נוסף, תוכלו לבקר ב<em>מרכז התכנה של אובונטו</"
+"em>. פשוט בהרבה מלחפש באינטרנט."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/office.html:1
@@ -218,6 +236,8 @@ msgid ""
 "<em>Gnumeric</em> is a spreadsheet program with an emphasis on accuracy. It "
 "can also be used to merge mathematical data into Abiword documents."
 msgstr ""
+"<em>Gnumeric</em> הנה תכנת גיליון אלקטרוני ששמה דגש על דיוק. ניתן גם להשתמש "
+"בה כדי למזג נתונים מתמטיים אל תוך מסמכים של Abiword."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/office.html:8
@@ -234,6 +254,8 @@ msgid ""
 "For power users, the OpenOffice.org suite is available in just a few clicks "
 "– just install it from the Ubuntu Software Center."
 msgstr ""
+"למשתמשים מתקדמים ערכת התוכנות המשרדיות OpenOffice.org זמינה במספר לחיצות "
+"בודדות - ניתן פשוט להתקין אותה דרך מרכז התכנה של אובונטו."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/tips-beginners.html:1
@@ -295,6 +317,9 @@ msgid ""
 "free to examine things as it installs. After the installation, the desktop "
 "will look much the same as it does now."
 msgstr ""
+"מאחר שתכנה זו מותקנת באמצעות תקליטור שולחן העבודה של זובונטו, הרגישו חופשי "
+"לחקור את הסביבה בזמן ההתקנה. לאחר ההתקנה, שולחן העבודה ייראה פחות או יותר "
+"כמו שהוא נראה עכשיו."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/welcome.html:10
@@ -341,3 +366,5 @@ msgid ""
 "To learn more about Xfce, look in <em>Applications &rarr; About Xfce &rarr; "
 "Info</em> or on the <a href=\"http://xfce.org/\">Xfce website</a>."
 msgstr ""
+"כדי ללמוד עוד אודות Xfce, ניתן להביט ב־<em>יישומים &rarr; על אודות Xfce "
+"&rarr; מידע</em> או באתר של <a href=\"http://xfce.org/\">Xfce</a>."

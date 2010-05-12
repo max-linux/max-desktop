@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:47+0000\n"
-"PO-Revision-Date: 2010-04-07 03:41+0000\n"
-"Last-Translator: zerng07 <Unknown>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-10 15:12+0000\n"
+"Last-Translator: Cheng-Chia Tseng <Unknown>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <div><h1>
@@ -56,13 +56,13 @@ msgid ""
 "choose between different visual styles and even change the fonts that are "
 "used by applications."
 msgstr ""
-"請記得也要檢視一下 <em>外觀設定</em>。您可以在那裡選擇不同的視覺風格，甚至是"
-"變更在應用程式上使用的字型。"
+"請記得也要檢查<em>外觀設定</em>，您可以在那裡選擇不同的視覺效果與改變使用在應"
+"用程式上的字型。"
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/documentation.html:1
 msgid "Getting Help with Ubuntu"
-msgstr "取得 Ubuntu 的相關協助"
+msgstr "取得 Ubuntu 的協助"
 
 #.  The string "Help and Support" should be exactly as it appears in the System menu. 
 #. type: Content of: <div><div><ul><li>
@@ -84,10 +84,10 @@ msgid ""
 "companies. Learn more at <a href=\"http://www.ubuntu.com/support\">ubuntu."
 "com/support</a>."
 msgstr ""
-"除了我們這些寫好的大量幫助外，Ubuntu 社群更遍布整個網際網路，並親自提供免費的"
-"技術支援。而 Canonical 公司、其合作廠商，與核可的公司都提供可用的商業支援。"
-"從 <a href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a> 來瞭解更"
-"多細節。"
+"除了我們這些寫好的大量幫助文件外，Ubuntu 社群更遍布整個網際網路，並親自提供免"
+"費的技術支援。而 Canonical 公司、其合作廠商與核可的公司都提供可用的商業支援。"
+"您可以從 <a href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a> 瞭"
+"解更多細節。"
 
 #.  The url "ubuntu.com/community" should not be translated 
 #. type: Content of: <div><div><ul><li>
@@ -107,7 +107,7 @@ msgstr "安裝程序很快就會結束。我們衷心希望您能享受 Ubuntu�
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/empathy.html:1
 msgid "Social from the start"
-msgstr "一啟動就能社交"
+msgstr "一啟動就能開始社交"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/empathy.html:6
@@ -220,8 +220,8 @@ msgid ""
 "Use the Export option to write your photos to CDs, email them to friends or "
 "share them online."
 msgstr ""
-"使用「輸出」選項來將您的相片寫入 CD，或是將它們 E-mail 給朋友或者是進行線上分"
-"享。"
+"使用「匯出」選項來將您的相片寫入 CD，或是將它們以電子郵件的方式寄給朋友，或者"
+"是進行線上分享。"
 
 #.  Graphics Applications refers to the Graphics submenu, and then the main Applications menu. 
 #. type: Content of: <div><div><ul><li>
@@ -230,8 +230,8 @@ msgid ""
 "To get started, choose F-Spot from the Graphics Applications menu or attach "
 "a digital camera and follow the prompts."
 msgstr ""
-"就從美工繪圖應用成內選單中選擇 F-Spot，或是將數位相機連接到電腦上並依照提示操"
-"作開始吧！"
+"就從「美工繪圖」應用程式內選單中選擇「F-Spot」，或是將數位相機連接到電腦上並"
+"依照提示開始操作吧！"
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/installing-software.html:1
@@ -314,7 +314,7 @@ msgid ""
 "subscriptions and automatically download new episodes."
 msgstr ""
 "<em>Rhythmbox 音樂播放器</em> 讓您整理您的音樂，聆聽網際網路廣播，甚至購買各"
-"種歌曲。還能管理您的 podcast 訂閱，並自動下載新的一集。"
+"種歌曲。還能管理您訂閱的 podcast ，並自動下載新的一集。"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/rhythmbox-totem.html:8
@@ -325,7 +325,7 @@ msgid ""
 "computers."
 msgstr ""
 "從 <em>Ubuntu One 音樂商店</em> 挖掘受歡迎的、沒有數位權利管理 (DRM) 的音樂，"
-"並可供購買。Ubuntu One 音樂商店是一間啟用雲端技術的數位音樂商店，所有您購買的"
+"並可供購買。Ubuntu One 音樂商店是一間使用雲端技術的數位音樂商店，所有您購買的"
 "音樂都會自動儲存在雲端內，並同步到您所有的電腦上。"
 
 #. type: Content of: <div><div><ul><li>
@@ -334,13 +334,13 @@ msgid ""
 "Plug in an MP3 player to start synchronizing your music collection, or "
 "insert a CD to copy songs to your computer."
 msgstr ""
-"插入一台 MP3 播放器來開始同步您的音樂收藏；或是插入一張 CD 來複製歌曲到您的電"
+"插入一台 MP3 播放器以開始同步您的音樂收藏；或是插入一張 CD 來複製歌曲到您的電"
 "腦上。"
 
 #. type: Content of: <div><h1>
 #: slideshows/ubuntu/slides/ubuntuone.html:1
 msgid "Keep your digital life in sync"
-msgstr "同步您的數位生活"
+msgstr "讓您的數位生活維持同步"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/ubuntu/slides/ubuntuone.html:6
@@ -350,8 +350,8 @@ msgid ""
 "bookmarks, address book, and notes – everything goes where you go with "
 "<em>Ubuntu One</em>."
 msgstr ""
-"不停地在您的筆記型電腦、網路小筆電，以及公司的桌上型電腦間切換，您發現您需要"
-"每件事物都能自動同步。您的文件、音樂、書籤、通訊錄以及備註 - 只要有了"
+"當您不停地在筆記型電腦、網路小筆電，以及公司的桌上型電腦之間切換，您發現您需"
+"要的每件事物都已自動同步了。您的文件、音樂、書籤、通訊錄以及備註 - 只要有了"
 "<em>Ubuntu One</em>，每項都能跟隨您的腳步到處走。"
 
 #. type: Content of: <div><div><ul><li>

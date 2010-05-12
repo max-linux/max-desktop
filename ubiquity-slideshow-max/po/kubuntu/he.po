@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:48+0000\n"
-"PO-Revision-Date: 2010-04-05 21:57+0000\n"
-"Last-Translator: Ofir Klinger <klinger.ofir@gmail.com>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-10 19:24+0000\n"
+"Last-Translator: Ddorda <d.dorda@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -40,6 +40,9 @@ msgid ""
 "there, you can turn on helpful tools like <em>Modifier Keys</em>, "
 "<em>Keyboard Filters</em>, and <em>Activation Gestures</em>."
 msgstr ""
+"תוכל לקבל את כל הכלים במקום אחד: תחת מאפייני <em>נגישות</em> בהגדרות מערכות "
+"הנגיש מתפריט התוכניות. משם יש באפשרותך להפעיל כלים שימושיים כגון <em>מקשי "
+"שינוי</em>, <em>מסנני מקלדת</em>, ו<em>מנחות הפעלה</em>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:14
@@ -48,11 +51,13 @@ msgid ""
 "choose between different visual styles and even change the fonts that are "
 "used by applications."
 msgstr ""
+"יש לזכור לעבור גם על <em>מאפייני מראה</em>. ניתן לבחור בין סגנונות ויזואליים "
+"שונים, ואף לשנות את הגופנים המוצגים ע\"י התוכנות במחשב."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/games.html:1
 msgid "Get your game on with Kubuntu"
-msgstr ""
+msgstr "לשחק בהנאה בקובונטו"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:6
@@ -60,6 +65,8 @@ msgid ""
 "With hundreds of game titles in our online repository, Kubuntu allows you to "
 "not be all about work, but also allows you to play."
 msgstr ""
+"עם מאות משחקים במאגרים המקוונים שלנו, קובונטו פותחת בפניכם עולם מהנה ומלא "
+"במשחקים."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:9
@@ -67,18 +74,20 @@ msgid ""
 "The <em>KDE Software Compilation</em> has quite a few games ranging from "
 "card games to logic games and board games."
 msgstr ""
+"<em>KDE Software Compilation</em> כוללת מספר יפה של משחקים החל ממשחקי קלפים "
+"וכלה במשחקי היגיון ומשחקי לוח."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:11
 msgid ""
 "First Person Shooters, Role Play Games, and more are also available in the "
 "repositories."
-msgstr ""
+msgstr "משחקי יריות מגוף ראשון, משחקי תפקידים ועוד זמינים גם כן מהמאגרים."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-help.html:1
 msgid "Getting help with Kubuntu"
-msgstr ""
+msgstr "קבלת עזרה עם קובונטו"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:6
@@ -86,6 +95,8 @@ msgid ""
 "If you need help, try <em>Help</em> from the menu, or the <em>Help</em> menu "
 "in most applications."
 msgstr ""
+"במידה ותזדקקו לעזרה, תוכלו למצוא אותה תחת <em>עזרה</em> מהתפריט, או תחת "
+"תפריט <em>עזרה</em> הזמין ברוב התוכנות."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:8
@@ -96,6 +107,10 @@ msgid ""
 "through Canonical, its partners and approved companies. Learn more at <a "
 "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
 msgstr ""
+"בנוסף על כל העזרה הכתובה, קהילת קובונטו בשיתוף פעולה עם קהילת אובונטו, מספקת "
+"תמיכה טכנית אישית בחינם דרך האינטרנט. תמיכה טכנית מסחרית זמינה דרך קנוניקל, "
+"שותפיה וחברות המאושרות על-ידה. ניתן ללמוד עוד דרך <a href=\"http://www."
+"ubuntu.com/support\">ubuntu.com/support</a>."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:14
@@ -103,11 +118,13 @@ msgid ""
 "Let us know about your Kubuntu experience at <a href=\"http://www.ubuntu.com/"
 "community\">ubuntu.com/community</a>!"
 msgstr ""
+"ספרו לנו על החוויה שלכם עם קובונטו דרך <a href=\"http://www.ubuntu.com/"
+"community\">ubuntu.com/community</a>!"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-involved.html:1
 msgid "Get involved and contribute to Kubuntu"
-msgstr ""
+msgstr "השתתפות ותרומה לקובונטו"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:6
@@ -117,6 +134,9 @@ msgid ""
 "the distribution, providing advice and technical support, as well as helping "
 "to promote Kubuntu to a wider audience."
 msgstr ""
+"קהילת קובונטו מורכבת מקבוצה של יחידים, אשר יוצרים ביחד את אחת מהקבוצות הכי "
+"טובות בקהילת הקוד הפתוח, עובדים על נושאים מגוונים בנוגע להפצה, מספקים הצע "
+"ותמיכה טכנית, וכמו כן עוזרים להפיץ את קובונטו לקהל יעד רחב יותר."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:11
@@ -124,6 +144,8 @@ msgid ""
 "No matter your skill level, getting involved and helping to mold the future "
 "of Kubuntu is easy, and you are more than welcome to help out."
 msgstr ""
+"ללא כל קשר לרמת המיומנויות שלכם, תוכלו בקלות להשתתף ולעזור בעיצוב העתיד של "
+"קובונטו, ואתם יותר ממוזמנים לעשות כן."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:14
@@ -133,22 +155,25 @@ msgid ""
 "help out. Remember, it is easy to get involved and the work you do will be "
 "seen by millions of people around the world."
 msgstr ""
+"הכנסו אל <a href=\"https://wiki.kubuntu.org/Kubuntu/GettingInvolved\">wiki."
+"kubuntu.org/Kubuntu/GettingInvolved</a> בכדי לראות היכן תוכלו לעזור. זכרו, "
+"זה קל להשתלב והעבודתכם תראה על־ידי מיליוני אנשים מכל רחבי העולם."
 
 #. type: Content of: <div><div><p>
 #: slideshows/kubuntu/slides/get-involved.html:20
 msgid "The installation will finish soon. We hope you enjoy Kubuntu."
-msgstr ""
+msgstr "תהליך ההתקנה יסתיים בקרוב. כולנו תקווה שתהנו מקובונטו."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/graphics.html:1
 msgid "Organize, enjoy, and share your photos"
-msgstr ""
+msgstr "צפה, ארגן ושתף את התמונות שלך בהנאה"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:5
 msgid ""
 "With <em>Gwenview</em>, it is really easy to organize and share your photos."
-msgstr ""
+msgstr "באמצעות <em>Gwenview</em>, תוכלו בקלות לארגן ולשתף את התמונות שלך."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:7
@@ -157,6 +182,9 @@ msgid ""
 "custom HTML gallery, or to export to services such as Flickr, SmugMug, "
 "PicasaWeb, and more."
 msgstr ""
+"השתמשו באפשרות הייצוא על מנת להעתיק את תמונותיכם למחשב מרוחק, iPod, גלריית "
+"HTML מותאמת אישית, או כדי לייצא לשירותים כמו Flickr, SmugMug, PicasaWeb, "
+"ועוד."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:10
@@ -164,6 +192,8 @@ msgid ""
 "For more advanced organization and editing features, <em>digiKam</em> is "
 "available for installation."
 msgstr ""
+"אפשרויות מתקדמות לארגון ועריכת התמונות שלכם זמינות דרך <em>digiKam</em> "
+"הניתנת להתקנה דרך המאגרים."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/installing-software.html:1
@@ -178,6 +208,9 @@ msgid ""
 "software from our online repositories, which we carefully organize to be "
 "safe and up to date."
 msgstr ""
+"חפשו את היישום <em>ניהול תוכנות</em> הזמין תחת לשונית \"מערכת\" בתפריט. "
+"\"ניהול תוכנות\" יאפשר לכם להתקין (ולהסיר) תוכנות מהמאגרים המקוונים שלנו, "
+"אשר אנו דואגים בקפדנות לשמור עליהם בטוחים ומעודכנים."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:10
@@ -185,6 +218,8 @@ msgid ""
 "There is great software for everything from creating music and movies to "
 "producing 3D models and exploring the universe."
 msgstr ""
+"ישנן תוכנות נפלאות לכל מטרה החל מיצירת מוזיקה וסרטים ועד ליצירת דגמים "
+"תלת־מימדים וחקר היקום."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:12
@@ -193,11 +228,13 @@ msgid ""
 "a Debian package or another repository available. That way, it will be "
 "really easy to install and you will receive automatic updates."
 msgstr ""
+"אם אתם זקוקים לתוכנה שאינה זמינה דרכנו, חפשו אם ישנה חבילת דביאן או מאגר "
+"נוסף זמין. באופן הבא, ההתקנה פשוטה מאוד וכך גם תקבלו עדכונים אוטומטיים."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/internet.html:1
 msgid "The Internet, your way"
-msgstr ""
+msgstr "האינטרנט, בדרך שלכם"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:5
@@ -205,6 +242,7 @@ msgid ""
 "Kubuntu ships software necessary to utilize the Internet for many different "
 "situations."
 msgstr ""
+"קובונטו מגיעה עם תוכנות המאפשרות לכם להשתמש באינטרנט בדרכים רבות ומגוונות."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:7
@@ -212,6 +250,8 @@ msgid ""
 "Browse the web, share your files, software, and multimedia, send and receive "
 "e-mail, and communicate with friends and family."
 msgstr ""
+"גלשו באינטרנט, שתפו את הקבצים, תוכנות ומולטימדיה שלכם, שלחו וקבל דואר "
+"אלקטרוני, והישארו בקשר עם חברים ומשפחה."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:10
@@ -219,17 +259,19 @@ msgid ""
 "Web browsers such as <em>Firefox</em> and Google's <em>Chromium</em> are "
 "easily installable."
 msgstr ""
+"דפדפנים כמו <em>פיירפוקס</em> והדפדפן <em>Chromium</em> של גוגל ניתנים "
+"להתקנה בקלות."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/multimedia.html:1
 msgid "Music and movies in Kubuntu"
-msgstr ""
+msgstr "מוזיקה וסרטים בקובונטו"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:5
 msgid ""
 "Kubuntu is ready to play videos and music from the web, from CDs and DVDs."
-msgstr ""
+msgstr "קובונטו בא מוכן לניגון סרטים ומוזיקה ישירות מהאינטרנט, מדיסקים ומ־DVD."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:7
@@ -238,6 +280,9 @@ msgid ""
 "Internet radio, podcasts, and more, as well as synchronizes your audio "
 "collection to a portable audio player."
 msgstr ""
+"נגן המוזיקה <em>Amarok</em> עוזר לכם לארגן את אוסף המוזיקה שלכם, להאזין "
+"לתחנות רדיו אינטרנטיות, פודקסטים, ועוד, ובנוסף גם לסנכרן את אוסף המוזיקה "
+"שלכם לנגני מוזיקה ניידים."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:10
@@ -245,11 +290,13 @@ msgid ""
 "<em>Dragon Player</em> allows you to easily watch videos from your computer, "
 "DVD, or streamed over the Internet."
 msgstr ""
+"<em>נגן Dragon</em> מאפשר לכם לצפות בקלות בסרטים ישירות ממחשבך, מכונן ה-DVD "
+"שלך, או בצפייה ישירה מרשת האינטרנט."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/office.html:1
 msgid "Office tools at your fingertips"
-msgstr ""
+msgstr "כלים משרדיים בקצות אצבעותיכם"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:5
@@ -257,6 +304,7 @@ msgid ""
 "<em>OpenOffice.org</em> is a powerful office software suite that is very "
 "easy to learn and use."
 msgstr ""
+"<em>OpenOffice.org</em> היא חבילת יישומים משרדיים קלה ללימוד ונוחה לשימוש."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:7
@@ -264,6 +312,8 @@ msgid ""
 "Use it to create letters, presentations and spreadsheets, as well as "
 "diagrams and databases."
 msgstr ""
+"השתמשו בה כדי ליצור מסמכים, מצגות וגיליונות, ובנוסף גם דיאגרמות ובסיסי "
+"נתונים."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:9
@@ -272,11 +322,14 @@ msgid ""
 "applications include WordPerfect and Microsoft Office. It uses the standard "
 "OpenDocument format."
 msgstr ""
+"<em>OpenOffice.org</em> עובד עם מסמכים מחבילות יישומים משרדיים פופלריות "
+"אחרות, כגון WordPerfect ו-Microsoft Office. הוא משתמש בפורמט OpenDocument "
+"הסטדנרטי."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/pim.html:1
 msgid "Manage your contacts, dates, and e-mail"
-msgstr ""
+msgstr "ניהול את אנשי הקשר, אירועים ודואר אלקטרוני"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:6
@@ -285,6 +338,8 @@ msgid ""
 "software that comes with Kubuntu. It contains applications for E-mail, "
 "Calendar, Address Book, and more."
 msgstr ""
+"<em>Kontact</em> הוא מנהל מידע אישי מלא ומקצועי המגיע עם קובונטו. הוא כולל "
+"תוכנות לניהול דואר אלקטרוני, יומנים, ספר כתובות ועוד."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:9
@@ -292,6 +347,8 @@ msgid ""
 "Send e-mail with <em>KMail</em> from services such as Yahoo, GMail, and "
 "various groupware services."
 msgstr ""
+"שליחת דואר אלקטרוני באמצעות <em>KMail</em> דרך שירותים כמו Yahoo, GMail, "
+"ושירותי דואר נוספים."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:11
@@ -299,6 +356,8 @@ msgid ""
 "Organize your calendar and scheduling with <em>KOrganizer</em> and "
 "synchronize with services such as Google's Calendar."
 msgstr ""
+"נהלו את היומנים וסדר היום שלכם עם <em>KOrganizer</em> וסנכרנו אותם עם "
+"שירותים כמו היומן של גוגל."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:13
@@ -307,13 +366,15 @@ msgid ""
 "your contacts with nearly every address book standard as well synchronize "
 "with various groupware services."
 msgstr ""
+"ארגנו את אנשי הקשר שלכם באמצעות <em>KAddressBook</em>, ייבאו וייצאו את אנשי "
+"הקשר שלכם עם כמעט כל ספר כתובות וסנכרנו אותו עם שירותים נוספים."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/pim.html:16
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/pim.html:17
 msgid ""
 "<em>Kontact</em> is the perfect personal information management integration "
 "for you!"
-msgstr ""
+msgstr "<em>Kontact</em> הוא מנהל המידע האישי המושלם בשבילכם!"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/welcome.html:1
@@ -323,7 +384,7 @@ msgstr "ברוכים הבאים"
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:6
 msgid "Thank you for choosing Kubuntu 10.04 LTS."
-msgstr ""
+msgstr "תודה על בחירתכם בקובונטו 10.04 LTS."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:7
@@ -332,6 +393,8 @@ msgid ""
 "their choice and to download, change, study and share their software for any "
 "purpose."
 msgstr ""
+"או מאמינים שכל משתמש מחשב צריך להיות חופשי לבחור את סביבת העבודה שברצונו "
+"לעבוד בה, ולהוריד, לשנות, ללמוד ולשתף את התוכנות שלו לכל מטרה."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:10
@@ -339,8 +402,10 @@ msgid ""
 "As part of our promise, we want Kubuntu to work as well for you as possible. "
 "So while it installs, this slideshow will provide a quick introduction."
 msgstr ""
+"כחלק ממטרתנו, אנו רוצים שקובונטו יעבוד בשבילכם טוב ככל שניתן. לכן, בזמן "
+"ההתקנה המצגת הזו תספק לכם מבוא מהיר."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/welcome.html:13
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/welcome.html:14
 msgid "Kubuntu is designed to be easy. Feel free to explore!"
-msgstr ""
+msgstr "קובונטו תוכננה להיות קלה. הרגישו חופשיים להתנסות!"

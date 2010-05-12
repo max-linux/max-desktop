@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-03-26 17:48+0000\n"
-"PO-Revision-Date: 2010-03-26 11:18+0000\n"
-"Last-Translator: cumulus007 <cumulus0007@gmail.com>\n"
+"POT-Creation-Date: 2010-04-17 10:33+0200\n"
+"PO-Revision-Date: 2010-04-11 13:49+0000\n"
+"Last-Translator: Redmar <redmar.vdberg@gmail.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -29,7 +29,7 @@ msgid ""
 "circumstances. So, we provide tools that make Kubuntu one of the most "
 "accessible operating systems around."
 msgstr ""
-"Wij vinden dat computers voor iedereen beschikbaar moeten zijn, ongeacht uw "
+"Wij vinden dat iedereen met computers moet kunnen werken, ongeacht de "
 "lichamelijke omstandigheden. Daarom bieden wij hulpmiddelen om van Kubuntu "
 "een van de meest toegankelijke besturingssystemen op de markt te maken."
 
@@ -41,6 +41,10 @@ msgid ""
 "there, you can turn on helpful tools like <em>Modifier Keys</em>, "
 "<em>Keyboard Filters</em>, and <em>Activation Gestures</em>."
 msgstr ""
+"U kunt al deze hulpmiddelen op één locatie vinden: bij het onderdeel "
+"<em>Accessibility</em> van Systeeminstellingen in het menu. Hier kunt u "
+"handige hulpmiddelen zoals <em>Modificatietoetsen</em>, "
+"<em>Toetsenbordfilters</em> en <em>Activatie-gebaren</em> inschakelen."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/accessibility.html:14
@@ -49,11 +53,14 @@ msgid ""
 "choose between different visual styles and even change the fonts that are "
 "used by applications."
 msgstr ""
+"Vergeet niet om <em>Uiterlijk</em> eens te bekijken. Daarmee kunt u kiezen "
+"uit verschillende thema's voor het uiterlijk, en zelfs de lettertypen "
+"aanpassen die gebruikt worden door programma's."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/games.html:1
 msgid "Get your game on with Kubuntu"
-msgstr "Games op Ubuntu"
+msgstr "Gamen met Kubuntu"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/games.html:6
@@ -79,8 +86,7 @@ msgid ""
 "First Person Shooters, Role Play Games, and more are also available in the "
 "repositories."
 msgstr ""
-"Neem een kijkje in de softwarebronnen voor shooters, rolspellen en nog veel "
-"meer."
+"Neem een kijkje in de softwarebronnen voor shooters, RPG's en nog veel meer."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/get-help.html:1
@@ -93,8 +99,8 @@ msgid ""
 "If you need help, try <em>Help</em> from the menu, or the <em>Help</em> menu "
 "in most applications."
 msgstr ""
-"Hulp nodig? Probeer dan <em>Hulp</em> in het menu, of het menu <em>Help</em> "
-"in de meeste programma's."
+"Hulp nodig? Probeer dan <em>Hulp</em> in het menu Systeem, of het menu "
+"<em>Help</em> in de meeste programma's."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:8
@@ -106,10 +112,11 @@ msgid ""
 "href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a>."
 msgstr ""
 "Naast onze uitgebreide geschreven documentatie, biedt de Kubuntu-gemeenschap "
-"gratis technische ondersteuning, zowel persoonlijk als over het internet. "
-"Tevens is commerciële ondersteuning beschikbaar door Canonical, haar "
-"partners en gecertificeerde bedrijven. Meer informatie is te vinden op <a "
-"href=\"http://www.ubuntu.com/support\">ubuntu.com/support</a> (Engelstalig)."
+"in samenwerking met die van Ubuntu gratis technische ondersteuning, zowel "
+"persoonlijk als over het internet. Tevens is commerciële ondersteuning "
+"beschikbaar via Canonical, haar partners en gecertificeerde bedrijven. Meer "
+"informatie is te vinden op <a href=\"http://www.ubuntu.com/support\">ubuntu."
+"com/support</a> (Engelstalig)."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-help.html:14
@@ -133,6 +140,10 @@ msgid ""
 "the distribution, providing advice and technical support, as well as helping "
 "to promote Kubuntu to a wider audience."
 msgstr ""
+"De Kubuntu-gemeenschap is één van de grootste teams binnen de opensource-"
+"gemeenschap. Samen werken deze mensen aan de distributie van Kubuntu, "
+"leveren ze advies en technische ondersteuning, en ook helpen ze mee aan het "
+"promoten van Kubuntu aan een breder publiek."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:11
@@ -140,6 +151,8 @@ msgid ""
 "No matter your skill level, getting involved and helping to mold the future "
 "of Kubuntu is easy, and you are more than welcome to help out."
 msgstr ""
+"Wat uw vaardigheden ook zijn, meehelpen en de toekomst van Kubuntu bepalen "
+"is eenvoudig, en uw hulp wordt altijd op prijs gesteld."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/get-involved.html:14
@@ -149,6 +162,10 @@ msgid ""
 "help out. Remember, it is easy to get involved and the work you do will be "
 "seen by millions of people around the world."
 msgstr ""
+"Kijk op <a href=\"https://wiki.kubuntu.org/Kubuntu/GettingInvolved\">wiki."
+"kubuntu.org/Kubuntu/GettingInvolved</a> (Engelstalig) om te zien waar u mee "
+"kunt helpen. Meedoen is eenvoudig en uw werk zal door miljoenen mensen over "
+"de hele wereld gezien worden."
 
 #. type: Content of: <div><div><p>
 #: slideshows/kubuntu/slides/get-involved.html:20
@@ -166,7 +183,7 @@ msgstr "Organiseer, deel en geniet van uw foto's"
 #: slideshows/kubuntu/slides/graphics.html:5
 msgid ""
 "With <em>Gwenview</em>, it is really easy to organize and share your photos."
-msgstr ""
+msgstr "Met <em>Gwenview</em> kunt u eenvoudig uw foto's organiseren en delen."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:7
@@ -175,6 +192,9 @@ msgid ""
 "custom HTML gallery, or to export to services such as Flickr, SmugMug, "
 "PicasaWeb, and more."
 msgstr ""
+"Gebruik de Exporteer-mogelijkheid om uw foto's te exporteren, bijvoorbeeld "
+"naar een andere computer, iPod, eigen HTML-galerij, fotosites zoals Flickr, "
+"SmugMug of PicasaWeb."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/graphics.html:10
@@ -182,6 +202,8 @@ msgid ""
 "For more advanced organization and editing features, <em>digiKam</em> is "
 "available for installation."
 msgstr ""
+"Voor meer geavanceerde organisatie- en bewerkingsmogelijkheden kunt u "
+"<em>digiKam</em> installeren."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/installing-software.html:1
@@ -196,6 +218,11 @@ msgid ""
 "software from our online repositories, which we carefully organize to be "
 "safe and up to date."
 msgstr ""
+"Open het programma <em>Software Management</em> in het menu in het tabblad "
+"Systeem. Met Software Management kunt u software vanuit onze online "
+"softwarebronnen installeren (of verwijderen). Deze softwarebronnen beheren "
+"wij zorgvuldig, zodat u altijd beschikt over veilige en meest recente "
+"software."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:10
@@ -203,6 +230,8 @@ msgid ""
 "There is great software for everything from creating music and movies to "
 "producing 3D models and exploring the universe."
 msgstr ""
+"Van programmeren en muziek maken tot het universum verkennen: voor elk doel "
+"is uitstekende software beschikbaar."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/installing-software.html:12
@@ -211,11 +240,14 @@ msgid ""
 "a Debian package or another repository available. That way, it will be "
 "really easy to install and you will receive automatic updates."
 msgstr ""
+"Als u software nodig heeft die niet door ons wordt verstrekt, zoek dan naar "
+"een Debian-pakket of een andere softwarebron. Op die manieren is software "
+"installeren zeer gemakkelijk en zult u er automatisch updates voor ontvangen."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/internet.html:1
 msgid "The Internet, your way"
-msgstr ""
+msgstr "Het internet, zoals u het wilt"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:5
@@ -223,6 +255,8 @@ msgid ""
 "Kubuntu ships software necessary to utilize the Internet for many different "
 "situations."
 msgstr ""
+"Kubuntu heeft software waarmee u het internet op vele verschillende manieren "
+"kunt gebruiken."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:7
@@ -230,6 +264,8 @@ msgid ""
 "Browse the web, share your files, software, and multimedia, send and receive "
 "e-mail, and communicate with friends and family."
 msgstr ""
+"Verken het web, deel uw bestanden, software en multimedia, verzend en "
+"ontvang e-mail en blijf in contact met familie en vrienden."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/internet.html:10
@@ -237,17 +273,21 @@ msgid ""
 "Web browsers such as <em>Firefox</em> and Google's <em>Chromium</em> are "
 "easily installable."
 msgstr ""
+"Webbrowsers zoals <em>Firefox</em> en Google's <em>Chromium</em> zijn "
+"gemakkelijk te installeren."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/multimedia.html:1
 msgid "Music and movies in Kubuntu"
-msgstr ""
+msgstr "Muziek en films in Kubuntu"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:5
 msgid ""
 "Kubuntu is ready to play videos and music from the web, from CDs and DVDs."
 msgstr ""
+"Uiteraard kunt u met Kubuntu muziek en films van het internet, cd's en dvd's "
+"afspelen."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:7
@@ -256,6 +296,9 @@ msgid ""
 "Internet radio, podcasts, and more, as well as synchronizes your audio "
 "collection to a portable audio player."
 msgstr ""
+"Met de muziekspeler <em>Amarok</em> kunt u uw muziek organiseren, en naar "
+"online media als internetradio en podcasts luisteren. Daarnaast kunt u het "
+"gebruiken om uw muziekcollectie naar een MP3-speler over te zetten."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/multimedia.html:10
@@ -263,11 +306,13 @@ msgid ""
 "<em>Dragon Player</em> allows you to easily watch videos from your computer, "
 "DVD, or streamed over the Internet."
 msgstr ""
+"Met <em>Dragon Player</em> kunt u eenvoudig video's vanaf uw computer, dvd's "
+"of internetstreams kijken."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/office.html:1
 msgid "Office tools at your fingertips"
-msgstr ""
+msgstr "Kantoorsoftware binnen handbereik"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:5
@@ -275,6 +320,8 @@ msgid ""
 "<em>OpenOffice.org</em> is a powerful office software suite that is very "
 "easy to learn and use."
 msgstr ""
+"<em>OpenOffice.org</em> is een krachtige kantoorsuite die eenvoudig in het "
+"gebruik is en die u snel onder de knie zult krijgen."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:7
@@ -282,6 +329,8 @@ msgid ""
 "Use it to create letters, presentations and spreadsheets, as well as "
 "diagrams and databases."
 msgstr ""
+"U kunt er brieven, presentaties, rekenbladen, diagrammen en gegevensbanken "
+"mee maken."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/office.html:9
@@ -290,11 +339,14 @@ msgid ""
 "applications include WordPerfect and Microsoft Office. It uses the standard "
 "OpenDocument format."
 msgstr ""
+"<em>OpenOffice.org</em> gebruikt standaard het bestandsformaat OpenDocument. "
+"Tevens kan het moeiteloos bestanden van programma's als Microsoft Office en "
+"WordPerfect openen."
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/pim.html:1
 msgid "Manage your contacts, dates, and e-mail"
-msgstr ""
+msgstr "Beheer uw contactpersonen, agenda en e-mail"
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:6
@@ -303,6 +355,9 @@ msgid ""
 "software that comes with Kubuntu. It contains applications for E-mail, "
 "Calendar, Address Book, and more."
 msgstr ""
+"<em>Kontact</em> is de uitgebreide toepassing voor het beheer van "
+"persoonlijke informatie in Kubuntu. Het kan uw e-mail, agenda, adressen en "
+"meer beheren."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:9
@@ -310,6 +365,8 @@ msgid ""
 "Send e-mail with <em>KMail</em> from services such as Yahoo, GMail, and "
 "various groupware services."
 msgstr ""
+"Met <em>KMail</em> kunt u e-mailen met accounts van Yahoo, GMail en "
+"verscheidene groupware-diensten."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:11
@@ -317,6 +374,8 @@ msgid ""
 "Organize your calendar and scheduling with <em>KOrganizer</em> and "
 "synchronize with services such as Google's Calendar."
 msgstr ""
+"Organiseer uw agenda en planning met <em>KOrganizer</em>, en synchroniseer "
+"deze met diensten als Google's Calendar."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/pim.html:13
@@ -325,13 +384,18 @@ msgid ""
 "your contacts with nearly every address book standard as well synchronize "
 "with various groupware services."
 msgstr ""
+"Houd uw contacten overzichtelijk met <em>KAddressBook</em>, importeer en "
+"exporteer uw contacten in alle bekende adresboekformaten, en synchroniseer "
+"met verschillende groupware-diensten."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/pim.html:16
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/pim.html:17
 msgid ""
 "<em>Kontact</em> is the perfect personal information management integration "
 "for you!"
 msgstr ""
+"<em>Kontact</em> is het ideale programma voor het beheer van persoonlijke "
+"informatie!"
 
 #. type: Content of: <h1>
 #: slideshows/kubuntu/slides/welcome.html:1
@@ -341,7 +405,7 @@ msgstr "Welkom"
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:6
 msgid "Thank you for choosing Kubuntu 10.04 LTS."
-msgstr ""
+msgstr "Bedankt voor uw keuze voor Kubuntu 10.04 LTS."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:7
@@ -350,6 +414,10 @@ msgid ""
 "their choice and to download, change, study and share their software for any "
 "purpose."
 msgstr ""
+"Wij geloven dat iedereen die een computer gebruikt vrij moet zijn in de "
+"keuze voor de werkomgeving die ze gebruiken. Gebruikers zijn vrij om "
+"software te downloaden, wijzigen, bestuderen en door te geven, voor welk "
+"doel dan ook."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/kubuntu/slides/welcome.html:10
@@ -357,8 +425,11 @@ msgid ""
 "As part of our promise, we want Kubuntu to work as well for you as possible. "
 "So while it installs, this slideshow will provide a quick introduction."
 msgstr ""
+"Een van onze doelen is dat u zo eenvoudig mogelijk met Kubuntu kunt werken. "
+"Terwijl Kubuntu geïnstalleerd wordt zal deze diavoorstelling een korte "
+"introductie geven."
 
-#. type: Content of: <div><div><ul><li>
-#: slideshows/kubuntu/slides/welcome.html:13
+#. type: Content of: <div><div><p>
+#: slideshows/kubuntu/slides/welcome.html:14
 msgid "Kubuntu is designed to be easy. Feel free to explore!"
-msgstr ""
+msgstr "Kubuntu is gemaakt voor gemak. Voel u vrij om te ontdekken!"

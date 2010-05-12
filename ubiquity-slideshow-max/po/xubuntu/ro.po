@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubiquity-slideshow-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-03-25 16:22+0000\n"
-"PO-Revision-Date: 2010-03-08 08:52+0000\n"
-"Last-Translator: Adi Roiban <adi@roiban.ro>\n"
+"PO-Revision-Date: 2010-04-14 20:09+0000\n"
+"Last-Translator: Claudia Cotună <special4ti@gmail.com>\n"
 "Language-Team: Romanian <ro@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-07 08:12+0000\n"
+"X-Launchpad-Export-Date: 2010-04-17 09:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. type: Content of: <h1>
@@ -101,6 +101,8 @@ msgid ""
 "There are a bunch of games available on the live CD as well, which you can "
 "enjoy while installing. Have fun!"
 msgstr ""
+"Unele jocuri sunt disponibile și pe CD-ul live, încât puteți să vă jucați "
+"chiar în timpul instalării. Distrați-vă!"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/getting-help.html:1
@@ -113,6 +115,8 @@ msgid ""
 "If you need help, try <em>Help</em> in the Applications menu, or the help "
 "menu available in most applications."
 msgstr ""
+"Dacă aveți nevoie de ajutor, accesați butonul <em>Ajutor</em> din meniul "
+"Aplicații sau meniul de ajutor disponibil în majoritatea aplicațiilor."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/getting-help.html:7
@@ -122,6 +126,10 @@ msgid ""
 "can join by <a href=\"http://webchat.freenode.net/?"
 "channels=xubuntu&nick=xubuntu...&prompt=1\">clicking here</a>."
 msgstr ""
+"Există mai multe moduri de a obține ajutor, inclusiv pe canalul nostru de "
+"IRC <em>#xubuntu</em> din rețeaua de IRC <a href=\"http://freenode.net/"
+"\">Freenode</a>, pe care îl puteți accesa dacă <a href=\"http://webchat."
+"freenode.net/?channels=xubuntu&nick=xubuntu...&prompt=1\">dați clic aici</a>."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/getting-help.html:9
@@ -129,6 +137,9 @@ msgid ""
 "For a complete list of support methods, see the <a href=\"http://xubuntu.org/"
 "help\">Help & Support page</a> on our website."
 msgstr ""
+"Pentru o listă completă a metodelor de asistență, consultați <a href="
+"\"http://xubuntu.org/help\">pagina de Ajutor și asistență</a> de pe site-ul "
+"nostru web."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/more-apps.html:1
@@ -154,6 +165,9 @@ msgid ""
 "capable of playing all your music, from mp3 to CD to live radio on the "
 "internet."
 msgstr ""
+"Melomanii sunt încurajați să încerce playerul muzical <em>Exaile</em>. "
+"Acesta este capabil să redea orice muzică, de la mp3 și CD-uri, până la "
+"radio în direct pe Internet."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/more-apps.html:8
@@ -161,6 +175,9 @@ msgid ""
 "If you need to burn a CD or DVD, check out <em>Brasero</em>. It is very easy "
 "to use and will even burn the Xubuntu image for you."
 msgstr ""
+"Dacă doriți să inscripționați un CD sau un DVD, folosiți <em>Brasero</em>. "
+"Este foarte ușor de utilizat și vă poate inscripționa chiar și imaginea "
+"Xubuntu."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/more-apps.html:10
@@ -169,6 +186,8 @@ msgid ""
 "All of these applications are available on the live CD, even while "
 "installing. Be adventurous!"
 msgstr ""
+"Toate aceste aplicații sunt disponibile pe CD-ul live. Nu ezitați să le "
+"testați, chiar și în timpul instalării!"
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/new-to-linux.html:1
@@ -194,6 +213,9 @@ msgid ""
 "try out the new software. We think you will be amazed at the few things you "
 "need to add."
 msgstr ""
+"După finalizarea instalării, acordați-vă câteva minute, ore sau chiar zile "
+"pentru a încerca noile programe. Veți fi uimit cât de puține lucruri mai "
+"aveți de adăugat."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/new-to-linux.html:8
@@ -201,6 +223,8 @@ msgid ""
 "If you find yourself wanting something else, please check the <em>Ubuntu "
 "Software Center</em> out. It is much easier than searching the internet."
 msgstr ""
+"Dacă doriți alte aplicații, căutați în <em>Centrul software Ubuntu</em>. "
+"Este mult mai ușor decât să căutați pe Internet."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/office.html:1
@@ -224,6 +248,9 @@ msgid ""
 "<em>Gnumeric</em> is a spreadsheet program with an emphasis on accuracy. It "
 "can also be used to merge mathematical data into Abiword documents."
 msgstr ""
+"<em>Gnumeric</em> este un program pentru foaie de calcul cu accent pe "
+"precizie. Poate fi utilizat și pentru a integra date matematice în documente "
+"Abiword."
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/xubuntu/slides/office.html:8
@@ -240,6 +267,8 @@ msgid ""
 "For power users, the OpenOffice.org suite is available in just a few clicks "
 "– just install it from the Ubuntu Software Center."
 msgstr ""
+"Pentru funcții mai complexe, suita OpenOffice.org este disponibilă la doar "
+"câteva clicuri – instalați-o din Centrul software Ubuntu."
 
 #. type: Content of: <h1>
 #: slideshows/xubuntu/slides/tips-beginners.html:1
@@ -303,6 +332,9 @@ msgid ""
 "free to examine things as it installs. After the installation, the desktop "
 "will look much the same as it does now."
 msgstr ""
+"De vreme ce instalați acest software utilizând CD-ul Xubuntu Desktop, nu "
+"ezitați să examinați totul în timpul instalării. După instalare, desktopul "
+"va arăta cam la fel ca acum."
 
 #. type: Content of: <div><div><p>
 #: slideshows/xubuntu/slides/welcome.html:10
@@ -353,3 +385,6 @@ msgid ""
 "To learn more about Xfce, look in <em>Applications &rarr; About Xfce &rarr; "
 "Info</em> or on the <a href=\"http://xfce.org/\">Xfce website</a>."
 msgstr ""
+"Pentru a afla mai multe despre Xfce, citiți în <em>Aplicații &rarr; Despre "
+"Xfce &rarr; Info</em> sau pe <a href=\"http://xfce.org/\">site-ul web Xfce</"
+"a>."
