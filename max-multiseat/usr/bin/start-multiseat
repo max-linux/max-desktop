@@ -1,7 +1,12 @@
 #!/bin/bash
 
-
 [ ! -d /dev/usbseat ] && exit 0
+
+#if [ "$1" != "" ]; then
+#  if [ -e /dev/usbseat/$1/keyboard ] && [ -e /dev/usbseat/$1/mouse ] && [ -e /dev/usbseat/$1/display ]; then
+#  fi
+#fi
+
 
 oldIFS=$IFS
 IFS=/

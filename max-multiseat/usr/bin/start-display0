@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# START display :0 in MULTISEAT
+#
+# if no MULTISEAT devices, launch X without special config (udev+auto)
+#
+
+
+
+if [ -d /dev/usbseat ]; then
+  /usr/bin/X -br :0 vt07 -audit 0 -nolisten tcp -config /lib/udev/xorg.conf.display0
+else
+  /usr/bin/X -br :0 vt07 -audit 0 -nolisten tcp
+fi

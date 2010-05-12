@@ -1,0 +1,116 @@
+#!/usr/bin/env python
+
+
+import os
+import sys
+import glob
+import subprocess
+
+try:
+  SEAT_ID=os.environ['SEAT_ID']
+except:
+  print "select-pulse-card:: SEAT_ID not found in environment"
+  sys.exit(0)
+
+def unload_module(modindex):
+  cmd=['pacmd']
+  p = subprocess.Popen(cmd, shell=True, bufsize=0, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, close_fds=True)
+  p.stdin.write("unload-module %s\n"%modindex)
+  p.stdin.close()
+
+def set_default_cardid(cardid):
+  print "select-pulse-card:: set_default_cardid %s"%cardid
+  cmd=['pacmd']
+  p = subprocess.Popen(cmd, shell=True, bufsize=0, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, close_fds=True)
+  p.stdin.write("set-default-sink %s\n"%cardid)
+  p.stdin.write("set-default-source %s\n"%cardid)
+  p.stdin.close()
+
+def get_sound_cardid():
+  cards={}
+  cardid=None
+  cmd=['pacmd']
+  p = subprocess.Popen(cmd, shell=True, bufsize=0, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, close_fds=True)
+  p.stdin.write('list-cards\n')
+  p.stdin.close()
+  for _line in p.stdout.readlines():
+    line=_line.strip()
+    if line.startswith('index:'):
+      cardid=line.split()[1]
+      cards[cardid]={'id':cardid, 'mine':False}
+
+    if cardid and line.startswith('name'):
+      cards[cardid]['name']=line.split()[1].replace('alsa_card.', '').replace('<','').replace('>','')
+      cards[cardid]['card_name']=line.split()[1].replace('<','').replace('>','')
+
+    #sysfs.path
+    if cardid and line.startswith('sysfs.path'):
+      SYS_PATH='/sys' + line.split()[2].replace('"','')
+      ctrl=os.path.basename(glob.glob(SYS_PATH + '/controlC*')[0])
+      #print SYS_PATH, "", ctrl
+      if os.path.exists('/dev/usbseat/%s/sound' %SEAT_ID):
+        seat_ctrl=os.path.basename(os.readlink('/dev/usbseat/%s/sound' %SEAT_ID))
+        #print seat_ctrl
+        if ctrl == seat_ctrl:
+          cards[cardid]['mine']=True
+
+  returnedcards=[]
+  for id in cards:
+    returnedcards.append(cards[id])
+  return returnedcards
+
+
+def get_card_modules():
+  cards=[]
+  modindex=None
+  mod_iscard=False
+  cmd=['pactl list']
+  p = subprocess.Popen(cmd, shell=True, bufsize=0, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, close_fds=True)
+  for _line in p.stdout.readlines():
+    line=_line.strip()
+    #print line
+    if line.startswith('Module'):
+      modindex=line.split()[1].replace('#', '')
+
+    if modindex and line == 'Name: module-alsa-card':
+      mod_iscard=True
+
+    if modindex and mod_iscard and line.startswith('Argument') and "device_id" in line:
+      # Argument: device_id="2" name="usb-C-Media_Electronics_Inc._USB_PnP_Sound_Device-00-default_1" card_name="alsa_card.usb-C-Media_Electronics_Inc._USB_PnP_Sound_Device-00-default_1" tsched=yes ignore_dB=no card_properties="module-udev-detect.discovered=1"
+      name=''
+      card_name=''
+      device_id=''
+      for arg in line.split():
+        if arg.startswith('name='):
+          name=arg.split('=')[1].replace('"', '')
+        if arg.startswith('device_id='):
+          device_id=arg.split('=')[1].replace('"', '')
+        if arg.startswith('card_name='):
+          card_name=arg.split('=')[1].replace('"', '')
+      cards.append( {'modindex':modindex, 'name':name, 'card_name':card_name, 'device_id':device_id} )
+
+  return cards
+
+
+
+#cards = get_card_modules()
+#for card in cards:
+#  print card, "\n"
+
+#set_sound_cardid(cardid)
+
+ALLCARDS = get_sound_cardid()
+for card in ALLCARDS:
+  if card['mine']:
+    print "select-pulse-card:: MY CARD SEAT_ID=", SEAT_ID, "==> ", card
+    set_default_cardid(card['id'])
+    for mod in get_card_modules():
+      if mod['name'] == card['name'] or mod['card_name'] == card['card_name']:
+        print "select-pulse-card::  MODINDEX (mine) ", mod['modindex']
+      else:
+        print "select-pulse-card:: UNLOAD MODULE %s" %mod['modindex']
+        unload_module( mod['modindex'] )
+
+  else:
+    print "select-pulse-card:: OTHER card ==> ", card
+

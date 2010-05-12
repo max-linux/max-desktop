@@ -1,3 +1,22 @@
+max-multiseat (6.0.max7) max; urgency=low
+
+  * Add some gnome-desktop-environment dependes to not uninstall it
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 10 May 2010 13:34:01 +0200
+
+max-multiseat (6.0.max6) max; urgency=low
+
+  * Disable GNOME startup sound (libcanberra-login-sound.desktop)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 07 May 2010 13:57:22 +0200
+
+max-multiseat (6.0.max5) max; urgency=low
+
+  * usr/bin/start-display0: Start DISPLAY :0 with no config if no devices found
+  * usr/bin/select-pulse-card: Use python script to force SOUND card (use pacmd and pactl)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 06 May 2010 14:06:06 +0200
+
 max-multiseat (6.0.max4) max; urgency=low
 
   * Export SEAT_ID in Xsession.d script
