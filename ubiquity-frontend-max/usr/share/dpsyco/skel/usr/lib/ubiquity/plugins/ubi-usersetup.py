@@ -94,6 +94,10 @@ class PageBase(PluginUI):
         """Set whether the home directory should be encrypted."""
         raise NotImplementedError('set_encrypt_home')
 
+    def set_force_encrypt_home(self, value):
+        """Forces whether the home directory should be encrypted."""
+        raise NotImplementedError('set_force_encrypt_home')
+
     def get_encrypt_home(self):
         """Returns true if the home directory should be encrypted."""
         raise NotImplementedError('get_encrypt_home')
@@ -236,6 +240,9 @@ class PageGtk2(PageBase):
 
     def set_encrypt_home(self, value):
         self.login_encrypt.set_active(value)
+
+    def set_force_encrypt_home(self, value):
+        self.login_vbox.set_sensitive(not value)
 
     def get_encrypt_home(self):
         return self.login_encrypt.get_active()
@@ -465,6 +472,11 @@ class PageKde2(PageBase):
 
     def set_encrypt_home(self, value):
         self.page.login_encrypt.setChecked(value)
+    
+    def set_force_encrypt_home(self, value):
+        self.page.login_encrypt.setDisabled(value)
+        self.page.login_auto.setDisabled(value)
+        self.page.login_pass.setDisabled(value)
 
     def get_encrypt_home(self):
         return self.page.login_encrypt.isChecked()
@@ -555,6 +567,9 @@ class PageNoninteractive2(PageBase):
     def set_encrypt_home(self, value):
         self.encrypt_home = value
 
+    def set_force_encrypt_home(self, value):
+        self.set_encrypt_home(value)
+
     def get_encrypt_home(self):
         return self.encrypt_home
 
@@ -619,8 +634,11 @@ class Page2(Plugin):
             except debconf.DebconfError:
                 pass
             try:
-                encrypt_home = self.db.get('user-setup/encrypt-home')
+                encrypt_home = self.db.get('user-setup/force-encrypt-home')
+                if not encrypt_home:
+                    encrypt_home = self.db.get('user-setup/encrypt-home')
                 self.ui.set_encrypt_home(encrypt_home == 'true')
+                self.ui.set_force_encrypt_home(encrypt_home == 'true')
             except debconf.DebconfError:
                 pass
         try:

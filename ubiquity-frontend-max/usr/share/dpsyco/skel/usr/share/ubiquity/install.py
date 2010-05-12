@@ -65,7 +65,8 @@ class DebconfFetchProgress(FetchProgress):
         self.eta = 0.0
 
     def start(self):
-        self.db.progress('START', 0, 100, self.title)
+        if os.environ['UBIQUITY_FRONTEND'] != 'debconf_ui':
+            self.db.progress('START', 0, 100, self.title)
         if self.info_starting is not None:
             self.db.progress('INFO', self.info_starting)
         self.old_capb = self.db.capb()
@@ -78,7 +79,8 @@ class DebconfFetchProgress(FetchProgress):
     def pulse(self):
         FetchProgress.pulse(self)
         try:
-            self.db.progress('SET', int(self.percent))
+            if os.environ['UBIQUITY_FRONTEND'] != 'debconf_ui':
+                self.db.progress('SET', int(self.percent))
         except debconf.DebconfError:
             return False
         if self.eta != 0.0:
@@ -94,7 +96,8 @@ class DebconfFetchProgress(FetchProgress):
         if self.old_capb is not None:
             self.db.capb(self.old_capb)
             self.old_capb = None
-            self.db.progress('STOP')
+            if os.environ['UBIQUITY_FRONTEND'] != 'debconf_ui':
+                self.db.progress('STOP')
 
 class DebconfInstallProgress(InstallProgress):
     """An object that reports apt's installation progress using debconf."""
@@ -114,7 +117,8 @@ class DebconfInstallProgress(InstallProgress):
                     flags & ~os.O_NONBLOCK)
 
     def startUpdate(self):
-        self.db.progress('START', 0, 100, self.title)
+        if os.environ['UBIQUITY_FRONTEND'] != 'debconf_ui':
+            self.db.progress('START', 0, 100, self.title)
         self.started = True
 
     def error(self, pkg, errormsg):
@@ -127,7 +131,8 @@ class DebconfInstallProgress(InstallProgress):
     def statusChange(self, dummypkg, percent, status):
         self.percent = percent
         self.status = status
-        self.db.progress('SET', int(percent))
+        if os.environ['UBIQUITY_FRONTEND'] != 'debconf_ui':
+            self.db.progress('SET', int(percent))
         self.db.subst(self.info, 'DESCRIPTION', status)
         self.db.progress('INFO', self.info)
 
@@ -211,7 +216,8 @@ class DebconfInstallProgress(InstallProgress):
 
     def finishUpdate(self):
         if self.started:
-            self.db.progress('STOP')
+            if os.environ['UBIQUITY_FRONTEND'] != 'debconf_ui':
+                self.db.progress('STOP')
             self.started = False
 
 class InstallStepError(Exception):
@@ -308,7 +314,18 @@ class Install:
     def next_region(self, size=1):
         self.db.progress('SET', self.count)
         self.progress_region(self.count, self.count + size)
+        self.prev_count = self.count
         self.count += size
+
+    def nested_progress_start(self):
+        if os.environ['UBIQUITY_FRONTEND'] == 'debconf_ui':
+            self.db.progress('STOP')
+
+    def nested_progress_end(self):
+        if os.environ['UBIQUITY_FRONTEND'] == 'debconf_ui':
+            self.db.progress('START', self.start, self.end,
+                             'ubiquity/install/title')
+            self.db.progress('SET', self.prev_count)
 
     def run(self):
         """Run the install stage: copy everything to the target system, then
@@ -316,13 +333,14 @@ class Install:
 
         # Give one extra progress point for each plugin, on the assumption that
         # they don't run long.
-        start = 0
-        end = 22 + len(self.plugins)
+        self.start = 0
+        self.end = 22 + len(self.plugins)
         if self.target != '/':
-            end += 74
+            self.end += 74
+        self.prev_count = 0
         self.count = 1
 
-        self.db.progress('START', start, end, 'ubiquity/install/title')
+        self.db.progress('START', self.start, self.end, 'ubiquity/install/title')
         self.db.progress('INFO', 'ubiquity/install/mounting_source')
 
         try:
@@ -451,7 +469,7 @@ class Install:
             self.db.progress('INFO', 'ubiquity/install/log_files')
             self.copy_logs()
 
-            self.db.progress('SET', end)
+            self.db.progress('SET', self.end)
         finally:
             self.cleanup()
             try:
@@ -600,12 +618,15 @@ class Install:
             keep.add('grub')
             keep.add('grub-pc')
         elif (arch == 'armel' and
-              subarch in ('dove', 'imx51', 'iop32x', 'ixp4xx', 'orion5x')):
+              subarch in ('dove', 'imx51', 'iop32x', 'ixp4xx', 'orion5x', 'omap')):
             keep.add('flash-kernel')
             if subarch == 'dove':
                 keep.add('uboot-mkimage')
             elif subarch == 'imx51':
                 keep.add('redboot-tools')
+            elif subarch == 'omap':
+                keep.add('uboot-envtools')
+                keep.add('uboot-mkimage')
         elif arch == 'powerpc' and subarch != 'ps3':
             keep.add('yaboot')
             keep.add('hfsutils')
@@ -690,6 +711,22 @@ class Install:
         else:
             md5_check = True
 
+        # Increase kernel flush times during bulk data copying to make it
+        # more likely that small files are packed contiguously, which should
+        # speed up initial boot times.
+        dirty_writeback_centisecs = None
+        dirty_expire_centisecs = None
+        if os.path.exists('/proc/sys/vm/dirty_writeback_centisecs'):
+            with open('/proc/sys/vm/dirty_writeback_centisecs') as dwc:
+                dirty_writeback_centisecs = int(dwc.readline())
+            with open('/proc/sys/vm/dirty_writeback_centisecs', 'w') as dwc:
+                print >>dwc, '3000\n'
+        if os.path.exists('/proc/sys/vm/dirty_expire_centisecs'):
+            with open('/proc/sys/vm/dirty_expire_centisecs') as dec:
+                dirty_expire_centisecs = int(dec.readline())
+            with open('/proc/sys/vm/dirty_expire_centisecs', 'w') as dec:
+                print >>dec, '6000\n'
+
         old_umask = os.umask(0)
         for dirpath, dirnames, filenames in os.walk(self.source):
             sp = dirpath[len(self.source) + 1:]
@@ -769,6 +806,14 @@ class Install:
                 # I have no idea why I've been getting lots of bug reports
                 # about this failing, but I really don't care. Ignore it.
                 pass
+
+        # Revert to previous kernel flush times.
+        if dirty_writeback_centisecs is not None:
+            with open('/proc/sys/vm/dirty_writeback_centisecs', 'w') as dwc:
+                print >>dwc, dirty_writeback_centisecs
+        if dirty_expire_centisecs is not None:
+            with open('/proc/sys/vm/dirty_expire_centisecs', 'w') as dec:
+                print >>dec, dirty_expire_centisecs
 
         # Try some possible locations for the kernel we used to boot. This
         # lets us save a couple of megabytes of CD space.
@@ -1251,7 +1296,8 @@ class Install:
 
         install_new = True
         try:
-            install_new_key = self.db.get('pkgsel/install-language-support')
+            install_new_key = \
+                self.db.get('pkgsel/install-language-support') == 'true'
             if install_new_key != '' and not misc.create_bool(install_new_key):
                 install_new = False
         except debconf.DebconfError:
@@ -1356,6 +1402,7 @@ class Install:
         hardware system in which has been installed on and need some
         automatic configurations to get work."""
 
+        self.nested_progress_start()
         install_misc.chroot_setup(self.target)
         try:
             dbfilter = hw_detect.HwDetect(None, self.db)
@@ -1364,6 +1411,7 @@ class Install:
                 raise InstallStepError("HwDetect failed with code %d" % ret)
         finally:
             install_misc.chroot_cleanup(self.target)
+        self.nested_progress_end()
 
         self.db.progress('INFO', 'ubiquity/install/hardware')
 
@@ -1611,6 +1659,10 @@ class Install:
     def configure_bootloader(self):
         """configuring and installing boot loader into installed
         hardware system."""
+
+        if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
+            return
+
         install_bootloader = self.db.get('ubiquity/install_bootloader')
         if install_bootloader == "true":
             misc.execute('mount', '--bind', '/proc', self.target + '/proc')
@@ -1643,7 +1695,7 @@ class Install:
                         else:
                             break
                 elif (arch == 'armel' and
-                      subarch in ('dove', 'imx51', 'iop32x', 'ixp4xx', 'orion5x')):
+                      subarch in ('dove', 'imx51', 'iop32x', 'ixp4xx', 'orion5x', 'omap')):
                     from ubiquity.components import flash_kernel
                     dbfilter = flash_kernel.FlashKernel(None, self.db)
                     ret = dbfilter.run_command(auto_process=True)
@@ -1699,6 +1751,8 @@ class Install:
         self.db.go()
 
     def do_install(self, to_install):
+        self.nested_progress_start()
+
         if self.langpacks:
             self.db.progress('START', 0, 10, 'ubiquity/langpacks/title')
         else:
@@ -1717,6 +1771,7 @@ class Install:
                 'not installing additional packages, since there are broken '
                 'packages: %s' % ', '.join(self.broken_packages(cache)))
             self.db.progress('STOP')
+            self.nested_progress_end()
             return
 
         for pkg in to_install:
@@ -1747,6 +1802,7 @@ class Install:
                     fetchprogress.stop()
                     installprogress.finishUpdate()
                     self.db.progress('STOP')
+                    self.nested_progress_end()
                     return
             except IOError:
                 for line in traceback.format_exc().split('\n'):
@@ -1754,6 +1810,7 @@ class Install:
                 fetchprogress.stop()
                 installprogress.finishUpdate()
                 self.db.progress('STOP')
+                self.nested_progress_end()
                 return
             except SystemError, e:
                 for line in traceback.format_exc().split('\n'):
@@ -1771,6 +1828,8 @@ class Install:
             self.warn_broken_packages(brokenpkgs, commit_error)
 
         self.db.progress('STOP')
+
+        self.nested_progress_end()
 
 
     def expand_dependencies_simple(self, cache, keep, to_remove,
@@ -1885,6 +1944,8 @@ class Install:
 
 
     def do_remove(self, to_remove, recursive=False):
+        self.nested_progress_start()
+
         self.db.progress('START', 0, 5, 'ubiquity/install/title')
         self.db.progress('INFO', 'ubiquity/install/find_removables')
 
@@ -1899,6 +1960,7 @@ class Install:
                 'not processing removals, since there are broken packages: '
                 '%s' % ', '.join(self.broken_packages(cache)))
             self.db.progress('STOP')
+            self.nested_progress_end()
             return
 
         self.get_remove_list(cache, to_remove, recursive)
@@ -1919,6 +1981,7 @@ class Install:
                     fetchprogress.stop()
                     installprogress.finishUpdate()
                     self.db.progress('STOP')
+                    self.nested_progress_end()
                     return
             except SystemError, e:
                 for line in traceback.format_exc().split('\n'):
@@ -1943,6 +2006,8 @@ class Install:
             self.db.go()
 
         self.db.progress('STOP')
+
+        self.nested_progress_end()
 
     def traverse_for_kernel(self, cache, pkg):
         kern = self.get_cache_pkg(cache, pkg)
@@ -2043,7 +2108,8 @@ class Install:
         """Try to install additional packages requested by the distributor"""
 
         try:
-            inst_langpacks = self.db.get('oem-config/install-language-support')
+            inst_langpacks = \
+                self.db.get('oem-config/install-language-support') == 'true'
         except debconf.DebconfError:
             inst_langpacks = False
         if inst_langpacks:
@@ -2559,6 +2625,9 @@ class Install:
     def copy_wallpaper_cache(self):
         """Copy wallpaper cache for libgnome desktop so that it's taken into
         account by ureadahead. Only install on system having g-s-d."""
+
+        if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
+            return
 
         # we don't use copy_network_config casper user trick as it's not and not
         # ubuntu in install mode

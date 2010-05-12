@@ -79,14 +79,15 @@ LOCALEDIR = "/usr/share/locale"
 
 def wrap_fix(w, allocation):
     # Until the extended layout branch of GTK+ gets merged (bgo #101968).
+    # We cannot short circuit this function if the layout width or height is
+    # unchanged as we might have switched text direction (by selecting an RTL
+    # language) since the last time the label was processed.  Fortunately,
+    # size-allocate is not called often once past the language page.
     layout = w.get_layout()
     old_width, old_height = layout.get_size()
-    if old_width / pango.SCALE == allocation.width:
-        return
     layout.set_width(allocation.width * pango.SCALE)
     unused, height = layout.get_size()
-    if old_height != height:
-        w.set_size_request(-1, height / pango.SCALE)
+    w.set_size_request(-1, height / pango.SCALE)
 
 def process_labels(w):
     if isinstance(w, gtk.Container):
@@ -894,7 +895,7 @@ documento que guarde no se conservará.""")
         if not cur:
             return False
 
-        if is_install:
+        if is_install and not self.oem_user_config:
             self.next.set_label(self.get_string('install_button'))
 
         num = self.steps.page_num(cur)

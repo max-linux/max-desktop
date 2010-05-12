@@ -235,6 +235,7 @@ class PageKde(PageBase):
         display = False
         grub_en = self.controller.get_grub()
         summary_device = self.controller.get_summary_device()
+        self.advanceddialog.grub_device_entry.clear()
 
         if grub_en:
             self.advanceddialog.grub_enable.show()
@@ -252,16 +253,19 @@ class PageKde(PageBase):
             # if the combo box does not yet have the target install device, add it
             # select current device
             summary_device = self.controller.get_summary_device()
-            index = self.advanceddialog.grub_device_entry.findText(summary_device)
-            if (index == -1):
-                self.advanceddialog.grub_device_entry.addItem(summary_device)
-                index = self.advanceddialog.grub_device_entry.count() - 1
-
-            # select the target device
+            
+            # by default select the summary device
+            self.advanceddialog.grub_device_entry.addItem(summary_device)
+            index = self.advanceddialog.grub_device_entry.count() - 1
             self.advanceddialog.grub_device_entry.setCurrentIndex(index)
 
             self.advanceddialog.grub_device_entry.setEnabled(grub_en)
             self.advanceddialog.grub_device_label.setEnabled(grub_en)
+            
+            for o in grub_options():
+                if o[0] == summary_device:
+                    continue
+                self.advanceddialog.grub_device_entry.addItem(o[0])
         else:
             self.advanceddialog.bootloader_group_label.hide()
             self.advanceddialog.grub_device_label.hide()

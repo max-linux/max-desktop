@@ -133,16 +133,20 @@ class PageGtk2(PageBase):
     def setup_network_watch(self):
         import dbus
         from dbus.mainloop.glib import DBusGMainLoop
-        DBusGMainLoop(set_as_default=True)
-        bus = dbus.SystemBus()
-        bus.add_signal_receiver(self.network_change, 'DeviceNoLongerActive',
-                                'org.freedesktop.NetworkManager',
-                                'org.freedesktop.NetworkManager',
-                                '/org/freedesktop/NetworkManager')
-        bus.add_signal_receiver(self.network_change, 'StateChange',
-                                'org.freedesktop.NetworkManager',
-                                'org.freedesktop.NetworkManager',
-                                '/org/freedesktop/NetworkManager')
+        try:
+            DBusGMainLoop(set_as_default=True)
+            bus = dbus.SystemBus()
+            bus.add_signal_receiver(self.network_change,
+                                    'DeviceNoLongerActive',
+                                    'org.freedesktop.NetworkManager',
+                                    'org.freedesktop.NetworkManager',
+                                    '/org/freedesktop/NetworkManager')
+            bus.add_signal_receiver(self.network_change, 'StateChange',
+                                    'org.freedesktop.NetworkManager',
+                                    'org.freedesktop.NetworkManager',
+                                    '/org/freedesktop/NetworkManager')
+        except dbus.DBusException:
+            return
         self.timeout_id = None
         self.wget_retcode = None
         self.wget_proc = None

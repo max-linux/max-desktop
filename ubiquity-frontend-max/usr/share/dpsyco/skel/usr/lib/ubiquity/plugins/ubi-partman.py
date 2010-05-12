@@ -2178,10 +2178,7 @@ class Page(Plugin):
                 raise AssertionError, "Arrived at %s unexpectedly" % question
 
         elif question.startswith('partman/confirm'):
-            if question == 'partman/confirm':
-                self.db.set('ubiquity/partman-made-changes', 'true')
-            else:
-                self.db.set('ubiquity/partman-made-changes', 'false')
+            self.db.set('ubiquity/partman-confirm', question[8:])
             self.preseed(question, 'true', seen=False)
             self.succeeded = True
             self.done = True
