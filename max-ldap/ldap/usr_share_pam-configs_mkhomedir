@@ -1,0 +1,7 @@
+name: Make home dir for user
+Default: yes
+Priority: 192
+Session-Type: Additional
+Session-Interactive: yes
+Session:
+	optional	pam_mkhomedir.so

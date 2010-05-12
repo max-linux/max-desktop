@@ -1,0 +1,442 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+##########################################################################
+# MAX-LDAP-GUI writen by MarioDebian <mariodebian@gmail.com>
+#
+#    MAX-LDAP version __VERSION__
+#
+# Copyright (c) 2010 Mario Izquierdo <mariodebian@gmail.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+# 02111-1307, USA.
+###########################################################################
+
+import sys
+import os
+
+import getopt
+import gtk
+
+import gobject
+
+from subprocess import Popen, PIPE, STDOUT
+import socket
+import shutil
+
+from tempfile import NamedTemporaryFile
+
+debug=False
+RESTORE=False
+PACKAGE="max-ldap"
+BACKUP="/var/lib/max-ldap/backup/"
+
+# if exec from svn or sources dir
+if os.path.isfile('./setup.py'):
+    LOCALE_DIR = "./po/"
+    GLADE_DIR = "./"
+    IMG_DIR = "./images/"
+    print "DEBUG: exec in sources dir"
+else:
+    GLADE_DIR = "/usr/share/max-ldap/"
+    IMG_DIR = "/usr/share/max-ldap/images/"
+    LOCALE_DIR = "/usr/share/locale/"
+
+def usage():
+    print "max-ldap help:"
+    print ""
+    print "   max-ldap -d [--debug]   (write debug data to stdout)"
+    print "   max-ldap -r [--restore] (Restore backup files or disable LDAP)"
+    print "   max-ldap -h [--help]    (this help)"
+
+
+try:
+    opts, args = getopt.getopt(sys.argv[1:], ":hdr", ["help", "debug", "restore"])
+except getopt.error, msg:
+    print msg
+    print "for command line options use max-ldap --help"
+    sys.exit(2)
+
+# process options
+for o, a in opts:
+    if o in ("-d", "--debug"):
+        print "DEBUG ACTIVE"
+        debug = True
+    if o in ("-h", "--help"):
+        usage()
+        sys.exit()
+    if o in ("-r", "--restore"):
+        RESTORE=True
+
+def print_debug(txt):
+    if debug:
+        print >> sys.stderr, "%s::%s" % ("max-ldap", txt)
+
+################################################################################
+class MAXLDAP(object):
+    def __init__(self):
+        print_debug("__init__()")
+        
+        self.profiles_model=gtk.TreeStore(str)
+        
+        
+        # Widgets
+        self.ui = gtk.Builder()
+        self.ui.set_translation_domain(PACKAGE)
+        print_debug("Loading ui file...")
+        self.ui.add_from_file(GLADE_DIR + 'max-ldap-main.ui')
+        self.mainwindow = self.ui.get_object('mainwindow')
+        self.mainwindow.set_icon_from_file(IMG_DIR +'max-icon.png')
+        
+        # close windows signals
+        self.mainwindow.connect('delete_event', self.quitapp)
+        self.mainwindow.show_all()
+        
+        self.img_logo = self.ui.get_object('img_logo')
+        self.img_logo.set_from_file(IMG_DIR +'max_logo.png')
+        
+        
+        # buttons
+        
+        self.btn_cancel=self.ui.get_object('btn_cancel')
+        self.btn_cancel.connect('clicked', self.quitapp)
+        
+        self.btn_apply=self.ui.get_object('btn_apply')
+        self.btn_apply.connect('clicked', self.enableLDAP)
+        
+        self.btn_restore=self.ui.get_object('btn_restore')
+        self.btn_restore.connect('clicked', self.restore)
+        self.btn_restore.hide()
+        
+        self.btn_testcon=self.ui.get_object('btn_testcon')
+        self.btn_testcon.connect('clicked', self.test_connection)
+        
+        self.showpassword=self.ui.get_object('ck_showpassword')
+        self.showpassword.connect('toggled', self.do_showpassword)
+        
+        
+        self.ldap_server=self.ui.get_object('txt_ldap_server')
+        self.password=self.ui.get_object('txt_rootpasswd')
+        self.admin=self.ui.get_object('txt_admin')
+        self.base_dn=self.ui.get_object('txt_basedn')
+        
+        global RESTORE
+        
+        if os.path.isfile(BACKUP + '/nsswitch.conf'):
+            RESTORE=True
+        
+        if RESTORE:
+            self.btn_apply.hide()
+            self.btn_restore.show()
+            self.restore()
+
+
+    def do_showpassword(self, widget):
+        if widget.get_active():
+            self.password.set_visibility(True)
+        else:
+            self.password.set_visibility(False)
+
+
+    def test_connection(self, widget=None):
+        # read IP
+        ip=self.ldap_server.get_text().strip()
+        print_debug (ip)
+        alive=PingPort(ip, '389').get_status()
+        if alive == "CLOSED":
+            d = gtk.MessageDialog(None,
+                      gtk.DIALOG_MODAL |
+                      gtk.DIALOG_DESTROY_WITH_PARENT,
+                      gtk.MESSAGE_WARNING,
+                      gtk.BUTTONS_OK,
+                      "No se puede acceder al servidor LDAP,\ncompruebe la IP o nombre de equipo y el cortafuegos en el servidor.")
+            d.run()
+            d.destroy()
+            return False
+        if widget:
+            show_info("El servidor tiene accesible LDAP.")
+        return True
+
+    def set_preseed(self, *args):
+        preseed="""ldap-auth-config	ldap-auth-config/bindpw	password	$PASSWORD$
+ldap-auth-config	ldap-auth-config/rootbindpw	password	$PASSWORD$
+ldap-auth-config	ldap-auth-config/binddn	string	$ADMIN$
+ldap-auth-config	ldap-auth-config/dbrootlogin	boolean	true
+ldap-auth-config	ldap-auth-config/rootbinddn	string	$ADMIN$
+ldap-auth-config	ldap-auth-config/pam_password	select	md5
+ldap-auth-config	ldap-auth-config/move-to-debconf	boolean	true
+ldap-auth-config	ldap-auth-config/ldapns/ldap-server	string	ldap://$LDAP_SERVER$/
+ldap-auth-config	ldap-auth-config/ldapns/base-dn	string	$BASE_DN$
+ldap-auth-config	ldap-auth-config/override	boolean	true
+ldap-auth-config	ldap-auth-config/ldapns/ldap_version	select	3
+ldap-auth-config	ldap-auth-config/dblogin	boolean	false
+libpam-runtime	libpam-runtime/override	boolean	false
+libpam-runtime	libpam-runtime/profiles	multiselect	unix, mkhomedir, libpam-mount, ldap, gnome-keyring, consolekit
+"""
+        password=self.password.get_text()
+        preseed=preseed.replace('$PASSWORD$', password)
+        
+        admin=self.admin.get_text().strip()
+        preseed=preseed.replace('$ADMIN$', admin)
+        
+        ldap_server=self.ldap_server.get_text().strip()
+        preseed=preseed.replace('$LDAP_SERVER$', ldap_server)
+        
+        base_dn=self.base_dn.get_text().strip()
+        preseed=preseed.replace('$BASE_DN$', base_dn)
+        
+        temp = NamedTemporaryFile()
+        temp.write(preseed)
+        temp.flush()
+        
+        # run debconf-set-selections
+        self.exe_cmd('debconf-set-selections < %s'%temp.name)
+        
+        # delete temp file
+        temp.close()
+        
+        print_debug("set_preseed() done")
+        return True
+
+
+
+    def install_pkgs(self, *args):
+        """
+        auth-client-config ldap-auth-client smbfs libnss-ldap libpam-mount
+        echo -e "iceweasel\t install\n" > /tmp/install.pkgs
+        /usr/sbin/synaptic --hide-main-window --non-interactive --set-selections-file /tmp/install.pkgs
+        """
+        # create temp file with packages to install
+        temp = NamedTemporaryFile()
+        for pkg in ['ldap-auth-client', 'auth-client-config', 'smbfs', 'libpam-mount']:
+            temp.write("%s\t install\n"%pkg)
+        temp.flush()
+        
+        print_debug("install_pkgs() calling synaptic...")
+        
+        # install with synaptic
+        self.exe_cmd('synaptic --hide-main-window --non-interactive --set-selections-file %s'%temp.name)
+        
+        # delete temp file
+        temp.close()
+        
+        print_debug("install_pkgs() install done")
+        return True
+
+    def write_mkhomedir(self):
+        f=open('/usr/share/pam-configs/mkhomedir', 'w')
+        f.write("""Name: Make home dir for user
+Default: yes
+Priority: 192
+Session-Type: Additional
+Session-Interactive: yes
+Session:
+	optional	pam_mkhomedir.so""")
+        print_debug("write_mkhomedir() done")
+        f.close()
+
+    def configure_PAM_mount(self):
+        pam_mount_line="""
+<volume fstype="smbfs" server="%s" path="homes" mountpoint="~"> <and> <sgrp>__USERS__</sgrp> </and> </volume>
+"""%(self.ldap_server.get_text().strip())
+        
+        search_line="<!-- Volume definitions -->"
+        
+        f=open('/etc/security/pam_mount.conf.xml', 'r')
+        data=f.readlines()
+        f.close()
+        
+        f=open('/etc/security/pam_mount.conf.xml', 'w')
+        for line in data:
+            if search_line in line:
+                f.write(line)
+                f.write(pam_mount_line)
+            else:
+                f.write(line)
+        f.close()
+
+    def enableLDAP(self, *args):
+        # test IP
+        if not self.test_connection():
+            return
+        
+        # test if backup exists
+        # FIXME
+        
+        # backup
+        shutil.copytree('/etc/pam.d', BACKUP+'pam.d')
+        shutil.copy('/etc/nsswitch.conf', BACKUP)
+        
+        
+        # pressed debconf
+        self.set_preseed()
+        
+        # install needed packages
+        self.install_pkgs()
+        
+        # backup pam_mount.conf.xml
+        shutil.copy('/etc/security/pam_mount.conf.xml', BACKUP)
+        
+        # configure mkhomedir
+        if not os.path.isfile('/usr/share/pam-configs/mkhomedir'):
+            self.write_mkhomedir()
+        
+        # configure pam_mount
+        self.configure_PAM_mount()
+        
+        # exec some magic commands
+        self.exe_cmd('/usr/sbin/auth-client-config -t nss -p lac_ldap')
+        
+        # set to no interactive
+        os.environ['DEBCONF_FRONTEND']="noninteractive"
+        os.environ['DEBIAN_FRONTEND']="noninteractive"
+        self.exe_cmd('/usr/sbin/pam-auth-update')
+        
+        # say user to reboot
+        print_debug("Please, reboot")
+        show_info("Por favor, reinicie el equipo.")
+        self.quitapp()
+
+    def restore(self, *args):
+        # ask for restore
+        if not ask_msg("¿Quiere restarurar el sistema sin LDAP?"):
+            self.quitapp()
+            return
+        
+        # copy files
+        if os.path.isfile(BACKUP + 'pam_mount.conf.xml'):
+            shutil.copy(BACKUP + 'pam_mount.conf.xml', '/etc/security/')
+            os.unlink(BACKUP + 'pam_mount.conf.xml')
+        
+        # PAM
+        if os.path.isdir(BACKUP+'pam.d'):
+            if os.path.isdir("/etc/pam.d"):
+                shutil.rmtree("/etc/pam.d")
+            shutil.copytree(BACKUP+'pam.d', '/etc/pam.d')
+            shutil.rmtree(BACKUP+'pam.d')
+        
+        # NSS
+        if os.path.isfile(BACKUP + 'nsswitch.conf'):
+            shutil.copy(BACKUP + 'nsswitch.conf', '/etc/')
+            os.unlink(BACKUP + 'nsswitch.conf')
+        
+        
+        print_debug("Resored !!!!, reboot now ")
+        show_info("Por favor, reinicie el equipo.")
+        self.quitapp()
+
+
+    def exe_cmd(self, cmd, verbose=1):
+        self.p = Popen(cmd, shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+        
+        output=[]
+        stdout = self.p.stdout
+        for line in stdout.readlines():
+            if line != '\n':
+                line=line.replace('\n', '')
+                output.append(line)
+        if len(output) == 1:
+            return output[0]
+        elif len(output) > 1:
+            if verbose==1:
+                print_debug ( "exe_cmd(%s) %s" %(cmd, output) )
+            return output
+        else:
+            if verbose == 1:
+                print_debug ( "exe_cmd(%s)=None" %(cmd) )
+            return []
+
+    def quitapp(self, *args):
+        print_debug ( "Exiting" )
+        self.mainloop.quit()
+
+    def run (self):
+        self.mainloop = gobject.MainLoop()
+        try:
+            self.mainloop.run()
+        except KeyboardInterrupt: # Press Ctrl+C
+            self.quitapp()
+
+
+class PingPort(object):
+    """ try to open a socket to host:ip """
+    def __init__(self, host, port, timeout=1):
+        self.host=host
+        self.port=int(port)
+        print_debug("PingPort() host=%s port=%d" %(host, self.port) )
+        if self.host == "":
+            print_debug ( "PingPort()  need host to connect" )
+            self.status = "CLOSED"
+            return
+
+        self.status=None
+        socket.setdefaulttimeout(timeout)
+        self.sd = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        print_debug( "PingPort()::__init__(host=%s, port=%d timeout=%f)" %(self.host, self.port, timeout) )
+        try:
+            # connect to the given host:port
+            self.sd.connect((self.host, self.port))
+        except socket.error:
+            # set the CLOSED flag
+            self.status = "CLOSED"
+        else:
+            self.status = "OPEN"
+            self.sd.close()
+
+        socket.setdefaulttimeout(timeout)
+
+    def get_status(self):
+        """ return socket status
+            values: OPEN CLOSED
+        """
+        print_debug ( "%s:%s port is \"%s\"" %(self.host, self.port, self.status) )
+        return self.status
+
+
+def ask_msg(txt):
+    response="yes"
+    d = gtk.MessageDialog(None,
+        gtk.DIALOG_MODAL |
+        gtk.DIALOG_DESTROY_WITH_PARENT,
+        gtk.MESSAGE_QUESTION,
+        gtk.BUTTONS_YES_NO,
+        txt)
+    if d.run() == gtk.RESPONSE_YES:
+        response=True
+    else:
+        response=False
+    d.destroy()
+    return response
+
+def show_info(txt):
+    d = gtk.MessageDialog(None,
+                          gtk.DIALOG_MODAL |
+                          gtk.DIALOG_DESTROY_WITH_PARENT,
+                          gtk.MESSAGE_INFO,
+                          gtk.BUTTONS_OK,
+                          txt)
+    d.run()
+    d.destroy()
+
+################################################################################
+
+if __name__ == '__main__':
+    # check if I'm root
+    if os.geteuid() != 0:
+        show_info("Este programa se debe ejecutar como usuario administrador (con gksudo)")
+        sys.exit(1)
+    
+    app = MAXLDAP ()
+    # Run app
+    app.run ()

@@ -1,0 +1,14 @@
+ldap-auth-config	ldap-auth-config/bindpw	password	GzxovzAANdxoPux9
+ldap-auth-config	ldap-auth-config/rootbindpw	password	GzxovzAANdxoPux9
+ldap-auth-config	ldap-auth-config/binddn	string	cn=proxyuser,dc=example,dc=net
+ldap-auth-config	ldap-auth-config/dbrootlogin	boolean	true
+ldap-auth-config	ldap-auth-config/rootbinddn	string	cn=ebox,dc=max-server
+ldap-auth-config	ldap-auth-config/pam_password	select	md5
+ldap-auth-config	ldap-auth-config/move-to-debconf	boolean	true
+ldap-auth-config	ldap-auth-config/ldapns/ldap-server	string	ldap://192.168.1.1/
+ldap-auth-config	ldap-auth-config/ldapns/base-dn	string	dc=max-server
+ldap-auth-config	ldap-auth-config/override	boolean	true
+ldap-auth-config	ldap-auth-config/ldapns/ldap_version	select	3
+ldap-auth-config	ldap-auth-config/dblogin	boolean	false
+libpam-runtime	libpam-runtime/override	boolean	false
+libpam-runtime	libpam-runtime/profiles	multiselect	unix, libpam-mount, ldap, gnome-keyring, consolekit

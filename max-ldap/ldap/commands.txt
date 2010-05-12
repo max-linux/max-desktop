@@ -1,0 +1,5 @@
+#backup /etc/nsswitch.conf y /etc/pam.d
+
+auth-client-config -t nss -p lac_ldap
+pam-auth-update 
+reboot

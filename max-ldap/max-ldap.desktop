@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Configurar MAX como cliente LDAP
+Exec=gksu /usr/bin/max-ldap
+Terminal=false
+Type=Application
+Icon=/usr/share/max-ldap/images/max-icon.png
+Categories=GNOME;Settings;System;DesktopSettings;Monitor

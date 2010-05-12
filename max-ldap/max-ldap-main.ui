@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkListStore" id="profile_list"/>
+  <object class="GtkWindow" id="mainwindow">
+    <property name="window_position">center</property>
+    <property name="default_width">600</property>
+    <property name="default_height">400</property>
+    <child>
+      <object class="GtkVBox" id="mainvbox">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">5</property>
+        <child>
+          <object class="GtkHBox" id="hbox3">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkImage" id="img_logo">
+                <property name="visible">True</property>
+                <property name="stock">gtk-missing-image</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lbl_title">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">&lt;b&gt;Configuraci&#xF3;n LDAP&lt;/b&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="padding">20</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <object class="GtkHSeparator" id="hseparator1">
+            <property name="visible">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lbl_profiles">
+            <property name="visible">True</property>
+            <property name="xalign">0</property>
+            <property name="xpad">19</property>
+            <property name="ypad">5</property>
+            <property name="label" translatable="yes">&lt;b&gt;Datos&lt;/b&gt;</property>
+            <property name="use_markup">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkTable" id="table_data">
+            <property name="visible">True</property>
+            <property name="n_rows">5</property>
+            <property name="n_columns">2</property>
+            <property name="column_spacing">5</property>
+            <property name="row_spacing">5</property>
+            <child>
+              <object class="GtkLabel" id="label3">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">IP/Nombre de maquina 
+del servidor LDAP</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label4">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Base DN</property>
+              </object>
+              <packing>
+                <property name="top_attach">1</property>
+                <property name="bottom_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="txt_basedn">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+                <property name="text">dc=max-server</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="right_attach">2</property>
+                <property name="top_attach">1</property>
+                <property name="bottom_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label5">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Administrador</property>
+              </object>
+              <packing>
+                <property name="top_attach">2</property>
+                <property name="bottom_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="txt_admin">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+                <property name="text" translatable="yes">cn=ebox,dc=max-server</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="right_attach">2</property>
+                <property name="top_attach">2</property>
+                <property name="bottom_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label6">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Contrase&#xF1;a administrador</property>
+              </object>
+              <packing>
+                <property name="top_attach">3</property>
+                <property name="bottom_attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="txt_rootpasswd">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="visibility">False</property>
+                <property name="invisible_char">&#x2022;</property>
+                <property name="text"></property>
+                <property name="invisible_char_set">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="right_attach">2</property>
+                <property name="top_attach">3</property>
+                <property name="bottom_attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <object class="GtkHBox" id="hbox4">
+                <property name="visible">True</property>
+                <child>
+                  <object class="GtkEntry" id="txt_ldap_server">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="invisible_char">&#x2022;</property>
+                    <property name="text" translatable="yes">192.168.1.1</property>
+                  </object>
+                  <packing>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btn_testcon">
+                    <property name="label" translatable="yes">Probar</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                  </object>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="right_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="ck_showpassword">
+                <property name="label" translatable="yes">ver contrase&#xF1;a</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="draw_indicator">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="right_attach">2</property>
+                <property name="top_attach">4</property>
+                <property name="bottom_attach">5</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox2">
+            <property name="visible">True</property>
+            <property name="spacing">15</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="label1">
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_restore">
+                <property name="label">gtk-revert-to-saved</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_apply">
+                <property name="label">gtk-apply</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_cancel">
+                <property name="label">gtk-quit</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="padding">5</property>
+            <property name="position">5</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
