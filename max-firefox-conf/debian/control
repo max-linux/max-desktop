@@ -9,15 +9,14 @@ Package: max-firefox-conf
 Architecture: all
 Recommends: max-java-plugin
 Depends: max-dpsyco-custom, 
-         firefox | firefox-3.0, 
-         apturl (>= 0.1.2ubuntu1),
+         firefox, 
+         apturl,
 	 max-ubufox,
 #         firefox-greasemonkey, 
 #         firefox-downloadhelper, 
          firefox-procon-latte,
 #         firefox-stylish
-Conflicts: max-3.0-firefox-conf, firefox (<=3.5), firefox (>=3.7)
-Replaces: max-3.0-firefox.conf
+#Conflicts: firefox (<=3.6.2), firefox (>=3.6.4)
 Description: Configuración de firefox para Ubuntu/MAX.
  Configuración basada en dpsyco/ubufox para firefox.
  Contiene bookmarks y preferencias del perfil de firefox.

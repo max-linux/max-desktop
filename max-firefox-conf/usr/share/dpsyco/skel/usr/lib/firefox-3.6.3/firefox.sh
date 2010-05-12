@@ -40,7 +40,7 @@ fi
 # default profile for us.
 
 MOZDIR=$HOME/.mozilla
-LIBDIR=/usr/lib/firefox-3.6
+LIBDIR=/usr/lib/firefox-3.6.3
 APPVER=
 META_NAME=firefox
 GDB=/usr/bin/gdb

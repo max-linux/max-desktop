@@ -1,3 +1,15 @@
+max-firefox-conf (6.0.max4) max; urgency=low
+
+  * Install cert8.db in /etc/firefox/profile/, and don't put firefox.sh script
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 14 Apr 2010 18:37:50 +0200
+
+max-firefox-conf (6.0.max3) max; urgency=low
+
+  * Use firefox-3.6.3 dir
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 14 Apr 2010 18:13:00 +0200
+
 max-firefox-conf (6.0.max2) max; urgency=low
 
   * Remove ubufox from this sources
