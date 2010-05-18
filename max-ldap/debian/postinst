@@ -1,0 +1,12 @@
+#!/bin/sh
+
+
+
+if [ "$1" = "configure" ]; then
+
+   [ -e /etc/init.d/max-ldap ] && rm -f /etc/init.d/max-ldap
+
+fi
+
+
+exit 0

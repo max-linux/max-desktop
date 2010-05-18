@@ -5,17 +5,16 @@
 import os
 import glob
 from distutils.core import setup
-from distutils.command.build import build
 
 data_files = []
 
-#class build_locales(build):
-#    os.system("cd po && make gmo")
+def get_debian_version():
+    f=open('debian/changelog', 'r')
+    line=f.readline()
+    f.close()
+    version=line.split()[1].replace('(','').replace(')','')
+    return version
 
-#for (path, dirs, files) in os.walk("po"):
-#    if "max-ldap.mo" in files:
-#        target = path.replace("po", "share/locale", 1)
-#        data_files.append((target, [os.path.join(path, "max-ldap.mo")]))
 
 def get_images(ipath):
     images = []
@@ -32,7 +31,7 @@ data_files.append(('share/applications', ['max-ldap.desktop'] ))
 
 setup(name='MAX-LDAP',
       description = 'Configure MAX as LDAP client',
-      version='0.1',
+      version=get_debian_version(),
       author = 'Mario Izquierdo',
       author_email = 'mariodebian@gmail.com',
       url = 'http://max.educa.madrid.org',
@@ -40,7 +39,6 @@ setup(name='MAX-LDAP',
       platforms = ['linux'],
       keywords = ['ldap'],
       scripts=['max-ldap'],
-      #cmdclass = {'build': build_locales},
       data_files=data_files
       )
 

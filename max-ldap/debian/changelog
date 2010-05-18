@@ -1,3 +1,21 @@
+max-ldap (0.4) max; urgency=low
+
+  * Set exit 0 in postinst script
+  * Read version from debian/changelog in setup.py
+  * Edit /etc/security/gropus.conf and /etc/pam.d/gdm to add LDAP user to UNIX groups (audio,plugdev, etc...)
+  * Fail if 'net ads join' fail.
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 18 May 2010 16:43:02 +0200
+
+max-ldap (0.3) max; urgency=low
+
+  * Join computer to domain (net ads join...)
+  * Edit /etc/samba/smb.conf to put domain name and security=domain
+  * Edit /etc/sudoers to give admin privileges to LDAP Administrators and Domain Admins groups
+  * Don't get domain name from init.d script, add from GUI.
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 18 May 2010 15:08:10 +0200
+
 max-ldap (0.2) max; urgency=low
 
   * Change icon and remove password

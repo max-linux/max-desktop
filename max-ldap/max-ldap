@@ -127,6 +127,7 @@ class MAXLDAP(object):
         
         
         self.ldap_server=self.ui.get_object('txt_ldap_server')
+        self.domain=self.ui.get_object('txt_domain')
         self.password=self.ui.get_object('txt_rootpasswd')
         self.admin=self.ui.get_object('txt_admin')
         self.base_dn=self.ui.get_object('txt_basedn')
@@ -266,10 +267,157 @@ Session:
                 f.write(line)
         f.close()
 
+    def add_host_to_domain(self):
+        """
+          Editar smb.conf
+
+          workgroup=EBOX
+          security=domain
+
+
+           Añadir máquina al domino
+             net ads join -D EBOX -U admin%adminpw
+
+           Respuesta:
+
+            Using short domain name -- EBOX
+            Joined 'MARIO-DESKTOP' to domain 'EBOX'
+        """
+        domain=self.domain.get_text().strip()
+        if domain == '':
+            print_debug("add_host_to_domain() domain EMPTY")
+            show_info("El dominio no puede estar vacío.")
+            return False
+        
+        f=open('/var/lib/max-ldap/domain', 'w')
+        f.write(domain)
+        f.close()
+        
+        shutil.copy('/etc/samba/smb.conf', BACKUP)
+        f=open('/etc/samba/smb.conf', 'r')
+        data=f.readlines()
+        f.close()
+        
+        f=open('/etc/samba/smb.conf', 'w')
+        for line in data:
+            if "workgroup =" in line:
+                f.write("   workgroup = %s\n"%domain)
+            elif "security =" in line:
+                f.write(line)
+                f.write("   security = domain\n")
+            else:
+                f.write(line)
+        f.close()
+        
+        user=self.admin.get_text().strip()
+        passwd=self.password.get_text().strip()
+        simpleuser=user.split(',')[0].split('=')[1]
+        
+        # call net ads join
+        cmd="net ads join -D %s -U %s%%%s"%(domain, simpleuser, passwd)
+        print_debug(cmd)
+        cmdresult=self.exe_cmd(cmd)
+        result=False
+        for line in cmdresult:
+            if "Joined" in line:
+                result=True
+        
+        print_debug("add_host_to_domain() done, result=%s"%result)
+        return result
+
+    def add_sudoers(self):
+        """
+        LDAP GROUPS
+        __USERS__:*:1901:
+        Domain Admins:*:512:  <=====
+        Domain Users:*:513:
+        Domain Guests:*:514:
+        Domain Computers:*:515:
+        Administrators:*:544:  <=======
+        Account Operators:*:548:
+        Print Operators:*:550:
+        Backup Operators:*:551:
+        Replicators:*:552:
+        
+        append this lines to sudoers:
+        
+        User_Alias DAG=%Domain\ Admins
+        DAG ALL=(ALL) ALL
+        %Administrators ALL=(ALL) ALL
+        """
+        shutil.copy('/etc/sudoers', BACKUP)
+        f=open('/etc/sudoers', 'r')
+        data=f.readlines()
+        f.close()
+        
+        for line in data:
+            if "# LDAP groups" in line:
+                print_debug("add_sudoers() #LDAP found in sudoers, exit")
+                return
+        
+        f=open('/etc/sudoers', 'w')
+        for line in data:
+            f.write(line)
+        
+        f.write("\n\n# LDAP groups\n")
+        f.write('User_Alias DAG=%Domain\ Admins\n')
+        f.write('DAG ALL=(ALL) ALL\n')
+        f.write('%Administrators ALL=(ALL) ALL\n')
+        f.write('# end LDAP\n')
+        f.close()
+        
+        print_debug("add_sudoers() done")
+
+    def add_users_to_groups(self):
+        """
+        Edit /etc/security/group.conf
+        """
+        f=open('/etc/security/group.conf', 'r')
+        data=f.readlines()
+        f.close()
+        
+        f=open('/etc/security/group.conf', 'w')
+        for line in data:
+            f.write(line)
+        f.write('\n\n')
+        #f.write('gdm;*;__USERS__;Al0000-2400;audio,video,floppy,cdrom,plugdev,netdev,powerdev,scanner,fuse\n')
+        #f.write('gdm;*;Profesores;Al0000-2400;audio,video,floppy,cdrom,plugdev,netdev,powerdev,scanner,fuse,tcos,sambashare\n')
+        f.write('gdm;*;*;Al0000-2400;audio,video,floppy,cdrom,plugdev,netdev,powerdev,scanner,fuse\n')
+        f.close()
+        
+        """
+        Edit /etc/pam.d/gdm
+        """
+        
+        f=open('/etc/pam.d/gdm', 'r')
+        data=f.readlines()
+        f.close()
+        
+        f=open('/etc/pam.d/gdm', 'w')
+        for line in data:
+            if "auth" in line and "pam_gnome_keyring.so" in line:
+                f.write(line)
+                f.write('auth     optional       pam_group.so\n')
+            else:
+                f.write(line)
+        f.close()
+        
+        print_debug("add_users_to_groups() done")
+
+
     def enableLDAP(self, *args):
         # test IP
         if not self.test_connection():
             return
+        
+        # sync time
+        self.exe_cmd("ntpdate-debian")
+        
+        if not self.add_host_to_domain():
+            show_info("No se ha podido unir el equipo al dominio.\nCompruebe el usuario, la contraseña y el dominio.")
+            return
+        
+        self.add_sudoers()
         
         # test if backup exists
         # FIXME
@@ -295,6 +443,10 @@ Session:
         # configure pam_mount
         self.configure_PAM_mount()
         
+        # add LDAP user to local groups (audio, plugdev...)
+        shutil.copy('/etc/security/group.conf', BACKUP)
+        self.add_users_to_groups()
+        
         # exec some magic commands
         self.exe_cmd('/usr/sbin/auth-client-config -t nss -p lac_ldap')
         
@@ -319,6 +471,11 @@ Session:
             shutil.copy(BACKUP + 'pam_mount.conf.xml', '/etc/security/')
             os.unlink(BACKUP + 'pam_mount.conf.xml')
         
+        # copy files
+        if os.path.isfile(BACKUP + 'group.conf'):
+            shutil.copy(BACKUP + 'group.conf', '/etc/security/')
+            os.unlink(BACKUP + 'group.conf')
+        
         # PAM
         if os.path.isdir(BACKUP+'pam.d'):
             if os.path.isdir("/etc/pam.d"):
@@ -331,8 +488,18 @@ Session:
             shutil.copy(BACKUP + 'nsswitch.conf', '/etc/')
             os.unlink(BACKUP + 'nsswitch.conf')
         
+        # SAMBA
+        if os.path.isfile(BACKUP + 'smb.conf'):
+            shutil.copy(BACKUP + 'smb.conf', '/etc/samba/')
+            os.unlink(BACKUP + 'smb.conf')
         
-        print_debug("Resored !!!!, reboot now ")
+        # sudoers
+        if os.path.isfile(BACKUP + 'sudoers'):
+            shutil.copy(BACKUP + 'sudoers', '/etc/')
+            os.unlink(BACKUP + 'sudoers')
+        
+        
+        print_debug("Restored !!!!, reboot now ")
         show_info("Por favor, reinicie el equipo.")
         self.quitapp()
 
