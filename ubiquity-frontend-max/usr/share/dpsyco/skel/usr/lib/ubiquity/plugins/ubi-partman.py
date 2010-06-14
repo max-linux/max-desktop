@@ -794,7 +794,7 @@ class PageGtk(PageBase):
         # If the selected method isn't a filesystem, then selecting a mount
         # point makes no sense. TODO cjwatson 2007-01-31: Unfortunately we
         # have to hardcode the list of known filesystems here.
-        known_filesystems = ('ext4', 'ext3', 'ext2', 'reiserfs', 'jfs', 'xfs',
+        known_filesystems = ('ext3', 'ext4', 'ext2', 'reiserfs', 'jfs', 'xfs',
                              'fat16', 'fat32', 'ntfs', 'uboot')
         if iterator is None or model[iterator][0] not in known_filesystems:
             self.partition_edit_mount_combo.child.set_text('')
@@ -1346,7 +1346,7 @@ class Page(Plugin):
             else:
                 yield (method, method, self.method_description(method))
 
-    def default_mountpoint_choices(self, fs='ext4'):
+    def default_mountpoint_choices(self, fs='ext3'):
         """Yields the possible mountpoints for a partition."""
 
         # We can't find out the real list of possible mountpoints from
