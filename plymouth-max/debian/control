@@ -10,5 +10,6 @@ Package: plymouth-max
 Architecture: any
 Depends: plymouth, plymouth-theme-text, plymouth-theme-script, ${shlibs:Depends}, ${misc:Depends}
 Conflicts: max-artwork (<<6.0.max9)
+Provides: plymouth-theme
 Description: Plymouth theme of MaX 6.0
  This package contains plymouth MaX 6.0 theme and text.so file
