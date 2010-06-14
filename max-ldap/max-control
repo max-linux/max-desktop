@@ -1,0 +1,60 @@
+#!/bin/bash
+#
+#  Helper script to shutdown/reboot or mount ISOS
+#  Called by user in Administrators group no need password with sudo
+#
+#
+
+_autocall() {
+  #max-control $1 $2 &
+  /sbin/start-stop-daemon --quiet --background --start --exec /usr/bin/max-control -- $1 $2
+  exit 0
+}
+
+
+if [ "$1" = "reboot" ]; then
+  _autocall rebootdo $2
+  exit 0
+fi
+
+if [ "$1" = "rebootdo" ]; then
+  #FIXME need g-message to call dbus but sudo| su call pam_mount
+  #notify-send "Reiniciando" "El Equipo se reiniciará en $2 segundos"
+  sleep $2
+  reboot
+  exit 0
+fi
+
+if [ "$1" = "poweroff" ]; then
+  _autocall poweroffdo $2
+  exit 0
+fi
+
+if [ "$1" = "poweroffdo" ]; then
+  #notify-send "Apagando" "El Equipo se apagará en $2 segundos"
+  sleep $2
+  poweroff
+  exit 0
+fi
+
+if [ "$1" = "mount" ]; then
+  # test ISO
+  [ ! -e "/mnt/isos/$2" ] && exit 0
+  # umount all isos
+  max-control umount
+  # mount "$2" ISO
+  mnt=$(basename `echo "/mnt/isos/$2"| sed -e 's/ /_/g'` .iso)
+  mkdir -p "/media/$mnt"
+  mount -o loop,ro "$2" "/media/$mnt"
+  exit 0
+fi
+
+
+if [ "$1" = "umount" ]; then
+  # umount all ISO
+  for mnt in $(awk '/iso9660/ {print $2}' /proc/mounts); do
+    umount -l $mnt
+    rmdir $mnt
+  done
+  exit 0
+fi

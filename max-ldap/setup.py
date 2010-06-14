@@ -29,6 +29,10 @@ data_files.append(('share/max-ldap', ['max-ldap-main.ui'] ))
 
 data_files.append(('share/applications', ['max-ldap.desktop'] ))
 
+data_files.append(('/etc/X11/Xsession.d', ['80_configure_ldap_session'] ))
+
+data_files.append(('share/gnome/shutdown', ['ldap_logout.sh'] ))
+
 setup(name='MAX-LDAP',
       description = 'Configure MAX as LDAP client',
       version=get_debian_version(),
@@ -38,7 +42,7 @@ setup(name='MAX-LDAP',
       license = 'GPLv2',
       platforms = ['linux'],
       keywords = ['ldap'],
-      scripts=['max-ldap'],
+      scripts=['max-ldap', 'max-control'],
       data_files=data_files
       )
 

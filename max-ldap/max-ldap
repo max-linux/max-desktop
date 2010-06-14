@@ -35,6 +35,8 @@ from subprocess import Popen, PIPE, STDOUT
 import socket
 import shutil
 
+import ldap
+
 from tempfile import NamedTemporaryFile
 
 debug=False
@@ -156,14 +158,7 @@ class MAXLDAP(object):
         print_debug (ip)
         alive=PingPort(ip, '389').get_status()
         if alive == "CLOSED":
-            d = gtk.MessageDialog(None,
-                      gtk.DIALOG_MODAL |
-                      gtk.DIALOG_DESTROY_WITH_PARENT,
-                      gtk.MESSAGE_WARNING,
-                      gtk.BUTTONS_OK,
-                      "No se puede acceder al servidor LDAP,\ncompruebe la IP o nombre de equipo y el cortafuegos en el servidor.")
-            d.run()
-            d.destroy()
+            show_error("No se puede acceder al servidor LDAP,\ncompruebe la IP o nombre de equipo y el cortafuegos en el servidor.")
             return False
         if widget:
             show_info("El servidor tiene accesible LDAP.")
@@ -210,7 +205,23 @@ libpam-runtime	libpam-runtime/profiles	multiselect	unix, mkhomedir, libpam-mount
         print_debug("set_preseed() done")
         return True
 
-
+    def unset_preseed(self, *args):
+        preseed="""libpam-runtime	libpam-runtime/override	boolean	false
+libpam-runtime	libpam-runtime/profiles	multiselect	unix, gnome-keyring, consolekit
+"""
+        
+        temp = NamedTemporaryFile()
+        temp.write(preseed)
+        temp.flush()
+        
+        # run debconf-set-selections
+        self.exe_cmd('debconf-set-selections < %s'%temp.name)
+        
+        # delete temp file
+        temp.close()
+        
+        print_debug("set_preseed() done")
+        return True
 
     def install_pkgs(self, *args):
         """
@@ -220,7 +231,7 @@ libpam-runtime	libpam-runtime/profiles	multiselect	unix, mkhomedir, libpam-mount
         """
         # create temp file with packages to install
         temp = NamedTemporaryFile()
-        for pkg in ['ldap-auth-client', 'auth-client-config', 'smbfs', 'libpam-mount']:
+        for pkg in ['ldap-auth-client', 'auth-client-config', 'smbfs', 'libpam-mount', 'samba', 'ssh']:
             temp.write("%s\t install\n"%pkg)
         temp.flush()
         
@@ -248,9 +259,18 @@ Session:
         f.close()
 
     def configure_PAM_mount(self):
+        serverip=self.ldap_server.get_text().strip()
         pam_mount_line="""
-<volume fstype="smbfs" server="%s" path="homes" mountpoint="~"> <and> <sgrp>__USERS__</sgrp> </and> </volume>
-"""%(self.ldap_server.get_text().strip())
+<volume options="iocharset=utf8" fstype="cifs" server="%s" path="homes" mountpoint="~"> <and> <sgrp>__USERS__</sgrp> </and> </volume>
+
+<volume options="iocharset=utf8" fstype="cifs" server="%s" path="isos" mountpoint="/mnt/isos"> <and> <sgrp>Teachers</sgrp> </and> </volume>
+<volume options="ro,iocharset=utf8" fstype="cifs" server="%s" path="isos" mountpoint="/mnt/isos"> <and> <sgrp>__USERS__</user> <not> <sgrp>Teachers</sgrp> </not> </and> </volume>
+"""%(serverip, serverip)
+        
+        logout_line="""
+<logout wait="500" hup="0" term="1" kill="1" />
+"""
+        logout_search_line="<logout"
         
         search_line="<!-- Volume definitions -->"
         
@@ -263,6 +283,8 @@ Session:
             if search_line in line:
                 f.write(line)
                 f.write(pam_mount_line)
+            elif logout_search_line in line:
+                f.write(logout_line)
             else:
                 f.write(line)
         f.close()
@@ -283,6 +305,7 @@ Session:
             Using short domain name -- EBOX
             Joined 'MARIO-DESKTOP' to domain 'EBOX'
         """
+        server=self.ldap_server.get_text().strip()
         domain=self.domain.get_text().strip()
         if domain == '':
             print_debug("add_host_to_domain() domain EMPTY")
@@ -302,9 +325,13 @@ Session:
         for line in data:
             if "workgroup =" in line:
                 f.write("   workgroup = %s\n"%domain)
-            elif "security =" in line:
+            elif "#   security = user" in line:
                 f.write(line)
                 f.write("   security = domain\n")
+            elif "wins server" in line:
+                f.write("   wins server = %s\n"%server)
+            elif "name resolve order" in line:
+                f.write("   name resolve order = lmhosts host wins bcast\n")
             else:
                 f.write(line)
         f.close()
@@ -344,7 +371,11 @@ Session:
         User_Alias DAG=%Domain\ Admins
         DAG ALL=(ALL) ALL
         %Administrators ALL=(ALL) ALL
+        %Administrators ALL=NOPASSWD: /usr/bin/max-control
         """
+        user=self.admin.get_text().strip()
+        simpleuser=user.split(',')[0].split('=')[1]
+        
         shutil.copy('/etc/sudoers', BACKUP)
         f=open('/etc/sudoers', 'r')
         data=f.readlines()
@@ -363,6 +394,9 @@ Session:
         f.write('User_Alias DAG=%Domain\ Admins\n')
         f.write('DAG ALL=(ALL) ALL\n')
         f.write('%Administrators ALL=(ALL) ALL\n')
+        f.write('# need to give this user NOPASSWD to work with libssh2-php\n')
+        f.write('%Administrators ALL=NOPASSWD: /usr/bin/max-control\n')
+        f.write('DAG ALL=NOPASSWD: /usr/bin/max-control\n')
         f.write('# end LDAP\n')
         f.close()
         
@@ -404,10 +438,46 @@ Session:
         
         print_debug("add_users_to_groups() done")
 
+    def configureSSH(self):
+        # configure sshd_config to disable logins of know users (madrid and alumno)
+        shutil.copy('/etc/ssh/sshd_config', BACKUP)
+        f=open('/etc/ssh/sshd_config', 'a')
+        f.write("\n\nDenyUsers madrid alumno\n")
+        f.close()
+        
+        print_debug("configureSSH() done")
+
+    def hostnameExists(self):
+        """
+        import ldap
+        l = ldap.initialize('ldap://192.168.1.1:389')
+        l.search_s('ou=Computers,dc=max-server',ldap.SCOPE_SUBTREE,'(uid=*)',['uid'])
+        [('uid=wxp$,ou=Computers,dc=max-server', {'uid': ['wxp$']}), ('uid=mario-desktop$,ou=Computers,dc=max-server', {'uid': ['mario-desktop$']}), ('uid=wxp64$,ou=Computers,dc=max-server', {'uid': ['wxp64$']}), ('uid=win2008$,ou=Computers,dc=max-server', {'uid': ['win2008$']})]
+        
+        import socket
+        socket.gethostname()
+        'thinkpad'
+        """
+        serverip=self.ldap_server.get_text().strip()
+        base_dn=self.base_dn.get_text().strip()
+        myhostname=socket.gethostname()
+        l = ldap.initialize('ldap://%s:389'%(serverip))
+        computers = l.search_s('ou=Computers,%s'%(base_dn),ldap.SCOPE_SUBTREE,'(uid=*)',['uid'])
+        for computer in computers:
+            if computer[1]['uid'][0] == "%s$"%(myhostname):
+                if ask_msg("El nombre de equipo '%s' ya está registrado en el servidor LDAP,\nSi ya ha registrado este equipo antes, y quiere continuar seleccione sí.\nPara salir y cambiar el nombre del equipo seleccione no."%(myhostname)):
+                    return True
+                return False
+        return True
+
 
     def enableLDAP(self, *args):
         # test IP
         if not self.test_connection():
+            return
+
+        # test hostname
+        if not self.hostnameExists():
             return
         
         # sync time
@@ -433,6 +503,8 @@ Session:
         # install needed packages
         self.install_pkgs()
         
+        self.configureSSH()
+        
         # backup pam_mount.conf.xml
         shutil.copy('/etc/security/pam_mount.conf.xml', BACKUP)
         
@@ -455,10 +527,24 @@ Session:
         os.environ['DEBIAN_FRONTEND']="noninteractive"
         self.exe_cmd('/usr/sbin/pam-auth-update')
         
+        # configure SSH to not mount remote filesystems????
+        # grep -v mount /etc/pam.d/common-auth > /etc/pam.d/common-auth-nomount
+        # grep -v mount /etc/pam.d/common-session > /etc/pam.d/common-session-nomount
+        #
+        # sed -i -e 's/common-auth/common-auth-nomount/g' /etc/pam.d/sshd
+        # sed -i -e 's/common-session/common-session-nomount/g' /etc/pam.d/sshd
+        
         # say user to reboot
         print_debug("Please, reboot")
         show_info("Por favor, reinicie el equipo.")
         self.quitapp()
+
+    def remove_pkgs(self):
+        apt="apt-get remove --purge -y --force-yes"
+        pkgs="ldap-auth-client auth-client-config smbfs libpam-mount"
+        self.exe_cmd("%s %s"%(apt, pkgs))
+        self.exe_cmd("apt-get autoremove --purge -y --force-yes")
+
 
     def restore(self, *args):
         # ask for restore
@@ -498,6 +584,24 @@ Session:
             shutil.copy(BACKUP + 'sudoers', '/etc/')
             os.unlink(BACKUP + 'sudoers')
         
+        # ssh
+        if os.path.isfile(BACKUP + 'sshd_config'):
+            shutil.copy(BACKUP + 'sshd_config', '/etc/ssh/')
+            os.unlink(BACKUP + 'sshd_config')
+        
+        if os.path.isfile('/usr/share/pam-configs/mkhomedir'):
+            os.unlink('/usr/share/pam-configs/mkhomedir')
+        
+        # set to no interactive
+        self.unset_preseed()
+        os.environ['DEBCONF_FRONTEND']="noninteractive"
+        os.environ['DEBIAN_FRONTEND']="noninteractive"
+        self.exe_cmd('/usr/sbin/pam-auth-update')
+        
+        try:
+            self.remove_pkgs()
+        except:
+            pass
         
         print_debug("Restored !!!!, reboot now ")
         show_info("Por favor, reinicie el equipo.")
@@ -526,7 +630,10 @@ Session:
 
     def quitapp(self, *args):
         print_debug ( "Exiting" )
-        self.mainloop.quit()
+        try:
+            self.mainloop.quit()
+        except:
+            pass
 
     def run (self):
         self.mainloop = gobject.MainLoop()
@@ -572,13 +679,12 @@ class PingPort(object):
 
 
 def ask_msg(txt):
-    response="yes"
     d = gtk.MessageDialog(None,
-        gtk.DIALOG_MODAL |
-        gtk.DIALOG_DESTROY_WITH_PARENT,
-        gtk.MESSAGE_QUESTION,
-        gtk.BUTTONS_YES_NO,
-        txt)
+                          gtk.DIALOG_MODAL |
+                          gtk.DIALOG_DESTROY_WITH_PARENT,
+                          gtk.MESSAGE_QUESTION,
+                          gtk.BUTTONS_YES_NO,
+                          txt)
     if d.run() == gtk.RESPONSE_YES:
         response=True
     else:
@@ -591,6 +697,16 @@ def show_info(txt):
                           gtk.DIALOG_MODAL |
                           gtk.DIALOG_DESTROY_WITH_PARENT,
                           gtk.MESSAGE_INFO,
+                          gtk.BUTTONS_OK,
+                          txt)
+    d.run()
+    d.destroy()
+
+def show_error(txt):
+    d = gtk.MessageDialog(None,
+                          gtk.DIALOG_MODAL |
+                          gtk.DIALOG_DESTROY_WITH_PARENT,
+                          gtk.MESSAGE_ERROR,
                           gtk.BUTTONS_OK,
                           txt)
     d.run()

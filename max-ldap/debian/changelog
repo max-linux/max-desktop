@@ -1,3 +1,30 @@
+max-ldap (0.7) max; urgency=low
+
+  * max-control (script with NOPASSWD sudo) to reboot, poweroff mount/umount ISOS
+  * Add isos to pam_mount_conf.xml (in /mnt/isos)
+  * Configure pam_mount to kill in logout
+  * Add gnome/shutdown script that kills all proccess to umount cifs
+  * Change XDG-USERS-DIRS in 80_configure_ldap_session
+  * Check if hostname is register and warn about it.
+  * Remove packages when running with '--restore'
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 06 Jun 2010 23:14:20 +0200
+
+max-ldap (0.6) max; urgency=low
+
+  * Add 80_configure_ldap_session script to /etc/X11/Xsession.d/ to configure GCONF workgroup
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 02 Jun 2010 15:46:03 +0200
+
+max-ldap (0.5) max; urgency=low
+
+  * Add SSH package to install_pkgs and ban MAX users for ssh logins
+  * Add admin user to don't need sudo password
+  * Install samba package (nmbd add wins client support)
+  * Configure wins server in /etc/samba/smb.conf
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 21 May 2010 00:04:06 +0200
+
 max-ldap (0.4) max; urgency=low
 
   * Set exit 0 in postinst script
