@@ -263,9 +263,9 @@ Session:
         pam_mount_line="""
 <volume options="iocharset=utf8" fstype="cifs" server="%s" path="homes" mountpoint="~"> <and> <sgrp>__USERS__</sgrp> </and> </volume>
 
-<volume options="iocharset=utf8" fstype="cifs" server="%s" path="isos" mountpoint="/mnt/isos"> <and> <sgrp>Teachers</sgrp> </and> </volume>
-<volume options="ro,iocharset=utf8" fstype="cifs" server="%s" path="isos" mountpoint="/mnt/isos"> <and> <sgrp>__USERS__</user> <not> <sgrp>Teachers</sgrp> </not> </and> </volume>
-"""%(serverip, serverip)
+<volume options="rw,iocharset=utf8" fstype="cifs" server="%s" path="isos" mountpoint="/mnt/isos"> <and> <sgrp>Teachers</sgrp> </and> </volume>
+<volume options="ro,iocharset=utf8" fstype="cifs" server="%s" path="isos" mountpoint="/mnt/isos"> <and> <sgrp>__USERS__</sgrp> <not> <sgrp>Teachers</sgrp> </not> </and> </volume>
+"""%(serverip, serverip, serverip)
         
         logout_line="""
 <logout wait="500" hup="0" term="1" kill="1" />

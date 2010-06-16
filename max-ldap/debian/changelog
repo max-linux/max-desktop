@@ -1,3 +1,9 @@
+max-ldap (0.8) max; urgency=low
+
+  * Fix bugs in pam_mount.xml (add another serverip and close sgrp not user)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 16 Jun 2010 15:34:42 +0200
+
 max-ldap (0.7) max; urgency=low
 
   * max-control (script with NOPASSWD sudo) to reboot, poweroff mount/umount ISOS
