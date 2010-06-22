@@ -43,9 +43,9 @@ if [ "$1" = "mount" ]; then
   # umount all isos
   max-control umount
   # mount "$2" ISO
-  mnt=$(basename `echo "/mnt/isos/$2"| sed -e 's/ /_/g'` .iso)
+  mnt=$(basename "$2" .iso | sed -e 's/ /_/g')
   mkdir -p "/media/$mnt"
-  mount -o loop,ro "$2" "/media/$mnt"
+  mount -o loop,ro "/mnt/isos/$2" "/media/$mnt"
   exit 0
 fi
 

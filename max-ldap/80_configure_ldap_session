@@ -57,3 +57,19 @@ _rename "$HOME/Vídeos" "$HOME/Videos"
 _rename "$HOME/Música" "$HOME/Musica"
 _rename "$HOME/Público" "$HOME/Publico"
 
+
+# si es usuario LDAP cargar skel y dumps GCONF
+if id | grep -q "__USERS__"; then
+
+    if [ ! -e $HOME/.bashrc ]; then
+        echo "Copiando SKEL en usuario LDAP $HOME/"
+        rsync -Pav /etc/skel/ $HOME/ >/dev/null 2>&1
+    fi
+
+    if [ ! -e $HOME/.max.dumps.done ]; then
+        for _file in $(find /usr/share/max/gconf-dumps/ -name "*dump.gconf"); do
+           /usr/bin/dbus-launch gconftool-2 --load $_file >/dev/null 2>&1
+           touch $HOME/.max.dumps.done
+        done
+    fi
+fi

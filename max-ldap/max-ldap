@@ -527,12 +527,14 @@ Session:
         os.environ['DEBIAN_FRONTEND']="noninteractive"
         self.exe_cmd('/usr/sbin/pam-auth-update')
         
-        # configure SSH to not mount remote filesystems????
-        # grep -v mount /etc/pam.d/common-auth > /etc/pam.d/common-auth-nomount
-        # grep -v mount /etc/pam.d/common-session > /etc/pam.d/common-session-nomount
+
+        shutil.copy('/etc/pam.d/sshd', BACKUP+'pam.d')
+        # configure SSH to not mount remote filesystems
+        self.exe_cmd('grep -v pam_mount /etc/pam.d/common-auth > /etc/pam.d/common-auth-nomount')
+        self.exe_cmd('grep -v pam_mount /etc/pam.d/common-session > /etc/pam.d/common-session-nomount')
         #
-        # sed -i -e 's/common-auth/common-auth-nomount/g' /etc/pam.d/sshd
-        # sed -i -e 's/common-session/common-session-nomount/g' /etc/pam.d/sshd
+        self.exe_cmd("sed -i -e 's/common-auth/common-auth-nomount/g' /etc/pam.d/sshd")
+        self.exe_cmd("sed -i -e 's/common-session/common-session-nomount/g' /etc/pam.d/sshd")
         
         # say user to reboot
         print_debug("Please, reboot")
@@ -591,6 +593,12 @@ Session:
         
         if os.path.isfile('/usr/share/pam-configs/mkhomedir'):
             os.unlink('/usr/share/pam-configs/mkhomedir')
+        
+        if os.path.isfile('/etc/pam.d/common-auth-nomount'):
+            os.unlink('/etc/pam.d/common-auth-nomount')
+        
+        if os.path.isfile('/etc/pam.d/common-session-nomount'):
+            os.unlink('/etc/pam.d/common-session-nomount')
         
         # set to no interactive
         self.unset_preseed()

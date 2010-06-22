@@ -1,3 +1,25 @@
+max-ldap (0.11) max; urgency=low
+
+  * max-control: fix iso path mount
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 22 Jun 2010 20:02:12 +0200
+
+max-ldap (0.10) max; urgency=low
+
+  * Backup /etc/pam.d/sshd before editing and allow to restore
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 22 Jun 2010 19:44:49 +0200
+
+max-ldap (0.9) max; urgency=low
+
+  * 80_configure_ldap_session: load GCONF dumps and copy skel if user is LDAP user
+  * ldap_logout.sh: kill pulseaudio before others
+  * ldap_logout.sh: kill dbus-daemon launched in 80_configure_ldap_session
+  * ldap_logout.sh: kill gdm-session-worker
+  * max-ldap: Configure sshd PAM to not use pam_mount
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 22 Jun 2010 19:10:01 +0200
+
 max-ldap (0.8) max; urgency=low
 
   * Fix bugs in pam_mount.xml (add another serverip and close sgrp not user)
