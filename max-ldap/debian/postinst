@@ -6,6 +6,12 @@ if [ "$1" = "configure" ]; then
 
    [ -e /etc/init.d/max-ldap ] && rm -f /etc/init.d/max-ldap
 
+
+    # call update GRUB to create extlinux conf
+    if which update-grub > /dev/null ; then
+        update-grub
+    fi
+
 fi
 
 

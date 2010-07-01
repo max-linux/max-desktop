@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# ext4 in ubuntu is not supported
+ROOT_FS_TYPE=$(blkid -o udev $(df /boot/| awk '/dev/ {print $1}') | awk -F"=" '/ID_FS_TYPE=/ {print $2}')
+if [ "$ROOT_FS_TYPE" = "ext4" ]; then
+  echo "/etc/grub.d/50_extlinux: ERROR ext4 is not supported as root filesystem"
+  exit 0
+fi
+
+
+VMLINUZ=$(readlink /vmlinuz)
+INITRD=$(readlink /initrd.img)
+
+echo "Updating extlinux..." >&2
+
+mkdir -p /boot/extlinux
+
+cat << EOF > /boot/extlinux/extlinux.conf
+default max
+timeout 2
+prompt 0
+ontimeout max
+
+label max
+	menu label MAX
+	kernel /${VMLINUZ}
+	append initrd=/${INITRD} root=UUID=${GRUB_DEVICE_UUID} ro quiet splash
+
+EOF
+
+extlinux -i /boot/extlinux
