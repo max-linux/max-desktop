@@ -88,7 +88,7 @@ apt-get update
 apt-get $APT_OPTS upgrade
 apt-get $APT_OPTS dist-upgrade
 yes| apt-get $APT_OPTS install xserver-xorg ubiquity casper ubiquity-frontend-max user-setup max-live
-apt-get $APT_OPTS install max-nanomax
+apt-get $APT_OPTS install max-nanomax-deps max-desktop-lxde-deps
 apt-get clean
 apt-get $APT_OPTS autoremove --purge
 EOC
@@ -184,7 +184,7 @@ fi # end of $NANOMAX_MOODLE
 
   NANO_DELETE_PACKAGES="evolution-documentation-en foomatic-db foomatic-db-engine foomatic-filters gimp-help-en fvwm1"
   NANO_DELETE_PACKAGES="$NANO_DELETE_PACKAGES gnome-user-guide gnome-user-guide-es gnome-mag gnome-media gnome-mount usplash-theme-ubuntu openjdk-6-jre-headless"
-  NANO_DELETE_PACKAGES="$NANO_DELETE_PACKAGES ubuntu-gdm-themes bsh bsh-gcj libjline-java"
+  NANO_DELETE_PACKAGES="$NANO_DELETE_PACKAGES bsh bsh-gcj libjline-java"
 
   if [ "$NANOMAX_MOODLE" = "0" ]; then
     NANO_DELETE_PACKAGES="$NANO_DELETE_PACKAGES ubuntu-gdm-themes bsh bsh-gcj libjline-java max-java-plugin sun-java6-bin sun-java6-jre sun-java6-plugin"
@@ -200,7 +200,7 @@ yes| apt-get $APT_OPTS remove --purge $NANO_DELETE_PACKAGES
 apt-get $APT_OPTS autoremove --purge
 apt-get $APT_OPTS autoremove --purge
 $MOODLE_PRE
-apt-get $APT_OPTS install max-nanomax max-live $MOODLE_PKGS
+apt-get $APT_OPTS install max-nanomax max-live max-nanomax-deps max-desktop-lxde-deps $MOODLE_PKGS
 EOC
 
 

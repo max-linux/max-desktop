@@ -6,7 +6,7 @@ DISTRO=lucid
 DISTRO_VERSION="10.04"
 ARCH=i386
 NANOARCH=i386
-IMAGE_NAME="MaX-6.0-alpha1"
+IMAGE_NAME="MaX-6.0-alpha3"
 TITLE="MaX 6.0"
 
 unset HOME
@@ -56,7 +56,8 @@ CHROOT=$CURDIR/chroot.${ARCH}
 NANOCHROOT=$CURDIR/nanochroot.${ARCH}
 CDRW=$CURDIR/cdimage.${ARCH}
 NANOMAX=$CDRW/nanomax
-MKSQUASHFS=/usr/local/bin/mksquashfs
+#MKSQUASHFS=/usr/local/bin/mksquashfs
+MKSQUASHFS=/usr/bin/mksquashfs
 
 PAQUETES_EXTRA_MAIN="b43-fwcutter build-essential dpkg-dev fakeroot g++-4.3 libstdc++6-4.3-dev g++ capiutils ipppd "
 PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN isdnutils-base isdnutils-xtools libcapi20-3 libcapi20-dev pppdcapiplugin libatm1 "
