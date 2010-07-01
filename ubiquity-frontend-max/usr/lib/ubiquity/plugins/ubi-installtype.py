@@ -123,6 +123,9 @@ class PageGtk(PageBase):
             self.install_type_nanomax.set_sensitive(False)
             self.install_warn_nano.show()
 
+        if not os.path.isfile("/cdrom/nanomax/filesystem.squashfs"):
+            self.install_type_nanomax.set_sensitive(False)
+
 
     # Functions called by the Page.
 
