@@ -1,3 +1,29 @@
+max-ldap (0.16) max; urgency=low
+
+  * max-control: Add notify support with sudo
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 01 Jul 2010 22:02:37 +0200
+
+max-ldap (0.15) max; urgency=low
+
+  * Redirect messages to stderr
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 01 Jul 2010 20:53:38 +0200
+
+max-ldap (0.14) max; urgency=low
+
+  * Add acpi=force reboot=warn in extlinux
+  * Check if extlinux is installed
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 01 Jul 2010 20:49:13 +0200
+
+max-ldap (0.13) max; urgency=low
+
+  * Update 50_extlinux to detect ext4 filesystems
+  * Depend on new package extlinux-ext4
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 01 Jul 2010 20:36:39 +0200
+
 max-ldap (0.12) max; urgency=low
 
   * Add /etc/grub.d/50_extlinux to install extlinux on root partition

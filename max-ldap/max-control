@@ -5,6 +5,7 @@
 #
 #
 
+
 _autocall() {
   #max-control $1 $2 &
   /sbin/start-stop-daemon --quiet --background --start --exec /usr/bin/max-control -- $1 $2
@@ -13,25 +14,26 @@ _autocall() {
 
 
 if [ "$1" = "reboot" ]; then
+  CON_USER=$(ck-history --last| grep tty7| grep -v gdm| head -1| awk '{print $1}')
+  sudo -H -u "$CON_USER" DISPLAY=:0 notify-send "Reiniciando" "El equipo se reiniciara en $2 segundos"
   _autocall rebootdo $2
   exit 0
 fi
 
 if [ "$1" = "rebootdo" ]; then
-  #FIXME need g-message to call dbus but sudo| su call pam_mount
-  #notify-send "Reiniciando" "El Equipo se reiniciará en $2 segundos"
   sleep $2
   reboot
   exit 0
 fi
 
 if [ "$1" = "poweroff" ]; then
+  CON_USER=$(ck-history --last| grep tty7| grep -v gdm| head -1| awk '{print $1}')
+  sudo -H -u "$CON_USER" DISPLAY=:0 notify-send "Apagando" "El equipo se apagara en $2 segundos"
   _autocall poweroffdo $2
   exit 0
 fi
 
 if [ "$1" = "poweroffdo" ]; then
-  #notify-send "Apagando" "El Equipo se apagará en $2 segundos"
   sleep $2
   poweroff
   exit 0
