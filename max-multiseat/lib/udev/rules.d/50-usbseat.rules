@@ -2,6 +2,9 @@
 # see http://libdlo.freedesktop.org/wiki/DeviceQuirks for more info
 ATTR{idVendor}=="17e9", ATTR{bConfigurationValue}=="2", RUN="/bin/echo 1 > /sys%p/bConfigurationValue"
 
+# Bus 002 Device 015: ID 0711:5100 Magic Control Technology Corp.
+ATTR{idVendor}=="0711",ATTR{idProduct}=="5100",PROGRAM="/bin/cat /sys/%p/../devnum",SYMLINK+="usbseat/%c/display",RUN+="usbseat.sh %c"
+
 # aliases for display, kbd, mouse attached to specific hubs
 
 KERNEL=="fb*",SUBSYSTEMS=="usb",PROGRAM="/bin/cat /sys/%p/../../../devnum",SYMLINK+="usbseat/%c/display",RUN+="usbseat.sh %c"

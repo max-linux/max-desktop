@@ -1,3 +1,12 @@
+max-multiseat (6.0.max8) max; urgency=low
+
+  * Support MWS300:
+    - Depend on xserver-xorg-video-tusb
+    - Add lib/udev/usbseat-xf86.tusb.conf.sed
+    - Launch Xorg and kill it to start USB HUB and get keyboard and mouse
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 30 Jul 2010 16:28:53 +0200
+
 max-multiseat (6.0.max7) max; urgency=low
 
   * Add some gnome-desktop-environment dependes to not uninstall it

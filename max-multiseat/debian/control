@@ -7,7 +7,7 @@ Standards-Version: 3.8.4
 
 Package: max-multiseat
 Architecture: all
-Depends: gdm-2.20, xserver-xorg-video-displaylink, python, deskbar-applet, glchess, glines, gnect, gnibbles, gnobots2, gnome-accessibility, gnome-games, gnotravex, gnotski, gtali, hamster-applet, python-beagle, python-bugbuddy, python-evince, python-evolution, python-gnome2-desktop, python-gnomedesktop, python-gnomeprint, python-gtop, python-mediaprofiles, python-metacity, python-opengl, python-rsvg, seahorse-plugins, sound-juicer, swfdec-gnome
+Depends: gdm-2.20, xserver-xorg-video-displaylink, xserver-xorg-video-tusb, python, deskbar-applet, glchess, glines, gnect, gnibbles, gnobots2, gnome-accessibility, gnome-games, gnotravex, gnotski, gtali, hamster-applet, python-beagle, python-bugbuddy, python-evince, python-evolution, python-gnome2-desktop, python-gnomedesktop, python-gnomeprint, python-gtop, python-mediaprofiles, python-metacity, python-opengl, python-rsvg, seahorse-plugins, sound-juicer, swfdec-gnome
 Provides: gnome-desktop-environment
 Description: Some files to support MultiSeat computers
  Contains:
