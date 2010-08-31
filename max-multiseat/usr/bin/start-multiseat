@@ -7,11 +7,26 @@
 #  fi
 #fi
 
-
-oldIFS=$IFS
-IFS=/
 for seat in /dev/usbseat/*; do
-	set $seat
-	/lib/udev/usbseat.sh $4
+
+  [ "$seat" = "/dev/usbseat/1" ] && continue
+
+  DEV_VEND=$(readlink -f $seat/display | awk -F "/" '{print $5}')
+  DEV_PROD=$(readlink -f $seat/display | awk -F "/" '{print $6}')
+  SEAT_ID=$(echo "$seat"| awk -F"/" '{print $4}')
+
+  echo "$(readlink -f $seat/display) ==> SEAT_ID=$SEAT_ID VENDOR=$DEV_VEND PRODUCT=$DEV_PROD"
+
+  if [ ! -e $seat/mouse ] || [ ! -e $seat/keyboard ]; then
+    # start device
+    echo "$seat/display Call MWS300-init-tool ${DEV_VEND} ${DEV_PROD} "
+    /lib/udev/MWS300-init-tool ${DEV_VEND} ${DEV_PROD}
+    sleep 2
+  fi
+
+  echo "$seat/display Call usbseat.sh $SEAT_ID"
+  /lib/udev/usbseat.sh $SEAT_ID
+
 done
-IFS=$oldIFS
+
+

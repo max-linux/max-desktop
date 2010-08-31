@@ -4,16 +4,30 @@
 # called once for every usb device that MIGHT be part of a seat, when they arrive or remove 
 
 echo "--------------------------------------------" >> /tmp/usbseat.log
-env >> /tmp/usbseat.log
+env | grep -e ^ID -e ^DEV >> /tmp/usbseat.log
 
-if [[ !(-n `/bin/pidof gdm`) ]]; then
-    exit 0
-fi
 
 if [ "$1" = "1"  ]; then
   echo "NOT make things in DISPLAY $1" >> /tmp/usbseat.log
   exit 0
 fi
+
+
+
+if [ "$ID_VENDOR_ID" = "0711" ] && [ "$ID_MODEL_ID" = "5100" ]; then
+    if [ -e /dev/usbseat/$1/keyboard ] && [ -e /dev/usbseat/$1/mouse ] && [ -e /dev/usbseat/$1/display ]; then
+	echo "Device $BUSNUM $DEVNUM initialized" >> /tmp/usbseat.log
+    	/lib/udev/MWS300-init-tool $BUSNUM $DEVNUM >> /tmp/usbseat.log 2>&1
+    	(sleep 5 && /lib/udev/usbseat.sh $1 && tree /dev/usbseat/$1 >> /tmp/usbseat.log) &
+	# exit now
+	exit 0
+    fi
+fi
+
+if [[ !(-n `/bin/pidof gdm`) ]]; then
+    exit 0
+fi
+
 
 seat_running=`/usr/bin/gdmdynamic -l | /bin/sed -n -e "/:$1,/p"`
 
@@ -35,10 +49,15 @@ case "$ACTION" in
 		if [[ -e /dev/usbseat/$1/keyboard && -e /dev/usbseat/$1/mouse && -e /dev/usbseat/$1/display ]]; then
 
 			# We have a newly complete seat. Start it.
-			TMPFILE=`/bin/mktemp` || exit 1
+			#TMPFILE=`/bin/mktemp` || exit 1
+			TMPFILE=`/bin/mktemp -t usbseat.XXXXXXXXXX` || exit 1
 			if lsusb | grep -q 0711:5100; then
 				echo "MWS300 complete, launching GDMdynamic in $1 with $TMPFILE" >> /tmp/usbseat.log
-				/bin/sed "s/%ID_SEAT%/$1/g" < /lib/udev/usbseat-xf86.tusb.conf.sed > $TMPFILE
+				#/bin/sed "s/%ID_SEAT%/$1/g" < /lib/udev/usbseat-xf86.tusb.conf.sed > $TMPFILE
+
+				VEND_ID=$(readlink -f /dev/usbseat/$1/display | awk -F"/" '{print $5}')
+				PROD_ID=$(readlink -f /dev/usbseat/$1/display | awk -F"/" '{print $6}')
+				/bin/sed -e "s/%ID_SEAT%/$1/g" -e "s|%VEND_ID%|$VEND_ID|g" -e "s|%PROD_ID%|$PROD_ID|g"  /lib/udev/usbseat-xf86.tusb.conf.sed > $TMPFILE
 			else
 				/bin/sed "s/%ID_SEAT%/$1/g" < /lib/udev/usbseat-xf86.conf.sed > $TMPFILE
 			fi
@@ -49,29 +68,9 @@ case "$ACTION" in
 
 			/usr/bin/gdmdynamic -v -r $1
 		else
-			if lsusb | grep -q 0711:5100; then
-				echo "MWS300 FIRST RUN ">> /tmp/usbseat.log
-				tree /dev/usbseat/$1 >> /tmp/usbseat.log
-
-				# MWS300 have only sound and display in /dev/usbseat/$1 before Xorg
-				# launch Xorg and kill it
-				if [ -e /dev/usbseat/$1/display ]; then
-					TMPFILE=`/bin/mktemp` || exit 1
-					/bin/sed "s/%ID_SEAT%/$1/g" < /lib/udev/usbseat-xf86.tusb.conf.sed > $TMPFILE
-					/usr/bin/X -br :$1 vt07 -audit 0 -nolisten tcp -config $TMPFILE >> /tmp/usbseat.log 2>&1 &
-					PID=$!
-					echo "Running X -br :$1 vt07 -audit 0 -nolisten tcp -config $TMPFILE in background PID=$PID" >> /tmp/usbseat.log
-					# kill this Xorg before 5secs and relaunch all multiseats
-					(sleep 5 && kill $PID && start-multiseat && tree /dev/usbseat/$1 >> /tmp/usbseat.log) &
-				fi
-			fi
+			echo "Some devices not found" >> /tmp/usbseat.log
+			tree /dev/usbseat/$1 >> /tmp/usbseat.log
 		fi
-		#if [ "$1" = "1" ] && [ -e /dev/usbseat/$1/keyboard ] && [ /dev/usbseat/$1/mouse ]; then
-		#	# start local dynamic
-		#	PID=$(ps aux| grep "X :0" | grep -v grep| awk '{print $2}')
-		#	[ -n $PID ] && kill -9 $PID || true
-		#	/usr/bin/gdmdynamic -v -t 2 -s 1 -a "0=/usr/bin/X -br :0 vt07 -audit 0 -nolisten tcp -config /lib/udev/xorg.conf.display0"
-		#fi
 		;;
 esac
 
