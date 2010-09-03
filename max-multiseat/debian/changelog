@@ -1,3 +1,17 @@
+max-multiseat (6.0.max14) max; urgency=low
+
+  * usr/bin/start-multiseat: fix loop typo and only delete gdmdynamic if not exists
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 03 Sep 2010 18:01:36 +0200
+
+max-multiseat (6.0.max13) max; urgency=low
+
+  * usr/bin/start-multiseat: Stop not needed gdmdynamic sessions
+  * lib/udev/usbseat.sh: fix init of MWS device, runs tool on ACTION=add
+  * etc/cron.d/max-multiseat: call start-multiseat every minute to add/remove seats
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 03 Sep 2010 17:41:48 +0200
+
 max-multiseat (6.0.max12) max; urgency=low
 
   * Fix MWS300 xorg.conf file, need DevId to detect graphic card

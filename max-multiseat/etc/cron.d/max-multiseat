@@ -1,0 +1,5 @@
+# Regular cron jobs for the max-multiseat package
+
+
+# poll for new and old USBSEATS every minute
+*/1 * * * * root [ -x /usr/bin/start-multiseat -a -d /dev/usbseat ] && /usr/bin/start-multiseat >> /tmp/start-multiseat.log 2>&1

@@ -30,3 +30,19 @@ for seat in /dev/usbseat/*; do
 done
 
 
+# need GDM running to stop gdmdynamic
+if [[ !(-n `/bin/pidof gdm`) ]]; then
+    exit 0
+fi
+
+
+# stop all not needed multiseat sessions
+DISPLAYS=$(/usr/bin/gdmdynamic -l | tr ";" "\012" | sed -e "s/:\(.*\),.*,.*/\1/" | tr "\012" " ")
+for d in $DISPLAYS; do
+
+   if [ -d /dev/usbseat/$d ]; then
+     echo "Removing SEAT 'gdmdynamic -v -d $d'"
+     gdmdynamic -v -d $d
+   fi
+
+done

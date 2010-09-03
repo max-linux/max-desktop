@@ -3,12 +3,15 @@
 # the seat number is the kernel device id of the hub the seat's devices are sitting off of
 # called once for every usb device that MIGHT be part of a seat, when they arrive or remove 
 
-echo "--------------------------------------------" >> /tmp/usbseat.log
+echo "-----------ACTION='$ACTION'-------------------------" >> /tmp/usbseat.log
 env | grep -e ^ID -e ^DEV >> /tmp/usbseat.log
 
 
 if [ "$1" = "1"  ]; then
+  #echo "----begin DISPLAY=$1-------------------------" >> /tmp/usbseat.log
   echo "NOT make things in DISPLAY $1" >> /tmp/usbseat.log
+  #env >> /tmp/usbseat.log
+  #echo "------end DISPLAY=$1-------------------------" >> /tmp/usbseat.log
   exit 0
 fi
 
@@ -17,8 +20,10 @@ fi
 if [ "$ID_VENDOR_ID" = "0711" ] && [ "$ID_MODEL_ID" = "5100" ]; then
     if [ -e /dev/usbseat/$1/keyboard ] && [ -e /dev/usbseat/$1/mouse ] && [ -e /dev/usbseat/$1/display ]; then
 	echo "Device $BUSNUM $DEVNUM initialized" >> /tmp/usbseat.log
+   else
+	echo "INIT $BUSNUM $DEVNUM ...." >> /tmp/usbseat.log
     	/lib/udev/MWS300-init-tool $BUSNUM $DEVNUM >> /tmp/usbseat.log 2>&1
-    	(sleep 5 && /lib/udev/usbseat.sh $1 && tree /dev/usbseat/$1 >> /tmp/usbseat.log) &
+    	(sleep 3 && /lib/udev/usbseat.sh $1 && tree /dev/usbseat/$1 >> /tmp/usbseat.log) &
 	# exit now
 	exit 0
     fi
@@ -30,12 +35,17 @@ fi
 
 
 seat_running=`/usr/bin/gdmdynamic -l | /bin/sed -n -e "/:$1,/p"`
+DISPLAY_NUMBER=$(echo $1| sed -e 's/://g')
 
 # $ACTION environment variable is set by udev subsystem
 case "$ACTION" in
 	'remove')
+		echo "REMOVE DISPLAY \$1=$1" >> /tmp/usbseat.log
+		env >> /tmp/usbseat.log
+
 		if [[ -n "{$seat_running}" ]]; then
-			/usr/bin/gdmdynamic -v -d $1
+			echo "/usr/bin/gdmdynamic -v -d $DISPLAY_NUMBER" >> /tmp/usbseat.log
+			/usr/bin/gdmdynamic -v -d $DISPLAY_NUMBER
 		fi
 		;;
 	*)
@@ -75,5 +85,6 @@ case "$ACTION" in
 esac
 
 exit 0
+
 
 
