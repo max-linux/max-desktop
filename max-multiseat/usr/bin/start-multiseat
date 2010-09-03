@@ -40,7 +40,7 @@ fi
 DISPLAYS=$(/usr/bin/gdmdynamic -l | tr ";" "\012" | sed -e "s/:\(.*\),.*,.*/\1/" | tr "\012" " ")
 for d in $DISPLAYS; do
 
-   if [ -d /dev/usbseat/$d ]; then
+   if [ ! -d /dev/usbseat/$d ]; then
      echo "Removing SEAT 'gdmdynamic -v -d $d'"
      gdmdynamic -v -d $d
    fi
