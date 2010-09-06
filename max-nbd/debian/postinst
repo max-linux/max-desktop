@@ -1,0 +1,9 @@
+#!/bin/sh
+
+
+#DEBHELPER#
+
+
+if [ ! -e /etc/nbd-client ]; then
+  /etc/init.d/max-nbd restart || true
+fi

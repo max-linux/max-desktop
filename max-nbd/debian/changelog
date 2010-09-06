@@ -1,0 +1,42 @@
+max-nbd (1.0.max7) max; urgency=low
+
+  * Fix storage server IP 192.168.11.2
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 06 Sep 2010 13:38:47 +0200
+
+max-nbd (1.0.max6) max; urgency=low
+
+  * Fix storage server IP
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 06 Sep 2010 13:23:55 +0200
+
+max-nbd (1.0.max5) max; urgency=low
+
+  * Fix syntax EOF
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 06 Sep 2010 13:16:57 +0200
+
+max-nbd (1.0.max4) max; urgency=low
+
+  * Fix fstab
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 06 Sep 2010 13:14:03 +0200
+
+max-nbd (1.0.max3) max; urgency=low
+
+  * Add fstab on top of code
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 06 Sep 2010 13:12:05 +0200
+
+max-nbd (1.0.max2) max; urgency=low
+
+  * Clean do jobs in /etc/fstab
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 06 Sep 2010 13:06:37 +0200
+
+max-nbd (1.0.max1) max; urgency=low
+
+  * Initial version
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 03 Sep 2010 18:25:49 +0200
+

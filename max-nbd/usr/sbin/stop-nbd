@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+#
+#  Stop NBD devices
+#
+#
+#
+
+# exit if nbd0 not in fstab
+grep -q /dev/nbd0 /etc/fstab || exit 0
+
+# turn off quotas
+/etc/init.d/quota off
+
+# umount nbd and disconnect
+grep -q /dev/nbd0 /proc/mounts && /etc/init.d/nbd-client stop
+

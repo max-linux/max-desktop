@@ -1,0 +1,109 @@
+#!/bin/bash
+#
+#
+#  Start NBD devices
+#
+#
+#
+
+# add to fstab
+grep -q nbd0 /etc/fstab || cat << EOF >> /etc/fstab
+
+# servidor de almacenamianto por NBD
+/dev/nbd0	/home/samba	ext4	defaults,rw,noauto,usrquota,grpquota,acl,user_xattr	0	0
+
+EOF
+
+mkdir -p /home/samba
+
+
+
+
+# don't put on kernel initramfs NBD stuff
+if [ -f /usr/share/initramfs-tools/hooks/nbd ] || [ -f /usr/share/initramfs-tools/scripts/local-top/nbd ]; then
+  rm -f /usr/share/initramfs-tools/hooks/nbd /usr/share/initramfs-tools/scripts/local-top/nbd
+  if [ -f /usr/sbin/update-initramfs ]; then
+    /usr/sbin/update-initramfs -u
+  fi
+fi
+
+
+# fix nbd-client script
+sed -e 's/modprobe -k/modprobe/g' /etc/init.d/nbd-client > /etc/init.d/nbd-client.new
+cat /etc/init.d/nbd-client.new > /etc/init.d/nbd-client
+rm -f /etc/init.d/nbd-client.new
+
+
+# create /etc/nbd-client
+if [ ! -f /etc/nbd-client ]; then
+
+cat << EOF > /etc/nbd-client
+# If you don't want to reconfigure this package after installing, uncomment
+# the following line:
+AUTO_GEN="n"
+# If you don't want the init script to kill nbd-client devices that aren't
+# specified in this configuration file, set the following to "false":
+KILLALL=false
+# Note that any statical settings in this file will be preserved
+# regardless of the setting of AUTO_GEN, so its use is only recommended
+# if you set things in a dynamical way (e.g., through a database)
+#
+# Name of the first used nbd /dev-entry:
+NBD_DEVICE[0]=/dev/nbd0
+#
+# Type; s=swap, f=filesystem (with entry in /etc/fstab), r=raw (no other setup
+# than to run the client)
+NBD_TYPE[0]=f
+#
+# The host on which the nbd-server process is running
+NBD_HOST[0]=192.168.11.2
+#
+# The port on which this client needs to connect
+NBD_PORT[0]=12345
+
+EOF
+
+fi
+
+
+
+if grep -q nbd /etc/rc.local; then
+
+cat << EOF > /etc/rc.local 
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+exit 0
+
+EOF
+fi
+
+# remove quota in reboot/poweroff
+rm -f /etc/rc0.d/K*quota
+rm -f /etc/rc6.d/K*quota
+
+
+# start nbd-client
+modprobe -q nbd
+
+grep -q /dev/nbd0 /proc/mounts || /etc/init.d/nbd-client start
+
+/etc/init.d/quota start
+
+[ -x /etc/init.d/ebox ] && /etc/init.d/ebox samba restart
+
+# create SAMBA dirs
+if [ ! -e /home/samba/netlogon/logon.bat ]; then
+   mkdir -p /home/samba/groups /home/samba/netlogon /home/samba/profiles /home/samba/shares /home/samba/users
+   dpkg-reconfigure max-control
+fi
