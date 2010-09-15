@@ -1,3 +1,9 @@
+max-gnome-default-settings (6.0.max9) max; urgency=low
+
+  * Rebuild gnome bottom panel dump
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Sep 2010 23:31:37 +0200
+
 max-gnome-default-settings (6.0.max8) max; urgency=low
 
   * gconf/desktop.gnome.interface.gconf, enable buttons_have_icons and menus_have_icons
