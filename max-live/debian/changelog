@@ -1,3 +1,17 @@
+max-live (6.0.max5) max; urgency=low
+
+  * Add LSB headers
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Sep 2010 19:23:45 +0200
+
+max-live (6.0.max4) max; urgency=low
+
+  * Update casper init.d script (translate messages)
+  * Add max-live init on rebot/shutdown
+    - Clean 70-persitent-net.rules (close ticket #254) 
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Sep 2010 19:03:37 +0200
+
 max-live (6.0.max3) max; urgency=low
 
   * Remove 'set -x' from 11max script

@@ -2,6 +2,8 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
+DEB_UPDATE_RCD_PARAMS := "stop 10 0 1 6 ."
+
 binary-install/max-live::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-live -type d -name .svn | xargs rm -rf --

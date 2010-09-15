@@ -89,7 +89,7 @@ do_stop ()
 	prompt=
     fi
 
-    for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty); do
+    for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth /sbin/usplash_write; do
         cache_path "$path"
     done
 
@@ -97,20 +97,27 @@ do_stop ()
 
     [ "$prompt" ] || return 0
 
-    stty sane < /dev/console
-
     # XXX - i18n
-    #echo "Please remove the disc and close the tray (if any) then press ENTER: " > /dev/console
-    echo "Por favor, retire el disco, cierre la bandeja y pulse RETORNO: " > /dev/console
-    if [ -x /sbin/usplash_write ]; then
-        /sbin/usplash_write "TIMEOUT 86400"
-        #/sbin/usplash_write "TEXT-URGENT Please remove the disc, close the tray (if any)"
-        #/sbin/usplash_write "TEXT-URGENT and press ENTER to continue"
-        /sbin/usplash_write "TEXT-URGENT Por favor, retire el disco, cierre la bandeja"
-        /sbin/usplash_write "TEXT-URGENT y pulse RETORNO para continuar"
-    fi
+    #MSG="Please remove the disc and close the tray (if any) then press ENTER: "
+    MSG="Por favor, retire el disco, cierre la bandeja y pulse RETORNO para continuar"
 
-    read x < /dev/console
+    if [ -x /bin/plymouth ] && plymouth --ping; then
+        plymouth message --text="$MSG"
+        plymouth watch-keystroke > /dev/null
+    else
+        stty sane < /dev/console
+
+        echo $MSG > /dev/console
+        if [ -x /sbin/usplash_write ]; then
+            /sbin/usplash_write "TIMEOUT 86400"
+            #/sbin/usplash_write "TEXT-URGENT Please remove the disc, close the tray (if any)"
+            #/sbin/usplash_write "TEXT-URGENT and press ENTER to continue"
+            /sbin/usplash_write "TEXT-URGENT Por favor, retire el disco, cierre la bandeja"
+            /sbin/usplash_write "TEXT-URGENT y pulse RETORNO para continuar"
+
+        fi
+        read x < /dev/console
+    fi
 }
 
 case "$1" in
