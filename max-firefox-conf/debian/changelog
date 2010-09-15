@@ -1,3 +1,22 @@
+max-firefox-conf (6.0.max7) max; urgency=low
+
+  * Reenable all extensions depends
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 02 Sep 2010 19:23:58 +0200
+
+max-firefox-conf (6.0.max6) max; urgency=low
+
+  * Add max-ubunfox to Depends
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 02 Sep 2010 18:58:45 +0200
+
+max-firefox-conf (6.0.max5) max; urgency=low
+
+  * Backport max-firefox-conf from MAX 6.0 to MAX 5.0
+  * Delete max-ubufox depends
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 02 Sep 2010 16:06:23 +0200
+
 max-firefox-conf (6.0.max4) max; urgency=low
 
   * Install cert8.db in /etc/firefox/profile/, and don't put firefox.sh script

@@ -12,10 +12,10 @@ Depends: max-dpsyco-custom,
          firefox, 
          apturl,
 	 max-ubufox,
-#         firefox-greasemonkey, 
-#         firefox-downloadhelper, 
+         firefox-greasemonkey, 
+         firefox-downloadhelper, 
          firefox-procon-latte,
-#         firefox-stylish
+         firefox-stylish
 #Conflicts: firefox (<=3.6.2), firefox (>=3.6.4)
 Description: Configuración de firefox para Ubuntu/MAX.
  Configuración basada en dpsyco/ubufox para firefox.
