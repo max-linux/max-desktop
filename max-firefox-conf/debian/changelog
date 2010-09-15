@@ -1,3 +1,28 @@
+max-firefox-conf (6.0.max11) max; urgency=low
+
+  * Fix --auto in postinst
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Sep 2010 17:58:39 +0200
+
+max-firefox-conf (6.0.max10) max; urgency=low
+
+  * Force alternative to be set to firefox
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Sep 2010 17:46:57 +0200
+
+max-firefox-conf (6.0.max9) max; urgency=low
+
+  * Remove Conflicts with: firefox-3.0, firefox-3.0-branding, firefox-3.0-gnome-support
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Sep 2010 17:37:40 +0200
+
+max-firefox-conf (6.0.max8) max; urgency=low
+
+  * Fix #278: remove and create x-www-browser (link point to firefox-3.0)
+  * Conflicts with: firefox-3.0, firefox-3.0-branding, firefox-3.0-gnome-support
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Sep 2010 17:29:31 +0200
+
 max-firefox-conf (6.0.max7) max; urgency=low
 
   * Reenable all extensions depends

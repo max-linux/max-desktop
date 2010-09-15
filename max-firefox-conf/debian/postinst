@@ -19,7 +19,27 @@ case "$1" in
        fi
     fi
 
-    
+    # configure alternatives
+    if [ "$(readlink /etc/alternatives/x-www-browser)" = "/usr/bin/firefox-3.0" ]; then
+      # remove alternative
+      update-alternatives --remove /usr/bin/x-www-browser /usr/bin/firefox 2>/dev/null|| true
+      update-alternatives --remove /usr/bin/x-www-browser /usr/bin/firefox-3.0 2>/dev/null || true
+      update-alternatives --remove x-www-browser /usr/bin/firefox 2>/dev/null || true
+      update-alternatives --remove x-www-browser /usr/bin/firefox-3.0 2>/dev/null || true
+
+      if [ -e /etc/alternatives/x-www-browser ]; then
+        # force removal
+        rm -f /etc/alternatives/x-www-browser
+        ln -s /usr/bin/firefox /etc/alternatives/x-www-browser
+      fi
+    fi
+
+    # install new alternative
+    update-alternatives --install /usr/bin/x-www-browser \
+        x-www-browser /usr/bin/firefox 40
+
+    update-alternatives --auto x-www-browser
+
 
     ;;
 

@@ -16,6 +16,7 @@ Depends: max-dpsyco-custom,
          firefox-downloadhelper, 
          firefox-procon-latte,
          firefox-stylish
+#Conflicts: firefox-3.0, firefox-3.0-branding, firefox-3.0-gnome-support
 #Conflicts: firefox (<=3.6.2), firefox (>=3.6.4)
 Description: Configuración de firefox para Ubuntu/MAX.
  Configuración basada en dpsyco/ubufox para firefox.
