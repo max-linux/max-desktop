@@ -401,7 +401,7 @@ if [ -f /tmp/max_install_type ] && [ "$(grep -c profesor /tmp/max_install_type)"
 fi
 
 # force locale
-cat << EOF > $ROOT/etc/default/locale
+cat << EOF >> $ROOT/etc/default/locale
 LANG="es_ES.UTF-8"
 LC_ALL="es_ES.UTF-8"
 EOF

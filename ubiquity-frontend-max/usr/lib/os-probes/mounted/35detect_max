@@ -22,7 +22,10 @@ if [ -f $dir/boot/grub/menu.lst ]; then
 fi
 
 if [ -f $dir/boot/grub/grub.cfg ]; then
-  first_entry=$(grep ^menuentry $dir/boot/grub/grub.cfg | head -1 | awk -F'"' '{print $2}')
+  first_entry=$(grep ^menuentry $dir/boot/grub/grub.cfg | grep -i max | head -1 | awk -F'"' '{print $2}')
+  if [ "$first_entry" = "" ]; then
+    first_entry=$(grep ^menuentry $dir/boot/grub/grub.cfg | grep -i max | head -1 | awk -F"'" '{print $2}')
+  fi
   if [ "$(echo $first_entry | grep -c -i max)" != "0" ]; then
     # is MaX example: (MaX 6.0, with Linux 2.6.32-15-generic)
     short=$(echo $first_entry| awk -F"," '{print $1}')

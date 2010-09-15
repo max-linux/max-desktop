@@ -1,3 +1,11 @@
+ubiquity-frontend-max (6.0.max25) max; urgency=low
+
+  * Sync with ubiquity 2.2.25
+  * Fix usr/lib/os-probes/mounted/35detect_max (use double and simeple quotes in grub.cfg)
+  * usr/lib/ubiquity/user-setup/user-setup-apply (append locales, not overwrite file)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Sep 2010 16:05:02 +0200
+
 ubiquity-frontend-max (6.0.max24) max; urgency=low
 
   * Disable install_type_nanomax when no nanomax/filesystem.squashfs
