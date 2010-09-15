@@ -1,3 +1,9 @@
+max-genlive (6.0.max12) max; urgency=low
+
+  * Add acpi=force reboot=warm to cmdline
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 01 Jul 2010 22:07:41 +0200
+
 max-genlive (6.0.max11) max; urgency=low
 
   * Bump version alpha3
