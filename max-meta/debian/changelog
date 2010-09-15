@@ -1,3 +1,13 @@
+max-meta (6.0.max22) max; urgency=low
+
+  * desktop-common, add:
+    - openclipart-openoffice.org
+  * desktop-gnome, remove:
+    - abiword
+    - gnumeric
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Sep 2010 18:38:56 +0200
+
 max-meta (6.0.max21) max; urgency=low
 
   * Add new packages:
