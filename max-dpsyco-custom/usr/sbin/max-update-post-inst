@@ -54,5 +54,25 @@ if [ -f /usr/share/initramfs-tools/hooks/dropbear ]; then
 fi
 
 
+# configure SSH to not allow danger logins
+if [ -f /etc/ssh/sshd_config ]; then
+  if ! grep -q "# MAX" /etc/ssh/sshd_config ; then
+    cat << EOF >> /etc/ssh/sshd_config
+
+# ******** no borrar este comentario ******
+# MAX
+# deshabilitar contraseñas conocidas
+# para activar el login cambiar la contraseña
+# del usuario que se quiera habilitar y eliminar
+# su nombre de la siguiente línea
+#
+#
+DenyUsers madrid alumno profesor
+EOF
+  # restart ssh service
+  restart ssh || true
+  fi
+fi
+
 
 /usr/sbin/update-dpsyco-skel > /dev/null 2>&1 || true
