@@ -1,3 +1,10 @@
+max-ldap (0.17) max; urgency=low
+
+  * 80_configure_ldap_session:
+    - Create ~/Escritorio/.hidden with Windows files (lnk or url)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 06 Sep 2010 20:12:52 +0200
+
 max-ldap (0.16) max; urgency=low
 
   * max-control: Add notify support with sudo

@@ -73,3 +73,20 @@ if id | grep -q "__USERS__"; then
         done
     fi
 fi
+
+
+
+# hide windows documents
+if ls $HOME/Escritorio/*lnk >/dev/null 2>&1; then
+  cd $HOME/Escritorio
+  ls *lnk *url -1 > $HOME/Escritorio/.hidden
+  cat << EOF >> $HOME/Escritorio/.hidden
+desktop.ini
+Microsoft Office
+Programas
+\$RECYCLE.BIN
+EOF
+
+  cd $HOME
+
+fi
