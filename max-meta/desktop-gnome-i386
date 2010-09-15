@@ -7,6 +7,8 @@ bluez-cups
 bluez-utils
 bogofilter
 cheese
+clamav
+clamtk
 ctags
 compizconfig-settings-manager
 dasher
@@ -65,6 +67,7 @@ libxine1-ffmpeg
 max-gnome-default-settings
 meld
 min12xxw
+molly-guard
 nautilus
 nautilus-filename-repairer
 nautilus-mount-image
@@ -74,8 +77,12 @@ network-manager-openvpn-gnome
 network-manager-vpnc-gnome
 openoffice.org-gnome
 openoffice.org-gtk
+openssh-server
+openssh-blacklist
+openssh-blacklist-extras
 pmount
 policykit-gnome
+rssh
 scrollkeeper
 shutter
 synaptic

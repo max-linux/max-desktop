@@ -1,3 +1,17 @@
+max-meta (6.0.max21) max; urgency=low
+
+  * Add new packages:
+    - openssh-server openssh-blacklist openssh-blacklist-extras 
+    - molly-guard 
+    - rssh 
+    - clamav clamtk
+  * Add new packages to nanomax:
+    - clamav
+    - testdisk
+  * Close ticket #277
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Sep 2010 18:08:52 +0200
+
 max-meta (6.0.max20) max; urgency=low
 
   * Depends on gdm or gdm-2.20
