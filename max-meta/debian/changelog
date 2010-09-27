@@ -1,3 +1,10 @@
+max-meta (6.0.max28) max; urgency=low
+
+  * desktop-gnome, remove:
+    - gwenview
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 27 Sep 2010 19:54:50 +0200
+
 max-meta (6.0.max27) max; urgency=low
 
   * Remove kipi-plugins (install a lot of KDE packages)
