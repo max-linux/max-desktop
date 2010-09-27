@@ -1,3 +1,51 @@
+max-meta (6.0.max27) max; urgency=low
+
+  * Remove kipi-plugins (install a lot of KDE packages)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 27 Sep 2010 14:42:17 +0200
+
+max-meta (6.0.max26) max; urgency=low
+
+  * desktop-common, add:
+    - openclipart-svg
+    - kipi-plugins
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 27 Sep 2010 14:37:33 +0200
+
+max-meta (6.0.max25) max; urgency=low
+
+  * desktop-gnome, add:
+    - Openshot, close ticket #286
+  * desktop-common, add:
+    - gnuchess (Needed by gcompris) close ticket #290
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 23 Sep 2010 17:54:35 +0200
+
+max-meta (6.0.max24) max; urgency=low
+
+  * Fix depends and recommends in max-desktop-infantil-primaria
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 21 Sep 2010 16:23:26 +0200
+
+max-meta (6.0.max23) max; urgency=low
+
+  * desktop-gnome, add:
+    - openoffice.org-pdfimport (Close ticket #285)
+    - pdfshuffler (Close ticket #283)
+    - remove pmount (obsolete)
+  * new desktop-infantil-primaria:
+    - blinken
+    - childsplay & childsplay-alphabet-sounds-es
+    - frozen-bubble
+    - gpaint
+    - ktuberling
+    - omnitux
+    - pysycache
+    - ttf-linex
+  * 
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 21 Sep 2010 14:48:13 +0200
+
 max-meta (6.0.max22) max; urgency=low
 
   * desktop-common, add:

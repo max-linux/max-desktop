@@ -2,7 +2,7 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
-PACKAGES=desktop-common desktop-gnome desktop-kde desktop-kde-extra desktop-xfce desktop-lxde server drivers nanomax
+PACKAGES=desktop-common desktop-gnome desktop-kde desktop-kde-extra desktop-xfce desktop-lxde server drivers nanomax desktop-infantil-primaria
 
 DEB_BUILD_ARCH=i386
 

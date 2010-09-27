@@ -267,3 +267,13 @@ Description: The Max drivers metapackage
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
 
+
+Package: max-desktop-infantil-primaria
+Architecture: all
+Recommends: ${max-desktop-infantil-primaria:Recommends}, ${max-desktop-infantil-primaria:Depends}
+Description: Infantil and primaria metapackage
+ This package depends on all apps, games and tools for infantil
+ and primaria schools.
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
