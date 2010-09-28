@@ -33,7 +33,6 @@ export UCF_FORCE_CONFFOLD=1
 export ERROR=0
 dpkg --configure -a
 apt-get $APT_OPTS -f install
-apt-get $APT_OPTS upgrade || ERROR=1
 apt-get $APT_OPTS dist-upgrade || ERROR=1
 apt-get $APT_OPTS autoremove --purge
 apt-get clean

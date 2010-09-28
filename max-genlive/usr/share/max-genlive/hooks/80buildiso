@@ -42,9 +42,10 @@ cp /boot/memtest86+.bin $CDRW/casper/memtest.bin
 _echo "Generando md5sum de archivos de dentro del DVD..."
 #(cd $CDRW && find . -type f -print0 | grep -v boot.cat | grep -v isolinux.bin | xargs -0 md5sum > md5sum.txt)
 (cd $CDRW && find . -type f -print0 | xargs -0 md5sum > md5sum.txt)
+
 # delete boot.cat and isolinux.bin
-grep -e -v "boot.cat" -e "isolinux.bin" md5sum.txt > md5sum.txt.new
-mv md5sum.txt.new md5sum.txt
+(cd $CDRW && grep -v -e "boot.cat" -e "isolinux.bin" md5sum.txt > md5sum.txt.new)
+(cd $CDRW && mv md5sum.txt.new md5sum.txt)
 
 #(cd debian/python-exe >/dev/null ; find . -type f  ! -regex '.*/DEBIAN/.*' -printf '%P\0' | xargs -r0 md5sum > DEBIAN/md5sums)
 
