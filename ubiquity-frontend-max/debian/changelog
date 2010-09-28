@@ -1,3 +1,10 @@
+ubiquity-frontend-max (6.0.max26) max; urgency=low
+
+  * usr/lib/ubiquity/plugins/ubi-installtype.py:
+    - Fix detect nanomax squashfs path
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 28 Sep 2010 16:50:20 +0200
+
 ubiquity-frontend-max (6.0.max25) max; urgency=low
 
   * Sync with ubiquity 2.2.25
