@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Kino (editor de vídeo)
+GenericName=Video Editor
+GenericName[es]=Editor de vídeo
+Comment=Edit DV video
+Comment[es]=Editar vídeos DV
+TryExec=kino
+Exec=kino %F
+Icon=kino.png
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;AudioVideo;AudioVideoEditing;
+MimeType=video/dv;application/smil

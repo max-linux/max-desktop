@@ -1,3 +1,12 @@
+max-menus (6.0.max9) max; urgency=low
+
+  * Overwrite more desktop files:
+    filezilla.desktop, tuxguitar.desktop, Kino.desktop, 
+    pdfshuffler.desktop, gv.desktop, firestarter.desktop, 
+    simple-scan.desktop
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 28 Sep 2010 23:16:31 +0200
+
 max-menus (6.0.max8) max; urgency=low
 
   * Remove WebHTTrack (fix duplicate in max-dpsyco-custom)

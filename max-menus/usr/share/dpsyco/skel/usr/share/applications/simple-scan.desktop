@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Escanear documentos
+Comment=Escanear documentos
+TryExec=/usr/bin/simple-scan
+Exec=simple-scan
+Icon=scanner
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Graphics;Scanning;
+X-GNOME-Gettext-Domain=simple-scan
+

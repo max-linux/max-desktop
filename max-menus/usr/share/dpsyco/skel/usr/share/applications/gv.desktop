@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=gv
+GenericName=PS and PDF viewer
+Comment=View PS and/or PDF files
+Exec=gv
+Icon=/usr/share/pixmaps/gv_icon.xpm
+Terminal=false
+Type=Application
+MimeType=application/ps;application/pdf;
+Categories=Viewer;Graphics;
+NoDisplay=true
