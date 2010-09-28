@@ -226,6 +226,8 @@
 			<Exclude><Filename>denemo.desktop</Filename></Exclude>
 			<Exclude><Filename>josm.desktop</Filename></Exclude>
 			<Exclude><Filename>kde4-marble.desktop</Filename></Exclude>
+			<Exclude><Filename>qelectrotech.desktop</Filename></Exclude>
+			<Exclude><Filename>ktechlab.desktop</Filename></Exclude>
 		</Menu>
 
 		<Menu>
@@ -335,6 +337,12 @@
 			<Include><Filename>josm.desktop</Filename></Include>
 			<Include><Filename>max-openstreetmap.desktop</Filename></Include>
 			<Include><Filename>kde4-marble.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Electrónica</Name>
+			<Directory>electronica.directory</Directory>
+			<Include><Filename>ktechlab.desktop</Filename></Include>
+			<Include><Filename>qelectrotech.desktop</Filename></Include>
 		</Menu>
 	</Menu> <!-- End Education -->
 
