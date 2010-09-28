@@ -5,6 +5,10 @@
 
 echo "Procesando disparadores para max ..."
 
+/usr/sbin/update-dpsyco-skel > /dev/null 2>&1 || true
+
+rm -f /usr/share/applications/Internet/WebHTTrack.desktop  /usr/share/applications/Internet/WebHTTrack-Websites.desktop
+
 if [ -x /usr/share/gnome-menus/update-gnome-menus-cache ]; then
   LC_ALL=C /usr/share/gnome-menus/update-gnome-menus-cache /usr/share/applications > /usr/share/applications/desktop.C.cache
   LC_ALL=es_ES.UTF-8 /usr/share/gnome-menus/update-gnome-menus-cache /usr/share/applications > /usr/share/applications/desktop.es_ES.utf8.cache
@@ -75,4 +79,3 @@ EOF
 fi
 
 
-/usr/sbin/update-dpsyco-skel > /dev/null 2>&1 || true

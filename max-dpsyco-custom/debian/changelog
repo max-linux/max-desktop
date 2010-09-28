@@ -1,3 +1,54 @@
+max-dpsyco-custom (6.0.max23) max; urgency=low
+
+  * Update skel before doing actions
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 21 Sep 2010 18:50:51 +0200
+
+max-dpsyco-custom (6.0.max22) max; urgency=low
+
+  * usr/sbin/max-update-post-inst:
+    - Delete WebHTTrack
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 21 Sep 2010 18:46:40 +0200
+
+max-dpsyco-custom (6.0.max21) max; urgency=low
+
+  * Don't remove usr/share/dpsyco/skel/usr/share/applications/Internet
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 21 Sep 2010 18:36:20 +0200
+
+max-dpsyco-custom (6.0.max20) max; urgency=low
+
+  * Re add WebHTTrack and conclict with old max-menus
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 21 Sep 2010 18:25:26 +0200
+
+max-dpsyco-custom (6.0.max19) max; urgency=low
+
+  * Move WebHTTrack to max-menus
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 21 Sep 2010 18:01:19 +0200
+
+max-dpsyco-custom (6.0.max18) max; urgency=low
+
+  * etc/cron.d/clamav-freshclam:
+    - Set user 'clamav'
+    - Sleep random time before update
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 16 Sep 2010 01:15:44 +0200
+
+max-dpsyco-custom (6.0.max17) max; urgency=low
+
+  * Include cron.d in debian/install
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 16 Sep 2010 00:03:01 +0200
+
+max-dpsyco-custom (6.0.max16) max; urgency=low
+
+  * etc/cron.d/clamav-freshclam: run freshclam from cron
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Sep 2010 23:59:09 +0200
+
 max-dpsyco-custom (6.0.max15) max; urgency=low
 
   * usr/sbin/max-update-post-inst:
