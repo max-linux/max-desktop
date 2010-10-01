@@ -16,7 +16,7 @@ Description: The Max desktop system
 
 Package: max-desktop-deps
 Architecture: all
-Depends: max-desktop, max-desktop-common, max-desktop-gnome | max-desktop-kde | max-desktop-xfce
+Depends: max-desktop, max-desktop-common-deps, max-desktop-gnome-deps | max-desktop-kde-deps | max-desktop-xfce-deps
 Description: The Max desktop system
  This package depends on all of the packages in the Max desktop system
  .
@@ -36,7 +36,7 @@ Description: The Max desktop system (GNOME desktop)
 
 Package: max-desktop-gnome-deps
 Architecture: all
-Depends: max-desktop-gnome, max-desktop-common, ${max-desktop-gnome-deps:Depends}
+Depends: max-desktop-gnome, max-desktop-common-deps, ${max-desktop-gnome-deps:Depends}
 Recommends: ${max-desktop-gnome-deps:Recommends}
 Provides: max-desktop
 Description: The Max desktop system (GNOME desktop)
@@ -57,7 +57,7 @@ Description: The Max desktop system (KDE desktop)
 
 Package: max-desktop-kde-deps
 Architecture: all
-Depends:  max-desktop-kde, max-desktop-common, ${max-desktop-kde-deps:Depends}
+Depends:  max-desktop-kde, max-desktop-common-deps, ${max-desktop-kde-deps:Depends}
 Recommends: ${max-desktop-kde-deps:Recommends}
 Provides: max-desktop
 Description: The Max desktop system (KDE desktop)
@@ -90,7 +90,7 @@ Description: The Max desktop system (Xfce4 desktop)
 
 Package: max-desktop-xfce-deps
 Architecture: all
-Depends: max-desktop-xfce, max-desktop-common, ${max-desktop-xfce-deps:Depends}
+Depends: max-desktop-xfce, max-desktop-common-deps, ${max-desktop-xfce-deps:Depends}
 Recommends: ${max-desktop-xfce-deps:Recommends}
 Provides: max-desktop
 Description: The Max desktop system (Xfce4 desktop)
@@ -151,7 +151,7 @@ Description: The Max desktop common packages to all desktops
 
 Package: max-desktop-common-deps
 Architecture: all
-Depends: max-desktop-common-deps, ${max-desktop-common-deps:Depends}
+Depends: max-desktop-common, ${max-desktop-common-deps:Depends}
 Description: The Max desktop common packages to all desktops
  This package depends on all of the packages in the Max server system
  .
