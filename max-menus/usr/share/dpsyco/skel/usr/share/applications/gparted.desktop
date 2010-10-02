@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Editor de particiones (GParted)
+GenericName=Editor de particiones
+Comment=Crear, reorganizar y borrar particiones
+Exec=gksu /usr/sbin/gparted
+Icon=gparted
+Terminal=false
+Type=Application
+Categories=GNOME;System;Filesystem;Settings;
+StartupNotify=true

@@ -184,6 +184,7 @@
 			<Exclude><Filename>jclicreports.desktop</Filename></Exclude>
 
 			<Exclude><Filename>MuseCore.desktop</Filename></Exclude>
+			<Exclude><Filename>mscore.desktop</Filename></Exclude>
 
 			<Exclude><Filename>robolinux.desktop</Filename></Exclude>
 			<Exclude><Filename>max-robolinux-doc.desktop</Filename></Exclude>
@@ -228,6 +229,8 @@
 			<Exclude><Filename>kde4-marble.desktop</Filename></Exclude>
 			<Exclude><Filename>qelectrotech.desktop</Filename></Exclude>
 			<Exclude><Filename>ktechlab.desktop</Filename></Exclude>
+			<Exclude><Filename>exe.desktop</Filename></Exclude>
+			<Exclude><Filename>freemind.desktop</Filename></Exclude>
 		</Menu>
 
 		<Menu>
@@ -343,6 +346,12 @@
 			<Directory>electronica.directory</Directory>
 			<Include><Filename>ktechlab.desktop</Filename></Include>
 			<Include><Filename>qelectrotech.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Aplicaciones eLearning</Name>
+			<Directory>elearning.directory</Directory>
+			<Include><Filename>exe.desktop</Filename></Include>
+			<Include><Filename>freemind.desktop</Filename></Include>
 		</Menu>
 	</Menu> <!-- End Education -->
 

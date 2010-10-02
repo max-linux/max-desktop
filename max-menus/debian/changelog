@@ -1,3 +1,11 @@
+max-menus (6.0.max11) max; urgency=low
+
+  * Translate gparted menu (close ticket #293)
+  * Fix duplicate mscore menu (close ticket #291)
+  * New submenu elearning.directory (close ticket #291)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 02 Oct 2010 19:39:04 +0200
+
 max-menus (6.0.max10) max; urgency=low
 
   * Add 'Electrónica' submenu and unhide ktechlab
