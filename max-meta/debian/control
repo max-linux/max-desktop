@@ -270,6 +270,7 @@ Description: The Max drivers metapackage
 
 Package: max-desktop-infantil-primaria
 Architecture: all
+Depends: ${max-desktop-infantil-primaria:Recommends}, ${max-desktop-infantil-primaria:Depends}
 Recommends: ${max-desktop-infantil-primaria:Recommends}, ${max-desktop-infantil-primaria:Depends}
 Description: Infantil and primaria metapackage
  This package depends on all apps, games and tools for infantil
