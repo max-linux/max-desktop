@@ -1,3 +1,16 @@
+max-gnome-default-settings (6.0.max11) max; urgency=low
+
+  * max-gnome-default-settings-infantil-primaria:
+    - Add new backgrounds and set in postinst
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 02 Oct 2010 17:18:22 +0200
+
+max-gnome-default-settings (6.0.max10) max; urgency=low
+
+  * Add package max-gnome-default-settings-infantil-primaria
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 02 Oct 2010 16:53:23 +0200
+
 max-gnome-default-settings (6.0.max9) max; urgency=low
 
   * Rebuild gnome bottom panel dump

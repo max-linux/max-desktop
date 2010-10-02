@@ -3,6 +3,9 @@
 include /usr/share/cdbs/1/rules/debhelper.mk
 
 install/max-gnome-default-settings::
+	find $(CURDIR)/debian/max-gnome-default-settings -type d -name .svn | xargs rm -rf --
 	install -m 755 maxgconf.sh $(CURDIR)/debian/max-gnome-default-settings/usr/bin/maxgconf
 
 
+install/max-gnome-default-settings-infantil-primaria::
+	find $(CURDIR)/debian/max-gnome-default-settings-infantil-primaria -type d -name .svn | xargs rm -rf --
