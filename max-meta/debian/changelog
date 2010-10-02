@@ -1,3 +1,17 @@
+max-meta (6.0.max35) max; urgency=low
+
+  * Force max-desktop-common depends on openshot
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 02 Oct 2010 18:47:38 +0200
+
+max-meta (6.0.max34) max; urgency=low
+
+  * Move opneshot desktop-gnome => desktop-common
+  * Move openssh-server, openssh-blacklist, openssh-blacklist-extra
+    from desktop-gnome => desktop-common
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 02 Oct 2010 18:32:20 +0200
+
 max-meta (6.0.max33) max; urgency=low
 
   * desktop-infantil-primaria, add:

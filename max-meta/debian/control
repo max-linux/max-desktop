@@ -143,6 +143,7 @@ Description: The Max server system
 Package: max-desktop-common
 Architecture: all
 Recommends: ${max-desktop-common:Depends}
+Depends: openshot
 Description: The Max desktop common packages to all desktops
  This package depends on all of the packages in the Max server system
  .
@@ -151,7 +152,7 @@ Description: The Max desktop common packages to all desktops
 
 Package: max-desktop-common-deps
 Architecture: all
-Depends: max-desktop-common, ${max-desktop-common-deps:Depends}
+Depends: max-desktop-common, openshot, ${max-desktop-common-deps:Depends}
 Description: The Max desktop common packages to all desktops
  This package depends on all of the packages in the Max server system
  .
