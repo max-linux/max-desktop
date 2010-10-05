@@ -22,7 +22,7 @@ fi
 
 if [ "$1" = "rebootdo" ]; then
   sleep $2
-  reboot
+  /sbin/reboot
   exit 0
 fi
 
@@ -35,7 +35,7 @@ fi
 
 if [ "$1" = "poweroffdo" ]; then
   sleep $2
-  poweroff
+  /sbin/poweroff
   exit 0
 fi
 

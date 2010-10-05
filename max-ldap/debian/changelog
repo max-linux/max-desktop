@@ -1,3 +1,9 @@
+max-ldap (0.18) max; urgency=low
+
+  * Call reboot and poweroff with absolute PATH
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 05 Oct 2010 16:02:25 +0200
+
 max-ldap (0.17) max; urgency=low
 
   * 80_configure_ldap_session:
