@@ -183,7 +183,6 @@
 			<Exclude><Filename>jclicauthor.desktop</Filename></Exclude>
 			<Exclude><Filename>jclicreports.desktop</Filename></Exclude>
 
-			<Exclude><Filename>MuseCore.desktop</Filename></Exclude>
 			<Exclude><Filename>mscore.desktop</Filename></Exclude>
 
 			<Exclude><Filename>robolinux.desktop</Filename></Exclude>
@@ -331,7 +330,7 @@
 			<Name>Música</Name>
 			<Directory>musica.directory</Directory>
 			<Include><Filename>denemo.desktop</Filename></Include>
-			<Include><Filename>MuseScore.desktop</Filename></Include>
+			<Include><Filename>mscore.desktop</Filename></Include>
 			<Include><Filename>kde4-rosegarden.desktop</Filename></Include>
 		</Menu>
 		<Menu>
