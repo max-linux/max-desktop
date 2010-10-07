@@ -4,10 +4,11 @@ create_link() {
   # $1 is final link
   # $2 is origin
   # $3 is username
-  [ -L $1 ] && rm -f $1
-  if [ ! -e $1 ]; then
-    cp $2 $1 
-    chown $3 $1
+  [ -L "$1" ] && rm -f "$1"
+  if [ ! -e "$1" ]; then
+    cp "$2" "$1"
+    chown "$3" "$1"
+    chmod +x "$1"
   fi
 }
 
@@ -31,7 +32,7 @@ case "$1" in
     if [ -e /etc/samba/smb.conf ]; then
       # configure SAMBA (without dpsyco)
       update-dpsyco-skel >/dev/null 2>&1
-      grep -q MAX50AULAMAX /etc/samba/smb.conf || \
+      grep -q MAX60AULAMAX /etc/samba/smb.conf || \
          cat /usr/share/max-skel-conf/etc/samba/smb.conf > /etc/samba/smb.conf
     fi
 
@@ -41,6 +42,8 @@ gdm shared/default-x-display-manager select gdm
 kdm shared/default-x-display-manager select gdm
 EOF
 
+    # desktop files need +x bit
+    chmod +x /etc/skel/Escritorio/manual.desktop
 
     ;;
 
