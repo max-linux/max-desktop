@@ -1,3 +1,10 @@
+max-ldap (0.19) max; urgency=low
+
+  * Disable dbrootlogin
+  * Delete /etc/ldap.secret and comment rootbinddn in /etc/ldap.conf
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 08 Oct 2010 14:13:08 +0200
+
 max-ldap (0.18) max; urgency=low
 
   * Call reboot and poweroff with absolute PATH

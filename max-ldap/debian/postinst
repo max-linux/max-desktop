@@ -12,6 +12,12 @@ if [ "$1" = "configure" ]; then
         update-grub
     fi
 
+    if [ -f /etc/ldap.conf ] && [ "$(grep -c ^rootbinddn /etc/ldap.conf)" != "0" ]; then
+      # disable rootbinddn
+      sed -i -e 's/rootbinddn/#rootbinddn/g' /etc/ldap.conf
+      rm -f /etc/ldap.secret
+    fi
+
 fi
 
 

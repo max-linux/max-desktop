@@ -168,7 +168,7 @@ class MAXLDAP(object):
         preseed="""ldap-auth-config	ldap-auth-config/bindpw	password	$PASSWORD$
 ldap-auth-config	ldap-auth-config/rootbindpw	password	$PASSWORD$
 ldap-auth-config	ldap-auth-config/binddn	string	$ADMIN$
-ldap-auth-config	ldap-auth-config/dbrootlogin	boolean	true
+ldap-auth-config	ldap-auth-config/dbrootlogin	boolean	false
 ldap-auth-config	ldap-auth-config/rootbinddn	string	$ADMIN$
 ldap-auth-config	ldap-auth-config/pam_password	select	md5
 ldap-auth-config	ldap-auth-config/move-to-debconf	boolean	true
