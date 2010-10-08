@@ -28,8 +28,19 @@ case $1 in
          max_gconf_load "$home/.gconf" $_file
          chown -R $username $home/.gconf || true
        done
+
+       # filename contain mandatory string
+       if [ $(echo $_file | grep -c "mandatory") -gt 0 ]; then
+         echo "Loading mandatory gconf values in $(basename $_file)"
+         max_gconf_load "/etc/gconf/gconf.xml.mandatory" $_file
+       else
+         echo "Loading defaults gconf values in $(basename $_file)"
+         max_gconf_load "/etc/gconf/gconf.xml.defaults" $_file
+       fi
+
+
      done
      ;;
 esac
 
-##DEBHELPER##
+#DEBHELPER#
