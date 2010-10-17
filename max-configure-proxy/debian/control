@@ -1,0 +1,13 @@
+Source: max-configure-proxy
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 7.0.0), cdbs, python, python-support
+Standards-Version: 3.8.4
+
+Package: max-configure-proxy
+Architecture: all
+Depends: python, python-gtk2, gksu
+Description: Configurar PROXY para MaX
+ Interfaz gráfica para configurar PROXY en MAX
+
