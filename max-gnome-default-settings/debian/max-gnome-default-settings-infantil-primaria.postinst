@@ -38,6 +38,13 @@ case $1 in
          max_gconf_load "/etc/gconf/gconf.xml.defaults" $_file
        fi
 
+     #/etc/skel/Escritorio/firefox.desktop
+     for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
+         username=$(basename $home)
+         cp /etc/skel/Escritorio/firefox.desktop $home/Escritorio/
+         chown -R $username $home/Escritorio/firefox.desktop || true
+     done
+
 
      done
      ;;

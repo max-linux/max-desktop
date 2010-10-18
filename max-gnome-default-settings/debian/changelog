@@ -1,3 +1,11 @@
+max-gnome-default-settings (6.0.max15) max; urgency=low
+
+  * max-gnome-default-settings-infantil-primaria:
+    - Update panel
+    - Install firefox launcher in desktop
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 17 Oct 2010 18:44:45 +0200
+
 max-gnome-default-settings (6.0.max14) max; urgency=low
 
   * Set default values in /etc/gconf/gconf.xml.default for panel
