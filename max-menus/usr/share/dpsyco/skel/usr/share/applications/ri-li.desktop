@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Ri-li
+Comment=un simulador de juguetes
+Comment[fr]=un jeu de petit train
+Comment[ro_RO]=un joc cu un tren de jucărie
+TryExec=/usr/games/ri-li
+Exec=ri-li
+Icon=ri-li
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame;

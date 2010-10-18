@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Blinken
+GenericName=Juego de perfeccionamiento de memoria
+X-DocPath=blinken/index.html
+TryExec=/usr/bin/blinken
+Exec=blinken
+Icon=blinken
+Type=Application
+Comment=A memory enhancement game
+Comment[es]=Juego de perfeccionamiento de memoria
+Terminal=false
+Categories=Qt;KDE;Education;Game;KidsGame;
+X-Ubuntu-Gettext-Domain=desktop_kdeedu

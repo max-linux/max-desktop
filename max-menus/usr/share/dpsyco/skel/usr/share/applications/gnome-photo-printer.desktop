@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=GNOME Photo Printer
+Name[fr]=GNOME Photo Printer
+Name[es]=Impresora de fotos de GNOME
+Comment=Print several photos on one page
+Comment[fr]=Imprime plusieurs photos sur une page
+Comment[es]=Imprime varias fotos en una página
+TryExec=/usr/bin/gnome-photo-printer
+Exec=gnome-photo-printer
+Icon=gnome-photo-printer.png
+Terminal=0
+Type=Application
+Categories=Graphics

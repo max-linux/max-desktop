@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Frozen-Bubble
+Comment=Explota las burbujas
+TryExec=/usr/games/frozen-bubble
+Exec=frozen-bubble 
+Icon=frozen-bubble-icon-48x48.png
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Categories=Game;ArcadeGame;

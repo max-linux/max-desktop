@@ -1,0 +1,14 @@
+[Desktop Entry]
+TryExec=/usr/games/ktuberling
+Exec=ktuberling -caption "%c" %u
+Name=Señor Patata
+GenericName=Juego del señor patata para niños
+Type=Application
+X-DocPath=ktuberling/index.html
+Terminal=false
+Icon=ktuberling
+MimeType=application/x-tuberling;
+X-KDE-StartupNotify=true
+X-DBUS-StartupType=Multi
+Categories=Qt;KDE;Game;KidsGame;
+X-Ubuntu-Gettext-Domain=desktop_kdegames

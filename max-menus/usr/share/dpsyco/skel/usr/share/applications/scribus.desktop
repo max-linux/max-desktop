@@ -10,6 +10,7 @@ TryExec=/usr/bin/scribus
 Exec=scribus %f
 Categories=Graphics;
 Comment=Graphic Page Layout and Publication
+Comment[es]=Herramienta de diseño gráfico y publicación
 [X-Property::X-KDE-NativeExtension]
 Type=QString
 Value=.sla
