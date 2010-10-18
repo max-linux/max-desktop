@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [ -d /var/lib/homealumno/ ] && [ ! -e /var/lib/homealumno/profiles.ini ]; then
+  cat << EOF > /var/lib/homealumno/profiles.ini
+[alumno]
+exceptions = .mozilla,
+screensaver = 1
+wallpaper = ""
+users = alumno,
+compiz = 1
+[main]
+profiles = alumno,
+EOF
+
+  mkdir -p /var/lib/homealumno/profiles/alumno
+fi
+
+
+
+#DEBHELPER#

@@ -1,0 +1,99 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+##########################################################################
+# HomeAlumno-GUI writen by MarioDebian <mariodebian@gmail.com>
+#
+#    HomeAlumno-GUI version __VERSION__
+#
+# Copyright (c) 2010 Mario Izquierdo <mariodebian@gmail.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+# 02111-1307, USA.
+###########################################################################
+
+import sys
+import os
+
+import getopt
+
+
+import homealumno
+
+# if exec from svn or sources dir
+if os.path.isfile('./setup.py'):
+    homealumno.LOCALE_DIR = "./po/"
+    homealumno.GLADE_DIR = "./"
+    homealumno.IMG_DIR = "./images/"
+    print "DEBUG: exec in sources dir"
+else:
+    homealumno.GLADE_DIR = "/usr/share/homealumno/"
+    homealumno.IMG_DIR = "/usr/share/homealumno/images/"
+    homealumno.LOCALE_DIR = "/usr/share/locale/"
+
+def usage():
+    print "homealumno-gui help:"
+    print ""
+    print "   homealumno-gui -d [--debug]  (write debug data to stdout)"
+    print "   homealumno-gui -h [--help]   (this help)"
+    print "   homealumno-gui -a [--apply]  (process profiles and apply them to current user)"
+
+
+try:
+    opts, args = getopt.getopt(sys.argv[1:], ":hda", ["help", "debug", "apply"])
+except getopt.error, msg:
+    print msg
+    print "for command line options use homealumno-gui --help"
+    sys.exit(2)
+
+# process options
+for o, a in opts:
+    if o in ("-d", "--debug"):
+        print "DEBUG ACTIVE"
+        homealumno.debug = True
+    if o in ("-h", "--help"):
+        usage()
+        sys.exit()
+    if o in ("-a", "--apply"):
+        homealumno.APPLY=True
+
+
+
+################################################################################
+
+
+if __name__ == '__main__':
+    if homealumno.APPLY:
+        import homealumno.profiler
+        app=homealumno.profiler.Profiler()
+        app.doapply()
+        sys.exit(0)
+    
+    if os.geteuid() != 0:
+        import gtk
+        d = gtk.MessageDialog(None,
+                      gtk.DIALOG_MODAL |
+                      gtk.DIALOG_DESTROY_WITH_PARENT,
+                      gtk.MESSAGE_WARNING,
+                      gtk.BUTTONS_OK,
+                      "Este programa se debe ejecutar como usuario administrador (con gksudo)")
+        d.run()
+        d.destroy()
+        sys.exit(1)
+
+    
+    import homealumno.main
+    app = homealumno.main.HomeAlumnoGui ()
+    # Run app
+    app.run ()

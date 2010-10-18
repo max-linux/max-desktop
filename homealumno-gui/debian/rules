@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+DEB_PYTHON_SYSTEM=pysupport
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/python-distutils.mk
+
+
+binary-install/homealumno-gui::
+	# clean svn dirs
+	find $(CURDIR)/debian/homealumno-gui -type d -name .svn | xargs rm -rf --

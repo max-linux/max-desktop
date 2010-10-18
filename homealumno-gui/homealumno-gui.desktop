@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Configurar perfiles (homealumno)
+Exec=gksu /usr/bin/homealumno-gui
+Terminal=false
+Type=Application
+Icon=max.png
+Categories=GNOME;Settings;System;DesktopSettings;Monitor
