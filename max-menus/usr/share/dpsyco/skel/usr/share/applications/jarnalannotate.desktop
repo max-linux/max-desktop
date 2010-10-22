@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Jarnal Annotate
+Name[es]=Anotaciones con Jarnal
+GenericName=Jarnal Annotate
+GenericName[es]=Anote con reconocimiento de escritura
+Comment=Aplicación para Tablet PC con reconocimiento de escritura manuscrita
+Comment[es]=Aplicación para TabletPC con reconocimiento de escritura manuscrita
+TryExec=/usr/bin/jarnalannotate
+Exec=jarnalannotate
+Icon=gedit-icon.png
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Application;Utility;TextEditor;

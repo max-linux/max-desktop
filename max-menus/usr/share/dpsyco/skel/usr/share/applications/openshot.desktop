@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=OpenShot (editor de vídeo)
 X-GNOME-FullName=OpenShot (editor de vídeo)
-Comment=Crea and edita vídeos y películas
+Comment=Crea y edita vídeos y películas
 TryExec=/usr/bin/openshot
 Exec=openshot %F
 Terminal=false

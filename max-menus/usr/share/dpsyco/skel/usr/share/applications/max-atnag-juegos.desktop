@@ -1,0 +1,15 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+TryExec=/usr/share/atnag/launcher.sh
+Exec=/usr/share/atnag/launcher.sh
+Icon=/usr/share/atnag/ressources/dir_icons/Atnag_games.png
+X-GNOME-DocPath=
+Terminal=false
+Name=Atnag educativo
+Name[es]=Atnag educativos
+GenericName[es]=Atnag - Juegos educativos
+Comment[es]=Juegos para aprender
+Categories=Application;Education;Atnag;
+

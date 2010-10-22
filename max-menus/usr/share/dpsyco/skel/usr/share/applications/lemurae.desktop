@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0.0
+Encoding=UTF-8
+Name=LemuRae
+Name[es]=Diccionario RAE (LemuRae)
+Comment=Tool to search in DRAE
+Comment[es]=Busca palabras en la página web de la Real Academia Española
+Exec=lemurae
+Icon=/usr/share/pixmaps/lemurae.svg
+Terminal=false
+Type=Application
+Categories=Application;Utility
+StartupNotify=true

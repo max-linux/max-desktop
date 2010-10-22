@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Squeak Scratch
+Comment=Crea animaciones y juegos
+Type=Application
+TryExec=/usr/bin/scratch
+Exec=scratch
+Icon=scratch1
+Terminal=false
+Categories=Application;Education;Squeak;
+MimeType=application/x-scratch-project
+

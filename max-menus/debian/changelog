@@ -1,3 +1,11 @@
+max-menus (6.0.max17) max; urgency=low
+
+  * debian/postinst:
+    - change default audio player totem => rhythmbox /etc7gnome/defaults.list
+  * Translate and fix Comments in a lot of launchers
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 22 Oct 2010 18:04:48 +0200
+
 max-menus (6.0.max16) max; urgency=low
 
   * Fix blinken translation

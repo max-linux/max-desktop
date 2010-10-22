@@ -3,6 +3,7 @@ TryExec=/usr/games/ktuberling
 Exec=ktuberling -caption "%c" %u
 Name=Señor Patata
 GenericName=Juego del señor patata para niños
+Comment=Diseña colocando piezas y personajes
 Type=Application
 X-DocPath=ktuberling/index.html
 Terminal=false

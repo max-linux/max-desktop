@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Squeak SmallLand
+Comment=Crea contenido multimedia
+Type=Application
+TryExec=/usr/bin/maxsqueak
+Exec=maxsqueak SqueakSmallLand-38-1223.image
+Icon=squeak
+Terminal=false
+Categories=Application;Education;

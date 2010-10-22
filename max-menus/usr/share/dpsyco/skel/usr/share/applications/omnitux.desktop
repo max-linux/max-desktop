@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Omnitux
+Name[es]=Omnitux
+GenericName[es]=Juegos educativos de actividades variadas
+Comment[es]=Juegos para niños de 2 a 10 años
+TryExec=/usr/games/omnitux
+Exec=omnitux
+Icon=omnitux
+Terminal=false
+Type=Application
+Categories=Education;
+StartupNotify=true

@@ -5,6 +5,11 @@ if [ "$1" = "configure" ]; then
   echo -n " * Updating menus ..."
   /usr/sbin/update-dpsyco-skel >/dev/null 2>&1
   echo ""
+
+
+  # change default audio player totem => rhythmbox
+  sed -e '/audio/s/totem/rhythmbox/g' /etc/gnome/defaults.list > /etc/gnome/defaults.list.new
+  mv /etc/gnome/defaults.list.new /etc/gnome/defaults.list
 fi
 
 
