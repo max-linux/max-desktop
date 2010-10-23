@@ -325,10 +325,13 @@ class Page(Plugin):
         self.sti=False
         if self.ui.get_test_sti() == "YES":
             # preseed
-            self.preseed('grub-installer/bootdev', '(hd0,0)')
-            self.preseed('ubiquity/install/new-bootdev', '(hd0,0)')
-            syslog.syslog("DEBUG: hey!!!! pressed 'grub-installer/bootdev' => (hd0,0)")
+            self.preseed('grub-installer/bootdev', '/dev/sda1')
+            self.preseed('ubiquity/install/new-bootdev', '/dev/sda1')
+            syslog.syslog("DEBUG: hey!!!! pressed 'grub-installer/bootdev' => /dev/sda1")
             self.sti=True
+            os.popen("sudo touch /tmp/max_sti")
+        else:
+            os.popen("sudo rm -f /tmp/max_sti")
         return ('/usr/share/ubiquity/summary', ['^ubiquity/summary.*'])
 
     def run(self, priority, question):

@@ -1,3 +1,15 @@
+ubiquity-frontend-max (6.0.max28) max; urgency=low
+
+  * Disable deb-src in 91security
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 22 Oct 2010 14:51:03 +0200
+
+ubiquity-frontend-max (6.0.max27) max; urgency=low
+
+  * Force install GRUB in /dev/sda1 when STI is detected
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 22 Oct 2010 14:23:42 +0200
+
 ubiquity-frontend-max (6.0.max26) max; urgency=low
 
   * usr/lib/ubiquity/plugins/ubi-installtype.py:
