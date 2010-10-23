@@ -1,0 +1,280 @@
+
+if [ "ARCH" = "amd64" ] || [ ! -n "$ENABLE_EXTRA_INFANTIL" ]; then
+  _echo "No descargando paquetes infantil extra, activar con \$ENABLE_EXTRA_INFANTIL=1"
+
+else
+
+CDINF=$CURDIR/cdinfantil
+PAQUETES_INFANTIL="max-desktop-infantil-primaria"
+
+rm -rf $CDINF
+mkdir -p $CDINF
+
+# crear enlace ubuntu a -> / del CDROM
+rm -f $CDINF/ubuntu
+( cd $CDINF && ln -s ./ ubuntu)
+
+chroot $CHROOT << EOF || _exit "Error actualizando chroot"
+apt-get update
+apt-get clean
+EOF
+
+################################################################################
+# borrar paquetes primero
+rm -rf $CDINF/pool/main
+mkdir -p $CDINF/pool/main
+
+URIS=""
+for pkg in $PAQUETES_INFANTIL; do
+ URIS=$URIS" "$(chroot $CHROOT apt-get --print-uris -qq install $pkg | awk '{print $1}' | sed "s/'//g")
+done
+
+if [ "$URIS" = "" ]; then
+  _exit "Error leyendo URIS de paquetes infantil, conflictos o dependencias seguramente..."
+fi
+
+for url in $URIS; do
+  ruta=$(dirname $(echo $url| awk -F"pool" '{print $2}') | sed 's/main//g'| sed 's/universe//g' | sed 's/multiverse//g'| sed 's|//|/|g')
+  mkdir -p $CDINF/pool/main/$ruta/
+
+  echo "  => Descargando paquete INFANTIL i386  $(basename $url) desde http://$(echo $url| awk -F'/' '{print $3"/"$4}')"
+  #echo "wget -q $url -O $CDINF/pool/main/$ruta/$(basename $url)"
+  wget -q $url -O $CDINF/pool/main/$ruta/$(basename $url) || _exit "Error al descargar $url"
+
+  # descargar AMD64
+  if [ "$(echo $url| grep -c 'i386')" != "0" ]; then
+    url64=$(echo $url| sed -e 's/_i386/_amd64/g')
+    echo "  => Descargando paquete INFANTIL AMD64 $(basename $url64) desde http://$(echo $url64| awk -F'/' '{print $3"/"$4}')"
+    wget -q $url64 -O $CDINF/pool/main/$ruta/$(basename $url64) || _exit "Error al descargar $url64"
+  fi
+done
+
+############################################################
+
+
+
+
+# borrar primero
+rm -rf $CDINF/dists/$DISTRO/main
+mkdir -p $CDINF/dists/$DISTRO/main/binary-i386 $CDINF/dists/$DISTRO/main/binary-amd64 $CDINF/dists/$DISTRO/main/source
+
+cat << EOF > $CDINF/dists/$DISTRO/main/binary-i386/Release
+Archive: $DISTRO
+Version: $MAX_VERSION
+Component: main
+Origin: Ubuntu
+Label: Ubuntu
+Architecture: i386
+EOF
+
+cat << EOF > $CDINF/dists/$DISTRO/main/binary-amd64/Release
+Archive: $DISTRO
+Version: $MAX_VERSION
+Component: main
+Origin: Ubuntu
+Label: Ubuntu
+Architecture: amd64
+EOF
+
+TMP=$CURDIR/ftp-archive
+
+mkdir -p $TMP
+
+cat << EOF > $TMP/apt-ftparchive-i386.conf
+Dir {
+  ArchiveDir "$CDINF";
+};
+
+TreeDefault {
+  Directory "pool/";
+};
+
+BinDirectory "pool/main" {
+  Packages "dists/$DISTRO/main/binary-i386/Packages";
+};
+
+Default {
+  Packages {
+    Extensions ".deb";
+    Compress ". gzip";
+  };
+};
+
+Contents {
+  Compress "gzip";
+};
+EOF
+
+cat << EOF > $TMP/apt-ftparchive-amd64.conf
+Dir {
+  ArchiveDir "$CDINF";
+};
+
+TreeDefault {
+  Directory "pool/";
+};
+
+BinDirectory "pool/main" {
+  Packages "dists/$DISTRO/main/binary-amd64/Packages";
+};
+
+Default {
+  Packages {
+    Extensions ".deb";
+    Compress ". gzip";
+  };
+};
+
+Contents {
+  Compress "gzip";
+};
+EOF
+
+
+cat << EOF > $TMP/release.conf
+APT::FTPArchive::Release::Origin "Ubuntu";
+APT::FTPArchive::Release::Label "Ubuntu";
+APT::FTPArchive::Release::Suite "$DISTRO";
+APT::FTPArchive::Release::Version "$MAX_VERSION";
+APT::FTPArchive::Release::Codename "$DISTRO";
+APT::FTPArchive::Release::Architectures "i386 amd64";
+APT::FTPArchive::Release::Components "main";
+APT::FTPArchive::Release::Description "Ubuntu Lucid 10.04";
+EOF
+
+APTCONF=$TMP/release.conf
+
+_echo "Construyendo repositorio para infantil"
+
+pushd $CDINF
+apt-ftparchive -c $APTCONF generate $TMP/apt-ftparchive-i386.conf
+apt-ftparchive -c $APTCONF generate $TMP/apt-ftparchive-amd64.conf
+apt-ftparchive -c $APTCONF release $CDINF/dists/$DISTRO > $CDINF/dists/$DISTRO/Release
+# delete Release lines
+sed -i '/Release/d' $CDINF/dists/$DISTRO/Release
+popd
+
+rm -f $CDINF/dists/$DISTRO/Release.gpg
+echo ""
+echo "  IMPORTANTE"
+echo ""
+echo "   Hay que subir el archivo  $CDINF/dists/$DISTRO/Release (por scp)"
+echo "   a max.educa.madrid.org firmarlo con la clave privada de MaX y copiarlo en"
+echo "   $CDINF/dists/$DISTRO/Release.gpg"
+echo ""
+echo "  gpg -bao $CDINF/dists/$DISTRO/Release.gpg --default-key 0C32D249 $CDINF/dists/$DISTRO/Release"
+echo ""
+
+echo "De momento abrimos una consola y esperamos a que se copie el archivo a su sitio"
+echo "Cuando termines escribes exit o pulsas Ctrl+D para seguir... o exit 1 para terminar"
+
+bash || _exit "Codigo de salida != 0, forzando salida"
+
+
+rm -rf $TMP
+
+mkdir -p $CDINF/.disk
+
+printf "%s" "MAX-${MAX_VERSION}-Complementos-Infantil-Primaria-${created}"> $CDINF/.disk/info
+printf "http://max.educa.madrid.org:8000/MaX60/NotasPublicacion" > $CDINF/.disk/release_notes_url
+printf "full_cd/single" > $CDINF/.disk/cd_type
+touch $CDINF/.disk/base_installable
+
+cat << EOF > $CDINF/README.diskdefines
+#define DISKNAME  MAX-${MAX_VERSION}-Complementos-Infantil-Primaria-${created}
+#define TYPE  binary
+#define TYPEbinary  1
+#define ARCH  i386 amd64
+#define ARCHi386  1
+#define ARCHamd64  1
+#define DISKNUM  1
+#define DISKNUM1  1
+#define TOTALNUM  0
+#define TOTALNUM0  1
+EOF
+
+
+cat << EOF > $CDINF/instalar.sh
+#!/bin/bash
+
+echo -e "max-desktop-infantil-primaria\t install\n" > /tmp/infantil.primaria.pkgs
+
+gksu -- /usr/sbin/synaptic --hide-main-window --non-interactive --set-selections-file /tmp/infantil.primaria.pkgs
+
+rm -f /tmp/infantil.primaria.pkgs
+EOF
+chmod +x $CDINF/instalar.sh
+
+
+cat << EOF > $CDINF/instalar-offline.sh
+#!/bin/bash
+
+# ejecutarme a mi mismo como root
+if [ "\$(id -u)" != "0" ]; then
+   gksu -- /bin/bash \$0
+   exit 0
+fi
+
+ERROR=0
+
+# copiar en local
+echo " * Copiando paquetes a disco duro... (tarda un poco)"
+rm -rf /var/cache/complementos
+mkdir -p /var/cache/complementos
+cp -ra /media/Complementos*/* /var/cache/complementos/
+
+
+# backup /var/lib/apt
+echo " * Backup de estado de repositorios..."
+rm -rf /var/lib/apt.backup /var/cache/apt.backup
+cp -ra /var/lib/apt /var/lib/apt.backup
+cp -ra /var/cache/apt /var/cache/apt.backup
+cp /etc/apt/sources.list /etc/apt/sources.list.complementos
+cat <<FIN > /etc/apt/sources.list
+deb file:///var/cache/complementos lucid main
+FIN
+
+echo " * Backup correcto"
+
+echo -e "max-desktop-infantil-primaria\t install\n" > /tmp/infantil.primaria.pkgs
+echo " * Lanzando synaptic..."
+apt-get update
+/usr/sbin/synaptic --hide-main-window --non-interactive --set-selections-file /tmp/infantil.primaria.pkgs || ERROR=1
+rm -f /tmp/infantil.primaria.pkgs
+
+# restore backup
+echo " * Restaurando backups de estado..."
+rm -rf /var/lib/apt /var/cache/apt
+mv /var/lib/apt.backup /var/lib/apt
+mv /var/cache/apt.backup /var/cache/apt
+mv /etc/apt/sources.list.complementos /etc/apt/sources.list
+rm -rf /var/cache/complementos
+
+[ ! -d /usr/share/doc/max-desktop-infantil-primaria ] && ERROR=1
+
+echo " * Terminado"
+if [ "\$ERROR" = "0" ]; then
+  zenity --info --text="Complementos instalados"
+else
+  zenity --info --text="Hubo errores al instalar los complementos
+
+Pruebe a instalar el paquete 'max-desktop-infantil-primaria' desde synaptic."
+fi
+exit 0
+
+EOF
+chmod +x $CDINF/instalar-offline.sh
+
+# crear ISO
+ISO_FILE="${IMAGE_NAME}-Complementos-Infantil-Primaria-${stamp}.iso"
+
+_echo "Generando ${ISO_FILE}"
+
+genisoimage -r -V "Complementos-infantil-primaria" -cache-inodes -J -l -joliet-long \
+     -o ${ISO_FILE} $CDINF/ || _exit "Error generando la imagen ISO"
+
+_echo "Generando md5 del CDROM"
+md5sum ${ISO_FILE} > ${ISO_FILE}.md5 || _exit "Error generando el md5"
+
+
+fi # fin de ENABLE_EXTRA_INFANTIL
