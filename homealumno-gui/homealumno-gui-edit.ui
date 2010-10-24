@@ -76,7 +76,7 @@
                 <child>
                   <object class="GtkLabel" id="label1">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">Usuarios que se aplica</property>
+                    <property name="label" translatable="yes">Usuarios a los que se aplica</property>
                   </object>
                   <packing>
                     <property name="top_attach">2</property>
