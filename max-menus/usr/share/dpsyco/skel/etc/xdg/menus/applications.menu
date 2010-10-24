@@ -333,6 +333,7 @@
 			<Include><Filename>denemo.desktop</Filename></Include>
 			<Include><Filename>mscore.desktop</Filename></Include>
 			<Include><Filename>kde4-rosegarden.desktop</Filename></Include>
+			<Include><Filename>tuxguitar.desktop</Filename></Include>
 		</Menu>
 		<Menu>
 			<Name>Cartografía</Name>
@@ -427,6 +428,7 @@
 		<Exclude><Filename>kde4-audiocd.desktop</Filename></Exclude>
 		<Exclude><Filename>denemo.desktop</Filename></Exclude>
 		<Exclude><Filename>mscore.desktop</Filename></Exclude>
+		<Exclude><Filename>tuxguitar.desktop</Filename></Exclude>
 	</Menu>   <!-- End Multimedia -->
 
 

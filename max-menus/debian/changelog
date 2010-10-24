@@ -1,3 +1,9 @@
+max-menus (6.0.max18) max; urgency=low
+
+  * Move tuxguitar from Audio to Education -> Music menu (Close ticket #298)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 24 Oct 2010 18:54:30 +0200
+
 max-menus (6.0.max17) max; urgency=low
 
   * debian/postinst:
