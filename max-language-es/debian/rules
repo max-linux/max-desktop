@@ -2,6 +2,13 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
+clean::
+	rm -f po/*mo
+
+build/max-language-es::
+	find -type f -name "*.po" -exec sh -c "N='{}'; msgfmt -v -o \$${N%.po}.mo \$$N" \;
+
+
 binary-install/max-language-es::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-language-es -type d -name .svn | xargs rm -rf --
