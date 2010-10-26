@@ -1,3 +1,13 @@
+max-meta (6.0.max40) max; urgency=low
+
+  * desktop-gnome:
+    - Add icedax, needed by brasero (close ticket #303)
+    - Add gimp-ufraw (close ticket #305)
+  * New package max-gnome-desktop-environment, provides 
+    gnome-desktop-environment without some deps. (Closes tickets #301 #305)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 26 Oct 2010 12:47:48 +0200
+
 max-meta (6.0.max39) max; urgency=low
 
   * desktop-gnome add:
