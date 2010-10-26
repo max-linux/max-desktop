@@ -1,3 +1,10 @@
+max-menus (6.0.max19) max; urgency=low
+
+  * gnome-translate.desktop:
+    - Remove Network from Categories (close ticket #299)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 26 Oct 2010 17:14:16 +0200
+
 max-menus (6.0.max18) max; urgency=low
 
   * Move tuxguitar from Audio to Education -> Music menu (Close ticket #298)
