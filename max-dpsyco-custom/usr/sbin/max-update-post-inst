@@ -87,3 +87,9 @@ for jvm in $JVMS; do
       ln -s /usr/share/descartes/DescartesLib.jar ${jvm}/jre/lib/ext/
     fi
 done
+
+
+# chech exe-learning mime
+if [ "$(xdg-mime query default application/x-exe-learning)" = "" ]; then
+  echo "application/x-exe-learning=exe.desktop" >> /etc/gnome/defaults.list
+fi
