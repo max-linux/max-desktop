@@ -1,3 +1,9 @@
+max-dpsyco-custom (6.0.max26) max; urgency=low
+
+  * Overwrite usr/share/system-config-printer/testpage-a4.ps (close ticket #118)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 05 Nov 2010 15:40:53 +0100
+
 max-dpsyco-custom (6.0.max25) max; urgency=low
 
   * max-update-post-inst:
