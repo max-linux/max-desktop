@@ -79,3 +79,11 @@ EOF
 fi
 
 
+
+# link descartes in every JAVA package
+JVMS=$(find /usr/lib/jvm/ -maxdepth 1 -mindepth 1 -type d | grep -v jmf)
+for jvm in $JVMS; do
+    if [ -d ${jvm}/jre/lib/ext/ ] && [ ! -e ${jvm}/jre/lib/ext/DescartesLib.jar ]; then
+      ln -s /usr/share/descartes/DescartesLib.jar ${jvm}/jre/lib/ext/
+    fi
+done

@@ -1,3 +1,10 @@
+max-dpsyco-custom (6.0.max24) max; urgency=low
+
+  * usr/sbin/max-update-post-inst:
+    - Link Descartes.jar in every JAVA package
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 05 Nov 2010 12:52:19 +0100
+
 max-dpsyco-custom (6.0.max23) max; urgency=low
 
   * Update skel before doing actions
