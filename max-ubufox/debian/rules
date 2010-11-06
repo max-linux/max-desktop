@@ -24,23 +24,32 @@ include /usr/share/mozilla-devscripts/xpi.mk
 #common-install-indep::
 
 binary-install/max-ubufox::
+	#mkdir -p debian/max-ubufox/usr/share/ubufox
+	#mv debian/max-ubufox/usr/share/xul-ext/max-ubufox/* debian/max-ubufox/usr/share/ubufox/
+	#rm -rf debian/max-ubufox/usr/share/xul-ext
 	tree debian/max-ubufox/
-	mv debian/max-ubufox/usr/share/max-ubufox debian/max-ubufox/usr/share/ubufox
 
 	dh_install -pmax-ubufox debian/ubufox.js etc/firefox/pref/
-	dh_link -pmax-ubufox /etc/firefox-3.0/pref/ubufox.js /usr/share/ubufox/defaults/preferences/000system.js
+#	dh_link -pmax-ubufox /etc/firefox-3.0/pref/ubufox.js /usr/share/ubufox/defaults/preferences/000system.js
+	dh_link -pmax-ubufox /etc/firefox-3.0/pref/ubufox.js /usr/share/xul-ext/max-ubufox/defaults/preferences/000system.js
 
 	dh_install debian/bookmarks.html usr/share/dpsyco/skel/etc/firefox/profile/
 
 	# ./usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/ubufox@ubuntu.com -> ../../../max-ubufox
-	rm -f debian/max-ubufox/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/ubufox@ubuntu.com
-	dh_link -pmax-ubufox usr/share/ubufox usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/ubufox@ubuntu.com
+
+	rm -f "debian/max-ubufox/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/ubufox@ubuntu.com"
+#	dh_link -pmax-ubufox usr/share/ubufox "usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/ubufox@ubuntu.com"
+	dh_link -pmax-ubufox usr/share/xul-ext/max-ubufox "usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/ubufox@ubuntu.com"
 
 
 	# ./usr/share/ubufox/defaults/preferences/000system.js -> /etc/firefox-3.0/pref/ubufox.js
 	rm -f debian/max-ubufox/usr/share/ubufox/defaults/preferences/000system.js
-	dh_link -pmax-ubufox etc/firefox/pref/ubufox.js usr/share/ubufox/defaults/preferences/000system.js
+#	dh_link -pmax-ubufox etc/firefox/pref/ubufox.js usr/share/ubufox/defaults/preferences/000system.js
+	dh_link -pmax-ubufox etc/firefox/pref/ubufox.js usr/share/xul-ext/max-ubufox/defaults/preferences/000system.js
 
-	dh_install content/startpage.html usr/share/ubufox/
-	dh_install content/max.css        usr/share/ubufox/
-	dh_install content/max-logo.png   usr/share/ubufox/
+#	dh_install content/startpage.html usr/share/ubufox/
+#	dh_install content/max.css        usr/share/ubufox/
+#	dh_install content/max-logo.png   usr/share/ubufox/
+
+
+	dh_install content/startpage.html usr/share/xul-ext/max-ubufox/

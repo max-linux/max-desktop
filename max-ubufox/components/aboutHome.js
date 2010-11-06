@@ -44,10 +44,10 @@ Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
 var HOMEPAGE_OFFLINE = "file:///usr/share/ubuntu-artwork/home/index.html";
 var HOMEPAGE_OFFLINE_TMPL = "/usr/share/ubuntu-artwork/home/locales/index-"
 */
-var HOMEPAGE_OFFLINE = "file:///usr/share/ubufox/startpage.html";
-var HOMEPAGE_OFFLINE_TMPL = "file:///usr/share/ubufox/startpage.html";
+var HOMEPAGE_OFFLINE = "file:///usr/share/xul-ext/max-ubufox/startpage.html";
+var HOMEPAGE_OFFLINE_TMPL = "file:///usr/share/xul-ext/max-ubufox/startpage.html";
 
-var HOMEPAGE_ONLINE_PREFIX = "file:///usr/share/ubufox/startpage.html#";
+var HOMEPAGE_ONLINE_PREFIX = "file:///usr/share/xul-ext/max-ubufox/startpage.html#";
 
 function getIsOffline() {
   return false;
