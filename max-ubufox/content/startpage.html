@@ -34,12 +34,12 @@ h2 {font-size: 1.4em;}
 h3 {font-size: 1.3em;}
 h4 {font-size: 1.2em;}
 h5, h6 {font-size: 1em;}
-#gglimg { align: middle; border:0}
+#gglimg { vertical-align: middle; border:0}
 strong { margin: 1.5em 0 0 0; font-weight: normal; color: #ed0d0d; /* rojo */ font-size: 1.3em;}
 -->
 </style>
 </head>
-<body>
+<body onload="javascript:document.getElementById('q').focus();">
 <div id="mastwrap">
 <div id="masthead"> </div>
 </div>
@@ -54,8 +54,8 @@ strong { margin: 1.5em 0 0 0; font-weight: normal; color: #ed0d0d; /* rojo */ fo
         <a href="http://www.google.com/"><img id="gglimg" src="http://www.google.com/logos/Logo_25wht.gif" alt="Google" /></a>
     </td>
     <td>
-        <input name="hl" type="hidden" value="es" />
-        <input name="q" size="25" maxlength="255" value="" id="sbi" type="text" />
+        <input id="hl" name="hl" type="hidden" value="es" />
+        <input id="q" name="q" size="25" maxlength="255" value="" type="text" />
         <input type="submit" name="btnG" value="Buscar" />
     </td>
   </tr>
