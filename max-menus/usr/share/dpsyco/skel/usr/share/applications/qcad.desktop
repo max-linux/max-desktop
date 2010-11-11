@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=QCad
+Comment=Aplicación de diseño asistido por ordenador
+GenericName=Electric diagrams editor
+TryExec=/usr/bin/qcad
+Exec=qcad
+Icon=qcad
+Terminal=false
+Type=Application
+MimeType=image/vnd.dxf;image/vnd.dwg;
+Categories=Graphics;2DGraphics;
