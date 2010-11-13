@@ -1,3 +1,9 @@
+max-skel-conf (6.0.max5) max; urgency=low
+
+  * Fix qdvdauthor initial config
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 13 Nov 2010 17:49:39 +0100
+
 max-skel-conf (6.0.max4) max; urgency=low
 
   * Add +x in /etc/skel/Escritorio/manual.desktop
