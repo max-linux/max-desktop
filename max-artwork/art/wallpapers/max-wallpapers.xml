@@ -2,11 +2,35 @@
 <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
 <wallpapers>
   <wallpaper>
-    <_name>Max Default</_name>
-    <filename>/usr/share/backgrounds/max.jpg</filename>
+    <name>Fondo MAX por defecto (4:3)</name>
+    <filename>/usr/share/backgrounds/max-madrid-linux-1600x1200.jpg</filename>
     <options>stretched</options>
     <pcolor>#114dd8</pcolor>
     <scolor>#114dd8</scolor>
     <shade_type>solid</shade_type>
- </wallpaper>
+  </wallpaper>
+  <wallpaper>
+    <name>Fondo MAX por defecto (16:10)</name>
+    <filename>/usr/share/backgrounds/max-madrid-linux-1900x1200.jpg</filename>
+    <options>stretched</options>
+    <pcolor>#114dd8</pcolor>
+    <scolor>#114dd8</scolor>
+    <shade_type>solid</shade_type>
+  </wallpaper>
+  <wallpaper>
+    <name>Fondo MAX Infantil (4:3)</name>
+    <filename>/usr/share/backgrounds/max-madrid-linux-infantil-1600x1200.jpg</filename>
+    <options>stretched</options>
+    <pcolor>#114dd8</pcolor>
+    <scolor>#114dd8</scolor>
+    <shade_type>solid</shade_type>
+  </wallpaper>
+  <wallpaper>
+    <name>Fondo MAX Infantil (16:10)</name>
+    <filename>/usr/share/backgrounds/max-madrid-linux-infantil-1900x1200.jpg</filename>
+    <options>stretched</options>
+    <pcolor>#114dd8</pcolor>
+    <scolor>#114dd8</scolor>
+    <shade_type>solid</shade_type>
+  </wallpaper>
 </wallpapers>

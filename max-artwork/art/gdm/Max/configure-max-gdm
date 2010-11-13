@@ -8,17 +8,17 @@ if [ "$(which sudo)" = "" ] || [ "$(which gconftool-2)" = "" ]; then
 fi
 
 
-sudo gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
-                 --type bool --set "/apps/gdm/simple-greeter/disable_user_list" "false"
+gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
+            --type bool --set "/apps/gdm/simple-greeter/disable_user_list" "false"
 
-sudo gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
-                 --type string --set "/apps/gdm/simple-greeter/banner_message_text" ""
+gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
+            --type string --set "/apps/gdm/simple-greeter/banner_message_text" ""
 
-sudo gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
-                 --type bool --set "/apps/gdm/simple-greeter/banner_message_enable" "false"
+gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
+            --type bool --set "/apps/gdm/simple-greeter/banner_message_enable" "false"
 
-sudo gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
-                 --type string --set "/apps/gdm/simple-greeter/logo_icon_name" "max"
+gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
+            --type string --set "/apps/gdm/simple-greeter/logo_icon_name" "max"
 
 
 if id gdm >/dev/null 2>&1; then

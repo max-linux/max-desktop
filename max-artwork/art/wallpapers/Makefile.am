@@ -1,6 +1,9 @@
 wallpaperdir = $(datadir)/backgrounds
 wallpaper_DATA = \
-	max.png
+	max-madrid-linux-1600x1200.jpg \
+	max-madrid-linux-1900x1200.jpg \
+	max-madrid-linux-infantil-1600x1200.jpg \
+	max-madrid-linux-infantil-1900x1200.jpg
 
 propsdir = $(datadir)/gnome-background-properties
 props_DATA = \
