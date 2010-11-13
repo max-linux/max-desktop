@@ -1,3 +1,11 @@
+max-meta (6.0.max42) max; urgency=low
+
+  * Disable special wallpaper for max-server
+  * max-server, remove:
+    - bind9|dnsmasq|pdnsd, postfix|exim4, mysql-server, nfs-kernel-server
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 13 Nov 2010 17:02:23 +0100
+
 max-meta (6.0.max41) max; urgency=low
 
   * desktop-common:

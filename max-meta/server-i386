@@ -1,8 +1,6 @@
-bind9|dnsmasq|pdnsd
 backharddi-ng
 backharddi-ng-net
 backharddi-ng-kernel-i386
-postfix|exim4
 linux-image-server
 linux-headers-server
 maxmoodle
@@ -10,5 +8,3 @@ max-gnome-default-settings
 max-mirror-utils
 max-tcos-profesor
 moodle
-mysql-server
-nfs-kernel-server
