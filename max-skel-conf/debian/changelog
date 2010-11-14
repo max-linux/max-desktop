@@ -1,3 +1,9 @@
+max-skel-conf (6.0.max6) max; urgency=low
+
+  * Add XDG default config in /etc/skel
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Nov 2010 17:49:22 +0100
+
 max-skel-conf (6.0.max5) max; urgency=low
 
   * Fix qdvdauthor initial config
