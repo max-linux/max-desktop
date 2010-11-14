@@ -1,11 +1,12 @@
 <!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
  "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
 <Menu>
-	<Name>Launcher</Name>
-	<Directory>Applications.directory</Directory>
+	<Name>Applications</Name>
+	<Directory>lxde-menu-applications.directory</Directory>
 	<DefaultAppDirs/>
 	<DefaultDirectoryDirs/>
 	<DefaultMergeDirs/>
+
 	<Layout>
 		<Merge type="menus"/>
 		<Menuname>MaX</Menuname>
@@ -27,7 +28,7 @@
 	</Menu>
 	<Menu>
 		<Name>Internet</Name>
-		<Directory>Internet.directory</Directory>
+		<Directory>lxde-network.directory</Directory>
 		<Include>
 			<And>
 				<Category>Network</Category>
@@ -35,7 +36,7 @@
 		</Include>
 		<Menu>
 			<Name>WebMail</Name>
-			<Directory>WebMail.directory</Directory>
+			<Directory>lxde-webmail.directory</Directory>
 			<Include>
 				<And>
 				<Category>X-WebMail</Category>
@@ -45,21 +46,22 @@
 	</Menu>
 	<Menu>
 		<Name>Work</Name>
-		<Directory>Work.directory</Directory>
+		<Directory>lxde-work.directory</Directory>
 		<Menu>
 			<Name>Accessories</Name>
-			<Directory>Accessories.directory</Directory>
+			<Directory>lxde-utility.directory</Directory>
 			<Include>
 				<And>
 					<Category>Utility</Category>
 					<Not><Category>Accessibility</Category></Not>
 					<Not><Category>System</Category></Not>
+					<Not><Category>PackageManager</Category></Not>
 				</And>
 			</Include>
 		</Menu>
 		<Menu>
 			<Name>Graphics</Name>
-			<Directory>Graphics.directory</Directory>
+			<Directory>lxde-graphics.directory</Directory>
 			<Include>
 				<And>
 					<Category>Graphics</Category>
@@ -70,7 +72,7 @@
 		</Menu>
 		<Menu>
 			<Name>Office</Name>
-			<Directory>Office.directory</Directory>
+			<Directory>lxde-office.directory</Directory>
 			<Include>
 				<And>
 					<Category>Office</Category>
@@ -79,7 +81,7 @@
 		</Menu>
 		<Menu>
 			<Name>Accessibility</Name>
-			<Directory>Accessibility.directory</Directory>
+			<Directory>lxde-accessibility.directory</Directory>
 			<Include>
 				<And>
 					<Category>Accessibility</Category>
@@ -89,7 +91,7 @@
 		</Menu>
 		<Menu>
 			<Name>Development</Name>
-			<Directory>Development.directory</Directory>
+			<Directory>lxde-development.directory</Directory>
 			<Include>
 				<And>
 					<Category>Development</Category>
@@ -107,7 +109,7 @@
 	</Menu>
 	<Menu>
 		<Name>Learn</Name>
-		<Directory>Learn.directory</Directory>
+		<Directory>lxde-learn.directory</Directory>
 		<Include>
 			<And>
 				<Category>Education</Category>
@@ -118,7 +120,7 @@
 		</Include>
 		<Menu>
 			<Name>Science</Name>
-			<Directory>Science.directory</Directory>
+			<Directory>lxde-science.directory</Directory>
 			<Include>
 				<And>
 					<Category>Science</Category>
@@ -128,7 +130,7 @@
 		</Menu>
 		<Menu>
 			<Name>Math</Name>
-			<Directory>Math.directory</Directory>
+			<Directory>lxde-math.directory</Directory>
 			<Include>
 				<And>
 					<Category>Math</Category>
@@ -138,7 +140,7 @@
 		</Menu>
 		<Menu>
 			<Name>Language</Name>
-			<Directory>Language.directory</Directory>
+			<Directory>lxde-language.directory</Directory>
 			<Include>
 				<And>
 					<Category>Languages</Category>
@@ -148,10 +150,10 @@
 	</Menu>
 	<Menu>
 		<Name>Play</Name>
-		<Directory>Play.directory</Directory>
+		<Directory>lxde-play.directory</Directory>
 		<Menu>
 			<Name>Games</Name>
-			<Directory>Games.directory</Directory>
+			<Directory>lxde-game.directory</Directory>
 			<Include>
 				<And>
 					<Category>Game</Category>
@@ -167,13 +169,62 @@
 	</Menu>
 	<Menu>
 		<Name>Settings</Name>
-		<Directory>Settings.directory</Directory>
+		<Directory>lxde-settings.directory</Directory>
 		<Include>
 			<And>
 				<Category>System</Category>
+				<Category>PackageManager</Category>
+				<Not><Category>Game</Category></Not>
+			</And>
+		</Include>
+		<Include>
+			<And>
 				<Category>Settings</Category>
 				<Not><Category>Game</Category></Not>
 			</And>
 		</Include>
 	</Menu>
+
+	<!-- Add some dirty hacks to map gnome categories to lxlauncher ones for merges -->
+	<Move>
+		<Old>Graphics</Old>
+		<New>Work/Graphics</New>
+	</Move>
+	<Move>
+		<Old>Accessories</Old>
+		<New>Work/Accessories</New>
+	</Move>
+	<Move>
+		<Old>Development</Old>
+		<New>Work/Development</New>
+	</Move>
+	<Move>
+		<Old>Education</Old>
+		<New>Learn</New>
+	</Move>
+	<Move>
+		<Old>Games</Old>
+		<New>Play/Games</New>
+	</Move>
+	<Move>
+		<Old>Multimedia</Old>
+		<New>Play/Multimedia</New>
+	</Move>
+	<Move>
+		<Old>Office</Old>
+		<New>Work/Office</New>
+	</Move>
+	<Move>
+		<Old>System</Old>
+		<New>Settings</New>
+	</Move>
+	<Move>
+		<Old>Other</Old>
+		<New>Work</New>
+	</Move>
+
+	<Move>
+		<Old>wine-wine</Old>
+		<New>Work/wine-wine</New>
+	</Move>
 </Menu>

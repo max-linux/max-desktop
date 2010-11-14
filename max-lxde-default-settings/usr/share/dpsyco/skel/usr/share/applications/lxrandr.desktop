@@ -4,6 +4,6 @@ Name[es]=Configuración de pantalla
 Comment=Change screen resolution and configure external monitors
 Comment[es]=Configuración de pantalla y monitores externos
 Exec=lxrandr
-Icon=display-capplet
+Icon=/usr/share/icons/maxtoon/scalable/apps/display-capplet.svg
 Type=Applications
 Categories=Settings;
