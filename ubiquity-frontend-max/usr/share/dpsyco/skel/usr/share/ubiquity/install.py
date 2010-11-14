@@ -2313,7 +2313,8 @@ class Install:
 
     # MaX
     def install_max_extras(self):
-        # MaX have 4 different install types escritorio, alumno, profesor, terminales
+        # MaX have 6 different install types
+        # ["escritorio", "profesor", "alumno", "infantil", "nanomax", "terminales"]
         if not os.path.exists("/tmp/max_install_type"):
             syslog.syslog("DEBUG: install_max_extras() /tmp/max_install_type not found")
             return

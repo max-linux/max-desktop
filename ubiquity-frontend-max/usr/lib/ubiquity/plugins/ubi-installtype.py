@@ -42,7 +42,7 @@ WEIGHT = 100
 
 class PageBase(PluginUI):
     def __init__(self):
-        self.install_types={"escritorio":1, "alumno":2, "profesor":3, "terminales":4, "nanomax":5}
+        self.install_types={"escritorio":1, "profesor":2, "alumno":3, "infantil":4, "nanomax":5, "terminales":6}
         self.install_type="escritorio"
         self.install_type_file="/tmp/max_install_type"
 
@@ -74,7 +74,7 @@ class PageGtk(PageBase):
     def __init__(self, controller, *args, **kwargs):
         PageBase.__init__(self, *args, **kwargs)
         self.controller = controller
-        self.install_types=["escritorio", "alumno", "profesor", "terminales", "nanomax"]
+        self.install_types=["escritorio", "profesor", "alumno", "infantil", "nanomax", "terminales"]
         #self.username_changed_id = None
         #self.hostname_changed_id = None
         #self.username_edited = False
@@ -89,10 +89,11 @@ class PageGtk(PageBase):
 
         self.install_type_group = builder.get_object('install_type_group')
         self.install_type_escritorio = builder.get_object('install_type_escritorio')
-        self.install_type_alumno = builder.get_object('install_type_alumno')
         self.install_type_profesor = builder.get_object('install_type_profesor')
-        self.install_type_terminales = builder.get_object('install_type_terminales')
+        self.install_type_alumno = builder.get_object('install_type_alumno')
+        self.install_type_infantil = builder.get_object('install_type_infantil')
         self.install_type_nanomax = builder.get_object('install_type_nanomax')
+        self.install_type_terminales = builder.get_object('install_type_terminales')
 
         self.hostname_widget = builder.get_object('hostname')
         
@@ -117,10 +118,11 @@ class PageGtk(PageBase):
         
         if os.path.isfile("/cdrom/casper/nanomax"):
             self.install_type_escritorio.set_sensitive(False)
-            self.install_type_alumno.set_sensitive(False)
             self.install_type_profesor.set_sensitive(False)
-            self.install_type_terminales.set_sensitive(False)
+            self.install_type_alumno.set_sensitive(False)
+            self.install_type_infantil.set_sensitive(False)
             self.install_type_nanomax.set_sensitive(False)
+            self.install_type_terminales.set_sensitive(False)
             self.install_warn_nano.show()
 
         if not os.path.isfile("/cdrom/nanomax/casper/filesystem.squashfs"):

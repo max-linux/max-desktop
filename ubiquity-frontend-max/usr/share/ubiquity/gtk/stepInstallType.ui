@@ -5,7 +5,6 @@
   <object class="GtkVBox" id="stepInstallType">
     <property name="visible">True</property>
     <property name="border_width">6</property>
-    <property name="orientation">vertical</property>
     <child>
       <object class="GtkLabel" id="install_heading_label">
         <property name="visible">True</property>
@@ -51,13 +50,11 @@
             <child>
               <object class="GtkVBox" id="vbox13">
                 <property name="visible">True</property>
-                <property name="orientation">vertical</property>
                 <property name="spacing">12</property>
                 <child>
                   <object class="GtkVBox" id="install_vbox">
                     <property name="visible">True</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                    <property name="orientation">vertical</property>
                     <property name="spacing">6</property>
                     <child>
                       <object class="GtkRadioButton" id="install_type_group">
@@ -86,6 +83,19 @@
                       </packing>
                     </child>
                     <child>
+                      <object class="GtkRadioButton" id="install_type_profesor">
+                        <property name="label" translatable="yes">Profesor</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="draw_indicator">True</property>
+                        <property name="group">install_type_group</property>
+                      </object>
+                      <packing>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
                       <object class="GtkRadioButton" id="install_type_alumno">
                         <property name="label" translatable="yes">Alumno</property>
                         <property name="visible">True</property>
@@ -97,30 +107,16 @@
                         <property name="group">install_type_group</property>
                       </object>
                       <packing>
-                        <property name="position">2</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkRadioButton" id="install_type_profesor">
-                        <property name="label" translatable="yes">Profesor</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">Seleccione esta opci&#xF3;n para instalar max-tcos-profesor y poder controlar el resto de equipos del aula desde TcosMonitor.</property>
-                        <property name="draw_indicator">True</property>
-                        <property name="group">install_type_group</property>
-                      </object>
-                      <packing>
                         <property name="position">3</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkRadioButton" id="install_type_terminales">
-                        <property name="label" translatable="yes">Servidor de terminales TCOS y Backharddi</property>
+                      <object class="GtkRadioButton" id="install_type_infantil">
+                        <property name="label" translatable="yes">Alumno para infantil y primaria</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">Seleccione esta opci&#xF3;n para instalar un servidor de terminales ligeros TCOS ya configurado y un servicio de clonado de discos duros BackHarddi</property>
+                        <property name="tooltip_text" translatable="yes">Seleccione esta opci&#xF3;n para max-desktop-infantil-primaria (personalizaci&#xF3;n de infantil).</property>
                         <property name="draw_indicator">True</property>
                         <property name="group">install_type_group</property>
                       </object>
@@ -130,16 +126,28 @@
                     </child>
                     <child>
                       <object class="GtkRadioButton" id="install_type_nanomax">
-                        <property name="label" translatable="yes">Memoria USB (nanoMaX)</property>
+                        <property name="label" translatable="yes">NanoMaX (memoria USB)</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">Generar a partir de una memoria USB una nanoMaX</property>
                         <property name="draw_indicator">True</property>
                         <property name="group">install_type_group</property>
                       </object>
                       <packing>
                         <property name="position">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkRadioButton" id="install_type_terminales">
+                        <property name="label" translatable="yes">Terminales ligeros (TCOS) y Sistema de clonado (Backharddi)</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="draw_indicator">True</property>
+                        <property name="group">install_type_group</property>
+                      </object>
+                      <packing>
+                        <property name="position">6</property>
                       </packing>
                     </child>
                   </object>
@@ -150,7 +158,8 @@
                 </child>
                 <child>
                   <object class="GtkLabel" id="install_warn_nano">
-                    <property name="label" translatable="yes">&lt;b&gt;Estas instalando desde la versi&#xF3;n CDROM o nanoMax, no se puede seleccionar el tipo de instalaci&#xF3;n.&lt;/b&gt;</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Estas instalando desde la versi&#xF3;n CDROM o nanoMax, 
+no se puede seleccionar el tipo de instalaci&#xF3;n.&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
                     <property name="wrap">True</property>
                   </object>
