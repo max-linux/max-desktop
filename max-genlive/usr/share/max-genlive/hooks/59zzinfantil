@@ -215,13 +215,17 @@ if [ "\$(id -u)" != "0" ]; then
    exit 0
 fi
 
+CDPATH=\$(dirname \$0)
+if [ ! -d "\$CDPATH" ]; then
+  CDPATH="/media/Complementos-infantil-primaria/"
+fi
 ERROR=0
 
 # copiar en local
 echo " * Copiando paquetes a disco duro... (tarda un poco)"
 rm -rf /var/cache/complementos
 mkdir -p /var/cache/complementos
-cp -ra /media/Complementos*/* /var/cache/complementos/
+cp -ra \$CDPATH/* /var/cache/complementos/
 
 
 # backup /var/lib/apt

@@ -13,9 +13,11 @@ export ERROR=0
 export MAX_ERROR=0
 apt-get $APT_OPTS install max-keyring || ERROR=1
 apt-get $APT_OPTS update || ERROR=1
+apt-get $APT_OPTS install max-gnome-desktop-environment
 apt-get $APT_OPTS install max-desktop-common
 apt-get $APT_OPTS install max-desktop-gnome
 apt-get $APT_OPTS install max-desktop-gnome max-drivers || ERROR=1
+#apt-get $APT_OPTS install max-desktop-infantil-primaria || ERROR=1
 [ "\$(ls /home/)" != "" ] && rm -rf /home/* && apt-get $APT_OPTS -f install 
 apt-get clean
 exit \$ERROR
@@ -24,7 +26,35 @@ EOC
 
 rm -rf $CHROOT/home/*
 
+if [ -d /opt/curso_linux/ ]; then
+  rsync -Pav /opt/curso_linux/ $CDRW/curso_linux/
+  mkdir -p $CHROOT/etc/skel/Escritorio
+  cat << EOF > $CHROOT/etc/skel/Escritorio/curso.desktop
+[Desktop Entry]
+Version=1.0
+Name=Curso Linux 2010
+Comment=Curso Linux 2010
+GenericName=Curso Linux 2010
+Exec=firefox file:///cdrom/curso_linux/index.htm
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=firefox
+StartupWMClass=Firefox
+StartupNotify=true
+EOF
+  chmod +x $CHROOT/etc/skel/Escritorio/curso.desktop
 
+  cat << EOF > $CHROOT/etc/X11/Xsession.d/99desktop
+
+if [ -d \$HOME/Desktop ]; then
+  rsync -Pav \$HOME/Escritorio/ \$HOME/Desktop/ 
+fi
+
+EOF
+
+
+fi
 
 EXTRA_DEBS=$(find /var/lib/max-genlive/dvd -type f -name *all.deb -o -name *$ARCH.deb 2>/dev/null)
 

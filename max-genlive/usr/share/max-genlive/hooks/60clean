@@ -110,8 +110,8 @@ sed -ie /example-content/d           $CDRW/casper/filesystem.manifest-desktop
 rm -f $CDRW/casper/filesystem.manifest-desktope
 
 _echo "Generando listas de metapaquetes"
-# generar metalistas para escritorio alumno profesor y servidor
-for meta in alumno profesor servidor terminales; do
+# generar metalistas para escritorio alumno profesor, servidor e infantil
+for meta in alumno profesor servidor terminales infantil; do
 
   case $meta in
      alumno)
@@ -129,6 +129,10 @@ for meta in alumno profesor servidor terminales; do
      terminales)
        metapkg="max-terminales"
        metafile=$CDRW/casper/filesystem.manifest-desktop.terminales
+       ;;
+     infantil)
+       metapkg="max-desktop-infantil-primaria"
+       metafile=$CDRW/casper/filesystem.manifest-desktop.infantil
        ;;
      nanomax)
        metapkg="max-nanomax"
