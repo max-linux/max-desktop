@@ -1,3 +1,9 @@
+max-dpsyco-custom (6.0.max30) max; urgency=low
+
+  * Remove max-menus of Depends (nanoMAX don't need it)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Nov 2010 23:48:53 +0100
+
 max-dpsyco-custom (6.0.max29) max; urgency=low
 
   * usr/sbin/max-update-post-inst:
