@@ -80,16 +80,19 @@ fi
 
 
 
-# link descartes in every JAVA package
-JVMS=$(find /usr/lib/jvm/ -maxdepth 1 -mindepth 1 -type d | grep -v jmf)
-for jvm in $JVMS; do
+if [ -d /usr/lib/jvm/ ]; then
+  # link descartes in every JAVA package
+  JVMS=$(find /usr/lib/jvm/ -maxdepth 1 -mindepth 1 -type d | grep -v jmf)
+  for jvm in $JVMS; do
     if [ -d ${jvm}/jre/lib/ext/ ] && [ ! -e ${jvm}/jre/lib/ext/DescartesLib.jar ]; then
       ln -s /usr/share/descartes/DescartesLib.jar ${jvm}/jre/lib/ext/
     fi
-done
+  done
+fi
 
-
+if [ -x /usr/bin/xdg-mime ]; then
 # chech exe-learning mime
-if [ "$(xdg-mime query default application/x-exe-learning)" = "" ]; then
-  echo "application/x-exe-learning=exe.desktop" >> /etc/gnome/defaults.list
+  if [ "$(xdg-mime query default application/x-exe-learning)" = "" ]; then
+    echo "application/x-exe-learning=exe.desktop" >> /etc/gnome/defaults.list
+  fi
 fi
