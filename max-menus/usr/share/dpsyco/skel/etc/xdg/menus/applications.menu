@@ -496,7 +496,6 @@
 		<Exclude><Filename>kde4-medianotifications.desktop</Filename></Exclude>
 		<Exclude><Filename>tcospersonalize.desktop</Filename></Exclude>
 		<Exclude><Filename>creditos-max40.desktop</Filename></Exclude>
-		<Exclude><Filename>manual.desktop</Filename></Exclude>
 		<Exclude><Filename>openoffice.org-draw.desktop</Filename></Exclude>
 		<Exclude><Filename>squeak-doc.desktop</Filename></Exclude>
 		<Exclude><Filename>squeak-manual.desktop</Filename></Exclude>
@@ -529,7 +528,6 @@
 		<Include><Filename>max-installed-help.desktop</Filename></Include>
 		<Include><Filename>max-installed-help-usr.desktop</Filename></Include>
 		<Include><Filename>install-manual.desktop</Filename></Include>
-		<Include><Filename>manual.desktop</Filename></Include>
 	</Menu> <!-- end MaX -->
 
 
