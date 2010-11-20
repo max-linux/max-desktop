@@ -1,3 +1,12 @@
+max-meta (6.0.max44) max; urgency=low
+
+  * nanomax, add:
+    - man-db
+    - manpages-es
+  * New package max-infantil: Depends on max-desktop-infantil-primaria and max-alumno
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 20 Nov 2010 12:52:34 +0100
+
 max-meta (6.0.max43) max; urgency=low
 
   * desktop-lxde, add:

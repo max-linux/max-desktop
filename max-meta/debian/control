@@ -280,6 +280,16 @@ Description: Infantil and primaria metapackage
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
 
+Package: max-infantil
+Architecture: all
+Depends: max-desktop-infantil-primaria, max-alumno
+Description: Infantil and primaria metapackage and TCOS for puppils
+ This package depends on all apps, games and tools for infantil
+ and primaria schools.
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
 
 
 Package: max-gnome-desktop-environment
