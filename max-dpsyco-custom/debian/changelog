@@ -1,3 +1,10 @@
+max-dpsyco-custom (6.0.max31) max; urgency=low
+
+  * usr/sbin/max-update-post-inst:
+    - Hide errors in xdg-mime query
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 20 Nov 2010 16:40:28 +0100
+
 max-dpsyco-custom (6.0.max30) max; urgency=low
 
   * Remove max-menus of Depends (nanoMAX don't need it)

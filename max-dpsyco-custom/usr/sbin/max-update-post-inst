@@ -92,7 +92,7 @@ fi
 
 if [ -x /usr/bin/xdg-mime ]; then
 # chech exe-learning mime
-  if [ "$(xdg-mime query default application/x-exe-learning)" = "" ]; then
+  if [ "$(xdg-mime query default application/x-exe-learning 2>/dev/null)" = "" ]; then
     echo "application/x-exe-learning=exe.desktop" >> /etc/gnome/defaults.list
   fi
 fi
