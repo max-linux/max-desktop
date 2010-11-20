@@ -131,7 +131,7 @@ for meta in alumno profesor servidor terminales infantil; do
        metafile=$CDRW/casper/filesystem.manifest-desktop.terminales
        ;;
      infantil)
-       metapkg="max-desktop-infantil-primaria"
+       metapkg="max-infantil"
        metafile=$CDRW/casper/filesystem.manifest-desktop.infantil
        ;;
      nanomax)

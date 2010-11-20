@@ -6,7 +6,7 @@ DISTRO=lucid
 DISTRO_VERSION="10.04"
 ARCH=i386
 NANOARCH=i386
-MAX_VERSION="6.0-rc1"
+MAX_VERSION="6.0-rc2"
 IMAGE_NAME="MaX-${MAX_VERSION}"
 TITLE="MaX 6.0"
 
@@ -73,7 +73,7 @@ PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN linux-wlan-ng-doc linux-wlan-ng locale
 PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN ndiswrapper-common ndiswrapper-utils-1.9 oem-config-gtk oem-config patch pptp-linux setserial"
 
 PAQUETES_EXTRA_RESTRICTED="drdsl"
-PAQUETES_INFANTIL="max-desktop-infantil-primaria"
+PAQUETES_INFANTIL="max-desktop-infantil-primaria max-infantil"
 
 
 #PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales max-nanomax virtualbox-ose backharddi backharddi-net"
@@ -81,7 +81,7 @@ PAQUETES_INFANTIL="max-desktop-infantil-primaria"
 
 PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales virtualbox-ose backharddi-ng backharddi-ng-net"
 PAQUETES_EXTRA="$PAQUETES_EXTRA max-tcos-alumno max-tcos-profesor"
-PAQUETES_EXTRA="$PAQUETES_EXTRA nvidia-glx-180 linux-wlan-ng-firmware linux-firmware max-desktop-infantil-primaria"
+PAQUETES_EXTRA="$PAQUETES_EXTRA nvidia-glx-180 linux-wlan-ng-firmware linux-firmware max-desktop-infantil-primaria max-infantil"
 
 BLACKLIST_PKGS="jetty resolvconf gdm-guest-session emacs22 emacs22-bin-common emacs22-common emacsen-common"
 BLACKLIST_PKGS="$BLACKLIST_PKGS python-ubuntuone python-ubuntuone-client python-ubuntuone-storageprotocol ubuntuone-client"
