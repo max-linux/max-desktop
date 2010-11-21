@@ -1,3 +1,9 @@
+max-skel-conf (6.0.max8) max; urgency=low
+
+  * Fix creation of XDG user dirs
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 21 Nov 2010 15:13:33 +0100
+
 max-skel-conf (6.0.max7) max; urgency=low
 
   * Remove manual.desktop
