@@ -1,0 +1,14 @@
+Source: max-stellarium
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 7.0.0), cdbs
+Standards-Version: 3.8.4
+
+Package: max-stellarium
+Architecture: all
+Depends: stellarium
+Description: Some landscapes for Stellarium
+ Contains:
+  * Stellarium extra landscapes
+
