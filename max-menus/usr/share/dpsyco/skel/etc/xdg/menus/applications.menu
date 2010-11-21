@@ -216,6 +216,7 @@
 			<Exclude><Filename>geogebra.desktop</Filename></Exclude>
 			<Exclude><Filename>kstars.desktop</Filename></Exclude>
 			<Exclude><Filename>kde4-celestia.desktop</Filename></Exclude>
+			<Exclude><Filename>celestia.desktop</Filename></Exclude>
 			<Exclude><Filename>gcompris.desktop</Filename></Exclude>
 			<Exclude><Filename>maxmoodle.desktop</Filename></Exclude>
 			<Exclude><Filename>maxmoodle-gui.desktop</Filename></Exclude>
@@ -281,6 +282,7 @@
 			<Include><Filename>kde4-kstars.desktop</Filename></Include>
 			<Include><Filename>starplot.desktop</Filename></Include>
 			<Include><Filename>kde4-celestia.desktop</Filename></Include>
+			<Include><Filename>celestia.desktop</Filename></Include>
 			<Include><Filename>stars.desktop</Filename></Include>
 			<Include><Filename>stellarium.desktop</Filename></Include>
 			<Include><Filename>kstars.desktop</Filename></Include>
