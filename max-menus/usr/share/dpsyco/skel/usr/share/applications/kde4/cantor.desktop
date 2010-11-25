@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Cantor
+Exec=cantor %i -caption "%c"
+Icon=cantor
+Type=Application
+X-DocPath=cantor/index.html
+GenericName=KDE Frontend to Mathematical Software.
+Terminal=false
+Categories=Qt;KDE;Education;Math;
+MimeType=application/x-cantor;
+X-Ubuntu-Gettext-Domain=desktop_kdeedu
+NoDisplay=true
