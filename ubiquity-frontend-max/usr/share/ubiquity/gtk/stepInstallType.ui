@@ -69,11 +69,11 @@
                     </child>
                     <child>
                       <object class="GtkRadioButton" id="install_type_escritorio">
-                        <property name="label" translatable="yes">Escritorio</property>
+                        <property name="label" translatable="yes">Escritorio personal</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">Seleccione esta opci&#xF3;n para una instalaci&#xF3;n b&#xE1;sica con todas las aplicaciones educativas.</property>
+                        <property name="tooltip_text" translatable="yes">Instalaci&#xF3;n b&#xE1;sica con todas las aplicaciones educativas.</property>
                         <property name="active">True</property>
                         <property name="draw_indicator">True</property>
                         <property name="group">install_type_group</property>
@@ -88,6 +88,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
+                        <property name="tooltip_text" translatable="yes">Instalaci&#xF3;n con todas las aplicaciones educativas y control de aula (TCOS) con perfil de profesor (controla a los alumnos).</property>
                         <property name="draw_indicator">True</property>
                         <property name="group">install_type_group</property>
                       </object>
@@ -101,7 +102,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">Seleccione esta opci&#xF3;n para instalar max-tcos-alumno y poder ser controlado desde TcosMonitor.</property>
+                        <property name="tooltip_text" translatable="yes">Instalaci&#xF3;n con todas las aplicaciones educativas y control de aula (TCOS) con perfil de alumno (ser&#xE1; controlado por el equipo del profesor).</property>
                         <property name="active">True</property>
                         <property name="draw_indicator">True</property>
                         <property name="group">install_type_group</property>
@@ -116,7 +117,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">Seleccione esta opci&#xF3;n para max-desktop-infantil-primaria (personalizaci&#xF3;n de infantil).</property>
+                        <property name="tooltip_text" translatable="yes">Instalaci&#xF3;n con todas las aplicaciones educativas, control de aula (TCOS) con perfil de alumno (ser&#xE1; controlado por el equipo del profesor) y personalizaci&#xF3;n del entorno para los m&#xE1;s peque&#xF1;os.</property>
                         <property name="draw_indicator">True</property>
                         <property name="group">install_type_group</property>
                       </object>
@@ -130,6 +131,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
+                        <property name="tooltip_text" translatable="yes">Instala MAX en una memoria USB y lleva tu sistema operativo a cualquier lugar. Se incluyen aplicaciones portables para Windows.</property>
                         <property name="draw_indicator">True</property>
                         <property name="group">install_type_group</property>
                       </object>
@@ -143,6 +145,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
+                        <property name="tooltip_text" translatable="yes">Convierte tu equipo en un servidor de terminales ligeros y un servidor de im&#xE1;genes para clonado de equipos por red.</property>
                         <property name="draw_indicator">True</property>
                         <property name="group">install_type_group</property>
                       </object>
