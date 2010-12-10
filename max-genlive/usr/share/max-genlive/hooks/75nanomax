@@ -286,6 +286,13 @@ EOC
   $MKSQUASHFS $NANOCHROOT/  $NANOMAX/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo NANOMAX squashfs"
   chmod 644 $NANOMAX/casper/filesystem.squashfs || _exit "No se ha podido cambiar los permisos de NANOMAX squashfs"
 
+  _echo "Calculando tamaño filesystem.size..."
+
+  unsquashfs -lls $NANOMAX/casper/filesystem.squashfs | grep -v " inodes " | grep -v "unsquashfs:" | awk '{print $3}' | grep -v "," > /tmp/size.tmp
+  for i in `cat /tmp/size.tmp`; do a=$(($a+$i)); done
+  echo $a > $NANOMAX/casper/filesystem.size
+  rm -f /tmp/size.tmp
+
 
   _echo "Copiando contenido live en nanomax..."
 

@@ -22,7 +22,7 @@ if [ ! $DISABLE_SQUASHFS ]; then
   unsquashfs -lls $CDRW/casper/filesystem.squashfs | grep -v " inodes " | grep -v "unsquashfs:" | awk '{print $3}' | grep -v "," > /tmp/size.tmp
   for i in `cat /tmp/size.tmp`; do a=$(($a+$i)); done
   echo $a > $CDRW/casper/filesystem.size
-
+  rm /tmp/size.tmp
 
 fi
 
