@@ -1,5 +1,10 @@
 #!/bin/sh
 
 
+if [ "$1" = configure ]; then
+  # update-alternatives --install <link> <name> <path> <priority>
+  update-alternatives --install /etc/lxdm/default.conf lxdm.conf /etc/lxdm/lxdm-max.conf 80
+fi
+
 
 #DEBHELPER#

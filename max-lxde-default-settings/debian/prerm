@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$1" = "remove" ] || [ "$1" = upgrade ]; then
+  update-alternatives --remove lxdm.conf /etc/lxdm/lxdm-max.conf 
+fi
+
+
+
+
+#DEBHELPER#
