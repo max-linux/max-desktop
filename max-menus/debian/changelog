@@ -1,3 +1,10 @@
+max-menus (6.0.max31) max; urgency=low
+
+  * usr/bin/klettres.max:
+    - Don't pass args to klettres
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 10 Dec 2010 21:04:00 +0100
+
 max-menus (6.0.max30) max; urgency=low
 
   * tuxtype.desktop usr/bin/tuxtype.max
