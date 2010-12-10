@@ -11,9 +11,9 @@ setup_nanomax() {
   [ ! -e /usr/bin/acroread ] && ln -s /usr/bin/evince /usr/bin/acroread
   [ ! -e /usr/share/pixmaps/acroread.png ] && ln -s /usr/share/icons/maxtoon/48x48/apps/xpdf.png /usr/share/pixmaps/acroread.png
 
-  if [ ! -e /usr/share/crystalsvg/48x48/apps/acroread.png ]; then
-    mkdir -p /usr/share/crystalsvg/48x48/apps
-    ln -s /usr/share/icons/maxtoon/48x48/apps/xpdf.png /usr/share/crystalsvg/48x48/apps/acroread.png
+  if [ ! -e /usr/share/icons/crystalsvg/48x48/apps/acroread.png ]; then
+    mkdir -p /usr/share/icons/crystalsvg/48x48/apps
+    ln -s /usr/share/icons/maxtoon/48x48/apps/xpdf.png /usr/share/icons/crystalsvg/48x48/apps/acroread.png
   fi
 
   if [ ! -e /usr/share/xsessions/gnome.desktop ]; then
@@ -26,7 +26,7 @@ setup_nanomax() {
 
   # configure max-manual lxlauncher icons
   FILES="/usr/share/max-manuales/manual.desktop /usr/share/max-manuales/install-manual.desktop"
-  FILES="$FILES /home/madrid/Desktop/manual.desktop /home/madrid/Desktop/install-manual.desktop"
+  FILES="$FILES /home/madrid/Escritorio/manual.desktop /home/madrid/Escritorio/install-manual.desktop"
   for f in $FILES; do
     if [ -e "$f" ]; then
       sed -i -e '/Icon/d' $f

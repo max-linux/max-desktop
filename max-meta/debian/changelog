@@ -1,3 +1,11 @@
+max-meta (6.0.max51) max; urgency=low
+
+  * debian/max-nanomax.init:
+    - Fix PATH of acroread icon /usr/share/crystalsvg => /usr/share/icons/crystalsvg
+    - Use Escritorio instead of Desktop
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 10 Dec 2010 18:40:12 +0100
+
 max-meta (6.0.max50) max; urgency=low
 
   * nanomax, add:
