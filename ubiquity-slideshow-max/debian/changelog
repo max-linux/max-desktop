@@ -1,3 +1,14 @@
+ubiquity-slideshow-max (22max5) max; urgency=low
+
+  * slides/*.html:
+    - Change "tú" => "usted"
+  * slides/link/background.png slides/link/background_rtl.png:
+    - Transparent circle icon placeholder
+  * slides/icons/ubuntuone.png:
+    - Put MAX logo instead of Ubuntu
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 10 Dec 2010 15:20:14 +0100
+
 ubiquity-slideshow-max (22max4) max; urgency=low
 
   * Fix some gramatical errors (close ticket #313)
