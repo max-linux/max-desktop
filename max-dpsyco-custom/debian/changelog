@@ -1,3 +1,13 @@
+max-dpsyco-custom (6.0.max32) max; urgency=low
+
+  * /usr/share/kde4/apps/parley/plugins/wiktionary_sound.desktop:
+    - Disable wiktionary_sound plugin by default
+  * /usr/share/dpsyco/skel/usr/share/kde4/apps/parley/plugins/google_images.py:
+    - Don't use translation (ascii and utf8 errors)
+  * Close MAX ticket #318
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 10 Dec 2010 13:55:23 +0100
+
 max-dpsyco-custom (6.0.max31) max; urgency=low
 
   * usr/sbin/max-update-post-inst:
