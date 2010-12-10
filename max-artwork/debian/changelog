@@ -1,3 +1,9 @@
+max-artwork (6.0.max15) max; urgency=low
+
+  * Depend on gdm or lxdm
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 10 Dec 2010 16:51:06 +0100
+
 max-artwork (6.0.max14) max; urgency=low
 
   * Add maxtoon/scalable/mimetypes/application-x-exe-learning.svg
