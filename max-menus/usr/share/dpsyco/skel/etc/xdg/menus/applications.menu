@@ -244,11 +244,11 @@
 		<Menu>
 			<Name>Malted</Name>
 			<Directory>malted.directory</Directory>
+			<Include><Filename>max-maltededitor.desktop</Filename></Include>
 			<Include><Filename>max-maltednavegador.desktop</Filename></Include>
 			<Include><Filename>max-malteddepurador.desktop</Filename></Include>
 			<Include><Filename>max-malteddocwww.desktop</Filename></Include>
 			<Include><Filename>max-malteddocpdf.desktop</Filename></Include>
-			<Include><Filename>malted-editor.desktop</Filename></Include>
 		</Menu>
 		<Menu>
 			<Name>Animalandia</Name>

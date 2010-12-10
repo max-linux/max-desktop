@@ -1,3 +1,19 @@
+max-menus (6.0.max28) max; urgency=low
+
+  * kde4/parley.desktop:
+    - Change description diccionario => vocabulario
+  * /etc/xdg/menus/applications.menu:
+    - Include Malted editor (desktop renamed)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 10 Dec 2010 14:12:42 +0100
+
+max-menus (6.0.max27) max; urgency=low
+
+  * childsplay.desktop:
+    - Run childsplay without login
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 25 Nov 2010 18:54:08 +0100
+
 max-menus (6.0.max26) max; urgency=low
 
   * Hide cantor and rocs launchers
