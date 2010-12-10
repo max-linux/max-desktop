@@ -1,3 +1,12 @@
+max-lxde-default-settings (6.0.max6) max; urgency=low
+
+  * Add /etc/init/lxdm.conf:
+    - Start LXDM if GDM or KDM is not installed (don't read /etc/X11/default-display-manager)
+  * /etc/X11/Xsession.d/65nanomax-xdg-user-dirs-update:
+    - Try to remove not needed Desktop dir
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 10 Dec 2010 18:41:46 +0100
+
 max-lxde-default-settings (6.0.max5) max; urgency=low
 
   * Depend on lxdm (conflict with GDM)

@@ -6,7 +6,5 @@ if [ -x /usr/bin/xdg-user-dirs-update ] && \
 	/usr/bin/xdg-user-dirs-update --force
 fi
 
-if [ ! -e $HOME/Desktop ]; then
-  ln -s $HOME/Escritorio $HOME/Desktop
-fi
-
+# try to remove Desktop
+rmdir $HOME/Desktop 2>/dev/null
