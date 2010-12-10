@@ -1,3 +1,12 @@
+max-menus (6.0.max30) max; urgency=low
+
+  * tuxtype.desktop usr/bin/tuxtype.max
+    - Create ~/.tuxtype/settings.txt with lang=espanol (close ticket #319)
+  * klettres.desktop usr/bin/klettres.max
+    - Create ~/.kde/share/config/klettresrc with Language=es (close ticket #330)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 10 Dec 2010 20:56:10 +0100
+
 max-menus (6.0.max29) max; urgency=low
 
   * plopp.desktop: Move to Games (close ticket #327)

@@ -2,7 +2,7 @@
 [Desktop Entry]
 Type=Application
 TryExec=/usr/bin/klettres
-Exec=klettres -caption "%c" %i
+Exec=klettres.max -caption "%c" %i
 Icon=klettres
 X-DocPath=klettres/index.html
 Comment=a KDE program to learn the alphabet
