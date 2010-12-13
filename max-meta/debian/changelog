@@ -1,3 +1,10 @@
+max-meta (6.0.max52) max; urgency=low
+
+  * nanomax-i386, add:
+    - openoffice.org-hyphenation (downloaded by installer)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 13 Dec 2010 16:16:25 +0100
+
 max-meta (6.0.max51) max; urgency=low
 
   * debian/max-nanomax.init:
