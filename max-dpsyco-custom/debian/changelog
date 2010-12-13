@@ -1,3 +1,10 @@
+max-dpsyco-custom (6.0.max34) max; urgency=low
+
+  * Add /etc/grub.d/58_backharddi-ng:
+    - Add backharddi kernel to GRUB if backharddi-ng is not installed (nanoMAX)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 13 Dec 2010 17:16:59 +0100
+
 max-dpsyco-custom (6.0.max33) max; urgency=low
 
   * usr/sbin/max-update-post-inst:

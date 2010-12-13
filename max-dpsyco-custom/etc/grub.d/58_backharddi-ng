@@ -1,0 +1,56 @@
+#!/bin/sh
+set -e
+
+# this script add backharddi to GRUB if backharddi-ng is not installed
+if [ -e /etc/grub.d/55_backharddi-ng ]; then
+  # backharddi-ng installed exit now
+  exit 0
+fi
+
+if [ ! -e /boot/linux-backharddi-ng ]; then
+  # no kernel, exit now
+  exit 0
+fi
+
+# older versions of grub2 do not have this yet (LP: #459080)
+if [ ! -e /usr/lib/grub/grub-mkconfig_lib ]; then
+    echo "no grub-mkconfig_lib, exiting"
+    exit 0
+fi
+
+. /usr/lib/grub/grub-mkconfig_lib
+
+# We can't cope with loop-mounted devices here.
+case ${GRUB_DEVICE_BOOT} in
+  /dev/loop/*|/dev/loop[0-9])
+    exit 0
+  ;;
+esac
+
+if [ "x${GRUB_DEVICE_UUID}" = "x" ] || [ "x${GRUB_DISABLE_LINUX_UUID}" = "xtrue" ] \
+    || ! test -e "/dev/disk/by-uuid/${GRUB_DEVICE_UUID}" \
+    || [ "`grub-probe -t abstraction --device ${GRUB_DEVICE} | sed -e 's,.*\(lvm\).*,\1,'`" = "lvm"  ] ; then
+  LINUX_ROOT_DEVICE=${GRUB_DEVICE}
+else
+  LINUX_ROOT_DEVICE=UUID=${GRUB_DEVICE_UUID}
+fi
+
+#linux-backharddi-ng
+#minirt-backharddi-ng.gz
+#append backharddi/medio=hd-media video=vesa:ywrap,mtrr vga=788 locale=es_ES console-keymaps-at/keymap=es quiet
+
+if test -e /boot/linux-backharddi-ng ; then
+  BACK1=$( make_system_path_relative_to_its_root "/boot/linux-backharddi-ng" )
+  BACK2=$( make_system_path_relative_to_its_root "/boot/minirt-backharddi-ng.gz" )
+  echo "Found Backharddi-NG image: linux-backharddi-ng" >&2
+  cat << EOF
+menuentry "Backharddi-NG (sistema de backup)" {
+EOF
+  prepare_boot_cache="$(prepare_grub_to_access_device ${GRUB_DEVICE_BOOT} | sed -e "s/^/\t/")"
+  printf '%s\n' "${prepare_boot_cache}"
+  cat << EOF
+	linux	$BACK1 backharddi/medio=hd-media video=vesa:ywrap,mtrr vga=788 locale=es_ES console-keymaps-at/keymap=es quiet
+	initrd	$BACK2
+}
+EOF
+fi
