@@ -1,3 +1,10 @@
+max-genlive (6.0.max21) max; urgency=low
+
+  * debian/control: readd max-win32-apps depends package
+  * usr/share/max-genlive/hooks/75nanomax: copy HTML files to CDROM
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 13 Dec 2010 16:18:46 +0100
+
 max-genlive (6.0.max20) max; urgency=low
 
   * usr/share/max-genlive/hooks/75nanomax:

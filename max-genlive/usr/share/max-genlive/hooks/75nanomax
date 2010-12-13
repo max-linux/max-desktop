@@ -296,6 +296,12 @@ EOC
 
   _echo "Copiando contenido live en nanomax..."
 
+  # añadir software portable del paquete max-win32-apps
+  if [ -d $GENLIVE/win32aps ]; then
+    _echo "Copiando max-win32-apps ..."
+    cp -ra $GENLIVE/win32aps/* $NANOMAX/
+  fi
+
   mkdir -p $NANOMAX/isolinux
   cp $CDRW/isolinux/*    $NANOMAX/isolinux/ || _exit "No se puede sobreescribir isolinux"
   cp $GENLIVE/isolinux/* $NANOMAX/isolinux/ || _exit "No se puede sobreescribir isolinux"
