@@ -1,3 +1,10 @@
+max-dpsyco-custom (6.0.max33) max; urgency=low
+
+  * usr/sbin/max-update-post-inst:
+    - Don't write /etc/default/grub if no exists
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 13 Dec 2010 16:13:52 +0100
+
 max-dpsyco-custom (6.0.max32) max; urgency=low
 
   * /usr/share/kde4/apps/parley/plugins/wiktionary_sound.desktop:

@@ -16,31 +16,34 @@ fi
 
 UPDATE_GRUB=0
 
-if ! grep -q "MaX-6.0" /etc/default/grub 2>/dev/null; then
-  echo '' >> /etc/default/grub
-  echo 'GRUB_DISTRIBUTOR="MaX-6.0"' >> /etc/default/grub
-  UPDATE_GRUB=1
-fi
-
-if grep -q "^GRUB_HIDDEN" /etc/default/grub 2>/dev/null; then
-  sed -i -e 's/^GRUB_HIDDEN/#GRUB_HIDDEN/g' /etc/default/grub
-  UPDATE_GRUB=1
-fi
-
-# add acpi=force reboot=warm to fix reboot and poweroff issues
-if ! grep -q "acpi=force" /etc/default/grub 2>/dev/null; then
-  . /etc/default/grub
-  echo "# this will fix poweroff and reboot issues in MAX" >> /etc/default/grub
-  echo "GRUB_CMDLINE_LINUX=\"$GRUB_CMDLINE_LINUX acpi=force reboot=warm \"" >> /etc/default/grub
-  UPDATE_GRUB=1
-fi
-
-
-if [ "$UPDATE_GRUB" = "1" ]; then
-  if [ -x "`which update-grub 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
-      update-grub
+if [ -e /etc/default/grub ]; then
+  if ! grep -q "MaX-6.0" /etc/default/grub 2>/dev/null; then
+    echo '' >> /etc/default/grub
+    echo 'GRUB_DISTRIBUTOR="MaX-6.0"' >> /etc/default/grub
+    UPDATE_GRUB=1
   fi
-fi
+
+  if grep -q "^GRUB_HIDDEN" /etc/default/grub 2>/dev/null; then
+    sed -i -e 's/^GRUB_HIDDEN/#GRUB_HIDDEN/g' /etc/default/grub
+    UPDATE_GRUB=1
+  fi
+
+  # add acpi=force reboot=warm to fix reboot and poweroff issues
+  if ! grep -q "acpi=force" /etc/default/grub 2>/dev/null; then
+    . /etc/default/grub
+    echo "# this will fix poweroff and reboot issues in MAX" >> /etc/default/grub
+    echo "GRUB_CMDLINE_LINUX=\"$GRUB_CMDLINE_LINUX acpi=force reboot=warm \"" >> /etc/default/grub
+    UPDATE_GRUB=1
+  fi
+
+
+  if [ "$UPDATE_GRUB" = "1" ]; then
+    if [ -x "`which update-grub 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
+      update-grub
+    fi
+  fi
+fi # end of [ -e /etc/default/grub ]
+
 
 # force to not dist upgrades
 if [ -f /etc/update-manager/release-upgrades ]; then
@@ -80,7 +83,7 @@ fi
 
 
 
-if [ -d /usr/lib/jvm/ ]; then
+if [ -d /usr/lib/jvm/ ] && [ -e /usr/share/descartes/DescartesLib.jar ]; then
   # link descartes in every JAVA package
   JVMS=$(find /usr/lib/jvm/ -maxdepth 1 -mindepth 1 -type d | grep -v jmf)
   for jvm in $JVMS; do
@@ -90,8 +93,8 @@ if [ -d /usr/lib/jvm/ ]; then
   done
 fi
 
-if [ -x /usr/bin/xdg-mime ]; then
-# chech exe-learning mime
+if [ -x /usr/bin/xdg-mime ] && [ -e /etc/gnome/defaults.list ]; then
+  # chech exe-learning mime
   if [ "$(xdg-mime query default application/x-exe-learning 2>/dev/null)" = "" ]; then
     echo "application/x-exe-learning=exe.desktop" >> /etc/gnome/defaults.list
   fi
