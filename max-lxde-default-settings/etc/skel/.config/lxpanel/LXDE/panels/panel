@@ -10,13 +10,13 @@ Global {
     height=26
     transparent=0
     tintcolor=#000000
-    alpha=0
+    alpha=255
     autohide=0
     heightwhenhidden=2
     setdocktype=1
     setpartialstrut=1
     usefontcolor=1
-    fontcolor=#ffffff
+    fontcolor=#000000
     background=0
     backgroundfile=/usr/share/lxpanel/images/background.png
     iconsize=24
