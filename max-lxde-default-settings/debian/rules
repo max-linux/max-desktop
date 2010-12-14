@@ -6,9 +6,9 @@ binary-install/max-lxde-default-settings::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-lxde-default-settings -type d -name .svn | xargs rm -rf --
 
-	for po in $(CURDIR)/debian/max-lxde-default-settings/usr/share/dpsyco/skel/usr/share/locale/es/LC_MESSAGES/*po; do \
-		echo " * Translating $$po ..." ;\
-		gmo=`echo $$po| sed -s 's/\.po/\.mo/g'` ;\
-		msgfmt --verbose -o $$gmo $$po; \
-		rm -f $$po; \
-	done
+#	for po in $(CURDIR)/debian/max-lxde-default-settings/usr/share/dpsyco/skel/usr/share/locale/es/LC_MESSAGES/*po; do \
+#		echo " * Translating $$po ..." ;\
+#		gmo=`echo $$po| sed -s 's/\.po/\.mo/g'` ;\
+#		msgfmt --verbose -o $$gmo $$po; \
+#		rm -f $$po; \
+#	done

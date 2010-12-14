@@ -1,3 +1,17 @@
+max-lxde-default-settings (6.0.max8) max; urgency=low
+
+  * Remove translations, LXDE has now Spanish updated ones
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 14 Dec 2010 13:38:02 +0100
+
+max-lxde-default-settings (6.0.max7) max; urgency=low
+
+  * /etc/xdg/lxsession/LXDE/autostart start
+    /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+    (this enable users-admin and time-admin make-changes button)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 14 Dec 2010 13:07:12 +0100
+
 max-lxde-default-settings (6.0.max6) max; urgency=low
 
   * Add /etc/init/lxdm.conf:
