@@ -1,3 +1,10 @@
+max-live (6.0.max8) max; urgency=low
+
+  * /usr/share/initramfs-tools/scripts/casper-bottom/11max:
+    - Don't run SSH server in live session
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Dec 2010 14:55:42 +0100
+
 max-live (6.0.max7) max; urgency=low
 
   * usr/share/initramfs-tools/scripts/casper-bottom/11max:

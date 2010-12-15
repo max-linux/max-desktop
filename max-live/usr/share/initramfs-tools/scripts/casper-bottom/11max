@@ -82,4 +82,10 @@ if [ -e /root/etc/lxdm/lxdm-max.conf ]; then
   mv /root/etc/lxdm/lxdm-max.conf.new /root/etc/lxdm/lxdm-max.conf
 fi
 
+# don't run SSH in live session
+if [ -d /root/etc/ssh ]; then
+  touch /root/etc/ssh/sshd_not_to_be_run
+fi
+
+
 log_end_msg
