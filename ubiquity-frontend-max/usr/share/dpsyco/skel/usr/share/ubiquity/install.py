@@ -2302,6 +2302,7 @@ class Install:
                           preexec_fn=install_misc.debconf_disconnect, close_fds=True)
 
             install_misc.chrex(self.target,'max-update-post-inst')
+            install_misc.chrex(self.target,'max-reset-ssh-keys')
             os.unlink("/target/bin/log-output")
             if delete_libdebian:
                 os.unlink("/target/usr/lib/libdebian-installer.so.4")
