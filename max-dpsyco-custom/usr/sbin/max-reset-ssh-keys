@@ -1,0 +1,11 @@
+#!/bin/bash
+# MAX DVD contains ssh generated keys
+# this script delete this keys and generate again
+
+
+
+if [ -e /etc/ssh/ssh_host_dsa_key ] && [ -d /usr/share/doc/openssh-server ]; then
+  echo "max-reset-ssh-keys: deleting SSH keys..."
+  rm -f /etc/ssh/*key*
+  dpkg-reconfigure openssh-server
+fi
