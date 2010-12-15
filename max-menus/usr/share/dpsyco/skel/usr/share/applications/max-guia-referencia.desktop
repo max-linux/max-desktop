@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Guía de referencia MAX
+Name[es]=Guía de referencia MAX
+Comment=Guía de referencia MAX
+Comment[es]=Enlace a la Guía de referencia MAX
+TryExec=/usr/bin/firefox
+Exec=firefox http://www.educa2.madrid.org/web/max/documentacion/max6/guia_de_referencia
+Icon=firefox
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Application;Core;
