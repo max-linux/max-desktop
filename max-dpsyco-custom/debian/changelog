@@ -1,3 +1,10 @@
+max-dpsyco-custom (6.0.max35) max; urgency=low
+
+  * /usr/share/system-tools-backends-2.0/scripts/Network/Hosts.pm:
+    - Add debian to distros list (fix network-admin change hostname)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Dec 2010 01:47:08 +0100
+
 max-dpsyco-custom (6.0.max34) max; urgency=low
 
   * Add /etc/grub.d/58_backharddi-ng:
