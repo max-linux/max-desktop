@@ -56,7 +56,7 @@ if [ "$ARCH" = "i386" ] && [ -f /etc/tcos/tcos.conf ]; then
     invoke-rc.d xfs restart
   fi
 
-  if [ -f /etc/default/xfstt ] && [ "$(grep -c 'LISTEN_TCP=\"no\"' /etc/default/xfstt)" = "0" ]; then
+  if [ -f /etc/default/xfstt ] && [ "$(grep -c 'LISTEN_TCP=\"no\"' /etc/default/xfstt)" = "1" ]; then
     sed 's/LISTEN_TCP="no"/LISTEN_TCP="yes"/g' /etc/default/xfstt
     invoke-rc.d xfstt restart
   fi
