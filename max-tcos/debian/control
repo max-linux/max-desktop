@@ -8,7 +8,7 @@ Standards-Version: 3.8.4
 Package: max-tcos-alumno
 Architecture: all
 Pre-Depends: dpsyco-lib (>= 1.0.11), dpsyco-lib (<= 1.1.0), dpsyco-skel (>= 1.0.11)
-Depends: tcos-standalone, vlc, rsync
+Depends: tcos-standalone, vlc
 Description: Configuración de tcos-standalone para equipos de alumnos
  Contiene:
   * Imagen de bloqueo lockscreen
@@ -17,18 +17,17 @@ Description: Configuración de tcos-standalone para equipos de alumnos
 Package: max-tcos-profesor
 Architecture: all
 Pre-Depends: dpsyco-lib (>= 1.0.11), dpsyco-lib (<= 1.1.0), dpsyco-skel (>= 1.0.11)
-Depends: tcosmonitor ( >= 0.2.1.max1), rsync, vlc
+Depends: tcosmonitor ( >= 0.2.1.max1), vlc
 Description: Configuración de tcosmonitor para equipos de profesores
  Contiene:
   * Parches para vlc sin MP3
-  * Configuración de rsync
 
 Package: max-terminales
 Architecture: all
 Conflicts: max-tcos-alumno
 Provides: max-tcos-alumno
 Replaces: max-tcos-alumno
-Depends: max-server, max-netboot-server, tcos-configurator, tcosconfig, paman, pavumeter, pavucontrol, max-tcos-profesor
+Depends: max-server, max-netboot-server, tcos-configurator, tcosconfig, paman, pavumeter, pavucontrol, max-tcos-profesor, xfs, xfstt
 Description: The Max NETBOOT server metapackage
  This package depends on max-server and max-netboot-server
  .

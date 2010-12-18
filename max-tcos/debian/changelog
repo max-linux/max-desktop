@@ -1,3 +1,10 @@
+max-tcos (6.0.max2) max; urgency=low
+
+  * Remove rsync from Depends
+  * Add xfs and xfstt to terminales Depends
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 18 Dec 2010 15:15:33 +0100
+
 max-tcos (6.0.max1) max; urgency=low
 
   * Change version to 6.0
