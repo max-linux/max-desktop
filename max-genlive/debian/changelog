@@ -1,3 +1,10 @@
+max-genlive (6.0.max22) max; urgency=low
+
+  * Bump version MaX-6.0-rc3
+  * Remove .bash_history
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 18 Dec 2010 18:46:34 +0100
+
 max-genlive (6.0.max21) max; urgency=low
 
   * debian/control: readd max-win32-apps depends package

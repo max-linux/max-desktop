@@ -6,6 +6,7 @@ if [ ! $DISABLE_SQUASHFS ]; then
 
   _revert_invoke
 
+  rm -f $CHROOT/root/.bash_history
   rm -rf $CHROOT/home/*
 
   LZMA=""

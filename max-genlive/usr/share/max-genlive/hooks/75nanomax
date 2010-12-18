@@ -278,6 +278,8 @@ EOC
   _echo "Actualizando DPSYCO..."
   chroot $NANOCHROOT/ /usr/sbin/update-dpsyco-skel
 
+  rm -f $NANOCHROOT/root/.bash_history
+
   LZMA=""
   # ver si hay que desactivar LZMA
   $MKSQUASHFS -help 2>&1 | grep -q nolzma && LZMA="-nolzma"
