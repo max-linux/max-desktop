@@ -52,32 +52,18 @@ if [ "$ARCH" = "i386" ] && [ -f /etc/tcos/tcos.conf ]; then
   # configurar XFS
   if [ -f /etc/X11/fs/config ] && [ "$(grep -c "^no-listen" /etc/X11/fs/config 2>/dev/null)" != "0" ]; then
     sed -i 's/no-listen/#no-listen/g' /etc/X11/fs/config
+    sed -i 's/client-limit = 10/client-limit = 30/g' /etc/X11/fs/config
     invoke-rc.d xfs restart
   fi
 
-  [ ! -f /etc/tcos/disable915 ] && touch /etc/tcos/disable915
+  if [ -f /etc/default/xfstt ] && [ "$(grep -c 'LISTEN_TCP=\"no\"' /etc/default/xfstt)" = "0" ]; then
+    sed 's/LISTEN_TCP="no"/LISTEN_TCP="yes"/g' /etc/default/xfstt
+    invoke-rc.d xfstt restart
+  fi
+
 
   # generar imagenes de arranque
   if [ -x /usr/sbin/gentcos ]; then
-    # cachear paquetes
-    #PKGS="esound libesd0"
-    #for pkg in $PKGS; do
-    #     if [ -d /var/cache/tcos/packages/${pkg} ]; then
-    #       # ya cacheado
-    #       continue
-    #     fi
-    #     if [ -d /cdrom/pool/max ]; then
-    #       abspkg=$(find /cdrom/pool/max -name "${pkg}_*")
-    #       echo "    *  Cacheando $pkg en /var/cache/tcos/packages/${pkg}"
-    #       rm -rf /var/cache/tcos/packages/${pkg} ; mkdir -p /var/cache/tcos/packages/${pkg}
-    #       if [ "${abspkg}" != "" ]; then
-    #         dpkg --extract ${abspkg} /var/cache/tcos/packages/${pkg}
-    #       fi
-    #     else
-    #       gentcos -instpkg $pkg
-    #     fi
-    #done
-    # generar imagenes de arranque 
     gentcos -tftp
   fi
 fi
@@ -118,23 +104,7 @@ if [ -d /usr/share/backharddi-ng ]; then
   fi
 fi
 
-#
-# Configurar servidor DHCP
-#
-# FIXME
-# FIXME leer interfaces
-# FIXME configurar /etc/default/dhcp3-server
-# FIXME configurar /etc/dhcp3/dhcpd.conf (rango de 25 ips)
-#
 
-#
-# FIXME Añadir usuarios live
-# FIXME alumno01 => alumno20 (añadir al grupo fuse)
-# FIXME ¿Configurarlos con homealumno?
-# 
-# FIXME Configurar nombres de host de alumno01 hasta alumno20
-#
-#
 
 
 #
@@ -145,9 +115,11 @@ if [ -x /usr/sbin/update-dpsyco-skel ]; then
   echo "  ** Actualizando plantilla dpsyco **"
   /usr/sbin/update-dpsyco-skel >/dev/null 2>&1
 
-  # ATFTPD esta configurado como demonio no desde inetd
-  update-inetd --disable tftp  >/dev/null 2>&1
-  invoke-rc.d atftpd restart
+  if [ -x /usr/sbin/atftpd ]; then
+    # ATFTPD esta configurado como demonio no desde inetd
+    update-inetd --disable tftp  >/dev/null 2>&1
+    invoke-rc.d atftpd restart
+  fi
 
   # force stop dropbear
   invoke-rc.d dropbear stop >/dev/null 2>&1 || true
