@@ -1,3 +1,12 @@
+max-dpsyco-custom (6.0.max37) max; urgency=low
+
+  * usr/sbin/max-reset-ssh-keys, set some environ vars
+    DEBCONF_FRONTEND=noninteractive
+    DEBIAN_FRONTEND=noninteractive 
+    UCF_FORCE_CONFFOLD=1
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 18 Dec 2010 22:05:56 +0100
+
 max-dpsyco-custom (6.0.max36) max; urgency=low
 
   * Add /usr/sbin/max-reset-ssh-keys:
