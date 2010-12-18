@@ -42,7 +42,7 @@ DEFAULT_CONF={'main':{'profiles':['alumno']},
                         'compiz':0, 'screensaver':0, 'wallpaper':''},
              }
 
-ALWAYS_EXCLUDE=['.xsession-errors', '.Xauthority', '.ICEauthority', '.dmrc', '.gvfs', '.kompozer']
+ALWAYS_EXCLUDE=['.xsession-errors', '.Xauthority', '.ICEauthority', '.dmrc', '.gvfs', '.kompozer', 'Escritorio/Profesor']
 
 class Profiler(object):
     def __init__(self):
