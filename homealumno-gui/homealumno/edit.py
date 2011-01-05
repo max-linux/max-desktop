@@ -50,7 +50,7 @@ class EditProfile(object):
         print_debug("Loading ui file...")
         self.ui.add_from_file(homealumno.GLADE_DIR + 'homealumno-gui-edit.ui')
         self.editwindow = self.ui.get_object('editwindow')
-        if os.path.isfile('/usr/share/pixmaps/max.png')
+        if os.path.isfile('/usr/share/pixmaps/max.png'):
             self.editwindow.set_icon_from_file('/usr/share/pixmaps/max.png')
         self.editwindow.connect('show',  self.on_editwindow_show)
         
