@@ -25,8 +25,9 @@
 import sys
 import os
 import pwd
+import grp
 
-sys.path.append('./')
+#sys.path.append('./')
 import homealumno
 import homealumno.gconfprofile
 
@@ -115,19 +116,39 @@ class Profiler(object):
                 print_debug("found %s in profile[%s]=%s"%(currentusername, profilename, profile))
                 excludes=""
                 for exc in ALWAYS_EXCLUDE:
-                    excludes=excludes + " --exclude=%s"%exc
+                    excludes=excludes + " --exclude='%s'"%exc
                 for exc in profile['exceptions']:
-                    excludes=excludes + " --exclude=%s"%exc
+                    excludes=excludes + " --exclude='%s'"%exc
+
+                # ejecutar pre-run scripts
+                post_run=os.path.abspath(homealumno.PRERUN_PATH + profilename)
+                if os.path.isfile(post_run):
+                    self.exe(post_run)
                 
                 # hacer un rsync desde /etc/skel con exclude
                 #print_debug("rsync %s -Pav /etc/skel/ --delete %s/"%(excludes, currenthome))
                 self.exe("rsync %s -Pav /etc/skel/ --delete %s/"%(excludes, currenthome))
+
+                self.exe("xdg-user-dirs-update --force")
+                # support ATNAG
+                try:
+                    if grp.getgrnam('atnag'):
+                        self.exe("mkdir -p %s/Escritorio"%currenthome)
+                        self.exe("chgrp atnag %s/Escritorio"%currenthome)
+                        self.exe("chmod 775 %s/Escritorio"%currenthome)
+                except:
+                    pass
                 
                 # hacer un rsync desde PROFILES_PATH + profilename con exclude
                 absprof=os.path.abspath(homealumno.PROFILES_PATH + profilename)
                 if os.path.isdir(absprof):
                     #print_debug("rsync %s -Pav %s/ %s/"%(excludes, absprof, currenthome))
                     self.exe("rsync %s -Pav %s/ %s/"%(excludes, absprof, currenthome))
+
+                # ejecutar post-run scripts
+                post_run=os.path.abspath(homealumno.POSTRUN_PATH + profilename)
+                if os.path.isfile(post_run):
+                    self.exe(post_run)
                 
                 # aplicar cambios de salvapantallas y fondo
                 if 'compiz' in profile and int(profile['compiz']) == 1:

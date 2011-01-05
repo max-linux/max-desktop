@@ -9,6 +9,9 @@ APPLY=False
 
 PROFILES_PATH="/var/lib/homealumno/profiles/"
 PROFILES_CONF_FILE="/var/lib/homealumno/profiles.ini"
+PRERUN_PATH="/var/lib/homealumno/pre-run/"
+POSTRUN_PATH="/var/lib/homealumno/post-run/"
+
 GLADE_DIR="/usr/share/homealumno-gui/"
 IMG_DIR="/usr/share/homealumno-gui/images/"
 

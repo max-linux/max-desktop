@@ -24,6 +24,7 @@
 
 import sys
 import gtk
+import os
 
 import homealumno
 import gobject
@@ -48,7 +49,8 @@ class HomeAlumnoGui(object):
         print_debug("Loading ui file...")
         self.ui.add_from_file(homealumno.GLADE_DIR + 'homealumno-gui-main.ui')
         self.mainwindow = self.ui.get_object('mainwindow')
-        self.mainwindow.set_icon_from_file('/usr/share/pixmaps/max.png')
+        if os.path.isfile('/usr/share/pixmaps/max.png'):
+            self.mainwindow.set_icon_from_file('/usr/share/pixmaps/max.png')
         self.mainwindow.connect('destroy', self.quitapp )
         self.mainwindow.connect('delete_event', self.quitapp )
         

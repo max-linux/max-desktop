@@ -1,3 +1,15 @@
+homealumno-gui (0.5) max; urgency=low
+
+  * homealumno/main.py homealumno/edit.py
+    - Check for '/usr/share/pixmaps/max.png' before use 
+  * Add PRERUN_PATH and POSTRUN_PATH scripts folders to make things before and after profile apply
+
+  * Escape excludes with '%s' in rsync command (allow spaces)
+  * Exec 'xdg-user-dirs-update --force' after deletion of HOME
+  * If atnag group exists, chmod 775 and chgrp 'Escritorio'
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 05 Jan 2011 15:39:48 +0100
+
 homealumno-gui (0.4) max; urgency=low
 
   * Add to ALWAYS_EXCLUDE 'Escritorio/Profesor'
