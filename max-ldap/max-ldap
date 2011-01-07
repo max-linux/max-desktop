@@ -442,7 +442,12 @@ Session:
         # configure sshd_config to disable logins of know users (madrid and alumno)
         shutil.copy('/etc/ssh/sshd_config', BACKUP)
         f=open('/etc/ssh/sshd_config', 'a')
-        f.write("\n\nDenyUsers madrid alumno\n")
+        f.write("\n\n# max-ldap\n")
+        f.write("# Al estar este equipo unido al dominio,\n")
+        f.write("# sólo se permite el acceso a usuarios del grupo 'Instaladores'\n")
+        f.write("# (perfil Administrador en max-control)\n")
+        f.write("# no pueden acceder ni usuarios locales, ni profesores ni Coordinadores TIC\n")
+        f.write("\nAllowGroups Instaladores\n")
         f.close()
         
         print_debug("configureSSH() done")

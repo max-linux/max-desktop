@@ -1,3 +1,9 @@
+max-ldap (0.20) max; urgency=low
+
+  * Add to /etc/ssh/sshd_config: 'AllowGroups Instaladores'
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 07 Jan 2011 18:45:27 +0100
+
 max-ldap (0.19) max; urgency=low
 
   * Disable dbrootlogin

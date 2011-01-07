@@ -18,6 +18,21 @@ if [ "$1" = "configure" ]; then
       rm -f /etc/ldap.secret
     fi
 
+
+    if ! grep -q "# max-ldap" /etc/ssh/sshd_config; then
+        cat << EOF >> /etc/ssh/sshd_config
+
+# max-ldap
+# Al estar este equipo unido al dominio,
+# sólo se permite el acceso a usuarios del grupo 'Instaladores'
+# (perfil Administrador en max-control)
+# no pueden acceder ni usuarios locales, ni profesores ni Coordinadores TIC
+
+AllowGroups Instaladores
+EOF
+        restart ssh || true
+    fi
+
 fi
 
 
