@@ -1,3 +1,12 @@
+homealumno-gui (0.7) max; urgency=low
+
+  * homealumno/profiler.py:
+    - Use a tempfile and excludes-from rsync args
+    - Escape spaces ' ' => '\ '
+    - if debug enabled print stdout in self.exe()
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 11 Jan 2011 12:57:19 +0100
+
 homealumno-gui (0.6) max; urgency=low
 
   * homealumno/edit.py:

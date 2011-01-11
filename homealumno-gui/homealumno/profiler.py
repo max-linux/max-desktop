@@ -33,6 +33,7 @@ import homealumno.gconfprofile
 
 from configobj import ConfigObj
 import subprocess
+import tempfile
 
 def print_debug(txt):
     if homealumno.debug:
@@ -108,6 +109,7 @@ class Profiler(object):
     def doapply(self):
         currentusername=pwd.getpwuid(os.getuid()).pw_name
         currenthome=pwd.getpwuid(os.getuid()).pw_dir
+        (fd, tmpexc)=tempfile.mkstemp()
         
         print_debug("applying profiles user=%s home=%s..."%(currentusername, currenthome))
         for profilename in self.get_allprofiles():
@@ -116,9 +118,18 @@ class Profiler(object):
                 print_debug("found %s in profile[%s]=%s"%(currentusername, profilename, profile))
                 excludes=""
                 for exc in ALWAYS_EXCLUDE:
-                    excludes=excludes + " --exclude='%s'"%exc
+                    os.write(fd, "%s\n"%exc)
                 for exc in profile['exceptions']:
-                    excludes=excludes + " --exclude='%s'"%exc
+                    if " " in exc:
+                        os.write(fd, "%s\n"%exc.replace(' ', '\ ') )
+                    else:
+                        os.write(fd, "%s\n"%exc)
+
+                # close fd and append to rsync commands
+                os.close(fd)
+                excludes="--exclude-from=%s"%tmpexc
+                if homealumno.debug:
+                    self.exe("cat %s"%tmpexc)
 
                 # ejecutar pre-run scripts
                 post_run=os.path.abspath(homealumno.PRERUN_PATH + profilename)
@@ -144,6 +155,10 @@ class Profiler(object):
                 if os.path.isdir(absprof):
                     #print_debug("rsync %s -Pav %s/ %s/"%(excludes, absprof, currenthome))
                     self.exe("rsync %s -Pav %s/ %s/"%(excludes, absprof, currenthome))
+
+                # delete filetemp file
+                if os.path.isfile(tmpexc):
+                    os.unlink(tmpexc)
 
                 # ejecutar post-run scripts
                 post_run=os.path.abspath(homealumno.POSTRUN_PATH + profilename)
@@ -185,6 +200,7 @@ class Profiler(object):
                     app.do(data)
 
     def exe(self, cmd):
+        #print_debug(cmd)
         _cmd=cmd.split()
         print_debug(_cmd)
         
@@ -195,6 +211,7 @@ class Profiler(object):
         stdout,stderr=subp.communicate()
         if int(subp.returncode) != 0:
             print_debug("WARNING STDERR=%s"%stderr.strip('\n'))
+        print_debug("exe output:%s"%stdout)
         return stdout.rstrip('\n')
 
 
