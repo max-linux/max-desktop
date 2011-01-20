@@ -1,0 +1,30 @@
+#!/bin/bash
+
+PREF="pc"
+
+if [ "$DISPLAY" = ":0" ] || [ "$DISPLAY" = ":0.0" ]; then
+  logger -t multiseat-autologin "entrada local DISPLAY='$DISPLAY' ${PREF}01"
+  echo "${PREF}01"
+  exit 0
+fi
+
+if [ "$DISPLAY" = ":1" ] || [ "$DISPLAY" = ":1.0" ]; then
+  logger -t multiseat-autologin "entrada local DISPLAY='$DISPLAY' ${PREF}02"
+  echo "${PREF}02"
+  exit 0
+fi
+
+
+for i in $(seq --format="%02g" 3 10); do
+  islogged=$(w | grep ^${PREF}$i)
+  logger -t multiseat-autologin "entrada multiseat DISPLAY='$DISPLAY' ${PREF}='${PREF}$i' islogged='$islogged'"
+  if [ "$islogged" = "" ]; then
+    logger -t multiseat-autologin "entrada multiseat DISPLAY='$DISPLAY' ${PREF}='${PREF}$i' islogged='$islogged' devolviendo ${PREF}$i..."
+    echo "${PREF}$i"
+    exit 0
+  fi
+
+done
+
+logger -t multiseat-autologin "no devolviendo usuario"
+exit 0

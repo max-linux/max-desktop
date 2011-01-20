@@ -1,3 +1,12 @@
+max-multiseat (6.0.max18) max; urgency=low
+
+  * New udev rules to get SEAT_ID by busnum (fix devnum duplicates)
+  * Allow to run on SEAT 1
+  * usr/bin/multiseat-autologin: demo script for GDM autologin
+  * usr/bin/start-multiseat: Don't remove SEAT 1
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 20 Jan 2011 16:07:39 +0100
+
 max-multiseat (6.0.max17) max; urgency=low
 
   * Depends on max-gnome-desktop-environment instead of providing gnome-desktop-environment

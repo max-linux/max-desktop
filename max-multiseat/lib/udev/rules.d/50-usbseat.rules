@@ -3,16 +3,27 @@
 ATTR{idVendor}=="17e9", ATTR{bConfigurationValue}=="2", RUN="/bin/echo 1 > /sys%p/bConfigurationValue"
 
 # Bus 002 Device 015: ID 0711:5100 Magic Control Technology Corp.
-ATTR{idVendor}=="0711",ATTR{idProduct}=="5100",PROGRAM="/bin/cat /sys/%p/../devnum",SYMLINK+="usbseat/%c/display",RUN+="usbseat.sh %c"
+#ATTR{idVendor}=="0711",ATTR{idProduct}=="5100",PROGRAM="/bin/cat /sys/%p/../devnum",SYMLINK+="usbseat/%c/display",RUN+="usbseat.sh %c"
 
 # aliases for display, kbd, mouse attached to specific hubs
 
-KERNEL=="fb*",SUBSYSTEMS=="usb",PROGRAM="/bin/cat /sys/%p/../../../devnum",SYMLINK+="usbseat/%c/display",RUN+="usbseat.sh %c"
-KERNEL=="mouse*", SUBSYSTEMS=="usb", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="02", PROGRAM="/bin/cat /sys/%p/../../../../../devnum",SYMLINK+="usbseat/%c/mouse",RUN+="usbseat.sh %c"
-KERNEL=="event*", SUBSYSTEM=="input", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="01",PROGRAM="/bin/cat /sys/%p/../../../../../devnum",SYMLINK+="usbseat/%c/keyboard",RUN+="usbseat.sh %c"
-KERNEL=="control*", SUBSYSTEM=="sound", SUBSYSTEMS=="usb", PROGRAM="/bin/cat /sys/%p/../../../../../devnum", SYMLINK+="usbseat/%c/sound"
+#KERNEL=="fb*",SUBSYSTEMS=="usb",PROGRAM="/bin/cat /sys/%p/../../../devnum",SYMLINK+="usbseat/%c/display",RUN+="usbseat.sh %c"
+#KERNEL=="mouse*", SUBSYSTEMS=="usb", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="02", PROGRAM="/bin/cat /sys/%p/../../../../../devnum",SYMLINK+="usbseat/%c/mouse",RUN+="usbseat.sh %c"
+#KERNEL=="event*", SUBSYSTEM=="input", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="01",PROGRAM="/bin/cat /sys/%p/../../../../../devnum",SYMLINK+="usbseat/%c/keyboard",RUN+="usbseat.sh %c"
+#KERNEL=="control*", SUBSYSTEM=="sound", SUBSYSTEMS=="usb", PROGRAM="/bin/cat /sys/%p/../../../../../devnum", SYMLINK+="usbseat/%c/sound"
 
 # and for when the keyboard and mouse are one more hub downstream. Relying on pnp order to have already set up mouse, keyboard on upstream hub if we're daisy-chaining
-KERNEL=="event*", SUBSYSTEM=="input", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="01",PROGRAM="/bin/cat /sys/%p/../../../../../../devnum",SYMLINK+="usbseat/%c/keyboard",RUN+="usbseat.sh %c"
-KERNEL=="mouse*", SUBSYSTEMS=="usb", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="02", PROGRAM="/bin/cat /sys/%p/../../../../../../devnum",SYMLINK+="usbseat/%c/mouse",RUN+="usbseat.sh %c"
+#KERNEL=="event*", SUBSYSTEM=="input", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="01",PROGRAM="/bin/cat /sys/%p/../../../../../../devnum",SYMLINK+="usbseat/%c/keyboard",RUN+="usbseat.sh %c"
+#KERNEL=="mouse*", SUBSYSTEMS=="usb", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="02", PROGRAM="/bin/cat /sys/%p/../../../../../../devnum",SYMLINK+="usbseat/%c/mouse",RUN+="usbseat.sh %c"
 
+
+
+ATTR{idVendor}=="0711",ATTR{idProduct}=="5100",PROGRAM="/lib/udev/make-usbseat.sh %p",SYMLINK+="usbseat/%c/display",RUN+="usbseat.sh %c"
+KERNEL=="fb*",SUBSYSTEMS=="usb",PROGRAM="/lib/udev/make-usbseat.sh %p/../../",SYMLINK+="usbseat/%c/display",RUN+="usbseat.sh %c"
+
+KERNEL=="mouse*", SUBSYSTEMS=="usb", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="02", PROGRAM="/lib/udev/make-usbseat.sh %p/../../../../",SYMLINK+="usbseat/%c/mouse",RUN+="usbseat.sh %c"
+KERNEL=="event*", SUBSYSTEM=="input", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="01",PROGRAM="/lib/udev/make-usbseat.sh %p/../../../../",SYMLINK+="usbseat/%c/keyboard",RUN+="usbseat.sh %c"
+KERNEL=="control*", SUBSYSTEM=="sound", SUBSYSTEMS=="usb", PROGRAM="/lib/udev/make-usbseat.sh %p/../../../../", SYMLINK+="usbseat/%c/sound"
+
+KERNEL=="event*", SUBSYSTEM=="input", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="01",PROGRAM="/lib/udev/make-usbseat.sh %p/../../../../../",SYMLINK+="usbseat/%c/keyboard",RUN+="usbseat.sh %c"
+KERNEL=="mouse*", SUBSYSTEMS=="usb", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="02", PROGRAM="/lib/udev/make-usbseat.sh %p/../../../../../",SYMLINK+="usbseat/%c/mouse",RUN+="usbseat.sh %c"

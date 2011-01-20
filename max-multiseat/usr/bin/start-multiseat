@@ -2,6 +2,8 @@
 
 [ ! -d /dev/usbseat ] && exit 0
 
+/lib/udev/usbseat.sh 0
+
 #if [ "$1" != "" ]; then
 #  if [ -e /dev/usbseat/$1/keyboard ] && [ -e /dev/usbseat/$1/mouse ] && [ -e /dev/usbseat/$1/display ]; then
 #  fi
@@ -9,7 +11,10 @@
 
 for seat in /dev/usbseat/*; do
 
-  [ "$seat" = "/dev/usbseat/1" ] && continue
+  if [ "$seat" = "/dev/usbseat/1" ]; then
+	/lib/udev/usbseat.sh 1
+	continue
+  fi
 
   DEV_VEND=$(readlink -f $seat/display | awk -F "/" '{print $5}')
   DEV_PROD=$(readlink -f $seat/display | awk -F "/" '{print $6}')
@@ -40,7 +45,7 @@ fi
 DISPLAYS=$(/usr/bin/gdmdynamic -l | tr ";" "\012" | sed -e "s/:\(.*\),.*,.*/\1/" | tr "\012" " ")
 for d in $DISPLAYS; do
 
-   if [ ! -d /dev/usbseat/$d ]; then
+   if [ $d -gt 1 ] && [ ! -d /dev/usbseat/$d ]; then
      echo "Removing SEAT 'gdmdynamic -v -d $d'"
      gdmdynamic -v -d $d
    fi

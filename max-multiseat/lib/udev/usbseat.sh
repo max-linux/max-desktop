@@ -72,12 +72,17 @@ case "$ACTION" in
 				/bin/sed "s/%ID_SEAT%/$1/g" < /lib/udev/usbseat-xf86.conf.sed > $TMPFILE
 			fi
 			tree /dev/usbseat/$1 >> /tmp/usbseat.log
-
+			#VTNUM=$(printf "%02g" $((07+$1)))
 			/usr/bin/gdmdynamic -v -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 vt07 -audit 0 -nolisten tcp -config $TMPFILE"
 			#/usr/bin/gdmdynamic -v -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 -audit 0 -nolisten tcp -novtswitch -sharevts -config $TMPFILE"
 
 			/usr/bin/gdmdynamic -v -r $1
 		else
+			if [ "$1" = "1" ]; then
+				/usr/bin/gdmdynamic -v -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 vt07 -audit 0 -nolisten tcp -config /lib/udev/xorg.conf.display0"
+				/usr/bin/gdmdynamic -v -r $1
+				exit
+			fi
 			echo "Some devices not found" >> /tmp/usbseat.log
 			tree /dev/usbseat/$1 >> /tmp/usbseat.log
 		fi
