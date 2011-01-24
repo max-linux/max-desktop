@@ -1,7 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Documentación de Moodle
+Name=Moodle docs
 Name[es]=Documentación de Moodle
+Comment=Moodle documents
 Comment[es]=Documentación de Moodle
 TryExec=/usr/bin/firefox
 Exec=firefox http://docs.moodle.org/es/Portada
