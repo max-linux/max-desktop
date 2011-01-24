@@ -7,7 +7,7 @@ clean::
 	(cd ktechlab && make clean)
 
 build/max-language-es::
-	find -type f -name "*.po" -exec sh -c "N='{}'; msgfmt -v -o \$${N%.po}.mo \$$N" \;
+	find -type f -name "*.po" -exec sh -x -c "N='{}'; msgfmt -v -o \$${N%.po}.mo \$$N" \;
 
 	(cd ktechlab && make)
 
