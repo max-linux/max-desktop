@@ -1,0 +1,13 @@
+Source: max-language-en
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 7.0.0), cdbs, gettext
+Standards-Version: 3.8.4
+
+Package: max-language-en
+Architecture: all
+Depends: language-support-en, language-pack-en
+Description: Convert MAX from Spanish to English
+ Convert MAX from Spanish to English
+
