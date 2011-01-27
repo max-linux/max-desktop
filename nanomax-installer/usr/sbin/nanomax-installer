@@ -43,7 +43,7 @@ class NanoMaXInstaller (object):
         self.widgets={}
         self.device={}
         self.mainloop = gobject.MainLoop()
-        self.hal=DeviceManager(self.insert_row)
+        self.dm=DeviceManager(self.insert_row)
         self.selected=None
 
 
@@ -94,7 +94,8 @@ class NanoMaXInstaller (object):
         treeview_file = treeview.get_selection()
         treeview_file.connect("changed", self.on_device_click)
         
-        self.hal.get_all_devices()
+        # load all devices with DeviceManager
+        self.dm.init_load()
 
     def on_device_click(self, devices):
         (model, iter) = devices.get_selected()
@@ -270,7 +271,7 @@ class DBusException(Exception):
     def get_dbus_name(self):
         return self._dbus_error_name
 
-dbus.exceptions.DBusException=DBusException
+#dbus.exceptions.DBusException=DBusException
 
 # Code based on:
 # (c) 2007, Davyd Madeley <davyd@madeley.id.au>
@@ -285,80 +286,41 @@ class DeviceManager:
         self.update_function=update_function
         self.event_bus=event_bus
         self.bus = dbus.SystemBus()
-        hal_obj = self.bus.get_object ('org.freedesktop.Hal', '/org/freedesktop/Hal/Manager')
-        self.hal = dbus.Interface (hal_obj, 'org.freedesktop.Hal.Manager')
-        self.bus.add_signal_receiver(self.get_all_devices,
-                        'DeviceAdded',
-                        'org.freedesktop.Hal.Manager',
-                        'org.freedesktop.Hal',
-                        '/org/freedesktop/Hal/Manager')
- 
-        self.bus.add_signal_receiver(self.remove,
-                        'DeviceRemoved',
-                        'org.freedesktop.Hal.Manager',
-                        'org.freedesktop.Hal',
-                        '/org/freedesktop/Hal/Manager')
-                        
-    def remove(self, udi):
-        self.get_all_devices(None)
+        self.proxy = self.bus.get_object("org.freedesktop.UDisks", 
+                                    "/org/freedesktop/UDisks")
+        self.iface = dbus.Interface(self.proxy, 'org.freedesktop.UDisks')
+        self.iface.connect_to_signal('DeviceAdded', self.device_added_callback)
+        self.iface.connect_to_signal('DeviceRemoved', self.device_removed_callback)
 
-        
-    def get_all_devices(self, event_udi=None):
-        #print event_udi
-        try:
-            if event_udi:
-                self.get_udi_data(event_udi)
-        except:
-            return
-        devices=[]
-        #print "\n\nEVENT at UDI %s"%event_udi
-        udis = self.hal.FindDeviceByCapability ('storage')
-        for udi in udis:
+    def device_added_callback(self, dev):
+        self.init_load()
+
+    def device_removed_callback(self, dev):
+        self.init_load()
+
+    def init_load(self):
+        all_devices=[]
+        for sto in self.iface.EnumerateDevices():
+            sto_obj = self.bus.get_object ('org.freedesktop.UDisks', sto)
+            storage = dbus.Interface (sto_obj, 'org.freedesktop.DBus.Properties')
             try:
-                tmp=self.get_udi_data(udi)
-            except Exception, err:
-                print "Exception when getting data from udi(%s) error=%s"%(udi,err)
+                storage.Get("org.freedesktop.DBus.Properties", 'DeviceIsRemovable')
+            except:
+                print "Exception, perhaps removing device..."
                 continue
-            if tmp and tmp['bus'] == self.event_bus:
-                devices.append(tmp)
-        #for dev in devices:
-        #    print dev
+            if storage.Get("org.freedesktop.DBus.Properties", 'DeviceIsRemovable') == 1 and \
+               storage.Get("org.freedesktop.DBus.Properties", 'DeviceIsOpticalDisc') == 0:
+                dev={
+                    "device": str(storage.Get("org.freedesktop.DBus.Properties", 'DeviceFile')),
+                    "model": str(storage.Get("org.freedesktop.DBus.Properties", 'DriveModel')),
+                    "vendor": str(storage.Get("org.freedesktop.DBus.Properties", 'DriveVendor')),
+                    "removable": bool(storage.Get("org.freedesktop.DBus.Properties", 'DeviceIsRemovable')),
+                    "size": int(storage.Get("org.freedesktop.DBus.Properties", 'DeviceSize'))
+                  }
+                print "device=%s"%dev
+                all_devices.append(dev)
         if self.update_function:
-            self.update_function(devices)
-
-    def get_udi_data(self, udi):
-        # get a device object
-        dev_obj = self.bus.get_object ('org.freedesktop.Hal', udi)
-        
-
-        # get an interface to the device
-        dev = dbus.Interface (dev_obj, 'org.freedesktop.Hal.Device')
-        if self.event_bus != dev.GetProperty ('storage.bus'):
-            return None
-        try:
-            if not os.path.exists(str(dev.GetProperty ('block.device'))):
-                print "device don't exists"
-                return None
-        except:
-            return None
-        if int( dev.GetProperty( 'storage.size') ) != 0:
-            size=int( dev.GetProperty( 'storage.size') )
-        else:
-            print "exec fdisk '%s'"%str(dev.GetProperty ('block.device'))
-            p = Popen("LC_ALL=C /sbin/fdisk -l %s| awk '/^Disk*.*bytes/ {print $5}'"%str(dev.GetProperty ('block.device')), shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
-            _size=p.stdout.readline().strip()
-            if _size == "":
-                return None
-            size=int(_size)
-        return{
-                "udi": str(udi),
-                "device": str(dev.GetProperty ('block.device')),
-                "bus": str(dev.GetProperty ('storage.bus')),
-                "model": str(dev.GetProperty ('storage.model')),
-                "vendor": str(dev.GetProperty ('storage.vendor')),
-                "removable": bool(dev.GetProperty ('storage.removable')),
-                "size": size
-              }
+            self.update_function(all_devices)
 
 
 

@@ -78,7 +78,7 @@ fi
 #echo " * Desmontando particiones..."
 # desmontamos particiones
 sync
-for dev in $(grep $DEVICE /proc/mounts | awk '{print $2}'); do
+for dev in $(grep "$DEVICE" /proc/mounts | awk '{print $1}'); do
   umount -l $dev
 done
 

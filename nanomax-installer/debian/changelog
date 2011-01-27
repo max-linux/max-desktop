@@ -1,3 +1,11 @@
+nanomax-installer (6.0.max2) max; urgency=low
+
+  * Switch HAL => UDisk
+  * Umount /dev/sd? before installing
+  * Change width 600=>700
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 27 Jan 2011 15:24:42 +0100
+
 nanomax-installer (6.0.max1) max; urgency=low
 
   * Change version to 6.0

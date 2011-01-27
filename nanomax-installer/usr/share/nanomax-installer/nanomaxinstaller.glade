@@ -4,7 +4,7 @@
 <glade-interface>
 
 <widget class="GtkWindow" id="mainwindow">
-  <property name="width_request">600</property>
+  <property name="width_request">700</property>
   <property name="visible">True</property>
   <property name="title" translatable="yes">nanoMaX Installer</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
