@@ -7,29 +7,35 @@
 #
 # $2 is a optional parameter [display|mouse|keyboard|sound]
 
+#logger() {
+#  echo "$2: $3" >> /tmp/make-usbseat.log
+#}
 
 SEAT_DB=/tmp/seat.db
+
 
 _BUSNUM=$(printf "%03g\n" $(cat "/sys/$1/../busnum" 2>/dev/null))
 _DEVNUM=$(printf "%03g\n" $(cat "/sys/$1/../devnum" 2>/dev/null))
 logger -t "/lib/udev/make-usbseat.sh [$2]" "/sys/$1/busnum BUSNUM=$_BUSNUM DEVNUM=$_DEVNUM"
+REAL=$(readlink -f "/sys/$1/../")
+logger -t "/lib/udev/make-usbseat.sh [$2]" "REAL=$REAL BUSNUM=$_BUSNUM DEVNUM=$_DEVNUM"
+
 
 if [ -e "$SEAT_DB" ] && grep -q "$_BUSNUM $_DEVNUM" $SEAT_DB; then
   # return SEAT_ID (third column)
   SEAT_ID=$(grep "$_BUSNUM $_DEVNUM" $SEAT_DB | awk '{print $3}')
   logger -t "/lib/udev/make-usbseat.sh [$2]" "found SEAT_ID in database: $SEAT_ID"
   echo $SEAT_ID
-  exit
+  exit 0
 else
-  # create new line with a unused SEAT_ID
-  for i in $(seq 2 200); do
-    if [ ! -d "/dev/usbseat/${i}" ]; then
-      # create SEAT_ID in SEAT_DB
-      echo "$_BUSNUM $_DEVNUM $i" >> $SEAT_DB
-      logger -t "/lib/udev/make-usbseat.sh [$2]" "created SEAT_ID '$i'"
-      echo $i
-      exit
-    fi
-  done
-  logger -t "/lib/udev/make-usbseat.sh [$2]" "CRITICAL ERROR, i=200 and no free SEAT_ID"
+  # read mayor SEAT_ID
+  LAST_SEAT=$(awk '{print $3}' $SEAT_DB 2>/dev/null| sort| tail -1)
+  # if not found start in 1
+  [ "$LAST_SEAT" = "" ] && LAST_SEAT=1
+  # use LAST+1 for new SEAT_ID
+  NEW_SEAT=$(($LAST_SEAT+1))
+  echo "$_BUSNUM $_DEVNUM $NEW_SEAT" >> $SEAT_DB
+  logger -t "/lib/udev/make-usbseat.sh [$2]" "created SEAT_ID '$NEW_SEAT'"
+  echo $NEW_SEAT
+  exit 0
 fi

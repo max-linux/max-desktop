@@ -2,6 +2,7 @@
 # see http://libdlo.freedesktop.org/wiki/DeviceQuirks for more info
 ATTR{idVendor}=="17e9", ATTR{bConfigurationValue}=="2", RUN="/bin/echo 1 > /sys%p/bConfigurationValue"
 
+########################################### OLD #################################################
 # Bus 002 Device 015: ID 0711:5100 Magic Control Technology Corp.
 #ATTR{idVendor}=="0711",ATTR{idProduct}=="5100",PROGRAM="/bin/cat /sys/%p/../devnum",SYMLINK+="usbseat/%c/display",RUN+="usbseat.sh %c"
 
@@ -15,13 +16,22 @@ ATTR{idVendor}=="17e9", ATTR{bConfigurationValue}=="2", RUN="/bin/echo 1 > /sys%
 # and for when the keyboard and mouse are one more hub downstream. Relying on pnp order to have already set up mouse, keyboard on upstream hub if we're daisy-chaining
 #KERNEL=="event*", SUBSYSTEM=="input", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="01",PROGRAM="/bin/cat /sys/%p/../../../../../../devnum",SYMLINK+="usbseat/%c/keyboard",RUN+="usbseat.sh %c"
 #KERNEL=="mouse*", SUBSYSTEMS=="usb", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="02", PROGRAM="/bin/cat /sys/%p/../../../../../../devnum",SYMLINK+="usbseat/%c/mouse",RUN+="usbseat.sh %c"
+#################################################################################################
 
 
+
+########################################### NEW #################################################
 # New MAX 6.0 rules use /tmp/seat.db to save BUSNUM/DEVNUM with a SEAT_ID
-# See at /var/log/syslog | grep make-usbseat for logging
+# See at /var/log/syslog | grep make-usbseat for debug output
+
 ATTR{idVendor}=="0711",ATTR{idProduct}=="5100",PROGRAM="/lib/udev/make-usbseat.sh %p display",SYMLINK+="usbseat/%c/display",RUN+="usbseat.sh %c"
 KERNEL=="fb*",SUBSYSTEMS=="usb",PROGRAM="/lib/udev/make-usbseat.sh %p/../../ display",SYMLINK+="usbseat/%c/display",RUN+="usbseat.sh %c"
 
 KERNEL=="mouse*", SUBSYSTEMS=="usb", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="02", PROGRAM="/lib/udev/make-usbseat.sh %p/../../../../ mouse",SYMLINK+="usbseat/%c/mouse",RUN+="usbseat.sh %c"
 KERNEL=="event*", SUBSYSTEM=="input", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="01",PROGRAM="/lib/udev/make-usbseat.sh %p/../../../../ keyboard",SYMLINK+="usbseat/%c/keyboard",RUN+="usbseat.sh %c"
 KERNEL=="control*", SUBSYSTEM=="sound", SUBSYSTEMS=="usb", PROGRAM="/lib/udev/make-usbseat.sh %p/../../../../ sound", SYMLINK+="usbseat/%c/sound"
+
+# this lines are duplicated
+#KERNEL=="event*", SUBSYSTEM=="input", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="01",PROGRAM="/lib/udev/make-usbseat.sh %p/../../../../../ down",SYMLINK+="usbseat/%c/keyboard",RUN+="usbseat.sh %c"
+#KERNEL=="mouse*", SUBSYSTEMS=="usb", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="02", PROGRAM="/lib/udev/make-usbseat.sh %p/../../../../../ down",SYMLINK+="usbseat/%c/mouse",RUN+="usbseat.sh %c"
+#################################################################################################
