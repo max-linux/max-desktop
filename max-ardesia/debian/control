@@ -1,0 +1,41 @@
+Source: max-ardesia
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
+Build-Depends: cdbs, debhelper (>= 7), subversion,
+		gcc, make, automake, autoconf, autotools-dev, intltool, libtool,
+		libgtk2.0-dev, libsigsegv-dev, binutils-dev,
+		libatk1.0-dev, libx11-dev, libpng12-dev,
+		libglib2.0-dev, libgconf2-dev, libfontconfig1-dev,
+		libfreetype6-dev, libgsl0-dev, libc6-dev,
+		fpc, lazarus,
+Standards-Version: 3.8.3
+Homepage: http://code.google.com/p/ardesia/
+
+Package: max-ardesia
+Architecture: any
+Depends: vlc, xdg-utils, ${shlibs:Depends}, ${misc:Depends}
+Provides: ardesia, curtain, spotlighter
+Replaces: ardesia, curtain, spotlighter
+Conflicts: ardesia, curtain, spotlighter
+Description: Ardesia is a free digital sketchpad.
+ You can make colored free-hand annotations with digital ink everywhere,
+ record it and share on the network.
+ .
+ Thanks to Ardesia you are free to open any application
+ and fix your ideas and comments as if you wrote on a classic chalkboard.
+ You can use the tool to make effective on-screen presentation,
+ highlight things or point out things of interest.
+ The tool facilitates the online presentations and demos showing in real time
+ your computer screen to anyone in the network.
+ You can use this tool to enhance your lessons or courses working with
+ your preferred applications and your preferred operating system.
+ Create nice tutorial and demos saving the desktop images
+ with your free hand annotations.
+ Ardesia includes a sketchpad software that allow to free-hand draw
+ geometrical shapes using the shape recognizer.
+ .
+ Ardesia works with all the pointing device; you can use a mouse,
+ a touch screen, a drawing tablet, a cheap&professional wiimote whiteboard
+ or a commercial whiteboard, interactive projector and
+ any other devices supported by your operating system.

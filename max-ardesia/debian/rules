@@ -1,0 +1,47 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+#include /usr/share/cdbs/1/class/makefile.mk
+
+
+clean::
+	rm -rf ardesia-read-only
+
+
+build/max-ardesia::
+	if [ ! -d ardesia-read-only ]; then svn checkout http://ardesia.googlecode.com/svn/trunk/ ardesia-read-only; fi
+
+	# build ardesia
+	cd ardesia-read-only/ardesia && ./autogen.sh
+	cd ardesia-read-only/ardesia && ./configure --prefix=/usr && make
+
+	# build curtain
+	cd ardesia-read-only/curtain && ./autogen.sh
+	cd ardesia-read-only/curtain && ./configure --prefix=/usr && make
+
+	# build spotlighter
+	cd ardesia-read-only/spotlighter && ./autogen.sh
+	cd ardesia-read-only/spotlighter && ./configure --prefix=/usr && make
+
+
+	# build magnifier
+	cat debian/make.sh > ardesia-read-only/magnifier/make.sh
+	cd ardesia-read-only/magnifier && make
+
+
+
+install/max-ardesia::
+	# install ardesia
+	cd ardesia-read-only/ardesia && make install DESTDIR=$(CURDIR)/debian/max-ardesia
+	mkdir -p debian/max-ardesia/usr/share/doc/max-ardesia/ardesia/
+	mv debian/max-ardesia/usr/doc/ardesia/* debian/max-ardesia/usr/share/doc/max-ardesia/ardesia/
+	rmdir debian/max-ardesia/usr/doc/ardesia
+
+	# install curtain
+	cd ardesia-read-only/curtain && make install DESTDIR=$(CURDIR)/debian/max-ardesia
+
+	# install spotlighter
+	cd ardesia-read-only/spotlighter && make install DESTDIR=$(CURDIR)/debian/max-ardesia
+
+	# install magnifier
+	cd ardesia-read-only/magnifier && make install DESTDIR=$(CURDIR)/debian/max-ardesia
