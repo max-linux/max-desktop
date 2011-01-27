@@ -122,3 +122,13 @@ samba-common samba-common/encrypt_passwords boolean true
 samba-common samba-common/dhcp boolean false
 samba-common samba-common/workgroup string AULAMAX
 samba-common samba-common/do_debconf boolean true
+
+# mscorefonts
+ttf-mscorefonts-installer	msttcorefonts/accepted-mscorefonts-eula	boolean	true
+ttf-mscorefonts-installer	msttcorefonts/present-mscorefonts-eula	note	
+#ttf-mscorefonts-installer	msttcorefonts/http_proxy	string	
+#ttf-mscorefonts-installer	msttcorefonts/error-mscorefonts-eula	error	
+#ttf-mscorefonts-installer	msttcorefonts/dlurl	string
+#ttf-mscorefonts-installer	msttcorefonts/savedir	string
+#ttf-mscorefonts-installer	msttcorefonts/baddldir	error
+3ttf-mscorefonts-installer	msttcorefonts/dldir	string	

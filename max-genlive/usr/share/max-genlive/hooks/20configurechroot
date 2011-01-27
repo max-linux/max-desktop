@@ -70,6 +70,8 @@ sun-java6-jdk   shared/accepted-sun-dlj-v1-1    boolean true
 tzdata  tzdata/Areas    select  Europe
 tzdata  tzdata/Zones/Europe     select  Madrid
 b43-fwcutter	b43-fwcutter/cut_firmware	boolean	true
+ttf-mscorefonts-installer	msttcorefonts/accepted-mscorefonts-eula	boolean	true
+ttf-mscorefonts-installer	msttcorefonts/present-mscorefonts-eula	note
 EOF
 
 echo "Europe/Madrid" > $CHROOT/etc/timezone
