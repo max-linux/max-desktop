@@ -1,3 +1,9 @@
+max-dpsyco-custom (6.0.max38) max; urgency=low
+
+  * Hack software-center to put Max 6.0 channel
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 28 Jan 2011 15:24:11 +0100
+
 max-dpsyco-custom (6.0.max37) max; urgency=low
 
   * usr/sbin/max-reset-ssh-keys, set some environ vars

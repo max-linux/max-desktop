@@ -6,3 +6,8 @@ binary-install/max-dpsyco-custom::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-dpsyco-custom -type d -name .svn | xargs rm -rf --
 
+	# compile python files => pyc
+	python $(CURDIR)/debian/compile-py-modules.py --compile
+
+clean::
+	python $(CURDIR)/debian/compile-py-modules.py --clean
