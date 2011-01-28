@@ -37,7 +37,7 @@ if [ -d $GENLIVE/win32aps ]; then
 fi
 
 # copiar memtest
-cp /boot/memtest86+.bin $CDRW/casper/memtest.bin
+cp /boot/memtest86+.bin $CDRW/casper/mt86plus
 
 _echo "Generando md5sum de archivos de dentro del DVD..."
 #(cd $CDRW && find . -type f -print0 | grep -v boot.cat | grep -v isolinux.bin | xargs -0 md5sum > md5sum.txt)
