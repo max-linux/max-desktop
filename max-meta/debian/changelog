@@ -1,3 +1,10 @@
+max-meta (6.0.max54) max; urgency=low
+
+  * desktop-common:
+    - Add pulseaudio-mixer-applet | pavucontrol (close ticket #331)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 28 Jan 2011 13:43:32 +0100
+
 max-meta (6.0.max53) max; urgency=low
 
   * max-server, remove:
