@@ -1,0 +1,19 @@
+Source: max-edilim
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
+Build-Depends: cdbs, debhelper (>= 7), wget, unzip
+Standards-Version: 3.8.3
+Homepage: http://www.educalim.com/clinux.htm
+
+Package: max-edilim
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Provides: edilim
+Replaces: edilim
+Conflicts: edilim
+Description: Entorno para la creación de materiales educativos
+ Entorno para la creación de materiales educativos, formado por un 
+ editor de actividades (EdiLim), un visualizador (LIM) y un archivo
+ en formato XML (libro) que define las propiedades del libro y 
+ las páginas que lo componen.

@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+URL=http://www.educalim.com/edilim33/edilim330rc6_linux.deb
+BIN=http://www.educalim.com/edilim33/edilim330rc6_portable_linux.zip
+
+clean::
+	rm -rf build bin build-stamp
+
+build-stamp:
+	mkdir -p build
+	if [ ! -e build/edilim.deb ]; then wget $(URL) -O- > build/edilim.deb; fi
+	if [ ! -e build/usr ]; then (cd build && dpkg --extract edilim.deb ./); fi
+
+	rm build/usr/share/edilim/edilim
+	#chmod 644 build/usr/share/edilim/imaxes/*
+	#chmod 644 build/usr/share/edilim/*
+
+	mkdir -p bin
+	if [ ! -e bin/edilim.zip ]; then wget $(BIN) -O- > bin/edilim.zip; fi
+	if [ ! -e bin/edilim ]; then (cd bin && unzip edilim.zip); fi
+	
+
+	mkdir -p build/usr/bin
+	mv bin/edilim build/usr/bin/edilim
+	chmod 644 build/usr/bin/edilim
+
+	touch build-stamp
+
+build/max-edilim:: build-stamp
