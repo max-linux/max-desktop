@@ -14,7 +14,7 @@
 case "$1" in
 start)
         log_begin_msg "Starting max-multiseat-storage" "max-multiseat-storage"
-          udisks --inhibit -- /usr/sbin/multiseat-udisks --daemon > /tmp/multiseat-udisks.log 2>&1 &
+          udisks --inhibit -- /usr/sbin/multiseat-udisks --daemon > /dev/null 2>&1 &
         log_end_msg 0
         ;;
 stop)

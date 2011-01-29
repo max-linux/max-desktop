@@ -1,9 +1,27 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-"""
-Installer for Multiseat UDisk inhibit daemon
-Copyright 2011, Mario Izquierdo mariodebian@gmail.com
+##########################################################################
+#
+# Multiseat UDisk inhibit daemon
+# Copyright 2011, Mario Izquierdo, mariodebian at gmail
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+# 02111-1307, USA.
+###########################################################################
 
+"""
 Changelog
   20110129 - First usable version
 
@@ -294,7 +312,6 @@ def umount(dev, uid):
         return "no-serial"
     
     # umount it
-    #os.system("id")
     os.system("umount %s"%dev)
     
     # remove mount dir
@@ -321,15 +338,16 @@ def umount(dev, uid):
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
-        #                            dev      user_uid
-        #/usr/sbin/multiseat-udisks /dev/sdc1 1000
+        #                              dev      user_uid
+        #/usr/sbin/multiseat-udisks /dev/sdc1    1000
         print umount(sys.argv[1], sys.argv[2])
         sys.exit(0)
     
-    if "--daemon" in sys.argv:
+    elif "--daemon" in sys.argv:
         # run inhibitor daemon
         app = MultiSeatDeviceManager()
         app.run()
+        sys.exit(0)
     
     print """no options???? 
 

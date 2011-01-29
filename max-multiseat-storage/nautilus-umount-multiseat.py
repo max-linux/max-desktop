@@ -1,6 +1,26 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
+##########################################################################
 #
+# Multiseat Nautilus umount USB storage devices
+# Copyright 2011, Mario Izquierdo, mariodebian at gmail
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+# 02111-1307, USA.
+###########################################################################
+
 import gtk
 import nautilus
 import commands
@@ -75,15 +95,15 @@ class MultiseatUmountExtension(nautilus.MenuProvider):
             line=_line.strip()
             log("umount.multiseat called, line=%s"%line)
             if line == "no-mounted":
-                return error_msg("El dispositivo no está montado")
+                return error_msg("El dispositivo no está montado.")
             elif line == "invalid-user" or line.strip() == "not-yours":
-                return error_msg("El usuario no tiene permiso para desmontar ese recurso")
+                return error_msg("El usuario no tiene permiso para desmontar ese dispositivo.")
             elif line == "no-serial":
-                return error_msg("No se pudo leer el número de serie del dispositivo")
+                return error_msg("No se pudo leer el número de serie del dispositivo.")
             elif line == "ok":
                 umounted=True
             else:
-                return error_msg("Error desconocido: %s"%line)
+                return error_msg("Error desconocido:\n\n%s"%line)
         # show a message if ok (umount OK)
         log("desmontaje correcto")
         if umounted:
@@ -122,8 +142,8 @@ class MultiseatUmountExtension(nautilus.MenuProvider):
             return
         
         umount_item = nautilus.MenuItem("NautilusPython::umount_multiseat_item",
-                                        "Desmontar dispositivo extraible multiseat",
-                                        "Desmontar dispositivo extraible multiseat",
+                                        "Desmontar dispositivo extraíble multiseat",
+                                        "Desmontar dispositivo extraíble multiseat",
                                         "nautilus-mount-image")
         
         if os.path.isfile('/usr/share/icons/maxtoon/16x16/devices/usbpendrive_unmount.png'):
