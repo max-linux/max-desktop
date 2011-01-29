@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/makefile.mk
+
+DEB_MAKE_INSTALL_TARGET := install PREFIX=/usr DESTDIR=$(CURDIR)/debian/max-multiseat-storage
+
+# start after gdm
+DEB_UPDATE_RCD_PARAMS := "start 99 2 3 4 5 . stop 02 0 1 6 ."
+DEB_DH_INSTALLINIT_ARGS := "--no-start"
+
+binary-install/max-multiseat-storage::
+	python $(CURDIR)/debian/compile-py-modules.py --compile
+
+	# clean svn dirs
+	find $(CURDIR)/debian/max-multiseat-storage -type d -name .svn | xargs rm -rf --
+
+
+clean::
+	python $(CURDIR)/debian/compile-py-modules.py --clean

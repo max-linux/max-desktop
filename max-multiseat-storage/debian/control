@@ -1,0 +1,15 @@
+Source: max-multiseat-storage
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 7.0.0), cdbs, python
+Standards-Version: 3.8.4
+
+Package: max-multiseat-storage
+Architecture: any
+Depends: python, python-nautilus, nautilus, udisks
+Description: Inhibit USB storage devices and mount in SEAT_ID
+ Contains:
+  * daemon (dbus) that inhibit UDisks mounts
+  * nautilus extension to allow umount devices
+  * 
