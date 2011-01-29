@@ -1,3 +1,10 @@
+max-artwork (6.0.max16) max; urgency=low
+
+  * Add art/icons/maxtoon/scalable/devices/audio-input-microphone-muted.svg:
+    - Needed by pulseaudio-mixer-applet
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 28 Jan 2011 21:32:07 +0100
+
 max-artwork (6.0.max15) max; urgency=low
 
   * Depend on gdm or lxdm
