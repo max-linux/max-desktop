@@ -10,7 +10,7 @@ Architecture: all
 Depends: gdm-2.20, 
          xserver-xorg-video-displaylink,
          xserver-xorg-video-tusb, 
-         max-gnome-desktop-environment
+Recommends: max-gnome-desktop-environment
 Description: Some files to support MultiSeat computers
  Contains:
   * udev rules to start multiseat hardware
