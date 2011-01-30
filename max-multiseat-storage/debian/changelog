@@ -1,3 +1,14 @@
+max-multiseat-storage (6.0.max3) max; urgency=low
+
+  * Create PID file and use to kill inhibitor process
+  * Add mount options for ntfs
+  * Fix LSB headers ini init.d script
+  * Add multi-partition support
+  * Fix ext2, ext3, ext4 mount options, chown+chmod mount dir
+  * Only mount this filesystems types: vfat, iso9660, ext2, ext3, ext4, ntfs
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 30 Jan 2011 17:45:09 +0100
+
 max-multiseat-storage (6.0.max2) max; urgency=low
 
   * Add license headers and cosmetic changes

@@ -41,6 +41,9 @@ import dbus.service
 if getattr(dbus, 'version', (0,0,0)) >= (0,41,0):
     import dbus.glib
 
+PID_FILE="/var/run/multiseat-udisks.pid"
+
+
 class DBusException(Exception):
     def __init__(self, *args, **kwargs):
         pass
@@ -54,6 +57,7 @@ class DBusException(Exception):
 
 class MultiSeatDeviceManager:
     def __init__(self):
+        self.pid=os.getpid()
         self.mainloop = gobject.MainLoop()
         self.all_devices=[]
         self.bus = dbus.SystemBus()
@@ -72,14 +76,29 @@ class MultiSeatDeviceManager:
             if not os.path.exists(self.all_devices[i]['device']):
                 print "device_removed_callback() NO EXISTS dev=%s"%self.all_devices[i]
                 if self.all_devices[i]['ismounted']:
-                    if self.UmountDevice(self.all_devices[i]):
-                        self.all_devices[i]['ismounted']=False
-                        # FIXME remove dev from self.all_devices ???
-                        # remove launcher
-                        if os.path.isfile(self.all_devices[i]['desktopfile']):
-                            os.unlink(self.all_devices[i]['desktopfile'])
-                            print "device_removed_callback() deleted %s"%self.all_devices[i]['desktopfile']
+                    self.all_devices[i]['ismounted']=False
+                    self.remove_device(self.all_devices[i])
+                    self.umount_same_disk(self.all_devices[i]['device'])
         self.init_load()
+
+    def umount_same_disk(self, devname):
+        # removed /dev/sdc3 but not removed /dev/sdc1 and /dev/sdc2
+        # force manual umount
+        if len(devname) < 9:
+            # disk not partition
+            return
+        dev_disk=devname[0:8]
+        for dev in self.all_devices:
+            if dev_disk in dev['device']:
+                print "umount_same_disk() dev_disk=%s dev=%s"%(dev_disk, dev)
+                self.remove_device(dev)
+
+    def remove_device(self, dev):
+        if self.UmountDevice(dev):
+            # remove launcher, mountpoint is deleted in UmountDevice()
+            if os.path.isfile(dev['desktopfile']):
+                os.unlink(dev['desktopfile'])
+                print "remove_device() deleted %s"%dev['desktopfile']
 
     def get(self, obj, prop):
         return obj.Get("org.freedesktop.DBus.Properties", prop)
@@ -91,19 +110,23 @@ class MultiSeatDeviceManager:
             storage = dbus.Interface (sto_obj, 'org.freedesktop.DBus.Properties')
             try:
                 storage.Get("org.freedesktop.DBus.Properties", 'DeviceIsRemovable')
-            except:
-                print "Exception, perhaps removing device..."
+            except Exception, err:
+                print "Exception, perhaps removing device... err=%s"%err
                 continue
             if bool(self.get(storage, 'DeviceIsPartition')) and \
                str(self.get(storage, 'DriveConnectionInterface')) == 'usb':
+                fstype=str(self.get(storage, 'IdType'))
+                if fstype not in ['vfat', 'iso9660', 'ext2', 'ext3', 'ext4', 'ntfs']:
+                    continue
                 path=str(self.get(storage, 'NativePath'))
                 seat_id=self.getSeatID(path)
                 serial=str(self.get(storage, 'DriveSerial'))
+                partnumber=str(self.get(storage, 'PartitionNUmber'))
                 label=str(self.get(storage, 'IdLabel'))
                 if label == '':
                     label=serial
                 username=self.getUserfromSeat(seat_id)
-                desktopfile=self.getUserDesktop(username) + "/%s.desktop"%serial
+                desktopfile=self.getUserDesktop(username) + "/%s-%s.desktop"%(serial,partnumber)
                 useruid=int(self.getUserUID(username))
                 dev={
                     "device": str(self.get(storage, 'DeviceFile')),
@@ -111,9 +134,10 @@ class MultiSeatDeviceManager:
                     "vendor": str(self.get(storage, 'DriveVendor')),
                     "serial": serial,
                     "label": label,
-                    "fstype": str(self.get(storage, 'IdType')),
+                    "fstype": fstype,
                     "ismounted": bool(self.get(storage, 'DeviceIsMounted')),
-                    "mountpoint": "/media/%s"%(serial),
+                    "partnumber":partnumber,
+                    "mountpoint": "/media/%s-%s"%(serial,partnumber),
                     "desktopfile": desktopfile,
                     "path":path,
                     "seat_id":seat_id,
@@ -129,6 +153,8 @@ class MultiSeatDeviceManager:
                     except Exception, err:
                         print "init_load() Exception creating launcher, err=%s"%err
                 self.all_devices.append(dev)
+        import pprint
+        pprint.pprint(self.all_devices)
 
     def getSeatID(self, path):
         seat_id=0
@@ -176,10 +202,20 @@ class MultiSeatDeviceManager:
         # iso9660 (rw,nosuid,nodev,uhelper=udisks,uid=0,gid=0,iocharset=utf8,mode=0400,dmode=0500)
         #
         # vfat: rw,nosuid,nodev,uhelper=udisks,uid=1000,gid=1000,shortname=mixed,dmask=0077,utf8=1,showexec,flush
+        #
+        # any_allow "exec", "noexec", "nodev", "nosuid", "atime", "noatime", "nodiratime", "ro", "rw", "sync", "dirsync"
         if d['fstype'] == 'iso9660':
-            options="-o rw,nosuid,nodev,uhelper=multiseat-udisks,user,uid=%s,gid=0,iocharset=utf8,mode=0400,dmode=0500"%d['username']
+            options="-o rw,nosuid,nodev,uhelper=multiseat-udisks,uid=%s,gid=0,iocharset=utf8,mode=0400,dmode=0500"%d['username']
+        elif d['fstype'] == 'vfat':
+            options="-o rw,nosuid,nodev,uhelper=multiseat-udisks,uid=%s,gid=0,shortname=mixed,dmask=0077,utf8=1,showexec,flush"%d['username']
+        elif d['fstype'] in ['ext2', 'ext3', 'ext4']:
+            options="-o rw,nosuid,nodev,uhelper=multiseat-udisks"
+            # no uid,gid support, in ext* filesystems => chown mountpoint
+        elif d['fstype'] == 'ntfs':
+            # mount with ntfs-3g???
+            options="-o rw,nosuid,nodev,uhelper=multiseat-udisks,uid=%s,gid=0,dmask=0077,default_permissions"%d['username']
         else:
-            options="-o rw,nosuid,nodev,uhelper=multiseat-udisks,user,uid=%s,gid=1000,shortname=mixed,dmask=0077,utf8=1,showexec,flush"%d['username']
+            options="-o rw,nosuid,nodev,uhelper=multiseat-udisks"
         
         cmd="mount -t %s %s '%s' %s"%(d['fstype'], d['device'], d['mountpoint'], options)
         print "MountDevice() cmd=%s"%cmd
@@ -188,6 +224,8 @@ class MultiSeatDeviceManager:
             print line
         p.communicate()
         if p.returncode == 0:
+            os.chown(d['mountpoint'], d['useruid'], 0)
+            os.chmod(d['mountpoint'], 0700)
             return True
         return False
 
@@ -208,17 +246,18 @@ class MultiSeatDeviceManager:
             return True
         try:
             os.mkdir(d['mountpoint'])
+            os.chmod(d['mountpoint'], 0700)
             return True
-        except:
-            print "Exception creating mountpoint %s"%d['mountpoint']
+        except Exception, err:
+            print "Exception creating mountpoint %s, err=%s"%(d['mountpoint'], err)
         return False
 
     def RemoveMountPoint(self, d):
         try:
             os.rmdir(d['mountpoint'])
             return True
-        except:
-            print "Exception removing mountpoint %s"%d['mountpoint']
+        except Exception, err:
+            print "Exception removing mountpoint %s, err=%s"%(d['mountpoint'], err)
         return False
 
     def CreateLauncher(self, d):
@@ -235,7 +274,7 @@ MountPoint=%s
 URL=%s
 X-multiseat-desktop=%s
 """%(d['label'], d['device'], d['fstype'], d['mountpoint'], d['mountpoint'], d['seat_id'])
-        # create /home/user/Escritorio/XXXXXXXXXXX.desktop (serial)
+        # create /home/user/Escritorio/XXXXXXXXXXX-x.desktop (serial,partnumber)
         print txt
         f=open(d['desktopfile'], 'w')
         f.write(txt)
@@ -268,6 +307,7 @@ X-multiseat-desktop=%s
         return uid
 
     def run (self):
+        file(PID_FILE, 'w').write('%d'%self.pid)
         try:
             self.mainloop.run()
         except KeyboardInterrupt:
@@ -275,10 +315,10 @@ X-multiseat-desktop=%s
         
     def quit(self, *args):
         self.mainloop.quit()
-        print "saliendo"
         sys.exit(0)
 
 def umount(dev, uid):
+    #FIXME if /dev/sdc2 is umounted try to search /dev/sdc? in /proc/mounts and umount it too
     #print "umount() dev=%s uid=%s"%(dev, uid)
     # read /proc/mounts searching device
     found=False
@@ -303,16 +343,27 @@ def umount(dev, uid):
     if username == '' or home == '':
         return "invalid-user"
     
-    if not "uid=%s"%uid in mountline:
+    #if not "uid=%s"%uid in mountline:
+    #    return "not-yours"
+    # ntfs-3g don't put uid in mountline stat mountpoint
+    allowed=False
+    try:
+        if os.stat(mountline.split()[1]).st_uid == int(uid):
+            allowed=True
+    except:
+        pass
+    
+    if not allowed:
         return "not-yours"
     
     # get serial from mount point
-    serial=mountline.split()[1].replace("/media/", '')
-    if serial == "":
+    #/media/serial-partnumber
+    serial_partnumber=mountline.split()[1].replace("/media/", '')
+    if serial_partnumber == "":
         return "no-serial"
     
     # umount it
-    os.system("umount %s"%dev)
+    os.system("sync ; umount %s"%dev)
     
     # remove mount dir
     try:
@@ -328,7 +379,7 @@ def umount(dev, uid):
         desktop=home + "/Desktop"
     
     try:
-        os.unlink(desktop + "/%s.desktop"%serial)
+        os.unlink(desktop + "/%s.desktop"%serial_partnumber)
     except:
         pass
     
