@@ -14,6 +14,13 @@
 
 case "$1" in
 start)
+        if ! grep -i "^0=localseat" -q /etc/gdm/gdm.conf-custom; then
+            log_warning_msg ""
+            log_warning_msg "         La sesión gráfica en el servidor está deshabilitada."
+            log_warning_msg "       Para activarla, en el archivo /etc/gdm/gdm.conf-custom,"
+            log_warning_msg "        modificar la línea  '0=Inactive' por '0=LocalSeat'"
+            log_warning_msg ""
+        fi
         log_begin_msg "Starting Multiseat" "max-multiseat"
           /usr/bin/start-multiseat >> /tmp/start-multiseat.log 2>&1
         log_end_msg 0
