@@ -15,7 +15,7 @@ PID_FILE="/var/run/multiseat-udisks.pid"
 case "$1" in
 start)
         mkdir -p "/var/run/"
-        if [ ! -d /dev/usbseat ] || [ ! -e /tmp/seat.db ] ; then
+        if [ ! -d /dev/usbseat ] || [ ! -e /dev/seat.db ] ; then
           # no multiseat devices or SEAT_ID database
           exit 0
         fi

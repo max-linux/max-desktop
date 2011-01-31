@@ -126,8 +126,12 @@ class MultiSeatDeviceManager:
                 if label == '':
                     label=serial
                 username=self.getUserfromSeat(seat_id)
-                desktopfile=self.getUserDesktop(username) + "/%s-%s.desktop"%(serial,partnumber)
-                useruid=int(self.getUserUID(username))
+                if username != '':
+                    desktopfile=self.getUserDesktop(username) + "/%s-%s.desktop"%(serial,partnumber)
+                    useruid=int(self.getUserUID(username))
+                else:
+                    desktopfile='/dev/null'
+                    useruid=0
                 dev={
                     "device": str(self.get(storage, 'DeviceFile')),
                     "model": str(self.get(storage, 'DriveModel')),
@@ -145,9 +149,8 @@ class MultiSeatDeviceManager:
                     "useruid":useruid,
                   }
                 print "init_load() device=%s"%dev
-                if not dev['ismounted'] and self.MountDevice(dev):
+                if not dev['ismounted'] and username != '' and self.MountDevice(dev):
                     dev['ismounted']=True
-                    # FIXME create desktop launcher
                     try:
                         self.CreateLauncher(dev)
                     except Exception, err:
@@ -162,13 +165,17 @@ class MultiSeatDeviceManager:
         # /sys/devices/pci0000:00/0000:00:02.1/usb1/1-2/{devnum|busnum}
         buspath="/".join( path.split('/')[0:7] )
         print "getSeatID() buspath=%s"%buspath
+        if not os.path.isfile(buspath+'/busnum'):
+            return seat_id
         busnum=int(open(buspath+'/busnum', 'r').readline())
         devnum=int(open(buspath+'/devnum', 'r').readline())
         busnum="%03i"%busnum
         devnum="%03i"%devnum
         print "getSeatID() busnum=%s devnum=%s"%(busnum, devnum)
-        # read /tmp/seat.db
-        f=open('/tmp/seat.db', 'r')
+        # read /dev/seat.db
+        if not os.path.isfile('/dev/seat.db'):
+            return seat_id
+        f=open('/dev/seat.db', 'r')
         for line in f.readlines():
             if "%s %s "%(busnum, devnum) in line:
                 print "getSeatID() found SEAT_ID in line=%s"%line.strip()
@@ -303,7 +310,6 @@ X-multiseat-desktop=%s
         for line in p.stdout.readlines():
             if "%s:"%username in line:
                 uid=line.split(':')[2]
-        
         return uid
 
     def run (self):
