@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# rescan multiseat devices in a early stage
+if [ -x "/etc/init.d/multiseat-rescan" ]; then
+	update-rc.d multiseat-rescan start 80 S . >/dev/null
+fi
+
+
+
+#DEBHELPER#

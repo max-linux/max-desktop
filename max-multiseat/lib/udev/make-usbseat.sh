@@ -13,6 +13,9 @@
 
 SEAT_DB=/tmp/seat.db
 
+(
+# lock in FD 9
+flock -x -w 2 9
 
 _BUSNUM=$(printf "%03g\n" $(cat "/sys/$1/../busnum" 2>/dev/null))
 _DEVNUM=$(printf "%03g\n" $(cat "/sys/$1/../devnum" 2>/dev/null))
@@ -26,7 +29,6 @@ if [ -e "$SEAT_DB" ] && grep -q "$_BUSNUM $_DEVNUM" $SEAT_DB; then
   SEAT_ID=$(grep "$_BUSNUM $_DEVNUM" $SEAT_DB | awk '{print $3}' | tail -1)
   logger -t "/lib/udev/make-usbseat.sh [$2]" "found SEAT_ID in database: $SEAT_ID"
   echo $SEAT_ID
-  exit 0
 else
   # read mayor SEAT_ID
   LAST_SEAT=$(awk '{print $3}' $SEAT_DB 2>/dev/null| sort| tail -1)
@@ -37,5 +39,8 @@ else
   echo "$_BUSNUM $_DEVNUM $NEW_SEAT" >> $SEAT_DB
   logger -t "/lib/udev/make-usbseat.sh [$2]" "created SEAT_ID '$NEW_SEAT'"
   echo $NEW_SEAT
-  exit 0
 fi
+
+) 9>/tmp/make-usbseat.lock
+
+rm -f /tmp/make-usbseat.lock

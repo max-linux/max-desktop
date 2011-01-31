@@ -1,0 +1,42 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          multiseat-rescan
+# Required-Start:    $local_fs
+# Required-Stop:
+# Default-Start:     S
+# Default-Stop:
+# Short-Description: Rescan multiseat devices and run udevma test to re-create links
+# Description:       Rescan multiseat devices and run udevma test to re-create links
+### END INIT INFO
+
+
+
+case "$1" in
+  start)
+	# DISPLAY devices
+	for vendor in $(find /sys/devices/pci0000\:00/*/usb*/*-*/*-*/ -name "idVendor"); do
+	  path=$(dirname $vendor)
+	  idvendor=$(cat $vendor)
+	  idproduct=$(cat $path/idProduct)
+	  if [ "$idvendor" = "0711" ] && [ "$idproduct" = "5100" ]; then
+	    udevadm test --action=add "$path" > /dev/null 2>&1
+	  fi
+	done
+
+	# SOUND devices
+	for path in $(find "/sys/devices/pci0000:00/" -name "controlC*"); do
+	  udevadm test --action=add "$path" > /dev/null 2>&1
+	done
+
+	# keyboard and mouse are detected after MWS300-init-tool
+	;;
+  stop|restart|force-reload)
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+	exit 3
+	;;
+esac
+
+:
+

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# remove multiseat-rescan
+if [ "$1" = "purge" ] ; then
+	update-rc.d multiseat-rescan remove >/dev/null
+        rm -f /etc/init.d/multiseat-rescan
+fi
+
+
+
+#DEBHELPER#
