@@ -6,6 +6,12 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 DEB_UPDATE_RCD_PARAMS := "start 99 2 3 4 5 ."
 DEB_DH_INSTALLINIT_ARGS := "--no-start"
 
+clean::
+	rm -f src/usbseat-gdm-remover
+
+build/max-multiseat::
+	gcc -O2 -ansi -pedantic -Wall src/usbseat-gdm-remover.c -o src/usbseat-gdm-remover
+
 binary-install/max-multiseat::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-multiseat -type d -name .svn | xargs rm -rf --

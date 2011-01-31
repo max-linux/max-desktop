@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 7.0.0), cdbs
 Standards-Version: 3.8.4
 
 Package: max-multiseat
-Architecture: all
+Architecture: any
 Depends: gdm-2.20, 
          xserver-xorg-video-displaylink,
          xserver-xorg-video-tusb, 

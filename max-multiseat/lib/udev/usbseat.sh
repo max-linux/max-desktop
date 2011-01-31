@@ -1,38 +1,39 @@
-#!/bin/bash
+#!/bin/sh
 # takes the "seat number" as parameter $1
 # the seat number is the kernel device id of the hub the seat's devices are sitting off of
 # called once for every usb device that MIGHT be part of a seat, when they arrive or remove 
 
-echo "-----------ACTION='$ACTION'-------------------------" >> /tmp/usbseat.log
-env | grep -e ^ID -e ^DEV >> /tmp/usbseat.log
+echo "-----------DISPLAY='$1'---ACTION='$ACTION'----DEVICE='$2'-------------" >> /tmp/usbseat.log
 
-
-if [ "$1" = "1"  ]; then
-  #echo "----begin DISPLAY=$1-------------------------" >> /tmp/usbseat.log
+if [ "$1" = "0" ] || [ "$1" = "1"  ]; then
   echo "NOT make things in DISPLAY $1" >> /tmp/usbseat.log
-  #env >> /tmp/usbseat.log
-  #echo "------end DISPLAY=$1-------------------------" >> /tmp/usbseat.log
   exit 0
 fi
 
-
+env | grep -e ^ID -e ^DEV >> /tmp/usbseat.log
 
 if [ "$ID_VENDOR_ID" = "0711" ] && [ "$ID_MODEL_ID" = "5100" ]; then
-    if [ -e /dev/usbseat/$1/keyboard ] && [ -e /dev/usbseat/$1/mouse ] && [ -e /dev/usbseat/$1/display ]; then
-	echo "Device $BUSNUM $DEVNUM initialized" >> /tmp/usbseat.log
-   else
-	echo "INIT $BUSNUM $DEVNUM ...." >> /tmp/usbseat.log
-    	/lib/udev/MWS300-init-tool $BUSNUM $DEVNUM >> /tmp/usbseat.log 2>&1
-    	(sleep 3 && /lib/udev/usbseat.sh $1 && tree /dev/usbseat/$1 >> /tmp/usbseat.log) &
-	# exit now
-	exit 0
-    fi
+	if [ -e /dev/usbseat/$1/keyboard ] && [ -e /dev/usbseat/$1/mouse ] && [ -e /dev/usbseat/$1/display ]; then
+		echo "Device $BUSNUM $DEVNUM complete, no MWS300-init-tool" >> /tmp/usbseat.log
+	else
+		echo "Call MWS300-init-tool $BUSNUM $DEVNUM ...." >> /tmp/usbseat.log
+		/lib/udev/MWS300-init-tool $BUSNUM $DEVNUM >> /tmp/usbseat.log 2>&1
+		(sleep 3 && /lib/udev/usbseat.sh $1 && tree /dev/usbseat/$1 >> /tmp/usbseat.log) &
+		# exit now
+		exit 0
+	fi
 fi
 
-if [[ !(-n `/bin/pidof gdm`) ]]; then
+if ! pidof gdm >/dev/null; then
     exit 0
 fi
 
+#GDMDYNAMIC="/usr/bin/gdmdynamic -v"
+GDMDYNAMIC="/usr/bin/gdmdynamic "
+
+(
+# lock in FD 8 for 4 seconds
+flock -x -w 4 8
 
 seat_running=`/usr/bin/gdmdynamic -l | /bin/sed -n -e "/:$1,/p"`
 DISPLAY_NUMBER=$(echo $1| sed -e 's/://g')
@@ -40,30 +41,35 @@ DISPLAY_NUMBER=$(echo $1| sed -e 's/://g')
 # $ACTION environment variable is set by udev subsystem
 case "$ACTION" in
 	'remove')
-		echo "REMOVE DISPLAY \$1=$1" >> /tmp/usbseat.log
-		env >> /tmp/usbseat.log
-
-		if [[ -n "{$seat_running}" ]]; then
-			echo "/usr/bin/gdmdynamic -v -d $DISPLAY_NUMBER" >> /tmp/usbseat.log
-			/usr/bin/gdmdynamic -v -d $DISPLAY_NUMBER
-		fi
+		exit 0
 		;;
 	*)
-                # A device which might be part of a seat has been added
-
 		# if we already have a running seat for this #, exit
-		if [[ -n "${seat_running}" ]]; then
+		if [ -n "${seat_running}" ]; then
+			echo "SEAT_ID $1 running, exit now" >> /tmp/usbseat.log
 			exit 0
 		fi
+		#PID=$(ps aux| grep "usbseat-gdm-remover /dev/usbseat/$1/display $1"| grep -c -v grep)
+		#if [ "$PID" != "0" ]; then
+		#	echo "SEAT_ID $1 running (PID=$PID), exit now" >> /tmp/usbseat.log
+		#	exit 0
+		#fi
 
-		if [[ -e /dev/usbseat/$1/keyboard && -e /dev/usbseat/$1/mouse && -e /dev/usbseat/$1/display ]]; then
+		if [ -e /dev/usbseat/$1/keyboard ] && \
+		   [ -e /dev/usbseat/$1/mouse ] &&  \
+		   [ -e /dev/usbseat/$1/display ]; then
 
 			# We have a newly complete seat. Start it.
-			#TMPFILE=`/bin/mktemp` || exit 1
 			TMPFILE=`/bin/mktemp -t usbseat.XXXXXXXXXX` || exit 1
-			if lsusb | grep -q 0711:5100; then
+			
+			# search for a MWS300 device
+			MWS=$(udevadm info --query=env --name=/dev/usbseat/$1/display | grep -e ID_VENDOR_ID=0711 -e ID_MODEL_ID=5100)
+			if [ "$MWS" != "" ]; then
+			    export $MWS
+			fi
+			
+			if [ "$ID_VENDOR_ID" = "0711" ] && [ "$ID_MODEL_ID" = "5100" ]; then
 				echo "MWS300 complete, launching GDMdynamic in $1 with $TMPFILE" >> /tmp/usbseat.log
-				#/bin/sed "s/%ID_SEAT%/$1/g" < /lib/udev/usbseat-xf86.tusb.conf.sed > $TMPFILE
 
 				VEND_ID=$(readlink -f /dev/usbseat/$1/display | awk -F"/" '{print $5}')
 				PROD_ID=$(readlink -f /dev/usbseat/$1/display | awk -F"/" '{print $6}')
@@ -71,16 +77,20 @@ case "$ACTION" in
 			else
 				/bin/sed "s/%ID_SEAT%/$1/g" < /lib/udev/usbseat-xf86.conf.sed > $TMPFILE
 			fi
+			
 			tree /dev/usbseat/$1 >> /tmp/usbseat.log
-			#VTNUM=$(printf "%02g" $((07+$1)))
-			/usr/bin/gdmdynamic -v -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 vt07 -audit 0 -nolisten tcp -config $TMPFILE"
-			#/usr/bin/gdmdynamic -v -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 -audit 0 -nolisten tcp -novtswitch -sharevts -config $TMPFILE"
+			$GDMDYNAMIC -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 vt07 -audit 0 -nolisten tcp -config $TMPFILE"
+			# old line -sharevts
+			#$GDMDYNAMIC -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 -audit 0 -nolisten tcp -novtswitch -sharevts -config $TMPFILE"
 
-			/usr/bin/gdmdynamic -v -r $1
+			$GDMDYNAMIC -r $1
+			
+			# call $GDMDYNAMIC -d $1 when sound device disappear (fork)
+			/usr/sbin/usbseat-gdm-remover /dev/usbseat/$1/sound $1 >> /tmp/usbseat.log 2>&1 &
 		else
 			if [ "$1" = "1" ]; then
-				/usr/bin/gdmdynamic -v -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 vt07 -audit 0 -nolisten tcp -config /lib/udev/xorg.conf.display0"
-				/usr/bin/gdmdynamic -v -r $1
+				$GDMDYNAMIC -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 vt07 -audit 0 -nolisten tcp -config /lib/udev/xorg.conf.display0"
+				$GDMDYNAMIC -r $1
 				exit
 			fi
 			echo "Some devices not found" >> /tmp/usbseat.log
@@ -89,7 +99,9 @@ case "$ACTION" in
 		;;
 esac
 
-exit 0
+) 8>/tmp/usbseat.lock
+
+rm -f /tmp/usbseat.lock
 
 
 

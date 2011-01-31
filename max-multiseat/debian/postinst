@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# obsolete file
+[ -f /etc/cron.d/max-multiseat ] && rm -f /etc/cron.d/max-multiseat
+
+
+
 # rescan multiseat devices in a early stage
 if [ -x "/etc/init.d/multiseat-rescan" ]; then
 	update-rc.d multiseat-rescan start 80 S . >/dev/null

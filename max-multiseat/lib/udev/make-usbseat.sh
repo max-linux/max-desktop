@@ -11,7 +11,16 @@
 #  echo "$2: $3" >> /tmp/make-usbseat.log
 #}
 
-SEAT_DB=/tmp/seat.db
+SEAT_DB=/dev/seat.db
+
+# use /dev RAM (tmpfs) for SEATS text file
+if [ ! -e $SEAT_DB ]; then
+  touch $SEAT_DB
+fi
+# FIXME REMOVE when max-multiseat-storage change to new file
+[ ! -e /tmp/seat.db ] && ln -s $SEAT_DB /tmp/seat.db
+
+
 
 (
 # lock in FD 9
@@ -24,14 +33,14 @@ REAL=$(readlink -f "/sys/$1/../")
 logger -t "/lib/udev/make-usbseat.sh [$2]" "REAL=$REAL BUSNUM=$_BUSNUM DEVNUM=$_DEVNUM"
 
 
-if [ -e "$SEAT_DB" ] && grep -q "$_BUSNUM $_DEVNUM" $SEAT_DB; then
+if grep -q "^$_BUSNUM $_DEVNUM" $SEAT_DB; then
   # return SEAT_ID (third column)
-  SEAT_ID=$(grep "$_BUSNUM $_DEVNUM" $SEAT_DB | awk '{print $3}' | tail -1)
+  SEAT_ID=$(grep "^$_BUSNUM $_DEVNUM" $SEAT_DB | awk '{print $3}' | tail -1)
   logger -t "/lib/udev/make-usbseat.sh [$2]" "found SEAT_ID in database: $SEAT_ID"
   echo $SEAT_ID
 else
-  # read mayor SEAT_ID
-  LAST_SEAT=$(awk '{print $3}' $SEAT_DB 2>/dev/null| sort| tail -1)
+  # read biggest SEAT_ID
+  LAST_SEAT=$(awk '{print $3}' $SEAT_DB 2>/dev/null| sort -n | tail -1)
   # if not found start in 1
   [ "$LAST_SEAT" = "" ] && LAST_SEAT=1
   # use LAST+1 for new SEAT_ID
