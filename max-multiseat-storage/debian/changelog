@@ -1,3 +1,12 @@
+max-multiseat-storage (6.0.max6) max; urgency=low
+
+  * multiseat-udisks.py:
+    - getSeatID() search busnum/devnum path from (end -8 folders) instead of first 7.
+    - getSeatID() if devname is disk without partitions use '-7'
+  * Add pylintrc and check/fix/clean the 2 python files
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 02 Feb 2011 16:32:10 +0100
+
 max-multiseat-storage (6.0.max5) max; urgency=low
 
   * Change /tmp/seat.db => /dev/seat.db

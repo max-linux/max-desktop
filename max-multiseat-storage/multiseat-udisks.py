@@ -27,31 +27,31 @@ Changelog
 
 """
 
-import os, sys
-import atexit
+import os
+import sys
+import pprint
 
 import gobject
 gobject.threads_init()
 
 from subprocess import Popen, PIPE, STDOUT
-import threading
 
 import dbus
 import dbus.service
-if getattr(dbus, 'version', (0,0,0)) >= (0,41,0):
+if getattr(dbus, 'version', (0, 0, 0)) >= (0, 41, 0):
     import dbus.glib
 
 PID_FILE="/var/run/multiseat-udisks.pid"
 
 
-class DBusException(Exception):
-    def __init__(self, *args, **kwargs):
-        pass
-    def __str__(self):
-        pass
-        
-    def get_dbus_name(self):
-        return self._dbus_error_name
+#class DBusException(Exception):
+#    def __init__(self, *args, **kwargs):
+#        pass
+#    def __str__(self):
+#        pass
+#        
+#    def get_dbus_name(self):
+#        return self._dbus_error_name
 
 #dbus.exceptions.DBusException=DBusException
 
@@ -85,6 +85,7 @@ class MultiSeatDeviceManager:
         # removed /dev/sdc3 but not removed /dev/sdc1 and /dev/sdc2
         # force manual umount
         if len(devname) < 9:
+            print "umount_same_disk() devname seems to be disk %s, no umounting..."%devname
             # disk not partition
             return
         dev_disk=devname[0:8]
@@ -156,16 +157,27 @@ class MultiSeatDeviceManager:
                     except Exception, err:
                         print "init_load() Exception creating launcher, err=%s"%err
                 self.all_devices.append(dev)
-        import pprint
         pprint.pprint(self.all_devices)
 
     def getSeatID(self, path):
         seat_id=0
         # /sys/devices/pci0000:00/0000:00:02.1/usb1/1-2/1-2.4/1-2.4:1.0/host9/target9:0:0/9:0:0:0/block/sdc/sdc1
         # /sys/devices/pci0000:00/0000:00:02.1/usb1/1-2/{devnum|busnum}
-        buspath="/".join( path.split('/')[0:7] )
+        #
+        # /sys/devices/pci0000:00/0000:00:1a.0/usb1/1-1/1-1.5/1-1.5.4/1-1.5.4:1.0/host7/target7:0:0/7:0:0:0/block/sdf/sdf1
+        # /sys/devices/pci0000:00/0000:00:1a.0/usb1/1-1/1-1.5/{devnum|busnum}
+        #
+        #       basename(path) == sdf  => pendrive without partitions (don't work, busnum in wrong path)
+        #       basename(path) == sdf1 => first pendrive partition
+        #
+        parent_folder=8
+        if len(os.path.basename(path)) == 3:
+            # sdf
+            parent_folder=7
+        buspath="/".join(path.split('/')[0:len(path.split('/'))-parent_folder])
         print "getSeatID() buspath=%s"%buspath
         if not os.path.isfile(buspath+'/busnum'):
+            print "getSeatID() no busnum file in path=%s, return seat_id=0"%path
             return seat_id
         busnum=int(open(buspath+'/busnum', 'r').readline())
         devnum=int(open(buspath+'/devnum', 'r').readline())
@@ -179,9 +191,9 @@ class MultiSeatDeviceManager:
         for line in f.readlines():
             if "%s %s "%(busnum, devnum) in line:
                 print "getSeatID() found SEAT_ID in line=%s"%line.strip()
+                #return 3rd column
                 seat_id=line.split()[2]
         f.close()
-        #return 3rd column
         return seat_id
 
     def getUserfromSeat(self, seat_id):
@@ -324,9 +336,11 @@ X-multiseat-desktop=%s
         sys.exit(0)
 
 def umount(dev, uid):
-    #FIXME if /dev/sdc2 is umounted try to search /dev/sdc? in /proc/mounts and umount it too
-    #print "umount() dev=%s uid=%s"%(dev, uid)
+    # FIXME if /dev/sdc2 is umounted try to search /dev/sdc? in /proc/mounts and umount it too
+    # print "umount() dev=%s uid=%s"%(dev, uid)
     # read /proc/mounts searching device
+    if uid == '':
+        return "no-uid"
     found=False
     mountline=''
     f=open('/proc/mounts', 'r')
@@ -356,7 +370,7 @@ def umount(dev, uid):
     try:
         if os.stat(mountline.split()[1]).st_uid == int(uid):
             allowed=True
-    except:
+    except Exception:
         pass
     
     if not allowed:
@@ -374,7 +388,7 @@ def umount(dev, uid):
     # remove mount dir
     try:
         os.rmdir(mountline.split()[1])
-    except:
+    except Exception:
         pass
     
     # remove Desktop launcher
@@ -386,7 +400,7 @@ def umount(dev, uid):
     
     try:
         os.unlink(desktop + "/%s.desktop"%serial_partnumber)
-    except:
+    except Exception:
         pass
     
     return "ok"

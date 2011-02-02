@@ -23,11 +23,8 @@
 
 import gtk
 import nautilus
-import commands
-import re
 import os
 import urllib
-import gtk
 from subprocess import Popen, PIPE, STDOUT
 
 def normalize(path):
@@ -90,13 +87,16 @@ class MultiseatUmountExtension(nautilus.MenuProvider):
             return error_msg("El dispositivo no está montado")
         # umount.multiseat a C app with bit SUID
         cmd="/sbin/umount.multiseat %s"%data['Dev']
-        p=Popen(cmd, shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+        p=Popen(cmd, shell=True, bufsize=0, 
+                stdout=PIPE, stderr=STDOUT, close_fds=True)
         for _line in p.stdout.readlines():
             line=_line.strip()
             log("umount.multiseat called, line=%s"%line)
             if line == "no-mounted":
                 return error_msg("El dispositivo no está montado.")
-            elif line == "invalid-user" or line.strip() == "not-yours":
+            elif line == "invalid-user" or \
+                 line.strip() == "not-yours" or \
+                 line.strip() == "no-uid":
                 return error_msg("El usuario no tiene permiso para desmontar ese dispositivo.")
             elif line == "no-serial":
                 return error_msg("No se pudo leer el número de serie del dispositivo.")
