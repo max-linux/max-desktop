@@ -38,6 +38,13 @@ case $1 in
      if [ -x /usr/share/update-notifier/notify-reboot-required ]; then
 		/usr/share/update-notifier/notify-reboot-required
      fi
+
+     # set nautilus background color of root user
+     gconftool-2 --direct --config-source xml:readwrite:/root/.gconf/ \
+                 --type bool --set "/apps/nautilus/preferences/background_set" "true" >/dev/null 2>&1
+     gconftool-2 --direct --config-source xml:readwrite:/root/.gconf/ \
+                 --type string --set "/apps/nautilus/preferences/background_color" "#E53B1A" >/dev/null 2>&1
+
      ;;
 esac
 
