@@ -1,3 +1,10 @@
+max-menus (6.0.max36) max; urgency=low
+
+  * usr/share/dpsyco/skel/usr/share/applications/mypaint.desktop:
+    - Fix icon and put in tabletpc category
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 15 Feb 2011 18:45:50 +0100
+
 max-menus (6.0.max35) max; urgency=low
 
   * usr/share/dpsyco/skel/usr/share/applications/squeak.desktop

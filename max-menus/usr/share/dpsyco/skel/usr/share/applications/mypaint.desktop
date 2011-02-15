@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=MyPaint
+Exec=mypaint %f
+Comment=Paint images from scratch
+Comment[es]=Dibujar imágenes desde cero
+GenericName=Image Editor
+GenericName[es]=Editor de imágenes
+MimeType=image/openraster;image/png;image/jpeg;
+Type=Application
+Icon=/usr/share/icons/hicolor/scalable/apps/mypaint.svg
+Categories=Tablet PC utils;tabletpc;
+Terminal=false
