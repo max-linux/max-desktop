@@ -5,8 +5,10 @@ max-menus (6.0.max35) max; urgency=low
     - Set SQUEAK_IMAGE_DIR=/usr/lib/squeak (close ticket #366)
   * usr/share/dpsyco/skel/usr/share/applications/cellwriter.desktop:
     - Call celwritter without args (close ticket #364)
+  * usr/share/dpsyco/skel/usr/share/applications/atnag.desktop:
+    - atnag => Atnag (close ticket #363)
 
- -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 15 Feb 2011 17:55:48 +0100
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 15 Feb 2011 18:00:53 +0100
 
 max-menus (6.0.max34) max; urgency=low
 

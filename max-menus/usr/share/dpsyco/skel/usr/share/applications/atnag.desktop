@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Atnag
+GenericName=Atnag
+Comment=Plataforma e-learning
+Comment[es]=Plataforma de formación Atnag
+TryExec=/usr/bin/atnag
+Exec=/usr/bin/atnag
+Icon=/usr/share/atnag/ressources/dir_icons/Atnag_model.png
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Application;Education;Atnag;
