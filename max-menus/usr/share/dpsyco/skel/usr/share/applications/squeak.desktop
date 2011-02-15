@@ -2,8 +2,8 @@
 Name=Squeak
 Comment=Programming system and content development tool
 Comment[es]=Entorno de desarrollo y programación de contenido
-TryExec=/usr/bin/squeak
-Exec=squeak
+TryExec=/usr/bin/squeak.max
+Exec=squeak.max
 Terminal=false
 Type=Application
 Icon=squeak

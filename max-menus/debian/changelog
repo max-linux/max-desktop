@@ -1,3 +1,11 @@
+max-menus (6.0.max35) max; urgency=low
+
+  * usr/share/dpsyco/skel/usr/share/applications/squeak.desktop
+    usr/bin/squeak.max:
+    - Set SQUEAK_IMAGE_DIR=/usr/lib/squeak (close ticket #366)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 15 Feb 2011 17:50:11 +0100
+
 max-menus (6.0.max34) max; urgency=low
 
   * Translate to english some menu entries (close #354)
