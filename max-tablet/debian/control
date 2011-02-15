@@ -7,6 +7,7 @@ Standards-Version: 3.8.4
 
 Package: max-tablet
 Architecture: all
+Depends: mypaint
 Recomends: wacom-tools
 Description: Dependencias y configuracion de TABLETPC para MaX
  Contiene:
