@@ -1,3 +1,10 @@
+max-language-es (6.0.max6) max; urgency=low
+
+  * Add ekiga translation from sources (close ticket: #362)
+  * Delete obsolete /usr/share/dpsyco
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 15 Feb 2011 18:08:28 +0100
+
 max-language-es (6.0.max5) max; urgency=low
 
   * Add po/xournal.po translation (Close ticket #357)
