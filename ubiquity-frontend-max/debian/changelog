@@ -1,3 +1,9 @@
+ubiquity-frontend-max (6.0.max33) max; urgency=low
+
+  * Draw MAX background in ubiquity-dm (close ticket #338)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 14 Mar 2011 15:10:55 +0100
+
 ubiquity-frontend-max (6.0.max32) max; urgency=low
 
   * usr/share/dpsyco/skel/usr/share/ubiquity/install.py:
