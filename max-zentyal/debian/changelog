@@ -1,0 +1,31 @@
+max-zentyal (0.5) max; urgency=low
+
+  * Add zentyal-gateway, zentyal-security, zentyal-infrastructure, zentyal-office
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 23 Mar 2011 11:38:50 +0100
+
+max-zentyal (0.4) max; urgency=low
+
+  * Add zentyal-dhcp
+  * Add zentyal-max-control
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 23 Mar 2011 11:36:18 +0100
+
+max-zentyal (0.3) max; urgency=low
+
+  * Remove zentyal-max-control depend
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 22 Mar 2011 18:41:10 +0100
+
+max-zentyal (0.2) max; urgency=low
+
+  * Use max-control instead of ebox-max-control
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 22 Mar 2011 18:31:27 +0100
+
+max-zentyal (0.1) max; urgency=low
+
+  * Initial release based on max-ebox
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 22 Mar 2011 18:16:39 +0100
+

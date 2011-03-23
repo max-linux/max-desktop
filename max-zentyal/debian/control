@@ -1,0 +1,33 @@
+Source: max-zentyal
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: cdbs, debhelper (>= 7)
+Standards-Version: 3.8.1
+
+Package: max-zentyal
+Architecture: all
+Depends: zentyal,
+         zentyal-ca, 
+         zentyal-dhcp,
+         zentyal-network,
+         zentyal-dns,
+         zentyal-firewall,
+         zentyal-ntp,
+         zentyal-objects,
+         zentyal-openvpn,
+         zentyal-printers,
+         zentyal-samba,
+         zentyal-services, 
+         zentyal-squid, 
+         zentyal-users, 
+         zentyal-trafficshaping,
+         zentyal-gateway,
+         zentyal-security,
+         zentyal-infrastructure,
+         zentyal-office,
+######### FIXME Add new Backharddi##################
+#         zentyal-backharddi-ng | ebox-backharddi-ng,
+#################################################
+         zentyal-max-control | max-control
+Description: Max Zentyal Metapackage
