@@ -10,7 +10,7 @@ Architecture: any
 Depends: gdm-2.20, 
          xserver-xorg-video-displaylink,
          xserver-xorg-video-tusb, 
-         util-linux
+         util-linux, procps
 Recommends: max-gnome-desktop-environment
 Description: Some files to support MultiSeat computers
  Contains:

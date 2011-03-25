@@ -5,8 +5,8 @@
 # Required-Stop:
 # Default-Start:     S
 # Default-Stop:
-# Short-Description: Rescan multiseat devices and run udevma test to re-create links
-# Description:       Rescan multiseat devices and run udevma test to re-create links
+# Short-Description: Rescan multiseat devices and run udevadm test to re-create links
+# Description:       Rescan multiseat devices and run udevadm test to re-create links
 ### END INIT INFO
 
 
@@ -29,6 +29,14 @@ case "$1" in
 	done
 
 	# keyboard and mouse are detected after MWS300-init-tool
+
+	# create empty file to switch sharevts in multiseats
+	if grep -q "^0=LocalSeat" /etc/gdm/gdm.conf-custom; then
+		# LocalSeat enabled, launch gdmdynamic with sharevts novtswitch
+		touch /dev/localseat
+	fi
+
+
 	;;
   stop|restart|force-reload)
 	;;

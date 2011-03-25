@@ -1,3 +1,15 @@
+max-multiseat (6.0.max26) max; urgency=low
+
+  * etc/init.d/multiseat-rescan:
+    - Create /dev/localseat if gdm.conf-custom have 0=LocalSeat enabled
+  * lib/udev/usbseat.sh:
+    - Kill all usbseat-gdm-remover process when starting new one
+    - View /tmp/.X-lock and restart seat if not found
+    - Start Xorg in multiseat with "-novtswitch -sharevts" if LocalSeat enabled
+  * Add procps to Depends (pgrep)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 25 Mar 2011 16:09:00 +0100
+
 max-multiseat (6.0.max25) max; urgency=low
 
   * Remove cron script (not needed)

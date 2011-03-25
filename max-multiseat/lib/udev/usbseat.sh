@@ -46,10 +46,22 @@ case "$ACTION" in
 	*)
 		# if we already have a running seat for this #, exit
 		if [ -n "${seat_running}" ]; then
-			echo "SEAT_ID $1 running, exit now" >> /tmp/usbseat.log
-			exit 0
+			if [ ! -f "/tmp/.X${1}-lock" ]; then
+				echo "SEAT_ID $1 running, but no /tmp/.X${1}-lock, last lines of Xorg.log" >> /tmp/usbseat.log
+				# seat running but Xorg no running
+				tail -50 /var/log/Xorg.${1}.log >> /tmp/usbseat.log 2>/dev/null
+				# remove gdmdynamic and recall this script
+				mv /dev/usbseat/$1/sound /dev/usbseat/$1/sound.disabled
+				sleep 1
+				mv /dev/usbseat/$1/sound.disabled /dev/usbseat/$1/sound
+				/lib/udev/usbseat.sh $1
+				exit 0
+			else
+				echo "SEAT_ID $1 running, exit now" >> /tmp/usbseat.log
+				exit 0
+			fi
 		fi
-		#PID=$(ps aux| grep "usbseat-gdm-remover /dev/usbseat/$1/display $1"| grep -c -v grep)
+		#PID=$(ps aux| grep "usbseat-gdm-remover /dev/usbseat/$1/sound $1"| grep -v grep)
 		#if [ "$PID" != "0" ]; then
 		#	echo "SEAT_ID $1 running (PID=$PID), exit now" >> /tmp/usbseat.log
 		#	exit 0
@@ -79,12 +91,22 @@ case "$ACTION" in
 			fi
 			
 			tree /dev/usbseat/$1 >> /tmp/usbseat.log
-			$GDMDYNAMIC -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 vt07 -audit 0 -nolisten tcp -config $TMPFILE"
-			# old line -sharevts
-			#$GDMDYNAMIC -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 -audit 0 -nolisten tcp -novtswitch -sharevts -config $TMPFILE"
+			if [ ! -e /dev/localseat ]; then
+				$GDMDYNAMIC -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 vt07 -audit 0 -nolisten tcp -config $TMPFILE"
+			else
+				# -novtswitch -sharevts when LocalSeat is enabled
+				$GDMDYNAMIC -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 vt07 -audit 0 -nolisten tcp -novtswitch -sharevts -config $TMPFILE"
+			fi
 
 			$GDMDYNAMIC -r $1
 			
+			# kill OLD removers
+			PIDS=$(pgrep -f "/usr/sbin/usbseat-gdm-remover /dev/usbseat/$1/sound $1")
+			if [ "$PIDS" != "" ]; then
+				echo "killing OLD usbseat-gdm-remover in $1" >> /tmp/usbseat.log 2>&1
+				pgrep -f -l "/usr/sbin/usbseat-gdm-remover /dev/usbseat/$1/sound $1" >> /tmp/usbseat.log 2>&1
+				kill $PIDS >> /tmp/usbseat.log 2>&1
+			fi
 			# call $GDMDYNAMIC -d $1 when sound device disappear (fork)
 			/usr/sbin/usbseat-gdm-remover /dev/usbseat/$1/sound $1 >> /tmp/usbseat.log 2>&1 &
 		else
