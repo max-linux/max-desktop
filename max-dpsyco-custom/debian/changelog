@@ -1,3 +1,9 @@
+max-dpsyco-custom (6.0.max40) max; urgency=low
+
+  * Remove '6.0' from debian/control
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 28 Mar 2011 15:47:44 +0200
+
 max-dpsyco-custom (6.0.max39) max; urgency=low
 
   * usr/sbin/max-update-post-inst
