@@ -11,7 +11,7 @@ Depends: ${misc:Depends}, python
 Conflicts: kubuntu-default-settings
 Provides: kubuntu-default-settings
 Replaces: kubuntu-default-settings
-Description: Default settings and artwork for the MaX 5.0 (KDE) desktop
- This package contains the default settings used by MaX 5.0.  It also
- includes artwork and MaX 5.0 (KDE) branding.
+Description: Default settings and artwork for the MaX (KDE) desktop
+ This package contains the default settings used by MaX.  It also
+ includes artwork and MaX (KDE) branding.
 
