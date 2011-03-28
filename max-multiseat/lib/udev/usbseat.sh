@@ -50,12 +50,7 @@ case "$ACTION" in
 				echo "SEAT_ID $1 running, but no /tmp/.X${1}-lock, last lines of Xorg.log" >> /tmp/usbseat.log
 				# seat running but Xorg no running
 				tail -50 /var/log/Xorg.${1}.log >> /tmp/usbseat.log 2>/dev/null
-				# remove gdmdynamic and recall this script
-				mv /dev/usbseat/$1/sound /dev/usbseat/$1/sound.disabled
-				sleep 1
-				mv /dev/usbseat/$1/sound.disabled /dev/usbseat/$1/sound
-				/lib/udev/usbseat.sh $1
-				exit 0
+				# no exit now, exec rest of script
 			else
 				echo "SEAT_ID $1 running, exit now" >> /tmp/usbseat.log
 				exit 0
