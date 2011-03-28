@@ -1,3 +1,9 @@
+max-apt (6.0.max2) max; urgency=low
+
+  * Remove 5.0 from description and update compat and debhelper version
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 28 Mar 2011 15:23:09 +0200
+
 max-apt (6.0.max1) max; urgency=low
 
   * Change version to 6.0
