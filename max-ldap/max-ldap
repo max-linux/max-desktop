@@ -417,6 +417,7 @@ Session:
         #f.write('gdm;*;__USERS__;Al0000-2400;audio,video,floppy,cdrom,plugdev,netdev,powerdev,scanner,fuse\n')
         #f.write('gdm;*;Profesores;Al0000-2400;audio,video,floppy,cdrom,plugdev,netdev,powerdev,scanner,fuse,tcos,sambashare\n')
         f.write('gdm;*;*;Al0000-2400;audio,video,floppy,cdrom,plugdev,netdev,powerdev,scanner,fuse\n')
+        f.write('gdm-2.20;*;*;Al0000-2400;audio,video,floppy,cdrom,fuse\n')
         f.close()
         
         """

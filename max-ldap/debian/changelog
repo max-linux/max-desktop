@@ -1,3 +1,9 @@
+max-ldap (0.21) max; urgency=low
+
+  * max-ldap, debian/postinst: Add gdm-2.20 to /etc/security/group.conf
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 28 Mar 2011 19:01:42 +0200
+
 max-ldap (0.20) max; urgency=low
 
   * Add to /etc/ssh/sshd_config: 'AllowGroups Instaladores'

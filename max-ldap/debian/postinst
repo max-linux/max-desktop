@@ -33,6 +33,15 @@ EOF
         restart ssh || true
     fi
 
+
+    # add gdm-2.20 to pam groups
+    #gdm;*;*;Al0000-2400;audio,video,floppy,cdrom,plugdev,netdev,powerdev,scanner,fuse
+    #gdm-2.20;*;*;Al0000-2400;audio,video,floppy,cdrom,plugdev,netdev,powerdev,scanner,fuse
+    if ! grep -q "^gdm-2.20" /etc/security/group.conf; then
+        echo "gdm-2.20;*;*;Al0000-2400;audio,video,floppy,cdrom,fuse" >> /etc/security/group.conf
+    fi
+
+
 fi
 
 
