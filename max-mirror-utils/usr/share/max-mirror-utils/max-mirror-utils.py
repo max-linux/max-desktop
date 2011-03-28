@@ -223,7 +223,7 @@ class MaXMirrorUtils:
         self.set_active_in_select(self.w['combo_options'], UBUNTU_MIRRORS[0][0])
         
         self.populate_select(self.w['combo_distro'], DISTROS)
-        self.set_active_in_select(self.w['combo_distro'], DISTROS[1][0])
+        self.set_active_in_select(self.w['combo_distro'], DISTROS[2][0])
         
         
         
