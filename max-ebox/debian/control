@@ -1,0 +1,11 @@
+Source: max-ebox
+Section: max
+Priority: optional
+Maintainer: Pedro Peña Pérez <pedro.pena@open-phoenix.com>
+Build-Depends: cdbs, debhelper (>= 7)
+Standards-Version: 3.8.1
+
+Package: max-ebox
+Architecture: all
+Depends: ebox, ebox-ca, ebox-dhcp, ebox-dns, ebox-firewall, ebox-network, ebox-ntp, ebox-objects, ebox-openvpn, ebox-printers, ebox-samba, ebox-services, ebox-squid, ebox-usersandgroups, ebox-trafficshaping, ebox-backharddi-ng, ebox-max-control
+Description: Max Ebox Metapackage
