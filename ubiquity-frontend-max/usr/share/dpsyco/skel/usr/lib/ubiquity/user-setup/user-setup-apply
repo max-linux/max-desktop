@@ -398,6 +398,10 @@ if [ -f /tmp/max_install_type ] && [ "$(grep -c profesor /tmp/max_install_type)"
   # add profesor to tcos group
   $log $chroot $ROOT adduser profesor tcos || true
 
+  $log cp /usr/share/ubiquity/tcosmonitor.desktop $ROOT/home/profesor/Escritorio/ || true
+  $log chmod 755 $ROOT/home/profesor/Escritorio/tcosmonitor.desktop || true
+  $log $chroot $ROOT chown profesor:profesor /home/profesor/Escritorio/tcosmonitor.desktop || true
+
 fi
 
 # force locale

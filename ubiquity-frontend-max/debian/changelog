@@ -1,3 +1,10 @@
+ubiquity-frontend-max (6.0.max34) max; urgency=low
+
+  * usr/share/dpsyco/skel/usr/lib/ubiquity/user-setup/user-setup-apply:
+    - Create tcosmonitor launcher in profesor Desktop
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 28 Mar 2011 15:11:58 +0200
+
 ubiquity-frontend-max (6.0.max33) max; urgency=low
 
   * Draw MAX background in ubiquity-dm (close ticket #338)
