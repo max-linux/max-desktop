@@ -10,15 +10,24 @@ if [ "$1" = "0" ] || [ "$1" = "1"  ]; then
   exit 0
 fi
 
-env | grep -e ^ID -e ^DEV >> /tmp/usbseat.log
+env | grep -e ^ID -e ^DEV -e ^SEAT_ID >> /tmp/usbseat.log
 
 if [ "$ID_VENDOR_ID" = "0711" ] && [ "$ID_MODEL_ID" = "5100" ]; then
-	if [ -e /dev/usbseat/$1/keyboard ] && [ -e /dev/usbseat/$1/mouse ] && [ -e /dev/usbseat/$1/display ]; then
+	# $1 could be 'display'
+	if [ "$1" = "display" ]; then
+		echo "UPSSS , error: \$1 is display, use SEAT_ID=$SEAT_ID" >> /tmp/usbseat.log
+	else
+		SEAT_ID=$1
+	fi
+
+	if [ -e /dev/usbseat/$SEAT_ID/keyboard ] && [ -e /dev/usbseat/$SEAT_ID/mouse ] && [ -e /dev/usbseat/$SEAT_ID/display ]; then
 		echo "Device $BUSNUM $DEVNUM complete, no MWS300-init-tool" >> /tmp/usbseat.log
 	else
+		tree /dev/usbseat/$SEAT_ID >> /tmp/usbseat.log
 		echo "Call MWS300-init-tool $BUSNUM $DEVNUM ...." >> /tmp/usbseat.log
 		/lib/udev/MWS300-init-tool $BUSNUM $DEVNUM >> /tmp/usbseat.log 2>&1
-		(sleep 3 && /lib/udev/usbseat.sh $1 && tree /dev/usbseat/$1 >> /tmp/usbseat.log) &
+		# start SEAT in background
+		(sleep 3 && /lib/udev/usbseat.sh $SEAT_ID && tree /dev/usbseat/$SEAT_ID >> /tmp/usbseat.log) &
 		# exit now
 		exit 0
 	fi

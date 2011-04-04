@@ -30,7 +30,7 @@ KERNEL=="fb*",SUBSYSTEMS=="usb",PROGRAM="/lib/udev/make-usbseat.sh %p/../../ dis
 
 # MWS300
 ATTR{idVendor}=="0711",ATTR{idProduct}=="5100",PROGRAM="/lib/udev/make-usbseat.sh %p display",\
-                                SYMLINK+="usbseat/%c/display",RUN+="usbseat.sh %c display"
+                                SYMLINK+="usbseat/%c/display",ENV{SEAT_ID}="%c",RUN+="usbseat.sh %c display"
 
 
 
@@ -41,7 +41,7 @@ KERNEL=="event*", SUBSYSTEM=="input", ATTRS{bInterfaceClass}=="03", ATTRS{bInter
         PROGRAM="/lib/udev/make-usbseat.sh %p/../../../../ keyboard",SYMLINK+="usbseat/%c/keyboard",RUN+="usbseat.sh %c keyboard"
 
 KERNEL=="control*", SUBSYSTEM=="sound", SUBSYSTEMS=="usb", \
-        PROGRAM="/lib/udev/make-usbseat.sh %p/../../../../ sound", SYMLINK+="usbseat/%c/sound"
+        PROGRAM="/lib/udev/make-usbseat.sh %p/../../../../ sound",SYMLINK+="usbseat/%c/sound"
 
 
 #################################################################################################
