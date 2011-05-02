@@ -8,16 +8,15 @@ Build-Depends: cdbs, debhelper (>= 7), subversion,
 		libatk1.0-dev, libx11-dev, libpng12-dev,
 		libglib2.0-dev, libgconf2-dev, libfontconfig1-dev,
 		libfreetype6-dev, libgsl0-dev, libc6-dev,
-		fpc, lazarus,
+		fpc, lazarus, 
+                libgsf-1-dev, libxml2-dev, trang, librsvg2-dev, libnotify-dev, libatspi-dev, gnome-doc-utils, scrollkeeper, libpanel-applet2-dev
 Standards-Version: 3.8.3
 Homepage: http://code.google.com/p/ardesia/
 
 Package: max-ardesia
-Architecture: any
-Depends: vlc, xdg-utils, ${shlibs:Depends}, ${misc:Depends}
-Provides: ardesia, curtain, spotlighter
-Replaces: ardesia, curtain, spotlighter
-Conflicts: ardesia, curtain, spotlighter
+Architecture: all
+Depends: ardesia, curtain, florence, magnifier, spotlighter
+Recommends: easystroke
 Description: Ardesia is a free digital sketchpad.
  You can make colored free-hand annotations with digital ink everywhere,
  record it and share on the network.
@@ -39,3 +38,74 @@ Description: Ardesia is a free digital sketchpad.
  a touch screen, a drawing tablet, a cheap&professional wiimote whiteboard
  or a commercial whiteboard, interactive projector and
  any other devices supported by your operating system.
+
+
+Package: ardesia
+Depends: binutils, vlc, ${shlibs:Depends}, ${misc:Depends}
+Conflicts: max-ardesia (<< 0.8)
+Architecture: any
+Description: The free digital sketchpad.
+ You can make colored free-hand annotations with digital ink everywhere,
+ record it and share on the network.
+ .
+ Thanks to Ardesia you are free to open any application
+ and fix your ideas and comments as if you wrote on a classic chalkboard.
+ You can use the tool to make effective on-screen presentation,
+ highlight things or point out things of interest.
+ The tool facilitates the online presentations and demos showing in real time
+ your computer screen to anyone in the network.
+ You can use this tool to enhance your lessons or courses working with
+ your preferred applications and your preferred operating system.
+ Create nice tutorial and demos saving the desktop images
+ with your free hand annotations.
+ Ardesia includes a sketchpad software that allow to free-hand draw
+ geometrical shapes using the shape recognizer.
+ .
+ Ardesia works with all the pointing device; you can use a mouse,
+ a touch screen, a drawing tablet, a cheap&professional wiimote whiteboard
+ or a commercial whiteboard, interactive projector and
+ any other devices supported by your operating system.
+
+Package: curtain
+Conflicts: max-ardesia (<< 0.8)
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Curtain on the screen.
+ Curtain enables you to show, move and resizeresize a curtain on the desktop.
+ .
+ This is especially useful when making presentations to hide and unhide things.
+ .
+ Curtain is XInput-Aware, so you can use it with a graphic tablet or a whiteboard.
+
+Package: florence
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: max-ardesia (<< 0.8)
+Description: Virtual keyboard.
+ Florence-ramble is a florence virtual keyboard flavour powered by the stroke taste.
+ .
+ This is especially useful as fast input text insertion device.
+ .
+ FlorenceRamble is XInput-Aware, so you can use this with a graphic tablet or a whiteboard.
+
+Package: magnifier
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: max-ardesia (<< 0.8)
+Description: Virtual Magnifier Glass.
+ Virtual Magnifier Glass magnify your desktop.
+ .
+ This is especially useful when making presentations to highlight things.
+ .
+ Vmg is XInput-Aware, so you can use it with a graphic tablet or a whiteboard.
+
+Package: spotlighter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: max-ardesia (<< 0.8)
+Description: Gtk interface to make annotations on the screen.
+ Spotlighter enables you to show, move and resize a spotlight on the desktop.
+ .
+ This is especially useful when making presentations, to highlight point of interest.
+ .
+ Curtain is XInput-Aware, so you can use it with a graphic tablet or a whiteboard.

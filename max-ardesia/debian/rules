@@ -3,45 +3,62 @@
 include /usr/share/cdbs/1/rules/debhelper.mk
 #include /usr/share/cdbs/1/class/makefile.mk
 
+#trunk
+URL=http://ardesia.googlecode.com/svn/trunk/
+
+#tags
+URL=http://ardesia.googlecode.com/svn/tags/0.8/
 
 clean::
 	rm -rf ardesia-read-only
 
 
-build/max-ardesia::
-	if [ ! -d ardesia-read-only ]; then svn checkout http://ardesia.googlecode.com/svn/trunk/ ardesia-read-only; fi
+build/max-ardesia:: build-stamp
+
+
+build-stamp:
+	if [ ! -d ardesia-read-only ]; then svn checkout $(URL) ardesia-read-only; fi
 
 	# build ardesia
-	cd ardesia-read-only/ardesia && ./autogen.sh
-	cd ardesia-read-only/ardesia && ./configure --prefix=/usr && make
+	cd ardesia-read-only/ardesia && ./autogen.sh --prefix=/usr && make
 
 	# build curtain
-	cd ardesia-read-only/curtain && ./autogen.sh
-	cd ardesia-read-only/curtain && ./configure --prefix=/usr && make
+	cd ardesia-read-only/curtain && ./autogen.sh --prefix=/usr && make
 
 	# build spotlighter
-	cd ardesia-read-only/spotlighter && ./autogen.sh
-	cd ardesia-read-only/spotlighter && ./configure --prefix=/usr && make
+	cd ardesia-read-only/spotlighter && ./autogen.sh --prefix=/usr && make
 
 
 	# build magnifier
 	cat debian/make.sh > ardesia-read-only/magnifier/make.sh
 	cd ardesia-read-only/magnifier && make
 
+	# build florence-ramble
+	cat debian/overrides/florence-ramble_src_applet.c > ardesia-read-only/florence-ramble/src/applet.c
+	cd ardesia-read-only/florence-ramble && ./autogen.sh --prefix=/usr --without-docs --sysconfdir=/etc && make
+
+	touch build-stamp
 
 
 install/max-ardesia::
+#max-ardesia
+#ardesia
+#curtain
+#florence-ramble
+#vmg
+#spotlighter
+
 	# install ardesia
-	cd ardesia-read-only/ardesia && make install DESTDIR=$(CURDIR)/debian/max-ardesia
-	mkdir -p debian/max-ardesia/usr/share/doc/max-ardesia/ardesia/
-	mv debian/max-ardesia/usr/doc/ardesia/* debian/max-ardesia/usr/share/doc/max-ardesia/ardesia/
-	rmdir debian/max-ardesia/usr/doc/ardesia
+	cd ardesia-read-only/ardesia && make install DESTDIR=$(CURDIR)/debian/ardesia
 
 	# install curtain
-	cd ardesia-read-only/curtain && make install DESTDIR=$(CURDIR)/debian/max-ardesia
+	cd ardesia-read-only/curtain && make install DESTDIR=$(CURDIR)/debian/curtain
 
 	# install spotlighter
-	cd ardesia-read-only/spotlighter && make install DESTDIR=$(CURDIR)/debian/max-ardesia
+	cd ardesia-read-only/spotlighter && make install DESTDIR=$(CURDIR)/debian/spotlighter
 
 	# install magnifier
-	cd ardesia-read-only/magnifier && make install DESTDIR=$(CURDIR)/debian/max-ardesia
+	cd ardesia-read-only/magnifier && make install DESTDIR=$(CURDIR)/debian/magnifier
+
+	# install florence-ramble
+	cd ardesia-read-only/florence-ramble && make install DESTDIR=$(CURDIR)/debian/florence

@@ -1,3 +1,11 @@
+max-ardesia (0.8-0svn2270.max1) max; urgency=low
+
+  * New upstream version 0.8
+  * Enable build and install of florence-ramble
+  * Split packages and use max-ardesia as metapackage
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 02 May 2011 15:13:39 +0200
+
 max-ardesia (0.7-0svn1977.max1) max; urgency=low
 
   * Initial release
