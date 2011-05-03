@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=0.2
+Type=Application
+Name=Virtual magnifier
+Name[es]=Lupa virtual
+GenericName=Virtual Magnifier
+Comment=Magnifying glass for the desktop screen.
+Comment[it]=Lente di ingrandimento per la scrivania.
+Comment[es]=Una lupa para tu escritorio.
+Exec=vmg %U
+TryExec=vmg
+Icon=vmg.png
+Terminal=false
+Categories=GNOME;GTK;Whiteboard;
+StartupNotify=true
+Encoding=UTF-8
