@@ -1,3 +1,9 @@
+max-live (6.0.max10) max; urgency=low
+
+  * Remove /etc/udev/rules.d/70-persistent* from casper-rw (close #254)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 03 May 2011 15:45:04 +0200
+
 max-live (6.0.max9) max; urgency=low
 
   * Remove xresprobe from Depends
