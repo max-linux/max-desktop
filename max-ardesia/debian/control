@@ -15,8 +15,8 @@ Homepage: http://code.google.com/p/ardesia/
 
 Package: max-ardesia
 Architecture: all
-Depends: ardesia, curtain, florence, magnifier, spotlighter
-Recommends: easystroke
+Depends: ardesia, curtain, magnifier, spotlighter
+Recommends: easystroke, florence
 Description: Ardesia is a free digital sketchpad.
  You can make colored free-hand annotations with digital ink everywhere,
  record it and share on the network.

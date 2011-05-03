@@ -1,7 +1,8 @@
 #!/usr/bin/make -f
 
 include /usr/share/cdbs/1/rules/debhelper.mk
-#include /usr/share/cdbs/1/class/makefile.mk
+
+export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 #trunk
 URL=http://ardesia.googlecode.com/svn/trunk/
@@ -35,30 +36,23 @@ build-stamp:
 
 	# build florence-ramble
 	cat debian/overrides/florence-ramble_src_applet.c > ardesia-read-only/florence-ramble/src/applet.c
-	cd ardesia-read-only/florence-ramble && ./autogen.sh --prefix=/usr --without-docs --sysconfdir=/etc && make
+	cd ardesia-read-only/florence-ramble && ./autogen.sh --prefix=/usr --without-docs --with-gconf-schema-file-dir=/usr/share/gconf/schemas && make
 
 	touch build-stamp
 
 
-install/max-ardesia::
-#max-ardesia
-#ardesia
-#curtain
-#florence-ramble
-#vmg
-#spotlighter
-
-	# install ardesia
+install/ardesia::
 	cd ardesia-read-only/ardesia && make install DESTDIR=$(CURDIR)/debian/ardesia
 
-	# install curtain
+install/curtain::
 	cd ardesia-read-only/curtain && make install DESTDIR=$(CURDIR)/debian/curtain
 
-	# install spotlighter
+install/spotlighter::
 	cd ardesia-read-only/spotlighter && make install DESTDIR=$(CURDIR)/debian/spotlighter
 
-	# install magnifier
+install/magnifier::
 	cd ardesia-read-only/magnifier && make install DESTDIR=$(CURDIR)/debian/magnifier
 
-	# install florence-ramble
+install/florence::
 	cd ardesia-read-only/florence-ramble && make install DESTDIR=$(CURDIR)/debian/florence
+	dh_gconf

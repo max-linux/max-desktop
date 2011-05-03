@@ -1,3 +1,11 @@
+max-ardesia (0.8-0svn2270.max2) max; urgency=low
+
+  * Fix debian/rules to run install in binary packages
+  * Move florence from Depends to Recommends
+  * Fix gconf schema path
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 03 May 2011 13:28:16 +0200
+
 max-ardesia (0.8-0svn2270.max1) max; urgency=low
 
   * New upstream version 0.8
