@@ -1,10 +1,16 @@
 #!/bin/bash
-# Start/stop the max-hardware hacks
-#
+### BEGIN INIT INFO
+# Provides:          max-multiseat
+# Required-Start:    $local_fs $syslog
+# Required-Stop:     
+# Default-Start:     2 3 4 5
+# Default-Stop:      
+# Short-Description: Start/stop the max-hardware hacks
+### END INIT INFO
 
 
 
-[ ! -x /usr/sbin/dmidecode ] && exit 0
+#[ ! -x /usr/sbin/dmidecode ] && exit 0
 [ ! -x /bin/setserial ] && exit 0
 [ ! -x /usr/sbin/max-setup-tablet ] && exit 0
 
@@ -13,13 +19,15 @@
 
 
 enable_toshiba() {
-  TOSH_MODEL=$(dmidecode --string system-product-name)
+  #TOSH_MODEL=$(dmidecode --string system-product-name)
+  TOSH_MODEL=$(cat /sys/class/dmi/id/product_name)
+  TOSH_VERSION=$(cat /sys/class/dmi/id/bios_version)
   if [ "$TOSH_MODEL" = "PORTEGE M700" ] || \
      [ "$TOSH_MODEL" = "PORTEGE M750" ] || \
      [ "$TOSH_MODEL" = "PORTEGE M400" ]; then
 
      # enable sound device (Thanks to Ismail)
-     if [ "$(grep -c 'options snd-hda-intel enable_msi=1 model=toshiba' /etc/modprobe.d/alsa-base.conf)" = "0" ]; then
+     if ! grep -q 'options snd-hda-intel enable_msi=1 model=toshiba' /etc/modprobe.d/alsa-base.conf; then
        # delete old lines
        grep -v "model=toshiba" /etc/modprobe.d/alsa-base.conf > /etc/modprobe.d/alsa-base.conf.new
        mv /etc/modprobe.d/alsa-base.conf.new /etc/modprobe.d/alsa-base.conf
@@ -33,25 +41,21 @@ enable_toshiba() {
      echo "$TOSH_MODEL" > /var/lib/max-hardware/model
 
      mkdir -p /dev/input/
-     [ ! -e /dev/input/wacom ]  && ln -s /dev/ttyS0 /dev/input/wacom
+     [ ! -e /dev/input/wacom ]  && [ -e /dev/ttyS0 ] && ln -s /dev/ttyS0 /dev/input/wacom
 
      setserial /dev/ttyS0 port 0x338 irq 4 autoconfig || true
 
      # don't write xorg.conf if xforcevesa
-     if grep -q xforcevesa /proc/cmdline; then
-       return
-     fi
+     #if grep -q xforcevesa /proc/cmdline; then
+     #  return
+     #fi
 
-     if [ "$(dmidecode | grep -c "Version: Version 1.80")" = "1" ]; then
-         # portege 750 13G configure wacom with hal
-         echo "#WACOM" > /etc/X11/xorg.conf
-     fi
-
-     max-setup-tablet /etc/X11/xorg.conf
-
-    if [ "$TOSH_MODEL" = "PORTEGE M400" ]; then
-      /usr/sbin/change.intel.drv --install26
-    fi
+     #if [ "$TOSH_VERSION" = "Version 1.80")" ]; then
+     #    # portege 750 13G configure wacom with hal
+     #    echo "#WACOM" > /etc/X11/xorg.conf
+     #fi
+     #
+     #max-setup-tablet /etc/X11/xorg.conf
 
   fi
 
@@ -63,14 +67,18 @@ enable_eeepc() {
     return
   fi
 
-  if [ "$(lsusb  |grep -c '1bfd:1688')" = "1" ]; then
+  if grep -q -i 1bfd1688 /proc/bus/pci/devices; then
     # input device detected
-    if [ "$(grep -c '#EeePC' /etc/X11/xorg.conf 2>&1)" = "0" ]; then
-      # overwrite xorg.conf
-      cat /usr/share/max-hardware/EeePC/xorg.conf > /etc/X11/xorg.conf
+    if ! grep -q '#EeePC' /etc/X11/xorg.conf; then
+       # overwrite xorg.conf
+       if [ -e /usr/lib/xorg/modules/drivers/tusb_drv.so ]; then
+         # EeePC with TUSB for projector
+         cat /usr/share/max-hardware/EeePC/xorg-tusb-clone.conf > /etc/X11/xorg.conf
+       else
+         cat /usr/share/max-hardware/EeePC/xorg.conf > /etc/X11/xorg.conf
+       fi
     fi
 
-    /usr/sbin/change.intel.drv --install26
 
   fi
 }
@@ -89,8 +97,8 @@ enable_tcos() {
 
 
 case "$1" in
-start)  
-        log_begin_msg "Starting Max50 hardware hacks"
+start)
+        log_begin_msg "Starting MAX hardware hacks"
           enable_toshiba
           enable_eeepc
           enable_tcos

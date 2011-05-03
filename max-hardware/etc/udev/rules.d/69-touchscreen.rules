@@ -1,2 +1,2 @@
-# MaX 5.0 create link from input device 1bfd:1688 EeePC
+# MaX create link from input device 1bfd:1688 EeePC
 KERNEL=="event*",SUBSYSTEM=="input",ATTRS{idVendor}=="1bfd",ATTRS{idProduct}=="1688",SYMLINK+="input/evtouch"

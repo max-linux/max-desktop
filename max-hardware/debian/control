@@ -5,8 +5,8 @@ Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
 Build-Depends:
  debhelper (>= 7),
  cdbs,
- quilt,
- pkg-config,
+# quilt,
+# pkg-config,
 # xserver-xorg-dev (>= 2:1.5.99.901),
 # x11proto-gl-dev,
 # x11proto-video-dev,
@@ -28,9 +28,9 @@ Standards-Version: 3.8.4
 
 Package: max-hardware
 Architecture: all
-Depends: setserial, dmidecode, xresprobe, usbutils, xbindkeys,
+Depends: setserial, xresprobe, usbutils, xbindkeys,
          ${shlibs:Depends}, ${misc:Depends}
-Description: Some files to support max special devices and computers
+Description: Some files to support in MAX some special devices and computers
  Contains:
   * Hooks and scripts of initramfs-tools
 
