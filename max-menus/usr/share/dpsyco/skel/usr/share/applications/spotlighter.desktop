@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=0.2
+Type=Application
+Name=Spotlighter
+GenericName=Show and move a spotlight 
+Comment=Show and move a spotlight on the desktop screen.
+Comment[it]=Mostra e sposta un riflettore sulla scrivania.
+Comment[es]=Muestra y mueve un reflector sobre el escritorio
+Exec=spotlighter %U
+TryExec=spotlighter
+Icon=spotlighter.png
+Terminal=false
+Categories=GNOME;GTK;Whiteboard;
+StartupNotify=true
+Encoding=UTF-8
