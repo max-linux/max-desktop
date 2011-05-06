@@ -1,7 +1,8 @@
 [Desktop Entry]
 Version=1.0
 Name=QCad
-Comment=Aplicación de diseño asistido por ordenador
+Comment=Computer design app
+Comment[es]=Aplicación de diseño asistido por ordenador
 GenericName=Electric diagrams editor
 TryExec=/usr/bin/qcad
 Exec=qcad

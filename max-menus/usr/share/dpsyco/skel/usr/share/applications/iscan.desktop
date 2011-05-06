@@ -2,8 +2,10 @@
 Encoding=UTF-8
 Type=Application
 Categories=GTK;Application;Graphics;RasterGraphics;Scanning;
-Name=Image Scan! para Linux (EPSON)
-Comment=Escanear documentos e imágenes con tu escaner Epson
+Name=Image Scan! for Linux (EPSON)
+Name[es]=Image Scan! para Linux (EPSON)
+Comment=Scan documents and photos with your Epson scanner
+Comment[es]=Escanear documentos e imágenes con tu escaner Epson
 Exec=iscan
 TryExec=/usr/bin/iscan
 Terminal=false

@@ -1,7 +1,9 @@
 [Desktop Entry]
 Version=1.0
 Name=PDF-Shuffler (partir y unir PDF)
+Name[es]=PDF-Shuffler (split and join PDF)
 Comment=PDF Merging, Rearranging, and Splitting
+Comment[es]=Unir, reordenar y dividir documentos PDF
 Type=Application
 TryExec=/usr/bin/pdfshuffler
 Exec=pdfshuffler

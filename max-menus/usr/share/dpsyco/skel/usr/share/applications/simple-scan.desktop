@@ -1,6 +1,8 @@
 [Desktop Entry]
-Name=Escanear documentos
-Comment=Escanear documentos
+Name=Simple scan
+Name[es]=Escanear documentos
+Comment=Scan documents
+Comment[es]=Escanear documentos
 TryExec=/usr/bin/simple-scan
 Exec=simple-scan
 Icon=scanner
