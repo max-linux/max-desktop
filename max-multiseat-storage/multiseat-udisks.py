@@ -122,7 +122,7 @@ class MultiSeatDeviceManager:
                 path=str(self.get(storage, 'NativePath'))
                 seat_id=self.getSeatID(path)
                 serial=str(self.get(storage, 'DriveSerial'))
-                partnumber=str(self.get(storage, 'PartitionNUmber'))
+                partnumber=str(self.get(storage, 'PartitionNumber'))
                 label=str(self.get(storage, 'IdLabel'))
                 if label == '':
                     label=serial
