@@ -98,6 +98,7 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS x11proto-kb-dev x11proto-input-dev x11proto-core
 BLACKLIST_PKGS="$BLACKLIST_PKGS libx11-dev libltdl-dev libplymouth-dev libpthread-stubs0-dev"
 BLACKLIST_PKGS="$BLACKLIST_PKGS mythbuntu-default-settings xfce4-panel xfce4-settings xfce4-utils"
 BLACKLIST_PKGS="$BLACKLIST_PKGS freemind-doc libatk1.0-doc libglib2.0-doc libgtk2.0-doc libpango1.0-doc lilypond-doc winff-doc xorg-docs-core"
+BLACKLIST_PKGS="$BLACKLIST_PKGS landscape-client landscape-common"
 
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux

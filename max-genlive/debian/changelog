@@ -1,3 +1,9 @@
+max-genlive (6.0.max27) max; urgency=low
+
+  * Blacklist landscape-client landscape-common packages
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 04 May 2011 19:14:01 +0200
+
 max-genlive (6.0.max26) max; urgency=low
 
   * Rename memtest86+.bin file to mt86plus, (close ticket #353)
