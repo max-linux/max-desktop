@@ -2,8 +2,8 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
-URL=http://www.educalim.com/edilim33/edilim330rc6_linux.deb
-BIN=http://www.educalim.com/edilim33/edilim330rc6_portable_linux.zip
+URL=http://www.educalim.com/edilim33/edilim330rc11_linux.deb
+BIN=http://www.educalim.com/edilim33/edilim330rc11_portable_linux.zip
 
 clean::
 	rm -rf build bin build-stamp
