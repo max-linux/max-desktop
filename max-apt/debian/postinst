@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+
+[ -f /etc/apt/preferences ] && rm -f /etc/apt/preferences
+
+
+exit 0
