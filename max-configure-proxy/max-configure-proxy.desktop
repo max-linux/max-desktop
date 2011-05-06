@@ -1,7 +1,10 @@
 [Desktop Entry]
-Name=Configurar proxy en MAX
-GenericName=Configurar proxy en MAX
+Name=Configure global proxy in MAX
+Name[es]=Configurar proxy en MAX
+GenericName=Configure global proxy in MAX
+GenericName[es]=Configurar proxy en MAX
 Comment=Configurar Proxy en MAX
+Comment[es]=Configure global proxy in MAX
 Exec=gksudo /usr/bin/max-configure-proxy
 Icon=gnome-network-properties
 StartupNotify=true
