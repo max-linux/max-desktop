@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Moodle
 GenericName=Moodle
-Comment=Plataforma e-learning
+Comment=E-learning plataform
+Comment[es]=Plataforma e-learning
 TryExec=/usr/bin/firefox
 Exec=firefox http://127.0.0.1/moodle/
 Icon=moodle.png

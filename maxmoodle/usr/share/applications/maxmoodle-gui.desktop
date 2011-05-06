@@ -1,7 +1,10 @@
 [Desktop Entry]
-Name=Configurar Moodle
-GenericName=Configurar Moodle
-Comment=Configurar Apache en Moodle
+Name=Configure Moodle
+Name[es]=Configurar Moodle
+GenericName=Configure Moodle
+GenericName[es]=Configurar Moodle
+Comment=Configure Apache in Moodle
+Comment[es]=Configurar Apache en Moodle
 Exec=maxmoodle-gui
 Icon=moodle.png
 StartupNotify=false
