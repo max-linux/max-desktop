@@ -59,13 +59,6 @@
 			<Exclude><Filename>jarnal.desktop</Filename></Exclude>
 		</Menu>
 
-		<Menu>
-			<Name>Pizarras Digitales</Name>
-			<Directory>pdi.directory</Directory>
-			<Include><Category>Whiteboard</Category></Include>
-                </Menu>
-
-
 		<Include><Filename>file-roller.desktop</Filename></Include>
 		<Include><Filename>gnome-font-viewer.desktop</Filename></Include>
 		<Include><Filename>gcalctool.desktop</Filename></Include>
@@ -540,6 +533,14 @@
 		<Include><Filename>max-installed-help-usr.desktop</Filename></Include>
 		<Include><Filename>install-manual.desktop</Filename></Include>
 	</Menu> <!-- end MaX -->
+
+
+	<!-- Pizarras digitales / Whiteboard -->
+	<Menu>
+		<Name>Pizarras Digitales</Name>
+		<Directory>pdi.directory</Directory>
+		<Include><Category>Whiteboard</Category></Include>
+	</Menu>
 
 
 	<Menu>
