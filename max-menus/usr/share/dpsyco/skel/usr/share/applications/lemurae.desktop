@@ -5,6 +5,7 @@ Name=LemuRae
 Name[es]=Diccionario RAE (LemuRae)
 Comment=Tool to search in DRAE
 Comment[es]=Busca palabras en la página web de la Real Academia Española
+TryExec=lemurae
 Exec=lemurae
 Icon=/usr/share/pixmaps/lemurae.svg
 Terminal=false

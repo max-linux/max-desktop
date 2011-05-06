@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=define-me (spanish RAE dict)
+Name[es]=define-me (diccionario RAE)
+Version=0.1.1
+Comment=define-me
+Comment[es]=define-me (diccionario RAE)
+TryExec=/usr/share/define-me/define-me.py
+Exec=/usr/share/define-me/define-me.py
+Icon=/usr/share/define-me/define-me.svg
+Type=Application
+Terminal=false
+StartupNotify=true
+Encoding=UTF-8
+Categories=Utility;
