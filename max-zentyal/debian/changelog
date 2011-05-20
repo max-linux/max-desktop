@@ -1,3 +1,15 @@
+max-zentyal (0.7) max; urgency=low
+
+  * Add plymouth-max
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 20 May 2011 20:36:33 +0200
+
+max-zentyal (0.6) max; urgency=low
+
+  * Add language-pack-zentyal-es as depends
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 20 May 2011 20:07:05 +0200
+
 max-zentyal (0.5) max; urgency=low
 
   * Add zentyal-gateway, zentyal-security, zentyal-infrastructure, zentyal-office

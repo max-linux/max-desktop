@@ -26,8 +26,10 @@ Depends: zentyal,
          zentyal-security,
          zentyal-infrastructure,
          zentyal-office,
+         language-pack-zentyal-es,
 ######### FIXME Add new Backharddi##################
 #         zentyal-backharddi-ng | ebox-backharddi-ng,
 #################################################
-         zentyal-max-control | max-control
+         zentyal-max-control | max-control,
+         plymouth-max
 Description: Max Zentyal Metapackage
