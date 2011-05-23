@@ -23,7 +23,8 @@ Depends: zentyal,
          zentyal-users, 
          zentyal-trafficshaping,
          zentyal-gateway,
-         zentyal-security,
+# no install zentyal-remoteservices , zentyal-ids
+#         zentyal-security,
          zentyal-infrastructure,
          zentyal-office,
          language-pack-zentyal-es,
@@ -31,5 +32,6 @@ Depends: zentyal,
 #         zentyal-backharddi-ng | ebox-backharddi-ng,
 #################################################
          zentyal-max-control | max-control,
-         plymouth-max
+#         plymouth-max,
+         language-pack-es-base
 Description: Max Zentyal Metapackage

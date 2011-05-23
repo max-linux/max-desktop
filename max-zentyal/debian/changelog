@@ -1,3 +1,15 @@
+max-zentyal (0.9) max; urgency=low
+
+  * Remove zentyal-security: no install zentyal-remoteservices, zentyal-ids
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 21 May 2011 14:04:54 +0200
+
+max-zentyal (0.8) max; urgency=low
+
+  * Remove plymouth
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 20 May 2011 22:01:37 +0200
+
 max-zentyal (0.7) max; urgency=low
 
   * Add plymouth-max
