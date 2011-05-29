@@ -1,6 +1,8 @@
 #!/usr/bin/make -f
 
 include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/dpatch/dpatch.make
+
 
 install/max-gnome-default-settings::
 	find $(CURDIR)/debian/max-gnome-default-settings -type d -name .svn | xargs rm -rf --

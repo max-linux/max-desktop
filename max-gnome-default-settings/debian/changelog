@@ -1,3 +1,9 @@
+max-gnome-default-settings (6.0.max18libreoffice1) max; urgency=low
+
+  * Change OpenOffice with LibreOffice using dpatch
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 29 May 2011 17:06:04 +0200
+
 max-gnome-default-settings (6.0.max18) max; urgency=low
 
   * Set nautilus background color of root user in postinst

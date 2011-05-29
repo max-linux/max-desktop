@@ -1,0 +1,121 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 10-libreoffice.dpatch by Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad max-gnome-default-settings~/gconf-dumps/apps.panel.dump.gconf max-gnome-default-settings/gconf-dumps/apps.panel.dump.gconf
+--- max-gnome-default-settings~/gconf-dumps/apps.panel.dump.gconf	2011-05-29 17:02:52.000000000 +0200
++++ max-gnome-default-settings/gconf-dumps/apps.panel.dump.gconf	2011-05-29 17:05:11.790376811 +0200
+@@ -3477,7 +3477,7 @@
+       <key>objects/object_1/launcher_location</key>
+       <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+       <value>
+-        <string>/usr/share/applications/openoffice.org-writer.desktop</string>
++        <string>/usr/share/applications/libreoffice-writer.desktop</string>
+       </value>
+     </entry>
+     <entry>
+@@ -3967,7 +3967,7 @@
+       <key>objects/object_6/launcher_location</key>
+       <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+       <value>
+-        <string>/usr/share/applications/openoffice.org-writer.desktop</string>
++        <string>/usr/share/applications/libreoffice-writer.desktop</string>
+       </value>
+     </entry>
+     <entry>
+diff -urNad max-gnome-default-settings~/max-gnome-default-settings-infantil-primaria/usr/share/dpsyco/skel/usr/share/max/gconf-dumps/apps.panel.dump.gconf max-gnome-default-settings/max-gnome-default-settings-infantil-primaria/usr/share/dpsyco/skel/usr/share/max/gconf-dumps/apps.panel.dump.gconf
+--- max-gnome-default-settings~/max-gnome-default-settings-infantil-primaria/usr/share/dpsyco/skel/usr/share/max/gconf-dumps/apps.panel.dump.gconf	2011-05-29 17:02:58.000000000 +0200
++++ max-gnome-default-settings/max-gnome-default-settings-infantil-primaria/usr/share/dpsyco/skel/usr/share/max/gconf-dumps/apps.panel.dump.gconf	2011-05-29 17:05:11.790376811 +0200
+@@ -3693,7 +3693,7 @@
+       <key>objects/object_1/launcher_location</key>
+       <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+       <value>
+-        <string>/usr/share/applications/openoffice.org-writer.desktop</string>
++        <string>/usr/share/applications/libreoffice-writer.desktop</string>
+       </value>
+     </entry>
+     <entry>
+@@ -3889,7 +3889,7 @@
+       <key>objects/object_103/launcher_location</key>
+       <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+       <value>
+-        <string>openoffice.org-calc.desktop</string>
++        <string>/usr/share/applications/libreoffice-calc.desktop</string>
+       </value>
+     </entry>
+     <entry>
+@@ -4281,7 +4281,7 @@
+       <key>objects/object_14/launcher_location</key>
+       <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+       <value>
+-        <string>/usr/share/applications/openoffice.org-writer.desktop</string>
++        <string>/usr/share/applications/libreoffice-writer.desktop</string>
+       </value>
+     </entry>
+     <entry>
+@@ -5163,7 +5163,7 @@
+       <key>objects/object_22/launcher_location</key>
+       <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+       <value>
+-        <string>/usr/share/applications/openoffice.org-impress.desktop</string>
++        <string>/usr/share/applications/libreoffice-impress.desktop</string>
+       </value>
+     </entry>
+     <entry>
+@@ -6535,7 +6535,7 @@
+       <key>objects/object_35/launcher_location</key>
+       <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+       <value>
+-        <string>/usr/share/applications/openoffice.org-calc.desktop</string>
++        <string>/usr/share/applications/libreoffice-calc.desktop</string>
+       </value>
+     </entry>
+     <entry>
+@@ -7711,7 +7711,7 @@
+       <key>objects/object_46/launcher_location</key>
+       <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+       <value>
+-        <string>/usr/share/applications/openoffice.org-draw.desktop</string>
++        <string>/usr/share/applications/libreoffice-draw.desktop</string>
+       </value>
+     </entry>
+     <entry>
+@@ -8691,7 +8691,7 @@
+       <key>objects/object_55/launcher_location</key>
+       <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+       <value>
+-        <string>/usr/share/applications/openoffice.org-draw.desktop</string>
++        <string>/usr/share/applications/libreoffice-draw.desktop</string>
+       </value>
+     </entry>
+     <entry>
+@@ -9181,7 +9181,7 @@
+       <key>objects/object_6/launcher_location</key>
+       <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+       <value>
+-        <string>/usr/share/applications/openoffice.org-writer.desktop</string>
++        <string>/usr/share/applications/libreoffice-writer.desktop</string>
+       </value>
+     </entry>
+     <entry>
+@@ -9671,7 +9671,7 @@
+       <key>objects/object_64/launcher_location</key>
+       <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+       <value>
+-        <string>/usr/share/applications/openoffice.org-writer.desktop</string>
++        <string>/usr/share/applications/libreoffice-writer.desktop</string>
+       </value>
+     </entry>
+     <entry>
+@@ -10553,7 +10553,7 @@
+       <key>objects/object_72/launcher_location</key>
+       <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
+       <value>
+-        <string>openoffice.org-writer.desktop</string>
++        <string>/usr/share/applications/libreoffice-writer.desktop</string>
+       </value>
+     </entry>
+     <entry>
