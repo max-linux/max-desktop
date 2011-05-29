@@ -1,3 +1,9 @@
+max-meta (6.0.max59) max; urgency=low
+
+  * Change Depends OpenOffice => max-openoffice.org|max-libreoffice
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 29 May 2011 17:27:36 +0200
+
 max-meta (6.0.max58) max; urgency=low
 
   * Change flashplugin-nonfree => flashplugin-installer
