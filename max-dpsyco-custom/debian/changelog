@@ -1,3 +1,9 @@
+max-dpsyco-custom (6.0.max41) max; urgency=low
+
+  * Remove OpenOffice.org launchers if LibreOffice is installed
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 29 May 2011 16:57:23 +0200
+
 max-dpsyco-custom (6.0.max40) max; urgency=low
 
   * Remove '6.0' from debian/control
