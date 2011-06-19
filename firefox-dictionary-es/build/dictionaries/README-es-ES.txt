@@ -1,13 +1,3 @@
-  ***
-  *    La versión del diccionario inicial se encuentra en http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/ (es_ES.zip)
-  * con fecha de 06-Marzo-2006.
-  *    Dicha versión se utilizará en lugar de la anterior porque es más completa.
-  *    Dicha versión ha sido levemente revisada por tnarik, antes de empaquetarla para su uso con Firefox 2.0 
-  *    Probablemente vuelva a cambiar en breve, tras llegar a un acuerdo común con la gente del proyecto Nave
-  * sobre las distintas versiones de diccionarios existentes. Además, quiero ponerme en contacto con Santiago Bosio
-  * para ver en qué estado se encuentra este diccionario. Pero es vital disponer de una versión mejorada.
-  ***
-
   ****************************************************************************
   **                                                                        **
   **  Diccionario para corrección ortográfica en español de OpenOffice.org  **
@@ -16,7 +6,7 @@
   **  VERSIÓN LOCALIZADA PARA ESPAÑA                                        **
   ****************************************************************************
 
-                                   Versión 0.1
+                                   Versión 0.5
 
 SUMARIO
 
@@ -30,8 +20,7 @@ SUMARIO
 1. AUTOR
 
    Este diccionario ha sido desarrollado inicialmente por Santiago Bosio;
-quien actualmente coordina el desarrollo de todos los diccionarios localizados,
-y mantiene el diccionario para la localización Argentina (es_AR).
+quien actualmente coordina el desarrollo de todos los diccionarios localizados.
 
    Si desea contactar al autor, por favor envíe sus mensajes mediante correo
 electrónico a:
@@ -43,31 +32,24 @@ electrónico a:
 trabajo de Jesús Carretero y Santiago Rodríguez, ni en la versión adaptada al
 formato de MySpell por Richard Holt.
 
-   Esta versión localizada del diccionario no cuenta con un encargado de
-mantenimiento. Si quiere ofrecerse para esta tarea, contáctese con el autor,
-quien le dará más detalles sobre el trabajo a desarrollar.
 
 2. LICENCIA
 
    Este diccionario para corrección ortográfica, integrado por el fichero
-de afijos (es_XX.aff) y la lista de palabras (es_XX.dic) se distribuye bajo
-licencia GNU LGPL (Lesser General Public License). Puede obtener una copia de
-la licencia original (en inglés) en la siguiente dirección:
-
-	http://www.gnu.org/licenses/lgpl.txt
-
+de afijos y la lista de palabras (es_ES[.aff|.dic]) se distribuye
+bajo un triple esquema de licencias disjuntas: GNU GPL versión 3 o posterior,
+GNU LGPL versión 3 o posterior, ó MPL versión 1.1 o posterior. Puede
+seleccionar libremente bajo cuál de estas licencias utilizará este diccionario.
+Encontrará copias de las licencias adjuntas en este mismo paquete.
 
 3. INSTALACIÓN
 
-   La forma recomendada de instalar sus diccionarios en OpenOffice.org 2.0, es
-utilizando el Asistente. Lo encontrará en el menú Archivo -> Asistentes, bajo
-la opción "Instalar diccionarios nuevos". Este asistente permite instalar los
-diccionarios descargándolos directamente de Internet, o utilizando un paquete
-de diccionario comprimido (en ZIP) que haya descargado previamente. El
-asistente realiza automáticamente las modificaciones en los ficheros de
-configuración.
+   En OpenOffice.org versión 3.x y superior, utilice el administrador de
+extensiones, seleccionando para instalar directamente el fichero con
+extensión ".oxt".
 
-   Si desea realizar una instalación manual siga estas instrucciones:
+   Para instalar en OpenOffice.org versión 1.x ó 2.x, deberá realizar una
+instalación manual siguiendo estas instrucciones:
 
 a) Copie el fichero de afijos y la lista de palabras en la carpeta de
    instalación de diccionarios.
@@ -189,6 +171,9 @@ creación de este diccionario. Se agradece especialmente a:
    - Carlos Dávila.
    - Román Gelbort.
    - J. Eduardo Moreno.
+   - Gonzalo Higuera Díaz.
+   - Ricardo Palomares Martínez.
+   - Sergio Medina.
+   - Ismael Olea.
    - y a todos los integrantes de la comunidad en español que proponen mejoras
      a este diccionario.
-
