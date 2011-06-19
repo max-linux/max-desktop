@@ -2,12 +2,12 @@
 ## 10-libreoffice.dpatch by Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
 ##
 ## All lines beginning with `## DP:' are a description of the patch.
-## DP: No description.
+## DP: Use LibreOffice instead of OpenOffice.org
 
 @DPATCH@
 diff -urNad max-gnome-default-settings~/gconf-dumps/apps.panel.dump.gconf max-gnome-default-settings/gconf-dumps/apps.panel.dump.gconf
 --- max-gnome-default-settings~/gconf-dumps/apps.panel.dump.gconf	2011-05-29 17:02:52.000000000 +0200
-+++ max-gnome-default-settings/gconf-dumps/apps.panel.dump.gconf	2011-05-29 17:05:11.790376811 +0200
++++ max-gnome-default-settings/gconf-dumps/apps.panel.dump.gconf	2011-05-29 18:53:48.849153395 +0200
 @@ -3477,7 +3477,7 @@
        <key>objects/object_1/launcher_location</key>
        <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
@@ -28,7 +28,7 @@ diff -urNad max-gnome-default-settings~/gconf-dumps/apps.panel.dump.gconf max-gn
      <entry>
 diff -urNad max-gnome-default-settings~/max-gnome-default-settings-infantil-primaria/usr/share/dpsyco/skel/usr/share/max/gconf-dumps/apps.panel.dump.gconf max-gnome-default-settings/max-gnome-default-settings-infantil-primaria/usr/share/dpsyco/skel/usr/share/max/gconf-dumps/apps.panel.dump.gconf
 --- max-gnome-default-settings~/max-gnome-default-settings-infantil-primaria/usr/share/dpsyco/skel/usr/share/max/gconf-dumps/apps.panel.dump.gconf	2011-05-29 17:02:58.000000000 +0200
-+++ max-gnome-default-settings/max-gnome-default-settings-infantil-primaria/usr/share/dpsyco/skel/usr/share/max/gconf-dumps/apps.panel.dump.gconf	2011-05-29 17:05:11.790376811 +0200
++++ max-gnome-default-settings/max-gnome-default-settings-infantil-primaria/usr/share/dpsyco/skel/usr/share/max/gconf-dumps/apps.panel.dump.gconf	2011-05-29 18:53:48.859163907 +0200
 @@ -3693,7 +3693,7 @@
        <key>objects/object_1/launcher_location</key>
        <schema_key>/schemas/apps/panel/objects/launcher_location</schema_key>
