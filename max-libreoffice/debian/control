@@ -45,7 +45,12 @@ Depends: openoffice.org-calc,
 	openoffice.org-math,
 	openoffice.org-style-human,
 	openoffice.org-thesaurus-es,
-	openoffice.org-writer
+	openoffice.org-writer,
+	openoffice.org-hyphenation,
+	python-uno ( = 1:3.2.0-7ubuntu4.2 ),
+	ttf-opensymbol ( = 1:3.2.0-7ubuntu4.2 ),
+	uno-libs3 ( = 1.6.0+OOo3.2.0-7ubuntu4.2 ), ure( = 1.6.0+OOo3.2.0-7ubuntu4.2 )
+#
 Conflicts: max-libreoffice, max-libreoffice-core, libreoffice, libreoffice-base, libreoffice-base-core, libreoffice-calc, libreoffice-common, libreoffice-core, libreoffice-draw, libreoffice-emailmerge, libreoffice-filter-binfilter, libreoffice-filter-mobiledev, libreoffice-gnome, libreoffice-gtk, libreoffice-help-en-us, libreoffice-help-es, libreoffice-impress, libreoffice-java-common, libreoffice-l10n-common, libreoffice-l10n-es, libreoffice-math, libreoffice-officebean, libreoffice-pdfimport, libreoffice-presentation-minimizer, libreoffice-report-builder-bin, libreoffice-style-galaxy, libreoffice-style-human, libreoffice-writer, openclipart-libreoffice
 Description: Dependencias de OpenOffice.org para MAX
  Metapaquete que instala OpenOffice.org en MAX
