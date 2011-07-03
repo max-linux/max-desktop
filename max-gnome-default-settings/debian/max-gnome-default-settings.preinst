@@ -2,7 +2,8 @@
 
 META_GCONF=/usr/share/max/gconf/
 META_GCONF_DUMPS=/usr/share/max/gconf-dumps
-
+# use old OpenOffice.org dumps (for launcher and icons)
+[ -e /usr/lib/openoffice/program/soffice ] && META_GCONF_DUMPS=/usr/share/max/gconf-dumps-oo
 
 # upgrade to 0.19 should remove mandatory strings
 if dpkg --compare-versions "$2" lt 0.22; then

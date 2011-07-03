@@ -1,3 +1,9 @@
+max-gnome-default-settings (6.0.max19max1) max; urgency=low
+
+  * Use gconf-dump-oo for OpenOffice.org panel dumps
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 03 Jul 2011 13:34:31 +0200
+
 max-gnome-default-settings (6.0.max18libreoffice2) max; urgency=low
 
   * debian/rules: fix correct dpatch include
