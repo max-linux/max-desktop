@@ -1,3 +1,15 @@
+max-libreoffice (6.0.max10) max; urgency=low
+
+  * max-libreoffice-core conflicts with openoffice.org-writer
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 04 Jul 2011 00:42:34 +0200
+
+max-libreoffice (6.0.max9) max; urgency=low
+
+  * Call max-gnome-default-settings postinst script to update gconf settings and launchers
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 03 Jul 2011 19:37:12 +0200
+
 max-libreoffice (6.0.max8) max; urgency=low
 
   * Add openoffice.org-hyphenation

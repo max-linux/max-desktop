@@ -1,0 +1,15 @@
+#!/bin/sh
+
+
+if [ "$1" = "configure" ]; then
+
+  bash /var/lib/dpkg/info/max-gnome-default-settings.postinst configure || true
+
+fi
+
+
+
+#DEBHELPER#
+
+
+exit 0
