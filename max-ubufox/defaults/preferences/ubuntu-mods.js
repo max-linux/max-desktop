@@ -11,19 +11,11 @@ pref("app.update.url.details","chrome://ubufox/locale/ubufox.properties");
 
 // look-and-feel modifications in firefox.js
 pref("browser.startup.homepage","chrome://ubufox/locale/ubufox.properties");
-pref("app.releaseNotesURL","chrome://ubufox/locale/ubufox.properties");
 pref("browser.throbber.url","chrome://ubufox/locale/ubufox.properties");
 
 pref("browser.link.open_newwindow", 3);
 pref("browser.link.open_external", 3);
 pref("middlemouse.contentLoadURL", false); // setting to false disables pasting urls on to the page
-
-// disable-default-browser-check on startup by defaullt
-pref("browser.shell.checkDefaultBrowser", false);
-
-// locale-by-match-os
-pref("intl.locale.matchOS", true);
-
 
 // intl-property fixes (minimal set resurrected from ubufox 0.5 in 0.6~b2)
 pref("general.useragent.locale", "chrome://global/locale/intl.properties");
@@ -32,6 +24,9 @@ pref("general.useragent.locale", "chrome://global/locale/intl.properties");
 pref("network.negotiate-auth.trusted-uris", "https://");
 
 // Yahoo by default
-//pref("browser.search.defaultenginename", "chrome://ubufox/locale/ubufox-search.properties");
-//pref("browser.search.order.1", "chrome://ubufox/locale/ubufox-search.properties");
-//pref("browser.search.order.2", "chrome://ubufox/locale/ubufox-search.properties");
+pref("browser.search.defaultenginename", "chrome://ubufox/locale/ubufox-search.properties");
+pref("browser.search.order.1", "chrome://ubufox/locale/ubufox-search.properties");
+pref("browser.search.order.2", "chrome://ubufox/locale/ubufox-search.properties");
+
+// Set the default dictionary.
+pref("spellchecker.dictionary", "chrome://ubufox/locale/ubufox.properties");

@@ -39,6 +39,7 @@ const Cc = Components.classes;
 const Ci = Components.interfaces;
 
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+Components.utils.import("resource://gre/modules/Services.jsm");
 
 /*
 var HOMEPAGE_OFFLINE = "file:///usr/share/ubuntu-artwork/home/index.html";
@@ -51,16 +52,6 @@ var HOMEPAGE_ONLINE_PREFIX = "file:///usr/share/xul-ext/max-ubufox/startpage.htm
 
 function getIsOffline() {
   return false;
-  /*
-  var prefs = Cc["@mozilla.org/preferences-service;1"]
-             .getService(Ci.nsIPrefBranch);
-  try {
-    return prefs.getBoolPref("browser.offline");
-  } catch (e) {
-    // in firefox 3.0 browser.offline does not exist in the begginning
-    // hence we interpret pref missing as ONLINE
-    return false;
-  }*/
 }
 
 function getUALocale() {
@@ -97,10 +88,10 @@ function getCurrentSearchEngineName () {
   return defaultEngine.name;
 }
 
-function AboutHome() {}
-AboutHome.prototype = {
-  classDescription: "About Home",
-  contractID: "@mozilla.org/network/protocol/about;1?what=home",
+function AboutStartpage() {}
+AboutStartpage.prototype = {
+  classDescription: "About Startpage",
+  contractID: "@mozilla.org/network/protocol/about;1?what=startpage",
   classID: Components.ID("{7a2a7a56-827f-4b38-bdac-31aa7ec2971d}"),
   QueryInterface: XPCOMUtils.generateQI([Ci.nsIAboutModule]),
  
@@ -119,8 +110,9 @@ AboutHome.prototype = {
 
     if (!getIsOffline()) {
       let searchEngineName = getCurrentSearchEngineName();
-      /*let channel = ios.newChannel(HOMEPAGE_ONLINE_PREFIX + "/" + searchEngineName + "/", null, null);*/
-      let channel = ios.newChannel(HOMEPAGE_OFFLINE, null, null);
+      let release = Services.prefs.getCharPref("extensions.ubufox@ubuntu.com.release");
+      let uri = HOMEPAGE_ONLINE_PREFIX + release + "/" + searchEngineName + "/";
+      let channel = ios.newChannel(uri, null, null);
       channel.originalURI = aURI;
       channel.owner = principal;
       return channel;
@@ -134,6 +126,9 @@ AboutHome.prototype = {
 };
 
 function NSGetModule(compMgr, fileSpec) {
-  return XPCOMUtils.generateModule([AboutHome]);
+  return XPCOMUtils.generateModule([AboutStartpage]);
 }
 
+if (typeof XPCOMUtils.generateNSGetFactory == "function") {
+  const NSGetFactory = XPCOMUtils.generateNSGetFactory([AboutStartpage]);
+}

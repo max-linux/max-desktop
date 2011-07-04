@@ -8,10 +8,12 @@ Standards-Version: 3.7.2.1
 
 Package: max-ubufox
 Architecture: all
-Depends: firefox | abrowser | firefox-3.0 | firefox-2, apturl (>= 0.1.2ubuntu1) | apturl-kde
-Conflicts: ubufox
-Replaces: ubufox
-Provides: ubufox
+Depends: firefox, apturl (>= 0.1.2ubuntu1) | apturl-kde, ${misc:Depends}
+Recommends: ${xpi:Recommends}
+Enhances: ${xpi:Enhances}
+Conflicts: ubufox, xul-ext-ubufox
+Replaces: ubufox, xul-ext-ubufox
+Provides: ubufox, xul-ext-ubufox, ${xpi:Provides}
 Description: Ubuntu Firefox specific configuration defaults and apt support
  Extension package for Firefox provides ubuntu specific configuration defaults
  as well as apt support for firefox plugins/extensions.

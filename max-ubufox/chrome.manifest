@@ -28,8 +28,19 @@ locale	ubufox	zh-CN	locale/zh-CN/
 skin	ubufox	classic/1.0	skin/
 overlay	chrome://browser/content/browser.xul	chrome://ubufox/content/ubuntuHelpMenuOverlay.xul
 overlay	chrome://browser/content/browser.xul	chrome://ubufox/content/updateRestart.xul
-overlay chrome://mozapps/content/extensions/extensions.xul chrome://ubufox/content/ubuntuAddonsOverlay.xul appversion>=3.0b3
-overlay chrome://mozapps/content/extensions/extensions.xul chrome://ubufox/content/ubuntuAddonsOverlay.ffox2.xul appversion<2.0.0.*
-overlay chrome://browser/content/browser.xul chrome://ubufox/content/ubuntuAltpluginsOverlay.xul
+overlay chrome://browser/content/browser.xul	chrome://ubufox/content/ubuntuAltpluginsOverlay.xul
 
 override chrome://mozapps/content/plugins/pluginInstallerWizard.xul chrome://ubufox/content/pluginInstallerWizard.xul
+
+component {7a2a7a56-827f-4b38-bdac-31aa7ec2971d} components/aboutStartpage.js
+contract @mozilla.org/network/protocol/about;1?what=startpage {7a2a7a56-827f-4b38-bdac-31aa7ec2971d}
+
+category agent-style-sheets pluginfinder chrome://ubufox/content/alternatePluginsBinding.css
+category agent-style-sheets xbl chrome://ubufox/content/alternatePluginsBinding.css
+category agent-style-sheets binding chrome://ubufox/content/alternatePluginsBinding.css
+
+component {f0b9df8b-0b9a-4432-9812-45b597e71e26} components/ufoxHTTPListener.js
+contract @canonical.com/ufox-http-listener;1 {f0b9df8b-0b9a-4432-9812-45b597e71e26}
+category profile-after-change ufoxHTTPListener @canonical.com/ufox-http-listener;1
+
+resource ubufox modules/

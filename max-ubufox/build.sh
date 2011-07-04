@@ -107,6 +107,8 @@ if [ -f "chrome.manifest" ]; then
   # (it simply adds jar:chrome/whatever.jar!/ at appropriate positions of chrome.manifest)
 fi
 
+$BEFORE_PACK
+
 # generate the XPI file
 echo "Generating $APP_NAME.xpi..."
 zip -r ../$APP_NAME.xpi *

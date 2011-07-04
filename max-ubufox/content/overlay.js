@@ -34,6 +34,9 @@
  * 
  * ***** END LICENSE BLOCK ***** */
 
+Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource://ubufox/uAddonInstaller.jsm");
+
 function getAppVersion ()
 {
   var versionString = null;
@@ -65,86 +68,6 @@ function getSourcePackageName ()
   return sourcePackageName;
 }
 
-var ubufox = {
-  onAddonsLoad: function () {
-    this.isffox3 = false;
-    var labelGetUbuntu = document.getElementById("getUbuntu"); // ffox 2
-    var extensions = document.getElementById("extensions-view");
-    this.strings = document.getElementById("ubufox-strings");
-
-    if (!labelGetUbuntu) {
-      labelGetUbuntu = document.getElementById("getUbuntu3");
-      this.isffox3 = true;
-    }
-    this.initialized = true;
-
-    if (!ubufoxCheckExecutable("/usr/bin/gnome-app-install"))
-      labelGetUbuntu.setAttribute("hidden", "true");
-    else if (!this.isffox3) {
-      // this is ffox2 only because ffox3 uses a distinct overlay anchor
-      if (extensions.getAttribute("selected") != "true") {
-        labelGetUbuntu.setAttribute("hidden", "true");
-      }
-      if (extensions.getAttribute("selected") == "true") {
-        labelGetUbuntu.setAttribute("hidden", "false");
-      }
-      extensions.addEventListener("DOMAttrModified", function (e) { ubufox.onAttrModified(e); }, false);
-    }
-  },
-  onMenuItemCommand: function(e) {
-    var promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
-                                  .getService(Components.interfaces.nsIPromptService);
-    promptService.alert(window, this.strings.getString("helloMessageTitle"),
-                                this.strings.getString("helloMessage"));
-  },
-  onAttrModified: function(e) {
-    var labelGetUbuntu = document.getElementById("getUbuntu");
-    var extensions = document.getElementById("extensions-view");
-
-    if (!ubufoxCheckExecutable("/usr/bin/gnome-app-install")) {
-      labelGetUbuntu.setAttribute("hidden", "true");
-      return;
-    }
-    if (extensions.getAttribute("selected") != "true") {
-      labelGetUbuntu.setAttribute("hidden", "true");
-    }
-    if (extensions.getAttribute("selected") == "true") {
-      labelGetUbuntu.setAttribute("hidden", "false");
-    }
-  },
-};
-window.addEventListener("load", function(e) { ubufox.onAddonsLoad(e); }, false);
-
-function startUbuntuAddonsWizard(ev)
-{
-  var executable =
-      Components.classes['@mozilla.org/file/local;1']
-      .createInstance(Components.interfaces.nsILocalFile);
-
-  executable.initWithPath("/usr/bin/gnome-app-install");
-
-  if(!executable.exists() || !executable.isExecutable())
-         alert('Unexpected error!');
-
-  var procUtil =
-      Components.classes['@mozilla.org/process/util;1']
-      .createInstance(Components.interfaces.nsIProcess);
-
-  var nsFile = executable.QueryInterface(Components.interfaces.nsIFile);
-
-  procUtil.init(executable);
-
-  var args = new Array("--xul-extensions=firefox");
-  // we care for firefox 2 and use a special mime type to document
-  // compatibility of extensions with it
-  if (!ubufox.isffox3) {
-    args = new Array("--xul-extensions=firefox-2");
-  }
-  var res = procUtil.run(false, args, args.length);
-
-  return true;
-}
-
 function ubufoxReportBug(event) {
 
   var executable =
@@ -173,23 +96,14 @@ function ubufoxReportBug(event) {
 
 function ubufoxGetHelpOnline(event)
 {
-  var getHelpUrl = "https://launchpad.net/distros/ubuntu/lucid/+sources/" + getSourcePackageName() + "/+gethelp";
+  var codename = Services.prefs.getCharPref("extensions.ubufox@ubuntu.com.codename");
+  var getHelpUrl = "https://launchpad.net/distros/ubuntu/" + codename + "/+sources/" + getSourcePackageName() + "/+gethelp";
   openUILink(getHelpUrl, event, false, true);
 }
 
 function ubufoxHelpTranslateLaunchpad(event)
 {
-  var translateUrl = "https://launchpad.net/distros/ubuntu/lucid/+sources/" + getSourcePackageName() + "/+translate";
+  var codename = Services.prefs.getCharPref("extensions.ubufox@ubuntu.com.codename");
+  var translateUrl = "https://launchpad.net/distros/ubuntu/" + codename + "/+sources/" + getSourcePackageName() + "/+translate";
   openUILink(translateUrl, event, false, true);
 }
-
-function ubufoxCheckExecutable(filename)
-{
-  var executable =
-      Components.classes['@mozilla.org/file/local;1']
-      .createInstance(Components.interfaces.nsILocalFile);
-
-  executable.initWithPath(filename);
-  return executable.exists();
-}
-

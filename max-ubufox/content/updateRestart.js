@@ -78,22 +78,19 @@ function String_startsWith (base, str)
 function checkUpdate()
 {
   var resReqFile = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
-  var versionString = null;
-  try {
-    versionString = Components.classes["@mozilla.org/fuel/application;1"].getService(Components.interfaces.extIApplication).version;
-  } catch (e) {
-  }
-  if (versionString != null && String_startsWith (versionString, "3.0"))
-    resReqFile.initWithPath("/var/lib/update-notifier/user.d/firefox-3.0-restart-required");
-  else if (versionString != null && String_startsWith (versionString, "3.5"))
-    resReqFile.initWithPath("/var/lib/update-notifier/user.d/firefox-3.5-restart-required");
-  else if (versionString != null && String_startsWith (versionString, "3.6"))
-    resReqFile.initWithPath("/var/lib/update-notifier/user.d/firefox-3.6-restart-required");
-  else if (versionString != null && String_startsWith (versionString, "3.7"))
-    resReqFile.initWithPath("/var/lib/update-notifier/user.d/firefox-3.7-restart-required");
-  else { // not supported version - skip restart notification
+  var launcher = Components.classes["@mozilla.org/process/environment;1"].getService(Components.interfaces.nsIEnvironment).get("MOZ_APP_LAUNCHER");
+  if(launcher == null) {
     return;
   }
+
+  try {
+    // If the launcher is a full path, just get the basename
+    resReqFile.initWithPath(launcher);
+    launcher = resReqFile.leafName;
+  } catch (e) { // initWithPath will throw if the path is relative
+  }
+
+  resReqFile.initWithPath("/var/lib/update-notifier/user.d/" + launcher + "-restart-required");
 
   if(resReqFile.exists())
   {

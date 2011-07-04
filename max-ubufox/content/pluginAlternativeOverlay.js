@@ -37,7 +37,7 @@
  * ***** END LICENSE BLOCK ***** */
 
 var prefBranch = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
-var pluginManager = Components.classes["@mozilla.org/plugin/manager;1"].getService(Components.interfaces.nsIPluginManager);
+var pluginHost = Components.classes["@mozilla.org/plugin/host;1"].getService(Components.interfaces.nsIPluginHost);
 
 const APP_ICON_ATTR_NAME = "appHandlerIcon";
 
@@ -109,6 +109,9 @@ function getFilehintNameMap () {
   try {
     url = prefBranch.getCharPref("pfs.filehint.url");
   } catch (e) {}
+
+  var distID = prefBranch.getCharPref("extensions.ubufox@ubuntu.com.release");
+  url.replace(/%DIST_ID%/g, distID);
 
   var req = new XMLHttpRequest();
   req.open('GET', url, true); /* 3rd argument, true, marks this as async */
@@ -289,12 +292,12 @@ var gApplicationsPane = {
                  "PFSWindow", "chrome,centerscreen,resizable=yes,width=600,height=600",
                  {plugins: pluginInfoArray, browser: gBrowser});
 
-      pluginManager.reloadPlugins(true);
+      pluginHost.reloadPlugins(true);
       showContentList();
     }
     else {
       prefBranch.setCharPref("modules.plugins.mimetype." + typeItem.type, aActionItem.ubufoxPluginFilename);
-      pluginManager.reloadPlugins(true);
+      pluginHost.reloadPlugins(true);
       showContentList();
     }
     return;

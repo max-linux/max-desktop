@@ -55,9 +55,9 @@
         onload="wizardInit()"
         onwizardfinish="return wizardFinish();">
 
-  <script type="application/x-javascript" src="chrome://ubufox/content/pluginInstallerWizard.js"/>
-  <script type="application/x-javascript" src="chrome://ubufox/content/pluginInstallerDatasource.js"/>
-  <script type="application/x-javascript" src="chrome://ubufox/content/pluginInstallerService.js"/>
+  <script type="application/javascript" src="chrome://ubufox/content/pluginInstallerWizard.js"/>
+  <script type="application/javascript" src="chrome://ubufox/content/pluginInstallerDatasource.js"/>
+  <script type="application/javascript" src="chrome://ubufox/content/pluginInstallerService.js"/>
 
   <stringbundleset id="pluginSet">
     <stringbundle id="brandStrings" src="chrome://branding/locale/brand.properties"/>

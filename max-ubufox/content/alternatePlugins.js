@@ -37,8 +37,6 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-if (!gBrowser)
-  var gBrowser = null;
 var gAltPluginWizard = null;
 
 altPluginWizard.prototype.pluginUsed = function(pluginElement){
@@ -97,8 +95,6 @@ function openPluginFinder(contentMimeArray){
 
 window.addEventListener("load", function() {
 
-  if (!gBrowser)
-    gBrowser = document.getElementById("content");  
   gAltPluginWizard = new altPluginWizard();
   gBrowser.tabContainer.addEventListener("TabSelect", gAltPluginWizard.tabSelected, false);
   gBrowser.addEventListener("DOMContentLoaded", gAltPluginWizard.domContentLoaded, false);
