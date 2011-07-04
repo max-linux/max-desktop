@@ -8,7 +8,10 @@ binary-install/max-firefox-conf::
 	find $(CURDIR)/debian/max-firefox-conf -type d -name .svn | xargs rm -rf --
 	find $(CURDIR)/debian/max-firefox-conf -type d -empty | xargs rm -rf --
 
+	tree $(CURDIR)/debian/max-firefox-conf
 
 	rm -rf $(CURDIR)/debian/max-firefox-conf/usr/share/dpsyco/skel/usr/share
-	rm -rf $(CURDIR)/debian/max-firefox-conf/usr/share/dpsyco/skel/usr/lib
+#	rm -rf $(CURDIR)/debian/max-firefox-conf/usr/share/dpsyco/skel/usr/lib
 #	rm -rf $(CURDIR)/debian/max-firefox-conf/usr/share/dpsyco/skel/etc
+
+	tree $(CURDIR)/debian/max-firefox-conf

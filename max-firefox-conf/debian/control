@@ -2,7 +2,8 @@ Source: max-firefox-conf
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.0.0), cdbs, dpatch, patchutils, mozilla-devscripts, zip, unzip, ca-certificates
+#Build-Depends: debhelper (>= 4.0.0), cdbs, dpatch, patchutils, mozilla-devscripts, zip, unzip, ca-certificates
+Build-Depends: debhelper (>= 4.0.0), cdbs, dpatch, patchutils, tree
 Standards-Version: 3.8.1
 
 Package: max-firefox-conf
@@ -10,12 +11,13 @@ Architecture: all
 Recommends: max-java-plugin
 Depends: max-dpsyco-custom, 
          firefox, 
+         firefox-locale-es, firefox-locale-en,
          apturl,
 	 max-ubufox,
-         firefox-greasemonkey, 
-         firefox-downloadhelper, 
+#         firefox-greasemonkey, 
+#         firefox-downloadhelper, 
          firefox-procon-latte,
-         firefox-stylish
+#         firefox-stylish
 #Conflicts: firefox-3.0, firefox-3.0-branding, firefox-3.0-gnome-support
 #Conflicts: firefox (<=3.6.2), firefox (>=3.6.4)
 Description: Configuración de firefox para Ubuntu/MAX.

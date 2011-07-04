@@ -1,3 +1,33 @@
+max-firefox-conf (6.0.max14) max; urgency=low
+
+  * Add firefox-locale-es, firefox-locale-en, to Depends
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 04 Jul 2011 15:39:42 +0200
+
+max-firefox-conf (6.0.max13) max; urgency=low
+
+  * Remove /usr/lib/firefox-addons/extensions/langpack-es@firefox-3.6.ubuntu.com
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 04 Jul 2011 11:59:29 +0200
+
+max-firefox-conf (6.0.max12) max; urgency=low
+
+  * Build in MaX for main
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 03 Jul 2011 14:09:15 +0200
+
+max-firefox-conf (6.0.max11extrasmax2) max; urgency=low
+
+  * Build for Firefox 5.0 in extras
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 28 Jun 2011 23:00:03 +0200
+
+max-firefox-conf (6.0.max11extrasmax1) max; urgency=low
+
+  * Build for Firefox 4.0 in extras
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 19 Jun 2011 16:46:22 +0200
+
 max-firefox-conf (6.0.max11) max; urgency=low
 
   * Fix --auto in postinst
