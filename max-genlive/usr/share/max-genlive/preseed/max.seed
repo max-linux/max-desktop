@@ -131,4 +131,8 @@ ttf-mscorefonts-installer	msttcorefonts/present-mscorefonts-eula	note
 #ttf-mscorefonts-installer	msttcorefonts/dlurl	string
 #ttf-mscorefonts-installer	msttcorefonts/savedir	string
 #ttf-mscorefonts-installer	msttcorefonts/baddldir	error
-3ttf-mscorefonts-installer	msttcorefonts/dldir	string	
+#ttf-mscorefonts-installer	msttcorefonts/dldir	string	
+
+# GRUB
+grub-pc grub-pc/timeout string 10
+grub-pc grub-pc/hidden_timeout boolean false

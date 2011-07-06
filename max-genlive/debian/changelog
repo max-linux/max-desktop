@@ -1,3 +1,10 @@
+max-genlive (6.0.max28) max; urgency=low
+
+  * Bump version to 6.0.2
+  * Add GRUB2 timeout as debconf preseed
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 06 Jul 2011 16:14:48 +0200
+
 max-genlive (6.0.max27) max; urgency=low
 
   * Blacklist landscape-client landscape-common packages
