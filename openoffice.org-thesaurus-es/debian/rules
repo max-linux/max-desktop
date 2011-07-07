@@ -11,3 +11,12 @@ install/openoffice.org-thesaurus-es::
 	install -D -m644 debian/dictinfo \
 		$(CURDIR)/debian/openoffice.org-thesaurus-es/usr/share/myspell/infos/ooo/openoffice.org-thesaurus-es
 
+
+install/libreoffice-thesaurus-es::
+	install -D -m644 th_es_ES_v2.dat \
+		$(CURDIR)/debian/libreoffice-thesaurus-es/usr/share/myspell/dicts/th_es_ES_v2.dat
+	install -D -m644 th_es_ES_v2.idx \
+		$(CURDIR)/debian/libreoffice-thesaurus-es/usr/share/myspell/dicts/th_es_ES_v2.idx
+	install -D -m644 debian/dictinfo \
+		$(CURDIR)/debian/libreoffice-thesaurus-es/usr/share/myspell/infos/ooo/libreoffice-thesaurus-es
+

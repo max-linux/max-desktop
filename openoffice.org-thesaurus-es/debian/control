@@ -7,11 +7,18 @@ Standards-Version: 3.8.4
 
 Package: openoffice.org-thesaurus-es
 Architecture: all
-Provides: openoffice.org2-thesaurus, openoffice.org2-thesaurus-es
-Depends: openoffice.org-core (>= 1.9) | language-support-es, dictionaries-common (>= 0.10) | openoffice.org-updatedicts
-Conflicts: openoffice.org (<< 1.9)
-Description: Spanish Thesaurus for OpenOffice.org
+Depends: openoffice.org-core (>= 1.9) | language-support-es, dictionaries-common (>= 0.10) | openoffice.org-updatedicts, ${misc:Depends}
+Conflicts: openoffice.org (<< 1.9), libreoffice-thesaurus-es
+Description: Spanish Thesaurus for LibreOffice | OpenOffice.org
  This package contains an Spanish thesaurus for use with the
- OpenOffice.org office suite.
+ LibreOffice | OpenOffice.org office suite.
+
+Package: libreoffice-thesaurus-es
+Architecture: all
+Depends: libreoffice-core, dictionaries-common (>= 0.10), ${misc:Depends}
+Conflicts: openoffice.org-thesaurus-es
+Description: Spanish Thesaurus for LibreOffice
+ This package contains an Spanish thesaurus for use with the
+ LibreOffice office suite.
 
 
