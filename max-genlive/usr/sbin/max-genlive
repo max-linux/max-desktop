@@ -9,13 +9,11 @@ elif [ "$1" = "i386" ]; then
 fi
 
 
-# Hacer el cd de MaX remasterizando el de Ubuntu
-
 DISTRO=lucid
 DISTRO_VERSION="10.04"
 ARCH=i386
 NANOARCH=i386
-MAX_VERSION="6.0.2"
+MAX_VERSION="6.5~rc1"
 IMAGE_NAME="MaX-${MAX_VERSION}"
 TITLE="MaX ${MAX_VERSION}"
 
