@@ -1,3 +1,9 @@
+max-libreoffice (6.0.max11) max; urgency=low
+
+  * Change openoffice-thesaurus-es with libreoffice-thesaurus-es in libreoffice-core
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 07 Jul 2011 13:26:51 +0200
+
 max-libreoffice (6.0.max10) max; urgency=low
 
   * max-libreoffice-core conflicts with openoffice.org-writer
