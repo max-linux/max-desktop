@@ -1,3 +1,17 @@
+max-zentyal (1.0max2) max; urgency=low
+
+  * No install svn dirs
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 07 Jul 2011 13:37:03 +0200
+
+max-zentyal (1.0max1) max; urgency=low
+
+  * Add /etc/zentyal/stubs/captiveportal/ldap.conf.mas (Second Ldap of EducaMadrid)
+  * Add Depends zentyal-captiveportal
+  * Remove debisn post|pre[inst] scripts (not needed)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 07 Jul 2011 13:34:22 +0200
+
 max-zentyal (0.9) max; urgency=low
 
   * Remove zentyal-security: no install zentyal-remoteservices, zentyal-ids

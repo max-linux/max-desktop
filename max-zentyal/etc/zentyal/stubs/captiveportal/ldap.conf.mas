@@ -1,0 +1,17 @@
+%args>
+    $ldap_url
+    $bindstring
+</%args>
+
+# LDAP connection URL
+ldap_url = <% $ldap_url %>
+
+# bind dn with {USERNAME} token
+ldap_bindstring = <% $bindstring %>
+
+# Secondary LDAP URL (Optional)
+ldap2_url = ldap://ldapexterno.educa.madrid.org:389
+
+# Secondary LDAP bind dn
+ldap2_bindstring = uid={USERNAME},ou=Usuarios,dc=externo,dc=educa,dc=madrid,dc=org
+
