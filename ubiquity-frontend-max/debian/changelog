@@ -1,3 +1,10 @@
+ubiquity-frontend-max (6.0.max35) max; urgency=low
+
+  * Update 6.5 logo
+  * Move usr/lib/os-probes/mounted/35detect_max to max-dpsyco-custom
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 07 Jul 2011 16:09:30 +0200
+
 ubiquity-frontend-max (6.0.max34) max; urgency=low
 
   * usr/share/dpsyco/skel/usr/lib/ubiquity/user-setup/user-setup-apply:

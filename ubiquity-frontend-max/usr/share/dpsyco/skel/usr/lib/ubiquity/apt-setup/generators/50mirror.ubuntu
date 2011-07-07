@@ -106,7 +106,7 @@ hostname="$RET"
 db_get mirror/$protocol/directory
 directory="/${RET#/}"
 
-# MaX 6.0 configure main mirror
+# MaX configure main mirror
 hostname=archive.ubuntu.com
 protocol=http
 
