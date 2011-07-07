@@ -2,8 +2,8 @@
 Encoding=UTF-8
 Name=Sun Java 6 Runtime (32bit)
 Comment=Sun Java 6 Runtime (32bit)
-TryExec=/usr/lib/jvm/ia32-java-6-sun-1.6.0.16/bin/java
-Exec=/usr/lib/jvm/ia32-java-6-sun-1.6.0.16/bin/java -jar
+TryExec=/usr/lib/jvm/ia32-java-6-sun/bin/java
+Exec=/usr/lib/jvm/ia32-java-6-sun/bin/java -jar
 Terminal=false
 Type=Application
 Icon=ia32-sun-java6

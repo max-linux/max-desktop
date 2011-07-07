@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Icon=libreoffice-impress
+Type=Application
+Categories=Office;
+Exec=libreoffice -impress %U
+MimeType=application/vnd.oasis.opendocument.presentation;application/vnd.oasis.opendocument.presentation-template;application/vnd.sun.xml.impress;application/vnd.sun.xml.impress.template;application/vnd.stardivision.impress;application/mspowerpoint;application/vnd.ms-powerpoint;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-powerpoint.presentation.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.template;application/vnd.ms-powerpoint.template.macroenabled.12;
+Name=LibreOffice Impress
+Name[pt_BR]=BrOffice Impress
+Name[es]=LibreOffice presentaciones
+GenericName=Presentation
+GenericName[en]=Presentation
+GenericName[es]=Presentaciones
+Comment=Create and edit presentations for slideshows, meeting and Web pages by using Impress.
+Comment[en]=Create and edit presentations for slideshows, meeting and Web pages by using Impress.
+Comment[es]=Crear y editar presentaciones para diapositivas, reuniones o páginas web.
+InitialPreference=5
+X-KDE-Protocols=file,http,smb,ftp,webdav
