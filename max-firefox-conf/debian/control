@@ -17,7 +17,10 @@ Depends: max-dpsyco-custom,
 #         firefox-greasemonkey, 
 #         firefox-downloadhelper, 
          firefox-procon-latte,
-#         firefox-stylish
+#         firefox-stylish,
+         xul-ext-flashblock,
+         xul-ext-firebug,
+         xul-ext-greasemonkey,
 #Conflicts: firefox-3.0, firefox-3.0-branding, firefox-3.0-gnome-support
 #Conflicts: firefox (<=3.6.2), firefox (>=3.6.4)
 Description: Configuración de firefox para Ubuntu/MAX.

@@ -1,3 +1,13 @@
+max-firefox-conf (6.0.max15) max; urgency=low
+
+  * Add extensions by default:
+    - xul-ext-flashblock, 
+    - xul-ext-firebug, 
+    - xul-ext-greasemonkey
+    (close ticket #344)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 07 Jul 2011 18:26:05 +0200
+
 max-firefox-conf (6.0.max14) max; urgency=low
 
   * Add firefox-locale-es, firefox-locale-en, to Depends
