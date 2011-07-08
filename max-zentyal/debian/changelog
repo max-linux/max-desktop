@@ -1,3 +1,10 @@
+max-zentyal (1.0max3) max; urgency=low
+
+  * Remove /etc/zentyal/stubs/captiveportal/ldap.conf.mas
+  * dpkg-divert in zentyal-max-control package
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 08 Jul 2011 18:25:15 +0200
+
 max-zentyal (1.0max2) max; urgency=low
 
   * No install svn dirs

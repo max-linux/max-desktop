@@ -7,3 +7,4 @@ binary-install/max-zentyal::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-zentyal -type d -name .svn | xargs rm -rf --
 
+	rm -rf $(CURDIR)/debian/max-zentyal/etc/zentyal
