@@ -16,7 +16,7 @@ for change in $CHANGELOGS; do
     dscpkg=$(find $pkgdir -name "$source*dsc")
     dscversion=$(basename $dscpkg | awk -F "_" '{print $2}' | sed 's/.dsc//g')
     if [ "$version" != "$dscversion" ]; then
-      echo " ** WARNING ** obsolete package $dscpkg in mirror $source $version old=$dscversion"
+      echo " ** WARNING ** obsolete package $dscpkg in mirror $source NEW=$version OLD=$dscversion"
     fi
   else
     echo "**WARNING $source is not in mirror"
