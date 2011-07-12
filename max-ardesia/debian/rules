@@ -8,7 +8,14 @@ export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 URL=http://ardesia.googlecode.com/svn/trunk/
 
 #tags
-URL=http://ardesia.googlecode.com/svn/tags/0.8/
+#URL=http://ardesia.googlecode.com/svn/tags/0.8/
+
+
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+        NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+        MAKEFLAGS += -j$(NUMJOBS)
+endif
+
 
 clean::
 	rm -rf ardesia-read-only
@@ -32,6 +39,8 @@ build-stamp:
 
 	# build magnifier
 	cat debian/make.sh > ardesia-read-only/magnifier/make.sh
+	# default spanish
+	cat debian/overrides/appsettings.pas > ardesia-read-only/magnifier/appsettings.pas
 	cd ardesia-read-only/magnifier && make
 
 	# build florence-ramble
