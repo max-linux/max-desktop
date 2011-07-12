@@ -12,7 +12,6 @@ Depends: gtk2-engines-murrine, gdm | lxdm, grub-pc, plymouth-max
 Provides: ubuntu-artwork, edubuntu-artwork, xubuntu-artwork, kubuntu-artwork, xsplash-artwork, gdm-theme, desktop-base, mythbuntu-gdm-theme
 Replaces: xsplash-artwork, desktop-base, mythbuntu-gdm-theme
 Conflicts: desktop-base, mythbuntu-gdm-theme
-Recommends: xsplash
 Description: MaX themes and artwork
  This package contains MaX themes, artwork and default settings.
 
