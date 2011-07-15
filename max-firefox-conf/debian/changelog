@@ -1,3 +1,9 @@
+max-firefox-conf (6.0.max16) max; urgency=low
+
+  * Remove xul-ext-flashblock
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 15 Jul 2011 12:13:24 +0200
+
 max-firefox-conf (6.0.max15) max; urgency=low
 
   * Add extensions by default:
