@@ -46,6 +46,7 @@ Comment[sv]=Brandväggsverktyg för ditt skrivbord
 Comment[tr]=Güvenlik Duvarı Aracı
 Comment[vi]=Công Cụ Tường Lửa Cho Máy Bàn
 Comment[zh_CN]=桌面防火墙工具
+TryExec=/usr/sbin/firestarter
 Exec=su-to-root -X -c /usr/sbin/firestarter
 Icon=firestarter.png
 Terminal=false
