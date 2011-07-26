@@ -29,8 +29,8 @@ APT
 EOF
 
 cat << EOF > $NANOCHROOT/etc/hosts
-127.0.0.1       localhost max60
-127.0.1.1       max60
+127.0.0.1       localhost max65
+127.0.1.1       max65
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
@@ -41,8 +41,8 @@ ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 EOF
 
-   echo "max60" > $NANOCHROOT/etc/hostname
-   echo "max60" > $NANOCHROOT/etc/mailname
+   echo "max65" > $NANOCHROOT/etc/hostname
+   echo "max65" > $NANOCHROOT/etc/mailname
 
   _echo "Configurando DEBCONF y zona horaria"
 
