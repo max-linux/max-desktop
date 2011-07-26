@@ -113,7 +113,7 @@ class PageGtk(PageBase):
         for radio in self.install_types:
             getattr(self, "install_type_%s"%radio).connect('toggled', self.on_install_type_radio_toggled)
 
-        self.set_hostname('max60')
+        self.set_hostname('max65')
         self.plugin_widgets = self.page
         
         if os.path.isfile("/cdrom/casper/nanomax"):
