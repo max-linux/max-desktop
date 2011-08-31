@@ -18,7 +18,7 @@ case "$1" in
 	  path=$(dirname $vendor)
 	  idvendor=$(cat $vendor)
 	  idproduct=$(cat $path/idProduct)
-	  if [ "$idvendor" = "0711" ] && [ "$idproduct" = "5100" ]; then
+	  if [ "$idvendor" = "0711" ]; then
 	    udevadm test --action=add "$path" > /dev/null 2>&1
 	  fi
 	done

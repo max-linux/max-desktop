@@ -12,7 +12,7 @@ fi
 
 env | grep -e ^ID -e ^DEV -e ^SEAT_ID >> /tmp/usbseat.log
 
-if [ "$ID_VENDOR_ID" = "0711" ] && [ "$ID_MODEL_ID" = "5100" ]; then
+if [ "$ID_VENDOR_ID" = "0711" ]; then
 	# $1 could be 'display'
 	if [ "$1" = "display" ]; then
 		echo "UPSSS , error: \$1 is display, use SEAT_ID=$SEAT_ID" >> /tmp/usbseat.log
@@ -79,12 +79,12 @@ case "$ACTION" in
 			TMPFILE=`/bin/mktemp -t usbseat.XXXXXXXXXX` || exit 1
 			
 			# search for a MWS300 device
-			MWS=$(udevadm info --query=env --name=/dev/usbseat/$1/display | grep -e ID_VENDOR_ID=0711 -e ID_MODEL_ID=5100)
+			MWS=$(udevadm info --query=env --name=/dev/usbseat/$1/display | grep -e ID_VENDOR_ID=0711 -e ID_MODEL_ID=5)
 			if [ "$MWS" != "" ]; then
 			    export $MWS
 			fi
 			
-			if [ "$ID_VENDOR_ID" = "0711" ] && [ "$ID_MODEL_ID" = "5100" ]; then
+			if [ "$ID_VENDOR_ID" = "0711" ]; then
 				echo "MWS300 complete, launching GDMdynamic in $1 with $TMPFILE" >> /tmp/usbseat.log
 
 				VEND_ID=$(readlink -f /dev/usbseat/$1/display | awk -F"/" '{print $5}')
