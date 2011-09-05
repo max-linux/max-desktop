@@ -1,3 +1,9 @@
+max-dpsyco-custom (6.0.max44) max; urgency=low
+
+  * Add /usr/sbin/max-divert
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 05 Sep 2011 18:54:42 +0200
+
 max-dpsyco-custom (6.0.max43) max; urgency=low
 
   * Add usr/lib/os-probes/mounted/35detect_max (from ubiquity-frontend-max package)
