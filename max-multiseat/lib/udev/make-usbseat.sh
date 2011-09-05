@@ -30,7 +30,7 @@ _BUSNUM=$(printf "%03g\n" $(cat "/sys/$1/../busnum" 2>/dev/null))
 _DEVNUM=$(printf "%03g\n" $(cat "/sys/$1/../devnum" 2>/dev/null))
 logger -t "/lib/udev/make-usbseat.sh [$2]" "/sys/$1/busnum BUSNUM=$_BUSNUM DEVNUM=$_DEVNUM"
 REAL=$(readlink -f "/sys/$1/../")
-logger -t "/lib/udev/make-usbseat.sh [$2]" "REAL=$REAL BUSNUM=$_BUSNUM DEVNUM=$_DEVNUM"
+logger -t "/lib/udev/make-usbseat.sh [$2]" "REAL=$REAL BUSNUM=$_BUSNUM DEVNUM=$_DEVNUM ID_VENDOR='$ID_VENDOR_ID' ID_MODEL='$ID_MODEL_ID'"
 
 
 if grep -q "^$_BUSNUM $_DEVNUM" $SEAT_DB; then
@@ -48,6 +48,16 @@ else
   echo "$_BUSNUM $_DEVNUM $NEW_SEAT" >> $SEAT_DB
   logger -t "/lib/udev/make-usbseat.sh [$2]" "created SEAT_ID '$NEW_SEAT'"
   echo $NEW_SEAT
+fi
+
+if [ "$ID_VENDOR_ID" = "0711" ] && [ "$ID_MODEL_ID" = "5100" ]; then
+  logger -t "/lib/udev/make-usbseat.sh [$2]" "Calling /lib/udev/MWS300-init-tool $_BUSNUM $_DEVNUM"
+  /lib/udev/MWS300-init-tool $_BUSNUM $_DEVNUM >> /tmp/usbseat.log 2>&1
+fi
+
+if [ "$ID_VENDOR_ID" = "0711" ] && [ "$ID_MODEL_ID" = "5500" ]; then
+  logger -t "/lib/udev/make-usbseat.sh [$2]" "Calling /lib/udev/multiseat-init-tool.v2 $_BUSNUM $_DEVNUM"
+  /lib/udev/multiseat-init-tool.v2 >> /tmp/usbseat.log 2>&1
 fi
 
 ) 9>/tmp/make-usbseat.lock

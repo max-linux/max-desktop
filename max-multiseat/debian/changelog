@@ -1,3 +1,9 @@
+max-multiseat (6.0.max32) max; urgency=low
+
+  * Call MWS300-init-tool||multiseat-init-tool.v2 in /lib/udev/make-usbseat.sh
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 05 Sep 2011 17:05:47 +0200
+
 max-multiseat (6.0.max31) max; urgency=low
 
   * Use diferent xorg.conf for Model 5500
