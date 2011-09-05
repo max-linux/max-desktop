@@ -25,9 +25,8 @@ if [ "$ID_VENDOR_ID" = "0711" ]; then
 	else
 		tree /dev/usbseat/$SEAT_ID >> /tmp/usbseat.log
 		echo "Call MWS300-init-tool $BUSNUM $DEVNUM ...." >> /tmp/usbseat.log
-		/lib/udev/MWS300-init-tool $BUSNUM $DEVNUM >> /tmp/usbseat.log 2>&1
-		# start SEAT in background
-		(sleep 3 && /lib/udev/usbseat.sh $SEAT_ID && tree /dev/usbseat/$SEAT_ID >> /tmp/usbseat.log) &
+		[ "$ID_MODEL_ID" = "5100" ] && /lib/udev/MWS300-init-tool $BUSNUM $DEVNUM >> /tmp/usbseat.log 2>&1
+		[ "$ID_MODEL_ID" = "5500" ] && /lib/udev/multiseat-init-tool.v2 >> /tmp/usbseat.log 2>&1
 		# exit now
 		exit 0
 	fi
@@ -89,7 +88,11 @@ case "$ACTION" in
 
 				VEND_ID=$(readlink -f /dev/usbseat/$1/display | awk -F"/" '{print $5}')
 				PROD_ID=$(readlink -f /dev/usbseat/$1/display | awk -F"/" '{print $6}')
-				/bin/sed -e "s/%ID_SEAT%/$1/g" -e "s|%VEND_ID%|$VEND_ID|g" -e "s|%PROD_ID%|$PROD_ID|g"  /lib/udev/usbseat-xf86.tusb.conf.sed > $TMPFILE
+				if [ "$ID_MODEL_ID" = "5500" ]; then
+					/bin/sed -e "s/%ID_SEAT%/$1/g" -e "s|%VEND_ID%|$VEND_ID|g" -e "s|%PROD_ID%|$PROD_ID|g"  /lib/udev/usbseat-xf86.tusb5500.conf.sed > $TMPFILE
+				else
+					/bin/sed -e "s/%ID_SEAT%/$1/g" -e "s|%VEND_ID%|$VEND_ID|g" -e "s|%PROD_ID%|$PROD_ID|g"  /lib/udev/usbseat-xf86.tusb.conf.sed > $TMPFILE
+				fi
 			else
 				/bin/sed "s/%ID_SEAT%/$1/g" < /lib/udev/usbseat-xf86.conf.sed > $TMPFILE
 			fi
