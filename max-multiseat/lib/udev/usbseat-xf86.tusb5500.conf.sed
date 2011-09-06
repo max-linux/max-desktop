@@ -45,8 +45,8 @@ Section "Device"
         VendorName	"Magic Control Technology"
 	BoardName	"MWS300"
 	Driver		"tusb"
-	# tusb MULTISEAT driver need VEND_ID and PROD_ID
-	Option "DevID" "%VEND_ID%%PROD_ID%"
+	# tusb MULTISEAT driver need BUSNUM and DEVNUM
+	Option "DevID" "%BUSNUM%%DEVNUM%"
 EndSection
 
 

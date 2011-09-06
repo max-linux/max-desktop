@@ -86,12 +86,12 @@ case "$ACTION" in
 			if [ "$ID_VENDOR_ID" = "0711" ]; then
 				echo "MWS300 complete, launching GDMdynamic in $1 with $TMPFILE" >> /tmp/usbseat.log
 
-				VEND_ID=$(readlink -f /dev/usbseat/$1/display | awk -F"/" '{print $5}')
-				PROD_ID=$(readlink -f /dev/usbseat/$1/display | awk -F"/" '{print $6}')
+				BUSNUM=$(readlink -f /dev/usbseat/$1/display | awk -F"/" '{print $5}')
+				DEVNUM=$(readlink -f /dev/usbseat/$1/display | awk -F"/" '{print $6}')
 				if [ "$ID_MODEL_ID" = "5500" ]; then
-					/bin/sed -e "s/%ID_SEAT%/$1/g" -e "s|%VEND_ID%|$VEND_ID|g" -e "s|%PROD_ID%|$PROD_ID|g"  /lib/udev/usbseat-xf86.tusb5500.conf.sed > $TMPFILE
-				else
-					/bin/sed -e "s/%ID_SEAT%/$1/g" -e "s|%VEND_ID%|$VEND_ID|g" -e "s|%PROD_ID%|$PROD_ID|g"  /lib/udev/usbseat-xf86.tusb.conf.sed > $TMPFILE
+					/bin/sed -e "s/%ID_SEAT%/$1/g" -e "s|%BUSNUM%|$BUSNUM|g" -e "s|%DEVNUM%|$DEVNUM|g"  /lib/udev/usbseat-xf86.tusb5500.conf.sed > $TMPFILE
+				else # MODEL=5100
+					/bin/sed -e "s/%ID_SEAT%/$1/g" -e "s|%BUSNUM%|$BUSNUM|g" -e "s|%DEVNUM%|$DEVNUM|g"  /lib/udev/usbseat-xf86.tusb.conf.sed > $TMPFILE
 				fi
 			else
 				/bin/sed "s/%ID_SEAT%/$1/g" < /lib/udev/usbseat-xf86.conf.sed > $TMPFILE
