@@ -51,13 +51,13 @@ else
 fi
 
 if [ "$ID_VENDOR_ID" = "0711" ] && [ "$ID_MODEL_ID" = "5100" ]; then
-  logger -t "/lib/udev/make-usbseat.sh [$2]" "Calling /lib/udev/MWS300-init-tool $_BUSNUM $_DEVNUM"
-  /lib/udev/MWS300-init-tool $_BUSNUM $_DEVNUM >> /tmp/usbseat.log 2>&1
+  logger -t "/lib/udev/make-usbseat.sh [$2]" "Calling /lib/udev/MWS300-init-tool $BUSNUM $DEVNUM"
+  /lib/udev/MWS300-init-tool $BUSNUM $DEVNUM >> /tmp/usbseat.log 2>&1
 fi
 
 if [ "$ID_VENDOR_ID" = "0711" ] && [ "$ID_MODEL_ID" = "5500" ]; then
-  logger -t "/lib/udev/make-usbseat.sh [$2]" "Calling /lib/udev/multiseat-init-tool.v2 $_BUSNUM $_DEVNUM"
-  /lib/udev/multiseat-init-tool.v2 >> /tmp/usbseat.log 2>&1
+  logger -t "/lib/udev/make-usbseat.sh [$2]" "Calling /lib/udev/multiseat-init-tool.v2 $BUSNUM $DEVNUM"
+  /lib/udev/multiseat-init-tool.v2 $BUSNUM $DEVNUM >> /tmp/usbseat.log 2>&1
 fi
 
 ) 9>/tmp/make-usbseat.lock

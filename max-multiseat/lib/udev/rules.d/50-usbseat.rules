@@ -1,6 +1,6 @@
 ########################################### NEW #################################################
-# New MAX 6.0 rules use /tmp/seat.db to save BUSNUM/DEVNUM with a SEAT_ID
-# See at /var/log/syslog | grep make-usbseat for debug output
+# New MAX 6.5 rules use /dev/seat.db to save BUSNUM/DEVNUM with a SEAT_ID
+# See at «grep make-usbseat /var/log/syslog» for debug output
 
 # old HP multiseat devices
 KERNEL=="fb*",SUBSYSTEMS=="usb",PROGRAM="/lib/udev/make-usbseat.sh %p/../../ displayfb",\
@@ -8,11 +8,11 @@ KERNEL=="fb*",SUBSYSTEMS=="usb",PROGRAM="/lib/udev/make-usbseat.sh %p/../../ dis
 
 # MWS300
 ATTR{idVendor}=="0711",ATTR{idProduct}=="5100",PROGRAM="/lib/udev/make-usbseat.sh %p display",\
-                                SYMLINK+="usbseat/%c/display",ENV{SEAT_ID}="%c",RUN+="usbseat.sh %c display"
+                                SYMLINK+="usbseat/%c/display"
 
 # MWS300v2
 ATTR{idVendor}=="0711",ATTR{idProduct}=="5500",PROGRAM="/lib/udev/make-usbseat.sh %p display",\
-                                SYMLINK+="usbseat/%c/display",ENV{SEAT_ID}="%c",RUN+="usbseat.sh %c display"
+                                SYMLINK+="usbseat/%c/display"
 
 
 

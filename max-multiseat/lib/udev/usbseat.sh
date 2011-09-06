@@ -12,26 +12,6 @@ fi
 
 env | grep -e ^ID -e ^DEV -e ^SEAT_ID >> /tmp/usbseat.log
 
-#if [ "$ID_VENDOR_ID" = "0711" ]; then
-#	# $1 could be 'display'
-#	if [ "$1" = "display" ]; then
-#		echo "UPSSS , error: \$1 is display, use SEAT_ID=$SEAT_ID" >> /tmp/usbseat.log
-#	else
-#		SEAT_ID=$1
-#	fi
-#
-#	if [ -e /dev/usbseat/$SEAT_ID/keyboard ] && [ -e /dev/usbseat/$SEAT_ID/mouse ] && [ -e /dev/usbseat/$SEAT_ID/display ]; then
-#		echo "Device $BUSNUM $DEVNUM complete, no MWS300-init-tool" >> /tmp/usbseat.log
-#	else
-#		tree /dev/usbseat/$SEAT_ID >> /tmp/usbseat.log
-#		echo "Call MWS300-init-tool $BUSNUM $DEVNUM ...." >> /tmp/usbseat.log
-#		[ "$ID_MODEL_ID" = "5100" ] && /lib/udev/MWS300-init-tool $BUSNUM $DEVNUM >> /tmp/usbseat.log 2>&1
-#		[ "$ID_MODEL_ID" = "5500" ] && /lib/udev/multiseat-init-tool.v2 >> /tmp/usbseat.log 2>&1
-#		# exit now
-#		exit 0
-#	fi
-#fi
-
 if ! pidof gdm >/dev/null; then
     exit 0
 fi

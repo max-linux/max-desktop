@@ -1,3 +1,12 @@
+max-multiseat (6.0.max33) max; urgency=low
+
+  * fix variable names typo VEND_ID=>BUSNUM PROD_ID=>DEVNUM
+  * lib/udev/rules.d/50-usbseat.rules, don't call usbseat.sh in
+    display devices (init in make-usbseat.sh)
+  * lib/udev/make-usbseat.sh: fix BUSNUM/DEVNUM in init tools
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 06 Sep 2011 16:38:52 +0200
+
 max-multiseat (6.0.max32) max; urgency=low
 
   * Call MWS300-init-tool||multiseat-init-tool.v2 in /lib/udev/make-usbseat.sh
