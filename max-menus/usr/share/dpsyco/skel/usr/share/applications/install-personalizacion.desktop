@@ -1,9 +1,9 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Install Preschool and Elementary Software
-Name[es]=Instalar personalización infantil primaria
+Name[es]=Instalar Personalización de Infantil y Primaria
 Comment=Install Preschool and Elementary Software
-Comment[es]= Instalar personalización infantil primaria
+Comment[es]=Instalar Personalización de Infantil y Primaria
 TryExec=/usr/bin/firefox
 Exec=firefox /usr/share/max/install-personalizacion.html
 Icon=firefox
