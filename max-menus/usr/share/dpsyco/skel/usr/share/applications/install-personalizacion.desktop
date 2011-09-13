@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Install Preschool and Elementary Software
+Name[es]=Instalar personalización infantil primaria
+Comment=Install Preschool and Elementary Software
+Comment[es]= Instalar personalización infantil primaria
+TryExec=/usr/bin/firefox
+Exec=firefox /usr/share/max/install-personalizacion.html
+Icon=firefox
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Application;Core;

@@ -1,3 +1,13 @@
+max-menus (6.0.max46) max; urgency=low
+
+  * usr/share/applications/install-personalizacion.desktop:
+    - Launcher to install infantil/primaria software
+  * Add usr/share/max/personalizacion.jpg
+        usr/share/max/install-personalizacion.html
+    - HTML page to install max-infantil package
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 13 Sep 2011 14:06:32 +0200
+
 max-menus (6.0.max45) max; urgency=low
 
   * Add TryExec to /usr/share/applications/firestarter.desktop
