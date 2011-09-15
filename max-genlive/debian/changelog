@@ -1,3 +1,9 @@
+max-genlive (6.0.max34) max; urgency=low
+
+  * Remove hal from BLACKLIST_PKGS
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 15 Sep 2011 16:12:50 +0200
+
 max-genlive (6.0.max33) max; urgency=low
 
   * Update /usr/share/max-genlive/isolinux/splash.pcx with MaX 6.5 text
