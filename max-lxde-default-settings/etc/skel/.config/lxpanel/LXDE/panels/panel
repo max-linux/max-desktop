@@ -78,7 +78,7 @@ Plugin {
             image=gtk-directory
         }
         Button {
-            id=openoffice.org-writer.desktop
+            id=libreoffice-writer.desktop
         }
         Button {
             id=switch-lxlauncher.desktop
