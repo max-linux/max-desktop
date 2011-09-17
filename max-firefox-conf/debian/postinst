@@ -44,6 +44,10 @@ case "$1" in
     update-alternatives --auto x-www-browser
 
 
+    [ -d /usr/lib/firefox-4.0.1 ] && rm -rf /usr/lib/firefox-4.0.1
+    [ -d /usr/lib/firefox-5.0 ]   && rm -rf /usr/lib/firefox-5.0
+    [ -d /usr/lib/firefox-6.0 ]   && rm -rf /usr/lib/firefox-6.0
+
     ;;
 
 esac

@@ -1,3 +1,9 @@
+max-firefox-conf (6.0.max19) max; urgency=low
+
+  * Delete OLD Firefox /ur/lib/ dirs
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 13 Sep 2011 01:10:31 +0200
+
 max-firefox-conf (6.0.max18) max; urgency=low
 
   * Build for Firefox 6.0.2
