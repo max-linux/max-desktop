@@ -1570,7 +1570,7 @@ class Install:
         except debconf.DebconfError:
             domain = ''
         if hostname == '':
-            hostname = 'max60'
+            hostname = 'max65'
 
         hosts = open(os.path.join(self.target, 'etc/hosts'), 'w')
         print >>hosts, "127.0.0.1\tlocalhost %s"%(hostname)

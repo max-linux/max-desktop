@@ -674,6 +674,9 @@ elif [ "$grub_version" = grub2 ] && [ "$frtype" = mdadm ]; then
 		default_bootdev="$bootfs_nodevfs"
 	fi
 	db_set grub-installer/bootdev "$default_bootdev"
+elif [ "$frdev" ]; then
+	default_bootdev="$frdev"
+	db_set grub-installer/bootdev "$default_bootdev"
 fi
 
 db_progress STEP 1

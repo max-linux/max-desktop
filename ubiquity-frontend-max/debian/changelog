@@ -1,3 +1,10 @@
+ubiquity-frontend-max (6.0.max37) max; urgency=low
+
+  * Sync with ubiquity 2.2.27
+  * Overwrite ubi-migrationassistant.py to disable it
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 17 Sep 2011 16:37:37 +0200
+
 ubiquity-frontend-max (6.0.max36) max; urgency=low
 
   * Change hostname to max65
