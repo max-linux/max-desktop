@@ -14,7 +14,7 @@ cat >> $file <<EOF
 
 
 #
-#  MaX 6.0 mirror
+#  MaX 6.x mirror
 #
 
 deb $protocol://$hostname$directory $codename $dists
