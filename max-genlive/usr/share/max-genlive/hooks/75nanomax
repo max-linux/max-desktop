@@ -333,8 +333,8 @@ EOC
   cp $NANOCHROOT/boot/initrd.img-${KERNEL} $NANOMAX/casper/initrd.gz
 
   # backharddi
-  cat $NANOCHROOT/boot/linux-backharddi-ng     > $NANOMAX/casper/vmback
-  cat $NANOCHROOT/boot/minirt-backharddi-ng.gz > $NANOMAX/casper/minirt.gz
+  [ -e $NANOCHROOT/boot/linux-backharddi-ng ] && cat $NANOCHROOT/boot/linux-backharddi-ng     > $NANOMAX/casper/vmback
+  [ -e $NANOCHROOT/boot/minirt-backharddi-ng.gz ] && cat $NANOCHROOT/boot/minirt-backharddi-ng.gz > $NANOMAX/casper/minirt.gz
 
   ISO_IMAGE="${IMAGE_NAME}-CDlive-$NANOARCH-${stamp}.iso"
 

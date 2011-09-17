@@ -1,3 +1,11 @@
+max-genlive (6.0.max35) max; urgency=low
+
+  * usr/share/max-genlive/hooks/75nanomax:
+    - Only copy backharddi if exists
+  * Bump version to MaX 6.5~rc3
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 17 Sep 2011 17:22:53 +0200
+
 max-genlive (6.0.max34) max; urgency=low
 
   * Remove hal from BLACKLIST_PKGS
