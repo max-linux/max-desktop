@@ -2,8 +2,9 @@
 Type=Application
 Encoding=UTF-8
 Version=1.0
-Name[es_ES]=xbindkeys
-Comment[es_ES]=Toshiba rotate
+Name=xbindkeys
+Name[es]=xbindkeys
 Comment=Toshiba rotate
+Comment[es]=Toshiba rotación de pantalla
 Exec=xbindkeys
 X-GNOME-Autostart-enabled=true

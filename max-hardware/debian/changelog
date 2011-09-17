@@ -1,3 +1,9 @@
+max-hardware (6.0.max5) max; urgency=low
+
+  * Fix usr/share/max-hardware/xbindkeys.desktop (Name section)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 17 Sep 2011 17:46:36 +0200
+
 max-hardware (6.0.max4) max; urgency=low
 
   * Add LSB headers
