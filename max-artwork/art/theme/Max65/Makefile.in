@@ -30,7 +30,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-subdir = art/theme/Max60
+subdir = art/theme/Max65
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -156,7 +156,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-themedir = /usr/share/themes/Max60
+themedir = /usr/share/themes/Max65
 theme_DATA = \
 	index.theme
 
@@ -173,9 +173,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__confi
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  art/theme/Max60/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  art/theme/Max65/Makefile'; \
 	cd $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu  art/theme/Max60/Makefile
+	  $(AUTOMAKE) --gnu  art/theme/Max65/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \

@@ -1,4 +1,4 @@
-themedir = /usr/share/themes/Max60
+themedir = /usr/share/themes/Max65
 theme_DATA = \
 	index.theme
 
