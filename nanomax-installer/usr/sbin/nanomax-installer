@@ -309,7 +309,8 @@ class DeviceManager:
                 print "Exception, perhaps removing device..."
                 continue
             if storage.Get("org.freedesktop.DBus.Properties", 'DeviceIsRemovable') == 1 and \
-               storage.Get("org.freedesktop.DBus.Properties", 'DeviceIsOpticalDisc') == 0:
+               storage.Get("org.freedesktop.DBus.Properties", 'DeviceIsOpticalDisc') == 0 and \
+               storage.Get("org.freedesktop.DBus.Properties", 'DriveConnectionInterface') == 'usb':
                 dev={
                     "device": str(storage.Get("org.freedesktop.DBus.Properties", 'DeviceFile')),
                     "model": str(storage.Get("org.freedesktop.DBus.Properties", 'DriveModel')),
