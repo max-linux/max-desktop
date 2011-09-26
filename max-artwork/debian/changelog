@@ -1,3 +1,13 @@
+max-artwork (6.0.max20) max; urgency=low
+
+  * Rename theme Max60 => Max65
+  * Disable xsplash stuff
+  * Change 'Consejería de Educación' => 'Consejería de Educación y empleo'
+  * Update maxgrub y maxgdm background images
+  * Remove GNOME splash stuff
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 22 Sep 2011 15:24:33 +0200
+
 max-artwork (6.0.max19) max; urgency=low
 
   * Update wallpapers with new Consejería text

@@ -9,8 +9,8 @@ Standards-Version: 3.8.4
 Package: max-artwork
 Architecture: all
 Depends: gtk2-engines-murrine, gdm | lxdm, grub-pc, plymouth-max
-Provides: ubuntu-artwork, edubuntu-artwork, xubuntu-artwork, kubuntu-artwork, xsplash-artwork, gdm-theme, desktop-base, mythbuntu-gdm-theme
-Replaces: xsplash-artwork, desktop-base, mythbuntu-gdm-theme
+Provides: ubuntu-artwork, edubuntu-artwork, xubuntu-artwork, kubuntu-artwork, gdm-theme, desktop-base, mythbuntu-gdm-theme
+Replaces: desktop-base, mythbuntu-gdm-theme
 Conflicts: desktop-base, mythbuntu-gdm-theme
 Description: MaX themes and artwork
  This package contains MaX themes, artwork and default settings.

@@ -1,1 +1,1 @@
-SUBDIRS = gdm gnome gtk theme splash wallpapers icons metacity grub xsplash
+SUBDIRS = gdm gnome gtk theme wallpapers icons metacity grub
