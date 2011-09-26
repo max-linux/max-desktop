@@ -100,7 +100,7 @@ copiar_nanomax() {
   # mover el kernel
   echo " * Configurando el kernel..."
   for f in initrd.gz minirt.gz vmback vmlinuz; do
-    mv /mnt/nanomax/casper/$f /mnt/nanomax/
+    [ -e /mnt/nanomax/casper/$f ] && mv /mnt/nanomax/casper/$f /mnt/nanomax/
   done
 }
 
