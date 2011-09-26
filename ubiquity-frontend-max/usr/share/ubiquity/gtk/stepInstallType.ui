@@ -141,11 +141,11 @@
                     </child>
                     <child>
                       <object class="GtkRadioButton" id="install_type_terminales">
-                        <property name="label" translatable="yes">Terminales ligeros (TCOS) y Sistema de clonado (Backharddi)</property>
+                        <property name="label" translatable="yes">Terminales ligeros (TCOS)</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">Convierte tu equipo en un servidor de terminales ligeros y un servidor de im&#xE1;genes para clonado de equipos por red.</property>
+                        <property name="tooltip_text" translatable="yes">Convierte tu equipo en un servidor de terminales ligeros.</property>
                         <property name="draw_indicator">True</property>
                         <property name="group">install_type_group</property>
                       </object>
