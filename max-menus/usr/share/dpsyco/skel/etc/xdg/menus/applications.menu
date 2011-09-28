@@ -339,11 +339,18 @@
 			<Include><Filename>tuxguitar.desktop</Filename></Include>
 		</Menu>
 		<Menu>
-			<Name>Cartografía</Name>
-			<Directory>cartografia.directory</Directory>
+			<Name>Ciencias</Name>
+			<Directory>ciencias.directory</Directory>
+			<Include><Filename>physion.desktop</Filename></Include>
+			<Include><Filename>tbe.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Geografía</Name>
+			<Directory>geografia.directory</Directory>
 			<Include><Filename>josm.desktop</Filename></Include>
 			<Include><Filename>max-openstreetmap.desktop</Filename></Include>
 			<Include><Filename>kde4-marble.desktop</Filename></Include>
+			<Include><Filename>kde4-kgeography.desktop</Filename></Include>
 		</Menu>
 		<Menu>
 			<Name>Electrónica</Name>
