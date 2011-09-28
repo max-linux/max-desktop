@@ -47,6 +47,11 @@ case "$1" in
     [ -d /usr/lib/firefox-4.0.1 ] && rm -rf /usr/lib/firefox-4.0.1
     [ -d /usr/lib/firefox-5.0 ]   && rm -rf /usr/lib/firefox-5.0
     [ -d /usr/lib/firefox-6.0 ]   && rm -rf /usr/lib/firefox-6.0
+    [ -d /usr/lib/firefox-6.0.2 ]   && rm -rf /usr/lib/firefox-6.0.2
+
+
+    # Update DNI-e certificates
+    [ -e /var/lib/dpkg/info/dnie-support.postinst ] && bash /var/lib/dpkg/info/dnie-support.postinst || true
 
     ;;
 
