@@ -1,3 +1,11 @@
+max-firefox-conf (6.0.max22) max; urgency=low
+
+  * Update for Firefox 7.0.1
+  * cert8.db:
+    - Add CAMERFIRMA http://www.camerfirma.com/certs/CMFECS_v3.crt 
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 30 Sep 2011 15:41:28 +0200
+
 max-firefox-conf (6.0.max21) max; urgency=low
 
   * Conflicts with Firefox >= 7.0.1
