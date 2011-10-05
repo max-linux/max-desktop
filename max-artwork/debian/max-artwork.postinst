@@ -31,6 +31,13 @@ case "$1" in
 
     # configure GDM
     [ -x /usr/sbin/configure-max-gdm ] && /usr/sbin/configure-max-gdm
+
+
+    # remove cached wallpapers
+    [ -d /var/lib/gdm/.cache/wallpaper/ ] && rm -f /var/lib/gdm/.cache/wallpaper/*
+    rm -f /home/*/.cache/wallpaper/* >/dev/null 2>&1
+
+
   ;;
 esac
 

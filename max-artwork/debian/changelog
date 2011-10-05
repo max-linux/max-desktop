@@ -1,3 +1,9 @@
+max-artwork (6.0.max21) max; urgency=low
+
+  * postinst: remove cached wallpapers
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 05 Oct 2011 11:53:27 +0200
+
 max-artwork (6.0.max20) max; urgency=low
 
   * Rename theme Max60 => Max65
