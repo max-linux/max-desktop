@@ -102,6 +102,7 @@ Description: The Max desktop system (Xfce4 desktop)
 Package: max-desktop-lxde
 Architecture: all
 Recommends: ${max-desktop-lxde:Recommends}, ${max-desktop-lxde:Depends}
+Depends: max-libreoffice-core
 Provides: max-desktop
 Description: The Max desktop system (LXDE desktop)
  This package depends on all LXDE packages in the Max desktop system
@@ -143,7 +144,7 @@ Description: The Max server system
 Package: max-desktop-common
 Architecture: all
 Recommends: ${max-desktop-common:Depends}
-Depends: openshot
+Depends: openshot, max-libreoffice
 Description: The Max desktop common packages to all desktops
  This package depends on all of the packages in the Max server system
  .

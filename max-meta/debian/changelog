@@ -1,3 +1,10 @@
+max-meta (6.0.max67) max; urgency=low
+
+  * desktop-common: force Depends on max-libreoffice
+  * desktop-lxde: force Depends on max-libreoffice-core
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 05 Oct 2011 10:48:01 +0200
+
 max-meta (6.0.max66) max; urgency=low
 
   * Remove backharddi from LXDE and server
