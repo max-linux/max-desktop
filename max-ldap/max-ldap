@@ -261,7 +261,8 @@ Session:
     def configure_PAM_mount(self):
         serverip=self.ldap_server.get_text().strip()
         pam_mount_line="""
-<volume options="iocharset=utf8" fstype="cifs" server="%s" path="homes" mountpoint="~"> <and> <sgrp>__USERS__</sgrp> </and> </volume>
+<volume options="iocharset=utf8,uid=%%(USER),mode=700" fstype="cifs" server="%s" path="homes" mountpoint="~"> <and> <sgrp>__USERS__</sgrp> </and> </volume>
+<volume fstype="tmpfs" mountpoint="~/.pulse" options="size=1M,uid=%%(USER),mode=0700"> <and> <sgrp>__USERS__</sgrp> </and> </volume>
 
 <volume options="rw,iocharset=utf8" fstype="cifs" server="%s" path="isos" mountpoint="/mnt/isos"> <and> <sgrp>Teachers</sgrp> </and> </volume>
 <volume options="ro,iocharset=utf8" fstype="cifs" server="%s" path="isos" mountpoint="/mnt/isos"> <and> <sgrp>__USERS__</sgrp> <not> <sgrp>Teachers</sgrp> </not> </and> </volume>
