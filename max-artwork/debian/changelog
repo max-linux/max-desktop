@@ -1,3 +1,9 @@
+max-artwork (6.0.max22) max; urgency=low
+
+  * Add gdm-2.20 to Depends alternative
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 14 Oct 2011 15:19:40 +0200
+
 max-artwork (6.0.max21) max; urgency=low
 
   * postinst: remove cached wallpapers
