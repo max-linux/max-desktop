@@ -1,3 +1,10 @@
+max-genlive (6.0.max36) max; urgency=low
+
+  * Remove backharddi from installed packages
+  * Remove backharddi from isolinux/syslinux config files
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 25 Oct 2011 17:29:50 +0200
+
 max-genlive (6.0.max35) max; urgency=low
 
   * usr/share/max-genlive/hooks/75nanomax:
