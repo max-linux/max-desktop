@@ -5,6 +5,7 @@ Section "ServerFlags"
 	Option	"DontZoom"		"true"
 	Option	"DontZap"		"true"
 	Option	"AllowMouseOpenFail"	"yes"
+	Option	"DontVTSwitch"
 EndSection
 
 

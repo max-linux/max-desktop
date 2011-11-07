@@ -97,11 +97,6 @@ case "$ACTION" in
 			# call $GDMDYNAMIC -d $1 when sound device disappear (fork)
 			/usr/sbin/usbseat-gdm-remover /dev/usbseat/$1/sound $1 >> /tmp/usbseat.log 2>&1 &
 		else
-			if [ "$1" = "1" ]; then
-				$GDMDYNAMIC -t 2 -s 1 -a "$1=/usr/bin/X -br :$1 vt07 -audit 0 -nolisten tcp -config /lib/udev/xorg.conf.display0"
-				$GDMDYNAMIC -r $1
-				exit
-			fi
 			echo "Some devices not found" >> /tmp/usbseat.log
 			tree /dev/usbseat/$1 >> /tmp/usbseat.log
 		fi

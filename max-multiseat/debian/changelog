@@ -1,3 +1,13 @@
+max-multiseat (6.0.max36) max; urgency=low
+
+  * Add Option 'DontVTSwitch' to all xorg.conf
+  * lib/udev/xorg.conf.display0:
+    - Use input3 and mouse1 as devices
+  * lib/udev/usbseat.sh:
+    - Remove unneeded code
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 07 Nov 2011 12:25:44 +0100
+
 max-multiseat (6.0.max35) max; urgency=low
 
   * lib/udev/usbseat-xf86.tusb.conf.sed:
