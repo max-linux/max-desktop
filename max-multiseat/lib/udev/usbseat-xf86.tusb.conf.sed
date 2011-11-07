@@ -44,7 +44,7 @@ Section "Device"
         Identifier	"Trigger-plus"
         VendorName	"Magic Control Technology"
 	BoardName	"MWS300"
-	Driver		"tusb"
+	Driver		"tusbv1"
 	# tusb MULTISEAT driver need BUSNUM and DEVNUM
 	Option "DevID" "%BUSNUM%%DEVNUM%"
 EndSection
