@@ -1,3 +1,15 @@
+max-meta (6.0.max68) max; urgency=low
+
+  * desktop-lxde-i386, add:
+    + firefox-gnome-support
+    + gawk
+    + gettext
+    + libreoffice-pdfimport
+    + psutils
+    + wireless-tools
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 16 Nov 2011 16:02:47 +0100
+
 max-meta (6.0.max67) max; urgency=low
 
   * desktop-common: force Depends on max-libreoffice
