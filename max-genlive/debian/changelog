@@ -1,3 +1,10 @@
+max-genlive (6.0.max39) max; urgency=low
+
+  * hooks/75nanomax:
+    - Rename directory isolinux => syslinux in nanoMAX
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 16 Nov 2011 17:01:08 +0100
+
 max-genlive (6.0.max38) max; urgency=low
 
   * Bump version to MaX 6.5~rc4

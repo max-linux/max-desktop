@@ -411,13 +411,12 @@ done
 _echo "Copiando sistema"
 
 cp -ra $NANOMAX/* part3/
-mv part3/isolinux/*  part3/
-rmdir part3/isolinux
-cp $GENLIVE/nano/syslinux.cfg part3/
+mv part3/isolinux  part3/syslinux
+cp $GENLIVE/syslinux/text-usb.cfg part3/syslinux/text.cfg
 cp /boot/memtest86+.bin part3/mt86plus
 # movemos el kernel
 for k in initrd.gz  minirt.gz  vmback  vmlinuz; do
-  mv part3/casper/$k part3/$k
+  [ -e "part3/$k" ] && mv part3/casper/$k part3/$k
 done
 
 # Metemos syslinux en la tercera partición
