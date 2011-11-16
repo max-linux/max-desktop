@@ -1,3 +1,10 @@
+max-genlive (6.0.max38) max; urgency=low
+
+  * Bump version to MaX 6.5~rc4
+  * isolinux/syslinux: use text.cfg for CD and nanoMAX
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 16 Nov 2011 15:59:26 +0100
+
 max-genlive (6.0.max37) max; urgency=low
 
   * Update splash.pcx

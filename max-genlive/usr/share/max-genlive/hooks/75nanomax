@@ -310,7 +310,9 @@ EOC
   cp $CDRW/isolinux/*    $NANOMAX/isolinux/ || _exit "No se puede sobreescribir isolinux"
   cp $GENLIVE/isolinux/* $NANOMAX/isolinux/ || _exit "No se puede sobreescribir isolinux"
 
-  cp $GENLIVE/nano/isolinux.cfg $NANOMAX/isolinux/
+  # en genlive por defecto el CD
+  cp $GENLIVE/nano/text-cd.cfg  $NANOMAX/isolinux/text.cfg
+  cp $GENLIVE/nano/text-usb.cfg $NANOMAX/isolinux/text-usb.cfg
 
   mkdir -p $NANOMAX/preseed
   rm -f $NANOMAX/preseed/*
