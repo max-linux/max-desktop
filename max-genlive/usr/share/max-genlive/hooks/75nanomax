@@ -410,7 +410,7 @@ _echo "Copiando sistema"
 
 cp -ra $NANOMAX/* part3/
 mv part3/isolinux part3/syslinux
-cp $GENLIVE/syslinux/text-usb.cfg part3/syslinux/text.cfg
+cp $GENLIVE/nano/text-usb.cfg part3/syslinux/text.cfg
 cp /boot/memtest86+.bin part3/mt86plus
 
 
