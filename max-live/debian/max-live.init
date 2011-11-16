@@ -30,7 +30,16 @@ stop)
 
           # clean udev rules in casper-rw ticket #254
           if [ -e /cdrom/casper-rw ]; then
-              mount /cdrom/casper-rw /mnt > /dev/null 2>&1 && rm -f /mnt/etc/udev/rules.d/70-persistent* && umount /mnt > /dev/null 2>&1
+              mount /cdrom/casper-rw /mnt > /dev/null 2>&1
+
+              rm -f /mnt/etc/udev/rules.d/70-persistent* \
+		    /mnt/etc/default/locale \
+		    /mnt/etc/environment \
+		    /mnt/etc/fstab \
+		    /mnt/etc/locale.gen \
+		    /mnt/var/lib/locales/supported.d/local
+
+              umount /mnt > /dev/null 2>&1
           fi
 
         log_end_msg 0
