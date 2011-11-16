@@ -96,12 +96,6 @@ copiar_nanomax() {
   rsync -Pazv /cdrom/nanomax/ /mnt/nanomax/ | zenity --progress --auto-close --pulsate --text="Copiando nanoMax..."
   mv /mnt/nanomax/isolinux /mnt/nanomax/syslinux
   cp /mnt/nanomax/syslinux/text-usb.cfg  /mnt/nanomax/syslinux/text.cfg
-
-  # mover el kernel
-  echo " * Configurando el kernel..."
-  for f in initrd.gz minirt.gz vmback vmlinuz; do
-    [ -e /mnt/nanomax/casper/$f ] && mv /mnt/nanomax/casper/$f /mnt/nanomax/
-  done
 }
 
 copiar_portables() {

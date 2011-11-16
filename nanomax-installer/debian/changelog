@@ -1,3 +1,10 @@
+nanomax-installer (6.0.max7) max; urgency=low
+
+  * usr/share/nanomax-installer/do-install.sh:
+    - Don't move kernel to root path of nanoMAX
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 16 Nov 2011 19:09:04 +0100
+
 nanomax-installer (6.0.max6) max; urgency=low
 
   * usr/share/nanomax-installer/do-install.sh:
