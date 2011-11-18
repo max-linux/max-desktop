@@ -39,7 +39,7 @@ rm -f $CHROOT/etc/usplash.conf
 #yres=768
 #EOF
 
-KERNEL=$(basename $(ls $CHROOT/boot/vmlinuz* -t| head -1)| sed 's/vmlinuz-//g')
+KERNEL=$(basename $(ls $CHROOT/boot/vmlinuz* | sort -nr | head -1)| sed 's/vmlinuz-//g')
 
 _echo "Instalando modulos extra para $KERNEL"
 chroot $CHROOT/ << EOF

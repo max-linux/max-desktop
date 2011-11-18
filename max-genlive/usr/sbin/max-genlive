@@ -16,8 +16,8 @@ NANOARCH=i386
 MAX_VERSION="6.5"
 IMAGE_NAME="MaX-${MAX_VERSION}"
 TITLE="MaX ${MAX_VERSION}"
-LINUX_IMAGE="linux-image-generic-lts-backport-natty"
-LINUX_HEADERS="linux-headers-generic-lts-backport-natty"
+LINUX_IMAGE="max-natty-linux-image"
+LINUX_HEADERS="max-natty-linux-headers"
 
 unset HOME
 export LC_ALL=C
@@ -28,7 +28,7 @@ stamp=$(date '+%Y%m%d_%H%M')
 created=$(date '+%Y%m%d')
 
 if [ "$MIRROR" = "" ]; then
-  MIRROR=192.168.0.2/mirror
+  MIRROR=192.168.0.2
 fi
 
 if [ "$AMD64" = "1" ]; then
@@ -87,7 +87,7 @@ PAQUETES_INFANTIL="max-desktop-infantil-primaria max-infantil"
 
 PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales virtualbox-ose"
 PAQUETES_EXTRA="$PAQUETES_EXTRA max-tcos-alumno max-tcos-profesor"
-PAQUETES_EXTRA="$PAQUETES_EXTRA nvidia-glx-180 linux-wlan-ng-firmware linux-firmware max-desktop-infantil-primaria max-infantil"
+PAQUETES_EXTRA="$PAQUETES_EXTRA nvidia-glx-180 linux-wlan-ng-firmware max-desktop-infantil-primaria max-infantil"
 
 BLACKLIST_PKGS="jetty resolvconf gdm-guest-session emacs22 emacs22-bin-common emacs22-common emacsen-common"
 BLACKLIST_PKGS="$BLACKLIST_PKGS python-ubuntuone python-ubuntuone-client python-ubuntuone-storageprotocol ubuntuone-client"
