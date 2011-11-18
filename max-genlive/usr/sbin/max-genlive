@@ -13,9 +13,11 @@ DISTRO=lucid
 DISTRO_VERSION="10.04"
 ARCH=i386
 NANOARCH=i386
-MAX_VERSION="6.5~rc4"
+MAX_VERSION="6.5"
 IMAGE_NAME="MaX-${MAX_VERSION}"
 TITLE="MaX ${MAX_VERSION}"
+LINUX_IMAGE="linux-image-generic-lts-backport-natty"
+LINUX_HEADERS="linux-headers-generic-lts-backport-natty"
 
 unset HOME
 export LC_ALL=C

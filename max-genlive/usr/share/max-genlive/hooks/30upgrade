@@ -70,9 +70,9 @@ EOC
 
 LIVE_PACKAGES="casper ubiquity ubiquity-casper ubiquity-frontend-gtk ubiquity-ubuntu-artwork"
 
-_echo "Instalando linux-image-generic"
+_echo "Instalando linux-image=$LINUX_IMAGE"
 
-chroot $CHROOT << EOC || _exit "No se ha podido instalar linux-image-generic"
+chroot $CHROOT << EOC || _exit "No se ha podido instalar $LINUX_IMAGE"
 export LC_ALL=C
 export LC_MESSAGES=C
 export DEBCONF_FRONTEND="noninteractive"
@@ -82,7 +82,7 @@ export ERROR=0
 dpkg --configure -a
 apt-get $APT_OPTS -f install
 apt-get $APT_OPTS install $LIVE_PACKAGES || ERROR=1
-apt-get $APT_OPTS install linux-image-generic || ERROR=1
+apt-get $APT_OPTS install $LINUX_IMAGE $LINUX_HEADERS || ERROR=1
 apt-get clean
 exit \$ERROR
 EOC
