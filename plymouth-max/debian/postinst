@@ -7,6 +7,8 @@ case "$1" in
                 --install /lib/plymouth/themes/default.plymouth default.plymouth \
                 /lib/plymouth/themes/max-logo/max-logo.plymouth 200
 
+        update-alternatives --set text.plymouth /lib/plymouth/themes/text/text.plymouth >/dev/null 2>&1
+
         [ -e /usr/sbin/plymouth-set-default-theme ] && rm -f /usr/sbin/plymouth-set-default-theme
 
         if which update-initramfs >/dev/null 2>&1
