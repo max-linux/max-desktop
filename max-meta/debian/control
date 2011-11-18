@@ -322,3 +322,57 @@ Conflicts: gnome-desktop-environment,
            ufraw
 Description: Replace gnome-desktop-environment package without some depends
  Replace gnome-desktop-environment package without some depends
+
+
+Package: max-lucid-linux-image
+Architecture: all
+Depends: linux-image-generic, linux-firmware
+Description: 2.6.32 kernel for MAX
+ This package install 2.6.32 kernel
+
+Package: max-lucid-linux-headers
+Architecture: all
+Depends: linux-image-generic, linux-headers-generic, linux-firmware
+Description: 2.6.32 kernel headers for MAX
+ This package install 2.6.32 kernel headers
+
+
+Package: max-natty-linux-image
+Architecture: all
+Depends: linux-image-generic-lts-backport-natty, linux-firmware-2.6.38
+Description: 2.6.38 kernel for MAX
+ This package install 2.6.38 kernel
+
+Package: max-natty-linux-headers
+Architecture: all
+Depends: linux-image-generic-lts-backport-natty, linux-headers-generic-lts-backport-natty, linux-firmware-2.6.38
+Description: 2.6.38 kernel headers for MAX
+ This package install 2.6.38 kernel headers
+
+# for SERVER
+
+Package: max-lucid-linux-image-server
+Architecture: all
+Depends: linux-image-server, linux-firmware
+Description: 2.6.32 kernel for MAX (server)
+ This package install 2.6.32 kernel (server)
+
+Package: max-lucid-linux-headers-server
+Architecture: all
+Depends: linux-image-server, linux-headers-server, linux-firmware
+Description: 2.6.32 kernel headers for MAX (server)
+ This package install 2.6.32 kernel headers (server)
+
+
+Package: max-natty-linux-image-server
+Architecture: all
+Depends: linux-image-server-lts-backport-natty, linux-firmware-2.6.38
+Description: 2.6.38 kernel for MAX (server)
+ This package install 2.6.38 kernel (server)
+
+Package: max-natty-linux-headers-server
+Architecture: all
+Depends: linux-image-server-lts-backport-natty, linux-server-generic-lts-backport-natty, linux-firmware-2.6.38
+Description: 2.6.38 kernel headers for MAX (server)
+ This package install 2.6.38 kernel headers (server)
+
