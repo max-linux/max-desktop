@@ -42,6 +42,21 @@ EOF
     fi
 
 
+    # ensure to umount $HOME in GDM Postlogin
+    if ! grep -q umount /etc/gdm/PostSession/Default; then
+        cat << EOF > /etc/gdm/PostSession/Default
+#!/bin/sh
+
+id | grep -q "__USERS__" || exit 0
+
+umount "/home/samba/users/\$USER/.gvfs"
+sleep 1
+umount "/home/samba/users/\$USER"
+exit 0
+EOF
+
+    fi
+
 fi
 
 
