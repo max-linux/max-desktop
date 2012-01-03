@@ -20,7 +20,17 @@ start)
           exit 0
         fi
         log_begin_msg "Starting max-multiseat-storage" "max-multiseat-storage"
-          udisks --inhibit -- /usr/sbin/multiseat-udisks --daemon > /dev/null 2>&1 &
+          if [ -e /usr/bin/udisks ]; then
+            # use udisks inhibitor
+            udisks --inhibit -- /usr/sbin/multiseat-udisks --daemon > /dev/null 2>&1 &
+
+          elif [ -e /usr/bin/hal-lock ]; then
+            # run hal inhibitor (called devkit-disk --inhibit inside)
+            hal-lock --interface org.freedesktop.Hal.Device.Storage --exclusive --run '/usr/sbin/multiseat-hal --daemon' > /dev/null 2>&1 &
+          else
+            # no UDisk/HAL ???
+            echo " * ERROR: No UDisk/HAL installed"
+          fi
         log_end_msg 0
         ;;
 stop)
@@ -28,15 +38,8 @@ stop)
           if [ -e $PID_FILE ]; then
             kill $(cat $PID_FILE) > /dev/null 2>&1
             rm -f $PID_FILE
+            [ -e /usr/bin/hal-lock ] && killall devkit-disks > /dev/null 2>&1
           fi
-          #PID=$(ps aux| grep "udisks --inhibit -- /usr/sbin/multiseat-udisks"| grep -v "grep"| awk '{print $2}')
-          #if [ "$PID" != "" ]; then
-          #    kill "$PID"
-          #fi
-          #PID=$(ps aux| grep "python /usr/sbin/multiseat-udisks"| grep -v "grep"| awk '{print $2}')
-          #if [ "$PID" != "" ]; then
-          #    kill "$PID"
-          #fi
         log_end_msg 0
         ;;
 restart|force-reload)

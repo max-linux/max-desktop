@@ -7,6 +7,8 @@ install: build make-install-dirs
 	install -m 755 multiseat-udisks.py $(DESTDIR)/usr/sbin/multiseat-udisks
 	install -m 755 src/umount.multiseat $(DESTDIR)/sbin/umount.multiseat
 
+	install -m 755 multiseat-hal.py $(DESTDIR)/usr/sbin/multiseat-hal
+
 
 make-install-dirs:
 	mkdir -p $(DESTDIR)/usr/lib/nautilus/extensions-2.0/python/
@@ -14,7 +16,7 @@ make-install-dirs:
 	mkdir -p $(DESTDIR)/sbin/
 
 clean:
-	rm -f src/umount.multiseat
+	rm -f src/umount.multiseat *~
 
 
 build: src/umount.multiseat.c
