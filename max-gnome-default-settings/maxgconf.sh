@@ -123,6 +123,7 @@ set_key() {
    # set at gconf home settings before general
    for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
       username=$(basename $home)
+      grep -q "^${username}:" /etc/passwd || continue
       gconftool-2 --config-source xml:readwrite:$home/.gconf --type $2 --set $1 "$3" >> /tmp/maxgconf.errors 2>&1
       is_username "$username" && chown -R $username $home/.gconf >> /tmp/maxgconf.errors 2>&1
       is_username "$username" && chown -R $username:$username $home/.gconf >> /tmp/maxgconf.errors 2>&1
@@ -135,6 +136,7 @@ unset_key() {
    # set at gconf home settings before general
    for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
       username=$(basename $home)
+      grep -q "^${username}:" /etc/passwd || continue
       gconftool-2 --direct --config-source xml:readwrite:$home/.gconf --unset $1  >> /tmp/maxgconf.errors 2>&1
       is_username "$username" && chown -R $username $home/.gconf >> /tmp/maxgconf.errors 2>&1
       is_username "$username" && chown -R $username:$username $home/.gconf >> /tmp/maxgconf.errors 2>&1

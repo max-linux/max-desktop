@@ -11,9 +11,13 @@ max_gconf_load() {
 
 case $1 in
   configure)
+
+     update-dpsyco-skel > /dev/null 2>&1
+
      for _file in $(find $META_GCONF -name "*.gconf"); do
        maxgconf --set $_file
      done
+
 
      # parse dumps files
      for _file in $(find $META_GCONF_DUMPS -name "*dump.gconf"); do
@@ -34,17 +38,15 @@ case $1 in
          max_gconf_load "/etc/gconf/gconf.xml.defaults" $_file
        fi
 
+     #/etc/skel/Escritorio/firefox.desktop
+     for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
+         username=$(basename $home)
+         cp /etc/skel/Escritorio/firefox.desktop $home/Escritorio/
+         chown -R $username $home/Escritorio/firefox.desktop || true
      done
-     if [ -x /usr/share/update-notifier/notify-reboot-required ]; then
-		/usr/share/update-notifier/notify-reboot-required
-     fi
 
-     # set nautilus background color of root user
-     gconftool-2 --direct --config-source xml:readwrite:/root/.gconf/ \
-                 --type bool --set "/apps/nautilus/preferences/background_set" "true" >/dev/null 2>&1
-     gconftool-2 --direct --config-source xml:readwrite:/root/.gconf/ \
-                 --type string --set "/apps/nautilus/preferences/background_color" "#E53B1A" >/dev/null 2>&1
 
+     done
      ;;
 esac
 

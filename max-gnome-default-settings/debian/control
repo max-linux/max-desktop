@@ -12,3 +12,14 @@ Description: MaX gnome default settings
  Contains:
   * maxgconf
   * gconf dumps and settings
+
+Package: max-gnome-default-settings-infantil-primaria
+Architecture: all
+Depends: max-gnome-default-settings
+Description: MaX gnome default settings for infantil & primaria
+ Contains:
+  * maxgconf
+  * gconf dumps and settings
+
+
+

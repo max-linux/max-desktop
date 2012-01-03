@@ -1,3 +1,16 @@
+max-gnome-default-settings (5.0.max6) max; urgency=low
+
+  * Remove max-artwork >= 6.0
+  * Remove pinta launcher
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 15 May 2011 19:42:41 +0200
+
+max-gnome-default-settings (5.0.max5) max; urgency=low
+
+  * Add max-gnome-default-settings-infantil-primaria
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 15 May 2011 19:02:45 +0200
+
 max-gnome-default-settings (5.0.max4) max; urgency=low
 
   * Add /system/smb/workgroup = AULAMAX
