@@ -1,3 +1,10 @@
+max-stellarium (7.0.max1) max; urgency=low
+
+  * Build in MaX 7.0
+  * Convert dpsyco => dh_divert
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 17:14:31 +0100
+
 max-stellarium (6.0.max1) max; urgency=low
 
   * Initial version (close ticket #315)

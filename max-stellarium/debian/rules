@@ -1,8 +1,9 @@
 #!/usr/bin/make -f
 
 include /usr/share/cdbs/1/rules/debhelper.mk
-
+include /usr/share/cdbs/1/rules/aa-debhelper.mk
 
 binary-install/max-stellarium::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-stellarium -type d -name .svn | xargs rm -rf --
+	rm -rf $(CURDIR)/debian/max-stellarium/usr/share/dpsyco
