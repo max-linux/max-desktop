@@ -1,0 +1,39 @@
+#!/bin/bash
+
+if [ ! -e debian/rules ]; then
+  echo " * Error no debian/rules file"
+  exit 1
+fi
+
+if ! grep -q "/usr/share/cdbs/1/rules/aa-debhelper.mk" debian/rules ; then
+  echo " * WARNING: Add 'include /usr/share/cdbs/1/rules/aa-debhelper.mk' to your debian/rules"
+fi
+
+if ! grep -q "aa-debhelper" debian/control; then
+  echo "* WARNING: Add aa-debhelper to Build-Depends"
+fi
+
+echo " * Cleaning and building package..."
+fakeroot debian/rules clean  >/dev/null 2>&1
+fakeroot debian/rules binary >/dev/null 2>&1
+rm -v ../*deb
+
+rm -f debian/*divert
+
+for f in $(find debian/ -type f | grep dpsyco); do
+
+  pkg=$(echo $f| awk -F "/" '{print $2}')
+  fname=$(echo $f| awk -F"/" '{print substr($0,index($0,$3))}')
+  new=$(echo $fname | sed 's|usr/share/dpsyco/skel/||g')
+
+  echo " $pkg => $fname => $new"
+  echo "$fname" >> debian/${pkg}.divert
+
+  mkdir -p ./$(dirname $new)
+  [ ! -d "./$(dirname $new).svn" ] && svn add ./$(dirname $new)
+  svn move $fname ./$(dirname $new)
+
+done
+
+
+exit

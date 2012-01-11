@@ -1,3 +1,9 @@
+aa-debhelper (0.2max3) max; urgency=low
+
+  * Add dh_convert_dpsyco_divert helper
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 15:03:16 +0100
+
 aa-debhelper (0.2max2) max; urgency=low
 
   * Run in quiet mode
