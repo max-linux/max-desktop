@@ -1,8 +1,7 @@
 #!/bin/sh
 
 if [ -x /usr/bin/apt-key ]; then
-    /usr/sbin/update-dpsyco-skel || true
     /usr/bin/apt-key update
-    # no se necesita ya
-    #/usr/bin/apt-key add /usr/share/keyrings/max-archive-keyring.gpg
 fi
+
+#DEBHELPER#

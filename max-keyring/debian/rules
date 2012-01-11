@@ -1,18 +1,22 @@
 #!/usr/bin/make -f
 
 include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/aa-debhelper.mk
 
 UBUNTU1=/usr/share/keyrings/ubuntu-archive-keyring.gpg
 UBUNTU2=/usr/share/keyrings/ubuntu-master-keyring.gpg
 MAX=usr/share/keyrings/max-archive-keyring.gpg
 MAX50=usr/share/keyrings/max50-archive-keyring.gpg
-DPSYCO=usr/share/dpsyco/skel/
+DPSYCO=./
 
 GPG_GET=gpg --list-options show-keyring
 KEY_MAX=$(shell $(GPG_GET) $(MAX)|awk '/^pub/ {print $$2}'| awk -F'/' '{print $$2}')
 KEY_MAX50=$(shell $(GPG_GET) $(MAX50)|awk '/^pub/ {print $$2}'| awk -F'/' '{print $$2}')
 KEY_UBUNTU1=$(shell $(GPG_GET) $(UBUNTU1)|awk '/^pub/ {print $$2}'| awk -F'/' '{print $$2}' | sed 's/\n//g')
 KEY_UBUNTU2=$(shell $(GPG_GET) $(UBUNTU2)|awk '/^pub/ {print $$2}'| awk -F'/' '{print $$2}' | sed 's/\n//g')
+
+clean::
+	rm -f  usr/share/keyrings/ubuntu-archive-keyring.gpg usr/share/keyrings/ubuntu-master-keyring.gpg
 
 build/max-keyring::
 	@if [ ! -f build-stamp ]; then \
@@ -31,3 +35,4 @@ build/max-keyring::
 binary-install/max-keyring::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-keyring -type d -name .svn | xargs rm -rf --
+	rm -rf $(CURDIR)/debian/max-keyring/usr/share/dpsyco
