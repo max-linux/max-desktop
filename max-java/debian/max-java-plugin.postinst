@@ -1,11 +1,15 @@
 #!/bin/sh
 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
-
+ARCH=$(dpkg-architecture -qDEB_BUILD_ARCH)
 priority=2063
 browser_dirs="xulrunner-addons"
 PLUGIN=libjavaplugin_oji.so
-PLUGINPTH=/usr/lib/jvm/java-6-sun/jre/plugin/i386/ns7/$PLUGIN
+if [ "$ARCH" = "i386" ]; then
+  PLUGINPTH=/usr/lib/jvm/java-6-sun/jre/lib/i386/libjavaplugin_jni.so
+else
+  PLUGINPTH=/usr/lib/jvm/java-6-sun/jre/lib/amd64/libjavaplugin_jni.so
+fi
 
 # delete old plugin link
 if [ -e /usr/lib/firefox-addons/plugins/libjavaplugin.so ]; then
