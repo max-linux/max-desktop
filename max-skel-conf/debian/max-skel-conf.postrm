@@ -1,27 +1,9 @@
 #!/bin/sh
-
 set -e
 
-case "$1" in
-  purge)
-    # delete manual launcher in existent HOMES
-    for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
-      if [ -d $home/Desktop ]; then
-         rm -f $home/Desktop/manual.desktop
-         rm -f $home/Desktop/creditos_max40.desktop
-      fi
-      if [ -d $home/Escritorio ]; then
-         rm -f $home/Escritorio/manual.desktop
-         rm -f $home/Escritorio/creditos_max40.desktop
-      fi
-    done
-    ;;
 
-esac
 
 #DEBHELPER#
-
-
 exit 0
 
 

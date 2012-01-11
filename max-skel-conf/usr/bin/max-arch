@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# return architecture based on file command
+#
+
+dpkg-architecture -qDEB_HOST_ARCH

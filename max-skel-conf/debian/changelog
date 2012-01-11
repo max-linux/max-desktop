@@ -1,3 +1,34 @@
+max-skel-conf (7.0.max8) max; urgency=low
+
+  * Fix /etc/default => /etc/default/rcS
+  * Convert homealumno package to dummy upgrade to homealumno-gui
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 16:38:08 +0100
+
+max-skel-conf (7.0.max7) max; urgency=low
+
+  * No divert /etc/default/rcS
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 16:18:51 +0100
+
+max-skel-conf (7.0.max6) max; urgency=low
+
+  * Build with new aa-debhelper
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 16:13:06 +0100
+
+max-skel-conf (7.0.max5) max; urgency=low
+
+  * Clean postinst/postrm
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 15:40:37 +0100
+
+max-skel-conf (7.0.max4) max; urgency=low
+
+  * Merge with max-dpsyco-custom
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 15:22:06 +0100
+
 max-skel-conf (7.0.max3) max; urgency=low
 
   * Fix max-skel-conf.postinst

@@ -6,9 +6,7 @@ include /usr/share/cdbs/1/rules/aa-debhelper.mk
 binary-install/max-skel-conf::
 	# clean svn dirs
 	@find $(CURDIR)/debian/max-skel-conf -type d -name .svn | xargs rm -rf --
-
-#	rm -rf $(CURDIR)/debian/max-skel-conf/usr/share/dpsyco/skel/etc/skel/.kde
-#	rm -rf $(CURDIR)/debian/max-skel-conf/usr/share/dpsyco/skel/etc/skel/.local
+	rm -rf $(CURDIR)/debian/max-skel-conf/usr/share/dpsyco/
 
 	@for dir in `find $(CURDIR)/debian/max-skel-conf/usr -type d`; do \
 #                echo "   TRY TO DELETE: $$dir"; \
@@ -17,7 +15,9 @@ binary-install/max-skel-conf::
                 ([ ! -d "$$dir" ] && echo "   EMPTY DELETED: $$dir"); \
 	done || true
 
-	rm -rf $(CURDIR)/debian/max-skel-conf/usr/share/dpsyco/
+
+binary-predeb/max-skel-conf::
+	rm $(CURDIR)/debian/max-skel-conf/DEBIAN/conffiles
 
 binary-install/homealumno::
 	# clean svn dirs

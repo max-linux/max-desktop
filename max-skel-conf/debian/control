@@ -14,6 +14,6 @@ Description: Configuración skel para Ubuntu/MAX.
 
 Package: homealumno
 Architecture: all
-Depends: max-skel-conf, max-menus, rsync
+Depends: homealumno-gui
 Description: Sistema modo kiosko para el usuario alumno (antiguo)
  Sistema modo kiosko para el usuario alumno (antiguo)
