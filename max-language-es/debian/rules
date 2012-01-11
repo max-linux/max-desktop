@@ -4,16 +4,17 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 
 clean::
 	rm -f po/*mo
-	(cd ktechlab && make clean)
+#	(cd ktechlab && make clean)
 
 build/max-language-es::
-	find -type f -name "*.po" -exec sh -x -c "N='{}'; msgfmt -v -o \$${N%.po}.mo \$$N" \;
+# disable in MAX 7.0
+#	find -type f -name "*.po" -exec sh -x -c "N='{}'; msgfmt -v -o \$${N%.po}.mo \$$N" \;
 
-	(cd ktechlab && make)
+#	(cd ktechlab && make)
 
 
 binary-install/max-language-es::
-	(cd ktechlab && make install DESTDIR=$(CURDIR)/debian/max-language-es/ )
+#	(cd ktechlab && make install DESTDIR=$(CURDIR)/debian/max-language-es/ )
 
 	# clean svn dirs
 	find $(CURDIR)/debian/max-language-es -type d -name .svn | xargs rm -rf --
