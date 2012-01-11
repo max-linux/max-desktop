@@ -1,3 +1,10 @@
+aa-debhelper (0.2max4) max; urgency=low
+
+  * Remove from ucf in preinst
+  * In postrm move distrib in original
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 16:06:38 +0100
+
 aa-debhelper (0.2max3) max; urgency=low
 
   * Add dh_convert_dpsyco_divert helper
