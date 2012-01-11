@@ -1,3 +1,63 @@
+max-meta (7.0.max3) max; urgency=low
+
+  * max-gnome-desktop-environment, remove:
+    - gnome-accessibility, 
+    - python-bugbuddy, 
+    - python-evince, 
+    - python-gnome2-desktop, 
+    - python-gnomeprint, 
+    - python-mediaprofiles, 
+    - seahorse-plugins, 
+    - swfdec-gnome
+  * desktop-gnome, remove:
+   - dbus-1-utils
+   - gnome-user-guide-es
+   - gstreamer0.10-plugins-ugly
+   - gstreamer0.10-plugins-ugly-multiverse
+   - policykit-gnome
+   - totem-gstreamer
+   - xulrunner-1.9.2-gnome-support
+  * desktop-common, remove:
+   - at-poke
+   - dvdrtools
+   - foomatic-db-gutenprint
+   - iaxcomm
+   - khelpcenter
+   - ktechlab          ****IMPORTANT**** Need old QT version (project died)
+   - latex-xft-fonts
+   - libfont-afm-perl
+   - libglib2.0-data
+   - libglut3
+   - libjcode-pm-perl
+   - libnss-mdns
+   - libpam-foreground
+   - libsasl2-modules
+   - libsox-fmt-all
+   - libxp6
+   - linuxprinting.org-ppds-extra
+   - max-apt
+   - max-dpsyco-custom
+   - mplayer-nogui
+   - mplayer-fonts
+   - powernowd
+   - qca-tls
+   - ttmkfdir
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 17:03:50 +0100
+
+max-meta (7.0.max2) max; urgency=low
+
+  * Remove max-dpsyco-custom
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 15:35:52 +0100
+
+max-meta (7.0.max1) max; urgency=low
+
+  * Build in MAX 7.0
+  * Remove lucid and natty linux metapackages
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 10 Jan 2012 18:13:26 +0100
+
 max-meta (6.0.max70) max; urgency=low
 
   * New packages max-DISTRO-linux for kernel

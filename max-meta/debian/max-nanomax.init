@@ -35,9 +35,9 @@ setup_nanomax() {
   done
 
   # delete netbeans dosemu sun java webstart and WebHTTTrack
-  rm -f /usr/share/applications/netbeans.desktop /usr/share/dpsyco/skel/usr/share/applications/netbeans.desktop
-  rm -f /usr/share/applications/sun*.desktop /usr/share/dpsyco/skel/usr/share/applications/sun*.desktop
-  rm -f /usr/share/applications/Web*.desktop /usr/share/dpsyco/skel/usr/share/applications/Web*.desktop
+  rm -f /usr/share/applications/netbeans.desktop
+  rm -f /usr/share/applications/sun*.desktop
+  rm -f /usr/share/applications/Web*.desktop
 
   # configure Firefox icon (lxlauncher split by dots "firefox-3.0" and don't found bitmap)
   sed -i -e '/Icon/d' /usr/share/applications/firefox.desktop
