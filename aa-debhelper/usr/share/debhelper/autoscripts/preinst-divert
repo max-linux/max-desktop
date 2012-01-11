@@ -1,0 +1,3 @@
+if [ "$1" = install ]; then
+	dpkg-divert --quiet --package #PACKAGE# --add --rename #FILE#
+fi

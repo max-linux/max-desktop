@@ -1,0 +1,24 @@
+aa-debhelper (0.2max2) max; urgency=low
+
+  * Run in quiet mode
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 13:30:27 +0100
+
+aa-debhelper (0.2max1) max; urgency=low
+
+  * Build in MaX 7.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 03 Jan 2012 17:22:13 +0100
+
+aa-debhelper (0.2) unstable; urgency=low
+
+  * added cdbs rules called aa-debhelper
+
+ -- Torsten Werner <twerner@debian.org>  Fri, 25 Mar 2005 15:14:06 +0100
+
+aa-debhelper (0.1) unstable; urgency=low
+
+  * Initial Release, including dh_divert
+
+ -- Torsten Werner <twerner@debian.org>  Sun, 13 Mar 2005 15:38:34 +0100
+

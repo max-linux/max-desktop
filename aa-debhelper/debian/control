@@ -1,0 +1,12 @@
+Source: aa-debhelper
+Section: devel
+Priority: optional
+Maintainer: Torsten Werner <twerner@debian.org>
+Build-Depends: cdbs (>= 0.4.23-1.1), debhelper (>= 4.1.0)
+Standards-Version: 3.6.0
+
+Package: aa-debhelper
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, debhelper
+Description: extra functionality for debhelper
+ This is a playground to add more functionality to debhelper, currently it is dh_divert.

@@ -1,0 +1,11 @@
+README for aa-debhelper
+
+
+
+The package aa-debhelper is part of the aa-project and adds some functionality
+to debhelper, currently it is just dh_divert. More information can be found at
+the aa-project page at http://alioth.debian.org and in the manpage
+dh_divert(1).
+
+Torsten Werner <twerner@debian.org>
+Sun Mar 13 20:59:06 CET 2005

@@ -1,0 +1,3 @@
+if [ "$1" = remove ]; then
+	dpkg-divert --quiet --package #PACKAGE# --remove --rename #FILE#
+fi

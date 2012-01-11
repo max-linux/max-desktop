@@ -1,0 +1,102 @@
+#!/usr/bin/perl
+
+=head1 NAME
+
+dh_divert - integrates dpkg-divert into debian install scripts
+
+=cut
+
+use strict;
+use warnings;
+use Debian::Debhelper::Dh_Lib;
+
+=head1 SYNOPSIS
+
+B<dh_divert> [S<I<debhelper options>>] [B<-A>] [S<I<file ...>>]
+
+=head1 DESCRIPTION
+
+dh_divert is a debhelper program that is responsible for adding
+calls to dpkg-divert into the install scripts.
+
+Any file names specified as parameters will be diverted into the
+first package dh_divert is told to act on. By default, this is
+the first binary package in debian/control, but if you use -p,
+-i, or -a flags, it will be the first package specified by those
+flags.
+
+Files named debian/package.divert (or debian/divert) can list
+other files to be installed.
+
+=head1 OPTIONS
+
+=over 4
+
+=item B<-A>, B<--all>
+
+Install any files specified by command line parameters in ALL
+packages acted on.
+
+=item I<file ...>
+
+Divert these files for the first package acted on. (Or for all
+packages if -A is specified.)
+
+=back
+
+=head1 RATIONALE
+
+One reason for using dh_divert is to build wrapper packages that changes some
+files and conffiles of already existing Debian packages. To avoid any problems
+with dpkg refusing to overwrite existing files you should use dh_divert in your
+wrapper package to divert the existing files. The new files of your wrapper
+package can now be installed easily with the well known dh_install tool without
+causing any conflicts.
+
+dh_divert can be used in other packages, too - whereever dpkg-divert is
+necessary.
+
+=cut
+
+init();
+
+foreach my $package (@{$dh{DOPACKAGES}}) {
+	my $tmp=tmpdir($package);
+	my $file=pkgfile($package,"divert");
+	
+	my @diverts;
+	
+	if ($file) {
+		@diverts=filearray($file, ".");
+	}	
+
+	if (($package eq $dh{FIRSTPACKAGE} || $dh{PARAMS_ALL}) && @ARGV) {
+		push @diverts, @ARGV;
+	}
+	
+	foreach my $divert (@diverts) {
+		next if excludefile($divert);
+		if (-d $divert) {
+			warn("Cannot divert directories!\n");
+		}
+		else {
+			autoscript($package, 'preinst', 'preinst-divert',
+				"s!#PACKAGE#!$package!g; s!#FILE#!/$divert!g");
+			autoscript($package, 'postrm', 'postrm-divert',
+				"s!#PACKAGE#!$package!g; s!#FILE#!/$divert!g");
+		}
+	}
+}
+
+=head1 SEE ALSO
+
+L<debhelper(7)>
+
+This program is part of the aa-debhelper package which itself is part of
+aa-project.
+
+=head1 AUTHOR
+
+Torsten Werner <twerner@debian.org>
+
+=cut
