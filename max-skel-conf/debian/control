@@ -2,24 +2,18 @@ Source: max-skel-conf
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.0.0), cdbs
+Build-Depends: debhelper (>= 4.0.0), cdbs, aa-debhelper
 Standards-Version: 3.7.2
 
 Package: max-skel-conf
 Architecture: all
-Depends: max-dpsyco-custom
-Conflicts: max-3.0-skel-conf
-Replaces: max-3.0-skel-conf
 Description: Configuración skel para Ubuntu/MAX.
- Configuración basada en dpsyco para /etc/skel y APT
+ Configuración basada en dh_divert para /etc/skel y APT
  Contiene:
   * /etc/skel
-  * /etc/skel-alumno
-  * /etc/apt/preferences
-  * /etc/samba/smb.conf
 
 Package: homealumno
 Architecture: all
-Depends: max-dpsyco-custom, max-skel-conf, max-menus, rsync
-Description: Sistema modo kiosko para el usuario alumno
- Configuración basada en dpsyco para /etc/skel y max-menus
+Depends: max-skel-conf, max-menus, rsync
+Description: Sistema modo kiosko para el usuario alumno (antiguo)
+ Sistema modo kiosko para el usuario alumno (antiguo)

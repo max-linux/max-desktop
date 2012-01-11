@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
 
 include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/aa-debhelper.mk
 
 binary-install/max-skel-conf::
 	# clean svn dirs
@@ -10,11 +11,13 @@ binary-install/max-skel-conf::
 #	rm -rf $(CURDIR)/debian/max-skel-conf/usr/share/dpsyco/skel/etc/skel/.local
 
 	@for dir in `find $(CURDIR)/debian/max-skel-conf/usr -type d`; do \
-                echo "   TRY TO DELETE: $$dir"; \
+#                echo "   TRY TO DELETE: $$dir"; \
 #		(rmdir -p --ignore-fail-on-non-empty "$$dir" || true); \
 		rmdir -p --ignore-fail-on-non-empty "$$dir"; \
                 ([ ! -d "$$dir" ] && echo "   EMPTY DELETED: $$dir"); \
 	done || true
+
+	rm -rf $(CURDIR)/debian/max-skel-conf/usr/share/dpsyco/
 
 binary-install/homealumno::
 	# clean svn dirs

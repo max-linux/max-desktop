@@ -1,3 +1,22 @@
+max-skel-conf (7.0.max3) max; urgency=low
+
+  * Fix max-skel-conf.postinst
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 14:45:20 +0100
+
+max-skel-conf (7.0.max2) max; urgency=low
+
+  * Fix debian/max-skel-conf.divert file
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 14:40:46 +0100
+
+max-skel-conf (7.0.max1) max; urgency=low
+
+  * Build in MAX 7.0
+  * Convert dpsyco to dh_divert
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 14:34:41 +0100
+
 max-skel-conf (6.0.max9) max; urgency=low
 
   * Change issue and motd to 6.5
