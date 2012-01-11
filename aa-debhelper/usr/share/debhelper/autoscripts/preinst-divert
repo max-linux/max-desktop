@@ -1,4 +1,4 @@
 if [ "$1" = install ]; then
-	grep -q "^/etc" "#FILE#" && ucf --purge "#FILE#"
+	grep -q "^/etc" "#FILE#" 2>/dev/null && ucf --purge "#FILE#"
 	dpkg-divert --quiet --package #PACKAGE# --add --rename #FILE#
 fi

@@ -1,3 +1,10 @@
+aa-debhelper (0.2max5) max; urgency=low
+
+  * usr/share/debhelper/autoscripts/preinst-divert:
+    - Hide grep errors
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 16:42:49 +0100
+
 aa-debhelper (0.2max4) max; urgency=low
 
   * Remove from ucf in preinst
