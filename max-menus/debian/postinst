@@ -2,9 +2,9 @@
 
 
 if [ "$1" = "configure" ]; then
-  echo -n " * Updating menus ..."
-  /usr/sbin/update-dpsyco-skel >/dev/null 2>&1
-  echo ""
+  #echo -n " * Updating menus ..."
+  #/usr/sbin/update-dpsyco-skel >/dev/null 2>&1
+  #echo ""
 
 
   # change default audio player totem => rhythmbox

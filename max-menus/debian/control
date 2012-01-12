@@ -2,15 +2,14 @@ Source: max-menus
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 7.0.0), cdbs, xmlstarlet
+Build-Depends: debhelper (>= 7.0.0), cdbs, xmlstarlet, aa-debhelper
 Standards-Version: 3.8.4
 
 Package: max-menus
 Architecture: all
-Depends: max-dpsyco-custom
+#Depends: max-dpsyco-custom
 Description: Configuración de menus para Ubuntu/MAX.
- Configuración basada en dpsyco para /etc/skel
+ Configuración basada en dh_divert para menus, lanzadores y submenus
  Contiene:
-  * /etc/skel/.config
-  * /etc/skel/.share
   * /usr/share/max/applications
+  * /etc/xdg/menus
