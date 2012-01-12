@@ -1,3 +1,16 @@
+max-skel-conf (7.0.max10) max; urgency=low
+
+  * usr/bin/max-arch:
+    - Use file /sbin/mkfs to get arch when dpkg-dev is not installed
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 12 Jan 2012 16:21:49 +0100
+
+max-skel-conf (7.0.max9) max; urgency=low
+
+  * Build with new aa-debhelper
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 12 Jan 2012 16:14:38 +0100
+
 max-skel-conf (7.0.max8) max; urgency=low
 
   * Fix /etc/default => /etc/default/rcS
