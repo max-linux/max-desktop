@@ -10,7 +10,7 @@ Package: max-firefox-conf
 Architecture: all
 Recommends: max-java-plugin
 Depends: max-dpsyco-custom, 
-         firefox (>= 7.0.1), 
+         firefox (>= 9.99), 
          firefox-locale-es, firefox-locale-en,
          apturl,
 	 max-ubufox,
@@ -21,7 +21,7 @@ Depends: max-dpsyco-custom,
 #         xul-ext-flashblock,
          xul-ext-firebug,
          xul-ext-greasemonkey,
-Conflicts: firefox (<< 7.0), firefox (>= 7.0.2)
+Conflicts: firefox (<< 10.0), firefox (>= 11.0)
 Description: Configuración de firefox para Ubuntu/MAX.
  Configuración basada en dpsyco/ubufox para firefox.
  Contiene bookmarks y preferencias del perfil de firefox.

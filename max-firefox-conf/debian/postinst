@@ -5,52 +5,6 @@
 case "$1" in
     configure)
 
-
-    if [ -e /usr/share/pixmaps/firefox-3.0.png ]; then
-       if [ ! -e /usr/share/pixmaps/firefox.png ]; then
-         ln -s /usr/share/pixmaps/firefox-3.0.png /usr/share/pixmaps/firefox.png || true
-       fi
-    fi
-
-#    if [ ! -e /usr/lib/firefox-addons/extensions/langpack-es@firefox-3.6.ubuntu.com ]; then
-#       if [ -d /usr/lib/firefox-addons/extensions/langpack-es-ES@firefox-3.6.ubuntu.com  ]; then
-#         ln -s /usr/lib/firefox-addons/extensions/langpack-es-ES@firefox-3.6.ubuntu.com \
-#		/usr/lib/firefox-addons/extensions/langpack-es@firefox-3.6.ubuntu.com || true
-#       fi
-#    fi
-    if [ -e /usr/lib/firefox-addons/extensions/langpack-es@firefox-3.6.ubuntu.com ]; then
-      rm -f /usr/lib/firefox-addons/extensions/langpack-es@firefox-3.6.ubuntu.com
-    fi
-
-    # configure alternatives
-    if [ "$(readlink /etc/alternatives/x-www-browser)" = "/usr/bin/firefox-3.0" ]; then
-      # remove alternative
-      update-alternatives --remove /usr/bin/x-www-browser /usr/bin/firefox 2>/dev/null|| true
-      update-alternatives --remove /usr/bin/x-www-browser /usr/bin/firefox-3.0 2>/dev/null || true
-      update-alternatives --remove x-www-browser /usr/bin/firefox 2>/dev/null || true
-      update-alternatives --remove x-www-browser /usr/bin/firefox-3.0 2>/dev/null || true
-
-      if [ -e /etc/alternatives/x-www-browser ]; then
-        # force removal
-        rm -f /etc/alternatives/x-www-browser
-        ln -s /usr/bin/firefox /etc/alternatives/x-www-browser
-      fi
-    fi
-
-    # install new alternative
-    update-alternatives --install /usr/bin/x-www-browser \
-        x-www-browser /usr/bin/firefox 40
-
-    update-alternatives --auto x-www-browser
-
-
-    [ -d /usr/lib/firefox-4.0.1 ]   && rm -rf /usr/lib/firefox-4.0.1
-    [ -d /usr/lib/firefox-5.0 ]     && rm -rf /usr/lib/firefox-5.0
-    [ -d /usr/lib/firefox-6.0 ]     && rm -rf /usr/lib/firefox-6.0
-    [ -d /usr/lib/firefox-6.0.2 ]   && rm -rf /usr/lib/firefox-6.0.2
-    [ -d /usr/lib/firefox-7.0 ]     && rm -rf /usr/lib/firefox-7.0
-
-
     # Update DNI-e certificates if exists
     [ -e /var/lib/dpkg/info/dnie-support.postinst ] && bash /var/lib/dpkg/info/dnie-support.postinst || true
 
