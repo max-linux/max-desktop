@@ -3,4 +3,4 @@
 // here to become effective.
 
 // Example: Homepage
-//pref("browser.startup.homepage", "file:/usr/share/doc/ubufox/example-homepage.properties");
+//pref("browser.startup.homepage", "file:/usr/share/doc/xul-ext-ubufox/example-homepage.properties");

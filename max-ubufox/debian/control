@@ -2,13 +2,13 @@ Source: max-ubufox
 Section: web
 Priority: optional
 Maintainer: Alexander Sack <asac@ubuntu.com>
-Build-Depends: debhelper (>= 5), cdbs, quilt, mozilla-devscripts, zip, tree
+Build-Depends: debhelper (>= 5), cdbs, quilt, mozilla-devscripts, zip, tree, lsb-release
 XS-Vcs-Bzr: https://code.launchpad.net/~ubuntu-core-dev/ubufox/ubuntu/
 Standards-Version: 3.7.2.1
 
 Package: max-ubufox
 Architecture: all
-Depends: firefox, apturl (>= 0.1.2ubuntu1) | apturl-kde, ${misc:Depends}
+Depends: aptdaemon, libglib2.0-0 (>= 2.26), firefox, apturl (>= 0.1.2ubuntu1) | apturl-kde, ${misc:Depends}
 Recommends: ${xpi:Recommends}
 Enhances: ${xpi:Enhances}
 Conflicts: ubufox, xul-ext-ubufox

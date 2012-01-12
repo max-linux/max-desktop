@@ -2,6 +2,7 @@
 
 #ORIG_PATH=/home/mario/MaX/build/ubufox/ubufox-0.9~rc1/
 ORIG_PATH=/home/madrid/MaX/build/firefox4/ubufox-0.9/
+ORIG_PATH=/home/madrid/MaX/build/ubufox/ubufox-1.5/
 
 #for f in $(find usr/ -type f -name "*py"); do
 for e in $(find $ORIG_PATH -type f | grep -v ".svn"); do

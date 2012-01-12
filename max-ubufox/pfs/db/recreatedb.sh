@@ -39,14 +39,13 @@ echo -- Inserting Data ...
 echo
 echo
 
-distributionIDs="8.04 8.10 9.04 9.10 10.04"
+distributionIDs="10.04 10.10 11.04 11.10 12.04"
 
-archs_7_10="amd64 i386 powerpc sparc"
-archs_8_04="amd64 i386"
-archs_8_10="amd64 i386"
-archs_9_04="amd64 i386"
-archs_9_10="amd64 i386"
 archs_10_04="amd64 i386"
+archs_10_10="amd64 i386"
+archs_11_04="amd64 i386"
+archs_11_10="amd64 i386"
+archs_12_04="amd64 i386"
 
 for distro in $distributionIDs; do
 

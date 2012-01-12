@@ -35,75 +35,146 @@
  * ***** END LICENSE BLOCK ***** */
 
 Components.utils.import("resource://gre/modules/Services.jsm");
-Components.utils.import("resource://ubufox/uAddonInstaller.jsm");
+Components.utils.import("resource://ubufox/UpdateRestartNotifier.jsm");
 
-function getAppVersion ()
-{
-  var versionString = null;
-  try {
-    versionString = Components.classes["@mozilla.org/fuel/application;1"].getService(Components.interfaces.extIApplication).version;
-  } catch (e) {
-  }
+if (!com) var com = {};
+if (!com.ubuntu) com.ubuntu = {};
 
-  if (versionString == null)
-    return null;
+(function() {
+  const Ci = Components.interfaces;
+  const Cc = Components.classes;
+  const Cu = Components.utils;
 
-  if (String_startsWith (versionString, "3.0"))
-    versionString = "3.0";
-  else if (String_startsWith (versionString, "3.5"))
-    versionString = "3.5";
-  else // Return null for > 3.6 as firefox is unversioned now
-    versionString = null;
+  var UpdateRestartListener = {
+    updated: false,
+    _buttons: null,
+    _restartNotificationLabel: null,
 
-  return versionString;
-}
+    get buttons() {
+      if (!this._buttons) {
+        let bundle = document.getElementById("ubufox-restart-strings");
+        let restartNotificationButton = bundle.getString("restartNotificationButton");
+        let restartNotificationKey = bundle.getString("restartNotificationKey");
 
-function getSourcePackageName ()
-{
-  var sourcePackageName = "firefox";
-  var versionString = getAppVersion();
-  if (versionString)
-    sourcePackageName = sourcePackageName + "-" + versionString;
+        this._buttons = [{ label: restartNotificationButton,
+                           accessKey: restartNotificationKey,
+                           callback: UpdateRestartNotifier.restart }];
+      }
 
-  return sourcePackageName;
-}
+      return this._buttons;
+    },
 
-function ubufoxReportBug(event) {
+    get restartNotificationLabel() {
+      if (!this._restartNotificationLabel) {
+        let bundle = document.getElementById("ubufox-restart-strings");
+        this._restartNotificationLabel = bundle.getString("restartNotificationLabel");
+      }
 
-  var executable =
-      Components.classes['@mozilla.org/file/local;1']
-      .createInstance(Components.interfaces.nsILocalFile);
+      return this._restartNotificationLabel;
+    },
 
-  executable.initWithPath("/usr/bin/ubuntu-bug");
+    addNotificationToBrowser: function URL_addNotificationToBrowser(browser) {
+      let notificationBox = gBrowser.getNotificationBox(browser);
+      let notification = notificationBox
+                         .getNotificationWithValue("notification-restart");
+      if (!notification) {
+        notificationBox.appendNotification(this.restartNotificationLabel,
+                                           "notification-restart", "",
+                                           notificationBox.PRIORITY_WARNING_LOW,
+                                           this.buttons);
+      }
+    },
 
-  if(!executable.exists () || !executable.isExecutable())
-         alert('Unexpected error!');
+    onUpdatedNotify: function URL_onUpdatedNotify() {
+      if (!this.updated) {
+        this.updated = true;
 
-  var procUtil =
-      Components.classes['@mozilla.org/process/util;1']
-      .createInstance(Components.interfaces.nsIProcess);
+        gBrowser.tabContainer.addEventListener("TabOpen", function(aEvent) {
+          UpdateRestartListener.addNotificationToBrowser(gBrowser
+                                                         .getBrowserForTab(aEvent.target));
+        }, false);
+      }
 
-  var nsFile = executable.QueryInterface(Components.interfaces.nsIFile);
+      gBrowser.browsers.forEach(function(browser) {
+        UpdateRestartListener.addNotificationToBrowser(browser);
+      });
+    }
+  };
 
-  procUtil.init(executable);
+  this.Ubufox = {
+    openPluginFinder: function() {
+      let contentMimeArray = {};
+      let pluginsOnTab = false;
+      let elements = gBrowser.selectedBrowser.contentDocument
+                                             .getElementsByTagName("embed");
+      for (let a = 0; a < elements.length; a++) {
+        let element = elements[a];
+        let pluginInfo = getPluginInfo(element);
+        contentMimeArray[pluginInfo.mimetype] = pluginInfo;
+        pluginsOnTab = true;
+      }
+      window.openDialog("chrome://ubufox/content/pluginAlternativeOverlay.xul",
+                       "PFSWindow", "chrome,centerscreen,resizable=yes",
+                       {plugins: contentMimeArray,
+                        browser: gBrowser.selectedBrowser,
+                        pluginsOnTab: pluginsOnTab});
+    },
 
-  var args = null;
-  args = new Array("-p", getSourcePackageName());
+    reportBug: function() {
+      let executable = Cc["@mozilla.org/file/local;1"]
+                          .createInstance(Ci.nsILocalFile);
 
-  var res = procUtil.run(false, args, args.length);
-}
+      executable.initWithPath("/usr/bin/ubuntu-bug");
 
+      if(!executable.exists () || !executable.isExecutable())
+        alert('Unexpected error!');
 
-function ubufoxGetHelpOnline(event)
-{
-  var codename = Services.prefs.getCharPref("extensions.ubufox@ubuntu.com.codename");
-  var getHelpUrl = "https://launchpad.net/distros/ubuntu/" + codename + "/+sources/" + getSourcePackageName() + "/+gethelp";
-  openUILink(getHelpUrl, event, false, true);
-}
+      let procUtil = Cc["@mozilla.org/process/util;1"]
+                        .createInstance(Ci.nsIProcess);
 
-function ubufoxHelpTranslateLaunchpad(event)
-{
-  var codename = Services.prefs.getCharPref("extensions.ubufox@ubuntu.com.codename");
-  var translateUrl = "https://launchpad.net/distros/ubuntu/" + codename + "/+sources/" + getSourcePackageName() + "/+translate";
-  openUILink(translateUrl, event, false, true);
-}
+      procUtil.init(executable);
+
+      let pkgname = Cc["@mozilla.org/xre/app-info;1"]
+                    .getService(Ci.nsIXULAppInfo).name.toLowerCase()
+      if (!pkgname) {
+          pkgname = "firefox";
+      }
+      let args = new Array(pkgname);
+
+      procUtil.run(false, args, args.length);
+    },
+
+    help: function() {
+      let codename = Services.prefs.getCharPref("extensions.ubufox.codename");
+      let url = "https://launchpad.net/distros/ubuntu/" + codename + "/+sources/firefox/+gethelp";
+      openUILinkIn(url, "tab");
+    },
+
+    translate: function() {
+      let codename = Services.prefs.getCharPref("extensions.ubufox.codename");
+      let url = "https://launchpad.net/distros/ubuntu/" +
+                codename + "/+sources/firefox/+translate";
+      openUILinkIn(url, "tab");
+    },
+  };
+
+  addEventListener("load", function() {
+    try {
+      window.removeEventListener("load", arguments.callee, false);
+      UpdateRestartNotifier.addListener(UpdateRestartListener);
+      let item = document.getElementById("ubufox-helptranslate");
+      item.hidden = true;
+    } catch(e) {
+      Cu.reportError(e);
+    }
+  }, false);
+
+  addEventListener("unload", function() {
+    removeEventListener("unload", arguments.callee, false);
+    // Don't remove this call, ever. Without this we will leak the
+    // document as it is in the scope of the callback, which
+    // UpdateRestartNotifier is holding on to
+    UpdateRestartNotifier.removeListener(UpdateRestartListener);
+  }, false);
+
+}).call(com.ubuntu);

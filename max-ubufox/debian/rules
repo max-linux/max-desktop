@@ -1,49 +1,37 @@
 #!/usr/bin/make -f
 
-# name the package (as in debian/control) that will ship the extension
-MOZ_EXTENSION_PKG := max-ubufox
-#
-# xpi.mk will auto detect the .xpi in your package. if you want to do it
-# explicit, use this variable
-#MOZ_XPI_FILE := yourextension.xpi
-#
-# xpi.mk tries to auto detect the extension manager id (em:id) from the .xpis
-# install.rdf file. There might be cases where this doesn't work. use the following
-# variable to explicitly define an extension ID and disable auto detection
-#MOZ_EM_ID := {xxxxxxx-xxxx-xxxx}
-#
-# xpi.mk will run a build command before packaging an .xpi file. you can use this
-# to produce an .xpi. if you define this, the clean rule will remove any .xpi file
-# found in the top level directory
 MOZ_XPI_BUILD_COMMAND = sh build.sh
 
 include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/rules/patchsys-quilt.mk
 include /usr/share/mozilla-devscripts/xpi.mk
 
-#common-install-indep::
-
 binary-install/max-ubufox::
-	#mkdir -p debian/max-ubufox/usr/share/ubufox
-	#mv debian/max-ubufox/usr/share/xul-ext/max-ubufox/* debian/max-ubufox/usr/share/ubufox/
-	#rm -rf debian/max-ubufox/usr/share/xul-ext
+	rm -rf debian/max-ubufox/usr/share/mozilla
+	dh_link -pmax-ubufox usr/share/xul-ext/max-ubufox usr/lib/firefox-addons/extensions/ubufox@ubuntu.com
+	dh_install content/startpage.html usr/share/xul-ext/max-ubufox/
 	tree debian/max-ubufox/
 
-	dh_install -pmax-ubufox debian/ubufox.js etc/firefox/pref/
+#binary-install/max-ubufox::
+#	#mkdir -p debian/max-ubufox/usr/share/ubufox
+#	#mv debian/max-ubufox/usr/share/xul-ext/max-ubufox/* debian/max-ubufox/usr/share/ubufox/
+#	#rm -rf debian/max-ubufox/usr/share/xul-ext
+#	tree debian/max-ubufox/
+#
+#	dh_install -pmax-ubufox debian/ubufox.js etc/firefox/pref/
 #	dh_link -pmax-ubufox /etc/firefox-3.0/pref/ubufox.js /usr/share/ubufox/defaults/preferences/000system.js
-	dh_link -pmax-ubufox /etc/firefox-3.0/pref/ubufox.js /usr/share/xul-ext/max-ubufox/defaults/preferences/000system.js
-
-	dh_install debian/bookmarks.html usr/share/dpsyco/skel/etc/firefox/profile/
-
-	# ./usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/ubufox@ubuntu.com -> ../../../max-ubufox
-
-	rm -f "debian/max-ubufox/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/ubufox@ubuntu.com"
+#	dh_link -pmax-ubufox /etc/firefox-3.0/pref/ubufox.js /usr/share/xul-ext/max-ubufox/defaults/preferences/000system.js
+#
+#	dh_install debian/bookmarks.html usr/share/dpsyco/skel/etc/firefox/profile/
+#
+#	# ./usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/ubufox@ubuntu.com -> ../../../max-ubufox
+#
+#	rm -f "debian/max-ubufox/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/ubufox@ubuntu.com"
 #	dh_link -pmax-ubufox usr/share/ubufox "usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/ubufox@ubuntu.com"
-	dh_link -pmax-ubufox usr/share/xul-ext/max-ubufox "usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/ubufox@ubuntu.com"
-
-
-	# ./usr/share/ubufox/defaults/preferences/000system.js -> /etc/firefox-3.0/pref/ubufox.js
-	rm -f debian/max-ubufox/usr/share/ubufox/defaults/preferences/000system.js
+#	dh_link -pmax-ubufox usr/share/xul-ext/max-ubufox "usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/ubufox@ubuntu.com"
+#
+#
+#	# ./usr/share/ubufox/defaults/preferences/000system.js -> /etc/firefox-3.0/pref/ubufox.js
+#	rm -f debian/max-ubufox/usr/share/ubufox/defaults/preferences/000system.js
 #	dh_link -pmax-ubufox etc/firefox/pref/ubufox.js usr/share/ubufox/defaults/preferences/000system.js
 	dh_link -pmax-ubufox etc/firefox/pref/ubufox.js usr/share/xul-ext/max-ubufox/defaults/preferences/000system.js
 
@@ -52,4 +40,4 @@ binary-install/max-ubufox::
 #	dh_install content/max-logo.png   usr/share/ubufox/
 
 
-	dh_install content/startpage.html usr/share/xul-ext/max-ubufox/
+#	dh_install content/startpage.html usr/share/xul-ext/max-ubufox/

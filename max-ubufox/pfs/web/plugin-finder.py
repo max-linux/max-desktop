@@ -36,7 +36,7 @@ import plugindata
 counter=0
 docroot=""
 CACHE_TIME_SEC=3600
-DB_DIR="/home/asac/pfsdb/"
+DB_DIR="/home/chr1s/public_html/pfsdb/"
 ENABLE_MOZILLA_PFS_RESULTS=None
 
 arch_map=dict()
@@ -123,13 +123,17 @@ def retrieve_descriptions(req, parameters):
 	appid = parameters['appID']
 
 	cur = apt_con.cursor()
-	cur.execute("SELECT name, mimetype, pkgname, description, section, filehint FROM package " \
+	cur.execute("SELECT name, mimetype, pkgname, description, section, filehint, manualInstallURL FROM package " \
 			+ "WHERE mimetype=? AND architecture=? AND appid=? " \
 			+ "AND distribution=? order by package.weight desc", (mimetype, architecture, appid, distribution))
 	for row in cur:
-		apturl = "apt:" + row[2] + "?section=" + row[4]
-		if row[4] == "multiverse":
-			apturl = apturl + "?section=universe"
+		apturl = ""
+		if row[2] != "":
+			section = row[4]
+			if section == "multiverse":
+				section = "universe"
+			apturl = "apt:" + row[2] + "?section=" + section
+
 		desc = plugindata.PluginDescription ( 		\
 				row[0], 	\
 				row[1], 	\
@@ -138,7 +142,7 @@ def retrieve_descriptions(req, parameters):
 				None,		\
 				apturl,	\
 				None,	\
-				None,	\
+				row[6],	\
 				None,		\
 				"false", \
 				row [5], \

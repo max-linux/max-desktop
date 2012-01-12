@@ -25,10 +25,9 @@ locale	ubufox	sl-SI	locale/sl-SI/
 locale	ubufox	sv-SE	locale/sv-SE/
 locale	ubufox	uk	locale/uk/
 locale	ubufox	zh-CN	locale/zh-CN/
+locale  ubufox  zh-TW   locale/zh-TW/
 skin	ubufox	classic/1.0	skin/
-overlay	chrome://browser/content/browser.xul	chrome://ubufox/content/ubuntuHelpMenuOverlay.xul
-overlay	chrome://browser/content/browser.xul	chrome://ubufox/content/updateRestart.xul
-overlay chrome://browser/content/browser.xul	chrome://ubufox/content/ubuntuAltpluginsOverlay.xul
+overlay	chrome://browser/content/browser.xul	chrome://ubufox/content/overlay.xul
 
 override chrome://mozapps/content/plugins/pluginInstallerWizard.xul chrome://ubufox/content/pluginInstallerWizard.xul
 
@@ -38,9 +37,5 @@ contract @mozilla.org/network/protocol/about;1?what=startpage {7a2a7a56-827f-4b3
 category agent-style-sheets pluginfinder chrome://ubufox/content/alternatePluginsBinding.css
 category agent-style-sheets xbl chrome://ubufox/content/alternatePluginsBinding.css
 category agent-style-sheets binding chrome://ubufox/content/alternatePluginsBinding.css
-
-component {f0b9df8b-0b9a-4432-9812-45b597e71e26} components/ufoxHTTPListener.js
-contract @canonical.com/ufox-http-listener;1 {f0b9df8b-0b9a-4432-9812-45b597e71e26}
-category profile-after-change ufoxHTTPListener @canonical.com/ufox-http-listener;1
 
 resource ubufox modules/

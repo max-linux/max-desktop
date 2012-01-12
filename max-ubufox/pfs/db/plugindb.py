@@ -22,6 +22,7 @@ import threading
 import nppapt
 import sqlite3
 import sys
+import json
 
 if len(sys.argv) < 3:
 	print "CMD <release> <archs>"
@@ -47,16 +48,31 @@ class AptPluginDbUpdater:
 			if e.mimetype in mimetype_pkgweights and e.pkgname in mimetype_pkgweights [ e.mimetype ]:
 				pkgweight = mimetype_pkgweights [ e.mimetype ] [ e.pkgname ]
 
-			print "insert into package (pkgname, pkgdesc, pkglongdesc, name, mimetype, architecture, appid, distribution, section, weight, filehint, description) values (?,?,?,?,?,?,\"{"+e.app_id.strip()+"}\",?,?,?,?,?)", \
+			print "insert into package (pkgname, pkgdesc, pkglongdesc, name, mimetype, architecture, appid, distribution, section, weight, filehint, description, manualInstallURL) values (?,?,?,?,?,?,\"{"+e.app_id.strip()+"}\",?,?,?,?,?,\"\")", \
 			e.pkgname, e.pkgdesc, e.pkglongdesc, e.name, e.mimetype, architecture, e.distribution, e.section, pkgweight, e.filehint, e.description
 
 			try:
-				self._apt_con.execute("insert into package (pkgname, pkgdesc, pkglongdesc, name, mimetype, architecture, appid, distribution, section, weight, filehint, description) values (?,?,?,?,?,?,\"{"+e.app_id.strip()+"}\",?,?,?,?,?)", \
+				self._apt_con.execute("insert into package (pkgname, pkgdesc, pkglongdesc, name, mimetype, architecture, appid, distribution, section, weight, filehint, description, manualInstallURL) values (?,?,?,?,?,?,\"{"+e.app_id.strip()+"}\",?,?,?,?,?,\"\")", \
 					(e.pkgname, e.pkgdesc, e.pkglongdesc, e.name, e.mimetype, architecture, e.distribution, e.section, pkgweight, e.filehint, e.description))
 				print " ... inserted ... "
 			except Exception, e:
 				print "ERROR", e.args
 
+	def add_extra_data (self, arch, dist):
+		fd = open('extra.json', 'r')
+		extras = json.load(fd)
+		fd.close()
+
+		for mimetype in extras['mimetypes']:
+			entry = extras['mimetypes'][mimetype]
+			for appid in extras[entry]['appids']:
+				print "insert into package (pkgname, pkgdesc, pkglongdesc, name, mimetype, architecture, appid, distribution, section, weight, filehint, description, manualInstallURL) values (\"\",\"\",\"\",?,?,?,\"{"+appid+"}\",?,\"\",\"\",\"\",?,?)", extras[entry]['name'], mimetype, arch, dist, extras[entry]['description'], extras[entry]['manualInstallURL']
+
+				try:
+					self._apt_con.execute("insert into package (pkgname, pkgdesc, pkglongdesc, name, mimetype, architecture, appid, distribution, section, weight, filehint, description, manualInstallURL) values (\"\",\"\",\"\",?,?,?,\"{"+appid+"}\",?,\"\",-1,\"\",?,?)", (extras[entry]['name'], mimetype, arch, dist, extras[entry]['description'], extras[entry]['manualInstallURL']))
+					print " ... inserted ... "
+				except Exception, e:
+					print "ERROR", e.args
 
 	def geterror (self):
 		return self._error
@@ -80,7 +96,8 @@ class AptPluginDbUpdater:
 				"  weight integer NOT NULL," + \
 				"  filehint integer NOT NULL," + \
 				"  description integer NOT NULL," + \
-				"  UNIQUE (pkgname, architecture, appid, mimetype, distribution)" + \
+				"  manualInstallURL string NOT NULL," + \
+				"  UNIQUE (pkgname, architecture, appid, mimetype, distribution, manualInstallURL)" + \
 				");")
 
 		except:
@@ -95,6 +112,8 @@ class AptPluginDbUpdater:
 				for rel in rel_arr:
 					npp_info_entries = nppapt.get_npp_entries_for_arch_and_distribution(apttmproot, architecture, rel)
 					self.redo_arch_rel_data(architecture, rel, npp_info_entries)
+					self.add_extra_data(architecture, rel)
+
 		finally:
 			if not apttmproot is None:
 				nppapt.tear_down_tmp_cache(apttmproot)

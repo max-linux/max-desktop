@@ -56,14 +56,12 @@
         onwizardfinish="return wizardFinish();">
 
   <script type="application/javascript" src="chrome://ubufox/content/pluginInstallerWizard.js"/>
-  <script type="application/javascript" src="chrome://ubufox/content/pluginInstallerDatasource.js"/>
-  <script type="application/javascript" src="chrome://ubufox/content/pluginInstallerService.js"/>
 
   <stringbundleset id="pluginSet">
     <stringbundle id="brandStrings" src="chrome://branding/locale/brand.properties"/>
     <stringbundle id="xpinstallStrings" src="chrome://global/locale/xpinstall/xpinstall.properties"/>
     <stringbundle id="pluginWizardString" src="chrome://mozapps/locale/plugins/plugins.properties"/>
-    <stringbundle id="ubufoxPluginWizardString" src="chrome://ubufox/locale/ubufox.properties"/>
+    <stringbundle id="ubufoxPluginWizardString" src="chrome://ubufox/locale/plugins.properties"/>
   </stringbundleset>
 
   <wizardpage label="&pluginWizard.firstPage.title; 2">
@@ -109,10 +107,7 @@
   <wizardpage label="&pluginWizard.installPluginsPage.title;" 
               onpageshow="gPluginInstaller.startPluginInstallation()">
     <description value="&pluginWizard.installPluginsPage.description.label;"/>
-
     <separator />
-
-    <description id="plugin_install_progress_message" value=""/>
     <progressmeter id="plugin_install_progress" mode="undetermined"/>
   </wizardpage>
 

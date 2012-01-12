@@ -110,8 +110,14 @@ AboutStartpage.prototype = {
 
     if (!getIsOffline()) {
       let searchEngineName = getCurrentSearchEngineName();
-      let release = Services.prefs.getCharPref("extensions.ubufox@ubuntu.com.release");
-      let uri = HOMEPAGE_ONLINE_PREFIX + release + "/" + searchEngineName + "/";
+      let release = Services.prefs.getCharPref("extensions.ubufox.release");
+      var uri;
+      // allow defaults packages to overwrite the homepage
+      try {
+        uri = Services.prefs.getCharPref("extensions.ubufox@ubuntu.com.custom_homepage");
+      } catch(e) {
+        uri = HOMEPAGE_ONLINE_PREFIX + release + "/" + searchEngineName + "/";
+      }
       let channel = ios.newChannel(uri, null, null);
       channel.originalURI = aURI;
       channel.owner = principal;

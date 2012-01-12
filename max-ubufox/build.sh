@@ -71,7 +71,7 @@ for CHROME_SUBDIR in $CHROME_PROVIDERS; do
   find $CHROME_SUBDIR -path '*CVS*' -prune -o -type f -print | grep -v \~ >> files
 done
 
-zip -0 -r $JAR_FILE `cat files`
+zip -0 -r $JAR_FILE `grep -v ".svn" files`
 # The following statement should be used instead if you don't wish to use the JAR file
 #cp --verbose --parents `cat files` $TMP_DIR/chrome
 
@@ -79,7 +79,7 @@ zip -0 -r $JAR_FILE `cat files`
 echo "Copying various files to $TMP_DIR folder..."
 for DIR in $ROOT_DIRS; do
   mkdir $TMP_DIR/$DIR
-  FILES="`find $DIR -path '*CVS*' -prune -o -type f -print | grep -v \~`"
+  FILES="`find $DIR -path '*CVS*' -prune -o -type f -print | grep -v \~| grep -v .svn`"
   echo $FILES >> files
   cp --verbose --parents $FILES $TMP_DIR
 done
