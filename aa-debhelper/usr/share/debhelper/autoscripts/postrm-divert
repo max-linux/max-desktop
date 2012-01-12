@@ -1,4 +1,8 @@
 if [ "$1" = remove ]; then
 	dpkg-divert --quiet --package #PACKAGE# --remove #FILE#
-	[ -e "#FILE#.divert" ] && mv "#FILE#.divert" "#FILE#"
+
+	if [ -e "#FILE#.divert" ] && \
+           [ ! -e "#FILE#" ]; then
+		mv "#FILE#.divert" "#FILE#"
+	fi
 fi

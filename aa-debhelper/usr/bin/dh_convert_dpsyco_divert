@@ -10,7 +10,7 @@ if ! grep -q "/usr/share/cdbs/1/rules/aa-debhelper.mk" debian/rules ; then
 fi
 
 if ! grep -q "aa-debhelper" debian/control; then
-  echo "* WARNING: Add aa-debhelper to Build-Depends"
+  echo " * WARNING: Add aa-debhelper to Build-Depends"
 fi
 
 echo " * Cleaning and building package..."
@@ -18,7 +18,7 @@ fakeroot debian/rules clean  >/dev/null 2>&1
 fakeroot debian/rules binary >/dev/null 2>&1
 rm -v ../*deb
 
-rm -f debian/*divert
+#rm -f debian/*divert
 
 for f in $(find debian/ -type f | grep dpsyco); do
 
@@ -26,14 +26,15 @@ for f in $(find debian/ -type f | grep dpsyco); do
   fname=$(echo $f| awk -F"/" '{print substr($0,index($0,$3))}')
   new=$(echo $fname | sed 's|usr/share/dpsyco/skel/||g')
 
-  echo " $pkg => $fname => $new"
-  echo "$fname" >> debian/${pkg}.divert
+  echo " $pkg => MOVE $fname => $new"
+  echo "$new" >> debian/${pkg}.divert
 
-  mkdir -p ./$(dirname $new)
-  [ ! -d "./$(dirname $new).svn" ] && svn add ./$(dirname $new)
-  svn move $fname ./$(dirname $new)
+  #mkdir -p ./$(dirname $new)
+  #[ ! -d "./$(dirname $new).svn" ] && svn add ./$(dirname $new)
+  #svn move $fname ./$(dirname $new)
 
 done
 
 
+fakeroot debian/rules clean  >/dev/null 2>&1
 exit

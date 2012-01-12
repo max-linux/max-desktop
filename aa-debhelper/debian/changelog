@@ -1,3 +1,9 @@
+aa-debhelper (0.2max6) max; urgency=low
+
+  * Restore divert on orig in postrm
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 12 Jan 2012 14:23:06 +0100
+
 aa-debhelper (0.2max5) max; urgency=low
 
   * usr/share/debhelper/autoscripts/preinst-divert:
