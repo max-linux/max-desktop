@@ -9,19 +9,18 @@ Standards-Version: 3.8.1
 Package: max-firefox-conf
 Architecture: all
 Recommends: max-java-plugin
-Depends: max-dpsyco-custom, 
-         firefox (>= 9.99), 
+Depends: firefox (>= 9.99), 
          firefox-locale-es, firefox-locale-en,
          apturl,
 	 max-ubufox,
-#         firefox-greasemonkey, 
-#         firefox-downloadhelper, 
-         firefox-procon-latte,
-#         firefox-stylish,
-#         xul-ext-flashblock,
-         xul-ext-firebug,
-         xul-ext-greasemonkey,
-Conflicts: firefox (<< 10.0), firefox (>= 11.0)
+#NO#         firefox-greasemonkey, 
+#NO#         firefox-downloadhelper, 
+#         firefox-procon-latte,
+#NO#         firefox-stylish,
+#NO#         xul-ext-flashblock,
+#         xul-ext-firebug,
+#         xul-ext-greasemonkey,
+Conflicts: firefox (<< 9.99), firefox (>= 10.1)
 Description: Configuración de firefox para Ubuntu/MAX.
  Configuración basada en dpsyco/ubufox para firefox.
  Contiene bookmarks y preferencias del perfil de firefox.

@@ -1,3 +1,15 @@
+max-firefox-conf (7.0.max3) max; urgency=low
+
+  * Fix versions of conflicts
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 12 Jan 2012 16:11:42 +0100
+
+max-firefox-conf (7.0.max2) max; urgency=low
+
+  * Remove dpscyo from depends and disable some extensions temporary
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 12 Jan 2012 16:08:39 +0100
+
 max-firefox-conf (7.0.max1) max; urgency=low
 
   * Build in MAX 7.0
