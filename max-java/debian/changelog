@@ -1,3 +1,15 @@
+max-java (7.0.max4) max; urgency=low
+
+  * Remove MAX version from description
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 12 Jan 2012 16:27:45 +0100
+
+max-java (7.0.max3) max; urgency=low
+
+  * Use max-arch instead of dpkg-architecture
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 12 Jan 2012 16:23:53 +0100
+
 max-java (7.0.max2) max; urgency=low
 
   * Change max-apt with max-skel-conf

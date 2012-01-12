@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
-ARCH=$(dpkg-architecture -qDEB_BUILD_ARCH)
+ARCH=$(max-arch)
 priority=2063
 browser_dirs="xulrunner-addons"
 PLUGIN=libjavaplugin_oji.so
