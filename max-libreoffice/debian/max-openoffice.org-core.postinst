@@ -3,7 +3,8 @@
 
 if [ "$1" = "configure" ]; then
 
-  bash /var/lib/dpkg/info/max-gnome-default-settings.postinst configure || true
+  [ -x /var/lib/dpkg/info/max-gnome-default-settings.postinst ] && \
+       bash /var/lib/dpkg/info/max-gnome-default-settings.postinst configure || true
 
 fi
 
