@@ -77,6 +77,11 @@ struct _ply_boot_splash_plugin
   char *message;
 
   uint32_t is_animating : 1;
+  uint32_t black;
+  uint32_t white;
+  uint32_t brown;
+  uint32_t blue;
+  char *title;
 };
 
 typedef struct
@@ -185,17 +190,16 @@ view_start_animation (view_t *view)
 
   ply_terminal_set_color_hex_value (terminal,
                                     PLY_TERMINAL_COLOR_BLACK,
-                                    0x0075bf); /* MaX blue original 0x2c001e*/ 
+                                    plugin->black);
   ply_terminal_set_color_hex_value (terminal,
                                     PLY_TERMINAL_COLOR_WHITE,
-                                    0xffffff);
+                                    plugin->white);
   ply_terminal_set_color_hex_value (terminal,
                                     PLY_TERMINAL_COLOR_BROWN,
-                                    0xa1bbcf); /* MaX blue light original 0xff4012 */
+                                    plugin->brown);
   ply_terminal_set_color_hex_value (terminal,
                                     PLY_TERMINAL_COLOR_BLUE,
-                                    0xa1bbcf); /* MaX blue light */
-  //                                  0x988592);
+                                    plugin->blue);
 
   ply_text_display_set_background_color (view->display,
                                          PLY_TERMINAL_COLOR_BLACK);
@@ -315,6 +319,8 @@ unpause_views (ply_boot_splash_plugin_t *plugin)
 static ply_boot_splash_plugin_t *
 create_plugin (ply_key_file_t *key_file)
 {
+  char *option;
+
   ply_boot_splash_plugin_t *plugin;
 
   ply_trace ("creating plugin");
@@ -323,6 +329,27 @@ create_plugin (ply_key_file_t *key_file)
   plugin->message = NULL;
 
   plugin->views = ply_list_new ();
+
+  /* Not a pretty API for setting defaults for your config file... */
+  plugin->black = 0x0075bf;/*0x2c001e;*/
+  plugin->white = 0xffffff;/*0xffffff;*/
+  plugin->brown = 0xa1bbcf;/*0xff4012;*/
+  plugin->blue  = 0xa1bbcf;/*0x988592;*/
+
+  option = ply_key_file_get_value (key_file, "ubuntu-text", "black");
+  if (option)
+    sscanf(option, "0x%x", &plugin->black);
+  option = ply_key_file_get_value (key_file, "ubuntu-text", "white");
+  if (option)
+    sscanf(option, "0x%x", &plugin->white);
+  option = ply_key_file_get_value (key_file, "ubuntu-text", "brown");
+  if (option)
+    sscanf(option, "0x%x", &plugin->brown);
+  option = ply_key_file_get_value (key_file, "ubuntu-text", "blue");
+  if (option)
+    sscanf(option, "0x%x", &plugin->blue);
+
+  plugin->title = ply_key_file_get_value (key_file, "ubuntu-text", "title");
 
   return plugin;
 }
@@ -425,8 +452,7 @@ animate_frame (ply_boot_splash_plugin_t *plugin,
 
       ply_text_display_set_background_color (view->display, PLY_TERMINAL_COLOR_BLACK);
       ply_text_display_set_foreground_color (view->display, PLY_TERMINAL_COLOR_WHITE);
-      /*ply_text_display_write (view->display, "Ubuntu 10.04");*/
-      ply_text_display_write (view->display, "   MaX 6.5");
+      ply_text_display_write (view->display, plugin->title);
 
       ply_text_display_set_cursor_position (view->display,
                                             (display_width - 10) / 2,

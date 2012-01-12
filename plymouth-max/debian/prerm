@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+if [ "x$1" = xremove ]; then
+        update-alternatives \
+                --remove default.plymouth /lib/plymouth/themes/max-logo/max-logo.plymouth
+        update-alternatives \
+                --remove text.plymouth /lib/plymouth/themes/max-text/max-text.plymouth
+
+fi
+

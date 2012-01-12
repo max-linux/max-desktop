@@ -2,14 +2,14 @@ Source: plymouth-max
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 7.0.0), cdbs, libplymouth-dev
+Build-Depends: debhelper (>= 7.0.0), cdbs
 Standards-Version: 3.8.4
 XS-Vcs-Browser: http://max.educa.madrid.org:8000/browser/trunk/plymouth-max
 
 Package: plymouth-max
-Architecture: any
-Depends: plymouth, plymouth-theme-text, plymouth-theme-script, ${shlibs:Depends}, ${misc:Depends}
+Architecture: all
+Depends: plymouth, plymouth-theme-ubuntu-text, plymouth-theme-script, ${shlibs:Depends}, ${misc:Depends}
 Conflicts: max-artwork (<<6.0.max9)
 Provides: plymouth-theme
-Description: Plymouth theme of MaX 6.x
- This package contains plymouth MaX 6.x theme and text.so file
+Description: Plymouth theme of MaX
+ This package contains plymouth MaX theme and text.so file

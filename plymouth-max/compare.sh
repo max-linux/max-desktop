@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ORIG_PATH=/home/mario/MaX/build/plymouth/plymouth-0.8.2/
+ORIG_PATH=/home/madrid/MaX/build/plymouth/plymouth-0.8.2/
 
 
 

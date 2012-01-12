@@ -1,16 +1,8 @@
 #!/bin/sh
 
-if [ "$1" = "remove" ]; then
-    dpkg-divert --package plymouth-max --rename --remove /lib/plymouth/text.so.ubuntu || true
-fi
-
-
 
 case "$1" in
     remove)
-        update-alternatives \
-                --remove default.plymouth /lib/plymouth/themes/max-logo/max-logo.plymouth
-
         if which update-initramfs >/dev/null 2>&1
         then
             update-initramfs -u
