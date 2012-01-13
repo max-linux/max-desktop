@@ -1,3 +1,10 @@
+max-tcos (7.0.max1) max; urgency=low
+
+  * Build in MAX 7.0
+  * Remove dpsyco in postinst(postrm
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 13 Jan 2012 14:00:44 +0100
+
 max-tcos (6.0.max5) max; urgency=low
 
   * Remove 5.0 text from lockscreen image (clos ticket #367)
