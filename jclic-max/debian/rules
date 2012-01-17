@@ -2,13 +2,14 @@
 
 
 include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/aa-debhelper.mk
 
 install/jclic-max::
 	install -m 644 demo.jclic.zip debian/jclic-max/usr/share/jclic/demo
 
-	install -m 755 debian/addons/jclic         debian/jclic-max/usr/share/dpsyco/skel/usr/bin/
-	install -m 755 debian/addons/jclicauthor   debian/jclic-max/usr/share/dpsyco/skel/usr/bin/
-	install -m 755 debian/addons/jclicreports  debian/jclic-max/usr/share/dpsyco/skel/usr/bin/
+	install -m 755 debian/addons/jclic         debian/jclic-max/usr/bin/
+	install -m 755 debian/addons/jclicauthor   debian/jclic-max/usr/bin/
+	install -m 755 debian/addons/jclicreports  debian/jclic-max/usr/bin/
 	
 binary-install/jclic-max::
 	# clean svn dirs
