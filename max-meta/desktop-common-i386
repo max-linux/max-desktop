@@ -14,6 +14,7 @@ automake
 avidemux
 bash-completion
 bc
+bluegriffon
 brltty
 build-essential
 celestia
@@ -84,8 +85,6 @@ josm-plugins
 kdeedu
 kde-l10n-es
 kino
-kompozer
-kompozer-l10n-es
 language-pack-es
 language-pack-kde-es-base
 language-selector
@@ -94,6 +93,7 @@ lftp
 libdvdcss2
 libgl1-mesa-glx
 libgl1-mesa-dri
+librecad
 libtool
 lilypond
 linux-image-generic
@@ -157,7 +157,6 @@ python-kde4
 python-qt4
 python-exe
 python-lxml
-qcad
 qelectrotech
 readahead
 robolinux
