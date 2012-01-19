@@ -20,8 +20,10 @@ detect_elo() {
 }
 
 enable_elo() {
-  # quit usplash
-  /etc/init.d/usplash start
+  # quit plymouth
+  if [ -x /bin/plymouth ] && plymouth --ping; then
+        plymouth quit
+  fi
   sleep 1
 
   # call 2 times to ddcprobe (init intel BIOS)
@@ -49,7 +51,7 @@ enable_elo() {
 case "$1" in
 start)  
         detect_elo
-        log_begin_msg "Starting Max40 EloTouch hacks" "max-elotouch"
+        log_begin_msg "Starting MaX EloTouch hacks" "max-elotouch"
           enable_elo
         log_end_msg $?
         ;;
