@@ -1,4 +1,5 @@
 #!/bin/bash
+exit 0
 
 META_GCONF=/usr/share/max/gconf/
 META_GCONF_DUMPS=/usr/share/max/gconf-dumps

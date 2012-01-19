@@ -1,3 +1,10 @@
+max-gnome-default-settings (7.0.max1) max; urgency=low
+
+  * Build in MAX 7.0
+  * Disable postinst postrm script
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 19 Jan 2012 14:34:22 +0100
+
 max-gnome-default-settings (6.0.max23) max; urgency=low
 
   * Add The Butterfly effect (tbe) in infantil panel close ticket #375
