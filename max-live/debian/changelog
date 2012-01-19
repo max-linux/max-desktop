@@ -1,3 +1,10 @@
+max-live (7.0.max1) max; urgency=low
+
+  * Build in MAX 7.0
+  * Convert dpsyco to dh_divert
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 19 Jan 2012 15:00:07 +0100
+
 max-live (6.0.max12) max; urgency=low
 
   * debian/max-live.init:
