@@ -18,7 +18,7 @@ Depends: libreoffice-calc,
 	libreoffice-l10n-es,
 	libreoffice-style-human,
 	libreoffice-thesaurus-es
-Conflicts: max-openoffice.org, max-openoffice.org-core, openoffice.org, openoffice.org-base, openoffice.org-calc, openoffice.org-common, openoffice.org-core, openoffice.org-draw, openoffice.org-emailmerge, openoffice.org-filter-binfilter, openoffice.org-filter-mobiledev, openoffice.org-gnome, openoffice.org-gtk, openoffice.org-help-en-us, openoffice.org-help-es, openoffice.org-hyphenation, openoffice.org-impress, openoffice.org-java-common, openoffice.org-l10n-common, openoffice.org-l10n-es, openoffice.org-math, openoffice.org-officebean, openoffice.org-pdfimport, openoffice.org-presentation-minimizer, openoffice.org-style-galaxy, openoffice.org-style-human, openoffice.org-writer, openclipart-openoffice.org
+Conflicts: max-openoffice.org, max-openoffice.org-core, openoffice.org, openoffice.org-base, openoffice.org-calc, openoffice.org-common, openoffice.org-core, openoffice.org-draw, openoffice.org-emailmerge, openoffice.org-filter-binfilter, openoffice.org-filter-mobiledev, openoffice.org-gnome, openoffice.org-gtk, openoffice.org-help-en-us, openoffice.org-help-es, openoffice.org-impress, openoffice.org-java-common, openoffice.org-l10n-common, openoffice.org-l10n-es, openoffice.org-math, openoffice.org-officebean, openoffice.org-pdfimport, openoffice.org-presentation-minimizer, openoffice.org-style-galaxy, openoffice.org-style-human, openoffice.org-writer, openclipart-openoffice.org
 Description: Dependencias de LibreOffice para MAX
  Metapaquete que instala LibreOffice en MAX
 
@@ -28,7 +28,7 @@ Depends: libreoffice,
 	max-libreoffice-core,
 	libreoffice-pdfimport,
 	libreoffice-presentation-minimizer,
-	openclipart-libreoffice
+#	openclipart-libreoffice
 Description: Dependencias de LibreOffice para MAX
  Metapaquete que instala LibreOffice en MAX
 
