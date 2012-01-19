@@ -3,7 +3,9 @@
 set -e
 
 if [ "$1" = "remove" ]; then
-	/usr/sbin/update-openoffice-dicts
+	[ -x /usr/sbin/update-openoffice-dicts ] && update-openoffice-dicts
 fi
 
 #DEBHELPER#
+
+exit 0

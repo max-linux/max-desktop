@@ -1,3 +1,15 @@
+openoffice.org-thesaurus-es (7.0.max3) max; urgency=low
+
+  * Exit with 0 in postinst/postrm
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 19 Jan 2012 16:55:42 +0100
+
+openoffice.org-thesaurus-es (7.0.max2) max; urgency=low
+
+  * Check for update-openoffice-dicts before calling
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 19 Jan 2012 16:44:03 +0100
+
 openoffice.org-thesaurus-es (7.0.max1) max; urgency=low
 
   * Build in MAX 7.0
