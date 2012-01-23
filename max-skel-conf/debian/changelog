@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max12) max; urgency=low
+
+  * Rebuild with new aa-debhelper
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 23 Jan 2012 16:44:38 +0100
+
 max-skel-conf (7.0.max11) max; urgency=low
 
   * Add divert usr/bin/mscore
