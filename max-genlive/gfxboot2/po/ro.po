@@ -2,20 +2,21 @@
 # LANGUAGE translations for boot loader
 # Copyright (C) 2004 SUSE LINUX AG
 # Claudiu Costin <claudiuc@kde.org>, 2004.
-#
+# Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2009-08-31 06:38+0000\n"
-"Last-Translator: Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
-"Language-Team: Romanian <ro-kde@yahoogroups.com>\n"
+"PO-Revision-Date: 2010-11-04 00:35+0000\n"
+"Last-Translator: Adi Roiban <adi@roiban.ro>\n"
+"Language-Team: Romanian <translation-team-ro@lists.sourceforge.net>\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-09-30 11:52+0000\n"
+"X-Generator: Launchpad (build 14071)\n"
 
 #. ok button label
 #. txt_ok
@@ -25,7 +26,7 @@ msgstr "OK"
 #. cancel button label
 #. txt_cancel
 msgid "Cancel"
-msgstr "Anulează"
+msgstr "Renunță"
 
 #. reboot button label
 #. txt_reboot
@@ -44,7 +45,7 @@ msgstr "Opțiuni de pornire"
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
 msgid "Exiting..."
-msgstr "Se încheie..."
+msgstr "Ieșire..."
 
 #. txt_exit_dialog
 msgid ""
@@ -71,7 +72,7 @@ msgstr "Eroare de intrare/ieșire"
 #. boot disk change dialog title
 #. txt_change_disk_title
 msgid "Change Boot Disk"
-msgstr "Modificare disc de pornire"
+msgstr "Schimbare disc de pornire"
 
 #. txt_insert_disk
 #, c-format
@@ -178,7 +179,7 @@ msgstr "Accesibilitate"
 #. label for accessibility menu
 #. txt_access_none
 msgid "None"
-msgstr "Nici unul"
+msgstr "Nimic"
 
 #. label for accessibility menu
 #. txt_access_v1
@@ -203,7 +204,7 @@ msgstr "Terminal Braille"
 #. label for accessibility menu
 #. txt_access_m1
 msgid "Keyboard Modifiers"
-msgstr "Modificator tastatură"
+msgstr "Modificatori tastatură"
 
 #. label for accessibility menu
 #. txt_access_m2
@@ -213,48 +214,57 @@ msgstr "Tastatură virtuală"
 #. label for accessibility menu
 #. txt_access_m3
 msgid "Motor Difficulties - switch devices"
-msgstr "Deficienţe motore - dispozitive tip butoane"
+msgstr "Deficiențe motoare - dispozitive tip butoane"
 
 #. label for accessibility menu
 #. txt_access_all
 msgid "Everything"
-msgstr "Totul"
+msgstr "Tot"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "Încercați Ubuntu ^fără a face modificări pe calculator"
+msgstr "Î^ncearcă Ubuntu fără instalare"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "Încercați Kubuntu ^fără a face modificări pe calculator"
+msgstr "Î^ncearcă Kubuntu fără instalare"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "Încercați Edubuntu ^fără a face modificări pe calculator"
+msgstr "Î^ncearcă Edubuntu fără instalare"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "Încercați Xubuntu ^fără a face modificări pe calculator"
+msgstr "Î^ncearcă Xubuntu fără instalare"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "Încercați Ubuntu MID ^fără a face modificări pe calculator"
+msgstr "Î^ncearcă Ubuntu MID  fără instalare"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "Încercați Ubuntu Netbook Remix ^fără a face modificări pe calculator"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "Î^ncearcă Ubuntu Netbook fără instalare"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "Î^ncearcă Kubuntu Netbook fără instalare"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^Pornește Kubuntu"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
@@ -304,32 +314,42 @@ msgstr "^Instalează Xubuntu"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu_server
 msgid "^Install Ubuntu Server"
-msgstr "^Instalare Ubuntu Server"
+msgstr "^Instalează Ubuntu Server"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Instalează Ubuntu ^Enterprise Cloud"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
 msgid "^Install Ubuntu Studio"
-msgstr "^Instalați Ubuntu Studio"
+msgstr "^Instalează Ubuntu Studio"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu_mid
 msgid "^Install Ubuntu MID"
-msgstr "^Instalați Ubuntu MID"
+msgstr "^Instalează Ubuntu MID"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "^Instalați Ubuntu Netbook Remix"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "^Instalează Ubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "^Instalează Kubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
-msgstr "Instalează o staţie de lucru"
+msgstr "Instalează o stație de lucru"
 
 #. Installation mode.
 #. txt_menuitem_server
@@ -354,7 +374,7 @@ msgstr "Instalează un server LTSP"
 #. Installation mode.
 #. txt_menuitem_ltsp_mythbuntu
 msgid "Install a Diskless Image Server"
-msgstr "Instalează o imagine server fără disc"
+msgstr "Instalează un server de imagini de inițializare a sistemelor fără disc"
 
 #. Installation mode.
 #. txt_menuitem_cli
@@ -384,7 +404,7 @@ msgstr "Salvați un sistem ava^riat"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
 msgid "Test ^memory"
-msgstr "Test ^memorie"
+msgstr "Testează ^memoria"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
@@ -404,10 +424,9 @@ msgstr "Reinstalare automată ^Dell"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_mythbuntu
 msgid "^Install Mythbuntu"
-msgstr "^Instalare Mythubuntu"
+msgstr "^Instalează Mythbuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "Încercați  Mythbuntu ^fără a face modificări pe calculator"
+msgstr "Î^ncearcă Mythbuntu fără instalare"

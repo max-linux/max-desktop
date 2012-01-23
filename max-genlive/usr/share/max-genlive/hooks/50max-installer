@@ -64,7 +64,6 @@ export DEBCONF_FRONTEND="noninteractive"
 export DEBIAN_FRONTEND="noninteractive"
 export UCF_FORCE_CONFFOLD=1
 export ERROR=0
-apt-get $APT_OPTS install language-support-es || ERROR=1
 apt-get $APT_OPTS install max-live || ERROR=1
 apt-get $APT_OPTS autoremove
 apt-get clean

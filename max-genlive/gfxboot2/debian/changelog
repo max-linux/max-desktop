@@ -1,3 +1,161 @@
+gfxboot-theme-ubuntu (0.12.2) oneiric; urgency=low
+
+  * Update translations from Launchpad.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 05 Oct 2011 17:09:26 +0100
+
+gfxboot-theme-ubuntu (0.12.1) oneiric; urgency=low
+
+  * Change "Install Ubuntu ^Enterprise Cloud" string to "^Enlist system with
+    Ubuntu Orchestra Server", matching debian-cd changes.
+  * Update translations from Launchpad.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 30 Sep 2011 14:02:43 +0100
+
+gfxboot-theme-ubuntu (0.12.0) oneiric; urgency=low
+
+  * Add localisation for "^Try Lubuntu without installing" and "^Install
+    Lubuntu" (LP: #855977).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 23 Sep 2011 13:49:32 +0100
+
+gfxboot-theme-ubuntu (0.11.4) natty; urgency=low
+
+  * Update translations from Launchpad.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 11 Apr 2011 18:08:26 +0100
+
+gfxboot-theme-ubuntu (0.11.3) natty; urgency=low
+
+  * Preseed keyboard-configuration/* questions for layout, variant, and
+    model, not the obsolete console-setup/* questions (LP: #742558).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 28 Mar 2011 19:46:48 +0100
+
+gfxboot-theme-ubuntu (0.11.2) natty; urgency=low
+
+  * Update keymaps from console-setup 1.57ubuntu17.
+  * Update langnames from localechooser 2.34ubuntu3.
+  * Regenerate font.
+
+ -- Evan Dandrea <ev@ubuntu.com>  Mon, 28 Mar 2011 14:53:53 +0100
+
+gfxboot-theme-ubuntu (0.11.1) natty; urgency=low
+
+  * Add an "access-options-v1" option to gfxboot.cfg, which overrides the
+    default "access=v1" kernel options used in High Contrast mode
+    (LP: #739445).
+  * Update translations from Launchpad.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 22 Mar 2011 14:22:32 +0000
+
+gfxboot-theme-ubuntu (0.11.0) natty; urgency=low
+
+  * Update translations from Launchpad (LP: #657984).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 03 Nov 2010 19:06:10 +0000
+
+gfxboot-theme-ubuntu (0.10.2) maverick; urgency=low
+
+  * Add localisation for "^Start Kubuntu" (LP: #608746).
+  * Don't fail to build if DEFAULT_LANG is set to a language code for which
+    there is no .tr file (LP: #585473).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 24 Aug 2010 10:48:39 +0100
+
+gfxboot-theme-ubuntu (0.10.1) maverick; urgency=low
+
+  * Rebuild with newer gfxboot-dev, for gfxboot.c32.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 14 Jul 2010 16:34:40 +0100
+
+gfxboot-theme-ubuntu (0.10.0) maverick; urgency=low
+
+  * The gfxboot com32 module in syslinux parses the configuration file for
+    us, but only gives us the human-readable labels.  Convert them back to
+    identifiers in that case so that we can translate them more easily.
+  * Preserve the original indices of menu items so that we can pass them
+    accurately back to the boot loader.  The gfxboot com32 module in
+    syslinux requires this.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 14 Jul 2010 14:37:52 +0100
+
+gfxboot-theme-ubuntu (0.9.9) lucid; urgency=low
+
+  * Update translations from Launchpad.
+  * If hidden-timeout=2 is set in gfxboot.cfg, then only show access.pcx at
+    the bottom of the screen, not the logo as well, to alleviate problems
+    caused by aspect ratio distortion.  For awkward internal reasons this
+    currently requires a blank.pcx to exist that has the same dimensions as
+    splash.pcx but is just a blank screen of the appropriate colour.
+  * Update keymaps from console-setup 1.34ubuntu14.
+  * Rebuild font based on debian-installer 20081029ubuntu101.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 19 Apr 2010 01:38:37 +0100
+
+gfxboot-theme-ubuntu (0.9.8) lucid; urgency=low
+
+  * Regenerate font, among other things including more Kazakh characters
+    (LP: #434406).
+  * Update translations from Launchpad.
+  * Convert to source format 3.0 (native).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 29 Mar 2010 23:33:41 +0100
+
+gfxboot-theme-ubuntu (0.9.7) lucid; urgency=low
+
+  * Add Estonian to langlist as well (LP: #496734).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sun, 21 Mar 2010 23:09:13 +0000
+
+gfxboot-theme-ubuntu (0.9.6) lucid; urgency=low
+
+  * Add localisation for "^Try Kubuntu Netbook without installing" and
+    "^Install Kubuntu Netbook" (LP: #540335).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 19 Mar 2010 19:00:33 +0000
+
+gfxboot-theme-ubuntu (0.9.5) lucid; urgency=low
+
+  * Stop building for lpia, which has been discontinued.
+  * Add a "screen-colour" option to gfxboot.cfg (should really be
+    "background", but that's already (mis)used).  This sets a flood-fill
+    colour for the screen, as well as setting menu.bar.color and xmenu.dark.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 05 Mar 2010 19:00:11 +0000
+
+gfxboot-theme-ubuntu (0.9.4) lucid; urgency=low
+
+  * Before displaying the splash screen, initialise the menu far enough so
+    that we can select the correct default boot entry in case the main menu
+    is never displayed.
+  * Add the "maybe-ubiquity" boot parameter when booting in splash mode.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 03 Mar 2010 13:10:28 +0000
+
+gfxboot-theme-ubuntu (0.9.3) lucid; urgency=low
+
+  * Update translations from Launchpad (LP: #527052).
+  * Change "Ubuntu Netbook Remix" strings to "Ubuntu Netbook" (LP: #518718).
+    Adjust translations where I could do so accurately.
+  * Remove unused imgsize, showlogo, and readimage functions.
+  * If hidden-timeout=1 is set in gfxboot.cfg, then try to display a splash
+    window before the main window, displaying the contents of access.pcx at
+    the bottom of the screen.  If the timeout expires on this screen, then
+    the default menu item will be booted without ever showing the main menu;
+    conversely, any key press will show the main menu.  The idea of this is
+    to avoid everyone having to see a complicated main menu, while offering
+    a visual indication that you need to press a key to get to it
+    (LP: #530713).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 02 Mar 2010 23:47:25 +0000
+
+gfxboot-theme-ubuntu (0.9.2) lucid; urgency=low
+
+  * Use fribidi for Hebrew in the language list as well (LP: #212491).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 22 Feb 2010 12:12:36 +0000
+
 gfxboot-theme-ubuntu (0.9.1) lucid; urgency=low
 
   [ Colin Watson ]

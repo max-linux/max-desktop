@@ -1,11 +1,9 @@
-0fRESCUING A BROKEN SYSTEM07                                                      09F407
+0fRESCUE MODE07                                                                   09F407
 
-There is no dedicated rescue mode on this CD. However, since the entire
-system runs from the CD, it is possible to use the command-line and/or
-graphical tools provided to rescue a broken system, and to use a web
-browser to search for help. Extensive advice is available online for most
-kinds of problems that might cause your normal system to fail to boot
-correctly.
+0fUse one of these boot methods to rescue an existing install:07
+
+0frescue07
+  Boot into rescue mode.
 
 
 
@@ -13,7 +11,9 @@ correctly.
 
 
 
-
+To use one of these boot methods, type it at the prompt, optionally
+followed by any boot parameters. For example:
+  boot: rescue acpi=off
 
 
 

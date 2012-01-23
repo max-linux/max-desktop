@@ -8,19 +8,20 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-08-22 03:43:17.138284+00:00\n"
-"PO-Revision-Date: 2009-10-02 02:04+0000\n"
-"Last-Translator: Vu Do Quynh <vu.do.quynh@auf.org>\n"
+"PO-Revision-Date: 2010-11-04 00:33+0000\n"
+"Last-Translator: Colin Watson <cjwatson@canonical.com>\n"
 "Language-Team: Vietnamese <vi@li.org>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-09-30 11:52+0000\n"
+"X-Generator: Launchpad (build 14071)\n"
 
 #. ok button label
 #. txt_ok
 msgid "OK"
-msgstr "Xác nhận"
+msgstr "Đồng ý"
 
 #. cancel button label
 #. txt_cancel
@@ -30,7 +31,7 @@ msgstr "Hủy bỏ"
 #. reboot button label
 #. txt_reboot
 msgid "Reboot"
-msgstr "Khởi động lại máy"
+msgstr "Khởi động lại"
 
 #. continue button label
 #. txt_continue
@@ -39,7 +40,7 @@ msgstr "Tiếp tục"
 
 #. txt_bootoptions
 msgid "Boot Options"
-msgstr "Các lựa chọn khi khởi động"
+msgstr "Các lựa chọn khởi động"
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
@@ -51,8 +52,8 @@ msgid ""
 "You are leaving the graphical boot menu and\n"
 "starting the text mode interface."
 msgstr ""
-"Bạn đang thoát khỏi trình đơn khởi động đồ họa\n"
-"và vào giao diện ở chế độ văn bản."
+"Bạn đang thoát khỏi trình đơn khởi động dạng đồ họa và đang bắt đầu sang "
+"giao diện ở chế độ văn bản"
 
 #. txt_help
 msgid "Help"
@@ -208,12 +209,12 @@ msgstr "Các hiệu chỉnh bàn phím"
 #. label for accessibility menu
 #. txt_access_m2
 msgid "On-Screen Keyboard"
-msgstr "Bàn phím trên màn hình"
+msgstr "Bàn phím ảo"
 
 #. label for accessibility menu
 #. txt_access_m3
 msgid "Motor Difficulties - switch devices"
-msgstr "Khó khăn khi vận động - các thiết bị bật tắt"
+msgstr "Vận hành khó khăn - chuyển thiết bị"
 
 #. label for accessibility menu
 #. txt_access_all
@@ -222,39 +223,48 @@ msgstr "Mọi thứ"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "^Thử Ubuntu mà không làm thay đổi máy tính của bạn"
+msgstr "^Thử Ubuntu không cần cài đặt"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "^Thử Kubuntu mà không làm thay đổi máy tính của bạn"
+msgstr "^Thử Kubuntu không cần cài đặt"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "^Thử Edubuntu mà không làm thay đổi máy tính của bạn"
+msgstr "^Thử Edubuntu không cần cài đặt"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "^Thử Xubuntu mà không làm thay đổi máy tính của bạn"
+msgstr "^Thử Xubuntu không cần cài đặt"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "^Thử Ubuntu MID mà không làm thay đổi máy tính của bạn"
+msgstr "^Thử Ubuntu MID không cần cài đặt"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "^Thử Ubuntu NetBook Remix mà không làm thay đổi máy tính của bạn"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "^Thử Ubuntu Netbook không cần cài đặt"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "^Thử Kubuntu Netbook không cần cài đặt"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^Bắt đầu Kubuntu"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
@@ -307,9 +317,9 @@ msgid "^Install Ubuntu Server"
 msgstr "^Cài đặt Ubuntu Server"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Cài đặt Ubuntu ^Enterprise Cloud"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
@@ -322,9 +332,19 @@ msgid "^Install Ubuntu MID"
 msgstr "^Cài đặt Ubuntu MID"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "^Cài đặt Ubuntu Netbook Remix"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "^Cài đặt Ubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "^Cài đặt Kubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_workstation
@@ -408,6 +428,5 @@ msgstr "^Cài đặt Mythbuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "^Thử Mythbuntu mà không làm thay đổi máy tính của bạn"
+msgstr "Thử Mythbuntu không cần cài đặt"

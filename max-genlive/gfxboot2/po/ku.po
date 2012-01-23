@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2009-10-17 21:13+0000\n"
+"PO-Revision-Date: 2011-10-03 22:50+0000\n"
 "Last-Translator: Erdal Ronahi <erdal.ronahi@gmail.com>\n"
 "Language-Team: Kurdish <ku@li.org>\n"
+"Language: ku\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-10-05 15:28+0000\n"
+"X-Generator: Launchpad (build 14085)\n"
 
 #. ok button label
 #. txt_ok
@@ -30,7 +31,7 @@ msgstr "Betal"
 #. reboot button label
 #. txt_reboot
 msgid "Reboot"
-msgstr "Nûdestpêkirin"
+msgstr "Dîsdestpêkirin"
 
 #. continue button label
 #. txt_continue
@@ -85,7 +86,7 @@ msgid ""
 "Insert boot disk %u."
 msgstr ""
 "Ev dîska boot a %u ye.\n"
-"Dîska boot a %u têxê."
+"Dîska boot a %u têkê."
 
 #. txt_insert_disk3
 #, c-format
@@ -93,8 +94,8 @@ msgid ""
 "This is not a suitable boot disk.\n"
 "Please insert boot disk %u."
 msgstr ""
-"Ev dîskeke boot a birêk nîn e.\n"
-"Ji kerema xwe re dîska boot a %u têxê."
+"Ev dîskeke boot a bi rêk nîn e\n"
+"Ji kerema xwe re dîska boot a %u têkê."
 
 #. password dialog title
 #. txt_password_title
@@ -219,42 +220,48 @@ msgstr "Her tişt"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "^Bêyî ku di komputera xwe tiştekî biguherînî Ubuntuyê biceribîne"
+msgstr "Ubuntu bêyî ku tu daxînî ^biceribîne"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "^Bêyî ku di komputera xwe tiştekî biguherînî Kubuntuyê biceribîne"
+msgstr "Kubuntu bêyî ku tu daxînî ^biceribîne"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "^Bêyî ku di komputera xwe tiştekî biguherînî Edubuntuyê biceribîne"
+msgstr "Edubuntu bêyî ku tu daxînî ^biceribîne"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "^Bêyî ku di komputera xwe tiştekî biguherînî Xubuntuyê biceribîne"
+msgstr "Xubuntu bêyî ku tu daxînî ^biceribîne"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr ""
-"Bêyî ku di kompîtura xwe de tu guhertinekê çêkî Ubuntu MID'ê ^bi kar bîne"
+msgstr "Ubuntu MID bêyî ku tu daxînî ^biceribîne"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr ""
-"Bêyî ku di kompîtura xwe de tu guhertinekê çêkî Ubuntu Netbook Remixê ^bi "
-"kar bîne"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "Ubuntu Netbook bêyî ku tu daxînî ^biceribîne"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "Kubuntu Netbook bêyî ku tu daxînî ^biceribîne"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr "Lubuntu'ye bi^ceribîne lê saz neke"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "Kubuntuyê ^Destpêke"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
@@ -307,9 +314,9 @@ msgid "^Install Ubuntu Server"
 msgstr "Ubuntu Server ^Saz Bike"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Ubuntu ^Enterprise Cloud saz bike"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
@@ -322,9 +329,19 @@ msgid "^Install Ubuntu MID"
 msgstr "Ubuntu MID ^Saz Bike"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "Ubuntu Netbook Remix ^Saz Bike"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "Ubuntu Netbook ^Saz Bike"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "Kubuntu Netbook saz bike"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr "Lubuntu'yê ^saz bike"
 
 #. Installation mode.
 #. txt_menuitem_workstation
@@ -408,6 +425,5 @@ msgstr "Mythbuntu ^Saz Bike"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "Bêyî ku di kompîtura xwe de guhertinan bikî Mythbuntu ^bi kar bîne"
+msgstr "Mythbuntu bêyî ku tu daxînî ^biceribîne"

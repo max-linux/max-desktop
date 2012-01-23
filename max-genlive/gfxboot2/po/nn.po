@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2007-02-28 07:00:57.592902+00:00\n"
-"PO-Revision-Date: 2009-10-05 16:43+0000\n"
+"PO-Revision-Date: 2011-03-18 07:43+0000\n"
 "Last-Translator: Rune Gangstø <runegang@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
+"Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-09-30 11:52+0000\n"
+"X-Generator: Launchpad (build 14071)\n"
 
 #. ok button label
 #. txt_ok
@@ -183,7 +184,7 @@ msgstr "Ingen"
 #. label for accessibility menu
 #. txt_access_v1
 msgid "High Contrast"
-msgstr "Høge kontrastar"
+msgstr "Høgkontrast"
 
 #. label for accessibility menu
 #. txt_access_v2
@@ -222,39 +223,48 @@ msgstr "Alt"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "^Prøv Ubuntu utan forandringar på datamaskina di"
+msgstr "^Prøv Ubuntu utan å installera"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "^Prøv Kubuntu utan forandringar på datamaskina di"
+msgstr "^Prøv Kubuntu utan å installera"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "^Prøv Edubuntu utan forandringar på datamaskina di"
+msgstr "^Prøv Edubuntu utan å installera"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "^Prøv Xubuntu utan forandringar på datamaskina di"
+msgstr "^Prøv Xubuntu utan å installera"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "^Prøv Ubuntu MID utan å gjere endringar på maskina."
+msgstr "^Prøv Ubuntu MID utan å installera"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "^Prøv Ubuntu Netbook Remix utan å gjere endringar på maskina."
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "^Prøv Ubuntu Netbook utan å installera"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "^Prøv Kubuntu Netbook utan å installera"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^Start Kubuntu"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
@@ -307,9 +317,9 @@ msgid "^Install Ubuntu Server"
 msgstr "^Installer Ubuntu Server"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Installer Ubuntu ^Enterprise Cloud"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
@@ -322,9 +332,19 @@ msgid "^Install Ubuntu MID"
 msgstr "^Installer Ubuntu MID"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "^Installer Ubuntu Netbook Remix"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "^Installer Ubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "^Installer Kubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_workstation
@@ -408,6 +428,5 @@ msgstr "^Installer Mythbuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "^Prøv Mythbuntu utan å gjere endringar på maskina"
+msgstr "^Prøv Mythbuntu utan å installera"

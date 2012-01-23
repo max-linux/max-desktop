@@ -8,19 +8,20 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2009-07-01 23:51+0000\n"
-"Last-Translator: Gaurav Mishra <gauravtechie@gmail.com>\n"
+"PO-Revision-Date: 2011-10-04 16:38+0000\n"
+"Last-Translator: Manish Kumar <manishku86@yahoo.co.in>\n"
 "Language-Team: Hindi <hi@li.org>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-10-05 15:28+0000\n"
+"X-Generator: Launchpad (build 14085)\n"
 
 #. ok button label
 #. txt_ok
 msgid "OK"
-msgstr ""
+msgstr "ठीक"
 
 #. cancel button label
 #. txt_cancel
@@ -30,21 +31,21 @@ msgstr "रद्द करें"
 #. reboot button label
 #. txt_reboot
 msgid "Reboot"
-msgstr "रीबूट"
+msgstr "पुनःबूट करें"
 
 #. continue button label
 #. txt_continue
 msgid "Continue"
-msgstr "जारी रखें"
+msgstr "आगे बढ़ें"
 
 #. txt_bootoptions
 msgid "Boot Options"
-msgstr ""
+msgstr "बूट विकल्प"
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
 msgid "Exiting..."
-msgstr ""
+msgstr "बाहर हो रहे हैं..."
 
 #. txt_exit_dialog
 msgid ""
@@ -57,12 +58,12 @@ msgstr ""
 
 #. txt_help
 msgid "Help"
-msgstr "सहायता"
+msgstr "मदद"
 
 #. info box title
 #. txt_info_title
 msgid "Boot loader"
-msgstr "बूट लोॊॊॊडर"
+msgstr "बूटलोडर"
 
 #. error box title
 #. txt_error_title
@@ -77,7 +78,7 @@ msgstr "बूट डिस्क बदलें"
 #. txt_insert_disk
 #, c-format
 msgid "Insert boot disk %u."
-msgstr ""
+msgstr "बूट डिस्क %u डालें"
 
 #. txt_insert_disk2
 #, c-format
@@ -85,6 +86,8 @@ msgid ""
 "This is boot disk %u.\n"
 "Insert boot disk %u."
 msgstr ""
+"यह बूट डिस्क %u है\n"
+"बूट डिस्क %u डालें"
 
 #. txt_insert_disk3
 #, c-format
@@ -92,6 +95,8 @@ msgid ""
 "This is not a suitable boot disk.\n"
 "Please insert boot disk %u."
 msgstr ""
+"यह उचित बूट डिस्क नहीं है ।\n"
+"कृपया उचित बूट डिस्क %u डालें ।"
 
 #. password dialog title
 #. txt_password_title
@@ -120,49 +125,52 @@ msgid ""
 "\n"
 "Turn the DVD over then continue."
 msgstr ""
+"यह दो तरफा डीवीडी है | आपने दूसरी तरफ से बूट कर दिया है |\n"
+"\n"
+"डीवीडी पलटें और जारी रखें |"
 
 #. power off dialog title
 #. txt_power_off_title
 msgid "Power Off"
-msgstr ""
+msgstr "बंद करें"
 
 #. txt_power_off
 msgid "Halt the system now?"
-msgstr ""
+msgstr "अब कंप्यूटर को बंद करें ?"
 
 #. txt_password
 msgid "Password\n"
-msgstr ""
+msgstr "कूटशब्द\n"
 
 #. button label for other/more options
 #. txt_other_options
 msgid "Other Options"
-msgstr ""
+msgstr "अन्य विकल्प"
 
 #. label for language selection
 #. txt_language
 msgid "Language"
-msgstr ""
+msgstr "भाषा"
 
 #. label for keymap selection
 #. txt_keymap
 msgid "Keymap"
-msgstr ""
+msgstr "कुंजीपटल"
 
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr ""
+msgstr "पद्धति"
 
 #. label for modes menu
 #. txt_mode_normal
 msgid "Normal"
-msgstr ""
+msgstr "सामान्य"
 
 #. label for d-i mode menu
 #. txt_expert_mode
 msgid "Expert mode"
-msgstr ""
+msgstr "विशेषज्ञ पद्धति"
 
 #. title for accessibility menu
 #. txt_access
@@ -172,42 +180,42 @@ msgstr "सुगमता"
 #. label for accessibility menu
 #. txt_access_none
 msgid "None"
-msgstr "कुछ नही"
+msgstr "कोई नहीं"
 
 #. label for accessibility menu
 #. txt_access_v1
 msgid "High Contrast"
-msgstr ""
+msgstr "उच्च कंट्रास्ट"
 
 #. label for accessibility menu
 #. txt_access_v2
 msgid "Magnifier"
-msgstr ""
+msgstr "आवर्धक"
 
 #. label for accessibility menu
 #. txt_access_v3
 msgid "Screen Reader"
-msgstr ""
+msgstr "स्क्रीन वाचक"
 
 #. label for accessibility menu
 #. txt_access_brltty
 msgid "Braille Terminal"
-msgstr ""
+msgstr "ब्रेल टर्मिनल"
 
 #. label for accessibility menu
 #. txt_access_m1
 msgid "Keyboard Modifiers"
-msgstr ""
+msgstr "कुंजीपटल सुधारक"
 
 #. label for accessibility menu
 #. txt_access_m2
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "स्क्रीन पर कुंजीपटल"
 
 #. label for accessibility menu
 #. txt_access_m3
 msgid "Motor Difficulties - switch devices"
-msgstr ""
+msgstr "यान्त्रिक समस्यायें - उपकरण बदलें"
 
 #. label for accessibility menu
 #. txt_access_all
@@ -217,184 +225,209 @@ msgstr "सभी"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
 msgid "^Try Ubuntu without installing"
-msgstr ""
+msgstr "संस्थापित किये बिना उबुन्टू का ^परीक्षण करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
 msgid "^Try Kubuntu without installing"
-msgstr ""
+msgstr "संस्थापित किये बिना कुबुन्टू ^परीक्षण करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
 msgid "^Try Edubuntu without installing"
-msgstr ""
+msgstr "संस्थापित किये बिना एडुबुन्टू ^परीक्षण करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
 msgid "^Try Xubuntu without installing"
-msgstr ""
+msgstr "संस्थापित किये बिना झुबुन्टू ^परीक्षण करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
 msgid "^Try Ubuntu MID without installing"
-msgstr ""
+msgstr "संस्थापित किये बिना उबुन्टू मीड ^परीक्षण करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr ""
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "संस्थापित किये बिना उबुन्टू नेटबुक ^परिक्षण करे"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "संस्थापित किये बिना कुबुन्टू नेटबुक ^परीक्षण करें"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr "बिना संस्थापना के लबुन्टू इस्तेमाल ( ^T ) करें"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "के-उबुन्तु प्रारंभ करें"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
 msgid "Use driver update disc"
-msgstr ""
+msgstr "अद्यतन ड्राइवर डिस्क का उपयोग करें"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
 msgid "^Install Ubuntu in text mode"
-msgstr ""
+msgstr "पाठ्य़ पद्धति से उबुन्टू ^संस्थापित करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr ""
+msgstr "पाठ्य़ पद्धति से कुबुन्टू ^संस्थापित करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr ""
+msgstr "पाठ्य़ पद्धति से एडुबुन्टू ^संस्थापित करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr ""
+msgstr "झुबुन्टू को पाठ पद्धति में ^संस्थापित करें"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr ""
+msgstr "उबुन्टू ^संस्थापित करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr ""
+msgstr "कुबुन्टू ^संस्थापित करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr ""
+msgstr "एडुबुन्टू ^संस्थापित करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr ""
+msgstr "झुबुन्टू ^संस्थापित करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu_server
 msgid "^Install Ubuntu Server"
-msgstr ""
+msgstr "उबुन्टू सर्वर ^संस्थापित करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr ""
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr "उबुन्टू ऑरचेस्ट्रा सर्वर के साथ तंत्र को सूचीबद्ध ( ^E ) करें"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
 msgid "^Install Ubuntu Studio"
-msgstr ""
+msgstr "उबुन्टू स्टुडिओ ^संस्थापित करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu_mid
 msgid "^Install Ubuntu MID"
-msgstr ""
+msgstr "उबुन्टू मीड ^संस्थापित करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr ""
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "उबुन्टु नेटबुक ^संस्थापित करे"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "कुबन्टू नेटबुक को ^संस्थापित करें"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr "उबुंटु स्थापित करें"
 
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
-msgstr ""
+msgstr "वर्क स्टेशन संस्थापित करे"
 
 #. Installation mode.
 #. txt_menuitem_server
 msgid "Install a server"
-msgstr ""
+msgstr "सर्वर संस्थापित करे"
 
 #. Installation mode.
 #. txt_menuitem_oem
 msgid "OEM install (for manufacturers)"
-msgstr ""
+msgstr "OEM संस्थापित करें (निर्माताओं के लिए)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
 msgid "Install a LAMP server"
-msgstr ""
+msgstr "LAMP सर्वर संस्थापित करें"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
 msgid "Install an LTSP server"
-msgstr ""
+msgstr "LTSP सर्वर संस्थापित करें"
 
 #. Installation mode.
 #. txt_menuitem_ltsp_mythbuntu
 msgid "Install a Diskless Image Server"
-msgstr ""
+msgstr "डिस्क-रहित प्रतिबिम्ब सर्वर संस्थापित करें"
 
 #. Installation mode.
 #. txt_menuitem_cli
 msgid "Install a command-line system"
-msgstr ""
+msgstr "कमाण्ड-लाईन तंत्र संस्थापित करें"
 
 #. Installation mode.
 #. txt_menuitem_minimal
 msgid "Install a minimal system"
-msgstr ""
+msgstr "न्यूनतम तंत्र संस्थापित करें"
 
 #. Installation mode.
 #. txt_menuitem_minimalvm
 msgid "Install a minimal virtual machine"
-msgstr ""
+msgstr "न्यूनतम आभासी मशीन संस्थापित करें"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
 msgid "^Check disc for defects"
-msgstr ""
+msgstr "दोष के लिए डिस्क की ^जाँच करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
 msgid "^Rescue a broken system"
-msgstr ""
+msgstr "विकृत प्रणाली का ^सुधार करें ।"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
 msgid "Test ^memory"
-msgstr ""
+msgstr "^स्मृति जाँच"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
-msgstr ""
+msgstr "प्रथम हार्ड डिस्क से ^Boot करे"
 
 #. Boot option.
 #. txt_option_free
 msgid "Free software only"
-msgstr ""
+msgstr "केवल मुक्त सॉफ्टवेयर"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_dell_factory_recovery
 msgid "^Dell Automatic Reinstall"
-msgstr ""
+msgstr "^डेल स्वचालित पुनःसंस्थापना"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_mythbuntu
 msgid "^Install Mythbuntu"
-msgstr ""
+msgstr "मिथबुन्टू ^संस्थापित करे"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
 msgid "^Try Mythbuntu without installing"
-msgstr ""
+msgstr "मिथबुन्टू संस्थापित किये बिना ^परीक्षण करे"

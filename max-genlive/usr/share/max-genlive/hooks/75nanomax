@@ -17,7 +17,7 @@ deb http://$MIRROR/ubuntu ${DISTRO} main universe multiverse restricted
 deb http://$MIRROR/ubuntu ${DISTRO}-updates main universe multiverse restricted
 deb http://$MIRROR/ubuntu ${DISTRO}-security main universe multiverse restricted
 
-deb http://$MIRROR/max60 max main
+deb http://$MIRROR/max70 max main
 EOF
 
   cat << EOF > $NANOCHROOT/etc/apt/apt.conf.d/06norecomends
@@ -219,7 +219,6 @@ yes | dpkg --configure -a
 yes | apt-get $APT_OPTS -f install
 apt-get update
 apt-get $APT_OPTS dist-upgrade
-update-dpsyco-skel
 apt-get clean
 EOC
 
@@ -277,9 +276,6 @@ EOC
   _echo "Deshabilitando contraseña de root (nanoMaX)"
   chroot $NANOCHROOT/ usermod -L root
 
-  _echo "Actualizando DPSYCO..."
-  chroot $NANOCHROOT/ /usr/sbin/update-dpsyco-skel
-
   rm -f $NANOCHROOT/root/.bash_history
 
   LZMA=""
@@ -311,8 +307,8 @@ EOC
   cp $GENLIVE/isolinux/* $NANOMAX/isolinux/ || _exit "No se puede sobreescribir isolinux"
 
   # en genlive por defecto el CD
-  cp $GENLIVE/nano/text-cd.cfg  $NANOMAX/isolinux/text.cfg
-  cp $GENLIVE/nano/text-usb.cfg $NANOMAX/isolinux/text-usb.cfg
+  cp $GENLIVE/nano/text-cd.cfg  $NANOMAX/isolinux/txt.cfg
+  cp $GENLIVE/nano/text-usb.cfg $NANOMAX/isolinux/txt-usb.cfg
 
   mkdir -p $NANOMAX/preseed
   rm -f $NANOMAX/preseed/*
@@ -324,10 +320,13 @@ EOC
   mkdir -p $NANOMAX/.disk
 
   printf "%s - $NANOARCH (%s)" "$TITLE" "$created" > $NANOMAX/.disk/info
-  printf "http://max.educa.madrid.org:8000/MaX60/NotasPublicacion" > $NANOMAX/.disk/release_notes_url
+  printf "http://max.educa.madrid.org:8000/MaX70/NotasPublicacion" > $NANOMAX/.disk/release_notes_url
   printf "full_cd/single" > $NANOMAX/.disk/cd_type
   rm -f $NANOMAX/.disk/base_installable
-  printf "d8ce36c5-3caf-4243-9dad-f8527accac3f" > $NANOMAX/.disk/casper-uuid-generic
+
+  zcat $NANOMAX/casper/initrd.gz | cpio --quiet -id conf/uuid.conf
+  cat conf/uuid.conf > $NANOMAX/.disk/casper-uuid-generic
+  rm -rf conf/
 
   # kernel
   KERNEL=$(basename $(ls $NANOCHROOT/boot/vmlinuz* -t| head -1)| sed 's/vmlinuz-//g')
@@ -410,7 +409,7 @@ _echo "Copiando sistema"
 
 cp -ra $NANOMAX/* part3/
 mv part3/isolinux part3/syslinux
-cp $GENLIVE/nano/text-usb.cfg part3/syslinux/text.cfg
+cp $GENLIVE/nano/text-usb.cfg part3/syslinux/txt.cfg
 cp /boot/memtest86+.bin part3/mt86plus
 
 
@@ -422,9 +421,9 @@ syslinux /dev/loop3
 _echo "Preparando aplicaciones portables"
 
 if [ $LOCAL_MIRROR ]; then
-  URL="http://$MIRROR/max60/portables.tar.gz"
+  URL="http://$MIRROR/max70/portables.tar.gz"
 else
-  URL="http://max.educa.madrid.org/max60/portables.tar.gz"
+  URL="http://max.educa.madrid.org/max70/portables.tar.gz"
 fi
 
 [ ! -f portables.tar.gz ] && wget $URL

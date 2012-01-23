@@ -1,5 +1,6 @@
 #! /usr/bin/perl -w
 use strict;
+use IPC::Open2;
 
 if (@ARGV != 1) {
     print STDERR "Usage: $0 localechooser-source-tree\n";
@@ -27,6 +28,7 @@ my @langname_notranslate = (
     'gu',
     'hi',
     'km',
+    'lo',
     'ml',
     'mr',
     'ne',
@@ -56,6 +58,15 @@ while (<LIST>) {
     $lang = $langcode_overrides{$lang} if exists $langcode_overrides{$lang};
     if (exists $langname_notranslate{$lang}) {
 	$langnames{$lang} = $bits[1];
+    } elsif ($lang eq 'he') {
+	my $bidi_pid = open2(\*BIDI_OUT, \*BIDI_IN, 'fribidi', '--nopad', '--nobreak');
+	binmode BIDI_IN, ':utf8';
+	binmode BIDI_OUT, ':utf8';
+	print BIDI_IN $bits[2];
+	close BIDI_IN;
+	{ local $/ = undef; $langnames{$lang} = <BIDI_OUT>; }
+	$langnames{$lang} =~ s/(.)%/%$1/g;
+	waitpid $bidi_pid, 0;
     } else {
 	$langnames{$lang} = $bits[2];
     }

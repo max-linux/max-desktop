@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2009-09-24 11:05+0000\n"
-"Last-Translator: Tharawut Paripaiboon <Unknown>\n"
+"PO-Revision-Date: 2011-09-24 15:43+0000\n"
+"Last-Translator: Manop Pornpeanvichanon(มานพ พรเพียรวิชานนท์) <Unknown>\n"
 "Language-Team: Thai <th@li.org>\n"
+"Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-09-30 11:53+0000\n"
+"X-Generator: Launchpad (build 14071)\n"
 
 #. ok button label
 #. txt_ok
@@ -39,7 +40,7 @@ msgstr "ดำเนินการต่อ"
 
 #. txt_bootoptions
 msgid "Boot Options"
-msgstr "ตัวเลือกในการบูตระบบ"
+msgstr "ตัวเลือกในการบูต"
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
@@ -51,8 +52,8 @@ msgid ""
 "You are leaving the graphical boot menu and\n"
 "starting the text mode interface."
 msgstr ""
-"คุณกำลังจะออกจากบูตเมนูแบบกราฟิก\n"
-"ไปเป็นแบบข้อความ"
+"คุณกำลังจะออกจากเมนูบูตแบบกราฟิกและ\n"
+"เริ่มใช้ส่วนติดต่อผู้ใช้แบบข้อความ"
 
 #. txt_help
 msgid "Help"
@@ -71,7 +72,7 @@ msgstr "I/O ผิดพลาด"
 #. boot disk change dialog title
 #. txt_change_disk_title
 msgid "Change Boot Disk"
-msgstr "เปลี่ยนบูตดิสก์"
+msgstr "เปลี่ยนแผ่นบูต"
 
 #. txt_insert_disk
 #, c-format
@@ -123,7 +124,7 @@ msgid ""
 "\n"
 "Turn the DVD over then continue."
 msgstr ""
-"นี่เป็นแผ่นดีวีดีที่สามารถใช้ได้ทั้ง 2 ด้านคุณบูตจากด้านที่ 2\n"
+"นี่เป็นแผ่นดีวีดีที่สามารถใช้ได้ทั้ง 2 ด้าน คุณได้บูตจากด้านที่ 2\n"
 "\n"
 "กรุณาพลิกแผ่นดีวีดีก่อนจึงจะสามารดำเนินการต่อไปได้"
 
@@ -134,7 +135,7 @@ msgstr "ปิดเครื่อง"
 
 #. txt_power_off
 msgid "Halt the system now?"
-msgstr "ต้องการปิดเครื่องเดี๋ยวนี้?"
+msgstr "ต้องการปิดเครื่องเดี๋ยวนี้หรือไม่?"
 
 #. txt_password
 msgid "Password\n"
@@ -173,7 +174,7 @@ msgstr "ขั้นสูง"
 #. title for accessibility menu
 #. txt_access
 msgid "Accessibility"
-msgstr "ทุพพลภาพ"
+msgstr "สิ่งอำนวยความสะดวก"
 
 #. label for accessibility menu
 #. txt_access_none
@@ -213,118 +214,137 @@ msgstr "แป้นพิมพ์บนจอภาพ"
 #. label for accessibility menu
 #. txt_access_m3
 msgid "Motor Difficulties - switch devices"
-msgstr "มีปัญหาด้านการเคลื่อนไหว - ใช้อุปกรณ์สวิทซ์"
+msgstr "มอเตอร์มีปัญหา - เปลี่ยนอุปกรณ์"
 
 #. label for accessibility menu
 #. txt_access_all
 msgid "Everything"
-msgstr "ทุกอย่าง"
+msgstr "ทั้งหมด"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "^ทดลองอูบุนตูโดยที่ไม่เปลี่ยนอะไรในเครื่องของคุณ"
+msgstr "^ลองใช้ Ubuntu โดยไม่ติดตั้งลงเครื่อง"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "^ทดลองคูบุนตูโดยที่ไม่เปลี่ยนอะไรในเครื่องของคุณ"
+msgstr "^ลองใช้ Kubuntu โดยไม่ติดตั้งลงเครื่อง"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "^ทดลองเอ็ดอูบุนตูโดยที่ไม่เปลี่ยนอะไรในเครื่องของคุณ"
+msgstr "^ลองใช้ Eubuntu โดยไม่ติดตั้งลงเครื่อง"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "^ทดลองซูบุนตูโดยที่ไม่เปลี่ยนอะไรในเครื่องของคุณ"
+msgstr "^ลองใช้ Xubuntu โดยไม่ติดตั้งลงเครื่อง"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "^ทดลองใช้อูบุนตู MID โดยไม่เปลี่ยนอะไรในคอมพิวเตอร์ของคุณ"
+msgstr "^ลองใช้ Ubuntu MID โดยไม่ติดตั้งลงเครื่อง"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "^ทดลองใช้อูบุนตูเน็ตบุ๊ค Remix โดยไม่เปลี่ยนอะไรในคอมพิวเตอร์ของคุณ"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "^ทดลองUbuntu Netbook โดยไม่ต้องติดตั้ง"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "^ทดลอง Kubuntu Netbook โดยไม่ต้องติดตั้ง"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr "^ลองใช้ Lubuntu โดยไม่ต้องติดตั้งลงเครื่อง"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^เริ่ม Kubuntu"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
 msgid "Use driver update disc"
-msgstr "ใช้แผ่นไดร์เวอร์เสริม"
+msgstr "ใช้แผ่นไดรเวอร์อัพเดต"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
 msgid "^Install Ubuntu in text mode"
-msgstr "^ติดตั้งอูบุนตูในแบบแสดงข้อความ"
+msgstr "^ติดตั้ง Ubuntu ในโหมดข้อความ"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr "^ติดตั้งคูบุนตูในแบบแสดงข้อความ"
+msgstr "^ติดตั้ง Kubuntu ในโหมดข้อความ"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr "^ติดตั้งเอ็ดอูบุนตูในแบบแสดงข้อความ"
+msgstr "^ติดตั้ง Edubuntu ในโหมดข้อความ"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr "^ติดตั้งซูบุนตูในแบบแสดงข้อความ"
+msgstr "^ติดตั้ง Xubuntu ในโหมดข้อความ"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr "^ติดตั้งอูบุนตู"
+msgstr "^ติดตั้ง Ubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr "^ติดตั้งคูบุนตู"
+msgstr "^ติดตั้ง Kubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr "^ติดตั้งเอ็ดอูบุนตู"
+msgstr "^ติดตั้ง Edubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr "^ติดตั้งซูบุนตู"
+msgstr "^ติดตั้ง Xubuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu_server
 msgid "^Install Ubuntu Server"
-msgstr "^ติดตั้งอูบุนตูเซิร์ฟเวอร์"
+msgstr "^ติดตั้ง Ubuntu Server"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "ติดตั้งอูบุนตูแบบ ^Enterprise Cloud"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
 msgid "^Install Ubuntu Studio"
-msgstr "^ติดตั้งอูบุนตูสตูดิโอ"
+msgstr "^ติดตั้ง Ubuntu Studio"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu_mid
 msgid "^Install Ubuntu MID"
-msgstr "^ติดตั้งอูบุนตู MID"
+msgstr "^ติดตั้ง Ubuntu MID"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "^ติดตั้งอูบุนตูเน็ตบุ๊ค Remix"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "^ติดตั้ง Ubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "^ติดตั้ง Kubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr "^ติดตั้ง Lubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
@@ -354,27 +374,27 @@ msgstr "ติดตั้ง LTSP เซิร์ฟเวอร์"
 #. Installation mode.
 #. txt_menuitem_ltsp_mythbuntu
 msgid "Install a Diskless Image Server"
-msgstr "ติดตั้งเซิร์ฟเวอร์แบบไม่มีฮาร์ดดิสก์"
+msgstr "ติดตั้งเซิร์ฟเวอร์ไม่ใช้ดิสก์"
 
 #. Installation mode.
 #. txt_menuitem_cli
 msgid "Install a command-line system"
-msgstr "ติดตั้งระบบแแบบพิมพ์คำสั่ง"
+msgstr "ติดตั้งระบบบรรทัดคำสัั่ง"
 
 #. Installation mode.
 #. txt_menuitem_minimal
 msgid "Install a minimal system"
-msgstr "ติดตั้งระบบแบบเฉพาะเท่าที่จำเป็น"
+msgstr "ติดตั้งระบบขนาดเล็ก"
 
 #. Installation mode.
 #. txt_menuitem_minimalvm
 msgid "Install a minimal virtual machine"
-msgstr "ติดตั้งเฉพาะที่จำเป็นของเครื่องเสมือนจริง"
+msgstr "ติดตั้งเครื่องเสมือนจริงขนาดเล็ก"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
 msgid "^Check disc for defects"
-msgstr "^ตรวจหาตำหนิบนแผ่นดิสก์"
+msgstr "^ตรวจสอบแผ่นเพื่อหาข้อผิดพลาด"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -408,6 +428,5 @@ msgstr "^ติดตั้ง Mythbuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "^ทดลอง Mythbuntu โดยไม่มีการปรับเปลี่ยนเครื่องของคุณ"
+msgstr "^ลองใช้ Mythbuntu โดยไม่ติดตั้งลงเครื่อง"

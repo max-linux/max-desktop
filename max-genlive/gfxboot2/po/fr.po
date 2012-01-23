@@ -12,14 +12,15 @@ msgstr ""
 "Project-Id-Version: po_bootloader-fr\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2009-09-05 12:22+0000\n"
-"Last-Translator: Emmanuel Sunyer <emmanuel.sunyer@dbmail.com>\n"
+"PO-Revision-Date: 2011-10-02 14:12+0000\n"
+"Last-Translator: Emmanuel Sunyer <emmanuel.sunyer@gmail.com>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-10-05 15:28+0000\n"
+"X-Generator: Launchpad (build 14085)\n"
 
 #. ok button label
 #. txt_ok
@@ -48,7 +49,7 @@ msgstr "Options d'amorçage"
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
 msgid "Exiting..."
-msgstr "Fermeture en cours ..."
+msgstr "Fermeture..."
 
 #. txt_exit_dialog
 msgid ""
@@ -75,7 +76,7 @@ msgstr "Erreur d'E/S"
 #. boot disk change dialog title
 #. txt_change_disk_title
 msgid "Change Boot Disk"
-msgstr "Changer le disque d'amorçage"
+msgstr "Changer de disque d'amorçage"
 
 #. txt_insert_disk
 #, c-format
@@ -134,7 +135,7 @@ msgstr ""
 #. power off dialog title
 #. txt_power_off_title
 msgid "Power Off"
-msgstr "Arrêt"
+msgstr "Extinction"
 
 #. txt_power_off
 msgid "Halt the system now?"
@@ -226,44 +227,53 @@ msgstr "Tout"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "^Essayez Ubuntu sans altérer votre ordinateur"
+msgstr "^Essayer Ubuntu sans l'installer"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "^Essayez Kubuntu sans altérer votre ordinateur"
+msgstr "^Essayer Kubuntu sans l'installer"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "^Essayez Edubuntu sans altérer votre ordinateur"
+msgstr "^Essayer Edubuntu sans l'installer"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "^Essayez Xubuntu sans altérer votre ordinateur"
+msgstr "^Essayer Xubuntu sans l'installer"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "^Essayez Ubuntu MID sans altérer votre ordinateur"
+msgstr "^Essayer Ubuntu MID sans l'installer"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "^Essayez Ubuntu Netbook Remix sans altérer votre ordinateur"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "^Essayer Ubuntu Netbook sans l'installer"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "^Essayer Kubuntu Netbook sans l'installer"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr "^Essayer Lubuntu sans l'installer"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^Démarrer Kubuntu"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
 msgid "Use driver update disc"
-msgstr "Utiliser le disque de mise à jour de pilote"
+msgstr "Utiliser le disque de mises à jour de pilotes"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
@@ -311,9 +321,9 @@ msgid "^Install Ubuntu Server"
 msgstr "^Installer Ubuntu Server"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Installer Ubuntu ^Enterprise Cloud"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr "^Inscrire le système avec Ubuntu Orchestra Server"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
@@ -326,9 +336,19 @@ msgid "^Install Ubuntu MID"
 msgstr "^Installer Ubuntu MID"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "^Installer Ubuntu Netbook Remix"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "^Installer Ubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "^Installer Kubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr "^Installer Lubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
@@ -412,6 +432,5 @@ msgstr "^Installer Mythbuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "^Essayez Mythbuntu sans altérer à votre ordinateur"
+msgstr "^Essayer Mythbuntu sans l'installer"

@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2009-09-24 08:39+0000\n"
-"Last-Translator: mahfiaz <mahfiaz@gmail.com>\n"
+"PO-Revision-Date: 2011-09-25 11:34+0000\n"
+"Last-Translator: tabbernuk <boamaod@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
+"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-09-30 11:52+0000\n"
+"X-Generator: Launchpad (build 14071)\n"
 
 #. ok button label
 #. txt_ok
@@ -30,7 +31,7 @@ msgstr "Katkesta"
 #. reboot button label
 #. txt_reboot
 msgid "Reboot"
-msgstr "Taaskäivitus"
+msgstr "Taaskäivita"
 
 #. continue button label
 #. txt_continue
@@ -51,12 +52,12 @@ msgid ""
 "You are leaving the graphical boot menu and\n"
 "starting the text mode interface."
 msgstr ""
-"Sa oled lahkumas graafilisest alglaadimismenüüst ning\n"
-"alustad tekstipõhise liidese kasutamist."
+"Oled lahkumas graafilisest alglaadimismenüüst ning\n"
+"alustad tekstiliidese kasutamist."
 
 #. txt_help
 msgid "Help"
-msgstr "Abiteave"
+msgstr "Abi"
 
 #. info box title
 #. txt_info_title
@@ -71,12 +72,12 @@ msgstr "S/V viga"
 #. boot disk change dialog title
 #. txt_change_disk_title
 msgid "Change Boot Disk"
-msgstr "Alglaadimise ketta vahetus"
+msgstr "Alglaadimisketta vahetus"
 
 #. txt_insert_disk
 #, c-format
 msgid "Insert boot disk %u."
-msgstr "Sisesta alglaadimise ketas %u."
+msgstr "Sisesta alglaadimisketas %u."
 
 #. txt_insert_disk2
 #, c-format
@@ -84,8 +85,8 @@ msgid ""
 "This is boot disk %u.\n"
 "Insert boot disk %u."
 msgstr ""
-"See on alglaadimise ketas %u.\n"
-"Sisesta alglaadimise ketas %u."
+"See on alglaadimisketas %u.\n"
+"Sisesta alglaadimisketas %u."
 
 #. txt_insert_disk3
 #, c-format
@@ -93,13 +94,13 @@ msgid ""
 "This is not a suitable boot disk.\n"
 "Please insert boot disk %u."
 msgstr ""
-"See pole sobiv alglaadimise ketas.\n"
-"Palun sisesta alglaadimise ketas %u."
+"See pole sobiv alglaadimisketas.\n"
+"Palun sisesta alglaadimisketas %u."
 
 #. password dialog title
 #. txt_password_title
 msgid "Password"
-msgstr "Salasõna"
+msgstr "Parool"
 
 #. Keep the newlines and spaces after ':'!
 #. txt_password
@@ -108,7 +109,7 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-"Sisesta oma salasõna   \n"
+"Sisesta oma parool:   \n"
 "\n"
 "\n"
 
@@ -125,12 +126,12 @@ msgid ""
 msgstr ""
 "See on kahepoolne DVD. Sa alustasid laadimist teiselt poolelt.\n"
 "\n"
-"Palun pööra DVD ümber ja jätka."
+"Pööra DVD ümber ja jätka."
 
 #. power off dialog title
 #. txt_power_off_title
 msgid "Power Off"
-msgstr "Väljalülitamine"
+msgstr "Lülita välja"
 
 #. txt_power_off
 msgid "Halt the system now?"
@@ -138,7 +139,7 @@ msgstr "Kas seisata süsteem kohe?"
 
 #. txt_password
 msgid "Password\n"
-msgstr "Salasõna\n"
+msgstr "Parool\n"
 
 #. button label for other/more options
 #. txt_other_options
@@ -153,12 +154,12 @@ msgstr "Keel"
 #. label for keymap selection
 #. txt_keymap
 msgid "Keymap"
-msgstr "Klaviatuuripaigutus"
+msgstr "Klahvistik"
 
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr "Režiimid"
+msgstr "Režiim"
 
 #. label for modes menu
 #. txt_mode_normal
@@ -168,12 +169,12 @@ msgstr "Tavaline"
 #. label for d-i mode menu
 #. txt_expert_mode
 msgid "Expert mode"
-msgstr "Edasijõudnutele"
+msgstr "Asjatundjale"
 
 #. title for accessibility menu
 #. txt_access
 msgid "Accessibility"
-msgstr "Hõlbustused"
+msgstr "Hõlbustus"
 
 #. label for accessibility menu
 #. txt_access_none
@@ -198,7 +199,7 @@ msgstr "Ekraanilugeja"
 #. label for accessibility menu
 #. txt_access_brltty
 msgid "Braille Terminal"
-msgstr "Braille'i terminal"
+msgstr "Braille terminal"
 
 #. label for accessibility menu
 #. txt_access_m1
@@ -213,7 +214,7 @@ msgstr "Ekraaniklaviatuur"
 #. label for accessibility menu
 #. txt_access_m3
 msgid "Motor Difficulties - switch devices"
-msgstr "Mootori raskused - vaheta seadmeid"
+msgstr "Raskused mootoriga - vaheta seadmeid"
 
 #. label for accessibility menu
 #. txt_access_all
@@ -222,64 +223,73 @@ msgstr "Kõik"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "P^roovi Ubuntut ilma oma arvutit muutmata"
+msgstr "^Proovi Ubuntut ilma paigaldamata"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "P^roovi Kubuntut ilma oma arvutit muutmata"
+msgstr "^Proovi Kubuntut ilma paigaldamata"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "P^roovi Edubuntut ilma oma arvutit muutmata"
+msgstr "^Proovi Edubuntut ilma paigaldamata"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "P^roovi Xubuntut ilma oma arvutit muutmata"
+msgstr "^Proovi Xubuntut ilma paigaldamata"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "^Proovi Ubuntu MID-i ilma oma arvutit muutmata"
+msgstr "^Proovi Ubuntu MID-i ilma paigaldamata"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "^Proovi Ubuntu Netbook Remix'i ilma oma arvutit muutmata"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "^Proovi Ubuntu Netbooki ilma paigaldamata"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "^Proovi Kubuntu Netbooki ilma paigaldamata"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr "^Proovi Lubuntut ilma paigaldamata"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^Käivita Kubuntu"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
 msgid "Use driver update disc"
-msgstr "Paigalda koos draiveri ^uuenduste plaadiga"
+msgstr "Draiveriuuenduste plaadi kasutamine"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
 msgid "^Install Ubuntu in text mode"
-msgstr "Paigalda Ubuntu ^tekstilaadis"
+msgstr "Paigalda Ubuntu ^tekstirežiimis"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr "Paigalda Kubuntu ^tekstilaadis"
+msgstr "Paigalda Kubuntu ^tekstirežiimis"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr "Paigalda Edubuntu ^tekstilaadis"
+msgstr "Paigalda Edubuntu ^tekstirežiimis"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr "Paigalda Xubuntu ^tekstilaadis"
+msgstr "Paigalda Xubuntu ^tekstirežiimis"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
@@ -307,9 +317,9 @@ msgid "^Install Ubuntu Server"
 msgstr "^Paigalda Ubuntu server"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Paigalda Ubuntu ^Enterprise Cloud"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
@@ -322,34 +332,44 @@ msgid "^Install Ubuntu MID"
 msgstr "^Paigalda Ubuntu MID"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "^Paigalda Ubuntu Netbook Remix"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "^Paigalda Ubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "^Paigalda Kubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr "^Paigalda Lubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
-msgstr "Paigalda ^tööjaam"
+msgstr "Paigalda tööjaam"
 
 #. Installation mode.
 #. txt_menuitem_server
 msgid "Install a server"
-msgstr "Paigalda ser^ver"
+msgstr "Paigalda server"
 
 #. Installation mode.
 #. txt_menuitem_oem
 msgid "OEM install (for manufacturers)"
-msgstr "^OEM paigaldus (tootjatele)"
+msgstr "OEM-paigaldus (tootjatele)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
 msgid "Install a LAMP server"
-msgstr "Paigalda ^LAMP server"
+msgstr "Paigalda LAMP server"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
 msgid "Install an LTSP server"
-msgstr "Paigalda LTSP s^erver"
+msgstr "Paigalda LTSP server"
 
 #. Installation mode.
 #. txt_menuitem_ltsp_mythbuntu
@@ -359,7 +379,7 @@ msgstr "Paigalda kettata pildiserver"
 #. Installation mode.
 #. txt_menuitem_cli
 msgid "Install a command-line system"
-msgstr "Paigalda k^äsurea süsteem"
+msgstr "Paigalda käsureasüsteem"
 
 #. Installation mode.
 #. txt_menuitem_minimal
@@ -369,12 +389,12 @@ msgstr "Paigalda minimaalne süsteem"
 #. Installation mode.
 #. txt_menuitem_minimalvm
 msgid "Install a minimal virtual machine"
-msgstr "Paigalda võimalikult väike virtuaalmasin"
+msgstr "Paigalda minimaalne virtuaalmasin"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
 msgid "^Check disc for defects"
-msgstr "Tee ^kettale vigade kontroll"
+msgstr "Tee plaadile vigade ^kontroll"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -389,7 +409,7 @@ msgstr "^Mälutest"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
-msgstr "Tee alglaa^dimine esimeselt kõvakettalt"
+msgstr "Tee ^alglaadimine esimeselt kõvakettalt"
 
 #. Boot option.
 #. txt_option_free
@@ -408,6 +428,5 @@ msgstr "^Paigalda Mythbuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "P^roovi Mythbuntu't ilma oma arvutit muutmata"
+msgstr "^Proovi Mythbuntut ilma paigaldamata"

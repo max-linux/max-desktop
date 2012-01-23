@@ -180,7 +180,6 @@ apt-get $APT_OPTS dist-upgrade || ERROR=1
 apt-get $APT_OPTS autoremove --purge || ERROR=1
 #apt-get $APT_OPTS remove --purge noextraubuntu || ERROR=1
 apt-get clean
-update-dpsyco-skel
 exit \$ERROR
 EOC
 
@@ -193,9 +192,6 @@ if ! grep -q REPORT_ABSENT_SYMLINK $CHROOT/etc/default/resolvconf; then
   echo "REPORT_ABSENT_SYMLINK=no" >> $CHROOT/etc/default/resolvconf
 fi
 
-
-_echo "Actualizando DPSYCO..."
-chroot $CHROOT/ /usr/sbin/update-dpsyco-skel
 
 _echo "Deshabilitando contraseña de root"
 chroot $CHROOT/ usermod -L root

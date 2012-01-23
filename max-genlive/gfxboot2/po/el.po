@@ -10,14 +10,15 @@ msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2009-10-20 11:32+0000\n"
-"Last-Translator: Thanos Lefteris <alefteris@gmail.com>\n"
+"PO-Revision-Date: 2011-04-15 13:56+0000\n"
+"Last-Translator: Hellenic SuSE Translators Group <Unknown>\n"
 "Language-Team: Hellenic-Ελληνικά-Greek <hstg@billg.gr>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-26 12:28+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-09-30 11:53+0000\n"
+"X-Generator: Launchpad (build 14071)\n"
 
 #. ok button label
 #. txt_ok
@@ -27,7 +28,7 @@ msgstr "Εντάξει"
 #. cancel button label
 #. txt_cancel
 msgid "Cancel"
-msgstr "Ακύρωση"
+msgstr "Άκυρο"
 
 #. reboot button label
 #. txt_reboot
@@ -41,12 +42,12 @@ msgstr "Συνέχεια"
 
 #. txt_bootoptions
 msgid "Boot Options"
-msgstr "Ρυθμ.Εκκίνησης"
+msgstr "Επιλογές εκκίνησης"
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
 msgid "Exiting..."
-msgstr "Γίνεται τερματισμός..."
+msgstr "Έξοδος…"
 
 #. txt_exit_dialog
 msgid ""
@@ -95,8 +96,8 @@ msgid ""
 "This is not a suitable boot disk.\n"
 "Please insert boot disk %u."
 msgstr ""
-"Αυτή δεν είναι ο κατάλληλος δίσκος εκκίνησης.\n"
-"Παρακαλώ εισάγετε το δίσκο εκκίνησης %u."
+"Αυτός δεν είναι ο κατάλληλος δίσκος εκκίνησης.\n"
+"Παρακαλώ εισάγετε τον δίσκο εκκίνησης %u."
 
 #. password dialog title
 #. txt_password_title
@@ -125,7 +126,7 @@ msgid ""
 "\n"
 "Turn the DVD over then continue."
 msgstr ""
-"Αυτό είναι DVD δύο πλευρών. Έχετε κάνει εκκίνηση από την δεύτερη πλευρά.\n"
+"Αυτό είναι DVD δύο πλευρών. Έχετε κάνει εκκίνηση από τη δεύτερη πλευρά.\n"
 "\n"
 "Γυρίστε το DVD και συνεχίστε."
 
@@ -136,7 +137,7 @@ msgstr "Τερματισμός λειτουργίας"
 
 #. txt_power_off
 msgid "Halt the system now?"
-msgstr "Θέλετε να σταματήσετε το σύστημα τώρα;"
+msgstr "Θέλετε να απενεργοποιήσετε το σύστημα τώρα;"
 
 #. txt_password
 msgid "Password\n"
@@ -224,39 +225,48 @@ msgstr "Όλα"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "^Δοκιμή του Ubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+msgstr "^Δοκιμάστε το Ubuntu χωρίς εγκατάσταση"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "^Δοκιμή του Kubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+msgstr "^Δοκιμάστε το Kubuntu χωρίς εγκατάσταση"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "^Δοκιμή του Edubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+msgstr "^Δοκιμάστε το Edubuntu χωρίς εγκατάσταση"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "^Δοκιμή του Xubuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+msgstr "^Δοκιμάστε το Xubuntu χωρίς εγκατάσταση"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "^Δοκιμή του Ubuntu MID χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+msgstr "^Δοκιμάστε το Ubuntu MID χωρίς εγκατάσταση"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "^Δοκιμή του Ubuntu Netbook Remix χωρίς αλλαγές στον υπολογιστή σας"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "^Δοκιμάστε το Ubuntu Netbook χωρίς εγκατάσταση"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "^Δοκιμάστε το Kubuntu Netbook χωρίς εγκατάσταση"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^Εκκίνηση Kubuntu"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
@@ -309,9 +319,9 @@ msgid "^Install Ubuntu Server"
 msgstr "^Εγκατάσταση Ubuntu Server"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Εγκατάσταση Ubuntu ^Enterprise Cloud"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
@@ -324,14 +334,24 @@ msgid "^Install Ubuntu MID"
 msgstr "^Εγκατάσταση Ubuntu MID"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "^Εγκατάσταση Ubuntu Netbook Remix"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "^Εγκατάσταση Ubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "^Εγκατάσταση Kubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
-msgstr "Εγκατάσταση ενός ^σταθμού εργασίας"
+msgstr "Εγκατάσταση ενός σταθμού εργασίας"
 
 #. Installation mode.
 #. txt_menuitem_server
@@ -410,6 +430,5 @@ msgstr "^Εγκατάσταση Mythbuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "^Δοκιμή του Mythbuntu χωρίς να γίνουν αλλαγές στον υπολογιστή σας"
+msgstr "^Δοκιμάστε το Mythbuntu χωρίς εγκατάσταση"

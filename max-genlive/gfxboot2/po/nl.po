@@ -11,14 +11,15 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2009-09-03 12:42+0000\n"
-"Last-Translator: cumulus007 <cumulus0007@gmail.com>\n"
+"PO-Revision-Date: 2011-10-03 08:45+0000\n"
+"Last-Translator: Rachid <Unknown>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-10-05 15:28+0000\n"
+"X-Generator: Launchpad (build 14085)\n"
 
 #. ok button label
 #. txt_ok
@@ -38,7 +39,7 @@ msgstr "Herstarten"
 #. continue button label
 #. txt_continue
 msgid "Continue"
-msgstr "Doorgaan"
+msgstr "Verder"
 
 #. txt_bootoptions
 msgid "Boot Options"
@@ -47,15 +48,15 @@ msgstr "Opstartopties"
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
 msgid "Exiting..."
-msgstr "Beëindigen..."
+msgstr "Afsluiten..."
 
 #. txt_exit_dialog
 msgid ""
 "You are leaving the graphical boot menu and\n"
 "starting the text mode interface."
 msgstr ""
-"U gaat het grafische opstartmenu verlaten.\n"
-"De interface wordt nu opgestart in tekstmodus."
+"U verlaat nu het grafische opstartmenu,\n"
+"de tekst-interface wordt gestart."
 
 #. txt_help
 msgid "Help"
@@ -137,7 +138,7 @@ msgstr "Computer uitschakelen"
 
 #. txt_power_off
 msgid "Halt the system now?"
-msgstr "Wilt u het systeem nu uitschakelen?"
+msgstr "Wilt u de computer nu uitschakelen?"
 
 #. txt_password
 msgid "Password\n"
@@ -146,7 +147,7 @@ msgstr "Wachtwoord\n"
 #. button label for other/more options
 #. txt_other_options
 msgid "Other Options"
-msgstr "Andere opties"
+msgstr "Overige opties"
 
 #. label for language selection
 #. txt_language
@@ -206,7 +207,7 @@ msgstr "Braille-terminal"
 #. label for accessibility menu
 #. txt_access_m1
 msgid "Keyboard Modifiers"
-msgstr "Optietoetsen voor toetsenbord"
+msgstr "Combinatietoetsen"
 
 #. label for accessibility menu
 #. txt_access_m2
@@ -216,7 +217,7 @@ msgstr "Schermtoetsenbord"
 #. label for accessibility menu
 #. txt_access_m3
 msgid "Motor Difficulties - switch devices"
-msgstr "Motorische handicap - toetsenbord"
+msgstr "Toetsenbord voor mensen met een motorische beperking"
 
 #. label for accessibility menu
 #. txt_access_all
@@ -225,39 +226,48 @@ msgstr "Alles"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "^Ubuntu uitproberen zonder te installeren"
+msgstr "Ubuntu ui^tproberen zonder te installeren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "^Kubuntu uitproberen zonder te installeren"
+msgstr "Kubuntu ui^tproberen zonder te installeren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "^Edubuntu uitproberen zonder te installeren"
+msgstr "Edubuntu ui^tproberen zonder te installeren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "^Xubuntu uitproberen zonder te installeren"
+msgstr "Xubuntu ui^tproberen zonder te installeren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "^Ubuntu MID uitproberen zonder te installeren"
+msgstr "Ubuntu MID ui^tproberen zonder te installeren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "^Ubuntu Netbook Remix uitproberen zonder te installeren"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "Ubuntu Netbook ui^tproberen zonder te installeren"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "Kubuntu Netbook ui^tproberen zonder te installeren"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr "Lubuntu ui^tproberen zonder te installeren"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "Kubuntu op^starten"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
@@ -310,9 +320,9 @@ msgid "^Install Ubuntu Server"
 msgstr "Ubuntu Server ^installeren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Ubuntu Enterprise Cloud ^installeren"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr "^Systeem registreren bij Ubuntu Orchestra Server"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
@@ -325,9 +335,19 @@ msgid "^Install Ubuntu MID"
 msgstr "Ubuntu MID ^installeren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "Ubuntu Netbook Remix ^installeren"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "Ubuntu Netbook ^installeren"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "Kubuntu Netbook ^installeren"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr "Lubuntu ^installeren"
 
 #. Installation mode.
 #. txt_menuitem_workstation
@@ -382,7 +402,7 @@ msgstr "^cd-rom op fouten controleren"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
 msgid "^Rescue a broken system"
-msgstr "^Een gebroken systeem repareren"
+msgstr "Een beschadigd systeem he^rstellen"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
@@ -392,7 +412,7 @@ msgstr "^Geheugentest uitvoeren"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
-msgstr "^Opstarten vanaf de eerste hardeschijf"
+msgstr "Vanaf de eerste harde schijf ^opstarten"
 
 #. Boot option.
 #. txt_option_free
@@ -407,10 +427,9 @@ msgstr "^Dell automatische herinstallatie"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_mythbuntu
 msgid "^Install Mythbuntu"
-msgstr "^Mythbuntu installeren"
+msgstr "Mythbuntu ^installeren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "^Mythbuntu uitproberen zonder te installeren"
+msgstr "Mythbuntu ui^tproberen zonder te installeren"

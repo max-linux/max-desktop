@@ -77,14 +77,8 @@
 } def
 
 
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-% Draw main window.
-%
-% ( window ) ==> ( )
-%
-/main.show {
-  window.push
-
+/menu.init {
+  % None of this may involve showing anything on the screen.
   /menu.shift 0 def
   /menu.visible.entries menu.texts length menu.max.entries min def
 
@@ -97,6 +91,32 @@
   menu.entry menu.visible.entries sub 0 ge {
     /menu.shift menu.entry menu.texts length menu.visible.entries sub min def
   } if
+
+  boot.pos.init
+
+  /boot.ed.width screen.size pop boot.pos pop sub 20 sub def
+  /boot.ed.height fontheight 2 add def
+
+  /boot.ed [
+    boot.pos exch 10 add exch 1 sub
+    % can't save background pixmap yet
+    .undef
+    boot.buf
+    boot.buf.size
+    .undef
+  ] def
+} def
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Draw main window.
+%
+% ( window ) ==> ( )
+%
+/main.show {
+  window.push
+
+  menu.init
 
   menu.visible.entries menu.texts length lt menu.scrollbar and {
    /menu.bar.width frame1.size pop frame4.size pop sub def
@@ -125,20 +145,12 @@
 
   window.current .font get setfont
 
-  boot.pos.init
-
-  /boot.ed.width screen.size pop boot.pos pop sub 20 sub def
-  /boot.ed.height fontheight 2 add def
-
   /boot.window window.current def
 
-  /boot.ed [
-    boot.pos exch 10 add exch 1 sub
-    over over moveto boot.ed.width boot.ed.height savescreen
-    boot.buf
-    boot.buf.size
-    .undef
-  ] def
+  % save background behind boot parameters field
+  boot.ed dup 0 get exch 1 get
+  over over moveto boot.ed.width boot.ed.height savescreen
+  boot.ed 2 rot put
 
   boot.setup
 

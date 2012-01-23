@@ -1,20 +1,22 @@
 # Serbian translations for boot loader
 # Copyright (C) 2005 SUSE Linux GmbH
 # Copyright © 2005 Danilo Segan <danilo@gnome.org>
-#
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: bootloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-03-27 22:16+0000\n"
-"PO-Revision-Date: 2009-07-01 23:51+0000\n"
-"Last-Translator: Данило Шеган <Unknown>\n"
-"Language-Team: Serbian <novell@prevod.org>\n"
+"PO-Revision-Date: 2011-10-02 15:08+0000\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Ubuntu Serbian Translators\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-10-05 15:28+0000\n"
+"X-Generator: Launchpad (build 14085)\n"
+"X-Project-Style: default\n"
 
 #. ok button label
 #. txt_ok
@@ -24,12 +26,12 @@ msgstr "У реду"
 #. cancel button label
 #. txt_cancel
 msgid "Cancel"
-msgstr "Одустани"
+msgstr "Откажи"
 
 #. reboot button label
 #. txt_reboot
 msgid "Reboot"
-msgstr "Ресетуј"
+msgstr "Поново покрени"
 
 #. continue button label
 #. txt_continue
@@ -50,8 +52,8 @@ msgid ""
 "You are leaving the graphical boot menu and\n"
 "starting the text mode interface."
 msgstr ""
-"Напуштате графички мени за покретање и\n"
-"покрећете текстуално сучеље."
+"Напуштате графички изборник покретања и\n"
+"покрећете сучеље у режиму текста."
 
 #. txt_help
 msgid "Help"
@@ -75,7 +77,7 @@ msgstr "Промените диск за покретање"
 #. txt_insert_disk
 #, c-format
 msgid "Insert boot disk %u."
-msgstr "Уметните диск за покретање %u."
+msgstr "Уметните диск за покретање „%u“."
 
 #. txt_insert_disk2
 #, c-format
@@ -83,8 +85,8 @@ msgid ""
 "This is boot disk %u.\n"
 "Insert boot disk %u."
 msgstr ""
-"Ово је диск за покретање %u.\n"
-"Уметните диск за покретање %u."
+"Ово је диск за покретање „%u“.\n"
+"Уметните диск за покретање „%u“."
 
 #. txt_insert_disk3
 #, c-format
@@ -92,8 +94,8 @@ msgid ""
 "This is not a suitable boot disk.\n"
 "Please insert boot disk %u."
 msgstr ""
-"Ово није адекватан диск за покретање <product>.\n"
-"Уметните диск за покретање %u."
+"Ово није прикладан диск за покретање.\n"
+"Уметните диск за покретање „%u“."
 
 #. password dialog title
 #. txt_password_title
@@ -107,14 +109,14 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-"Унесите своју лозинку:   \n"
+"Унесите вашу лозинку:   \n"
 "\n"
 "\n"
 
 #. dvd warning title
 #. txt_dvd_warning_title
 msgid "DVD Error"
-msgstr "ДВД грешка"
+msgstr "Грешка на ДВД-у"
 
 #. txt_dvd_warning2
 msgid ""
@@ -122,7 +124,7 @@ msgid ""
 "\n"
 "Turn the DVD over then continue."
 msgstr ""
-"Ово је двострани ДВД.  Покренули сте са друге стране.\n"
+"Ово је двострани ДВД. Покренули сте са друге стране.\n"
 "\n"
 "Окрените ДВД и затим наставите."
 
@@ -133,7 +135,7 @@ msgstr "Угаси"
 
 #. txt_power_off
 msgid "Halt the system now?"
-msgstr "Сада угасити систем?"
+msgstr "Да сада угасим систем?"
 
 #. txt_password
 msgid "Password\n"
@@ -157,7 +159,7 @@ msgstr "Мапа тастера"
 #. label for installation mode selection
 #. txt_modes
 msgid "Modes"
-msgstr "Начини"
+msgstr "Режими"
 
 #. label for modes menu
 #. txt_mode_normal
@@ -177,7 +179,7 @@ msgstr "Приступачност"
 #. label for accessibility menu
 #. txt_access_none
 msgid "None"
-msgstr "ништа"
+msgstr "Ништа"
 
 #. label for accessibility menu
 #. txt_access_v1
@@ -197,22 +199,22 @@ msgstr "Читач екрана"
 #. label for accessibility menu
 #. txt_access_brltty
 msgid "Braille Terminal"
-msgstr "Брејев терминал"
+msgstr "Брајев терминал"
 
 #. label for accessibility menu
 #. txt_access_m1
 msgid "Keyboard Modifiers"
-msgstr "Модификатори тастатуре"
+msgstr "Измењивачи тастатуре"
 
 #. label for accessibility menu
 #. txt_access_m2
 msgid "On-Screen Keyboard"
-msgstr "тастатура на екрану"
+msgstr "Тастатура на екрану"
 
 #. label for accessibility menu
 #. txt_access_m3
 msgid "Motor Difficulties - switch devices"
-msgstr "Проблеми са мотором - промените уређај"
+msgstr "Проблеми са мотором — промените уређај"
 
 #. label for accessibility menu
 #. txt_access_all
@@ -221,44 +223,53 @@ msgstr "Све"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "^Пробајте Убунту без икаквих промена на вашем рачунару"
+msgstr "^Пробајте Убунту без инсталирања"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "^Пробајте Кубунту без икаквих промена на вашем рачунару"
+msgstr "^Пробајте Kубунту без инсталирања"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "^Пробајте Едубунту без икаквих промена на вашем рачунару"
+msgstr "^Пробајте Едубунту без инсталирања"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "^Пробајте Ксубунту без икаквих промена на вашем рачунару"
+msgstr "^Пробајте Ксубунту без инсталирања"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "^Пробајте Убунту МИ без икаквих промена на вашем рачунару"
+msgstr "^Пробајте Убунту МИД без инсталирања"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "^Пробајте Убунту за нетбукове без измена на вашем рачунару"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "^Пробајте Убунту за нетбуке без инсталирања"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "^Пробајте Кубунту за нетбуке без инсталиирања"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr "^Пробајте Лубунту без инсталирања"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^Покрени Кубунту"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
 msgid "Use driver update disc"
-msgstr "Користи диск са освеженим драјверима"
+msgstr "Користите диск са освежењима управљачких програма"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
@@ -268,37 +279,37 @@ msgstr "^Инсталирај Убунту у текстуалном режим�
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr "^Инсталирај Kubuntu у текстуалном моду"
+msgstr "^Инсталирај Кубунту у текстуалном режиму"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr "^Инсталирај Edubuntu у текстуалном моду"
+msgstr "^Инсталирај Едубунту у текстуалном режиму"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr "^Инсталирај Xubuntu у текстуалном моду"
+msgstr "^Инсталирај Ксубунту у текстуалном режиму"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
 msgid "^Install Ubuntu"
-msgstr "^Инсталирај Ubuntu"
+msgstr "^Инсталирај Убунту"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_kubuntu
 msgid "^Install Kubuntu"
-msgstr "^Инсталирај Kubuntu"
+msgstr "^Инсталирај Кубунту"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr "^Инсталирај Edubuntu"
+msgstr "^Инсталирај Едубунту"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
 msgid "^Install Xubuntu"
-msgstr "^Инсталирај Xubuntu"
+msgstr "^Инсталирај Ксубунту"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu_server
@@ -306,24 +317,34 @@ msgid "^Install Ubuntu Server"
 msgstr "^Инсталирај Убунту за сервере"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr ""
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr "^Ангажујте систем са Убунтуовим оркестар сервером"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
 msgid "^Install Ubuntu Studio"
-msgstr "^Инсталирај Убунту Студио"
+msgstr "^Инсталирај Убунту студио"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu_mid
 msgid "^Install Ubuntu MID"
-msgstr "^Инсталирај Убунту за мобилне и интернет уређаје"
+msgstr "^Инсталирај Убунту МИД"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "^Инсталирај Убунту за нетбукове"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "^Инсталирај Убунту за нетбуке"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "^Инсталирај Кубунту за нетбуке"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr "^Инсталирај Лубунту"
 
 #. Installation mode.
 #. txt_menuitem_workstation
@@ -343,12 +364,12 @@ msgstr "ОЕМ инсталација (за произвођаче)"
 #. Installation mode.
 #. txt_menuitem_lamp
 msgid "Install a LAMP server"
-msgstr "Инсталирај LAMP сервер"
+msgstr "Инсталирај ЛАМП сервер"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
 msgid "Install an LTSP server"
-msgstr "Инсталирај LTSP сервер"
+msgstr "Инсталирај ЛТСП сервер"
 
 #. Installation mode.
 #. txt_menuitem_ltsp_mythbuntu
@@ -378,7 +399,7 @@ msgstr "^Провери диск за оштећења"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
 msgid "^Rescue a broken system"
-msgstr "^Спаси оштећен систем"
+msgstr "^Спаси оштећени систем"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
@@ -388,7 +409,7 @@ msgstr "Тестирај ^меморију"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
-msgstr "^Покрени са првог фиксногдиска"
+msgstr "^Покрени са првог чврстог диска"
 
 #. Boot option.
 #. txt_option_free
@@ -398,15 +419,14 @@ msgstr "Само слободан софтвер"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_dell_factory_recovery
 msgid "^Dell Automatic Reinstall"
-msgstr "^Dell-ово аутоматско пре-инсталирање"
+msgstr "^Делово аутоматско реинсталирање"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_mythbuntu
 msgid "^Install Mythbuntu"
-msgstr "^Инсталирај Mythbuntu"
+msgstr "^Инсталирај Митубунту"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "^Пробајте Mythbuntu без измена на вашем рачунару"
+msgstr "^Пробајте Митубунту без инсталирања"

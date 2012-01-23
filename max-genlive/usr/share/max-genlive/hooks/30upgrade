@@ -4,6 +4,11 @@ if [ ! -e /sbin/initctl.distrib ]; then
   chroot $CHROOT ln -s /bin/true /sbin/initctl
 fi
 
+if [ ! -e /usr/sbin/update-grub ]; then
+  chroot $CHROOT dpkg-divert --local --rename --add /usr/sbin/update-grub
+  chroot $CHROOT ln -s /bin/true /usr/sbin/update-grub
+fi
+
 chroot $CHROOT << EOC || _exit "No se ha podido instalar sysv-rc y dpkg"
 export LC_ALL=C
 export LC_MESSAGES=C
@@ -45,8 +50,8 @@ EOC
 #UBUNTU_PACKAGES="deskbar-applet dkms gnome-netstatus-applet gnome-spell "
 #UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnome-themes gnome-volume-manager gnupg-agent gparted gpgsm gtk-qt-engine "
 
-UBUNTU_PACKAGES="dkms gnome-netstatus-applet "
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnome-themes gnupg-agent gparted gpgsm "
+UBUNTU_PACKAGES="dkms "
+UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnupg-agent gparted gpgsm "
 UBUNTU_PACKAGES="$UBUNTU_PACKAGES ispanish ispell jfsutils language-pack-gnome-es language-pack-gnome-es-base "
 UBUNTU_PACKAGES="$UBUNTU_PACKAGES mdetect mii-diag mysql-client openssl-blacklist "
 UBUNTU_PACKAGES="$UBUNTU_PACKAGES util-linux-locales valgrind xfsprogs"

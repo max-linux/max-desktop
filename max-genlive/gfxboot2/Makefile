@@ -44,7 +44,7 @@ FILES_BOOT_EN = $(FILES_CORE) en.tr 16x16.fnt $(PIC_COMMON)
 ifdef DEFAULT_LANG
 FILES_INST += lang
 FILES_BOOT += lang
-FILES_BOOT_EN += lang $(DEFAULT_LANG).tr
+FILES_BOOT_EN += lang $(patsubst boot/%,%,$(wildcard boot/$(DEFAULT_LANG).tr))
 endif
 
 .PHONY: all themes font clean po
@@ -84,7 +84,7 @@ font:
 	@if [ -z "$(DI_PATH)" ]; then echo "Please set DI_PATH to an unpacked debian-installer source tree" >&2; exit 1; fi
 	cat po/*.po >tmp.txt
 	cat $(DI_PATH)/build/boot/x86/po/*.po >>tmp.txt
-	mkblfont -v -l 18 -p /usr/share/fonts/X11/misc \
+	gfxboot-font -v -l 18 -p /usr/share/fonts/X11/misc \
 	-c ISO-8859-15 -c ISO-8859-2 -c koi8-r \
 	`$(KEYMAPCHARS) keytables.inc` \
 	-t tmp.txt \

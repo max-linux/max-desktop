@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: bootloader\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2009-10-12 17:58+0000\n"
-"Last-Translator: Sergei Sedov <Unknown>\n"
+"PO-Revision-Date: 2011-10-01 07:29+0000\n"
+"Last-Translator: Nikita Putko <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-10-05 15:28+0000\n"
+"X-Generator: Launchpad (build 14085)\n"
 
 #. ok button label
 #. txt_ok
@@ -52,8 +53,8 @@ msgid ""
 "You are leaving the graphical boot menu and\n"
 "starting the text mode interface."
 msgstr ""
-"Графическое меню загрузки будет закрыто\n"
-"и будет запущен текстовый вариант интерфейса."
+"Вы покидаете графическое меню загрузки.\n"
+"Будет запущен текстовый интерфейс."
 
 #. txt_help
 msgid "Help"
@@ -94,8 +95,8 @@ msgid ""
 "This is not a suitable boot disk.\n"
 "Please insert boot disk %u."
 msgstr ""
-"Это не подходящий загрузочный диск.\n"
-"Вставьте загрузочный диск %u."
+"Это неподходящий загрузочный диск.\n"
+"Пожалуйста, вставьте загрузочный диск %u."
 
 #. password dialog title
 #. txt_password_title
@@ -109,7 +110,7 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-"Введите свой пароль:   \n"
+"Введите ваш пароль:   \n"
 "\n"
 "\n"
 
@@ -135,7 +136,7 @@ msgstr "Выключить питание"
 
 #. txt_power_off
 msgid "Halt the system now?"
-msgstr "Остановить систему сейчас?"
+msgstr "Выключить систему?"
 
 #. txt_password
 msgid "Password\n"
@@ -169,7 +170,7 @@ msgstr "Обычный"
 #. label for d-i mode menu
 #. txt_expert_mode
 msgid "Expert mode"
-msgstr "Режим эксперта"
+msgstr "Экспертный режим"
 
 #. title for accessibility menu
 #. txt_access
@@ -184,17 +185,17 @@ msgstr "Нет"
 #. label for accessibility menu
 #. txt_access_v1
 msgid "High Contrast"
-msgstr "Высокий контраст"
+msgstr "Высокая контрастность"
 
 #. label for accessibility menu
 #. txt_access_v2
 msgid "Magnifier"
-msgstr "Лупа"
+msgstr "Экранная лупа"
 
 #. label for accessibility menu
 #. txt_access_v3
 msgid "Screen Reader"
-msgstr "Программа чтения экрана"
+msgstr "Чтение с экрана"
 
 #. label for accessibility menu
 #. txt_access_brltty
@@ -204,7 +205,7 @@ msgstr "Терминал Брайля"
 #. label for accessibility menu
 #. txt_access_m1
 msgid "Keyboard Modifiers"
-msgstr "Клавиши-модификаторы"
+msgstr "Модификаторы клавиатуры"
 
 #. label for accessibility menu
 #. txt_access_m2
@@ -214,7 +215,7 @@ msgstr "Экранная клавиатура"
 #. label for accessibility menu
 #. txt_access_m3
 msgid "Motor Difficulties - switch devices"
-msgstr "Нарушение Двигательных Функций - устройства переключения"
+msgstr "Переключающие устройства при нарушениях моторики"
 
 #. label for accessibility menu
 #. txt_access_all
@@ -223,39 +224,48 @@ msgstr "Всё"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "^Запустить Ubuntu без установки на компьютер"
+msgstr "^Запустить Ubuntu без установки"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "^Запустить Kubuntu без установки на компьютер"
+msgstr "^Запустить Kubuntu без установки"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "^Запустить Edubuntu без установки на компьютер"
+msgstr "^Запустить Edubuntu без установки"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "^Запустить Xubuntu без установки на компьютер"
+msgstr "^Запустить Xubuntu без установки"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "^Запустить Ubuntu MID без установки на компьютер"
+msgstr "^Запустить Ubuntu MID без установки"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "^Запустить Ubuntu Netbook Remix без установки на компьютер"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "^Запустить Ubuntu Netbook без установки"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "^Запустить Kubuntu Netbook без установки"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr "^Попробовать Lubuntu без установки"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^Запустить Kubuntu"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
@@ -305,12 +315,12 @@ msgstr "^Установить Xubuntu"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu_server
 msgid "^Install Ubuntu Server"
-msgstr "Установить сервер Ubuntu"
+msgstr "^Установить Ubuntu Server"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Установить Ubuntu ^Enterprise Cloud"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr "^Использовать систему как сервер Ubuntu Orchestra"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
@@ -323,9 +333,19 @@ msgid "^Install Ubuntu MID"
 msgstr "^Установить Ubuntu MID"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "^Установить Ubuntu Netbook Remix"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "^Установить Ubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "^Установить Kubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr "^Установить Lubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
@@ -340,17 +360,17 @@ msgstr "Установить сервер"
 #. Installation mode.
 #. txt_menuitem_oem
 msgid "OEM install (for manufacturers)"
-msgstr "OEM-режим установки (для поставщиков)"
+msgstr "OEM-режим установки (для производителей)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
 msgid "Install a LAMP server"
-msgstr "Установить ^LAMP-сервер"
+msgstr "Установить сервер LAMP"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
 msgid "Install an LTSP server"
-msgstr "Установить ^LTSP-сервер"
+msgstr "Установить сервер LTSP"
 
 #. Installation mode.
 #. txt_menuitem_ltsp_mythbuntu
@@ -375,7 +395,7 @@ msgstr "Установить минимальную виртуальную ма�
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
 msgid "^Check disc for defects"
-msgstr "Проверить ^CD на наличие ошибок"
+msgstr "^Проверить CD на наличие ошибок"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -409,6 +429,5 @@ msgstr "^Установить Mythbuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "^Запустить Mythbuntu без установки на компьютер"
+msgstr "^Запустить Mythbuntu без установки"

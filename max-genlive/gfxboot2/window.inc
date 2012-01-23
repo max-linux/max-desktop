@@ -101,8 +101,9 @@
 % window types
 /t_dialog 100 def
 /t_help   101 def
-/t_main   102 def
-/t_xmenu  103 def
+/t_splash 102 def
+/t_main   103 def
+/t_xmenu  104 def
 
 % actions
 /actNothing           0 def
@@ -151,6 +152,7 @@
     window.current .type get
     dup t_dialog eq { exch dialog.input exch } if
     dup t_help eq { exch help.input exch } if
+    dup t_splash eq { exch splash.input exch } if
     dup t_main eq { exch main.input exch } if
     dup t_xmenu eq { exch xmenu.input exch } if
     pop
@@ -181,6 +183,7 @@
   dup .type get
   dup t_dialog eq { pop dialog.init return } if
   dup t_help eq { pop help.init return } if
+  dup t_splash eq { pop splash.init return } if
   dup t_main eq { pop main.init return } if
   dup t_xmenu eq { pop xmenu.init return } if
   pop
@@ -196,6 +199,7 @@
   dup .type get
   dup t_dialog eq { pop dialog.show return } if
   dup t_help eq { pop help.show return } if
+  dup t_splash eq { pop splash.show return } if
   dup t_main eq { pop main.show return } if
   dup t_xmenu eq { pop xmenu.show return } if
   pop

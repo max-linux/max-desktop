@@ -6,14 +6,15 @@ msgstr ""
 "Project-Id-Version: bootloader\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2009-10-22 03:12+0000\n"
+"PO-Revision-Date: 2011-04-15 08:41+0000\n"
 "Last-Translator: Mantas Kriaučiūnas <mantas@akl.lt>\n"
 "Language-Team: Lithuanian <i18n@operis.org>\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-26 12:28+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-09-30 11:53+0000\n"
+"X-Generator: Launchpad (build 14071)\n"
 
 #. ok button label
 #. txt_ok
@@ -37,7 +38,7 @@ msgstr "Tęsti"
 
 #. txt_bootoptions
 msgid "Boot Options"
-msgstr "Startavimo parametrai"
+msgstr "Paleidimo parametrai:"
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
@@ -49,8 +50,8 @@ msgid ""
 "You are leaving the graphical boot menu and\n"
 "starting the text mode interface."
 msgstr ""
-"Jūs paliekate grafinį įkrovos meniu ir\n"
-"paleidžiate tekstinę sąsają."
+"Paliksite grafinį paleidimo meniu ir\n"
+"paleisite tekstinę sąsają."
 
 #. txt_help
 msgid "Help"
@@ -64,17 +65,17 @@ msgstr "Sistemų įkėliklis"
 #. error box title
 #. txt_error_title
 msgid "I/O error"
-msgstr "I/O klaida"
+msgstr "﻿Įvesties/išvesties klaida"
 
 #. boot disk change dialog title
 #. txt_change_disk_title
 msgid "Change Boot Disk"
-msgstr "Keisti įkrovos diską"
+msgstr "Keisti paleidimo diską"
 
 #. txt_insert_disk
 #, c-format
 msgid "Insert boot disk %u."
-msgstr "Įdėkite įkrovos diską %u."
+msgstr "Įdėkite %u paleidimo diską."
 
 #. txt_insert_disk2
 #, c-format
@@ -82,8 +83,8 @@ msgid ""
 "This is boot disk %u.\n"
 "Insert boot disk %u."
 msgstr ""
-"Tai įkrovos diskas %u.\n"
-"Įdėkite įkrovos diską %u."
+"Tai %u paleidimo diskas.\n"
+"Įdėkite %u paleidimo diską."
 
 #. txt_insert_disk3
 #, c-format
@@ -91,8 +92,8 @@ msgid ""
 "This is not a suitable boot disk.\n"
 "Please insert boot disk %u."
 msgstr ""
-"Tai netinkamas įkrovos diskas.\n"
-"Įdėkite įkrovos diską %u."
+"Tai netinkamas paleidimo diskas.\n"
+"Įdėkite %u paleidimo diską."
 
 #. password dialog title
 #. txt_password_title
@@ -121,7 +122,7 @@ msgid ""
 "\n"
 "Turn the DVD over then continue."
 msgstr ""
-"Tai dvipusis DVD. Jūs įkrovėte iš antrosios pusės.\n"
+"Tai dvipusis DVD. Paleidote jį iš antrosios pusės.\n"
 "\n"
 "Apverskite DVD ir tęskite."
 
@@ -132,7 +133,7 @@ msgstr "Išjungti"
 
 #. txt_power_off
 msgid "Halt the system now?"
-msgstr "Sustabdyti sistemą?"
+msgstr "Ar sustabdyti sistemą dabar?"
 
 #. txt_password
 msgid "Password\n"
@@ -141,7 +142,7 @@ msgstr "Slaptažodis\n"
 #. button label for other/more options
 #. txt_other_options
 msgid "Other Options"
-msgstr "Kiti parametrai"
+msgstr "Kiti nustatymai"
 
 #. label for language selection
 #. txt_language
@@ -161,7 +162,7 @@ msgstr "Būdai"
 #. label for modes menu
 #. txt_mode_normal
 msgid "Normal"
-msgstr "Normalus"
+msgstr "Įprastas"
 
 #. label for d-i mode menu
 #. txt_expert_mode
@@ -176,12 +177,12 @@ msgstr "Prieinamumas"
 #. label for accessibility menu
 #. txt_access_none
 msgid "None"
-msgstr "Nėra"
+msgstr "Nieko"
 
 #. label for accessibility menu
 #. txt_access_v1
 msgid "High Contrast"
-msgstr "Labai kontrastinga"
+msgstr "Didelio kontrasto"
 
 #. label for accessibility menu
 #. txt_access_v2
@@ -206,7 +207,7 @@ msgstr "Klaviatūros modifikatoriai"
 #. label for accessibility menu
 #. txt_access_m2
 msgid "On-Screen Keyboard"
-msgstr "Vaizdinė klaviatūra"
+msgstr "Klaviatūra ekrane"
 
 #. label for accessibility menu
 #. txt_access_m3
@@ -216,48 +217,57 @@ msgstr "Motorikos sutrikimai - perjungti įrenginius"
 #. label for accessibility menu
 #. txt_access_all
 msgid "Everything"
-msgstr "Viską"
+msgstr "Viskas"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "^Paleisti Ubuntu nekeičiant nieko jūsų kompiuteryje"
+msgstr "^Išbandyti Ubuntu neįdiegiant"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "^Paleisti Kubuntu nekeičiant nieko jūsų kompiuteryje"
+msgstr "^Išbandyti Kubuntu neįdiegiant"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "^Paleisti Edubuntu nekeičiant nieko jūsų kompiuteryje"
+msgstr "^Išbandyti Edubuntu neįdiegiant"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "^Paleisti Xubuntu nekeičiant nieko jūsų kompiuteryje"
+msgstr "^Išbandyti Xubuntu neįdiegiant"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "^Išbandykite Ubuntu MID nieko nekeisdami kompiuteryje"
+msgstr "^Išbandyti Ubuntu MID neįdiegiant"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "^Išbandykite Ubuntu Netbook Remix nieko nekeisdami kompiuteryje"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "^Išbandyti Ubuntu Netbook neįdiegiant"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "^Išbandyti Kubuntu Netbook neįdiegiant"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^Paleisti Kubuntu"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
 msgid "Use driver update disc"
-msgstr "Naudoti tvarkyklių atnaujinimo diską"
+msgstr "Naudoti valdyklių atnaujinimo diską"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
@@ -305,9 +315,9 @@ msgid "^Install Ubuntu Server"
 msgstr "Į^diegti Ubuntu serverį"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Įdiegti Ubuntu ^Enterprise Cloud"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
@@ -320,9 +330,19 @@ msgid "^Install Ubuntu MID"
 msgstr "Į^diegti Ubuntu MID"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "Į^diegti Ubuntu Netbook Remix"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "Į^diegti Ubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "Į^diegti Kubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_workstation
@@ -372,7 +392,7 @@ msgstr "Įdiegti minimalią virtualią mašiną"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
 msgid "^Check disc for defects"
-msgstr "^Patikrinti ar nėra defektų paleidimo laikmenoje"
+msgstr "^Patikrinti, ar nėra defektų paleidimo laikmenoje"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
@@ -387,7 +407,7 @@ msgstr "Patikrinti operatyviąją ^atmintį (RAM)"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
 msgid "^Boot from first hard disk"
-msgstr "Į^kelti iš pirmojo kompiuterio disko"
+msgstr "P^aleisti iš pirmojo kompiuterio disko"
 
 #. Boot option.
 #. txt_option_free
@@ -397,7 +417,7 @@ msgstr "Tik laisva programinė įranga"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_dell_factory_recovery
 msgid "^Dell Automatic Reinstall"
-msgstr "^Dell automatinis įdiegimas iš naujo"
+msgstr "^Automatinis įdiegimas iš naujo"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_mythbuntu
@@ -406,6 +426,5 @@ msgstr "Į^diegti Mythbuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "Iš^bandyti Mythbuntu be pakeitimų jūsų kompiuteryje"
+msgstr "^Išbandyti Mythbuntu neįdiegiant"

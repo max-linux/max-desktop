@@ -8,7 +8,7 @@ build/max-genlive::
 		touch $(CURDIR)/gfxboot-build;\
 	fi
 
-clean/max-genlive::
+clean::
 	cd gfxboot2 && make clean
 	rm -f $(CURDIR)/gfxboot-build
 

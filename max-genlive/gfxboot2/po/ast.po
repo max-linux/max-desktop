@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2009-07-01 23:49+0000\n"
-"PO-Revision-Date: 2009-09-03 19:54+0000\n"
+"PO-Revision-Date: 2011-09-30 23:42+0000\n"
 "Last-Translator: Iñigo Varela <malditoastur@gmail.com>\n"
 "Language-Team: Asturian <ast@li.org>\n"
+"Language: ast\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-10-05 15:28+0000\n"
+"X-Generator: Launchpad (build 14085)\n"
 
 #. ok button label
 #. txt_ok
@@ -25,7 +26,7 @@ msgstr "Aceutar"
 #. cancel button label
 #. txt_cancel
 msgid "Cancel"
-msgstr "Encaboxar"
+msgstr "Desaniciar"
 
 #. reboot button label
 #. txt_reboot
@@ -56,7 +57,7 @@ msgstr ""
 
 #. txt_help
 msgid "Help"
-msgstr "Aida"
+msgstr "Ayuda"
 
 #. info box title
 #. txt_info_title
@@ -85,7 +86,7 @@ msgid ""
 "Insert boot disk %u."
 msgstr ""
 "Esti ye'l discu d'arranque %u.\n"
-"Inxerte'l discu d'arranque %u."
+"Inxerta'l discu d'arranque %u."
 
 #. txt_insert_disk3
 #, c-format
@@ -94,7 +95,7 @@ msgid ""
 "Please insert boot disk %u."
 msgstr ""
 "Esti nun ye un discu d'arranque válidu.\n"
-"Por favor, inxerte un discu d'arranque %u."
+"Por favor, inxerta un discu d'arranque %u."
 
 #. password dialog title
 #. txt_password_title
@@ -222,39 +223,48 @@ msgstr "Tou"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "^Prebar Ubuntu ensin facer cambeos nel to equipu"
+msgstr "^Prueba Ubuntu ensin instalalu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "^Prebar Kubuntu ensin facer cambeos nel to equipu"
+msgstr "^Prueba Kubuntu ensin instalalu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "^Prebar Edubuntu ensin facer cambeos nel to equipu"
+msgstr "^Prueba Edubuntu ensin instalalu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "^Intentar Xubuntu ensin facer cambeos nel to equipu"
+msgstr "^Prueba Xubuntu ensin instalalu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "^Prebar Ubuntu MID ensin alterar el so equipu"
+msgstr "^Prueba Ubuntu MID ensin instalalu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "^Prebar Ubuntu Netbook Remix ensin alterar el so equipu"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "^Prueba Ubuntu Netbook ensin instalalu"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "^Probar Kubuntu Netbook ensin instalar"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr "^Probar Lubuntu ensin instalar"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^Aniciar Kubuntu"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
@@ -307,9 +317,9 @@ msgid "^Install Ubuntu Server"
 msgstr "^Instalar Ubuntu Server"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Instalar Ubuntu ^Enterprise Cloud"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr "Sistema ^Enlist con Ubuntu Orchestra Server"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
@@ -322,9 +332,19 @@ msgid "^Install Ubuntu MID"
 msgstr "^Instalar Ubuntu MID"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "^Instalar Ubuntu Netbook Remix"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "^Instalar Ubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "^Instalar Kubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr "^Instalar Lubuntu"
 
 #. Installation mode.
 #. txt_menuitem_workstation
@@ -408,6 +428,5 @@ msgstr "^Instalar Mythbuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "^Prebar Mythbuntu ensin facer cambeos nel to equipu"
+msgstr "^Prueba Mythbuntu ensin instalalu"

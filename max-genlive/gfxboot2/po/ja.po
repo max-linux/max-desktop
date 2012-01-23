@@ -6,14 +6,15 @@ msgstr ""
 "Project-Id-Version: bootloader\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2009-10-15 14:44+0000\n"
-"Last-Translator: Ichiro Yanagida <Unknown>\n"
+"PO-Revision-Date: 2011-10-02 04:39+0000\n"
+"Last-Translator: Kentaro Kazuhama <kazken3@gmail.com>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-10-05 15:28+0000\n"
+"X-Generator: Launchpad (build 14085)\n"
 
 #. ok button label
 #. txt_ok
@@ -59,7 +60,7 @@ msgstr "ヘルプ"
 #. info box title
 #. txt_info_title
 msgid "Boot loader"
-msgstr "ブートローダ"
+msgstr "ブートローダー"
 
 #. error box title
 #. txt_error_title
@@ -220,39 +221,48 @@ msgstr "すべて"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "コンピュータに変更を加えないでUbuntuを使ってみる(^T)"
+msgstr "インストールせずにUbuntuを試してみる(^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "コンピュータに変更を加えないでKubuntuを使ってみる(^T)"
+msgstr "インストールせずにKubuntuを試してみる(^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "コンピュータに変更を加えないでEdubuntuを使ってみる(^T)"
+msgstr "インストールせずにEdubuntuを試してみる(^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "コンピュータに変更を加えないでXubuntuを使ってみる(^T)"
+msgstr "インストールせずにXubuntuを試してみる(^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "コンピュータに変更を加えないでUbuntu MIDを使ってみる(^T)"
+msgstr "インストールせずにUbuntu MIDを試してみる(^T)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "コンピュータに変更を加えないでUbuntu Netbook Remixを使ってみる(^T)"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "インストールせずにUbuntu Netbookを試してみる(^T)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "インストールせずにKubuntu Netbookを試してみる(^T)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr "インストールせずにLubuntuを試してみる(^T)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "Kubuntuを起動(^S)"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
@@ -302,12 +312,12 @@ msgstr "Xubuntuをインストール(^I)"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu_server
 msgid "^Install Ubuntu Server"
-msgstr "~Ubuntuサーバーをインストール"
+msgstr "Ubuntu Serverをインストール(^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Ubuntuエンタープライズ・クラウド(^E)をインストール"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr "Ubuntu Orchestra Serverへシステムを登録(^E)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
@@ -320,9 +330,19 @@ msgid "^Install Ubuntu MID"
 msgstr "Ubuntu MIDをインストール(^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "Ubuntu Netbook Remixをインストール(^I)"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "Ubuntu Netbookをインストール(^I)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "Kubuntu Netbookをインストール(^I)"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr "Lubuntuをインストール(^I)"
 
 #. Installation mode.
 #. txt_menuitem_workstation
@@ -332,7 +352,7 @@ msgstr "ワークステーションのインストール"
 #. Installation mode.
 #. txt_menuitem_server
 msgid "Install a server"
-msgstr "サーバのインストール"
+msgstr "サーバーのインストール"
 
 #. Installation mode.
 #. txt_menuitem_oem
@@ -342,17 +362,17 @@ msgstr "メーカー向けOEMインストール"
 #. Installation mode.
 #. txt_menuitem_lamp
 msgid "Install a LAMP server"
-msgstr "LAMPサーバのインストール"
+msgstr "LAMPサーバーのインストール"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
 msgid "Install an LTSP server"
-msgstr "LTSPサーバのインストール"
+msgstr "LTSPサーバーのインストール"
 
 #. Installation mode.
 #. txt_menuitem_ltsp_mythbuntu
 msgid "Install a Diskless Image Server"
-msgstr "ディスクレスイメージサーバをインストール"
+msgstr "ディスクレスイメージサーバーをインストール"
 
 #. Installation mode.
 #. txt_menuitem_cli
@@ -402,10 +422,9 @@ msgstr "^Dell 自動再インストール"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_mythbuntu
 msgid "^Install Mythbuntu"
-msgstr "^インストールMythbuntu"
+msgstr "Mythbuntuをインストール(^I)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "^コンピューターに変更を加えずに Mythbuntu を試してみる"
+msgstr "インストールせずにMythbuntuを試してみる(^T)"

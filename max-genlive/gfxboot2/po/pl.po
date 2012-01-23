@@ -6,14 +6,15 @@ msgstr ""
 "Project-Id-Version: bootloader\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2009-09-05 19:00+0000\n"
+"PO-Revision-Date: 2010-11-04 00:35+0000\n"
 "Last-Translator: Tomasz Dominikowski <dominikowski@gmail.com>\n"
 "Language-Team: Polish <i18n@suse.de>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-09-30 11:52+0000\n"
+"X-Generator: Launchpad (build 14071)\n"
 
 #. ok button label
 #. txt_ok
@@ -23,7 +24,7 @@ msgstr "OK"
 #. cancel button label
 #. txt_cancel
 msgid "Cancel"
-msgstr "Anuluj"
+msgstr "Przerwij"
 
 #. reboot button label
 #. txt_reboot
@@ -33,24 +34,24 @@ msgstr "Uruchom ponownie"
 #. continue button label
 #. txt_continue
 msgid "Continue"
-msgstr "Kontynuuj"
+msgstr "Dalej"
 
 #. txt_bootoptions
 msgid "Boot Options"
-msgstr "Opcje uruchamiania"
+msgstr "Opcje rozruchu"
 
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
 msgid "Exiting..."
-msgstr "Zakończenie..."
+msgstr "Kończenie..."
 
 #. txt_exit_dialog
 msgid ""
 "You are leaving the graphical boot menu and\n"
 "starting the text mode interface."
 msgstr ""
-"Opuszczanie graficznego menu uruchamiania systemu i\n"
-"uruchamianie interfejsu tekstowego."
+"Opuszczasz graficzne menu uruchamiania i\n"
+"rozpoczynasz tryb interfejsu tekstowego."
 
 #. txt_help
 msgid "Help"
@@ -69,12 +70,12 @@ msgstr "Błąd wejścia/wyjścia"
 #. boot disk change dialog title
 #. txt_change_disk_title
 msgid "Change Boot Disk"
-msgstr "Zmiana dysku uruchomieniowego"
+msgstr "Zmiana dysku rozruchowego"
 
 #. txt_insert_disk
 #, c-format
 msgid "Insert boot disk %u."
-msgstr "Proszę wsunąć dysk uruchomieniowy %u."
+msgstr "Umieść dysk rozruchowy %u."
 
 #. txt_insert_disk2
 #, c-format
@@ -82,8 +83,8 @@ msgid ""
 "This is boot disk %u.\n"
 "Insert boot disk %u."
 msgstr ""
-"To jest dysk uruchomieniowy %u.\n"
-"Proszę wsunąć dysk uruchomieniowy %u."
+"To jest dysk rozruchowy %u.\n"
+"Umieść dysk rozruchowy %u."
 
 #. txt_insert_disk3
 #, c-format
@@ -91,8 +92,8 @@ msgid ""
 "This is not a suitable boot disk.\n"
 "Please insert boot disk %u."
 msgstr ""
-"To nie jest odpowiedni dysk uruchomieniowy.\n"
-"Proszę wsunąć dysk uruchomieniowy %u."
+"To nie jest odpowiedni dysk rozruchowy.\n"
+"Umieść, proszę, dysk rozruchowy %u."
 
 #. password dialog title
 #. txt_password_title
@@ -106,7 +107,7 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-"Proszę wprowadzić hasło:   \n"
+"Wprowadź swoje hasło:   \n"
 "\n"
 "\n"
 
@@ -151,7 +152,7 @@ msgstr "Język"
 #. label for keymap selection
 #. txt_keymap
 msgid "Keymap"
-msgstr "Klawiatura"
+msgstr "Układ klawiatury"
 
 #. label for installation mode selection
 #. txt_modes
@@ -161,17 +162,17 @@ msgstr "Tryby"
 #. label for modes menu
 #. txt_mode_normal
 msgid "Normal"
-msgstr "Normalny"
+msgstr "Zwykły"
 
 #. label for d-i mode menu
 #. txt_expert_mode
 msgid "Expert mode"
-msgstr "Tryb zaawansowany"
+msgstr "Tryb ekspercki"
 
 #. title for accessibility menu
 #. txt_access
 msgid "Accessibility"
-msgstr "Dostępność"
+msgstr "Ułatwienia dostępu"
 
 #. label for accessibility menu
 #. txt_access_none
@@ -201,7 +202,7 @@ msgstr "Terminal Braille'a"
 #. label for accessibility menu
 #. txt_access_m1
 msgid "Keyboard Modifiers"
-msgstr "Modyfikatory klawiszowe"
+msgstr "Modyfikatory klawiatury"
 
 #. label for accessibility menu
 #. txt_access_m2
@@ -220,54 +221,63 @@ msgstr "Wszystko"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "^Wypróbowanie Ubuntu bez wprowadzania zmian w komputerze"
+msgstr "^Wypróbowanie Ubuntu bez instalacji"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "^Wypróbowanie Kubuntu bez wprowadzania zmian w komputerze"
+msgstr "^Wypróbowanie Kubuntu bez instalacji"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "^Wypróbowanie Edubuntu bez wprowadzania zmian w komputerze"
+msgstr "^Wypróbowanie Edubuntu bez instalacji"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "^Wypróbowanie Xubuntu bez wprowadzania zmian w komputerze"
+msgstr "^Wypróbowanie Xubuntu bez instalacji"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "^Wypróbowanie Ubuntu MID bez wprowadzania zmian w komputerze"
+msgstr "^Wypróbowanie Ubuntu MID bez instalacji"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "^Wypróbowanie Ubuntu Netbook Remix bez wprowadzania zmian w komputerze"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "^Wypróbowanie Ubuntu Netbook bez instalacji"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "^Wypróbowanie Kubuntu Netbook bez instalacji"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^Uruchomienie Kubuntu"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
 msgid "Use driver update disc"
-msgstr "Użycie dysku z aktualizacjami sterowników"
+msgstr "Użyj dysku aktualizującego sterowniki"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
 msgid "^Install Ubuntu in text mode"
-msgstr "Instalacja w trybie ^tekstowym"
+msgstr "^Zainstaluj Ubuntu w trybie tekstowym"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_kubuntu
 msgid "^Install Kubuntu in text mode"
-msgstr "^Instalacja Kubuntu w trybie tekstowym"
+msgstr "^Zainstaluj Kubuntu w trybie tekstowym"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
@@ -302,12 +312,12 @@ msgstr "^Instalacja Xubuntu"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu_server
 msgid "^Install Ubuntu Server"
-msgstr "^Zainstaluj Ubuntu Serwer"
+msgstr "^Instalacja Ubuntu Server"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Instalacja Ubuntu ^Enterprise Cloud"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
@@ -320,49 +330,59 @@ msgid "^Install Ubuntu MID"
 msgstr "^Instalacja Ubuntu MID"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "^Instalacja Ubuntu Netbook Remix"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "^Instalacja Ubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "^Instalacja Kubuntu Netbook"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr ""
 
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
-msgstr "Instalacja ^stacji roboczej"
+msgstr "Instalacja stacji roboczej"
 
 #. Installation mode.
 #. txt_menuitem_server
 msgid "Install a server"
-msgstr "Instalacja ser^wera"
+msgstr "Instalacja serwera"
 
 #. Installation mode.
 #. txt_menuitem_oem
 msgid "OEM install (for manufacturers)"
-msgstr "Instalacja OEM (^dla producentów sprzętu)"
+msgstr "Instalacja OEM (dla producentów sprzętu)"
 
 #. Installation mode.
 #. txt_menuitem_lamp
 msgid "Install a LAMP server"
-msgstr "Instalacja serwera ^LAMP"
+msgstr "Instalacja serwera LAMP"
 
 #. Installation mode.
 #. txt_menuitem_ltsp
 msgid "Install an LTSP server"
-msgstr "Instalacja serwera ^LTSP"
+msgstr "Instalacja serwera LTSP"
 
 #. Installation mode.
 #. txt_menuitem_ltsp_mythbuntu
 msgid "Install a Diskless Image Server"
-msgstr "Instalacja bezdyskowego s^erwera"
+msgstr "Instalacja serwera bezdyskowego"
 
 #. Installation mode.
 #. txt_menuitem_cli
 msgid "Install a command-line system"
-msgstr "Instalacja ^systemu wyłącznie z wierszem poleceń"
+msgstr "Instalacja systemu opartego o wiersz poleceń"
 
 #. Installation mode.
 #. txt_menuitem_minimal
 msgid "Install a minimal system"
-msgstr "Instalacja minimalnego systemu"
+msgstr "Instalacja systemu minimalnego"
 
 #. Installation mode.
 #. txt_menuitem_minimalvm
@@ -377,12 +397,12 @@ msgstr "^Sprawdzenie płyty pod kątem błędów odczytu"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
 msgid "^Rescue a broken system"
-msgstr "^Naprawa uszkodzonego systemu"
+msgstr "^Naprawienie uszkodzonego systemu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_memtest
 msgid "Test ^memory"
-msgstr "^Test pamięci"
+msgstr "Sprawdzenie ^pamięci"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_hd
@@ -406,6 +426,5 @@ msgstr "^Instalacja Mythbuntu"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "^Wypróbowanie Mythbuntu bez wprowadzania zmian w komputerze"
+msgstr "^Wypróbowanie Mythbuntu bez instalacji"

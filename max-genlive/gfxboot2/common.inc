@@ -216,7 +216,7 @@
     panel.show
   } if
 
-  boot.buf menu.entry 0
+  boot.buf menu.indices menu.entry get 0
 } def
 
 
@@ -278,7 +278,9 @@
     /add_suffix .undef def
 
     % set new working directory
-    xmenu.bits .xm_current get 1 eq { 64bit_boot_dir } { 32bit_boot_dir } ifelse
+    xmenu.bits {
+      xmenu.bits .xm_current get 1 eq { 64bit_boot_dir } { 32bit_boot_dir } ifelse
+    } { .undef } ifelse
     dup .undef ne {
       dup getcwd ne { chdir } { pop } ifelse
     } {
@@ -371,14 +373,14 @@
       config.keymap .km.name get
       dup "_" strstr dup 0 eq {
         pop
-        keymap.op "console-setup/layoutcode%s%s " bc.cmd dup length add sprintf
+        keymap.op "keyboard-configuration/layoutcode%s%s " bc.cmd dup length add sprintf
       } {
         over over 1 sub 0 put
-        over keymap.op "console-setup/layoutcode%s%s " bc.cmd dup length add sprintf
-        add keymap.op "console-setup/variantcode%s%s " bc.cmd dup length add sprintf
+        over keymap.op "keyboard-configuration/layoutcode%s%s " bc.cmd dup length add sprintf
+        add keymap.op "keyboard-configuration/variantcode%s%s " bc.cmd dup length add sprintf
       } ifelse
       config.keymap .km.model get dup {
-        keymap.op "console-setup/modelcode%s%s " bc.cmd dup length add sprintf
+        keymap.op "keyboard-configuration/modelcode%s%s " bc.cmd dup length add sprintf
       } {
         pop
       } ifelse
@@ -425,6 +427,10 @@
     } { pop } ifelse
   } if
 
+  timeout.hidden {
+    "maybe-ubiquity " bc.cmd dup length add sprintf
+  } if
+
   bc.cmd dropspaces
 
   debug 3 ge {
@@ -432,7 +438,7 @@
     bc.cmd print "<<  (press ESC) " print trace
   } if
 
-  bc.cmd menu.entry
+  bc.cmd menu.indices menu.entry get
 } def
 
 
@@ -464,6 +470,11 @@
     /panel.normal over def
     /title.bg exch def
   } { pop } ifelse
+  "screen-colour" getgfxconfig dup .undef ne {
+    strtol
+    /menu.bar.color over def
+    /xmenu.dark exch def
+  } { pop } ifelse
   "access-options" getgfxconfig dup .undef ne {
     /access.optionnames [
       .undef
@@ -476,26 +487,65 @@
     ] def
     pop
   } { pop } ifelse
+  "access-options-v1" getgfxconfig dup .undef ne {
+    /access.options.v1 exch def
+  } { pop } ifelse
+  "hidden-timeout" getgfxconfig dup .undef ne {
+    % If >= 1, display just the main and access logos and wait for a
+    % keypress; if timeout expires, boot without showing the menu.
+    % If >= 2, as above, but don't display the splash image (hack for
+    % Ubuntu 10.04 LTS, so please don't rely on it permanently).
+    strtol
+    dup 1 ge { /timeout.hidden true def } if
+    2 ge { /timeout.hidden.showsplash false def } if
+  } { pop } ifelse
+
+  menu.bar.color setcolor 0 0 moveto screen.size fillrect
+
+  % Hack for Ubuntu 10.04 LTS.  Should be replaced by better logo handling
+  % in general.
+  timeout.hidden.showsplash not {
+    /background.file.orig background.file def
+    "blank.pcx" findfile
+    /background.file over def setimage
+  } if
+
+  % Move the logo down 84 pixels to centre it.  This is obviously a gross
+  % hack.  To fix this, we need to move to smaller logo images which are
+  % positioned on the screen in code, rather than doing the positioning in
+  % the image files.
+  timeout.hidden {
+    0 0 moveto 0 0 0 84 image
+    0 84
+  } { 0 0 } ifelse
+  moveto 0 0 clip.size image
 
   /menu.args exch def
   /menu.texts exch def
   /menu.humans exch def
+  /menu.indices exch def
 
-  window.main
-  dup window.init
-      window.show
+  timeout.hidden {
+    window.splash
+    dup window.init
+        window.show
+  } {
+    window.main
+    dup window.init
+        window.show
 
-  32+64bit_source not {
+    32+64bit_source not {
 
-    64bit {
-      64bit_source not { notimeout 32bit_popup } if
-    } {
-      64bit_source { notimeout 64bit_popup } if
-    } ifelse
+      64bit {
+        64bit_source not { notimeout /timeout.hidden false def 32bit_popup } if
+      } {
+        64bit_source { notimeout /timeout.hidden false def 64bit_popup } if
+      } ifelse
 
-  } if
+    } if
 
-  lang.displayed not { panel.lang } if
+    lang.displayed not { panel.lang } if
+  } ifelse
 
   50 sound.setvolume
   "startup.mod" findfile dup .undef ne {
@@ -516,7 +566,7 @@
   window.current .color.fg get setcolor
   window.current .ed.font get setfont
 
-  boot.ed edit.hidecursor
+  boot.show { boot.ed edit.hidecursor } if
   menu.args menu.entry get
   bootpromptmap
 
@@ -919,43 +969,12 @@
 } def
 
 
-% ( img ) => ( width heigh )
-/imgsize {
-  dup .undef eq {
-    pop 0 0
-  } {
-    getdword dup
-    0xffff and exch 16 shr
-  } ifelse
-} def
-
-
-% ( pic pic_a -- )
-/showlogo {
-  /tmp.sc over imgsize savescreen def
-
-  currentpoint 4 2 roll
-  0 0 moveto tmp.sc blend
-  moveto tmp.sc restorescreen
-
-  tmp.sc free
-} def
-
-
-% ( file_name ) ==> ( image )
-/readimage {
-  findfile dup setimage 0 0 image.size unpackimage exch free
-} def
-
-
 /boot.pos.init {
   /boot.label.len txt_bootoptions strsize pop def
   /boot.pos { boot.label.len 10 add small_layout { 410 } { 510 } ifelse } def
 } def
 
 /init {
-  0 0 moveto currentpoint clip.size image
-
   small_layout {
     /head.x 70 def
     /head.y 141 def
@@ -1349,6 +1368,13 @@
 /clip.size { screen.size } def
 
 /small_layout screen.size pop 640 eq def
+
+/access.file "access.pcx" findfile def
+access.file dup .undef ne {
+  setimage image.size /access.height exch def /access.width exch def
+} {
+  pop /access.height .undef def /access.height .undef def
+} ifelse
 
 "splash.pcx" findfile
 dup .undef eq { pop "back.jpg" findfile } if

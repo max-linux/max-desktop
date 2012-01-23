@@ -8,19 +8,21 @@ msgstr ""
 "Project-Id-Version: gfxboot-theme-ubuntu\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2006-03-18 12:14:59.394968+00:00\n"
-"PO-Revision-Date: 2009-10-15 12:24+0000\n"
-"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
+"PO-Revision-Date: 2011-02-20 19:55+0000\n"
+"Last-Translator: Launchpad Translations Administrators <rosetta@launchpad."
+"net>\n"
 "Language-Team: Arabic <ar@li.org>\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-09-30 11:52+0000\n"
+"X-Generator: Launchpad (build 14071)\n"
 
 #. ok button label
 #. txt_ok
 msgid "OK"
-msgstr "حسنا"
+msgstr "حسناً"
 
 #. cancel button label
 #. txt_cancel
@@ -30,12 +32,12 @@ msgstr "ألغِ"
 #. reboot button label
 #. txt_reboot
 msgid "Reboot"
-msgstr "أعد التشغيل"
+msgstr "أعِد التشغيل"
 
 #. continue button label
 #. txt_continue
 msgid "Continue"
-msgstr "أكمل"
+msgstr "استمر"
 
 #. txt_bootoptions
 msgid "Boot Options"
@@ -61,7 +63,7 @@ msgstr "مساعدة"
 #. info box title
 #. txt_info_title
 msgid "Boot loader"
-msgstr "محمل الإقلاع"
+msgstr "مُحَمِّل الإقلاع"
 
 #. error box title
 #. txt_error_title
@@ -123,9 +125,9 @@ msgid ""
 "\n"
 "Turn the DVD over then continue."
 msgstr ""
-"هذا قرص دي‌ڤي‌دي مزدوج الأوجه. لقد أقلعت من الوجه الثاني.\n"
+"هذا قرص دي‌ڤي‌دي مزدوج الوجه. لقد أقلعت من الوجه الثاني.\n"
 "\n"
-"من فضلك اقلب القرص ثم أكمل."
+"من فضلك إقلب القرص ثم أكمل."
 
 #. power off dialog title
 #. txt_power_off_title
@@ -178,22 +180,22 @@ msgstr "الإتاحة"
 #. label for accessibility menu
 #. txt_access_none
 msgid "None"
-msgstr "بلا"
+msgstr "لا شيء"
 
 #. label for accessibility menu
 #. txt_access_v1
 msgid "High Contrast"
-msgstr "عال التباين"
+msgstr "عالي التباين"
 
 #. label for accessibility menu
 #. txt_access_v2
 msgid "Magnifier"
-msgstr "مكبر"
+msgstr "مكبّر"
 
 #. label for accessibility menu
 #. txt_access_v3
 msgid "Screen Reader"
-msgstr "قارئ شاشة"
+msgstr "قارئ الشاشة"
 
 #. label for accessibility menu
 #. txt_access_brltty
@@ -222,39 +224,48 @@ msgstr "كل شيء"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "^جرب أوبونتو بدون تغيير أي شيء في حاسوبك"
+msgstr "^جرِّب أوبونتو دون تثبيتها"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "^جرب كوبونتو بدون تغيير أي شيء في حاسوبك"
+msgstr "^جرِّب كوبونتو دون تثبيتها"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "^جرب إديوبونتو بدون تغيير أي شيء في حاسوبك"
+msgstr "^جرِّب إيديوبونتو دون تثبيتها"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "^جرب إكسبوبونتو بدون تغيير أي شيء في حاسوبك"
+msgstr "^ جرِّب إكس أوبونتو دون تثبيتها"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "^جرب أوبونتو جوال بدون أي تغييرات على حاسوبك"
+msgstr "^ جرِّب أوبونتومِد دون تثبيتها"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "^جرب أوبنتو نسخة النت بوك بدون تغيير أي شيء في حاسوبك"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "^جرب أوبونتو نت بوك بدون تثبيت"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "^جرب كوبنتو نت بوك بدون تثبيت"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr ""
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^ّبدأ تشغيل كوينتو"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
@@ -274,12 +285,12 @@ msgstr "^ثبت كوبونتو في الطور النصي"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_edubuntu
 msgid "^Install Edubuntu in text mode"
-msgstr "^ثبت إديوبونتو في الطور النصي"
+msgstr "^ثبت إديوبونتو باستخدام الوضع النصي"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_xubuntu
 msgid "^Install Xubuntu in text mode"
-msgstr "^ثبت إكسبونتو في الطور النصي"
+msgstr "^ثبت إكسبونتو في باستخدام الوضع النصي"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu
@@ -294,7 +305,7 @@ msgstr "^ثبت كوبونتو"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_edubuntu
 msgid "^Install Edubuntu"
-msgstr "^ثبت أديوبونتو"
+msgstr "^ثبت إدوبنتو"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_xubuntu
@@ -304,26 +315,36 @@ msgstr "^ثبت إكسبونتو"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu_server
 msgid "^Install Ubuntu Server"
-msgstr "^ثبت خادوم أوبونتو"
+msgstr "^ثبت خادم أوبونتو"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
 msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
 msgid "^Install Ubuntu Studio"
-msgstr "^ثبت استوديو أوبونتو"
+msgstr "^ثبت أبونتو استوديو"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntu_mid
 msgid "^Install Ubuntu MID"
-msgstr ""
+msgstr "^ثبِّت أوبونتو MID"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "^ثبت أوبونتو نت بوك"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "^ثبت كوبنتو نت بوك"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
 msgstr ""
 
 #. Installation mode.
@@ -409,4 +430,4 @@ msgstr "^ثبت ميثبونتو"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
 msgid "^Try Mythbuntu without installing"
-msgstr ""
+msgstr "^جرِّب مِثبونتو دون تثبيتها"

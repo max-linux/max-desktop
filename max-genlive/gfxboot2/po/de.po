@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To:  \n"
 "POT-Creation-Date: 2007-10-09 09:00+0000\n"
-"PO-Revision-Date: 2009-10-05 19:06+0000\n"
-"Last-Translator: Jochen Skulj <jochen@jochenskulj.de>\n"
+"PO-Revision-Date: 2011-09-30 16:30+0000\n"
+"Last-Translator: Hendrik Knackstedt <Unknown>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-19 08:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-10-05 15:28+0000\n"
+"X-Generator: Launchpad (build 14085)\n"
 
 #. ok button label
 #. txt_ok
@@ -45,15 +46,15 @@ msgstr "Startoptionen"
 #. window title for exit dialog
 #. txt_exit_title (see txt_exit_dialog)
 msgid "Exiting..."
-msgstr "Beenden ..."
+msgstr "Wird beendet …"
 
 #. txt_exit_dialog
 msgid ""
 "You are leaving the graphical boot menu and\n"
 "starting the text mode interface."
 msgstr ""
-"Sie verlassen das grafische Startmenü und\n"
-"wechseln in den Textmodus."
+"Sie verlassen das grafische Boot-Menü und\n"
+"starten den Textmodus."
 
 #. txt_help
 msgid "Help"
@@ -62,7 +63,7 @@ msgstr "Hilfe"
 #. info box title
 #. txt_info_title
 msgid "Boot loader"
-msgstr "Startoptionen"
+msgstr "Boot-Loader"
 
 #. error box title
 #. txt_error_title
@@ -94,7 +95,7 @@ msgid ""
 "This is not a suitable boot disk.\n"
 "Please insert boot disk %u."
 msgstr ""
-"Dies ist kein geeignetes Startmedium.\n"
+"Dies ist kein verwendbares Startmedium.\n"
 "Bitte legen Sie Startmedium %u ein."
 
 #. password dialog title
@@ -126,7 +127,7 @@ msgid ""
 msgstr ""
 "Dies ist eine doppelseitige DVD. Sie haben von der zweiten Seite gestartet.\n"
 "\n"
-"Drehen Sie die DVD um, und fahren Sie dann fort."
+"Drehen Sie die DVD um und fahren Sie dann fort."
 
 #. power off dialog title
 #. txt_power_off_title
@@ -144,7 +145,7 @@ msgstr "Passwort\n"
 #. button label for other/more options
 #. txt_other_options
 msgid "Other Options"
-msgstr "Weitere Optionen"
+msgstr "Weitere Einstellungen"
 
 #. label for language selection
 #. txt_language
@@ -189,12 +190,12 @@ msgstr "Hoher Kontrast"
 #. label for accessibility menu
 #. txt_access_v2
 msgid "Magnifier"
-msgstr "Bildschirmvergrößerung"
+msgstr "Bildschirmlupe"
 
 #. label for accessibility menu
 #. txt_access_v3
 msgid "Screen Reader"
-msgstr "Bildschirm-Vorleser"
+msgstr "Bildschirmleser"
 
 #. label for accessibility menu
 #. txt_access_brltty
@@ -223,44 +224,53 @@ msgstr "Alle"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Try Ubuntu without installing"
-msgstr "Ubuntu ^ausprobieren (Rechner bleibt unverändert)"
+msgstr "Ubuntu ohne Installation ^ausprobieren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
-#, fuzzy
 msgid "^Try Kubuntu without installing"
-msgstr "Kubuntu ^ausprobieren (Rechner bleibt unverändert)"
+msgstr "Kubuntu ohne Installation ^ausprobieren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_edubuntu
-#, fuzzy
 msgid "^Try Edubuntu without installing"
-msgstr "Edubuntu ^ausprobieren (Rechner bleibt unverändert)"
+msgstr "Edubuntu ohne Installation ^ausprobieren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_xubuntu
-#, fuzzy
 msgid "^Try Xubuntu without installing"
-msgstr "Xubuntu ^ausprobieren (Rechner bleibt unverändert)"
+msgstr "Xubuntu ohne Installation ^ausprobieren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_mid
-#, fuzzy
 msgid "^Try Ubuntu MID without installing"
-msgstr "Ubuntu MID ^ausprobieren (Rechner bleibt unverändert)"
+msgstr "Ubuntu MID ohne Installation ^ausprobieren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_live_ubuntu_netbook_remix
-#, fuzzy
-msgid "^Try Ubuntu Netbook Remix without installing"
-msgstr "Ubuntu Netbook Remix ^ausprobieren (Rechner bleibt unverändert)"
+#. txt_menuitem_live_ubuntu_netbook
+msgid "^Try Ubuntu Netbook without installing"
+msgstr "Ubuntu Netbook ohne Installation ^ausprobieren"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_kubuntu_netbook
+msgid "^Try Kubuntu Netbook without installing"
+msgstr "Kubuntu Netbook ohne Installation ^ausprobieren"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_live_lubuntu
+msgid "^Try Lubuntu without installing"
+msgstr "^Lubuntu ohne Installation ausprobieren"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_start_kubuntu
+msgid "^Start Kubuntu"
+msgstr "^Kubuntu starten"
 
 #. Installation mode.
 #. txt_menuitem_driverupdates
 msgid "Use driver update disc"
-msgstr "Treiber-Update-CD/DVD benutzen"
+msgstr "CD/DVD mit Treiber-Aktualisierungen benutzen"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_text_ubuntu
@@ -308,9 +318,9 @@ msgid "^Install Ubuntu Server"
 msgstr "Ubuntu Server ^installieren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_enterprise_cloud
-msgid "Install Ubuntu ^Enterprise Cloud"
-msgstr "Ubuntu ^Enterprise-Wolke installieren"
+#. txt_menuitem_enlist_ubuntu_orchestra
+msgid "^Enlist system with Ubuntu Orchestra Server"
+msgstr "^System mit Ubuntu Orchestra Server aufführen"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_install_ubuntustudio
@@ -323,14 +333,24 @@ msgid "^Install Ubuntu MID"
 msgstr "Ubuntu MID ^installieren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
-#. txt_menuitem_install_ubuntu_netbook_remix
-msgid "^Install Ubuntu Netbook Remix"
-msgstr "Ubuntu Netbook Remix ^installieren"
+#. txt_menuitem_install_ubuntu_netbook
+msgid "^Install Ubuntu Netbook"
+msgstr "Ubuntu Netbook ^installieren"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_kubuntu_netbook
+msgid "^Install Kubuntu Netbook"
+msgstr "Kubuntu Netbook ^installieren"
+
+#. Boot menu item; a ^ prefix indicates a unique accelerator key.
+#. txt_menuitem_install_lubuntu
+msgid "^Install Lubuntu"
+msgstr "^Lubuntu installieren"
 
 #. Installation mode.
 #. txt_menuitem_workstation
 msgid "Install a workstation"
-msgstr "Einen Arbeitsplatz installieren"
+msgstr "Eine Workstation installieren"
 
 #. Installation mode.
 #. txt_menuitem_server
@@ -360,7 +380,7 @@ msgstr "Festplattenlosen Image-Server installieren"
 #. Installation mode.
 #. txt_menuitem_cli
 msgid "Install a command-line system"
-msgstr "System nur mit Befehlszeile installieren"
+msgstr "Ein Befehlszeilensystem installieren"
 
 #. Installation mode.
 #. txt_menuitem_minimal
@@ -409,6 +429,5 @@ msgstr "Mythbuntu ^installieren"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_mythbuntu
-#, fuzzy
 msgid "^Try Mythbuntu without installing"
-msgstr "Mythbuntu ^ausprobieren (Rechner bleibt unverändert)"
+msgstr "Mythbuntu ohne Installation ^ausprobieren"

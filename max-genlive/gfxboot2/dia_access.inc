@@ -23,6 +23,10 @@
 
 /access.optionnames [ access.alloptionnames { } forall ] def
 
+% Custom kernel options.  Feel free to extend as needed.  Keep this in sync
+% with MenuInit.
+/access.options.v1 "access=v1" def
+
 /access.alltexts [
   /txt_access_none
   /txt_access_v1 /txt_access_v2 /txt_access_v3 /txt_access_brltty
@@ -97,8 +101,12 @@
     dup "brltty" eq {
       pop /access.option "braille=ask" def
     } {
-      dup length 7 add string /access.option exch def
-      "access=%s" access.option sprintf
+      dup "v1" eq {
+        pop /access.option access.options.v1 def
+      } {
+        dup length 7 add string /access.option exch def
+        "access=%s" access.option sprintf
+      } ifelse
     } ifelse
   } ifelse
 

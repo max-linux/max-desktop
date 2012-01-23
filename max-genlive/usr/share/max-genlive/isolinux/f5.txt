@@ -9,7 +9,7 @@ For more information about what boot parameters you can use, press:
 
  <09F607> -- boot parameters for special machines
  <09F707> -- boot parameters for various disk controllers
- <09F807> -- boot parameters understood by the bootstrap system
+ <09F807> -- boot parameters understood by the install system
 
 Note that to specify a parameter for a particular kernel module, use the form
 module.param=value, for example: libata.atapi_enabled=1

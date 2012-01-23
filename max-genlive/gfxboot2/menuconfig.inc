@@ -57,6 +57,18 @@
     } if
     /menuconfig.idx inc
   } forall
+
+  % The gfxboot com32 module in syslinux parses the configuration file for
+  % us, but only gives us the human-readable labels, so we may need to
+  % translate them back.
+  /menuconfig.idx 0 def
+  menuconfig.humans {
+    menuconfig.human eq {
+      menuconfig.entries menuconfig.idx menuconfig.curlabel put
+      return
+    } if
+    /menuconfig.idx inc
+  } forall
 } def
 
 % Remove the current menu item from the menu.
@@ -71,6 +83,7 @@
       /menuconfig.newargs menuconfig.args length 1 sub array def
       /menuconfig.newentries menuconfig.entries length 1 sub array def
       /menuconfig.newhumans menuconfig.humans length 1 sub array def
+      /menuconfig.newindices menuconfig.indices length 1 sub array def
       menuconfig.idx 0 ne {
         0 1 menuconfig.idx 1 sub {
           menuconfig.args over get
@@ -78,7 +91,9 @@
           menuconfig.entries over get
           menuconfig.newentries 2 index rot put
           menuconfig.humans over get
-          menuconfig.newhumans 3 1 roll put
+          menuconfig.newhumans 2 index rot put
+          menuconfig.indices over get
+          menuconfig.newindices 3 1 roll put
         } for
       } if
 
@@ -90,13 +105,16 @@
           menuconfig.entries over 1 add get
           menuconfig.newentries 2 index rot put
           menuconfig.humans over 1 add get
-          menuconfig.newhumans 3 1 roll put
+          menuconfig.newhumans 2 index rot put
+          menuconfig.indices over 1 add get
+          menuconfig.newindices 3 1 roll put
         } for
       } if
 
       /menuconfig.args menuconfig.newargs def
       /menuconfig.entries menuconfig.newentries def
       /menuconfig.humans menuconfig.newhumans def
+      /menuconfig.indices menuconfig.newindices def
 
       return
     } if
@@ -154,14 +172,16 @@
   free
 } def
 
-% ( menu_entries_array menu_args_array -- menu_humans_array menu_entries_array menu_args_array )
+% ( menu_entries_array menu_args_array -- menu_indices_array menu_humans_array menu_entries_array menu_args_array )
 % The returned menu_args_array (kernel parameters), menu_entries_array
-% (identifiers), and menu_humans_array (human-readable names) will have any
-% hidden entries removed.
+% (identifiers), menu_humans_array (human-readable names), and
+% menu_indices_array (original indices) will have any hidden entries
+% removed.
 /menuconfig.init {
   dup length array /menuconfig.args exch def
   over length array /menuconfig.entries exch def
   over length array /menuconfig.humans exch def
+  over length array /menuconfig.indices exch def
 
   % copy input arrays; initialise menuconfig.humans
   /menuconfig.idx 0 def
@@ -173,6 +193,7 @@
   {
     dup menuconfig.entries menuconfig.idx rot put
     menuconfig.humans menuconfig.idx rot put
+    menuconfig.indices menuconfig.idx dup put
     /menuconfig.idx inc
   } forall
 
@@ -185,5 +206,5 @@
 
   .undef menuconfig.parse
 
-  menuconfig.humans menuconfig.entries menuconfig.args
+  menuconfig.indices menuconfig.humans menuconfig.entries menuconfig.args
 } def
