@@ -95,7 +95,7 @@ copiar_nanomax() {
   echo " * Copiando archivos de nanoMaX... (tarda un rato)"
   rsync -Pazv /cdrom/nanomax/ /mnt/nanomax/ | zenity --progress --auto-close --pulsate --text="Copiando nanoMax..."
   mv /mnt/nanomax/isolinux /mnt/nanomax/syslinux
-  cp /mnt/nanomax/syslinux/text-usb.cfg  /mnt/nanomax/syslinux/text.cfg
+  cp /mnt/nanomax/syslinux/txt-usb.cfg  /mnt/nanomax/syslinux/txt.cfg
 }
 
 copiar_portables() {
