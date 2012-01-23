@@ -7,7 +7,13 @@ Standards-Version: 3.8.4
 
 Package: max-live
 Architecture: all
-Depends: ubiquity-frontend-max, grub-pc, language-pack-es, language-pack-kde-es, language-support-es, laptop-detect, ntfsprogs, lupin-casper
+Depends: ubiquity-frontend-max,
+         grub-pc,
+         language-pack-es,
+         language-pack-kde-es,
+#         language-support-es,
+         laptop-detect, ntfsprogs,
+         lupin-casper
 Provides: max-install
 Replaces: max-install
 Conflicts: max-install
