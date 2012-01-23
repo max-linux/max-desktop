@@ -28,7 +28,6 @@ class GrubInstaller(FilteredCommand):
                 ['^grub-installer/bootdev$', 'ERROR'],
                 {'OVERRIDE_UNSUPPORTED_OS': '1'})
 
-
     def error(self, priority, question):
         self.frontend.error_dialog(self.description(question),
                                    self.extended_description(question))

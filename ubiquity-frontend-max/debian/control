@@ -2,15 +2,14 @@ Source: ubiquity-frontend-max
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 7.0.0), cdbs, python
+Build-Depends: debhelper (>= 7.0.0), cdbs, python, aa-debhelper
 Standards-Version: 3.8.4
 XS-Vcs-Browser: http://max.educa.madrid.org:8000/browser/trunk/ubiquity-frontend-max
 
 Package: ubiquity-frontend-max
 Architecture: any
-Depends: ubiquity, ubiquity-frontend-gtk, debconf-utils, nanomax-installer, ubiquity-slideshow-max, max-dpsyco-custom (>=6.0.max43)
+Depends: ubiquity, ubiquity-frontend-gtk, debconf-utils, nanomax-installer, ubiquity-slideshow-max
 Description: Some files to custom ubiquity installer
  Contains:
   * MaX gui of ubiquity installer
-  * Dpsyco overwrite of Ubuntu ubiquity
 

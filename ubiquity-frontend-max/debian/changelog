@@ -1,3 +1,15 @@
+ubiquity-frontend-max (7.0.max2) max; urgency=low
+
+  * Convert plugins from gtk to gi.repository.Gtk
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 23 Jan 2012 17:35:36 +0100
+
+ubiquity-frontend-max (7.0.max1) max; urgency=low
+
+  * Sync with ubiquity 2.9.10
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 23 Jan 2012 14:45:37 +0100
+
 ubiquity-frontend-max (6.0.max38) max; urgency=low
 
   * Remove Backharddi from Server description

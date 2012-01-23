@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
 
 include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/aa-debhelper.mk
 
 clean::
 	find -name "*~" | xargs rm -f
@@ -11,7 +12,7 @@ clean::
 	cd sti && make clean
 
 
-build:
+build/ubiquity-frontend-max::
 	#
 	#  COMPILE PYC files
 	#
@@ -23,3 +24,4 @@ binary-install/ubiquity-frontend-max::
 	cd sti && make install DESTDIR=$(CURDIR)/debian/ubiquity-frontend-max
 	# clean svn dirs
 	find $(CURDIR)/debian/ubiquity-frontend-max -type d -name .svn | xargs rm -rf --
+	rm -rf $(CURDIR)/debian/ubiquity-frontend-max/usr/share/dpsyco

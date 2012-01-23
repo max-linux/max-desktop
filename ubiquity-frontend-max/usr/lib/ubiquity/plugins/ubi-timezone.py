@@ -22,114 +22,172 @@ import time
 import re
 
 import debconf
-import PyICU
+import icu
 
-from ubiquity.plugin import *
+from ubiquity import plugin
 from ubiquity import i18n
+from ubiquity import misc
 import ubiquity.tz
 
 NAME = 'timezone'
-AFTER = 'language'
+#after partman for default install, but language for oem install
+AFTER = ['partman', 'language']
 WEIGHT = 10
 
-class PageGtk2(PluginUI):
+_geoname_url = 'http://geoname-lookup.ubuntu.com/?query=%s&release=%s'
+
+class PageGtk2(plugin.PluginUI):
+    plugin_title = 'ubiquity/text/timezone_heading_label'
     def __init__(self, controller, *args, **kwargs):
         self.controller = controller
-        try:
-            import gtk
-            builder = gtk.Builder()
-            self.controller.add_builder(builder)
-            builder.add_from_file('/usr/share/ubiquity/gtk/stepLocation.ui')
-            builder.connect_signals(self)
-            self.page = builder.get_object('stepLocation')
-            self.region_combo = builder.get_object('timezone_zone_combo')
-            self.city_combo = builder.get_object('timezone_city_combo')
-            self.map_window = builder.get_object('timezone_map_window')
-            self.setup_page()
-        except Exception, e:
-            self.debug('Could not create timezone page: %s', e)
-            self.page = None
+        from gi.repository import Gtk
+        builder = Gtk.Builder()
+        self.controller.add_builder(builder)
+        builder.add_from_file(os.path.join(os.environ['UBIQUITY_GLADE'], 'stepLocation.ui'))
+        builder.connect_signals(self)
+        self.page = builder.get_object('stepLocation')
+        self.city_entry = builder.get_object('timezone_city_entry')
+        self.map_window = builder.get_object('timezone_map_window')
+        self.setup_page()
+        self.timezone = None
+        self.zones = []
         self.plugin_widgets = self.page
+        self.geoname_cache = {}
+        self.geoname_session = None
+        self.geoname_timeout_id = None
+        self.online = False
+
+    def plugin_set_online_state(self, state):
+        self.online = state
 
     def plugin_translate(self, lang):
-        c = self.controller
-        if c.get_string('ubiquity/imported/time-format', lang) == '12-hour':
-            fmt = c.get_string('ubiquity/imported/12-hour', lang)
-        else:
-            fmt = c.get_string('ubiquity/imported/24-hour', lang)
-        self.tzmap.set_time_format(fmt)
+        #c = self.controller
+        #if c.get_string('ubiquity/imported/time-format', lang) == '12-hour':
+        #    fmt = c.get_string('ubiquity/imported/12-hour', lang)
+        #else:
+        #    fmt = c.get_string('ubiquity/imported/24-hour', lang)
+        #self.tzmap.set_time_format(fmt)
+        inactive = self.controller.get_string(
+            'timezone_city_entry_inactive_label', lang)
+        self.city_entry.set_placeholder_text(inactive)
 
     def set_timezone(self, timezone):
-        self.fill_timezone_boxes()
-        self.select_city(None, timezone)
+        self.zones = self.controller.dbfilter.build_timezone_list()
+        self.tzmap.set_timezone(timezone)
 
     def get_timezone(self):
-        i = self.city_combo.get_active()
-        m = self.city_combo.get_model()
-        return m[i][1]
-
-    @only_this_page
-    def fill_timezone_boxes(self):
-        m = self.region_combo.get_model()
-        tz = self.controller.dbfilter
-
-        # Regions are a translated shortlist of regions, followed by full list
-        m.clear()
-        lang = os.environ['LANG'].split('_', 1)[0]
-        region_pairs = tz.build_shortlist_region_pairs(lang)
-        if region_pairs:
-            for pair in region_pairs:
-                m.append(pair)
-            m.append([None, None, None])
-        region_pairs = tz.build_region_pairs()
-        for pair in region_pairs:
-            m.append(pair)
-
-    @only_this_page
-    def select_country(self, country):
-        def country_is_in_region(country, region):
-            if not region: return False
-            return country in self.controller.dbfilter.get_countries_for_region(region)
-
-        m = self.region_combo.get_model()
-        iterator = self.region_combo.get_active_iter()
-        got_country = False
-        if iterator:
-            got_country = m[iterator][1] == country or \
-                          country_is_in_region(country, m[iterator][2])
-        if not got_country:
-            iterator = m.get_iter_first()
-            while iterator:
-                if m[iterator][0] is not None and \
-                   m[iterator][1] == country or \
-                   country_is_in_region(country, m[iterator][2]):
-                    self.region_combo.set_active_iter(iterator)
-                    break
-                iterator = m.iter_next(iterator)
+        return self.timezone
 
     def select_city(self, unused_widget, city):
+        city = city.get_property('zone')
         loc = self.tzdb.get_loc(city)
         if not loc:
+            self.controller.allow_go_forward(False)
+        else:
+            self.city_entry.set_text(loc.human_zone)
+            self.city_entry.set_position(-1)
+            self.timezone = city
+            self.controller.allow_go_forward(True)
+
+
+    def changed(self, entry):
+        import urllib
+        from gi.repository import Gtk, GObject, Soup
+
+        text = misc.utf8(self.city_entry.get_text())
+        if not text:
+            return
+        # TODO if the completion widget has a selection, return?  How do we
+        # determine this?
+        if text in self.geoname_cache:
+            model = self.geoname_cache[text]
+            self.city_entry.get_completion().set_model(model)
+        else:
+            model = Gtk.ListStore(GObject.TYPE_STRING, GObject.TYPE_STRING,
+                                  GObject.TYPE_STRING, GObject.TYPE_STRING,
+                                  GObject.TYPE_STRING)
+
+            if self.geoname_session is None:
+                self.geoname_session = Soup.SessionAsync()
+            url = _geoname_url % (urllib.quote(text.encode('UTF-8')),
+                                  misc.get_release().version)
+            message = Soup.Message.new('GET', url)
+            message.request_headers.append('User-agent', 'Ubiquity/1.0')
+            self.geoname_session.abort()
+            if self.geoname_timeout_id is not None:
+                GObject.source_remove(self.geoname_timeout_id)
+            self.geoname_timeout_id = \
+                GObject.timeout_add_seconds(2, self.geoname_timeout,
+                                            (text, model))
+            self.geoname_session.queue_message(message, self.geoname_cb,
+                                               (text, model))
+
+    def geoname_add_tzdb(self, text, model):
+        if len(model):
+            # already added
             return
 
-        self.select_country(loc.country)
+        # TODO benchmark this
+        results = [(name, self.tzdb.get_loc(city))
+                    for (name, city) in
+                        [(x[0], x[1]) for x in self.zones
+                            if x[0].lower().split('(', 1)[-1] \
+                                            .startswith(text.lower())]]
+        for result in results:
+            # We use name rather than loc.human_zone for i18n.
+            # TODO this looks pretty awful for US results:
+            # United States (New York) (United States)
+            # Might want to match the debconf format.
+            name, loc = result
+            model.append([name, '', loc.human_country,
+                          str(loc.latitude), str(loc.longitude)])
 
-        m = self.city_combo.get_model()
-        iterator = m.get_iter_first()
-        while iterator:
-            if m[iterator][1] == city:
-                self.city_combo.set_active_iter(iterator)
-                return
-            iterator = m.iter_next(iterator)
-        # We don't have a timezone selection, so don't let the user proceed.
-        self.controller.allow_go_forward(False)
+    def geoname_timeout(self, user_data):
+        text, model = user_data
+        self.geoname_add_tzdb(text, model)
+        self.geoname_timeout_id = None
+        self.city_entry.get_completion().set_model(model)
+        return False
+
+    def geoname_cb(self, session, message, user_data):
+        import syslog
+        import json
+        from gi.repository import GObject, Soup
+
+        text, model = user_data
+
+        if self.geoname_timeout_id is not None:
+            GObject.source_remove(self.geoname_timeout_id)
+            self.geoname_timeout_id = None
+        self.geoname_add_tzdb(text, model)
+
+        if message.status_code == Soup.KnownStatusCode.CANCELLED:
+            # Silently ignore cancellation.
+            pass
+        elif message.status_code != Soup.KnownStatusCode.OK:
+            # Log but otherwise ignore failures.
+            syslog.syslog('Geoname lookup for "%s" failed: %d %s' %
+                          (text, message.status_code, message.reason_phrase))
+        else:
+            for result in json.loads(message.response_body.data):
+                model.append([result['name'],
+                              result['admin1'],
+                              result['country'],
+                              result['latitude'],
+                              result['longitude']])
+
+            # Only cache positive results.
+            self.geoname_cache[text] = model
+
+        self.city_entry.get_completion().set_model(model)
 
     def setup_page(self):
-        import gobject, gtk
-        from ubiquity import timezone_map
+        # TODO Put a frame around the completion to add contrast (LP: #605908)
+        from gi.repository import Gtk, GObject
+        from gi.repository import TimezoneMap
         self.tzdb = ubiquity.tz.Database()
-        self.tzmap = timezone_map.TimezoneMap(self.tzdb, '/usr/share/ubiquity/pixmaps/timezone')
-        self.tzmap.connect('city-selected', self.select_city)
+        self.tzmap = TimezoneMap.TimezoneMap()
+        self.tzmap.connect('location-changed', self.select_city)
         self.map_window.add(self.tzmap)
         self.tzmap.show()
 
@@ -137,116 +195,47 @@ class PageGtk2(PluginUI):
             return m[i][0] is None
 
         self.timeout_id = 0
-
-        # Don't hit on_entry_changed for every key press.
-        def queue_entry_changed(e, widget):
-            self.controller.allow_go_forward(False)
+        def queue_entry_changed(entry):
             if self.timeout_id:
-                gobject.source_remove(self.timeout_id)
-            self.timeout_id = gobject.timeout_add(300, on_entry_changed, e, widget)
+                GObject.source_remove(self.timeout_id)
+            self.timeout_id = GObject.timeout_add(300, self.changed, entry)
 
-        def on_entry_changed(e, widget):
-            text = e.get_text().lower()
-            if not text:
-                self.controller.allow_go_forward(False)
-                return
-            m = widget.get_model()
-            iterator = m.get_iter_first()
-            while iterator:
-                country = m.get_value(iterator,0)
-                if country is not None:
-                    country = country.lower()
-                    if text == country or country.find('(%s)' % text) != -1:
-                        widget.set_active_iter(iterator)
-                        self.controller.allow_go_forward(True)
-                        return
-                iterator = m.iter_next(iterator)
-            self.controller.allow_go_forward(False)
-
-        renderer = gtk.CellRendererText()
-        self.region_combo.pack_start(renderer, True)
-        self.region_combo.set_text_column(0)
-        list_store = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
-        self.region_combo.set_model(list_store)
-        self.region_combo.set_row_separator_func(is_separator)
-
-        completion = gtk.EntryCompletion()
-        entry = self.region_combo.child
-        entry.connect('changed', queue_entry_changed, self.region_combo)
-        entry.set_completion(completion)
-        completion.set_model(list_store)
-        completion.set_text_column(0)
+        self.city_entry.connect('changed', queue_entry_changed)
+        completion = Gtk.EntryCompletion()
+        self.city_entry.set_completion(completion)
         completion.set_inline_completion(True)
         completion.set_inline_selection(True)
 
-        renderer = gtk.CellRendererText()
-        self.city_combo.pack_start(renderer, True)
-        self.city_combo.set_text_column(0)
-        city_store = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING)
-        self.city_combo.set_model(city_store)
+        def match_selected(completion, model, iterator):
+            # Select on map.
+            lat = float(model[iterator][3])
+            lon = float(model[iterator][4])
+            self.tzmap.set_coords(lon, lat)
 
-        completion = gtk.EntryCompletion()
-        entry = self.city_combo.child
-        entry.set_completion(completion)
-        entry.connect('changed', queue_entry_changed, self.city_combo)
-        completion.set_model(city_store)
-        completion.set_text_column(0)
-        completion.set_inline_completion(True)
-        completion.set_inline_selection(True)
+            self.city_entry.set_text(model[iterator][0])
+            self.city_entry.set_position(-1)
+            return True
+        completion.connect('match-selected', match_selected)
 
-        def match_func(completion, key, iter):
-            m = completion.get_model()
-            text = m.get_value(iter, 0)
-            if not text:
-                return False
-            text = text.lower()
-            key = key.lower()
-            if text.startswith(key) or text.find('(' + key) != -1:
-                return True
+        def match_func(completion, key, iterator, data):
+            # We've already determined that it's a match in entry_changed.
+            return True
+
+        def data_func(column, cell, model, iterator, data):
+            row = model[iterator]
+            if row[1]:
+                # The result came from geonames, and thus has an administrative
+                # zone attached to it.
+                text = '%s <small>(%s, %s)</small>' % (row[0], row[1], row[2])
             else:
-                return False
+                text = '%s <small>(%s)</small>' % (row[0], row[2])
+            cell.set_property('markup', text)
+        cell = Gtk.CellRendererText()
+        completion.pack_start(cell, True)
+        completion.set_match_func(match_func, None)
+        completion.set_cell_data_func(cell, data_func, None)
 
-        completion.set_match_func(match_func)
-
-    @only_this_page
-    def on_region_combo_changed(self, *args):
-        i = self.region_combo.get_active()
-        m = self.region_combo.get_model()
-        if i is None or i < 0:
-            return
-        if m[i][1]:
-            countries = [m[i][1]]
-        else:
-            countries = self.controller.dbfilter.get_countries_for_region(m[i][2])
-
-        m = self.city_combo.get_model()
-        m.clear()
-
-        shortlist, longlist = self.controller.dbfilter.build_timezone_pairs(countries)
-        for pair in shortlist:
-            m.append(pair)
-        if shortlist:
-            m.append([None, None])
-        for pair in longlist:
-            m.append(pair)
-
-        default = len(countries) == 1 and self.controller.dbfilter.get_default_for_region(countries[0])
-        if default:
-            self.select_city(None, default)
-        else:
-            self.city_combo.set_active_iter(m.get_iter_first())
-
-    def on_city_combo_changed(self, *args):
-        i = self.city_combo.get_active()
-        if i < 0:
-            # There's no selection yet.
-            return
-
-        zone = self.get_timezone()
-        self.tzmap.select_city(zone)
-        self.controller.allow_go_forward(True)
-
-class PageKde2(PluginUI):
+class PageKde2(plugin.PluginUI):
     plugin_breadcrumb = 'ubiquity/text/breadcrumb_timezone'
 
     def __init__(self, controller, *args, **kwargs):
@@ -267,8 +256,12 @@ class PageKde2(PluginUI):
             self.page = None
 
         self.plugin_widgets = self.page
+        self.online = False
 
-    @only_this_page
+    def plugin_set_online_state(self, state):
+        self.online = state
+
+    @plugin.only_this_page
     def refresh_timezones(self):
         lang = os.environ['LANG'].split('_', 1)[0]
         shortlist = self.controller.dbfilter.build_shortlist_region_pairs(lang)
@@ -281,7 +274,7 @@ class PageKde2(PluginUI):
         for pair in longlist:
             self.page.timezone_zone_combo.addItem(pair[0], pair[2])
 
-    @only_this_page
+    @plugin.only_this_page
     def populateCities(self, regionIndex):
         self.page.timezone_city_combo.clear()
 
@@ -302,7 +295,7 @@ class PageKde2(PluginUI):
         return len(countries) == 1 and self.controller.dbfilter.get_default_for_region(countries[0])
 
     # called when the region(zone) combo changes
-    @only_this_page
+    @plugin.only_this_page
     def regionChanged(self, regionIndex):
         if self.controller.dbfilter is None:
             return
@@ -325,7 +318,7 @@ class PageKde2(PluginUI):
         self.tzmap.set_timezone(zone)
         self.tzmap.zoneChanged.connect(self.mapZoneChanged)
 
-    @only_this_page
+    @plugin.only_this_page
     def mapZoneChanged(self, loc, zone):
         self.page.timezone_zone_combo.blockSignals(True)
         self.page.timezone_city_combo.blockSignals(True)
@@ -357,10 +350,24 @@ class PageKde2(PluginUI):
     def get_timezone (self):
         return self.tzmap.get_timezone()
 
-class PageDebconf(PluginUI):
+class PageDebconf(plugin.PluginUI):
     plugin_title = 'ubiquity/text/timezone_heading_label'
 
-class PageNoninteractive(PluginUI):
+    def __init__(self, controller, *args, **kwargs):
+        self.controller = controller
+        self.online = False
+
+    def plugin_set_online_state(self, state):
+        self.online = state
+
+class PageNoninteractive(plugin.PluginUI):
+    def __init__(self, controller, *args, **kwargs):
+        self.controller = controller
+        self.online = False
+
+    def plugin_set_online_state(self, state):
+        self.online = state
+
     def set_timezone(self, timezone):
         """Set the current selected timezone."""
         self.timezone = timezone
@@ -369,8 +376,13 @@ class PageNoninteractive(PluginUI):
         """Get the current selected timezone."""
         return self.timezone
 
-class Page(Plugin):
+class Page(plugin.Plugin):
     def prepare(self, unfiltered=False):
+        # TODO: This can go away once we have the ability to abort wget/rdate
+        if not self.ui.online:
+            self.preseed('tzsetup/geoip_server', '')
+            self.preseed('clock-setup/ntp', 'false')
+
         clock_script = '/usr/share/ubiquity/clock-setup'
         env = {'PATH': '/usr/share/ubiquity:' + os.environ['PATH']}
 
@@ -385,9 +397,9 @@ class Page(Plugin):
         self.tzdb = ubiquity.tz.Database()
         self.multiple = False
         try:
-            # Strip .UTF-8 from locale, PyICU doesn't parse it
+            # Strip .UTF-8 from locale, icu doesn't parse it
             locale = os.environ['LANG'].rsplit('.', 1)[0]
-            self.collator = PyICU.Collator.createInstance(PyICU.Locale(locale))
+            self.collator = icu.Collator.createInstance(icu.Locale(locale))
         except:
             self.collator = None
         if not 'UBIQUITY_AUTOMATIC' in os.environ:
@@ -427,7 +439,7 @@ class Page(Plugin):
                     zone = choices_c[0]
             self.ui.set_timezone(zone)
 
-        return Plugin.run(self, priority, question)
+        return plugin.Plugin.run(self, priority, question)
 
     def get_default_for_region(self, region):
         try:
@@ -452,6 +464,25 @@ class Page(Plugin):
             codes = []
         self.regions[region] = codes
         return codes
+
+    # Returns ['timezone', ...]
+    def build_timezone_list(self):
+        total = []
+        continents = self.choices_untranslated('localechooser/continentlist')
+        for continent in continents:
+            country_codes = self.choices_untranslated('localechooser/countrylist/%s' % continent.replace(' ', '_'))
+            for c in country_codes:
+                shortlist = self.build_shortlist_timezone_pairs(c, sort=False)
+                longlist = self.build_longlist_timezone_pairs(c, sort=False)
+                shortcopy = shortlist[:]
+                # TODO set() | set() instead.
+                for short_item in shortcopy:
+                    for long_item in longlist:
+                        if short_item[1] == long_item[1]:
+                            shortlist.remove(short_item)
+                            break
+                total += shortlist + longlist
+        return total
 
     # Returns [('translated country name', None, 'region code')...] list
     def build_region_pairs(self):
@@ -510,7 +541,7 @@ class Page(Plugin):
 
         return (shortlist, longlist)
 
-    def build_shortlist_timezone_pairs(self, country_code):
+    def build_shortlist_timezone_pairs(self, country_code, sort=True):
         try:
             shortlist = self.choices_display_map('tzsetup/country/%s' % country_code)
             for pair in shortlist.items():
@@ -518,7 +549,8 @@ class Page(Plugin):
                 if pair[1] == 'other':
                     del shortlist[pair[0]]
             shortlist = shortlist.items()
-            shortlist.sort(key=self.collation_key)
+            if sort:
+                shortlist.sort(key=self.collation_key)
             return shortlist
         except debconf.DebconfError:
             return []
@@ -574,7 +606,7 @@ class Page(Plugin):
         if 'LANG' not in os.environ:
             return [] # ?!
         locale = os.environ['LANG'].rsplit('.', 1)[0]
-        tz_format = PyICU.SimpleDateFormat('VVVV', PyICU.Locale(locale))
+        tz_format = icu.SimpleDateFormat('VVVV', icu.Locale(locale))
         now = time.time()*1000
         rv = []
         try:
@@ -585,15 +617,20 @@ class Page(Plugin):
             # HM (Heard and McDonald Islands).  Both are uninhabited.
             locs = []
         for location in locs:
-            tz_format.setTimeZone(PyICU.TimeZone.createTimeZone(location.zone))
-            translated = tz_format.format(now)
-            # Check if PyICU had a valid translation for this timezone.  If it
+            timezone = icu.TimeZone.createTimeZone(location.zone)
+            if timezone.getID() == 'Etc/Unknown':
+                translated = None
+            else:
+                tz_format.setTimeZone(timezone)
+                translated = tz_format.format(now)
+            # Check if icu had a valid translation for this timezone.  If it
             # doesn't, the returned string will look like GMT+0002 or somesuch.
             # Sometimes the GMT is translated (like in Chinese), so we check
-            # for the number part.  PyICU does not indicate a 'translation
+            # for the number part.  icu does not indicate a 'translation
             # failure' like this in any way...
-            if re.search('.*[-+][0-9][0-9]:?[0-9][0-9]$', translated):
-                # Wasn't something that PyICU understood...
+            if (translated is None or
+                re.search('.*[-+][0-9][0-9]:?[0-9][0-9]$', translated)):
+                # Wasn't something that icu understood...
                 name = self.get_fallback_translation_for_tz(country_code, location.zone)
                 rv.append((name, location.zone))
             else:
@@ -626,13 +663,14 @@ class Page(Plugin):
             if location.zone == zone:
                 self.preseed('debian-installer/country', location.country)
                 break
-        Plugin.ok_handler(self)
+        plugin.Plugin.ok_handler(self)
 
     def cleanup(self):
-        Plugin.cleanup(self)
-        i18n.reset_locale(self.frontend, just_country=True)
+        plugin.Plugin.cleanup(self)
+        self.ui.controller.set_locale(
+                i18n.reset_locale(self.frontend, just_country=True))
 
-class Install(InstallPlugin):
+class Install(plugin.InstallPlugin):
     def prepare(self, unfiltered=False):
         tzsetup_script = '/usr/lib/ubiquity/tzsetup/post-base-installer'
         clock_script = '/usr/share/ubiquity/clock-setup-apply'
@@ -644,4 +682,4 @@ class Install(InstallPlugin):
 
     def install(self, target, progress, *args, **kwargs):
         progress.info('ubiquity/install/timezone')
-        return InstallPlugin.install(self, target, progress, *args, **kwargs)
+        return plugin.InstallPlugin.install(self, target, progress, *args, **kwargs)

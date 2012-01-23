@@ -1,6 +1,6 @@
 # -*- coding: utf-8; Mode: Python; indent-tabs-mode: nil; tab-width: 4 -*-
 
-# Copyright (C) 2006 Evan Dandrea <evand@ubuntu.com>.
+# Copyright (C) 2006 Evan Dandrea <ev@ubuntu.com>.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,20 +17,18 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import syslog
-import sys
 import os
 import debconf
 
-from ubiquity.plugin import *
-from ubiquity.misc import *
+from ubiquity import plugin
 
 NAME = 'migrationassistant'
-BEFORE = 'summary'
+AFTER = 'usersetup'
 WEIGHT = 10
 # Not useful in oem-config.
 OEM = False
 
-class PageBase2(PluginUI):
+class PageBase2(plugin.PluginUI):
     def ma_set_choices(self, choices):
         """Set the available migration-assistant choices."""
         pass
@@ -52,10 +50,10 @@ class PageGtk2(PageBase):
         self.controller = controller
         self.ma_choices = []
         try:
-            import gtk
-            builder = gtk.Builder()
+            from gi.repository import Gtk
+            builder = Gtk.Builder()
             self.controller.add_builder(builder)
-            builder.add_from_file('/usr/share/ubiquity/gtk/stepMigrationAssistant.ui')
+            builder.add_from_file(os.path.join(os.environ['UBIQUITY_GLADE'], 'stepMigrationAssistant.ui'))
             builder.connect_signals(self)
             self.page = builder.get_object('stepMigrationAssistant')
             self.matreeview = builder.get_object('matreeview')
@@ -103,9 +101,9 @@ class PageGtk2(PageBase):
                 items.remove(item)
 
     def ma_set_choices(self, choices):
-        import gtk
+        from gi.repository import Gtk
 
-        def cell_data_func(unused_column, cell, model, iterator):
+        def cell_data_func(unused_column, cell, model, iterator, unused):
             val = model.get_value(iterator, 1)
             if model.iter_children(iterator):
                 # Windows XP...
@@ -134,13 +132,13 @@ class PageGtk2(PageBase):
             # TODO cjwatson 2009-04-01: i18n
             msg = 'There were no users or operating systems suitable for ' \
                   'importing from.'
-            liststore = gtk.ListStore(str)
+            liststore = Gtk.ListStore(str)
             liststore.append([msg])
             self.matreeview.set_model(liststore)
-            column = gtk.TreeViewColumn('item', gtk.CellRendererText(), text=0)
+            column = Gtk.TreeViewColumn('item', Gtk.CellRendererText(), text=0)
             self.matreeview.append_column(column)
         else:
-            treestore = gtk.TreeStore(bool, object)
+            treestore = Gtk.TreeStore(bool, object)
 
             # We save the choices list so we can preserve state, should the user
             # decide to move back through the interface.  We cannot just put the
@@ -175,15 +173,15 @@ class PageGtk2(PageBase):
 
             self.matreeview.set_model(treestore)
 
-            renderer = gtk.CellRendererToggle()
+            renderer = Gtk.CellRendererToggle()
             renderer.connect('toggled', self.ma_cb_toggle, treestore)
-            column = gtk.TreeViewColumn('boolean', renderer, active=0)
+            column = Gtk.TreeViewColumn('boolean', renderer, active=0)
             column.set_clickable(True)
-            column.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+            column.set_sizing(Gtk.TreeViewColumnSizing.AUTOSIZE)
             self.matreeview.append_column(column)
 
-            renderer = gtk.CellRendererText()
-            column = gtk.TreeViewColumn('item', renderer)
+            renderer = Gtk.CellRendererText()
+            column = Gtk.TreeViewColumn('item', renderer)
             column.set_cell_data_func(renderer, cell_data_func)
             self.matreeview.append_column(column)
 
@@ -198,7 +196,7 @@ class PageGtk2(PageBase):
 class PageNoninteractive(PageBase):
     pass
 
-class Page2(Plugin):
+class Page2(plugin.Plugin):
     def prepare(self):
         self.got_a_question = False
         questions = ['^migration-assistant/partitions',
@@ -226,11 +224,6 @@ class Page2(Plugin):
                 self.preseed(question, 'false')
             return True
 
-        # We cannot currently import from partitions that are scheduled for
-        # deletion, so we filter them out of the list.
-        if question == 'migration-assistant/partitions':
-            self.filter_parts()
-
         elif question == 'ubiquity/run-ma-again':
             self.db.set('ubiquity/run-ma-again', 'false')
             self.set_choices()
@@ -240,7 +233,7 @@ class Page2(Plugin):
             if not self.got_a_question:
                 return self.succeeded
             else:
-                return Plugin.run(self, priority, question)
+                return plugin.Plugin.run(self, priority, question)
 
         elif question.endswith('user'):
             username = self.db.get('passwd/username')
@@ -260,7 +253,7 @@ class Page2(Plugin):
     def error(self, priority, question):
         self.frontend.error_dialog(self.description(question),
                                    self.extended_description(question))
-        return Plugin.error(self, priority, question)
+        return plugin.Plugin.error(self, priority, question)
 
     def ok_handler(self):
         choices = self.ui.ma_get_choices()
@@ -285,34 +278,7 @@ class Page2(Plugin):
             self.db.register('migration-assistant/users', question)
             self.preseed(question, ', '.join(users[p]))
 
-        return Plugin.ok_handler(self)
-
-    def filter_parts(self):
-        question = 'migration-assistant/partitions'
-        from ubiquity.parted_server import PartedServer
-        with raised_privileges():
-            parted = PartedServer()
-
-            parts = []
-            for disk in parted.disks():
-                parted.select_disk(disk)
-                for partition in parted.partitions():
-                    # We check to see if the partition is scheduled to be
-                    # formatted and if not add it to the list of post-commit
-                    # available partitions.
-                    filename = '/var/lib/partman/devices/%s/%s/format' % \
-                        (disk, partition[1])
-                    if os.path.exists(filename):
-                        syslog.syslog('filtering out %s as it is to be formatted.' % partition[5])
-                    else:
-                        parts.append(partition[5])
-
-        ret = []
-        for choice in self.choices(question):
-            if choice[choice.rfind('(')+1:choice.rfind(')')] in parts:
-                ret.append(choice)
-
-        self.preseed(question, ", ".join(ret))
+        return plugin.Plugin.ok_handler(self)
 
     def set_choices(self):
         tree = []
@@ -361,17 +327,17 @@ class Page2(Plugin):
 
         self.ui.ma_set_choices(tree)
 
-class Install(InstallPlugin):
+class Install(plugin.InstallPlugin):
     def prepare(self):
         return (['/usr/lib/ubiquity/migration-assistant/ma-apply',
                  '/usr/lib/ubiquity/migration-assistant'], [])
 
     def install(self, target, progress, *args, **kwargs):
         progress.info('ubiquity/install/migrationassistant')
-        return InstallPlugin.install(self, target, progress, *args, **kwargs)
+        return plugin.InstallPlugin.install(self, target, progress, *args, **kwargs)
 
     def error(self, priority, question):
         self.frontend.error_dialog(self.description(question))
-        return InstallPlugin.error(self, priority, question)
+        return plugin.InstallPlugin.error(self, priority, question)
 
 # vim:ai:et:sts=4:tw=80:sw=4:

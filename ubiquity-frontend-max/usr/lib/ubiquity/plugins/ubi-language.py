@@ -20,7 +20,7 @@
 import os
 import debconf
 
-from ubiquity.plugin import *
+from ubiquity import plugin
 from ubiquity import i18n
 from ubiquity import misc
 from ubiquity import auto_update
@@ -34,12 +34,12 @@ try:
     import lsb_release
     _ver = lsb_release.get_distro_information()['RELEASE']
 except:
-    _ver = '10.04'
+    _ver = '12.04'
 _wget_url = 'http://changelogs.ubuntu.com/ubiquity/%s-update-available' % _ver
 
 _release_notes_url_path = '/cdrom/.disk/release_notes_url'
 
-class PageBase(PluginUI):
+class PageBase(plugin.PluginUI):
     def set_language_choices(self, unused_choices, choice_map):
         """Called with language choices and a map to localised names."""
         self.language_choice_map = dict(choice_map)
@@ -63,118 +63,70 @@ class PageBase(PluginUI):
 
 class PageGtk2(PageBase):
     plugin_is_language = True
+    plugin_title = 'ubiquity/text/language_heading_label'
 
     def __init__(self, controller, *args, **kwargs):
         self.controller = controller
+        self.timeout_id = None
+        self.wget_retcode = None
+        self.wget_proc = None
         if self.controller.oem_user_config:
             ui_file = 'stepLanguageOnly.ui'
             self.only = True
         else:
             ui_file = 'stepLanguage.ui'
             self.only = False
-        try:
-            import gtk
-            builder = gtk.Builder()
-            builder.add_from_file('/usr/share/ubiquity/gtk/%s' % ui_file)
-            builder.connect_signals(self)
-            self.controller.add_builder(builder)
-            self.page = builder.get_object('stepLanguage')
-            self.iconview = builder.get_object('language_iconview')
-            self.treeview = builder.get_object('language_treeview')
-            self.oem_id_entry = builder.get_object('oem_id_entry')
+        from gi.repository import Gtk
+        builder = Gtk.Builder()
+        builder.add_from_file(os.path.join(os.environ['UBIQUITY_GLADE'], ui_file))
+        builder.connect_signals(self)
+        self.controller.add_builder(builder)
+        self.page = builder.get_object('stepLanguage')
+        self.iconview = builder.get_object('language_iconview')
+        self.treeview = builder.get_object('language_treeview')
+        self.oem_id_entry = builder.get_object('oem_id_entry')
+        if self.controller.oem_config:
+            builder.get_object('oem_id_vbox').show()
 
-            if self.controller.oem_config:
-                builder.get_object('oem_id_vbox').show()
-
-            self.release_notes_url = ''
-            self.update_installer = True
-            self.release_notes_label = builder.get_object('release_notes_label')
-            if self.release_notes_label:
-                if self.controller.oem_config or auto_update.already_updated():
-                    self.update_installer = False
-                try:
-                    release_notes = open(_release_notes_url_path)
-                    self.release_notes_url = release_notes.read().rstrip('\n')
-                    release_notes.close()
-                except (KeyboardInterrupt, SystemExit):
-                    raise
-                except:
-                    pass
-            self.install_ubuntu = builder.get_object('install_ubuntu')
-            self.try_ubuntu = builder.get_object('try_ubuntu')
-            if not self.only:
-                if not 'UBIQUITY_GREETER' in os.environ:
-                    try_section_vbox = builder.get_object('try_section_vbox')
-                    try_section_vbox and try_section_vbox.hide()
-                    self.install_ubuntu and self.install_ubuntu.hide()
-                else:
-                    def inst(*args):
-                        self.try_ubuntu.set_sensitive(False)
-                        self.controller.go_forward()
-                    self.install_ubuntu.connect('clicked', inst)
-                    self.try_ubuntu.connect('clicked',
-                        self.on_try_ubuntu_clicked)
-                self.try_text_label = builder.get_object('try_text_label')
-                self.ready_text_label = builder.get_object('ready_text_label')
-                self.alpha_warning_label = builder.get_object('alpha_warning_label')
-                # We do not want to show the yet to be substituted strings
-                # (${MEDIUM}, etc), so don't show the core of the page until
-                # it's ready.
-                for w in self.page.get_children():
-                    w.hide()
-                if self.update_installer:
-                    self.setup_network_watch()
-
-        except Exception, e:
-            self.debug('Could not create language page: %s', e)
-            self.page = None
+        self.release_notes_url = ''
+        self.update_installer = True
+        self.release_notes_label = builder.get_object('release_notes_label')
+        self.release_notes_found = False
+        if self.release_notes_label:
+            self.release_notes_label.connect('activate-link', self.on_link_clicked)
+            if self.controller.oem_config or auto_update.already_updated():
+                self.update_installer = False
+            try:
+                release_notes = open(_release_notes_url_path)
+                self.release_notes_url = release_notes.read().rstrip('\n')
+                release_notes.close()
+                self.release_notes_found = True
+            except (KeyboardInterrupt, SystemExit):
+                raise
+            except:
+                pass
+        self.install_ubuntu = builder.get_object('install_ubuntu')
+        self.try_ubuntu = builder.get_object('try_ubuntu')
+        if not self.only:
+            if not 'UBIQUITY_GREETER' in os.environ:
+                choice_section_vbox = builder.get_object('choice_section_vbox')
+                choice_section_vbox and choice_section_vbox.hide()
+            else:
+                def inst(*args):
+                    self.try_ubuntu.set_sensitive(False)
+                    self.controller.go_forward()
+                self.install_ubuntu.connect('clicked', inst)
+                self.try_ubuntu.connect('clicked',
+                    self.on_try_ubuntu_clicked)
+            self.try_install_text_label = builder.get_object('try_install_text_label')
+            # We do not want to show the yet to be substituted strings
+            # (${MEDIUM}, etc), so don't show the core of the page until
+            # it's ready.
+            for w in self.page.get_children():
+                w.hide()
         self.plugin_widgets = self.page
 
-    def setup_network_watch(self):
-        import dbus
-        from dbus.mainloop.glib import DBusGMainLoop
-        try:
-            DBusGMainLoop(set_as_default=True)
-            bus = dbus.SystemBus()
-            bus.add_signal_receiver(self.network_change,
-                                    'DeviceNoLongerActive',
-                                    'org.freedesktop.NetworkManager',
-                                    'org.freedesktop.NetworkManager',
-                                    '/org/freedesktop/NetworkManager')
-            bus.add_signal_receiver(self.network_change, 'StateChange',
-                                    'org.freedesktop.NetworkManager',
-                                    'org.freedesktop.NetworkManager',
-                                    '/org/freedesktop/NetworkManager')
-        except dbus.DBusException:
-            return
-        self.timeout_id = None
-        self.wget_retcode = None
-        self.wget_proc = None
-        self.network_change()
-
-    def network_change(self, state=None):
-        import gobject
-        if state and (state != 4 and state != 3):
-            return
-        if self.timeout_id:
-            gobject.source_remove(self.timeout_id)
-        self.timeout_id = gobject.timeout_add(300, self.check_returncode)
-
-    def check_returncode(self, *args):
-        import subprocess
-        if self.wget_retcode is not None or self.wget_proc is None:
-            self.wget_proc = subprocess.Popen(
-                ['wget', '-q', _wget_url, '--timeout=15'])
-        self.wget_retcode = self.wget_proc.poll()
-        if self.wget_retcode is None:
-            return True
-        else:
-            if self.wget_retcode == 0:
-                self.release_notes_label.show()
-            else:
-                self.release_notes_label.hide()
-
-    @only_this_page
+    @plugin.only_this_page
     def on_try_ubuntu_clicked(self, *args):
         # Spinning cursor.
         self.controller.allow_change_step(False)
@@ -183,27 +135,33 @@ class PageGtk2(PageBase):
         self.controller._wizard.current_page = None
         self.controller.dbfilter.ok_handler()
 
-    def set_alpha_warning(self, show):
-        if not show and not self.only:
-            self.alpha_warning_label.hide()
-
     def set_language_choices(self, choices, choice_map):
-        import gtk, gobject
+        from gi.repository import Gtk, GObject
         PageBase.set_language_choices(self, choices, choice_map)
-        list_store = gtk.ListStore(gobject.TYPE_STRING)
+        list_store = Gtk.ListStore.new([GObject.TYPE_STRING])
+        longest_length = 0
+        longest = ''
         for choice in choices:
             list_store.append([choice])
+            # Work around the fact that GtkIconView wraps at 50px or the width
+            # of the icon, which is nonexistent here. See adjust_wrap_width ()
+            # in gtkiconview.c for the details.
+            if self.only:
+                length = len(choice)
+                if length > longest_length:
+                    longest_length = length
+                    longest = choice
         # Support both iconview and treeview
         if self.only:
             self.iconview.set_model(list_store)
             self.iconview.set_text_column(0)
-            lang_per_column = self.iconview.get_allocation().height / 40
-            columns = int(round(len(choices) / float(lang_per_column)))
-            self.iconview.set_columns(columns)
+            pad = self.iconview.get_property('item-padding')
+            layout = self.iconview.create_pango_layout(longest)
+            self.iconview.set_item_width(layout.get_pixel_size()[0] + pad * 2)
         else:
             if len(self.treeview.get_columns()) < 1:
-                column = gtk.TreeViewColumn(None, gtk.CellRendererText(), text=0)
-                column.set_sizing(gtk.TREE_VIEW_COLUMN_GROW_ONLY)
+                column = Gtk.TreeViewColumn(None, Gtk.CellRendererText(), text=0)
+                column.set_sizing(Gtk.TreeViewColumnSizing.GROW_ONLY)
                 self.treeview.append_column(column)
                 selection = self.treeview.get_selection()
                 selection.connect('changed',
@@ -216,7 +174,7 @@ class PageGtk2(PageBase):
             model = self.iconview.get_model()
             iterator = model.iter_children(None)
             while iterator is not None:
-                if unicode(model.get_value(iterator, 0)) == language:
+                if misc.utf8(model.get_value(iterator, 0)) == language:
                     path = model.get_path(iterator)
                     self.iconview.select_path(path)
                     self.iconview.scroll_to_path(path, True, 0.5, 0.5)
@@ -226,14 +184,14 @@ class PageGtk2(PageBase):
             model = self.treeview.get_model()
             iterator = model.iter_children(None)
             while iterator is not None:
-                if unicode(model.get_value(iterator, 0)) == language:
+                if misc.utf8(model.get_value(iterator, 0)) == language:
                     path = model.get_path(iterator)
                     self.treeview.get_selection().select_path(path)
                     self.treeview.scroll_to_cell(
                         path, use_align=True, row_align=0.5)
                     break
                 iterator = model.iter_next(iterator)
-        
+
         if not self.only and 'UBIQUITY_GREETER' in os.environ:
             self.try_ubuntu.set_sensitive(True)
             self.install_ubuntu.set_sensitive(True)
@@ -244,15 +202,15 @@ class PageGtk2(PageBase):
             model = self.iconview.get_model()
             items = self.iconview.get_selected_items()
             if not items:
-                return 'C'
+                return None
             iterator = model.get_iter(items[0])
         else:
             selection = self.treeview.get_selection()
             (model, iterator) = selection.get_selected()
         if iterator is None:
-            return 'C'
+            return None
         else:
-            value = unicode(model.get_value(iterator, 0))
+            value = misc.utf8(model.get_value(iterator, 0))
             return self.language_choice_map[value][1]
 
     def on_language_activated(self, *args, **kwargs):
@@ -260,44 +218,122 @@ class PageGtk2(PageBase):
 
     def on_language_selection_changed(self, *args, **kwargs):
         lang = self.get_language()
+        self.controller.allow_go_forward(bool(lang))
+        if not lang:
+            return
+        misc.set_indicator_keymaps(lang)
+        # strip encoding; we use UTF-8 internally no matter what
+        lang = lang.split('.')[0]
+        self.controller.translate(lang)
+        from gi.repository import Gtk
+        ltr = i18n.get_string('default-ltr', lang, 'ubiquity/imported')
+        if ltr == 'default:RTL':
+            Gtk.Widget.set_default_direction(Gtk.TextDirection.RTL)
+        else:
+            Gtk.Widget.set_default_direction(Gtk.TextDirection.LTR)
+
+        if self.only:
+            # The language page for oem-config doesn't have the fancy greeter.
+            return
+
+        # TODO: Cache these.
+        release = misc.get_release()
+        install_medium = misc.get_install_medium()
+        install_medium = i18n.get_string(install_medium, lang)
+        # Set the release name (Ubuntu 10.04) and medium (USB or CD) where
+        # necessary.
+        w = self.try_install_text_label
+        text = i18n.get_string(Gtk.Buildable.get_name(w), lang)
+        text = text.replace('${RELEASE}', release.name)
+        text = text.replace('${MEDIUM}', install_medium)
+        w.set_label(text)
+
+        # Big buttons.
+        for w in (self.try_ubuntu, self.install_ubuntu):
+            text = i18n.get_string(Gtk.Buildable.get_name(w), lang)
+            text = text.replace('${RELEASE}', release.name)
+            text = text.replace('${MEDIUM}', install_medium)
+            w.get_child().set_markup('<span size="x-large">%s</span>' % text)
+
+        # We need to center each button under each image *and* have a homogeous
+        # size between the two buttons.
+        self.try_ubuntu.set_size_request(-1, -1)
+        self.install_ubuntu.set_size_request(-1, -1)
+        try_w = self.try_ubuntu.size_request().width
+        install_w = self.install_ubuntu.size_request().width
+        if try_w > install_w:
+            self.try_ubuntu.set_size_request(try_w, -1)
+            self.install_ubuntu.set_size_request(try_w, -1)
+        elif install_w > try_w:
+            self.try_ubuntu.set_size_request(install_w, -1)
+            self.install_ubuntu.set_size_request(install_w, -1)
+
+        # Make the forward button a consistent size, regardless of its text.
+        install_label = i18n.get_string('install_button', lang)
+        next_button = self.controller._wizard.next
+        next_label = next_button.get_label()
+
+        next_button.set_size_request(-1, -1)
+        next_w = next_button.size_request().width
+        next_button.set_label(install_label)
+        install_w = next_button.size_request().width
+        next_button.set_label(next_label)
+        if next_w > install_w:
+            next_button.set_size_request(next_w, -1)
+        else:
+            next_button.set_size_request(install_w, -1)
+
+        self.update_release_notes_label()
+        for w in self.page.get_children():
+            w.show()
+
+    def plugin_set_online_state(self, state):
+        from gi.repository import GObject
+        if self.release_notes_label:
+            if self.timeout_id:
+                GObject.source_remove(self.timeout_id)
+            if state:
+                self.release_notes_label.show()
+                self.timeout_id = GObject.timeout_add(300, self.check_returncode)
+            else:
+                self.release_notes_label.hide()
+
+    def check_returncode(self, *args):
+        import subprocess
+        if self.wget_retcode is not None or self.wget_proc is None:
+            self.wget_proc = subprocess.Popen(
+                ['wget', '-q', _wget_url, '--timeout=15', '--tries=1', '-O', '/dev/null'])
+        self.wget_retcode = self.wget_proc.poll()
+        if self.wget_retcode is None:
+            return True
+        else:
+            if self.wget_retcode == 0:
+                self.update_installer = True
+            else:
+                self.update_installer = False
+            self.update_release_notes_label()
+            return False
+
+    def update_release_notes_label(self):
+        print "update_release_notes_label()"
+        lang = self.get_language()
         if not lang:
             return
         # strip encoding; we use UTF-8 internally no matter what
         lang = lang.split('.')[0]
-        self.controller.translate(lang)
-        import gtk
-        ltr = i18n.get_string('default-ltr', lang, 'ubiquity/imported')
-        if ltr == 'default:RTL':
-            gtk.widget_set_default_direction(gtk.TEXT_DIR_RTL)
-        else:
-            gtk.widget_set_default_direction(gtk.TEXT_DIR_LTR)
-        if not self.only:
-            release_name = misc.get_release_name()
-            install_medium = misc.get_install_medium()
-            install_medium = i18n.get_string(install_medium, lang)
-            for widget in (self.try_text_label,
-                           self.try_ubuntu,
-                           self.install_ubuntu,
-                           self.ready_text_label,
-                           self.alpha_warning_label):
-                text = i18n.get_string(gtk.Buildable.get_name(widget), lang)
-                text = text.replace('${RELEASE}', release_name)
-                text = text.replace('${MEDIUM}', install_medium)
-                widget.set_label(text)
-
-            if self.release_notes_label:
-                if self.release_notes_url and self.update_installer:
-                    pass
-                elif self.release_notes_url:
-                    text = i18n.get_string('release_notes_only', lang)
-                    self.release_notes_label.set_markup(text)
-                elif self.update_installer:
-                    text = i18n.get_string('update_installer_only', lang)
-                    self.release_notes_label.set_markup(text)
-                else:
-                    self.release_notes_label.hide()
-            for w in self.page.get_children():
-                w.show()
+        # Either leave the release notes label alone (both release notes and a
+        # critical update are available), set it to just the release notes,
+        # just the critical update, or neither, as appropriate.
+        if self.release_notes_label:
+            if self.release_notes_found and self.update_installer:
+                text = i18n.get_string('release_notes_label', lang)
+                self.release_notes_label.set_markup(text)
+            elif self.release_notes_found:
+                text = i18n.get_string('release_notes_only', lang)
+                self.release_notes_label.set_markup(text)
+            elif self.update_installer:
+                text = i18n.get_string('update_installer_only', lang)
+                self.release_notes_label.set_markup(text)
 
     def set_oem_id(self, text):
         return self.oem_id_entry.set_text(text)
@@ -330,6 +366,8 @@ class PageKde2(PageBase):
 
     def __init__(self, controller, *args, **kwargs):
         self.controller = controller
+        self.wget_retcode = None
+        self.wget_proc = None
         if self.controller.oem_user_config:
             self.only = True
         else:
@@ -337,26 +375,36 @@ class PageKde2(PageBase):
 
         try:
             from PyQt4 import uic
-            from PyQt4.QtGui import QLabel, QWidget
+            from PyQt4.QtGui import QWidget, QPixmap
             self.page = uic.loadUi('/usr/share/ubiquity/qt/stepLanguage.ui')
             self.combobox = self.page.language_combobox
             self.combobox.currentIndexChanged[str].connect(self.on_language_selection_changed)
-            
-            def inst(*args):
-                self.try_ubuntu.setEnabled(False)
-                self.controller.go_forward()
-            self.page.begin_install_button.clicked.connect(inst)
-            self.page.try_ubuntu.clicked.connect(self.on_try_ubuntu_clicked)
-
             if not self.controller.oem_config:
                 self.page.oem_id_label.hide()
                 self.page.oem_id_entry.hide()
 
+            def inst(*args):
+                self.page.try_ubuntu.setEnabled(False)
+                self.controller.go_forward()
+            self.page.install_ubuntu.clicked.connect(inst)
+            self.page.try_ubuntu.clicked.connect(self.on_try_ubuntu_clicked)
+            picture1 = QPixmap("/usr/share/ubiquity/pixmaps/kubuntu-live-session.png")
+            self.page.image1.setPixmap(picture1)
+            self.page.image1.resize(picture1.size())
+            picture2 = QPixmap("/usr/share/ubiquity/pixmaps/kubuntu-install.png")
+            self.page.image2.setPixmap(picture2)
+            self.page.image2.resize(picture2.size())
+
             self.release_notes_url = ''
+            self.update_installer = True
+            if self.controller.oem_config or auto_update.already_updated():
+                self.update_installer = False
+            self.release_notes_found = False
             try:
                 release_notes = open(_release_notes_url_path)
                 self.release_notes_url = release_notes.read().rstrip('\n')
                 release_notes.close()
+                self.release_notes_found = True
             except (KeyboardInterrupt, SystemExit):
                 raise
             except:
@@ -370,12 +418,13 @@ class PageKde2(PageBase):
 
             if not 'UBIQUITY_GREETER' in os.environ:
                 self.page.try_ubuntu.hide()
-                self.page.try_text_label.hide()
-                self.page.begin_install_button.hide()
+                self.page.try_install_text_label.hide()
+                self.page.install_ubuntu.hide()
+                self.page.image1.hide()
+                self.page.image2.hide()
 
             if self.only:
                 self.page.alpha_warning_label.hide()
-
             # We do not want to show the yet to be substituted strings
             # (${MEDIUM}, etc), so don't show the core of the page until
             # it's ready.
@@ -391,12 +440,12 @@ class PageKde2(PageBase):
 
         self.plugin_widgets = self.page
 
-    @only_this_page
+    @plugin.only_this_page
     def on_try_ubuntu_clicked(self, *args):
         # Spinning cursor.
         self.controller.allow_change_step(False)
         # Queue quit.
-        self.page.begin_install_button.setEnabled(False)
+        self.page.install_ubuntu.setEnabled(False)
         self.controller._wizard.current_page = None
         self.controller.dbfilter.ok_handler()
 
@@ -410,9 +459,9 @@ class PageKde2(PageBase):
         lang = self.selected_language()
         if link == "release-notes":
             if lang:
-               lang = lang.split('.')[0].lower()
-               url = self.release_notes_url.replace('${LANG}', lang)
-               self.openURL(url)
+                lang = lang.split('.')[0].lower()
+                url = self.release_notes_url.replace('${LANG}', lang)
+                self.openURL(url)
         elif link == "update":
             if not auto_update.update(self.controller._wizard):
                 # no updates, so don't check again
@@ -443,10 +492,10 @@ class PageKde2(PageBase):
             self.combobox.addItem("C")
         else:
             self.combobox.setCurrentIndex(index)
-        
+
         if not self.only and 'UBIQUITY_GREETER' in os.environ:
             self.page.try_ubuntu.setEnabled(True)
-            self.page.begin_install_button.setEnabled(True)
+            self.page.install_ubuntu.setEnabled(True)
 
     def get_language(self):
         lang = self.selected_language()
@@ -467,21 +516,75 @@ class PageKde2(PageBase):
         lang = lang.split('.')[0]
         self.controller.translate(lang)
         if not self.only:
-            release_name = misc.get_release_name()
+            release = misc.get_release()
             install_medium = misc.get_install_medium()
             install_medium = i18n.get_string(install_medium, lang)
-            for widget in (self.page.try_text_label,
+            for widget in (self.page.try_install_text_label,
                            self.page.try_ubuntu,
-                           self.page.ready_text_label,
+                           self.page.install_ubuntu,
                            self.page.alpha_warning_label):
                 text = widget.text()
-                text = text.replace('${RELEASE}', release_name)
+                text = text.replace('${RELEASE}', release.name)
                 text = text.replace('${MEDIUM}', install_medium)
+                text = text.replace('Ubuntu', 'Kubuntu')
                 widget.setText(text)
-                
+
+        self.update_release_notes_label()
         for w in self.widgetHidden:
             w.show()
         self.widgetHidden = []
+
+    def plugin_set_online_state(self, state):
+        from PyQt4.QtCore import QTimer, SIGNAL
+        if self.page.release_notes_label:
+            if state:
+                self.page.release_notes_label.show()
+                QTimer.singleShot(300, self.check_returncode)
+                self.timer = QTimer(self.page)
+                self.timer.connect(self.timer, SIGNAL("timeout()"),
+                    self.check_returncode)
+                self.timer.start(300)
+            else:
+                self.page.release_notes_label.hide()
+
+    def check_returncode(self, *args):
+        import subprocess
+        from PyQt4.QtCore import SIGNAL
+        if self.wget_retcode is not None or self.wget_proc is None:
+            self.wget_proc = subprocess.Popen(
+                ['wget', '-q', _wget_url, '--timeout=15', '--tries=1', '-O', '/dev/null'])
+        self.wget_retcode = self.wget_proc.poll()
+        if self.wget_retcode is None:
+            return True
+        else:
+            if self.wget_retcode == 0:
+                self.update_installer = True
+            else:
+                self.update_installer = False
+            self.update_release_notes_label()
+            self.timer.disconnect(self.timer, SIGNAL("timeout()"),
+                self.check_returncode)
+
+
+    def update_release_notes_label(self):
+        lang = self.selected_language()
+        if not lang:
+            return
+        # strip encoding; we use UTF-8 internally no matter what
+        lang = lang.split('.')[0]
+        # Either leave the release notes label alone (both release notes and a
+        # critical update are available), set it to just the release notes,
+        # just the critical update, or neither, as appropriate.
+        if self.page.release_notes_label:
+            if self.release_notes_found and self.update_installer:
+                text = i18n.get_string('release_notes_label', lang)
+                self.page.release_notes_label.setText(text)
+            elif self.release_notes_found:
+                text = i18n.get_string('release_notes_only', lang)
+                self.page.release_notes_label.setText(text)
+            elif self.update_installer:
+                text = i18n.get_string('update_installer_only', lang)
+                self.page.release_notes_label.setText(text)
 
     def set_oem_id(self, text):
         return self.page.oem_id_entry.setText(text)
@@ -508,7 +611,7 @@ class PageNoninteractive(PageBase):
         """Get the current selected language."""
         return self.language
 
-class Page(Plugin):
+class Page(plugin.Plugin):
     def prepare(self, unfiltered=False):
         self.language_question = None
         self.initial_language = None
@@ -533,9 +636,9 @@ class Page(Plugin):
         questions = ['localechooser/languagelist']
         environ = {'PATH': '/usr/lib/ubiquity/localechooser:' + os.environ['PATH']}
         if 'UBIQUITY_FRONTEND' in os.environ and os.environ['UBIQUITY_FRONTEND'] == "debconf_ui":
-          environ['TERM_FRAMEBUFFER'] = '1'
+            environ['TERM_FRAMEBUFFER'] = '1'
         else:
-          environ['OVERRIDE_SHOW_ALL_LANGUAGES'] = '1'
+            environ['OVERRIDE_SHOW_ALL_LANGUAGES'] = '1'
         return (localechooser_script, questions, environ)
 
     def run(self, priority, question):
@@ -552,11 +655,14 @@ class Page(Plugin):
             self.ui.set_language_choices(sorted_choices,
                                          language_display_map)
             self.ui.set_language(current_language)
-        return Plugin.run(self, priority, question)
+            if len(sorted_choices) == 1:
+                self.done = True
+                return True
+        return plugin.Plugin.run(self, priority, question)
 
     def cancel_handler(self):
         self.ui.controller.translate(just_me=False, not_me=True) # undo effects of UI translation
-        Plugin.cancel_handler(self)
+        plugin.Plugin.cancel_handler(self)
 
     def ok_handler(self):
         if self.language_question is not None:
@@ -567,18 +673,18 @@ class Page(Plugin):
                 self.db.reset('debian-installer/country')
         if self.ui.controller.oem_config:
             self.preseed('oem-config/id', self.ui.get_oem_id())
-        Plugin.ok_handler(self)
+        plugin.Plugin.ok_handler(self)
 
     def cleanup(self):
-        Plugin.cleanup(self)
+        plugin.Plugin.cleanup(self)
         i18n.reset_locale(self.frontend)
         self.frontend.stop_debconf()
         self.ui.controller.translate(just_me=False, not_me=True, reget=True)
 
-class Install(InstallPlugin):
+class Install(plugin.InstallPlugin):
     def prepare(self, unfiltered=False):
         if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
-            return (['/usr/lib/ubiquity/localechooser-apply'], [])
+            return (['/usr/share/ubiquity/localechooser-apply'], [])
         else:
             return (['sh', '-c',
                      '/usr/lib/ubiquity/localechooser/post-base-installer ' +
@@ -586,7 +692,7 @@ class Install(InstallPlugin):
 
     def install(self, target, progress, *args, **kwargs):
         progress.info('ubiquity/install/locales')
-        rv = InstallPlugin.install(self, target, progress, *args, **kwargs)
+        rv = plugin.InstallPlugin.install(self, target, progress, *args, **kwargs)
         if not rv:
             # fontconfig configuration needs to be adjusted based on the
             # selected locale (from language-selector-common.postinst). Ignore

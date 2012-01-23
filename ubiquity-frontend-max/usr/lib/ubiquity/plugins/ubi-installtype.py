@@ -28,9 +28,7 @@ import os
 import sys
 from subprocess import Popen, PIPE, STDOUT
 
-from ubiquity import validation
-from ubiquity.misc import execute, execute_root
-from ubiquity.plugin import *
+from ubiquity import plugin
 import debconf
 import syslog
 
@@ -40,7 +38,7 @@ WEIGHT = 100
 
 
 
-class PageBase(PluginUI):
+class PageBase(plugin.PluginUI):
     def __init__(self):
         self.install_types={"escritorio":1, "profesor":2, "alumno":3, "infantil":4, "nanomax":5, "terminales":6}
         self.install_type="escritorio"
@@ -80,8 +78,8 @@ class PageGtk(PageBase):
         #self.username_edited = False
         #self.hostname_edited = False
 
-        import gtk
-        builder = gtk.Builder()
+        from gi.repository import Gtk
+        builder = Gtk.Builder()
         self.controller.add_builder(builder)
         builder.add_from_file('/usr/share/ubiquity/gtk/stepInstallType.ui')
         builder.connect_signals(self)
@@ -113,7 +111,7 @@ class PageGtk(PageBase):
         for radio in self.install_types:
             getattr(self, "install_type_%s"%radio).connect('toggled', self.on_install_type_radio_toggled)
 
-        self.set_hostname('max65')
+        self.set_hostname('max70')
         self.plugin_widgets = self.page
         
         if os.path.isfile("/cdrom/casper/nanomax"):
@@ -179,7 +177,7 @@ class PageNoninteractive2(PageBase):
     pass
 
 
-class Page(Plugin):
+class Page(plugin.Plugin):
     def ok_handler(self):
         install_type=self.ui.get_install_type()
         self.preseed('ubiquity/max_install_type', install_type)
@@ -206,8 +204,8 @@ class Page(Plugin):
             os.popen("sudo rm -f /tmp/max_install_type")
         except:
             pass
-        import gtk
-        gtk.main_quit()
+        from gi.repository import Gtk
+        Gtk.main_quit()
         sys.exit(0)
 
 #class Install(InstallPlugin):

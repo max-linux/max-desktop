@@ -7,7 +7,7 @@
 # Authors:
 #
 # - Colin Watson <cjwatson@ubuntu.com>
-# - Evan Dandrea <evand@ubuntu.com>
+# - Evan Dandrea <ev@ubuntu.com>
 # - Roman Shtylman <shtylman@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
@@ -24,11 +24,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import os
+import os, re
 
 from ubiquity import validation
-from ubiquity.misc import execute, execute_root
-from ubiquity.plugin import *
+from ubiquity.misc import execute, execute_root, dmimodel, utf8
+from ubiquity import plugin
 import debconf
 
 NAME = 'usersetup'
@@ -40,22 +40,48 @@ def check_hostname(hostname):
     invalid."""
     # TODO: i18n
     e = []
-    for result in validation.check_hostname(unicode(hostname)):
+    # Ahem.  We can cheat here by inserting newlines where needed.  Hopefully
+    # by the time we translate this, GTK+ will have decent layout management.
+    for result in validation.check_hostname(utf8(hostname)):
         if result == validation.HOSTNAME_LENGTH:
-            e.append("The hostname must be between 1 and 63 characters long.")
+            e.append("Must be between 1 and 63 characters long.")
         elif result == validation.HOSTNAME_BADCHAR:
-            e.append("The hostname may only contain letters, digits, hyphens, "
-                     "and dots.")
+            e.append("May only contain letters, digits,\nhyphens, and dots.")
         elif result == validation.HOSTNAME_BADHYPHEN:
-            e.append("The hostname may not start or end with a hyphen.")
+            e.append("May not start or end with a hyphen.")
         elif result == validation.HOSTNAME_BADDOTS:
-            e.append('The hostname may not start or end with a dot, '
+            e.append('May not start or end with a dot,\n'
                      'or contain the sequence "..".')
     return "\n".join(e)
 
-class PageBase(PluginUI):
+def check_username(username):
+    """Returns a newline separated string of reasons why the username is
+    invalid."""
+    # TODO: i18n
+    # Ahem.  We can cheat here by inserting newlines where needed.  Hopefully
+    # by the time we translate this, GTK+ will have decent layout management.
+    if username:
+        if not re.match('[a-z]', username[0]):
+            return "Must start with a lower-case letter."
+        # Technically both these conditions might hold.  However, the common
+        # case seems to be that somebody starts typing their name beginning
+        # with an upper-case letter, and it's probably sufficient to just
+        # issue the first error in that case.
+        elif not re.match('^[-a-z0-9_]+$', username):
+            return ("May only contain lower-case letters,\n"
+                    "digits, hyphens, and underscores.")
+    return ''
+
+class PageBase(plugin.PluginUI):
     def __init__(self):
-        self.laptop = execute("laptop-detect")
+        self.suffix = dmimodel()
+        if self.suffix:
+            self.suffix = '-%s' % self.suffix
+        else:
+            if execute("laptop-detect"):
+                self.suffix = '-laptop'
+            else:
+                self.suffix = '-desktop'
         self.allow_password_empty = False
 
     def set_fullname(self, value):
@@ -132,6 +158,7 @@ class PageBase(PluginUI):
         self.allow_password_empty = empty
 
 class PageGtk2(PageBase):
+    plugin_title = 'ubiquity/text/userinfo_heading_label'
     def __init__(self, controller, *args, **kwargs):
         PageBase.__init__(self, *args, **kwargs)
         self.controller = controller
@@ -139,34 +166,41 @@ class PageGtk2(PageBase):
         self.hostname_changed_id = None
         self.username_edited = False
         self.hostname_edited = False
+        self.hostname_timeout_id = 0
 
-        import gtk
-        from ubiquity.frontend.gtk_components.labelled_entry import LabelledEntry
-        builder = gtk.Builder()
+        from gi.repository import Gtk
+        builder = Gtk.Builder()
         self.controller.add_builder(builder)
-        builder.add_from_file('/usr/share/ubiquity/gtk/stepUserInfo.ui')
+        builder.add_from_file(os.path.join(os.environ['UBIQUITY_GLADE'], 'stepUserInfo.ui'))
         builder.connect_signals(self)
         self.page = builder.get_object('stepUserInfo')
         self.username = builder.get_object('username')
+        self.hostname = builder.get_object('hostname')
         self.fullname = builder.get_object('fullname')
         self.password = builder.get_object('password')
         self.verified_password = builder.get_object('verified_password')
         self.login_auto = builder.get_object('login_auto')
         self.login_encrypt = builder.get_object('login_encrypt')
-        self.username_error_reason = builder.get_object('username_error_reason')
-        self.username_error_box = builder.get_object('username_error_box')
-        self.password_error_reason = builder.get_object('password_error_reason')
-        self.password_error_box = builder.get_object('password_error_box')
-        self.hostname_error_reason = builder.get_object('hostname_error_reason')
-        self.hostname_error_box = builder.get_object('hostname_error_box')
-        self.hostname = builder.get_object('hostname')
+        self.login_pass = builder.get_object('login_pass')
+        self.username_error_label = builder.get_object('username_error_label')
+        self.hostname_error_label = builder.get_object('hostname_error_label')
+        self.password_error_label = builder.get_object('password_error_label')
         self.login_vbox = builder.get_object('login_vbox')
-        self.scrolledwin = builder.get_object('userinfo_scrolledwindow')
 
-        self.username_valid_image = builder.get_object('username_valid_image')
-        self.hostname_valid_image = builder.get_object('hostname_valid_image')
-        self.fullname_valid_image = builder.get_object('fullname_valid_image')
-        self.password_valid = builder.get_object('password_valid')
+        self.username_ok = builder.get_object('username_ok')
+        self.hostname_ok = builder.get_object('hostname_ok')
+        self.fullname_ok = builder.get_object('fullname_ok')
+        self.password_ok = builder.get_object('password_ok')
+        self.password_strength = builder.get_object('password_strength')
+
+        # Dodgy hack to let us center the contents of the page without it
+        # moving as elements appear and disappear, specifically the full name
+        # okay check icon and the hostname error messages.
+        paddingbox = builder.get_object('paddingbox')
+        def func(box):
+            box.get_parent().child_set_property(box, 'expand', False)
+            box.set_size_request(box.get_allocation().width / 2, -1)
+        paddingbox.connect('realize', func)
 
         # Some signals need to be connected by hand so that we have the
         # handler ids.
@@ -183,34 +217,28 @@ class PageGtk2(PageBase):
             self.username.set_editable(False)
             self.username.set_sensitive(False)
             self.username_edited = True
-            if self.laptop:
-                self.hostname.set_text('oem-laptop')
-            else:
-                self.hostname.set_text('oem-desktop')
+            self.hostname.set_text('oem%s' % self.suffix)
             self.hostname_edited = True
             self.login_vbox.hide()
             # The UserSetup component takes care of preseeding passwd/user-uid.
-            execute_root('apt-install', 'oem-config-gtk')
+            execute_root('apt-install', 'oem-config-gtk',
+                                        'oem-config-slideshow-ubuntu')
 
-        sh = gtk.gdk.get_default_root_window().get_screen().get_height()
-        # A bit ugly, but better to show the scrollbar on the edge cases than
-        # not show it when needed.
-        if sh <= 600:
-            self.scrolledwin.set_policy(gtk.POLICY_NEVER, gtk.POLICY_AUTOMATIC)
         self.plugin_widgets = self.page
 
     def plugin_translate(self, lang):
+        # TODO Move back into the frontend as we can check
+        # isinstance(LabelledEntry and just call set_label.  We'll need to
+        # properly name the debconf keys though (s/inactive_label//)
         user = self.controller.get_string('username_inactive_label', lang)
         full = self.controller.get_string('fullname_inactive_label', lang)
         pasw = self.controller.get_string('password_inactive_label', lang)
-        host = self.controller.get_string('hostname_inactive_label', lang)
         vpas = self.controller.get_string('password_again_inactive_label',
                                           lang)
-        self.username.set_inactive_message(user)
-        self.fullname.set_inactive_message(full)
-        self.password.set_inactive_message(pasw)
-        self.verified_password.set_inactive_message(vpas)
-        self.hostname.set_inactive_message(host)
+        self.username.set_placeholder_text(user)
+        self.fullname.set_placeholder_text(full)
+        self.password.set_placeholder_text(pasw)
+        self.verified_password.set_placeholder_text(vpas)
 
     # Functions called by the Page.
 
@@ -248,30 +276,33 @@ class PageGtk2(PageBase):
         return self.login_encrypt.get_active()
 
     def username_error(self, msg):
-        self.username_valid_image.hide()
-        self.username_error_reason.set_text(msg)
-        self.username_error_box.show()
-
-    def password_error(self, msg):
-        self.password_valid.hide()
-        self.password_error_reason.set_text(msg)
-        self.password_error_box.show()
+        self.username_ok.hide()
+        m = '<small><span foreground="darkred"><b>%s</b></span></small>' % msg
+        self.username_error_label.set_markup(m)
+        self.username_error_label.show()
 
     def hostname_error(self, msg):
-        self.hostname_valid_image.hide()
-        self.hostname_error_reason.set_text(msg)
-        self.hostname_error_box.show()
+        self.hostname_ok.hide()
+        m = '<small><span foreground="darkred"><b>%s</b></span></small>' % msg
+        self.hostname_error_label.set_markup(m)
+        self.hostname_error_label.show()
+
+    def password_error(self, msg):
+        self.password_strength.hide()
+        m = '<small><span foreground="darkred"><b>%s</b></span></small>' % msg
+        self.password_error_label.set_markup(m)
+        self.password_error_label.show()
 
     def get_hostname (self):
         return self.hostname.get_text()
 
-    def set_hostname(self, value):
+    def set_hostname (self, value):
         self.hostname.set_text(value)
 
     def clear_errors(self):
-        self.username_error_box.hide()
-        self.password_error_box.hide()
-        self.hostname_error_box.hide()
+        self.username_error_label.hide()
+        self.hostname_error_label.hide()
+        self.password_error_label.hide()
 
     # Callback functions.
 
@@ -286,19 +317,17 @@ class PageGtk2(PageBase):
         if (widget is not None and widget.get_name() == 'fullname' and
             not self.username_edited):
             self.username.handler_block(self.username_changed_id)
-            new_username = widget.get_text().split(' ')[0]
+            new_username = utf8(widget.get_text().split(' ')[0])
             new_username = new_username.encode('ascii', 'ascii_transliterate')
             new_username = new_username.lower()
             self.username.set_text(new_username)
             self.username.handler_unblock(self.username_changed_id)
         elif (widget is not None and widget.get_name() == 'username' and
               not self.hostname_edited):
-            if self.laptop:
-                hostname_suffix = '-laptop'
-            else:
-                hostname_suffix = '-desktop'
             self.hostname.handler_block(self.hostname_changed_id)
-            self.hostname.set_text(widget.get_text().strip() + hostname_suffix)
+            t = widget.get_text()
+            if t:
+                self.hostname.set_text(re.sub(r'\W', '', t) + self.suffix)
             self.hostname.handler_unblock(self.hostname_changed_id)
 
         # Do some initial validation.  We have to process all the widgets so we
@@ -307,50 +336,70 @@ class PageGtk2(PageBase):
         complete = True
 
         if self.fullname.get_text():
-            self.fullname_valid_image.show()
+            self.fullname_ok.show()
         else:
-            self.fullname_valid_image.hide()
+            self.fullname_ok.hide()
 
-        if self.username.get_text():
-            self.username_error_box.hide()
-            self.username_valid_image.show()
+        text = self.username.get_text()
+        if text:
+            error_msg = check_username(text)
+            if error_msg:
+                self.username_error(error_msg)
+                complete = False
+            else:
+                self.username_ok.show()
+                self.username_error_label.hide()
         else:
-            self.username_valid_image.hide()
+            self.username_ok.hide()
+            self.username_error_label.hide()
             complete = False
 
         passw = self.password.get_text()
         vpassw = self.verified_password.get_text()
         allow_empty = self.allow_password_empty
-        if allow_empty:
-            self.password_valid.hide()
-        elif passw and vpassw:
-            if passw == vpassw:
-                self.password_error_box.hide()
-                (txt, color) = validation.human_password_strength(passw)
-                txt = self.controller.get_string('ubiquity/text/password/' + txt)
-                txt = '<small><span foreground="%s"><b>%s</b></span></small>' \
-                      % (color, txt)
-                self.password_valid.set_markup(txt)
-                self.password_valid.show()
-            else:
-                self.password_valid.hide()
-                complete = False
-        else:
-            self.password_valid.hide()
+        if passw != vpassw:
             complete = False
+            self.password_ok.hide()
+            if passw and (len(vpassw) / float(len(passw)) > 0.8):
+                # TODO Cache, use a custom string.
+                txt = self.controller.get_string('ubiquity/text/password_mismatch')
+                txt = '<small><span foreground="darkred"><b>%s</b></span></small>' % txt
+                self.password_error_label.set_markup(txt)
+                self.password_error_label.show()
+        else:
+            self.password_error_label.hide()
+
+        if allow_empty:
+            self.password_strength.hide()
+        elif not passw:
+            self.password_strength.hide()
+            complete = False
+        else:
+            (txt, color) = validation.human_password_strength(passw)
+            # TODO Cache
+            txt = self.controller.get_string('ubiquity/text/password/' + txt)
+            txt = '<small><span foreground="%s"><b>%s</b></span></small>' \
+                  % (color, txt)
+            self.password_strength.set_markup(txt)
+            self.password_strength.show()
+            if passw == vpassw:
+                self.password_ok.show()
 
         txt = self.hostname.get_text()
+        self.hostname_ok.show()
         if txt:
             error_msg = check_hostname(txt)
-            if not error_msg:
-                self.hostname_error_box.hide()
-                self.hostname_valid_image.show()
-            else:
+            if error_msg:
                 self.hostname_error(error_msg)
                 complete = False
+                self.hostname_ok.hide()
+            else:
+                self.hostname_ok.show()
+                self.hostname_error_label.hide()
         else:
-            self.hostname_valid_image.hide()
             complete = False
+            self.hostname_ok.hide()
+            self.hostname_error_label.hide()
 
         self.controller.allow_go_forward(complete)
 
@@ -360,6 +409,40 @@ class PageGtk2(PageBase):
     def on_hostname_changed(self, widget):
         self.hostname_edited = (widget.get_text() != '')
 
+        # Let's not call this every time the user presses a key.
+        from gi.repository import GObject
+        if self.hostname_timeout_id:
+            GObject.source_remove(self.hostname_timeout_id)
+        self.hostname_timeout_id = GObject.timeout_add(300,
+                                        self.hostname_timeout, widget)
+
+    def lookup_result(self, resolver, result, unused):
+        from gi.repository import GObject
+        try:
+            resolver.lookup_by_name_finish(result)
+        except GObject.GError:
+            pass
+        else:
+            # FIXME: i18n
+            self.hostname_error('That name already exists on the network.')
+            self.hostname_ok.hide()
+
+    def hostname_timeout(self, widget):
+        from gi.repository import Gio
+        if self.hostname_ok.get_property('visible'):
+            res = Gio.Resolver.get_default()
+            hostname = widget.get_text()
+            for host in (hostname, '%s.local' % hostname):
+                res.lookup_by_name_async(host, None, self.lookup_result, None)
+
+    def on_authentication_toggled(self, w):
+        if w == self.login_auto and w.get_active():
+            self.login_encrypt.set_active(False)
+        elif w == self.login_encrypt and w.get_active():
+            # TODO why is this so slow to activate the login_pass radio button
+            # when checking encrypted home?
+            self.login_pass.set_active(True)
+
 class PageKde2(PageBase):
     plugin_breadcrumb = 'ubiquity/text/breadcrumb_user'
 
@@ -368,7 +451,6 @@ class PageKde2(PageBase):
         self.controller = controller
 
         from PyQt4 import uic
-        from PyQt4.QtGui import QDialog
         from PyKDE4.kdeui import KIconLoader
 
         self.plugin_widgets = uic.loadUi('/usr/share/ubiquity/qt/stepUserSetup.ui')
@@ -390,10 +472,7 @@ class PageKde2(PageBase):
             self.username_edited = True
             self.hostname_edited = True
 
-            if self.laptop:
-                self.page.hostname.setText('oem-laptop')
-            else:
-                self.page.hostname.setText('oem-desktop')
+            self.page.hostname.setText('oem%s' % self.suffix)
 
             # The UserSetup component takes care of preseeding passwd/user-uid.
             execute_root('apt-install', 'oem-config-kde')
@@ -422,17 +501,14 @@ class PageKde2(PageBase):
             new_username = unicode(self.page.fullname.text()).split(' ')[0]
             new_username = new_username.encode('ascii', 'ascii_transliterate').lower()
             self.page.username.setText(new_username)
+            self.on_username_changed()
+            self.username_edited = False
             self.page.username.blockSignals(False)
 
     def on_username_changed(self):
         if not self.hostname_edited:
-            if self.laptop:
-                hostname_suffix = '-laptop'
-            else:
-                hostname_suffix = '-desktop'
-
             self.page.hostname.blockSignals(True)
-            self.page.hostname.setText(unicode(self.page.username.text()).strip() + hostname_suffix)
+            self.page.hostname.setText(unicode(self.page.username.text()).strip() + self.suffix)
             self.page.hostname.blockSignals(False)
 
         self.username_edited = (self.page.username.text() != '')
@@ -472,7 +548,7 @@ class PageKde2(PageBase):
 
     def set_encrypt_home(self, value):
         self.page.login_encrypt.setChecked(value)
-    
+
     def set_force_encrypt_home(self, value):
         self.page.login_encrypt.setDisabled(value)
         self.page.login_auto.setDisabled(value)
@@ -597,7 +673,7 @@ class PageNoninteractive2(PageBase):
     def clear_errors(self):
         pass
 
-class Page2(Plugin):
+class Page2(plugin.Plugin):
     def prepare(self, unfiltered=False):
         if ('UBIQUITY_FRONTEND' not in os.environ or
             os.environ['UBIQUITY_FRONTEND'] != 'debconf_ui'):
@@ -609,7 +685,8 @@ class Page2(Plugin):
                         hostname = self.db.get('netcfg/get_hostname')
                         domain = self.db.get('netcfg/get_domain')
                         if hostname and domain:
-                            hostname = '%s.%s' % (hostname, domain)
+                            hostname = '%s.%s' % (hostname.rstrip('.'),
+                                                  domain.strip('.'))
                         if hostname != '':
                             self.ui.set_hostname(hostname)
                 except debconf.DebconfError:
@@ -671,7 +748,7 @@ class Page2(Plugin):
                 self.ui.set_username(value)
 
     def run(self, priority, question):
-        return Plugin.run(self, priority, question)
+        return plugin.Plugin.run(self, priority, question)
 
     def ok_handler(self):
         self.ui.clear_errors()
@@ -715,7 +792,7 @@ class Page2(Plugin):
             else:
                 self.preseed('netcfg/get_domain', '')
 
-        Plugin.ok_handler(self)
+        plugin.Plugin.ok_handler(self)
 
     def error(self, priority, question):
         if question.startswith('passwd/username-'):
@@ -725,9 +802,9 @@ class Page2(Plugin):
         else:
             self.ui.error_dialog(self.description(question),
                                        self.extended_description(question))
-        return Plugin.error(self, priority, question)
+        return plugin.Plugin.error(self, priority, question)
 
-class Install(InstallPlugin):
+class Install(plugin.InstallPlugin):
     def prepare(self, unfiltered=False):
         if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
             environ = {'OVERRIDE_SYSTEM_USER': '1'}
@@ -739,9 +816,8 @@ class Install(InstallPlugin):
     def error(self, priority, question):
         self.ui.error_dialog(self.description(question),
                              self.extended_description(question))
-        return InstallPlugin.error(self, priority, question)
+        return plugin.InstallPlugin.error(self, priority, question)
 
     def install(self, target, progress, *args, **kwargs):
         progress.info('ubiquity/install/user')
-        return InstallPlugin.install(self, target, progress, *args, **kwargs)
-
+        return plugin.InstallPlugin.install(self, target, progress, *args, **kwargs)

@@ -20,7 +20,7 @@
 
 import os
 import syslog
-from ubiquity.plugin import *
+from ubiquity import plugin
 
 NAME = 'welcome'
 AFTER = None
@@ -34,7 +34,7 @@ def get_intro(fname):
     return text
 
 
-class PageBase(PluginUI):
+class PageBase(plugin.PluginUI):
     def __init__(self):
         self.intro_file="/usr/share/ubiquity/intro.txt"
         self.intro_file_nano="/usr/share/ubiquity/intro-nanomax.txt"
@@ -46,8 +46,8 @@ class PageGtk(PageBase):
         self.controller = controller
         
 
-        import gtk
-        builder = gtk.Builder()
+        from gi.repository import Gtk
+        builder = Gtk.Builder()
         self.controller.add_builder(builder)
         builder.add_from_file('/usr/share/ubiquity/gtk/stepWelcome.ui')
         builder.connect_signals(self)
@@ -65,7 +65,7 @@ class PageGtk(PageBase):
         self.intro_label.set_markup( get_intro(fname).rstrip('\n') )
         syslog.syslog("DEBUG: PageGTK intro")
 
-        sh = gtk.gdk.get_default_root_window().get_screen().get_height()
+        #sh = gtk.gdk.get_default_root_window().get_screen().get_height()
         self.plugin_widgets = self.page
 
 

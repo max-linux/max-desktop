@@ -146,16 +146,26 @@ if [ "$RET" = true ] && ! is_system_user; then
 		for module in aes cbc ecb; do
 			modprobe -q "$module" || true
 		done
+		apt-install ecryptfs-utils 2>/dev/null
+		apt-install cryptsetup 2>/dev/null
 		
 		umountproc=false
+		umountsys=false
 		umountdev=false
 		if [ ! -e $ROOT/proc/cmdline ]; then
 			$log $chroot $ROOT mount -t proc proc /proc
 			umountproc=:
 		fi
-		if ! grep -qE '^[^ ]+ /dev' $ROOT/proc/mounts; then
+		if [ ! -e $ROOT/sys/block ]; then
+			# We need /sys for devtmpfs to create block devices.
+			$log $chroot $ROOT mount -t sysfs sysfs /sys
+			umountsys=:
+		fi
+		if [ $(stat -c %d "$ROOT/dev") -eq $(stat -c %d "$ROOT") ]; then
 			mount --bind /dev $ROOT/dev
 			umountdev=:
+		else
+			$log $chroot $ROOT udevadm settle
 		fi
 		if ! $log $chroot $ROOT ecryptfs-setup-swap -f -n; then
 			echo "ecryptfs-setup-swap failed." >&2
@@ -166,6 +176,9 @@ if [ "$RET" = true ] && ! is_system_user; then
 		fi
 		if $umountproc; then
 			$log $chroot $ROOT umount /proc
+		fi
+		if $umountsys; then
+			$log $chroot $ROOT umount /sys
 		fi
 		if $umountdev; then
 			umount $ROOT/dev
@@ -193,6 +206,7 @@ if [ "$RET" = true ] && ! is_system_user; then
 			$log $chroot $ROOT mount -t sysfs sysfs /sys
 			umountsys=:
 		fi
+		mkdir -p $ROOT/dev/shm
 		$log $chroot $ROOT mount -t tmpfs tmpfs /dev/shm
 	fi
 	if [ -x $ROOT/usr/sbin/adduser ]; then
@@ -276,6 +290,41 @@ TimedLoginDelay=10"
 					-e "s/^#?AutoReLogin=.*\$/AutoReLogin=true/" \
 					/etc/kde4/kdm/kdmrc
 			fi
+
+			if $chroot $ROOT [ -f /etc/lxdm/lxdm.conf ]; then
+    				# Configure LXDM autologin with LXDE session
+   				$log $chroot $ROOT sed -i$BACKUP -r \
+        				-e "s/^# autologin=dgod/autologin=$USER/" \
+        				-e "s/^# session/session/" \
+        				/etc/lxdm/lxdm.conf
+			fi
+
+			if $chroot $ROOT [ -f /etc/xdg/lubuntu/lxdm/lxdm.conf ]; then
+    				# Configure LXDM autologin with Lubuntu session
+				$log $chroot $ROOT sed -i$BACKUP -r \
+			        	-e "s/^# autologin=dgod/autologin=$USER/" \
+			        	-e "s/^# session/session/" \
+			        	-e "s/startlxde/startlubuntu/" \
+			        	/etc/xdg/lubuntu/lxdm/lxdm.conf
+			fi
+
+			if $chroot $ROOT [ -d /etc/lightdm ]; then
+				# Configure LightDM autologin
+				LightDMCustomFile=$ROOT/etc/lightdm/lightdm.conf
+				AutologinParameters="autologin-guest=false\n\
+autologin-user=$USER\n\
+autologin-user-timeout=0\n\
+autologin-session=lightdm-autologin"
+				if ! grep -qs '^autologin-user' $LightDMCustomFile; then
+					if ! grep -qs '^\[SeatDefaults\]' $LightDMCustomFile; then
+						echo '[SeatDefaults]' >> $LightDMCustomFile
+					fi
+					sed -i "s/\[SeatDefaults\]/\[SeatDefaults\]\n$AutologinParameters/" $LightDMCustomFile
+				#oem config scenario
+				else
+					sed -i "s/^\(\(str  *\)\?autologin-user\)=.*$/\1=$USER/g;" $ROOT/etc/lightdm/lightdm.conf
+				fi
+			fi
 		fi
 	fi
 
@@ -289,13 +338,13 @@ TimedLoginDelay=10"
 			apt-install sudo 2>/dev/null || $log $chroot $ROOT apt-get -q -y install sudo || true
 		fi
 		if [ -e $ROOT/etc/sudoers ]; then
-			$log $chroot $ROOT addgroup --system admin >/dev/null 2>&1 || true
-			$log $chroot $ROOT adduser "$USER" admin >/dev/null 2>&1 || true
-			cat <<EOF >>$ROOT/etc/sudoers
-
-# Members of the admin group may gain root privileges
-%admin ALL=(ALL) ALL
-EOF
+			# Test if we can add the user to the sudo group
+			# (possible if sudo >= 1.7.2-2 is installed on the target system)
+			# If we can, do it this way, otherwise add the user to sudoers
+			# See #597239
+			if ! $log $chroot $ROOT adduser "$USER" sudo >/dev/null 2>&1; then
+				echo "$USER ALL=(ALL) ALL" >> $ROOT/etc/sudoers
+			fi
 		else
 			# sudo failed to install, system won't be usable
 			exit 1
@@ -306,6 +355,8 @@ EOF
 			$log $chroot $ROOT update-alternatives --set libgksu-gconf-defaults /usr/share/libgksu/debian/gconf-defaults.libgksu-sudo
 			$log $chroot $ROOT update-gconf-defaults || true
 		fi
+		# Configure aptitude to use sudo.
+		echo 'Aptitude::Get-Root-Command "sudo:/usr/bin/sudo";' > $ROOT/etc/apt/apt.conf.d/00aptitude
 	else
 		# Configure gksu to use su, via an alternative, if it's
 		# installed and the alternative is registered.
@@ -325,7 +376,13 @@ EOF
 		while read name device source options; do
 			if echo "$options" | grep -q "swap"; then
 				if swapoff $device; then
-					dd if=/dev/zero of=$device 2>/dev/null || true
+					if [ ! -b $device ]; then
+						ONE_MEG=$((1024*1024))
+						size=$(($(stat -c %s ${device})/${ONE_MEG}))
+						dd if=/dev/zero of=$device bs=${ONE_MEG} count=$size 2>/dev/null || true
+					else
+						dd if=/dev/zero of=$device bs=16M 2>/dev/null || true
+					fi
 				fi
 			fi
 		done < $ROOT/etc/crypttab
