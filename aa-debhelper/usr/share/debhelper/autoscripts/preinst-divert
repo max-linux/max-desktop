@@ -4,8 +4,8 @@ if [ "$1" = install ]; then
 
 	dpkg-divert --quiet --package #PACKAGE# --add --rename #FILE#
 
-	if [ ! -e "#FILE#.divert" ] && \
+	if [ ! -e "#FILE#.distrib" ] && \
            [ -e "#FILE#" ]; then
-                cp "#FILE#" "#FILE#.divert"
+                cp "#FILE#" "#FILE#.distrib"
         fi
 fi
