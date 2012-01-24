@@ -31,13 +31,13 @@ if [ -e /etc/default/grub ]; then
     UPDATE_GRUB=1
   fi
 
-  # add acpi=force reboot=warm to fix reboot and poweroff issues
-  if ! grep -q "acpi=force" /etc/default/grub 2>/dev/null; then
-    . /etc/default/grub
-    echo "# this will fix poweroff and reboot issues in MAX" >> /etc/default/grub
-    echo "GRUB_CMDLINE_LINUX=\"$GRUB_CMDLINE_LINUX acpi=force reboot=warm \"" >> /etc/default/grub
-    UPDATE_GRUB=1
-  fi
+#  # add acpi=force reboot=warm to fix reboot and poweroff issues
+#  if ! grep -q "acpi=force" /etc/default/grub 2>/dev/null; then
+#    . /etc/default/grub
+#    echo "# this will fix poweroff and reboot issues in MAX" >> /etc/default/grub
+#    echo "GRUB_CMDLINE_LINUX=\"$GRUB_CMDLINE_LINUX acpi=force reboot=warm \"" >> /etc/default/grub
+#    UPDATE_GRUB=1
+#  fi
 
 
   if [ "$UPDATE_GRUB" = "1" ]; then
