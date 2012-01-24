@@ -8,7 +8,7 @@ Build-Depends: debhelper (>= 7), cdbs, dpatch
 Package: max-gnome-default-settings
 Architecture: all
 Conflicts: max-desktop-common (<< 4.0.max1.13)
-Depends: max-artwork (>=6.0.max13)
+Depends: max-artwork (>=6.0.max13), gconf-editor, dconf-tools
 Description: MaX gnome default settings
  Contains:
   * maxgconf
@@ -16,7 +16,7 @@ Description: MaX gnome default settings
 
 Package: max-gnome-default-settings-infantil-primaria
 Architecture: all
-Depends: max-gnome-default-settings, max-artwork (>=6.0.max13)
+Depends: max-gnome-default-settings, max-artwork (>=6.0.max13), gconf-editor, dconf-tools
 Description: MaX gnome default settings for infantil & primaria
  Contains:
   * maxgconf

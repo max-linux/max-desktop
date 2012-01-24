@@ -1,3 +1,4 @@
-gconf/*.gconf*        /usr/share/max/gconf
-gconf-dumps/*.gconf  /usr/share/max/gconf-dumps
-gconf-dumps-oo/*.gconf  /usr/share/max/gconf-dumps-oo
+usr/*                  /usr/
+gconf/*.gconf*         /usr/share/max/gconf
+gconf-dumps/*.gconf    /usr/share/max/gconf-dumps
+gconf-dumps-oo/*.gconf /usr/share/max/gconf-dumps-oo

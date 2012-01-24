@@ -1,0 +1,32 @@
+[org.gnome.desktop.interface]
+gtk-theme="Ambiance"
+#icon-theme="ubuntu-mono-dark"
+icon-theme="maxtoon"
+cursor-theme="DMZ-White"
+font-name="Ubuntu 11"
+monospace-font-name="Ubuntu Mono 13"
+buttons-have-icons=true
+menus-have-icons=true
+
+[desktop.unity.launcher]
+favorites=['ubiquity-gtkui.desktop', 'nautilus-home.desktop', 'firefox.desktop', 'libreoffice-writer.desktop', 'gnome-control-center.desktop']
+
+[org.gnome.desktop.background]
+show-desktop-icons=true
+picture-uri='file:///usr/share/backgrounds/max.jpg'
+picture-options=stretched
+
+[org.gnome.nautilus.desktop]
+home-icon-visible=true
+computer-icon-visible=true
+trash-icon-visible=true
+volumes-visible=true
+computer-icon-name=Equipo
+trash-icon-name=Papelera
+network-icon-name=Equipos de red
+
+[org.gnome.nautilus.preferences]
+enable-delete=true
+
+[org.gnome.system.smb]
+workgroup=AULAMAX

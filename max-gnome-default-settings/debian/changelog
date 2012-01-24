@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max2) max; urgency=low
+
+  * Add usr/share/glib-2.0/schemas/zz-max.gschema.override
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 24 Jan 2012 19:38:21 +0100
+
 max-gnome-default-settings (7.0.max1) max; urgency=low
 
   * Build in MAX 7.0
