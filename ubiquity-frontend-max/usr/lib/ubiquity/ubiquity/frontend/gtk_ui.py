@@ -271,6 +271,13 @@ class Wizard(BaseFrontend):
         steps = self.builder.get_object("steps")
         found_install = False
         for mod in self.modules:
+            if mod.module.NAME in ['prepare',
+                                   'timezone',
+                                   'console-setup',
+                                   'user-setup',
+                                   'language',
+                                   'migrationassistant']:
+                continue
             if hasattr(mod.module, 'PageGtk'):
                 mod.ui_class = mod.module.PageGtk
                 mod.controller = Controller(self)

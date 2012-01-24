@@ -33,7 +33,7 @@ import debconf
 import syslog
 
 NAME = 'installtype'
-AFTER = 'welcome'
+AFTER = 'intro'
 WEIGHT = 100
 
 
@@ -196,7 +196,7 @@ class Page(plugin.Plugin):
             # quit when done
             self.quit_installer()
         
-        Plugin.ok_handler(self)
+        plugin.Plugin.ok_handler(self)
 
     def quit_installer(self):
         """quit installer cleanly."""

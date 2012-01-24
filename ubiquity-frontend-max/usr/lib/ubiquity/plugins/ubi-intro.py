@@ -22,7 +22,7 @@ import os
 import syslog
 from ubiquity import plugin
 
-NAME = 'welcome'
+NAME = 'intro'
 AFTER = None
 WEIGHT = 100
 
@@ -83,8 +83,8 @@ class PageDebconf(PageBase):
 class PageNoninteractive2(PageBase):
     pass
 
-class Page(Plugin):
+class Page(plugin.Plugin):
     def ok_handler(self):
         syslog.syslog("DEBUG: PageGTK Page ok_handler")
-        Plugin.ok_handler(self)
+        plugin.Plugin.ok_handler(self)
 

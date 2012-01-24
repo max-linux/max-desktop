@@ -1,3 +1,15 @@
+ubiquity-frontend-max (7.0.max4) max; urgency=low
+
+  * Remove diverted plugins and disable in gtk_ui.py
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 24 Jan 2012 19:40:22 +0100
+
+ubiquity-frontend-max (7.0.max3) max; urgency=low
+
+  * Build with new aa-debhelper
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 23 Jan 2012 21:52:14 +0100
+
 ubiquity-frontend-max (7.0.max2) max; urgency=low
 
   * Convert plugins from gtk to gi.repository.Gtk
