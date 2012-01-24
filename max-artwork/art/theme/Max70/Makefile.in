@@ -30,7 +30,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-subdir = art/theme/Max65
+subdir = art/theme/Max70
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -156,9 +156,103 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-themedir = /usr/share/themes/Max65
+themedir = /usr/share/themes/Max70
 theme_DATA = \
-	index.theme
+     metacity-1/close_focused_normal.png \
+     metacity-1/unmaximize_focused_prelight.png \
+     metacity-1/unmaximize.png \
+     metacity-1/maximize_focused_normal.png \
+     metacity-1/close_focused_pressed.png \
+     metacity-1/unmaximize_focused_normal.png \
+     metacity-1/maximize.png \
+     metacity-1/unmaximize_unfocused.png \
+     metacity-1/close_focused_prelight.png \
+     metacity-1/menu.png \
+     metacity-1/unmaximize_unfocused_over.png \
+     metacity-1/maximize_unfocused.png \
+     metacity-1/minimize_unfocused_prelight.png \
+     metacity-1/minimize_focused_prelight.png \
+     metacity-1/maximize_unfocused_prelight.png \
+     metacity-1/minimize.png \
+     metacity-1/maximize_unfocused_over.png \
+     metacity-1/trough_middle.png \
+     metacity-1/close_unfocused_pressed.png \
+     metacity-1/minimize_focused_normal.png \
+     metacity-1/metacity-theme-1.xml \
+     metacity-1/maximize_unfocused_pressed.png \
+     metacity-1/trough_left.png \
+     metacity-1/unmaximize_unfocused_pressed.png \
+     metacity-1/maximize_focused_pressed.png \
+     metacity-1/menu_prelight.png \
+     metacity-1/close_unfocused_over.png \
+     metacity-1/close.png \
+     metacity-1/maximize_focused_prelight.png \
+     metacity-1/unmaximize_focused_pressed.png \
+     metacity-1/minimize_unfocused_over.png \
+     metacity-1/trough_right.png \
+     metacity-1/close_unfocused.png \
+     metacity-1/unmaximize_unfocused_prelight.png \
+     metacity-1/minimize_unfocused_pressed.png \
+     metacity-1/minimize_focused_pressed.png \
+     metacity-1/minimize_unfocused.png \
+     metacity-1/close_unfocused_prelight.png \
+     index.theme \
+     gtk-2.0/gtkrc \
+     gtk-2.0/apps/img/panel-button-inactive.png \
+     gtk-2.0/apps/img/handle-v.png \
+     gtk-2.0/apps/img/panel-button-active.png \
+     gtk-2.0/apps/img/handle-h.png \
+     gtk-2.0/apps/img/panel-button-hover.png \
+     gtk-2.0/apps/img/arrow-down.png \
+     gtk-2.0/apps/img/panel.png \
+     gtk-2.0/apps/chromium.rc \
+     gtk-2.0/apps/ff.rc \
+     gtk-2.0/apps/banshee.rc \
+     gtk-2.0/apps/gedit.rc \
+     gtk-2.0/apps/gnome-panel.rc \
+     gtk-2.0/apps/nautilus.rc \
+     gtk-2.0/apps/gnome-terminal.rc \
+     gtk-3.0/settings.ini \
+     gtk-3.0/gtk.css \
+     gtk-3.0/apps/gnome-panel.css \
+     gtk-3.0/apps/nautilus.css \
+     gtk-3.0/apps/unity.css \
+     gtk-3.0/apps/gnome-terminal.css \
+     gtk-3.0/assets/slider_prelight.png \
+     gtk-3.0/assets/scrollbar_handle.png \
+     gtk-3.0/assets/slider.png \
+     gtk-3.0/assets/slider_prelight_vertical.png \
+     gtk-3.0/assets/scrollbar_handle_vertical.png \
+     gtk-3.0/assets/slider_vertical.png \
+     gtk-3.0/gtk-widgets.css \
+     unity/close_focused_normal.png \
+     unity/unmaximize_focused_prelight.png \
+     unity/unmaximize.png \
+     unity/maximize_focused_normal.png \
+     unity/close_focused_pressed.png \
+     unity/unmaximize_focused_normal.png \
+     unity/maximize.png \
+     unity/unmaximize_unfocused.png \
+     unity/close_focused_prelight.png \
+     unity/maximize_unfocused.png \
+     unity/minimize_unfocused_prelight.png \
+     unity/minimize_focused_prelight.png \
+     unity/maximize_unfocused_prelight.png \
+     unity/minimize.png \
+     unity/close_unfocused_pressed.png \
+     unity/minimize_focused_normal.png \
+     unity/maximize_unfocused_pressed.png \
+     unity/unmaximize_unfocused_pressed.png \
+     unity/maximize_focused_pressed.png \
+     unity/close.png \
+     unity/maximize_focused_prelight.png \
+     unity/unmaximize_focused_pressed.png \
+     unity/close_unfocused.png \
+     unity/unmaximize_unfocused_prelight.png \
+     unity/minimize_unfocused_pressed.png \
+     unity/minimize_focused_pressed.png \
+     unity/minimize_unfocused.png \
+     unity/close_unfocused_prelight.png
 
 EXTRA_DIST = $(theme_DATA)
 all: all-am
@@ -173,9 +267,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__confi
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  art/theme/Max65/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  art/theme/Max70/Makefile'; \
 	cd $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu  art/theme/Max65/Makefile
+	  $(AUTOMAKE) --gnu  art/theme/Max70/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
