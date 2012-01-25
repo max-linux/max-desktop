@@ -1,3 +1,9 @@
+max-live (7.0.max4) max; urgency=low
+
+  * Change MAX-7.0 to FLAVOUR var
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 25 Jan 2012 16:59:09 +0100
+
 max-live (7.0.max3) max; urgency=low
 
   * Add empty var FLAVOUR to casper.conf
