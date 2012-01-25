@@ -1,3 +1,12 @@
+max-firefox-conf (7.0.max4) max; urgency=low
+
+  * Add depends:
+    - xul-ext-firebug
+    - xul-ext-greasemonkey
+    - xul-ext-procon-latte
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 25 Jan 2012 14:14:48 +0100
+
 max-firefox-conf (7.0.max3) max; urgency=low
 
   * Fix versions of conflicts
