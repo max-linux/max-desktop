@@ -20,38 +20,6 @@ fi
 # blacklist packages
 rm -f $CHROOT/etc/apt/preferences.d/20_no_max_recom.pref
 
-cat << EOF > /tmp/noextraubuntu
-Section: misc
-Priority: optional
-Standards-Version: 3.8.4
-
-Package: noextraubuntu
-Version: 0.1
-Provides: $(echo $BLACKLIST_PKGS | sed -e 's/ /, /g')
-Replaces: $(echo $BLACKLIST_PKGS | sed -e 's/ /, /g')
-Conflicts: $(echo $BLACKLIST_PKGS | sed -e 's/ /, /g')
-Architecture: all
-Description: Provides some not needed Ubuntu packages
-
-EOF
-
-#OLDDIR=`pwd`
-#cd /tmp
-#equivs-build /tmp/noextraubuntu
-#mv /tmp/noextraubuntu*deb $CHROOT/
-#cd $OLDDIR
-rm -f /tmp/noextraubuntu
-
-#chroot $CHROOT/ << EOF || _exit "Error instalando noextraubuntu"
-#export LC_ALL=C
-#export LC_MESSAGES=C
-#export DEBCONF_FRONTEND="noninteractive"
-#export DEBIAN_FRONTEND="noninteractive"
-#dpkg -i /noextraubuntu*deb
-#EOF
-#rm -f $CHROOT/noextraubuntu*deb
-
-
 mount --bind /proc $CHROOT/proc
 mount --bind /sys   $CHROOT/sys
 
@@ -86,19 +54,4 @@ EOF
 
 #xserver-xorg    xserver-xorg/config/inputdevice/keyboard/layout string es
 #xserver-xorg    xserver-xorg/config/inputdevice/keyboard/model  string pc105
-# not work
-#console-setup	console-setup/variant	select	Spain
-#console-setup	console-setup/layoutcode	string	es
-#console-setup	console-setup/charmap	select	UTF-8
-#console-setup	console-setup/fontsize-text	select	16
-#console-setup	console-setup/layout	select	Spain
-#console-setup	console-setup/variantcode	string	
-#console-setup	console-setup/codesetcode	string	Uni1
-#console-setup	console-setup/modelcode	string	pc105
-#console-setup	console-setup/altgr	select	No AltGr key
-#console-setup	console-setup/ttys	string	/dev/tty[1-6]
-#console-setup	console-setup/model	select	Generic 105-key (Intl) PC
-#console-setup	console-setup/fontsize-fb	select	16
-#console-setup	console-setup/fontface	select	Fixed
-#console-setup	console-setup/fontsize	string	16
 #EOF

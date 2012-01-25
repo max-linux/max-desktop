@@ -71,33 +71,3 @@ exit \$ERROR
 EOC
 
 
-# configurar cups-pdf
-if [ -e $CHROOT/usr/lib/cups/backend/cups-pdf ]; then
-
-/etc/init.d/cups stop
-_revert_invoke
-
-
-# cups-pdf need to contact cups server to create PDF printer
-chroot $CHROOT << EOC || _exit "No se han podido configurar cups-pdf"
-export LC_ALL=C
-export LC_MESSAGES=C
-export DEBCONF_FRONTEND="noninteractive"
-export DEBIAN_FRONTEND="noninteractive"
-export UCF_FORCE_CONFFOLD=1
-export ERROR=0
-#cat /proc/mounts
-/etc/init.d/apparmor start || true
-/etc/init.d/cups start || ERROR=1
-dpkg-reconfigure -phigh cups-pdf || ERROR=1
-aa-complain cupsd || true
-/etc/init.d/cups stop   || true
-/etc/init.d/apparmor stop || true
-#exit \$ERROR
-EOC
-
-
-_add_invoke
-/etc/init.d/cups start
-
-fi

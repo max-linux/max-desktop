@@ -1,3 +1,18 @@
+max-genlive (7.0.max7) max; urgency=low
+
+  * Don't build bootlogo, use from gfxboot-theme-ubuntu
+  * Fix more max65 hostnames
+  * Don't configure console-setup
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 25 Jan 2012 15:06:14 +0100
+
+max-genlive (7.0.max6) max; urgency=low
+
+  * Call mksquashfs inside chroot
+  * Call genisoimage inside chroot
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 23 Jan 2012 18:39:36 +0100
+
 max-genlive (7.0.max5) max; urgency=low
 
   * Safely remove update-grub divert

@@ -2,22 +2,32 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
-build/max-genlive::
-	if [ ! -f $(CURDIR)/gfxboot-build ]; then\
-		cd gfxboot2 && make; \
-		touch $(CURDIR)/gfxboot-build;\
-	fi
+build-stamp:
+	mkdir -p build
+	tar -zxf /usr/share/gfxboot-theme-ubuntu/bootlogo.tar.gz -C build/
+	touch $(CURDIR)/build-stamp
+
+
+build/max-genlive:: build-stamp
+#	if [ ! -f $(CURDIR)/gfxboot-build ]; then\
+#		cd gfxboot2 && make; \
+#		touch $(CURDIR)/gfxboot-build;\
+#	fi
 
 clean::
-	cd gfxboot2 && make clean
-	rm -f $(CURDIR)/gfxboot-build
+#	cd gfxboot2 && make clean
+#	rm -f $(CURDIR)/gfxboot-build
+	rm -rf build/
 
 binary-install/max-genlive::
 	install -d $(CURDIR)/debian/max-genlive/usr/share/max-genlive/isolinux
 
-	install -m 644 gfxboot2/install/bootlogo $(CURDIR)/debian/max-genlive/usr/share/max-genlive/isolinux
-	install -m 644 gfxboot2/install/init     $(CURDIR)/debian/max-genlive/usr/share/max-genlive/isolinux
-	install -m 644 gfxboot2/install/es.tr    $(CURDIR)/debian/max-genlive/usr/share/max-genlive/isolinux
+	install -m 644 build/bootlogo            $(CURDIR)/debian/max-genlive/usr/share/max-genlive/isolinux
+	install -m 644 build/es.tr               $(CURDIR)/debian/max-genlive/usr/share/max-genlive/isolinux
+
+#	install -m 644 gfxboot2/install/bootlogo $(CURDIR)/debian/max-genlive/usr/share/max-genlive/isolinux
+#	install -m 644 gfxboot2/install/init     $(CURDIR)/debian/max-genlive/usr/share/max-genlive/isolinux
+#	install -m 644 gfxboot2/install/es.tr    $(CURDIR)/debian/max-genlive/usr/share/max-genlive/isolinux
 
 	# clean svn dirs
 	find $(CURDIR)/debian/max-genlive -type d -name .svn | xargs rm -rf --

@@ -20,8 +20,8 @@ ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 EOF
 
-    echo "max65" > $CHROOT/etc/hostname
-    echo "max65" > $CHROOT/etc/mailname
+    echo "max70" > $CHROOT/etc/hostname
+    echo "max70" > $CHROOT/etc/mailname
 fi
 
 set -x

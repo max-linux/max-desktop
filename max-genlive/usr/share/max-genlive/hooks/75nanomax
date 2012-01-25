@@ -29,8 +29,8 @@ APT
 EOF
 
 cat << EOF > $NANOCHROOT/etc/hosts
-127.0.0.1       localhost max65
-127.0.1.1       max65
+127.0.0.1       localhost max70
+127.0.1.1       max70
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
@@ -41,8 +41,8 @@ ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 EOF
 
-   echo "max65" > $NANOCHROOT/etc/hostname
-   echo "max65" > $NANOCHROOT/etc/mailname
+   echo "max70" > $NANOCHROOT/etc/hostname
+   echo "max70" > $NANOCHROOT/etc/mailname
 
   _echo "Configurando DEBCONF y zona horaria"
 
@@ -224,28 +224,6 @@ EOC
 
 
   _revert_invoke $NANOCHROOT
-
-  # preseed console-setup
-  grep ^console-setup $GENLIVE/preseed/*.seed | chroot $NANOCHROOT debconf-set-selections || _exit "No se puede hacer preseed de console-setup"
-
-  # configure console-setup
-  chroot $NANOCHROOT << EOC || _exit "Error configurando console-setup"
-export LC_ALL=C
-export LC_MESSAGES=C
-export DEBCONF_FRONTEND="noninteractive"
-export DEBIAN_FRONTEND="noninteractive"
-export UCF_FORCE_CONFFOLD=1
-dpkg-reconfigure console-setup
-EOC
-
-
-  _echo "Configurando console-setup ..."
-  # overwrite console-setup config
-  #grep ^XKB $NANOCHROOT/etc/default/console-setup
-
-  cat $GENLIVE/console-setup/console-setup > $NANOCHROOT/etc/default/console-setup
-  #_echo "Configurando console-setup ... [despues]"
-  #grep ^XKB $NANOCHROOT/etc/default/console-setup
 
 
   umount -l $NANOCHROOT/proc

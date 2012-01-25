@@ -1,8 +1,4 @@
 # Install the MaX Ubuntu desktop.
-# http://forja.guadalinex.org/plugins/scmsvn/cgi-bin/viewcvs.cgi/generation_system/demiurgo/trunk/debian-cd/data/edgy/preseed/ubiquity.seed?root=guadalinexv4&rev=755&view=markup
-#ubiquity	partman-auto/choose_recipe	select	60guadalinex
-#ubiquity	partman-auto/expert_recipe_file	string	/lib/partman/recipes/60guadalinex
-#
 #
 #
 tasksel tasksel/first multiselect ubuntu-desktop
@@ -10,15 +6,17 @@ debconf debconf/language string es
 d-i debian-installer/locale string es_ES
 d-i clock-setup/utc boolean false
 d-i time/zone string Europe/Madrid
+d-i clock-setup/utc boolean false
 #
 #
 #
 # Keyboard selection.
 d-i console-setup/modelcode string pc105
 d-i console-setup/layoutcode string es
-# To select a variant of the selected layout (if you leave this out, the
-# basic form of the layout will be used):
-#d-i console-setup/variantcode string dvorak
+d-i console-setup/ask_detect boolean false
+d-i keyboard-configuration/layoutcode string es
+d-i keyboard-configuration/modelcode string pc105
+#
 #
 # Ubiquity installer
 #

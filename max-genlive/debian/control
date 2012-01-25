@@ -2,7 +2,9 @@ Source: max-genlive
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 7.0.0), cdbs, gfxboot-dev (>= 4.1.42), cpio, libfribidi0
+Build-Depends: debhelper (>= 7.0.0), cdbs, 
+               gfxboot-theme-ubuntu,
+#              gfxboot-dev (>= 4.1.42), cpio, libfribidi0
 Standards-Version: 3.9.4
 
 Package: max-genlive

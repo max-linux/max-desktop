@@ -11,11 +11,23 @@ if [ ! $DISABLE_SQUASHFS ]; then
 
   LZMA=""
   # ver si hay que desactivar LZMA
-  $MKSQUASHFS -help 2>&1 | grep -q nolzma && LZMA="-nolzma"
+  chroot $CHROOT $MKSQUASHFS -help 2>&1 | grep -q nolzma && LZMA="-nolzma"
 
   mkdir -p $CDRW/casper/
   _echo "Creando archivo squashfs (tarda bastante)..."
-  $MKSQUASHFS $CHROOT/  $CDRW/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo squashfs"
+
+  # montar chroot dentro de chroot
+  mount -o bind $CHROOT/ $CHROOT/mnt
+  mount -o bind $CDRW/   $CHROOT/media
+
+  chroot $CHROOT $MKSQUASHFS /mnt/  /media/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo squashfs"
+
+  umount $CHROOT/media
+  umount $CHROOT/mnt
+
+
+#  $MKSQUASHFS $CHROOT/  $CDRW/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo squashfs"
+
   chmod 644 $CDRW/casper/filesystem.squashfs
 
   _echo "Calculando tamaño filesystem.size..."

@@ -16,8 +16,8 @@ NANOARCH=i386
 MAX_VERSION="7.0~alpha1"
 IMAGE_NAME="MaX-${MAX_VERSION}"
 TITLE="MaX ${MAX_VERSION}"
-LINUX_IMAGE="linux-image-generic"
-LINUX_HEADERS="linux-headers-generic"
+LINUX_IMAGE="linux-image-generic-pae"
+LINUX_HEADERS="linux-headers-generic-pae"
 
 unset HOME
 export LC_ALL=C

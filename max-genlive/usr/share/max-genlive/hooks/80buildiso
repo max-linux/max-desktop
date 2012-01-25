@@ -56,9 +56,18 @@ ISO_FILE="${IMAGE_NAME}-DVDlive-$ARCH-${stamp}.iso"
 
 _echo "Generando ${ISO_FILE}"
 
-genisoimage -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \
+# montar chroot 
+mount -o bind $CHROOT/../ $CHROOT/mnt
+
+chroot $CHROOT genisoimage -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \
      -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
-     -boot-info-table -o ${ISO_FILE} $CDRW/ || _exit "Error generando la imagen ISO"
+     -boot-info-table -o /mnt/${ISO_FILE} /mnt/cdimage.${ARCH}/ || _exit "Error generando la imagen ISO"
+umount $CHROOT/mnt
+
+
+#genisoimage -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \
+#     -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
+#     -boot-info-table -o ${ISO_FILE} $CDRW/ || _exit "Error generando la imagen ISO"
 
 _echo "Generando md5 del DVD"
 md5sum ${ISO_FILE} > ${ISO_FILE}.md5 || _exit "Error generando el md5"
