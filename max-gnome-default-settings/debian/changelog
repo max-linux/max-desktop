@@ -1,3 +1,10 @@
+max-gnome-default-settings (7.0.max5) max; urgency=low
+
+  * usr/share/gconf/defaults/98_max:
+    - Add gconf defaults
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Jan 2012 14:06:28 +0100
+
 max-gnome-default-settings (7.0.max4) max; urgency=low
 
   * Fix Unity favorites panel

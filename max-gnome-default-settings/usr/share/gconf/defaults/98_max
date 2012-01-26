@@ -1,0 +1,25 @@
+/desktop/gnome/interface/icon_theme "maxtoon"
+/desktop/gnome/interface/gtk_theme "Max70"
+/desktop/gnome/interface/buttons_have_icons true
+/desktop/gnome/interface/menus_have_icons true
+/desktop/gnome/peripherals/mouse/cursor_theme "DMZ-White"
+/apps/metacity/general/theme "Max70"
+/apps/metacity/general/button_layout "menu:minimize,maximize,close"
+/desktop/gnome/background/color_shading_type "solid"
+/desktop/gnome/background/secondary_color "#3b3b62"
+/desktop/gnome/background/primary_color "#3b3b62"
+/desktop/gnome/background/picture_filename "/usr/share/backgrounds/max-madrid-linux-1900x1200.jpg"
+/desktop/gnome/background/picture_options "stretched"
+/desktop/gnome/background/draw_background true
+/apps/nautilus/preferences/enable_delete true
+/apps/nautilus/preferences/desktop_font "DejaVu Sans Condensed, Oblique 10"
+/apps/nautilus/preferences/confirm_trash true
+/apps/nautilus/preferences/always_use_browser true
+/apps/nautilus/desktop/home_icon_visible true 
+/apps/nautilus/desktop/network_icon_visible true 
+/apps/nautilus/desktop/computer_icon_visible true 
+/apps/nautilus/desktop/trash_icon_visible false 
+/apps/nautilus/desktop/volumes_visible false
+/system/smb/workgroup "AULAMAX"
+/desktop/unity-2d/launcher/favorites [ubiquity-gtkui.desktop,nautilus-home.desktop,firefox.desktop,libreoffice-writer.desktop,gnome-control-center.desktop]
+
