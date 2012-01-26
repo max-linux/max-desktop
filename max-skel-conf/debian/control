@@ -7,6 +7,8 @@ Standards-Version: 3.7.2
 
 Package: max-skel-conf
 Architecture: all
+Conflicts: ubuntu-artwork
+Provides: ubuntu-artwork
 Description: Configuración skel para Ubuntu/MAX.
  Configuración basada en dh_divert para /etc/skel y APT
  Contiene:
