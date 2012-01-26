@@ -1,3 +1,16 @@
+aa-debhelper (0.2max9) max; urgency=low
+
+  * usr/share/debhelper/autoscripts/preinst-divert:
+    - Run dpkg-diver on install OR upgrade
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Jan 2012 15:40:53 +0100
+
+aa-debhelper (0.2max8) max; urgency=low
+
+  * Fix file path etc detection
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Jan 2012 14:22:11 +0100
+
 aa-debhelper (0.2max7) max; urgency=low
 
   * Change divert => distrib in postrm

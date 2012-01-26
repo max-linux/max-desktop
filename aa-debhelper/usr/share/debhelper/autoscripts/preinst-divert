@@ -1,5 +1,5 @@
-if [ "$1" = install ]; then
-	grep -q "^/etc" "#FILE#" 2>/dev/null && \
+if [ "$1" = install ] || [ "$1" = upgrade ]; then
+	echo "#FILE#" | grep -q "^/etc" 2>/dev/null && \
         ucf --purge "#FILE#"
 
 	dpkg-divert --quiet --package #PACKAGE# --add --rename #FILE#
