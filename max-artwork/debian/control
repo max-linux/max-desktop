@@ -15,8 +15,3 @@ Conflicts: desktop-base, mythbuntu-gdm-theme
 Description: MaX themes and artwork
  This package contains MaX themes, artwork and default settings.
 
-#Package: max-artwork-usplash
-#Architecture: any
-#Depends: usplash, ${shlibs:Depends}
-#Description: MaX artwork for usplash
-# This is us the usplash startup screen for MaX.

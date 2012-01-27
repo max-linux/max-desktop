@@ -1,3 +1,11 @@
+max-artwork (7.0.max3) max; urgency=low
+
+  * Remove usplash stuff
+  * art/theme/Max70/Makefile.am:
+    - Fix to install metacity, gtk2, gkt3, unity in their dir
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 27 Jan 2012 13:09:08 +0100
+
 max-artwork (7.0.max2) max; urgency=low
 
   * Rename artwork to Max70
