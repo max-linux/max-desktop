@@ -1,3 +1,9 @@
+max-live (7.0.max5) max; urgency=low
+
+  * Remove usr/lib/ubiquity/apt-setup/generators/70mirror.max
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 27 Jan 2012 14:32:51 +0100
+
 max-live (7.0.max4) max; urgency=low
 
   * Change MAX-7.0 to FLAVOUR var
