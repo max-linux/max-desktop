@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+
+#DEBHELPER#
+
+# remove diverted files
+rm -f /usr/lib/ubiquity/apt-setup/generators/*.distrib
+

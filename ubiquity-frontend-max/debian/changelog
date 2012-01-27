@@ -1,3 +1,20 @@
+ubiquity-frontend-max (7.0.max6) max; urgency=low
+
+  * usr/lib/ubiquity/ubiquity/frontend/gtk_ui.py:
+    - Fix module name user-setup => usersetup
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 27 Jan 2012 14:36:50 +0100
+
+ubiquity-frontend-max (7.0.max5) max; urgency=low
+
+  * usr/lib/ubiquity/apt-setup/generators/70mirror.max:
+    - Move file from max-live
+  * usr/share/ubiquity/pixmaps/max/logo.png:
+    - Add v7.0 post-it
+  * Remove usr/lib/ubiquity/apt-setup/generators/*.distrib in postinst
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 27 Jan 2012 14:31:52 +0100
+
 ubiquity-frontend-max (7.0.max4) max; urgency=low
 
   * Remove diverted plugins and disable in gtk_ui.py

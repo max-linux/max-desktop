@@ -9,6 +9,7 @@ XS-Vcs-Browser: http://max.educa.madrid.org:8000/browser/trunk/ubiquity-frontend
 Package: ubiquity-frontend-max
 Architecture: any
 Depends: ubiquity, ubiquity-frontend-gtk, debconf-utils, nanomax-installer, ubiquity-slideshow-max
+Conflicts: max-live (<< 7.0max5)
 Description: Some files to custom ubiquity installer
  Contains:
   * MaX gui of ubiquity installer

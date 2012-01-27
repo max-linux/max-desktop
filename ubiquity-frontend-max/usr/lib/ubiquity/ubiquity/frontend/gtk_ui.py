@@ -274,7 +274,7 @@ class Wizard(BaseFrontend):
             if mod.module.NAME in ['prepare',
                                    'timezone',
                                    'console-setup',
-                                   'user-setup',
+                                   'usersetup',
                                    'language',
                                    'migrationassistant']:
                 continue
