@@ -1,3 +1,9 @@
+max-netboot-server (7.0.max2) max; urgency=low
+
+  * Add etc to install dir
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 28 Jan 2012 16:26:31 +0100
+
 max-netboot-server (7.0.max1) max; urgency=low
 
   * Convert dpsyco to dh_divert
