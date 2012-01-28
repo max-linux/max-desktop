@@ -1,10 +1,12 @@
 #!/usr/bin/make -f
 
 include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/aa-debhelper.mk
 
 binary-install/max-lxde-default-settings::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-lxde-default-settings -type d -name .svn | xargs rm -rf --
+	rm -rf $(CURDIR)/debian/max-lxde-default-settings/usr/share/dpsyco
 
 #	for po in $(CURDIR)/debian/max-lxde-default-settings/usr/share/dpsyco/skel/usr/share/locale/es/LC_MESSAGES/*po; do \
 #		echo " * Translating $$po ..." ;\
