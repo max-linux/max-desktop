@@ -1,3 +1,9 @@
+ubiquity-frontend-max (7.0.max7) max; urgency=low
+
+  * Move some postinst code from install.py to plugininstall.py
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 28 Jan 2012 16:07:28 +0100
+
 ubiquity-frontend-max (7.0.max6) max; urgency=low
 
   * usr/lib/ubiquity/ubiquity/frontend/gtk_ui.py:
