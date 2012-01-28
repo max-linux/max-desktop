@@ -1,3 +1,11 @@
+max-artwork (7.0.max5) max; urgency=low
+
+  * Don't add start-here alternative
+  * Use update-grub instead of update-grub2
+  * Fix maxgdm.png header
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 28 Jan 2012 15:18:15 +0100
+
 max-artwork (7.0.max4) max; urgency=low
 
   * Update all walpapers with postit-v7.0

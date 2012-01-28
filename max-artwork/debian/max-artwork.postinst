@@ -1,18 +1,5 @@
 #!/bin/sh
 
-install_alternative() {
-SIZES="16 22 24 32"
-
-( while read name prio; do
-    command="update-alternatives --quiet --install /usr/share/icons/gnome/scalable/places/start-here.svg start-here.svg /usr/share/icons/maxtoon/scalable/places/$name.svg $prio"
-    for s in $SIZES; do
-      command="$command --slave /usr/share/icons/gnome/${s}x${s}/places/start-here.png start-here-${s}.png /usr/share/icons/maxtoon/${s}x${s}/apps/max.png"
-    done
-    $command
-  done ) << EOF
-max 90
-EOF
-}
 
 case "$1" in
   configure)
@@ -21,12 +8,9 @@ case "$1" in
     echo " * Updating maxtoon icon cache ..."
     gtk-update-icon-cache /usr/share/icons/maxtoon > /dev/null 2>&1|| true
 
-    # install max start-here
-    install_alternative
-
     # update-grub
-    if [ -x "`which update-grub2 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
-      update-grub2
+    if [ -x "`which update-grub 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
+      update-grub
     fi
 
     # configure GDM
