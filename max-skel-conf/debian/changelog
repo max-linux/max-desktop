@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max18) max; urgency=low
+
+  * Divert etc/lightdm/unity-greeter.conf
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 28 Jan 2012 14:56:52 +0100
+
 max-skel-conf (7.0.max17) max; urgency=low
 
   * Build with new aa-debhelper
