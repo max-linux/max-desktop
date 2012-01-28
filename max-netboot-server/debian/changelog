@@ -1,3 +1,9 @@
+max-netboot-server (7.0.max1) max; urgency=low
+
+  * Convert dpsyco to dh_divert
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 28 Jan 2012 16:14:14 +0100
+
 max-netboot-server (6.0.max5) max; urgency=low
 
   * Create dir var/lib/max-netboot/backharddi with links to backharddi-ng-kernel
