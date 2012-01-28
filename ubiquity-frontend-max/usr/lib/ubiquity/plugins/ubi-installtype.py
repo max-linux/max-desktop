@@ -98,6 +98,7 @@ class PageGtk(PageBase):
         self.install_vbox = builder.get_object('install_vbox')
         self.scrolledwin = builder.get_object('install_scrolledwindow')
         self.install_warn_nano = builder.get_object('install_warn_nano')
+        self.install_warn_sti = builder.get_object('install_warn_sti')
 
         #self.install_type_group.connect('toggled', self.on_install_type_radio_toggled)
         try:
@@ -109,7 +110,7 @@ class PageGtk(PageBase):
 
         self.set_install_type('escritorio')
         for radio in self.install_types:
-            getattr(self, "install_type_%s"%radio).connect('toggled', self.on_install_type_radio_toggled)
+            getattr(self, "install_type_%s"%radio).connect('toggled', self.on_install_type_radio_toggled, radio)
 
         self.set_hostname('max70')
         self.plugin_widgets = self.page
@@ -124,7 +125,8 @@ class PageGtk(PageBase):
             self.install_warn_nano.show()
 
         if not os.path.isfile("/cdrom/nanomax/casper/filesystem.squashfs"):
-            self.install_type_nanomax.set_sensitive(False)
+            #self.install_type_nanomax.set_sensitive(False)
+            self.install_type_nanomax.hide()
 
 
     # Functions called by the Page.
@@ -150,8 +152,7 @@ class PageGtk(PageBase):
         if not widget.get_active():
             # do nothing
             return
-        else:
-            self.set_install_type(widget.name.replace("install_type_",""))
+        self.set_install_type(args[0])
         syslog.syslog("DEBUG: on_install_type_radio_toggled() TYPE=%s"%self.install_type)
         
 
@@ -163,6 +164,13 @@ class PageGtk(PageBase):
         return self.hostname_widget.get_text().strip()
 
 
+    def get_test_sti(self):
+        subp = Popen(['/usr/bin/test-sti'], stdout=PIPE)
+        result = subp.communicate()[0].splitlines()
+        self.sti=result[0].strip()
+        syslog.syslog("DEBUG: get_test_sti() result=%s sti=%s"%(result, self.sti))
+        if self.sti == "YES":
+            self.install_warn_sti.show()
 
 class PageKde(PageBase):
     pass

@@ -1,3 +1,11 @@
+ubiquity-frontend-max (7.0.max8) max; urgency=low
+
+  * plugins/ubi-installtype.py:
+    - Fix radio toggle
+    - Add test-sti call and show a warning if YES
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 28 Jan 2012 23:00:57 +0100
+
 ubiquity-frontend-max (7.0.max7) max; urgency=low
 
   * Move some postinst code from install.py to plugininstall.py

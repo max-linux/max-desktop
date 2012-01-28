@@ -173,6 +173,20 @@ no se puede seleccionar el tipo de instalaci&#xF3;n.&lt;/b&gt;</property>
                   </packing>
                 </child>
                 <child>
+                  <object class="GtkLabel" id="install_warn_sti">
+                    <property name="label" translatable="yes">&lt;b&gt;Se ha detectado una tarjeta de protecci&#xF3;n.
+No olvide seleccionar el particionado avanzado e instalar GRUB en sda1.
+&lt;/b&gt;</property>
+                    <property name="use_markup">True</property>
+                    <property name="wrap">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
                   <object class="GtkHBox" id="hbox1">
                     <property name="visible">True</property>
                     <child>
@@ -196,7 +210,7 @@ no se puede seleccionar el tipo de instalaci&#xF3;n.&lt;/b&gt;</property>
                     </child>
                   </object>
                   <packing>
-                    <property name="position">2</property>
+                    <property name="position">3</property>
                   </packing>
                 </child>
               </object>

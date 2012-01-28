@@ -1728,6 +1728,7 @@ class Install(install_misc.InstallBase):
         f.close()
         if install_type == "escritorio":
             # return, no things to do
+            syslog.syslog("DEBUG: install_max_extras() type escritorio, nothing to do")
             return
         syslog.syslog("DEBUG: install_max_extras() trying to get diferences with %s install_type"%install_type)
         # make a diff between filesystem.manifest-desktop and filesystem.manifest-desktop.xxxxxx
