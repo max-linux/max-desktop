@@ -2,7 +2,7 @@ Source: max-xfce-default-settings
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 7.0.0), cdbs
+Build-Depends: debhelper (>= 7.0.0), cdbs, aa-debhelper
 Standards-Version: 3.8.4
 
 Package: max-xfce-default-settings
@@ -11,6 +11,6 @@ Conflicts: xubuntu-default-settings
 Provides: xubuntu-default-settings
 Depends: dmz-cursor-theme
 Architecture: all 
-Description: xfce default settings MAX 4.0
- Contains default Xfce4 settings for Ubuntu based MaX 4.0 distro
+Description: xfce default settings for MAX
+ Contains default Xfce4 settings for Ubuntu based MaX distro
  Conflicts with xubuntu-default-settings
