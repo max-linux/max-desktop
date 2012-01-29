@@ -49,6 +49,7 @@ case "$1" in
     [ -d /usr/lib/firefox-6.0 ]     && rm -rf /usr/lib/firefox-6.0
     [ -d /usr/lib/firefox-6.0.2 ]   && rm -rf /usr/lib/firefox-6.0.2
     [ -d /usr/lib/firefox-7.0 ]     && rm -rf /usr/lib/firefox-7.0
+    [ -d /usr/lib/firefox-7.0.0 ]   && rm -rf /usr/lib/firefox-7.0.0
 
 
     # Update DNI-e certificates if exists
