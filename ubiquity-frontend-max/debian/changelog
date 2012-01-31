@@ -1,3 +1,10 @@
+ubiquity-frontend-max (7.0.max9) max; urgency=low
+
+  * Call test-sti inside installtype
+  * Remove deprecated code
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 31 Jan 2012 10:39:29 +0100
+
 ubiquity-frontend-max (7.0.max8) max; urgency=low
 
   * plugins/ubi-installtype.py:

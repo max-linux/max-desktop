@@ -199,6 +199,11 @@ class Install(install_misc.InstallBase):
         self.db.progress('INFO', 'ubiquity/install/bootloader')
         self.configure_bootloader()
 
+        # MAX install max packages
+        self.install_max_extras()
+        # MaX exec apt-get autoremove --purge
+        self.do_autoremove()
+
         self.next_region(size=4)
         self.db.progress('INFO', 'ubiquity/install/removing')
         if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
@@ -209,11 +214,6 @@ class Install(install_misc.InstallBase):
                 pass
         else:
             self.remove_extras()
-        
-        # MAX install max packages
-        self.install_max_extras()
-        # MaX exec apt-get autoremove --purge
-        self.do_autoremove()
 
         self.next_region()
         if 'UBIQUITY_OEM_USER_CONFIG' not in os.environ:
@@ -387,7 +387,15 @@ class Install(install_misc.InstallBase):
         if self.target != '/':
             for path in ('/etc/network/interfaces', '/etc/resolv.conf'):
                 if os.path.exists(path):
-                    shutil.copy2(path, os.path.join(self.target, path[1:]))
+                    targetpath = os.path.join(self.target, path[1:])
+                    st = os.lstat(path)
+                    if stat.S_ISLNK(st.st_mode):
+                        if os.path.lexists(targetpath):
+                            os.unlink(targetpath)
+                        linkto = os.readlink(path)
+                        os.symlink(linkto, targetpath)
+                    else:
+                        shutil.copy2(path, os.path.join(self.target, path[1:]))
 
         try:
             hostname = self.db.get('netcfg/get_hostname')

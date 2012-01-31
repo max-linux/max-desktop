@@ -115,6 +115,9 @@ class PageGtk(PageBase):
         self.set_hostname('max70')
         self.plugin_widgets = self.page
         
+        self.sti=False
+        self.get_test_sti()
+        
         if os.path.isfile("/cdrom/casper/nanomax"):
             self.install_type_escritorio.set_sensitive(False)
             self.install_type_profesor.set_sensitive(False)
@@ -154,7 +157,6 @@ class PageGtk(PageBase):
             return
         self.set_install_type(args[0])
         syslog.syslog("DEBUG: on_install_type_radio_toggled() TYPE=%s"%self.install_type)
-        
 
     def set_hostname(self, hostname):
         self.hostname=hostname
@@ -163,7 +165,6 @@ class PageGtk(PageBase):
     def get_hostname(self):
         return self.hostname_widget.get_text().strip()
 
-
     def get_test_sti(self):
         subp = Popen(['/usr/bin/test-sti'], stdout=PIPE)
         result = subp.communicate()[0].splitlines()
@@ -171,6 +172,10 @@ class PageGtk(PageBase):
         syslog.syslog("DEBUG: get_test_sti() result=%s sti=%s"%(result, self.sti))
         if self.sti == "YES":
             self.install_warn_sti.show()
+            os.popen("sudo touch /tmp/max_sti")
+        else:
+            self.install_warn_sti.hide()
+            os.popen("sudo rm -f /tmp/max_sti")
 
 class PageKde(PageBase):
     pass
