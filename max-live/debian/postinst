@@ -10,6 +10,8 @@ case "${1}" in
                         addgroup --quiet --system vboxusers
                 fi
 
+	rm -f /usr/share/initramfs-tools/scripts/casper-bottom/14locales.distrib
+
 esac
 
 #DEBHELPER#

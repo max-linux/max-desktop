@@ -1,3 +1,11 @@
+max-live (7.0.max6) max; urgency=low
+
+  * Rename scripts/casper-bottom/11max => 99max
+  * Remove casper distrib scripts
+  * Remove obsolete scripts/casper-bottom/60_fix_OOo_live
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 31 Jan 2012 11:41:09 +0100
+
 max-live (7.0.max5) max; urgency=low
 
   * Remove usr/lib/ubiquity/apt-setup/generators/70mirror.max
