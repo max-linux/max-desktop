@@ -7,7 +7,6 @@
 	<!-- Scan legacy dirs first, as later items take priority -->
 	<LegacyDir>/etc/X11/applnk</LegacyDir>
 	<LegacyDir>/usr/share/gnome/apps</LegacyDir>
-	<LegacyDir>/usr/share/control-center-2.0/capplets</LegacyDir>
 
 	<!-- Read standard .directory and .desktop file locations -->
 	<DefaultAppDirs/>
@@ -530,7 +529,7 @@
 
 
 	<Menu>
-		<Name>MaX 6.5</Name>
+		<Name>MaX 7.0</Name>
 		<Directory>max60.directory</Directory>
 		<Include><Filename>max-educamadrid.desktop</Filename></Include>
 		<Include><Filename>max-guia-referencia.desktop</Filename></Include>
