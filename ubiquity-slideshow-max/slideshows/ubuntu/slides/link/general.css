@@ -29,7 +29,9 @@ a {
 	background-repeat:no-repeat;
 	background-position:top right;
 	
-	background-color:#EFEEED;
+	/*background-color:#EFEEED;*/
+	/* MAX 7.0 */
+	background-color:#DFD7CF;
 	
 	/*cursor:default;*/
 }
