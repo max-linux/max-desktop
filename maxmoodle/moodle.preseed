@@ -18,13 +18,13 @@ moodle	moodle/mysql/admin-pass	password	cmadrid
 moodle	moodle/mysql/app-pass	password	cmadrid
 moodle	moodle/password-confirm	password	cmadrid
 moodle	moodle/database-type	select	mysql
-moodle	moodle/internal/reconfiguring	boolean	false
+moodle	moodle/internal/reconfiguring	boolean	true
 moodle	moodle/www	string	http://localhost/moodle
 moodle	moodle/upgrade-backup	boolean	true
-moodle	moodle/dbconfig-reinstall	boolean	false
+moodle	moodle/dbconfig-reinstall	boolean	true
 moodle	moodle/db/app-user	string	moodle
 moodle	moodle/internal/skip-preseed	boolean	false
-moodle	moodle/purge	boolean	false
+moodle	moodle/purge	boolean	true
 moodle	moodle/remote/host	select	
 moodle	moodle/db/dbname	string	moodle
 moodle	moodle/mysql/method	select	unix socket
