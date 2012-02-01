@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max6) max; urgency=low
+
+  * Call update-gconf-defaults in postinst
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 01 Feb 2012 14:52:39 +0100
+
 max-gnome-default-settings (7.0.max5) max; urgency=low
 
   * usr/share/gconf/defaults/98_max:

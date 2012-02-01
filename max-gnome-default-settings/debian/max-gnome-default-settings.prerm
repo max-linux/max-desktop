@@ -1,4 +1,9 @@
 #!/bin/bash
+
+if [ "$1" = "configure" ]; then
+  update-gconf-defaults || true
+fi
+
 exit 0
 
 META_GCONF=/usr/share/max/gconf/
