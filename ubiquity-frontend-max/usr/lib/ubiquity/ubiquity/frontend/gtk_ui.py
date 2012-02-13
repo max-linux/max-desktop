@@ -82,8 +82,7 @@ def set_root_cursor(cursor=None):
     win = Gdk.get_default_root_window()
     if win:
         win.set_cursor(cursor)
-    while Gtk.events_pending():
-        Gtk.main_iteration()
+    gtkwidgets.refresh()
 
 class Controller(ubiquity.frontend.base.Controller):
     def add_builder(self, builder):
@@ -418,9 +417,14 @@ class Wizard(BaseFrontend):
             # In live session mode, update-notifier will pick up the crash
             # report; in only-ubiquity mode we need to bring up the UI
             # ourselves
+            # update-notifier doesn't work on overlayfs so also run if using
+            # maybe-ubiquity
+
+            # FIXME: Revert the check to maybe-ubiquity once inotify on
+            # overlayfs is fixed (crash will then be detected by update-notifier)
             with open('/proc/cmdline') as fp:
-                if 'only-ubiquity' in fp.read():
-		    # we need to drop privileges, we cannot run GTK programs
+                if 'ubiquity' in fp.read():
+                    # we need to drop privileges, we cannot run GTK programs
                     # with non-matching real/effective u/gid
                     misc.drop_all_privileges()
                     misc.execute('/usr/share/apport/apport-gtk')
@@ -430,8 +434,7 @@ class Wizard(BaseFrontend):
             self.crash_dialog.run()
             self.crash_dialog.hide()
             self.live_installer.hide()
-            while Gtk.events_pending():
-                Gtk.main_iteration()
+            self.refresh()
             misc.execute_root("apport-bug", "ubiquity")
             sys.exit(1)
 
@@ -672,8 +675,7 @@ class Wizard(BaseFrontend):
                 if self.backup:
                     self.pagesindex = self.pop_history()
 
-            while Gtk.events_pending():
-                Gtk.main_iteration()
+            self.refresh()
 
         # There's still work to do (postinstall).  Let's keep the user
         # entertained.
@@ -1418,8 +1420,7 @@ color : @fg_color
             self.crash_dialog.run()
             self.crash_dialog.hide()
             self.live_installer.hide()
-            while Gtk.events_pending():
-                Gtk.main_iteration()
+            self.refresh()
             misc.execute_root("apport-bug", "ubiquity")
             sys.exit(1)
         if BaseFrontend.debconffilter_done(self, dbfilter):
@@ -1441,6 +1442,11 @@ color : @fg_color
         if finished_step == last_page and not self.backup:
             self.finished_pages = True
             if self.finished_installing or self.oem_user_config:
+                self.debconf_progress_info('')
+                # thaw container size
+                self.progress_section.set_size_request(-1, -1)
+                self.install_details_expander.show()
+                self.install_progress.show()
                 self.progress_section.show()
                 dbfilter = plugininstall.Install(self)
                 dbfilter.start(auto_process=True)
@@ -1478,6 +1484,13 @@ color : @fg_color
             if self.finished_pages:
                 dbfilter = plugininstall.Install(self)
                 dbfilter.start(auto_process=True)
+            else:
+                # temporarily freeze container size
+                allocation = self.progress_section.get_allocation()
+                self.progress_section.set_size_request(
+                    allocation.width, allocation.height)
+                self.install_details_expander.hide()
+                self.install_progress.hide()
 
         elif finished_step == 'ubiquity.components.plugininstall':
             self.installing = False
@@ -1591,7 +1604,8 @@ color : @fg_color
                 text = option
             buttons.extend((text, len(buttons) / 2 + 1))
         dialog = Gtk.Dialog(title, self.live_installer, Gtk.DialogFlags.MODAL, tuple(buttons))
-        vbox = Gtk.VBox()
+        vbox = Gtk.Box()
+        vbox.set_orientation(Gtk.Orientation.VERTICAL)
         vbox.set_border_width(5)
         label = Gtk.Label(label=msg)
         label.set_line_wrap(True)
@@ -1609,8 +1623,7 @@ color : @fg_color
             return options[response - 1]
 
     def refresh (self):
-        while Gtk.events_pending():
-            Gtk.main_iteration()
+        gtkwidgets.refresh()
 
     # Run the UI's main loop until it returns control to us.
     def run_main_loop (self):

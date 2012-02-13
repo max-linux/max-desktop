@@ -1,3 +1,16 @@
+ubiquity-frontend-max (7.0.max11) max; urgency=low
+
+  * Sync with ubiquity 2.9.18
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 13 Feb 2012 14:19:56 +0100
+
+ubiquity-frontend-max (7.0.max10) max; urgency=low
+
+  * Don't install maxui desktop file
+  * Overwrite console-setup plugin
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 01 Feb 2012 15:00:38 +0100
+
 ubiquity-frontend-max (7.0.max9) max; urgency=low
 
   * Call test-sti inside installtype

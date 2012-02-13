@@ -33,11 +33,10 @@ import fcntl
 import traceback
 import syslog
 import gzip
-import debconf
-import warnings
-warnings.filterwarnings("ignore", "apt API not stable yet", FutureWarning)
-import apt_pkg
 import pwd
+
+import debconf
+import apt_pkg
 from apt.cache import Cache
 
 sys.path.insert(0, '/usr/lib/ubiquity')
@@ -98,6 +97,11 @@ class Install(install_misc.InstallBase):
 
         # Keep this in sync with configure_apt.
         # TODO cjwatson 2011-03-03: consolidate this.
+        try:
+            if self.db.get('base-installer/install-recommends') == 'false':
+                apt_pkg.Config.set("APT::Install-Recommends", "false")
+        except debconf.DebconfError:
+            pass
         apt_pkg.Config.set("APT::Authentication::TrustCDROM", "true")
         apt_pkg.Config.set("Acquire::gpgv::Options::",
                            "--ignore-time-conflict")
@@ -532,6 +536,17 @@ class Install(install_misc.InstallBase):
         # should come up with a way to avoid this.
 
         # Keep this in sync with __init__.
+
+        try:
+            if self.db.get('base-installer/install-recommends') == 'false':
+                apt_conf_ir = open(
+                    os.path.join(self.target,
+                                 'etc/apt/apt.conf.d/00InstallRecommends'),
+                    'w')
+                print >>apt_conf_ir, 'APT::Install-Recommends "false";'
+                apt_conf_ir.close()
+        except debconf.DebconfError:
+            pass
 
         # Make apt trust CDs. This is not on by default (we think).
         # This will be left in place on the installed system.

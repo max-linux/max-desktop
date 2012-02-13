@@ -8,14 +8,13 @@ import signal
 import errno
 import imp
 import grp
+import pwd
 
 import debconf
 
 sys.path.insert(0, '/usr/lib/ubiquity')
 
 import ubiquity.frontend
-import pwd
-
 from ubiquity import osextras
 from ubiquity import gsettings
 from ubiquity.misc import create_bool
