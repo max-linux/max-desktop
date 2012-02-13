@@ -1,3 +1,10 @@
+max-dpsyco-custom (6.0.max46) max; urgency=low
+
+  * Add usr/lib/os-probes/mounted/20microsoft:
+    - Fix Windows Vista detect order
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 13 Feb 2012 13:30:01 +0100
+
 max-dpsyco-custom (6.0.max45) max; urgency=low
 
   * Update testpage-a4.ps
