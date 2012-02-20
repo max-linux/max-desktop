@@ -1,3 +1,9 @@
+max-firefox-conf (6.0.max29) max; urgency=low
+
+  * Remove version dir, use update-postinst to copy/remove default Firefox files
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 20 Feb 2012 12:49:34 +0100
+
 max-firefox-conf (6.0.max28) max; urgency=low
 
   * Update for Firefox 10.0.1
