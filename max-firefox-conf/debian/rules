@@ -9,5 +9,5 @@ binary-install/max-firefox-conf::
 	find $(CURDIR)/debian/max-firefox-conf -type d -empty | xargs rm -rf --
 
 	tree $(CURDIR)/debian/max-firefox-conf
-	rm -rf $(CURDIR)/debian/max-firefox-conf/usr/share/dpsyco
+	rm -rf $(CURDIR)/debian/max-firefox-conf/usr/share/dpsyco $(CURDIR)/debian/max-firefox-conf/usr/lib/
 	tree $(CURDIR)/debian/max-firefox-conf
