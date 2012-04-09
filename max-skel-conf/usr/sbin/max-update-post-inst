@@ -102,3 +102,23 @@ if [ -x /usr/bin/xdg-mime ] && [ -e /etc/gnome/defaults.list ]; then
     echo "application/x-exe-learning=exe.desktop" >> /etc/gnome/defaults.list
   fi
 fi
+
+
+# update Firefox defaults
+FF_DIR=$(dirname /usr/lib/firefox*/firefox)
+FF_DEF=/usr/share/max-firefox-conf/profile/
+if [ ! -e "$FF_DIR/defaults/profile/localstore.rdf" ]; then
+  echo " * Actualizando perfil de Firefox $FF_DIR"
+  mkdir -p "$FF_DIR/defaults/profile/"
+  cp $FF_DEF/* "$FF_DIR/defaults/profile/"
+fi
+
+# clean OLF firefox
+for f in $(echo /usr/lib/firefox*/defaults 2>/dev/null); do
+  [ ! -d "$f" ] && continue
+  [ -e "$f/../firefox" ] && continue
+  echo " * Limpiando versiones viejas de Firefox $f"
+  rm -rf "$f"
+done
+
+rmdir /usr/lib/firefox* 2>/dev/null
