@@ -35,6 +35,8 @@ class PageGtk2(plugin.PluginUI):
     def __init__(self, controller, *args, **kwargs):
         self.controller = controller
         self.current_layout = None
+        self.keyboard_layout_timeout_id = 0
+        self.keyboard_variant_timeout_id = 0
         try:
             from gi.repository import Gtk
             builder = Gtk.Builder()
@@ -71,8 +73,8 @@ class PageGtk2(plugin.PluginUI):
         idx = v.values().index(keymap[1])
         variant = v.keys()[idx]
         self.set_keyboard(layout)
-        self.set_keyboard_variant(variant)
-        # FIXME choppy UI effect
+        self.controller.dbfilter.change_layout(layout)
+        self.controller.dbfilter.apply_keyboard(layout, variant)
 
         # Necessary to clean up references so self.query is garbage collected.
         self.calculate_closed()
@@ -88,6 +90,7 @@ class PageGtk2(plugin.PluginUI):
         self.query.connect('layout_result', self.calculate_result)
         self.query.connect('delete-event', self.calculate_closed)
         #self.controller._wizard.overlay.set_property('greyed', True)
+        self.query.set_transient_for(self.page.get_toplevel())
         self.query.run()
 
     def on_keyboardlayoutview_row_activated(self, *args):
@@ -95,20 +98,44 @@ class PageGtk2(plugin.PluginUI):
 
     @plugin.only_this_page
     def on_keyboard_layout_selected(self, *args):
+        if not 'UBIQUITY_AUTOMATIC' in os.environ:
+            # Let's not call this every time the user presses a key.
+            from gi.repository import GObject
+            if self.keyboard_layout_timeout_id:
+                GObject.source_remove(self.keyboard_layout_timeout_id)
+            self.keyboard_layout_timeout_id = GObject.timeout_add(600,
+                                            self.keyboard_layout_timeout)
+        else:
+            self.keyboard_layout_timeout()
+
+    def keyboard_layout_timeout(self, *args):
         layout = self.get_keyboard()
-        if layout is not None:
+        if layout is not None and layout != self.current_layout:
             self.current_layout = layout
             self.controller.dbfilter.change_layout(layout)
+        return False
 
     def on_keyboardvariantview_row_activated(self, *args):
         self.controller.go_forward()
 
     @plugin.only_this_page
     def on_keyboard_variant_selected(self, *args):
+        if not 'UBIQUITY_AUTOMATIC' in os.environ:
+            # Let's not call this every time the user presses a key.
+            from gi.repository import GObject
+            if self.keyboard_variant_timeout_id:
+                GObject.source_remove(self.keyboard_variant_timeout_id)
+            self.keyboard_variant_timeout_id = GObject.timeout_add(600,
+                                            self.keyboard_variant_timeout)
+        else:
+            self.keyboard_variant_timeout()
+
+    def keyboard_variant_timeout(self, *args):
         layout = self.get_keyboard()
         variant = self.get_keyboard_variant()
         if layout is not None and variant is not None:
             self.controller.dbfilter.apply_keyboard(layout, variant)
+        return False
 
     def set_keyboard_choices(self, choices):
         # Sort the choices including these with accents
@@ -155,9 +182,11 @@ class PageGtk2(plugin.PluginUI):
         while iterator is not None:
             if misc.utf8(model.get_value(iterator, 0)) == layout:
                 path = model.get_path(iterator)
-                self.keyboardlayoutview.get_selection().select_path(path)
-                self.keyboardlayoutview.scroll_to_cell(
-                    path, use_align=True, row_align=0.5)
+                selection = self.keyboardlayoutview.get_selection()
+                if not selection.path_is_selected(path):
+                    selection.select_path(path)
+                    self.keyboardlayoutview.scroll_to_cell(
+                        path, use_align=True, row_align=0.5)
                 break
             iterator = model.iter_next(iterator)
 

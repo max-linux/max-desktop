@@ -229,6 +229,7 @@ class Wizard(BaseFrontend):
         self.parallel_db = None
         self.timeout_id = None
         self.screen_reader = False
+        self.orca_process = None
 
         # To get a "busy mouse":
         self.watch = Gdk.Cursor.new(Gdk.CursorType.WATCH)
@@ -244,8 +245,6 @@ class Wizard(BaseFrontend):
 
         # set default language
         self.locale = i18n.reset_locale(self)
-
-        GObject.timeout_add_seconds(30, self.poke_screensaver)
 
         # set custom language
         self.set_locales()
@@ -270,6 +269,7 @@ class Wizard(BaseFrontend):
         steps = self.builder.get_object("steps")
         found_install = False
         for mod in self.modules:
+            # MAX70 disable some modules
             if mod.module.NAME in ['prepare',
                                    'timezone',
                                    'console-setup',
@@ -323,7 +323,6 @@ class Wizard(BaseFrontend):
         self.translate_widgets(reget=True)
 
         self.customize_installer()
-        misc.add_connection_watch(self.network_change)
 
         # Put up the a11y indicator in maybe-ubiquity mode
         if ('UBIQUITY_GREETER' in os.environ and os.path.exists('/usr/bin/casper-a11y-enable')):
@@ -497,6 +496,52 @@ class Wizard(BaseFrontend):
             gconftool.set(terminal_key, 'string',
                           self.gconf_previous[terminal_key])
 
+    def disable_screensaver(self):
+        gs_schema = 'org.gnome.desktop.screensaver'
+        gs_key = 'idle-activation-enabled'
+        gs_previous = '%s/%s' % (gs_schema, gs_key)
+        if gs_previous in self.gsettings_previous:
+            return
+
+        gs_value = gsettings.get(gs_schema, gs_key)
+        self.gsettings_previous[gs_previous] = gs_value
+
+        if gs_value != False:
+            gsettings.set(gs_schema, gs_key, False)
+
+        atexit.register(self.enable_screensaver)
+
+    def enable_screensaver(self):
+        gs_schema = 'org.gnome.desktop.screensaver'
+        gs_key = 'idle-activation-enabled'
+        gs_previous = '%s/%s' % (gs_schema, gs_key)
+        gs_value = self.gsettings_previous[gs_previous]
+
+        gsettings.set(gs_schema, gs_key, gs_value)
+
+    def disable_powermgr(self):
+        gs_schema = 'org.gnome.settings-daemon.plugins.power'
+        gs_key = 'active'
+        gs_previous = '%s/%s' % (gs_schema, gs_key)
+        if gs_previous in self.gsettings_previous:
+            return
+
+        gs_value = gsettings.get(gs_schema, gs_key)
+        self.gsettings_previous[gs_previous] = gs_value
+
+        if gs_value != False:
+            gsettings.set(gs_schema, gs_key, False)
+
+        atexit.register(self.enable_powermgr)
+
+    def enable_powermgr(self):
+        gs_schema = 'org.gnome.settings-daemon.plugins.power'
+        gs_key = 'active'
+        gs_previous = '%s/%s' % (gs_schema, gs_key)
+        gs_value = self.gsettings_previous[gs_previous]
+
+        gsettings.set(gs_schema, gs_key, gs_value)
+
     def disable_logout_indicator(self):
         gs_schema = 'com.canonical.indicator.session'
         gs_key = 'suppress-logout-menuitem'
@@ -575,12 +620,15 @@ class Wizard(BaseFrontend):
         os.environ['UBIQUITY_A11Y_PROFILE'] = 'high-contrast'
 
     def a11y_profile_screen_reader_activate(self, widget=None):
+        if self.orca_process and self.orca_process.poll() != 0:
+            return
+
         subprocess.call(['log-output', '-t', 'ubiquity',
                          '--pass-stdout', '/usr/bin/casper-a11y-enable',
                          'blindness'], preexec_fn=misc.drop_all_privileges)
         os.environ['UBIQUITY_A11Y_PROFILE'] = 'screen-reader'
         if os.path.exists('/usr/bin/orca'):
-            subprocess.Popen(['/usr/bin/orca', '-n'], preexec_fn=misc.drop_all_privileges)
+            self.orca_process = subprocess.Popen(['/usr/bin/orca', '-n'], preexec_fn=misc.drop_all_privileges)
 
     def a11y_profile_keyboard_modifiers_activate(self, widget=None):
         subprocess.call(['log-output', '-t', 'ubiquity',
@@ -609,6 +657,8 @@ class Wizard(BaseFrontend):
             sys.exit(1)
 
         self.disable_volume_manager()
+        self.disable_screensaver()
+        self.disable_powermgr()
 
         if 'UBIQUITY_ONLY' in os.environ:
             self.disable_logout_indicator()
@@ -661,6 +711,7 @@ class Wizard(BaseFrontend):
 
                 page.controller.dbfilter = self.dbfilter
                 Gtk.main()
+                self.pending_quits = max(0, self.pending_quits - 1)
                 page.controller.dbfilter = None
 
             if self.backup or self.dbfilter_handle_status():
@@ -681,6 +732,7 @@ class Wizard(BaseFrontend):
         # entertained.
         self.start_slideshow()
         Gtk.main()
+        self.pending_quits = max(0, self.pending_quits - 1)
         # postinstall will exit here by calling Gtk.main_quit in
         # find_next_step.
 
@@ -786,9 +838,10 @@ color : @fg_color
         self.vte = Vte.Terminal()
         self.install_details_sw.add(self.vte)
         self.vte.fork_command_full(0, None,
-            ['/usr/bin/tail', '-f', '/var/log/installer/debug',
+            ['/bin/busybox', 'tail', '-f', '/var/log/installer/debug',
                               '-f', '/var/log/syslog', '-q'],
             None, 0, None, None)
+        self.vte.set_font_from_string("Ubuntu Mono 8")
         self.vte.show()
         # FIXME shrink the window horizontally instead of locking the window size.
         self.live_installer.set_resizable(False)
@@ -832,7 +885,8 @@ color : @fg_color
             self.slideshow = '/usr/share/oem-config-slideshow'
         else:
             self.slideshow = '/usr/share/ubiquity-slideshow'
-        if os.path.exists(self.slideshow):
+
+        if os.path.exists(self.slideshow) and not self.hide_slideshow:
             try:
                 cfg = ConfigParser.ConfigParser()
                 cfg.read(os.path.join(self.slideshow, 'slideshow.conf'))
@@ -848,24 +902,7 @@ color : @fg_color
         # set initial bottom bar status
         self.allow_go_backward(False)
 
-    def poke_screensaver(self):
-        """Attempt to make sure that the screensaver doesn't kick in."""
-        if os.path.exists('/usr/bin/gnome-screensaver-command'):
-            command = ["gnome-screensaver-command", "--poke"]
-        elif os.path.exists('/usr/bin/xscreensaver-command'):
-            command = ["xscreensaver-command", "--deactivate"]
-        else:
-            return
-
-        env = ['LC_ALL=C']
-        for key, value in os.environ.iteritems():
-            if key != 'LC_ALL':
-                env.append('%s=%s' % (key, value))
-        GObject.spawn_async(command, envp=env,
-                            flags=(GObject.SPAWN_SEARCH_PATH |
-                                   GObject.SPAWN_STDOUT_TO_DEV_NULL |
-                                   GObject.SPAWN_STDERR_TO_DEV_NULL))
-        return True
+        misc.add_connection_watch(self.network_change)
 
     def set_window_hints(self, widget):
         if (self.oem_user_config or
@@ -948,6 +985,8 @@ color : @fg_color
         core_names.append('ubiquity/imported/default-ltr')
         core_names.append('ubiquity/text/release_notes_only')
         core_names.append('ubiquity/text/update_installer_only')
+        core_names.append('ubiquity/text/USB')
+        core_names.append('ubiquity/text/CD')
         for stock_item in ('cancel', 'close', 'go-back', 'go-forward',
                             'ok', 'quit'):
             core_names.append('ubiquity/imported/%s' % stock_item)
@@ -1264,7 +1303,8 @@ color : @fg_color
     # Callbacks
 
     def on_quit_clicked(self, unused_widget):
-        self.warning_dialog.show()
+        self.warning_dialog.set_transient_for(self.live_installer.get_toplevel())
+        self.warning_dialog.show_all()
         # Stop processing.
         return True
 
@@ -1630,6 +1670,7 @@ color : @fg_color
         self.allow_change_step(True)
         self.set_focus()
         Gtk.main()
+        self.pending_quits = max(0, self.pending_quits - 1)
 
     # Return control to the next level up.
     pending_quits = 0
@@ -1638,16 +1679,15 @@ color : @fg_color
         # main_quit will do nothing if the main loop hasn't had time to
         # quit.  So we stagger calls to make sure that if this function
         # is called multiple times (nested loops), it works as expected.
-        def quit_decrement():
-            # Defensively guard against negative pending
-            self.pending_quits = max(0, self.pending_quits - 1)
-            return False
         def idle_quit():
             if self.pending_quits > 1:
                 quit_quit()
             if Gtk.main_level() > 0:
                 Gtk.main_quit()
-            return quit_decrement()
+            else:
+                self.pending_quits = max(0, self.pending_quits - 1)
+            return False
+
         def quit_quit():
             # Wait until we're actually out of this main loop
             GObject.idle_add(idle_quit)
