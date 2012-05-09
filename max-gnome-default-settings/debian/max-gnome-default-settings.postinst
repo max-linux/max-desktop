@@ -4,6 +4,17 @@ if [ "$1" = "configure" ]; then
   update-gconf-defaults || true
 fi
 
+# ugly hack
+# dconf don't allow to set gnome-panel
+# http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=648009
+# 
+for u in $(ls /home/*/.config/dconf/user 2>/dev/null); do
+  if [ ! -e "${u}.imported" ]; then
+    cat /etc/skel/.config/dconf/user > "$u";
+    touch "${u}.imported"
+  fi
+done
+
 exit 0
 
 # install gconf settings
