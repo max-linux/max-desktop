@@ -11,7 +11,6 @@ style "default" {
 	#######################
 	# Style Properties
 	#######################
-	GtkWidget::new-tooltip-style = 1
 	GtkButton::child-displacement-x = 1
 	GtkButton::child-displacement-y = 1
 	GtkButton::default-border = { 0, 0, 0, 0 }
@@ -101,7 +100,7 @@ style "default" {
 		glazestyle = 0
 		default_button_color = shade (1.1, @selected_bg_color)
 		gradient_shades = {1.1, 1.0, 1.0, 0.9}
-		roundness = 4
+		roundness = 3
 		lightborder_shade = 1.26
 		lightborderstyle = 1
 		listviewstyle = 2
@@ -109,7 +108,7 @@ style "default" {
 		colorize_scrollbar = FALSE
 		menubaritemstyle = 1
 		menubarstyle = 1
-		menustyle = 3
+		menustyle = 0
 		focusstyle = 3
 		handlestyle = 1
 		sliderstyle = 3
@@ -164,10 +163,12 @@ style "button" {
 
 	engine "murrine" {
 		#contrast = 1.0
-		border_shades = {1.02, 0.92}
+		border_shades = {1.04, 0.82}
+		reliefstyle = 5
+		shadow_shades = {1.02, 1.1}
 		textstyle = 1
 		glowstyle = 5
-		glow_shade = 1.08
+		glow_shade = 1.1
 		#text_shade = 1.04
 	}
 }
@@ -185,7 +186,9 @@ style "notebook_button" {
 	engine "murrine" {
 		#contrast = 1.0
 		textstyle = 1
-		border_shades = {0.95, 0.88}
+		border_shades = {1.01, 0.8}
+		reliefstyle = 5
+		shadow_shades = {1.0, 1.1}
 		glowstyle = 5
 		glow_shade = 1.02
 		lightborder_shade = 1.32
@@ -319,12 +322,9 @@ style "toolbar-button" = "notebook_button" {
 	}
 }
 
-style "menu" = "dark" {
+style "menu" {
 	xthickness = 0
 	ythickness = 0
-
-	bg[NORMAL] = "#ece7e2"
-#	fg[INSENSITIVE]   = shade (0.8, "#4D4C48")
 
 	engine "murrine"
 	{
@@ -684,7 +684,5 @@ widget_class "EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem*" st
 #include "apps/banshee.rc"
 include "apps/chromium.rc"
 include "apps/ff.rc"
-#include "apps/gedit.rc"
-include "apps/gnome-panel.rc"
 include "apps/gnome-terminal.rc"
 include "apps/nautilus.rc"

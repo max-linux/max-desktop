@@ -37,7 +37,10 @@ metacity_DATA = \
      metacity-1/minimize_unfocused_pressed.png \
      metacity-1/minimize_focused_pressed.png \
      metacity-1/minimize_unfocused.png \
-     metacity-1/close_unfocused_prelight.png
+     metacity-1/close_unfocused_prelight.png \
+     metacity-1/trough_unfocused_left.png \
+     metacity-1/trough_unfocused_middle.png \
+     metacity-1/trough_unfocused_right.png
 
 gtk2dir = /usr/share/themes/Max70/gtk-2.0
 gtk2_DATA = gtk-2.0/gtkrc
@@ -47,33 +50,23 @@ gtk2apps_DATA = \
      gtk-2.0/apps/chromium.rc \
      gtk-2.0/apps/ff.rc \
      gtk-2.0/apps/banshee.rc \
-     gtk-2.0/apps/gedit.rc \
-     gtk-2.0/apps/gnome-panel.rc \
      gtk-2.0/apps/nautilus.rc \
      gtk-2.0/apps/gnome-terminal.rc
-
-gtk2appsimgdir = /usr/share/themes/Max70/gtk-2.0/apps/img
-gtk2appsimg_DATA = \
-     gtk-2.0/apps/img/panel-button-inactive.png \
-     gtk-2.0/apps/img/handle-v.png \
-     gtk-2.0/apps/img/panel-button-active.png \
-     gtk-2.0/apps/img/handle-h.png \
-     gtk-2.0/apps/img/panel-button-hover.png \
-     gtk-2.0/apps/img/arrow-down.png \
-     gtk-2.0/apps/img/panel.png
 
 gtk3dir = /usr/share/themes/Max70/gtk-3.0
 gtk3_DATA= \
      gtk-3.0/settings.ini \
      gtk-3.0/gtk.css \
-     gtk-3.0/gtk-widgets.css
+     gtk-3.0/gtk-widgets.css \
+     gtk-3.0/gtk-widgets-backdrop.css
 
 gtk3appsdir = /usr/share/themes/Max70/gtk-3.0/apps
 gtk3apps_DATA = \
      gtk-3.0/apps/gnome-panel.css \
      gtk-3.0/apps/nautilus.css \
      gtk-3.0/apps/unity.css \
-     gtk-3.0/apps/gnome-terminal.css
+     gtk-3.0/apps/gnome-terminal.css \
+     gtk-3.0/apps/gedit.css
 
 gtk3assetsdir = /usr/share/themes/Max70/gtk-3.0/assets
 gtk3assets_DATA = \
@@ -82,7 +75,14 @@ gtk3assets_DATA = \
      gtk-3.0/assets/slider.png \
      gtk-3.0/assets/slider_prelight_vertical.png \
      gtk-3.0/assets/scrollbar_handle_vertical.png \
-     gtk-3.0/assets/slider_vertical.png
+     gtk-3.0/assets/slider_vertical.png \
+     gtk-3.0/assets/slider_vertical_backdrop.png \
+     gtk-3.0/assets/slider_vertical_insensitive_backdrop.png \
+     gtk-3.0/assets/slider_insensitive.png \
+     gtk-3.0/assets/slider_backdrop.png \
+     gtk-3.0/assets/slider_insensitive_backdrop.png \
+     gtk-3.0/assets/slider_vertical_insensitive.png
+
 
 
 unitydir = /usr/share/themes/Max70/unity
@@ -124,7 +124,6 @@ EXTRA_DIST = $(theme_DATA) \
 		$(metacity_DATA) \
 		$(gtk2_DATA) \
 		$(gtk2apps_DATA) \
-		$(gtk2appsimg_DATA) \
 		$(gtk3_DATA) \
 		$(gtk3apps_DATA) \
 		$(gtk3assets_DATA) \
