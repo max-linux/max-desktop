@@ -10,7 +10,7 @@ Package: max-firefox-conf
 Architecture: all
 Recommends: max-java-plugin
 Depends: max-dpsyco-custom, 
-         firefox, 
+         firefox (>= 10.0.1), 
          firefox-locale-es, firefox-locale-en,
          apturl,
 	 max-ubufox,
