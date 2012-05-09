@@ -1,0 +1,26 @@
+Source: max-linux
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 7.0.0), cdbs
+Standards-Version: 3.8.4
+
+Package: max-linux
+Architecture: i386 amd64
+Depends: linux-image-generic
+Provides: linux-image-generic-pae
+Description: Kernel por defecto en MAX
+ Kernel por defecto en MAX
+
+Package: max-linux-headers
+Architecture: i386 amd64
+Depends: linux-headers-generic
+Provides: linux-headers-generic-pae
+Description: Cabeceras del kernel por defecto en MAX
+ Cabeceras del kernel por defecto en MAX
+
+Package: max-linux-source
+Architecture: i386 amd64
+Depends: linux-source
+Description: Código fuente del kernel por defecto en MAX
+ Código fuente del kernel por defecto en MAX
