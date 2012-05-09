@@ -68,6 +68,7 @@ class PageGtk2(plugin.PluginUI):
         if len(keymap) == 1:
             keymap.append('')
         layout = keyboard_names.lang[l]['layouts_rev'][keymap[0]]
+
         # Temporary workaround until I fix variants_rev
         v = keyboard_names.lang[l]['variants'][keymap[0]]
         idx = v.values().index(keymap[1])

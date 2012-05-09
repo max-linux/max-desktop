@@ -791,6 +791,9 @@ documento que guarde no se conservará."""
                 slides += '?rtl'
 
         from gi.repository import WebKit
+        # We have no significant browsing interface, so there isn't much point
+        # in WebKit creating a memory-hungry cache.
+        WebKit.set_cache_model(WebKit.CacheModel.DOCUMENT_VIEWER)
         webview = WebKit.WebView()
         # WebKit puts file URLs in their own domain by default.
         # This means that anything which checks for the same origin,

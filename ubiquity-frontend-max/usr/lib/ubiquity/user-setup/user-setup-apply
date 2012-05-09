@@ -135,8 +135,10 @@ if [ "$RET" = true ] && ! is_system_user; then
 
 	ENCRYPT_HOME="false"
 	ENCRYPT_HOME_OPT=
-	db_get user-setup/encrypt-home
-	if [ "$RET" = true ]; then
+	if [ "$OVERRIDE_ALREADY_ENCRYPTED_SWAP" ]; then
+		ENCRYPT_HOME="true"
+		ENCRYPT_HOME_OPT="--encrypt-home"
+	elif db_get user-setup/encrypt-home && [ "$RET" = true ]; then
 		ENCRYPT_HOME="true"
 		ENCRYPT_HOME_OPT="--encrypt-home"
 		if type anna-install >/dev/null 2>&1 && [ -d /lib/debian-installer ]; then
@@ -365,7 +367,8 @@ autologin-session=lightdm-autologin"
 			$log $chroot $ROOT update-gconf-defaults || true
 		fi
 	fi
-	if [ -n "$ENCRYPT_HOME_OPT" ] && [ -e $ROOT/etc/crypttab ]; then
+	if [ -z "$OVERRIDE_ALREADY_ENCRYPTED_SWAP" ] && \
+	   [ -n "$ENCRYPT_HOME_OPT" ] && [ -e $ROOT/etc/crypttab ]; then
 		# Zero out all encrypted swap partitions.  It is assumed that
 		# passwords are not used beyond this point in the install.
 		# cryptswap0 /dev/sda5 /dev/urandom swap,cipher=aes-cbc-essiv:sha256

@@ -282,8 +282,11 @@ class Install(install_misc.InstallBase):
         gid = subprocess.Popen(['chroot', self.target, 'sudo', '-u',
             target_user, '--', 'id', '-g'], stdout=subprocess.PIPE)
         gid = gid.communicate()[0].strip('\n')
-        uid = int(uid)
-        gid = int(gid)
+        try:
+            uid = int(uid)
+            gid = int(gid)
+        except ValueError:
+            return
         if os.path.exists(PHOTO_PATH):
             targetpath = os.path.join(self.target, 'home', target_user, '.face')
             shutil.copy2(PHOTO_PATH, targetpath)
@@ -409,6 +412,18 @@ class Install(install_misc.InstallBase):
                         os.symlink(linkto, targetpath)
                     else:
                         shutil.copy2(path, os.path.join(self.target, path[1:]))
+        else:
+            if not os.path.exists('/etc/network/interfaces'):
+                # Make sure there's at least something here so that ifupdown
+                # doesn't get upset at boot.
+                with open('/etc/network/interfaces', 'w') as interfaces:
+                    print >>interfaces, textwrap.dedent("""\
+                        # This file describes the network interfaces available on your system
+                        # and how to activate them. For more information, see interfaces(5).
+
+                        # The loopback network interface
+                        auto lo
+                        iface lo inet loopback""")
 
         try:
             hostname = self.db.get('netcfg/get_hostname')
