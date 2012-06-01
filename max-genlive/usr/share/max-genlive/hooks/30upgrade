@@ -4,11 +4,6 @@ if [ ! -e /sbin/initctl.distrib ]; then
   chroot $CHROOT ln -s /bin/true /sbin/initctl
 fi
 
-if [ ! -e /usr/sbin/update-grub ]; then
-  chroot $CHROOT dpkg-divert --local --rename --add /usr/sbin/update-grub
-  chroot $CHROOT ln -s /bin/true /usr/sbin/update-grub
-fi
-
 chroot $CHROOT << EOC || _exit "No se ha podido instalar sysv-rc y dpkg"
 export LC_ALL=C
 export LC_MESSAGES=C

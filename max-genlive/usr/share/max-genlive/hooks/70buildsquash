@@ -9,6 +9,7 @@ if [ ! $DISABLE_SQUASHFS ]; then
   rm -f $CHROOT/root/.bash_history
   rm -rf $CHROOT/home/*
 
+  NUMPROC="-processors $(grep -c ^processor /proc/cpuinfo)"
   LZMA=""
   # ver si hay que desactivar LZMA
   chroot $CHROOT $MKSQUASHFS -help 2>&1 | grep -q nolzma && LZMA="-nolzma"
@@ -20,7 +21,7 @@ if [ ! $DISABLE_SQUASHFS ]; then
   mount -o bind $CHROOT/ $CHROOT/mnt
   mount -o bind $CDRW/   $CHROOT/media
 
-  chroot $CHROOT $MKSQUASHFS /mnt/  /media/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo squashfs"
+  chroot $CHROOT $MKSQUASHFS /mnt/ /media/casper/filesystem.squashfs $LZMA $NUMPROC || _exit "No se ha podido generar el archivo squashfs"
 
   umount $CHROOT/media
   umount $CHROOT/mnt

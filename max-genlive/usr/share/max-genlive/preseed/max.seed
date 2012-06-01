@@ -16,6 +16,17 @@ d-i console-setup/layoutcode string es
 d-i console-setup/ask_detect boolean false
 d-i keyboard-configuration/layoutcode string es
 d-i keyboard-configuration/modelcode string pc105
+d-i keyboard-configuration/optionscode string
+d-i keyboard-configuration/variantcode string es
+d-i keyboard-configuration/variant select España
+#
+ubiquity keyboard-configuration/modelcode string pc105
+ubiquity keyboard-configuration/layoutcode string es
+ubiquity keyboard-configuration/optionscode string
+ubiquity keyboard-configuration/variantcode string es
+ubiquity keyboard-configuration/variant select España
+keyboard-configuration console-setup/ask_detect boolean false
+ubiquity console-setup/ask_detect boolean false
 #
 #
 # Ubiquity installer
@@ -120,7 +131,7 @@ samba-common samba-common/encrypt_passwords boolean true
 samba-common samba-common/dhcp boolean false
 samba-common samba-common/workgroup string AULAMAX
 samba-common samba-common/do_debconf boolean true
-
+#
 # mscorefonts
 ttf-mscorefonts-installer	msttcorefonts/accepted-mscorefonts-eula	boolean	true
 ttf-mscorefonts-installer	msttcorefonts/present-mscorefonts-eula	note	
@@ -130,7 +141,7 @@ ttf-mscorefonts-installer	msttcorefonts/present-mscorefonts-eula	note
 #ttf-mscorefonts-installer	msttcorefonts/savedir	string
 #ttf-mscorefonts-installer	msttcorefonts/baddldir	error
 #ttf-mscorefonts-installer	msttcorefonts/dldir	string	
-
+#
 # GRUB
 grub-pc grub-pc/timeout string 10
 grub-pc grub-pc/hidden_timeout boolean false

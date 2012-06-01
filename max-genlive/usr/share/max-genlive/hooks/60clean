@@ -5,18 +5,18 @@
 
 _echo "Actualizando imágenes de arranque"
 
-KERNEL=$(basename $(ls $CHROOT/boot/vmlinuz*pae | sort -nr | head -1)| sed 's/vmlinuz-//g')
+KERNEL=$(basename $(ls $CHROOT/boot/vmlinuz* | sort -nr | head -1)| sed 's/vmlinuz-//g')
 
-_echo "Instalando modulos extra para $KERNEL"
-chroot $CHROOT/ << EOF
-export LC_ALL=C
-export LC_MESSAGES=C
-export DEBCONF_FRONTEND="noninteractive"
-export DEBIAN_FRONTEND="noninteractive"
-export UCF_FORCE_CONFFOLD=1
-apt-get $APT_OPTS install linux-backports-modules-$KERNEL 
-apt-get $APT_OPTS install linux-restricted-modules-$KERNEL
-EOF
+#_echo "Instalando modulos extra para $KERNEL"
+#chroot $CHROOT/ << EOF
+#export LC_ALL=C
+#export LC_MESSAGES=C
+#export DEBCONF_FRONTEND="noninteractive"
+#export DEBIAN_FRONTEND="noninteractive"
+#export UCF_FORCE_CONFFOLD=1
+#apt-get $APT_OPTS install linux-backports-modules-$KERNEL 
+#apt-get $APT_OPTS install linux-restricted-modules-$KERNEL
+#EOF
 
 #apt-get $APT_OPTS install linux-backports-modules-$KERNEL linux-restricted-modules-$KERNEL virtualbox-ose-modules-$KERNEL
 

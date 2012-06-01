@@ -9,7 +9,11 @@ cp $GENLIVE/preseed/* $CDRW/preseed/ || _exit "No se puede sobreescribir preseed
 printf "%s - $ARCH (%s)" "$TITLE" "$created" > $CDRW/.disk/info
 printf "http://max.educa.madrid.org:8000/MaX70/NotasPublicacion" > $CDRW/.disk/release_notes_url
 printf "full_cd/single" > $CDRW/.disk/cd_type
-touch $CDRW/.disk/base_installable 
+if [ -n "$ENABLE_EXTRA" ]; then
+  touch $CDRW/.disk/base_installable 
+else
+  rm -f $CDRW/.disk/base_installable
+fi
 
 zcat $CDRW/casper/initrd.gz | cpio --quiet -id conf/uuid.conf
 cat conf/uuid.conf > $CDRW/.disk/casper-uuid-generic
