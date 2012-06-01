@@ -11,4 +11,5 @@ etc/skel/.bash_logout
 usr/share/system-config-printer/testpage-a4.ps
 usr/bin/mscore
 usr/share/icons/hicolor/48x48/apps/distributor-logo.png
-etc/lightdm/unity-greeter.conf
+etc/lightdm/max-greeter.conf
+etc/lightdm/lightdm.conf

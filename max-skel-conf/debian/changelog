@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max22) max; urgency=low
+
+  * Depends on lightdm-gtk-greeter
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 01 Jun 2012 11:26:21 +0200
+
 max-skel-conf (7.0.max21) max; urgency=low
 
   * Clean FF without version in dir
