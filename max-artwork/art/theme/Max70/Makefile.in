@@ -65,13 +65,12 @@ am__base_list = \
   sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
 am__installdirs = "$(DESTDIR)$(gtk2dir)" "$(DESTDIR)$(gtk2appsdir)" \
-	"$(DESTDIR)$(gtk2appsimgdir)" "$(DESTDIR)$(gtk3dir)" \
-	"$(DESTDIR)$(gtk3appsdir)" "$(DESTDIR)$(gtk3assetsdir)" \
-	"$(DESTDIR)$(metacitydir)" "$(DESTDIR)$(themedir)" \
-	"$(DESTDIR)$(unitydir)"
-DATA = $(gtk2_DATA) $(gtk2apps_DATA) $(gtk2appsimg_DATA) $(gtk3_DATA) \
-	$(gtk3apps_DATA) $(gtk3assets_DATA) $(metacity_DATA) \
-	$(theme_DATA) $(unity_DATA)
+	"$(DESTDIR)$(gtk3dir)" "$(DESTDIR)$(gtk3appsdir)" \
+	"$(DESTDIR)$(gtk3assetsdir)" "$(DESTDIR)$(metacitydir)" \
+	"$(DESTDIR)$(themedir)" "$(DESTDIR)$(unitydir)"
+DATA = $(gtk2_DATA) $(gtk2apps_DATA) $(gtk3_DATA) $(gtk3apps_DATA) \
+	$(gtk3assets_DATA) $(metacity_DATA) $(theme_DATA) \
+	$(unity_DATA)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
@@ -219,7 +218,10 @@ metacity_DATA = \
      metacity-1/minimize_unfocused_pressed.png \
      metacity-1/minimize_focused_pressed.png \
      metacity-1/minimize_unfocused.png \
-     metacity-1/close_unfocused_prelight.png
+     metacity-1/close_unfocused_prelight.png \
+     metacity-1/trough_unfocused_left.png \
+     metacity-1/trough_unfocused_middle.png \
+     metacity-1/trough_unfocused_right.png
 
 gtk2dir = /usr/share/themes/Max70/gtk-2.0
 gtk2_DATA = gtk-2.0/gtkrc
@@ -228,33 +230,23 @@ gtk2apps_DATA = \
      gtk-2.0/apps/chromium.rc \
      gtk-2.0/apps/ff.rc \
      gtk-2.0/apps/banshee.rc \
-     gtk-2.0/apps/gedit.rc \
-     gtk-2.0/apps/gnome-panel.rc \
      gtk-2.0/apps/nautilus.rc \
      gtk-2.0/apps/gnome-terminal.rc
-
-gtk2appsimgdir = /usr/share/themes/Max70/gtk-2.0/apps/img
-gtk2appsimg_DATA = \
-     gtk-2.0/apps/img/panel-button-inactive.png \
-     gtk-2.0/apps/img/handle-v.png \
-     gtk-2.0/apps/img/panel-button-active.png \
-     gtk-2.0/apps/img/handle-h.png \
-     gtk-2.0/apps/img/panel-button-hover.png \
-     gtk-2.0/apps/img/arrow-down.png \
-     gtk-2.0/apps/img/panel.png
 
 gtk3dir = /usr/share/themes/Max70/gtk-3.0
 gtk3_DATA = \
      gtk-3.0/settings.ini \
      gtk-3.0/gtk.css \
-     gtk-3.0/gtk-widgets.css
+     gtk-3.0/gtk-widgets.css \
+     gtk-3.0/gtk-widgets-backdrop.css
 
 gtk3appsdir = /usr/share/themes/Max70/gtk-3.0/apps
 gtk3apps_DATA = \
      gtk-3.0/apps/gnome-panel.css \
      gtk-3.0/apps/nautilus.css \
      gtk-3.0/apps/unity.css \
-     gtk-3.0/apps/gnome-terminal.css
+     gtk-3.0/apps/gnome-terminal.css \
+     gtk-3.0/apps/gedit.css
 
 gtk3assetsdir = /usr/share/themes/Max70/gtk-3.0/assets
 gtk3assets_DATA = \
@@ -263,7 +255,13 @@ gtk3assets_DATA = \
      gtk-3.0/assets/slider.png \
      gtk-3.0/assets/slider_prelight_vertical.png \
      gtk-3.0/assets/scrollbar_handle_vertical.png \
-     gtk-3.0/assets/slider_vertical.png
+     gtk-3.0/assets/slider_vertical.png \
+     gtk-3.0/assets/slider_vertical_backdrop.png \
+     gtk-3.0/assets/slider_vertical_insensitive_backdrop.png \
+     gtk-3.0/assets/slider_insensitive.png \
+     gtk-3.0/assets/slider_backdrop.png \
+     gtk-3.0/assets/slider_insensitive_backdrop.png \
+     gtk-3.0/assets/slider_vertical_insensitive.png
 
 unitydir = /usr/share/themes/Max70/unity
 unity_DATA = \
@@ -302,7 +300,6 @@ EXTRA_DIST = $(theme_DATA) \
 		$(metacity_DATA) \
 		$(gtk2_DATA) \
 		$(gtk2apps_DATA) \
-		$(gtk2appsimg_DATA) \
 		$(gtk3_DATA) \
 		$(gtk3apps_DATA) \
 		$(gtk3assets_DATA) \
@@ -381,26 +378,6 @@ uninstall-gtk2appsDATA:
 	test -n "$$files" || exit 0; \
 	echo " ( cd '$(DESTDIR)$(gtk2appsdir)' && rm -f" $$files ")"; \
 	cd "$(DESTDIR)$(gtk2appsdir)" && rm -f $$files
-install-gtk2appsimgDATA: $(gtk2appsimg_DATA)
-	@$(NORMAL_INSTALL)
-	test -z "$(gtk2appsimgdir)" || $(MKDIR_P) "$(DESTDIR)$(gtk2appsimgdir)"
-	@list='$(gtk2appsimg_DATA)'; test -n "$(gtk2appsimgdir)" || list=; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(gtk2appsimgdir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(gtk2appsimgdir)" || exit $$?; \
-	done
-
-uninstall-gtk2appsimgDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(gtk2appsimg_DATA)'; test -n "$(gtk2appsimgdir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	test -n "$$files" || exit 0; \
-	echo " ( cd '$(DESTDIR)$(gtk2appsimgdir)' && rm -f" $$files ")"; \
-	cd "$(DESTDIR)$(gtk2appsimgdir)" && rm -f $$files
 install-gtk3DATA: $(gtk3_DATA)
 	@$(NORMAL_INSTALL)
 	test -z "$(gtk3dir)" || $(MKDIR_P) "$(DESTDIR)$(gtk3dir)"
@@ -562,7 +539,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(gtk2dir)" "$(DESTDIR)$(gtk2appsdir)" "$(DESTDIR)$(gtk2appsimgdir)" "$(DESTDIR)$(gtk3dir)" "$(DESTDIR)$(gtk3appsdir)" "$(DESTDIR)$(gtk3assetsdir)" "$(DESTDIR)$(metacitydir)" "$(DESTDIR)$(themedir)" "$(DESTDIR)$(unitydir)"; do \
+	for dir in "$(DESTDIR)$(gtk2dir)" "$(DESTDIR)$(gtk2appsdir)" "$(DESTDIR)$(gtk3dir)" "$(DESTDIR)$(gtk3appsdir)" "$(DESTDIR)$(gtk3assetsdir)" "$(DESTDIR)$(metacitydir)" "$(DESTDIR)$(themedir)" "$(DESTDIR)$(unitydir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -611,9 +588,8 @@ info: info-am
 info-am:
 
 install-data-am: install-gtk2DATA install-gtk2appsDATA \
-	install-gtk2appsimgDATA install-gtk3DATA install-gtk3appsDATA \
-	install-gtk3assetsDATA install-metacityDATA install-themeDATA \
-	install-unityDATA
+	install-gtk3DATA install-gtk3appsDATA install-gtk3assetsDATA \
+	install-metacityDATA install-themeDATA install-unityDATA
 
 install-dvi: install-dvi-am
 
@@ -658,9 +634,9 @@ ps: ps-am
 ps-am:
 
 uninstall-am: uninstall-gtk2DATA uninstall-gtk2appsDATA \
-	uninstall-gtk2appsimgDATA uninstall-gtk3DATA \
-	uninstall-gtk3appsDATA uninstall-gtk3assetsDATA \
-	uninstall-metacityDATA uninstall-themeDATA uninstall-unityDATA
+	uninstall-gtk3DATA uninstall-gtk3appsDATA \
+	uninstall-gtk3assetsDATA uninstall-metacityDATA \
+	uninstall-themeDATA uninstall-unityDATA
 
 .MAKE: install-am install-strip
 
@@ -668,16 +644,15 @@ uninstall-am: uninstall-gtk2DATA uninstall-gtk2appsDATA \
 	distclean-generic distdir dvi dvi-am html html-am info info-am \
 	install install-am install-data install-data-am install-dvi \
 	install-dvi-am install-exec install-exec-am install-gtk2DATA \
-	install-gtk2appsDATA install-gtk2appsimgDATA install-gtk3DATA \
-	install-gtk3appsDATA install-gtk3assetsDATA install-html \
-	install-html-am install-info install-info-am install-man \
-	install-metacityDATA install-pdf install-pdf-am install-ps \
-	install-ps-am install-strip install-themeDATA \
-	install-unityDATA installcheck installcheck-am installdirs \
-	maintainer-clean maintainer-clean-generic mostlyclean \
-	mostlyclean-generic pdf pdf-am ps ps-am uninstall uninstall-am \
-	uninstall-gtk2DATA uninstall-gtk2appsDATA \
-	uninstall-gtk2appsimgDATA uninstall-gtk3DATA \
+	install-gtk2appsDATA install-gtk3DATA install-gtk3appsDATA \
+	install-gtk3assetsDATA install-html install-html-am \
+	install-info install-info-am install-man install-metacityDATA \
+	install-pdf install-pdf-am install-ps install-ps-am \
+	install-strip install-themeDATA install-unityDATA installcheck \
+	installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-generic pdf \
+	pdf-am ps ps-am uninstall uninstall-am uninstall-gtk2DATA \
+	uninstall-gtk2appsDATA uninstall-gtk3DATA \
 	uninstall-gtk3appsDATA uninstall-gtk3assetsDATA \
 	uninstall-metacityDATA uninstall-themeDATA uninstall-unityDATA
 
