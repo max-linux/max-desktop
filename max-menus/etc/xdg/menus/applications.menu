@@ -393,7 +393,6 @@
 		</Include>
 		<Include><Filename>evince.desktop</Filename></Include>
 		<Include><Filename>tuxpaint.desktop</Filename></Include>
-		<Include><Filename>openoffice.org-draw.desktop</Filename></Include>
 		<!-- excludes -->
 		<Exclude><Filename>blender-fullscreen.desktop</Filename></Exclude>
 		<Exclude><Filename>gqview.desktop</Filename></Exclude>
@@ -449,8 +448,6 @@
 			<Category>Office</Category>
 			</And>
 		</Include>
-		<Include><Filename>openoffice.org-draw.desktop</Filename></Include>
-		<Include><Filename>openoffice.org-math.desktop</Filename></Include>
 		<!-- exclude -->
 		<Exclude><Filename>kde4-knotes.desktop</Filename></Exclude>
 		<Exclude><Filename>kde4-korganizer.desktop</Filename></Exclude>
@@ -504,7 +501,6 @@
 		<Exclude><Filename>kde4-medianotifications.desktop</Filename></Exclude>
 		<Exclude><Filename>tcospersonalize.desktop</Filename></Exclude>
 		<Exclude><Filename>creditos-max40.desktop</Filename></Exclude>
-		<Exclude><Filename>openoffice.org-draw.desktop</Filename></Exclude>
 		<Exclude><Filename>squeak-doc.desktop</Filename></Exclude>
 		<Exclude><Filename>squeak-manual.desktop</Filename></Exclude>
 	</Menu> <!-- End Other -->
