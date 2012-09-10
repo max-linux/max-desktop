@@ -7,6 +7,15 @@ monospace-font-name="Ubuntu Mono 13"
 buttons-have-icons=true
 menus-have-icons=true
 
+[com.canonical.unity-greeter]
+draw-grid = false
+play-ready-sound = true
+draw-user-backgrounds = false
+theme-name = 'Max70'
+icon-theme-name = 'maxtoon'
+logo = '/usr/share/pixmaps/max.png'
+background = '/usr/share/images/gdm/maxgdm.png'
+
 [desktop.unity.launcher]
 favorites=['ubiquity-gtkui.desktop', 'nautilus-home.desktop', 'firefox.desktop', 'libreoffice-writer.desktop', 'gnome-control-center.desktop']
 
