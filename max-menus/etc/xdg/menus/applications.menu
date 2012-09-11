@@ -552,18 +552,59 @@
 
 	<!-- end menus -->
 
+  <!-- System Settings -->
+  <Menu>
+    <Name>Administration</Name>
+    <Directory>Settings-System.directory</Directory>
+    <Include>
+      <And>
+        <Category>Settings</Category>
+        <Category>System</Category>
+      </And>
+    </Include>
+  </Menu>     <!-- End System Settings -->
 
+  <!-- Merge in these other files as submenus -->
+  <Menu>
+    <Name>Preferences</Name>
+    <Directory>Settings.directory</Directory>
+    <Include>
+      <And>
+        <Category>Settings</Category>
+        <Not>
+          <Or>
+            <Category>System</Category>
+            <Filename>gnomecc.desktop</Filename>
+          </Or>
+        </Not>
+      </And>
+    </Include>
+    <Include>
+        <Filename>gnomecc.desktop</Filename>
+    </Include>
+    <Exclude>
+        <Filename>kde-kdepasswd.desktop</Filename>
+    </Exclude>
+    <Exclude>
+        <Filename>openjdk-6-policytool.desktop</Filename>
+    </Exclude>
+    <Exclude>
+        <Filename>xscreensaver-properties.desktop</Filename>
+    </Exclude>
+  </Menu>
 
-<Include>
-  <Filename>gnome-app-install.desktop</Filename>
-</Include>
+<!--<Include>-->
+<!--  <Filename>ubuntu-software-center.desktop</Filename>-->
+<!--</Include>-->
 
 <!-- Separator between menus and gnome-app-install -->
 <Layout>
   <Merge type="menus"/>
   <Merge type="files"/>
   <Separator/>
-  <Filename>gnome-app-install.desktop</Filename>
+  <Menuname>Administration</Menuname>
+  <Menuname>Preferences</Menuname>
+<!--  <Filename>ubuntu-software-center.desktop</Filename>-->
 </Layout>
 
 </Menu> <!-- End Applications -->
