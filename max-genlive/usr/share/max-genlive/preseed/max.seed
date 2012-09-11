@@ -43,6 +43,12 @@ ubiquity tzconfig/gmt boolean false
 ubiquity time/zone select Europe/Madrid
 ubiquity debian-installer/locale select es_ES
 #
+ubiquity debian-installer/consoledisplay string console-setup
+ubiquity debian-installer/country string ES
+ubiquity debian-installer/locale select es_ES.UTF-8
+ubiquity localechooser/preferred-locale select es_ES.UTF-8
+ubiquity localechooser/shortlist select ES
+#
 #ubiquity ubiquity/stepLanguage boolean true
 #ubiquity ubiquity/stepLocation boolean true
 #ubiquity ubiquity/stepKeyboardConf	boolean true
@@ -64,6 +70,8 @@ passwd passwd/username string madrid
 passwd passwd/user-password password cmadrid
 passwd passwd/user-password-again password cmadrid
 passwd passwd/user-default-groups string adm audio cdrom dialout floppy video dip lpadmin plugdev fuse scanner vboxusers sambashare
+passwd passwd/auto-login boolean false
+ubiquity user-setup/allow-password-weak boolean true
 #
 passwd passwd/alumno-userfullname string Alumno
 passwd passwd/alumno-username string alumno
@@ -145,3 +153,9 @@ ttf-mscorefonts-installer	msttcorefonts/present-mscorefonts-eula	note
 # GRUB
 grub-pc grub-pc/timeout string 10
 grub-pc grub-pc/hidden_timeout boolean false
+#
+#
+#
+ubiquity ubiquity/use_nonfree boolean true
+ubiquity ubiquity/download_updates boolean false
+

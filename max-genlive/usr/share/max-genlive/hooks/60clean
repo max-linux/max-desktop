@@ -2,6 +2,20 @@
 #_echo "Abriendo consola para limpiar"
 #bash
 
+if [ "$ARCH" = "i386" ]; then
+_echo "Borrando kernel PAE"
+
+PAES=$(chroot $CHROOT/ dpkg -l| grep pae| awk '{printf $2" "}')
+chroot $CHROOT/ << EOF
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+export ERROR=0
+apt-get $APT_OPTS remove --purge $PAES
+EOF
+fi
 
 _echo "Actualizando imágenes de arranque"
 
@@ -56,6 +70,7 @@ if [ "$(chroot $CHROOT/ dpkg -l |grep -c ^rc)" != 0 ]; then
 dpkg --purge \$(dpkg -l |grep ^rc| awk '{print \$2}')
 EOF
 fi
+
 
 
 
