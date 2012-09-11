@@ -37,7 +37,7 @@
 <constant name="C_icons_unfocused_prelight" value="gtk:bg[NORMAL]" />
 <constant name="C_icons_unfocused_pressed" value="blend/#000000/#a0180f/0.7" />
 <constant name="D_icons_unfocused_offset" value="0" /> <!-- offset of the unfocused icons -->
-<constant name="D_icons_shrink" value="1" /> <!-- increasing this value makes the icons in buttons smaller -->
+<constant name="D_icons_shrink" value="0" /> <!-- increasing this value makes the icons in buttons smaller -->
 <constant name="D_icons_grow" value="1" /> <!-- increasing this value makes the icons in buttons bigger -->
 <!-- geometries -->
 
@@ -176,8 +176,8 @@
 	<gradient type="vertical" x="1" y="1" width="1" height="height-4">
 		<color value="#dd2928"/>
 		<color value="#a0180f"/>
-		<!--<color value="C_titlebar_focused_hilight" />
-		<color value="blend/gtk:bg[NORMAL]/#000000/0.03" />-->
+		<!--<color value="C_titlebar_focused_hilight" /> -->
+		<!-- <color value="blend/gtk:bg[NORMAL]/#000000/0.03" />-->
 	</gradient>
 </draw_ops>
 
@@ -928,17 +928,17 @@
 
 <draw_ops name="button_inner_right">
 	<include name="button_inner_right_fill" />
-	<include name="button_inner_right_border" />
+<!--	<include name="button_inner_right_border" />-->
 </draw_ops>
 
 <draw_ops name="button_inner_right_prelight">
 	<include name="button_inner_right_fill_prelight" />
-	<include name="button_inner_right_border" />
+<!--	<include name="button_inner_right_border" />-->
 </draw_ops>
 
 <draw_ops name="button_inner_right_pressed">
 	<include name="button_inner_right_fill_pressed" />
-	<include name="button_inner_right_border" />
+<!--	<include name="button_inner_right_border" />-->
 </draw_ops>
 
 <draw_ops name="button_inner_left_slice1">

@@ -21,8 +21,8 @@
 @define-color error_color #cc0000;
 
 /* theme common colors */
-/*@define-color button_bg_color shade (mix (#dfd7cf, #cdcdcd, 0.6), 1.06);*/
-/*@define-color button_insensitive_bg_color mix (@button_bg_color, @bg_color, 0.6);*/
+@define-color button_bg_color shade (mix (#dfd7cf, #cdcdcd, 0.6), 1.06);
+@define-color button_insensitive_bg_color mix (@button_bg_color, @bg_color, 0.6);
 @define-color dark_bg_color #efebe7;
 @define-color dark_fg_color @fg_color;
 @define-color transparent rgba (0, 0, 0, 0);
