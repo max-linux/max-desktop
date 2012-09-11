@@ -8,7 +8,7 @@ Standards-Version: 3.8.4
 Package: max-linux
 Architecture: i386 amd64
 Depends: linux-image-generic
-Provides: linux-image-generic-pae
+Provides: linux-image-generic-pae, linux-image
 Description: Kernel por defecto en MAX
  Kernel por defecto en MAX
 
