@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max25) max; urgency=low
+
+  * Disable dnsmasq cache in network-manager
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 12 Sep 2012 13:12:48 +0200
+
 max-skel-conf (7.0.max24) max; urgency=low
 
   * Translate GRUB submenu

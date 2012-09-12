@@ -49,6 +49,14 @@ fi # end of [ -e /etc/default/grub ]
 
 sed -i '/submenu/s/Previous Linux versions/Versiones anteriores/g' /boot/grub/grub.cfg
 
+# disable dnsmasq cache
+if grep -q ^dns /etc/NetworkManager/NetworkManager.conf 2>&1; then
+    echo " * Desactivando cache DNS (dnsmasq)"
+    sed 's/dns=/#dns=/g' /etc/NetworkManager/NetworkManager.conf
+fi
+
+
+
 
 # force to not dist upgrades
 if [ -f /etc/update-manager/release-upgrades ]; then
