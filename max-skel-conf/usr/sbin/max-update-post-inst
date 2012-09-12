@@ -47,6 +47,8 @@ if [ -e /etc/default/grub ]; then
   fi
 fi # end of [ -e /etc/default/grub ]
 
+sed -i '/submenu/s/Previous Linux versions/Versiones anteriores/g' /boot/grub/grub.cfg
+
 
 # force to not dist upgrades
 if [ -f /etc/update-manager/release-upgrades ]; then
