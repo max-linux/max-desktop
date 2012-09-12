@@ -120,17 +120,6 @@ APACHE_POST="""
 	php_value post_max_size 2M
 </IfModule>
 
-<IfModule mod_php4.c>
-	php_flag magic_quotes_gpc On
-	php_flag magic_quotes_runtime Off
-	php_flag file_uploads On
-	php_flag short_open_tag On
-	php_flag session.auto_start Off
-	php_flag session.bug_compat_warn Off
-
-	php_value upload_max_filesize 2M
-	php_value post_max_size 2M
-</IfModule>
 
 <IfModule mod_dir.c>
 	DirectoryIndex index.php
@@ -232,6 +221,10 @@ class MaXMoodle:
         # chmod to www-data and 640
         os.chown(MOODLE_CONF, pwd.getpwnam('www-data')[2], pwd.getpwnam('www-data')[3])
         os.chmod(MOODLE_CONF, 0640)
+
+        # link if no exists
+        if not os.path.lexists("/etc/apache2/conf.d/moodle.conf"):
+            os.symlink(MOODLE_CONF, "/etc/apache2/conf.d/moodle.conf")
 
         # reload apache
         result=self.exe_cmd("/etc/init.d/apache2 reload")

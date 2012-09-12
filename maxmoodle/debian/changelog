@@ -1,3 +1,10 @@
+maxmoodle (7.0.max4) max; urgency=low
+
+  * Synlink apache2/conf.d if no exists
+  * Hack dbconfig to store root password
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 12 Sep 2012 13:17:58 +0200
+
 maxmoodle (7.0.max3) max; urgency=low
 
   * Fix preseed in preinst

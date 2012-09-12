@@ -44,6 +44,10 @@ def configure_apache():
         f.write(line)
     f.close()
 
+    # link if no exists
+    if not os.path.lexists("/etc/apache2/conf.d/moodle.conf"):
+        os.symlink(APACHE, "/etc/apache2/conf.d/moodle.conf")
+
 
 def configure_moodle():
     f=open(CONFIG, 'r')
