@@ -33,9 +33,8 @@ import debconf
 import syslog
 
 NAME = 'installtype'
-AFTER = 'intro'
-WEIGHT = 100
-
+AFTER = 'console_setup'
+WEIGHT = 10
 
 
 class PageBase(plugin.PluginUI):

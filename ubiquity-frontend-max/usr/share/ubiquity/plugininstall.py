@@ -1755,6 +1755,7 @@ class Install(install_misc.InstallBase):
                 if pids[pid][1].startswith("python"): continue
                 if pids[pid][1].startswith("install"): continue
                 if pids[pid][1].startswith("plugininstall"): continue
+                if pids[pid][1].startswith("pluginin"): continue
                 syslog.syslog("DEBUG: killing %s" %(pids[pid]) )
                 pin,pout=os.popen2("sudo kill %s"%(pid) )
                 pin.close()
