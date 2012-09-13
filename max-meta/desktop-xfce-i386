@@ -14,6 +14,7 @@ xfce4-cpugraph-plugin
 xfce4-datetime-plugin
 xfce4-diskperf-plugin
 xfce4-fsguard-plugin
+xfce4-indicator-plugin
 xfce4-mailwatch-plugin
 xfce4-mixer
 xfce4-mount-plugin
@@ -33,3 +34,15 @@ xfdesktop4
 xfprint4
 xfwm4
 xfwm4-themes
+xfce4-dict
+xfce4-notes
+xfce4-notes-plugin
+xfce4-places-plugin
+xfce4-power-manager
+xfce4-notifyd
+
+indicator-application-gtk2
+indicator-appmenu-gtk2
+indicator-messages-gtk2
+indicator-session-gtk2
+indicator-sound-gtk2

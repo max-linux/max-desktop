@@ -1,3 +1,21 @@
+max-meta (7.0.max14) max; urgency=low
+
+  * desktop-xfce-i386 add:
+    + xfce4-indicator-plugin
+    + xfce4-dict
+    + xfce4-notes
+    + xfce4-notes-plugin
+    + xfce4-places-plugin
+    + xfce4-power-manager
+    + xfce4-notifyd
+    + indicator-application-gtk2
+    + indicator-appmenu-gtk2
+    + indicator-messages-gtk2
+    + indicator-session-gtk2
+    + indicator-sound-gtk2
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 13 Sep 2012 22:51:05 +0200
+
 max-meta (7.0.max13) max; urgency=low
 
   * Fix max-pdi Depends/Recommends
