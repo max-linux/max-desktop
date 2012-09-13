@@ -5,10 +5,6 @@
 
 echo "Procesando disparadores para max ..."
 
-#/usr/sbin/update-dpsyco-skel > /dev/null 2>&1 || true
-
-rm -f /usr/share/applications/Internet/WebHTTrack.desktop  /usr/share/applications/Internet/WebHTTrack-Websites.desktop
-
 
 if [ -x /usr/share/gnome-menus/update-gnome-menus-cache ]; then
   # this breaks Smart PDI install script WTF !!!!
@@ -31,15 +27,6 @@ if [ -e /etc/default/grub ]; then
     UPDATE_GRUB=1
   fi
 
-#  # add acpi=force reboot=warm to fix reboot and poweroff issues
-#  if ! grep -q "acpi=force" /etc/default/grub 2>/dev/null; then
-#    . /etc/default/grub
-#    echo "# this will fix poweroff and reboot issues in MAX" >> /etc/default/grub
-#    echo "GRUB_CMDLINE_LINUX=\"$GRUB_CMDLINE_LINUX acpi=force reboot=warm \"" >> /etc/default/grub
-#    UPDATE_GRUB=1
-#  fi
-
-
   if [ "$UPDATE_GRUB" = "1" ]; then
     if [ -x "`which update-grub 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
       update-grub
@@ -52,7 +39,7 @@ sed -i '/submenu/s/Previous Linux versions/Versiones anteriores/g' /boot/grub/gr
 # disable dnsmasq cache
 if grep -q ^dns /etc/NetworkManager/NetworkManager.conf 2>&1; then
     echo " * Desactivando cache DNS (dnsmasq)"
-    sed 's/dns=/#dns=/g' /etc/NetworkManager/NetworkManager.conf
+    sed -i 's/dns=/#dns=/g' /etc/NetworkManager/NetworkManager.conf
 fi
 
 
@@ -114,21 +101,21 @@ if [ -x /usr/bin/xdg-mime ] && [ -e /etc/gnome/defaults.list ]; then
 fi
 
 
-# update Firefox defaults
-FF_DIR=$(dirname /usr/lib/firefox*/firefox)
-FF_DEF=/usr/share/max-firefox-conf/profile/
-if [ ! -e "$FF_DIR/defaults/profile/localstore.rdf" ]; then
-  echo " * Actualizando perfil de Firefox $FF_DIR"
-  mkdir -p "$FF_DIR/defaults/profile/"
-  cp $FF_DEF/* "$FF_DIR/defaults/profile/"
-fi
-
-# clean OLF firefox
-for f in $(echo /usr/lib/firefox*/defaults 2>/dev/null); do
-  [ ! -d "$f" ] && continue
-  [ -e "$f/../firefox" ] && continue
-  echo " * Limpiando versiones viejas de Firefox $f"
-  rm -rf "$f"
-done
-
-rmdir /usr/lib/firefox* 2>/dev/null
+## update Firefox defaults
+#FF_DIR=$(dirname /usr/lib/firefox*/firefox)
+#FF_DEF=/usr/share/max-firefox-conf/profile/
+#if [ ! -e "$FF_DIR/defaults/profile/localstore.rdf" ]; then
+#  echo " * Actualizando perfil de Firefox $FF_DIR"
+#  mkdir -p "$FF_DIR/defaults/profile/"
+#  cp $FF_DEF/* "$FF_DIR/defaults/profile/"
+#fi
+#
+## clean OLD firefox
+#for f in $(echo /usr/lib/firefox*/defaults 2>/dev/null); do
+#  [ ! -d "$f" ] && continue
+#  [ -e "$f/../firefox" ] && continue
+#  echo " * Limpiando versiones viejas de Firefox $f"
+#  rm -rf "$f"
+#done
+#
+#rmdir /usr/lib/firefox* 2>/dev/null

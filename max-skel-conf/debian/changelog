@@ -1,3 +1,10 @@
+max-skel-conf (7.0.max27) max; urgency=low
+
+  * Disable firefox hacks
+  * Fix network-manager dns hack
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 13 Sep 2012 16:32:38 +0200
+
 max-skel-conf (7.0.max26) max; urgency=low
 
   * Remove obsolete /etc/skel/.dmrc
