@@ -1,3 +1,10 @@
+max-live (7.0.max8) max; urgency=low
+
+  * Remove obsolete .dmrc
+  * Set lightdm to use xfce if found in cmdline
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 13 Sep 2012 15:25:29 +0200
+
 max-live (7.0.max7) max; urgency=low
 
   * Use gtkui instead os maxui

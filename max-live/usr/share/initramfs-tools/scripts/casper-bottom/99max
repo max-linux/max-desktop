@@ -33,25 +33,6 @@ for file in /usr/share/applications/ubiquity-gtkui.desktop /usr/share/max-manual
     fi
 done
 
-
-
-if [ -f /root/cdrom/casper/nanomax ]; then
-  if [ -e /usr/share/xsessions/LXDE.desktop ]; then
-    SESSION=LXDE
-  elif [ -e /usr/share/xsessions/xfce.desktop ]; then
-    SESSION=xfce
-  else
-    SESSION=default
-  fi
-  cat << EOF > /root/etc/skel/.dmrc
-[Desktop]
-Session=$SESSION
-Language=es_ES.UTF-8
-EOF
-  chroot /root install -D -o $USERNAME -g $USERNAME /etc/skel/.dmrc /home/$USERNAME/.dmrc
-
-fi
-
 # delete from Escritorio or Desktop
 rm -rf /root/home/$USERNAME/*/*examples*
 rm -rf /root/home/$USERNAME/*examples*
@@ -60,17 +41,6 @@ rm -rf /root/home/$USERNAME/*examples*
 # copy Europe/Madrid timezone
 cp -f /root/usr/share/zoneinfo/Europe/Madrid /root/etc/localtime
 
-# disable network icon
-# /apps/nautilus/desktop/network_icon_visible bool false
-#chroot /root gconftool-2 --direct --type bool \
-#             --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults \
-#             --set /apps/nautilus/desktop/network_icon_visible false
-#
-
-
-# PolicyKit is configured in casper 1.123
-# patch send https://launchpad.net/bugs/201852
-# and merged
 
 # adduser to sambashare group
 chroot /root adduser $USERNAME sambashare
@@ -87,5 +57,9 @@ if [ -d /root/etc/ssh ]; then
   touch /root/etc/ssh/sshd_not_to_be_run
 fi
 
+# use xfce desktop if found in cmdline
+if grep -q "xfce" /proc/cmdline; then
+  chroot /root /usr/lib/lightdm/lightdm-set-defaults -s xfce
+fi
 
 log_end_msg
