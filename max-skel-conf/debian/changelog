@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max26) max; urgency=low
+
+  * Remove obsolete /etc/skel/.dmrc
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 13 Sep 2012 14:34:09 +0200
+
 max-skel-conf (7.0.max25) max; urgency=low
 
   * Disable dnsmasq cache in network-manager
