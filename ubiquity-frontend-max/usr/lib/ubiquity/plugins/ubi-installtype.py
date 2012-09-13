@@ -33,15 +33,20 @@ import debconf
 import syslog
 
 NAME = 'installtype'
+# debug
+#AFTER = None
+#WEIGHT = 100
+# normal
 AFTER = 'console_setup'
 WEIGHT = 10
-
 
 class PageBase(plugin.PluginUI):
     def __init__(self):
         self.install_types={"escritorio":1, "profesor":2, "alumno":3, "infantil":4, "nanomax":5, "terminales":6}
         self.install_type="escritorio"
         self.install_type_file="/tmp/max_install_type"
+        self.desktop_type="gnome"
+        self.desktop_type_file="/tmp/max_desktop_type"
 
     def set_install_type(self, value):
         """Set the set_install_type."""
@@ -72,6 +77,7 @@ class PageGtk(PageBase):
         PageBase.__init__(self, *args, **kwargs)
         self.controller = controller
         self.install_types=["escritorio", "profesor", "alumno", "infantil", "nanomax", "terminales"]
+        self.desktop_types=["gnome", "xfce"]
         #self.username_changed_id = None
         #self.hostname_changed_id = None
         #self.username_edited = False
@@ -98,6 +104,14 @@ class PageGtk(PageBase):
         self.scrolledwin = builder.get_object('install_scrolledwindow')
         self.install_warn_nano = builder.get_object('install_warn_nano')
         self.install_warn_sti = builder.get_object('install_warn_sti')
+        
+        self.desktop_type_group = builder.get_object('desktop_type_group')
+        self.desktop_type_gnome = builder.get_object('desktop_gnome')
+        self.desktop_type_xfce = builder.get_object('desktop_xfce')
+        #
+        for radio in self.desktop_types:
+            getattr(self, "desktop_type_%s"%radio).connect('toggled', self.on_desktop_type_radio_toggled, radio)
+        self.set_desktop_type('gnome')
 
         #self.install_type_group.connect('toggled', self.on_install_type_radio_toggled)
         try:
@@ -133,6 +147,16 @@ class PageGtk(PageBase):
 
     # Functions called by the Page.
 
+    def set_desktop_type(self, value):
+        if hasattr(self, "desktop_type_%s"%value):
+            obj=getattr(self, "desktop_type_%s"%value)
+            obj.set_active(True)
+        self.desktop_type=value
+        f=open(self.desktop_type_file, "w")
+        f.write(value)
+        f.close()
+        syslog.syslog("DEBUG: set_desktop_type %s"%value)
+
     def set_install_type(self, value):
         if hasattr(self, "install_type_%s"%value):
             obj=getattr(self, "install_type_%s"%value)
@@ -148,6 +172,13 @@ class PageGtk(PageBase):
 
     def get_install_type(self):
         return self.install_type
+
+    def on_desktop_type_radio_toggled(self, widget, *args):
+        if not widget.get_active():
+            # do nothing
+            return
+        self.set_desktop_type(args[0])
+        syslog.syslog("DEBUG: on_desktop_type_radio_toggled() TYPE=%s"%self.desktop_type)
 
     # MaX install type
     def on_install_type_radio_toggled(self, widget, *args):

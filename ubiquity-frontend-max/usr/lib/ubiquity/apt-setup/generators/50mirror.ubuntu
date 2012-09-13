@@ -144,7 +144,7 @@ if [ "$PROPOSED" = true ]; then
 	cat >> $file <<EOF
 
 ## Proposed updates undergoing testing.
-deb $protocol://$hostname$directory $codename-proposed $dists
+#deb $protocol://$hostname$directory $codename-proposed $dists
 #deb-src $protocol://$srchostname$srcdirectory $codename-proposed $dists
 EOF
 fi
@@ -172,7 +172,7 @@ ${COMMENT}#deb-src $protocol://$srchostname$srcdirectory $codename-updates unive
 EOF
 if [ "$PROPOSED" = true ]; then
 	cat >> $file <<EOF
-${COMMENT}deb $protocol://$hostname$directory $codename-proposed universe
+${COMMENT}#deb $protocol://$hostname$directory $codename-proposed universe
 ${COMMENT}#deb-src $protocol://$srchostname$srcdirectory $codename-proposed universe
 EOF
 fi
@@ -194,7 +194,7 @@ deb $protocol://$hostname$directory $codename-updates multiverse
 EOF
 	if [ "$PROPOSED" = true ]; then
 		cat >> $file <<EOF
-deb $protocol://$hostname$directory $codename-proposed multiverse
+#deb $protocol://$hostname$directory $codename-proposed multiverse
 #deb-src $protocol://$srchostname$srcdirectory $codename-proposed multiverse
 EOF
 	fi

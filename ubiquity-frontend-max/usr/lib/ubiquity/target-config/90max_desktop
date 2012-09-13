@@ -1,0 +1,36 @@
+#! /bin/sh
+#set -e
+
+if [ -e /tmp/max_desktop_type ]; then
+  # gnome or xfce
+  # tune /etc/skel/.dmrc and users .dmrc
+  if [ "$(cat /tmp/max_desktop_type)" = "xfce" ]; then
+    echo " * Setting XFCE desktop by default"
+    chroot /target /usr/lib/lightdm/lightdm-set-defaults -s xfce
+    # set AccountsService
+    test -d /target/var/lib/AccountsService/users/ || mkdir -p /target/var/lib/AccountsService/users/
+    cat << EOF > /target/var/lib/AccountsService/users/madrid
+
+[User]
+XSession=xfce
+XKeyboardLayouts=
+EOF
+  cat /target/var/lib/AccountsService/users/madrid > /target/var/lib/AccountsService/users/alumno
+  cat /target/var/lib/AccountsService/users/madrid > /target/var/lib/AccountsService/users/profesor
+  fi
+fi
+
+
+# IBM hack, trac #417
+if grep -q "i915.modeset=0 video=LVDS-1:e" /proc/cmdline; then
+  echo " * Setting IBM hacks in GRUB"
+  if ! grep -q "i915.modeset=0 video=LVDS-1:e" /target/etc/default/grub 2>/dev/null; then
+    . /target/etc/default/grub
+    echo "# this will fix IBM issues in MAX" >> /target/etc/default/grub
+    echo "GRUB_CMDLINE_LINUX=\"$GRUB_CMDLINE_LINUX i915.modeset=0 video=LVDS-1:e \"" >> /target/etc/default/grub
+    chroot /target update-grub
+  fi
+fi
+
+
+exit 0

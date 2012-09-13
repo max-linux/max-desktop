@@ -1,3 +1,17 @@
+ubiquity-frontend-max (7.0.max17) max; urgency=low
+
+  * usr/lib/ubiquity/target-config/90max_desktop:
+    - Set xfce as default if selected
+    - Use IBM GRUB default boot options
+  * usr/lib/ubiquity/apt-setup/generators/50mirror.ubuntu:
+    - Disable proposed mirrors
+  * usr/lib/ubiquity/plugins/ubi-installtype.py:
+    - Add Desktop selection (GNOME or Xfce4)
+  * usr/share/applications/ubiquity-gtkui.desktop:
+    - Fix install icon
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 13 Sep 2012 14:58:24 +0200
+
 ubiquity-frontend-max (7.0.max16) max; urgency=low
 
   * Don't kill pluginin
