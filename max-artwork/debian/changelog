@@ -1,3 +1,9 @@
+max-artwork (7.0.max10) max; urgency=low
+
+  * Depends on lightdm|gdm|lxdm|gdm-2.20
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 13 Sep 2012 18:14:39 +0200
+
 max-artwork (7.0.max9) max; urgency=low
 
   * Fix button colors
