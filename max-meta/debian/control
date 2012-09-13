@@ -1,7 +1,7 @@
 Source: max-meta
 Section: max
 Priority: optional
-Maintainer: Pedro Peña Pérez <pedro.pena@edmanufacturer.es>
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
 Standards-Version: 3.7.2
 Build-Depends: debhelper (>= 4), cdbs
 
@@ -316,3 +316,23 @@ Description: Replace gnome-desktop-environment package without some depends
  Replace gnome-desktop-environment package without some depends
 
 
+
+Package: max-pdi
+Architecture: all
+Recommends: ${max-pdi:Depends}
+Description: The Max desktop system (GNOME desktop)
+ This package depends on all GNOME packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+
+Package: max-pdi-deps
+Architecture: all
+Depends: ${max-pdi-deps:Depends}
+Provides: max-desktop
+Description: The Max desktop system (GNOME desktop)
+ This package depends on all GNOME packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
