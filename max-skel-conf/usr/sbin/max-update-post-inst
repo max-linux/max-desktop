@@ -34,7 +34,7 @@ if [ -e /etc/default/grub ]; then
   fi
 fi # end of [ -e /etc/default/grub ]
 
-sed -i '/submenu/s/Previous Linux versions/Versiones anteriores/g' /boot/grub/grub.cfg
+test -e /boot/grub/grub.cfg && sed -i '/submenu/s/Previous Linux versions/Versiones anteriores/g' /boot/grub/grub.cfg
 
 # disable dnsmasq cache
 if grep -q ^dns /etc/NetworkManager/NetworkManager.conf 2>&1; then
