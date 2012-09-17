@@ -1,0 +1,633 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+ "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+
+<Menu>
+	<Name>Applications</Name>
+	<Directory>X-GNOME-Menu-Applications.directory</Directory>
+	<!-- Scan legacy dirs first, as later items take priority -->
+	<LegacyDir>/etc/X11/applnk</LegacyDir>
+	<LegacyDir>/usr/share/gnome/apps</LegacyDir>
+
+	<!-- Read standard .directory and .desktop file locations -->
+	<DefaultAppDirs/>
+	<DefaultDirectoryDirs/>
+
+	<!-- Read in overrides and child menus from applications-merged/ -->
+	<DefaultMergeDirs/>
+	
+	
+		<!-- Accessories submenu -->
+	<Menu>
+	<Name>Accessories</Name>
+	<Directory>Utility.directory</Directory>
+	<Include>
+	  <And>
+		<Category>Utility</Category>
+		<!-- Accessibility spec must have either the Utility or Settings
+		 category, and we display an accessibility submenu already for
+		 the ones that do not have Settings, so don't display accessibility
+		 applications here -->
+		<Not><Category>Accessibility</Category></Not>
+		<Not><Category>System</Category></Not>
+	  </And>
+	</Include>
+	</Menu> <!-- End Accessories -->
+	
+	<Menu>
+	<Directory>Utility.directory</Directory>
+	<Name>Accessories</Name>
+		<Include>
+		  <And>
+			<Category>Utility</Category>
+			<!-- Accessibility spec must have either the Utility or Settings
+			 category, and we display an accessibility submenu already for
+			 the ones that do not have Settings, so don't display accessibility
+			 applications here -->
+			<Not><Category>Accessibility</Category></Not>
+			<Not><Category>System</Category></Not>
+		  </And>
+		</Include>
+		<Menu>
+			<Name>Aplicaciones Tablet PC</Name>
+			<Directory>tabletpc.directory</Directory>
+			<Include><Filename>xournal.desktop</Filename></Include>
+			<Include><Filename>notelab.desktop</Filename></Include>
+			<Include><Filename>jarnalannotate.desktop</Filename></Include>
+			<Include><Filename>cellwriter.desktop</Filename></Include>
+			<Include><Filename>mypaint.desktop</Filename></Include>
+			<Exclude><Filename>jarnal.desktop</Filename></Exclude>
+		</Menu>
+
+		<Include><Filename>file-roller.desktop</Filename></Include>
+		<Include><Filename>gnome-font-viewer.desktop</Filename></Include>
+		<Include><Filename>gcalctool.desktop</Filename></Include>
+
+		<Exclude><Filename>kde4-kcalc.desktop</Filename></Exclude>
+		<Exclude><Filename>xournal.desktop</Filename></Exclude>
+		<Exclude><Filename>jarnal.desktop</Filename></Exclude>
+		<Exclude><Filename>jarnalannotate.desktop</Filename></Exclude>
+		<Exclude><Filename>notelab.desktop</Filename></Exclude>
+		<Exclude><Filename>cellwriter.desktop</Filename></Exclude>
+		<Exclude><Filename>redhat-manage-print-jobs.desktop</Filename></Exclude>
+		<Exclude><Filename>dasher.desktop</Filename></Exclude>
+		<Exclude><Filename>xfce4-terminal.desktop</Filename></Exclude>
+		<Exclude><Filename>gok.desktop</Filename></Exclude>
+		<Exclude><Filename>exe.desktop</Filename></Exclude>
+		<Exclude><Filename>bluetooth-analyzer.desktop</Filename></Exclude>
+		<Exclude><Filename>xfce4-screenshooter.desktop</Filename></Exclude>
+		<Exclude><Filename>speedcrunch.desktop</Filename></Exclude>
+	</Menu><!-- End Accessories -->
+	
+	
+	<!-- Accessibility submenu -->
+	<Menu>
+	<Name>Universal Access</Name>
+	<Directory>Utility-Accessibility.directory</Directory>
+	<Include>
+	  <And>
+		<Category>Accessibility</Category>
+		<Not><Category>Settings</Category></Not>
+	  </And>
+	</Include>
+		<Include><Filename>onboard-settings.desktop</Filename></Include>
+		<Include><Filename>onboard.desktop</Filename></Include>
+		<Include><Filename>orca.desktop</Filename></Include>
+		<Exclude><Filename>cellwriter.desktop</Filename></Exclude>
+	</Menu> <!-- End Accessibility -->
+	
+	<!-- Development Tools -->
+	<Menu>
+	<Name>Development</Name>
+	<Directory>Development.directory</Directory>
+		<Include>
+			<And>
+			<Category>Development</Category>
+			</And>
+		  <Filename>emacs.desktop</Filename>
+		</Include>
+		<Menu>
+			<Name>Traducción</Name>
+			<Directory>traduccion.directory</Directory>
+			<Include><Filename>kde-kbabel.desktop</Filename></Include>
+			<Include><Filename>kde-kbabeldict.desktop</Filename></Include>
+			<Include><Filename>gtranslator.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Kdevelop</Name>
+			<Directory>kdevelop.directory</Directory>
+			<Include><Filename>kde-kdevelop_c_cpp.desktop</Filename></Include>
+			<Include><Filename>kde-kdevelop.desktop</Filename></Include>
+			<Include><Filename>kde-kdevelop_kde_cpp.desktop</Filename></Include>
+			<Include><Filename>kde-kdevelop_ruby.desktop</Filename></Include>
+			<Include><Filename>kde-kdevelop_scripting.desktop</Filename></Include>
+			<Include><Filename>kde-kdevassistant.desktop</Filename></Include>
+			<Include><Filename>kde-kdevdesigner.desktop</Filename></Include>
+			<Include><Filename>assistant-qt3.desktop</Filename></Include>
+			<Include><Filename>designer-qt3.desktop</Filename></Include>
+		</Menu>
+		<Exclude><Filename>devhelp.desktop</Filename></Exclude>
+		<Exclude><Filename>kde-kdevelop.desktop</Filename></Exclude>
+		<Exclude><Filename>kde-kdevelop_kde_cpp.desktop</Filename></Exclude>
+		<Exclude><Filename>kde-kdevelop_ruby.desktop</Filename></Exclude>
+		<Exclude><Filename>kde-kdevelop_scripting.desktop</Filename></Exclude>
+		<Exclude><Filename>kde-kdevassistant.desktop</Filename></Exclude>
+		<Exclude><Filename>kde-kdevdesigner.desktop</Filename></Exclude>
+		<Exclude><Filename>kde-kxsldbg.desktop</Filename></Exclude>
+		<Exclude><Filename>squeak.desktop</Filename></Exclude>
+		<Exclude><Filename>kde-kdevelop_c_cpp.desktop</Filename></Exclude>
+		<Exclude><Filename>assistant-qt3.desktop</Filename></Exclude>
+		<Exclude><Filename>designer-qt3.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-catalogmanager.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-kbabeldict.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-kbabel.desktop</Filename></Exclude>
+		<Exclude><Filename>gtranslator.desktop</Filename></Exclude>
+	</Menu> <!-- End Development Tools -->
+	
+	
+
+
+	<!-- Education -->
+	<Menu>
+	<Name>Education</Name>
+	<Directory>Education.directory</Directory>
+		<!--
+		<Include>
+			<And>
+			<Category>Education</Category>
+			</And>
+		</Include>
+		-->
+		<Menu>
+			<Name>Otras aplicaciones educativas</Name>
+			<Directory>eduotros.directory</Directory>
+			<Include>
+				<And>
+				<Category>Education</Category>
+				</And>
+			</Include>
+			<Exclude>
+				<And><Category>Atnag</Category></And>
+				<And><Category>Clic</Category></And>
+				<And><Category>Malted</Category></And>
+				<And><Category>Hotpot</Category></And>
+			</Exclude>
+
+			<!--include -->
+			<Include><Filename>exe.desktop</Filename></Include>
+			<Include><Filename>freemind.desktop</Filename></Include>
+			<Include><Filename>qelectrotech.desktop</Filename></Include>
+			<Include><Filename>tuxtype.desktop</Filename></Include>
+
+			<!-- exclude -->
+			<Exclude><Filename>jclic.desktop</Filename></Exclude>
+			<Exclude><Filename>jclicauthor.desktop</Filename></Exclude>
+			<Exclude><Filename>jclicreports.desktop</Filename></Exclude>
+
+			<Exclude><Filename>mscore.desktop</Filename></Exclude>
+
+			<Exclude><Filename>robolinux.desktop</Filename></Exclude>
+			<Exclude><Filename>max-robolinux-doc.desktop</Filename></Exclude>
+
+			<Exclude><Filename>squeak.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-atenex.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-doc.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-educarex.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-manual.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-scratch.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-small-land.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak-small-land-plugin.desktop</Filename></Exclude>
+
+			<Exclude><Filename>gcompris-edit.desktop</Filename></Exclude>
+			<Exclude><Filename>animalandia.desktop</Filename></Exclude>
+			<Exclude><Filename>animalandia-tutorial.desktop</Filename></Exclude>
+			<Exclude><Filename>descartes.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-kbruch.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-kpercentage.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-kig.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-kstars.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-kmplot.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-kalgebra.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-kstarts.desktop</Filename></Exclude>
+			<Exclude><Filename>starplot.desktop</Filename></Exclude>
+			<Exclude><Filename>stars.desktop</Filename></Exclude>
+			<Exclude><Filename>stellarium.desktop</Filename></Exclude>
+			<Exclude><Filename>tuxmath.desktop</Filename></Exclude>
+			<Exclude><Filename>wxmaxima.desktop</Filename></Exclude>
+			<Exclude><Filename>geogebra.desktop</Filename></Exclude>
+			<Exclude><Filename>kstars.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-celestia.desktop</Filename></Exclude>
+			<Exclude><Filename>celestia.desktop</Filename></Exclude>
+			<Exclude><Filename>gcompris.desktop</Filename></Exclude>
+			<Exclude><Filename>maxmoodle.desktop</Filename></Exclude>
+			<Exclude><Filename>maxmoodle-gui.desktop</Filename></Exclude>
+			<Exclude><Filename>squeak.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-kturtle.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-kiten.desktop</Filename></Exclude>
+			<Exclude><Filename>tuxpaint.desktop</Filename></Exclude>
+			<Exclude><Filename>denemo.desktop</Filename></Exclude>
+			<Exclude><Filename>josm.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-marble.desktop</Filename></Exclude>
+			<Exclude><Filename>qelectrotech.desktop</Filename></Exclude>
+			<Exclude><Filename>ktechlab.desktop</Filename></Exclude>
+			<Exclude><Filename>exe.desktop</Filename></Exclude>
+			<Exclude><Filename>freemind.desktop</Filename></Exclude>
+		</Menu>
+
+		<Menu>
+			<Name>Atnag</Name>
+			<Directory>atnag.directory</Directory>
+			<Include><Filename>atnag.desktop</Filename></Include>
+			<Include><Filename>max-atnag-activ.desktop</Filename></Include>
+			<Include><Filename>max-atnag-juegos.desktop</Filename></Include>
+			<Include><Filename>max-atnag-config.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Malted</Name>
+			<Directory>malted.directory</Directory>
+			<Include><Filename>max-maltededitor.desktop</Filename></Include>
+			<Include><Filename>max-maltednavegador.desktop</Filename></Include>
+			<Include><Filename>max-malteddepurador.desktop</Filename></Include>
+			<Include><Filename>max-malteddocwww.desktop</Filename></Include>
+			<Include><Filename>max-malteddocpdf.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Animalandia</Name>
+			<Directory>animalandia.directory</Directory>
+			<Include><Filename>animalandia.desktop</Filename></Include>
+			<Include><Filename>animalandia-tutorial.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Squeak</Name>
+			<Directory>squeak.directory</Directory>
+			<Include><Filename>squeak.desktop</Filename></Include>
+			<Include><Filename>squeak-doc.desktop</Filename></Include>
+			<Include><Filename>squeak-manual.desktop</Filename></Include>
+			<Include><Filename>squeak-image-es.desktop</Filename></Include>
+			<Include><Filename>squeak-small-land.desktop</Filename></Include>
+			<Include><Filename>squeak-small-land-plugin.desktop</Filename></Include>
+			<Include><Filename>squeak-atenex.desktop</Filename></Include>
+			<Include><Filename>squeak-educarex.desktop</Filename></Include>
+			<Include><Filename>squeak-scratch.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Robótica</Name>
+			<Directory>robotics.directory</Directory>
+			<Include><Filename>robolinux.desktop</Filename></Include>
+			<Include><Filename>max-robolinux-doc.desktop</Filename>	</Include>
+			<Include><Filename>kde4-kturtle.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Astronomía</Name>
+			<Directory>astronomia.directory</Directory>
+			<Include><Filename>kde4-kstars.desktop</Filename></Include>
+			<Include><Filename>starplot.desktop</Filename></Include>
+			<Include><Filename>kde4-celestia.desktop</Filename></Include>
+			<Include><Filename>celestia.desktop</Filename></Include>
+			<Include><Filename>stars.desktop</Filename></Include>
+			<Include><Filename>stellarium.desktop</Filename></Include>
+			<Include><Filename>kstars.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>GCompris</Name>
+			<Directory>gcompris.directory</Directory>
+			<Include><Filename>gcompris-edit.desktop</Filename></Include>
+			<Include><Filename>gcompris.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>JavaHotPot</Name>
+			<Directory>javahotpot.directory</Directory>
+			<Include><Filename>javahotpot.desktop</Filename></Include>
+			<Include><Filename>javahotpot-tutorial.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>JClic</Name>
+			<Directory>jclic.directory</Directory>
+			<Include><Filename>jclic.desktop</Filename></Include>
+			<Include><Filename>jclicauthor.desktop</Filename></Include>
+			<Include><Filename>max-jcliccurso.desktop</Filename></Include>
+			<Include><Filename>jclicreports.desktop</Filename></Include>
+			<Include><Filename>max-jclicdescarga.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Matemáticas</Name>
+			<Directory>matematicas.directory</Directory>
+			<Include><Filename>geogebra.desktop</Filename></Include>
+			<Include><Filename>descartes.desktop</Filename></Include>
+			<Include><Filename>wxmaxima.desktop</Filename></Include>
+			<Include><Filename>kde4-kbruch.desktop</Filename></Include>
+			<Include><Filename>kde4-kpercentage.desktop</Filename></Include>
+			<Include><Filename>kde4-kig.desktop</Filename></Include>
+			<Include><Filename>kde4-kmplot.desktop</Filename></Include>
+			<Include><Filename>kde4-kalgebra.desktop</Filename></Include>
+			<Include><Filename>tuxmath.desktop</Filename></Include>
+			<Include><Filename>speedcrunch.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Moodle</Name>
+			<Directory>moodle.directory</Directory>
+			<Include><Filename>maxmoodle.desktop</Filename></Include>
+			<Include><Filename>maxmoodle-gui.desktop</Filename></Include>
+			<Include><Filename>max-moodle-doc.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Música</Name>
+			<Directory>musica.directory</Directory>
+			<Include><Filename>denemo.desktop</Filename></Include>
+			<Include><Filename>mscore.desktop</Filename></Include>
+			<Include><Filename>kde4-rosegarden.desktop</Filename></Include>
+			<Include><Filename>tuxguitar.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Ciencias</Name>
+			<Directory>ciencias.directory</Directory>
+			<Include><Filename>physion.desktop</Filename></Include>
+			<Include><Filename>tbe.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Geografía</Name>
+			<Directory>geografia.directory</Directory>
+			<Include><Filename>josm.desktop</Filename></Include>
+			<Include><Filename>max-openstreetmap.desktop</Filename></Include>
+			<Include><Filename>kde4-marble.desktop</Filename></Include>
+			<Include><Filename>kde4-kgeography.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Electrónica</Name>
+			<Directory>electronica.directory</Directory>
+			<Include><Filename>ktechlab.desktop</Filename></Include>
+			<Include><Filename>qelectrotech.desktop</Filename></Include>
+		</Menu>
+		<Menu>
+			<Name>Aplicaciones eLearning</Name>
+			<Directory>elearning.directory</Directory>
+			<Include><Filename>exe.desktop</Filename></Include>
+			<Include><Filename>freemind.desktop</Filename></Include>
+		</Menu>
+	</Menu> <!-- End Education -->
+
+	<!-- Games -->
+	<Menu>
+	<Name>Games</Name>
+	<Directory>Game.directory</Directory>
+		<Include>
+			<And>
+			<Category>Game</Category>
+			</And>
+		</Include>
+		<Exclude><Filename>freecell.desktop</Filename></Exclude>
+		<Exclude><Filename>gcompris.desktop</Filename></Exclude>
+		<Exclude><Filename>tuxmath.desktop</Filename></Exclude>
+		<Exclude><Filename>jclic.desktop</Filename></Exclude>
+		<Exclude><Filename>tuxtype.desktop</Filename></Exclude>
+	</Menu> <!-- End Games -->
+
+
+	<!-- Graphics -->
+	<Menu>
+	<Name>Graphics</Name>
+	<Directory>Graphics.directory</Directory>
+		<Include>
+			<And>
+			<Category>Graphics</Category>
+			</And>
+		</Include>
+		<Include><Filename>evince.desktop</Filename></Include>
+		<Include><Filename>tuxpaint.desktop</Filename></Include>
+		<!-- excludes -->
+		<Exclude><Filename>blender-fullscreen.desktop</Filename></Exclude>
+		<Exclude><Filename>gqview.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-gwenview.desktop</Filename></Exclude>
+	</Menu> <!-- End Graphics -->
+
+
+
+
+	<!-- Internet -->
+	<Menu>
+	<Name>Internet</Name>
+	<Directory>Network.directory</Directory>
+		<Include>
+			<And>
+			<Category>Network</Category>
+			</And>
+		</Include>
+		<Exclude><Filename>kde4-Kontact.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-kwifimanager.desktop</Filename></Exclude>
+		<Exclude><Filename>openjdk-6-javaws.desktop</Filename></Exclude>
+		<Exclude><Filename>evolution-mail.desktop</Filename></Exclude>
+	</Menu>   <!-- End Internet -->
+
+
+
+
+
+	<!-- Multimedia -->
+	<Menu>
+	<Name>Multimedia</Name>
+	<Directory>AudioVideo.directory</Directory>
+		<Include>
+			<And>
+			<Category>AudioVideo</Category>
+			</And>
+		</Include>
+		<Include><Filename>kde4-k3b.desktop</Filename></Include>
+		<!-- exclude -->
+		<Exclude><Filename>kde4-audiocd.desktop</Filename></Exclude>
+		<Exclude><Filename>denemo.desktop</Filename></Exclude>
+		<Exclude><Filename>mscore.desktop</Filename></Exclude>
+		<Exclude><Filename>tuxguitar.desktop</Filename></Exclude>
+	</Menu>   <!-- End Multimedia -->
+
+
+	<!-- Office -->
+	<Menu>
+	<Name>Office</Name>
+	<Directory>Office.directory</Directory>
+		<Include>
+			<And>
+			<Category>Office</Category>
+			</And>
+		</Include>
+		<!-- exclude -->
+		<Exclude><Filename>kde4-knotes.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-korganizer.desktop</Filename></Exclude>
+		<Exclude><Filename>ooo-base.desktop</Filename></Exclude>
+		<Exclude><Filename>freemind.desktop</Filename></Exclude>
+		<Exclude><Filename>qelectrotech.desktop</Filename></Exclude>
+	</Menu> <!-- End Office -->
+
+
+	<!-- System Tools-->
+	<Menu>
+	<Name>System</Name>
+	<Directory>System-Tools.directory</Directory>
+		<Include>
+			<And>
+			<Category>System</Category>
+			<Not><Category>Settings</Category></Not>
+			</And>
+		</Include>
+		<Exclude><Filename>kde4-ksystemlog.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-adept_manager.desktop</Filename></Exclude>
+		<Include><Filename>gconf-editor.desktop</Filename></Include>
+		<Exclude><Filename>xfce4-taskmanager.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-kcron.desktop</Filename></Exclude>
+		<Exclude><Filename>gdmflexiserver-xnest.desktop</Filename></Exclude>
+		<Exclude><Filename>gdmflexiserver.desktop</Filename></Exclude>
+	</Menu>   <!-- End System Tools -->
+
+
+
+	<!-- Other -->
+	<Menu>
+	<Name>Other</Name>
+	<Directory>X-GNOME-Other.directory</Directory>
+	<OnlyUnallocated/>
+		<Include>
+			<And>
+			<Not><Category>Core</Category></Not>
+			<Not><Category>Settings</Category></Not>
+			<Not><Category>Screensaver</Category></Not>
+			<Not><Category>KDE</Category></Not>
+			</And>
+		</Include>
+		<Exclude><Filename>geogebra.desktop</Filename></Exclude>
+		<Exclude><Filename>javahotpot.desktop</Filename></Exclude>
+		<Exclude><Filename>orage.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-audioencoding.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-kcm_knetworkconfmodule_ss.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-clock.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-kwalletmanager.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-medianotifications.desktop</Filename></Exclude>
+		<Exclude><Filename>tcospersonalize.desktop</Filename></Exclude>
+		<Exclude><Filename>creditos-max40.desktop</Filename></Exclude>
+		<Exclude><Filename>squeak-doc.desktop</Filename></Exclude>
+		<Exclude><Filename>squeak-manual.desktop</Filename></Exclude>
+	</Menu> <!-- End Other -->
+
+
+	<!-- The Debian menu -->
+	<Menu>
+	<Name>Debian</Name>
+	<MergeFile>debian-menu.menu</MergeFile>
+	<Directory>Debian.directory</Directory>
+	</Menu>
+
+	<!-- MAX -->
+	<Menu>
+		<Name>Universal Access</Name>
+		<Include><Filename>onboard-settings.desktop</Filename></Include>
+		<Include><Filename>onboard.desktop</Filename></Include>
+		<Include><Filename>orca.desktop</Filename></Include>
+		<Exclude><Filename>cellwriter.desktop</Filename></Exclude>
+	</Menu> <!-- End Universal Access -->
+
+
+
+	<Menu>
+		<Name>MaX 7.0</Name>
+		<Directory>max60.directory</Directory>
+		<Include><Filename>max-educamadrid.desktop</Filename></Include>
+		<Include><Filename>max-guia-referencia.desktop</Filename></Include>
+		<Include><Filename>max-foros.desktop</Filename></Include>
+		<Include><Filename>max-installed-help.desktop</Filename></Include>
+		<Include><Filename>max-installed-help-usr.desktop</Filename></Include>
+		<Include><Filename>install-manual.desktop</Filename></Include>
+		<Include><Filename>install-personalizacion.desktop</Filename></Include>
+	</Menu> <!-- end MaX -->
+
+
+	<!-- Pizarras digitales / Whiteboard -->
+	<Menu>
+		<Name>Pizarras Digitales</Name>
+		<Directory>pdi.directory</Directory>
+		<Include><Category>Whiteboard</Category></Include>
+	</Menu>
+
+
+	<Menu>
+		<Name>Utilities</Name>
+		<Exclude><Filename>gfontview.desktop</Filename></Exclude>
+	</Menu>
+
+	<!-- end menus -->
+
+  <!-- System Settings -->
+  <Menu>
+    <Name>Administration</Name>
+    <Directory>Settings-System.directory</Directory>
+    <Include>
+      <And>
+        <Category>Settings</Category>
+        <Category>System</Category>
+      </And>
+    </Include>
+  </Menu>     <!-- End System Settings -->
+
+  <!-- Merge in these other files as submenus -->
+  <Menu>
+    <Name>Preferences</Name>
+    <Directory>Settings.directory</Directory>
+    <Include>
+      <And>
+        <Category>Settings</Category>
+        <Not>
+          <Or>
+            <Category>System</Category>
+            <Filename>gnomecc.desktop</Filename>
+          </Or>
+        </Not>
+      </And>
+    </Include>
+    <Include>
+        <Filename>gnomecc.desktop</Filename>
+    </Include>
+    <Exclude>
+        <Filename>kde-kdepasswd.desktop</Filename>
+    </Exclude>
+    <Exclude>
+        <Filename>openjdk-6-policytool.desktop</Filename>
+    </Exclude>
+    <Exclude>
+        <Filename>xscreensaver-properties.desktop</Filename>
+    </Exclude>
+  </Menu>
+
+<!--<Include>-->
+<!--  <Filename>ubuntu-software-center.desktop</Filename>-->
+<!--</Include>-->
+
+
+<Include>
+    <Category>X-Xfce-Toplevel</Category>
+</Include>
+<Exclude>
+    <Or>
+        <Filename>exo-file-manager.desktop</Filename>
+        <Filename>exo-terminal-emulator.desktop</Filename>
+        <Filename>exo-mail-reader.desktop</Filename>
+        <Filename>exo-web-browser.desktop</Filename>
+    </Or>
+</Exclude>
+
+<!-- Separator between menus and gnome-app-install -->
+<Layout>
+  <Merge type="menus"/>
+  <Merge type="files"/>
+  <Separator/>
+  <Menuname>Administration</Menuname>
+  <Menuname>Preferences</Menuname>
+
+  <Separator/>
+<Include>
+  <Filename>xfrun4.desktop</Filename>
+  <Filename>xfce4-run.desktop</Filename>
+</Include>
+  <Separator/>
+  <Filename>xfhelp4.desktop</Filename>
+  <Filename>xfce4-about.desktop</Filename>
+  <Filename>xfce4-session-logout.desktop</Filename>
+</Layout>
+
+</Menu> <!-- End Applications -->
+

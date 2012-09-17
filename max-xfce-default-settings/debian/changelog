@@ -1,3 +1,23 @@
+max-xfce-default-settings (7.0.max4) max; urgency=low
+
+  * Don't show devices in desktop
+  * Fix panel launchers order
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 17 Sep 2012 14:30:22 +0200
+
+max-xfce-default-settings (7.0.max3) max; urgency=low
+
+  * Fix xfce4 XDG config
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 17 Sep 2012 12:09:39 +0200
+
+max-xfce-default-settings (7.0.max2) max; urgency=low
+
+  * Recreate xfce4 XDG conf files
+  * Add icon to xsession file
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 13 Sep 2012 19:40:02 +0200
+
 max-xfce-default-settings (7.0.max1) max; urgency=low
 
   * Build in MAX 7.0
