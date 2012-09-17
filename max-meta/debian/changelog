@@ -1,3 +1,15 @@
+max-meta (7.0.max15) max; urgency=low
+
+  * desktop-xfce add:
+    + indicator-datetime-gtk2
+  * desktop-common add:
+    + fbreader (close #405)
+    + jfractionlab (close #402) 
+    + chromium-browser chromium-browser-l10n (close #404)
+    + dvdstyler (close #407) 
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 17 Sep 2012 14:26:13 +0200
+
 max-meta (7.0.max14) max; urgency=low
 
   * desktop-xfce-i386 add:
