@@ -24,6 +24,7 @@ log_begin_msg "$DESCRIPTION"
 
 # delete old ubiquity
 rm -f /root/home/$USERNAME/*/ubiquity*desktop 2>/dev/null
+rm -rf /root/home/$USERNAME/Desktop 2>/dev/null
 
 chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Escritorio
 
