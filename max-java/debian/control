@@ -19,6 +19,6 @@ Description: Dependencias de máquina virtual java JDK para Max
 
 Package: max-java-plugin
 Architecture: i386 amd64
-Depends: max-skel-conf, max-java-jre
+Depends: max-skel-conf, max-java-jre, sun-java6-plugin
 Description: Dependencias de máquina virtual java (plugin mozilla) para Max
  Máquina virtual java (plugin mozilla) para Max
