@@ -7,7 +7,8 @@ Standards-Version: 3.8.4
 
 Package: max-language-es
 Architecture: all
-Depends: scite, max-skel-conf
+Depends: scite, max-skel-conf,
+         openoffice.org-hyphenation, poppler-data, wspanish
 Description: Some translation files of MaX
  Contains:
   * Scite translation
