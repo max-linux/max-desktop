@@ -19,6 +19,28 @@ clean:
 
 distclean:
 
+printindextheme:
+	@for size in $(SIZES); do\
+		_size=`echo $$size | cut -dx -f1`;\
+		for _dir in $(shell find scalable -mindepth 1 -type d |grep -v ".svn"); do\
+			dir=`echo $$_dir | sed "s|scalable/|$$size/|g"`; \
+			echo -n "$$dir,";\
+		done; \
+	done
+	@for size in $(SIZES); do\
+		_size=`echo $$size | cut -dx -f1`;\
+		for _dir in $(shell find scalable -mindepth 1 -type d |grep -v ".svn"); do\
+			dir=`echo $$_dir | sed "s|scalable/|$$size/|g"`; \
+			context=`basename $$dir| sed 's/\([a-z]\)\([a-zA-Z0-9]*\)/\u\1\2/g'` ;\
+			echo  "[$$dir]";\
+			echo  "Size=$$_size";\
+			echo  "Context=$$context";\
+			echo  "Type=Fixed";\
+			echo  "";\
+		done; \
+	done
+
+
 
 build: clean
 	@for size in $(SIZES); do\
