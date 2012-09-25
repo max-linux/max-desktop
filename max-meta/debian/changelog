@@ -1,3 +1,12 @@
+max-meta (7.0.max17) max; urgency=low
+
+  * desktop-xfce remove:
+    - indicator-application-gtk2
+    - indicator-appmenu-gtk2
+
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 25 Sep 2012 14:41:03 +0200
+
 max-meta (7.0.max16) max; urgency=low
 
   * desktop-gnome add:
