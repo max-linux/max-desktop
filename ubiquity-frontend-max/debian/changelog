@@ -1,3 +1,9 @@
+ubiquity-frontend-max (7.0.max18) max; urgency=low
+
+  * Don't run update-grub in target-config/90max_desktop
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 25 Sep 2012 11:42:07 +0200
+
 ubiquity-frontend-max (7.0.max17) max; urgency=low
 
   * usr/lib/ubiquity/target-config/90max_desktop:
