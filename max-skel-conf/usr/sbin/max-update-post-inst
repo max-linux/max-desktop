@@ -119,3 +119,7 @@ fi
 #done
 #
 #rmdir /usr/lib/firefox* 2>/dev/null
+
+
+# disable apport
+sed -i '/^enabled/s/1/0/g' /etc/default/apport 2>&1

@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max29) max; urgency=low
+
+  * Disable apport
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 27 Sep 2012 13:35:27 +0200
+
 max-skel-conf (7.0.max28) max; urgency=low
 
   * Test if GRUB is installed
