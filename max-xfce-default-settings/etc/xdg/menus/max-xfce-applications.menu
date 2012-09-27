@@ -47,21 +47,10 @@
 			<Not><Category>System</Category></Not>
 		  </And>
 		</Include>
-		<Menu>
-			<Name>Aplicaciones Tablet PC</Name>
-			<Directory>tabletpc.directory</Directory>
-			<Include><Filename>xournal.desktop</Filename></Include>
-			<Include><Filename>notelab.desktop</Filename></Include>
-			<Include><Filename>jarnalannotate.desktop</Filename></Include>
-			<Include><Filename>cellwriter.desktop</Filename></Include>
-			<Include><Filename>mypaint.desktop</Filename></Include>
-			<Exclude><Filename>jarnal.desktop</Filename></Exclude>
-		</Menu>
 
 		<Include><Filename>file-roller.desktop</Filename></Include>
 		<Include><Filename>gnome-font-viewer.desktop</Filename></Include>
 		<Include><Filename>gcalctool.desktop</Filename></Include>
-
 		<Exclude><Filename>kde4-kcalc.desktop</Filename></Exclude>
 		<Exclude><Filename>xournal.desktop</Filename></Exclude>
 		<Exclude><Filename>jarnal.desktop</Filename></Exclude>
@@ -76,6 +65,13 @@
 		<Exclude><Filename>bluetooth-analyzer.desktop</Filename></Exclude>
 		<Exclude><Filename>xfce4-screenshooter.desktop</Filename></Exclude>
 		<Exclude><Filename>speedcrunch.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-akonaditray.desktop</Filename></Exclude>
+		<Exclude><Filename>xfce4-about.desktop</Filename></Exclude>
+		<Exclude><Filename>xfhelp4.desktop</Filename></Exclude>
+		<Exclude><Filename>xfrun4.desktop</Filename></Exclude>
+		<Exclude><Filename>globaltime.desktop</Filename></Exclude>
+		<Exclude><Filename>xarchiver.desktop</Filename></Exclude>
+		<Exclude><Filename>xabacus.desktop</Filename></Exclude>
 	</Menu><!-- End Accessories -->
 	
 	
@@ -106,13 +102,6 @@
 		  <Filename>emacs.desktop</Filename>
 		</Include>
 		<Menu>
-			<Name>Traducción</Name>
-			<Directory>traduccion.directory</Directory>
-			<Include><Filename>kde-kbabel.desktop</Filename></Include>
-			<Include><Filename>kde-kbabeldict.desktop</Filename></Include>
-			<Include><Filename>gtranslator.desktop</Filename></Include>
-		</Menu>
-		<Menu>
 			<Name>Kdevelop</Name>
 			<Directory>kdevelop.directory</Directory>
 			<Include><Filename>kde-kdevelop_c_cpp.desktop</Filename></Include>
@@ -140,7 +129,8 @@
 		<Exclude><Filename>kde4-catalogmanager.desktop</Filename></Exclude>
 		<Exclude><Filename>kde4-kbabeldict.desktop</Filename></Exclude>
 		<Exclude><Filename>kde4-kbabel.desktop</Filename></Exclude>
-		<Exclude><Filename>gtranslator.desktop</Filename></Exclude>
+		<!--<Exclude><Filename>gtranslator.desktop</Filename></Exclude>-->
+		<Exclude><Filename>scratch.desktop</Filename></Exclude>
 	</Menu> <!-- End Development Tools -->
 	
 	
@@ -150,13 +140,6 @@
 	<Menu>
 	<Name>Education</Name>
 	<Directory>Education.directory</Directory>
-		<!--
-		<Include>
-			<And>
-			<Category>Education</Category>
-			</And>
-		</Include>
-		-->
 		<Menu>
 			<Name>Otras aplicaciones educativas</Name>
 			<Directory>eduotros.directory</Directory>
@@ -166,7 +149,6 @@
 				</And>
 			</Include>
 			<Exclude>
-				<And><Category>Atnag</Category></And>
 				<And><Category>Clic</Category></And>
 				<And><Category>Malted</Category></And>
 				<And><Category>Hotpot</Category></And>
@@ -179,6 +161,7 @@
 			<Include><Filename>tuxtype.desktop</Filename></Include>
 
 			<!-- exclude -->
+			<Exclude><Filename>physion.desktop</Filename></Exclude>
 			<Exclude><Filename>jclic.desktop</Filename></Exclude>
 			<Exclude><Filename>jclicauthor.desktop</Filename></Exclude>
 			<Exclude><Filename>jclicreports.desktop</Filename></Exclude>
@@ -231,43 +214,34 @@
 			<Exclude><Filename>ktechlab.desktop</Filename></Exclude>
 			<Exclude><Filename>exe.desktop</Filename></Exclude>
 			<Exclude><Filename>freemind.desktop</Filename></Exclude>
-		</Menu>
 
-		<Menu>
-			<Name>Atnag</Name>
-			<Directory>atnag.directory</Directory>
-			<Include><Filename>atnag.desktop</Filename></Include>
-			<Include><Filename>max-atnag-activ.desktop</Filename></Include>
-			<Include><Filename>max-atnag-juegos.desktop</Filename></Include>
-			<Include><Filename>max-atnag-config.desktop</Filename></Include>
-		</Menu>
-		<Menu>
-			<Name>Malted</Name>
-			<Directory>malted.directory</Directory>
-			<Include><Filename>max-maltededitor.desktop</Filename></Include>
-			<Include><Filename>max-maltednavegador.desktop</Filename></Include>
-			<Include><Filename>max-malteddepurador.desktop</Filename></Include>
-			<Include><Filename>max-malteddocwww.desktop</Filename></Include>
-			<Include><Filename>max-malteddocpdf.desktop</Filename></Include>
-		</Menu>
-		<Menu>
-			<Name>Animalandia</Name>
-			<Directory>animalandia.directory</Directory>
-			<Include><Filename>animalandia.desktop</Filename></Include>
-			<Include><Filename>animalandia-tutorial.desktop</Filename></Include>
-		</Menu>
-		<Menu>
-			<Name>Squeak</Name>
-			<Directory>squeak.directory</Directory>
-			<Include><Filename>squeak.desktop</Filename></Include>
-			<Include><Filename>squeak-doc.desktop</Filename></Include>
-			<Include><Filename>squeak-manual.desktop</Filename></Include>
-			<Include><Filename>squeak-image-es.desktop</Filename></Include>
-			<Include><Filename>squeak-small-land.desktop</Filename></Include>
-			<Include><Filename>squeak-small-land-plugin.desktop</Filename></Include>
-			<Include><Filename>squeak-atenex.desktop</Filename></Include>
-			<Include><Filename>squeak-educarex.desktop</Filename></Include>
-			<Include><Filename>squeak-scratch.desktop</Filename></Include>
+			<!-- lengua -->
+			<Exclude><Filename>tuxtype.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-kwordquiz.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-kanagram.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-khangman.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-klettres.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-ktouch.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-kwordquiz.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-parley.desktop</Filename></Exclude>
+
+			<!-- mates -->
+			<Exclude><Filename>JFractionLab.desktop</Filename></Exclude>
+			<Exclude><Filename>MathWar.desktop</Filename></Exclude>
+			<Exclude><Filename>xabacus.desktop</Filename></Exclude>
+
+
+			<!-- elearning -->
+			<Exclude><Filename>edilim.desktop</Filename></Exclude>
+
+			<!-- geografia -->
+			<Exclude><Filename>kde4-kgeography.desktop</Filename></Exclude>
+
+			<Exclude><Filename>leocad.desktop</Filename></Exclude>
+			<Exclude><Filename>kde4-kalzium.desktop</Filename></Exclude>
+
+			<!-- musica -->
+			<Exclude><Filename>solfege.desktop</Filename></Exclude>
 		</Menu>
 		<Menu>
 			<Name>Robótica</Name>
@@ -275,38 +249,6 @@
 			<Include><Filename>robolinux.desktop</Filename></Include>
 			<Include><Filename>max-robolinux-doc.desktop</Filename>	</Include>
 			<Include><Filename>kde4-kturtle.desktop</Filename></Include>
-		</Menu>
-		<Menu>
-			<Name>Astronomía</Name>
-			<Directory>astronomia.directory</Directory>
-			<Include><Filename>kde4-kstars.desktop</Filename></Include>
-			<Include><Filename>starplot.desktop</Filename></Include>
-			<Include><Filename>kde4-celestia.desktop</Filename></Include>
-			<Include><Filename>celestia.desktop</Filename></Include>
-			<Include><Filename>stars.desktop</Filename></Include>
-			<Include><Filename>stellarium.desktop</Filename></Include>
-			<Include><Filename>kstars.desktop</Filename></Include>
-		</Menu>
-		<Menu>
-			<Name>GCompris</Name>
-			<Directory>gcompris.directory</Directory>
-			<Include><Filename>gcompris-edit.desktop</Filename></Include>
-			<Include><Filename>gcompris.desktop</Filename></Include>
-		</Menu>
-		<Menu>
-			<Name>JavaHotPot</Name>
-			<Directory>javahotpot.directory</Directory>
-			<Include><Filename>javahotpot.desktop</Filename></Include>
-			<Include><Filename>javahotpot-tutorial.desktop</Filename></Include>
-		</Menu>
-		<Menu>
-			<Name>JClic</Name>
-			<Directory>jclic.directory</Directory>
-			<Include><Filename>jclic.desktop</Filename></Include>
-			<Include><Filename>jclicauthor.desktop</Filename></Include>
-			<Include><Filename>max-jcliccurso.desktop</Filename></Include>
-			<Include><Filename>jclicreports.desktop</Filename></Include>
-			<Include><Filename>max-jclicdescarga.desktop</Filename></Include>
 		</Menu>
 		<Menu>
 			<Name>Matemáticas</Name>
@@ -321,14 +263,24 @@
 			<Include><Filename>kde4-kalgebra.desktop</Filename></Include>
 			<Include><Filename>tuxmath.desktop</Filename></Include>
 			<Include><Filename>speedcrunch.desktop</Filename></Include>
+			<Include><Filename>JFractionLab.desktop</Filename></Include>
+			<Include><Filename>MathWar.desktop</Filename></Include>
+			<Include><Filename>xabacus.desktop</Filename></Include>
 		</Menu>
+
 		<Menu>
-			<Name>Moodle</Name>
-			<Directory>moodle.directory</Directory>
-			<Include><Filename>maxmoodle.desktop</Filename></Include>
-			<Include><Filename>maxmoodle-gui.desktop</Filename></Include>
-			<Include><Filename>max-moodle-doc.desktop</Filename></Include>
+			<Name>Lengua</Name>
+			<Directory>lengua.directory</Directory>
+			<Include><Filename>tuxtype.desktop</Filename></Include>
+			<Include><Filename>kde4-kwordquiz.desktop</Filename></Include>
+			<Include><Filename>kde4-kanagram.desktop</Filename></Include>
+			<Include><Filename>kde4-khangman.desktop</Filename></Include>
+			<Include><Filename>kde4-klettres.desktop</Filename></Include>
+			<Include><Filename>kde4-ktouch.desktop</Filename></Include>
+			<Include><Filename>kde4-kwordquiz.desktop</Filename></Include>
+
 		</Menu>
+
 		<Menu>
 			<Name>Música</Name>
 			<Directory>musica.directory</Directory>
@@ -336,13 +288,38 @@
 			<Include><Filename>mscore.desktop</Filename></Include>
 			<Include><Filename>kde4-rosegarden.desktop</Filename></Include>
 			<Include><Filename>tuxguitar.desktop</Filename></Include>
+			<Include><Filename>solfege.desktop</Filename></Include>
+			<Include><Filename>gtick.desktop</Filename></Include>
+			<Include><Filename>hydrogen.desktop</Filename></Include>
+			<Include><Filename>lingot.desktop</Filename></Include>
+			<Include><Filename>rosegarden.desktop</Filename></Include>
+			<Include><Filename>performous.desktop</Filename></Include>
+			<Include><Filename>fretsonfire-game.desktop</Filename></Include>
 		</Menu>
+
 		<Menu>
 			<Name>Ciencias</Name>
 			<Directory>ciencias.directory</Directory>
 			<Include><Filename>physion.desktop</Filename></Include>
 			<Include><Filename>tbe.desktop</Filename></Include>
+			<Include><Filename>atomix.desktop</Filename></Include>
+			<Include><Filename>kde4-kalzium.desktop</Filename></Include>
+			<Menu>
+				<Name>Animalandia</Name>
+				<Directory>animalandia.directory</Directory>
+				<Include><Filename>animalandia.desktop</Filename></Include>
+				<Include><Filename>animalandia-tutorial.desktop</Filename></Include>
+			</Menu>
 		</Menu>
+
+		<Menu>
+			<Name>Estudio</Name>
+			<Directory>estudio.directory</Directory>
+			<Include><Filename>kde4-parley.desktop</Filename></Include>
+			<Include><Filename>freemind.desktop</Filename></Include>
+			<Include><Filename>freeplane.desktop</Filename></Include>
+		</Menu>
+
 		<Menu>
 			<Name>Geografía</Name>
 			<Directory>geografia.directory</Directory>
@@ -350,18 +327,77 @@
 			<Include><Filename>max-openstreetmap.desktop</Filename></Include>
 			<Include><Filename>kde4-marble.desktop</Filename></Include>
 			<Include><Filename>kde4-kgeography.desktop</Filename></Include>
+			<Include><Filename>kde4-kstars.desktop</Filename></Include>
+			<Include><Filename>starplot.desktop</Filename></Include>
+			<Include><Filename>kde4-celestia.desktop</Filename></Include>
+			<Include><Filename>celestia.desktop</Filename></Include>
+			<Include><Filename>stars.desktop</Filename></Include>
+			<Include><Filename>stellarium.desktop</Filename></Include>
+			<Include><Filename>kstars.desktop</Filename></Include>
 		</Menu>
+
 		<Menu>
 			<Name>Electrónica</Name>
 			<Directory>electronica.directory</Directory>
 			<Include><Filename>ktechlab.desktop</Filename></Include>
 			<Include><Filename>qelectrotech.desktop</Filename></Include>
 		</Menu>
+
 		<Menu>
 			<Name>Aplicaciones eLearning</Name>
 			<Directory>elearning.directory</Directory>
 			<Include><Filename>exe.desktop</Filename></Include>
-			<Include><Filename>freemind.desktop</Filename></Include>
+			<Include><Filename>edilim.desktop</Filename></Include>
+			<Menu>
+				<Name>Malted</Name>
+				<Directory>malted.directory</Directory>
+				<Include><Filename>max-maltededitor.desktop</Filename></Include>
+				<Include><Filename>max-maltednavegador.desktop</Filename></Include>
+				<Include><Filename>max-malteddepurador.desktop</Filename></Include>
+				<Include><Filename>max-malteddocwww.desktop</Filename></Include>
+				<Include><Filename>max-malteddocpdf.desktop</Filename></Include>
+			</Menu>
+			<Menu>
+				<Name>Squeak</Name>
+				<Directory>squeak.directory</Directory>
+				<Include><Filename>squeak.desktop</Filename></Include>
+				<Include><Filename>squeak-doc.desktop</Filename></Include>
+				<Include><Filename>squeak-manual.desktop</Filename></Include>
+				<Include><Filename>squeak-image-es.desktop</Filename></Include>
+				<Include><Filename>squeak-small-land.desktop</Filename></Include>
+				<Include><Filename>squeak-small-land-plugin.desktop</Filename></Include>
+				<Include><Filename>squeak-atenex.desktop</Filename></Include>
+				<Include><Filename>squeak-educarex.desktop</Filename></Include>
+				<Include><Filename>squeak-scratch.desktop</Filename></Include>
+			</Menu>
+			<Menu>
+				<Name>GCompris</Name>
+				<Directory>gcompris.directory</Directory>
+				<Include><Filename>gcompris-edit.desktop</Filename></Include>
+				<Include><Filename>gcompris.desktop</Filename></Include>
+			</Menu>
+			<Menu>
+				<Name>JavaHotPot</Name>
+				<Directory>javahotpot.directory</Directory>
+				<Include><Filename>javahotpot.desktop</Filename></Include>
+				<Include><Filename>javahotpot-tutorial.desktop</Filename></Include>
+			</Menu>
+			<Menu>
+				<Name>JClic</Name>
+				<Directory>jclic.directory</Directory>
+				<Include><Filename>jclic.desktop</Filename></Include>
+				<Include><Filename>jclicauthor.desktop</Filename></Include>
+				<Include><Filename>max-jcliccurso.desktop</Filename></Include>
+				<Include><Filename>jclicreports.desktop</Filename></Include>
+				<Include><Filename>max-jclicdescarga.desktop</Filename></Include>
+			</Menu>
+			<Menu>
+				<Name>Moodle</Name>
+				<Directory>moodle.directory</Directory>
+				<Include><Filename>maxmoodle.desktop</Filename></Include>
+				<Include><Filename>maxmoodle-gui.desktop</Filename></Include>
+				<Include><Filename>max-moodle-doc.desktop</Filename></Include>
+			</Menu>
 		</Menu>
 	</Menu> <!-- End Education -->
 
@@ -379,6 +415,11 @@
 		<Exclude><Filename>tuxmath.desktop</Filename></Exclude>
 		<Exclude><Filename>jclic.desktop</Filename></Exclude>
 		<Exclude><Filename>tuxtype.desktop</Filename></Exclude>
+		<Exclude><Filename>atomix.desktop</Filename></Exclude>
+		<Exclude><Filename>tbe.desktop</Filename></Exclude>
+		<Exclude><Filename>childsplay.desktop</Filename></Exclude>
+		<Exclude><Filename>performous.desktop</Filename></Exclude>
+		<Exclude><Filename>fretsonfire-game.desktop</Filename></Exclude>
 	</Menu> <!-- End Games -->
 
 
@@ -393,6 +434,8 @@
 		</Include>
 		<Include><Filename>evince.desktop</Filename></Include>
 		<Include><Filename>tuxpaint.desktop</Filename></Include>
+		<Include><Filename>leocad.desktop</Filename></Include>
+
 		<!-- excludes -->
 		<Exclude><Filename>blender-fullscreen.desktop</Filename></Exclude>
 		<Exclude><Filename>gqview.desktop</Filename></Exclude>
@@ -436,6 +479,13 @@
 		<Exclude><Filename>denemo.desktop</Filename></Exclude>
 		<Exclude><Filename>mscore.desktop</Filename></Exclude>
 		<Exclude><Filename>tuxguitar.desktop</Filename></Exclude>
+		<Exclude><Filename>xine.desktop</Filename></Exclude>
+		<Exclude><Filename>solfege.desktop</Filename></Exclude>
+		<Exclude><Filename>gtick.desktop</Filename></Exclude>
+		<Exclude><Filename>hydrogen.desktop</Filename></Exclude>
+		<Exclude><Filename>lingot.desktop</Filename></Exclude>
+		<Exclude><Filename>qjackctl.desktop</Filename></Exclude>
+		<Exclude><Filename>rosegarden.desktop</Filename></Exclude>
 	</Menu>   <!-- End Multimedia -->
 
 
@@ -454,6 +504,9 @@
 		<Exclude><Filename>ooo-base.desktop</Filename></Exclude>
 		<Exclude><Filename>freemind.desktop</Filename></Exclude>
 		<Exclude><Filename>qelectrotech.desktop</Filename></Exclude>
+		<Exclude><Filename>xfcalendar.desktop</Filename></Exclude>
+		<Exclude><Filename>globaltime.desktop</Filename></Exclude>
+		<Exclude><Filename>freeplane.desktop</Filename></Exclude>
 	</Menu> <!-- End Office -->
 
 
@@ -474,6 +527,11 @@
 		<Exclude><Filename>kde4-kcron.desktop</Filename></Exclude>
 		<Exclude><Filename>gdmflexiserver-xnest.desktop</Filename></Exclude>
 		<Exclude><Filename>gdmflexiserver.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-nepomukcontroller.desktop</Filename></Exclude>
+		<Exclude><Filename>kde4-nepomukbackup.desktop</Filename></Exclude>
+		<Exclude><Filename>xfce4-session-logout.desktop</Filename></Exclude>
+		<Exclude><Filename>debian-uxterm.desktop</Filename></Exclude>
+		<Exclude><Filename>debian-xterm.desktop</Filename></Exclude>
 	</Menu>   <!-- End System Tools -->
 
 
@@ -542,6 +600,16 @@
 		<Name>Pizarras Digitales</Name>
 		<Directory>pdi.directory</Directory>
 		<Include><Category>Whiteboard</Category></Include>
+		<Menu>
+			<Name>Aplicaciones Tablet PC</Name>
+			<Directory>tabletpc.directory</Directory>
+			<Include><Filename>xournal.desktop</Filename></Include>
+			<Include><Filename>notelab.desktop</Filename></Include>
+			<Include><Filename>jarnalannotate.desktop</Filename></Include>
+			<Include><Filename>cellwriter.desktop</Filename></Include>
+			<Include><Filename>mypaint.desktop</Filename></Include>
+			<Exclude><Filename>jarnal.desktop</Filename></Exclude>
+		</Menu>
 	</Menu>
 
 
@@ -579,31 +647,18 @@
         </Not>
       </And>
     </Include>
-    <Include>
-        <Filename>gnomecc.desktop</Filename>
-    </Include>
-    <Exclude>
-        <Filename>kde-kdepasswd.desktop</Filename>
-    </Exclude>
-    <Exclude>
-        <Filename>openjdk-6-policytool.desktop</Filename>
-    </Exclude>
-    <Exclude>
-        <Filename>xscreensaver-properties.desktop</Filename>
-    </Exclude>
+    <Include><Filename>gnomecc.desktop</Filename></Include>
+    <Exclude><Filename>kde-kdepasswd.desktop</Filename></Exclude>
+    <Exclude><Filename>openjdk-6-policytool.desktop</Filename></Exclude>
+    <Exclude><Filename>xscreensaver-properties.desktop</Filename></Exclude>
   </Menu>
-
-<!--<Include>-->
-<!--  <Filename>ubuntu-software-center.desktop</Filename>-->
-<!--</Include>-->
-
 
 <Include>
     <Category>X-Xfce-Toplevel</Category>
 </Include>
 <Exclude>
     <Or>
-        <Filename>exo-file-manager.desktop</Filename>
+        <!--<Filename>exo-file-manager.desktop</Filename>-->
         <Filename>exo-terminal-emulator.desktop</Filename>
         <Filename>exo-mail-reader.desktop</Filename>
         <Filename>exo-web-browser.desktop</Filename>
@@ -618,15 +673,16 @@
   <Menuname>Administration</Menuname>
   <Menuname>Preferences</Menuname>
 
-  <Separator/>
-<Include>
-  <Filename>xfrun4.desktop</Filename>
-  <Filename>xfce4-run.desktop</Filename>
-</Include>
-  <Separator/>
-  <Filename>xfhelp4.desktop</Filename>
-  <Filename>xfce4-about.desktop</Filename>
-  <Filename>xfce4-session-logout.desktop</Filename>
+	<Separator/>
+	<Include>
+		<Filename>exo-file-manager.desktop</Filename>
+		<Filename>xfrun4.desktop</Filename>
+		<Filename>xfce4-run.desktop</Filename>
+	</Include>
+	<Separator/>
+	<Filename>xfhelp4.desktop</Filename>
+	<Filename>xfce4-about.desktop</Filename>
+	<Filename>xfce4-session-logout.desktop</Filename>
 </Layout>
 
 </Menu> <!-- End Applications -->
