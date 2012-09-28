@@ -131,6 +131,7 @@
 		<Exclude><Filename>kde4-kbabel.desktop</Filename></Exclude>
 		<!--<Exclude><Filename>gtranslator.desktop</Filename></Exclude>-->
 		<Exclude><Filename>scratch.desktop</Filename></Exclude>
+		<Exclude><Filename>fritzing.desktop</Filename></Exclude>
 	</Menu> <!-- End Development Tools -->
 	
 	
@@ -242,6 +243,8 @@
 
 			<!-- musica -->
 			<Exclude><Filename>solfege.desktop</Filename></Exclude>
+
+			<Exclude><Filename>qucs.desktop</Filename></Exclude>
 		</Menu>
 		<Menu>
 			<Name>Robótica</Name>
@@ -341,6 +344,10 @@
 			<Directory>electronica.directory</Directory>
 			<Include><Filename>ktechlab.desktop</Filename></Include>
 			<Include><Filename>qelectrotech.desktop</Filename></Include>
+			<Include><Filename>fritzing.desktop</Filename></Include>
+			<Include><Filename>geda-gschem.desktop</Filename></Include>
+			<Include><Filename>geda-gattrib.desktop</Filename></Include>
+			<Include><Filename>qucs.desktop</Filename></Include>
 		</Menu>
 
 		<Menu>
@@ -561,6 +568,8 @@
 		<Exclude><Filename>creditos-max40.desktop</Filename></Exclude>
 		<Exclude><Filename>squeak-doc.desktop</Filename></Exclude>
 		<Exclude><Filename>squeak-manual.desktop</Filename></Exclude>
+		<Exclude><Filename>geda-gschem.desktop</Filename></Exclude>
+		<Exclude><Filename>geda-gattrib.desktop</Filename></Exclude>
 	</Menu> <!-- End Other -->
 
 
