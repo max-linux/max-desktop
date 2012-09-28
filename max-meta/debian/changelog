@@ -1,3 +1,21 @@
+max-meta (7.0.max19) max; urgency=low
+
+  * desktop-common add:
+    + apertium
+    + apertium-tolk
+    + apertium-en-es
+    + apertium-eo-es
+    + apertium-es-ca
+    + apertium-es-gl
+    + apertium-es-pt
+    + apertium-es-ro
+    + apertium-eu-es
+    + apertium-fr-es
+    + apertium-oc-es
+    + gtick 
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 27 Sep 2012 17:20:58 +0200
+
 max-meta (7.0.max18) max; urgency=low
 
   * desktop-common add:
