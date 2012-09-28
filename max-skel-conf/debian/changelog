@@ -1,3 +1,10 @@
+max-skel-conf (7.0.max30) max; urgency=low
+
+  * Add usr/share/max/nautilus_background_for_root.sh
+    Close #412
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 28 Sep 2012 16:27:56 +0200
+
 max-skel-conf (7.0.max29) max; urgency=low
 
   * Disable apport
