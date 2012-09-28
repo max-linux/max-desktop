@@ -1,3 +1,9 @@
+ubiquity-frontend-max (7.0.max19) max; urgency=low
+
+  * Save console-setup in 90max_desktop
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 25 Sep 2012 15:56:04 +0200
+
 ubiquity-frontend-max (7.0.max18) max; urgency=low
 
   * Don't run update-grub in target-config/90max_desktop
