@@ -1,3 +1,15 @@
+max-meta (7.0.max20) max; urgency=low
+
+  * desktop-common add Close #145:
+    + fritzing
+    + geda geda-doc geda-examples geda-gattrib geda-gnetlist
+    + geda-gschem geda-gsymcheck geda-symbols geda-utils
+    + gpsim
+    + qucs
+
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 28 Sep 2012 17:23:56 +0200
+
 max-meta (7.0.max19) max; urgency=low
 
   * desktop-common add:
