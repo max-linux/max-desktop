@@ -1,3 +1,10 @@
+ubiquity-frontend-max (7.0.max20) max; urgency=low
+
+  * Disable guest login
+  * Add button in Welcome to launch usb-creator-gtk
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 04 Oct 2012 11:33:27 +0200
+
 ubiquity-frontend-max (7.0.max19) max; urgency=low
 
   * Save console-setup in 90max_desktop

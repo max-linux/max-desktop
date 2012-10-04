@@ -19,8 +19,10 @@
 # along with Ubiquity.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
+import sys
 import syslog
 from ubiquity import plugin
+from subprocess import Popen, PIPE, STDOUT
 
 NAME = 'intro'
 AFTER = None
@@ -55,6 +57,8 @@ class PageGtk(PageBase):
 
         self.intro_image = builder.get_object('intro_image')
         self.intro_label = builder.get_object('intro_label')
+        self.btn_usb = builder.get_object('btn_usb')
+        self.btn_usb.connect('clicked', self.genUSB)
         
         self.intro_image=self.intro_image.set_from_file("/usr/share/ubiquity/pixmaps/max/logo.png")
 
@@ -68,7 +72,28 @@ class PageGtk(PageBase):
         #sh = gtk.gdk.get_default_root_window().get_screen().get_height()
         self.plugin_widgets = self.page
 
+    def genUSB(self, *args):
+        self.installing=True
+        p=Popen("sudo /usr/bin/usb-creator-gtk", shell=True, bufsize=0,
+                                                 stdout=PIPE,
+                                                 stderr=STDOUT, close_fds=True)
+        while self.installing:
+            if p.poll() != None: self.installing=False
+            line=p.stdout.readline()
+            syslog.syslog("USBCREATOR: %s"%line.strip())
+        # quit when done
+        self.quit_installer()
 
+    def quit_installer(self):
+        """quit installer cleanly."""
+        try:
+            os.popen("sudo rm -f /tmp/max_install_type")
+            os.popen("sudo rm -f /tmp/max_desktop_type")
+        except:
+            pass
+        from gi.repository import Gtk
+        Gtk.main_quit()
+        sys.exit(0)
 
 
 class PageKde(PageBase):

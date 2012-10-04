@@ -5,16 +5,61 @@
   <object class="GtkVBox" id="stepWelcome">
     <property name="visible">True</property>
     <property name="border_width">6</property>
-    <property name="orientation">vertical</property>
     <child>
-      <object class="GtkImage" id="intro_image">
+      <object class="GtkHBox" id="hbox1">
         <property name="visible">True</property>
-        <property name="ypad">15</property>
-        <property name="stock">gtk-missing-image</property>
+        <property name="spacing">5</property>
+        <child>
+          <object class="GtkImage" id="intro_image">
+            <property name="visible">True</property>
+            <property name="ypad">15</property>
+            <property name="stock">gtk-missing-image</property>
+          </object>
+          <packing>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <object class="GtkVBox" id="vbox1">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_usb">
+                <property name="label" translatable="yes">Generar USB</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image1</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
       </object>
       <packing>
+        <property name="expand">False</property>
+        <property name="fill">False</property>
         <property name="position">0</property>
       </packing>
+    </child>
+    <child>
+      <placeholder/>
     </child>
     <child>
       <object class="GtkLabel" id="intro_label">
@@ -25,11 +70,16 @@
         <property name="max_width_chars">70</property>
       </object>
       <packing>
-        <property name="position">1</property>
+        <property name="position">2</property>
       </packing>
     </child>
     <child>
       <placeholder/>
     </child>
+  </object>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="xpad">4</property>
+    <property name="icon_name">media-flash</property>
   </object>
 </interface>

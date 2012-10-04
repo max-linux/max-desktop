@@ -32,7 +32,7 @@ if grep -q "i915.modeset=0 video=LVDS-1:e" /proc/cmdline; then
   fi
 fi
 
-
+chroot /target /usr/lib/lightdm/lightdm-set-defaults --allow-guest=false
 chroot /target loadkeys es
 chroot /target setupcon --save-only
 
