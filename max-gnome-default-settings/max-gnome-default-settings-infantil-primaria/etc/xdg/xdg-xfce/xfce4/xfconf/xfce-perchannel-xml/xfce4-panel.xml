@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="panels" type="uint" value="2">
+    <property name="panel-0" type="empty">
+      <property name="position" type="string" value="p=8;x=72;y=872"/>
+      <property name="size" type="uint" value="37"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
+        <value type="int" value="11"/>
+        <value type="int" value="2"/>
+        <value type="int" value="13"/>
+        <value type="int" value="14"/>
+        <value type="int" value="4"/>
+        <value type="int" value="12"/>
+        <value type="int" value="8"/>
+        <value type="int" value="3"/>
+        <value type="int" value="10"/>
+        <value type="int" value="36"/>
+        <value type="int" value="5"/>
+        <value type="int" value="18"/>
+      </property>
+    </property>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=6;x=473;y=22"/>
+      <property name="size" type="uint" value="40"/>
+      <property name="length" type="uint" value="75"/>
+      <property name="length-adjust" type="bool" value="true"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="6"/>
+        <value type="int" value="7"/>
+        <value type="int" value="9"/>
+        <value type="int" value="15"/>
+        <value type="int" value="16"/>
+        <value type="int" value="17"/>
+        <value type="int" value="19"/>
+        <value type="int" value="20"/>
+        <value type="int" value="21"/>
+        <value type="int" value="22"/>
+        <value type="int" value="23"/>
+        <value type="int" value="24"/>
+        <value type="int" value="25"/>
+        <value type="int" value="26"/>
+        <value type="int" value="27"/>
+        <value type="int" value="28"/>
+        <value type="int" value="29"/>
+        <value type="int" value="30"/>
+        <value type="int" value="31"/>
+        <value type="int" value="32"/>
+        <value type="int" value="33"/>
+        <value type="int" value="34"/>
+        <value type="int" value="35"/>
+      </property>
+      <property name="background-style" type="uint" value="0"/>
+      <property name="position-locked" type="bool" value="false"/>
+      <property name="autohide" type="bool" value="false"/>
+      <property name="position-locked" type="bool" value="false"/>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-1" type="string" value="applicationsmenu">
+      <property name="button-title" type="string" value="Inicio"/>
+      <property name="show-tooltips" type="bool" value="true"/>
+      <property name="button-icon" type="string" value="max"/>
+      <property name="custom-menu" type="bool" value="true"/>
+      <property name="custom-menu-file" type="string" value="/etc/xdg/menus/max-xfce-applications.menu"/>
+      <property name="show-button-title" type="bool" value="false"/>
+    </property>
+    <property name="plugin-3" type="string" value="tasklist">
+      <property name="flat-buttons" type="bool" value="false"/>
+      <property name="show-handle" type="bool" value="false"/>
+      <property name="rotate-vertically" type="bool" value="true"/>
+      <property name="sort-order" type="uint" value="4"/>
+      <property name="show-wireframes" type="bool" value="false"/>
+      <property name="include-all-workspaces" type="bool" value="true"/>
+      <property name="show-only-minimized" type="bool" value="false"/>
+    </property>
+    <property name="plugin-4" type="string" value="screenshooter"/>
+    <property name="plugin-12" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/gnome-terminal.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-13" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/firefox.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-2" type="string" value="showdesktop"/>
+    <property name="plugin-8" type="string" value="separator"/>
+    <property name="plugin-10" type="string" value="separator">
+      <property name="expand" type="bool" value="false"/>
+    </property>
+    <property name="plugin-11" type="string" value="separator"/>
+    <property name="plugin-14" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/libreoffice-writer.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-18" type="string" value="indicator"/>
+    <property name="plugin-5" type="string" value="systray">
+      <property name="size-max" type="uint" value="37"/>
+      <property name="show-frame" type="bool" value="false"/>
+    </property>
+  <property name="plugin-6" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/gcompris.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-7" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/childsplay.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-9" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/omnitux.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-15" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/pysycache.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-16" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/frozen-bubble.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-17" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/ri-li.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-19" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/kde4/khangman.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-20" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/jarnalannotate.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-21" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/kde4/ktouch.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-22" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/tuxtype.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-23" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/tuxmath.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-24" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/kde4/klettres.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-25" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/gnome-translate.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-26" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/kde4/kgeography.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-27" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/kde4/marble.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-28" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/kde4/ktuberling.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-29" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/tuxpaint.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-30" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/plopp.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-31" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/pinta.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-32" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/squeak-scratch.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-33" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/squeak-small-land.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-34" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/gnome-sound-recorder.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-35" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/openshot.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-36" type="string" value="pager">
+      <property name="rows" type="uint" value="2"/>
+    </property>
+  </property>
+</channel>

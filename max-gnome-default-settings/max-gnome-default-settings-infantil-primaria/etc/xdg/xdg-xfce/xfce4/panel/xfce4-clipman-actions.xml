@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE actions [
+	<!ELEMENT actions (action+)>
+	<!ELEMENT action (name,regex,commands)>
+	<!ELEMENT commands (command+)>
+	<!ELEMENT command (name,exec)>
+
+	<!ELEMENT name (#PCDATA)>
+	<!ATTLIST name xml:lang CDATA #IMPLIED>
+	<!ELEMENT regex (#PCDATA)>
+	<!ELEMENT exec (#PCDATA)>
+]>
+<actions>
+	<action>
+		<name>Image</name>
+		<name xml:lang="ast">Imaxe</name>
+		<name xml:lang="be">Малюнак</name>
+		<name xml:lang="ca">Imatge</name>
+		<name xml:lang="cs">Obrázek</name>
+		<name xml:lang="da">Billede</name>
+		<name xml:lang="de">Bild</name>
+		<name xml:lang="el">Εικόνα</name>
+		<name xml:lang="en_GB">Image</name>
+		<name xml:lang="es">Imagen</name>
+		<name xml:lang="eu">Irudia</name>
+		<name xml:lang="fi">Kuva</name>
+		<name xml:lang="fr">Image</name>
+		<name xml:lang="gl">Imaxe</name>
+		<name xml:lang="hr">Slika</name>
+		<name xml:lang="hu">Kép</name>
+		<name xml:lang="id">Citra</name>
+		<name xml:lang="it">Immagine</name>
+		<name xml:lang="ja">画像</name>
+		<name xml:lang="kk">Сурет</name>
+		<name xml:lang="lv">Attēls</name>
+		<name xml:lang="nl">Afbeelding</name>
+		<name xml:lang="pl">Obraz</name>
+		<name xml:lang="pt">Imagem</name>
+		<name xml:lang="ru">Изображение</name>
+		<name xml:lang="sk">Obrázok</name>
+		<name xml:lang="sv">Bild</name>
+		<name xml:lang="tr">Resim</name>
+		<name xml:lang="ug">سۈرەت</name>
+		<name xml:lang="uk">Картинка</name>
+		<name xml:lang="ur">تصویر</name>
+		<name xml:lang="ur_PK">تصویر</name>
+		<name xml:lang="vi">Ảnh</name>
+		<name xml:lang="zh_CN">图像</name>
+		<regex>(http|ftp).+\.(jpg|png|gif)</regex>
+		<commands>
+			<command>
+				<name>Edit with Gimp</name>
+				<name xml:lang="ast">Editar con GIMP</name>
+				<name xml:lang="be">Рэдагаваць з дапамогай Gimp</name>
+				<name xml:lang="ca">Edita amb Gimp</name>
+				<name xml:lang="cs">Upravit pomocí aplikace Gimp</name>
+				<name xml:lang="da">Redigér med Gimp</name>
+				<name xml:lang="de">Mit GIMP bearbeiten</name>
+				<name xml:lang="el">Επεξεργασία με gimp</name>
+				<name xml:lang="en_GB">Edit with Gimp</name>
+				<name xml:lang="es">Editar con GIMP</name>
+				<name xml:lang="eu">Editatu Gimp-rekin</name>
+				<name xml:lang="fi">Muokkaa GIMP:ssä</name>
+				<name xml:lang="fr">Éditer avec Gimp</name>
+				<name xml:lang="gl">Editar co Gimp</name>
+				<name xml:lang="hr">Uredi pomoću Gimp-a</name>
+				<name xml:lang="hu">Szerkesztés a Gimppel</name>
+				<name xml:lang="id">Sunting dengan Gimp</name>
+				<name xml:lang="it">Modifica con GIMP</name>
+				<name xml:lang="ja">GIMP で編集</name>
+				<name xml:lang="kk">Gimp көмегімен түзету</name>
+				<name xml:lang="lv">Rediģēt ar Gimp</name>
+				<name xml:lang="nl">Bewerken met Gimp</name>
+				<name xml:lang="pl">Otwórz za pomocą Gimp</name>
+				<name xml:lang="pt">Editar com Gimp</name>
+				<name xml:lang="ru">Редактировать в Gimp</name>
+				<name xml:lang="sk">Upraviť v aplikácii Gimp</name>
+				<name xml:lang="sv">Redigera med Gimp</name>
+				<name xml:lang="tr">Gimp ile Düzenle</name>
+				<name xml:lang="ug">GIMP دە تەھرىرلەش</name>
+				<name xml:lang="uk">Редагувати в Gimp</name>
+				<name xml:lang="ur">گمپ سے مدون کریں</name>
+				<name xml:lang="ur_PK">گمپ سے مدون کریں</name>
+				<name xml:lang="vi">Chỉnh sửa bằng Gimp</name>
+				<name xml:lang="zh_CN">使用 Gimp 编辑</name>
+				<exec>gimp-remote &quot;\0&quot;</exec>
+			</command>
+			<command>
+				<name>View with Ristretto</name>
+				<name xml:lang="ast">Ver con Ristretto</name>
+				<name xml:lang="ca">Mostra amb Ristretto</name>
+				<name xml:lang="cs">Zobrazit v aplikaci Ristretto</name>
+				<name xml:lang="da">Vis med Ristretto</name>
+				<name xml:lang="de">Mit Ristretto betrachten</name>
+				<name xml:lang="el">Εμφάνιση με το ristretto</name>
+				<name xml:lang="en_GB">View with Ristretto</name>
+				<name xml:lang="es">Ver con Ristretto</name>
+				<name xml:lang="eu">Ikusi Ristretto-rekin</name>
+				<name xml:lang="fi">Näytä Ristrettolla</name>
+				<name xml:lang="fr">Ouvrir avec Ristretto</name>
+				<name xml:lang="gl">Ver con Ristretto</name>
+				<name xml:lang="hr">Pogledaj pomoću Ristretto-a</name>
+				<name xml:lang="hu">Megjelenítés a Ristrettoval</name>
+				<name xml:lang="id">Tampilkan dengan Ristretto</name>
+				<name xml:lang="it">Visualizza con Ristretto</name>
+				<name xml:lang="ja">Ristretto で表示</name>
+				<name xml:lang="kk">Ristretto көмегімен қарау</name>
+				<name xml:lang="lv">Apskatīt ar Ristretto</name>
+				<name xml:lang="nl">Weergeven in Ristretto</name>
+				<name xml:lang="pl">Otwórz za pomocą Ristretto</name>
+				<name xml:lang="pt">Ver com Ristretto</name>
+				<name xml:lang="ru">Просмотр в Ristretto</name>
+				<name xml:lang="sk">Zobraziť v aplikácii Risttretto</name>
+				<name xml:lang="sv">Visa med Ristretto</name>
+				<name xml:lang="tr">Ristretto ile görüntüle</name>
+				<name xml:lang="ug">Ristretto دە كۆرسەت</name>
+				<name xml:lang="uk">Переглянути в Ristretto</name>
+				<name xml:lang="ur">ریسٹریٹو کے ذریعہ دیکھیں</name>
+				<name xml:lang="ur_PK">ریسٹریٹو کے ذریعہ دیکھیں</name>
+				<name xml:lang="vi">Xem bằng Ristretto</name>
+				<name xml:lang="zh_CN">使用 Ristretto 查看</name>
+				<exec>ristretto &quot;\0&quot;</exec>
+			</command>
+		</commands>
+	</action>
+	<action>
+		<name>Bugz</name>
+		<name xml:lang="ast">Fallos</name>
+		<name xml:lang="ca">Errors</name>
+		<name xml:lang="cs">Chyby</name>
+		<name xml:lang="da">Fejl</name>
+		<name xml:lang="de">Fehler</name>
+		<name xml:lang="el">Σφάλματα</name>
+		<name xml:lang="en_GB">Bugz</name>
+		<name xml:lang="es">Fallos</name>
+		<name xml:lang="eu">Bugz</name>
+		<name xml:lang="fi">Vikailmoitukset</name>
+		<name xml:lang="fr">Bogue</name>
+		<name xml:lang="gl">Erros</name>
+		<name xml:lang="hu">Hibák</name>
+		<name xml:lang="id">Bugz</name>
+		<name xml:lang="it">Problemi</name>
+		<name xml:lang="ja">Bugz</name>
+		<name xml:lang="kk">Bugz</name>
+		<name xml:lang="lv">Bugz</name>
+		<name xml:lang="nl">Bugz</name>
+		<name xml:lang="pl">Błędy</name>
+		<name xml:lang="pt">Erros</name>
+		<name xml:lang="ru">Ошибки</name>
+		<name xml:lang="sk">Chyby</name>
+		<name xml:lang="tr">Hatalar</name>
+		<name xml:lang="ug">Bugz</name>
+		<name xml:lang="uk">Помилки</name>
+		<name xml:lang="ur">بگز</name>
+		<name xml:lang="ur_PK">بگز</name>
+		<name xml:lang="zh_CN">查看错误报告</name>
+		<regex>bug\s*#?\s*([0-9]+)</regex>
+		<commands>
+			<command>
+				<name>Xfce Bug</name>
+				<name xml:lang="ast">Fallu de Xfce</name>
+				<name xml:lang="ca">Error de Xfce</name>
+				<name xml:lang="cs">Chyba prostředí Xfce</name>
+				<name xml:lang="da">Xfce-fejl</name>
+				<name xml:lang="de">Fehler bei Xfce</name>
+				<name xml:lang="el">Σφάλμα xfce</name>
+				<name xml:lang="en_GB">Xfce Bug</name>
+				<name xml:lang="es">Fallo de Xfce</name>
+				<name xml:lang="eu">Xfce programa-errorea</name>
+				<name xml:lang="fi">Xfce:n vikailmoitus</name>
+				<name xml:lang="fr">Bogue Xfce</name>
+				<name xml:lang="gl">Erro de Xfce</name>
+				<name xml:lang="hr">Xfce Bug</name>
+				<name xml:lang="hu">Xfce hiba</name>
+				<name xml:lang="id">Kutu Xfce</name>
+				<name xml:lang="it">Problema di Xfce</name>
+				<name xml:lang="ja">Xfce バグ</name>
+				<name xml:lang="kk">Xfce Bug</name>
+				<name xml:lang="lv">Xfce Bug</name>
+				<name xml:lang="nl">Xfce-fout</name>
+				<name xml:lang="pl">Błąd Xfce</name>
+				<name xml:lang="pt">Erro Xfce</name>
+				<name xml:lang="ru">Ошибка в Xfce</name>
+				<name xml:lang="sk">Chyba Xfce</name>
+				<name xml:lang="tr">Xfce Hatası</name>
+				<name xml:lang="ug">Xfce  كەمتۈكى</name>
+				<name xml:lang="uk">Помилка Xfce</name>
+				<name xml:lang="ur">ایکسفس بگ</name>
+				<name xml:lang="ur_PK">ایکسفس بگ</name>
+				<name xml:lang="vi">Lỗi của Xfce</name>
+				<name xml:lang="zh_CN">查看 Xfce 错误报告</name>
+				<exec>exo-open http://bugzilla.xfce.org/show_bug.cgi?id=\1</exec>
+			</command>
+			<command>
+				<name>GNOME Bug</name>
+				<name xml:lang="ast">Fallu de GNOME</name>
+				<name xml:lang="ca">Error de GNOME</name>
+				<name xml:lang="cs">Chyba prostředí GNOME</name>
+				<name xml:lang="da">GNOME-fejl</name>
+				<name xml:lang="de">Fehler bei Gnome</name>
+				<name xml:lang="el">Σφάλμα gnome</name>
+				<name xml:lang="en_GB">GNOME Bug</name>
+				<name xml:lang="es">Fallo de GNOME</name>
+				<name xml:lang="eu">Gnome programa-errorea</name>
+				<name xml:lang="fi">GNOME-vikailmoitus</name>
+				<name xml:lang="fr">Bogue GNOME</name>
+				<name xml:lang="gl">Erro de GNOME</name>
+				<name xml:lang="hr">GNOME Bug</name>
+				<name xml:lang="hu">GNOME hiba</name>
+				<name xml:lang="id">Kutu GNOME</name>
+				<name xml:lang="it">Problema di GNOME</name>
+				<name xml:lang="ja">GNOME バグ</name>
+				<name xml:lang="kk">GNOME Bug</name>
+				<name xml:lang="lv">GNOME Bug</name>
+				<name xml:lang="nl">GNOME-fout</name>
+				<name xml:lang="pl">Błąd GNOME</name>
+				<name xml:lang="pt">Erro GNOME</name>
+				<name xml:lang="ru">Ошибки в GNOME</name>
+				<name xml:lang="sk">Chyba Gnome</name>
+				<name xml:lang="tr">GNOME Hatası</name>
+				<name xml:lang="ug">GNOME كەمتۈكى</name>
+				<name xml:lang="uk">Помилка ҐНОМА</name>
+				<name xml:lang="ur">گنوم بگ</name>
+				<name xml:lang="ur_PK">گنوم بگ</name>
+				<name xml:lang="vi">Lỗi của GNOME</name>
+				<name xml:lang="zh_CN">查看 GNOME 错误报告</name>
+				<exec>exo-open http://bugzilla.gnome.org/show_bug.cgi?id=\1</exec>
+			</command>
+		</commands>
+	</action>
+	<action>
+		<name>Long URL</name>
+		<name xml:lang="ast">URL llarga</name>
+		<name xml:lang="ca">URL completa</name>
+		<name xml:lang="cs">Dlouhá adresa URL</name>
+		<name xml:lang="da">Lang URL</name>
+		<name xml:lang="de">Lange Webadresse</name>
+		<name xml:lang="el">Μεγάλο url</name>
+		<name xml:lang="en_GB">Long URL</name>
+		<name xml:lang="es">URL larga</name>
+		<name xml:lang="eu">URL luzea</name>
+		<name xml:lang="fi">Pitkä URL</name>
+		<name xml:lang="fr">Longue URL</name>
+		<name xml:lang="gl">URL longo</name>
+		<name xml:lang="hr">Dugi URL</name>
+		<name xml:lang="hu">Hosszú URL</name>
+		<name xml:lang="id">URL Panjang</name>
+		<name xml:lang="it">URL lunga</name>
+		<name xml:lang="ja">長い URL</name>
+		<name xml:lang="kk">Ұзын URL</name>
+		<name xml:lang="lv">Garš URL</name>
+		<name xml:lang="nl">Lange URL</name>
+		<name xml:lang="pl">Długi adres URL</name>
+		<name xml:lang="pt">URL longa</name>
+		<name xml:lang="ru">Длинный URL</name>
+		<name xml:lang="sk">Dlhá URL</name>
+		<name xml:lang="tr">Uzun URL</name>
+		<name xml:lang="ug">ئۇزۇن URL</name>
+		<name xml:lang="uk">Довгий URL</name>
+		<name xml:lang="ur">طویل ربط</name>
+		<name xml:lang="ur_PK">طویل ربط</name>
+		<name xml:lang="vi">Đại chỉ URL đầy đủ</name>
+		<name xml:lang="zh_CN">长 URL</name>
+		<regex>http://[^ ]{120,}</regex>
+		<commands>
+			<command>
+				<name>Shrink the URL</name>
+				<name xml:lang="ast">Acurtiar la URL</name>
+				<name xml:lang="ca">Encongeix la URL</name>
+				<name xml:lang="cs">Zkrátit adresu URL</name>
+				<name xml:lang="da">Formindsk URL'en</name>
+				<name xml:lang="de">Webadresse kürzen</name>
+				<name xml:lang="el">Σμίκρυνση του url</name>
+				<name xml:lang="en_GB">Shrink the URL</name>
+				<name xml:lang="es">Acortar la URL</name>
+				<name xml:lang="eu">LAburtu URLa</name>
+				<name xml:lang="fi">Luo lyhyt URL</name>
+				<name xml:lang="fr">Rétrécir l'URL</name>
+				<name xml:lang="gl">Acurtar o URL</name>
+				<name xml:lang="hr">Skrati URL</name>
+				<name xml:lang="hu">URL tömörítése</name>
+				<name xml:lang="id">Kecilkan URL</name>
+				<name xml:lang="it">Accorcia l'URL</name>
+				<name xml:lang="ja">URL を短縮</name>
+				<name xml:lang="kk">URL-ды қысқарту</name>
+				<name xml:lang="lv">Saīsināt URL</name>
+				<name xml:lang="nl">URL inkrimpen</name>
+				<name xml:lang="pt">Encurtar URL</name>
+				<name xml:lang="ru">Сократить URL</name>
+				<name xml:lang="sk">Skrátiť URL</name>
+				<name xml:lang="tr">URL'yi kısalt</name>
+				<name xml:lang="ug">URL نى قىسقارتىڭ</name>
+				<name xml:lang="uk">Вкоротити URL</name>
+				<name xml:lang="ur">روابط مختصر کریں</name>
+				<name xml:lang="ur_PK">روابط مختصر کریں</name>
+				<name xml:lang="vi">Địa chỉ URL thu gọn</name>
+				<name xml:lang="zh_CN">缩短 URL</name>
+				<exec>exo-open http://tinyurl.com/create.php?url=\0</exec>
+			</command>
+		</commands>
+	</action>
+</actions>
