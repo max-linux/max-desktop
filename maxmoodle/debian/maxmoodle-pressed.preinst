@@ -5,21 +5,6 @@
 
 
 if [ ! -e /var/cache/maxmoodle/mysql.pressed ]; then
-  cat << EOF > /etc/dbconfig-common/config
-# dbconfig-common system-wide configuration options
-
-# dbc_remember_admin_pass: should we cache administrative passwords?
-#	set to "true" to keep admin passwords cached in debconf
-dbc_remember_admin_pass='true'
-
-# dbc_remote_questions_default: will we be likely to install on remote servers?
-#	set to "true" to raise the priority of debconf questions related to
-#   database installation on remote servers (for database types that support this)
-dbc_remote_questions_default='false'
-
-EOF
-  chmod 600 /etc/dbconfig-common/config
-
   # preesed mysql-server-5.5 package
   echo " * maxmoodle-pressed: pressing mysql server"
   debconf-set-selections << END
@@ -38,24 +23,20 @@ if [ ! -e /var/cache/maxmoodle/moodle.pressed ]; then
   # preesed moodle package
   echo " * maxmoodle-pressed: pressing moodle"
   debconf-set-selections << END
-moodle moodle/app-password-confirm password cmadrid
-moodle moodle/mysql/admin-pass password cmadrid
-moodle moodle/mysql/app-pass password cmadrid
-moodle moodle/password-confirm password cmadrid
-moodle moodle/database-type select mysql
-moodle moodle/internal/reconfiguring boolean true
-moodle moodle/www string http://localhost/moodle
-moodle moodle/upgrade-backup boolean true
-moodle moodle/dbconfig-reinstall boolean true
-moodle moodle/db/app-user string moodle
-moodle moodle/internal/skip-preseed boolean false
-moodle moodle/purge boolean true
-moodle moodle/remote/host select
-moodle moodle/db/dbname string moodle
-moodle moodle/mysql/method select unix socket
-moodle moodle/dbconfig-upgrade boolean true
-moodle moodle/mysql/admin-user string root
-moodle moodle/dbconfig-install boolean true
+moodle	moodle/dbu_password	password	cmadrid
+moodle	moodle/dba_password	password	cmadrid
+moodle	moodle/dbu_confirm	password	cmadrid
+moodle	moodle/dba_confirm	password	cmadrid
+moodle	moodle/db_host	string	localhost
+moodle	moodle/create_db	note	
+moodle	moodle/create_tables	note	
+moodle	moodle/notconfigured	note	
+moodle	moodle/dbu_name	string	moodle
+moodle	moodle/db_server	select	mysql-server
+moodle	moodle/webserver	select	apache2
+moodle	moodle/db_postgres_create	boolean	true
+moodle	moodle/old_webserver_config	note	
+moodle	moodle/dba_name	string	root
 END
   touch /var/cache/maxmoodle/moodle.pressed
 fi

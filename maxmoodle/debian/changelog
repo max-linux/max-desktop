@@ -1,3 +1,9 @@
+maxmoodle (7.0.max5) max; urgency=low
+
+  * Revert to previous preseed
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 05 Oct 2012 10:27:50 +0200
+
 maxmoodle (7.0.max4) max; urgency=low
 
   * Synlink apache2/conf.d if no exists
