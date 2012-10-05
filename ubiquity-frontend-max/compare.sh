@@ -11,7 +11,8 @@
 #ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.9.15/
 #ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.9.18/
 #ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.10.8/
-ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.10.16/
+#ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.10.16/
+ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.10.20/
 
 #for f in $(find usr/ -type f -name "*py"); do
 for f in $(find usr/ -type f | grep -v ".svn"); do

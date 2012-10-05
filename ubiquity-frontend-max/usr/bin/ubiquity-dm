@@ -156,7 +156,22 @@ class DM:
     def server_preexec(self):
         signal.signal(signal.SIGUSR1, signal.SIG_IGN)
 
+    def run_hooks(self, hookdir):
+        if os.path.isdir(hookdir):
+            # Exclude hooks containing '.', so that *.dpkg-* et al are avoided. 
+            hooks = [entry for entry in os.listdir(hookdir)
+                     if '.' not in entry]
+            for hookentry in hooks:
+                hook = os.path.join(hookdir, hookentry)
+                with open('/var/log/installer/dm', 'a') as logfile:
+                    subprocess.call(
+                        hook, stdout=logfile, stderr=logfile,
+                        preexec_fn=self.drop_privileges)
+
     def run(self, *program):
+        # extract the program basename to see if we are in oem-config or ubiquity
+        program_basename = os.path.basename(program[0])
+
         null = open('/dev/null', 'w')
         try:
             os.makedirs('/var/log/installer')
@@ -265,6 +280,14 @@ EndSection
         os.environ['GVFS_DISABLE_FUSE' ] = '1'
 
         ck_open_session(self.uid)
+
+        # run simple, custom scripts during install time
+        if program_basename == 'ubiquity':
+            self.run_hooks('/usr/lib/ubiquity/dm-scripts/install')
+
+        # run simple, custom scripts during  oem-config
+        if program_basename == 'oem-config-wrapper':
+            self.run_hooks('/usr/lib/ubiquity/dm-scripts/oem')
 
         # Session bus, apparently needed by most interfaces now
         if ('DBUS_SESSION_BUS_ADDRESS' not in os.environ and
