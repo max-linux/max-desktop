@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max16) max; urgency=low
+
+  * Move skel/.config/dconf to /etc/dconf
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 05 Oct 2012 22:50:10 +0200
+
 max-gnome-default-settings (7.0.max15) max; urgency=low
 
   * Fix dconf profile in infantil
