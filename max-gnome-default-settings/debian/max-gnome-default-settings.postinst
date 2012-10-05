@@ -12,7 +12,6 @@ fi
 for u in $(ls /home/*/.config/dconf/user 2>/dev/null); do
   if [ ! -e "${u}.imported" ]; then
     cat /etc/skel/.config/dconf/user > "$u"
-    cat /etc/skel/.config/dconf/user_infantil_primaria > "${u}_infantil_primaria"
     touch "${u}.imported"
   fi
 done

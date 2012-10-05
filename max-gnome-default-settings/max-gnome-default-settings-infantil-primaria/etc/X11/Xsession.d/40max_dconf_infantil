@@ -5,7 +5,7 @@
 
 
 if [ -d /usr/share/doc/max-desktop-infantil-primaria ]; then
-	DCONF_PROFILE=$HOME/.config/dconf/user_infantil_primaria
+	export DCONF_PROFILE=infantil
 fi
 
 
