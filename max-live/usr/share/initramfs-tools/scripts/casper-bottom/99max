@@ -21,6 +21,8 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
+# disable apport crashes
+sed -i 's/enabled=1/enabled=0/' /root/etc/default/apport
 
 # delete old ubiquity
 rm -f /root/home/$USERNAME/*/ubiquity*desktop 2>/dev/null
@@ -62,5 +64,11 @@ fi
 if grep -q "xfce" /proc/cmdline; then
   chroot /root /usr/lib/lightdm/lightdm-set-defaults -s xfce
 fi
+
+
+# hack for Ubiquity and Xfce4
+# ubiquity loads with black background
+rm -rf /root/root/.themes
+
 
 log_end_msg
