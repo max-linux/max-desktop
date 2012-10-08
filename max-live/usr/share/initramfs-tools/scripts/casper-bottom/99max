@@ -70,5 +70,7 @@ fi
 # ubiquity loads with black background
 rm -rf /root/root/.themes
 
+chroot /root loadkeys es
+chroot /root setupcon --save-only
 
 log_end_msg
