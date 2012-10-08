@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max17) max; urgency=low
+
+  * Hide shotwell #456 and enable window switcher in compiz #451
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 08 Oct 2012 15:28:59 +0200
+
 max-gnome-default-settings (7.0.max16) max; urgency=low
 
   * Move skel/.config/dconf to /etc/dconf
