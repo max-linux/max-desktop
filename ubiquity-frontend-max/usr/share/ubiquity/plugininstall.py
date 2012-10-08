@@ -205,8 +205,6 @@ class Install(install_misc.InstallBase):
 
         # MAX install max packages
         self.install_max_extras()
-        # MaX exec apt-get autoremove --purge
-        self.do_autoremove()
 
         self.next_region(size=4)
         self.db.progress('INFO', 'ubiquity/install/removing')
@@ -265,6 +263,10 @@ class Install(install_misc.InstallBase):
                 'Could not copy wallpaper cache:')
             for line in traceback.format_exc().split('\n'):
                 syslog.syslog(syslog.LOG_WARNING, line)
+        # MaX exec apt-get autoremove --purge
+        self.do_autoremove()
+        # end MAX
+
         self.copy_dcd()
 
         self.db.progress('SET', self.count)
