@@ -24,33 +24,32 @@
     </property>
     <property name="panel-1" type="empty">
       <property name="position" type="string" value="p=6;x=473;y=22"/>
-      <property name="size" type="uint" value="40"/>
-      <property name="length" type="uint" value="75"/>
+      <property name="size" type="uint" value="50"/>
+      <property name="length" type="uint" value="100"/>
       <property name="length-adjust" type="bool" value="true"/>
       <property name="plugin-ids" type="array">
+        <value type="int" value="40"/>
         <value type="int" value="6"/>
         <value type="int" value="7"/>
         <value type="int" value="9"/>
         <value type="int" value="15"/>
-        <value type="int" value="16"/>
         <value type="int" value="17"/>
         <value type="int" value="19"/>
-        <value type="int" value="20"/>
-        <value type="int" value="21"/>
+        <value type="int" value="24"/>
         <value type="int" value="22"/>
         <value type="int" value="23"/>
-        <value type="int" value="24"/>
-        <value type="int" value="25"/>
         <value type="int" value="26"/>
         <value type="int" value="27"/>
         <value type="int" value="28"/>
         <value type="int" value="29"/>
-        <value type="int" value="30"/>
         <value type="int" value="31"/>
+        <value type="int" value="37"/>
+        <value type="int" value="38"/>
+        <value type="int" value="30"/>
         <value type="int" value="32"/>
-        <value type="int" value="33"/>
         <value type="int" value="34"/>
         <value type="int" value="35"/>
+        <value type="int" value="39"/>
       </property>
       <property name="background-style" type="uint" value="0"/>
       <property name="position-locked" type="bool" value="false"/>
@@ -220,6 +219,24 @@
     </property>
     <property name="plugin-36" type="string" value="pager">
       <property name="rows" type="uint" value="2"/>
+    </property>
+    <property name="plugin-37" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/libreoffice-draw.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-38" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/libreoffice-impress.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-39" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="true"/>
+    </property>
+    <property name="plugin-40" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
     </property>
   </property>
 </channel>
