@@ -4,6 +4,8 @@
 
 if [ "$1" = "configure" ]; then
 
+   [ -x /usr/lib/lightdm/lightdm-set-defaults ] &&  /usr/lib/lightdm/lightdm-set-defaults --hide-users || true
+
    [ -e /etc/init.d/max-ldap ] && rm -f /etc/init.d/max-ldap
 
 

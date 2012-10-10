@@ -1,3 +1,10 @@
+max-ldap (0.22max1) max; urgency=low
+
+  * Build in MaX 7.0
+  * Disable user list in lightdm
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Oct 2012 16:09:08 +0200
+
 max-ldap (0.22) max; urgency=low
 
   * Umount user home in /etc/gdm/PostSession/Default
