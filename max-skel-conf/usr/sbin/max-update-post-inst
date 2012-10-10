@@ -127,3 +127,12 @@ sed -i '/^enabled/s/1/0/g' /etc/default/apport 2>&1
 
 # set nautilus background red color for root
 bash /usr/share/max/nautilus_background_for_root.sh
+
+
+# dconf apparmor
+if ! grep -q "dconf" /etc/apparmor.d/abstractions/gnome 2>&1; then
+  echo ""                   >> /etc/apparmor.d/abstractions/gnome
+  echo "  # max dconf"      >> /etc/apparmor.d/abstractions/gnome
+  echo "  /etc/dconf/** r," >> /etc/apparmor.d/abstractions/gnome
+  invoke-rc.d apparmor reload
+fi

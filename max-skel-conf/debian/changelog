@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max33) max; urgency=low
+
+  * Configure apparmor.d to allow /etc/dconf
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 08 Oct 2012 20:40:30 +0200
+
 max-skel-conf (7.0.max32) max; urgency=low
 
   * Configure Xscreensaver #446
