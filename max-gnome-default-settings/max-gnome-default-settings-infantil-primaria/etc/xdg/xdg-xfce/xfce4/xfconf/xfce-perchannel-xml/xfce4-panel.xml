@@ -55,6 +55,7 @@
       <property name="position-locked" type="bool" value="false"/>
       <property name="autohide" type="bool" value="false"/>
       <property name="position-locked" type="bool" value="false"/>
+      <property name="background-alpha" type="uint" value="0"/>
     </property>
   </property>
   <property name="plugins" type="empty">
