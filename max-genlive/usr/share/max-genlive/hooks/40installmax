@@ -14,10 +14,14 @@ export MAX_ERROR=0
 apt-get $APT_OPTS install max-keyring || ERROR=1
 apt-get $APT_OPTS update || ERROR=1
 apt-get $APT_OPTS install squashfs-tools
-apt-get $APT_OPTS install max-gnome-desktop-environment
-apt-get $APT_OPTS install max-desktop-common
-apt-get $APT_OPTS install max-desktop-gnome
-apt-get $APT_OPTS install max-desktop-gnome max-drivers || ERROR=1
+apt-get $APT_OPTS install max-gnome-desktop-environment || ERROR=1
+apt-get $APT_OPTS install max-libreoffice || ERROR=1
+apt-get $APT_OPTS install max-desktop-common || ERROR=1
+apt-get $APT_OPTS install max-desktop-gnome || ERROR=1
+apt-get $APT_OPTS install max-desktop-xfce || ERROR=1
+apt-get $APT_OPTS install max-pdi || ERROR=1
+apt-get $APT_OPTS install max-manuales || ERROR=1
+apt-get $APT_OPTS install max-drivers || ERROR=1
 #apt-get $APT_OPTS install max-desktop-infantil-primaria || ERROR=1
 [ "\$(ls /home/)" != "" ] && rm -rf /home/* && apt-get $APT_OPTS -f install 
 apt-get clean

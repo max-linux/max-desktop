@@ -4,7 +4,7 @@ if [ "$1" = "amd64" ]; then
   LOCAL_MIRROR=1 MIRROR=192.168.0.2 ENABLE_EXTRA=1 AMD64=1 max-genlive
   exit 0
 elif [ "$1" = "i386" ]; then
-  LOCAL_MIRROR=1 MIRROR=192.168.0.2 ENABLE_EXTRA=1 ENABLE_EXTRA_INFANTIL=1 ENABLE_NANO=1 max-genlive
+  LOCAL_MIRROR=1 MIRROR=192.168.0.2 ENABLE_EXTRA=1 max-genlive
   exit 0
 fi
 
@@ -13,11 +13,10 @@ DISTRO=precise
 DISTRO_VERSION="12.04"
 ARCH=i386
 NANOARCH=i386
-MAX_VERSION="7.0~alpha2"
+MAX_VERSION="7.0"
 IMAGE_NAME="MaX-${MAX_VERSION}"
-TITLE="MaX ${MAX_VERSION} ($ARCH)"
-LINUX_IMAGE="linux-image-generic"
-LINUX_HEADERS="linux-headers-generic"
+LINUX_IMAGE="max-linux"
+LINUX_HEADERS="max-linux-headers"
 
 unset HOME
 export LC_ALL=C
@@ -34,6 +33,9 @@ fi
 if [ "$AMD64" = "1" ]; then
   ARCH=amd64
 fi
+
+TITLE="MaX ${MAX_VERSION}"
+
 
 if [ "$LOCAL_MIRROR" = "" ]; then
   LOCAL_MIRROR=
@@ -77,15 +79,14 @@ NANOMAX=$CDRW/nanomax
 MKSQUASHFS=/usr/bin/mksquashfs
 
 PAQUETES_EXTRA_MAIN="b43-fwcutter build-essential dpkg-dev fakeroot g++ capiutils ipppd "
-PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN isdnutils-base isdnutils-xtools libcapi20-3 libcapi20-dev pppdcapiplugin libatm1 "
-PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN linux-wlan-ng-doc linux-wlan-ng localechooser-data lupin-support mouseemu ndisgtk "
-PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN ndiswrapper-common ndiswrapper-utils-1.9 oem-config-gtk oem-config patch pptp-linux setserial"
+PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN linux-wlan-ng localechooser-data lupin-support mouseemu "
+PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN oem-config-gtk oem-config patch pptp-linux setserial"
 
 PAQUETES_EXTRA_RESTRICTED="drdsl"
 PAQUETES_INFANTIL="max-desktop-infantil-primaria max-infantil"
 
 
-PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales virtualbox-ose"
+PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales"
 PAQUETES_EXTRA="$PAQUETES_EXTRA max-tcos-alumno max-tcos-profesor"
 PAQUETES_EXTRA="$PAQUETES_EXTRA linux-wlan-ng-firmware max-desktop-infantil-primaria max-infantil"
 
@@ -96,7 +97,7 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS icedtea6-plugin icedtea-6-jre-cacao kpackagekit 
 BLACKLIST_PKGS="$BLACKLIST_PKGS x11proto-core-dev x11proto-composite-dev python-dev libglade2.0-cil-dev xtrans-dev"
 BLACKLIST_PKGS="$BLACKLIST_PKGS x11proto-kb-dev x11proto-input-dev x11proto-core-dev libxt-dev libxdmcp-dev libxcb1-dev libxau-dev"
 BLACKLIST_PKGS="$BLACKLIST_PKGS libx11-dev libltdl-dev libplymouth-dev libpthread-stubs0-dev"
-BLACKLIST_PKGS="$BLACKLIST_PKGS mythbuntu-default-settings xfce4-panel xfce4-settings xfce4-utils"
+BLACKLIST_PKGS="$BLACKLIST_PKGS mythbuntu-default-settings"
 BLACKLIST_PKGS="$BLACKLIST_PKGS freemind-doc libatk1.0-doc libglib2.0-doc libgtk2.0-doc libpango1.0-doc lilypond-doc winff-doc xorg-docs-core"
 BLACKLIST_PKGS="$BLACKLIST_PKGS landscape-client landscape-common"
 # Ubuntu 12.04 globalmenu
@@ -106,6 +107,12 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS firefox-globalmenu thunderbird-globalmenu"
 BLACKLIST_PKGS="$BLACKLIST_PKGS overlay-scrollbar liboverlay-scrollbar-0.2-0 liboverlay-scrollbar3-0.2-0"
 ## gdm by default https://bugs.launchpad.net/ubuntu/+source/gdm/+bug/805154
 ##BLACKLIST_PKGS="$BLACKLIST_PKGS lightdm unity-greeter"
+# ibus (chinnese and japan input)
+BLACKLIST_PKGS="$BLACKLIST_PKGS ibus-gtk ibus-gtk3 ibus-pinyin ibus-table pinyin-database libibus-1.0-0"
+# don't install English help #439
+BLACKLIST_PKGS="$BLACKLIST_PKGS libreoffice-help-en-gb libreoffice-help-en-us"
+# ubiquity install KDE
+BLACKLIST_PKGS="$BLACKLIST_PKGS ubiquity-frontend-kde"
 
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux

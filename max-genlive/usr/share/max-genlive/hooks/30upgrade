@@ -45,10 +45,10 @@ EOC
 #UBUNTU_PACKAGES="deskbar-applet dkms gnome-netstatus-applet gnome-spell "
 #UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnome-themes gnome-volume-manager gnupg-agent gparted gpgsm gtk-qt-engine "
 
-UBUNTU_PACKAGES="dkms "
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnupg-agent gparted gpgsm "
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES ispanish ispell jfsutils language-pack-gnome-es language-pack-gnome-es-base "
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES mdetect mii-diag mysql-client openssl-blacklist "
+UBUNTU_PACKAGES="$LINUX_IMAGE dkms"
+UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnupg-agent gparted gpgsm"
+UBUNTU_PACKAGES="$UBUNTU_PACKAGES ispanish ispell jfsutils language-pack-gnome-es language-pack-gnome-es-base"
+UBUNTU_PACKAGES="$UBUNTU_PACKAGES mdetect mii-diag mysql-client openssl-blacklist"
 UBUNTU_PACKAGES="$UBUNTU_PACKAGES util-linux-locales valgrind xfsprogs"
 UBUNTU_PACKAGES="$UBUNTU_PACKAGES network-manager-openvpn network-manager-vpnc network-manager-pptp"
 

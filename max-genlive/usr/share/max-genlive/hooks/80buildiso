@@ -16,7 +16,7 @@ else
 fi
 
 zcat $CDRW/casper/initrd.gz | cpio --quiet -id conf/uuid.conf
-cat conf/uuid.conf > $CDRW/.disk/casper-uuid-generic
+cat conf/uuid.conf 2>/dev/null > $CDRW/.disk/casper-uuid-generic
 rm -rf conf/
 
 cat << EOF > $CDRW/README.diskdefines
@@ -31,10 +31,10 @@ cat << EOF > $CDRW/README.diskdefines
 #define TOTALNUM0  1
 EOF
 
-_echo "Borrando wuby (instalador para windows)"
-rm -rf $CDRW/*exe
-rm -rf $CDRW/*inf
-rm -rf $CDRW/pics/
+#_echo "Borrando wuby (instalador para windows)"
+#rm -rf $CDRW/*exe
+#rm -rf $CDRW/*inf
+#rm -rf $CDRW/pics/
 
 # añadir software portable del paquete max-win32-apps
 if [ -d $GENLIVE/win32aps ]; then
@@ -63,7 +63,7 @@ _echo "Generando ${ISO_FILE}"
 # montar chroot 
 mount -o bind $CHROOT/../ $CHROOT/mnt
 
-chroot $CHROOT genisoimage -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \
+chroot $CHROOT genisoimage -r -V "$TITLE (${ARCH})" -cache-inodes -J -l -b isolinux/isolinux.bin \
      -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
      -boot-info-table -o /mnt/${ISO_FILE} /mnt/cdimage.${ARCH}/ || _exit "Error generando la imagen ISO"
 umount $CHROOT/mnt

@@ -11,7 +11,7 @@ export DEBIAN_FRONTEND="noninteractive"
 export UCF_FORCE_CONFFOLD=1
 export ERROR=0
 apt-get $APT_OPTS remove --purge \$(dpkg -l|awk '{print \$2}'| grep language-pack| grep -v -e "-es" -e "-en" -e "common" -e "selector") || ERROR=1
-apt-get $APT_OPTS install max-desktop-gnome ubuntu-desktop language-selector || ERROR=1
+apt-get $APT_OPTS install max-desktop-gnome max-desktop-xfce max-pdi language-selector || ERROR=1
 apt-get $APT_OPTS autoremove --purge
 apt-get clean
 exit \$ERROR
@@ -33,18 +33,3 @@ apt-get clean
 exit \$ERROR
 EOC
 
-
-# comprobar si tenemos recomendados como dependencias
-#chroot $CHROOT << EOC || _exit "No se han podido instalar los recomendados"
-#export LC_ALL=C
-#export LC_MESSAGES=C
-#export DEBCONF_FRONTEND="noninteractive"
-#export DEBIAN_FRONTEND="noninteractive"
-#export UCF_FORCE_CONFFOLD=1
-#export ERROR=0
-#apt-get $APT_OPTS install max-desktop-gnome-deps max-desktop-common-deps || ERROR=1
-#apt-get $APT_OPTS remove --purge max-desktop-gnome-deps max-desktop-common-deps || ERROR=1
-#apt-get $APT_OPTS autoremove --purge || ERROR=1
-#apt-get clean
-#exit \$ERROR
-#EOC
