@@ -1,3 +1,9 @@
+max-firefox-conf (7.0.max6) max; urgency=low
+
+  * Add default profile to firefox dirs close #471
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 23 Nov 2012 13:28:27 +0100
+
 max-firefox-conf (7.0.max5) max; urgency=low
 
   * Remove version depends
