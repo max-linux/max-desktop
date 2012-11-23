@@ -1,3 +1,9 @@
+max-genlive (7.0.max14) max; urgency=low
+
+  * Remove isolinux/text.cfg and add help message in splash.pcx
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 23 Nov 2012 13:13:06 +0100
+
 max-genlive (7.0.max13) max; urgency=low
 
   * Fix a lot of things
