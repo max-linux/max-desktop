@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max21) max; urgency=low
+
+  * Force change infantil background in GNOME/Xfce4 in X11/Xsession.d
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 29 Nov 2012 13:42:29 +0100
+
 max-gnome-default-settings (7.0.max20) max; urgency=low
 
   * Enable compositing in Xfce4

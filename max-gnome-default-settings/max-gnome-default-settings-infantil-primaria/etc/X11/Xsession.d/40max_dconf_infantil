@@ -6,6 +6,14 @@
 
 if [ -d /usr/share/doc/max-desktop-infantil-primaria ]; then
 	export DCONF_PROFILE=infantil
+
+
+	if [ ! -e $HOME/.config/infantil-background ]; then
+		gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/max-madrid-linux-1900x1200.jpg"
+		xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "/usr/share/backgrounds/max-madrid-linux-1900x1200.jpg"
+		touch $HOME/.config/infantil-background
+	fi
+
 fi
 
 
