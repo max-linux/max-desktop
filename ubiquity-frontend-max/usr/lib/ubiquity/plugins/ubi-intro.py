@@ -74,13 +74,13 @@ class PageGtk(PageBase):
 
     def genUSB(self, *args):
         self.installing=True
-        p=Popen("sudo /usr/bin/usb-creator-gtk", shell=True, bufsize=0,
+        p=Popen("sudo nohup /usr/bin/usb-creator-gtk 2>&1 > /dev/null &", shell=True, bufsize=0,
                                                  stdout=PIPE,
                                                  stderr=STDOUT, close_fds=True)
-        while self.installing:
-            if p.poll() != None: self.installing=False
-            line=p.stdout.readline()
-            syslog.syslog("USBCREATOR: %s"%line.strip())
+        #while self.installing:
+        #    if p.poll() != None: self.installing=False
+        #    line=p.stdout.readline()
+        #    syslog.syslog("USBCREATOR: %s"%line.strip())
         # quit when done
         self.quit_installer()
 

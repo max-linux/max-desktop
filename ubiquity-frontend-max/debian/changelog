@@ -1,3 +1,15 @@
+ubiquity-frontend-max (7.0.max24) max; urgency=low
+
+  * Call usb-creator with nohup and quit installer
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 29 Nov 2012 12:58:00 +0100
+
+ubiquity-frontend-max (7.0.max23) max; urgency=low
+
+  * Change IBM hacks
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 23 Nov 2012 22:28:39 +0100
+
 ubiquity-frontend-max (7.0.max22) max; urgency=low
 
   * Call autoremove after remove packages #445
