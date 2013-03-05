@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Videos
+Name[es]=Vídeos
+Exec=max-thunar VIDEOS
+Icon=folder-videos
+Terminal=false
+StartupNotify=false
+OnlyShowIn=XFCE;
+Categories=Places;

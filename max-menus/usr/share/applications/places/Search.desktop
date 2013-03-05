@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Search for Files...
+Name[es]=Buscar archivos...
+Exec=gnome-search-tool
+Icon=system-search
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Places;
+OnlyShowIn=XFCE;

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Computer
+Name[es]=Equipo
+Exec=thunar computer://
+Icon=computer
+Path=
+Terminal=false
+StartupNotify=false
+OnlyShowIn=XFCE;
+Categories=Places;

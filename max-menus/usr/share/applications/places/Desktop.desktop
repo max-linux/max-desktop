@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Desktop
+Name[es]=Escritorio
+Exec=max-thunar DESKTOP
+Icon=desktop
+Terminal=false
+StartupNotify=false
+OnlyShowIn=XFCE;
+Categories=Places;

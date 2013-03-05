@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Documents
+Name[es]=Documentos
+Exec=max-thunar DOCUMENTS
+Icon=folder-documents
+Terminal=false
+StartupNotify=false
+OnlyShowIn=XFCE;
+Categories=Places;

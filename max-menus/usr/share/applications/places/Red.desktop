@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Network
+Name[es]=Red
+Exec=thunar network://
+Icon=network
+Path=
+Terminal=false
+StartupNotify=false
+OnlyShowIn=XFCE;
+Categories=Places;

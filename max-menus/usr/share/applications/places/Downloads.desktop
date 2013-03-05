@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Downloads
+Name[es]=Descargas
+Exec=max-thunar DOWNLOAD
+Icon=folder-download
+Terminal=false
+StartupNotify=false
+OnlyShowIn=XFCE;
+Categories=Places;

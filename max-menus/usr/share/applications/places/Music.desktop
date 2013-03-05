@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Music
+Name[es]=Música
+Exec=max-thunar MUSIC
+Icon=folder-music
+Terminal=false
+StartupNotify=false
+OnlyShowIn=XFCE;
+Categories=Places;

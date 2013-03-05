@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Personal folder
+Name[es]=Carpeta personal
+Exec=max-thunar HOME
+Icon=folder-home
+Terminal=false
+StartupNotify=false
+OnlyShowIn=XFCE;
+Categories=Places;

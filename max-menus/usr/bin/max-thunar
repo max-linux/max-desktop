@@ -1,0 +1,9 @@
+#!/bin/sh
+
+
+if [ "$1" != "" ]; then
+  thunar "$(xdg-user-dir $1)"
+  exit
+fi
+
+thunar

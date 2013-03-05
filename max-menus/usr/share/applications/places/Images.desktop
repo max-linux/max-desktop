@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Images
+Name[es]=Imágenes
+Exec=max-thunar PICTURES
+Icon=folder-pictures
+Terminal=false
+StartupNotify=false
+OnlyShowIn=XFCE;
+Categories=Places;
