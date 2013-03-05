@@ -662,6 +662,27 @@
     <Exclude><Filename>xscreensaver-properties.desktop</Filename></Exclude>
   </Menu>
 
+  <Menu>
+    <Name>Places</Name>
+    <Directory>Places.directory</Directory>
+    <Include><Category>Places</Category></Include>
+    <Layout>
+        <Filename>places-Personal.desktop</Filename>
+        <Filename>places-Desktop.desktop</Filename>
+        <Filename>places-Documents.desktop</Filename>
+        <Filename>places-Music.desktop</Filename>
+        <Filename>places-Images.desktop</Filename>
+        <Filename>places-Videos.desktop</Filename>
+        <Filename>places-Downloads.desktop</Filename>
+        <Separator/>
+        <Filename>places-Equipo.desktop</Filename>>
+        <Separator/>
+        <Filename>places-Red.desktop</Filename>
+        <Separator/>
+        <Filename>places-Search.desktop</Filename>
+    </Layout>
+  </Menu>
+
 <Include>
     <Category>X-Xfce-Toplevel</Category>
 </Include>
@@ -681,6 +702,8 @@
   <Separator/>
   <Menuname>Administration</Menuname>
   <Menuname>Preferences</Menuname>
+  <Separator/>
+  <Menuname>Places</Menuname>
 
 	<Separator/>
 	<Include>
