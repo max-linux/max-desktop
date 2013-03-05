@@ -89,7 +89,7 @@ do_stop ()
         prompt=
     fi
 
-    for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth /sbin/usplash_write; do
+    for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth $(which eject) /sbin/usplash_write; do
         cache_path "$path"
     done
 

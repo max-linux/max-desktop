@@ -1,3 +1,9 @@
+max-live (7.0.max14) max; urgency=low
+
+  * Cache eject and try to eject DVD in live shutdown
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 23 Nov 2012 17:25:29 +0100
+
 max-live (7.0.max13) max; urgency=low
 
   * Fix english keyboard in live session
