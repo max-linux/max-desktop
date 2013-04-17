@@ -136,3 +136,16 @@ if ! grep -q "dconf" /etc/apparmor.d/abstractions/gnome 2>&1; then
   echo "  /etc/dconf/** r," >> /etc/apparmor.d/abstractions/gnome
   invoke-rc.d apparmor reload
 fi
+
+
+
+# TCOS lightdm support
+#session optional        pam_lastlog.so silent
+if [ -f /etc/pam.d/lightdm ]; then
+  grep -q "pam_lastlog" /etc/pam.d/lightdm || cat << EOF >> /etc/pam.d/lightdm
+
+# TCOS lightdm support
+session optional        pam_lastlog.so silent
+
+EOF
+fi
