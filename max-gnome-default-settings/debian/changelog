@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max22) max; urgency=low
+
+  * Clean postinst/prerm scripts and install firefox launxher in infantil (close #491)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 06 May 2013 13:38:19 +0200
+
 max-gnome-default-settings (7.0.max21) max; urgency=low
 
   * Force change infantil background in GNOME/Xfce4 in X11/Xsession.d

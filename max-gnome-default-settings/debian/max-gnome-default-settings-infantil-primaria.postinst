@@ -4,59 +4,20 @@ if [ "$1" = "configure" ]; then
   rm -rf /etc/skel/.config/dconf
   update-gconf-defaults || true
   glib-compile-schemas /usr/share/glib-2.0/schemas/ || true
+
+
+
+  for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
+    username=$(basename $home)
+    cp /etc/skel/Escritorio/firefox.desktop $home/Escritorio/
+    chown -R $username $home/Escritorio/firefox.desktop || true
+  done
+
+
 fi
+
+#DEBHELPER#
 
 exit 0
 
-# install gconf settings
-META_GCONF=/usr/share/max/gconf/
-META_GCONF_DUMPS=/usr/share/max/gconf-dumps
-# use old OpenOffice.org dumps (for launcher and icons)
-[ -e /usr/lib/openoffice/program/soffice ] && META_GCONF_DUMPS=/usr/share/max/gconf-dumps-oo
 
-max_gconf_load() {
-  gconftool-2 --direct --config-source xml:readwrite:$1 --load $2 >/dev/null 2>&1
-}
-
-case $1 in
-  configure)
-
-     update-dpsyco-skel > /dev/null 2>&1
-
-     for _file in $(find $META_GCONF -name "*.gconf"); do
-       maxgconf --set $_file
-     done
-
-
-     # parse dumps files
-     for _file in $(find $META_GCONF_DUMPS -name "*dump.gconf"); do
-       # set at user too
-       for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
-	 username=$(basename $home)
-         grep -q "^${username}:" /etc/passwd || continue
-         max_gconf_load "$home/.gconf" $_file
-         chown -R $username $home/.gconf || true
-       done
-
-       # filename contain mandatory string
-       if [ $(echo $_file | grep -c "mandatory") -gt 0 ]; then
-         echo "Loading mandatory gconf values in $(basename $_file)"
-         max_gconf_load "/etc/gconf/gconf.xml.mandatory" $_file
-       else
-         echo "Loading defaults gconf values in $(basename $_file)"
-         max_gconf_load "/etc/gconf/gconf.xml.defaults" $_file
-       fi
-
-     #/etc/skel/Escritorio/firefox.desktop
-     for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
-         username=$(basename $home)
-         cp /etc/skel/Escritorio/firefox.desktop $home/Escritorio/
-         chown -R $username $home/Escritorio/firefox.desktop || true
-     done
-
-
-     done
-     ;;
-esac
-
-#DEBHELPER#

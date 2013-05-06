@@ -9,7 +9,7 @@ fi
 # ugly hack
 # dconf don't allow to set gnome-panel
 # http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=648009
-# 
+#
 for u in $(ls /home/*/.config/dconf/user 2>/dev/null); do
   if [ ! -e "${u}.imported" ]; then
     cat /etc/skel/.config/dconf/user > "$u"
@@ -17,56 +17,8 @@ for u in $(ls /home/*/.config/dconf/user 2>/dev/null); do
   fi
 done
 
+#DEBHELPER#
+
 exit 0
 
-# install gconf settings
-META_GCONF=/usr/share/max/gconf/
-META_GCONF_DUMPS=/usr/share/max/gconf-dumps
-# use old OpenOffice.org dumps (for launcher and icons)
-[ -e /usr/lib/openoffice/program/soffice ] && META_GCONF_DUMPS=/usr/share/max/gconf-dumps-oo
 
-
-max_gconf_load() {
-  gconftool-2 --direct --config-source xml:readwrite:$1 --load $2 >/dev/null 2>&1
-}
-
-case $1 in
-  configure)
-     for _file in $(find $META_GCONF -name "*.gconf"); do
-       maxgconf --set $_file
-     done
-
-     # parse dumps files
-     for _file in $(find $META_GCONF_DUMPS -name "*dump.gconf"); do
-       # set at user too
-       for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
-	 username=$(basename $home)
-         grep -q "^${username}:" /etc/passwd || continue
-         max_gconf_load "$home/.gconf" $_file
-         chown -R $username $home/.gconf || true
-       done
-
-       # filename contain mandatory string
-       if [ $(echo $_file | grep -c "mandatory") -gt 0 ]; then
-         echo "Loading mandatory gconf values in $(basename $_file)"
-         max_gconf_load "/etc/gconf/gconf.xml.mandatory" $_file
-       else
-         echo "Loading defaults gconf values in $(basename $_file)"
-         max_gconf_load "/etc/gconf/gconf.xml.defaults" $_file
-       fi
-
-     done
-     if [ -x /usr/share/update-notifier/notify-reboot-required ]; then
-		/usr/share/update-notifier/notify-reboot-required
-     fi
-
-     # set nautilus background color of root user
-     gconftool-2 --direct --config-source xml:readwrite:/root/.gconf/ \
-                 --type bool --set "/apps/nautilus/preferences/background_set" "true" >/dev/null 2>&1
-     gconftool-2 --direct --config-source xml:readwrite:/root/.gconf/ \
-                 --type string --set "/apps/nautilus/preferences/background_color" "#E53B1A" >/dev/null 2>&1
-
-     ;;
-esac
-
-#DEBHELPER#
