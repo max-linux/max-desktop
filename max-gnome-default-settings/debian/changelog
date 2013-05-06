@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max23) max; urgency=low
+
+  * Change metacity theme MaxColors
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 06 May 2013 15:56:38 +0200
+
 max-gnome-default-settings (7.0.max22) max; urgency=low
 
   * Clean postinst/prerm scripts and install firefox launxher in infantil (close #491)
