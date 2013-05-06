@@ -42,6 +42,12 @@ if [ -d $GENLIVE/win32aps ]; then
   cp -ra $GENLIVE/win32aps/* $CDRW/
 fi
 
+
+if [ "$ARCH" = "amd64" ]; then
+  cp -ra /usr/share/max-genlive/EFI     $CDRW/
+  cp -ra /usr/share/max-genlive/boot    $CDRW/
+fi
+
 # copiar memtest
 cp /boot/memtest86+.bin $CDRW/casper/mt86plus
 
