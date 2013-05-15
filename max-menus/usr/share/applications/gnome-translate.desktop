@@ -8,6 +8,7 @@ Comment[es]=Traduce textos y páginas web
 Comment[fr]=Traduire un texte ou une page web
 Type=Application
 Categories=GNOME;Application;Utility;Translation;
+TryExec=/usr/bin/gnome-translate
 Exec=gnome-translate %u
 Terminal=false
 StartupNotify=true
