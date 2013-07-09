@@ -1,3 +1,10 @@
+max-skel-conf (7.0.max37) max; urgency=low
+
+  * Link /etc/firefox/pref/* inside /usr/lib/firefox/defaults/pref/
+    - Add apturl to firefox (close: #504)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Jul 2013 12:31:03 +0200
+
 max-skel-conf (7.0.max36) max; urgency=low
 
   * Start khangman in spanish (close #470)

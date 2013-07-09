@@ -121,6 +121,20 @@ fi
 #rmdir /usr/lib/firefox* 2>/dev/null
 
 
+# apturl for firefox
+if [ -d /etc/firefox/pref ]; then
+  # link pref in install dir
+  for f in /etc/firefox/pref/*; do
+    fname=$(basename $f)
+    if [ ! -e "/usr/lib/firefox/defaults/pref/$fname" ]; then
+      #echo ln -s $f /usr/lib/firefox/defaults/pref/$fname
+      ln -s "$f" "/usr/lib/firefox/defaults/pref/$fname"
+    fi
+  done
+fi
+
+
+
 # disable apport
 sed -i '/^enabled/s/1/0/g' /etc/default/apport 2>&1
 
