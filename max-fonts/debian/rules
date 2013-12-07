@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+
+%:
+	dh $@ 
+
+
+
+override_dh_auto_build:
+	mkdir -p tmp fonts
+	@ echo " * Downloading fonts ..."
+	@cd tmp && wget -q -i ../debian/wget.list
+
+	echo " * Extracting ..."
+	@cd fonts && for z in `ls ../tmp/*.zip`; do\
+		unzip -q -o $$z;\
+	done;
+
+	@rm -rf fonts/*txt tmp/
+
+override_dh_auto_clean:
+	dh_auto_clean
+	@rm -rf fonts tmp/
