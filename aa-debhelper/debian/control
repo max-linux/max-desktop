@@ -2,7 +2,9 @@ Source: aa-debhelper
 Section: devel
 Priority: optional
 Maintainer: Torsten Werner <twerner@debian.org>
-Build-Depends: cdbs (>= 0.4.53), debhelper (>= 7.0.1)
+Build-Depends: cdbs,
+ debhelper,
+ dh-buildinfo
 Standards-Version: 3.6.0
 
 Package: aa-debhelper
