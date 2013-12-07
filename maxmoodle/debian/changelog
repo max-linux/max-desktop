@@ -1,3 +1,22 @@
+maxmoodle (7.0.max8) max; urgency=low
+
+  * Move lang to /var/lib/moodle/lang/
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 07 Dec 2013 17:13:56 +0100
+
+maxmoodle (7.0.max7) max; urgency=low
+
+  * Fix import os in usr/sbin/configure-moodle
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 07 Dec 2013 17:09:08 +0100
+
+maxmoodle (7.0.max6) max; urgency=low
+
+  * Build in MAX 7.0
+  * Update for moodle 2.5, close #468
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 07 Dec 2013 17:04:03 +0100
+
 maxmoodle (7.0.max5) max; urgency=low
 
   * Revert to previous preseed
