@@ -1,14 +1,14 @@
 #!/usr/bin/make -f
 
 include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/aa-debhelper.mk
 
 clean::
 	rm -f po/*mo
 #	(cd ktechlab && make clean)
 
 build/max-language-es::
-# disable in MAX 7.0
-#	find -type f -name "*.po" -exec sh -x -c "N='{}'; msgfmt -v -o \$${N%.po}.mo \$$N" \;
+	find po/ -type f -name "*.po" -exec sh -x -c "N='{}'; msgfmt -v -o \$${N%.po}.mo \$$N" \;
 
 #	(cd ktechlab && make)
 
