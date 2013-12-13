@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Exec=xfce4-session-logout --halp
+Icon=gnome-session-halt
+StartupNotify=false
+Terminal=false
+Categories=System;X-XFCE;X-Xfce-Toplevel;
+OnlyShowIn=XFCE;
+Name=Poweroff
+Name[es]=Apagar
+Comment=Poweroff computer
+Comment[es]=Apagar equipo

@@ -538,6 +538,7 @@
 		<Exclude><Filename>kde4-nepomukcontroller.desktop</Filename></Exclude>
 		<Exclude><Filename>kde4-nepomukbackup.desktop</Filename></Exclude>
 		<Exclude><Filename>xfce4-session-logout.desktop</Filename></Exclude>
+		<Exclude><Filename>xfce4-session-halt.desktop</Filename></Exclude>
 		<Exclude><Filename>debian-uxterm.desktop</Filename></Exclude>
 		<Exclude><Filename>debian-xterm.desktop</Filename></Exclude>
 	</Menu>   <!-- End System Tools -->
@@ -716,6 +717,7 @@
 	<Filename>xfhelp4.desktop</Filename>
 	<Filename>xfce4-about.desktop</Filename>
 	<Filename>xfce4-session-logout.desktop</Filename>
+	<Filename>xfce4-session-halt.desktop</Filename>
 </Layout>
 
 </Menu> <!-- End Applications -->
