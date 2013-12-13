@@ -1,3 +1,9 @@
+max-fonts (7.0-max2) max; urgency=low
+
+  * Remove ttf-symbol-replacement and ttf-tomsontalk from depends
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 13 Dec 2013 13:56:14 +0100
+
 max-fonts (7.0-max1) max; urgency=low
 
   * Initial release closes #304 and closes #461
