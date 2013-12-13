@@ -1,3 +1,9 @@
+max-menus (7.0.max26) max; urgency=low
+
+  * Unhide system-config-printer.desktop in GNOME, close #475
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 13 Dec 2013 15:24:28 +0100
+
 max-menus (7.0.max25) max; urgency=low
 
   * Replace tuxmath icon instead of installing new one, rel #478
