@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max38) max; urgency=low
+
+  * Force always gnome-session in fallback mode, close #454 and #474
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 13 Dec 2013 15:36:18 +0100
+
 max-skel-conf (7.0.max37) max; urgency=low
 
   * Link /etc/firefox/pref/* inside /usr/lib/firefox/defaults/pref/
