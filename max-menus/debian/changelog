@@ -1,3 +1,9 @@
+max-menus (7.0.max22) max; urgency=low
+
+  * Move VirtualBox to System menu, closes #476
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 13 Dec 2013 14:32:02 +0100
+
 max-menus (7.0.max21) max; urgency=low
 
   * Hide gnome-translate menu if not installed, close #465
