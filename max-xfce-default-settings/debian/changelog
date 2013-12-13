@@ -1,3 +1,9 @@
+max-xfce-default-settings (7.0.max15) max; urgency=low
+
+  * Fix typo in poweroff command, rel #480
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 13 Dec 2013 15:09:10 +0100
+
 max-xfce-default-settings (7.0.max14) max; urgency=low
 
   * Add poweroff menu, close #480
