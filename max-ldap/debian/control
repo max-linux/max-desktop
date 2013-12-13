@@ -7,6 +7,6 @@ Standards-Version: 3.8.4
 
 Package: max-ldap
 Architecture: all
-Depends: gksu, python-gtk2, python-ldap, sudo, libnotify-bin, syslinux, extlinux-ext4, ${misc:Depends}, ${shlibs:Depends}, ${python:Depends}
+Depends: gksu, python-gtk2, python-ldap, sudo, libnotify-bin, ${misc:Depends}, ${shlibs:Depends}, ${python:Depends}
 Description: PyGTK tool to configure MAX as LDAP client
  Easy GUI to configure MaX as LDAP client.

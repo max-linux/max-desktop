@@ -1,3 +1,9 @@
+max-ldap (0.24) max; urgency=low
+
+  * Remove syslinux, extlinux-ext4 from Depends, closes #467
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 13 Dec 2013 14:36:46 +0100
+
 max-ldap (0.23) max; urgency=low
 
   * Build in MaX 7.0
