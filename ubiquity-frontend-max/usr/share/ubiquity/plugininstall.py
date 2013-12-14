@@ -1778,6 +1778,7 @@ class Install(install_misc.InstallBase):
 
             install_misc.chrex(self.target,'max-update-post-inst')
             install_misc.chrex(self.target,'max-reset-ssh-keys')
+            install_misc.chrex(self.target,'check-efi-install')
             os.unlink("/target/bin/log-output")
             if delete_libdebian:
                 os.unlink("/target/usr/lib/libdebian-installer.so.4")
