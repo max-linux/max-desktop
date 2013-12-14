@@ -44,7 +44,7 @@ fi
 
 
 if [ "$ARCH" = "amd64" ]; then
-  cp -ra /usr/share/max-genlive/EFI     $CDRW/
+  cp -ra /usr/share/max-genlive/efi     $CDRW/
   cp -ra /usr/share/max-genlive/boot    $CDRW/
 fi
 

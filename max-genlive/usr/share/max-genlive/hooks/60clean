@@ -25,7 +25,8 @@ fi
 
 _echo "Actualizando imágenes de arranque"
 
-KERNEL=$(basename $(ls $CHROOT/boot/vmlinuz* | sort -nr | head -1)| sed 's/vmlinuz-//g')
+# sort -V ==> sshot version numbers
+KERNEL=$(basename $(ls $CHROOT/boot/vmlinuz* | sort -Vr | head -1)| sed 's/vmlinuz-//g')
 
 #_echo "Instalando modulos extra para $KERNEL"
 #chroot $CHROOT/ << EOF

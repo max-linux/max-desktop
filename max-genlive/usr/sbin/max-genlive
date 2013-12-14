@@ -13,7 +13,7 @@ DISTRO=precise
 DISTRO_VERSION="12.04"
 ARCH=i386
 NANOARCH=i386
-MAX_VERSION="7.0.1"
+MAX_VERSION="7.5-beta1"
 IMAGE_NAME="MaX-${MAX_VERSION}"
 LINUX_IMAGE="max-linux"
 LINUX_HEADERS="max-linux-headers"
@@ -32,6 +32,9 @@ fi
 
 if [ "$AMD64" = "1" ]; then
   ARCH=amd64
+  # for UEFI need /sys/firmware/efi/efivars
+  LINUX_IMAGE="linux-signed-image-generic-lts-saucy"
+  LINUX_HEADERS="linux-headers-generic-lts-saucy"
 fi
 
 TITLE="MaX ${MAX_VERSION}"
@@ -81,6 +84,9 @@ MKSQUASHFS=/usr/bin/mksquashfs
 PAQUETES_EXTRA_MAIN="b43-fwcutter build-essential dpkg-dev fakeroot g++ capiutils ipppd "
 PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN linux-wlan-ng localechooser-data lupin-support mouseemu "
 PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN oem-config-gtk oem-config patch pptp-linux setserial"
+if [ "$ARCH" = "amd64" ]; then
+  PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN efibootmgr grub-efi grub-efi-amd64 grub-efi-amd64-bin grub-efi-amd64-signed secureboot-db shim shim-signed"
+fi
 
 PAQUETES_EXTRA_RESTRICTED="drdsl"
 PAQUETES_INFANTIL="max-desktop-infantil-primaria max-infantil"
