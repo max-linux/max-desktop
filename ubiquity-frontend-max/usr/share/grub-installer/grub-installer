@@ -416,7 +416,11 @@ case $ARCH in
 	fi
 	;;
     i386/efi|amd64/efi)
-	grub_package="grub-efi"
+	if [ "$ARCH" = amd64/efi ]; then
+		grub_package="grub-efi-amd64-signed"
+	else
+		grub_package="grub-efi"
+	fi
 	;;
     i386/*|amd64/*)
 	# On PC/BIOS, default to GRUB Legacy
@@ -562,12 +566,15 @@ db_progress INFO grub-installer/progress/step_install
 # to grub legacy, or vice-versa
 case "$grub_package" in
     grub)
-	log-output -t grub-installer $chroot $ROOT dpkg -P grub-pc-bin grub-pc grub-efi grub-efi-amd64-bin grub-efi-amd64 grub-efi-ia32-bin grub-efi-ia32 grub-gfxpayload-lists
+	log-output -t grub-installer $chroot $ROOT dpkg -P grub-pc-bin grub-pc grub-efi grub-efi-amd64-bin grub-efi-amd64 grub-efi-amd64-signed grub-efi-ia32-bin grub-efi-ia32 grub-gfxpayload-lists
 	;;
     grub-pc)
-	log-output -t grub-installer $chroot $ROOT dpkg -P grub grub-legacy grub-efi grub-efi-amd64-bin grub-efi-amd64 grub-efi-ia32-bin grub-efi-ia32
+	log-output -t grub-installer $chroot $ROOT dpkg -P grub grub-legacy grub-efi grub-efi-amd64-bin grub-efi-amd64 grub-efi-amd64-signed grub-efi-ia32-bin grub-efi-ia32
 	;;
     grub-efi)
+	log-output -t grub-installer $chroot $ROOT dpkg -P grub grub-legacy grub-pc-bin grub-pc grub-gfxpayload-lists grub-efi-amd64-signed
+	;;
+    grub-efi-amd64-signed)
 	log-output -t grub-installer $chroot $ROOT dpkg -P grub grub-legacy grub-pc-bin grub-pc grub-gfxpayload-lists
 	;;
 esac
@@ -585,6 +592,11 @@ case "$grub_package" in
    *)
 	# Will pull in os-prober based on global setting for Recommends
 	apt-install $grub_package || exit_code=$? 
+	case $grub_package in
+	    *-signed)
+		apt-install shim-signed || true
+		;;
+	esac
 	;;
 esac
 
@@ -903,11 +915,13 @@ if [ -z "$frdisk" ] || [ "$grub_version" = grub2 ]; then
 		esac
 		if [ "$CODE" = 0 ]; then
 			info "grub-install ran successfully"
-			if [ -e /tmp/max_sti ]; then
-				info "DETECTED STI card running $chroot $ROOT grub-install $grub_install_params \"/dev/sda1\""
-				log-output -t grub-installer $chroot $ROOT grub-install $grub_install_params "/dev/sda1"
-				rm -f /tmp/max_sti
-			fi
+                       if [ ! -d /sys/firmware/efi ] && [ -e /tmp/max_sti ]; then
+                               info "DETECTED STI card running $chroot $ROOT grub-install $grub_install_params \"/dev/sda1\""
+                               log-output -t grub-installer $chroot $ROOT grub-install $grub_install_params "/dev/sda1"
+                               rm -f /tmp/max_sti
+                       fi
+
+
 		else
 			case $ARCH:$grub_package in
 			    *:grub|*:grub-pc|sparc:grub-ieee1275)

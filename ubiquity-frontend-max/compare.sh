@@ -1,18 +1,7 @@
 #!/bin/sh
 
-#ORIG_PATH=/home/mario/MaX/build/ubiquity/ubiquity-2.2.15/
-#ORIG_PATH=/home/mario/MaX/build/ubiquity/ubiquity-2.2.16/
-#ORIG_PATH=/home/mario/MaX/build/ubiquity/ubiquity-2.2.18/
-#ORIG_PATH=/home/mario/MaX/build/ubiquity/ubiquity-2.2.23/
-#ORIG_PATH=/home/mario/MaX/build/ubiquity/ubiquity-2.2.24/
-#ORIG_PATH=/home/mario/MaX/build/ubiquity/ubiquity-2.2.25/
-#ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.2.27/
-#ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.9.10/
-#ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.9.15/
-#ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.9.18/
-#ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.10.8/
-#ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.10.16/
-ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.10.20/
+#ORIG_PATH=/home/madrid/MaX/build/ubiquity/ubiquity-2.10.20/
+ORIG_PATH=/data/max/build/desktop/ubiquity/ubiquity-2.10.28/
 
 #for f in $(find usr/ -type f -name "*py"); do
 for f in $(find usr/ -type f | grep -v ".svn"); do

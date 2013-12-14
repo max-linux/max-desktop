@@ -275,6 +275,7 @@ class Wizard(BaseFrontend):
                                    'console-setup',
                                    'usersetup',
                                    'language',
+                                   'webcam',
                                    'migrationassistant']:
                 continue
             if hasattr(mod.module, 'PageGtk'):
@@ -863,6 +864,7 @@ color : @fg_color
             self.live_installer.set_title(self.get_string('oem_user_config_title'))
             self.live_installer.set_icon_name("preferences-system")
             self.quit.hide()
+            self.back.hide()
 
         if 'UBIQUITY_AUTOMATIC' in os.environ:
             # Hide the notebook until the first page is ready.
@@ -1200,6 +1202,11 @@ color : @fg_color
             self.allow_go_backward(False)
         elif 'UBIQUITY_AUTOMATIC' not in os.environ:
             self.allow_go_backward(True)
+
+        # If we are in oem-config, ensure the back button is displayed if
+        # and only if we are not on the first page.
+        if self.oem_user_config:
+            self.back.set_visible(self.pagesindex > 0)
         return True
 
     def set_page_title(self, page, lang=None):

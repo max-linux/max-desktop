@@ -61,6 +61,13 @@ class PageGtk2(plugin.PluginUI):
         test_label = self.controller.get_string('keyboard_test_label', lang)
         self.keyboard_test.set_placeholder_text(test_label)
 
+    def cancel_timeouts(self):
+        from gi.repository import GLib
+        if self.keyboard_layout_timeout_id:
+            GLib.source_remove(self.keyboard_layout_timeout_id)
+        if self.keyboard_variant_timeout_id:
+            GLib.source_remove(self.keyboard_variant_timeout_id)
+
     @plugin.only_this_page
     def calculate_result(self, w, keymap):
         l = self.controller.dbfilter.get_locale()
@@ -516,10 +523,20 @@ class Page2(plugin.Plugin):
         self.succeeded = False
         self.exit_ui_loops()
 
+    def cancel_handler(self):
+        if hasattr(self.ui, "cancel_timeouts"):
+            self.ui.cancel_timeouts()
+
+        return plugin.Plugin.cancel_handler(self)
+
     def ok_handler(self):
         variant = self.ui.get_keyboard_variant()
         if variant is not None:
             self.preseed('keyboard-configuration/variant', variant)
+
+        if hasattr(self.ui, "cancel_timeouts"):
+            self.ui.cancel_timeouts()
+
         return plugin.Plugin.ok_handler(self)
 
     # TODO cjwatson 2006-09-07: This is duplication from
