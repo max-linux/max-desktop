@@ -1,3 +1,9 @@
+max-live (7.0.max15) max; urgency=low
+
+  * Remove grub-pc from depends
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 14 Dec 2013 03:07:43 +0100
+
 max-live (7.0.max14) max; urgency=low
 
   * Cache eject and try to eject DVD in live shutdown

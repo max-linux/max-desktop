@@ -8,7 +8,7 @@ Standards-Version: 3.8.4
 Package: max-live
 Architecture: all
 Depends: ubiquity-frontend-max,
-         grub-pc,
+#         grub-pc,
          language-pack-es,
          language-pack-kde-es,
 #         language-support-es,
