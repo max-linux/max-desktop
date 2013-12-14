@@ -13,8 +13,8 @@ Description: Configuración skel para Ubuntu/MAX.
  Contiene:
   * /etc/skel
 
-Package: homealumno
-Architecture: all
-Depends: homealumno-gui
-Description: Sistema modo kiosko para el usuario alumno (antiguo)
- Sistema modo kiosko para el usuario alumno (antiguo)
+#Package: homealumno
+#Architecture: all
+#Depends: homealumno-gui
+#Description: Sistema modo kiosko para el usuario alumno (antiguo)
+# Sistema modo kiosko para el usuario alumno (antiguo)

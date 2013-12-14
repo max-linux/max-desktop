@@ -1,0 +1,65 @@
+#!/bin/sh
+set -e
+
+if [ ! -d /sys/firmware/efi/efivars ]; then
+  echo " *  NO UEFI found /sys/firmware/efi/efivars "
+  exit
+fi
+
+if [ "$1" = "remove" ]; then
+  EFI_NUM=$(efibootmgr | awk '/MAX/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g')
+  [ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d /dev/sda
+  rm -rf /boot/efi/EFI/MAX/
+  exit
+fi
+
+
+EFI_PART=$(awk '/boot\/efi/ {print $1}' /proc/mounts)
+
+if [ -x $EFI_PART ]; then
+  echo " * NO UEFI partition"
+  exit
+fi
+
+EFI_NUM=$(echo $EFI_PART| cut -c9-)
+MAX_PART=$(mount | awk '/ \/ / {print $1}')
+MAX_GRUB=$(grub-probe --device $MAX_PART --target=drive)
+
+# generate grubx64.efi
+# https://help.ubuntu.com/community/UEFIBooting
+#grub-mkimage -O x86_64-efi -d /usr/lib/grub/x86_64-efi/ -o /tmp/grubx64.efi -p "" $(for f in /usr/lib/grub/x86_64-efi/*mod; do echo -n `basename $f .mod`" "; done)
+
+grub-mkimage -O x86_64-efi -d /usr/lib/grub/x86_64-efi/ -o /tmp/grubx64.efi -p "" part_gpt part_msdos ntfs ntfscomp hfsplus fat ext2 normal chain boot configfile linux multiboot efi_gop efi_uga gettext gfxterm gzio png video_bochs video_cirrus search_fs_file search_fs_uuid search_label search loadenv boot cat chain cmp echo extcmd help ls reboot test
+
+
+echo " * Installing GRUB in UEFI part $EFI_PART to boot $MAX_PART ..."
+
+# remount (Ubiquity don't mount efi dir)
+umount $EFI_PART
+mkdir -p /boot/efi
+mount $EFI_PART /boot/efi
+
+mkdir -p /boot/efi/EFI/MAX/
+cp /tmp/grubx64.efi /boot/efi/EFI/MAX/
+cat << EOF > /boot/efi/EFI/MAX/grub.cfg
+set root='${MAX_GRUB}'
+configfile /boot/grub/grub.cfg
+EOF
+
+
+efibootmgr -q -c -p $EFI_NUM -d /dev/sda -l "\EFI\MAX\grubx64.efi" -L "MAX (grub)"
+rm -f /tmp/grubx64.efi
+
+
+
+if [ -e "/boot/efi/EFI/Microsoft/Boot/BCD" ]; then
+  # replace os.prober with new detection script
+  grep -q "^GRUB_DISABLE_OS_PROBER=true" /etc/default/grub || echo GRUB_DISABLE_OS_PROBER=true >> /etc/default/grub
+  cp /usr/share/max/25_windows-uefi /etc/grub.d/25_windows_uefi
+  chmod +x /etc/grub.d/25_windows_uefi
+fi
+
+
+update-grub
+
+echo " * Done"

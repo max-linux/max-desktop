@@ -1,0 +1,49 @@
+#!/bin/sh
+set -e
+# wget https://gist.github.com/raw/4330598/adaf598a78d568dbfada596441bdfad3b4dd3f97/25_windows_uefi
+# Probe for UEFI entries in EFI system partition
+
+prefix="/usr"
+exec_prefix="${prefix}"
+datarootdir="${prefix}/share"
+
+export TEXTDOMAIN=grub
+export TEXTDOMAINDIR="${datarootdir}/locale"
+
+. "${datarootdir}/grub/grub-mkconfig_lib"
+
+found=
+bcd=/boot/efi/EFI/Microsoft/Boot/BCD
+if [ -n "$bcd" ]; then
+  if grep -qs "W.i.n.d.o.w.s. .8" "$bcd"; then
+		long="Windows 8 (loader)"
+	elif grep -qs "W.i.n.d.o.w.s. .7" "$bcd"; then
+		long="Windows 7 (loader)"
+	elif grep -qs "W.i.n.d.o.w.s. .V.i.s.t.a" "$bcd"; then
+		long="Windows Vista (loader)"
+	elif grep -qs "W.i.n.d.o.w.s. .S.e.r.v.e.r. .2.0.0.8. .R.2." "$bcd"; then
+		long="Windows Server 2008 R2 (loader)"
+	elif grep -qs "W.i.n.d.o.w.s. .S.e.r.v.e.r. .2.0.0.8." "$bcd"; then
+		long="Windows Server 2008 (loader)"
+	elif grep -qs "W.i.n.d.o.w.s. .R.e.c.o.v.e.r.y. .E.n.v.i.r.o.n.m.e.n.t" "$bcd"; then
+		long="Windows Recovery Environment (loader)"
+	elif grep -qs "W.i.n.d.o.w.s. .S.e.t.u.p" "$bcd"; then
+		long="Windows Recovery Environment (loader)"
+	else
+		long="Windows Vista (loader)"
+	fi
+        found=true
+        gettext_printf "Found %s on %s\n" "${long}" "UEFI ESP" >&2
+        cat << EOF
+menuentry "${long}" {
+	insmod search_fs_uuid
+	insmod chain
+EOF
+	DEVICE=`cat /etc/mtab | grep /boot/efi | cut -f 1 -d ' '`
+	prepare_grub_to_access_device ${DEVICE} | sed -e "s/^/\t/"
+
+	cat << EOF
+	chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+}
+EOF
+fi

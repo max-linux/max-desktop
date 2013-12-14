@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max39) max; urgency=low
+
+  * Add check-efi-install command and disable os-prober in Windows/UEFI
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 15 Dec 2013 00:20:06 +0100
+
 max-skel-conf (7.0.max38) max; urgency=low
 
   * Force always gnome-session in fallback mode, close #454 and #474
