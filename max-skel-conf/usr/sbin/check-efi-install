@@ -35,7 +35,7 @@ grub-mkimage -O x86_64-efi -d /usr/lib/grub/x86_64-efi/ -o /tmp/grubx64.efi -p "
 echo " * Installing GRUB in UEFI part $EFI_PART to boot $MAX_PART ..."
 
 # remount (Ubiquity don't mount efi dir)
-umount $EFI_PART
+umount $EFI_PART || true
 mkdir -p /boot/efi
 mount $EFI_PART /boot/efi
 

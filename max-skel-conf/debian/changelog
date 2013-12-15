@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max40) max; urgency=low
+
+  * Umount of /boot/efi can fail, ignore it
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 15 Dec 2013 17:16:52 +0100
+
 max-skel-conf (7.0.max39) max; urgency=low
 
   * Add check-efi-install command and disable os-prober in Windows/UEFI
