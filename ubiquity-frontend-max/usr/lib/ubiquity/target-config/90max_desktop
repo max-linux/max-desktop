@@ -37,5 +37,22 @@ chroot /target /usr/lib/lightdm/lightdm-set-defaults --allow-guest=false
 chroot /target loadkeys es
 chroot /target setupcon --save-only
 
+if [ ! -d /sys/firmware/efi/efivars ]; then
+  echo " *  NO UEFI found /sys/firmware/efi/efivars "
+  exit 0
+fi
+
+
+EFI_PART=$(awk '/boot\/efi/ {print $1}' /proc/mounts| tail -1)
+
+if [ -x $EFI_PART ]; then
+  echo " * NO UEFI partition"
+  exit 0
+fi
+
+# remount (Ubiquity don't mount efi dir)
+umount $EFI_PART > /dev/null 2>&1 || true
+mkdir -p /target/boot/efi
+mount $EFI_PART /target/boot/efi
 
 exit 0

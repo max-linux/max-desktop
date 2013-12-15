@@ -1,3 +1,10 @@
+ubiquity-frontend-max (7.0.max28) max; urgency=low
+
+  * usr/lib/ubiquity/target-config/90max_desktop:
+    - Remount /target/boot/efi
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 15 Dec 2013 17:50:29 +0100
+
 ubiquity-frontend-max (7.0.max27) max; urgency=low
 
   * Call check-efi-install at finish to fix UEFI
