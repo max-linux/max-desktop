@@ -7,7 +7,7 @@ rm -f $CDRW/preseed/*
 cp $GENLIVE/preseed/* $CDRW/preseed/ || _exit "No se puede sobreescribir preseed"
 
 printf "%s - $ARCH (%s)" "$TITLE" "$created" > $CDRW/.disk/info
-printf "http://max.educa.madrid.org:8000/MaX70/NotasPublicacion" > $CDRW/.disk/release_notes_url
+printf "http://www.educa2.madrid.org/web/max" > $CDRW/.disk/release_notes_url
 printf "full_cd/single" > $CDRW/.disk/cd_type
 if [ -n "$ENABLE_EXTRA" ]; then
   touch $CDRW/.disk/base_installable 

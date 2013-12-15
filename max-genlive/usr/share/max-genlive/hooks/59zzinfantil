@@ -176,7 +176,7 @@ rm -rf $TMP
 mkdir -p $CDINF/.disk
 
 printf "%s" "MAX-${MAX_VERSION}-Complementos-Infantil-Primaria-${created}"> $CDINF/.disk/info
-printf "http://max.educa.madrid.org:8000/MaX70/NotasPublicacion" > $CDINF/.disk/release_notes_url
+printf "http://www.educa2.madrid.org/web/max" > $CDINF/.disk/release_notes_url
 printf "full_cd/single" > $CDINF/.disk/cd_type
 touch $CDINF/.disk/base_installable
 

@@ -17,6 +17,7 @@ MAX_VERSION="7.5-beta1"
 IMAGE_NAME="MaX-${MAX_VERSION}"
 LINUX_IMAGE="max-linux"
 LINUX_HEADERS="max-linux-headers"
+MAXHOSTNAME=max75
 
 unset HOME
 export LC_ALL=C

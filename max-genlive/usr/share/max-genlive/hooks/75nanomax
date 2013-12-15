@@ -29,8 +29,8 @@ APT
 EOF
 
 cat << EOF > $NANOCHROOT/etc/hosts
-127.0.0.1       localhost max70
-127.0.1.1       max70
+127.0.0.1       localhost $MAXHOSTNAME
+127.0.1.1       $MAXHOSTNAME
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
@@ -41,8 +41,8 @@ ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 EOF
 
-   echo "max70" > $NANOCHROOT/etc/hostname
-   echo "max70" > $NANOCHROOT/etc/mailname
+   echo "$MAXHOSTNAME" > $NANOCHROOT/etc/hostname
+   echo "$MAXHOSTNAME" > $NANOCHROOT/etc/mailname
 
   _echo "Configurando DEBCONF y zona horaria"
 
@@ -318,7 +318,7 @@ EOC
   mkdir -p $NANOMAX/.disk
 
   printf "%s - $NANOARCH (%s)" "$TITLE" "$created" > $NANOMAX/.disk/info
-  printf "http://max.educa.madrid.org:8000/MaX70/NotasPublicacion" > $NANOMAX/.disk/release_notes_url
+  printf "http://www.educa2.madrid.org/web/max" > $NANOMAX/.disk/release_notes_url
   printf "full_cd/single" > $NANOMAX/.disk/cd_type
   rm -f $NANOMAX/.disk/base_installable
 

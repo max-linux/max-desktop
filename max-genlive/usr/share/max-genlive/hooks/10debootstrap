@@ -8,8 +8,8 @@ if [ ! -d $CHROOT ]; then
     (debootstrap --arch=$ARCH $DISTRO $CHROOT http://$MIRROR/ubuntu || _exit "Error en el debootstrap")
 
     cat << EOF > $CHROOT/etc/hosts
-127.0.0.1	localhost max70
-127.0.1.1	max70
+127.0.0.1	localhost $MAXHOSTNAME
+127.0.1.1	$MAXHOSTNAME
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
@@ -20,12 +20,12 @@ ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 EOF
 
-    echo "max70" > $CHROOT/etc/hostname
-    echo "max70" > $CHROOT/etc/mailname
+    echo "$MAXHOSTNAME" > $CHROOT/etc/hostname
+    echo "$MAXHOSTNAME" > $CHROOT/etc/mailname
 fi
 
 set -x
-chroot $CHROOT hostname max70
+chroot $CHROOT hostname $MAXHOSTNAME
 set +x
 
 
