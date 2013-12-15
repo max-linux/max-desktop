@@ -6,12 +6,35 @@ if [ ! -d /sys/firmware/efi/efivars ]; then
   exit
 fi
 
-if [ "$1" = "remove" ]; then
-  EFI_NUM=$(efibootmgr | awk '/MAX/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
-  [ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d /dev/sda
-  rm -rf /boot/efi/EFI/MAX/
+if [ ! -e /bin/efibootmgr ]; then
+  echo " * No efibootmgr found"
   exit
 fi
+
+if [ "$1" = "remove" ]; then
+  echo -n " Are you sure to remove UEFI MAX entries?? [y/N] "
+  read remove
+  if [ "$remove" != "y" ]; then
+    exit
+  fi
+  # remove MAX entry
+  EFI_NUM=$(efibootmgr | awk '/MAX/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
+  [ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d /dev/sda
+  # ubuntu install max-7.0 entry (don't works)
+  EFI_NUM_UBUNTU=$(efibootmgr | awk '/max\-/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
+  [ ! -z $EFI_NUM_UBUNTU ] && efibootmgr -q -B -b "$EFI_NUM_UBUNTU" -d /dev/sda
+  rm -rf /boot/efi/EFI/MAX/
+  echo " * Removed."
+  exit
+fi
+
+EFI_NUM=$(efibootmgr | awk '/MAX/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
+if [ ! -z $EFI_NUM ]; then
+  echo " * UEFI MAX is installed, run with 'remove' arg to delete"
+  exit
+fi
+
+
 
 
 EFI_PART=$(awk '/boot\/efi/ {print $1}' /proc/mounts| tail -1)
@@ -25,11 +48,6 @@ EFI_NUM=$(echo $EFI_PART| cut -c9-)
 MAX_PART=$(mount | awk '/ \/ / {print $1}')
 MAX_GRUB=$(grub-probe --device $MAX_PART --target=drive)
 
-# generate grubx64.efi
-# https://help.ubuntu.com/community/UEFIBooting
-#grub-mkimage -O x86_64-efi -d /usr/lib/grub/x86_64-efi/ -o /tmp/grubx64.efi -p "" $(for f in /usr/lib/grub/x86_64-efi/*mod; do echo -n `basename $f .mod`" "; done)
-
-grub-mkimage -O x86_64-efi -d /usr/lib/grub/x86_64-efi/ -o /tmp/grubx64.efi -p "" part_gpt part_msdos ntfs ntfscomp hfsplus fat ext2 normal chain boot configfile linux multiboot efi_gop efi_uga gettext gfxterm gzio png video_bochs video_cirrus search_fs_file search_fs_uuid search_label search loadenv boot cat chain cmp echo extcmd help ls reboot test
 
 
 echo " * Installing GRUB in UEFI part $EFI_PART to boot $MAX_PART ..."
@@ -41,6 +59,19 @@ if [ ! -d /boot/efi/EFI ]; then
   mount $EFI_PART /boot/efi
 fi
 
+if [ ! -d /boot/efi/EFI ]; then
+  echo " * No /boot/efi/EFI found"
+  exit
+fi
+
+EFI_NUM_UBUNTU=$(efibootmgr | awk '/max\-/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
+[ ! -z $EFI_NUM_UBUNTU ] && efibootmgr -q -B -b "$EFI_NUM_UBUNTU" -d /dev/sda
+
+# generate grubx64.efi
+# https://help.ubuntu.com/community/UEFIBooting
+grub-mkimage -O x86_64-efi -d /usr/lib/grub/x86_64-efi/ -o /tmp/grubx64.efi -p "" part_gpt part_msdos ntfs ntfscomp hfsplus fat ext2 normal chain boot configfile linux linux16 multiboot efi_gop efi_uga gettext gfxterm gzio png video_bochs video_cirrus search_fs_file search_fs_uuid search_label search loadenv boot cat chain cmp echo extcmd help ls reboot test
+
+
 mkdir -p /boot/efi/EFI/MAX/
 cp /tmp/grubx64.efi /boot/efi/EFI/MAX/
 cat << EOF > /boot/efi/EFI/MAX/grub.cfg
@@ -50,6 +81,11 @@ EOF
 
 
 efibootmgr -q -c -p $EFI_NUM -d /dev/sda -l "\EFI\MAX\grubx64.efi" -L "MAX (grub)"
+
+# set MAX as default
+EFI_NUM=$(efibootmgr | awk '/MAX/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
+[ ! -z $EFI_NUM ] && efibootmgr -q -a -b "$EFI_NUM" -d /dev/sda
+
 rm -f /tmp/grubx64.efi
 
 
