@@ -1,3 +1,9 @@
+max-linux (7.0.max3) max; urgency=low
+
+  * Depends on linux-image-generic-lts-saucy and linux-headers-generic-lts-saucy
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 15 Dec 2013 14:01:16 +0100
+
 max-linux (7.0.max2) max; urgency=low
 
   * Provides linux-image
