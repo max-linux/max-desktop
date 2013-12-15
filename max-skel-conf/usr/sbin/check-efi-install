@@ -7,14 +7,14 @@ if [ ! -d /sys/firmware/efi/efivars ]; then
 fi
 
 if [ "$1" = "remove" ]; then
-  EFI_NUM=$(efibootmgr | awk '/MAX/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g')
+  EFI_NUM=$(efibootmgr | awk '/MAX/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
   [ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d /dev/sda
   rm -rf /boot/efi/EFI/MAX/
   exit
 fi
 
 
-EFI_PART=$(awk '/boot\/efi/ {print $1}' /proc/mounts)
+EFI_PART=$(awk '/boot\/efi/ {print $1}' /proc/mounts| tail -1)
 
 if [ -x $EFI_PART ]; then
   echo " * NO UEFI partition"
@@ -34,10 +34,12 @@ grub-mkimage -O x86_64-efi -d /usr/lib/grub/x86_64-efi/ -o /tmp/grubx64.efi -p "
 
 echo " * Installing GRUB in UEFI part $EFI_PART to boot $MAX_PART ..."
 
-# remount (Ubiquity don't mount efi dir)
-umount $EFI_PART || true
-mkdir -p /boot/efi
-mount $EFI_PART /boot/efi
+if [ ! -d /boot/efi/EFI ]; then
+  # remount (Ubiquity don't mount efi dir)
+  umount $EFI_PART || true
+  mkdir -p /boot/efi
+  mount $EFI_PART /boot/efi
+fi
 
 mkdir -p /boot/efi/EFI/MAX/
 cp /tmp/grubx64.efi /boot/efi/EFI/MAX/
@@ -55,7 +57,7 @@ rm -f /tmp/grubx64.efi
 if [ -e "/boot/efi/EFI/Microsoft/Boot/BCD" ]; then
   # replace os.prober with new detection script
   grep -q "^GRUB_DISABLE_OS_PROBER=true" /etc/default/grub || echo GRUB_DISABLE_OS_PROBER=true >> /etc/default/grub
-  cp /usr/share/max/25_windows-uefi /etc/grub.d/25_windows_uefi
+  cp /usr/share/max/25_windows_uefi /etc/grub.d/25_windows_uefi
   chmod +x /etc/grub.d/25_windows_uefi
 fi
 
