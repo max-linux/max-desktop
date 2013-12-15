@@ -32,9 +32,6 @@ fi
 
 if [ "$AMD64" = "1" ]; then
   ARCH=amd64
-  # for UEFI need /sys/firmware/efi/efivars
-  LINUX_IMAGE="linux-signed-image-generic-lts-saucy"
-  LINUX_HEADERS="linux-headers-generic-lts-saucy"
 fi
 
 TITLE="MaX ${MAX_VERSION}"
