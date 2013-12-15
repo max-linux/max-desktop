@@ -11,5 +11,9 @@ if [ -x "/etc/init.d/multiseat-rescan" ]; then
 fi
 
 
+if [ ! -e /etc/X11/default-display-manager ] && [ -e /usr/sbin/gdm ]; then
+  echo "/usr/sbin/gdm" > /etc/X11/default-display-manager
+fi
+
 
 #DEBHELPER#

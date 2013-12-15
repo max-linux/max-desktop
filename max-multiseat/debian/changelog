@@ -1,3 +1,9 @@
+max-multiseat (7.0.max2) max; urgency=low
+
+  * Create /etc/X11/default-display-manager if no exist with GDM, close #466
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 15 Dec 2013 22:10:03 +0100
+
 max-multiseat (7.0.max1) max; urgency=low
 
   * Build in MaX 7.0
