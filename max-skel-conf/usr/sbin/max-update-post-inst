@@ -16,9 +16,9 @@ fi
 UPDATE_GRUB=0
 
 if [ -e /etc/default/grub ]; then
-  if ! grep -q "MaX" /etc/default/grub 2>/dev/null; then
+  if ! grep -q "MaX-7.5" /etc/default/grub 2>/dev/null; then
     echo '' >> /etc/default/grub
-    echo 'GRUB_DISTRIBUTOR="MaX-7.0"' >> /etc/default/grub
+    echo 'GRUB_DISTRIBUTOR="MaX-7.5"' >> /etc/default/grub
     UPDATE_GRUB=1
   fi
 
