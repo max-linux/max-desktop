@@ -356,7 +356,7 @@ Session:
         simpleuser=user.split(',')[0].split('=')[1]
         
         # call net ads join
-        cmd="net ads join -D %s -U %s%%%s"%(domain, simpleuser, passwd)
+        cmd="net rpc join -D %s -U %s%%%s"%(domain, simpleuser, passwd)
         print_debug(cmd)
         cmdresult=self.exe_cmd(cmd)
         result=False
@@ -458,6 +458,13 @@ Session:
     def configureSSH(self):
         # configure sshd_config to disable logins of know users (madrid and alumno)
         shutil.copy('/etc/ssh/sshd_config', BACKUP)
+        f=open('/etc/ssh/sshd_config', 'r')
+        data=f.readlines()
+        f.close()
+        for line in data:
+            if "max-ldap" in line:
+                return
+
         f=open('/etc/ssh/sshd_config', 'a')
         f.write("\n\n# max-ldap\n")
         f.write("# Al estar este equipo unido al dominio,\n")

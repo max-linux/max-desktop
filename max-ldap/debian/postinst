@@ -9,11 +9,6 @@ if [ "$1" = "configure" ]; then
    [ -e /etc/init.d/max-ldap ] && rm -f /etc/init.d/max-ldap
 
 
-    # call update GRUB to create extlinux conf
-    if which update-grub > /dev/null ; then
-        update-grub
-    fi
-
     if [ -f /etc/ldap.conf ] && [ "$(grep -c ^rootbinddn /etc/ldap.conf)" != "0" ]; then
       # disable rootbinddn
       sed -i -e 's/rootbinddn/#rootbinddn/g' /etc/ldap.conf
@@ -43,7 +38,7 @@ EOF
         echo "gdm-2.20;*;*;Al0000-2400;audio,video,floppy,cdrom,fuse" >> /etc/security/group.conf
     fi
 
-
+    if [ -d /etc/gdm/PostSession/ ]; then
     # ensure to umount $HOME in GDM Postlogin
     if ! grep -q umount /etc/gdm/PostSession/Default; then
         cat << EOF > /etc/gdm/PostSession/Default
@@ -51,6 +46,7 @@ EOF
 
 id | grep -q "__USERS__" || exit 0
 
+sleep 1
 umount "/home/samba/users/\$USER/.gvfs"
 sleep 1
 umount "/home/samba/users/\$USER"
@@ -58,6 +54,17 @@ exit 0
 EOF
 
     fi
+    fi
+
+
+    if [ -d /etc/lightdm/ ]; then
+       cp /usr/share/max-ldap/script_logout.sh /etc/lightdm/
+       chmod +x /etc/lightdm/script_logout.sh
+       if ! grep -q "session-cleanup-script=/etc/lightdm/script_logout.sh" /etc/lightdm/lightdm.conf ; then
+          echo session-cleanup-script=/etc/lightdm/script_logout.sh >> /etc/lightdm/lightdm.conf
+       fi
+    fi
+
 
 fi
 

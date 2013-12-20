@@ -1,3 +1,10 @@
+max-ldap (0.26) max; urgency=low
+
+  * Add script_logout.sh to lightdm
+  * Use 'net rpc join' instead of 'net ads join'
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 20 Dec 2013 18:33:12 +0100
+
 max-ldap (0.25) max; urgency=low
 
   * Fix for joining MAX 7.0/7.5 to old max server, rel #467

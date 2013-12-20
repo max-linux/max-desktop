@@ -33,7 +33,8 @@ data_files.append(('/etc/X11/Xsession.d', ['80_configure_ldap_session'] ))
 
 data_files.append(('share/gnome/shutdown', ['ldap_logout.sh'] ))
 
-data_files.append(('/etc/grub.d', ['50_extlinux'] ))
+data_files.append(('share/max-ldap', ['script_logout.sh'] ))
+
 
 setup(name='MAX-LDAP',
       description = 'Configure MAX as LDAP client',
