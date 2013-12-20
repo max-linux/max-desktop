@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Exec=xfce4-session-logout --halt
+Exec=xfce4-session-logout
 Icon=gnome-session-halt
 StartupNotify=false
 Terminal=false

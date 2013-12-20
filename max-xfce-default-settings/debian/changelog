@@ -1,3 +1,9 @@
+max-xfce-default-settings (7.0.max16) max; urgency=low
+
+  * Don't poweroff, only show dialog, close #489
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 20 Dec 2013 16:21:25 +0100
+
 max-xfce-default-settings (7.0.max15) max; urgency=low
 
   * Fix typo in poweroff command, rel #480
