@@ -179,6 +179,19 @@ ldap-auth-config	ldap-auth-config/ldapns/ldap_version	select	3
 ldap-auth-config	ldap-auth-config/dblogin	boolean	false
 libpam-runtime	libpam-runtime/override	boolean	false
 libpam-runtime	libpam-runtime/profiles	multiselect	unix, mkhomedir, libpam-mount, ldap, gnome-keyring, consolekit
+nslcd	nslcd/ldap-bindpw	password	
+nslcd	nslcd/ldap-sasl-realm	string	
+nslcd	nslcd/ldap-starttls	boolean	false
+nslcd	nslcd/ldap-sasl-krb5-ccname	string	/var/run/nslcd/nslcd.tkt
+nslcd	nslcd/ldap-auth-type	select	none
+nslcd	nslcd/ldap-reqcert	select	
+nslcd	nslcd/ldap-uris	string	ldap://$LDAP_SERVER$
+nslcd	nslcd/ldap-sasl-secprops	string	
+nslcd	nslcd/ldap-binddn	string	
+nslcd	nslcd/ldap-sasl-authcid	string	
+nslcd	nslcd/ldap-sasl-mech	select	
+nslcd	nslcd/ldap-base	string	$BASE_DN$
+nslcd	nslcd/ldap-sasl-authzid	string	
 """
         password=self.password.get_text()
         preseed=preseed.replace('$PASSWORD$', password)
@@ -231,7 +244,7 @@ libpam-runtime	libpam-runtime/profiles	multiselect	unix, gnome-keyring, consolek
         """
         # create temp file with packages to install
         temp = NamedTemporaryFile()
-        for pkg in ['ldap-auth-client', 'auth-client-config', 'smbfs', 'libpam-mount', 'samba', 'ssh']:
+        for pkg in ['ldap-auth-client', 'auth-client-config', 'smbfs', 'libpam-mount', 'samba', 'ssh', 'ldap-utils', 'nslcd']:
             temp.write("%s\t install\n"%pkg)
         temp.flush()
         
@@ -261,7 +274,7 @@ Session:
     def configure_PAM_mount(self):
         serverip=self.ldap_server.get_text().strip()
         pam_mount_line="""
-<volume options="iocharset=utf8,uid=%%(USER),mode=700" fstype="cifs" server="%s" path="homes" mountpoint="~"> <and> <sgrp>__USERS__</sgrp> </and> </volume>
+<volume options="iocharset=utf8,uid=%%(USER)" fstype="cifs" server="%s" path="homes" mountpoint="~"> <and> <sgrp>__USERS__</sgrp> </and> </volume>
 <volume fstype="tmpfs" mountpoint="~/.pulse" options="size=1M,uid=%%(USER),mode=0700"> <and> <sgrp>__USERS__</sgrp> </and> </volume>
 
 <volume options="rw,iocharset=utf8" fstype="cifs" server="%s" path="isos" mountpoint="/mnt/isos"> <and> <sgrp>Teachers</sgrp> </and> </volume>
@@ -336,6 +349,7 @@ Session:
             else:
                 f.write(line)
         f.close()
+        return True
         
         user=self.admin.get_text().strip()
         passwd=self.password.get_text().strip()
@@ -424,6 +438,7 @@ Session:
         """
         Edit /etc/pam.d/gdm
         """
+        return True
         
         f=open('/etc/pam.d/gdm', 'r')
         data=f.readlines()
@@ -542,15 +557,23 @@ Session:
         #
         self.exe_cmd("sed -i -e 's/common-auth/common-auth-nomount/g' /etc/pam.d/sshd")
         self.exe_cmd("sed -i -e 's/common-session/common-session-nomount/g' /etc/pam.d/sshd")
+
+        # Desactiva la lista de usuarios y el Invitado de la pantalla de login del lightdm
+        self.exe_cmd("/usr/lib/lightdm/lightdm-set-defaults --hide-users true")
+        self.exe_cmd("/usr/lib/lightdm/lightdm-set-defaults --allow-guest false")
+
+        # Activa el servicio nslcd en los niveles de ejecución
+        self.exe_cmd("update-rc.d nslcd enable");
         
         # say user to reboot
         print_debug("Please, reboot")
         show_info("Por favor, reinicie el equipo.")
         self.quitapp()
 
+
     def remove_pkgs(self):
         apt="apt-get remove --purge -y --force-yes"
-        pkgs="ldap-auth-client auth-client-config smbfs libpam-mount"
+        pkgs="ldap-auth-client auth-client-config smbfs libpam-mount ldap-utils nslcd"
         self.exe_cmd("%s %s"%(apt, pkgs))
         self.exe_cmd("apt-get autoremove --purge -y --force-yes")
 
