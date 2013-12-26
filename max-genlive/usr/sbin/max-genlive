@@ -117,6 +117,8 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS ibus-gtk ibus-gtk3 ibus-pinyin ibus-table pinyin
 BLACKLIST_PKGS="$BLACKLIST_PKGS libreoffice-help-en-gb libreoffice-help-en-us"
 # ubiquity install KDE
 BLACKLIST_PKGS="$BLACKLIST_PKGS ubiquity-frontend-kde compiz compiz-core"
+# ubiquity install KDE
+BLACKLIST_PKGS="$BLACKLIST_PKGS software-center"
 
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
