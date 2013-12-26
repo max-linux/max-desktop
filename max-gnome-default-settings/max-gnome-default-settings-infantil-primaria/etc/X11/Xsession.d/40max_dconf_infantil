@@ -4,7 +4,8 @@
 
 
 
-if [ -e $HOME/.infantil ] && [ -d /usr/share/doc/max-desktop-infantil-primaria ]; then
+#if [ -e $HOME/.infantil ] && [ -d /usr/share/doc/max-desktop-infantil-primaria ]; then
+if [ -d /usr/share/doc/max-desktop-infantil-primaria ]; then
 	export DCONF_PROFILE=infantil
 
 
