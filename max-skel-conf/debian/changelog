@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max47) max; urgency=low
+
+  * Set apturl as default x-scheme-handler/apt (Chromium opens apt:// links OK), close #459
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Dec 2013 17:26:18 +0100
+
 max-skel-conf (7.0.max46) max; urgency=low
 
   * Start pysiogame in spanish

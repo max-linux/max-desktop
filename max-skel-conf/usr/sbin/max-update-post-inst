@@ -98,6 +98,13 @@ if [ -x /usr/bin/xdg-mime ] && [ -e /etc/gnome/defaults.list ]; then
   if [ "$(xdg-mime query default application/x-exe-learning 2>/dev/null)" = "" ]; then
     echo "application/x-exe-learning=exe.desktop" >> /etc/gnome/defaults.list
   fi
+
+
+  if xdg-mime query default x-scheme-handler/apt| grep -q software-center; then
+    xdg-mime default apturl.desktop x-scheme-handler/apt
+    sed -i '/ubuntu-software-center/d' /etc/gnome/defaults.list
+    echo "x-scheme-handler/apt=apturl.desktop" >> /etc/gnome/defaults.list
+  fi
 fi
 
 
