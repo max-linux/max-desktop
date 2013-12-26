@@ -1,3 +1,0 @@
-# run clamav-freshclam once a day at 15:00
-
-00 15    * * *   clamav   test -x /usr/bin/freshclam && (bash -c 'sleep $[ RANDOM % 1800 ]' && /usr/bin/freshclam >/dev/null 2>&1)
