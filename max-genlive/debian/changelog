@@ -1,3 +1,10 @@
+max-genlive (7.0.max25) max; urgency=low
+
+  * Replace 7.0 => 7.5
+  * Enable only-ubiquity entry, close #487
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Dec 2013 16:53:51 +0100
+
 max-genlive (7.0.max24) max; urgency=low
 
   * Change hostname to max75
