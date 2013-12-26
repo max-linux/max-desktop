@@ -1,3 +1,10 @@
+max-gnome-default-settings (7.0.max28) max; urgency=low
+
+  * Add virtual desktop switcher to GNOME
+  * Replace Ri-Li with pySioGame, close #460
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Dec 2013 16:13:32 +0100
+
 max-gnome-default-settings (7.0.max27) max; urgency=low
 
   * Only enable if HOME/.infantil exists, close #462
