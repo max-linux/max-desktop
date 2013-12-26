@@ -6,9 +6,10 @@ if [ "$(max-arch)" != "amd64" ]; then
 fi
 
 
+
 PKGS=$(dpkg -l| awk '/9.4.7/ {print $2}'| grep acroread)
 
-if [ "$PKGS" = "" ]; then
+if [ "$PKGS" = "" ] && [ "$1" != "force" ]; then
   echo " * Acrobat está actualizado o no instalado"
   exit
 fi
@@ -19,10 +20,10 @@ if ! apt-cache policy acroread| grep -q 9.5; then
   exit
 fi
 
-apt-get remove --purge -y $PKGS
+[ ! -z "$PKGS" ] && apt-get remove --purge -y $PKGS
 
-apt-get install acroread:i386 acroread-data:i386 acroread-plugins:i386 acroread-debian-files:i386
+apt-get install -y acroread:i386 acroread-data:i386 acroread-plugins:i386 acroread-debian-files:i386 libcanberra-gtk0:i386 gtk2-engines-murrine:i386
 
-apt-get autoremove --purge
+apt-get autoremove --purge -y
 
 echo " * Acrobat Reader actualizado."

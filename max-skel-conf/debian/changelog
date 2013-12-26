@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max45) max; urgency=low
+
+  * Fix max-update-acroread and add canberra-gtk
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Dec 2013 14:07:06 +0100
+
 max-skel-conf (7.0.max44) max; urgency=low
 
   * Add max-update-acroread to update acroread packages in 64 bits
