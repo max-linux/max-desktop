@@ -1,3 +1,9 @@
+max-live (7.0.max16) max; urgency=low
+
+  * Don't run jockey in live session
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Dec 2013 12:57:38 +0100
+
 max-live (7.0.max15) max; urgency=low
 
   * Remove grub-pc from depends

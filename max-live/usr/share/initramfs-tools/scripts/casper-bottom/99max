@@ -73,4 +73,8 @@ rm -rf /root/root/.themes
 chroot /root loadkeys es
 chroot /root setupcon --save-only
 
+# don't run jockey in live session
+rm -f /root/etc/xdg/autostart/*jockey*
+
+
 log_end_msg
