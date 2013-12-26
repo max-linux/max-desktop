@@ -9,7 +9,7 @@ for change in $CHANGELOGS; do
   letter=$(echo $source| cut -c1)
   #pkgdir="../../../max40/pool/main/$letter/$source/"
   #pkgdir="../../../max50/pool/main/$letter/$source/"
-  pkgdir="../../../max60/pool/main/$letter/$source/"
+  pkgdir="/data/mirror/max70/pool/main/$letter/$source/"
   #echo "source=$source version=$version"
 
   if [ -d $pkgdir ]; then
