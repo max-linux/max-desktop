@@ -69,11 +69,12 @@ EFI_NUM_UBUNTU=$(efibootmgr | awk '/max\-/ {print $1}'| sed -e 's/Boot//g' -e 's
 
 # generate grubx64.efi
 # https://help.ubuntu.com/community/UEFIBooting
-grub-mkimage -O x86_64-efi -d /usr/lib/grub/x86_64-efi/ -o /tmp/grubx64.efi -p "" part_gpt part_msdos ntfs ntfscomp hfsplus fat ext2 normal chain boot configfile linux linux16 multiboot efi_gop efi_uga gettext gfxterm gzio png video_bochs video_cirrus search_fs_file search_fs_uuid search_label search loadenv boot cat chain cmp echo extcmd help ls reboot test
+grub-mkimage -O x86_64-efi -d /usr/lib/grub/x86_64-efi/ -o /tmp/grubx64.efi -p "" part_gpt part_msdos ntfs ntfscomp hfsplus fat ext2 normal chain boot configfile linux multiboot efi_gop efi_uga gettext gfxterm gzio png video_bochs video_cirrus search_fs_file search_fs_uuid search_label search loadenv boot cat chain cmp echo extcmd help ls reboot test
 
 
 mkdir -p /boot/efi/EFI/MAX/
 cp /tmp/grubx64.efi /boot/efi/EFI/MAX/
+
 cat << EOF > /boot/efi/EFI/MAX/grub.cfg
 set root='${MAX_GRUB}'
 configfile /boot/grub/grub.cfg
@@ -92,7 +93,7 @@ rm -f /tmp/grubx64.efi
 
 if [ -e "/boot/efi/EFI/Microsoft/Boot/BCD" ]; then
   # replace os.prober with new detection script
-  grep -q "^GRUB_DISABLE_OS_PROBER=true" /etc/default/grub || echo GRUB_DISABLE_OS_PROBER=true >> /etc/default/grub
+  grep -q "^GRUB_DISABLE_OS_PROBER=true" /etc/default/grub || echo "GRUB_DISABLE_OS_PROBER=true" >> /etc/default/grub
   cp /usr/share/max/25_windows_uefi /etc/grub.d/25_windows_uefi
   chmod +x /etc/grub.d/25_windows_uefi
 fi

@@ -1,3 +1,12 @@
+max-skel-conf (7.0.max48) max; urgency=low
+
+  * usr/sbin/check-efi-install:
+    - Remove linux16 from grubx64.efi
+  * usr/lib/os-probes/mounted/35detect_max (rroobbeerr):
+    - Add double quotes in grub.cfg paths (can countain spaces)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 27 Dec 2013 16:07:56 +0100
+
 max-skel-conf (7.0.max47) max; urgency=low
 
   * Set apturl as default x-scheme-handler/apt (Chromium opens apt:// links OK), close #459
