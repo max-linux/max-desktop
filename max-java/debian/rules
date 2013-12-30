@@ -15,9 +15,9 @@ binary-install/max-java-jre::
 	fi
 
 	@if [ "$(DEB_BUILD_ARCH)" = "amd64" ]; then \
-		echo "dh_link usr/lib/jvm/ia32-java-6-sun usr/lib/jvm/java-6-sun-max"; \
+		echo "dh_link usr/lib/jvm/java-6-sun usr/lib/jvm/java-6-sun-max"; \
 		echo "cp debian/java-6-sun-max.jinfo.amd64 $(CURDIR)/debian/max-java-jre/usr/lib/jvm/.java-6-sun-max.jinfo"; \
-		dh_link usr/lib/jvm/ia32-java-6-sun usr/lib/jvm/java-6-sun-max; \
+		dh_link usr/lib/jvm/java-6-sun usr/lib/jvm/java-6-sun-max; \
 		cp debian/java-6-sun-max.jinfo.amd64 $(CURDIR)/debian/max-java-jre/usr/lib/jvm/.java-6-sun-max.jinfo; \
 	fi
 
