@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max30) max; urgency=low
+
+  * Enable lock screen in glib schema, close #451
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 30 Dec 2013 16:07:41 +0100
+
 max-gnome-default-settings (7.0.max29) max; urgency=low
 
   * Revert HOME/.infantil, reopen #462

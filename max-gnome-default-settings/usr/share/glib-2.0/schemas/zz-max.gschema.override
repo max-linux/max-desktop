@@ -152,3 +152,6 @@ history=[]
 [apps/shotwell/preferences/ui]
 show-welcome-dialog=false
 
+
+[org/gnome/desktop/lockdown]
+disable-lock-screen=false
