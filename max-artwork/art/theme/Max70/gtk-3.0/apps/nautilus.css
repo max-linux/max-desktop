@@ -1,7 +1,7 @@
 @define-color cluebar_color shade (mix (@bg_color, @base_color, 0.5), 0.95);
 
 NautilusWindow * {
-    -GtkPaned-handle-size: 6;
+    -GtkPaned-handle-size: 6px;
 }
 
 .nautilus-canvas-item {
@@ -138,7 +138,7 @@ NautilusWindow .sidebar .frame {
 NautilusWindow .pane-separator {
     background-color: @dark_bg_color;
     border-style: solid;
-    border-width: 1;
+    border-width: 1px;
 
     -unico-border-gradient: none;
     -unico-inner-stroke-width: 0;
