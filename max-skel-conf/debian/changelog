@@ -1,3 +1,10 @@
+max-skel-conf (7.0.max49) max; urgency=low
+
+  * Add usr/share/polkit-1/actions/org.freedesktop.consolekit.policy
+    to allow reboot/poweroff when multiple users logged, close #435
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 05 Jan 2014 15:04:16 +0100
+
 max-skel-conf (7.0.max48) max; urgency=low
 
   * usr/sbin/check-efi-install:
