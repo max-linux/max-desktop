@@ -3,9 +3,12 @@
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/rules/aa-debhelper.mk
 
-DEB_UPDATE_RCD_PARAMS := "stop 10 0 1 6 ."
+DEB_UPDATE_RCD_PARAMS := "start 10 0 6 ."
 
 binary-install/max-live::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-live -type d -name .svn | xargs rm -rf --
 	rm -rf $(CURDIR)/debian/max-live/usr/share/dpsyco
+
+	dh_installinit -r --no-start --init-script=casper -- start 89 0 6 .
+

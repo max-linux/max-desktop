@@ -1,3 +1,9 @@
+max-live (7.0.max17) max; urgency=low
+
+  * Enable casper update-rc.d (enable eject media in reboot/poweroff), close #423
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 05 Jan 2014 15:26:22 +0100
+
 max-live (7.0.max16) max; urgency=low
 
   * Don't run jockey in live session
