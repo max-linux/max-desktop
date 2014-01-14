@@ -5,6 +5,11 @@
 case "$1" in
     configure)
 
+    # update for new Firefox
+    if [ -d /usr/lib/firefox/browser ] && [ ! -e /usr/lib/firefox/browser/defaults/profile ]; then
+        ln -s /usr/lib/firefox/defaults/profile /usr/lib/firefox/browser/defaults/profile
+    fi
+
     # Update DNI-e certificates if exists
     [ -e /var/lib/dpkg/info/dnie-support.postinst ] && bash /var/lib/dpkg/info/dnie-support.postinst || true
 
