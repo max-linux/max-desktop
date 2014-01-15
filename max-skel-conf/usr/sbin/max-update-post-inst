@@ -108,26 +108,6 @@ if [ -x /usr/bin/xdg-mime ] && [ -e /etc/gnome/defaults.list ]; then
 fi
 
 
-## update Firefox defaults
-#FF_DIR=$(dirname /usr/lib/firefox*/firefox)
-#FF_DEF=/usr/share/max-firefox-conf/profile/
-#if [ ! -e "$FF_DIR/defaults/profile/localstore.rdf" ]; then
-#  echo " * Actualizando perfil de Firefox $FF_DIR"
-#  mkdir -p "$FF_DIR/defaults/profile/"
-#  cp $FF_DEF/* "$FF_DIR/defaults/profile/"
-#fi
-#
-## clean OLD firefox
-#for f in $(echo /usr/lib/firefox*/defaults 2>/dev/null); do
-#  [ ! -d "$f" ] && continue
-#  [ -e "$f/../firefox" ] && continue
-#  echo " * Limpiando versiones viejas de Firefox $f"
-#  rm -rf "$f"
-#done
-#
-#rmdir /usr/lib/firefox* 2>/dev/null
-
-
 # apturl for firefox
 if [ -d /etc/firefox/pref ]; then
   # link pref in install dir
@@ -167,6 +147,26 @@ if [ -f /etc/pam.d/lightdm ]; then
 
 # TCOS lightdm support
 session optional        pam_lastlog.so silent
+
+EOF
+fi
+
+
+
+# upgrade to MAX 7.5
+if ! grep -q "/max75" /etc/apt/sources.list; then
+  echo " * Updating sources.list to upgrade to MAX 7.5 ..."
+  # remove max70
+  sed -i -e '/max70/d' -e '/MaX/d' /etc/apt/sources.list
+  # add max75
+  cat << EOF >> /etc/apt/sources.list
+
+
+#
+# MAX 7.0 => 7.5 upgrade
+#
+deb http://max.educa.madrid.org/max75 max main
+#deb-src http://max.educa.madrid.org/max75 max main
 
 EOF
 fi

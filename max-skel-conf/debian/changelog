@@ -1,3 +1,11 @@
+max-skel-conf (7.0.max50) max; urgency=low
+
+  * usr/sbin/max-update-post-inst:
+    - Clean old code
+    - Edit sources.list to change repo /max70 => /max75
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Jan 2014 17:51:02 +0100
+
 max-skel-conf (7.0.max49) max; urgency=low
 
   * Add usr/share/polkit-1/actions/org.freedesktop.consolekit.policy
