@@ -17,7 +17,7 @@ deb http://$MIRROR/ubuntu ${DISTRO} main universe multiverse restricted
 deb http://$MIRROR/ubuntu ${DISTRO}-updates main universe multiverse restricted
 deb http://$MIRROR/ubuntu ${DISTRO}-security main universe multiverse restricted
 
-deb http://$MIRROR/max70 max main
+deb http://$MIRROR/max75 max main
 EOF
 
   cat << EOF > $NANOCHROOT/etc/apt/apt.conf.d/06norecomends
@@ -419,9 +419,9 @@ syslinux /dev/loop3
 _echo "Preparando aplicaciones portables"
 
 if [ $LOCAL_MIRROR ]; then
-  URL="http://$MIRROR/max70/portables.tar.gz"
+  URL="http://$MIRROR/max75/portables.tar.gz"
 else
-  URL="http://max.educa.madrid.org/max70/portables.tar.gz"
+  URL="http://max.educa.madrid.org/max75/portables.tar.gz"
 fi
 
 [ ! -f portables.tar.gz ] && wget $URL
