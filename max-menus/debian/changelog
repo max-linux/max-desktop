@@ -1,3 +1,9 @@
+max-menus (7.0.max27) max; urgency=low
+
+  * Move python-whiteboard.desktop to PDI menu
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 20 Jan 2014 11:30:36 +0100
+
 max-menus (7.0.max26) max; urgency=low
 
   * Unhide system-config-printer.desktop in GNOME, close #475
