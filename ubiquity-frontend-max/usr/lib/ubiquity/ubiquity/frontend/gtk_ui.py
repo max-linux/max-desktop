@@ -753,7 +753,10 @@ class Wizard(BaseFrontend):
             txt="""La instalación ha finalizado.
 Puede seguir probando MaX, pero recuerde que hasta que
 reinicie el equipo, cualquier cambio que haga o
-documento que guarde no se conservará."""
+documento que guarde no se conservará.\n\n
+Se han creado los usuarios madrid y alumno con contraseñas cmadrid y alumno,\n
+madrid es administrador y alumno usuario básico cuyos datos se borran al cerrar sesión,\n
+comportamiento modificable por madrid desde Inicio->Administración->Configurar pefiles."""
             self.finished_label.set_label(txt)
             with misc.raised_privileges():
                 open('/var/run/reboot-required', "w").close()
