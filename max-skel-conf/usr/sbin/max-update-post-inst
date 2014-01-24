@@ -158,5 +158,5 @@ if ! grep -q "/max75" /etc/apt/sources.list; then
   echo " * Updating sources.list to upgrade to MAX 7.5 ..."
   # substitutes max70 with max75
   cp /etc/apt/sources.list /etc/apt/sources.list.bak
-  sed -i -e 's#http://\([^/]*\)/max70#http://$1/max75#g' /etc/apt/sources.list
+  sed -i -e 's#http://\(.*\)/max70#http://$1/max75#g' /etc/apt/sources.list
 fi
