@@ -156,17 +156,6 @@ fi
 # upgrade to MAX 7.5
 if ! grep -q "/max75" /etc/apt/sources.list; then
   echo " * Updating sources.list to upgrade to MAX 7.5 ..."
-  # remove max70
-  sed -i -e '/max70/d' -e '/MaX/d' /etc/apt/sources.list
-  # add max75
-  cat << EOF >> /etc/apt/sources.list
-
-
-#
-# MAX 7.0 => 7.5 upgrade
-#
-deb http://max.educa.madrid.org/max75 max main
-#deb-src http://max.educa.madrid.org/max75 max main
-
-EOF
+  # substitutes max70 with max75
+  sed -i -e s#http://\([^/]*\)/max70#http://$1/max75#g /etc/apt/sources.list
 fi
