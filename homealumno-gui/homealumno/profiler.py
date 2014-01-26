@@ -120,9 +120,6 @@ class Profiler(object):
                 for exc in ALWAYS_EXCLUDE:
                     os.write(fd, "%s\n"%exc)
                 for exc in profile['exceptions']:
-                    if " " in exc:
-                        os.write(fd, "%s\n"%exc.replace(' ', '\ ') )
-                    else:
                         os.write(fd, "%s\n"%exc)
 
                 # close fd and append to rsync commands
