@@ -349,7 +349,6 @@ Session:
             else:
                 f.write(line)
         f.close()
-        return True
         
         user=self.admin.get_text().strip()
         passwd=self.password.get_text().strip()
@@ -360,7 +359,7 @@ Session:
         print_debug(cmd)
         cmdresult=self.exe_cmd(cmd)
         result=False
-        for line in cmdresult:
+        for line in cmdresult.splitlines():
             if "Joined" in line:
                 result=True
         
