@@ -1,3 +1,9 @@
+max-xfce-default-settings (7.0.max17) max; urgency=low
+
+  * Rename squeak-scratch => scratch in Xfce menu
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 31 Jan 2014 11:56:46 +0100
+
 max-xfce-default-settings (7.0.max16) max; urgency=low
 
   * Don't poweroff, only show dialog, close #489

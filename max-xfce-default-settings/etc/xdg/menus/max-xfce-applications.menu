@@ -177,7 +177,7 @@
 			<Exclude><Filename>squeak-doc.desktop</Filename></Exclude>
 			<Exclude><Filename>squeak-educarex.desktop</Filename></Exclude>
 			<Exclude><Filename>squeak-manual.desktop</Filename></Exclude>
-			<Exclude><Filename>squeak-scratch.desktop</Filename></Exclude>
+			<Exclude><Filename>scratch.desktop</Filename></Exclude>
 			<Exclude><Filename>squeak-small-land.desktop</Filename></Exclude>
 			<Exclude><Filename>squeak-small-land-plugin.desktop</Filename></Exclude>
 
@@ -375,7 +375,7 @@
 				<Include><Filename>squeak-small-land-plugin.desktop</Filename></Include>
 				<Include><Filename>squeak-atenex.desktop</Filename></Include>
 				<Include><Filename>squeak-educarex.desktop</Filename></Include>
-				<Include><Filename>squeak-scratch.desktop</Filename></Include>
+				<Include><Filename>scratch.desktop</Filename></Include>
 			</Menu>
 			<Menu>
 				<Name>GCompris</Name>
