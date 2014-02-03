@@ -15,7 +15,7 @@ if [ "$PKGS" = "" ] && [ "$1" != "force" ]; then
 fi
 
 
-if [ "$1" != "force" ] && ! apt-cache policy acroread| grep -q 9.5; then
+if [ "$1" != "force" ] && ! apt-cache policy acroread-debian-files| grep -q 9.5; then
   echo " * Acrobat 9.5 no disponible en el repositorio, necesita un apt-get update"
   exit
 fi
