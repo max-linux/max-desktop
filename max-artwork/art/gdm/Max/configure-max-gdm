@@ -22,7 +22,7 @@ gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.mandator
 
 
 if id gdm >/dev/null 2>&1; then
-  sudo -u gdm gconftool-2 --direct --config-source xml:readwrite:/var/lib/gdm/.gconf --type string --set "/desktop/gnome/background/picture_filename" "/usr/share/images/gdm/max75_gdm.jpg"
+  sudo -u gdm gconftool-2 --direct --config-source xml:readwrite:/var/lib/gdm/.gconf --type string --set "/desktop/gnome/background/picture_filename" "/usr/share/images/gdm/maxgdm.png"
   sudo -u gdm gconftool-2 --direct --config-source xml:readwrite:/var/lib/gdm/.gconf --type string --set "/desktop/gnome/interface/icon_theme" "maxtoon"
   sudo -u gdm gconftool-2 --direct --config-source xml:readwrite:/var/lib/gdm/.gconf --type string --set "/desktop/gnome/interface/gtk_theme" "MaxColors"
   echo " * Configurando tema en GDM para MaX..."
