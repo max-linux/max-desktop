@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max32) max; urgency=low
+
+  * Fix XFCE background in second monitor, close #514
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 12 Feb 2014 16:43:26 +0100
+
 max-gnome-default-settings (7.0.max31) max; urgency=low
 
   * Fix scratch launcher in infantil, close #509
