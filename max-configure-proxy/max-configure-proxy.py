@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 # -*- coding: UTF-8 -*-
 ##########################################################################
 # max-configure-proxy writen by MarioDebian <mariodebian@gmail.com>
@@ -29,26 +29,19 @@ import os
 
 import pygtk
 pygtk.require('2.0')
-import gtk.glade
+import gtk
 import getopt
-
 from threading import Thread
-
 import gobject
-
-#import threading
 gtk.gdk.threads_init()
 gobject.threads_init()
-
-
-
-
 
 debug=False
 PACKAGE="max-configure-proxy"
 
 
-GLADE_DIR = "/usr/share/max-configure-proxy/"
+UI_DIR = "/usr/share/max-configure-proxy/"
+#UI_DIR = "./"
 PROFILE_CONF="/etc/profile.d/max-proxy.sh"
 
 def print_debug(txt):
@@ -90,21 +83,25 @@ class MaxConfigureProxy(object):
         self.begin_usernumber=1
         
         # Widgets
-        self.ui = gtk.glade.XML(GLADE_DIR + 'max-configure-proxy.glade')
-        self.mainwindow = self.ui.get_widget('mainwindow')
+        
+        #self.ui = gtk.glade.XML(GLADE_DIR + 'max-configure-proxy.ui')
+        self.ui = gtk.Builder()
+        print_debug("load ui %s"%(UI_DIR + 'max-configure-proxy.ui'))
+        self.ui.add_from_file(UI_DIR + 'max-configure-proxy.ui')
+        self.mainwindow = self.ui.get_object('mainwindow')
         
         # close windows signals
         self.mainwindow.connect('destroy', self.quitapp )
         self.mainwindow.connect('delete_event', self.quitapp)
         
-        self.button_quit=self.ui.get_widget("btn_quit")
+        self.button_quit=self.ui.get_object("btn_quit")
         self.button_quit.connect('clicked', self.quitapp)
         
         
         # widgets
         self.w={}
-        for widget in ['txt_ip', 'txt_port', 'btn_activate', 'btn_cancel', 'lbl_message']:
-            self.w[widget]=self.ui.get_widget(widget)
+        for widget in ['txt_ip', 'txt_port', 'txt_user', 'txt_password', 'btn_activate', 'btn_cancel', 'lbl_message']:
+            self.w[widget]=self.ui.get_object(widget)
             #print_debug("widget name=%s obj=%s"%(widget, self.w[widget]))
         
         self.w['lbl_message'].set_text("")
@@ -120,6 +117,8 @@ class MaxConfigureProxy(object):
             data=self.read_proxy()
             self.w['txt_ip'].set_text(data['ip'])
             self.w['txt_port'].set_text(data['port'])
+            self.w['txt_user'].set_text(data['user'])
+            self.w['txt_password'].set_text(data['password'])
             print_debug(data)
         else:
             self.w['btn_activate'].set_sensitive(True)
@@ -134,12 +133,19 @@ class MaxConfigureProxy(object):
 
     def configure_proxy(self, *args):
         print_debug("configure_proxy() ")
+        user=self.w['txt_user'].get_text().strip()
+        password=self.w['txt_password'].get_text().strip()
         ip=self.w['txt_ip'].get_text().strip()
         try:
             port=int(self.w['txt_port'].get_text().strip())
         except:
             port=''
-        print_debug("export http_proxy=http://%s:%s"%(ip,port))
+        proxy_str="%s:%s"%(ip,port)
+        use_auth='false'
+        if user != '' and password != '':
+            proxy_str="%s:%s@%s:%s"%(user,password,ip,port)
+            use_auth='true'
+        print_debug("export http_proxy=http://%s"%(proxy_str))
         if ip == '' or port == '':
             gtk.gdk.threads_enter()
             self.error_msg("La IP o el puerto no son correctos")
@@ -150,11 +156,80 @@ class MaxConfigureProxy(object):
         f=open(PROFILE_CONF, 'w')
         f.write("#ip=%s\n"%ip)
         f.write("#port=%s\n"%port)
-        f.write("export http_proxy='http://%s:%s'\n"%(ip,port))
+        f.write("#user=%s\n"%user)
+        f.write("#password=%s\n"%password)
+        f.write("export all_proxy='http://%s'\n"%(proxy_str))
+        f.write("export ftp_proxy='http://%s'\n"%(proxy_str))
+        f.write("export http_proxy='http://%s'\n"%(proxy_str))
+        f.write("export https_proxy='http://%s'\n"%(proxy_str))
+        f.write("export socks_proxy='http://%s'\n"%(proxy_str))
+        f.write("export no_proxy='localhost,127.0.0.0/8,192.168.0.0/16,max-server'\n")
+        f.write("\n")
         f.close()
         
+        # generar dconf
+        for profile in ['user', 'alumno']:
+            need_dconf_edit=True
+            if os.path.isfile('/etc/dconf/profile/'+profile):
+                f=open('/etc/dconf/profile/'+profile, 'r')
+                for line in f.readlines():
+                    if "system-db:local" in line:
+                        need_dconf_edit=False
+                f.close()
+            else:
+                continue
+            if need_dconf_edit:
+                print_debug("EDIT '/etc/dconf/profile/%s' to add system-db:local"%(profile))
+                f=open('/etc/dconf/profile/'+profile, 'a')
+                f.write("system-db:local\n")
+                f.close()
+        
+        # generar local.d/00_proxy
+        if not os.path.isdir('/etc/dconf/db/local.d'):
+            os.mkdir('/etc/dconf/db/local.d', 0755)
+        
+        f=open('/etc/dconf/db/local.d/00_proxy', 'w')
+        f.write("""
+[system/proxy/ftp]
+host='%s'
+port=%s
+
+[system/proxy/http]
+host='%s'
+port=%s
+enabled=true
+authentication-user='%s'
+authentication-password='%s'
+use-authentication=%s
+
+[system/proxy/https]
+host='%s'
+port=%s
+
+[system/proxy]
+ignore-hosts=['localhost', '127.0.0.0/8', '192.168.0.0/16', 'max-server']
+mode='manual'
+
+[system/proxy/socks]
+host='%s'
+port=%s
+
+""" %(ip, port, ip, port, user, password, use_auth, ip, port, ip, port) )
+        f.close()
+        print_debug("CREATED '/etc/dconf/db/local.d/00_proxy'")
+        
+        # update dconf
+        os.system("dconf update")
+        
+        
+        # configurar apt-get
+        f=open('/etc/apt/apt.conf.d/88max-proxy', 'w')
+        f.write("Acquire::http::Proxy \"http://%s\";\n" %(proxy_str))
+        f.close()
+        print_debug("CREATED '/etc/apt/apt.conf.d/88max-proxy'")
+        
         gtk.gdk.threads_enter()
-        self.w['lbl_message'].set_markup( ("<b>Proxy guardado, es necesario reiniciar.</b>") )
+        self.w['lbl_message'].set_markup( ("<b>Proxy activado.</b>") )
         self.w['btn_activate'].set_sensitive(False)
         self.w['btn_cancel'].set_sensitive(True)
         gtk.gdk.threads_leave()
@@ -167,20 +242,48 @@ class MaxConfigureProxy(object):
 
     def desconfigure_proxy(self, *args):
         print_debug("desconfigure_proxy() ")
-        # borrar archivo
-        os.unlink(PROFILE_CONF)
+        # borrar archivos
+        for f in [PROFILE_CONF,
+                  '/etc/dconf/db/local.d/00_proxy',
+                  '/etc/apt/apt.conf.d/88max-proxy']:
+            if os.path.isfile(f):
+                print_debug("DELETE '%s'" %(f))
+                os.unlink(f)
+        
+        
+        # limpiar dconf
+        for profile in ['user', 'alumno']:
+            need_dconf_edit=False
+            if os.path.isfile('/etc/dconf/profile/'+profile):
+                f=open('/etc/dconf/profile/'+profile, 'r')
+                lines=f.readlines()
+                for line in lines:
+                    if "system-db:local" in line:
+                        need_dconf_edit=True
+                f.close()
+            if need_dconf_edit:
+                print_debug("EDIT '/etc/dconf/profile/%s' to remove system-db:local"%(profile))
+                f=open('/etc/dconf/profile/'+profile, 'w')
+                for line in lines:
+                    if "system-db:local" not in line:
+                        f.write(line)
+                f.close()
+        # update dconf
+        os.system("dconf update")
         
         # limpiar campos
         gtk.gdk.threads_enter()
         self.w['txt_ip'].set_text('')
         self.w['txt_port'].set_text('')
-        self.w['lbl_message'].set_markup( ("<b>Proxy eliminado, es necesario reiniciar.</b>") )
+        self.w['txt_user'].set_text('')
+        self.w['txt_password'].set_text('')
+        self.w['lbl_message'].set_markup( ("<b>Proxy desactivado.</b>") )
         self.w['btn_activate'].set_sensitive(True)
         self.w['btn_cancel'].set_sensitive(False)
         gtk.gdk.threads_leave()
 
     def read_proxy(self):
-        data={'ip':'', 'port':''}
+        data={'ip':'', 'port':'', 'user':'', 'password':''}
         if not os.path.isfile(PROFILE_CONF):
             return data
         
@@ -190,6 +293,10 @@ class MaxConfigureProxy(object):
                 data['ip']=line.split('=')[1].strip()
             if "#port" in line:
                 data['port']=line.split('=')[1].strip()
+            if "#user" in line:
+                data['user']=line.split('=')[1].strip()
+            if "#password" in line:
+                data['password']=line.split('=')[1].strip()
         f.close()
         return data
 

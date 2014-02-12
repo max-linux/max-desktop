@@ -1,3 +1,9 @@
+max-configure-proxy (7.0.max2) max; urgency=low
+
+  * Add dconf and apt-get support, close #470
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 12 Feb 2014 13:13:55 +0100
+
 max-configure-proxy (7.0.max1) max; urgency=low
 
   * Build in MAX 7.0

@@ -30,14 +30,14 @@ class max_install_data(install_data):
 
 
 # Interface files
-data_files.append( ('share/max-configure-proxy', ['max-configure-proxy.glade'] ) )
+data_files.append( ('share/max-configure-proxy', ['max-configure-proxy.ui'] ) )
 
 # Desktop files
 data_files.append( ('share/applications/', ['max-configure-proxy.desktop']) )
 
 
 setup(name='MaxConfigureProxy',
-      description = 'Configure proxy in /etc/profile.d',
+      description = 'Configure proxy in /etc/profile.d, dconf and apt-get',
       version=get_debian_version(),
       author = 'Mario Izquierdo',
       author_email = 'mariodebian@gmail.com',
