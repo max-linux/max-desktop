@@ -1,6 +1,20 @@
 #! /bin/sh
 #set -e
 
+if [ -e /tmp/sendinfo ]; then
+  # save in chroot to send MAX statistics
+  mkdir -p /target/var/lib/max-sendinfo/
+  touch /target/var/lib/max-sendinfo/pending
+  rm -f /tmp/sendinfo
+  MINUTE=$((RANDOM%59))
+  cat << EOF > /target/etc/cron.d/max-sendinfo
+
+# Try to send install info and hardware to MAX servers every hour in a random minute
+$MINUTE *     * * *     root   [ -d /var/lib/max-sendinfo ] && [ -x /usr/sbin/max-sendinfo ] && /usr/sbin/max-sendinfo >> /var/lib/max-sendinfo/sendinfo.log 2>&1
+EOF
+fi
+
+
 if [ -e /tmp/max_desktop_type ]; then
   # gnome or xfce
   # tune /etc/skel/.dmrc and users .dmrc

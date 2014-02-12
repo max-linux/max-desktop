@@ -99,6 +99,8 @@ class PageGtk(PageBase):
         self.install_type_terminales = builder.get_object('install_type_terminales')
 
         self.hostname_widget = builder.get_object('hostname')
+
+        self.sendinfo_widget = builder.get_object('sendinfo_check')
         
         self.install_vbox = builder.get_object('install_vbox')
         self.scrolledwin = builder.get_object('install_scrolledwindow')
@@ -115,7 +117,7 @@ class PageGtk(PageBase):
 
         #self.install_type_group.connect('toggled', self.on_install_type_radio_toggled)
         try:
-            os.popen("sudo rm -f /tmp/max_install_type")
+            os.popen("sudo rm -f /tmp/max_install_type /tmp/sendinfo")
         except:
             pass
         syslog.syslog("DEBUG: preseeding max.seed")
@@ -130,6 +132,8 @@ class PageGtk(PageBase):
         
         self.sti=False
         self.get_test_sti()
+
+        self.sendinfo_widget.connect('toggled', self.on_sendinfo_toggled)
         
         if os.path.isfile("/cdrom/casper/nanomax"):
             self.install_type_escritorio.set_sensitive(False)
@@ -194,6 +198,13 @@ class PageGtk(PageBase):
 
     def get_hostname(self):
         return self.hostname_widget.get_text().strip()
+
+    def on_sendinfo_toggled(self, widget):
+        syslog.syslog("DEBUG: on_sendinfo_toggled() STATUS=%s"%(("OFF", "ON")[widget.get_active()]))
+        if not widget.get_active():
+            os.popen("sudo rm -f /tmp/sendinfo")
+        else:
+            os.popen("sudo touch /tmp/sendinfo")
 
     def get_test_sti(self):
         subp = Popen(['/usr/bin/test-sti'], stdout=PIPE)
