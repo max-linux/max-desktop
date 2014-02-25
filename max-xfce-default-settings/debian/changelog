@@ -1,3 +1,9 @@
+max-xfce-default-settings (7.0.max19) max; urgency=low
+
+  * Change background jpg => png
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 25 Feb 2014 12:37:03 +0100
+
 max-xfce-default-settings (7.0.max18) max; urgency=low
 
   * Fix second monitor background and fix broken symlinks, close #518
