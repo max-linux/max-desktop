@@ -1,3 +1,9 @@
+ubiquity-frontend-max (7.0.max34) max; urgency=low
+
+  * Change background jpg => png
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 25 Feb 2014 12:31:09 +0100
+
 ubiquity-frontend-max (7.0.max33) max; urgency=low
 
   * Add checkbox with a send info action (cron.d/max-seninfo)

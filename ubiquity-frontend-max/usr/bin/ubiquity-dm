@@ -21,7 +21,7 @@ from ubiquity.misc import create_bool
 from ubiquity.casper import get_casper
 from ubiquity.debconfcommunicator import DebconfCommunicator
 
-background_MAX = '/usr/share/backgrounds/max.jpg'
+background_MAX = '/usr/share/backgrounds/max.png'
 
 def ck_open_session(uid):
     import dbus
