@@ -33,9 +33,13 @@ text_colour.blue = 1.0;
 #tinted_text_colour.green = 0.52;
 #tinted_text_colour.blue = 0.57;
 # MaX Tinted text #003258 0,50,88
-tinted_text_colour.red = 0.00;
-tinted_text_colour.green = 0.20;
-tinted_text_colour.blue = 0.34;
+#tinted_text_colour.red = 0.00;
+#tinted_text_colour.green = 0.20;
+#tinted_text_colour.blue = 0.34;
+# MAX 7.5
+tinted_text_colour.red = 1.0;
+tinted_text_colour.green = 1.0;
+tinted_text_colour.blue = 1.0;
 
 # Action Text - #ffffff - RGB 255 255 255
 action_text_colour.red = 1.0;
@@ -168,11 +172,15 @@ fun StringToInteger (str) {
 # #2c001e --> 0.16, 0.00, 0.12
 #
 # max background #0075cf => 0, 117, 207 (%256)=> 0.00 , 0.46, 0.81
+# max 7.5 background #0b2562 => 11, 37, 98 (%256)=> 0.04 , 0.14, 0.38
 #
 #Window.SetBackgroundTopColor (0.16, 0.00, 0.12);     # Nice colour on top of the screen fading to
 #Window.SetBackgroundBottomColor (0.16, 0.00, 0.12);  # an equally nice colour on the bottom
-Window.SetBackgroundTopColor (0.00, 0.46, 0.81);     # Nice colour on top of the screen fading to
-Window.SetBackgroundBottomColor (0.00, 0.46, 0.81);  # an equally nice colour on the bottom
+#Window.SetBackgroundTopColor (0.00, 0.46, 0.81);     # Nice colour on top of the screen fading to
+#Window.SetBackgroundBottomColor (0.00, 0.46, 0.81);  # an equally nice colour on the bottom
+# MAX 7.5
+Window.SetBackgroundTopColor (0.04, 0.14, 0.38);     # Nice colour on top of the screen fading to
+Window.SetBackgroundBottomColor (0.04, 0.14, 0.38);  # an equally nice colour on the bottom
 
 bits_per_pixel = Window.GetBitsPerPixel ();
 if (bits_per_pixel == 4) {
