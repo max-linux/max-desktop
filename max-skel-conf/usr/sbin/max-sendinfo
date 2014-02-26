@@ -106,8 +106,8 @@ def readfile(fname):
 
 if __name__ == '__main__':
     # don't run if no pending file
-    # if not os.path.exists(PENDING):
-    #     sys.exit(0)
+    if not os.path.exists(PENDING):
+        sys.exit(0)
     #
     # id=[DBUS uniq UUID]
     # distro=[ Ubuntu or Debian with version ]

@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max57) max; urgency=low
+
+  * Don't send data if no pending file
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 26 Feb 2014 18:15:57 +0100
+
 max-skel-conf (7.0.max56) max; urgency=low
 
   * Use bash intead of sh in max-sendinfo-enable
