@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max56) max; urgency=low
+
+  * Use bash intead of sh in max-sendinfo-enable
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 26 Feb 2014 15:43:20 +0100
+
 max-skel-conf (7.0.max55) max; urgency=low
 
   * Fix cron path in max-sendinfo-enable
