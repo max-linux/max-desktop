@@ -1,3 +1,9 @@
+max-meta (7.0.max30) max; urgency=low
+
+  * Add libgxps-utils to print/render XPS PDF files, close #531
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 26 Feb 2014 11:34:04 +0100
+
 max-meta (7.0.max29) max; urgency=low
 
   * Add chromium-codecs-ffmpeg-extra, close #522
