@@ -3,5 +3,5 @@
 #
 
 WALLPAPER="/usr/share/images/grub/maxgrub.png"
-COLOR_NORMAL="black/black"
-COLOR_HIGHLIGHT="magenta/black"
+COLOR_NORMAL="light-gray/black"
+COLOR_HIGHLIGHT="black/white"
