@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max55) max; urgency=low
+
+  * Fix cron path in max-sendinfo-enable
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 26 Feb 2014 15:26:21 +0100
+
 max-skel-conf (7.0.max54) max; urgency=low
 
   * Add max-sendinfo to put stats into MAX servers (disabled by default), close #525
