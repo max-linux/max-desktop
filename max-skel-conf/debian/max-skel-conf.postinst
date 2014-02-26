@@ -21,11 +21,11 @@ case "$1" in
          cat /usr/share/max-skel-conf/etc/samba/smb.conf > /etc/samba/smb.conf
     fi
 
-    # preseed default-display-manager
-    debconf-set-selections << EOF
-gdm shared/default-x-display-manager select gdm
-kdm shared/default-x-display-manager select gdm
-EOF
+#    # preseed default-display-manager
+#    debconf-set-selections << EOF
+#gdm shared/default-x-display-manager select gdm
+#kdm shared/default-x-display-manager select gdm
+#EOF
 
 
     rm -f /etc/skel/Escritorio/manual.desktop

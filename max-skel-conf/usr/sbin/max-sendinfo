@@ -1,0 +1,135 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+#
+import os
+import sys
+import datetime
+import time
+import simplejson as json
+import urllib
+import urllib2
+import base64
+import logging
+from subprocess import Popen, PIPE, STDOUT
+
+
+URL = "http://madrid_linux.educa.madrid.org/stats/stats.php"
+HEADERS = {'User-Agent': "MAX 7.5"}
+VERBOSE = True
+
+
+LOGGER_FILE = '/var/lib/max-sendinfo/sendinfo.log'
+# add numbers to the end to force upload again
+PENDING = '/var/lib/max-sendinfo/pending'
+
+
+if not os.access(LOGGER_FILE, os.W_OK) or "--debug" in sys.argv:
+    lg = logging.getLogger('max-sendinfo')
+    lg.setLevel(logging.DEBUG)
+    formatter = logging.Formatter('%(asctime)s %(message)s')
+    ch = logging.StreamHandler(sys.stdout)
+    ch.setFormatter(formatter)
+    lg.addHandler(ch)
+    lg.setLevel(logging.DEBUG)
+else:
+    logging.basicConfig(level=logging.DEBUG,
+                        format='%(asctime)s %(message)s',
+                        filename=LOGGER_FILE,
+                        filemode='a')
+    lg = logging.getLogger('max-sendinfo')
+
+
+def sendRequest(data={}, method=None):
+    local_indent = ''
+    #
+    data = urllib.urlencode(data)
+    #print data
+    req = urllib2.Request(URL, data, HEADERS)
+    response = None
+    raw = ""
+    try:
+        lg.debug("Pushing to (%s) ..." % (URL))
+        raw = urllib2.urlopen(req).read()
+    except Exception, err:
+        lg.error("Exception loading API (%s), err=%s" % (URL, err))
+        return response
+
+    try:
+        response = json.loads(raw)
+    except Exception, err:
+        lg.error("sendRequest() received raw\n")
+        lg.error("="*80)
+        lg.error(raw)
+        lg.error("="*80)
+    #
+    return response
+
+def exe_cmd(cmd, verbose=True):
+    bin=cmd.split(' ')[0]
+    if not os.path.exists(bin):
+        lg.error( "exe_cmd(%s) bin no exists" %(cmd) )
+        return 'n/a'
+    p = Popen(cmd, shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+
+    output=[]   
+    for line in p.stdout.readlines():
+        if line != '\n':
+            line=line.replace('\n', '')
+            output.append(line)
+    if len(output) == 1:
+        if not output[0]:
+            return 'n/a'
+        return output[0]
+    elif len(output) > 1:
+        if verbose==1:
+            lg.info( "exe_cmd(%s) %s" %(cmd, output) )
+        return "_".join(output)
+    else:
+        if verbose == 1:
+            lg.info( "exe_cmd(%s)=None" %(cmd) )
+        return 'n/a'
+
+
+def readfile(fname):
+    if not os.path.exists(fname):
+        return 'n/a'
+
+    fd=open(fname, 'r')
+    data=fd.readlines()
+    fd.close()
+
+    # remove line breaks
+    temp = [line.rstrip('\n') for line in data]
+
+    return "_".join(temp)
+
+
+if __name__ == '__main__':
+    # don't run if no pending file
+    # if not os.path.exists(PENDING):
+    #     sys.exit(0)
+    #
+    # id=[DBUS uniq UUID]
+    # distro=[ Ubuntu or Debian with version ]
+    # arch=[ i386 | amd64 ]
+    # version=[ from sources.list max75 for ex ]
+
+    UID=readfile('/var/lib/dbus/machine-id')  # unico por instalación           => Depende de dbus
+    DISTRO=exe_cmd('/usr/bin/lsb_release -s -i -r -c')  # Ubuntu_12.04_precise  => Depende de lsb-release
+    ARCH=exe_cmd('/usr/bin/dpkg-architecture -qDEB_HOST_ARCH') # i386 o amd64   => Depende de dpkg-dev
+    VERSION=exe_cmd("/usr/bin/awk -F \"/| \" '/\/max/ {print $5;exit}' /etc/apt/sources.list")
+
+    data={
+       'id':      UID,
+       'distro':  DISTRO,
+       'version': VERSION,
+       'arch':    ARCH,
+       }
+    lg.debug(data)
+    recv = sendRequest(data)
+    lg.info(recv)
+    if 'msg' in recv and recv['msg'] == 'OK' and os.path.exists(PENDING):
+        os.unlink(PENDING)
+        lg.info("Delete pending file=%s" %(PENDING))
+
+    sys.exit(0)
