@@ -19,6 +19,7 @@ VERBOSE = True
 
 
 LOGGER_FILE = '/var/lib/max-sendinfo/sendinfo.log'
+UUID_FILE = '/var/lib/max-sendinfo/uuid'
 # add numbers to the end to force upload again
 PENDING = '/var/lib/max-sendinfo/pending'
 
@@ -114,7 +115,13 @@ if __name__ == '__main__':
     # arch=[ i386 | amd64 ]
     # version=[ from sources.list max75 for ex ]
 
-    UID=readfile('/var/lib/dbus/machine-id')  # unico por instalación           => Depende de dbus
+    if not os.path.exists(UUID_FILE):
+        UID=exe_cmd('/usr/bin/dbus-uuidgen')
+        f=open(UUID_FILE, 'w')
+        f.write("%s"%UID)
+        f.close()
+
+    UID=readfile(UUID_FILE)                             # unico por instalación
     DISTRO=exe_cmd('/usr/bin/lsb_release -s -i -r -c')  # Ubuntu_12.04_precise  => Depende de lsb-release
     ARCH=exe_cmd('/usr/bin/dpkg-architecture -qDEB_HOST_ARCH') # i386 o amd64   => Depende de dpkg-dev
     VERSION=exe_cmd("/usr/bin/awk -F \"/| \" '/\/max/ {print $5;exit}' /etc/apt/sources.list")

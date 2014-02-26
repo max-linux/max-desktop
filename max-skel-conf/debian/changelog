@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max58) max; urgency=low
+
+  * Generate UUID in max-sendinfo dir
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 26 Feb 2014 18:20:10 +0100
+
 max-skel-conf (7.0.max57) max; urgency=low
 
   * Don't send data if no pending file
