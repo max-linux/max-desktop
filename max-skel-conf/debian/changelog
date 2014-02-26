@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max54) max; urgency=low
+
+  * Add max-sendinfo to put stats into MAX servers (disabled by default), close #525
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 26 Feb 2014 15:20:40 +0100
+
 max-skel-conf (7.0.max53) max; urgency=low
 
   * Fix max-update-acroread
