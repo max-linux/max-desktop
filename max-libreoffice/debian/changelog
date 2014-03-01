@@ -1,3 +1,9 @@
+max-libreoffice (7.0.max5) max; urgency=low
+
+  * Use '1.2' as default ODF format, close #537
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 01 Mar 2014 19:42:03 +0100
+
 max-libreoffice (7.0.max4) max; urgency=low
 
   * Add openoffice.org-hyphenation to max-libreoffice
