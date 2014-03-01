@@ -10,8 +10,16 @@
     <shade_type>solid</shade_type>
   </wallpaper>
   <wallpaper>
-    <name>Fondo MAX por defecto (16:10)</name>
+    <name>Fondo MAX por defecto (19:12)</name>
     <filename>/usr/share/backgrounds/max-madrid-linux-1900x1200.png</filename>
+    <options>stretched</options>
+    <pcolor>#114dd8</pcolor>
+    <scolor>#114dd8</scolor>
+    <shade_type>solid</shade_type>
+  </wallpaper>
+  <wallpaper>
+    <name>Fondo MAX por defecto (16:10)</name>
+    <filename>/usr/share/backgrounds/max-madrid-linux-1920x1080.png</filename>
     <options>stretched</options>
     <pcolor>#114dd8</pcolor>
     <scolor>#114dd8</scolor>
@@ -26,8 +34,16 @@
     <shade_type>solid</shade_type>
   </wallpaper>
   <wallpaper>
-    <name>Fondo MAX alternativo (16:10)</name>
+    <name>Fondo MAX alternativo (19:12)</name>
     <filename>/usr/share/backgrounds/max-madrid-linux-1900x1200_puente.png</filename>
+    <options>stretched</options>
+    <pcolor>#114dd8</pcolor>
+    <scolor>#114dd8</scolor>
+    <shade_type>solid</shade_type>
+  </wallpaper>
+  <wallpaper>
+    <name>Fondo MAX alternativo (16:10)</name>
+    <filename>/usr/share/backgrounds/max-madrid-linux-1920x1080_puente.png</filename>
     <options>stretched</options>
     <pcolor>#114dd8</pcolor>
     <scolor>#114dd8</scolor>
@@ -42,8 +58,16 @@
     <shade_type>solid</shade_type>
   </wallpaper>
   <wallpaper>
-    <name>Fondo MAX Infantil (16:10)</name>
+    <name>Fondo MAX Infantil (19:12)</name>
     <filename>/usr/share/backgrounds/max-madrid-linux-infantil-1900x1200.png</filename>
+    <options>stretched</options>
+    <pcolor>#114dd8</pcolor>
+    <scolor>#114dd8</scolor>
+    <shade_type>solid</shade_type>
+  </wallpaper>
+  <wallpaper>
+    <name>Fondo MAX Infantil (16:10)</name>
+    <filename>/usr/share/backgrounds/max-madrid-linux-infantil-1920x1080.png</filename>
     <options>stretched</options>
     <pcolor>#114dd8</pcolor>
     <scolor>#114dd8</scolor>
