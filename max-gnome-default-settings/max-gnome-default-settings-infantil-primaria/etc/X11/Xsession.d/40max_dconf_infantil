@@ -9,10 +9,10 @@ if [ -d /usr/share/doc/max-desktop-infantil-primaria ]; then
 	export DCONF_PROFILE=infantil
 
 
-	if [ ! -e $HOME/.config/infantil-background ]; then
-		gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/max-madrid-linux-1900x1200.png"
-		xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "/usr/share/backgrounds/max-madrid-linux-1900x1200.png"
-		touch $HOME/.config/infantil-background
+	if [ ! -e $HOME/.config/infantil-background75 ]; then
+		gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/max-infantil.png"
+		xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "/usr/share/backgrounds/max-infantil.png"
+		touch $HOME/.config/infantil-background75
 	fi
 
 fi
