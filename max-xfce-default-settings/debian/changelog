@@ -1,3 +1,9 @@
+max-xfce-default-settings (7.0.max22) max; urgency=low
+
+  * Add chromium to Xfce4 panel, close #541
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 04 Mar 2014 15:17:08 +0100
+
 max-xfce-default-settings (7.0.max21) max; urgency=low
 
   * Enable Xine in Audio Video menu, close #532
