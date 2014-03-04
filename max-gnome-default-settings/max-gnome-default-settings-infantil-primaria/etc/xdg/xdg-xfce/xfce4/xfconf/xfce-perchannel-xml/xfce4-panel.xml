@@ -11,6 +11,7 @@
         <value type="int" value="11"/>
         <value type="int" value="2"/>
         <value type="int" value="13"/>
+        <value type="int" value="16"/>
         <value type="int" value="14"/>
         <value type="int" value="4"/>
         <value type="int" value="12"/>
@@ -85,6 +86,11 @@
     <property name="plugin-13" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="/usr/share/applications/firefox.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-16" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="/usr/share/applications/chromium-browser.desktop"/>
       </property>
     </property>
     <property name="plugin-2" type="string" value="showdesktop"/>
