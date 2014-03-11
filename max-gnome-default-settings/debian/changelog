@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max36) max; urgency=low
+
+  * Remove logo from lightdm, close #549
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 11 Mar 2014 20:06:30 +0100
+
 max-gnome-default-settings (7.0.max35) max; urgency=low
 
   * Use max-infantil.png symlink
