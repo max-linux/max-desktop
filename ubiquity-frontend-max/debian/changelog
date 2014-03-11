@@ -1,3 +1,9 @@
+ubiquity-frontend-max (7.0.max36) max; urgency=low
+
+  * Fix accent and enable stats by default, close #546
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 11 Mar 2014 20:25:49 +0100
+
 ubiquity-frontend-max (7.0.max35) max; urgency=low
 
   * Use bash intead of sh to generate random number

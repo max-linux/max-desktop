@@ -289,7 +289,7 @@ No olvide seleccionar el particionado avanzado e instalar GRUB en sda1.
                       <object class="GtkLabel" id="sendinfo_label">
                         <property name="visible">True</property>
                         <property name="label" translatable="yes">Notificar instalaci&#xF3;n de MAX
-(para estad#xED;sticas)</property>
+(para estad&#xED;sticas)</property>
                       </object>
                       <packing>
                         <property name="position">0</property>
@@ -298,11 +298,11 @@ No olvide seleccionar el particionado avanzado e instalar GRUB en sda1.
                     <child>
                       <object class="GtkCheckButton" id="sendinfo_check">
                         <property name="label" translatable="yes"> </property>
-                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="xalign">0</property>
+                        <property name="active">True</property>
                         <property name="draw_indicator">True</property>
                       </object>
                       <packing>
