@@ -264,7 +264,7 @@ class Install(install_misc.InstallBase):
             for line in traceback.format_exc().split('\n'):
                 syslog.syslog(syslog.LOG_WARNING, line)
         # MaX exec apt-get autoremove --purge
-        self.do_autoremove()
+        #self.do_autoremove()
         # end MAX
 
         self.copy_dcd()
@@ -1798,6 +1798,20 @@ class Install(install_misc.InstallBase):
         # FIXME use debconf preseed instead of a file
         f=open("/tmp/max_install_type", "r")
         install_type=f.readline().strip()
+        f.close()
+        it_txt=""
+        if install_type != "escritorio":
+            it_txt="    \"^max-%s$\";" %install_type
+        f=open('/target/etc/apt/apt.conf.d/01autoremove-ubiquity-max', 'w')
+        f.write("""APT
+{
+  NeverAutoRemove
+  {
+    "^max-.*";
+%s
+  };
+};
+""" %it_txt)
         f.close()
         if install_type == "escritorio":
             # return, no things to do
