@@ -7,9 +7,7 @@ for change in $CHANGELOGS; do
   source=$(dpkg-parsechangelog -l$change | awk '/^Source/ {print $2}')
   version=$(dpkg-parsechangelog -l$change | awk '/^Version/ {print $2}')
   letter=$(echo $source| cut -c1)
-  #pkgdir="../../../max40/pool/main/$letter/$source/"
-  #pkgdir="../../../max50/pool/main/$letter/$source/"
-  pkgdir="/data/mirror/max70/pool/main/$letter/$source/"
+  pkgdir="/data/mirror/max75/pool/main/$letter/$source/"
   #echo "source=$source version=$version"
 
   if [ -d $pkgdir ]; then
