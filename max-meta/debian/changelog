@@ -1,3 +1,9 @@
+max-meta (7.0.max31) max; urgency=low
+
+  * Remove plop-bin as alternate (crash installer, rel #548 )
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 23 Mar 2014 11:50:11 +0100
+
 max-meta (7.0.max30) max; urgency=low
 
   * Add libgxps-utils to print/render XPS PDF files, close #531
