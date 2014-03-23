@@ -20,6 +20,7 @@ Depends: firefox,
 #NO#         xul-ext-flashblock,
          xul-ext-firebug,
          xul-ext-greasemonkey,
+         mozplugger
 #Conflicts: firefox (<< 9.99), firefox (>= 10.1)
 Description: Configuración de firefox para Ubuntu/MAX.
  Configuración basada en dpsyco/ubufox para firefox.
