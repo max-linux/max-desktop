@@ -134,6 +134,8 @@ class PageGtk(PageBase):
         self.get_test_sti()
 
         self.sendinfo_widget.connect('toggled', self.on_sendinfo_toggled)
+        # by default enabled
+        os.popen("sudo touch /tmp/sendinfo")
         
         if os.path.isfile("/cdrom/casper/nanomax"):
             self.install_type_escritorio.set_sensitive(False)
