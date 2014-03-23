@@ -264,7 +264,7 @@ class Install(install_misc.InstallBase):
             for line in traceback.format_exc().split('\n'):
                 syslog.syslog(syslog.LOG_WARNING, line)
         # MaX exec apt-get autoremove --purge
-        #self.do_autoremove()
+        self.do_autoremove()
         # end MAX
 
         self.copy_dcd()
