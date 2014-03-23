@@ -10,7 +10,6 @@ usr/share/applications/wine-uninstaller.desktop
 usr/share/applications/qt4config.desktop
 usr/share/applications/celestia.desktop
 usr/share/applications/gcalctool.desktop
-usr/share/applications/libreoffice-base.desktop
 usr/share/applications/atnag.desktop
 usr/share/applications/jclic.desktop
 usr/share/applications/freemind.desktop
@@ -26,7 +25,6 @@ usr/share/applications/max-installed-help.desktop
 usr/share/applications/Kino.desktop
 usr/share/applications/mscore.desktop
 usr/share/applications/denemo.desktop
-usr/share/applications/libreoffice-writer.desktop
 usr/share/applications/vmg.desktop
 usr/share/applications/netbeans.desktop
 usr/share/applications/plopp.desktop
@@ -41,7 +39,6 @@ usr/share/applications/gnome-photo-printer.desktop
 usr/share/applications/smplayer.desktop
 usr/share/applications/gtk-recordmydesktop.desktop
 usr/share/applications/sankore.desktop
-usr/share/applications/libreoffice-impress.desktop
 usr/share/applications/max-guia-referencia.desktop
 usr/share/applications/whyteboard.desktop
 usr/share/applications/florence.desktop
@@ -50,7 +47,6 @@ usr/share/applications/tuxtype.desktop
 usr/share/applications/pseint.desktop
 usr/share/applications/gcompris.desktop
 usr/share/applications/vlc.desktop
-usr/share/applications/qcad.desktop
 usr/share/applications/avidemux-gtk.desktop
 usr/share/applications/scribus.desktop
 usr/share/applications/pavucontrol.desktop
@@ -68,10 +64,8 @@ usr/share/applications/childsplay.desktop
 usr/share/applications/ntfs-config.desktop
 usr/share/applications/tuxguitar.desktop
 usr/share/applications/jarnalannotate.desktop
-usr/share/applications/libreoffice-calc.desktop
 usr/share/applications/notelab.desktop
 usr/share/applications/qdvdauthor.desktop
-usr/share/applications/libreoffice-startcenter.desktop
 usr/share/applications/omnitux.desktop
 usr/share/applications/thunderbird.desktop
 usr/share/applications/pinta.desktop
@@ -93,14 +87,11 @@ usr/share/applications/lemurae.desktop
 usr/share/applications/iscan.desktop
 usr/share/applications/wine-browsedrive.desktop
 usr/share/applications/calibrate.desktop
-usr/share/applications/libreoffice-math.desktop
 usr/share/applications/max-moodle-doc.desktop
 usr/share/applications/orca.desktop
 usr/share/applications/squeak-manual.desktop
 usr/share/applications/squeak.desktop
 usr/share/applications/squeak-small-land.desktop
-usr/share/applications/libreoffice-draw.desktop
-usr/share/applications/kompozer.desktop
 usr/share/applications/gnome-sound-recorder.desktop
 usr/share/applications/padevchooser.desktop
 usr/share/applications/ardesia.desktop
@@ -137,6 +128,10 @@ usr/share/applications/bluefish.desktop
 usr/share/applications/screem.desktop
 usr/share/applications/qelectrotech.desktop
 usr/share/applications/audacity.desktop
-usr/share/applications/virtualbox.desktop
 etc/xdg/menus/settings.menu
 etc/xdg/menus/applications.menu
+usr/share/applications/python-whiteboard.desktop
+usr/share/applications/virtualbox.desktop
+usr/share/tuxmath/images/icons/icon.png
+usr/share/applications/system-config-printer.desktop
+usr/bin/ardesia
