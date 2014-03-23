@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max37) max; urgency=low
+
+  * Use self package name to apply infantil profile, rel #548
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 23 Mar 2014 11:55:26 +0100
+
 max-gnome-default-settings (7.0.max36) max; urgency=low
 
   * Remove logo from lightdm, close #549
