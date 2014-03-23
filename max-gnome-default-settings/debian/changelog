@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max38) max; urgency=low
+
+  * Fix Chromium launcher in bottom panel
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 23 Mar 2014 12:32:51 +0100
+
 max-gnome-default-settings (7.0.max37) max; urgency=low
 
   * Use self package name to apply infantil profile, rel #548

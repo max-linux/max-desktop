@@ -11,7 +11,7 @@
         <value type="int" value="11"/>
         <value type="int" value="2"/>
         <value type="int" value="13"/>
-        <value type="int" value="16"/>
+        <value type="int" value="41"/>
         <value type="int" value="14"/>
         <value type="int" value="4"/>
         <value type="int" value="12"/>
@@ -88,7 +88,7 @@
         <value type="string" value="/usr/share/applications/firefox.desktop"/>
       </property>
     </property>
-    <property name="plugin-16" type="string" value="launcher">
+    <property name="plugin-41" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="/usr/share/applications/chromium-browser.desktop"/>
       </property>
@@ -206,7 +206,7 @@
     </property>
     <property name="plugin-32" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="/usr/share/applications/squeak-scratch.desktop"/>
+        <value type="string" value="/usr/share/applications/scratch.desktop"/>
       </property>
     </property>
     <property name="plugin-33" type="string" value="launcher">
