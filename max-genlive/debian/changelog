@@ -1,3 +1,9 @@
+max-genlive (7.0.max31) max; urgency=low
+
+  * Bump version to rc2
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 23 Mar 2014 15:18:17 +0100
+
 max-genlive (7.0.max30) max; urgency=low
 
   * Fix splash.pcx, use a indexed image, not a RGB, rel #547
