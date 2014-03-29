@@ -84,15 +84,17 @@ enable_eeepc() {
 }
 
 enable_tcos() {
+    rm -f /var/lib/tcos/chroot/etc/tcos/hacking/max-hardware-tcos
+    rm -f /etc/tcos/hacking/max-hardware-tcos
     # copy hacks in i386 chroot to build images
-    if [ -d /var/lib/tcos/chroot/etc/tcos/hacking ]; then
-        cp /usr/share/max-hardware/max-hardware-tcos /var/lib/tcos/chroot/etc/tcos/hacking/
-    fi
+    #if [ -d /var/lib/tcos/chroot/etc/tcos/hacking ]; then
+    #    cp /usr/share/max-hardware/max-hardware-tcos /var/lib/tcos/chroot/etc/tcos/hacking/
+    #fi
 
     # and in normal dir too
-    if [ -d /etc/tcos/hacking ]; then
-        cp /usr/share/max-hardware/max-hardware-tcos /etc/tcos/hacking/
-    fi
+    #if [ -d /etc/tcos/hacking ]; then
+    #    cp /usr/share/max-hardware/max-hardware-tcos /etc/tcos/hacking/
+    #fi
 }
 
 
