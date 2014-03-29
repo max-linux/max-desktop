@@ -172,6 +172,9 @@
 			<Exclude><Filename>robolinux.desktop</Filename></Exclude>
 			<Exclude><Filename>max-robolinux-doc.desktop</Filename></Exclude>
 
+			<Exclude><Filename>robolinux-nxt.desktop</Filename></Exclude>
+			<Exclude><Filename>robolinux-nxt-doc.desktop</Filename></Exclude>
+
 			<Exclude><Filename>squeak.desktop</Filename></Exclude>
 			<Exclude><Filename>squeak-atenex.desktop</Filename></Exclude>
 			<Exclude><Filename>squeak-doc.desktop</Filename></Exclude>
@@ -250,7 +253,11 @@
 			<Name>Robótica</Name>
 			<Directory>robotics.directory</Directory>
 			<Include><Filename>robolinux.desktop</Filename></Include>
-			<Include><Filename>max-robolinux-doc.desktop</Filename>	</Include>
+			<Include><Filename>max-robolinux-doc.desktop</Filename></Include>
+
+			<Include><Filename>robolinux-nxt.desktop</Filename></Include>
+			<Include><Filename>robolinux-nxt-doc.desktop</Filename></Include>
+
 			<Include><Filename>kde4-kturtle.desktop</Filename></Include>
 		</Menu>
 		<Menu>
