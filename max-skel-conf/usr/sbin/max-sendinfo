@@ -116,12 +116,19 @@ if __name__ == '__main__':
     # version=[ from sources.list max75 for ex ]
 
     if not os.path.exists(UUID_FILE):
-        UID=exe_cmd('/usr/bin/dbus-uuidgen')
+        UID=exe_cmd('/bin/dbus-uuidgen')
         f=open(UUID_FILE, 'w')
         f.write("%s"%UID)
         f.close()
 
-    UID=readfile(UUID_FILE)                             # unico por instalación
+    UID=readfile(UUID_FILE)
+    if UID == 'n/a':
+        UID=exe_cmd('/bin/dbus-uuidgen')
+        f=open(UUID_FILE, 'w')
+        f.write("%s"%UID)
+        f.close()
+    #
+    #
     DISTRO=exe_cmd('/usr/bin/lsb_release -s -i -r -c')  # Ubuntu_12.04_precise  => Depende de lsb-release
     ARCH=exe_cmd('/usr/bin/dpkg-architecture -qDEB_HOST_ARCH') # i386 o amd64   => Depende de dpkg-dev
     VERSION=exe_cmd("/usr/bin/awk -F \"/| \" '/\/max/ {print $5;exit}' /etc/apt/sources.list")
