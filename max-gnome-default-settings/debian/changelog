@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max39) max; urgency=low
+
+  * Change Xfce4 terminal to xfce4-terminal, close #563
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 04 Apr 2014 09:47:57 +0200
+
 max-gnome-default-settings (7.0.max38) max; urgency=low
 
   * Fix Chromium launcher in bottom panel
