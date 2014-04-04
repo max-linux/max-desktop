@@ -48,7 +48,7 @@
     <property name="plugin-4" type="string" value="screenshooter"/>
     <property name="plugin-12" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="/usr/share/applications/gnome-terminal.desktop"/>
+        <value type="string" value="/usr/share/applications/xfce4-terminal.desktop"/>
       </property>
     </property>
     <property name="plugin-13" type="string" value="launcher">
