@@ -1,3 +1,9 @@
+max-firefox-conf (7.0.max13) max; urgency=low
+
+  * Don't use ACROREAD() in mozplugger
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 04 Apr 2014 09:33:32 +0200
+
 max-firefox-conf (7.0.max12) max; urgency=low
 
   * Disable pdfjs and add to depends mozplugger, close #552

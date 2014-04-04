@@ -13,6 +13,16 @@ case "$1" in
     # Update DNI-e certificates if exists
     [ -e /var/lib/dpkg/info/dnie-support.postinst ] && bash /var/lib/dpkg/info/dnie-support.postinst || true
 
+
+    if [ -e /etc/mozpluggerrc.d/62-documents.conf ]; then
+        if grep -q "ACROREAD" /etc/mozpluggerrc.d/62-documents.conf; then
+          # remove  ACROREAD()
+          grep -v "ACROREAD" /etc/mozpluggerrc.d/62-documents.conf > /tmp/62-documents.conf
+          mv /tmp/62-documents.conf /etc/mozpluggerrc.d/62-documents.conf
+          update-mozpluggerrc
+        fi
+    fi
+
     ;;
 
 esac
