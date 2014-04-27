@@ -1,3 +1,9 @@
+ubiquity-frontend-max (7.0.max41) max; urgency=low
+
+  * Check for valid hostname, close #562
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 27 Apr 2014 20:32:14 +0200
+
 ubiquity-frontend-max (7.0.max40) max; urgency=low
 
   * Enable autoremove again, rel #548

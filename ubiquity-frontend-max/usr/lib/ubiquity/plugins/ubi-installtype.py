@@ -28,6 +28,8 @@ import os
 import sys
 from subprocess import Popen, PIPE, STDOUT
 
+from ubiquity import validation
+from ubiquity import misc
 from ubiquity import plugin
 import debconf
 import syslog
@@ -39,6 +41,21 @@ NAME = 'installtype'
 # normal
 AFTER = 'console_setup'
 WEIGHT = 10
+
+def check_hostname(hostname):
+    """Returns a list of reasons why the hostname is invalid."""
+    errors = []
+    for result in validation.check_hostname(misc.utf8(hostname)):
+        if result == validation.HOSTNAME_LENGTH:
+            errors.append('hostname_error_length')
+        elif result == validation.HOSTNAME_BADCHAR:
+            errors.append('hostname_error_badchar')
+        elif result == validation.HOSTNAME_BADHYPHEN:
+            errors.append('hostname_error_badhyphen')
+        elif result == validation.HOSTNAME_BADDOTS:
+            errors.append('hostname_error_baddots')
+    return errors
+
 
 class PageBase(plugin.PluginUI):
     def __init__(self):
@@ -99,6 +116,7 @@ class PageGtk(PageBase):
         self.install_type_terminales = builder.get_object('install_type_terminales')
 
         self.hostname_widget = builder.get_object('hostname')
+        self.hostname_error_widget = builder.get_object('hostname_error')
 
         self.sendinfo_widget = builder.get_object('sendinfo_check')
         
@@ -128,6 +146,9 @@ class PageGtk(PageBase):
             getattr(self, "install_type_%s"%radio).connect('toggled', self.on_install_type_radio_toggled, radio)
 
         self.set_hostname('max75')
+        self.hostname_widget.connect('changed', self.on_hostname_changed)
+        self.hostname_error_widget.hide()
+
         self.plugin_widgets = self.page
         
         self.sti=False
@@ -149,7 +170,6 @@ class PageGtk(PageBase):
         if not os.path.isfile("/cdrom/nanomax/casper/filesystem.squashfs"):
             #self.install_type_nanomax.set_sensitive(False)
             self.install_type_nanomax.hide()
-
 
     # Functions called by the Page.
 
@@ -220,6 +240,27 @@ class PageGtk(PageBase):
             self.install_warn_sti.hide()
             os.popen("sudo rm -f /tmp/max_sti")
 
+    def on_hostname_changed(self, widget):
+        if widget.get_text() != '':
+            self.info_loop(None)
+
+    def info_loop(self, *args):
+        """Verify user input."""
+        complete=False
+
+        txt = self.hostname_widget.get_text()
+        errors = check_hostname(txt)
+        if errors:
+            # show a alert message
+            m = '<small><span foreground="darkred"><b>El nombre de equipo es incorrecto, evite guiones bajos o caracteres distintos de letras y números</b></span></small>'
+            self.hostname_error_widget.set_markup(m)
+            self.hostname_error_widget.show()
+        else:
+            complete = True
+            self.hostname_error_widget.hide()
+        self.controller.allow_go_forward(complete)
+
+
 class PageKde(PageBase):
     pass
 
@@ -234,6 +275,10 @@ class PageNoninteractive2(PageBase):
 
 
 class Page(plugin.Plugin):
+
+    def prepare(self, unfiltered=False):
+        self.ui.info_loop(None)
+
     def ok_handler(self):
         install_type=self.ui.get_install_type()
         self.preseed('ubiquity/max_install_type', install_type)

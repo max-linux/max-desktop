@@ -283,6 +283,14 @@ No olvide seleccionar el particionado avanzado e instalar GRUB en sda1.
                   </packing>
                 </child>
                 <child>
+                  <object class="GtkLabel" id="hostname_error">
+                    <property name="visible">True</property>
+                  </object>
+                  <packing>
+                    <property name="position">6</property>
+                  </packing>
+                </child>
+                <child>
                   <object class="GtkHBox" id="hbox2">
                     <property name="visible">True</property>
                     <child>
@@ -311,7 +319,7 @@ No olvide seleccionar el particionado avanzado e instalar GRUB en sda1.
                     </child>
                   </object>
                   <packing>
-                    <property name="position">6</property>
+                    <property name="position">7</property>
                   </packing>
                 </child>
               </object>
