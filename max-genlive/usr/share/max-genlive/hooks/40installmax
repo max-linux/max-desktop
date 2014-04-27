@@ -22,11 +22,27 @@ apt-get $APT_OPTS install max-desktop-xfce || ERROR=1
 apt-get $APT_OPTS install max-pdi || ERROR=1
 apt-get $APT_OPTS install max-manuales || ERROR=1
 apt-get $APT_OPTS install max-drivers || ERROR=1
+apt-get $APT_OPTS install plopp || ERROR=1
 #apt-get $APT_OPTS install max-desktop-infantil-primaria || ERROR=1
 [ "\$(ls /home/)" != "" ] && rm -rf /home/* && apt-get $APT_OPTS -f install 
 apt-get clean
 exit \$ERROR
 EOC
+
+# paquetes multiarch en amd64
+if [ "amd64" = "$ARCH" ]; then
+chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes de MaX"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+export ERROR=0
+export MAX_ERROR=0
+apt-get $APT_OPTS install libxtst6:i386 libpulsedsp:i386 libjpeg62:i386 || ERROR=1
+apt-get clean
+exit \$ERROR
+fi
 
 
 rm -rf $CHROOT/home/*
