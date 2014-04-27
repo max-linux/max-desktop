@@ -155,6 +155,13 @@
 				<And><Category>Hotpot</Category></And>
 			</Exclude>
 
+                        <Menu>
+                                <Name>GCompris</Name>
+                                <Directory>gcompris.directory</Directory>
+                                <Include><Filename>gcompris-edit.desktop</Filename></Include>
+                                <Include><Filename>gcompris.desktop</Filename></Include>
+                        </Menu>
+
 			<!--include -->
 			<Include><Filename>exe.desktop</Filename></Include>
 			<Include><Filename>freemind.desktop</Filename></Include>
@@ -383,12 +390,6 @@
 				<Include><Filename>squeak-atenex.desktop</Filename></Include>
 				<Include><Filename>squeak-educarex.desktop</Filename></Include>
 				<Include><Filename>scratch.desktop</Filename></Include>
-			</Menu>
-			<Menu>
-				<Name>GCompris</Name>
-				<Directory>gcompris.directory</Directory>
-				<Include><Filename>gcompris-edit.desktop</Filename></Include>
-				<Include><Filename>gcompris.desktop</Filename></Include>
 			</Menu>
 			<Menu>
 				<Name>JavaHotPot</Name>
