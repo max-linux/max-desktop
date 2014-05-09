@@ -1,3 +1,9 @@
+max-artwork (7.0.max25) max; urgency=low
+
+  * Create links max.png and max-infantil.png instead of providing in package
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 09 May 2014 22:00:29 +0200
+
 max-artwork (7.0.max24) max; urgency=low
 
   * Add Xfce desktop effect in GTK theme in Max70 theme, close #529

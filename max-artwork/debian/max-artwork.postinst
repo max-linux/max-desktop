@@ -22,6 +22,18 @@ case "$1" in
     rm -f /home/*/.cache/wallpaper/* >/dev/null 2>&1
 
 
+    # create default links to wallpapers
+    if [ ! -e /usr/share/backgrounds/max.png ]; then
+        echo " * Creating max.png link ..."
+        ln -s /usr/share/backgrounds/max-madrid-linux-1920x1080.png /usr/share/backgrounds/max.png
+    fi
+
+    if [ ! -e /usr/share/backgrounds/max-infantil.png ]; then
+        echo " * Creating max-infantil.png link ..."
+        ln -s /usr/share/backgrounds/max-madrid-linux-infantil-1920x1080.png /usr/share/backgrounds/max-infantil.png
+    fi
+
+
   ;;
 esac
 
