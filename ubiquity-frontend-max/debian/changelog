@@ -1,3 +1,9 @@
+ubiquity-frontend-max (7.0.max43) max; urgency=low
+
+  * Fix shell in target-config
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 09 May 2014 21:21:00 +0200
+
 ubiquity-frontend-max (7.0.max42) max; urgency=low
 
   * Disable repos during install, only use DVD
