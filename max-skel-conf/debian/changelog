@@ -1,3 +1,10 @@
+max-skel-conf (7.0.max60) max; urgency=low
+
+  * Add usr/lib/update-notifier/package-data-downloader to force download flash plugin with proxy
+  * Add vacio.png for gnome-panel background
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 09 May 2014 22:32:25 +0200
+
 max-skel-conf (7.0.max59) max; urgency=low
 
   * Fix max-sendinfo uuid
