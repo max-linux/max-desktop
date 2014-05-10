@@ -8,6 +8,7 @@ if [ ! $DISABLE_SQUASHFS ]; then
 
   rm -f $CHROOT/root/.bash_history
   rm -rf $CHROOT/home/*
+  rm -rf $CHROOT/var/lib/max/background-selected
 
   NUMPROC="-processors $(grep -c ^processor /proc/cpuinfo)"
   LZMA=""

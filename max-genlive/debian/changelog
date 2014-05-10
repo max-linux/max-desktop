@@ -1,3 +1,9 @@
+max-genlive (7.0.max33) max; urgency=low
+
+  * Clean background image lock before squash for a clean live DVD, rel #570
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 10 May 2014 18:47:20 +0200
+
 max-genlive (7.0.max32) max; urgency=low
 
    * Bump version to rc3, install some i386 libs in amd64, close #565
