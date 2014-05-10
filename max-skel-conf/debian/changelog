@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max63) max; urgency=low
+
+  * Fix typo in postinst
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 10 May 2014 13:17:12 +0200
+
 max-skel-conf (7.0.max62) max; urgency=low
 
   * Add 'Crea Lanzador' nautilus script in skel, close #571

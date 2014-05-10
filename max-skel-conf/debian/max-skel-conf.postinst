@@ -49,7 +49,7 @@ if [ ! -e /etc/lightdm/lightdm.conf ]; then
         mv /etc/lightdm/lightdm.conf-max /etc/lightdm/lightdm.conf
     else
         cp /usr/share/max-skel-conf/etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
-    if
+    fi
 fi
 
 /usr/lib/lightdm/lightdm-set-defaults --keep-old --allow-guest false
