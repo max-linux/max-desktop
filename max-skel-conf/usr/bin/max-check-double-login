@@ -1,0 +1,108 @@
+#!/usr/bin/env python
+#
+# Copyright (c) 20014 Mario Izquierdo <mariodebian@gmail.com>
+#
+# This package is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+#
+# This package is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+import pwd
+import os
+import sys
+import time
+import datetime
+
+
+import dbus
+import dateutil.parser
+
+
+def username(uid):
+    try:
+        return pwd.getpwuid( int(uid) ).pw_name
+    except Exception, err:
+        return None
+
+
+class Connections(object):
+    def __init__(self):
+        self.connections=[]
+        self.__get_all__()
+    
+    def __get_all__(self):
+        bus = dbus.SystemBus()
+        manager_obj = bus.get_object ('org.freedesktop.ConsoleKit', '/org/freedesktop/ConsoleKit/Manager')
+        manager = dbus.Interface (manager_obj, 'org.freedesktop.ConsoleKit.Manager')
+
+        for sessionid in manager.GetSessions():
+            session_obj = bus.get_object ('org.freedesktop.ConsoleKit', sessionid)
+            session = dbus.Interface (session_obj, 'org.freedesktop.ConsoleKit.Session')
+            
+            userid=int(session.GetUnixUser())
+            usernametxt=None
+            active=False
+            #diff=None
+            diff_seconds=0
+            if str(session.GetSessionType()) != 'LoginWindow':#FIXME userid > 900: better???
+                usernametxt=username(userid)
+                active=True
+                #diff=self.diffnow(str(session.GetCreationTime()))
+                diff_seconds=self.diffseconds(str(session.GetCreationTime()))
+            
+            con={'unix_user':userid,
+                 'user':usernametxt,
+                 'since':str(session.GetCreationTime()),
+                 'active':active,
+                 #'diff':diff,
+                 'diff_seconds':diff_seconds,
+                 #'id':str(session.GetId()),
+                 'is_local':bool(session.IsLocal()),
+                 'remote_host_name':str(session.GetRemoteHostName()),
+                 'x11_display':str(session.GetX11Display()),
+                 'x11_display_device':str(session.GetX11DisplayDevice())
+                }
+            self.connections.append(con)
+
+    def diffnow(self, date):
+        diff=datetime.timedelta(0, time.mktime(time.gmtime()) - time.mktime(dateutil.parser.parse(date).timetuple()))
+        print diff
+        """
+        if days == 0:
+                timelogged="%02dh:%02dm"%(hours,minutes)
+            else:
+                timelogged="%dd %02dh:%02dm"%(days,hours,minutes)
+        """
+        if diff.days > 0:
+            return "%dd %s"%(diff.days, datetime.timedelta(0, diff.seconds))
+        else:
+            return "%s"%datetime.timedelta(0, diff.seconds)
+
+    def diffseconds(self, date):
+        diff=datetime.timedelta(0, time.mktime(time.gmtime()) - time.mktime(dateutil.parser.parse(date).timetuple()))
+        return diff.total_seconds()
+
+
+if __name__ == "__main__":
+    if not "USER" in os.environ:
+        sys.exit(0)
+    #
+    current_user=os.environ['USER']
+    #
+    app=Connections()
+    for con in app.connections:
+        if con['user'] == current_user and con['diff_seconds'] > 10:
+            print "Usuario %s ya logueado" %(current_user)
+            sys.exit(1)
+    print "Usuario %s no logueado" %(current_user)
+    sys.exit(0)

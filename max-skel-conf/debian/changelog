@@ -1,3 +1,10 @@
+max-skel-conf (7.0.max61) max; urgency=low
+
+  * Remove lightdm.conf from diverts and use lightdm-set-defaults to edit it
+  * Add etc/X11/Xsession.d/01-max-double-login and usr/bin/max-check-double-login, close #464
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 10 May 2014 10:24:22 +0200
+
 max-skel-conf (7.0.max60) max; urgency=low
 
   * Add usr/lib/update-notifier/package-data-downloader to force download flash plugin with proxy

@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+if [ -e /etc/lightdm/lightdm.conf ] && [ -e /etc/lightdm/lightdm.conf.distrib ] ; then
+    # make a user backup
+    cp /etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf-max
+fi
+
+
+#DEBHELPER#

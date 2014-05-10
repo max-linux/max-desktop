@@ -1,0 +1,14 @@
+#
+# Detect double login in lightdm/GDM
+#
+#
+
+
+if [ ! -e /etc/max-double-login.nocheck ]; then
+
+  if ! /usr/bin/max-check-double-login ; then
+    zenity --error --no-wrap --text="Se ha detectado que su usuario <b>'$USER' ya está logueado</b>, el doble login está desactivado."
+    exit 1
+  fi
+
+fi
