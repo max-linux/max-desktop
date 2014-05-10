@@ -1,6 +1,9 @@
 #!/bin/sh
 
 if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
+    # waiting for fix in #560
+    zenity --error --no-wrap --text="Ardesia tiene actualmente <b>problemas pendientes de resolución</b> para poder ejecutarse en <b>GNOME</b>.\n\nPuede cerrar sesión e iniciar sesión en <b>Xfce</b> donde podrá ejectuar Ardesia sin problemas.\n\nDisculpe las molestias."
+    exit
     # enable metacity composite
     gconftool-2 --set /apps/metacity/general/compositing_manager --type boolean "true"
 fi
