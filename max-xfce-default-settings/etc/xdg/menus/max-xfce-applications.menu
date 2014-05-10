@@ -130,7 +130,7 @@
 		<Exclude><Filename>kde4-kbabeldict.desktop</Filename></Exclude>
 		<Exclude><Filename>kde4-kbabel.desktop</Filename></Exclude>
 		<!--<Exclude><Filename>gtranslator.desktop</Filename></Exclude>-->
-		<Exclude><Filename>scratch.desktop</Filename></Exclude>
+		<Include><Filename>scratch.desktop</Filename></Include>
 		<Exclude><Filename>fritzing.desktop</Filename></Exclude>
 	</Menu> <!-- End Development Tools -->
 	
