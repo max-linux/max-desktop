@@ -1,0 +1,15 @@
+#!/bin/bash
+# Copiar a ~/.gnome2/nautilus-scripts/
+rm -f nuevo_lanzador.desktop
+gnome-desktop-item-edit --create-new "nuevo_lanzador.desktop"
+nombre=`grep -e 'Name=' nuevo_lanzador.desktop | cut -d= -f2`.desktop
+nombre_valido=`echo "$nombre" | tr / _`
+if [ -f "$nombre_valido" ] ; then
+   zenity --error --text "Ya existe el fichero $nombre_valido"
+   exit 1
+fi
+mv nuevo_lanzador.desktop "$nombre_valido"
+if [ "$?" != "0" ] ; then
+   zenity --error --text "No se pudo renombrar:\nnuevo_lanzador.desktop\ncon el nombre:\n$nombre_valido"
+   rm -f nuevo_lanzador.desktop
+fi
