@@ -160,3 +160,7 @@ if ! grep -q "/max75" /etc/apt/sources.list; then
   cp /etc/apt/sources.list /etc/apt/sources.list.bak
   sed -i -e 's#http://\(.*\)/max70#http://$1/max75#g' /etc/apt/sources.list
 fi
+
+
+# change background image with better size
+/usr/sbin/max-set-background 2>&1 > /dev/null
