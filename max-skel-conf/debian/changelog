@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max67) max; urgency=low
+
+  * Only check double login if /etc/max-check-double-login exists
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 11 May 2014 11:37:12 +0200
+
 max-skel-conf (7.0.max66) max; urgency=low
 
   * Disable double-login check for now
