@@ -9,25 +9,18 @@ if [ "$DISPLAY" = "" ]; then
   exit
 fi
 
+
 RES=$(xrandr | grep '*' | head -1 | awk '{ print $1 }' 2>/dev/null)
 X=${RES%x*}
 Y=${RES#*x}
 REL=$(($X*10/$Y))
 
+case 1 in
+$(( $REL <= 13)) ) SUFFIX="1600x1200";;
+$(( $REL <= 15)) ) SUFFIX="1900x1200";;
+*) SUFFIX="1920x1080";;
+esac
 
-if [ $REL -lt 13 ]; then
-  SUFIX= "1600x1200"
-if [  $REL -lt 15 ]; then
-  SUFIX= "1900x1200"
-else
-  SUFFIX="1920x1080"
-fi
-
-#case 1 in
-#$(( $REL <= 15)) ) SUFIX= "1900x1200";;
-#$(( $REL <= 13)) ) SUFIX= "1600x1200";;
-#*) SUFFIX="1920x1080";;
-#esac
 
 if [ "$SUFFIX" = "" ]; then
   exit
