@@ -167,8 +167,8 @@ fi
 
 # ensure ligthdm is configured
 if [ ! -e /etc/lightdm/lightdm.conf-max ] && [ -e /usr/lib/lightdm/lightdm-set-defaults ]; then
-  /usr/lib/lightdm/lightdm-set-defaults --keep-old --allow-guest false
-  /usr/lib/lightdm/lightdm-set-defaults --keep-old --session "gnome-classic"
-  /usr/lib/lightdm/lightdm-set-defaults --keep-old --greeter "unity-greeter"
+  /usr/lib/lightdm/lightdm-set-defaults --allow-guest false
+  /usr/lib/lightdm/lightdm-set-defaults --session "gnome-classic"
+  /usr/lib/lightdm/lightdm-set-defaults --greeter "unity-greeter"
   touch /etc/lightdm/lightdm.conf-max
 fi
