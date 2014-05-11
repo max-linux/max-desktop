@@ -1,3 +1,9 @@
+max-genlive (7.0.max34) max; urgency=low
+
+  * Add libcairo2:i386 libpango1.0-0:i386 for amd64 (needed by scratch i386)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 11 May 2014 17:43:28 +0200
+
 max-genlive (7.0.max33) max; urgency=low
 
   * Clean background image lock before squash for a clean live DVD, rel #570

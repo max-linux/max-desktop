@@ -39,7 +39,7 @@ export DEBIAN_FRONTEND="noninteractive"
 export UCF_FORCE_CONFFOLD=1
 export ERROR=0
 export MAX_ERROR=0
-apt-get $APT_OPTS install libxtst6:i386 libpulsedsp:i386 libjpeg62:i386 || ERROR=1
+apt-get $APT_OPTS install libxtst6:i386 libpulsedsp:i386 libjpeg62:i386 libcairo2:i386 libpango1.0-0:i386 || ERROR=1
 apt-get clean
 exit \$ERROR
 fi
