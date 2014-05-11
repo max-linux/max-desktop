@@ -1,3 +1,10 @@
+max-skel-conf (7.0.max68) max; urgency=low
+
+  * Ensure lightdm.conf is configured
+  * Check for resolution before setting to no image
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 11 May 2014 22:30:14 +0200
+
 max-skel-conf (7.0.max67) max; urgency=low
 
   * Only check double login if /etc/max-check-double-login exists

@@ -164,3 +164,11 @@ fi
 
 # change background image with better size
 /usr/sbin/max-set-background 2>&1 > /dev/null
+
+# ensure ligthdm is configured
+if [ ! -e /etc/lightdm/lightdm.conf-max ] && [ -e /usr/lib/lightdm/lightdm-set-defaults ]; then
+  /usr/lib/lightdm/lightdm-set-defaults --keep-old --allow-guest false
+  /usr/lib/lightdm/lightdm-set-defaults --keep-old --session "gnome-classic"
+  /usr/lib/lightdm/lightdm-set-defaults --keep-old --greeter "unity-greeter"
+  touch /etc/lightdm/lightdm.conf-max
+fi
