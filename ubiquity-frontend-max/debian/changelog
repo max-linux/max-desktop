@@ -1,3 +1,9 @@
+ubiquity-frontend-max (7.0.max44) max; urgency=low
+
+  * Change minimum size 8 => 20 GB in intro.txt
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 12 May 2014 15:23:24 +0200
+
 ubiquity-frontend-max (7.0.max43) max; urgency=low
 
   * Fix shell in target-config
