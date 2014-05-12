@@ -177,7 +177,7 @@ def process_download_requests():
 	############### Detect MAX proxy ##################################
 	if os.path.isfile('/etc/profile.d/max-proxy.sh'):
 		lines = open('/etc/profile.d/max-proxy.sh', 'r').readlines()
-		for l in lines:
+		for line in lines:
 			if "http_proxy=" in line and "http" in line.split("'")[1]:
 				os.environ['http_proxy'] = line.split("'")[1]
 			if "ftp_proxy=" in line and "http" in line.split("'")[1]:

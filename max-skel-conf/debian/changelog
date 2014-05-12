@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max70) max; urgency=low
+
+  * Fix typo 'l' => 'line' to crash flash plugin download with proxy
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 12 May 2014 15:18:38 +0200
+
 max-skel-conf (7.0.max69) max; urgency=low
 
   * Modift ligthdm.conf at first time
