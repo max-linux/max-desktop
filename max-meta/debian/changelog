@@ -1,3 +1,9 @@
+max-meta (7.0.max32) max; urgency=low
+
+  * Add galternatives, close #578
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 13 May 2014 11:22:16 +0200
+
 max-meta (7.0.max31) max; urgency=low
 
   * Remove plop-bin as alternate (crash installer, rel #548 )
