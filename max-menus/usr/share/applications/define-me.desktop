@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=define-me (spanish RAE dict)
-Name[es]=define-me (diccionario RAE)
+Name=define-me (spanish dict)
+Name[es]=define-me (diccionario)
 Version=0.1.1
 Comment=define-me
-Comment[es]=define-me (diccionario RAE)
+Comment[es]=define-me (diccionario)
 TryExec=/usr/share/define-me/define-me.py
 Exec=/usr/share/define-me/define-me.py
 Icon=/usr/share/define-me/define-me.svg
