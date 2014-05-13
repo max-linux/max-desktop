@@ -1,3 +1,10 @@
+max-artwork (7.0.max26) max; urgency=low
+
+  * Add more icons from gartoon 1.1
+  * Use smaller LibreOffice icons, close #576, close #564
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 13 May 2014 15:48:36 +0200
+
 max-artwork (7.0.max25) max; urgency=low
 
   * Create links max.png and max-infantil.png instead of providing in package
