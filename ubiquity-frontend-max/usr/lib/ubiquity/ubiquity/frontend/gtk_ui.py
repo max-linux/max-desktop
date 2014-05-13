@@ -756,7 +756,7 @@ reinicie el equipo, cualquier cambio que haga o
 documento que guarde no se conservará.\n\n
 Se han creado los usuarios madrid y alumno con contraseñas cmadrid y alumno,\n
 madrid es administrador y alumno usuario básico cuyos datos se borran al cerrar sesión,\n
-comportamiento modificable por madrid desde Inicio->Administración->Configurar pefiles."""
+comportamiento modificable por madrid desde Inicio->Administración->Configurar perfiles."""
             self.finished_label.set_label(txt)
             with misc.raised_privileges():
                 open('/var/run/reboot-required', "w").close()
