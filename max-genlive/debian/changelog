@@ -1,3 +1,9 @@
+max-genlive (7.0.max35) max; urgency=low
+
+  * Set final version for 7.5
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 20 May 2014 11:54:00 +0200
+
 max-genlive (7.0.max34) max; urgency=low
 
   * Add libcairo2:i386 libpango1.0-0:i386 for amd64 (needed by scratch i386)
