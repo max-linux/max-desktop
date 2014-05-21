@@ -312,7 +312,7 @@ Session:
 
 
            Añadir máquina al domino
-             net ads join -D EBOX -U admin%adminpw
+             net rpc join -D EBOX -U admin%adminpw
 
            Respuesta:
 
