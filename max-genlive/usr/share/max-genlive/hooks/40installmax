@@ -22,7 +22,7 @@ apt-get $APT_OPTS install max-desktop-xfce || ERROR=1
 apt-get $APT_OPTS install max-pdi || ERROR=1
 apt-get $APT_OPTS install max-manuales || ERROR=1
 apt-get $APT_OPTS install max-drivers || ERROR=1
-apt-get $APT_OPTS install plopp || ERROR=1
+apt-get $APT_OPTS install plopp robolinux-rcx || ERROR=1
 #apt-get $APT_OPTS install max-desktop-infantil-primaria || ERROR=1
 [ "\$(ls /home/)" != "" ] && rm -rf /home/* && apt-get $APT_OPTS -f install 
 apt-get clean
