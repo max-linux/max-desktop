@@ -76,5 +76,11 @@ chroot /root setupcon --save-only
 # don't run jockey in live session
 rm -f /root/etc/xdg/autostart/*jockey*
 
+cat << EOF > /root/etc/X11/Xsession.d/10-max-change-background
+
+sudo /usr/sbin/max-set-background
+
+EOF
+
 
 log_end_msg

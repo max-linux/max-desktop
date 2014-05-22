@@ -1,3 +1,9 @@
+max-live (7.0.max19) max; urgency=low
+
+  * Run max-set-background during live boot
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 22 May 2014 09:13:44 +0200
+
 max-live (7.0.max18) max; urgency=low
 
   * Set hostname in live session to max75
