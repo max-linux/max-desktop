@@ -7,6 +7,7 @@ Build-Depends: debhelper (>= 4), cdbs
 
 Package: max-desktop
 Architecture: all
+Multi-Arch: foreign
 Recommends: max-desktop-common, max-desktop-gnome | max-desktop-kde | max-desktop-xfce
 Description: The Max desktop system
  This package depends on all of the packages in the Max desktop system
@@ -16,6 +17,7 @@ Description: The Max desktop system
 
 Package: max-desktop-deps
 Architecture: all
+Multi-Arch: foreign
 Depends: max-desktop, max-desktop-common-deps, max-desktop-gnome-deps | max-desktop-kde-deps | max-desktop-xfce-deps
 Description: The Max desktop system
  This package depends on all of the packages in the Max desktop system
@@ -25,6 +27,7 @@ Description: The Max desktop system
 
 Package: max-desktop-gnome
 Architecture: all
+Multi-Arch: foreign
 Recommends: max-gnome-desktop-environment, ${max-desktop-gnome:Recommends}, max-desktop-common, ${max-desktop-gnome:Depends}
 Provides: max-desktop
 Description: The Max desktop system (GNOME desktop)
@@ -36,6 +39,7 @@ Description: The Max desktop system (GNOME desktop)
 
 Package: max-desktop-gnome-deps
 Architecture: all
+Multi-Arch: foreign
 Depends: max-gnome-desktop-environment, max-desktop-gnome, max-desktop-common-deps, ${max-desktop-gnome-deps:Depends}
 Recommends: ${max-desktop-gnome-deps:Recommends}
 Provides: max-desktop
@@ -47,6 +51,7 @@ Description: The Max desktop system (GNOME desktop)
 
 Package: max-desktop-kde
 Architecture: all
+Multi-Arch: foreign
 Recommends: ${max-desktop-kde:Recommends}, max-desktop-common, ${max-desktop-kde:Depends}
 Provides: max-desktop
 Description: The Max desktop system (KDE desktop)
@@ -57,6 +62,7 @@ Description: The Max desktop system (KDE desktop)
 
 Package: max-desktop-kde-deps
 Architecture: all
+Multi-Arch: foreign
 Depends:  max-desktop-kde, max-desktop-common-deps, ${max-desktop-kde-deps:Depends}
 Recommends: ${max-desktop-kde-deps:Recommends}
 Provides: max-desktop
@@ -69,6 +75,7 @@ Description: The Max desktop system (KDE desktop)
 
 Package: max-desktop-kde-extra
 Architecture: all
+Multi-Arch: foreign
 Depends:  max-desktop-common, ${max-desktop-kde-extra:Depends}
 Recommends: ${max-desktop-kde-extra:Recommends}
 Description: The Max desktop system (KDE desktop extra apps)
@@ -80,6 +87,7 @@ Description: The Max desktop system (KDE desktop extra apps)
 
 Package: max-desktop-xfce
 Architecture: all
+Multi-Arch: foreign
 Recommends: ${max-desktop-xfce:Recommends}, max-desktop-common, ${max-desktop-xfce:Depends}
 Provides: max-desktop
 Description: The Max desktop system (Xfce4 desktop)
@@ -90,6 +98,7 @@ Description: The Max desktop system (Xfce4 desktop)
 
 Package: max-desktop-xfce-deps
 Architecture: all
+Multi-Arch: foreign
 Depends: max-desktop-xfce, max-desktop-common-deps, ${max-desktop-xfce-deps:Depends}
 Recommends: ${max-desktop-xfce-deps:Recommends}
 Provides: max-desktop
@@ -101,6 +110,7 @@ Description: The Max desktop system (Xfce4 desktop)
 
 Package: max-desktop-lxde
 Architecture: all
+Multi-Arch: foreign
 Recommends: ${max-desktop-lxde:Recommends}, ${max-desktop-lxde:Depends}
 Depends: max-libreoffice-core
 Provides: max-desktop
@@ -112,6 +122,7 @@ Description: The Max desktop system (LXDE desktop)
 
 Package: max-desktop-lxde-deps
 Architecture: all
+Multi-Arch: foreign
 Depends: max-desktop-lxde, ${max-desktop-lxde-deps:Depends}
 Recommends: ${max-desktop-lxde-deps:Recommends}
 Provides: max-desktop
@@ -123,6 +134,7 @@ Description: The Max desktop system (LXDE desktop)
 
 Package: max-server
 Architecture: all
+Multi-Arch: foreign
 Recommends: ${max-server:Recommends}, max-desktop, ${max-server:Depends}
 Description: The Max server system
  This package depends on all of the packages in the Max server system
@@ -133,6 +145,7 @@ Description: The Max server system
 
 Package: max-server-deps
 Architecture: all
+Multi-Arch: foreign
 Depends: max-server, max-desktop, ${max-server-deps:Depends}
 Recommends: ${max-server-deps:Recommends}
 Description: The Max server system
@@ -143,6 +156,7 @@ Description: The Max server system
 
 Package: max-desktop-common
 Architecture: all
+Multi-Arch: foreign
 Recommends: ${max-desktop-common:Depends}
 Depends: openshot, max-libreoffice
 Description: The Max desktop common packages to all desktops
@@ -153,6 +167,7 @@ Description: The Max desktop common packages to all desktops
 
 Package: max-desktop-common-deps
 Architecture: all
+Multi-Arch: foreign
 Depends: max-desktop-common, openshot, ${max-desktop-common-deps:Depends}
 Description: The Max desktop common packages to all desktops
  This package depends on all of the packages in the Max server system
@@ -162,6 +177,7 @@ Description: The Max desktop common packages to all desktops
 
 Package: max-desktop-all
 Architecture: all
+Multi-Arch: foreign
 Recommends: max-desktop-gnome, max-desktop-kde-extra, max-desktop-xfce
 Description: The Max desktop all metapackage
  This package depends on all desktop packages of MaX system
@@ -171,6 +187,7 @@ Description: The Max desktop all metapackage
 
 Package: max-desktop-all-deps
 Architecture: all
+Multi-Arch: foreign
 Depends: max-desktop-all-deps, max-desktop-gnome-deps, max-desktop-kde-extra-deps, max-desktop-xfce-deps
 Description: The Max desktop all metapackage
  This package depends on all desktop packages of MaX system
@@ -180,6 +197,7 @@ Description: The Max desktop all metapackage
 
 Package: max-alumno
 Architecture: all
+Multi-Arch: foreign
 Recommends: max-tcos-alumno
 Description: The Max desktop alumno metapackage
  This package depends on max-tcos-alumno
@@ -189,6 +207,7 @@ Description: The Max desktop alumno metapackage
 
 Package: max-alumno-deps
 Architecture: all
+Multi-Arch: foreign
 Depends: max-alumno, max-tcos-alumno
 Description: The Max desktop alumno metapackage
  This package depends on max-tcos-alumno
@@ -198,6 +217,7 @@ Description: The Max desktop alumno metapackage
 
 Package: max-profesor
 Architecture: all
+Multi-Arch: foreign
 Recommends: max-tcos-profesor
 Description: The Max desktop profesor metapackage
  This package depends on max-tcos-profesor
@@ -207,6 +227,7 @@ Description: The Max desktop profesor metapackage
 
 Package: max-profesor-deps
 Architecture: all
+Multi-Arch: foreign
 Depends: max-profesor, max-tcos-profesor
 Description: The Max desktop profesor metapackage
  This package depends on max-tcos-profesor
@@ -216,6 +237,7 @@ Description: The Max desktop profesor metapackage
 
 Package: max-nanomax
 Architecture: all
+Multi-Arch: foreign
 Recommends: ${max-nanomax:Depends}
 Description: The Max nanoMaX metapackage
  This package depends on all nanomax installed packages and live-system
@@ -225,6 +247,7 @@ Description: The Max nanoMaX metapackage
 
 Package: max-nanomax-deps
 Architecture: all
+Multi-Arch: foreign
 Depends: max-nanomax, ${max-nanomax-deps:Depends}
 Description: The Max nanoMaX metapackage
  This package depends on all nanomax installed packages and live-system
@@ -234,6 +257,7 @@ Description: The Max nanoMaX metapackage
 
 Package: max-servidor
 Architecture: all
+Multi-Arch: foreign
 Recommends: max-server
 Description: The Max server metapackage
  This package depends on max-server
@@ -243,6 +267,7 @@ Description: The Max server metapackage
 
 Package: max-servidor-deps
 Architecture: all
+Multi-Arch: foreign
 Depends: max-servidor, max-server
 Description: The Max server metapackage
  This package depends on max-server
@@ -252,6 +277,7 @@ Description: The Max server metapackage
 
 Package: max-drivers
 Architecture: all
+Multi-Arch: foreign
 Recommends: ${max-drivers:Recommends}, ${max-drivers:Depends}
 Description: The Max drivers metapackage
  This package depends on all drivers used in the Max system
@@ -261,6 +287,7 @@ Description: The Max drivers metapackage
 
 Package: max-drivers-deps
 Architecture: all
+Multi-Arch: foreign
 Depends: max-drivers, ${max-drivers-deps:Depends}
 Recommends: ${max-drivers-deps:Recommends}
 Description: The Max drivers metapackage
@@ -272,6 +299,7 @@ Description: The Max drivers metapackage
 
 Package: max-desktop-infantil-primaria
 Architecture: all
+Multi-Arch: foreign
 Depends: ${max-desktop-infantil-primaria:Recommends}, ${max-desktop-infantil-primaria:Depends}
 Recommends: ${max-desktop-infantil-primaria:Recommends}, ${max-desktop-infantil-primaria:Depends}
 Description: Infantil and primaria metapackage
@@ -283,6 +311,7 @@ Description: Infantil and primaria metapackage
 
 Package: max-infantil
 Architecture: all
+Multi-Arch: foreign
 Depends: max-desktop-infantil-primaria, max-alumno
 Description: Infantil and primaria metapackage and TCOS for puppils
  This package depends on all apps, games and tools for infantil
@@ -295,6 +324,7 @@ Description: Infantil and primaria metapackage and TCOS for puppils
 
 Package: max-gnome-desktop-environment
 Architecture: all
+Multi-Arch: foreign
 Depends: python, 
          glchess, glines, gnect, 
          gnibbles, gnobots2, 
@@ -319,6 +349,7 @@ Description: Replace gnome-desktop-environment package without some depends
 
 Package: max-pdi
 Architecture: all
+Multi-Arch: foreign
 Recommends: ${max-pdi:Depends}
 Description: The Max desktop system (GNOME desktop)
  This package depends on all GNOME packages in the Max desktop system
@@ -329,6 +360,7 @@ Description: The Max desktop system (GNOME desktop)
 
 Package: max-pdi-deps
 Architecture: all
+Multi-Arch: foreign
 Depends: ${max-pdi-deps:Depends}
 Provides: max-desktop
 Description: The Max desktop system (GNOME desktop)
