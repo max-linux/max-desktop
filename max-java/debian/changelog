@@ -1,3 +1,9 @@
+max-java (7.0.max8) max; urgency=low
+
+  * Add oracle-java7-plugin to max-java-plugin, close #585
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 07 Sep 2014 20:39:36 +0200
+
 max-java (7.0.max7) max; urgency=low
 
   * Install java7 by default, close #575
