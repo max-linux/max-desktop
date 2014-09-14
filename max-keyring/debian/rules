@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
 
+export HOME=/root
+
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/rules/aa-debhelper.mk
 
