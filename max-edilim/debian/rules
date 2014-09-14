@@ -2,8 +2,30 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
-URL=http://www.educalim.com/edilim33/edilim330rc11_linux.deb
-BIN=http://www.educalim.com/edilim33/edilim330rc11_portable_linux.zip
+
+DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+ifeq ($(DEB_HOST_ARCH),i386)
+  URL=http://educalim.com/edilim41/edilim41_386.deb
+  BIN=http://educalim.com/edilim41/edilim41_linux386_portable.zip  
+else
+  URL=http://educalim.com/edilim41/edilim41_amd64.deb
+  BIN=http://educalim.com/edilim41/edilim41_amd64_portable.zip
+endif
+
+#URL=http://www.educalim.com/edilim33/edilim330rc11_linux.deb
+#BIN=http://www.educalim.com/edilim33/edilim330rc11_portable_linux.zip
+
+info:
+	@echo
+	@echo Build information
+	@echo ==========================
+	@echo ARCH         = $(DEB_HOST_ARCH)
+	@echo BIN          = $(BIN)
+	@echo URL          = $(URL)
+	@echo
+	@echo
+
 
 clean::
 	rm -rf build bin build-stamp
@@ -13,18 +35,24 @@ build-stamp:
 	if [ ! -e build/edilim.deb ]; then wget $(URL) -O- > build/edilim.deb; fi
 	if [ ! -e build/usr ]; then (cd build && dpkg --extract edilim.deb ./); fi
 
-	rm build/usr/share/edilim/edilim
-	#chmod 644 build/usr/share/edilim/imaxes/*
-	#chmod 644 build/usr/share/edilim/*
+	mkdir -p build/usr/bin
+	mv build/usr/share/edilim/edilim build/usr/bin/edilim
+#	ldd build/usr/share/edilim/edilim
+#	rm build/usr/share/edilim/edilim
+#	chmod 644 build/usr/share/edilim/imaxes/*
+#	chmod 644 build/usr/share/edilim/*
 
-	mkdir -p bin
-	if [ ! -e bin/edilim.zip ]; then wget $(BIN) -O- > bin/edilim.zip; fi
-	if [ ! -e bin/edilim ]; then (cd bin && unzip edilim.zip); fi
+#	mkdir -p bin
+#	if [ ! -e bin/edilim.zip ]; then wget $(BIN) -O- > bin/edilim.zip; fi
+#	if [ ! -e bin/edilim ]; then (cd bin && unzip edilim.zip); fi
 	
 
-	mkdir -p build/usr/bin
-	mv bin/edilim build/usr/bin/edilim
-	chmod 644 build/usr/bin/edilim
+#	mkdir -p build/usr/bin
+#	mv bin/edilim build/usr/bin/edilim
+#	chmod 644 build/usr/bin/edilim
+#	ldd build/usr/bin/edilim
+
+	rm -rf build/usr/share/applications
 
 	touch build-stamp
 
