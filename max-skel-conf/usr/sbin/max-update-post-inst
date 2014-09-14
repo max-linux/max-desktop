@@ -172,3 +172,9 @@ if [ ! -e /etc/lightdm/lightdm.conf-max ] && [ -e /usr/lib/lightdm/lightdm-set-d
   /usr/lib/lightdm/lightdm-set-defaults --greeter "unity-greeter"
   touch /etc/lightdm/lightdm.conf-max
 fi
+
+# Disable HWE https://wiki.ubuntu.com/HweStackEolNotifications
+if [ ! -e /var/lib/update-notifier/disable-hwe-eol-messages ]; then
+  mkdir -p /var/lib/update-notifier
+  touch /var/lib/update-notifier/disable-hwe-eol-messages
+fi

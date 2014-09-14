@@ -1,3 +1,9 @@
+max-skel-conf (7.0.max71) max; urgency=low
+
+  * Disable HWE
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Sep 2014 15:30:38 +0200
+
 max-skel-conf (7.0.max70) max; urgency=low
 
   * Fix typo 'l' => 'line' to crash flash plugin download with proxy
