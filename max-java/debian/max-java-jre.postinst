@@ -29,13 +29,13 @@ if [ "$1" = "triggered" ]; then
 
     for jvm in $JVMS; do
         if [ "$(find ${jvm} -type f| wc -l)" = "0" ]; then
-            echo " * JVM empty ($jvm) cleaning ..."
+            #echo " * JVM empty ($jvm) cleaning ..."
             rm -rf "${jvm}"
         elif [ -d ${jvm}/jre/lib/ext/ ]; then
             for lib in $LIBS; do
                 libname=$(basename $lib)
                 if [ ! -e "${jvm}/jre/lib/ext/${libname}" ]; then
-                    echo "${lib}  => ${jvm}/jre/lib/ext/"
+                    #echo "${lib}  => ${jvm}/jre/lib/ext/"
                     ln -s "${lib}" ${jvm}/jre/lib/ext/
                 #else
                 #    echo "EXISTS $jvm/jre/lib/ext/$libname"
