@@ -1,3 +1,9 @@
+max-java (7.0.max9) max; urgency=low
+
+  * Use triggers to symlink java jre/lib/ext extensions, close #589
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Sep 2014 19:02:33 +0200
+
 max-java (7.0.max8) max; urgency=low
 
   * Add oracle-java7-plugin to max-java-plugin, close #585

@@ -22,6 +22,31 @@ configure_alternatives() {
 }
 
 
+if [ "$1" = "triggered" ]; then
+    # launch trigger to mantain java-libs (descartes or malted) symlinks in JVM
+    JVMS=$(find /usr/lib/jvm/ -maxdepth 1 -mindepth 1 -type d | grep -v jmf)
+    LIBS=$(find /usr/share/max/java-libs/ -type f)
+
+    for jvm in $JVMS; do
+        if [ "$(find ${jvm} -type f| wc -l)" = "0" ]; then
+            echo " * JVM empty ($jvm) cleaning ..."
+            rm -rf "${jvm}"
+        elif [ -d ${jvm}/jre/lib/ext/ ]; then
+            for lib in $LIBS; do
+                libname=$(basename $lib)
+                if [ ! -e "${jvm}/jre/lib/ext/${libname}" ]; then
+                    echo "${lib}  => ${jvm}/jre/lib/ext/"
+                    ln -s "${lib}" ${jvm}/jre/lib/ext/
+                #else
+                #    echo "EXISTS $jvm/jre/lib/ext/$libname"
+                fi
+            done
+        fi
+    done
+    exit
+fi
+
+
 if [ "$1" = "configure" ]; then
     configure_alternatives
     update-java-alternatives --jre --set java-6-sun-max
