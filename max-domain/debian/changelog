@@ -1,3 +1,15 @@
+max-domain (0.3) max; urgency=low
+
+  * Rename ldap_logout.sh => 99domain_logout.sh
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 18 Sep 2014 16:59:02 +0200
+
+max-domain (0.2) max; urgency=low
+
+  * Fix some minor typos
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 18 Sep 2014 16:52:00 +0200
+
 max-domain (0.1) max; urgency=low
 
   * Initial version

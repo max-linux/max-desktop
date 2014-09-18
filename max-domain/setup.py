@@ -29,9 +29,9 @@ data_files.append(('share/max-domain', ['max-domain-main.ui'] ))
 
 data_files.append(('share/applications', ['max-domain.desktop'] ))
 
-data_files.append(('/etc/X11/Xsession.d', ['80_configure_ldap_session'] ))
+data_files.append(('/etc/X11/Xsession.d', ['80_configure_domain_session'] ))
 
-data_files.append(('share/gnome/shutdown', ['ldap_logout.sh'] ))
+data_files.append(('share/gnome/shutdown', ['99domain_logout.sh'] ))
 
 data_files.append(('share/max-domain', ['script_logout.sh'] ))
 

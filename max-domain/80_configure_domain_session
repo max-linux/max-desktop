@@ -19,59 +19,53 @@
 #fi
 
 
-mkdir -p ~/.config
-cat << EOF > ~/.config/user-dirs.dirs 
-# This file is written by xdg-user-dirs-update, 
-# updated by /etc/X11/Xsession.d/80_configure_ldap_session
+#mkdir -p ~/.config
+#cat << EOF > ~/.config/user-dirs.dirs 
+## This file is written by xdg-user-dirs-update, 
+## updated by /etc/X11/Xsession.d/80_configure_domain_session
+##
+## If you want to change or add directories, just edit the line you're
+## interested in. All local changes will be retained on the next run
+## Format is XDG_xxx_DIR="$HOME/yyy", where yyy is a shell-escaped
+## homedir-relative path, or XDG_xxx_DIR="/yyy", where /yyy is an
+## absolute path. No other format is supported.
+## 
+#XDG_DESKTOP_DIR="$HOME/Escritorio"
+#XDG_DOWNLOAD_DIR="$HOME/Descargas"
+#XDG_TEMPLATES_DIR="$HOME/Plantillas"
+#XDG_PUBLICSHARE_DIR="$HOME/Publico"
+#XDG_DOCUMENTS_DIR="$HOME/Documentos"
 #
-# If you want to change or add directories, just edit the line you're
-# interested in. All local changes will be retained on the next run
-# Format is XDG_xxx_DIR="$HOME/yyy", where yyy is a shell-escaped
-# homedir-relative path, or XDG_xxx_DIR="/yyy", where /yyy is an
-# absolute path. No other format is supported.
-# 
-XDG_DESKTOP_DIR="$HOME/Escritorio"
-XDG_DOWNLOAD_DIR="$HOME/Descargas"
-XDG_TEMPLATES_DIR="$HOME/Plantillas"
-XDG_PUBLICSHARE_DIR="$HOME/Publico"
-XDG_DOCUMENTS_DIR="$HOME/Documentos"
-
-EOF
-
-_rename() {
-if [ -d "$1" ]; then
-  if [ -d "$2" ]; then
-    # move files inside
-    mv "$1"/* "$2"/
-    rmdir "$1"
-  else
-    mv "$1" "$2"
-  fi 
-fi
-}
+#EOF
+#
+#_rename() {
+#if [ -d "$1" ]; then
+#  if [ -d "$2" ]; then
+#    # move files inside
+#    mv "$1"/* "$2"/
+#    rmdir "$1"
+#  else
+#    mv "$1" "$2"
+#  fi 
+#fi
+#}
+#
+#
+#
+#_rename "$HOME/Imágenes" "$HOME/Imagenes"
+#_rename "$HOME/Vídeos" "$HOME/Videos"
+#_rename "$HOME/Música" "$HOME/Musica"
+#_rename "$HOME/Público" "$HOME/Publico"
 
 
-
-_rename "$HOME/Imágenes" "$HOME/Imagenes"
-_rename "$HOME/Vídeos" "$HOME/Videos"
-_rename "$HOME/Música" "$HOME/Musica"
-_rename "$HOME/Público" "$HOME/Publico"
-
-
-# si es usuario LDAP cargar skel y dumps GCONF
-if id | grep -q "__USERS__"; then
+# si es usuario del Dominio cargar skel
+if id | grep -q "domain^users"; then
 
     if [ ! -e $HOME/.bashrc ]; then
-        echo "Copiando SKEL en usuario LDAP $HOME/"
+        echo "Copiando SKEL en usuario del dominio $HOME/"
         rsync -Pav /etc/skel/ $HOME/ >/dev/null 2>&1
     fi
 
-    if [ ! -e $HOME/.max.dumps.done ]; then
-        for _file in $(find /usr/share/max/gconf-dumps/ -name "*dump.gconf"); do
-           /usr/bin/dbus-launch gconftool-2 --load $_file >/dev/null 2>&1
-           touch $HOME/.max.dumps.done
-        done
-    fi
 fi
 
 

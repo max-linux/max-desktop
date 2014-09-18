@@ -610,7 +610,7 @@ Session:
 
     def restore(self, *args):
         # ask for restore
-        if not ask_msg("¿Quiere restarurar el sistema sin LDAP?"):
+        if not ask_msg("¿Quiere restaurar el sistema sin Dominio?"):
             self.quitapp()
             return
         
