@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Unir MAX a un dominio
+Exec=gksu /usr/bin/max-domain
+Terminal=false
+Type=Application
+Icon=/usr/share/max-domain/images/max-icon.png
+Categories=GNOME;Settings;System;DesktopSettings;Monitor

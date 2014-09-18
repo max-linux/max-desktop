@@ -1,0 +1,62 @@
+#!/bin/bash
+#
+#  Helper script to shutdown/reboot or mount ISOS
+#  Called by user in Administrators group no need password with sudo
+#
+#
+
+
+_autocall() {
+  #max-control $1 $2 &
+  /sbin/start-stop-daemon --quiet --background --start --exec /usr/bin/max-control -- $1 $2
+  exit 0
+}
+
+
+if [ "$1" = "reboot" ]; then
+  CON_USER=$(ck-history --last| grep tty7| grep -v gdm| head -1| awk '{print $1}')
+  sudo -H -u "$CON_USER" DISPLAY=:0 notify-send "Reiniciando" "El equipo se reiniciara en $2 segundos"
+  _autocall rebootdo $2
+  exit 0
+fi
+
+if [ "$1" = "rebootdo" ]; then
+  sleep $2
+  /sbin/reboot
+  exit 0
+fi
+
+if [ "$1" = "poweroff" ]; then
+  CON_USER=$(ck-history --last| grep tty7| grep -v gdm| head -1| awk '{print $1}')
+  sudo -H -u "$CON_USER" DISPLAY=:0 notify-send "Apagando" "El equipo se apagara en $2 segundos"
+  _autocall poweroffdo $2
+  exit 0
+fi
+
+if [ "$1" = "poweroffdo" ]; then
+  sleep $2
+  /sbin/poweroff
+  exit 0
+fi
+
+if [ "$1" = "mount" ]; then
+  # test ISO
+  [ ! -e "/mnt/isos/$2" ] && exit 0
+  # umount all isos
+  max-control umount
+  # mount "$2" ISO
+  mnt=$(basename "$2" .iso | sed -e 's/ /_/g')
+  mkdir -p "/media/$mnt"
+  mount -o loop,ro "/mnt/isos/$2" "/media/$mnt"
+  exit 0
+fi
+
+
+if [ "$1" = "umount" ]; then
+  # umount all ISO
+  for mnt in $(awk '/iso9660/ {print $2}' /proc/mounts); do
+    umount -l $mnt
+    rmdir $mnt
+  done
+  exit 0
+fi

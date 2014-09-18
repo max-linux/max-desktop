@@ -1,0 +1,25 @@
+#!/bin/sh
+
+
+
+if [ "$1" = "configure" ]; then
+
+   [ -x /usr/lib/lightdm/lightdm-set-defaults ] &&  /usr/lib/lightdm/lightdm-set-defaults --hide-users || true
+
+   [ -e /etc/init.d/max-domain ] && rm -f /etc/init.d/max-domain
+
+
+
+    if [ -d /etc/lightdm/ ]; then
+       cp /usr/share/max-domain/script_logout.sh /etc/lightdm/
+       chmod +x /etc/lightdm/script_logout.sh
+       if ! grep -q "session-cleanup-script=/etc/lightdm/script_logout.sh" /etc/lightdm/lightdm.conf ; then
+          echo session-cleanup-script=/etc/lightdm/script_logout.sh >> /etc/lightdm/lightdm.conf
+       fi
+    fi
+
+
+fi
+
+
+exit 0

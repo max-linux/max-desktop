@@ -1,0 +1,793 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+##########################################################################
+# MAX-DOMAIN-GUI writen by MarioDebian <mariodebian@gmail.com>
+#
+#    MAX-DOMAIN version __VERSION__
+#
+# Copyright (c) 2010 Mario Izquierdo <mariodebian@gmail.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+# 02111-1307, USA.
+###########################################################################
+
+import sys
+import os
+
+import getopt
+import gtk
+
+import gobject
+
+from subprocess import Popen, PIPE, STDOUT
+import socket
+import shutil
+
+import ldap
+
+from tempfile import NamedTemporaryFile
+
+debug=False
+RESTORE=False
+PACKAGE="max-domain"
+BACKUP="/var/lib/max-domain/backup/"
+
+# if exec from svn or sources dir
+if os.path.isfile('./max-domain-main.ui'):
+    LOCALE_DIR = "./po/"
+    GLADE_DIR = "./"
+    IMG_DIR = "./images/"
+    print "DEBUG: exec in sources dir"
+else:
+    GLADE_DIR = "/usr/share/max-domain/"
+    IMG_DIR = "/usr/share/max-domain/images/"
+    LOCALE_DIR = "/usr/share/locale/"
+
+def usage():
+    print "max-domain help:"
+    print ""
+    print "   max-domain -d [--debug]   (write debug data to stdout)"
+    print "   max-domain -r [--restore] (Restore backup files or disable LDAP)"
+    print "   max-domain -h [--help]    (this help)"
+
+
+try:
+    opts, args = getopt.getopt(sys.argv[1:], ":hdr", ["help", "debug", "restore"])
+except getopt.error, msg:
+    print msg
+    print "for command line options use max-domain --help"
+    sys.exit(2)
+
+# process options
+for o, a in opts:
+    if o in ("-d", "--debug"):
+        print "DEBUG ACTIVE"
+        debug = True
+    if o in ("-h", "--help"):
+        usage()
+        sys.exit()
+    if o in ("-r", "--restore"):
+        RESTORE=True
+
+def print_debug(txt):
+    if debug:
+        print >> sys.stderr, "%s::%s" % ("max-domain", txt)
+
+################################################################################
+class MAXLDAP(object):
+    def __init__(self):
+        print_debug("__init__()")
+        self.PKGS=['likewise-open', 'auth-client-config', 'smbfs', 'libpam-mount', 'samba', 'ssh']
+        
+        self.profiles_model=gtk.TreeStore(str)
+        
+        
+        # Widgets
+        self.ui = gtk.Builder()
+        self.ui.set_translation_domain(PACKAGE)
+        print_debug("Loading ui file...")
+        self.ui.add_from_file(GLADE_DIR + 'max-domain-main.ui')
+        self.mainwindow = self.ui.get_object('mainwindow')
+        self.mainwindow.set_icon_from_file(IMG_DIR +'max-icon.png')
+        
+        # close windows signals
+        self.mainwindow.connect('delete_event', self.quitapp)
+        self.mainwindow.show_all()
+        
+        self.img_logo = self.ui.get_object('img_logo')
+        self.img_logo.set_from_file(IMG_DIR +'max_logo.png')
+        
+        
+        # buttons
+        
+        self.btn_cancel=self.ui.get_object('btn_cancel')
+        self.btn_cancel.connect('clicked', self.quitapp)
+        
+        self.btn_apply=self.ui.get_object('btn_apply')
+        self.btn_apply.connect('clicked', self.enableDomain)
+        
+        self.btn_restore=self.ui.get_object('btn_restore')
+        self.btn_restore.connect('clicked', self.restore)
+        self.btn_restore.hide()
+        
+        self.btn_testcon=self.ui.get_object('btn_testcon')
+        self.btn_testcon.connect('clicked', self.test_connection)
+        
+        self.showpassword=self.ui.get_object('ck_showpassword')
+        self.showpassword.connect('toggled', self.do_showpassword)
+        
+        
+        self.ldap_server=self.ui.get_object('txt_ldap_server')
+        self.hostname=self.ui.get_object('txt_hostname')
+        self.domain=self.ui.get_object('txt_domain')
+        self.password=self.ui.get_object('txt_rootpasswd')
+        self.admin=self.ui.get_object('txt_admin')
+        #self.base_dn=self.ui.get_object('txt_basedn')
+        
+        orig_hostname = socket.gethostname()
+        self.hostname.set_text(orig_hostname)
+        
+        global RESTORE
+        
+        if os.path.isfile(BACKUP + '/nsswitch.conf'):
+            RESTORE=True
+        
+        if RESTORE:
+            self.btn_apply.hide()
+            self.btn_restore.show()
+            self.restore()
+
+
+    def do_showpassword(self, widget):
+        if widget.get_active():
+            self.password.set_visibility(True)
+        else:
+            self.password.set_visibility(False)
+
+
+    def test_connection(self, widget=None):
+        # read IP
+        ip=self.ldap_server.get_text().strip()
+        print_debug (ip)
+        alive=PingPort(ip, '389').get_status()
+        if alive == "CLOSED":
+            show_error("No se puede acceder al servidor LDAP,\ncompruebe la IP o nombre de equipo y el cortafuegos en el servidor.")
+            return False
+        if widget:
+            show_info("El servidor tiene accesible LDAP.")
+        return True
+
+#    def set_preseed(self, *args):
+#        preseed="""ldap-auth-config	ldap-auth-config/bindpw	password	$PASSWORD$
+#ldap-auth-config	ldap-auth-config/rootbindpw	password	$PASSWORD$
+#ldap-auth-config	ldap-auth-config/binddn	string	$ADMIN$
+#ldap-auth-config	ldap-auth-config/dbrootlogin	boolean	false
+#ldap-auth-config	ldap-auth-config/rootbinddn	string	$ADMIN$
+#ldap-auth-config	ldap-auth-config/pam_password	select	md5
+#ldap-auth-config	ldap-auth-config/move-to-debconf	boolean	true
+#ldap-auth-config	ldap-auth-config/ldapns/ldap-server	string	ldap://$LDAP_SERVER$/
+#ldap-auth-config	ldap-auth-config/ldapns/base-dn	string	$BASE_DN$
+#ldap-auth-config	ldap-auth-config/override	boolean	true
+#ldap-auth-config	ldap-auth-config/ldapns/ldap_version	select	3
+#ldap-auth-config	ldap-auth-config/dblogin	boolean	false
+#libpam-runtime	libpam-runtime/override	boolean	false
+#libpam-runtime	libpam-runtime/profiles	multiselect	unix, mkhomedir, libpam-mount, ldap, gnome-keyring, consolekit
+#nslcd	nslcd/ldap-bindpw	password	
+#nslcd	nslcd/ldap-sasl-realm	string	
+#nslcd	nslcd/ldap-starttls	boolean	false
+#nslcd	nslcd/ldap-sasl-krb5-ccname	string	/var/run/nslcd/nslcd.tkt
+#nslcd	nslcd/ldap-auth-type	select	none
+#nslcd	nslcd/ldap-reqcert	select	
+#nslcd	nslcd/ldap-uris	string	ldap://$LDAP_SERVER$
+#nslcd	nslcd/ldap-sasl-secprops	string	
+#nslcd	nslcd/ldap-binddn	string	
+#nslcd	nslcd/ldap-sasl-authcid	string	
+#nslcd	nslcd/ldap-sasl-mech	select	
+#nslcd	nslcd/ldap-base	string	$BASE_DN$
+#nslcd	nslcd/ldap-sasl-authzid	string	
+#"""
+#        password=self.password.get_text()
+#        preseed=preseed.replace('$PASSWORD$', password)
+#        
+#        admin=self.admin.get_text().strip()
+#        preseed=preseed.replace('$ADMIN$', admin)
+#        
+#        ldap_server=self.ldap_server.get_text().strip()
+#        preseed=preseed.replace('$LDAP_SERVER$', ldap_server)
+#        
+#        base_dn=self.base_dn.get_text().strip()
+#        preseed=preseed.replace('$BASE_DN$', base_dn)
+#        
+#        temp = NamedTemporaryFile()
+#        temp.write(preseed)
+#        temp.flush()
+#        
+#        # run debconf-set-selections
+#        self.exe_cmd('debconf-set-selections < %s'%temp.name)
+#        
+#        # delete temp file
+#        temp.close()
+#        
+#        print_debug("set_preseed() done")
+#        return True
+
+#    def unset_preseed(self, *args):
+#        preseed="""libpam-runtime	libpam-runtime/override	boolean	false
+#libpam-runtime	libpam-runtime/profiles	multiselect	unix, gnome-keyring, consolekit
+#"""
+#        
+#        temp = NamedTemporaryFile()
+#        temp.write(preseed)
+#        temp.flush()
+#        
+#        # run debconf-set-selections
+#        self.exe_cmd('debconf-set-selections < %s'%temp.name)
+#        
+#        # delete temp file
+#        temp.close()
+#        
+#        print_debug("set_preseed() done")
+#        return True
+
+    def install_pkgs(self, *args):
+        """
+        auth-client-config ldap-auth-client smbfs libnss-ldap libpam-mount
+        echo -e "iceweasel\t install\n" > /tmp/install.pkgs
+        /usr/sbin/synaptic --hide-main-window --non-interactive --set-selections-file /tmp/install.pkgs
+        """
+        # create temp file with packages to install
+        temp = NamedTemporaryFile()
+        for pkg in self.PKGS:
+            temp.write("%s\t install\n"%pkg)
+        temp.flush()
+        
+        print_debug("install_pkgs() calling synaptic...")
+        
+        # install with synaptic
+        self.exe_cmd('synaptic --hide-main-window --non-interactive --set-selections-file %s'%temp.name)
+        
+        # delete temp file
+        temp.close()
+        
+        print_debug("install_pkgs() install done")
+        return True
+
+
+#    def install_pkgs(self, *args):
+#        """
+#        auth-client-config ldap-auth-client smbfs libnss-ldap libpam-mount
+#        echo -e "iceweasel\t install\n" > /tmp/install.pkgs
+#        /usr/sbin/synaptic --hide-main-window --non-interactive --set-selections-file /tmp/install.pkgs
+#        """
+#        # create temp file with packages to install
+#        temp = NamedTemporaryFile()
+#        for pkg in ['ldap-auth-client', 'auth-client-config', 'smbfs', 'libpam-mount', 'samba', 'ssh', 'ldap-utils', 'nslcd']:
+#            temp.write("%s\t install\n"%pkg)
+#        temp.flush()
+#        
+#        print_debug("install_pkgs() calling synaptic...")
+#        
+#        # install with synaptic
+#        self.exe_cmd('synaptic --hide-main-window --non-interactive --set-selections-file %s'%temp.name)
+#        
+#        # delete temp file
+#        temp.close()
+#        
+#        print_debug("install_pkgs() install done")
+#        return True
+
+    def write_mkhomedir(self):
+        f=open('/usr/share/pam-configs/mkhomedir', 'w')
+        f.write("""Name: Make home dir for user
+Default: yes
+Priority: 192
+Session-Type: Additional
+Session-Interactive: yes
+Session:
+	optional	pam_mkhomedir.so""")
+        print_debug("write_mkhomedir() done")
+        f.close()
+
+
+    def configure_PAM_mount(self):
+        serverip=self.ldap_server.get_text().strip()
+        pam_mount_line="""
+<volume options="iocharset=utf8" fstype="cifs" server="%s" path="homes" mountpoint="~" > <and> <sgrp>domain^users</sgrp> </and> </volume>
+<volume fstype="tmpfs" mountpoint="~/.pulse" options="size=1M,mode=0700,uid=%%(USERUID)"> <and> <sgrp>domain^users</sgrp> </and> </volume>
+
+<volume options="rw,iocharset=utf8" fstype="cifs" server="%s" path="isos" mountpoint="/mnt/isos"> <and> <sgrp>teachers</sgrp> </and> </volume>
+<volume options="ro,iocharset=utf8" fstype="cifs" server="%s" path="isos" mountpoint="/mnt/isos"> <and> <sgrp>domain^users</sgrp> <not> <sgrp>Teachers</sgrp> </not> </and> </volume>
+"""%(serverip, serverip, serverip)
+        
+        logout_line="""
+<logout wait="5000" hup="0" term="1" kill="1" />
+"""
+        logout_search_line="<logout"
+        
+        search_line="<!-- Volume definitions -->"
+        
+        f=open('/etc/security/pam_mount.conf.xml', 'r')
+        data=f.readlines()
+        f.close()
+        
+        f=open('/etc/security/pam_mount.conf.xml', 'w')
+        for line in data:
+            if search_line in line:
+                f.write(line)
+                f.write(pam_mount_line)
+            elif logout_search_line in line:
+                f.write(logout_line)
+            else:
+                f.write(line)
+        f.close()
+
+    def configureSamba(self):
+        """
+          Editar smb.conf
+
+          workgroup=EBOX
+          security=domain
+
+
+           Añadir máquina al domino
+             net ads join -D EBOX -U admin%adminpw
+
+           Respuesta:
+
+            Using short domain name -- EBOX
+            Joined 'MARIO-DESKTOP' to domain 'EBOX'
+        """
+        server=self.ldap_server.get_text().strip()
+        domain=self.domain.get_text().strip()
+        if domain == '':
+            print_debug("add_host_to_domain() domain EMPTY")
+            show_info("El dominio no puede estar vacío.")
+            return False
+        
+        workgroup = domain.split('.')[0].upper()
+        
+        f=open('/var/lib/max-domain/domain', 'w')
+        f.write(workgroup)
+        f.close()
+        
+        shutil.copy('/etc/samba/smb.conf', BACKUP)
+        f=open('/etc/samba/smb.conf', 'r')
+        data=f.readlines()
+        f.close()
+        
+        f=open('/etc/samba/smb.conf', 'w')
+        for line in data:
+            if "workgroup =" in line:
+                f.write("   workgroup = %s\n"%workgroup)
+            elif "#   security = user" in line:
+                f.write(line)
+                f.write("   security = domain\n")
+            elif "wins server" in line:
+                f.write("   wins server = %s\n"%server)
+            elif "name resolve order" in line:
+                f.write("   name resolve order = lmhosts host wins bcast\n")
+            else:
+                f.write(line)
+        f.close()
+        
+#        user=self.admin.get_text().strip()
+#        passwd=self.password.get_text().strip()
+#        simpleuser=user.split(',')[0].split('=')[1]
+#        
+#        # call net ads join
+#        cmd="net rpc join -D %s -U %s%%%s"%(domain, simpleuser, passwd)
+#        print_debug(cmd)
+#        cmdresult=self.exe_cmd(cmd)
+#        result=False
+#        for line in cmdresult.splitlines():
+#            if "Joined" in line:
+#                result=True
+        
+        print_debug("configureSamba() done, result=%s"%result)
+        return result
+
+    def add_sudoers(self):
+        """
+        LDAP GROUPS
+        coordinadorestic:x:325583955:
+        instaladores:x:325583956:
+        domain^admins:x:325583360:   <====
+        domain^users:x:325583361:
+        teachers:x:325583954:
+        
+        append this lines to sudoers:
+        
+        User_Alias DAG=%domain^admins
+        DAG ALL=(ALL) ALL
+        DAG ALL=NOPASSWD: /usr/bin/max-control
+        """
+        user=self.admin.get_text().strip()
+        simpleuser=user.split(',')[0].split('=')[1]
+        
+        shutil.copy('/etc/sudoers', BACKUP)
+        f=open('/etc/sudoers', 'r')
+        data=f.readlines()
+        f.close()
+        
+        for line in data:
+            if "# LDAP groups" in line:
+                print_debug("add_sudoers() #LDAP found in sudoers, exit")
+                return
+        
+        f=open('/etc/sudoers', 'w')
+        for line in data:
+            f.write(line)
+        
+        f.write("\n\n# LDAP groups\n")
+        f.write('User_Alias DAG=%domain^admins\n')
+        f.write('DAG ALL=(ALL) ALL\n')
+        f.write('# need to give this user NOPASSWD to work with libssh2-php\n')
+        f.write('DAG ALL=NOPASSWD: /usr/bin/max-control\n')
+        f.write('# end LDAP\n')
+        f.close()
+        
+        print_debug("add_sudoers() done")
+
+    def add_users_to_groups(self):
+        """
+        Edit /etc/security/group.conf
+        """
+        f=open('/etc/security/group.conf', 'r')
+        data=f.readlines()
+        f.close()
+        
+        f=open('/etc/security/group.conf', 'w')
+        for line in data:
+            f.write(line)
+        f.write('\n\n')
+        f.write('# for MAX normal login\n')
+        f.write('gdm;*;*;Al0000-2400;audio,video,floppy,cdrom,plugdev,netdev,powerdev,scanner,fuse\n')
+        f.write('lightdm;*;*;Al0000-2400;audio,video,floppy,cdrom,plugdev,netdev,powerdev,scanner,fuse\n')
+        f.write('# for multiseat\n')
+        f.write('gdm-2.20;*;*;Al0000-2400;audio,video,floppy,cdrom,fuse\n')
+        f.close()
+        
+        print_debug("add_users_to_groups() done")
+        return True
+
+
+    def configureSSH(self):
+        # configure sshd_config to disable logins of know users (madrid and alumno)
+        shutil.copy('/etc/ssh/sshd_config', BACKUP)
+        f=open('/etc/ssh/sshd_config', 'r')
+        data=f.readlines()
+        f.close()
+        for line in data:
+            if "max-domain" in line:
+                return
+
+        f=open('/etc/ssh/sshd_config', 'a')
+        f.write("\n\n# max-domain\n")
+        f.write("# Al estar este equipo unido al dominio,\n")
+        f.write("# sólo se permite el acceso a usuarios del grupo 'Instaladores'\n")
+        f.write("# (perfil Administrador en max-control)\n")
+        f.write("# no pueden acceder ni usuarios locales, ni profesores ni Coordinadores TIC\n")
+        f.write("\nAllowGroups instaladores\n")
+        f.close()
+        
+        print_debug("configureSSH() done")
+
+    def joinDomain(self):
+        """
+        # domainjoin-cli join madrid.lan admin admin
+        Joining to AD Domain:   madrid.lan
+        With Computer DNS Name: max75rc3.madrid.lan
+
+        SUCCESS
+        You should reboot this system before attempting GUI logins as a domain user.
+        
+        """
+        domain = self.domain.get_text().strip()
+        hostname = self.hostname.get_text().strip()
+        user = self.admin.get_text().strip()
+        password = self.password.get_text()
+        
+        # change hostname
+        orig_hostname = socket.gethostname()
+        if orig_hostname != hostname:
+            self.exe_cmd("domainjoin-cli setname '%s'" %(hostname) )
+        #
+        #
+        #
+        ret = self.exe_cmd("domainjoin-cli join '%s' '%s' '%s' " %(domain, user, password) )
+        done = False
+        for l in ret:
+            print_debug(l)
+            if "SUCCESS" in l:
+                done = True
+                
+                self.exe_cmd("lwconfig AssumeDefaultDomain true")
+                self.exe_cmd('lwconfig HomeDirTemplate "%H/%D/%U"')
+                break
+        #
+        return done
+
+    def configurePAM(self):
+        # configure priority of libpam-mount to 251 (likewise have 250)
+        f=open('/usr/share/pam-configs/libpam-mount', 'r')
+        data=f.readlines()
+        f.close()
+        
+        f=open('/usr/share/pam-configs/libpam-mount', 'w')
+        for line in data:
+            if "Priority" in line:
+                f.write("Priority: 251")
+            else:
+                f.write(line)
+        
+        # set to no interactive
+        os.environ['DEBCONF_FRONTEND']="noninteractive"
+        os.environ['DEBIAN_FRONTEND']="noninteractive"
+        self.exe_cmd('/usr/sbin/pam-auth-update')
+
+        shutil.copy('/etc/pam.d/sshd', BACKUP+'pam.d')
+        # configure SSH to not mount remote filesystems
+        self.exe_cmd('grep -v pam_mount /etc/pam.d/common-auth > /etc/pam.d/common-auth-nomount')
+        self.exe_cmd('grep -v pam_mount /etc/pam.d/common-session > /etc/pam.d/common-session-nomount')
+        #
+        self.exe_cmd("sed -i -e 's/common-auth/common-auth-nomount/g' /etc/pam.d/sshd")
+        self.exe_cmd("sed -i -e 's/common-session/common-session-nomount/g' /etc/pam.d/sshd")
+        return True
+
+
+    def enableDomain(self, *args):
+        # test IP
+        if not self.test_connection():
+            return
+        
+        # backup
+        shutil.copytree('/etc/pam.d', BACKUP+'pam.d')
+        shutil.copy('/etc/nsswitch.conf', BACKUP)
+        
+        # sync time
+        if os.path.isfile("/usr/sbin/ntpdate-debian"):
+            print_debug("Updating date (ntp)...")
+            self.exe_cmd("ntpdate-debian")
+        
+        # install needed packages
+        self.install_pkgs()
+        
+        if not self.joinDomain():
+            show_info("No se ha podido unir el equipo al dominio.\nCompruebe el usuario, la contraseña y el dominio.")
+            return
+        
+        self.configureSamba()
+        
+        self.add_sudoers()
+        
+        self.configureSSH()
+        
+        # backup pam_mount.conf.xml
+        shutil.copy('/etc/security/pam_mount.conf.xml', BACKUP)
+        
+        # configure mkhomedir
+        if not os.path.isfile('/usr/share/pam-configs/mkhomedir'):
+            self.write_mkhomedir()
+        
+        # configure pam_mount
+        self.configure_PAM_mount()
+        
+        # add LDAP user to local groups (audio, plugdev...)
+        shutil.copy('/etc/security/group.conf', BACKUP)
+        self.add_users_to_groups()
+        
+        # configure pam, call pam-auth-update, disable pam-mount for SSH
+        self.configurePAM()
+
+        # Desactiva la lista de usuarios y el Invitado de la pantalla de login del lightdm
+        self.exe_cmd("/usr/lib/lightdm/lightdm-set-defaults --hide-users true")
+        self.exe_cmd("/usr/lib/lightdm/lightdm-set-defaults --allow-guest false")
+        
+        # say user to reboot
+        print_debug("Please, reboot")
+        show_info("Por favor, reinicie el equipo.")
+        self.quitapp()
+
+
+    def remove_pkgs(self):
+        apt="apt-get remove --purge -y --force-yes"
+        pkgs=" ".join(self.PKGS)
+        self.exe_cmd("%s %s"%(apt, pkgs))
+        self.exe_cmd("apt-get autoremove --purge -y --force-yes")
+
+
+    def restore(self, *args):
+        # ask for restore
+        if not ask_msg("¿Quiere restarurar el sistema sin LDAP?"):
+            self.quitapp()
+            return
+        
+        # copy files
+        if os.path.isfile(BACKUP + 'pam_mount.conf.xml'):
+            shutil.copy(BACKUP + 'pam_mount.conf.xml', '/etc/security/')
+            os.unlink(BACKUP + 'pam_mount.conf.xml')
+        
+        # copy files
+        if os.path.isfile(BACKUP + 'group.conf'):
+            shutil.copy(BACKUP + 'group.conf', '/etc/security/')
+            os.unlink(BACKUP + 'group.conf')
+        
+        # PAM
+        if os.path.isdir(BACKUP+'pam.d'):
+            if os.path.isdir("/etc/pam.d"):
+                shutil.rmtree("/etc/pam.d")
+            shutil.copytree(BACKUP+'pam.d', '/etc/pam.d')
+            shutil.rmtree(BACKUP+'pam.d')
+        
+        # NSS
+        if os.path.isfile(BACKUP + 'nsswitch.conf'):
+            shutil.copy(BACKUP + 'nsswitch.conf', '/etc/')
+            os.unlink(BACKUP + 'nsswitch.conf')
+        
+        # SAMBA
+        if os.path.isfile(BACKUP + 'smb.conf'):
+            shutil.copy(BACKUP + 'smb.conf', '/etc/samba/')
+            os.unlink(BACKUP + 'smb.conf')
+        
+        # sudoers
+        if os.path.isfile(BACKUP + 'sudoers'):
+            shutil.copy(BACKUP + 'sudoers', '/etc/')
+            os.unlink(BACKUP + 'sudoers')
+        
+        # ssh
+        if os.path.isfile(BACKUP + 'sshd_config'):
+            shutil.copy(BACKUP + 'sshd_config', '/etc/ssh/')
+            os.unlink(BACKUP + 'sshd_config')
+        
+        if os.path.isfile('/usr/share/pam-configs/mkhomedir'):
+            os.unlink('/usr/share/pam-configs/mkhomedir')
+        
+        if os.path.isfile('/etc/pam.d/common-auth-nomount'):
+            os.unlink('/etc/pam.d/common-auth-nomount')
+        
+        if os.path.isfile('/etc/pam.d/common-session-nomount'):
+            os.unlink('/etc/pam.d/common-session-nomount')
+        
+        # set to no interactive
+        self.unset_preseed()
+        os.environ['DEBCONF_FRONTEND']="noninteractive"
+        os.environ['DEBIAN_FRONTEND']="noninteractive"
+        self.exe_cmd('/usr/sbin/pam-auth-update')
+        
+        try:
+            self.remove_pkgs()
+        except:
+            pass
+        
+        print_debug("Restored !!!!, reboot now ")
+        show_info("Por favor, reinicie el equipo.")
+        self.quitapp()
+
+
+    def exe_cmd(self, cmd, verbose=1):
+        self.p = Popen(cmd, shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+        
+        output=[]
+        stdout = self.p.stdout
+        for line in stdout.readlines():
+            if line != '\n':
+                line=line.replace('\n', '')
+                output.append(line)
+        if len(output) == 1:
+            return output[0]
+        elif len(output) > 1:
+            if verbose==1:
+                print_debug ( "exe_cmd(%s) %s" %(cmd, output) )
+            return output
+        else:
+            if verbose == 1:
+                print_debug ( "exe_cmd(%s)=None" %(cmd) )
+            return []
+
+    def quitapp(self, *args):
+        print_debug ( "Exiting" )
+        try:
+            self.mainloop.quit()
+        except:
+            pass
+
+    def run (self):
+        self.mainloop = gobject.MainLoop()
+        try:
+            self.mainloop.run()
+        except KeyboardInterrupt: # Press Ctrl+C
+            self.quitapp()
+
+
+class PingPort(object):
+    """ try to open a socket to host:ip """
+    def __init__(self, host, port, timeout=1):
+        self.host=host
+        self.port=int(port)
+        print_debug("PingPort() host=%s port=%d" %(host, self.port) )
+        if self.host == "":
+            print_debug ( "PingPort()  need host to connect" )
+            self.status = "CLOSED"
+            return
+
+        self.status=None
+        socket.setdefaulttimeout(timeout)
+        self.sd = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        print_debug( "PingPort()::__init__(host=%s, port=%d timeout=%f)" %(self.host, self.port, timeout) )
+        try:
+            # connect to the given host:port
+            self.sd.connect((self.host, self.port))
+        except socket.error:
+            # set the CLOSED flag
+            self.status = "CLOSED"
+        else:
+            self.status = "OPEN"
+            self.sd.close()
+
+        socket.setdefaulttimeout(timeout)
+
+    def get_status(self):
+        """ return socket status
+            values: OPEN CLOSED
+        """
+        print_debug ( "%s:%s port is \"%s\"" %(self.host, self.port, self.status) )
+        return self.status
+
+
+def ask_msg(txt):
+    d = gtk.MessageDialog(None,
+                          gtk.DIALOG_MODAL |
+                          gtk.DIALOG_DESTROY_WITH_PARENT,
+                          gtk.MESSAGE_QUESTION,
+                          gtk.BUTTONS_YES_NO,
+                          txt)
+    if d.run() == gtk.RESPONSE_YES:
+        response=True
+    else:
+        response=False
+    d.destroy()
+    return response
+
+def show_info(txt):
+    d = gtk.MessageDialog(None,
+                          gtk.DIALOG_MODAL |
+                          gtk.DIALOG_DESTROY_WITH_PARENT,
+                          gtk.MESSAGE_INFO,
+                          gtk.BUTTONS_OK,
+                          txt)
+    d.run()
+    d.destroy()
+
+def show_error(txt):
+    d = gtk.MessageDialog(None,
+                          gtk.DIALOG_MODAL |
+                          gtk.DIALOG_DESTROY_WITH_PARENT,
+                          gtk.MESSAGE_ERROR,
+                          gtk.BUTTONS_OK,
+                          txt)
+    d.run()
+    d.destroy()
+
+################################################################################
+
+if __name__ == '__main__':
+    # check if I'm root
+    if os.geteuid() != 0:
+        show_info("Este programa se debe ejecutar como usuario administrador (con gksudo)")
+        sys.exit(1)
+    
+    app = MAXLDAP ()
+    # Run app
+    app.run ()
