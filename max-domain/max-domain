@@ -292,12 +292,21 @@ class MAXLDAP(object):
         f=open('/usr/share/pam-configs/mkhomedir', 'w')
         f.write("""Name: Make home dir for user
 Default: yes
-Priority: 192
+Priority: 252
 Session-Type: Additional
 Session-Interactive: yes
 Session:
-	optional	pam_mkhomedir.so""")
+	optional	pam_mkhomedir.so umask=0077""")
         print_debug("write_mkhomedir() done")
+        f.close()
+
+        f=open('/usr/share/pam-configs/domaingroups', 'w')
+        f.write("""Name: Enable /etc/security/group.conf
+Default: yes
+Priority: 900
+Auth-Type: Primary
+Auth:
+        required                        pam_group.so use_first_pass""")
         f.close()
 
 
@@ -382,21 +391,8 @@ Session:
                 f.write(line)
         f.close()
         
-#        user=self.admin.get_text().strip()
-#        passwd=self.password.get_text().strip()
-#        simpleuser=user.split(',')[0].split('=')[1]
-#        
-#        # call net ads join
-#        cmd="net rpc join -D %s -U %s%%%s"%(domain, simpleuser, passwd)
-#        print_debug(cmd)
-#        cmdresult=self.exe_cmd(cmd)
-#        result=False
-#        for line in cmdresult.splitlines():
-#            if "Joined" in line:
-#                result=True
-        
-        print_debug("configureSamba() done, result=%s"%result)
-        return result
+        print_debug("configureSamba() done")
+        return True
 
     def add_sudoers(self):
         """
@@ -413,8 +409,6 @@ Session:
         DAG ALL=(ALL) ALL
         DAG ALL=NOPASSWD: /usr/bin/max-control
         """
-        user=self.admin.get_text().strip()
-        simpleuser=user.split(',')[0].split('=')[1]
         
         shutil.copy('/etc/sudoers', BACKUP)
         f=open('/etc/sudoers', 'r')
@@ -444,6 +438,7 @@ Session:
         """
         Edit /etc/security/group.conf
         """
+
         f=open('/etc/security/group.conf', 'r')
         data=f.readlines()
         f.close()
@@ -514,12 +509,28 @@ Session:
                 done = True
                 
                 self.exe_cmd("lwconfig AssumeDefaultDomain true")
+                self.exe_cmd("lwconfig --show AssumeDefaultDomain")
                 self.exe_cmd('lwconfig HomeDirTemplate "%H/%D/%U"')
+                self.exe_cmd("lwconfig --show HomeDirTemplate")
                 break
         #
         return done
 
     def configurePAM(self):
+        print_debug("preseeding libpam-runtime ...")
+        preseed="""libpam-runtime	libpam-runtime/override	boolean	false
+libpam-runtime	libpam-runtime/profiles	multiselect	unix, libpam-mount, likewise-open, mkhomedir, gnome-keyring, ecryptfs-utils, consolekit, capabilit, domaingroups
+"""
+        temp = NamedTemporaryFile()
+        temp.write(preseed)
+        temp.flush()
+        
+        # run debconf-set-selections
+        self.exe_cmd('debconf-set-selections < %s'%temp.name)
+        
+        # delete temp file
+        temp.close()
+
         # configure priority of libpam-mount to 251 (likewise have 250)
         f=open('/usr/share/pam-configs/libpam-mount', 'r')
         data=f.readlines()
@@ -528,10 +539,12 @@ Session:
         f=open('/usr/share/pam-configs/libpam-mount', 'w')
         for line in data:
             if "Priority" in line:
-                f.write("Priority: 251")
+                f.write("Priority: 251\n")
             else:
                 f.write(line)
+        f.close()
         
+        print_debug("Updating pam (pam-auth-update) ...")
         # set to no interactive
         os.environ['DEBCONF_FRONTEND']="noninteractive"
         os.environ['DEBIAN_FRONTEND']="noninteractive"
@@ -561,6 +574,7 @@ Session:
             print_debug("Updating date (ntp)...")
             self.exe_cmd("ntpdate-debian")
         
+        print_debug("Installing packages...")
         # install needed packages
         self.install_pkgs()
         
@@ -594,6 +608,15 @@ Session:
         # Desactiva la lista de usuarios y el Invitado de la pantalla de login del lightdm
         self.exe_cmd("/usr/lib/lightdm/lightdm-set-defaults --hide-users true")
         self.exe_cmd("/usr/lib/lightdm/lightdm-set-defaults --allow-guest false")
+
+        if os.path.isdir("/etc/apparmor.d/tunables/home.d"):
+            domain = self.domain.get_text().strip()
+            workgroup = domain.split('.')[0].upper()
+            f=open('/etc/apparmor.d/tunables/home.d/max-domain', 'w')
+            f.write("# Update HOMEDIRS for max-domain\n")
+            f.write("@{HOMEDIRS}+=/home/%s/\n" %workgroup )
+            f.close()
+        
         
         # say user to reboot
         print_debug("Please, reboot")
@@ -603,8 +626,10 @@ Session:
 
     def remove_pkgs(self):
         apt="apt-get remove --purge -y --force-yes"
-        pkgs=" ".join(self.PKGS)
-        self.exe_cmd("%s %s"%(apt, pkgs))
+        pkgs=self.PKGS
+        pkgs.remove('samba')
+        pkgs.remove('ssh')
+        self.exe_cmd("%s %s"%(apt, " ".join(pkgs)))
         self.exe_cmd("apt-get autoremove --purge -y --force-yes")
 
 
@@ -613,6 +638,8 @@ Session:
         if not ask_msg("¿Quiere restaurar el sistema sin Dominio?"):
             self.quitapp()
             return
+
+        self.exe_cmd("domainjoin-cli leave")
         
         # copy files
         if os.path.isfile(BACKUP + 'pam_mount.conf.xml'):
@@ -659,9 +686,12 @@ Session:
         
         if os.path.isfile('/etc/pam.d/common-session-nomount'):
             os.unlink('/etc/pam.d/common-session-nomount')
+
+        if os.path.isfile('/etc/apparmor.d/tunables/home.d/max-domain'):
+            os.unlink('/etc/apparmor.d/tunables/home.d/max-domain')
         
         # set to no interactive
-        self.unset_preseed()
+        #self.unset_preseed()
         os.environ['DEBCONF_FRONTEND']="noninteractive"
         os.environ['DEBIAN_FRONTEND']="noninteractive"
         self.exe_cmd('/usr/sbin/pam-auth-update')

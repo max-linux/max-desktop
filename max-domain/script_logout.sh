@@ -10,7 +10,7 @@ if [ $log != "" ] ; then
    echo "Usuario: $USER" > $log
 fi
 
-USER_HOME=$(getent passwd admin | awk -F ":" '{print $6}')
+USER_HOME=$(getent passwd $USER | awk -F ":" '{print $6}')
 
 
 # Antes de hacer el killall se espera que se cierren de forma normal los procesos

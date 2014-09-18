@@ -1,3 +1,16 @@
+max-domain (0.4) max; urgency=low
+
+  * Use mkhomedir umask=0077 => dir 700
+  * Change Prio of mkhomedir to 252 (before likewise)
+  * Add pam_group to enable /etc/security/group.conf
+  * Preseed libpam-runtime
+  * Change Prio of pam-mount to 251 (before likewise)
+  * Add Apparmor HOMEDIRS to enable /home/_DOMAIN_/ access
+  * Don't uninstall samba and ssh
+  * Fix typo in script_logout.sh
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 18 Sep 2014 19:47:29 +0200
+
 max-domain (0.3) max; urgency=low
 
   * Rename ldap_logout.sh => 99domain_logout.sh
