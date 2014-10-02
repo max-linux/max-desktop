@@ -7,14 +7,14 @@ Standards-Version: 3.8.4
 
 Package: max-linux
 Architecture: i386 amd64
-Depends: linux-image-generic-lts-saucy
+Depends: linux-image-generic-lts-saucy | linux-image-generic-lts-trusty
 Provides: linux-image-generic-pae, linux-image
 Description: Kernel por defecto en MAX
  Kernel por defecto en MAX
 
 Package: max-linux-headers
 Architecture: i386 amd64
-Depends: linux-headers-generic-lts-saucy
+Depends: linux-headers-generic-lts-saucy | linux-headers-generic-lts-trusty
 Provides: linux-headers-generic-pae
 Description: Cabeceras del kernel por defecto en MAX
  Cabeceras del kernel por defecto en MAX

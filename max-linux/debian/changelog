@@ -1,3 +1,9 @@
+max-linux (7.0.max4) max; urgency=low
+
+  * Depends on saucy or trusty kernel
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 02 Oct 2014 09:29:43 +0200
+
 max-linux (7.0.max3) max; urgency=low
 
   * Depends on linux-image-generic-lts-saucy and linux-headers-generic-lts-saucy
