@@ -59,10 +59,6 @@ export DEBIAN_FRONTEND="noninteractive"
 dpkg-reconfigure tzdata
 EOF
 
-#xserver-xorg    xserver-xorg/config/inputdevice/keyboard/layout string es
-#xserver-xorg    xserver-xorg/config/inputdevice/keyboard/model  string pc105
-#EOF
-
 
 cat << EOF > $CHROOT/etc/default/keyboard
 # Check /usr/share/doc/keyboard-configuration/README.Debian for
