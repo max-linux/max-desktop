@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max41) max; urgency=low
+
+  * Fix org.gnome.desktop.lockdown
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 03 Oct 2014 12:03:58 +0200
+
 max-gnome-default-settings (7.0.max40) max; urgency=low
 
   * Add gnome-terminal and set background to vacio.png, close #569

@@ -149,9 +149,9 @@ y-centered=false
 history=[]
 
 
-[apps/shotwell/preferences/ui]
+[apps.shotwell.preferences.ui]
 show-welcome-dialog=false
 
 
-[org/gnome/desktop/lockdown]
+[org.gnome.desktop.lockdown]
 disable-lock-screen=false
