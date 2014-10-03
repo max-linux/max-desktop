@@ -2,6 +2,11 @@
 # 
 #
 
+if [ -e /var/lib/max-domain/domain ]; then
+  gsettings set org.gnome.system.smb workgroup '$(cat /var/lib/max-domain/domain)'
+fi
+
+
 # /var/lib/max-domain/domain
 # gconftool-2 --set /system/smb/workgroup --type string "EBOX"
 

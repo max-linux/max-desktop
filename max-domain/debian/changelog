@@ -1,3 +1,9 @@
+max-domain (0.4max1) max; urgency=low
+
+  * Set dconf domain with gsettings in 80_configure_domain_session
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 03 Oct 2014 16:52:59 +0200
+
 max-domain (0.4) max; urgency=low
 
   * Use mkhomedir umask=0077 => dir 700
