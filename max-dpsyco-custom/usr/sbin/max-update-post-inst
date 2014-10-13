@@ -140,3 +140,9 @@ for t in $(ls /usr/lib/thunderbird-addons/extensions/*xpi); do
     ln -s "$t" "/usr/lib/thunderbird/extensions/$tname"
   fi
 done
+
+
+if ! grep -q "old-releases" /etc/apt/sources.list ; then
+    sed -i.max-backup -e 's@http://*.*.ubuntu.com@http://old-releases.ubuntu.com@g' -e 's@http://*.ubuntu.com@http://old-releases.ubuntu.com@g' /etc/apt/sources.list
+    echo " * Por favor ejecuta «sudo apt-get update» para usar old-releases.ubuntu.com"
+fi
