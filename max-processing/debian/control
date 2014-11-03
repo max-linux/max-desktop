@@ -8,7 +8,7 @@ Homepage: https://processing.org
 
 Package: processing
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: oracle-java7-jre, ${shlibs:Depends}, ${misc:Depends}
 Description: Java animation and interaction IDE
  Processing is an open source programming language
  and environment for people who want to create images,
