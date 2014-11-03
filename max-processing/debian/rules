@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+
+VERSION=2.2.1
+
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+ifeq ($(DEB_HOST_ARCH),i386)
+  PROC_ARCH=linux32
+  REMOVE=linux64
+else
+  PROC_ARCH=linux64
+  REMOVE=linux32
+endif
+
+
+
+%:
+	dh $@
+
+
+info:
+	@echo
+	@echo Build information
+	@echo ==========================
+	@echo ARCH         = $(DEB_HOST_ARCH)
+	@echo URL          = $(URL)
+	@echo
+	@echo
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build bin build-stamp
+
+
+override_dh_auto_build:
+	mkdir -p build
+	if [ ! -e build/processing.tgz ]; then wget --no-check-certificate http://download.processing.org/processing-$(VERSION)-$(PROC_ARCH).tgz -O- > build/processing.tgz; fi
+	(cd build && tar -zxf processing.tgz)
+
+	rm -rf build/processing-*/modes/java/application/launch4j/
+	rm -rf build/processing-*/modes/java/libraries/serial/library/$(REMOVE)

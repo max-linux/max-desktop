@@ -1,0 +1,9 @@
+build/processing-*/core usr/share/processing/
+build/processing-*/processing usr/share/processing/
+build/processing-*/modes usr/share/processing/
+build/processing-*/tools usr/share/processing/
+build/processing-*/processing-java usr/share/processing/
+build/processing-*/revisions.txt usr/share/processing/
+build/processing-*/lib usr/share/processing/
+
+debian/processing.desktop usr/share/applications/
