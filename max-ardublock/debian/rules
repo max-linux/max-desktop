@@ -10,5 +10,6 @@ override_dh_clean:
 
 
 override_dh_auto_build:
-	wget --no-check-certificate http://cloud.github.com/downloads/taweili/ardublock/ardublock-all.jar
+#	wget --no-check-certificate http://cloud.github.com/downloads/taweili/ardublock/ardublock-all.jar
+	curl -L -O http://cloud.github.com/downloads/taweili/ardublock/ardublock-all.jar
 
