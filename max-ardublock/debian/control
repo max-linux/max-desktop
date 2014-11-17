@@ -1,0 +1,16 @@
+Source: max-ardublock
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
+Build-Depends: debhelper (>= 7), wget, unzip
+Standards-Version: 3.8.3
+Homepage: https://github.com/taweili/ardublock
+
+Package: ardublock
+Architecture: all
+Depends: arduino, ${shlibs:Depends}, ${misc:Depends}
+Description: Block Programming Language for Arduino
+ Arduino is an open-source electronics prototyping platform based on
+ flexible, easy-to-use hardware and software. It's intended for artists,
+ designers, hobbyists, and anyone interested in creating interactive
+ objects or environments.

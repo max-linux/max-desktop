@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf *.jar
+
+
+override_dh_auto_build:
+	wget --no-check-certificate http://cloud.github.com/downloads/taweili/ardublock/ardublock-all.jar
+
