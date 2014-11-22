@@ -8,7 +8,7 @@ Standards-Version: 3.8.4
 Package: max-java-jre
 Architecture: all
 Depends: max-skel-conf, oracle-java8-jre, openjdk-7-jre
-Conflicts: sun-java6-jre, openjdk-6-jre
+Conflicts: sun-java6-jre, openjdk-6-jre, openjdk-6-jre-headless
 Description: Dependencias de máquina virtual java JRE para Max
  Máquina virtual java JRE para Max
 
