@@ -6,19 +6,22 @@ Build-Depends: debhelper (>= 7.0.0), cdbs
 Standards-Version: 3.8.4
 
 Package: max-java-jre
-Architecture: i386 amd64
-Depends: max-skel-conf, oracle-java8-jre
+Architecture: all
+Depends: max-skel-conf, oracle-java8-jre, openjdk-7-jre
+Conflicts: sun-java6-jre, openjdk-6-jre
 Description: Dependencias de máquina virtual java JRE para Max
  Máquina virtual java JRE para Max
 
 Package: max-java-jdk
-Architecture: i386 amd64
-Depends: max-skel-conf, oracle-java8-jdk
+Architecture: all
+Depends: max-skel-conf, oracle-java8-jdk, openjdk-7-jdk
+Conflicts: sun-java6-jdk, openjdk-6-jdk
 Description: Dependencias de máquina virtual java JDK para Max
  Máquina virtual java JDK para Max
 
 Package: max-java-plugin
-Architecture: i386 amd64
+Architecture: all
 Depends: max-skel-conf, max-java-jre, oracle-java8-plugin
+Conflicts: sun-java6-plugin
 Description: Dependencias de máquina virtual java (plugin mozilla) para Max
  Máquina virtual java (plugin mozilla) para Max

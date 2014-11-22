@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=MAX Java selector
+Name[es]=MAX Configurador Java
+Exec=gksudo /usr/bin/max-java-selector
+Terminal=false
+Type=Application
+Icon=openjdk-7
+Categories=Application;System;
