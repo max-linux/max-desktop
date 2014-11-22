@@ -1,0 +1,183 @@
+#!/bin/sh
+
+InstallDir='/opt'/'Scratch 2'
+AIRInstallDir="/opt/Adobe AIR"
+ResourceDir="${AIRInstallDir}/Versions/1.0/Resources"
+PATH="${ResourceDir}/xdg-utils:$PATH"
+XDG_UTILS_INSTALL_MODE="system"
+
+if which kde-config >/dev/null 2>&1; then
+   :
+else
+   PATH="$PATH:/opt/kde3/bin:/opt/kde/bin"
+fi
+
+if which kde4-config >/dev/null 2>&1; then
+   :
+else
+   PATH="$PATH:/opt/kde4/bin:/usr/lib/kde4/bin"
+fi
+
+if [ -z "$XDG_DATA_DIRS" ]; then
+    XDG_DATA_DIRS="/usr/share/:/usr/local/share/"
+
+    if xdg_data_dir=`kde-config --prefix 2>/dev/null`; then
+        XDG_DATA_DIRS="${XDG_DATA_DIRS}:${xdg_data_dir}/share/"
+    fi
+
+    if xdg_data_dir=`kde4-config --prefix 2>/dev/null`; then
+        XDG_DATA_DIRS="${XDG_DATA_DIRS}:${xdg_data_dir}/share/"
+    fi
+
+    if [ -x /opt/gnome/bin/gnome-open ]; then
+        XDG_DATA_DIRS="${XDG_DATA_DIRS}:/opt/gnome/share/"
+    fi
+
+    export XDG_DATA_DIRS
+fi
+
+export PATH
+export XDG_UTILS_INSTALL_MODE
+
+InstallMimeType()
+{
+    xdg-mime install --novendor "edu.media.mit.scratch2editor.xml" >/dev/null 2>&1
+}
+
+
+InstallMimeIcon()
+{
+    icon_size="$1"
+    icon_path="$2"
+    mimetype="`echo "$3" | tr '//' '-'`"
+
+    xdg-icon-resource install --noupdate --novendor --context mimetypes --mode system --size "$icon_size" "$icon_path" "$mimetype" >/dev/null 2>&1
+    xdg-icon-resource install --noupdate --novendor --theme gnome --context mimetypes --mode system --size "$icon_size" "$icon_path" "$mimetype" >/dev/null 2>&1
+}
+
+
+InstallAppIcon()
+{
+    icon_size="$1"
+    icon_path="$2"
+
+    xdg-icon-resource install --noupdate --novendor --context apps --mode system --size "$icon_size" "$icon_path" >/dev/null 2>&1
+    xdg-icon-resource install --noupdate --novendor --theme gnome --context apps --mode system --size "$icon_size" "$icon_path" >/dev/null 2>&1
+}
+
+
+SetAsDefaultApplication()
+{
+    mimetype="$1"
+
+    xdg-mime default "edu.media.mit.scratch2editor.desktop" "$mimetype" >/dev/null 2>&1
+}
+
+
+cd "$InstallDir/share/META-INF/AIR"
+
+case "$1" in
+    configure)
+
+        if [ -n '' ]; then
+            xdg-desktop-menu install --novendor "edu.media.mit.scratch2editor.directory" "edu.media.mit.scratch2editor.desktop"
+        else
+            xdg-desktop-menu install --novendor "edu.media.mit.scratch2editor.desktop"
+        fi >/dev/null 2>&1
+
+
+    	InstallAppIcon 16 "${InstallDir}/share/META-INF/AIR/image16x16/edu.media.mit.scratch2editor.png"
+InstallAppIcon 32 "${InstallDir}/share/META-INF/AIR/image32x32/edu.media.mit.scratch2editor.png"
+InstallAppIcon 48 "${InstallDir}/share/META-INF/AIR/image48x48/edu.media.mit.scratch2editor.png"
+InstallAppIcon 128 "${InstallDir}/share/META-INF/AIR/image128x128/edu.media.mit.scratch2editor.png"
+
+        xdg-icon-resource forceupdate >/dev/null 2>&1
+
+        if true; then
+            if script="`mktemp -t air.XXXXXX`"; then
+            cat > "$script" <<EOF
+export PATH="$PATH"
+xdg-desktop-icon install --novendor edu.media.mit.scratch2editor.desktop
+EOF
+                chmod 755 "$script"
+                #( sudo -H -S -u madrid "$script" < /dev/null || su madrid -c "$script" ) < /dev/null
+                rm -f "$script"
+            fi
+        fi >/dev/null 2>&1
+
+        rm -f /usr/share/applications/edu.media.mit.scratch2editor.desktop 2>/dev/null
+        ln -s "$PWD/edu.media.mit.scratch2editor.desktop" /usr/share/applications/edu.media.mit.scratch2editor.desktop 2>/dev/null
+
+#        OLD_IFS="$IFS"
+#        IFS=':'
+#
+#        xdg_gnome_dirs="`echo $XDG_DATA_DIRS:/usr/share:/usr/local/share | sed -e 's#//*#/#g' -e 's#//*:#:#g' -e 's#//*$##g'`"
+#
+#        xdg_kde_dirs=`kde-config --install xdgdata-apps --expandvars 2>/dev/null`:`kde-config --install apps --expandvars 2>/dev/null`:`kde4-config --install xdgdata-apps --expandvars 2>/dev/null`:`kde4-config --install apps --expandvars 2>/dev/null`
+#        xdg_kde_dirs="`echo $xdg_kde_dirs | sed -e 's#//*#/#g' -e 's#//*:#:#g' -e 's#//*$##g'`"
+#
+#        for xdg_dir in $xdg_gnome_dirs
+#        do
+#            if [ -d "$xdg_dir/applications" ]; then
+#                rm -f "$xdg_dir/edu.media.mit.scratch2editor.desktop"
+#                ( grep -v "^OnlyShowIn=" "edu.media.mit.scratch2editor.desktop"
+#
+#                if [ -n '' ]; then
+#                    echo "OnlyShowIn="
+#                else
+#                    echo "OnlyShowIn=GNOME;XFCE;"
+#                fi ) > "$xdg_dir/applications/edu.media.mit.scratch2editor.desktop"
+#            fi
+#        done >/dev/null 2>&1
+#
+#        xdg_kde_dirs=`kde-config --install xdgdata-apps --expandvars 2>/dev/null`:`kde-config --install apps --expandvars 2>/dev/null`:`kde4-config --install xdgdata-apps --expandvars 2>/dev/null`:`kde4-config --install apps --expandvars 2>/dev/null`
+#
+#        ## The OnlyShowIn entries are removed for files installed to the directory if it is common between GNOME and KDE.
+#
+#        for xdg_dir in $xdg_kde_dirs
+#        do
+#            if [ -d "$xdg_dir" -a -z '' ]
+#            then
+#                 ( grep -v "^OnlyShowIn=" "edu.media.mit.scratch2editor.desktop"; echo "OnlyShowIn=KDE;" ) | tee "$xdg_dir/.hidden/edu.media.mit.scratch2editor.desktop" > "$xdg_dir/edu.media.mit.scratch2editor.desktop"
+#                for x in $xdg_gnome_dirs
+#                do
+#                    if [ "$xdg_dir" = "$x/applications" ]
+#                    then
+#                        grep -v "^OnlyShowIn=" "edu.media.mit.scratch2editor.desktop" > "$xdg_dir/edu.media.mit.scratch2editor.desktop"
+#                        break
+#                    fi
+#                done
+#            fi
+#        done >/dev/null 2>&1
+#
+#        for xdg_dir in $xdg_dirs
+#        do
+#            if [ -n '' ]; then
+#                ln -s "$PWD/edu.media.mit.scratch2editor.desktop" "$xdg_dir/edu.media.mit.scratch2editor.desktop"
+#            else
+#                rm -f "$xdg_dir/edu.media.mit.scratch2editor.desktop"
+#            ( grep -v "^OnlyShowIn=" "edu.media.mit.scratch2editor.desktop" ; echo "OnlyShowIn=GNOME;XFCE;" ) > "$xdg_dir/edu.media.mit.scratch2editor.desktop"
+#            fi
+#    done >/dev/null 2>&1
+#
+#    IFS="$OLD_IFS"
+
+#    update-app-install >/dev/null 2>&1
+
+    if grep -qi "midinux" /etc/issue >/dev/null 2>&1; then
+        dbus-send --system /com/nfschina/midhome/signal com.nfschina.midhome.signal.menu_refresh >/dev/null 2>&1
+        update-desktop-database /usr/share/applications/hildon >/dev/null 2>&1
+    fi
+
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+    ;;
+esac
+
+exit 0
+
