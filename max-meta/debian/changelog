@@ -1,3 +1,9 @@
+max-meta (7.0.max37) max; urgency=low
+
+  * Remove clamav and clamtk, close #614
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 22 Nov 2014 18:40:50 +0100
+
 max-meta (7.0.max36) max; urgency=low
 
   * Change python-exe to python-intef-exe, close #608
