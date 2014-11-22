@@ -1,0 +1,14 @@
+Source: max-appinventor
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
+Build-Depends: debhelper (>= 8.0.0), wget
+Standards-Version: 3.9.3
+Homepage: http://appinventor.mit.edu/explore/
+
+Package: appinventor
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Appinventor setup
+ This software is used in conjunction with
+ Google App Inventor for Android.  See appinventor.googlelabs.com

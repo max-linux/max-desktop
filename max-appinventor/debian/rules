@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+
+URL=http://dl.google.com/dl/appinventor/installers/linux/appinventor-setup_1.1_all.deb
+
+
+%:
+	dh $@ 
+
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) && dpkg -x appinventor*.deb tmp); \
+	fi
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
