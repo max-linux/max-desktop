@@ -7,10 +7,11 @@ if [ "$1" = "configure" ]; then
 
 
 
-  for home in $(find /home/ -maxdepth 1 -mindepth 1 -type d); do
+  for desktop in $(find /home/ -maxdepth 2 -name Escritorio); do
+    home=$(dirname $desktop)
     username=$(basename $home)
-    cp /etc/skel/Escritorio/firefox.desktop $home/Escritorio/
-    chown -R $username $home/Escritorio/firefox.desktop || true
+    cp /etc/skel/Escritorio/firefox.desktop $desktop/
+    chown -R $username $desktop/firefox.desktop || true
   done
 
 

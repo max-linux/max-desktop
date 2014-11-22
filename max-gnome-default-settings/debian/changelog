@@ -1,3 +1,9 @@
+max-gnome-default-settings (7.0.max42) max; urgency=low
+
+  * Add notification area to GNOME, close #597
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 22 Nov 2014 17:14:42 +0100
+
 max-gnome-default-settings (7.0.max41) max; urgency=low
 
   * Fix org.gnome.desktop.lockdown
