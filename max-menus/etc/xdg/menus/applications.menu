@@ -153,6 +153,7 @@
 				<And><Category>Clic</Category></And>
 				<And><Category>Malted</Category></And>
 				<And><Category>Hotpot</Category></And>
+				<And><Category>Squeak</Category></And>
 			</Exclude>
 
                         <Menu>
@@ -381,6 +382,11 @@
 			<Menu>
 				<Name>Squeak</Name>
 				<Directory>squeak.directory</Directory>
+				<Include>
+                                	<And>
+                                	<Category>Squeak</Category>
+                                	</And>
+                        	</Include>
 				<Include><Filename>squeak.desktop</Filename></Include>
 				<Include><Filename>squeak-doc.desktop</Filename></Include>
 				<Include><Filename>squeak-manual.desktop</Filename></Include>
