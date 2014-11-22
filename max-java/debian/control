@@ -7,18 +7,18 @@ Standards-Version: 3.8.4
 
 Package: max-java-jre
 Architecture: i386 amd64
-Depends: max-skel-conf, sun-java6-jre, oracle-java7-jre
+Depends: max-skel-conf, oracle-java8-jre
 Description: Dependencias de máquina virtual java JRE para Max
  Máquina virtual java JRE para Max
 
 Package: max-java-jdk
 Architecture: i386 amd64
-Depends: max-skel-conf, sun-java6-jdk, oracle-java7-jdk
+Depends: max-skel-conf, oracle-java8-jdk
 Description: Dependencias de máquina virtual java JDK para Max
  Máquina virtual java JDK para Max
 
 Package: max-java-plugin
 Architecture: i386 amd64
-Depends: max-skel-conf, max-java-jre, sun-java6-plugin, oracle-java7-plugin
+Depends: max-skel-conf, max-java-jre, oracle-java8-plugin
 Description: Dependencias de máquina virtual java (plugin mozilla) para Max
  Máquina virtual java (plugin mozilla) para Max

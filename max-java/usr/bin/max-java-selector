@@ -1,0 +1,222 @@
+#!/bin/bash
+# Script para cambiar la versión de java a utilizar en el equipo.
+version="1.1"
+
+nombre_script=`basename $0`
+titulo_ventana="$nombre_script - v$version"
+
+if [ $UID != 0 ] ; then
+   zenity --title "$titulo_ventana" --error --text "Se necesitan privilegios de administrador para ejecutar este script."
+   exit 1
+fi
+
+lista_versiones=""
+
+# Esta función necesita cuatro parámetros. Va modificando la variable
+# "lista_versiones" con el estado del paquete y con el formato adecuado
+# para pasarsela al zenity:
+# $1 = Nombre genérico de la versión de Java, la primera columna del menú.
+# $2 = Nombre real del paquete JRE.
+# $3 = Nombre real del paquete del plugin de java para el navegador.
+# $4 = Notas sobre la versión, la cuarta columna del menú.
+function comprueba_paquete()
+{
+   # Comprueba si existe el paquete en los repositorios.
+   # No se puede usar "dpkg-query" para esta tarea ya que se ha
+   # comprobado que no es fiable en algunos casos, por ejemplo
+   # con el paquete "icedtea-7-plugin".
+   apt-cache show "$2" > /dev/null
+   if [ $? != 0 ] ; then
+      lista_versiones="${lista_versiones}${1}@No encontrado en repositorios@"
+   else
+      dpkg -s "$2" | grep "Status:" | grep -q "ok installed"
+      if [ $? != 0 ] ; then
+         lista_versiones="${lista_versiones}${1}@No instalado@"
+      elif [ "$1" == "$java_actual" ] ; then
+         lista_versiones="${lista_versiones}${1}@Instalado(*)@"
+      else
+         lista_versiones="${lista_versiones}${1}@Instalado@"
+      fi
+   fi
+   # Comprueba si existe el paquete del plugin de java
+   apt-cache show "$3" > /dev/null
+   if [ $? != 0 ] ; then
+      lista_versiones="${lista_versiones}No encontrado en repositorios@${4}@"
+   else
+      dpkg -s "$3" | grep "Status:" | grep -q "ok installed"
+      if [ $? != 0 ] ; then
+         lista_versiones="${lista_versiones}No instalado@${4}@"
+      elif [ "$1" == "$plugin_actual" ] ; then
+         lista_versiones="${lista_versiones}Instalado(*)@${4}@"
+      else
+         lista_versiones="${lista_versiones}Instalado@${4}@"
+      fi
+   fi
+}
+
+
+# Averigua el java en uso.
+java_actual=`ls -l /etc/alternatives/java | cut -d">" -f 2`
+echo $java_actual | grep -q /java-6-sun/
+if [ $? == 0 ] ; then
+   java_actual="Sun Java 6"
+else
+   echo $java_actual | grep -q -e "/java-6-openjdk-i386/" -e "/java-6-openjdk-amd64/" 
+   if [ $? == 0 ] ; then
+      java_actual="Open JDK 6"
+   else
+      echo $java_actual | grep -q /java-7-oracle/ 
+      if [ $? == 0 ] ; then
+         java_actual="Oracle Java 7"
+      else
+         echo $java_actual | grep -q -e "/java-7-openjdk-i386/" -e "/java-7-openjdk-amd64/" 
+         if [ $? == 0 ] ; then
+            java_actual="Open JDK 7"
+         else
+            echo $java_actual | grep -q /java-8-oracle/ 
+            if [ $? == 0 ] ; then
+               java_actual="Oracle Java 8"
+            else
+               zenity --title "$titulo_ventana" --warning --text "No se ha encontrado la versión en uso de java."
+            fi
+         fi
+      fi
+   fi
+fi
+# Averigua el plugin en uso.
+plugin_actual=`ls -l /etc/alternatives/mozilla-javaplugin.so | cut -d">" -f 2`
+echo $plugin_actual | grep -q /java-6-sun/
+if [ $? == 0 ] ; then
+   plugin_actual="Sun Java 6"
+else
+   echo $plugin_actual | grep -q /java-6-openjdk 
+   if [ $? == 0 ] ; then
+      plugin_actual="Open JDK 6"
+   else
+      echo $plugin_actual | grep -q /java-7-oracle/ 
+      if [ $? == 0 ] ; then
+         plugin_actual="Oracle Java 7"
+      else
+         echo $plugin_actual | grep -q /java-7-openjdk 
+         if [ $? == 0 ] ; then
+            plugin_actual="Open JDK 7"
+         else
+            echo $plugin_actual | grep -q /java-8-oracle/ 
+            if [ $? == 0 ] ; then
+               plugin_actual="Oracle Java 8"
+            else
+               zenity --title "$titulo_ventana" --warning --text "No se ha encontrado la versión en uso del plugin java para el navegador."
+            fi
+         fi
+      fi
+   fi
+fi
+# Se prepara la lista de versiones java.
+comprueba_paquete "Sun Java 6"    "sun-java6-jre"     "sun-java6-plugin"    "Obsoleto"
+comprueba_paquete "Open JDK 6"    "openjdk-6-jre"     "icedtea-6-plugin"    "Obsoleto, compatible JClic"
+comprueba_paquete "Oracle Java 7" "oracle-java7-jre"  "oracle-java7-plugin" "Compatible trámites oficiales"
+comprueba_paquete "Open JDK 7"    "openjdk-7-jre"     "icedtea-7-plugin"    "Compatible JClic"
+comprueba_paquete "Oracle Java 8" "oracle-java8-jre"  "oracle-java8-plugin" "Última versión oficial"
+
+echo Lista de versiones: $lista_versiones
+
+IFS_OLD=$IFS
+IFS=@
+
+opcion=$(zenity --width=570 --height=270 --list \
+--title "$titulo_ventana" \
+--text "Seleccione la versión de Java que quiere utilizar.\n(*) Versión actualmente en uso." \
+--column "Versión" \
+--column "JRE"     \
+--column "Plugin"  \
+--column "Notas"   \
+$lista_versiones)
+# "$lista_versiones" es un texto del siguiente estilo que utiliza la @ como separador de campos:
+# Sun Java 6@Instalado@Oracle Java 7@No instalado@Open SDK 6@No instalado@Open SDK 7@Instalado@
+
+IFS=$IFS_OLD
+
+echo Opcion: $opcion
+
+case "$opcion" in
+   "Sun Java 6" )
+         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 2`
+         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="sun-java6-jre" ; fi
+         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 3`
+         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes sun-java6-plugin" ; fi
+         paquetes=`echo $paquetes`
+         cadena_ruta_java="/java-6-sun/"
+   ;;
+   "Open JDK 6")
+         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 6`
+         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="openjdk-6-jre" ; fi
+         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 7`
+         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes icedtea-6-plugin" ; fi
+         paquetes=`echo $paquetes`
+         cadena_ruta_java="/java-6-openjdk"
+   ;;
+   "Oracle Java 7")
+         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 10`
+         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="oracle-java7-jre" ; fi
+         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 11`
+         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes oracle-java7-plugin" ; fi
+         paquetes=`echo $paquetes`
+         cadena_ruta_java="/java-7-oracle/"
+   ;;
+   "Open JDK 7") 
+         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 14`
+         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="openjdk-7-jre" ; fi
+         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 15`
+         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes icedtea-7-plugin" ; fi
+         paquetes=`echo $paquetes`
+         alter_plugin="mozilla-javaplugin.so"
+         cadena_ruta_java="/java-7-openjdk"
+   ;;
+   "Oracle Java 8")
+         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 18`
+         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="oracle-java8-jre" ; fi
+         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 19`
+         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes oracle-java8-plugin" ; fi
+         paquetes=`echo $paquetes`
+         cadena_ruta_java="/java-8-oracle/"
+   ;;
+   *) exit 0
+esac
+
+if [ -z "$paquetes" ] ; then
+   zenity --title "$titulo_ventana" --error --text "No se puede instalar la versión \"$opcion\" por que no se\nencuentra en el reposistorio ninguno de los dos paquetes.\nPruebe a actualizar los repositorios ejecutando:\nsudo apt-get update"
+else
+
+   if [ "$estado_paquete_jre" == "No encontrado en repositorios" ] ; then
+      zenity --title "$titulo_ventana" --error --text "El paquete JRE no se puede instalar ya que\nno se encuentra diponible en los repositorios."
+   fi
+   if [ "$estado_paquete_plugin" == "No encontrado en repositorios" ] ; then
+      zenity --title "$titulo_ventana" --error --text "El paquete del plugin para el navegador no se puede instalar\nya que no se encuentra disponible en los repositorios."
+   fi
+
+   (
+   apt-get -y install $paquetes
+   resul=$?
+   sleep 2
+   if [ $resul != 0 ] ; then exit $resul; fi
+   ) 2>&1 | tee /dev/stderr | zenity --width=550 --height=250 --title "$titulo_ventana" --progress --pulsate --auto-close --auto-kill --text "Instalando: $paquetes"
+
+   if [ $PIPESTATUS != 0 ] ; then zenity --title "$titulo_ventana" --error --no-wrap --text "Error al ejecutar:\napt-get -y install $paquetes\n\nCompruebe que tiene conexión a internet y actualice\nla información de los repositorios ejecutando:\nsudo apt-get update" ; exit 1; fi
+
+   ruta=`update-alternatives --list java | grep "$cadena_ruta_java"` # Se optiene la ruta de instalación
+   if [ ! -f "$ruta" ] ; then zenity --title "$titulo_ventana" --error --text "No se encontró alternativa java para la versión $opcion." ; exit 1; fi
+   update-alternatives --set java "$ruta"
+   resul=$?
+   if [ $resul != 0 ] ; then zenity --title "$titulo_ventana" --error --text "\"update-alternatives --set java\" salió con error: $resul" ; exit 1; fi
+
+   ruta=`update-alternatives --list mozilla-javaplugin.so | grep "$cadena_ruta_java"` # Se optiene la ruta de instalación
+   if [ ! -f "$ruta" ] ; then zenity --title "$titulo_ventana" --error --text "No se encontró alternativa mozilla-javaplugin.so para la versión $opcion." ; exit 1; fi
+   update-alternatives --set mozilla-javaplugin.so "$ruta"
+   resul=$?
+   if [ $resul != 0 ] ; then zenity --title "$titulo_ventana" --error --text "\"update-alternatives --set mozilla-javaplugin.so\" salió con error: $resul" ; exit 1; fi
+
+   zenity --title "$titulo_ventana" --info --text "Se ha configurado el equipo para utilizar \"$opcion\"."
+fi
+
+
+

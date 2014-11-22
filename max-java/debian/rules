@@ -2,7 +2,7 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
-binary-install/max-java-jre::
+binary-install/max-java-jre_DISABLED_::
 
 	@echo "** Build ARCH: " $(DEB_BUILD_ARCH)
 

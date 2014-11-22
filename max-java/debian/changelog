@@ -1,3 +1,10 @@
+max-java (7.0.max11) max; urgency=low
+
+  * Depends on oracle-java8 and remove sun-java6
+  * Add max-java-selector, close #611
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 22 Nov 2014 14:48:35 +0100
+
 max-java (7.0.max10) max; urgency=low
 
   * max-java-jre more silent

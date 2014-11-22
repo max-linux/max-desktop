@@ -3,23 +3,23 @@
 #set -e
 
 # openjdk have priority 1061
-priority=2063
-basedir=/usr/lib/jvm/java-6-sun-max
-jre_tools='ControlPanel java java_vm javaws jcontrol keytool pack200 policytool rmid rmiregistry unpack200 orbd servertool tnameserv appletviewer jar jarsigner pluginappletviewer'
-
-configure_alternatives() {
-  for i in $jre_tools; do
-    [ ! -e $basedir/jre/bin/$i ] && continue 
-    update-alternatives --quiet \
-            --install \
-            /usr/bin/$i \
-            $i \
-            $basedir/jre/bin/$i \
-            $priority
-    #update-alternatives --quiet --set $i $basedir/jre/bin/$i
-    update-alternatives --quiet --auto $i
-  done
-}
+#priority=2063
+#basedir=/usr/lib/jvm/java-6-sun-max
+#jre_tools='ControlPanel java java_vm javaws jcontrol keytool pack200 policytool rmid rmiregistry unpack200 orbd servertool tnameserv appletviewer jar jarsigner pluginappletviewer'
+#
+#configure_alternatives() {
+#  for i in $jre_tools; do
+#    [ ! -e $basedir/jre/bin/$i ] && continue 
+#    update-alternatives --quiet \
+#            --install \
+#            /usr/bin/$i \
+#            $i \
+#            $basedir/jre/bin/$i \
+#            $priority
+#    #update-alternatives --quiet --set $i $basedir/jre/bin/$i
+#    update-alternatives --quiet --auto $i
+#  done
+#}
 
 
 if [ "$1" = "triggered" ]; then
@@ -47,10 +47,10 @@ if [ "$1" = "triggered" ]; then
 fi
 
 
-if [ "$1" = "configure" ]; then
-    configure_alternatives
-    update-java-alternatives --jre --set java-6-sun-max
-fi
+#if [ "$1" = "configure" ]; then
+#    configure_alternatives
+#    update-java-alternatives --jre --set java-6-sun-max
+#fi
 
 
 

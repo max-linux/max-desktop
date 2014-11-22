@@ -1,6 +1,6 @@
 #!/bin/bash
 
-JAVAWS=/usr/lib/jvm/java-6-sun-max/bin/javaws
+JAVAWS=/usr/lib/jvm/java-8-oracle/bin/javaws
 
 ARGS=""
 if [ ! "$@" ]; then
