@@ -1,3 +1,15 @@
+max-genlive (7.0.max40) max; urgency=low
+
+  * Add extras repo
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 22 Nov 2014 20:38:10 +0100
+
+max-genlive (7.0.max39) max; urgency=low
+
+  * Install linux-lts-trusty-tools
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 22 Nov 2014 17:35:59 +0100
+
 max-genlive (7.0.max38) max; urgency=low
 
   * Install UBUNTU_PACKAGES with ubuntu-desktop

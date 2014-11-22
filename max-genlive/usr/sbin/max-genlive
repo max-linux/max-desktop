@@ -22,8 +22,8 @@ MAXHOSTNAME=max75
 
 # Create a 12.04 with trusty kernel and Xorg
 LINUX_IMAGE="linux-image-generic-lts-trusty max-linux"
-LINUX_HEADERS="linux-headers-generic-lts-trusty max-linux-headers"
-XSERVER_XORG="xserver-xorg-trusty"
+LINUX_HEADERS="linux-headers-generic-lts-trusty max-linux-headers linux-lts-trusty-tools"
+XSERVER_XORG="xserver-xorg-lts-trusty"
 
 unset HOME
 export LC_ALL=C
