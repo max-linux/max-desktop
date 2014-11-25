@@ -1,3 +1,9 @@
+max-genlive (7.0.max41) max; urgency=low
+
+  * Fix genisoimage to enable UEFI
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 25 Nov 2014 17:50:43 +0100
+
 max-genlive (7.0.max40) max; urgency=low
 
   * Add extras repo
