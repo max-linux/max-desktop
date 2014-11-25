@@ -131,6 +131,7 @@
 		<Exclude><Filename>kde4-kbabel.desktop</Filename></Exclude>
 		<!--<Exclude><Filename>gtranslator.desktop</Filename></Exclude>-->
 		<Include><Filename>scratch.desktop</Filename></Include>
+		<Include><Filename>edu.media.mit.scratch2editor.desktop</Filename></Include>
 		<Exclude><Filename>fritzing.desktop</Filename></Exclude>
 	</Menu> <!-- End Development Tools -->
 	
