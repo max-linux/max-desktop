@@ -1,9 +1,10 @@
 #!/usr/bin/make -f
 #export DH_VERBOSE=1
 
+VERSION=1.1
 
-URL=http://dl.google.com/dl/appinventor/installers/linux/appinventor-setup_1.1_all.deb
-
+URL1=http://dl.google.com/dl/appinventor/installers/linux/appinventor-setup_$(VERSION)_all.deb
+URL2=http://commondatastorage.googleapis.com/appinventordownloads/appinventor2-setup_$(VERSION).tar.gz
 
 %:
 	dh $@ 
@@ -13,10 +14,18 @@ URL=http://dl.google.com/dl/appinventor/installers/linux/appinventor-setup_1.1_a
 override_dh_auto_build:
 	if [ ! -d build ]; then \
 		mkdir build ;\
-		( cd build && wget $(URL) && dpkg -x appinventor*.deb tmp); \
+		( cd build && wget $(URL1) && dpkg -x appinventor*.deb tmp); \
+		( cd build && wget $(URL2) && tar -zxf appinventor2-setup_$(VERSION).tar.gz); \
 	fi
 
 
 override_dh_clean:
 	dh_clean
 	rm -rf build
+
+
+override_dh_shlibdeps:
+	dh_shlibdeps -Xusr/google/appinventor/commands-for-Appinventor/emulator64-x86 -Xusr/google/appinventor/commands-for-Appinventor/emulator64-mips -Xusr/google/appinventor/commands-for-Appinventor/emulator64-arm
+
+override_dh_strip:
+	# do not strip, break executables

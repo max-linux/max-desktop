@@ -7,8 +7,9 @@ Standards-Version: 3.9.3
 Homepage: http://appinventor.mit.edu/explore/
 
 Package: appinventor
-Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Architecture: i386
+Multi-Arch: foreign
+Depends: libncurses5, ${shlibs:Depends}, ${misc:Depends}
 Description: Appinventor setup
  This software is used in conjunction with
  Google App Inventor for Android.  See appinventor.googlelabs.com
