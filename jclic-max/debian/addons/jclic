@@ -13,7 +13,7 @@ fi
 cd $HOME
 aux="java"
 export JMF_HOME="/usr/lib/jvm/jmf/"
-export JAVA_HOME="/usr/lib/jvm/java-6-sun-max/jre"
+export JAVA_HOME="/usr/lib/jvm/java-8-oracle/jre"
 export CLASSPATH="${JMF_HOME}/lib/jmf.jar:${JMF_HOME}/lib/mp3plugin.jar:${JMF_HOME}/lib/mediaplayer.jar:/usr/share/java:${CLASSPATH}"
 export LD_LIBRARY_PATH="${JMF_HOME}/lib:${LD_LIBRARY_PATH}"
 
