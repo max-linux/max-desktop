@@ -69,17 +69,20 @@ _echo "Generando ${ISO_FILE}"
 # montar chroot 
 mount -o bind $CHROOT/../ $CHROOT/mnt
 
-#chroot $CHROOT genisoimage -r -V "$TITLE (${ARCH})" -cache-inodes -J -l -b isolinux/isolinux.bin \
-#     -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
-#     -boot-info-table -o /mnt/${ISO_FILE} /mnt/cdimage.${ARCH}/ || _exit "Error generando la imagen ISO"
-
-chroot $CHROOT genisoimage -U -A "$TITLE (${ARCH})" -V "$TITLE (${ARCH})" \
+if [ "$ARCH" = "amd64" ]; then
+  chroot $CHROOT genisoimage -U -A "$TITLE (${ARCH})" -V "$TITLE (${ARCH})" \
      -J -joliet-long -r -v -T -cache-inodes -l -b isolinux/isolinux.bin \
      -volset "$TITLE (${ARCH})" \
      -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
      -boot-info-table -o /mnt/${ISO_FILE} \
      -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot \
      /mnt/cdimage.${ARCH}/ || _exit "Error generando la imagen ISO"
+else
+  chroot $CHROOT genisoimage -r -V "$TITLE (${ARCH})" -cache-inodes -J -l -b isolinux/isolinux.bin \
+     -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
+     -boot-info-table -o /mnt/${ISO_FILE} /mnt/cdimage.${ARCH}/ || _exit "Error generando la imagen ISO"
+fi
+
 
 umount $CHROOT/mnt
 

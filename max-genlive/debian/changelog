@@ -1,3 +1,9 @@
+max-genlive (7.0.max43) max; urgency=low
+
+  * Only build UEFI iso in amd64
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 26 Nov 2014 22:24:31 +0100
+
 max-genlive (7.0.max42) max; urgency=low
 
   * Log max-genlive output
