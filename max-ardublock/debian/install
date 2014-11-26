@@ -1,1 +1,5 @@
-*.jar usr/share/arduino/tools/ArduBlockTool/tool/
+# downloaded
+#*.jar usr/share/arduino/tools/ArduBlockTool/tool/
+
+# build from sources
+ardublock/target/ardublock-all.jar usr/share/arduino/tools/ArduBlockTool/tool/

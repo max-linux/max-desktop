@@ -6,10 +6,18 @@
 
 override_dh_clean:
 	dh_clean
-	rm -rf *.jar
+	rm -rf ardublock
 
 
 override_dh_auto_build:
 #	wget --no-check-certificate http://cloud.github.com/downloads/taweili/ardublock/ardublock-all.jar
-	curl -L -O http://cloud.github.com/downloads/taweili/ardublock/ardublock-all.jar
+#	curl -L -O http://cloud.github.com/downloads/taweili/ardublock/ardublock-all.jar
 
+	git clone https://github.com/taweili/ardublock
+	(cd ardublock && ./install_openblocks)
+	(cd ardublock && mvn validate && mvn clean package)
+
+# need X11, no debian/rules
+#	(cd ardublock && mvn compile exec:java -Dexec.mainClass="com.ardublock.Main")
+
+	find -type f
