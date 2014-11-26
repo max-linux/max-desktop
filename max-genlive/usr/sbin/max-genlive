@@ -1,10 +1,10 @@
 #!/bin/bash
 
 if [ "$1" = "amd64" ]; then
-  LOCAL_MIRROR=1 MIRROR=127.0.0.1 ENABLE_EXTRA=1 AMD64=1 max-genlive
+  LOCAL_MIRROR=1 MIRROR=127.0.0.1 ENABLE_EXTRA=1 AMD64=1 max-genlive 2>&1 | tee -a max-amd64.log
   exit 0
 elif [ "$1" = "i386" ]; then
-  LOCAL_MIRROR=1 MIRROR=127.0.0.1 ENABLE_EXTRA=1 max-genlive
+  LOCAL_MIRROR=1 MIRROR=127.0.0.1 ENABLE_EXTRA=1 max-genlive 2>&1 | tee -a max-i386.log
   exit 0
 fi
 
@@ -23,7 +23,7 @@ MAXHOSTNAME=max75
 # Create a 12.04 with trusty kernel and Xorg
 LINUX_IMAGE="linux-image-generic-lts-trusty max-linux"
 LINUX_HEADERS="linux-headers-generic-lts-trusty max-linux-headers linux-lts-trusty-tools"
-XSERVER_XORG="xserver-xorg-lts-trusty"
+XSERVER_XORG="xserver-xorg-lts-trusty libgl1-mesa-dri-lts-trusty libgl1-mesa-glx-lts-trusty x11-xserver-utils-lts-trusty"
 
 unset HOME
 export LC_ALL=C
