@@ -10,22 +10,28 @@ language=es
 EOF
 fi
 
+
+
 cd $HOME
-aux="java"
 export JMF_HOME="/usr/lib/jvm/jmf/"
-export JAVA_HOME="/usr/lib/jvm/java-8-oracle/jre"
 export CLASSPATH="${JMF_HOME}/lib/jmf.jar:${JMF_HOME}/lib/mp3plugin.jar:${JMF_HOME}/lib/mediaplayer.jar:/usr/share/java:${CLASSPATH}"
 export LD_LIBRARY_PATH="${JMF_HOME}/lib:${LD_LIBRARY_PATH}"
+JAVA=java
 
+ORACLE_JAVA=$(find /usr/lib/jvm/ -maxdepth 1 -type l| grep -v default-java| egrep "(oracle|sun)" | tail -1)
+if [ -d "$ORACLE_JAVA" ]; then
+    export JAVA_HOME="$ORACLE_JAVA"
+    JAVA=${JAVA_HOME}/jre/bin/java
+fi
 
 # TCOS thin client
 REMOTE_DISPLAY=$(echo $DISPLAY| awk -F ":" '{print $1}')
 if [ "${REMOTE_DISPLAY}" != "" ]; then
   if [ -x /usr/bin/padsp ]; then
-     padsp -s "$REMOTE_DISPLAY" -n JClic -m JClic-stream $aux -cp $CLASSPATH -jar /usr/share/java/jclic.jar "$@" 
+     padsp -s "$REMOTE_DISPLAY" -n JClic -m JClic-stream $JAVA -cp $CLASSPATH -jar /usr/share/java/jclic.jar "$@" 
      exit 0
   fi
 fi
 
-$aux -cp $CLASSPATH -jar /usr/share/java/jclic.jar "$@" 
+$JAVA -cp $CLASSPATH -jar /usr/share/java/jclic.jar "$@" 
 
