@@ -113,9 +113,9 @@ else
 fi
 # Se prepara la lista de versiones java.
 comprueba_paquete "Sun Java 6"    "sun-java6-jre"     "sun-java6-plugin"    "Obsoleto"
-comprueba_paquete "Open JDK 6"    "openjdk-6-jre"     "icedtea-6-plugin"    "Obsoleto, compatible JClic"
+comprueba_paquete "Open JDK 6"    "openjdk-6-jre"     "icedtea-6-plugin"    "Obsoleto, compatible DescartesWeb"
 comprueba_paquete "Oracle Java 7" "oracle-java7-jre"  "oracle-java7-plugin" "Compatible trámites oficiales"
-comprueba_paquete "Open JDK 7"    "openjdk-7-jre"     "icedtea-7-plugin"    "Compatible JClic"
+comprueba_paquete "Open JDK 7"    "openjdk-7-jre"     "icedtea-7-plugin"    "Compatible DescartesWeb"
 comprueba_paquete "Oracle Java 8" "oracle-java8-jre"  "oracle-java8-plugin" "Última versión oficial"
 
 echo Lista de versiones: $lista_versiones
