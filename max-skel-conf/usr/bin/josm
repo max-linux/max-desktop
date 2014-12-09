@@ -1,0 +1,14 @@
+#!/bin/sh
+# Simple wrapper script used to start JOSM in Debian
+set -e
+
+JAVACMD="`readlink -n -f /etc/alternatives/java`"
+JAVA_OPTS="$JAVA_OPTS -Djava.net.preferIPv4Stack=true -Djava.net.useSystemProxies=true"
+
+if [ "$JAVACMD" ]; then
+     echo "Using $JAVACMD to execute josm." || true
+     exec $JAVACMD $JAVA_OPTS -jar /usr/share/josm/josm.jar "$@"
+else
+     echo "No valid JVM found to run JOSM." || true
+     exit 1
+fi

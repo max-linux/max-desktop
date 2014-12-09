@@ -8,8 +8,8 @@ etc/skel/.bash_profile
 etc/skel/.bash_aliases
 etc/skel/.bashrc
 etc/skel/.bash_logout
+
 usr/share/system-config-printer/testpage-a4.ps
-usr/bin/mscore
 usr/share/icons/hicolor/48x48/apps/distributor-logo.png
 usr/share/xsessions/gnome-fallback.desktop
 usr/share/xsessions/gnome.desktop
@@ -17,3 +17,6 @@ usr/share/xsessions/twm.desktop
 usr/share/xsessions/gnome-classic.desktop
 usr/share/polkit-1/actions/org.freedesktop.consolekit.policy
 usr/lib/update-notifier/package-data-downloader
+
+usr/bin/josm
+usr/bin/mscore
