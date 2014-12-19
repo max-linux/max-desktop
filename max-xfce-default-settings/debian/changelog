@@ -1,3 +1,9 @@
+max-xfce-default-settings (7.0.max31) max; urgency=low
+
+  * Set Terminal as default XFCE4, close #633
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 19 Dec 2014 16:00:39 +0100
+
 max-xfce-default-settings (7.0.max30) max; urgency=low
 
   * Copy helpers.rc if no exists
