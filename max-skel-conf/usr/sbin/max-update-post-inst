@@ -178,3 +178,8 @@ if [ ! -e /var/lib/update-notifier/disable-hwe-eol-messages ]; then
   mkdir -p /var/lib/update-notifier
   touch /var/lib/update-notifier/disable-hwe-eol-messages
 fi
+
+
+# add alumno to dialout
+groups alumno | grep -q dialout || adduser alumno dialout
+
