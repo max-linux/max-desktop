@@ -76,7 +76,7 @@ ubiquity user-setup/allow-password-weak boolean true
 passwd passwd/alumno-userfullname string Alumno
 passwd passwd/alumno-username string alumno
 passwd passwd/alumno-password password alumno
-passwd passwd/alumno-default-groups string audio cdrom floppy video plugdev scanner vboxusers sambashare
+passwd passwd/alumno-default-groups string audio cdrom dialout floppy video plugdev scanner vboxusers sambashare
 
 ubiquity ubiquity/stepUserInfo boolean false
 #
