@@ -1,0 +1,23 @@
+build/tmp/usr/google    usr/
+
+# disabled for i386 arch
+#build/appinventor2-setup_1.1/appinventor/commands-for-Appinventor/emulator64-x86      usr/google/appinventor/commands-for-Appinventor/
+#build/appinventor2-setup_1.1/appinventor/commands-for-Appinventor/emulator64-mips     usr/google/appinventor/commands-for-Appinventor/
+#build/appinventor2-setup_1.1/appinventor/commands-for-Appinventor/emulator64-arm      usr/google/appinventor/commands-for-Appinventor/
+#
+#build/appinventor2-setup_1.1/appinventor/commands-for-Appinventor/aiStarter           usr/google/appinventor/commands-for-Appinventor/
+#build/appinventor2-setup_1.1/appinventor/commands-for-Appinventor/reset-emulator      usr/google/appinventor/commands-for-Appinventor/
+#build/appinventor2-setup_1.1/appinventor/commands-for-Appinventor/getversion          usr/google/appinventor/commands-for-Appinventor/
+#build/appinventor2-setup_1.1/appinventor/commands-for-Appinventor/emulator-mips       usr/google/appinventor/commands-for-Appinventor/
+#build/appinventor2-setup_1.1/appinventor/commands-for-Appinventor/emulator-arm        usr/google/appinventor/commands-for-Appinventor/
+#build/appinventor2-setup_1.1/appinventor/commands-for-Appinventor/emulator-x86        usr/google/appinventor/commands-for-Appinventor/
+
+
+build/appinventor2-setup_1.1/appinventor/commands-for-Appinventor/*                   usr/google/appinventor/commands-for-Appinventor/
+
+
+debian/appinventor.png                usr/share/pixmaps/
+
+debian/appinventor.desktop            usr/share/applications/
+debian/appinventor-starter.desktop    usr/share/applications/
+
