@@ -5,18 +5,18 @@ Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.3
 
-Package: max-gambas
-Architecture: all
-Depends: gambas2
-Conflicts: gambas3-runtime
-Description: Gambas2 metapakacge for MAX
- Gambas2 metapakacge for MAX
+#Package: max-gambas
+#Architecture: all
+#Depends: gambas2
+#Conflicts: gambas3-runtime
+#Description: Gambas2 metapakacge for MAX
+# Gambas2 metapakacge for MAX
 
 
 # for extras
-#Package: max-gambas
-#Architecture: all
-#Depends: gambas3
-#Conflicts: gambas2-runtime
-#Description: Gambas2 metapakacge for MAX
-# Gambas2 metapakacge for MAX
+Package: max-gambas
+Architecture: all
+Depends: gambas3
+Conflicts: gambas2-runtime
+Description: Gambas3 metapakacge for MAX
+ Gambas3 metapackage for MAX
