@@ -1,3 +1,9 @@
+max-fonts (8.0-max1) max; urgency=low
+
+  * Build in MAX 8.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 08 Feb 2015 12:55:28 +0100
+
 max-fonts (7.0-max2) max; urgency=low
 
   * Remove ttf-symbol-replacement and ttf-tomsontalk from depends
