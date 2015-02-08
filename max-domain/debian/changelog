@@ -1,3 +1,9 @@
+max-domain (0.4max2) max; urgency=low
+
+  * Build in MAX 8.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 08 Feb 2015 12:54:22 +0100
+
 max-domain (0.4max1) max; urgency=low
 
   * Set dconf domain with gsettings in 80_configure_domain_session
