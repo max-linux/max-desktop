@@ -9,21 +9,21 @@ elif [ "$1" = "i386" ]; then
 fi
 
 
-DISTRO=precise
-DISTRO_VERSION="12.04"
+DISTRO=trusty
+DISTRO_VERSION="14.04"
 ARCH=i386
 NANOARCH=i386
-MAX_VERSION="7.5.1"
+MAX_VERSION="8.0"
 IMAGE_NAME="MaX-${MAX_VERSION}"
 LINUX_IMAGE="max-linux"
 LINUX_HEADERS="max-linux-headers"
 XSERVER_XORG="xserver-xorg"
-MAXHOSTNAME=max75
+MAXHOSTNAME=max80
 
-# Create a 12.04 with trusty kernel and Xorg
-LINUX_IMAGE="linux-image-generic-lts-trusty max-linux"
-LINUX_HEADERS="linux-headers-generic-lts-trusty max-linux-headers linux-lts-trusty-tools"
-XSERVER_XORG="xserver-xorg-lts-trusty libgl1-mesa-dri-lts-trusty libgl1-mesa-glx-lts-trusty x11-xserver-utils-lts-trusty"
+## Create a 12.04 with trusty kernel and Xorg
+#LINUX_IMAGE="linux-image-generic-lts-trusty max-linux"
+#LINUX_HEADERS="linux-headers-generic-lts-trusty max-linux-headers linux-lts-trusty-tools"
+#XSERVER_XORG="xserver-xorg-lts-trusty libgl1-mesa-dri-lts-trusty libgl1-mesa-glx-lts-trusty x11-xserver-utils-lts-trusty"
 
 unset HOME
 export LC_ALL=C
