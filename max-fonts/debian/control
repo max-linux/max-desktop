@@ -7,6 +7,20 @@ Standards-Version: 3.9.3
 
 Package: max-fonts
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, ttf-essays1743, ttf-junicode, ttf-levien-typoscript, ttf-linex, ttf-marvosym, ttf-oflb-asana-math, ttf-oflb-euterpe, ttf-oflb-euterpe, ttf-sil-andika, ttf-century-catalogue, ttf-mgopen, ttf-beteckna, ttf-droid, ttf-ecolier-court, ttf-ecolier-lignes-court, ttf-bpg-georgian-fonts, ttf-adf-verana, ttf-goudybookletter, ttf-levien-museum, ttf-linux-libertine, ttf-ancient-fonts, ttf-inconsolata, ttf-engadget, ttf-okolaks, ttf-opendin, ttf-radisnoir, ttf-rufscript, ttf-sil-gentium, ttf-atarismall, ttf-breip, ttf-staypuft, ttf-aenigma, ttf-fifthhorseman-dkg-handwriting, ttf-isabella, ttf-sjfonts, ttf-georgewilliams, ttf-femkeklaver, ttf-adf-universalis, ttf-adf-tribun, ttf-adf-switzera, ttf-adf-romande, ttf-adf-oldania, ttf-adf-mekanus, ttf-adf-libris, ttf-adf-irianis, ttf-adf-ikarius, ttf-adf-gillius, ttf-adf-berenis, ttf-adf-baskervald, ttf-adf-accanthis, otf-freefont, ttf-dustin
+Depends: ${shlibs:Depends}, ${misc:Depends},
+  ttf-essays1743, ttf-junicode,
+  ttf-marvosym,
+  ttf-beteckna,
+  ttf-adf-verana, ttf-goudybookletter, ttf-linux-libertine,
+  ttf-ancient-fonts, ttf-engadget,
+  ttf-radisnoir,
+  ttf-atarismall, ttf-staypuft, ttf-aenigma,
+  ttf-fifthhorseman-dkg-handwriting, ttf-isabella, ttf-sjfonts,
+  ttf-georgewilliams, ttf-femkeklaver, ttf-adf-universalis,
+  ttf-adf-tribun, ttf-adf-switzera, ttf-adf-romande,
+  ttf-adf-oldania, ttf-adf-mekanus, ttf-adf-libris,
+  ttf-adf-irianis, ttf-adf-ikarius, ttf-adf-gillius,
+  ttf-adf-berenis, ttf-adf-baskervald, ttf-adf-accanthis,
+  otf-freefont
 Description: Some fonts for MAX distro
  Some fonts for MAX distro
