@@ -1,3 +1,9 @@
+max-lxde-default-settings (8.0.max1) max; urgency=low
+
+  * Build in MAX 8.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 17 Feb 2015 14:43:32 +0100
+
 max-lxde-default-settings (7.0.max3) max; urgency=low
 
   * Remove /etc/skel/.xscreensaver (included in max-skel-conf)
