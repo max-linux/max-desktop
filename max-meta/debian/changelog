@@ -1,3 +1,14 @@
+max-meta (8.0.max5) max; urgency=low
+
+  * Remove GNOME depends:
+    - gnome-photo-printer
+    - gqview
+    - gstreamer0.10-ffmpeg
+    - gtk2-engines-clearlooks, gtk2-engines-industrial, gtk2-engines-mist
+    - min12xxw
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 17 Feb 2015 17:37:01 +0100
+
 max-meta (8.0.max4) max; urgency=low
 
   * Remove some depends from max-gnome-desktop-environment
