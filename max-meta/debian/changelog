@@ -1,3 +1,18 @@
+max-meta (8.0.max3) max; urgency=low
+
+  * Remove more packages:
+    - gournal
+    - iscan, iscan-plugins
+    - libdvdcss2
+    - linuxprinting.org-ppds
+    - max-elotouch
+    - ntfsprogs
+    - pseint
+  * Change:
+    - language-selector => language-selector-gnome
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 17 Feb 2015 17:14:55 +0100
+
 max-meta (8.0.max2) max; urgency=low
 
   * Remove some depends:
