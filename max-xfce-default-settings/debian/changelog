@@ -1,3 +1,15 @@
+max-xfce-default-settings (8.0.max2) max; urgency=low
+
+  * Change menu to 8.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 17 Feb 2015 15:06:16 +0100
+
+max-xfce-default-settings (8.0.max1) max; urgency=low
+
+  * Build in MAX 8.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 17 Feb 2015 15:03:46 +0100
+
 max-xfce-default-settings (7.0.max31) max; urgency=low
 
   * Set Terminal as default XFCE4, close #633
