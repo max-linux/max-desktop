@@ -15,11 +15,11 @@ Depends: firefox,
 	 max-ubufox,
 #NO#         firefox-greasemonkey, 
 #NO#         firefox-downloadhelper, 
-         xul-ext-procon-latte,
+#         xul-ext-procon-latte,
 #NO#         firefox-stylish,
 #NO#         xul-ext-flashblock,
-         xul-ext-firebug,
-         xul-ext-greasemonkey,
+#         xul-ext-firebug,
+#         xul-ext-greasemonkey,
          mozplugger
 #Conflicts: firefox (<< 9.99), firefox (>= 10.1)
 Description: Configuración de firefox para Ubuntu/MAX.
