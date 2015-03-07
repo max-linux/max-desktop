@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/sh
 # MaX dont fail creating users
 #set -e
 
@@ -399,6 +399,7 @@ else
 	db_set passwd/user-password-again ''
 fi
 
+
 # MaX ensure to disable root password
 usermod -L root || true
 
@@ -469,5 +470,6 @@ cat << EOF >> $ROOT/etc/default/locale
 LANG="es_ES.UTF-8"
 LC_ALL="es_ES.UTF-8"
 EOF
+
 
 exit 0
