@@ -16,9 +16,9 @@ fi
 UPDATE_GRUB=0
 
 if [ -e /etc/default/grub ]; then
-  if ! grep -q "MaX-7.5" /etc/default/grub 2>/dev/null; then
+  if ! grep -q "MaX-8.0" /etc/default/grub 2>/dev/null; then
     echo '' >> /etc/default/grub
-    echo 'GRUB_DISTRIBUTOR="MaX-7.5"' >> /etc/default/grub
+    echo 'GRUB_DISTRIBUTOR="MaX-8.0"' >> /etc/default/grub
     UPDATE_GRUB=1
   fi
 
@@ -154,12 +154,12 @@ fi
 
 
 # upgrade to MAX 7.5
-if ! grep -q "/max75" /etc/apt/sources.list; then
-  echo " * Updating sources.list to upgrade to MAX 7.5 ..."
-  # substitutes max70 with max75
-  cp /etc/apt/sources.list /etc/apt/sources.list.bak
-  sed -i -e 's#http://\(.*\)/max70#http://$1/max75#g' /etc/apt/sources.list
-fi
+#if ! grep -q "/max75" /etc/apt/sources.list; then
+#  echo " * Updating sources.list to upgrade to MAX 7.5 ..."
+#  # substitutes max70 with max75
+#  cp /etc/apt/sources.list /etc/apt/sources.list.bak
+#  sed -i -e 's#http://\(.*\)/max70#http://$1/max75#g' /etc/apt/sources.list
+#fi
 
 
 # change background image with better size
@@ -181,5 +181,5 @@ fi
 
 
 # add alumno to dialout
-groups alumno | grep -q dialout || adduser alumno dialout
+groups alumno 2>/dev/null | grep -q dialout || adduser alumno dialout
 

@@ -1,3 +1,15 @@
+max-skel-conf (8.0.max3) max; urgency=low
+
+  * Don't fail if alumno no exists set GRUB MAX 8.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 07 Mar 2015 13:16:09 +0100
+
+max-skel-conf (8.0.max2) max; urgency=low
+
+  * Add /etc/default/rcS to divert
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 17 Feb 2015 18:06:14 +0100
+
 max-skel-conf (8.0.max1) max; urgency=low
 
   * Build in MAX 8.0
