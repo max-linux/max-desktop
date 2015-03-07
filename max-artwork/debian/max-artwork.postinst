@@ -4,10 +4,6 @@
 case "$1" in
   configure)
 
-    # update icon cache
-    echo " * Updating maxtoon icon cache ..."
-    gtk-update-icon-cache /usr/share/icons/maxtoon > /dev/null 2>&1|| true
-
     # update-grub
     if [ -x "`which update-grub 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
       update-grub

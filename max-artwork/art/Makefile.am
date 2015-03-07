@@ -1,1 +1,1 @@
-SUBDIRS = gdm gnome gtk theme wallpapers icons metacity grub
+SUBDIRS = gdm gnome gtk theme wallpapers metacity grub
