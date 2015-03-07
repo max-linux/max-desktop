@@ -1,3 +1,11 @@
+ubiquity-frontend-max (8.0.max2) max; urgency=low
+
+  * Remove nanomax-installer from depends
+  * Move sti to new package ubiquity-frontend-max-bin
+  * Convert to all arch package
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 07 Mar 2015 13:21:24 +0100
+
 ubiquity-frontend-max (8.0.max1) max; urgency=low
 
   * Sync with 2.18.8.7 of Ubuntu trusty

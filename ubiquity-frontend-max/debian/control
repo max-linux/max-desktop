@@ -7,8 +7,8 @@ Standards-Version: 3.8.4
 XS-Vcs-Browser: http://max.educa.madrid.org:8000/browser/trunk/ubiquity-frontend-max
 
 Package: ubiquity-frontend-max
-Architecture: any
-Depends: ubiquity, ubiquity-frontend-gtk, debconf-utils, nanomax-installer, ubiquity-slideshow-max
+Architecture: all
+Depends: ubiquity, ubiquity-frontend-gtk, debconf-utils, ubiquity-slideshow-max, ubiquity-frontend-max-bin
 Conflicts: max-live (<< 7.0max5)
 Description: Some files to custom ubiquity installer
  Contains:

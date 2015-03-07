@@ -9,7 +9,6 @@ clean::
 	#   CLEAN PYC files
 	#
 	python $(CURDIR)/compile-py-modules.py --clean
-	cd sti && make clean
 
 
 build/ubiquity-frontend-max::
@@ -17,11 +16,3 @@ build/ubiquity-frontend-max::
 	#  COMPILE PYC files
 	#
 	python $(CURDIR)/compile-py-modules.py --compile
-	cd sti && make
-
-
-binary-install/ubiquity-frontend-max::
-	cd sti && make install DESTDIR=$(CURDIR)/debian/ubiquity-frontend-max
-	# clean svn dirs
-	find $(CURDIR)/debian/ubiquity-frontend-max -type d -name .svn | xargs rm -rf --
-	rm -rf $(CURDIR)/debian/ubiquity-frontend-max/usr/share/dpsyco
