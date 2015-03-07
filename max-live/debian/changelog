@@ -1,3 +1,9 @@
+max-live (8.0.max2) max; urgency=low
+
+  * Remove ntfsprogs from depends
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 07 Mar 2015 13:12:56 +0100
+
 max-live (8.0.max1) max; urgency=low
 
   * Build in MAX 8.0

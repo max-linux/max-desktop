@@ -12,7 +12,8 @@ Depends: ubiquity-frontend-max,
          language-pack-es,
          language-pack-kde-es,
 #         language-support-es,
-         laptop-detect, ntfsprogs,
+         laptop-detect,
+#        ntfsprogs,
          lupin-casper
 Provides: max-install
 Replaces: max-install
