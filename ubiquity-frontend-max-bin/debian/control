@@ -1,0 +1,14 @@
+Source: ubiquity-frontend-max-bin
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 7.0.0), cdbs
+Standards-Version: 3.8.4
+
+Package: ubiquity-frontend-max-bin
+Architecture: any
+Conflicts: ubiquity-frontend-max-bin (<< 8.0.max2)
+Description: Binary files to custom ubiquity installer
+ Contains:
+  * MaX gui of ubiquity installer
+
