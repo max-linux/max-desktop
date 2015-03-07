@@ -1,0 +1,15 @@
+#!/bin/sh
+
+
+case "$1" in
+  configure)
+
+    # update icon cache
+    echo " * Updating maxtoon icon cache ..."
+    gtk-update-icon-cache /usr/share/icons/maxtoon > /dev/null 2>&1|| true
+  ;;
+esac
+
+#DEBHELPER#
+
+exit 0

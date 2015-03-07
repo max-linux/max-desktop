@@ -1,0 +1,12 @@
+Source: max-artwork-icon-maxtoon
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
+Build-Depends: debhelper (>= 8.0.0), imagemagick, librsvg2-bin
+Standards-Version: 3.9.3
+
+Package: max-artwork-icon-maxtoon
+Architecture: all
+Conflicts: max-artwork (<< 8.0.max2)
+Description: Maxtoon icon theme for MAX
+ Maxtoon icon theme for MAX

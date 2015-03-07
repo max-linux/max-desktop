@@ -1,14 +1,11 @@
+datadir = /usr/share/
 themedir = $(datadir)/icons/maxtoon
 
-#ls /mnt/distro/chroot.i386/usr/share/icons/gnome/
-#16x16  22x22  24x24  32x32  48x48  8x8  icon-theme.cache  index.theme  scalable
-
-#ls /mnt/distro/chroot.i386/usr/share/icons/hicolor/
-#128x128  16x16  192x192  20x20  22x22  24x24  256x256  32x32  36x36  48x48  64x64  72x72  96x96  icon-theme.cache  index.theme  scalable
+##SIZES=16x16 22x22 24x24 32x32 48x48 64x64 72x72 96x96 128x128
+#SIZES=16x16
 
 SIZES=16x16 22x22 24x24 32x32 48x48 64x64
-#SIZES=16x16 22x22 24x24 32x32 48x48 64x64 72x72 96x96 128x128
-#SIZES=16x16
+
 
 all: build
 clean:
@@ -42,7 +39,7 @@ printindextheme:
 
 
 
-build: clean
+build:
 	@for size in $(SIZES); do\
 		_size=`echo $$size | cut -dx -f1`;\
 		echo "Building theme for $$size size"; \
