@@ -1,3 +1,9 @@
+max-genlive (8.0.max2) max; urgency=low
+
+  * Update isolinux bin files, and remove some blackliested packages
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 09 Mar 2015 19:06:07 +0100
+
 max-genlive (8.0.max1) max; urgency=low
 
   * Build in MAX 8.0

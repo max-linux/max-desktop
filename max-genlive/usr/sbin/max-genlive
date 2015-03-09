@@ -92,7 +92,8 @@ if [ "$ARCH" = "amd64" ]; then
   PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN efibootmgr grub-efi grub-efi-amd64 grub-efi-amd64-bin grub-efi-amd64-signed secureboot-db shim shim-signed"
 fi
 
-PAQUETES_EXTRA_RESTRICTED="drdsl"
+#PAQUETES_EXTRA_RESTRICTED="drdsl"
+PAQUETES_EXTRA_RESTRICTED=""
 PAQUETES_INFANTIL="max-desktop-infantil-primaria max-infantil"
 
 
@@ -101,9 +102,9 @@ PAQUETES_EXTRA="$PAQUETES_EXTRA max-tcos-alumno max-tcos-profesor"
 PAQUETES_EXTRA="$PAQUETES_EXTRA linux-wlan-ng-firmware max-desktop-infantil-primaria max-infantil"
 
 BLACKLIST_PKGS="jetty resolvconf "
-BLACKLIST_PKGS="$BLACKLIST_PKGS python-ubuntuone python-ubuntuone-client python-ubuntuone-storageprotocol ubuntuone-client"
-BLACKLIST_PKGS="$BLACKLIST_PKGS ubuntuone-client-gnome rhythmbox-ubuntuone-music-store"
-BLACKLIST_PKGS="$BLACKLIST_PKGS icedtea6-plugin icedtea-6-jre-cacao kpackagekit arora openjdk-6-doc"
+#BLACKLIST_PKGS="$BLACKLIST_PKGS python-ubuntuone python-ubuntuone-client python-ubuntuone-storageprotocol ubuntuone-client"
+#BLACKLIST_PKGS="$BLACKLIST_PKGS ubuntuone-client-gnome rhythmbox-ubuntuone-music-store"
+BLACKLIST_PKGS="$BLACKLIST_PKGS icedtea6-plugin icedtea-6-jre-cacao arora openjdk-6-doc"
 BLACKLIST_PKGS="$BLACKLIST_PKGS x11proto-core-dev x11proto-composite-dev python-dev libglade2.0-cil-dev xtrans-dev"
 BLACKLIST_PKGS="$BLACKLIST_PKGS x11proto-kb-dev x11proto-input-dev x11proto-core-dev libxt-dev libxdmcp-dev libxcb1-dev libxau-dev"
 BLACKLIST_PKGS="$BLACKLIST_PKGS libx11-dev libltdl-dev libplymouth-dev libpthread-stubs0-dev"
@@ -114,18 +115,20 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS landscape-client landscape-common"
 BLACKLIST_PKGS="$BLACKLIST_PKGS appmenu-gtk appmenu-gtk3 appmenu-qt indicator-appmenu"
 BLACKLIST_PKGS="$BLACKLIST_PKGS firefox-globalmenu thunderbird-globalmenu"
 # Ubuntu 12.04 Overlay scrollbar
-BLACKLIST_PKGS="$BLACKLIST_PKGS overlay-scrollbar liboverlay-scrollbar-0.2-0 liboverlay-scrollbar3-0.2-0"
+BLACKLIST_PKGS="$BLACKLIST_PKGS overlay-scrollbar"
 ## gdm by default https://bugs.launchpad.net/ubuntu/+source/gdm/+bug/805154
 ##BLACKLIST_PKGS="$BLACKLIST_PKGS lightdm unity-greeter"
 # ibus (chinnese and japan input)
-BLACKLIST_PKGS="$BLACKLIST_PKGS ibus-gtk ibus-gtk3 ibus-pinyin ibus-table pinyin-database libibus-1.0-0"
+BLACKLIST_PKGS="$BLACKLIST_PKGS ibus-gtk ibus-gtk3 ibus-pinyin ibus-table pinyin-database"
 # don't install English help #439
 BLACKLIST_PKGS="$BLACKLIST_PKGS libreoffice-help-en-gb libreoffice-help-en-us"
 # ubiquity install KDE
 BLACKLIST_PKGS="$BLACKLIST_PKGS ubiquity-frontend-kde compiz compiz-core"
-# ubiquity install KDE
+# no software center
 BLACKLIST_PKGS="$BLACKLIST_PKGS software-center"
-
+# ubuntu trusty
+BLACKLIST_PKGS="$BLACKLIST_PKGS oneconf oneconf-common"
+BLACKLIST_PKGS="$BLACKLIST_PKGS unity-gtk2-module unity-gtk3-module unity-services"
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
 GENLIVE=/usr/share/max-genlive

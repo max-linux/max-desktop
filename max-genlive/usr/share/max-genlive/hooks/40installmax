@@ -11,7 +11,6 @@ export DEBIAN_FRONTEND="noninteractive"
 export UCF_FORCE_CONFFOLD=1
 export ERROR=0
 export MAX_ERROR=0
-apt-get $APT_OPTS install max-keyring || ERROR=1
 apt-get $APT_OPTS update || ERROR=1
 apt-get $APT_OPTS install squashfs-tools
 apt-get $APT_OPTS install max-gnome-desktop-environment || ERROR=1
@@ -22,7 +21,6 @@ apt-get $APT_OPTS install max-desktop-xfce || ERROR=1
 apt-get $APT_OPTS install max-pdi || ERROR=1
 apt-get $APT_OPTS install max-manuales || ERROR=1
 apt-get $APT_OPTS install max-drivers || ERROR=1
-apt-get $APT_OPTS install plopp robolinux-rcx || ERROR=1
 #apt-get $APT_OPTS install max-desktop-infantil-primaria || ERROR=1
 [ "\$(ls /home/)" != "" ] && rm -rf /home/* && apt-get $APT_OPTS -f install 
 apt-get clean
