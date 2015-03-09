@@ -138,14 +138,14 @@ class PageGtk(PageBase):
             os.popen("sudo rm -f /tmp/max_install_type /tmp/sendinfo")
         except:
             pass
-        syslog.syslog("DEBUG: preseeding max.seed")
-        os.popen("sudo debconf-set-selections < /cdrom/preseed/max.seed")
+        # syslog.syslog("DEBUG: preseeding max.seed")
+        # os.popen("sudo debconf-set-selections < /cdrom/preseed/max.seed")
 
         self.set_install_type('escritorio')
         for radio in self.install_types:
             getattr(self, "install_type_%s"%radio).connect('toggled', self.on_install_type_radio_toggled, radio)
 
-        self.set_hostname('max75')
+        self.set_hostname('max80')
         self.hostname_widget.connect('changed', self.on_hostname_changed)
         self.hostname_error_widget.hide()
 

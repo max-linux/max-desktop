@@ -115,15 +115,16 @@ else
 	srcdirectory="$directory"
 fi
 
-if [ "$protocol" = http ]; then
-	db_get mirror/$protocol/proxy
-	proxy="$RET"
-	if [ -n "$proxy" ]; then
-		if ! grep -iq "Acquire::$protocol::Proxy" $ROOT/etc/apt/apt.conf.new; then
-			echo "Acquire::$protocol::Proxy \"$proxy\";" >> $ROOT/etc/apt/apt.conf.new
-		fi
-	fi
-fi
+case $protocol in
+    http|https)
+       db_get mirror/$protocol/proxy
+       proxy="$RET"
+       if [ -n "$proxy" ]; then
+               if ! grep -iq "Acquire::$protocol::Proxy" $ROOT/etc/apt/apt.conf.new; then
+                       echo "Acquire::$protocol::Proxy \"$proxy\";" >> $ROOT/etc/apt/apt.conf.new
+               fi
+       fi
+esac
 
 db_get apt-setup/proposed
 PROPOSED="$RET"
