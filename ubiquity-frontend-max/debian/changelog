@@ -1,3 +1,9 @@
+ubiquity-frontend-max (8.0.max5) max; urgency=low
+
+  * Fix new Exceptions for python3
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 09 Mar 2015 19:29:37 +0100
+
 ubiquity-frontend-max (8.0.max4) max; urgency=low
 
   * Don't preseed during installer, and update default hostname to max80

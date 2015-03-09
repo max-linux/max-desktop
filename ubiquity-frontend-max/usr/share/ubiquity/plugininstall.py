@@ -1829,8 +1829,8 @@ class Install(install_misc.InstallBase):
                 os.unlink("/target/usr/lib/libdebian-installer.so.4")
                 os.unlink("/target/usr/lib/libdebian-installer.so.4.0.7")
 
-        except Exception,err:
-            syslog.syslog("DEBUG: Exception in do_autoremove(): %s"%err)
+        except Exception:
+            syslog.syslog("DEBUG: Exception in do_autoremove()")
         install_misc.chroot_cleanup(self.target)
 
     # MaX
@@ -1909,8 +1909,8 @@ class Install(install_misc.InstallBase):
         
         try:
             self.killall_target_proc()
-        except Exception, err:
-            syslog.syslog("DEBUG: install_max_extras() Exception %s"%err)
+        except Exception:
+            syslog.syslog("DEBUG: install_max_extras() Exception")
 
 
 if __name__ == '__main__':
