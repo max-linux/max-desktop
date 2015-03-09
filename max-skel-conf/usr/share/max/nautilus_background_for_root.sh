@@ -1,16 +1,16 @@
 #!/bin/sh
 
 
-if [ -d /root/.themes/Max70 ]; then
+if [ -d /root/.themes/MaxTheme ]; then
   #echo " * Root theme configured"
   exit
 fi
 
 
-mkdir -p /root/.themes/Max70
-cd /root/.themes/Max70
+mkdir -p /root/.themes/MaxTheme
+cd /root/.themes/MaxTheme
 
-for a in /usr/share/themes/Max70/*; do
+for a in /usr/share/themes/MaxTheme/*; do
   ln -s $a
 done
 
@@ -20,8 +20,8 @@ mkdir -p gtk-3.0/apps gtk-3.0/assets
 
 IFS='
 '
-for f in $(find /usr/share/themes/Max70/gtk-3.0/ -type f); do
-  dest=$(echo $f| sed 's@/usr/share/themes/Max70/@@g')
+for f in $(find /usr/share/themes/MaxTheme/gtk-3.0/ -type f); do
+  dest=$(echo $f| sed 's@/usr/share/themes/MaxTheme/@@g')
   ln -s "$f" "$dest"
 done
 
