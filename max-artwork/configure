@@ -5693,7 +5693,7 @@ $as_echo "$LINGUAS" >&6; }
 	< $srcdir/po/POTFILES.in > po/POTFILES
 
 
-ac_config_files="$ac_config_files Makefile art/theme/Makefile art/theme/Max70/Makefile art/wallpapers/Makefile art/gtk/Makefile art/gtk/MaxColors/Makefile art/gdm/Makefile art/gdm/Max/Makefile art/Makefile art/metacity/Makefile art/metacity/MaxColors/Makefile art/splash/Makefile art/xsplash/Makefile art/gnome/MaxPlain/Makefile art/gnome/Makefile art/gnome/MaxColors/Makefile art/grub/Makefile po/Makefile"
+ac_config_files="$ac_config_files Makefile art/theme/Makefile art/theme/MaxTheme/Makefile art/wallpapers/Makefile art/gtk/Makefile art/gtk/MaxColors/Makefile art/gdm/Makefile art/gdm/Max/Makefile art/Makefile art/metacity/Makefile art/metacity/MaxColors/Makefile art/splash/Makefile art/xsplash/Makefile art/gnome/MaxPlain/Makefile art/gnome/Makefile art/gnome/MaxColors/Makefile art/grub/Makefile po/Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -6341,7 +6341,7 @@ do
     "default-1") CONFIG_COMMANDS="$CONFIG_COMMANDS default-1" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "art/theme/Makefile") CONFIG_FILES="$CONFIG_FILES art/theme/Makefile" ;;
-    "art/theme/Max70/Makefile") CONFIG_FILES="$CONFIG_FILES art/theme/Max70/Makefile" ;;
+    "art/theme/MaxTheme/Makefile") CONFIG_FILES="$CONFIG_FILES art/theme/MaxTheme/Makefile" ;;
     "art/wallpapers/Makefile") CONFIG_FILES="$CONFIG_FILES art/wallpapers/Makefile" ;;
     "art/gtk/Makefile") CONFIG_FILES="$CONFIG_FILES art/gtk/Makefile" ;;
     "art/gtk/MaxColors/Makefile") CONFIG_FILES="$CONFIG_FILES art/gtk/MaxColors/Makefile" ;;

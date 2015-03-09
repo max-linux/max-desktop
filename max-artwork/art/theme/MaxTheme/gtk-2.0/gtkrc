@@ -1,13 +1,8 @@
-# Ubuntu Human-Murrine Colorscheme
-#
-# Authors:
-# Cory Kontros <coryisatm@nc.rr.com>
-# Richard Stellingwerff <remenic@gmail.com>
-# Daniel Borgmann <daniel.borgmann@gmail.com>
-# Billy Cantrell <bvcmdk@yahoo.com>
-# Mario Izquierdo <mariodebian@gmail.com> for MaX 4.0
-#
-# Feel free to modify and share!
+gtk-color-scheme = "base_color:#ffffff\nbg_color:#efebe7\ntooltip_bg_color:#6397d7\nselected_bg_color:#86abd9\ntext_color:#3C3C3C\nfg_color:#101010\ntooltip_fg_color:#000000\nselected_fg_color:#ffffff\nlink_color:#DD4814\nbg_color_dark:#3c3b37\nfg_color_dark:#dfdbd2"
+
+gtk-icon-sizes = "panel-menu=22,22:gtk-button=16,16"
+
+gtk-auto-mnemonics = 1
 
 #
 # colores para MaX 4.0

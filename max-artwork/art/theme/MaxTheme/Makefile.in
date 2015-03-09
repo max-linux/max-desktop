@@ -32,7 +32,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-subdir = art/theme/Max70
+subdir = art/theme/MaxTheme
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -179,14 +179,14 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-metacitydir = /usr/share/themes/Max70/metacity-1
+metacitydir = /usr/share/themes/MaxTheme/metacity-1
 metacity_DATA = \
      metacity-1/metacity-theme-2.xml \
      metacity-1/metacity-theme-3.xml
 
-gtk2dir = /usr/share/themes/Max70/gtk-2.0
+gtk2dir = /usr/share/themes/MaxTheme/gtk-2.0
 gtk2_DATA = gtk-2.0/gtkrc
-gtk2appsdir = /usr/share/themes/Max70/gtk-2.0/apps
+gtk2appsdir = /usr/share/themes/MaxTheme/gtk-2.0/apps
 gtk2apps_DATA = \
      gtk-2.0/apps/chromium.rc \
      gtk-2.0/apps/ff.rc \
@@ -194,14 +194,14 @@ gtk2apps_DATA = \
      gtk-2.0/apps/nautilus.rc \
      gtk-2.0/apps/gnome-terminal.rc
 
-gtk3dir = /usr/share/themes/Max70/gtk-3.0
+gtk3dir = /usr/share/themes/MaxTheme/gtk-3.0
 gtk3_DATA = \
      gtk-3.0/settings.ini \
      gtk-3.0/gtk.css \
      gtk-3.0/gtk-widgets.css \
      gtk-3.0/gtk-widgets-backdrop.css
 
-gtk3appsdir = /usr/share/themes/Max70/gtk-3.0/apps
+gtk3appsdir = /usr/share/themes/MaxTheme/gtk-3.0/apps
 gtk3apps_DATA = \
      gtk-3.0/apps/gnome-panel.css \
      gtk-3.0/apps/nautilus.css \
@@ -209,7 +209,7 @@ gtk3apps_DATA = \
      gtk-3.0/apps/gnome-terminal.css \
      gtk-3.0/apps/gedit.css
 
-gtk3assetsdir = /usr/share/themes/Max70/gtk-3.0/assets
+gtk3assetsdir = /usr/share/themes/MaxTheme/gtk-3.0/assets
 gtk3assets_DATA = \
      gtk-3.0/assets/slider_prelight.png \
      gtk-3.0/assets/scrollbar_handle.png \
@@ -224,7 +224,7 @@ gtk3assets_DATA = \
      gtk-3.0/assets/slider_insensitive_backdrop.png \
      gtk-3.0/assets/slider_vertical_insensitive.png
 
-unitydir = /usr/share/themes/Max70/unity
+unitydir = /usr/share/themes/MaxTheme/unity
 unity_DATA = \
      unity/close_focused_normal.png \
      unity/unmaximize_focused_prelight.png \
@@ -255,7 +255,7 @@ unity_DATA = \
      unity/minimize_unfocused.png \
      unity/close_unfocused_prelight.png
 
-themedir = /usr/share/themes/Max70
+themedir = /usr/share/themes/MaxTheme
 theme_DATA = index.theme
 EXTRA_DIST = $(theme_DATA) \
 		$(metacity_DATA) \
@@ -278,9 +278,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__confi
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu art/theme/Max70/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu art/theme/MaxTheme/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu art/theme/Max70/Makefile
+	  $(AUTOMAKE) --gnu art/theme/MaxTheme/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \

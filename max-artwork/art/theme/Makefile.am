@@ -1,1 +1,1 @@
-SUBDIRS = Max70
+SUBDIRS = MaxTheme

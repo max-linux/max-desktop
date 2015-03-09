@@ -1,12 +1,12 @@
-metacitydir = /usr/share/themes/Max70/metacity-1
+metacitydir = /usr/share/themes/MaxTheme/metacity-1
 metacity_DATA = \
      metacity-1/metacity-theme-2.xml \
      metacity-1/metacity-theme-3.xml
 
-gtk2dir = /usr/share/themes/Max70/gtk-2.0
+gtk2dir = /usr/share/themes/MaxTheme/gtk-2.0
 gtk2_DATA = gtk-2.0/gtkrc
 
-gtk2appsdir = /usr/share/themes/Max70/gtk-2.0/apps
+gtk2appsdir = /usr/share/themes/MaxTheme/gtk-2.0/apps
 gtk2apps_DATA = \
      gtk-2.0/apps/chromium.rc \
      gtk-2.0/apps/ff.rc \
@@ -14,14 +14,14 @@ gtk2apps_DATA = \
      gtk-2.0/apps/nautilus.rc \
      gtk-2.0/apps/gnome-terminal.rc
 
-gtk3dir = /usr/share/themes/Max70/gtk-3.0
+gtk3dir = /usr/share/themes/MaxTheme/gtk-3.0
 gtk3_DATA= \
      gtk-3.0/settings.ini \
      gtk-3.0/gtk.css \
      gtk-3.0/gtk-widgets.css \
      gtk-3.0/gtk-widgets-backdrop.css
 
-gtk3appsdir = /usr/share/themes/Max70/gtk-3.0/apps
+gtk3appsdir = /usr/share/themes/MaxTheme/gtk-3.0/apps
 gtk3apps_DATA = \
      gtk-3.0/apps/gnome-panel.css \
      gtk-3.0/apps/nautilus.css \
@@ -29,7 +29,7 @@ gtk3apps_DATA = \
      gtk-3.0/apps/gnome-terminal.css \
      gtk-3.0/apps/gedit.css
 
-gtk3assetsdir = /usr/share/themes/Max70/gtk-3.0/assets
+gtk3assetsdir = /usr/share/themes/MaxTheme/gtk-3.0/assets
 gtk3assets_DATA = \
      gtk-3.0/assets/slider_prelight.png \
      gtk-3.0/assets/scrollbar_handle.png \
@@ -46,7 +46,7 @@ gtk3assets_DATA = \
 
 
 
-unitydir = /usr/share/themes/Max70/unity
+unitydir = /usr/share/themes/MaxTheme/unity
 unity_DATA= \
      unity/close_focused_normal.png \
      unity/unmaximize_focused_prelight.png \
@@ -78,7 +78,7 @@ unity_DATA= \
      unity/close_unfocused_prelight.png
 
 
-themedir = /usr/share/themes/Max70
+themedir = /usr/share/themes/MaxTheme
 theme_DATA = index.theme
 
 EXTRA_DIST = $(theme_DATA) \
