@@ -93,7 +93,7 @@ if [ "$ARCH" = "amd64" ]; then
 fi
 
 #PAQUETES_EXTRA_RESTRICTED="drdsl"
-PAQUETES_EXTRA_RESTRICTED=""
+PAQUETES_EXTRA_RESTRICTED="virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms"
 PAQUETES_INFANTIL="max-desktop-infantil-primaria max-infantil"
 
 
@@ -119,7 +119,7 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS overlay-scrollbar"
 ## gdm by default https://bugs.launchpad.net/ubuntu/+source/gdm/+bug/805154
 ##BLACKLIST_PKGS="$BLACKLIST_PKGS lightdm unity-greeter"
 # ibus (chinnese and japan input)
-BLACKLIST_PKGS="$BLACKLIST_PKGS ibus-gtk ibus-gtk3 ibus-pinyin ibus-table pinyin-database"
+BLACKLIST_PKGS="$BLACKLIST_PKGS ibus-gtk ibus-gtk3 ibus-pinyin ibus-table pinyin-database ibus"
 # don't install English help #439
 BLACKLIST_PKGS="$BLACKLIST_PKGS libreoffice-help-en-gb libreoffice-help-en-us"
 # ubiquity install KDE
@@ -128,7 +128,7 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS ubiquity-frontend-kde compiz compiz-core"
 BLACKLIST_PKGS="$BLACKLIST_PKGS software-center"
 # ubuntu trusty
 BLACKLIST_PKGS="$BLACKLIST_PKGS oneconf oneconf-common"
-BLACKLIST_PKGS="$BLACKLIST_PKGS unity-gtk2-module unity-gtk3-module unity-services"
+BLACKLIST_PKGS="$BLACKLIST_PKGS unity-gtk2-module unity-gtk3-module unity-services xul-ext-unity unity-webapps-service unity-webapps-qml"
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
 GENLIVE=/usr/share/max-genlive

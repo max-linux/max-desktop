@@ -139,7 +139,7 @@ APT::FTPArchive::Release::Version "$MAX_VERSION";
 APT::FTPArchive::Release::Codename "$DISTRO";
 APT::FTPArchive::Release::Architectures "i386 amd64";
 APT::FTPArchive::Release::Components "main";
-APT::FTPArchive::Release::Description "Ubuntu Precise 12.04";
+APT::FTPArchive::Release::Description "Ubuntu Trusty 14.04";
 EOF
 
 APTCONF=$TMP/release.conf
@@ -235,7 +235,7 @@ cp -ra /var/lib/apt /var/lib/apt.backup
 cp -ra /var/cache/apt /var/cache/apt.backup
 cp /etc/apt/sources.list /etc/apt/sources.list.complementos
 cat <<FIN > /etc/apt/sources.list
-deb file:///var/cache/complementos precise main
+deb file:///var/cache/complementos trusty main
 FIN
 
 echo " * Backup correcto"

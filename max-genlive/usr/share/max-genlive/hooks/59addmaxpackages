@@ -218,7 +218,7 @@ APT::FTPArchive::Release::Version "$DISTRO_VERSION";
 APT::FTPArchive::Release::Codename "$DISTRO";
 APT::FTPArchive::Release::Architectures "$ARCH";
 APT::FTPArchive::Release::Components "main restricted max";
-APT::FTPArchive::Release::Description "Ubuntu Precise 12.04";
+APT::FTPArchive::Release::Description "Ubuntu Trusty 14.04";
 EOF
 
 APTCONF=$TMP/release.conf
