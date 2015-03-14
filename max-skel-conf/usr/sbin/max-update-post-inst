@@ -165,14 +165,6 @@ fi
 # change background image with better size
 /usr/sbin/max-set-background 2>&1 > /dev/null
 
-# ensure ligthdm is configured
-if [ ! -e /etc/lightdm/lightdm.conf-max ] && [ -e /usr/lib/lightdm/lightdm-set-defaults ]; then
-  /usr/lib/lightdm/lightdm-set-defaults --allow-guest false
-  /usr/lib/lightdm/lightdm-set-defaults --session "gnome-classic"
-  /usr/lib/lightdm/lightdm-set-defaults --greeter "unity-greeter"
-  touch /etc/lightdm/lightdm.conf-max
-fi
-
 # Disable HWE https://wiki.ubuntu.com/HweStackEolNotifications
 if [ ! -e /var/lib/update-notifier/disable-hwe-eol-messages ]; then
   mkdir -p /var/lib/update-notifier
@@ -181,5 +173,5 @@ fi
 
 
 # add alumno to dialout
-groups alumno 2>/dev/null | grep -q dialout || adduser alumno dialout
+#groups alumno 2>/dev/null | grep -q dialout || adduser alumno dialout
 

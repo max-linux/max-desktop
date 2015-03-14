@@ -17,7 +17,7 @@ case "$1" in
 
     if [ -e /etc/samba/smb.conf ]; then
       # configure SAMBA
-      grep -q MAX70AULAMAX /etc/samba/smb.conf || \
+      grep -q MAX80AULAMAX /etc/samba/smb.conf || \
          cat /usr/share/max-skel-conf/etc/samba/smb.conf > /etc/samba/smb.conf
     fi
 
@@ -37,24 +37,6 @@ case "$1" in
 esac
 
 #DEBHELPER#
-
-
-#[SeatDefaults]
-#user-session=gnome-classic
-#greeter-session=unity-greeter
-
-if [ ! -e /etc/lightdm/lightdm.conf ]; then
-    # copy old user file, if not, copy new one
-    if [ -e /etc/lightdm/lightdm.conf-max ]; then
-        mv /etc/lightdm/lightdm.conf-max /etc/lightdm/lightdm.conf
-    else
-        cp /usr/share/max-skel-conf/etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
-    fi
-fi
-
-/usr/lib/lightdm/lightdm-set-defaults --keep-old --allow-guest false
-/usr/lib/lightdm/lightdm-set-defaults --keep-old --session "gnome-classic"
-/usr/lib/lightdm/lightdm-set-defaults --keep-old --greeter "unity-greeter"
 
 
 exit 0

@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Ubuntu
-Comment=This session logs you into Ubuntu
-Exec=gnome-session --session=ubuntu
-TryExec=gnome-session-no-exists
-Icon=
-Type=Application
-Hidden=true
-X-Ubuntu-Gettext-Domain=gnome-session-3.0
