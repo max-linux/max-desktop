@@ -88,3 +88,28 @@
 TerminalScreen {
     background-color: #000000;
 }
+
+.scrollbar,
+.scrollbar.vertical {
+    -GtkScrollbar-has-backward-stepper: 1;
+    -GtkScrollbar-has-forward-stepper: 1;
+    -GtkRange-slider-width: 16px;
+
+    border-radius: 3px;
+
+    border-image: none;
+}
+
+.scrollbar.slider,
+.scrollbar.slider:hover,
+.scrollbar.slider.vertical, .scrollbar.slider.vertical:hover, .scrollbar.button.vertical {
+    background-image: -gtk-gradient (linear, left top, right top,
+                                     from (shade (#86ABD9, 1.12)),
+                                     to (shade (#86ABD9, 0.96)));
+}
+.scrollbar.slider.horizontal, .scrollbar.slider.horizontal:hover, .scrollbar.button.horizontal {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (#86ABD9, 1.12)),
+                                     to (shade (#86ABD9, 0.96)));
+}
+
