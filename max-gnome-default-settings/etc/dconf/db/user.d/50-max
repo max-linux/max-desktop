@@ -144,7 +144,7 @@ theme='MaxColors'
 [com/canonical/unity-greeter]
 theme-name='MaxTheme'
 
-[org.gnome.desktop.interface]
+[org/gnome/desktop/interface]
 gtk-theme="MaxTheme"
 icon-theme="maxtoon"
 cursor-theme="DMZ-White"
@@ -153,7 +153,7 @@ monospace-font-name="Ubuntu Mono 13"
 buttons-have-icons=true
 menus-have-icons=true
 
-[com.canonical.unity-greeter]
+[com/canonical/unity-greeter]
 draw-grid = false
 play-ready-sound = true
 draw-user-backgrounds = false
@@ -163,18 +163,18 @@ logo = ''
 background = '/usr/share/images/gdm/maxgdm.png'
 background-color = '#0b2562'
 
-[desktop.unity.launcher]
+[desktop/unity/launcher]
 favorites=['ubiquity-gtkui.desktop', 'nautilus-home.desktop', 'firefox.desktop', 'libreoffice-writer.desktop', 'gnome-control-center.desktop']
 
-[com.canonical.Unity.Launcher]
+[com/canonical/Unity/Launcher]
 favorites=['ubiquity-gtkui.desktop', 'nautilus-home.desktop', 'firefox.desktop', 'libreoffice-writer.desktop', 'gnome-control-center.desktop']
 
-[org.gnome.desktop.background]
+[org/gnome/desktop/background]
 show-desktop-icons=true
 picture-uri='file:///usr/share/backgrounds/max.png'
 picture-options='stretched'
 
-[org.gnome.nautilus.desktop]
+[org/gnome/nautilus/desktop]
 volumes-visible=true
 
 home-icon-visible=true
@@ -186,25 +186,22 @@ trash-icon-name='Papelera'
 network-icon-name='Equipos de red'
 network-icon-visible=true
 
-[org.gnome.nautilus.preferences]
+[org/gnome/nautilus/preferences]
 enable-delete=true
 
-[org.gnome.system.smb]
+[org/gnome/system/smb]
 workgroup='AULAMAX'
 
-[org.gnome.desktop.session]
+[org/gnome/desktop/session]
 session-name="gnome-fallback"
 
-[org.gnome.gnome-panel.run-dialog]
-history=[]
 
-
-[apps.shotwell.preferences.ui]
+[apps/shotwell/preferences/ui]
 show-welcome-dialog=false
 
-[org.gnome.desktop.wm.preferences]
+[org/gnome/desktop/wm/preferences]
 button-layout='menu:minimize,maximize,close'
 theme='MaxColors'
 
-[com.canonical.unity-greeter]
+[com/canonical/unity-greeter]
 theme-name='MaxTheme'
