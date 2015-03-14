@@ -1,0 +1,91 @@
+metacitydir = /usr/share/themes/MaxTheme/metacity-1
+metacity_DATA = \
+     metacity-1/metacity-theme-2.xml \
+     metacity-1/metacity-theme-3.xml
+
+gtk2dir = /usr/share/themes/MaxTheme/gtk-2.0
+gtk2_DATA = gtk-2.0/gtkrc
+
+gtk2appsdir = /usr/share/themes/MaxTheme/gtk-2.0/apps
+gtk2apps_DATA = \
+     gtk-2.0/apps/chromium.rc \
+     gtk-2.0/apps/ff.rc \
+     gtk-2.0/apps/banshee.rc \
+     gtk-2.0/apps/nautilus.rc \
+     gtk-2.0/apps/gnome-terminal.rc
+
+gtk3dir = /usr/share/themes/MaxTheme/gtk-3.0
+gtk3_DATA= \
+     gtk-3.0/settings.ini \
+     gtk-3.0/gtk.css \
+     gtk-3.0/gtk-widgets.css \
+     gtk-3.0/gtk-widgets-backdrop.css
+
+gtk3appsdir = /usr/share/themes/MaxTheme/gtk-3.0/apps
+gtk3apps_DATA = \
+     gtk-3.0/apps/gnome-panel.css \
+     gtk-3.0/apps/nautilus.css \
+     gtk-3.0/apps/unity.css \
+     gtk-3.0/apps/gnome-terminal.css \
+     gtk-3.0/apps/gedit.css
+
+gtk3assetsdir = /usr/share/themes/MaxTheme/gtk-3.0/assets
+gtk3assets_DATA = \
+     gtk-3.0/assets/slider_prelight.png \
+     gtk-3.0/assets/scrollbar_handle.png \
+     gtk-3.0/assets/slider.png \
+     gtk-3.0/assets/slider_prelight_vertical.png \
+     gtk-3.0/assets/scrollbar_handle_vertical.png \
+     gtk-3.0/assets/slider_vertical.png \
+     gtk-3.0/assets/slider_vertical_backdrop.png \
+     gtk-3.0/assets/slider_vertical_insensitive_backdrop.png \
+     gtk-3.0/assets/slider_insensitive.png \
+     gtk-3.0/assets/slider_backdrop.png \
+     gtk-3.0/assets/slider_insensitive_backdrop.png \
+     gtk-3.0/assets/slider_vertical_insensitive.png
+
+
+
+unitydir = /usr/share/themes/MaxTheme/unity
+unity_DATA= \
+    unity/unmaximize_unfocused_pressed.png \
+    unity/minimize.png \
+    unity/unmaximize_focused_prelight.png \
+    unity/unmaximize.png \
+    unity/maximize_focused_pressed.png \
+    unity/unmaximize_unfocused.png \
+    unity/unmaximize_unfocused_prelight.png \
+    unity/minimize_focused_prelight.png \
+    unity/minimize_unfocused.png \
+    unity/close_focused_normal.png \
+    unity/minimize_focused_pressed.png \
+    unity/maximize_unfocused.png \
+    unity/minimize_unfocused_pressed.png \
+    unity/maximize.png \
+    unity/unmaximize_focused_pressed.png \
+    unity/maximize_focused_prelight.png \
+    unity/unmaximize_focused_normal.png \
+    unity/maximize_unfocused_pressed.png \
+    unity/maximize_unfocused_prelight.png \
+    unity/close.png \
+    unity/minimize_unfocused_prelight.png \
+    unity/maximize_focused_normal.png \
+    unity/minimize_focused_normal.png \
+    unity/close_unfocused_prelight.png \
+    unity/close_focused_pressed.png \
+    unity/close_unfocused_pressed.png \
+    unity/close_focused_prelight.png \
+    unity/close_unfocused.png
+
+themedir = /usr/share/themes/MaxTheme
+theme_DATA = index.theme
+
+EXTRA_DIST = $(theme_DATA) \
+		$(metacity_DATA) \
+		$(gtk2_DATA) \
+		$(gtk2apps_DATA) \
+		$(gtk3_DATA) \
+		$(gtk3apps_DATA) \
+		$(gtk3assets_DATA) \
+		$(unity_DATA)
+
