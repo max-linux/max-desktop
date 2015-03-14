@@ -3,7 +3,8 @@
 if [ "$1" = "configure" ]; then
   rm -rf /etc/skel/.config/dconf
   update-gconf-defaults || true
-  glib-compile-schemas /usr/share/glib-2.0/schemas/ || true
+
+  dconf update
 fi
 
 

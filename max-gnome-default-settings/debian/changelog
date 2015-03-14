@@ -1,3 +1,22 @@
+max-gnome-default-settings (8.0.max5) max; urgency=low
+
+  * Change schema override with /etc/dconf/db/user.d/
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 14 Mar 2015 19:23:54 +0100
+
+max-gnome-default-settings (8.0.max4) max; urgency=low
+
+  * Set org.gnome.desktop.wm.preferences buttons and theme and change
+    gnome-classic => gnome-fallback
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 14 Mar 2015 17:55:22 +0100
+
+max-gnome-default-settings (8.0.max3) max; urgency=low
+
+  * Fix schema override data
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 14 Mar 2015 17:24:36 +0100
+
 max-gnome-default-settings (8.0.max2) max; urgency=low
 
   * Change theme Max70 to MaxTheme
