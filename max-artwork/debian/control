@@ -3,7 +3,7 @@ Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
 #Build-Depends: debhelper (>= 4.0.0), cdbs, intltool, libusplash-dev, librsvg2-bin, libglib2.0-dev, ubuntu-docs, imagemagick, librsvg2-bin
-Build-Depends: debhelper (>= 7.0.0), cdbs, imagemagick, librsvg2-bin
+Build-Depends: debhelper (>= 7.0.0), cdbs
 Standards-Version: 3.8.4
 
 Package: max-artwork

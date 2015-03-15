@@ -1,3 +1,9 @@
+max-artwork (8.0.max7) max; urgency=low
+
+  * Remove imagemagick and librsvg2-bin from build depends
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 15 Mar 2015 20:39:40 +0100
+
 max-artwork (8.0.max6) max; urgency=low
 
   * Change assets from orange to blue
