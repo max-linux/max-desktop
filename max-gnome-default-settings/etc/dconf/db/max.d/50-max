@@ -69,3 +69,6 @@ workgroup='AULAMAX'
 [apps/shotwell/preferences/ui]
 show-welcome-dialog=false
 
+[desktop/ibus/panel]
+show-icon-on-systray=false
+
