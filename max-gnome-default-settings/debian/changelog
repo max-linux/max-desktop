@@ -1,3 +1,9 @@
+max-gnome-default-settings (8.0.max8) max; urgency=low
+
+  * Set gnome-panel in etc/dconf/db/user binary
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 15 Mar 2015 19:51:13 +0100
+
 max-gnome-default-settings (8.0.max7) max; urgency=low
 
   * Remove launcher history dconf

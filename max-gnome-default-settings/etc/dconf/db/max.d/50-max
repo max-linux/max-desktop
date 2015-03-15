@@ -1,0 +1,71 @@
+[org/gnome/desktop/wm/preferences]
+button-layout='menu:minimize,maximize,close'
+theme='MaxColors'
+
+[com/canonical/unity-greeter]
+theme-name='MaxTheme'
+
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'es'), ('xkb', 'us')]
+
+[org/gnome/desktop/session]
+session-name='gnome-fallback'
+
+[org/gnome/desktop/wm/preferences]
+button-layout='menu:minimize,maximize,close'
+theme='MaxColors'
+
+[com/canonical/unity-greeter]
+theme-name='MaxTheme'
+
+[org/gnome/desktop/interface]
+gtk-theme="MaxTheme"
+icon-theme="maxtoon"
+cursor-theme="DMZ-White"
+font-name="Ubuntu 11"
+monospace-font-name="Ubuntu Mono 13"
+gtk-im-module='gtk-im-context-simple'
+enable-animations=true
+menus-have-icons=true
+buttons-have-icons=true
+
+[com/canonical/unity-greeter]
+draw-grid = false
+play-ready-sound = true
+draw-user-backgrounds = false
+theme-name = 'Ambiance'
+icon-theme-name = 'maxtoon'
+logo = ''
+background = '/usr/share/images/gdm/maxgdm.png'
+background-color = '#0b2562'
+
+[desktop/unity/launcher]
+favorites=['ubiquity-gtkui.desktop', 'nautilus-home.desktop', 'firefox.desktop', 'libreoffice-writer.desktop', 'gnome-control-center.desktop']
+
+[com/canonical/Unity/Launcher]
+favorites=['ubiquity-gtkui.desktop', 'nautilus-home.desktop', 'firefox.desktop', 'libreoffice-writer.desktop', 'gnome-control-center.desktop']
+
+[org/gnome/desktop/background]
+show-desktop-icons=true
+picture-uri='file:///usr/share/backgrounds/max.png'
+picture-options='stretched'
+
+[org/gnome/nautilus/desktop]
+volumes-visible=true
+home-icon-visible=true
+home-icon-name='Carpeta personal'
+trash-icon-visible=false
+trash-icon-name='Papelera'
+network-icon-name='Equipos de red'
+network-icon-visible=true
+
+[org/gnome/nautilus/preferences]
+enable-delete=true
+
+[org/gnome/system/smb]
+workgroup='AULAMAX'
+
+
+[apps/shotwell/preferences/ui]
+show-welcome-dialog=false
+
