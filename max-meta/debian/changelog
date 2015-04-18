@@ -1,3 +1,19 @@
+max-meta (8.0.max7) max; urgency=low
+
+  * Remove some packages (rel #644)
+    - javahotpot, max-javahotpot-tutorial
+    - jclic-max, max-jclic-curso
+    - malted, malted-linux-doc, malted-projects
+    - max-edilim
+    - anjuta
+    - pidgin
+    - glade
+    - gtranslator
+    - meld
+    - pidgin
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 18 Apr 2015 12:47:48 +0200
+
 max-meta (8.0.max6) max; urgency=low
 
   * Add pseint and gnome-session-fallback
