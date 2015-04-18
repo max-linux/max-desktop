@@ -1,3 +1,9 @@
+max-genlive (8.0.max5) max; urgency=low
+
+  * No install moodle (apache, mysql, php) by default (rel #644)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 18 Apr 2015 12:57:08 +0200
+
 max-genlive (8.0.max4) max; urgency=low
 
   * Update splash.pcx and change precise => trusty, 7.5 => 8.0

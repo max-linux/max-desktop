@@ -46,9 +46,9 @@ EOC
 #UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnome-themes gnome-volume-manager gnupg-agent gparted gpgsm gtk-qt-engine "
 
 UBUNTU_PACKAGES="$LINUX_IMAGE $XSERVER_XORG dkms"
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnupg-agent gparted gpgsm"
+UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnupg-agent gparted"
 UBUNTU_PACKAGES="$UBUNTU_PACKAGES ispanish ispell jfsutils language-pack-gnome-es language-pack-gnome-es-base"
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES mdetect mysql-client openssl-blacklist"
+UBUNTU_PACKAGES="$UBUNTU_PACKAGES mdetect openssl-blacklist"
 UBUNTU_PACKAGES="$UBUNTU_PACKAGES util-linux-locales valgrind xfsprogs"
 UBUNTU_PACKAGES="$UBUNTU_PACKAGES network-manager-openvpn network-manager-vpnc network-manager-pptp"
 

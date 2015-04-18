@@ -19,6 +19,7 @@ LINUX_IMAGE="max-linux"
 LINUX_HEADERS="max-linux-headers"
 XSERVER_XORG="xserver-xorg"
 MAXHOSTNAME=max80
+INSTALL_MOODLE=no
 
 ## Create a 12.04 with trusty kernel and Xorg
 #LINUX_IMAGE="linux-image-generic-lts-trusty max-linux"
@@ -109,7 +110,7 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS x11proto-core-dev x11proto-composite-dev python-
 BLACKLIST_PKGS="$BLACKLIST_PKGS x11proto-kb-dev x11proto-input-dev x11proto-core-dev libxt-dev libxdmcp-dev libxcb1-dev libxau-dev"
 BLACKLIST_PKGS="$BLACKLIST_PKGS libx11-dev libltdl-dev libplymouth-dev libpthread-stubs0-dev"
 BLACKLIST_PKGS="$BLACKLIST_PKGS mythbuntu-default-settings"
-BLACKLIST_PKGS="$BLACKLIST_PKGS freemind-doc libatk1.0-doc libglib2.0-doc libgtk2.0-doc libpango1.0-doc lilypond-doc winff-doc xorg-docs-core"
+BLACKLIST_PKGS="$BLACKLIST_PKGS freemind-doc libatk1.0-doc libglib2.0-doc libgtk2.0-doc libpango1.0-doc lilypond-doc winff-doc"
 BLACKLIST_PKGS="$BLACKLIST_PKGS landscape-client landscape-common"
 # Ubuntu 12.04 globalmenu
 BLACKLIST_PKGS="$BLACKLIST_PKGS appmenu-gtk appmenu-gtk3 appmenu-qt indicator-appmenu"
@@ -119,7 +120,7 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS overlay-scrollbar"
 ## gdm by default https://bugs.launchpad.net/ubuntu/+source/gdm/+bug/805154
 ##BLACKLIST_PKGS="$BLACKLIST_PKGS lightdm unity-greeter"
 # ibus (chinnese and japan input)
-BLACKLIST_PKGS="$BLACKLIST_PKGS ibus-gtk ibus-gtk3 ibus-pinyin ibus-table pinyin-database ibus"
+BLACKLIST_PKGS="$BLACKLIST_PKGS ibus-gtk ibus-gtk3 ibus-pinyin ibus-table pinyin-database"
 # don't install English help #439
 BLACKLIST_PKGS="$BLACKLIST_PKGS libreoffice-help-en-gb libreoffice-help-en-us"
 # ubiquity install KDE
@@ -128,7 +129,23 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS ubiquity-frontend-kde compiz compiz-core"
 BLACKLIST_PKGS="$BLACKLIST_PKGS software-center"
 # ubuntu trusty
 BLACKLIST_PKGS="$BLACKLIST_PKGS oneconf oneconf-common"
-BLACKLIST_PKGS="$BLACKLIST_PKGS unity-gtk2-module unity-gtk3-module unity-services xul-ext-unity unity-webapps-service unity-webapps-qml"
+BLACKLIST_PKGS="$BLACKLIST_PKGS unity-gtk2-module unity-gtk3-module unity-services xul-ext-unity "
+
+
+
+#  appmenu-qt* compiz* compiz-core* compiz-gnome* compiz-plugins-default* ibus*
+#  ibus-gtk* ibus-gtk3* ibus-pinyin* ibus-table* indicator-appmenu*
+#  libcompizconfig0* libunity-core-6.0-9* libunity-webapps0* oneconf*
+#  oneconf-common* overlay-scrollbar* overlay-scrollbar-gtk2*
+#  overlay-scrollbar-gtk3* python-oneconf* python3-oneconf* resolvconf*
+#  software-center* ubuntu-desktop* ubuntu-minimal* unity*
+#  unity-control-center* unity-control-center-signon* unity-gtk2-module*
+#  unity-gtk3-module* unity-lens-applications* unity-services*
+#  unity-webapps-common* unity-webapps-qml* unity-webapps-service*
+#  webaccounts-extension-common* webapp-container* xorg* xorg-docs-core*
+#  xul-ext-unity* xul-ext-webaccounts* xul-ext-websites-integration*
+
+
 
 NEW_ISOLINUX=/usr/share/max-genlive/isolinux
 GENLIVE=/usr/share/max-genlive

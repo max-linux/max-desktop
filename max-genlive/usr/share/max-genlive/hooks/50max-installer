@@ -1,5 +1,5 @@
 
-if [ ! -d $CHROOT/var/lib/mysql/moodle ]; then
+if [ "$INSTALL_MOODLE" = "yes" ] && [ ! -d $CHROOT/var/lib/mysql/moodle ]; then
 _echo "Configurando entorno live"
 
 chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes para la versión live"
