@@ -18,7 +18,6 @@ apt-get $APT_OPTS install max-libreoffice || ERROR=1
 apt-get $APT_OPTS install max-desktop-common || ERROR=1
 apt-get $APT_OPTS install max-desktop-gnome || ERROR=1
 apt-get $APT_OPTS install max-desktop-xfce || ERROR=1
-apt-get $APT_OPTS install max-pdi || ERROR=1
 apt-get $APT_OPTS install max-manuales || ERROR=1
 apt-get $APT_OPTS install max-drivers || ERROR=1
 #apt-get $APT_OPTS install max-desktop-infantil-primaria || ERROR=1

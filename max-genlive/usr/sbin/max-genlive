@@ -13,7 +13,7 @@ DISTRO=trusty
 DISTRO_VERSION="14.04"
 ARCH=i386
 NANOARCH=i386
-MAX_VERSION="8.0"
+MAX_VERSION="8.0-alfa1"
 IMAGE_NAME="MaX-${MAX_VERSION}"
 LINUX_IMAGE="max-linux"
 LINUX_HEADERS="max-linux-headers"
@@ -130,6 +130,7 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS software-center"
 # ubuntu trusty
 BLACKLIST_PKGS="$BLACKLIST_PKGS oneconf oneconf-common"
 BLACKLIST_PKGS="$BLACKLIST_PKGS unity-gtk2-module unity-gtk3-module unity-services xul-ext-unity "
+BLACKLIST_PKGS="$BLACKLIST_PKGS unity-webapps-common "
 
 
 

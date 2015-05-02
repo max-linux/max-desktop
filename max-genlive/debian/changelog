@@ -1,3 +1,10 @@
+max-genlive (8.0.max6) max; urgency=low
+
+  * Remove max-pdi from default install and blacklist unity-webapps-
+    common (Amazon) rel #644
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 02 May 2015 19:01:13 +0200
+
 max-genlive (8.0.max5) max; urgency=low
 
   * No install moodle (apache, mysql, php) by default (rel #644)
