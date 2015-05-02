@@ -25,7 +25,7 @@ Architecture: all
 Conflicts: max-tcos-alumno
 Provides: max-tcos-alumno
 Replaces: max-tcos-alumno
-Depends: max-server, max-netboot-server, tcos-configurator, tcosconfig, paman, pavumeter, pavucontrol, max-tcos-profesor, xfs, xfstt
+Depends: max-netboot-server, tcos-configurator, tcosconfig, paman, pavumeter, pavucontrol, max-tcos-profesor, xfs, xfstt
 Description: The Max NETBOOT server metapackage
  This package depends on max-server and max-netboot-server
  .
