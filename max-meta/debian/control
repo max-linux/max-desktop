@@ -158,7 +158,7 @@ Package: max-desktop-common
 Architecture: all
 Multi-Arch: foreign
 Recommends: ${max-desktop-common:Depends}
-Depends: openshot, max-libreoffice
+Depends: max-i386-libs
 Description: The Max desktop common packages to all desktops
  This package depends on all of the packages in the Max server system
  .
@@ -168,7 +168,7 @@ Description: The Max desktop common packages to all desktops
 Package: max-desktop-common-deps
 Architecture: all
 Multi-Arch: foreign
-Depends: max-desktop-common, openshot, ${max-desktop-common-deps:Depends}
+Depends: max-i386-libs, max-desktop-common, ${max-desktop-common-deps:Depends}
 Description: The Max desktop common packages to all desktops
  This package depends on all of the packages in the Max server system
  .
