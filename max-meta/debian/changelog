@@ -1,3 +1,15 @@
+max-meta (8.0.max8) max; urgency=low
+
+  * Remove non base packages: (rel #644):
+    + max-gambas
+    + notelab
+    + pseint
+    + robolinux-nxt and robolinux-rcx
+    + ekiga
+    + kdeedu => kturtle
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 02 May 2015 18:37:19 +0200
+
 max-meta (8.0.max7) max; urgency=low
 
   * Remove some packages (rel #644)
