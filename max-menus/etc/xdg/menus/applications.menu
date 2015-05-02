@@ -624,16 +624,13 @@
 		<Name>Pizarras Digitales</Name>
 		<Directory>pdi.directory</Directory>
 		<Include><Category>Whiteboard</Category></Include>
-		<Menu>
-			<Name>Aplicaciones Tablet PC</Name>
-			<Directory>tabletpc.directory</Directory>
-			<Include><Filename>xournal.desktop</Filename></Include>
-			<Include><Filename>notelab.desktop</Filename></Include>
-			<Include><Filename>jarnalannotate.desktop</Filename></Include>
-			<Include><Filename>cellwriter.desktop</Filename></Include>
-			<Include><Filename>mypaint.desktop</Filename></Include>
-			<Exclude><Filename>jarnal.desktop</Filename></Exclude>
-		</Menu>
+		
+		<Include><Filename>xournal.desktop</Filename></Include>
+		<Include><Filename>notelab.desktop</Filename></Include>
+		<Include><Filename>jarnalannotate.desktop</Filename></Include>
+		<Include><Filename>cellwriter.desktop</Filename></Include>
+		<Include><Filename>mypaint.desktop</Filename></Include>
+		<Exclude><Filename>jarnal.desktop</Filename></Exclude>
 	</Menu>
 
 
