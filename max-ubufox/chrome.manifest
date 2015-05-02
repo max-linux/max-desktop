@@ -1,41 +1,41 @@
 content	ubufox	content/
-locale	ubufox	af-ZA	locale/af-ZA/
+
+locale	ubufox	af	locale/af/
 locale	ubufox	ar	locale/ar/
 locale	ubufox	ca	locale/ca/
-locale	ubufox	cs-CZ	locale/cs-CZ/
-locale	ubufox	de-DE	locale/de-DE/
-locale	ubufox	el-GR	locale/el-GR/
+locale	ubufox	cs	locale/cs/
+locale	ubufox	de	locale/de/
+locale	ubufox	el	locale/el/
 locale	ubufox	en-US	locale/en-US/
 locale	ubufox	es	locale/es/
 locale	ubufox	eu	locale/eu/
-locale	ubufox	fi-FI	locale/fi-FI/
+locale	ubufox	fi	locale/fi/
 locale	ubufox	fr	locale/fr/
-locale	ubufox	gl-ES	locale/gl-ES/
-locale	ubufox	hu-HU	locale/hu-HU/
-locale	ubufox	it-IT	locale/it-IT/
+locale	ubufox	gl	locale/gl/
+locale	ubufox	hu	locale/hu/
+locale	ubufox	it	locale/it/
 locale	ubufox	ja	locale/ja/
-locale	ubufox	lt-LT	locale/lt-LT/
-locale	ubufox	pl-PL	locale/pl-PL/
+locale	ubufox	lt	locale/lt/
+locale  ubufox  nl  locale/nl/
+locale	ubufox	pl	locale/pl/
 locale	ubufox	pt	locale/pt/
 locale	ubufox	pt-BR	locale/pt-BR/
-locale	ubufox	pt-PT	locale/pt/
+locale	ubufox	pt-PT	locale/pt-PT/
 locale	ubufox	ro	locale/ro/
-locale	ubufox	ru-RU	locale/ru-RU/
-locale	ubufox	sl-SI	locale/sl-SI/
+locale	ubufox	ru	locale/ru/
+locale	ubufox	sl	locale/sl/
 locale	ubufox	sv-SE	locale/sv-SE/
 locale	ubufox	uk	locale/uk/
 locale	ubufox	zh-CN	locale/zh-CN/
 locale  ubufox  zh-TW   locale/zh-TW/
-skin	ubufox	classic/1.0	skin/
+
 overlay	chrome://browser/content/browser.xul	chrome://ubufox/content/overlay.xul
 
-override chrome://mozapps/content/plugins/pluginInstallerWizard.xul chrome://ubufox/content/pluginInstallerWizard.xul
-
-component {7a2a7a56-827f-4b38-bdac-31aa7ec2971d} components/aboutStartpage.js
+component {7a2a7a56-827f-4b38-bdac-31aa7ec2971d} components/AboutStartpage.js
 contract @mozilla.org/network/protocol/about;1?what=startpage {7a2a7a56-827f-4b38-bdac-31aa7ec2971d}
 
-category agent-style-sheets pluginfinder chrome://ubufox/content/alternatePluginsBinding.css
-category agent-style-sheets xbl chrome://ubufox/content/alternatePluginsBinding.css
-category agent-style-sheets binding chrome://ubufox/content/alternatePluginsBinding.css
+component {799a4700-2085-40e8-853a-05dcf8e95e41} components/UpdateNotifier.js
+contract @ubuntu.com/update-notifier;1 {799a4700-2085-40e8-853a-05dcf8e95e41}
+category profile-after-change UpdateNotifier @ubuntu.com/update-notifier;1
 
-resource ubufox modules/
+resource ubufox res/

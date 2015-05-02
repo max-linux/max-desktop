@@ -1,23 +1,33 @@
 Source: max-ubufox
 Section: web
 Priority: optional
-Maintainer: Alexander Sack <asac@ubuntu.com>
-Build-Depends: debhelper (>= 5), cdbs, quilt, mozilla-devscripts, zip, tree, lsb-release
-XS-Vcs-Bzr: https://code.launchpad.net/~ubuntu-core-dev/ubufox/ubuntu/
-Standards-Version: 3.7.2.1
+Maintainer: Ubuntu Mozilla Team <ubuntu-mozillateam@lists.ubuntu.com>
+Build-Depends: debhelper (>= 7),
+               cdbs,
+               mozilla-devscripts (>= 0.22~)
+Standards-Version: 3.9.1
+Homepage: https://launchpad.net/ubufox
 
 Package: max-ubufox
 Architecture: all
-Depends: aptdaemon, libglib2.0-0 (>= 2.26), firefox, apturl (>= 0.1.2ubuntu1) | apturl-kde, ${misc:Depends}
+Depends: aptdaemon, libglib2.0-0 (>= 2.26), ${misc:Depends}
 Recommends: ${xpi:Recommends}
+Provides: ${xpi:Provides}, xul-ext-ubufox
 Enhances: ${xpi:Enhances}
-Conflicts: ubufox, xul-ext-ubufox
-Replaces: ubufox, xul-ext-ubufox
-Provides: ubufox, xul-ext-ubufox, ${xpi:Provides}
-Description: Ubuntu Firefox specific configuration defaults and apt support
- Extension package for Firefox provides ubuntu specific configuration defaults
- as well as apt support for firefox plugins/extensions.
+Breaks: ubufox (<< 0.9~rc2-0ubuntu3), xul-ext-ubufox
+Replaces: ubufox (<< 0.9~rc2-0ubuntu3), xul-ext-ubufox
+Description: MAX and Ubuntu-specific configuration defaults and apt support for Firefox
+ Adds MAX and Ubuntu-specific modifications to Firefox.
  .
- You can uninstall this package if you prefer to use a pristine firefox
- install.
+ Integrates the browser with Ubuntu to:
+  * Enable searching for missing plugins from Ubuntu software catalog
+  * Add the following options to the Help menu
+    - Get help on-line
+    - Help translating Firefox
+    - Ubuntu Release Notes
+  * Set homepage to MAX Start Page
+  * Display a restart notification after upgrading Firefox
+  * Add ask.com to the search engines.
+ .
+ You can uninstall this if you prefer to use a pristine Firefox install.
 

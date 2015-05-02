@@ -1,0 +1,7 @@
+#ubufox-restart-notification-icon {
+  list-style-image: url(moz-icon://stock/reboot-notifier?size=menu);
+}
+
+.popup-notification-icon[popupid="ubufox-restart-request"] {
+  list-style-image: url(chrome://global/skin/icons/information-64.png);
+}

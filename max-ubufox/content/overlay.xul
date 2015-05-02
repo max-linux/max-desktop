@@ -35,7 +35,7 @@
   - 
   - ***** END LICENSE BLOCK ***** -->
 
-<?xml-stylesheet href="chrome://ubufox/skin/overlay.css" type="text/css"?>
+<?xml-stylesheet href="chrome://ubufox/content/overlay.css" type="text/css"?>
 <!DOCTYPE overlay [
   <!ENTITY % ubufoxDTD SYSTEM "chrome://ubufox/locale/ubufox.dtd">
   <!ENTITY % ubufox-altDTD SYSTEM "chrome://ubufox/locale/ubufox-alt.dtd">
@@ -49,27 +49,16 @@
 
   <stringbundleset id="stringbundleset">
     <stringbundle id="ubufox-restart-strings" src="chrome://ubufox/locale/ubufox-restart.properties"/>
-  </stringbundleset>
-
-  <stringbundleset id="stringbundleset">
     <stringbundle id="ubufox-strings" src="chrome://ubufox/locale/ubufox.properties"/>
   </stringbundleset>
+
+  <box id="notification-popup-box">
+    <image id="ubufox-restart-notification-icon" class="notification-anchor-icon" role="button"/>
+  </box>
 
   <menupopup id="menu_HelpPopup">
     <menuitem id="ubufox-reportbug" label="&ubufox.launchpad.reportbug.label;" 
               oncommand="com.ubuntu.Ubufox.reportBug();"
               insertbefore="aboutSeparator"/>
-    <menuitem label="&ubufox.launchpad.gethelponline.label;"
-              oncommand="com.ubuntu.Ubufox.help();"
-              insertbefore="aboutSeparator"/>
-    <menuitem id="ubufox-helptranslate" label="&ubufox.launchpad.helptranslate.label;"
-              oncommand="com.ubuntu.Ubufox.translate();"
-              insertbefore="aboutSeparator"/>
-  </menupopup>
-
-  <menupopup id="menu_ToolsPopup">
-    <menuitem id="menuAltPlugins" 
-              label="&ubufox.altplugin.menuentry;"
-              oncommand="com.ubuntu.Ubufox.openPluginFinder();"/>
   </menupopup>
 </overlay>

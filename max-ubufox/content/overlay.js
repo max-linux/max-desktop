@@ -34,136 +34,198 @@
  * 
  * ***** END LICENSE BLOCK ***** */
 
-Components.utils.import("resource://gre/modules/Services.jsm");
-Components.utils.import("resource://ubufox/UpdateRestartNotifier.jsm");
-
 if (!com) var com = {};
 if (!com.ubuntu) com.ubuntu = {};
 
 (function() {
-  const Ci = Components.interfaces;
-  const Cc = Components.classes;
-  const Cu = Components.utils;
+  const { classes: Cc, utils: Cu } = Components;
+
+  Cu.import("resource://gre/modules/Services.jsm");
+  Cu.import("resource://gre/modules/XPCOMUtils.jsm");
+  Cu.import("resource://gre/modules/PopupNotifications.jsm");
+  Cu.import("resource://ubufox/modules/Distro.jsm");
 
   var UpdateRestartListener = {
-    updated: false,
-    _buttons: null,
-    _restartNotificationLabel: null,
+    restartRequested: false,
 
-    get buttons() {
-      if (!this._buttons) {
-        let bundle = document.getElementById("ubufox-restart-strings");
-        let restartNotificationButton = bundle.getString("restartNotificationButton");
-        let restartNotificationKey = bundle.getString("restartNotificationKey");
+    addNotificationToBrowser: function URL_addNotificationToBrowser(aBrowser,
+                                                                    aRaised) {
+      if (this.notificationStyle == "popup") {
+        PopupNotifications.show(aBrowser, "ubufox-restart-request",
+                                this.restartNotificationLabel,
+                                "ubufox-restart-notification-icon",
+                                {label: this.restartNotificationButton,
+                                 accessKey: this.restartNotificationKey,
+                                 callback: (function() {
+          gBrowser.tabContainer.removeEventListener("TabOpen",
+                                                    this.onTabOpen,
+                                                    false);
+          gBrowser.browsers.forEach(function(browser) {
+            let notification = PopupNotifications.getNotification("ubufox-restart-request",
+                                                                  browser);
+            if (notification) {
+              PopupNotifications.remove(notification);
+            }
+          });
 
-        this._buttons = [{ label: restartNotificationButton,
-                           accessKey: restartNotificationKey,
-                           callback: UpdateRestartNotifier.restart }];
+          Cc["@mozilla.org/toolkit/app-startup;1"].getService(Ci.nsIAppStartup)
+                                                  .quit(Ci.nsIAppStartup.eRestart |
+                                                        Ci.nsIAppStartup.eAttemptQuit);
+        }).bind(this)},
+                                [], {dismissed: aRaised ? false : true,
+                                     timeout: 8.64e15});
+      } else if (this.notificationStyle == "infobar") {
+        let notificationBox = gBrowser.getNotificationBox(aBrowser);
+        let notification = notificationBox
+                           .getNotificationWithValue("notification-restart");
+        if (!notification) {
+          notificationBox.appendNotification(this.oldRestartNotificationLabel,
+                                             "notification-restart", "",
+                                             notificationBox.PRIORITY_WARNING_LOW,
+                                             [{ label: this.restartNotificationButton,
+                                                accessKey: this.restartNotificationKey,
+                                                callback: (function() {
+            gBrowser.tabContainer.removeEventListener("TabOpen",
+                                                      this.onTabOpen,
+                                                      false);
+            gBrowser.browsers.forEach(function(browser) {
+              let notificationBox = gBrowser.getNotificationBox(browser);
+              let notification = notificationBox
+                                 .getNotificationWithValue("notification-restart");
+              if (notification) {
+                notificationBox.removeNotification(notification);
+              }
+            });
+
+            if (this.intervalId) {
+              window.clearInterval(this.intervalId);
+            }
+
+            Cc["@mozilla.org/toolkit/app-startup;1"].getService(Ci.nsIAppStartup)
+                                                    .quit(Ci.nsIAppStartup.eRestart |
+                                                          Ci.nsIAppStartup.eAttemptQuit);
+          }).bind(this)}]);
+        }
       }
-
-      return this._buttons;
     },
 
-    get restartNotificationLabel() {
-      if (!this._restartNotificationLabel) {
-        let bundle = document.getElementById("ubufox-restart-strings");
-        this._restartNotificationLabel = bundle.getString("restartNotificationLabel");
-      }
-
-      return this._restartNotificationLabel;
+    onTabOpen: function URL_onTabOpen(aEvent) {
+      window.setTimeout(function() {
+        UpdateRestartListener.addNotificationToBrowser(gBrowser.getBrowserForTab(aEvent.target),
+                                                       false);
+      }, 0);
     },
 
-    addNotificationToBrowser: function URL_addNotificationToBrowser(browser) {
-      let notificationBox = gBrowser.getNotificationBox(browser);
-      let notification = notificationBox
-                         .getNotificationWithValue("notification-restart");
-      if (!notification) {
-        notificationBox.appendNotification(this.restartNotificationLabel,
-                                           "notification-restart", "",
-                                           notificationBox.PRIORITY_WARNING_LOW,
-                                           this.buttons);
-      }
-    },
-
-    onUpdatedNotify: function URL_onUpdatedNotify() {
-      if (!this.updated) {
-        this.updated = true;
-
-        gBrowser.tabContainer.addEventListener("TabOpen", function(aEvent) {
-          UpdateRestartListener.addNotificationToBrowser(gBrowser
-                                                         .getBrowserForTab(aEvent.target));
-        }, false);
-      }
-
+    displayNotifications: function URL_displayNotifications() {
       gBrowser.browsers.forEach(function(browser) {
-        UpdateRestartListener.addNotificationToBrowser(browser);
-      });
+        this.addNotificationToBrowser(browser,
+                                      browser == gBrowser.selectedBrowser ?
+                                       true : false);
+      }, this);
+    },
+
+    requestRestart: function URL_requestRestart() {
+      if (!this.restartRequested) {
+        gBrowser.tabContainer.addEventListener("TabOpen", this.onTabOpen, false);
+        this.displayNotifications();
+
+        if (this.notificationStyle == "infobar") {
+          this.intervalId = window.setInterval(this.displayNotifications.bind(this),
+                                               900000);
+        }
+
+        this.restartRequested = true;
+      }
+    },
+
+    onAppUpdated: function URL_onAppUpdated() {
+      this.requestRestart();
+    },
+
+    onPluginsUpdated: function URL_onPluginsUpdated() {
+      if (this.notificationStyle == "popup") {
+        this.requestRestart();
+      }
     }
   };
 
+  XPCOMUtils.defineLazyGetter(UpdateRestartListener,
+                              "notificationStyle",
+                              function() {
+    try {
+      return Services.prefs.getCharPref("extensions.ubufox.update-restart-notification-style");
+    } catch(e) {
+      return distro.updateRestartNotificationStyle;
+    }
+  });
+
+  XPCOMUtils.defineLazyGetter(UpdateRestartListener,
+                              "oldRestartNotificationLabel",
+                              function() {
+    return document.getElementById("ubufox-restart-strings")
+                   .getString("oldRestartNotificationLabel");
+  });
+
+  XPCOMUtils.defineLazyGetter(UpdateRestartListener,
+                              "restartNotificationLabel",
+                              function() {
+    return document.getElementById("ubufox-restart-strings")
+                   .getFormattedString("restartNotificationLabel",
+                                       [document.getElementById("bundle_brand")
+                                                .getString("brandShortName")]);
+  });
+
+  XPCOMUtils.defineLazyGetter(UpdateRestartListener,
+                              "restartNotificationButton",
+                              function() {
+
+    return document.getElementById("ubufox-restart-strings")
+                   .getString("restartNotificationButton");
+  });
+
+  XPCOMUtils.defineLazyGetter(UpdateRestartListener,
+                              "restartNotificationKey",
+                              function() {
+    return document.getElementById("ubufox-restart-strings")
+                   .getString("restartNotificationKey");
+  });
+
   this.Ubufox = {
-    openPluginFinder: function() {
-      let contentMimeArray = {};
-      let pluginsOnTab = false;
-      let elements = gBrowser.selectedBrowser.contentDocument
-                                             .getElementsByTagName("embed");
-      for (let a = 0; a < elements.length; a++) {
-        let element = elements[a];
-        let pluginInfo = getPluginInfo(element);
-        contentMimeArray[pluginInfo.mimetype] = pluginInfo;
-        pluginsOnTab = true;
-      }
-      window.openDialog("chrome://ubufox/content/pluginAlternativeOverlay.xul",
-                       "PFSWindow", "chrome,centerscreen,resizable=yes",
-                       {plugins: contentMimeArray,
-                        browser: gBrowser.selectedBrowser,
-                        pluginsOnTab: pluginsOnTab});
-    },
-
     reportBug: function() {
-      let executable = Cc["@mozilla.org/file/local;1"]
-                          .createInstance(Ci.nsILocalFile);
-
-      executable.initWithPath("/usr/bin/ubuntu-bug");
-
-      if(!executable.exists () || !executable.isExecutable())
-        alert('Unexpected error!');
-
-      let procUtil = Cc["@mozilla.org/process/util;1"]
-                        .createInstance(Ci.nsIProcess);
-
-      procUtil.init(executable);
-
-      let pkgname = Cc["@mozilla.org/xre/app-info;1"]
-                    .getService(Ci.nsIXULAppInfo).name.toLowerCase()
-      if (!pkgname) {
-          pkgname = "firefox";
-      }
-      let args = new Array(pkgname);
-
-      procUtil.run(false, args, args.length);
+      distro.reportBug();
     },
 
     help: function() {
-      let codename = Services.prefs.getCharPref("extensions.ubufox.codename");
-      let url = "https://launchpad.net/distros/ubuntu/" + codename + "/+sources/firefox/+gethelp";
-      openUILinkIn(url, "tab");
-    },
-
-    translate: function() {
-      let codename = Services.prefs.getCharPref("extensions.ubufox.codename");
-      let url = "https://launchpad.net/distros/ubuntu/" +
-                codename + "/+sources/firefox/+translate";
-      openUILinkIn(url, "tab");
-    },
+      openUILinkIn(distro.helpURL, "tab");
+    }
   };
+
+  // Override an existing function with a new function, chaining up to
+  // the old function
+  function overrideExistingFunction(aObject, aName, aReplacement) {
+    var old = aObject[aName];
+    aObject[aName] = function() {
+      try {
+        aReplacement.apply(aObject, arguments);
+      } catch(e) {
+        Cu.reportError(e);
+      }
+      old.apply(aObject, arguments);
+    }
+  }
+
+  overrideExistingFunction(window, "buildHelpMenu", function() {
+    document.getElementById("ubufox-reportbug").setAttribute("hidden",
+                                                             !distro.canReportBug);
+  });
 
   addEventListener("load", function() {
     try {
-      window.removeEventListener("load", arguments.callee, false);
-      UpdateRestartNotifier.addListener(UpdateRestartListener);
-      let item = document.getElementById("ubufox-helptranslate");
-      item.hidden = true;
+      removeEventListener("load", arguments.callee, false);
+      Cc["@ubuntu.com/update-notifier;1"].getService()
+                                         .wrappedJSObject
+                                         .addListener(UpdateRestartListener);
+      gInitialPages.push("about:startpage");
     } catch(e) {
       Cu.reportError(e);
     }
@@ -174,7 +236,9 @@ if (!com.ubuntu) com.ubuntu = {};
     // Don't remove this call, ever. Without this we will leak the
     // document as it is in the scope of the callback, which
     // UpdateRestartNotifier is holding on to
-    UpdateRestartNotifier.removeListener(UpdateRestartListener);
+    Cc["@ubuntu.com/update-notifier;1"].getService()
+                                       .wrappedJSObject
+                                       .removeListener(UpdateRestartListener);
   }, false);
 
 }).call(com.ubuntu);
