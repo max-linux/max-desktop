@@ -1,0 +1,19 @@
+Source: max-i386-libs
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+
+Package: max-i386-libs
+Architecture: i386
+Multi-Arch: foreign
+Depends: libncurses5,
+	libxtst6,
+	libpulsedsp,
+	libjpeg-turbo8,	libjpeg62,
+	libcairo2, libpango-1.0-0,
+#
+#
+Description: MAX i386 libs
+ MAX i386 libs
