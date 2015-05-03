@@ -1,3 +1,9 @@
+max-gnome-default-settings (8.0.max11) max; urgency=low
+
+  * Try to not show ibus keyboard applet
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 03 May 2015 15:38:11 +0200
+
 max-gnome-default-settings (8.0.max10) max; urgency=low
 
   * Hide ibus in systray
