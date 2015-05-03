@@ -1,3 +1,9 @@
+max-genlive (8.0.max9) max; urgency=low
+
+  * Remove max-servidor from paquetes MAX
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 03 May 2015 19:41:22 +0200
+
 max-genlive (8.0.max8) max; urgency=low
 
   * Add «dpkg --add-architecture i386» in amd64, remove, oem-config

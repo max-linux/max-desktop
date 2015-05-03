@@ -98,7 +98,7 @@ PAQUETES_EXTRA_RESTRICTED="virtualbox-guest-utils virtualbox-guest-x11 virtualbo
 PAQUETES_INFANTIL="max-desktop-infantil-primaria max-infantil"
 
 
-PAQUETES_EXTRA="tcos max-alumno max-profesor max-servidor max-terminales"
+PAQUETES_EXTRA="tcos max-alumno max-profesor max-terminales"
 PAQUETES_EXTRA="$PAQUETES_EXTRA max-tcos-alumno max-tcos-profesor"
 PAQUETES_EXTRA="$PAQUETES_EXTRA linux-wlan-ng-firmware max-desktop-infantil-primaria max-infantil"
 

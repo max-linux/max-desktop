@@ -21,6 +21,8 @@ mkdir -p $CDRW/pool/main
 chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA_MAIN > /dev/null 2>&1 || _exit "Error buscando URIS de $PAQUETES_EXTRA_MAIN"
 URIS_MAIN=$(chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA_MAIN | awk '{print $1}' | sed "s/'//g")
 
+echo "  * PAQUETES EXTRA MAIN => $PAQUETES_EXTRA_MAIN"
+
 
 if [ "$URIS_MAIN" = "" ]; then
   _exit "Error leyendo URIS de paquetes extra, conflictos o dependencias seguramente..."
@@ -41,6 +43,7 @@ mkdir -p $CDRW/pool/restricted
 chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA_RESTRICTED >/dev/null 2>&1 || _exit "Error buscando URIS de $PAQUETES_EXTRA_RESTRICTED"
 URIS_RESTRICTED=$(chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA_RESTRICTED | awk '{print $1}' | sed "s/'//g")
 
+echo "  * PAQUETES EXTRA RESTRICTED => $PAQUETES_EXTRA_RESTRICTED"
 
 if [ "$URIS_RESTRICTED" = "" ]; then
   _exit "Error leyendo URIS de paquetes RESTRICTED, conflictos o dependencias seguramente..."
@@ -58,6 +61,8 @@ done
 # borrar paquetes primero
 rm -rf $CDRW/pool/max/
 mkdir -p $CDRW/pool/max/
+
+echo "  * PAQUETES EXTRA => $PAQUETES_EXTRA"
 
 URIS=""
 for pkg in $PAQUETES_EXTRA; do
