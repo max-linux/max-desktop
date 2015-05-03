@@ -1,3 +1,9 @@
+max-skel-conf (8.0.max6) max; urgency=low
+
+  * Add depends python-simplejson to push max-sendinfo
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 03 May 2015 15:55:24 +0200
+
 max-skel-conf (8.0.max5) max; urgency=low
 
   * Update lightdm to use /usr/share/lightdm/lightdm.conf.d/

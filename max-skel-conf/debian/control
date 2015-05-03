@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: max-skel-conf
 Architecture: all
-Depends: unity-greeter, dbus, lsb-release, dpkg-dev
+Depends: unity-greeter, dbus, lsb-release, dpkg-dev, python-simplejson
 Description: Configuración skel para Ubuntu/MAX.
  Configuración basada en dh_divert para /etc/skel y APT
  Contiene:
