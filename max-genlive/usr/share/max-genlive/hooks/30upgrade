@@ -18,6 +18,22 @@ apt-get $APT_OPTS install sysv-rc dpkg max-keyring || ERROR=1
 exit \$ERROR
 EOC
 
+
+if [ "$ARCH" = "amd64" ]; then
+  chroot $CHROOT << EOC || _exit "Error añadiendo arquitectura i386"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+export ERROR=0
+dpkg --add-architecture i386 || ERROR=1
+exit \$ERROR
+EOC
+fi
+
+
+
 # change start-stop-daemon and invoke-rc.d with fake scripts
 _add_invoke
 

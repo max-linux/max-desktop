@@ -88,7 +88,7 @@ MKSQUASHFS=/usr/bin/mksquashfs
 
 PAQUETES_EXTRA_MAIN="b43-fwcutter build-essential dpkg-dev fakeroot g++ capiutils ipppd "
 PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN linux-wlan-ng localechooser-data lupin-support mouseemu "
-PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN oem-config-gtk oem-config patch pptp-linux setserial"
+PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN patch pptp-linux setserial"
 if [ "$ARCH" = "amd64" ]; then
   PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN efibootmgr grub-efi grub-efi-amd64 grub-efi-amd64-bin grub-efi-amd64-signed secureboot-db shim shim-signed"
 fi
