@@ -1,3 +1,9 @@
+max-artwork (8.0.max8) max; urgency=low
+
+  * Update wallpapers, gdm and grub background
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 03 May 2015 15:28:37 +0200
+
 max-artwork (8.0.max7) max; urgency=low
 
   * Remove imagemagick and librsvg2-bin from build depends
