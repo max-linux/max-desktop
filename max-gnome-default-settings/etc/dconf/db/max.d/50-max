@@ -73,3 +73,14 @@ show-welcome-dialog=false
 show-icon-on-systray=false
 show=0
 
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+logout=''
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Primary><Alt>Delete'
+command='gnome-system-monitor'
+name='Monitor de recursos'
+
+
