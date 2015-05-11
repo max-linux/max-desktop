@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+
+DH_VERBOSE=1
+
+DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+URL="http://www.geogebra.net/linux/pool/main/g/geogebra5/geogebra5_5.0.82.0-39727"
+
+info:
+	@echo VERSION=$(VERSION)
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL)_$(DEB_HOST_ARCH).deb && dpkg -x *deb ./); \
+	fi
+
+override_dh_auto_install:
+	dh_install
+

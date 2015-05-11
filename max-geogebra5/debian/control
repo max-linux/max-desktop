@@ -1,0 +1,27 @@
+Source: max-geogebra5
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
+Build-Depends: debhelper (>= 7), wget
+Standards-Version: 3.8.3
+Homepage: http://www.geogebra.org/
+
+
+Package: geogebra5
+Architecture: any
+Provides: geogebra
+Replaces: geogebra
+Breaks: geogebra
+Depends: max-java-jre, ${shlibs:Depends}, ${misc:Depends}
+Description: Free mathematics software for learning and teaching
+ GeoGebra is free dynamic mathematics software for all levels of education
+ that joins geometry, algebra, graphing, and calculus in one
+ easy-to-use package.
+ .
+ Quick Facts:
+ Graphics, algebra and spreadsheet are connected and fully dynamic.
+ Easy-to-use interface, yet many powerful features.
+ Authoring tool to create and share interactive online learning materials.
+ Available in many languages for our millions of users around the world.
+ Free and open source math/maths software.
+
