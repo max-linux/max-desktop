@@ -1,3 +1,18 @@
+max-meta (8.0.max13) max; urgency=low
+
+  * Add some gnome packages
+    * gnome-calculator
+    * gnome-contacts
+    * gnome-disk-utility
+    * gnome-font-viewer
+    * gnome-orca
+    * gnome-screenshot
+    * gnome-session-canberra
+    * gnome-system-log
+    * gvfs-fuse
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 11 May 2015 16:50:38 +0200
+
 max-meta (8.0.max12) max; urgency=low
 
   * Add rfkill in max-desktop-common
