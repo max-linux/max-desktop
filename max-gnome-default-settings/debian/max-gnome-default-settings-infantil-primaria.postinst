@@ -3,10 +3,11 @@
 if [ "$1" = "configure" ]; then
   rm -rf /etc/skel/.config/dconf
   update-gconf-defaults || true
-  glib-compile-schemas /usr/share/glib-2.0/schemas/ || true
 
+  update-gconf-defaults || true
+  dconf update
 
-
+  # install firefox in Desktop
   for desktop in $(find /home/ -maxdepth 2 -name Escritorio); do
     home=$(dirname $desktop)
     username=$(basename $home)
