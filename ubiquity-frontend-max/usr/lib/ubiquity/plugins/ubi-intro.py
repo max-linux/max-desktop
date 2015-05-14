@@ -60,6 +60,10 @@ class PageGtk(PageBase):
         self.btn_usb = builder.get_object('btn_usb')
         self.btn_usb.connect('clicked', self.genUSB)
         
+        # don't show USB button
+        self.vbox1 = builder.get_object('vbox1')
+        self.vbox1.hide()
+
         self.intro_image=self.intro_image.set_from_file("/usr/share/ubiquity/pixmaps/max/logo.png")
 
         fname=self.intro_file
