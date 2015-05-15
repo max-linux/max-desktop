@@ -13,7 +13,7 @@ DISTRO=trusty
 DISTRO_VERSION="14.04"
 ARCH=i386
 NANOARCH=i386
-MAX_VERSION="8.0-alfa1"
+MAX_VERSION="8.0-alfa2"
 IMAGE_NAME="MaX-${MAX_VERSION}"
 LINUX_IMAGE="max-linux"
 LINUX_HEADERS="max-linux-headers"
@@ -285,7 +285,8 @@ fi
 # esto es para pruebas
 #. /usr/share/max-genlive/hooks/10mountiso
 #. /usr/share/max-genlive/hooks/20configurechroot
-#. /usr/share/max-genlive/hooks/55addmaxpackages
+#. /usr/share/max-genlive/hooks/59addmaxpackages
+#_exit 1
 
 #. /usr/share/max-genlive/hooks/10debootstrap
 #. /usr/share/max-genlive/hooks/20configurechroot

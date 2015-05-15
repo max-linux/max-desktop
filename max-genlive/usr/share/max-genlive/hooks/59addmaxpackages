@@ -189,6 +189,67 @@ Contents {
 };
 EOF
 
+
+BUILD32=0
+if [ "$ARCH" = "amd64" ] && [ "$(find $CDRW -name '*_i386.deb')" != "" ]; then
+cat << EOF > $TMP/apt-ftparchive-max32.conf
+Dir {
+  ArchiveDir "$CDRW";
+};
+
+TreeDefault {
+  Directory "pool/";
+};
+
+BinDirectory "pool/max32" {
+  Packages "dists/$DISTRO/main/binary-i386/Packages";
+};
+
+Default {
+  Packages {
+    Extensions ".deb";
+    Compress ". gzip";
+  };
+};
+
+Contents {
+  Compress "gzip";
+};
+EOF
+
+  rm -rf "$CDRW/pool/max32"
+
+  mkdir -p $CDRW/dists/$DISTRO/main/binary-i386
+  mkdir -p "$CDRW/pool/max32"
+  mv -v $(find -name '*_i386.deb') "$CDRW/pool/max32/"
+  BUILD32=1
+
+
+cat << EOF > $CDRW/dists/$DISTRO/main/binary-i386/Release
+Archive: $DISTRO
+Version: $DISTRO_VERSION
+Component: main
+Origin: Ubuntu
+Label: Ubuntu
+Architecture: i386
+EOF
+
+cat << EOF > $TMP/release32.conf
+APT::FTPArchive::Release::Origin "Ubuntu";
+APT::FTPArchive::Release::Label "Ubuntu";
+APT::FTPArchive::Release::Suite "$DISTRO";
+APT::FTPArchive::Release::Version "$DISTRO_VERSION";
+APT::FTPArchive::Release::Codename "$DISTRO";
+APT::FTPArchive::Release::Architectures "amd64 i386";
+APT::FTPArchive::Release::Components "main restricted max";
+APT::FTPArchive::Release::Description "Ubuntu Trusty 14.04";
+EOF
+
+fi
+
+
+
+
 cat << EOF > $TMP/apt-ftparchive-restricted.conf
 Dir {
   ArchiveDir "$CDRW";
@@ -235,6 +296,12 @@ apt-ftparchive -c $APTCONF generate $TMP/apt-ftparchive-deb.conf
 apt-ftparchive -c $APTCONF generate $TMP/apt-ftparchive-max.conf
 apt-ftparchive -c $APTCONF generate $TMP/apt-ftparchive-restricted.conf
 apt-ftparchive -c $APTCONF release $CDRW/dists/$DISTRO > $CDRW/dists/$DISTRO/Release
+
+if [ "$BUILD32" = "1" ]; then
+  apt-ftparchive -c $TMP/release32.conf generate $TMP/apt-ftparchive-max32.conf
+  apt-ftparchive -c $TMP/release32.conf release $CDRW/dists/$DISTRO > $CDRW/dists/$DISTRO/Release
+fi
+
 # delete Release lines
 sed -i '/Release/d' $CDRW/dists/$DISTRO/Release
 popd

@@ -1,3 +1,10 @@
+max-genlive (8.0.max11) max; urgency=low
+
+  * Move 32bits deb files to pool/max32 and create a simple repo for
+    multiarch install (plopp)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 15 May 2015 08:50:23 +0200
+
 max-genlive (8.0.max10) max; urgency=low
 
   * Update GRUB and EFI
