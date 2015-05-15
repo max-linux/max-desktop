@@ -1,3 +1,16 @@
+max-meta (8.0.max19) max; urgency=low
+
+  * Add max-desktop-extras package to replace ubuntu-restricted-extra,
+    and remove epson old package
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 15 May 2015 08:45:58 +0200
+
+max-meta (8.0.max18) max; urgency=low
+
+  * Add Scratch to common and gcompris to infantil
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 15 May 2015 08:32:23 +0200
+
 max-meta (8.0.max17) max; urgency=low
 
   * Infantil: add khangman klettres kgeography marble

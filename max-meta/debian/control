@@ -368,3 +368,18 @@ Description: The Max desktop system (GNOME desktop)
  .
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
+
+
+Package: max-desktop-extras
+Architecture: all
+Multi-Arch: foreign
+Depends: ${max-desktop-extras:Depends}
+Provives: ubuntu-restricted-extras, ubuntu-restricted-addons
+Replaces: ubuntu-restricted-extras, ubuntu-restricted-addons
+Conflicts: ubuntu-restricted-extras, ubuntu-restricted-addons
+Description: The Max desktop extras package
+ This package depends on all EXTRAS packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
