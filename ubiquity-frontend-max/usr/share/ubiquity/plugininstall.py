@@ -1895,7 +1895,8 @@ class Install(install_misc.InstallBase):
         found_cdrom = False
         for line in old_sources:
             if 'cdrom:' in line:
-                print >>new_sources, line,
+                # print >>new_sources, line,
+                new_sources.write(line)
                 found_cdrom = True
         new_sources.close()
         old_sources.close()

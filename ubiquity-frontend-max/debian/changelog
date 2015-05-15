@@ -1,3 +1,9 @@
+ubiquity-frontend-max (8.0.max9) max; urgency=low
+
+  * Fix new packages install with old print >>
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 15 May 2015 08:28:06 +0200
+
 ubiquity-frontend-max (8.0.max8) max; urgency=low
 
   * Update logo with 8.0 and hide USB button
