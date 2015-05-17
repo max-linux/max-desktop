@@ -96,7 +96,7 @@
     <property name="plugin-2" type="string" value="showdesktop"/>
     <property name="plugin-8" type="string" value="separator"/>
     <property name="plugin-10" type="string" value="separator">
-      <property name="expand" type="bool" value="false"/>
+      <property name="expand" type="bool" value="true"/>
     </property>
     <property name="plugin-11" type="string" value="separator"/>
     <property name="plugin-14" type="string" value="launcher">
