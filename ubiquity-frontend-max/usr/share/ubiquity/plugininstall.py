@@ -1234,10 +1234,11 @@ class Install(install_misc.InstallBase):
             self.verify_language_packs()
 
     def install_restricted_extras(self):
-        if self.db.get('ubiquity/use_nonfree') == 'true':
-            self.db.progress('INFO', 'ubiquity/install/nonfree')
-            packages = self.db.get('ubiquity/nonfree_package').split()
-            self.do_install(packages)
+        pass
+        # if self.db.get('ubiquity/use_nonfree') == 'true':
+        #     self.db.progress('INFO', 'ubiquity/install/nonfree')
+        #     packages = self.db.get('ubiquity/nonfree_package').split()
+        #     self.do_install(packages)
 
     def install_extras(self):
         """Try to install packages requested by installer components."""
