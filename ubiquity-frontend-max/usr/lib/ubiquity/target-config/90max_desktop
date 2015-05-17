@@ -20,7 +20,11 @@ if [ -e /tmp/max_desktop_type ]; then
   # tune /etc/skel/.dmrc and users .dmrc
   if [ "$(cat /tmp/max_desktop_type)" = "xfce" ]; then
     echo " * Setting XFCE desktop by default" >&2
-    chroot /target /usr/lib/lightdm/lightdm-set-defaults -s xfce
+    # chroot /target /usr/lib/lightdm/lightdm-set-defaults -s xfce
+cat << EOF > /target/usr/share/lightdm/lightdm.conf.d/95-max-xfce.conf
+[SeatDefaults]
+user-session=xfce
+EOF
     # set AccountsService
     test -d /target/var/lib/AccountsService/users/ || mkdir -p /target/var/lib/AccountsService/users/
     cat << EOF > /target/var/lib/AccountsService/users/madrid
