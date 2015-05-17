@@ -131,6 +131,7 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS software-center"
 BLACKLIST_PKGS="$BLACKLIST_PKGS oneconf oneconf-common"
 BLACKLIST_PKGS="$BLACKLIST_PKGS unity-gtk2-module unity-gtk3-module unity-services xul-ext-unity "
 BLACKLIST_PKGS="$BLACKLIST_PKGS unity-webapps-common "
+BLACKLIST_PKGS="$BLACKLIST_PKGS apport apport-gtk "
 
 
 

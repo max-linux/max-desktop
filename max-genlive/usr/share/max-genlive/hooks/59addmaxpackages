@@ -220,6 +220,7 @@ EOF
   rm -rf "$CDRW/pool/max32"
 
   mkdir -p $CDRW/dists/$DISTRO/main/binary-i386
+  mkdir -p $CDRW/dists/$DISTRO/max/binary-i386
   mkdir -p "$CDRW/pool/max32"
   mv -v $(find -name '*_i386.deb') "$CDRW/pool/max32/"
   BUILD32=1

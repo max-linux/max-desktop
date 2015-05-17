@@ -1,3 +1,9 @@
+max-genlive (8.0.max12) max; urgency=low
+
+  * Blacklist apport and create max/i386 dir in CDROM repo
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 17 May 2015 16:48:13 +0200
+
 max-genlive (8.0.max11) max; urgency=low
 
   * Move 32bits deb files to pool/max32 and create a simple repo for
