@@ -1,3 +1,9 @@
+max-skel-conf (8.0.max7) max; urgency=low
+
+  * Check for /etc/default/apport before editing
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 17 May 2015 16:26:46 +0200
+
 max-skel-conf (8.0.max6) max; urgency=low
 
   * Add depends python-simplejson to push max-sendinfo

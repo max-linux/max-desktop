@@ -123,7 +123,7 @@ fi
 
 
 # disable apport
-sed -i '/^enabled/s/1/0/g' /etc/default/apport 2>&1
+[ -e /etc/default/apport ] && sed -i '/^enabled/s/1/0/g' /etc/default/apport 2>&1
 
 
 # set nautilus background red color for root
