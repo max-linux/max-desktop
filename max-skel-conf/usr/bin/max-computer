@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$SESSION" = "xfce" ]; then
+  thunar computer://
+  exit
+fi
+
+#SESSION=gnome-fallback
+nautilus computer://
