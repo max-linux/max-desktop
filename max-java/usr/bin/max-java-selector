@@ -112,8 +112,8 @@ else
    fi
 fi
 # Se prepara la lista de versiones java.
-comprueba_paquete "Sun Java 6"    "sun-java6-jre"     "sun-java6-plugin"    "Obsoleto"
-comprueba_paquete "Open JDK 6"    "openjdk-6-jre"     "icedtea-6-plugin"    "Obsoleto, compatible DescartesWeb"
+#comprueba_paquete "Sun Java 6"    "sun-java6-jre"     "sun-java6-plugin"    "Obsoleto"
+#comprueba_paquete "Open JDK 6"    "openjdk-6-jre"     "icedtea-6-plugin"    "Obsoleto, compatible DescartesWeb"
 comprueba_paquete "Oracle Java 7" "oracle-java7-jre"  "oracle-java7-plugin" "Compatible trámites oficiales"
 comprueba_paquete "Open JDK 7"    "openjdk-7-jre"     "icedtea-7-plugin"    "Compatible DescartesWeb"
 comprueba_paquete "Oracle Java 8" "oracle-java8-jre"  "oracle-java8-plugin" "Última versión oficial"
@@ -139,22 +139,22 @@ IFS=$IFS_OLD
 echo Opcion: $opcion
 
 case "$opcion" in
-   "Sun Java 6" )
-         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 2`
-         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="sun-java6-jre" ; fi
-         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 3`
-         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes sun-java6-plugin" ; fi
-         paquetes=`echo $paquetes`
-         cadena_ruta_java="/java-6-sun/"
-   ;;
-   "Open JDK 6")
-         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 6`
-         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="openjdk-6-jre" ; fi
-         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 7`
-         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes icedtea-6-plugin" ; fi
-         paquetes=`echo $paquetes`
-         cadena_ruta_java="/java-6-openjdk"
-   ;;
+#   "Sun Java 6" )
+#         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 2`
+#         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="sun-java6-jre" ; fi
+#         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 3`
+#         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes sun-java6-plugin" ; fi
+#         paquetes=`echo $paquetes`
+#         cadena_ruta_java="/java-6-sun/"
+#   ;;
+#   "Open JDK 6")
+#         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 6`
+#         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="openjdk-6-jre" ; fi
+#         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 7`
+#         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes icedtea-6-plugin" ; fi
+#         paquetes=`echo $paquetes`
+#         cadena_ruta_java="/java-6-openjdk"
+#   ;;
    "Oracle Java 7")
          estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 10`
          if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="oracle-java7-jre" ; fi
@@ -163,7 +163,7 @@ case "$opcion" in
          paquetes=`echo $paquetes`
          cadena_ruta_java="/java-7-oracle/"
    ;;
-   "Open JDK 7") 
+   "Open JDK 7")
          estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 14`
          if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="openjdk-7-jre" ; fi
          estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 15`

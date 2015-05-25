@@ -1,3 +1,9 @@
+max-java (8.0.max2) max; urgency=low
+
+  * Remove sun-java6 from options, close #666
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 25 May 2015 20:08:41 +0200
+
 max-java (8.0.max1) max; urgency=low
 
   * Build in MAX 8.0
