@@ -1,3 +1,9 @@
+max-meta (8.0.max23) max; urgency=low
+
+  * Update python-intef-exe => intef-exe, close #608
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 03 Jun 2015 09:55:45 +0200
+
 max-meta (8.0.max22) max; urgency=low
 
   * Add ffdiaporama in max-common, close #680
