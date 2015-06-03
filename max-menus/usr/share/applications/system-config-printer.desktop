@@ -1,7 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Printing
+Name[es]=Impresoras
 Comment=Configure printers
+Comment[es]=Configurar impresoras
+TryExec=/usr/bin/system-config-printer
 Exec=system-config-printer
 Terminal=false
 Type=Application
