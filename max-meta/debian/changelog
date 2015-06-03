@@ -1,3 +1,9 @@
+max-meta (8.0.max24) max; urgency=low
+
+  * desktop-xfce4 conflicts with xfce4-terminal, close #646
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 03 Jun 2015 11:26:37 +0200
+
 max-meta (8.0.max23) max; urgency=low
 
   * Update python-intef-exe => intef-exe, close #608
