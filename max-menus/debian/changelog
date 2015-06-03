@@ -1,3 +1,9 @@
+max-menus (8.0.max7) max; urgency=low
+
+  * Hide moodle doc menu, if no maxmoodle installed, close #674
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 03 Jun 2015 11:08:29 +0200
+
 max-menus (8.0.max6) max; urgency=low
 
   * Fix and trsnalate vino-preferences menu, close #651
