@@ -1,3 +1,9 @@
+max-meta (8.0.max25) max; urgency=medium
+
+  * Add remmina to desktop-gnome, close #665
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 08 Jun 2015 09:06:52 +0200
+
 max-meta (8.0.max24) max; urgency=low
 
   * desktop-xfce4 conflicts with xfce4-terminal, close #646
