@@ -19,14 +19,20 @@ if [ ! $DISABLE_SQUASHFS ]; then
   _echo "Creando archivo squashfs (tarda bastante)..."
 
   # montar chroot dentro de chroot
-  mount -o bind $CHROOT/ $CHROOT/mnt
   mount -o bind $CDRW/   $CHROOT/media
+  mount -o bind $CHROOT/ $CHROOT/mnt
 
-  chroot $CHROOT $MKSQUASHFS /mnt/ /media/casper/filesystem.squashfs $LZMA $NUMPROC || _exit "No se ha podido generar el archivo squashfs"
+  cat << EOF > $CHROOT/exclude.squashfs
+/media/*
+/exclude/exclude.squashfs
+EOF
+
+  chroot $CHROOT $MKSQUASHFS /mnt/ /media/casper/filesystem.squashfs -ef /exclude.squashfs $LZMA $NUMPROC || _exit "No se ha podido generar el archivo squashfs"
 
   umount $CHROOT/media
   umount $CHROOT/mnt
 
+  rm -f $CHROOT/exclude.squashfs
 
 #  $MKSQUASHFS $CHROOT/  $CDRW/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo squashfs"
 
