@@ -1,3 +1,9 @@
+max-configure-proxy (8.0.max2) max; urgency=medium
+
+  * Add proxy exceptions, close #668
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 08 Jun 2015 08:50:44 +0200
+
 max-configure-proxy (8.0.max1) max; urgency=low
 
   * Build in MAX 8.0

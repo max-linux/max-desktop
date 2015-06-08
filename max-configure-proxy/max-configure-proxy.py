@@ -38,7 +38,7 @@ gobject.threads_init()
 
 debug=False
 PACKAGE="max-configure-proxy"
-
+DEFAULT_EXCP='localhost,127.0.0.1,max-server,.educa.madrid.org,.educa2.madrid.org'
 
 UI_DIR = "/usr/share/max-configure-proxy/"
 #UI_DIR = "./"
@@ -100,7 +100,7 @@ class MaxConfigureProxy(object):
         
         # widgets
         self.w={}
-        for widget in ['txt_ip', 'txt_port', 'txt_user', 'txt_password', 'btn_activate', 'btn_cancel', 'lbl_message']:
+        for widget in ['txt_ip', 'txt_port', 'txt_user', 'txt_password', 'txt_exceptions', 'btn_activate', 'btn_cancel', 'lbl_message']:
             self.w[widget]=self.ui.get_object(widget)
             #print_debug("widget name=%s obj=%s"%(widget, self.w[widget]))
         
@@ -119,11 +119,13 @@ class MaxConfigureProxy(object):
             self.w['txt_port'].set_text(data['port'])
             self.w['txt_user'].set_text(data['user'])
             self.w['txt_password'].set_text(data['password'])
+            self.w['txt_exceptions'].set_text(data['exceptions'])
             print_debug(data)
         else:
             self.w['btn_activate'].set_sensitive(True)
             self.w['btn_cancel'].set_sensitive(False)
             self.w['lbl_message'].set_markup( ("<b>No hay proxy configurado</b>") )
+            self.w['txt_exceptions'].set_text(DEFAULT_EXCP)
 
 ##########################################################
 
@@ -135,6 +137,8 @@ class MaxConfigureProxy(object):
         print_debug("configure_proxy() ")
         user=self.w['txt_user'].get_text().strip()
         password=self.w['txt_password'].get_text().strip()
+        exceptions=self.w['txt_exceptions'].get_text().strip()
+        excp_list="'" + "', '".join(exceptions.split(',')) + "'"
         ip=self.w['txt_ip'].get_text().strip()
         try:
             port=int(self.w['txt_port'].get_text().strip())
@@ -154,16 +158,17 @@ class MaxConfigureProxy(object):
         
         # escribir archivo
         f=open(PROFILE_CONF, 'w')
-        f.write("#ip=%s\n"%ip)
-        f.write("#port=%s\n"%port)
-        f.write("#user=%s\n"%user)
-        f.write("#password=%s\n"%password)
-        f.write("export all_proxy='http://%s'\n"%(proxy_str))
-        f.write("export ftp_proxy='http://%s'\n"%(proxy_str))
-        f.write("export http_proxy='http://%s'\n"%(proxy_str))
-        f.write("export https_proxy='http://%s'\n"%(proxy_str))
-        f.write("export socks_proxy='http://%s'\n"%(proxy_str))
-        f.write("export no_proxy='localhost,127.0.0.0/8,192.168.0.0/16,max-server'\n")
+        f.write("#ip=%s\n" % ip)
+        f.write("#port=%s\n" % port)
+        f.write("#user=%s\n" % user)
+        f.write("#password=%s\n" % password)
+        f.write("#exceptions=%s\n" % exceptions)
+        f.write("export all_proxy='http://%s'\n" % (proxy_str))
+        f.write("export ftp_proxy='http://%s'\n" % (proxy_str))
+        f.write("export http_proxy='http://%s'\n" % (proxy_str))
+        f.write("export https_proxy='http://%s'\n" % (proxy_str))
+        f.write("export socks_proxy='http://%s'\n" % (proxy_str))
+        f.write("export no_proxy='%s'\n" % exceptions)
         f.write("\n")
         f.close()
         
@@ -207,14 +212,14 @@ host='%s'
 port=%s
 
 [system/proxy]
-ignore-hosts=['localhost', '127.0.0.0/8', '192.168.0.0/16', 'max-server']
+ignore-hosts=[%s]
 mode='manual'
 
 [system/proxy/socks]
 host='%s'
 port=%s
 
-""" %(ip, port, ip, port, user, password, use_auth, ip, port, ip, port) )
+""" %(ip, port, ip, port, user, password, use_auth, ip, port, excp_list, ip, port) )
         f.close()
         print_debug("CREATED '/etc/dconf/db/local.d/00_proxy'")
         
@@ -277,13 +282,16 @@ port=%s
         self.w['txt_port'].set_text('')
         self.w['txt_user'].set_text('')
         self.w['txt_password'].set_text('')
+        self.w['txt_exceptions'].set_text(DEFAULT_EXCP)
         self.w['lbl_message'].set_markup( ("<b>Proxy desactivado.</b>") )
         self.w['btn_activate'].set_sensitive(True)
         self.w['btn_cancel'].set_sensitive(False)
         gtk.gdk.threads_leave()
 
     def read_proxy(self):
-        data={'ip':'', 'port':'', 'user':'', 'password':''}
+        data={'ip':'', 'port':'',
+              'user':'', 'password':'',
+              'exceptions':DEFAULT_EXCP}
         if not os.path.isfile(PROFILE_CONF):
             return data
         
@@ -297,6 +305,8 @@ port=%s
                 data['user']=line.split('=')[1].strip()
             if "#password" in line:
                 data['password']=line.split('=')[1].strip()
+            if "#exceptions" in line:
+                data['exceptions']=line.split('=')[1].strip()
         f.close()
         return data
 
