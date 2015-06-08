@@ -378,7 +378,7 @@ Package: max-desktop-extras
 Architecture: all
 Multi-Arch: foreign
 Depends: ${max-desktop-extras:Depends}
-Provives: ubuntu-restricted-extras, ubuntu-restricted-addons
+Provides: ubuntu-restricted-extras, ubuntu-restricted-addons
 Replaces: ubuntu-restricted-extras, ubuntu-restricted-addons
 Conflicts: ubuntu-restricted-extras, ubuntu-restricted-addons
 Description: The Max desktop extras package
