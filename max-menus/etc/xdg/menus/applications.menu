@@ -122,7 +122,6 @@
 		<Exclude><Filename>kde-kdevassistant.desktop</Filename></Exclude>
 		<Exclude><Filename>kde-kdevdesigner.desktop</Filename></Exclude>
 		<Exclude><Filename>kde-kxsldbg.desktop</Filename></Exclude>
-		<Exclude><Filename>squeak.desktop</Filename></Exclude>
 		<Exclude><Filename>kde-kdevelop_c_cpp.desktop</Filename></Exclude>
 		<Exclude><Filename>assistant-qt3.desktop</Filename></Exclude>
 		<Exclude><Filename>designer-qt3.desktop</Filename></Exclude>
@@ -154,7 +153,6 @@
 				<And><Category>Clic</Category></And>
 				<And><Category>Malted</Category></And>
 				<And><Category>Hotpot</Category></And>
-				<And><Category>Squeak</Category></And>
 			</Exclude>
 
                         <Menu>
@@ -184,15 +182,6 @@
 			<Exclude><Filename>robolinux-nxt.desktop</Filename></Exclude>
 			<Exclude><Filename>robolinux-nxt-doc.desktop</Filename></Exclude>
 
-			<Exclude><Filename>squeak.desktop</Filename></Exclude>
-			<Exclude><Filename>squeak-atenex.desktop</Filename></Exclude>
-			<Exclude><Filename>squeak-doc.desktop</Filename></Exclude>
-			<Exclude><Filename>squeak-educarex.desktop</Filename></Exclude>
-			<Exclude><Filename>squeak-manual.desktop</Filename></Exclude>
-			<Exclude><Filename>scratch.desktop</Filename></Exclude>
-			<Exclude><Filename>squeak-small-land.desktop</Filename></Exclude>
-			<Exclude><Filename>squeak-small-land-plugin.desktop</Filename></Exclude>
-
 			<Exclude><Filename>gcompris-edit.desktop</Filename></Exclude>
 			<Exclude><Filename>animalandia.desktop</Filename></Exclude>
 			<Exclude><Filename>animalandia-tutorial.desktop</Filename></Exclude>
@@ -216,7 +205,6 @@
 			<Exclude><Filename>gcompris.desktop</Filename></Exclude>
 			<Exclude><Filename>maxmoodle.desktop</Filename></Exclude>
 			<Exclude><Filename>maxmoodle-gui.desktop</Filename></Exclude>
-			<Exclude><Filename>squeak.desktop</Filename></Exclude>
 			<Exclude><Filename>kde4-kturtle.desktop</Filename></Exclude>
 			<Exclude><Filename>kde4-kiten.desktop</Filename></Exclude>
 			<Exclude><Filename>tuxpaint.desktop</Filename></Exclude>
@@ -379,24 +367,6 @@
 				<Include><Filename>max-malteddepurador.desktop</Filename></Include>
 				<Include><Filename>max-malteddocwww.desktop</Filename></Include>
 				<Include><Filename>max-malteddocpdf.desktop</Filename></Include>
-			</Menu>
-			<Menu>
-				<Name>Squeak</Name>
-				<Directory>squeak.directory</Directory>
-				<Include>
-                                	<And>
-                                	<Category>Squeak</Category>
-                                	</And>
-                        	</Include>
-				<Include><Filename>squeak.desktop</Filename></Include>
-				<Include><Filename>squeak-doc.desktop</Filename></Include>
-				<Include><Filename>squeak-manual.desktop</Filename></Include>
-				<Include><Filename>squeak-image-es.desktop</Filename></Include>
-				<Include><Filename>squeak-small-land.desktop</Filename></Include>
-				<Include><Filename>squeak-small-land-plugin.desktop</Filename></Include>
-				<Include><Filename>squeak-atenex.desktop</Filename></Include>
-				<Include><Filename>squeak-educarex.desktop</Filename></Include>
-				<Include><Filename>scratch.desktop</Filename></Include>
 			</Menu>
 			<Menu>
 				<Name>JavaHotPot</Name>
@@ -581,8 +551,6 @@
 		<Exclude><Filename>kde4-medianotifications.desktop</Filename></Exclude>
 		<Exclude><Filename>tcospersonalize.desktop</Filename></Exclude>
 		<Exclude><Filename>creditos-max40.desktop</Filename></Exclude>
-		<Exclude><Filename>squeak-doc.desktop</Filename></Exclude>
-		<Exclude><Filename>squeak-manual.desktop</Filename></Exclude>
 		<Exclude><Filename>geda-gschem.desktop</Filename></Exclude>
 		<Exclude><Filename>geda-gattrib.desktop</Filename></Exclude>
 	</Menu> <!-- End Other -->
