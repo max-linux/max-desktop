@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# In MAX squeak images ae in /usr/lib/squeak not /usr/share/squeak
-#
-export SQUEAK_IMAGE_DIR=/usr/lib/squeak
-
-squeak $@
-

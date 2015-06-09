@@ -22,17 +22,17 @@ if [ ! $DISABLE_SQUASHFS ]; then
   mount -o bind $CDRW/   $CHROOT/media
   mount -o bind $CHROOT/ $CHROOT/mnt
 
-  cat << EOF > $CHROOT/exclude.squashfs
-/media/*
-/exclude/exclude.squashfs
+  cat << EOF > $CHROOT/exclude.sq
+/media/
+/exclude.sq
 EOF
 
-  chroot $CHROOT $MKSQUASHFS /mnt/ /media/casper/filesystem.squashfs -ef /exclude.squashfs $LZMA $NUMPROC || _exit "No se ha podido generar el archivo squashfs"
+  chroot $CHROOT $MKSQUASHFS /mnt/ /media/casper/filesystem.squashfs -ef /exclude.sq $LZMA $NUMPROC || _exit "No se ha podido generar el archivo squashfs"
 
   umount $CHROOT/media
   umount $CHROOT/mnt
 
-  rm -f $CHROOT/exclude.squashfs
+  rm -f $CHROOT/exclude.sq
 
 #  $MKSQUASHFS $CHROOT/  $CDRW/casper/filesystem.squashfs $LZMA || _exit "No se ha podido generar el archivo squashfs"
 
