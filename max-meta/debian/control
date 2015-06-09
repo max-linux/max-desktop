@@ -90,8 +90,6 @@ Architecture: all
 Multi-Arch: foreign
 Recommends: ${max-desktop-xfce:Recommends}, max-desktop-common, ${max-desktop-xfce:Depends}
 Provides: max-desktop
-Conflicts: xfce4-terminal
-Breaks: xfce4-terminal
 Description: The Max desktop system (Xfce4 desktop)
  This package depends on all Xfce4 packages in the Max desktop system
  .
@@ -104,8 +102,6 @@ Multi-Arch: foreign
 Depends: max-desktop-xfce, max-desktop-common-deps, ${max-desktop-xfce-deps:Depends}
 Recommends: ${max-desktop-xfce-deps:Recommends}
 Provides: max-desktop
-Conflicts: xfce4-terminal
-Breaks: xfce4-terminal
 Description: The Max desktop system (Xfce4 desktop)
  This package depends on all Xfce4 packages in the Max desktop system
  .
