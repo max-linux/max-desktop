@@ -1,3 +1,9 @@
+max-genlive (8.0.max15) max; urgency=medium
+
+  * Blacklist dvdisaster
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Jun 2015 20:23:34 +0200
+
 max-genlive (8.0.max14) max; urgency=medium
 
   * Fix squashfs exclude file
