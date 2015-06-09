@@ -1,3 +1,9 @@
+max-tcos (8.0.max3) max; urgency=medium
+
+  * Remove xfs, close #709
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Jun 2015 19:47:12 +0200
+
 max-tcos (8.0.max2) max; urgency=low
 
   * Remove max-server from max-terminales
