@@ -1,3 +1,9 @@
+max-gnome-default-settings (8.0.max16) max; urgency=medium
+
+  * Hide indicator-keyboard, close #706
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Jun 2015 18:52:26 +0200
+
 max-gnome-default-settings (8.0.max15) max; urgency=medium
 
   * Hide ibus by default

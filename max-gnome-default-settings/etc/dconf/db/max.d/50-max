@@ -73,6 +73,8 @@ show-welcome-dialog=false
 show-icon-on-systray=false
 show=0
 
+[com/canonical/indicator/keyboard]
+visible=false
 
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
