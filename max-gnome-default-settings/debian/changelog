@@ -1,3 +1,9 @@
+max-gnome-default-settings (8.0.max15) max; urgency=medium
+
+  * Hide ibus by default
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Jun 2015 18:34:27 +0200
+
 max-gnome-default-settings (8.0.max14) max; urgency=low
 
   * Expand panel separator, close #657
