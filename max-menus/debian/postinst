@@ -10,6 +10,14 @@ if [ "$1" = "configure" ]; then
   # change default audio player totem => rhythmbox
   sed -e '/audio/s/totem/rhythmbox/g' /etc/gnome/defaults.list > /etc/gnome/defaults.list.new
   mv /etc/gnome/defaults.list.new /etc/gnome/defaults.list
+
+  # remove distrib to hidde menu if ardesia is not installed
+  if [ -e /usr/bin/ardesia.distrib ]; then
+    if cmp /usr/bin/ardesia /usr/bin/ardesia.distrib >/dev/null 2>&1 ; then
+      rm -f /usr/bin/ardesia.distrib
+    fi
+  fi
+
 fi
 
 
