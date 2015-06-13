@@ -1,3 +1,15 @@
+max-gnome-default-settings (8.0.max19) max; urgency=medium
+
+  * Infantil: Add gcompris and pysycache to gnome-panel, close #696
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 13 Jun 2015 15:38:11 +0200
+
+max-gnome-default-settings (8.0.max18) max; urgency=medium
+
+  * Remove infantil.d, breaks panel
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 13 Jun 2015 15:17:44 +0200
+
 max-gnome-default-settings (8.0.max17) max; urgency=medium
 
   * Hide arrows in infantil, close #721
