@@ -140,10 +140,12 @@
 			<Filename>kde4-kbabeldict.desktop</Filename>
 			<Filename>kde4-kbabel.desktop</Filename>
 			<!--<Filename>gtranslator.desktop</Filename>-->
-			<Include><Filename>scratch.desktop</Filename></Include>
 			<Filename>fritzing.desktop</Filename>
 		</Exclude>
-		<Include><Filename>edu.media.mit.scratch2editor.desktop</Filename></Include>
+		<Include>
+			<Filename>scratch.desktop</Filename>
+			<Filename>edu.media.mit.scratch2editor.desktop</Filename>
+		</Include>
 	</Menu> <!-- End Development Tools -->
 	
 	
