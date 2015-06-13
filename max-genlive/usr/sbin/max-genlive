@@ -95,8 +95,9 @@ fi
 
 #PAQUETES_EXTRA_RESTRICTED="drdsl"
 PAQUETES_EXTRA_RESTRICTED="virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms"
-PAQUETES_INFANTIL="max-desktop-infantil-primaria max-infantil"
+PAQUETES_EXTRA_RESTRICTED="$PAQUETES_EXTRA_RESTRICTED nvidia-current nvidia-settings"
 
+PAQUETES_INFANTIL="max-desktop-infantil-primaria max-infantil"
 
 PAQUETES_EXTRA="tcos max-alumno max-profesor max-terminales"
 PAQUETES_EXTRA="$PAQUETES_EXTRA max-tcos-alumno max-tcos-profesor"
