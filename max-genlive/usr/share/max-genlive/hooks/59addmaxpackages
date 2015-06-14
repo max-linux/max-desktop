@@ -191,7 +191,7 @@ EOF
 
 
 BUILD32=0
-if [ "$ARCH" = "amd64" ] && [ "$(find $CDRW -name '*_i386.deb')" != "" ]; then
+if [ "$ARCH" = "amd64" ] && [ "$(find "$CDRW" -name '*_i386.deb')" != "" ]; then
 cat << EOF > $TMP/apt-ftparchive-max32.conf
 Dir {
   ArchiveDir "$CDRW";
@@ -222,7 +222,7 @@ EOF
   mkdir -p $CDRW/dists/$DISTRO/main/binary-i386
   mkdir -p $CDRW/dists/$DISTRO/max/binary-i386
   mkdir -p "$CDRW/pool/max32"
-  mv -v $(find -name '*_i386.deb') "$CDRW/pool/max32/"
+  mv -v $(find "$CDRW/pool/max" -name '*_i386.deb') "$CDRW/pool/max32/"
   BUILD32=1
 
 

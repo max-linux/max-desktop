@@ -1,3 +1,9 @@
+max-genlive (8.0.max17) max; urgency=medium
+
+  * Fix multiarch DVD repo fix
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Jun 2015 14:24:59 +0200
+
 max-genlive (8.0.max16) max; urgency=medium
 
   * Add nvidia drivers to DVD, close #689
