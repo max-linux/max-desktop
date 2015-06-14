@@ -1810,13 +1810,20 @@ class Install(install_misc.InstallBase):
     def do_autoremove(self):
         syslog.syslog("DEBUG do_autoremove() init")
         install_misc.chroot_setup(self.target)
-        delete_libdebian=False
+        to_delete = ["/bin/log-output"]
         try:
             shutil.copy("/bin/log-output", "/target/bin/log-output")
-            if not os.path.exists("/usr/lib/libdebian-installer.so.4"):
-                delete_libdebian=True
-                shutil.copy("/usr/lib/libdebian-installer.so.4", "/target/usr/lib/libdebian-installer.so.4")
-                shutil.copy("/usr/lib/libdebian-installer.so.4.0.7", "/target/usr/lib/libdebian-installer.so.4.0.7")
+
+            for arch in ['', "i386-linux-gnu", "x86_64-linux-gnu"]:
+                if os.path.exists("/usr/lib/%s/libdebian-installer.so.4" % arch):
+                    syslog.syslog("DEBUG: do_autoremove copy arch %s"  % arch)
+                    shutil.copy("/usr/lib/%s/libdebian-installer.so.4" % arch,
+                                "/target/usr/lib/%s/libdebian-installer.so.4" % arch)
+                    to_delete.append("/usr/lib/%s/libdebian-installer.so.4" % arch)
+
+                    shutil.copy("/usr/lib/%s/libdebian-installer.so.4.0.7" % arch,
+                                "/target/usr/lib/%s/libdebian-installer.so.4.0.7" % arch)
+                    to_delete.append("/usr/lib/%s/libdebian-installer.so.4.0.7")
 
             subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
                           'apt-get', 'autoremove', '--purge', '-y'],
@@ -1825,13 +1832,14 @@ class Install(install_misc.InstallBase):
             install_misc.chrex(self.target,'max-update-post-inst')
             install_misc.chrex(self.target,'max-reset-ssh-keys')
             install_misc.chrex(self.target,'check-efi-install')
-            os.unlink("/target/bin/log-output")
-            if delete_libdebian:
-                os.unlink("/target/usr/lib/libdebian-installer.so.4")
-                os.unlink("/target/usr/lib/libdebian-installer.so.4.0.7")
+            for f in to_delete:
+                if os.path.exists("/target/%s" % f)
+                    os.unlink("/target/%s" % f)
 
         except Exception:
             syslog.syslog("DEBUG: Exception in do_autoremove()")
+            for line in traceback.format_exc().split('\n'):
+                syslog.syslog(syslog.LOG_WARNING, line)
         install_misc.chroot_cleanup(self.target)
 
     # MaX
