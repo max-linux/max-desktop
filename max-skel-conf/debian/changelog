@@ -1,3 +1,9 @@
+max-skel-conf (8.0.max10) max; urgency=medium
+
+  * Fix GRUB EFI install, close #677
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Jun 2015 14:21:05 +0200
+
 max-skel-conf (8.0.max9) max; urgency=low
 
   * Set path of grub EFI, close #677
