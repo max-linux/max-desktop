@@ -1833,7 +1833,7 @@ class Install(install_misc.InstallBase):
             install_misc.chrex(self.target,'max-reset-ssh-keys')
             install_misc.chrex(self.target,'check-efi-install')
             for f in to_delete:
-                if os.path.exists("/target/%s" % f)
+                if os.path.exists("/target/%s" % f):
                     os.unlink("/target/%s" % f)
 
         except Exception:

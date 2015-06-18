@@ -1,3 +1,9 @@
+ubiquity-frontend-max (8.0.max14) max; urgency=medium
+
+  * Fix plugininstall.py typo
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 18 Jun 2015 17:48:39 +0200
+
 ubiquity-frontend-max (8.0.max13) max; urgency=medium
 
   * Fix do_autoremove, rel #677
