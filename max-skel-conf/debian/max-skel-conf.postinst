@@ -32,6 +32,10 @@ case "$1" in
 
     # obsolete
     rm -f /etc/skel/.dmrc
+    if [ -e "/etc/skel/.gnome2/nautilus-scripts/Crear lanzador" ]; then
+      rm -f '/etc/skel/.gnome2/nautilus-scripts/Crear lanzador'
+      rm -f "/home/*/.gnome2/nautilus-scripts/Crear lanzador"
+    fi
     ;;
 
 esac
