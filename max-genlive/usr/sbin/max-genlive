@@ -121,7 +121,7 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS overlay-scrollbar"
 ## gdm by default https://bugs.launchpad.net/ubuntu/+source/gdm/+bug/805154
 ##BLACKLIST_PKGS="$BLACKLIST_PKGS lightdm unity-greeter"
 # ibus (chinnese and japan input)
-BLACKLIST_PKGS="$BLACKLIST_PKGS ibus-gtk ibus-gtk3 ibus-pinyin ibus-table pinyin-database"
+#BLACKLIST_PKGS="$BLACKLIST_PKGS ibus-gtk ibus-gtk3 ibus-pinyin ibus-table pinyin-database"
 # don't install English help #439
 BLACKLIST_PKGS="$BLACKLIST_PKGS libreoffice-help-en-gb libreoffice-help-en-us"
 # ubiquity install KDE
