@@ -4,3 +4,7 @@ if [ ! -e $HOME/.config/xfce4/helpers.rc ]; then
 	mkdir -p $HOME/.config/xfce4/
 	cp /etc/xdg/xfce4/helpers.rc $HOME/.config/xfce4/helpers.rc
 fi
+
+if ! grep -q "MAX=" $HOME/.config/xfce4/helpers.rc 2>/dev/null ; then
+    cp /etc/xdg/xfce4/helpers.rc $HOME/.config/xfce4/helpers.rc
+fi

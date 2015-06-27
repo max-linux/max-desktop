@@ -1,3 +1,9 @@
+max-xfce-default-settings (8.0.max8) max; urgency=medium
+
+  * Set xfce4-terminal as default for XFCE, close #646
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 27 Jun 2015 13:39:29 +0200
+
 max-xfce-default-settings (8.0.max7) max; urgency=medium
 
   * Fix scratch in Development menu
