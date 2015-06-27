@@ -1,0 +1,11 @@
+Source: max-manuales
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 5), cdbs
+Standards-Version: 3.7.2
+
+Package: max-manuales
+Architecture: all
+Description: Manuales de instalación de MAX
+ Guía de instalación de MaX
