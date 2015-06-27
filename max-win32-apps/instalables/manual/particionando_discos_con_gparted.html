@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Particionando discos con GParted </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="generator" content="eXeLearning 2.0.3 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Mostrar",hide:"Ocultar",showFeedback:"Mostrar retroalimentación",hideFeedback:"Ocultar retroalimentación",correct:"Correcto",incorrect:"Incorrecto",menu:"Menú"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="emptyHeader"></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Portada</a></li>
+   <li><a href="introduccin_qu_es_max.html" class="daddy">Introducción ¿Qué es MAX?</a>
+   <ul class="other-section">
+      <li><a href="por_qu_max.html" class="no-ch">¿Por qué MAX?</a></li>
+      <li><a href="origen_de_max.html" class="no-ch">Origen de MAX</a></li>
+   </ul>
+   </li>
+   <li><a href="modos_de_funcionamiento_de_max.html" class="daddy">Modos de funcionamiento de MAX</a>
+   <ul class="other-section">
+      <li><a href="trabajar_desde_un_dvd_en_modo_live.html" class="no-ch">Trabajar desde un DVD en modo live</a></li>
+      <li><a href="trabajar_desde_un_dvd_en_modo_live_con_la_accesibilidad_activada.html" class="no-ch">Trabajar desde un DVD en modo live con la accesibilidad activada</a></li>
+      <li><a href="trabajar_desde_un_dispositivo_usb_en_modo_live.html" class="no-ch">Trabajar desde un dispositivo USB en modo live</a></li>
+      <li><a href="trabajar_desde_el_disco_duro_con_la_distribucin_instalada.html" class="no-ch">Trabajar desde el disco duro con la distribución instalada</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="instalacin_de_max_en_el_disco_duro.html" class="current-page-parent daddy">Instalación de MAX en el disco duro</a>
+   <ul>
+      <li><a href="requisitos.html" class="no-ch">Requisitos</a></li>
+      <li><a href="el_arranque_y_la_bios.html" class="no-ch">El arranque y la BIOS</a></li>
+      <li><a href="equipos_con_bios_uefi_windows_8_y_posteriores.html" class="no-ch">Equipos con BIOS UEFI (windows 8 y posteriores)</a></li>
+      <li class="current-page-parent"><a href="el_instalador_de_max.html" class="current-page-parent daddy">El Instalador de MAX</a>
+      <ul>
+         <li><a href="ejecutar_el_instalador.html" class="no-ch">Ejecutar el instalador</a></li>
+         <li><a href="seleccionar_el_tipo_de_instalacin.html" class="no-ch">Seleccionar el tipo de instalación</a></li>
+         <li><a href="seleccionar_caractersticas_de_la_instalacin.html" class="no-ch">Seleccionar características de la instalación</a></li>
+         <li id="active"><a href="particionando_discos_con_gparted.html" class="active no-ch">Particionando discos con GParted</a></li>
+         <li><a href="el_gestor_de_arranque_grub2.html" class="no-ch">El gestor de arranque Grub2</a></li>
+         <li><a href="finalizacin_de_la_instalacin_y_usuarios_creados.html" class="no-ch">Finalización de la instalación y usuarios creados</a></li>
+      </ul>
+      </li>
+      <li><a href="terminales_ligeros_tcos.html" class="no-ch">Terminales ligeros (TCOS)</a></li>
+   </ul>
+   </li>
+   <li><a href="configuracin_de_max.html" class="daddy">Configuración de MAX</a>
+   <ul class="other-section">
+      <li><a href="entornos_de_escritorio_y_personalizacin_del_entorno.html" class="daddy">Entornos de escritorio y personalización del entorno</a>
+      <ul class="other-section">
+         <li><a href="entorno.html" class="daddy">Entorno</a>
+         <ul class="other-section">
+            <li><a href="gnome1.html" class="no-ch">GNOME</a></li>
+            <li><a href="xfce1.html" class="no-ch">Xfce</a></li>
+         </ul>
+         </li>
+         <li><a href="personalizacin_del_entorno.html" class="daddy">Personalización del entorno</a>
+         <ul class="other-section">
+            <li><a href="gnome2.html" class="no-ch">GNOME</a></li>
+            <li><a href="xfce2.html" class="no-ch">Xfce</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="configuracin_de_red_y_nombre_de_los_equipos.html" class="daddy">Configuración de Red y nombre de los equipos</a>
+      <ul class="other-section">
+         <li><a href="configurar_la_red.html" class="no-ch">Configurar la red</a></li>
+         <li><a href="configuracin_de_la_tarjeta_de_red_cableada.html" class="no-ch">Configuración de la tarjeta de red cableada</a></li>
+         <li><a href="configuracin_de_una_tarjeta_de_red_inalmbrica.html" class="no-ch">Configuración de una tarjeta de red inalámbrica</a></li>
+         <li><a href="cambio_de_nombre_de_equipo_en_la_configuracin_de_red.html" class="no-ch">Cambio de nombre de equipo en la configuración de red</a></li>
+      </ul>
+      </li>
+      <li><a href="comparticin_de_recursos.html" class="daddy">Compartición de recursos</a>
+      <ul class="other-section">
+         <li><a href="nombre_del_equipo_y_grupo_de_trabajo.html" class="no-ch">Nombre del equipo y grupo de trabajo</a></li>
+         <li><a href="compartir_recursos_en_una_red.html" class="no-ch">Compartir recursos en una red</a></li>
+      </ul>
+      </li>
+      <li><a href="impresoras.html" class="daddy">Impresoras</a>
+      <ul class="other-section">
+         <li><a href="impresora_usb.html" class="no-ch">Impresora USB</a></li>
+         <li><a href="impresora_en_red.html" class="no-ch">Impresora en red</a></li>
+         <li><a href="archivo_ppd.html" class="no-ch">Archivo ppd</a></li>
+         <li><a href="impresora_en_otro_equipo_con_max.html" class="no-ch">Impresora en otro equipo con MAX</a></li>
+         <li><a href="impresora_en_otro_equipo_con_windows.html" class="no-ch">Impresora en otro equipo con Windows</a></li>
+      </ul>
+      </li>
+      <li><a href="pizarras_digitales.html" class="no-ch">Pizarras digitales</a></li>
+      <li><a href="otros_dispositivos.html" class="no-ch">Otros dispositivos</a></li>
+      <li><a href="el_configurador_de_perfiles.html" class="no-ch">El configurador de perfiles</a></li>
+      <li><a href="instalacin_de_software.html" class="daddy">Instalación de software</a>
+      <ul class="other-section">
+         <li><a href="instalacin_de_software_de_max.html" class="no-ch">Instalación de software de MAX</a></li>
+         <li><a href="gestor_de_paquetes_synaptic.html" class="daddy">Gestor de paquetes Synaptic</a>
+         <ul class="other-section">
+            <li><a href="conceptos_generales_sobre_la_gestin_de_paquetes.html" class="no-ch">Conceptos generales sobre la gestión de paquetes</a></li>
+            <li><a href="arranque_de_synaptic.html" class="no-ch">Arranque de Synaptic</a></li>
+            <li><a href="la_pantalla_principal.html" class="no-ch">La pantalla principal</a></li>
+            <li><a href="gestin_de_repositorios.html" class="no-ch">Gestión de repositorios</a></li>
+            <li><a href="actualizacin_de_los_listados_de_paquetes_desde_los_repositorios.html" class="no-ch">Actualización de los listados de paquetes desde los repositorios</a></li>
+            <li><a href="buscar_un_paquete.html" class="no-ch">Buscar un paquete</a></li>
+            <li><a href="seleccin_de_un_paquete_para_instalar.html" class="no-ch">Selección de un paquete para instalar</a></li>
+            <li><a href="aplicar_los_cambios_marcados.html" class="no-ch">Aplicar los cambios marcados</a></li>
+            <li><a href="finalizando_synaptic.html" class="no-ch">Finalizando Synaptic</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="arranque_del_equipo.html" class="no-ch">Arranque del equipo</a></li>
+      <li><a href="el_gestor_de_entrada_lightdm_y_el_entorno_de_escritorio.html" class="no-ch">El gestor de entrada (lightdm) y el entorno de escritorio</a></li>
+      <li><a href="para_saber_ms.html" class="no-ch">Para saber más</a></li>
+   </ul>
+   </li>
+   <li><a href="usar_max.html" class="daddy">Usar MAX</a>
+   <ul class="other-section">
+      <li><a href="utilizacin_bsica_del_sistema.html" class="daddy">Utilización básica del sistema</a>
+      <ul class="other-section">
+         <li><a href="explorador_de_archivos.html" class="daddy">Explorador de archivos</a>
+         <ul class="other-section">
+            <li><a href="seleccin_de_elementos.html" class="no-ch">Selección de elementos</a></li>
+            <li><a href="copiar_o_mover_archivos.html" class="no-ch">Copiar o mover archivos</a></li>
+            <li><a href="crear_una_nueva_carpeta.html" class="no-ch">Crear una nueva carpeta</a></li>
+            <li><a href="diferentes_vistas_de_documentos.html" class="no-ch">Diferentes vistas de documentos</a></li>
+         </ul>
+         </li>
+         <li><a href="usbs_y_otros_dispositivos.html" class="no-ch">USBs y otros dispositivos</a></li>
+         <li><a href="comprimir_y_descomprimir.html" class="daddy">Comprimir y descomprimir</a>
+         <ul class="other-section">
+            <li><a href="comprimir_archivos.html" class="no-ch">Comprimir archivos</a></li>
+            <li><a href="descomprimir_archivos.html" class="no-ch">Descomprimir archivos</a></li>
+         </ul>
+         </li>
+         <li><a href="alojamiento_de_ficheros_en_la_red.html" class="daddy">Alojamiento de ficheros en la red</a>
+         <ul class="other-section">
+            <li><a href="directorio_de_ficheros_de_educamadrid.html" class="no-ch">Directorio de ficheros de Educamadrid</a></li>
+         </ul>
+         </li>
+         <li><a href="compartir_una_carpeta_con_alumnos.html" class="daddy">Compartir una carpeta con alumnos</a>
+         <ul class="other-section">
+            <li><a href="el_profesor_quiere_enviar_ficheros.html" class="no-ch">El profesor quiere enviar ficheros</a></li>
+            <li><a href="alumnos_comparten_informacin.html" class="no-ch">Alumnos comparten información</a></li>
+            <li><a href="alumnos_entregan_examen.html" class="no-ch">Alumnos entregan examen</a></li>
+            <li><a href="cmo_accede_un_alumno_a_carpeta_compartida.html" class="no-ch">Cómo accede un alumno a carpeta compartida</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="aplicaciones_bsicas.html" class="daddy">Aplicaciones básicas</a>
+      <ul class="other-section">
+         <li><a href="navegadores.html" class="no-ch">Navegadores</a></li>
+         <li><a href="trabajar_con_documentos_de_office.html" class="daddy">Trabajar con documentos de Office</a>
+         <ul class="other-section">
+            <li><a href="guardar_archivo_como_microsoft_office.html" class="no-ch">Guardar archivo como Microsoft Office</a></li>
+            <li><a href="guardar_archivo_como_pdf.html" class="no-ch">Guardar archivo como PDF</a></li>
+         </ul>
+         </li>
+         <li><a href="reproductores_multimedia.html" class="daddy">Reproductores multimedia</a>
+         <ul class="other-section">
+            <li><a href="imagen.html" class="no-ch">Imagen</a></li>
+            <li><a href="sonido.html" class="no-ch">Sonido</a></li>
+            <li><a href="vdeo.html" class="no-ch">Vídeo</a></li>
+         </ul>
+         </li>
+         <li><a href="correo_electrnico.html" class="daddy">Correo electrónico</a>
+         <ul class="other-section">
+            <li><a href="thunderbird__crear_una_cuenta.html" class="no-ch">Thunderbird - crear una cuenta</a></li>
+            <li><a href="uso_bsico_y_opciones.html" class="no-ch">Uso básico y opciones</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="seleccionar_caractersticas_de_la_instalacin.html" class="prev"><span>&laquo; </span>Anterior</a> | <a href="el_gestor_de_arranque_grub2.html" class="next"> Siguiente<span> &raquo;</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Particionando discos con GParted</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id46">
+<div class="iDevice emphasis0">
+<div id="ta46_239" class="block iDevice_content">
+<p>Como alternativa al asistente de particionado de la propia instalación puede utilizar el programa <strong>Gparted</strong>, localizado en <strong>Administración</strong> -&gt; <strong>Editor de</strong><br /><strong>particiones (Gparted)</strong>, que tambien se puede lanzar desde una terminal mediante el comando:</p>
+<pre><strong>sudo gparted</strong></pre>
+<p>y con la contraseña: <strong>cmadrid</strong></p>
+<p>Una de las ventajas de <strong>GParted</strong> es que se pueden realizar cambios en el disco sin que estos sean aplicados, y una vez que estemos satisfechos con el resultado grabar los cambios para que sean permanentes.</p>
+<p>Es importante no tener abierto el instalador de <strong>MAX</strong> al utilizar <strong>Gparted</strong>. Al abrir el programa se muestra la siguiente ventana:</p>
+<div class="exe-figure exe-image position-center" style="width: 600px;"><img src="fig_gparted_01.png" width="600" height="396" />
+<div class="figcaption"><span class="title"><em>Aspecto del programa para realizar las particiones. Gparted</em></span></div>
+</div>
+<p>La ventana de Gparted está dividida en las siguientes zonas:</p>
+<ul>
+<li><strong>Selección de Disco duro</strong>: permite listar aquellos discos duros presentes en el ordenador, así como seleccionar en qué disco duro quiere particionar.</li>
+</ul>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="fig_gparted_02.png" width="150" height="31" /></p>
+<ul>
+<li><strong>Barra de espacio en el disco duro</strong>: Esta barra representa el contenido del disco duro seleccionado. Cada caja representa una partición del disco duro. Cada caja tiene un color que corresponde con el sistema de ficheros con el que está formateada. En la leyenda de la barra se puede ver qué sistemas de ficheros corresponden con cada color. También se puede ver dentro de cada partición el espacio utilizado de cada partición.</li>
+</ul>
+<div class="exe-figure exe-image position-center" style="width: 600px;"><img src="fig_gparted_03.png" width="600" height="59" />
+<div class="figcaption"><span class="title"><em>Representación gráfica de las particiones detectadas</em></span></div>
+</div>
+<ul>
+<li><strong>Listado de particiones</strong>: Este listado permite ver detalles sobre las particiones tales como: el nombre de la partición, el sistema de ficheros, el<br />tamaño total, el tamaño usado (ocupado), el espacio libre, etc...</li>
+</ul>
+<div class="exe-figure exe-image position-center" style="width: 600px;"><img src="fig_gparted_04.png" width="600" height="69" />
+<div class="figcaption"><span class="title"><em>Ejemplo de listado de particiones</em></span></div>
+</div>
+<p><strong>NOTA:</strong> Las particiones mostradas en el ejemplo de las figuras anteriores no tienen por qué corresponder con las de su ordenador, y se muestran solamente a título ilustrativo.</p>
+<ul>
+<li><strong>Listado de acciones pendientes</strong>: permite ver las tareas que se van a hacer cuando se termine de planificar las particiones.<br /><br /></li>
+<li><strong>Menú y botones de acceso directo</strong>: Todas las acciones que se pueden hacer con los botones las podemos encontrar también en los menús. Destacar el último botón el cual habrá que pulsar para confirmar los cambios realizados antes de cerrar el programa.</li>
+</ul>
+<div class="exe-figure exe-image position-center" style="width: 341px;"><img src="fig_gparted_05.png" width="341" height="70" />
+<div class="figcaption"><span class="title"><em>Barra de botones y de Menú en Gparted</em></span></div>
+</div>
+<p>A continuación se muestra un ejemplo de cómo redimensionar una partición de Windows y luego crear las particiones necesarias para dejar el disco preparado para el asistente de instalación.</p>
+<h2>Redimensión de partición única de Windows</h2>
+<p>Una instalación típica de Windows, por ejemplo Windows 7, consta de dos particiones primarias, una primera de un tamaño bastante reducido y que no suele superar los 500MB. Esta partición contiene los ficheros de arranque de Windows. La segunda partición suele ocupar el resto del disco y contiene el sistema operativo en sí. Está ultima partición es la que nos interesa redimensionar. También se puede encontrar Windows instalado en una sola partición, por lo que entonces no hay lugar a duda de la partición a seleccionar.<span class="title"><em> <br /></em></span></p>
+<p>Para redimensionar la partición hacemos clic con el botón derecho del ratón sobre ella y en el menú contextual que aparece seleccionamos <strong>Redimensionar/mover</strong></p>
+<div class="exe-figure exe-image position-center" style="width: 500px;"><img src="fig_gparted_06.png" width="500" height="122" />
+<div class="figcaption"><span class="title"><em>Selección de una partición para su redimensionado</em></span></div>
+</div>
+<p>Aparecerá entonces la siguiente ventana:</p>
+<div class="exe-figure exe-image position-center" style="width: 500px;"><img src="fig_gparted_07.png" width="450" height="238" />
+<div class="figcaption"><span class="title"><em>Redimensionado de la partición de Windows</em></span></div>
+</div>
+<p>En esta ventana tenemos dos opciones para cambiar el tamaño, arrastrando las flechas negras que están en los limites del dibujo de la partición o introduciendo el valor en los campos correspondientes. En el ejemplo de la imagen se ha introducido directamente un valor de 10GiB(10240MiB) para dejar libre unos 20 GB para la instalación de <strong>MAX</strong>.</p>
+<p>Ajuste en su caso el cuadro <strong>Tamaño Nuevo</strong> poniendo un valor tal que en la casilla del <strong>Espacio libre a continuación</strong> se ajuste a un valor de al menos<br />20379 MiB (unos 20 GB aproximadamente, que es el tamaño mínimo para instalar <strong>MAX</strong>).</p>
+<p>Al pulsar el botón <strong>Redimensionar/Mover</strong> volveremos a la ventana principal, veremos que debajo de la tabla de particiones, se muestra el listado de acciones pendientes y que, en éste, se ha añadido una nueva entrada que identifica que se ha planificado una redimensión. Según se vayan realizando nuevas acciones, se irán añadiendo a ese listado. Además también observaremos que el botón de aplicar las acciones pendientes se ha iluminado:</p>
+<div class="exe-figure exe-image position-center" style="width: 450px;"><img src="fig_gparted_08.png" width="550" height="260" />
+<div class="figcaption"><span class="title"><em>Redimensionando particiones con Gparted</em></span></div>
+</div>
+<p>Podemos seguir realizando cambios pero es preferible hacerlos uno a uno por si hay algún error saber en que punto estamos teniendo problemas, así que pulsamos el botón de aplicar cambios el cual pedirá confirmar la acción. El redimensionado de una partición puede tardar desde unos pocos segundos hasta varios minutos, así que esperaremos a que termine el proceso.</p>
+<div class="exe-figure exe-image position-center" style="width: 300px;"><img src="fig_gparted_09.png" style="float: right;" width="350" height="130" />
+<div style="text-align: center;" class="figcaption"><span class="title"><em>Redimensionado terminado</em></span></div>
+</div>
+<p>cuando se indique, tal como aparece en la imagen anterior, podremos cerrar la ventana. Volveremos entonces a la ventana principal donde podemos observar el cambio:</p>
+<div class="exe-figure exe-image position-center" style="width: 500px;"><img src="fig_gparted_10.png" width="600" height="262" />
+<div class="figcaption"><span class="title"><em>Espacio disponible después del redimensionado</em></span></div>
+</div>
+<p>Ahora ya podemos crear las particiones para la instalación de MAX. Son necesarias al menos dos particiones:</p>
+<ul>
+<li>Una partición principal con, al menos, <strong>20 GB</strong> de tamaño, formateada como <strong>ext4</strong>, utilizará el punto de montaje llamado <strong>raíz</strong> representado por el símbolo de la barra diagonal "<strong>/</strong>".<br /><br /></li>
+<li>Opcionalmente una partición <strong>swap</strong> o de intercambio, de <strong>1GB</strong>.<br /><br /></li>
+<li>Opcionalmente una partición de datos formateada como <strong>ext4</strong> con punto de montaje <strong>/home</strong></li>
+</ul>
+<p>Para instalar <strong>MAX</strong> es necesario disponer de ambas particiones, ya sea redimensionando una partición existente o creando particiones nuevas en un espacio vacío, esto puede hacerse con <strong>Gparted</strong>.</p>
+<p><strong>Crear la partición raíz</strong>: para ello pulse con el botón derecho del ratón sobre la fila del espacio sin asignar y en el menú contextual que aparece, pulse sobre la opción <strong>Nueva</strong>, aparecerá la siguiente ventana:</p>
+<div class="exe-figure exe-image position-center" style="width: 500px;"><img src="fig_gparted_11.png" width="500" height="218" />
+<div class="figcaption"><span class="title"><em>Creación de una partición extendida</em></span></div>
+</div>
+<p>Puede instalar <strong>MAX</strong> directamente en una partición primaria siempre que la suma de las particiones primarias mas la extendida no superen más de cuatro particiones. En nuestro ejemplo se ha elegido extendida para documentar este caso que es algo más complejo pero se podían haber elegido como primarias pues teníamos dos particiones primarias ocupadas por la instalación de Windows, mas otras dos que queremos crear para <strong>MAX</strong>, en total justo cuatro particiones primarias.</p>
+<p>Si desea crear más de cuatro particiones en su sistema, entonces será obligatorio crear una partición extendida que almacenará el resto de particiones. En otro caso es indiferente instalar <strong>MAX</strong> en una partición primaria o en una extendida.</p>
+<p>Al pulsar el botón <strong>Añadir</strong> veremos que aparece la nueva partición extendida:</p>
+<div class="exe-figure exe-image position-center" style="width: 500px;"><img src="fig_gparted_12.png" width="600" height="315" />
+<div class="figcaption"><span class="title"><em>Partición extendia sin ninguna partición lógica creada</em></span></div>
+</div>
+<p>Ahora el espacio sin asignar está dentro de la partición extendida, es ahí donde crearemos la partición raíz, para ello haga clic derecho sobre la fila del espacio <strong>sin asignar</strong> y en el menú contextual que aparece seleccione <strong>Nueva</strong>. Aparecerá una ventana parecida a la siguiente:</p>
+<div class="exe-figure exe-image position-center" style="width: 600px;"><img src="fig_gparted_13.png" width="600" height="262" />
+<div class="figcaption"><span class="title"><em>Creación de la partición raíz</em></span></div>
+</div>
+<p>Ajuste los valores con el tamaño que desea para la partición de <strong>MAX</strong>, lo normal es modificar directamente el <strong>espacio libre a continuación</strong> para reservar el tamaño de la partición de intercambio, en el ejemplo <strong>1024 MiB</strong>, y el resto dejarlo para <strong>MAX</strong>.</p>
+<p>Cambie el sistema de archivos a <strong>ext4</strong> y escriba una etiqueta que identifique ese partición. Es recomendable dejar la alineación de las particiones con "<strong>MiB</strong>", debido a ello puede que entre particiones queden espacios de <strong>1 MiB</strong> tal como se observa en el espacio libre precedente. Hay particionadores que muestran estos espacios como no usados, no intente aprovecharlos moviendo las particiones pues puede ocasionar la perdida de la partición.</p>
+<p>Realice el mismo proceso para añadir la partición de intercambio, solo que ahora configure las opciones tal como se muestran en la siguiente imagen, teniendo en cuenta que el tamaño de su partición de intercambio puede ser diferente:</p>
+<div class="exe-figure exe-image position-center" style="width: 500px;"><img src="fig_gparted_14.png" width="500" height="219" />
+<div class="figcaption"><span class="title"><em>Creación de la partición de intercambio o swap</em></span></div>
+</div>
+<p>Después de añadir la partición de intercambio tan sólo queda pulsar el botón de aplicar los cambios para que sean permanentes, nos advertirá que la edición de particiones puede ser peligrosa y puede provocar la perdida de datos:</p>
+<div class="exe-figure exe-image position-center" style="width: 300px;"><img src="fig_gparted_15.png" width="330" height="140" />
+<div class="figcaption"><span class="title"><em>Confirmando los cambios en las particiones</em></span></div>
+</div>
+<p>pulse sobre el botón <strong>Aplicar</strong> si está conforme con los resultados y verá como se van aplicando cada uno de los pasos que ha ido dando en una ventana de progreso similar a la siguiente:<br /><br /></p>
+<div class="exe-figure exe-image position-center" style="width: 330px;"><img src="fig_gparted_16.png" width="330" height="192" />
+<div class="figcaption"><span class="title"><em>Aplicando los cambios en las particiones</em></span></div>
+</div>
+<p>Al terminar ya tendremos preparadas las particiones para la instalación de MAX, el resultado final debería ser algo parecido a la siguiente imagen:</p>
+<div class="exe-figure exe-image position-center" style="width: 600px;"><img src="fig_gparted_17.png" width="600" height="283" />
+<div class="figcaption"><span class="title"><em>Esquema de particiones</em></span></div>
+</div>
+<p>De esta manera disponemos de: una partición de Windows modificada y con espacio suficiente para funcionar, una partición de sistema de tipo <strong>ext4 </strong>para <strong>MAX</strong> y una partición de intercambio, <strong>linux-swap</strong>, para optimizar el rendimiento de <strong>MAX</strong>.</p>
+<p>Para instalar MAX conservando las particiones que hemos creado, inicie el instalador y en la ventana que detecta el tipo de instalación, seleccione <strong>Más opciones</strong>:</p>
+<div class="exe-figure exe-image position-center" style="width: 700px;"><img src="insta_max_gparted_mas_opciones.png" width="700" height="417" />
+<div class="figcaption"><span class="title"><em>Instalación con selección personalizada de particiones</em></span></div>
+</div>
+<p>En este caso aparecen las particiones que hemos definido con <strong>GParted</strong>, tan sólo hay que indicar al asistente qué partición queremos que sera la partición raíz, para ello seleccionamos la partición <strong>ext4</strong> y pulsamos el botón <strong>Cambiar</strong>...:</p>
+<div class="exe-figure exe-image position-center" style="width: 600px;"><img src="fig_gparted_18.png" width="600" height="402" />
+<div class="figcaption"><span class="title"><em>Selección de puntos de montaje</em></span></div>
+</div>
+<p>Elegiremos el mismo sistema de ficheros con el que se creó la partición, <strong>ext4</strong>, y lo mas importante, indicar que el punto de montaje será la raíz. No hace falta volver a formatear la partición si está recién creada por lo que no marcamos dicha opción. En caso de que estemos realizando una instalación sobre una versión anterior de <strong>MAX</strong> sí habría que marcar formatear la partición para que se elimine cualquier resto de la versión anterior:</p>
+<div class="exe-figure exe-image position-center" style="width: 350px;"><img src="config_particion_raiz.png" width="350" height="178" />
+<div class="figcaption"><span class="title"><em>Configuración de la partición raíz</em></span></div>
+</div>
+<p>Pulsamos el botón Aceptar y al volver a la ventana principal del asistente ya podemos pulsar Instalar ahora. Como no hemos marcado la opción de formatear la partición el asistente avisa con el siguiente mensaje:</p>
+<div class="exe-figure exe-image position-center" style="width: 500px;"><img src="fig_gparted_19.png" width="500" height="267" />
+<div class="figcaption"><span class="title"><em>Aviso sobre marcado para formatear</em></span></div>
+</div>
+<p>Al pulsar en el botón <strong>Continuar</strong> se pasará a la ventana de selección del tipo de instalación (Escritorio, Profesor, Alumno, etc.) tal como se ha descrito en la sección anterior. El proceso a partir de aquí es el mismo, cuando termine la instalación pedirá reiniciar el equipo y deberemos extraer el DVD.</p>
+<div class="exe-figure exe-image position-center" style="width: 400px;"><img src="fig_gparted_21.png" width="500" height="266" />
+<div class="figcaption"><span class="title"><em>Finalización de la instalación de MAX</em></span></div>
+</div>
+<h2>Reiniciar el ordenador</h2>
+<p>Una vez que <strong>MAX</strong> haya terminado de cerrar, expulsará automáticamente el <strong>DVD</strong> de su lector, cuando esto ocurra pulse la tecla <strong>&lt;Intro&gt;</strong> para rearrancar el ordenador.</p>
+<p>Al terminar la instalación de cualquiera de las versiones de <strong>MAX</strong>, se crean por defecto dos usuarios: el usuario <em><strong>madrid</strong></em> y el usuario <em><strong>alumno</strong></em>.</p>
+<p><strong><span style="color: #ff0000;">RECUERDE</span></strong> que el usuario <em><strong>madrid</strong></em>, con la contraseña <em><strong>cmadrid</strong></em>, tiene permiso total sobre el equipo, por lo que se recomienda cambiar la contraseña de dicho usuario una vez finalizada la instalación, principalmente en los equipos instalados en las aulas de informática de los centros docentes.</p>
+<p>El usuario alumno está configurado por defecto para perder todos los cambios que haga en Escritorio y Documentos. Este comportamiento puede modificarlo desde el usuario <em><strong>madrid</strong></em> con el programa <strong>Inicio → Administracion → Configurador de perfiles (homealumno)</strong></p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="seleccionar_caractersticas_de_la_instalacin.html" class="prev"><span>&laquo; </span>Anterior</a> | <a href="el_gestor_de_arranque_grub2.html" class="next"> Siguiente<span> &raquo;</span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_max_js.js"></script></body></html>
