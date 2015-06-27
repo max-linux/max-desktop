@@ -1,3 +1,9 @@
+max-skel-conf (8.0.max14) max; urgency=medium
+
+  * Preconfigure pysiogame with homealumno profile, close #708
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 27 Jun 2015 18:54:43 +0200
+
 max-skel-conf (8.0.max13) max; urgency=medium
 
   * Add gdmflexiserver to fix switch users, close #687
