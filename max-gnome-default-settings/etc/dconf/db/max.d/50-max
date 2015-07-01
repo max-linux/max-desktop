@@ -87,3 +87,5 @@ command='gnome-system-monitor'
 name='Monitor de recursos'
 
 
+[org/gnome/settings-daemon/plugins/power]
+button-power='interactive'
