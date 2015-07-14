@@ -8,7 +8,7 @@ Standards-Version: 3.8.4
 Package: max-multiseat
 Architecture: any
 Depends: gdm-2.20, 
-         xserver-xorg-video-displaylink,
+#         xserver-xorg-video-displaylink,
          xserver-xorg-video-tusb (>= 0.1.0-4max7) , 
          util-linux, procps,
          max-multiseat-storage

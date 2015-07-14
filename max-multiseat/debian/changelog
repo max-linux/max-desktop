@@ -1,3 +1,9 @@
+max-multiseat (8.0.max2) max; urgency=medium
+
+  * Remove obsolete xserver-xorg-video-displaylink
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 14 Jul 2015 16:47:25 +0200
+
 max-multiseat (8.0.max1) max; urgency=low
 
   * Build in MAX 8.0
