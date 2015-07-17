@@ -1,0 +1,13 @@
+[Desktop Entry]
+Keywords=Drivers;
+Exec=/usr/bin/software-properties-gtk --open-tab=4
+Icon=jockey
+Terminal=false
+Type=Application
+NotShownIn=GNOME;Unity;KDE;
+Categories=X-XFCE;GTK;Settings;HardwareSettings
+Name=Additional Drivers
+Name[es]=Controladores adicionales
+Comment=Configure third-party and proprietary drivers
+Comment[es]=Configurar drivers de terceros y propietarios
+X-Ubuntu-Gettext-Domain=software-properties
