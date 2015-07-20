@@ -1,6 +1,7 @@
 
 
-mkdir -p $CDRW $CDRW/casper $CDRW/nanomax $CDRW/pool $CDRW/portables $CDRW/preseed $CDRW/.disk $CDRW/isolinux
+mkdir -p $CDRW $CDRW/casper $CDRW/pool $CDRW/preseed $CDRW/.disk $CDRW/isolinux
+#mkdir -p $CDRW/nanomax $CDRW/portables
 
 
 if [ ! -d $CHROOT ]; then

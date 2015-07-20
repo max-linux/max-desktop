@@ -1,3 +1,11 @@
+max-genlive (8.0.max21) max; urgency=medium
+
+  * Bump version MAX-8.0
+  * Remove nvidia from DVD
+  * Don't create empty nanomax or installer dirs
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 20 Jul 2015 09:11:31 +0200
+
 max-genlive (8.0.max20) max; urgency=medium
 
   * Bump version to 8.1-rc1
