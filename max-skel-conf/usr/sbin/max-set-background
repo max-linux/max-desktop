@@ -11,8 +11,20 @@ fi
 
 
 RES=$(xrandr | grep '*' | head -1 | awk '{ print $1 }' 2>/dev/null)
+if [ -z "$RES" ]; then
+  exit 0
+fi
+
 X=${RES%x*}
+case $X in
+ ''|*[!0-9]*) exit 0 ;;
+esac
+
 Y=${RES#*x}
+case $Y in
+ ''|*[!0-9]*) exit 0 ;;
+esac
+
 REL=$(($X*10/$Y))
 
 case 1 in
