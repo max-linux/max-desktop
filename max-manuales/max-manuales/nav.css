@@ -1,6 +1,6 @@
-body{padding:0;text-align:center;background:#fff url(_max_fondo_pagina.gif)}
+body{padding:0;text-align:center;background:#fff url(maxfondopagina.gif)}
 #lbOverlay{background:#000}
-#content{width:97%;margin:20px auto;text-align:left;position:relative;padding-bottom:21px;min-width:965px;background:#fff url(_max_columna_izquierda.gif) repeat-y 0 0;border:5px solid #000;box-shadow:0 0 10px 0 #666;border-radius:5px}
+#content{width:97%;margin:20px auto;text-align:left;position:relative;padding-bottom:21px;min-width:965px;background:#fff url(maxcolumnaizquierda.gif) repeat-y 0 0;border:5px solid #000;box-shadow:0 0 10px 0 #666;border-radius:5px}
 .no-nav #content{background:#fff}
 #main-wrapper{padding:10px 20px 0 250px}
 .no-nav #main-wrapper{padding-left:20px}
@@ -40,7 +40,7 @@ html[xmlns] #content{display:block}
 * html #content{height: 1%;overflow:visible}
 
 #nav-toggler{margin:0;position:absolute;top:8.3em;right:20px}
-#nav-toggler a{display:block;width:11px;height:11px;background:url(_max_max_min.gif) no-repeat 0 0;outline:none}
+#nav-toggler a{display:block;width:11px;height:11px;background:url(maxmaxmin.gif) no-repeat 0 0;outline:none}
 #nav-toggler .hide-nav{background-position:0 -11px}
 #nav-toggler span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 
@@ -58,7 +58,7 @@ html[xmlns] #content{display:block}
 	#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none;border-bottom-color:#000}
 	#siteNav a{display:block;text-decoration:none;padding:.4em 10px;border:none}
 	#siteNav li{float:left}
-    #siteNav ul ul .daddy{background:url(_max_flecha_nav.gif) no-repeat right 50%}
+    #siteNav ul ul .daddy{background:url(maxflechanav.gif) no-repeat right 50%}
 	#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}
 	* html #siteNav li ul{width:13em}
 	#siteNav li li{padding-right:1em;width:13em}
