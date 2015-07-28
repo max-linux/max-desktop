@@ -21,7 +21,7 @@ li{list-style-position:inside}
 input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 /* 'tips for completion' and 'pedagogical help' */
 .popupDiv{background-color:#EDEFF0;border:2px solid #607489;padding:0 4px 4px 4px;margin-left:15px;text-align:left;z-index:99;border-radius:3px}
-.popupDivLabel{text-align:center;font:message-box;font-weight:bold;color:#fff;cursor:move;margin:0 -4px;background-image:url(popup_bg.gif)}
+.popupDivLabel{text-align:center;font:message-box;font-weight:bold;color:#fff;cursor:move;margin:0 -4px;background-image:url(popupbg.gif)}
 @media print{
     .feedback{display:block}
     .feedbackbutton{display:none}
