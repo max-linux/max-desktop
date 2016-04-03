@@ -1,3 +1,9 @@
+max-configure-proxy (8.0.max3) max; urgency=medium
+
+  * Add 192.168.1.0/24 to exceptions, close #771
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 03 Apr 2016 17:39:50 +0200
+
 max-configure-proxy (8.0.max2) max; urgency=medium
 
   * Add proxy exceptions, close #668

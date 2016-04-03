@@ -39,6 +39,8 @@ gobject.threads_init()
 debug=False
 PACKAGE="max-configure-proxy"
 DEFAULT_EXCP='localhost,127.0.0.1,max-server,.educa.madrid.org,.educa2.madrid.org'
+for i in range(255):
+    DEFAULT_EXCP="%s,192.168.1.%d" % (DEFAULT_EXCP, i)
 
 UI_DIR = "/usr/share/max-configure-proxy/"
 #UI_DIR = "./"
