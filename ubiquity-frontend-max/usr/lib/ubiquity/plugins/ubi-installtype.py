@@ -233,12 +233,14 @@ class PageGtk(PageBase):
         result = subp.communicate()[0].splitlines()
         self.sti=result[0].strip()
         syslog.syslog("DEBUG: get_test_sti() result=%s sti=%s"%(result, self.sti))
-        if self.sti == "YES":
+        if self.sti == b'YES':
             self.install_warn_sti.show()
             os.popen("sudo touch /tmp/max_sti")
+            syslog.syslog("DEBUG: get_test_sti() YES")
         else:
             self.install_warn_sti.hide()
             os.popen("sudo rm -f /tmp/max_sti")
+            syslog.syslog("DEBUG: get_test_sti() NO")
 
     def on_hostname_changed(self, widget):
         if widget.get_text() != '':

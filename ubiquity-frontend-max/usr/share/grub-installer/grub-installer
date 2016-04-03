@@ -907,8 +907,8 @@ if [ -z "$frdisk" ] || [ "$grub_version" = grub2 ]; then
 			info "grub-install ran successfully"
                         # MAX
                         if [ ! -d /sys/firmware/efi ] && [ -e /tmp/max_sti ]; then
-                            info "DETECTED STI card running $chroot $ROOT grub-install $grub_install_params \"/dev/sda1\""
-                            log-output -t grub-installer $chroot $ROOT grub-install $grub_install_params "/dev/sda1"
+                            info "DETECTED STI card running $chroot $ROOT grub-install $grub_install_params \"/dev/sda1\" --force"
+                            log-output -t grub-installer $chroot $ROOT grub-install $grub_install_params "/dev/sda1" --force
                             rm -f /tmp/max_sti
                         fi
 		else

@@ -1,3 +1,9 @@
+ubiquity-frontend-max (8.0.max15) max; urgency=medium
+
+  * Fix STI detect and install GRUB in sda1, close #774
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 03 Apr 2016 17:12:09 +0200
+
 ubiquity-frontend-max (8.0.max14) max; urgency=medium
 
   * Fix plugininstall.py typo
