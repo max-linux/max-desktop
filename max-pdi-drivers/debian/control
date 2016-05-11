@@ -57,3 +57,22 @@ Depends: activaid (>= 2.0.1-9~Ubuntu~1404),
 Description: Drivers for Promethean PDI
  Drivers for Promethean PDI
 
+
+Package: max-pdi-drivers-iqboard
+Architecture: i386
+Multi-Arch: foreign
+Depends: rsboardep,
+         ${shlibs:Depends}, ${misc:Depends}
+Description: Drivers for IQBoard PDI
+ Drivers for IQBoard PDI
+
+
+
+Package: max-pdi-drivers-hitachi
+Architecture: i386
+Multi-Arch: foreign
+Depends: starboardsoftware,
+         ${shlibs:Depends}, ${misc:Depends}
+Description: Drivers for Hitachi PDI
+ Drivers for Hitachi PDI
+
