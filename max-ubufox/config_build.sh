@@ -1,6 +1,6 @@
 #!/bin/bash
 # Build config for build.sh
-APP_NAME=ubufox
+APP_NAME=maxubufox
 CHROME_PROVIDERS="content locale res"
 CLEAN_UP=1
 ROOT_FILES=

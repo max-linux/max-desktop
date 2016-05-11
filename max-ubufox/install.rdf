@@ -2,11 +2,11 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
  xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
-    <em:id>ubufox@ubuntu.com</em:id>
-    <em:unpack>true</em:unpack>
+    <em:id>maxubufox@educa.madrid.org</em:id>
     <em:name>MAX and Ubuntu Firefox Modifications</em:name>
-    <em:version>3.0</em:version>
+    <em:version>3.2.2</em:version>
     <em:creator>Canonical Ltd.</em:creator>
+    <em:type>2</em:type>
     <em:contributor>Alexander Sack &lt;asac@ubuntu.com&gt;</em:contributor>
     <em:contributor>Sasa Bodiroza &lt;jazzva@gmail.com&gt;</em:contributor>
     <em:contributor>Daniel Abramov &lt;ex@vingrad.ru&gt;</em:contributor>
