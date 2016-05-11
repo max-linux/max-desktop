@@ -41,3 +41,19 @@ Depends: libnspr4-0d (>= 2:4.10.10-0ubuntu0.14.04.1),
 Description: Drivers for SMART 680 PDI
  Drivers for SMART 680 PDI
 
+Package: max-pdi-drivers-promethean
+Architecture: i386
+Multi-Arch: foreign
+Depends: activaid (>= 2.0.1-9~Ubuntu~1404),
+         activdriver (>= 5.11.7-1~Ubuntu~1404),
+         activtools (>= 5.11.7-1~Ubuntu~1404),
+         activhwr-es (>= 1.0.1-76),
+         libssl0.9.8 (>= 0.9.8o-7ubuntu3.2.14.04.1),
+         activinspire-help-es (>= 1.0.2-7),
+         activresources-core-es (>= 1.0.1-144),
+         activ-meta-es (>= 2.0.0-67),
+         libxmu6, libpulse-mainloop-glib0,
+         ${shlibs:Depends}, ${misc:Depends}
+Description: Drivers for Promethean PDI
+ Drivers for Promethean PDI
+
