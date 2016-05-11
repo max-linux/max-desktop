@@ -1,0 +1,43 @@
+Source: max-pdi-drivers
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez <mario.izquierdo@thinetic.es>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+
+Package: max-pdi-drivers-smart-480
+Architecture: i386
+Multi-Arch: foreign
+Depends: libnspr4-0d (>= 2:4.10.10-0ubuntu0.14.04.1),
+         libudev0 (>= 175-0ubuntu9),
+         smart-common (>= 10.3.2171.1-1),
+         smart-languagesetup (>= 2.2.2060.4),
+         smart-hwr (>= 11.3.2121.1),
+         smart-product-drivers (>= 11.3.2121.1-1),
+         xf86-input-nextwindow-wheezy (>= 0.3.4~wheezy1),
+         nwfermi (>= 0.6.5.1),
+         smart-gallerysetup (>= 1.3.6235.1),
+         smart-activation (>= 1.1.2066.1-1),
+         smart-notebook (>= 11.0.7511.0-1),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: Drivers for SMART 480 PDI
+ Drivers for SMART 480 PDI
+
+Package: max-pdi-drivers-smart-680
+Architecture: i386
+Multi-Arch: foreign
+Depends: libnspr4-0d (>= 2:4.10.10-0ubuntu0.14.04.1),
+         libudev0 (>= 175-0ubuntu9),
+         smart-common (>= 10.3.2171.1-1),
+         smart-languagesetup (>= 2.2.2060.4),
+         smart-hwr (>= 11.3.2121.1),
+         smart-product-drivers (>= 11.3.2121.1-1),
+# no         xf86-input-nextwindow-wheezy (>= 0.3.4~wheezy1),
+# no         nwfermi (>= 0.6.5.1),
+         smart-gallerysetup (>= 1.3.6235.1),
+         smart-activation (>= 1.1.2066.1-1),
+         smart-notebook (>= 11.0.7511.0-1),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: Drivers for SMART 680 PDI
+ Drivers for SMART 680 PDI
+
