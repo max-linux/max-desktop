@@ -2,7 +2,7 @@ Source: max-bitbloq-offline
 Section: max
 Priority: extra
 Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
-Build-Depends: debhelper (>= 8.0.0), wget, unzip
+Build-Depends: debhelper (>= 8.0.0), wget, unzip, libnotify-dev
 Standards-Version: 3.9.3
 Homepage: https://github.com/bq/bitbloq-offline
 

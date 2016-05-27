@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 #export DH_VERBOSE=1
 
-ARCH=$(shell dpkg-architecture -q DEB_BUILD_ARCH)
+ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
 ifeq ($(ARCH), amd64)
 	URL=https://github.com/bq/bitbloq-offline/releases/download/v1.0.2/linux.zip
 else
@@ -30,7 +30,15 @@ override_dh_clean:
 
 
 #override_dh_shlibdeps:
-#	dh_shlibdeps -Xusr/google/appinventor/commands-for-Appinventor/emulator64-x86 -Xusr/google/appinventor/commands-for-Appinventor/emulator64-mips -Xusr/google/appinventor/commands-for-Appinventor/emulator64-arm
+#	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+
+
+override_dh_shlibdeps:
+	dh_shlibdeps -Xusr/share/bitbloq-offline/resources/app/app/res/web2board/linux/res/pp/packages/toolchain-atmelavr/avr/lib \
+		     -Xusr/share/bitbloq-offline/resources/app/app/res/web2board/linux \
+		     -Xusr/share/bitbloq-offline/libgcrypt.so.11 \
+		     -Xusr/share/bitbloq-offline/libnode.so \
+		     -Xusr/share/bitbloq-offline/Bitbloq
 
 override_dh_strip:
 	# do not strip, break executables
