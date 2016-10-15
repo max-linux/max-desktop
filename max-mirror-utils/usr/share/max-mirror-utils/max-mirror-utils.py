@@ -166,12 +166,14 @@ DISTROS=[
           [ _("MaX 6.0"), ['lucid', 'lucid-updates', 'lucid-security'], ['max60'] ],
           [ _("MaX 7.5"), ['precise', 'precise-updates', 'precise-security'], ['max75'] ],
           [ _("MaX 8.0"), ['trusty', 'trusty-updates', 'trusty-security'], ['max80'] ],
-          [ _("MaX 4.0, 5.0, 6.0, 7.5 y 8.0"), ['hardy', 'hardy-updates', 'hardy-security', 
-                                             'jaunty', 'jaunty-updates', 'jaunty-security', 
+          [ _("MaX 9.0"), ['xenial', 'xenial-updates', 'xenial-security'], ['max80'] ],
+          [ _("MaX 4.0, 5.0, 6.0, 7.5, 8.0 y 9.0"), ['hardy', 'hardy-updates', 'hardy-security',
+                                             'jaunty', 'jaunty-updates', 'jaunty-security',
                                              'lucid', 'lucid-updates', 'lucid-security',
-                                             'precise', 'precise-updates', 'precise-security'
-                                             'trusty', 'trusty-updates', 'trusty-security'], 
-                                            ['max40', 'max50', 'max60', 'max75', 'max80'] ],
+                                             'precise', 'precise-updates', 'precise-security',
+                                             'trusty', 'trusty-updates', 'trusty-security',
+                                             'xenial', 'xenial-updates', 'xenial-security'], 
+                                            ['max40', 'max50', 'max60', 'max75', 'max80', 'max90'] ],
         ]
 
 
