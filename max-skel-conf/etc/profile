@@ -27,7 +27,7 @@ fi
 
 umask 022
 
-#Aliases MAX 3.0
+#Aliases MAX 9.0
 alias ..="cd .." 
 alias which="type -path" 
 alias where="type -all" 

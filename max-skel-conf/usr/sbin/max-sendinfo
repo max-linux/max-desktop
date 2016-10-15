@@ -14,7 +14,7 @@ from subprocess import Popen, PIPE, STDOUT
 
 
 URL = "http://madrid_linux.educa.madrid.org/stats/stats.php"
-HEADERS = {'User-Agent': "MAX 8.2"}
+HEADERS = {'User-Agent': "MAX 9.0"}
 VERBOSE = True
 
 
