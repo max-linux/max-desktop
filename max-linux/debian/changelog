@@ -1,3 +1,10 @@
+max-linux (9.0.max1) max; urgency=medium
+
+  * Build in MAX 9.0
+  * Use linux-image-generic instead of LTS flavour
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 15 Oct 2016 18:36:32 +0200
+
 max-linux (8.0.max1) max; urgency=low
 
   * Build in MAX 8.0

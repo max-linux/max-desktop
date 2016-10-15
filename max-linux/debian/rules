@@ -6,5 +6,3 @@ binary-install/max-linux::
 
 	@echo "** Build ARCH: " $(DEB_BUILD_ARCH)
 
-	@# clean svn dirs
-	@find $(CURDIR)/debian/max-java* -type d -name .svn | xargs rm -rf --
