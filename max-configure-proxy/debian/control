@@ -2,7 +2,7 @@ Source: max-configure-proxy
 Section: max
 Priority: extra
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 7.0.0), cdbs, python, python-support
+Build-Depends: debhelper (>= 7.0.0), python-all, dh-python
 Standards-Version: 3.8.4
 
 Package: max-configure-proxy
