@@ -77,7 +77,7 @@ if [ -f /etc/ssh/sshd_config ]; then
 DenyUsers madrid alumno profesor
 EOF
   # restart ssh service
-  restart ssh || true
+  invoke-rc.d ssh restart || true
   fi
 fi
 
