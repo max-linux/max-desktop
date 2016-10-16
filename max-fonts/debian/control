@@ -10,7 +10,7 @@ Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends},
   ttf-essays1743, ttf-junicode,
   ttf-marvosym,
-  ttf-beteckna,
+#  ttf-beteckna,
   ttf-adf-verana, ttf-goudybookletter, ttf-linux-libertine,
   ttf-ancient-fonts, ttf-engadget,
   ttf-radisnoir,
