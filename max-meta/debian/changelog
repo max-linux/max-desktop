@@ -1,3 +1,27 @@
+max-meta (9.0.max2) max; urgency=medium
+
+  * Remove:
+    - cups-driver-gutenprint
+    - diveintopython
+    - kdeedu
+    - bluez-utils
+    - flegita-gimp
+    - gnome-media
+    - gnome-session-fallback
+    - gnome-themes-extras
+    - gstreamer0.10-plugins-bad
+    - gstreamer0.10-plugins-bad-multiverse
+    - libxine1-ffmpeg
+    - kdeedu
+    - kdeedu
+    - libxine1-ffmpeg
+  * Add:
+    - bluez-tools
+    - gnome-session-flashback
+    - gnome-sound-recorder
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 16 Oct 2016 16:02:52 +0200
+
 max-meta (9.0.max1) max; urgency=medium
 
   * Build in MAX 9.0
