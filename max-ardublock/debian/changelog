@@ -1,3 +1,10 @@
+max-ardublock (0.1max3) max; urgency=medium
+
+  * Build in MAX 9.0
+  * Switch to openjdk-8
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 16 Oct 2016 15:08:14 +0200
+
 max-ardublock (0.1max2) max; urgency=low
 
   * Build from GIT repo
