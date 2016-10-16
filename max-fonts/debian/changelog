@@ -1,3 +1,10 @@
+max-fonts (9.0-max1) max; urgency=medium
+
+  * Build in MAX 9.0
+  * Rename fonts depends ttf => fonts
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 16 Oct 2016 12:55:05 +0200
+
 max-fonts (8.0-max2) max; urgency=low
 
   * Remove some unavalaible fonts
