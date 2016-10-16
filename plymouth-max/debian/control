@@ -8,8 +8,8 @@ XS-Vcs-Browser: http://max.educa.madrid.org:8000/browser/trunk/plymouth-max
 
 Package: plymouth-max
 Architecture: all
-Depends: plymouth, plymouth-theme-ubuntu-text, plymouth-theme-script, ${shlibs:Depends}, ${misc:Depends}
+Depends: plymouth, plymouth-label, ${shlibs:Depends}, ${misc:Depends}
 Conflicts: max-artwork (<<6.0.max9)
 Provides: plymouth-theme
 Description: Plymouth theme of MaX
- This package contains plymouth MaX theme and text.so file
+ This package contains plymouth MaX theme

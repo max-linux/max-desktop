@@ -1,3 +1,9 @@
+plymouth-max (9.0.max2) max; urgency=medium
+
+  * Fix depends plymouth-theme-ubuntu-text => plymouth-label
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 16 Oct 2016 16:12:12 +0200
+
 plymouth-max (9.0.max1) max; urgency=medium
 
   * Build in MAX 9.0
