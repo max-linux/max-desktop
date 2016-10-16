@@ -10,7 +10,7 @@ Package: appinventor2
 Architecture: i386
 Multi-Arch: foreign
 Conflicts: appinventor
-Break: appinventor
+Breaks: appinventor
 Replaces:appinventor
 Depends: libncurses5, ${shlibs:Depends}, ${misc:Depends}
 Description: Appinventor setup
