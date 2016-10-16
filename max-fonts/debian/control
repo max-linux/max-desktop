@@ -21,6 +21,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
   ttf-adf-oldania, ttf-adf-mekanus, ttf-adf-libris,
   ttf-adf-irianis, ttf-adf-ikarius, ttf-adf-gillius,
   ttf-adf-berenis, ttf-adf-baskervald, ttf-adf-accanthis,
-  otf-freefont
+  otf-freefont,
+  ttf-arabeyes, ttf-baekmuk, ttf-dejavu, ttf-freefont, ttf-liberation
 Description: Some fonts for MAX distro
  Some fonts for MAX distro
