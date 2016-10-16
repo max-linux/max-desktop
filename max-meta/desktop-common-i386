@@ -6,7 +6,6 @@ acroread-plugins
 anacron
 animalandia
 apertium
-apertium-tolk
 apertium-en-es
 apertium-eo-es
 apertium-es-ca
@@ -146,7 +145,7 @@ mesa-utils
 mjpegtools
 mktemp
 mscore
-myspell-es
+hunspell-es|myspell-es
 nfs-kernel-server
 nmap
 ntfs-config

@@ -4,6 +4,7 @@ kdeedu
 flegita-gimp
 gnome-media
 gnome-themes-extras
+apertium-tolk
 
 gstreamer0.10-plugins-bad
 gstreamer0.10-plugins-bad-multiverse
@@ -14,3 +15,10 @@ ttf-indic-fonts
 ttf-kochi-gothic
 ttf-kochi-mincho
 ttf-malayalam-fonts
+
+
+extras:
+-gstreamer0.10-fluendo-mp3
+-gstreamer0.10-plugins-bad
+-gstreamer0.10-plugins-ugly
+
