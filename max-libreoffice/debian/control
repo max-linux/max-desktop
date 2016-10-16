@@ -27,7 +27,7 @@ Architecture: all
 Depends: libreoffice,
 	max-libreoffice-core,
 	libreoffice-pdfimport,
-	libreoffice-presentation-minimizer,
+#	libreoffice-presentation-minimizer,
 #	openclipart-libreoffice
 Description: Dependencias de LibreOffice para MAX
  Metapaquete que instala LibreOffice en MAX
