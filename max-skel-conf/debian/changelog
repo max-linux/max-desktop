@@ -1,3 +1,10 @@
+max-skel-conf (9.0.max2) max; urgency=medium
+
+  * Remove divert update-notifier/package-data-downloader, apt should
+    use apt.conf proxy
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 16 Oct 2016 20:32:32 +0200
+
 max-skel-conf (9.0.max1) max; urgency=medium
 
   * Build in MAX 9.0
