@@ -1,3 +1,10 @@
+max-java (9.0.max1) max; urgency=medium
+
+  * Build in MAX 9.0
+  * Remove oracle java 7 from depends
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 15 Oct 2016 22:50:21 +0200
+
 max-java (8.0.max2) max; urgency=low
 
   * Remove sun-java6 from options, close #666
