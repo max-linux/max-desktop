@@ -6,11 +6,11 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
 ifeq ($(DEB_HOST_ARCH),i386)
-  URL=http://educalim.com/edilim41/edilim41_386.deb
-  BIN=http://educalim.com/edilim41/edilim41_linux386_portable.zip  
+  URL=http://educalim.com/edilim41/edilim43_386.deb
+  BIN=http://educalim.com/edilim41/edilim43_linux386_portable.zip  
 else
-  URL=http://educalim.com/edilim41/edilim41_amd64.deb
-  BIN=http://educalim.com/edilim41/edilim41_amd64_portable.zip
+  URL=http://educalim.com/edilim41/edilim43_amd64.deb
+  BIN=http://educalim.com/edilim41/edilim43_amd64_portable.zip
 endif
 
 #URL=http://www.educalim.com/edilim33/edilim330rc11_linux.deb
