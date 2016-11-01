@@ -1,0 +1,109 @@
+syslinux-themes-max (9.0max1) max; urgency=medium
+
+  * Build in MAX 9.0
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 01 Nov 2016 18:58:33 +0100
+
+syslinux-themes-ubuntu (12) xenial; urgency=medium
+
+  * debian/control: bump debhelper Depends to 9.
+  * debian/compat: bump to compat level 9.
+  * Removed oneiric, quantal, raring, and utopic themes.
+  * Added theme for xenial.
+  * Switch default to xenial theme.
+  * Fix wily and vivid themes help text to show the right version numbers, also
+    drop the build date since it would be incorrect.
+
+ -- Mathieu Trudel-Lapierre <mathieu-tl@ubuntu.com>  Wed, 28 Oct 2015 14:04:46 -0400
+
+syslinux-themes-ubuntu (11) wily; urgency=medium
+
+  * Add new syslinux-themes-ubuntu-wily package. Switch
+    syslinux-themes-ubuntu dependency to it.
+
+ -- Harald Sitter <sitter@kde.org>  Tue, 12 May 2015 15:35:42 +0200
+
+syslinux-themes-ubuntu (10) vivid; urgency=medium
+
+  * Make sure all c32 files are linked into the theme folders.
+    LP: #1387705
+  * Adjust -ubuntu link to point to utopic rather than trusty and fix the
+    link to point to an actual path.
+  * Add syslinux-themes-ubuntu-vivid package. Switch syslinux-themes-ubuntu
+    dependency to it.
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Thu, 30 Oct 2014 16:46:26 +0100
+
+syslinux-themes-ubuntu (9) utopic; urgency=medium
+
+  * Cope with file rearrangement in syslinux 6.
+  * Add new syslinux-themes-ubuntu-utopic package.  Switch
+    syslinux-themes-ubuntu dependency to it.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 17 Jul 2014 15:15:23 +0100
+
+syslinux-themes-ubuntu (8) trusty; urgency=medium
+
+  * Add new syslinux-themes-ubuntu-trusty package (LP: #1265297).  Switch
+    syslinux-themes-ubuntu dependency to it.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 07 Jan 2014 13:36:53 +0000
+
+syslinux-themes-ubuntu (7) saucy; urgency=low
+
+  * Add new syslinux-themes-ubuntu-saucy package.  Switch
+    syslinux-themes-ubuntu dependency to it.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 01 May 2013 18:08:55 -0700
+
+syslinux-themes-ubuntu (6) raring; urgency=low
+
+  * Add new syslinux-themes-ubuntu-raring package.  Switch
+    syslinux-themes-ubuntu dependency to it.
+  * Make /usr/share/syslinux-themes-ubuntu/themes/ubuntu a symlink to
+    ubuntu-raring rather than ubuntu-precise (oops).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 09 Nov 2012 14:15:07 +0000
+
+syslinux-themes-ubuntu (5) quantal; urgency=low
+
+  * Make several files under themes/ubuntu-quantal/ in the source package be
+    copies of files in themes/ubuntu-precise/ rather than hard links to
+    them, to avoid sbuild failures in some configurations.
+  * Create symlinks to files in /usr/lib/syslinux/ at package build time
+    rather than shipping them in the source package.  The latter seems to
+    trigger odd bugs in the build toolchain when more than one symlink to
+    the same file is present in the source package, causing some of the
+    resulting binary packages to include zero-byte files instead of
+    symlinks.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sat, 01 Sep 2012 01:10:14 +0100
+
+syslinux-themes-ubuntu (4) quantal; urgency=low
+
+  * Fix quantal theme accidentally being installed into both
+    syslinux-themes-ubuntu-precise and syslinux-themes-ubuntu-quantal.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 11 Jun 2012 17:55:13 +0100
+
+syslinux-themes-ubuntu (3) quantal; urgency=low
+
+  * Add new syslinux-themes-ubuntu-quantal package.  Switch
+    syslinux-themes-ubuntu dependency to it.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sat, 02 Jun 2012 01:19:06 +0100
+
+syslinux-themes-ubuntu (2) precise; urgency=low
+
+  * Add chain.c32 symlink to ubuntu-oneiric/isolinux-live theme.
+  * Add new syslinux-themes-ubuntu-precise package.  Switch
+    syslinux-themes-ubuntu dependency to it.
+  * Only build for amd64 and i386 architectures.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 07 Nov 2011 12:29:37 +0000
+
+syslinux-themes-ubuntu (1) oneiric; urgency=low
+
+  * Initial release, based in part on syslinux-themes-debian 9-1.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 11 Aug 2011 18:56:58 +0100
