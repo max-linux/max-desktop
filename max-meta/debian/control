@@ -8,7 +8,7 @@ Build-Depends: debhelper (>= 4), cdbs
 Package: max-desktop
 Architecture: all
 Multi-Arch: foreign
-Recommends: max-desktop-common, max-desktop-gnome | max-desktop-kde | max-desktop-xfce
+Recommends: max-desktop-common, max-desktop-mate | max-desktop-gnome | max-desktop-kde | max-desktop-xfce
 Description: The Max desktop system
  This package depends on all of the packages in the Max desktop system
  .
@@ -18,12 +18,37 @@ Description: The Max desktop system
 Package: max-desktop-deps
 Architecture: all
 Multi-Arch: foreign
-Depends: max-desktop, max-desktop-common-deps, max-desktop-gnome-deps | max-desktop-kde-deps | max-desktop-xfce-deps
+Depends: max-desktop, max-desktop-common-deps, max-desktop-mate-deps | max-desktop-gnome-deps | max-desktop-kde-deps | max-desktop-xfce-deps
 Description: The Max desktop system
  This package depends on all of the packages in the Max desktop system
  .
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
+
+Package: max-desktop-mate
+Architecture: all
+Multi-Arch: foreign
+Recommends: ${max-desktop-mate:Recommends}, max-desktop-common, ${max-desktop-mate:Depends}
+Provides: max-desktop
+Description: The Max desktop system (MATE desktop)
+ This package depends on all MATE packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+
+Package: max-desktop-mate-deps
+Architecture: all
+Multi-Arch: foreign
+Depends: max-desktop-mate, max-desktop-common-deps, ${max-desktop-mate-deps:Depends}
+Recommends: ${max-desktop-mate-deps:Recommends}
+Provides: max-desktop
+Description: The Max desktop system (MATE desktop)
+ This package depends on all MATE packages in the Max desktop system
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
 
 Package: max-desktop-gnome
 Architecture: all
@@ -178,7 +203,7 @@ Description: The Max desktop common packages to all desktops
 Package: max-desktop-all
 Architecture: all
 Multi-Arch: foreign
-Recommends: max-desktop-gnome, max-desktop-kde-extra, max-desktop-xfce
+Recommends: max-desktop-mate, max-desktop-gnome, max-desktop-kde-extra, max-desktop-xfce
 Description: The Max desktop all metapackage
  This package depends on all desktop packages of MaX system
  .
@@ -188,7 +213,7 @@ Description: The Max desktop all metapackage
 Package: max-desktop-all-deps
 Architecture: all
 Multi-Arch: foreign
-Depends: max-desktop-all-deps, max-desktop-gnome-deps, max-desktop-kde-extra-deps, max-desktop-xfce-deps
+Depends: max-desktop-all-deps, max-desktop-mate, max-desktop-gnome-deps, max-desktop-kde-extra-deps, max-desktop-xfce-deps
 Description: The Max desktop all metapackage
  This package depends on all desktop packages of MaX system
  .
@@ -351,8 +376,8 @@ Package: max-pdi
 Architecture: all
 Multi-Arch: foreign
 Recommends: ${max-pdi:Depends}
-Description: The Max desktop system (GNOME desktop)
- This package depends on all GNOME packages in the Max desktop system
+Description: The Max desktop system (PDI)
+ This package depends on all PDI packages in the Max desktop system
  .
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
@@ -363,8 +388,8 @@ Architecture: all
 Multi-Arch: foreign
 Depends: ${max-pdi-deps:Depends}
 Provides: max-desktop
-Description: The Max desktop system (GNOME desktop)
- This package depends on all GNOME packages in the Max desktop system
+Description: The Max desktop system (PDI)
+ This package depends on all PDI packages in the Max desktop system
  .
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
