@@ -5,11 +5,11 @@ case "$1" in
     configure)
 
         update-alternatives \
-                --install /lib/plymouth/themes/default.plymouth default.plymouth \
-                /lib/plymouth/themes/max-logo/max-logo.plymouth 200
+                --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+                /usr/share/plymouth/themes/max-logo/max-logo.plymouth 200
         update-alternatives \
-                --install /lib/plymouth/themes/text.plymouth text.plymouth \
-                /lib/plymouth/themes/max-text/max-text.plymouth 200
+                --install /usr/share/plymouth/themes/text.plymouth text.plymouth \
+                /usr/share/plymouth/themes/max-text/max-text.plymouth 200
 
         if which update-initramfs >/dev/null 2>&1
         then

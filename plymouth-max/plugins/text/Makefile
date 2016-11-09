@@ -4,7 +4,7 @@ INCLUDES = -I./                 \
            -I/usr/include/plymouth-1/ply-splash-graphics \
            -I/usr/include/plymouth-1/ply-boot-client
 
-plugindir = /lib/plymouth
+plugindir = /usr/share/plymouth
 
 
 CFLAGS=-Wall -g -O2 -c -Wno-sign-compare -Wno-deprecated-declarations
