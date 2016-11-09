@@ -1,12 +1,12 @@
 [Desktop Entry]
 Type=Application
 Version=1.0
-Name=Instalar MAX 8.0
+Name=Instalar MAX 9.0
 Comment=Instalar MaX en el disco duro
 Exec=sh -c 'ubiquity gtk_ui'
 Icon=/usr/share/pixmaps/max-logo.png
 Terminal=false
 Categories=GTK;System;Settings;
-OnlyShowIn=GNOME;XFCE;Unity;
+OnlyShowIn=MATE;GNOME;XFCE;Unity;
 #X-Ubuntu-Gettext-Domain=ubiquity-desktop
 X-Ayatana-Appmenu-Show-Stubs=False
