@@ -57,7 +57,7 @@ chroot /target setupcon --save-only
 
 
 # enable repo (ubiquity plugininstall.py set to 127.0.0.1
-sed -i -e '/ubuntu.com/d' -e '/max.educa.madrid.org/d' /target/etc/hosts
+sed -i -e '/ubuntu.com/d' -e '/max.educa.madrid.org/d' -e '/max2.educa.madrid.org/d' /target/etc/hosts
 
 
 if [ ! -d /sys/firmware/efi/efivars ]; then

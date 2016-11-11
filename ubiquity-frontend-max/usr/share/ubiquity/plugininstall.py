@@ -486,6 +486,7 @@ class Install(install_misc.InstallBase):
 
             # MAX disable repos during installation
             print("127.0.1.1\tmax.educa.madrid.org", file=hosts)
+            print("127.0.1.1\tmax2.educa.madrid.org", file=hosts)
             print("127.0.1.1\tarchive.ubuntu.com", file=hosts)
             print("127.0.1.1\tsecurity.ubuntu.com", file=hosts)
 
