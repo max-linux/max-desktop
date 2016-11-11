@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+PACKAGES=core desktop live
+
+configure::
+	for seed in $(PACKAGES); do \
+		package=max-mate-$$seed; \
+		echo " * Building depends of max-mate-$$seed" ;\
+		(printf "$$package:Depends="; perl -pe 's/\n/, /g'  $$seed; echo) \
+			>> debian/$$package.substvars; \
+		#(printf "$$package-deps:Depends="; perl -pe 's/\n/, /g'  $$seed; echo) \
+		#	>> debian/$$package-deps.substvars; \
+		(printf "$$package:Recommends="; perl -pe 's/\n/, /g'  $$seed-recommends; echo) \
+			>> debian/$$package.substvars; \
+	done
+
+clean::
+	rm -f *~
+	rm -f debian/*substvars
+
