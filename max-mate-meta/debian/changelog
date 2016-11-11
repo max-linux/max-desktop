@@ -1,3 +1,9 @@
+max-mate-meta (1:9.0max3) max; urgency=medium
+
+  * Fix depends and recommends vars
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 11 Nov 2016 18:06:42 +0100
+
 max-mate-meta (1:9.0max2) max; urgency=medium
 
   * Change arch any => all

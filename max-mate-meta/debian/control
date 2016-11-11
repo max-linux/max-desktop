@@ -8,8 +8,8 @@ Homepage: https://launchpad.net/ubuntu-mate/
 
 Package: max-mate-core
 Architecture: all
-Depends: ${germinate:Depends}, ${misc:Depends}
-Recommends: ${germinate:Recommends}
+Depends: ${max-mate-core:Depends}, ${misc:Depends}
+Recommends: ${max-mate-core:Recommends}
 Description: MAX MATE - core system
  This package is the minimal MATE desktop as a Ubuntu environment.
  .
@@ -17,8 +17,8 @@ Description: MAX MATE - core system
 
 Package: max-mate-desktop
 Architecture: all
-Depends: ${germinate:Depends}, ${misc:Depends}
-Recommends: ${germinate:Recommends}
+Depends: ${max-mate-desktop:Depends}, ${misc:Depends}
+Recommends: ${max-mate-desktop:Recommends}
 Description: MAX MATE - full desktop
  This package is the MAX MATE desktop environment.
  .
