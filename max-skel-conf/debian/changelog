@@ -1,3 +1,9 @@
+max-skel-conf (9.0.max3) max; urgency=medium
+
+  * Change default session to mate
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 11 Nov 2016 09:47:57 +0100
+
 max-skel-conf (9.0.max2) max; urgency=medium
 
   * Remove divert update-notifier/package-data-downloader, apt should
