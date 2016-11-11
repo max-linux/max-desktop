@@ -1,0 +1,19 @@
+# This file is sourced by Xsession(5), not executed.
+
+if [ "x$DESKTOP_SESSION" = "xmate" ] || [ "x$XDG_SESSION_DESKTOP" == "xmate" ]; then
+    if [ -z "$GTK_MODULES" ] ; then
+        GTK_MODULES="canberra-gtk-module:topmenu-gtk-module"
+    else
+        GTK_MODULES="$GTK_MODULES:canberra-gtk-module:topmenu-gtk-module"
+    fi
+    export GTK_MODULES
+
+    # Disable GTK3 overlay scrollbars
+    export GTK_OVERLAY_SCROLLING=0
+
+	# QT apps to use GTK styling
+    export QT_STYLE_OVERRIDE=gtk
+
+    # Workaround clutter issue (LP: #1462445)
+    export CLUTTER_BACKEND=x11
+fi

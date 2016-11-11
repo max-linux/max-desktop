@@ -1,0 +1,317 @@
+max-mate-settings (9.0max1) max; urgency=medium
+
+  * Fork from ubuntu-mate-settings, build in MAX 9.0
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 11 Nov 2016 09:07:06 +0100
+
+ubuntu-mate-settings (16.04.5.3) xenial; urgency=medium
+
+  * Re-upload. Closes (LP: #1574789)
+
+ -- Martin Wimpress <code@flexion.org>  Sun, 03 Jul 2016 09:31:54 +0100
+
+ubuntu-mate-settings (16.04.5.2) xenial; urgency=medium
+
+  * debian/ubuntu-mate-default-settings.maintscript: Correct error.
+
+ -- Martin Wimpress <code@flexion.org>  Wed, 25 May 2016 22:41:22 +0100
+
+ubuntu-mate-settings (16.04.5.1) xenial; urgency=medium
+
+  * Remove /usr/share/X11/xorg.conf.d/90-zap.conf. Closes (LP: #1574789)
+  * Closes (LP: #1577706)
+
+ -- Martin Wimpress <code@flexion.org>  Mon, 02 May 2016 23:42:23 +0100
+
+ubuntu-mate-settings (16.04.5) xenial; urgency=medium
+
+  * Add modified window manager .desktop files, specific to Ubuntu MATE,
+  to cater for the all supported compositors. Closes (LP: #1553070)
+  * Revert the GNOME Main Menu entry for network-config-tool
+  * Closes (LP: #1569320)
+
+ -- Martin Wimpress <code@flexion.org>  Sun, 10 Apr 2016 13:54:43 +0100
+
+ubuntu-mate-settings (16.04.4) xenial; urgency=medium
+
+  * Add modified mate-panel.desktop, specific to Ubuntu MATE, to cater
+  for the all supported  compositors and disk encryption strategies.
+  Closes (LP: #1553070)
+  * Add all optical video mime types and enable autoplay.
+  * Correct the settings for Plank. See LP: #1556651  
+  * Correct the GNOME Main Menu entry for network-config-tool.
+  * Closes (LP: #1556711)
+
+ -- Martin Wimpress <code@flexion.org>  Fri, 11 Mar 2016 16:58:48 +0000
+
+ubuntu-mate-settings (16.04.3) xenial; urgency=medium
+
+  * Added migration for incorrect ~/.xinputrc. See LP: #1550325
+  * Added sensible Synapse interface defaults.
+  * Migrated Plank configuration to gsettings, required by the new
+  version of Plank.
+  * Closes (LP: #1552283)
+
+ -- Martin Wimpress <code@flexion.org>  Fri, 26 Feb 2016 13:27:27 +0000
+
+ubuntu-mate-settings (16.04.2) xenial; urgency=medium
+
+  * Add support for topmenu-gtk.
+  * Add topmenu to the Mutiny layouts.
+  * Correct the "fresh" variants of the Mutiny layouts.
+  * Closes (LP: #1547989)
+
+ -- Martin Wimpress <code@flexion.org>  Fri, 19 Feb 2016 00:46:59 +0000
+
+ubuntu-mate-settings (16.04.1) xenial; urgency=medium
+
+  * Update custom menu entries to reduce clutter.
+  * Update gsettings override to improve default behaviour.
+  * Correct LibreOffice default icons to use Human style.
+  * Fix Mutiny panel layouts.
+  * Closes (LP: #1535922)
+
+ -- Martin Wimpress <code@flexion.org>  Tue, 19 Jan 2016 22:11:31 +0000
+
+ubuntu-mate-settings (16.04.0) xenial; urgency=medium
+
+  * etc/X11/Xsession.d/99mate-environment
+    + Enable GTK styling for QT applications.
+  * usr/share/glib-2.0/schemas/ubuntu-mate.gschema.override
+    + Enable Marco animations.
+    + Show program list in launcher.
+  * usr/share/mate/applications/defaults.list:
+    + Correct .destkop typos.
+    + Update and sort default application handlers.
+  * debian/control:
+    + Conflict with debian-mate-default-settings.
+  * etc/xdg/menus/mate-preferences-categories.menu:
+    + Removed, now provided by mate-control-center 1.12.0.
+  * usr/share/mate-panel/layouts/mutiny.layout:
+    + Add Mutiny panel layout support.
+  * Closes (LP: #1523834)
+
+ -- Martin Wimpress <code@flexion.org>  Tue, 27 Oct 2015 14:01:48 +0000
+
+ubuntu-mate-settings (15.10.4) wily; urgency=medium
+
+  * Workaround clutter issue (LP: #1462445)
+  * Update Plank configuration so it is compatible with version 0.10.0
+  * Closes (LP: #1498340)
+
+ -- Martin Wimpress <code@flexion.org>  Tue, 22 Sep 2015 00:35:16 +0100
+
+ubuntu-mate-settings (15.10.3) wily; urgency=medium
+
+  * debian/ubuntu-mate-settings.install: Fix FTBFS due to missing files:
+    - remove mate-keybinding desktop file (already dropped in previous upload)
+    - remove mate-network-properties desktop file (same as above)
+  * debian/ubuntu-mate-settings.install: add mate-at-properties.desktop file
+    which was introduced in the previous upload.
+
+ -- Mathieu Trudel-Lapierre <mathieu-tl@ubuntu.com>  Thu, 17 Sep 2015 17:38:47 -0400
+
+ubuntu-mate-settings (15.10.2) wily; urgency=medium
+
+  * Correct categorisation of Accessibility settings.
+  * Correct date stamp in earlier releases to prevent errors with dpkg.
+  * Disable GTK3 overlay scrollbars, more consistent with MATE.
+  * Disable Marco animations. (LP: #1495313)
+  * Sync LibreOffice custom .desktop entries with upstream.
+  * Remove obsolete .desktop entries.
+  * Closes (LP: #1493034)
+
+ -- Martin Wimpress <code@flexion.org>  Mon, 07 Sep 2015 09:46:58 +0100
+
+ubuntu-mate-settings (15.10.1) wily; urgency=medium
+
+  [ Robert Ancell ]
+  * Merge LightDM configuration changes.
+
+  [ Martin Wimpress ]
+  * ubuntu-mate.gschema.override:
+    + Remove Deja Dup override to ensure the backup wizard runs.
+  * debian/changelog:
+    + Bump version to track Ubuntu release cycle.
+    + White space cleanup.
+  * Closes (LP: #1488930)
+
+ -- Martin Wimpress <code@flexion.org>  Wed, 26 Aug 2015 12:10:37 +0100
+
+ubuntu-mate-settings (0.4.7) wily; urgency=medium
+
+  * Update overlay settings to replace corrupt Tilda configurations.
+  * Add gsettings override to enable Marco compositing.
+  * Remove Ubuntu Software Center dockitem.
+  * Process debian folder with wrap and sort.
+  * Closes (LP: #1476616)
+
+ -- Martin Wimpress <code@flexion.org>  Mon, 20 Jul 2015 00:03:37 +0100
+
+ubuntu-mate-settings (0.4.6) wily; urgency=medium
+
+  * Fix overlay settings so they do not clobber Plank.
+  * Update default application handlers.
+    + .deb files are now handled by gdebi.
+    + apt:// URLs are now handled by aptutl.
+    + DVD, VideCD and SuperVCD discs are handled by VLC.
+  * Closes (LP: #1466785).
+
+ -- Martin Wimpress <code@flexion.org>  Sat, 13 Jun 2015 15:18:28 +0100
+
+ubuntu-mate-settings (0.4.5) wily; urgency=medium
+
+  * Added default settings for Plank.
+  * Added keybinding for launching Ubiquity from the live session.
+  * Added Netbook panel layouts.
+  * Added gschema overrides for Window Picker and Maximus.
+  * Added missing default applications list.
+  * Added ubuntu-mate-libreoffice-draw-icons package.
+  * Added ubuntu-mate-libreoffice-math-icons package.
+  * Updated custom menu entries to reduce clutter.
+  * Updated keybindings so they are consitent with Compiz.
+  * Updated the Xsession environment so QT accessibility and styling
+  are not enabled by default.
+  * Updated panel layouts with correct applet placement offsets.
+  * Changed the default theme to Ambiant-MATE.
+  * Removed custom im-config.desktop. Upstream is fixed.
+  * Closes (LP: #1456597)
+
+ -- Martin Wimpress <code@flexion.org>  Sat, 16 May 2015 09:28:39 +0100
+
+ubuntu-mate-settings (0.4.4.1) vivid; urgency=medium
+
+  * Make /usr/lib/ubuntu-mate/ubuntu-mate-tilda executable (LP: #1432439)
+
+ -- Martin Wimpress <code@flexion.org>  Sun, 15 Mar 2015 21:32:47 +0000
+
+ubuntu-mate-settings (0.4.4) vivid; urgency=medium
+
+  * Correct the start up of Tilda under Ubuntu MATE. (LP: #1431349)
+  * Remove duplicate Language Support menu entry. (LP: #1428275)
+
+ -- Martin Wimpress <code@flexion.org>  Wed, 12 Mar 2015 22:24:01 +0000
+
+ubuntu-mate-settings (0.4.3) vivid; urgency=medium
+
+  * Qt accessibility modules enabled.
+  * Qt theme is overridden with GTK+ when MATE session is detected.
+  * Enabled Ambiant-MATE theme in the live session.
+  * Relocated autostart files to /usr/share/mate/autostart
+  so they do not conflict with other desktop environments.
+  * Removed all configuration from /etc/skel. (LP: #1426862)
+  * Closes (LP: #1427182)
+
+ -- Martin Wimpress <code@flexion.org>  Thu, 26 Feb 2015 11:42:10 +0000
+
+ubuntu-mate-settings (0.4.2ubuntu1) vivid-proposed; urgency=medium
+
+  * Closes need-packaging bug (LP: #1421703)
+
+ -- Adam Stokes <adam.stokes@ubuntu.com>  Fri, 13 Feb 2015 11:39:07 -0500
+
+ubuntu-mate-settings (0.4.2) vivid; urgency=medium
+
+  * Improve Debian packaging.
+
+ -- Martin Wimpress <code@flexion.org>  Tue, 03 Feb 2015 20:48:20 +0000
+
+ubuntu-mate-settings (0.4.1~15.04~20) vivid; urgency=medium
+
+  * Switched to Yuyo GTK theme.
+  * Sane defaults for Touchpads.
+  * Consistent units throughout MATE.
+  * Consistent button layouts in MATE, GTK3 and GNOME.
+  * Changed Pluma theme to Yuyo-Dark.
+  * Moved the live-session LightDM configuration to
+  /usr/share/lightdm/lightdm.conf.d
+  * Consistent window manager button arrangement.
+  * Added Tilda configuration.
+  * Fixed sound themes.
+  * Enabled terminating the X server with Ctrl+Alt+Backspace.
+  * Define default applications.
+  * Window switching keybindings.
+  * Fully disable Ubuntu overlay scroll bars.
+
+ -- Martin Wimpress <code@flexion.org>  Sun, 14 Dec 2014 16:01:33 +0000
+
+ubuntu-mate-settings (0.4.0) vivid; urgency=medium
+
+  * Clean up for Utopic and Vivid.
+
+ -- Ubuntu MATE Developers <code@ubuntu-mate.org>  Sun, 16 Nov 2014 17:10:20 +0000
+
+ubuntu-mate-settings (0.3.9~trusty7) trusty; urgency=medium
+
+  * Added additional panel layouts and made ubunt-mate-indicators the default.
+  * Added policykit desktop privileges for MATE.
+  * Fixed all locked panel items.
+  * Updated accessibility keybindings to support patched mate-settings-daemon.
+  * Correctly replace policykit-desktop-privileges-ubuntu-mate.
+
+ -- Ubuntu MATE Developers <code@ubuntu-mate.org>  Fri, 31 Oct 2014 11:48:23 +0100
+
+ubuntu-mate-settings (0.3.8) utopic; urgency=medium
+
+  * Modified /etc/lightdm/lightdm.conf.d/90-ubuntu-mate.conf to
+    prevent lightdm from crashing. LP: #1369952.
+  * Updated IBus system tray icon color to match other mono icons.
+  * Fixed the default sound theme.
+  * Enable Marco's compositing manager in the live session only.
+  * Use the system monospace font in MATE Terminal.
+  * Make font selection consistent across all default applications.
+  * Added keybindings for assistive tools.
+  * Added mate-panel as a dependency of ubuntu-mate-default-settings.
+
+ -- Ubuntu MATE Developers <code@ubuntu-mate.org>  Mon, 16 Sep 2014 23:35:41 +0100
+
+ubuntu-mate-settings (0.3.7) utopic; urgency=medium
+
+  * Removed MATE specific PolicyKit Local Authority now merged upstream.
+  * Package cleansing and copyright attribution.
+  * Removed xzoom.desktop.
+
+ -- Ubuntu MATE Developers <code@ubuntu-mate.org>  Wed, 10 Sep 2014 22:47:45 +0100
+
+ubuntu-mate-settings (0.3.6~utopic3) utopic; urgency=medium
+
+  * Configure default applications.
+  * Default panel layout more similar to Ubuntu 11.04.
+
+ -- Ubuntu MATE Developers <code@ubuntu-mate.org>  Fri, 05 Sep 2014 03:53:44 +0100
+
+ubuntu-mate-settings (0.3.5~utopic4) utopic; urgency=medium
+
+  * Added Redmond (Windows XP like) panel layout.
+
+ -- Ubuntu MATE Developers <code@ubuntu-mate.org>  Mon, 01 Sep 2014 05:02:12 +0100
+
+ubuntu-mate-settings (0.3.4~utopic1) utopic; urgency=medium
+
+  * Add MATE specific PolicyKit Local Authority.
+
+ -- Ubuntu MATE Developers <code@ubuntu-mate.org>  Mon, 01 Sep 2014 00:38:39 +0100
+
+ubuntu-mate-settings (0.3.3~utopic1) utopic; urgency=medium
+
+  * Qt4 applications style to match Ubuntu MATE.
+
+ -- Ubuntu MATE Developers <code@ubuntu-mate.org>  Wed, 27 Aug 2014 23:19:47 +0100
+
+ubuntu-mate-settings (0.3.2~utopic1) utopic; urgency=medium
+
+  * Package clean up.
+
+ -- Ubuntu MATE Developers <code@ubuntu-mate.org>  Fri, 22 Aug 2014 00:46:21 +0100
+
+ubuntu-mate-settings (0.3.1~utopic1) utopic; urgency=medium
+
+  * Added Circle of MATEs screensaver.
+
+ -- Ubuntu MATE Developers <code@ubuntu-mate.org>  Thu, 21 Aug 2014 22:54:37 +0100
+
+ubuntu-mate-settings (0.3.0~utopic1) utopic; urgency=medium
+
+  * Package refactoring.
+
+ -- Ubuntu MATE Developers <code@ubuntu-mate.org>  Wed, 20 Aug 2014 01:56:43 +0100

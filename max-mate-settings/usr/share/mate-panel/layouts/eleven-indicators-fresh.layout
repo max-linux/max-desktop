@@ -1,0 +1,51 @@
+[Toplevel top]
+expand=true
+orientation=top
+size=24
+
+[Object mate-menu]
+locked=true
+position=0
+toplevel-id=top
+applet-iid=MateMenuAppletFactory::MateMenuApplet
+object-type=applet
+
+[Object firefox]
+locked=true
+position=10
+launcher-location=/usr/share/applications/firefox.desktop
+toplevel-id=top
+object-type=launcher
+menu-path=applications:/
+
+[Object notification-area]
+object-type=applet
+applet-iid=NotificationAreaAppletFactory::NotificationArea
+toplevel-id=top
+position=40
+panel-right-stick=true
+locked=true
+
+[Object indicatorappletcomplete]
+object-type=applet
+applet-iid=IndicatorAppletCompleteFactory::IndicatorAppletComplete
+toplevel-id=top
+position=30
+panel-right-stick=true
+locked=true
+
+[Object clock]
+object-type=applet
+applet-iid=ClockAppletFactory::ClockApplet
+toplevel-id=top
+position=20
+panel-right-stick=true
+locked=true
+
+[Object shutdown]
+action-type=shutdown
+object-type=action
+position=10
+panel-right-stick=true
+toplevel-id=top
+locked=true

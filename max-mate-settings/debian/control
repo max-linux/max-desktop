@@ -1,0 +1,47 @@
+Source: max-mate-settings
+Section: x11
+Priority: optional
+Maintainer: Ubuntu MATE Team <ubuntu-mate-dev@lists.launchpad.net>
+Build-Depends: debhelper (>= 9),
+Standards-Version: 3.9.7
+Homepage: https://launchpad.net/ubuntu-mate/
+Vcs-Bzr: lp:~ubuntu-mate-dev/ubuntu-mate/ubuntu-mate-settings
+Vcs-Browser: http://bazaar.launchpad.net/~ubuntu-mate-dev/ubuntu-mate/ubuntu-mate-settings/files
+
+Package: max-mate-default-settings
+Architecture: all
+Depends: desktop-file-utils,
+         im-config,
+         libglib2.0-bin,
+         mate-panel,
+         ttf-ubuntu-font-family,
+         ${misc:Depends},
+Replaces: policykit-desktop-privileges-ubuntu-mate,
+Suggests: mate-desktop-environment-core (>= 1.10.0),
+Conflicts: debian-mate-default-settings,
+           mint-mate-default-settings,
+           ubuntu-mate-default-settings
+Description: Default settings for MAX MATE
+ Various system settings tailored for MAX MATE.
+
+Package: max-mate-live-settings
+Architecture: all
+Depends: ${misc:Depends},
+Description: Default settings for MAX MATE live CD
+ Various system settings tailored for MAX MATE live CD.
+
+Package: max-mate-libreoffice-draw-icons
+Architecture: all
+Depends: libreoffice-draw,
+         ${misc:Depends},
+Description: MAX MATE desktop icons for LibreOffice draw
+ Slightly modified LibreOffice draw .desktop files, for
+ MAX MATE, that reduce menu clutter.
+
+Package: max-mate-libreoffice-math-icons
+Architecture: all
+Depends: libreoffice-math,
+         ${misc:Depends},
+Description: MAX MATE desktop icons for LibreOffice math
+ Slightly modified LibreOffice math .desktop files, for
+ MAX MATE, that reduce menu clutter.

@@ -1,0 +1,81 @@
+[Toplevel top]
+orientation=top
+expand=true
+size=24
+
+[Toplevel left]
+orientation=left
+expand=true
+size=48
+
+[Objects topmenu]
+object-type=applet
+applet-iid=TopMenuMatePanelAppletFactory::TopMenuMatePanelApplet
+toplevel-id=top
+position=48
+panel-right-stick=false
+locked=true
+
+[Object notification-area]
+object-type=applet
+applet-iid=NotificationAreaAppletFactory::NotificationArea
+toplevel-id=top
+position=30
+panel-right-stick=true
+locked=true
+
+[Object indicatorappletcomplete]
+object-type=applet
+applet-iid=IndicatorAppletCompleteFactory::IndicatorAppletComplete
+toplevel-id=top
+position=20
+panel-right-stick=true
+locked=true
+
+[Object clock]
+object-type=applet
+applet-iid=ClockAppletFactory::ClockApplet
+toplevel-id=top
+position=10
+panel-right-stick=true
+locked=true
+
+[Object shutdown]
+action-type=shutdown
+object-type=action
+position=0
+panel-right-stick=true
+toplevel-id=top
+locked=true
+
+[Object mate-menu]
+locked=true
+position=0
+panel-right-stick=false
+toplevel-id=left
+applet-iid=MateMenuAppletFactory::MateMenuApplet
+object-type=applet
+
+[Object dockapplet]
+locked=true
+position=10
+panel-right-stick=false
+toplevel-id=left
+applet-iid=DockAppletFactory::DockApplet
+object-type=applet
+
+[Object workspaceswitcherapplet]
+locked=true
+position=10
+panel-right-stick=true
+toplevel-id=left
+applet-iid=WnckletFactory::WorkspaceSwitcherApplet
+object-type=applet
+
+[Object trashapplet]
+locked=true
+position=0
+panel-right-stick=true
+toplevel-id=left
+applet-iid=TrashAppletFactory::TrashApplet
+object-type=applet

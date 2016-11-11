@@ -1,0 +1,7 @@
+rm_conffile /etc/xdg/autostart/nm-applet-mate.desktop 0.4.2ubuntu1
+rm_conffile /etc/xdg/autostart/tilda.desktop 0.4.2ubuntu1
+rm_conffile /etc/skel/.local/share/applications/im-config.desktop 0.4.2ubuntu1
+rm_conffile /etc/skel/.local/share/applications/mimeapps.list 0.4.2ubuntu1
+rm_conffile /etc/skel/.config/libreoffice/4/user/registrymodifications.xcu 0.4.2ubuntu1
+rm_conffile /etc/skel/.config/tilda/config_0 0.4.2ubuntu1
+rm_conffile /etc/skel/.config/Trolltech.conf 0.4.2ubuntu1

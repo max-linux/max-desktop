@@ -1,0 +1,173 @@
+[com.ubuntu.update-manager]
+show-details=true
+show-versions=true
+
+[net.launchpad.plank.dock.settings]
+dock-items=['desktop.dockitem','clock.dockitem','firefox.dockitem','matecc.dockitem']
+hide-mode='window-dodge'
+show-dock-item=true
+theme='Ubuntu-MATE'
+
+[org.gnome.crypto.pgp]
+keyservers=['hkp://keyserver.ubuntu.com:11371', 'hkp://pool.sks-keyservers.net', 'ldap://keyserver.pgp.com']
+
+[org.gnome.desktop.interface]
+cursor-theme='DMZ-White'
+document-font-name='Ubuntu 11'
+font-name='Ubuntu 11'
+gtk-theme='Ambiant-MATE'
+icon-theme='Ambiant-MATE'
+monospace-font-name='Ubuntu Mono 13'
+
+[org.gnome.desktop.wm.preferences]
+button-layout='menu:minimize,maximize,close'
+theme='Ambiant-MATE'
+titlebar-font='Ubuntu Bold 11'
+
+[org.gnome.rhythmbox.encoding-settings]
+media-type-presets={'audio/x-vorbis':'Ubuntu', 'audio/mpeg':'Ubuntu'}
+
+[org.gnome.rhythmbox.rhythmdb]
+monitor-library=true
+
+[org.gnome.rhythmbox.plugins]
+active-plugins=['artsearch', 'audiocd','audioscrobbler','cd-recorder','daap','dbus-media-server','generic-player','ipod','iradio','mmkeys','mpris','mtpdevice','notification','power-manager']
+
+[org.gnome.Charmap]
+font='Ubuntu 22'
+
+[org.gtk.Settings.FileChooser]
+show-hidden=false
+show-size-column=true
+sort-directories-first=true
+
+[org.mate.applications-at-mobility]
+exec='onboard'
+
+[org.mate.applications-at-visual]
+exec='orca'
+
+[org.mate.applications-office.calendar]
+exec='thunderbird'
+
+[org.mate.applications-office.tasks]
+exec='thunderbird'
+
+[org.mate.background]
+picture-filename='/usr/share/backgrounds/ubuntu-mate-common/Ubuntu-Mate-Cold.jpg'
+
+[org.mate.caja.desktop]
+font='Ubuntu 11'
+computer-icon-visible=false
+home-icon-visible=true
+trash-icon-visible=false
+
+[org.mate.control-center.appearance]
+more-backgrounds-url='https://ubuntu-mate.community/c/multimedia/artwork'
+
+[org.mate.dictionary]
+print-font='Ubuntu 12'
+
+[org.mate.disk-usage-analyzer.ui]
+statusbar-visible=true
+
+[org.mate.font-rendering]
+antialiasing = 'rgba'
+hinting = 'slight'
+
+[org.mate.interface]
+icon-theme='Ambiant-MATE'
+gtk-decoration-layout='menu:minimize,maximize,close'
+gtk-theme='Ambiant-MATE'
+font-name='Ubuntu 11'
+document-font-name='Ubuntu 11'
+monospace-font-name='Ubuntu Mono 13'
+
+[org.mate.media-handling]
+autorun-x-content-start-app=['x-content/software','x-content/video-bluray.xml','x-content/video-dvd.xml', 'x-content/video-hddvd.xml','x-content/video-svcd.xml','x-content/video-vcd.xml']
+
+[org.mate.Marco.general]
+center-new-windows=false
+compositing-manager=true
+side-by-side-tiling=true
+theme='Ambiant-MATE'
+titlebar-font='Ubuntu Medium 11'
+
+[org.mate.Marco.global-keybindings]
+run-command-terminal='<Control><Alt>t'
+switch-panels='disabled'
+switch-windows='<Alt>Tab'
+switch-windows-all='<Control><Alt>Tab'
+switch-windows-all-backward='<Control><Alt><Shift>Tab'
+switch-windows-backward='<Alt><Shift>Tab'
+
+[org.mate.Marco.window-keybindings]
+move-to-center='<Control><Alt>KP_Begin'
+move-to-corner-ne='<Control><Alt>KP_Page_Up'
+move-to-corner-nw='<Control><Alt>KP_Home'
+move-to-corner-se='<Control><Alt>KP_Page_Down'
+move-to-corner-sw='<Control><Alt>KP_End'
+move-to-side-n='<Control><Alt>KP_Up'
+move-to-side-s='<Control><Alt>KP_Down'
+tile-to-side-e='<Control><Alt>KP_Right'
+tile-to-side-w='<Control><Alt>KP_Left'
+
+[org.mate.NotificationDaemon]
+theme='slider'
+
+[org.mate.maximus]
+no-maximize=true
+undecorate=false
+
+[org.mate.panel]
+default-layout='max-mate'
+show-program-list=true
+
+[org.mate.peripherals-mouse]
+cursor-theme='DMZ-White'
+
+[org.mate.peripherals-touchpad]
+disable-while-typing=true
+tap-to-click=true
+
+[org.mate.pluma]
+color-scheme='Ambiant-MATE'
+display-line-numbers=true
+display-right-margin=true
+highlight-current-line=true
+editor-font='Ubuntu Mono 13'
+print-font-body-pango='Ubuntu Mono 9'
+print-font-header-pango='Ubuntu 11'
+print-font-numbers-pango='Ubuntu 8'
+
+[org.mate.screensaver]
+lock-delay=1
+mode='single'
+themes=['screensavers-footlogo-floaters']
+
+[org.mate.sound]
+theme-name='ubuntu'
+event-sounds=true
+input-feedback-sounds=true
+
+[org.mate.session]
+idle-delay=30
+
+[org.mate.SettingsDaemon.plugins.media-keys]
+magnifier='<Alt><Mod4>m'
+screenreader='<Alt><Mod4>s'
+on-screen-keyboard='<Alt><Mod4>k'
+
+[org.mate.stickynotes]
+default-font='Ubuntu 10'
+
+[org.mate.system-monitor]
+show-tree=true
+solaris-mode=true
+
+[org.mate.terminal.profile]
+allow-bold=false
+use-system-font=true
+
+[org.yorba.shotwell.printing]
+titles-font='Ubuntu Bold 12'

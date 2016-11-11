@@ -1,0 +1,12 @@
+Package: max-mate-live-settings
+Source: max-mate-settings
+Version: 9.0max1
+Architecture: all
+Maintainer: Ubuntu MATE Team <ubuntu-mate-dev@lists.launchpad.net>
+Installed-Size: 45
+Depends: dconf-gsettings-backend | gsettings-backend
+Section: x11
+Priority: optional
+Homepage: https://launchpad.net/ubuntu-mate/
+Description: Default settings for Ubuntu MATE live CD
+ Various system settings tailored for Ubuntu MATE live CD.

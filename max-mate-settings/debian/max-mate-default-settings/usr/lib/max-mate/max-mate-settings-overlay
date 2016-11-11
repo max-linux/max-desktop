@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+function overlay_file() {
+    local SYSTEM_FILE="/usr/share/max-mate/settings-overlay/${1}"
+    local USER_FILE="${HOME}/.${1}"
+    local USER_DIR=$(dirname "${USER_FILE}")
+    if [ ! -f "${USER_FILE}" ]; then
+        mkdir -p "${USER_DIR}"
+        cp "${SYSTEM_FILE}" "${USER_FILE}"
+    fi
+}
+
+# If the 'xim' input method is set, probably by gnome-language-selector,
+# this causes all manner of compatibility issues. This is a work around
+# for pre-existing configurations, a patch has been submitted upstream.
+#  - https://bugs.launchpad.net/language-selector/+bug/1550325
+function correct_xinputrc() {
+    DETECT_XIM=$(grep xim ${HOME}/.xinputrc)
+    if [ $? -eq 0 ]; then
+        AUTO=$(im-config -m | sed '3q;d')
+        /usr/bin/im-config -n ${AUTO}
+    fi
+}
+
+if [ ! -d "${HOME}/.config/plank/dock1" ]; then
+    overlay_file config/plank/dock1/launchers/clock.dockitem
+    overlay_file config/plank/dock1/launchers/desktop.dockitem
+    overlay_file config/plank/dock1/launchers/firefox.dockitem
+    overlay_file config/plank/dock1/launchers/matecc.dockitem
+fi
+overlay_file config/folder-color/hide_donation
+overlay_file config/libreoffice/4/user/registrymodifications.xcu
+overlay_file config/synapse/config.json
+overlay_file config/Trolltech.conf
+correct_xinputrc
