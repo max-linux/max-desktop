@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 9), cdbs
 Homepage: https://launchpad.net/ubuntu-mate/
 
 Package: max-mate-core
-Architecture: any
+Architecture: all
 Depends: ${germinate:Depends}, ${misc:Depends}
 Recommends: ${germinate:Recommends}
 Description: MAX MATE - core system
@@ -16,7 +16,7 @@ Description: MAX MATE - core system
  It is safe to remove this package if some of these packages are not desired.
 
 Package: max-mate-desktop
-Architecture: any
+Architecture: all
 Depends: ${germinate:Depends}, ${misc:Depends}
 Recommends: ${germinate:Recommends}
 Description: MAX MATE - full desktop
