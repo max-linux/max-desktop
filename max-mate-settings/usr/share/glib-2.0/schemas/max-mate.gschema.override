@@ -15,8 +15,8 @@ keyservers=['hkp://keyserver.ubuntu.com:11371', 'hkp://pool.sks-keyservers.net',
 cursor-theme='DMZ-White'
 document-font-name='Ubuntu 11'
 font-name='Ubuntu 11'
-gtk-theme='Ambiant-MATE'
-icon-theme='Ambiant-MATE'
+gtk-theme='MaxTheme'
+icon-theme='maxtoon'
 monospace-font-name='Ubuntu Mono 13'
 
 [org.gnome.desktop.wm.preferences]
@@ -90,7 +90,7 @@ autorun-x-content-start-app=['x-content/software','x-content/video-bluray.xml','
 center-new-windows=false
 compositing-manager=true
 side-by-side-tiling=true
-theme='Ambiant-MATE'
+theme='MaxColors'
 titlebar-font='Ubuntu Medium 11'
 
 [org.mate.Marco.global-keybindings]
