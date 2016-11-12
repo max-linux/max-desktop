@@ -1,7 +1,9 @@
 #!/usr/bin/make -f
 
 #ID=$(shell xmlstarlet sel -N rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns\# -N em=http://www.mozilla.org/2004/em-rdf\# -t -v "//rdf:Description[@about='urn:mozilla:install-manifest']/em:id" install.rdf)
-ID=$(shell ls *.xpi)
+#ID=$(shell ls *.xpi)
+ID=maxubufox@educa.madrid.org
+
 
 %:
 	dh $@
