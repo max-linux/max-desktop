@@ -21,7 +21,7 @@ monospace-font-name='Ubuntu Mono 13'
 
 [org.gnome.desktop.wm.preferences]
 button-layout='menu:minimize,maximize,close'
-theme='Ambiant-MATE'
+theme='MaxColors'
 titlebar-font='Ubuntu Bold 11'
 
 [org.gnome.rhythmbox.encoding-settings]
@@ -54,7 +54,7 @@ exec='thunderbird'
 exec='thunderbird'
 
 [org.mate.background]
-picture-filename='/usr/share/backgrounds/ubuntu-mate-common/Ubuntu-Mate-Cold.jpg'
+picture-filename='/usr/share/backgrounds/max.png'
 
 [org.mate.caja.desktop]
 font='Ubuntu 11'
@@ -76,9 +76,9 @@ antialiasing = 'rgba'
 hinting = 'slight'
 
 [org.mate.interface]
-icon-theme='Ambiant-MATE'
+icon-theme='maxtoon'
 gtk-decoration-layout='menu:minimize,maximize,close'
-gtk-theme='Ambiant-MATE'
+gtk-theme='MaxTheme'
 font-name='Ubuntu 11'
 document-font-name='Ubuntu 11'
 monospace-font-name='Ubuntu Mono 13'
