@@ -7,9 +7,6 @@ acpid
 alsa-base
 alsa-utils
 anacron
-apport
-apport-gtk
-apport-symptoms
 apturl
 at-spi2-core
 atril
@@ -18,7 +15,6 @@ avahi-discover
 avahi-dnsconfd
 avahi-utils
 bc
-blueman
 brasero
 brasero-cdrkit
 brltty
@@ -64,10 +60,6 @@ fonts-dejavu-core
 fonts-freefont-ttf
 fonts-liberation
 fonts-nanum
-fonts-noto
-fonts-noto-cjk
-fonts-noto-mono
-fonts-noto-unhinted
 fonts-opendyslexic
 foomatic-db-compressed-ppds
 galculator
@@ -283,7 +275,7 @@ xterm
 xul-ext-calendar-timezones
 xul-ext-gdata-provider
 xul-ext-lightning
-xul-ext-ubufox
+max-ubufox
 xzoom
 yelp
 zenity

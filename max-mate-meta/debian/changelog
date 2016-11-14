@@ -1,3 +1,21 @@
+max-mate-meta (1:9.0max6) max; urgency=medium
+
+  * Remove blueman from desktop
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 14 Nov 2016 11:19:54 +0100
+
+max-mate-meta (1:9.0max5) max; urgency=medium
+
+  * Change xul-ext-ubunfox > max-ubufox
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 12 Nov 2016 19:49:00 +0100
+
+max-mate-meta (1:9.0max4) max; urgency=medium
+
+  * Remove fonts-noto apport snapd
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 12 Nov 2016 19:24:25 +0100
+
 max-mate-meta (1:9.0max3) max; urgency=medium
 
   * Fix depends and recommends vars

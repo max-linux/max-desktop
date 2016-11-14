@@ -41,10 +41,6 @@ fonts-dejavu-core
 fonts-freefont-ttf
 fonts-liberation
 fonts-nanum
-fonts-noto
-fonts-noto-cjk
-fonts-noto-mono
-fonts-noto-unhinted
 fonts-opendyslexic
 foomatic-db-compressed-ppds
 galculator
@@ -208,7 +204,7 @@ xserver-xorg
 xserver-xorg-input-all
 xserver-xorg-video-all
 xterm
-xul-ext-ubufox
+max-ubufox
 xzoom
 yelp
 zenity
