@@ -145,7 +145,7 @@ class PageGtk(PageBase):
         for radio in self.install_types:
             getattr(self, "install_type_%s"%radio).connect('toggled', self.on_install_type_radio_toggled, radio)
 
-        self.set_hostname('max80')
+        self.set_hostname('max90')
         self.hostname_widget.connect('changed', self.on_hostname_changed)
         self.hostname_error_widget.hide()
 
