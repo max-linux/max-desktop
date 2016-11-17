@@ -8,7 +8,7 @@ Standards-Version: 3.8.4
 
 Package: max-artwork
 Architecture: all
-Depends: gtk2-engines-murrine, lightdm | gdm | lxdm | gdm-2.20, plymouth-max, max-artwork-icon-maxtoon
+Depends: gtk3-engines-unico, gtk2-engines-murrine, lightdm | gdm | lxdm | gdm-2.20, plymouth-max, max-artwork-icon-maxtoon
 Provides: ubuntu-artwork, edubuntu-artwork, xubuntu-artwork, kubuntu-artwork, gdm-theme, desktop-base, mythbuntu-gdm-theme
 Replaces: desktop-base, mythbuntu-gdm-theme
 Conflicts: desktop-base, mythbuntu-gdm-theme
