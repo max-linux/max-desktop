@@ -1,6 +1,7 @@
 
 _echo "Configurando DNS del chroot y nuevo sources.list"
 
+rm -f $CHROOT/etc/resolv.conf
 cat /etc/resolv.conf > $CHROOT/etc/resolv.conf
 
 if [ ! -e $CHROOT/usr/sbin/update-grub.distrib ]; then
@@ -16,13 +17,17 @@ deb http://$MIRROR/ubuntu ${DISTRO} main universe multiverse restricted
 deb http://$MIRROR/ubuntu ${DISTRO}-updates main universe multiverse restricted
 deb http://$MIRROR/ubuntu ${DISTRO}-security main universe multiverse restricted
 
-deb http://$MIRROR/max80 max main
+deb http://$MIRROR/max90 max main
 
 EOF
 else
      _echo " ****** sources.list ***** Usando mirror INTERNET"
      cp $GENLIVE/sources.list $CHROOT/etc/apt/
 fi
+
+cat << EOF > $CHROOT/etc/apt/apt.conf.d/99translations
+Acquire::Languages "none";
+EOF
 
 # blacklist packages
 rm -f $CHROOT/etc/apt/preferences.d/20_no_max_recom.pref
@@ -36,12 +41,6 @@ touch $CHROOT/etc/X11/xorg.conf
 
 _echo "Configurando DEBCONF: licencia JAVA... zona horaria y firmware"
 chroot $CHROOT debconf-set-selections << EOF || _exit "No se ha podido aceptar la licencia JAVA"
-sun-java5-bin   shared/accepted-sun-dlj-v1-1    boolean true
-sun-java5-jdk   shared/accepted-sun-dlj-v1-1    boolean true
-sun-java5-jre   shared/accepted-sun-dlj-v1-1    boolean true
-sun-java6-bin   shared/accepted-sun-dlj-v1-1    boolean true
-sun-java6-jre   shared/accepted-sun-dlj-v1-1    boolean true
-sun-java6-jdk   shared/accepted-sun-dlj-v1-1    boolean true
 tzdata  tzdata/Areas    select  Europe
 tzdata  tzdata/Zones/Europe     select  Madrid
 b43-fwcutter	b43-fwcutter/cut_firmware	boolean	true

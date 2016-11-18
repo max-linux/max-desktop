@@ -180,5 +180,7 @@ _echo "Copiando archivos isolinux..."
 
 mkdir -p $CDRW/isolinux
 cp $GENLIVE/isolinux/* $CDRW/isolinux/ || _exit "No se puede sobreescribir isolinux"
-cp $CHROOT/usr/lib/syslinux/isolinux.bin $CDRW/isolinux/
+#cp $CHROOT/usr/lib/syslinux/isolinux.bin $CDRW/isolinux/
+cp $CHROOT/usr/lib/ISOLINUX/isolinux.bin $CDRW/isolinux/
 
+rm -f $CHROOT/etc/apt/apt.conf.d/99translations

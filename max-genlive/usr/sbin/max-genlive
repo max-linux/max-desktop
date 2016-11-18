@@ -9,16 +9,16 @@ elif [ "$1" = "i386" ]; then
 fi
 
 
-DISTRO=trusty
-DISTRO_VERSION="14.04"
+DISTRO=xenial
+DISTRO_VERSION="16.04"
 ARCH=i386
 NANOARCH=i386
-MAX_VERSION="8.0"
+MAX_VERSION="9.0-beta1"
 IMAGE_NAME="MaX-${MAX_VERSION}"
 LINUX_IMAGE="max-linux"
 LINUX_HEADERS="max-linux-headers"
 XSERVER_XORG="xserver-xorg"
-MAXHOSTNAME=max80
+MAXHOSTNAME=max90
 INSTALL_MOODLE=no
 
 ## Create a 12.04 with trusty kernel and Xorg
@@ -103,10 +103,10 @@ PAQUETES_EXTRA="tcos max-alumno max-profesor max-terminales"
 PAQUETES_EXTRA="$PAQUETES_EXTRA max-tcos-alumno max-tcos-profesor"
 PAQUETES_EXTRA="$PAQUETES_EXTRA linux-wlan-ng-firmware max-desktop-infantil-primaria max-infantil"
 
-BLACKLIST_PKGS="jetty resolvconf "
+BLACKLIST_PKGS="resolvconf "
 #BLACKLIST_PKGS="$BLACKLIST_PKGS python-ubuntuone python-ubuntuone-client python-ubuntuone-storageprotocol ubuntuone-client"
 #BLACKLIST_PKGS="$BLACKLIST_PKGS ubuntuone-client-gnome rhythmbox-ubuntuone-music-store"
-BLACKLIST_PKGS="$BLACKLIST_PKGS icedtea6-plugin icedtea-6-jre-cacao arora openjdk-6-doc"
+BLACKLIST_PKGS="$BLACKLIST_PKGS arora"
 BLACKLIST_PKGS="$BLACKLIST_PKGS x11proto-core-dev x11proto-composite-dev python-dev libglade2.0-cil-dev xtrans-dev"
 BLACKLIST_PKGS="$BLACKLIST_PKGS x11proto-kb-dev x11proto-input-dev x11proto-core-dev libxt-dev libxdmcp-dev libxcb1-dev libxau-dev"
 BLACKLIST_PKGS="$BLACKLIST_PKGS libx11-dev libltdl-dev libplymouth-dev libpthread-stubs0-dev"
@@ -125,7 +125,8 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS overlay-scrollbar"
 # don't install English help #439
 BLACKLIST_PKGS="$BLACKLIST_PKGS libreoffice-help-en-gb libreoffice-help-en-us"
 # ubiquity install KDE
-BLACKLIST_PKGS="$BLACKLIST_PKGS ubiquity-frontend-kde compiz compiz-core"
+BLACKLIST_PKGS="$BLACKLIST_PKGS ubiquity-frontend-kde"
+#BLACKLIST_PKGS="$BLACKLIST_PKGS compiz compiz-core" # no remove compiz
 # no software center
 BLACKLIST_PKGS="$BLACKLIST_PKGS software-center"
 # ubuntu trusty
@@ -134,6 +135,16 @@ BLACKLIST_PKGS="$BLACKLIST_PKGS unity-gtk2-module unity-gtk3-module unity-servic
 BLACKLIST_PKGS="$BLACKLIST_PKGS unity-webapps-common "
 BLACKLIST_PKGS="$BLACKLIST_PKGS apport apport-gtk "
 BLACKLIST_PKGS="$BLACKLIST_PKGS dvdisaster"
+
+
+
+BLACKLIST_PKGS="$BLACKLIST_PKGS texlive-base texlive-binaries texlive-extra-utils texlive-font-utils texlive-fonts-recommended texlive-fonts-recommended-doc"
+BLACKLIST_PKGS="$BLACKLIST_PKGS texlive-generic-recommended texlive-latex-base texlive-latex-base-doc texlive-latex-extra texlive-latex-extra-doc"
+BLACKLIST_PKGS="$BLACKLIST_PKGS texlive-latex-recommended texlive-latex-recommended-doc texlive-pictures texlive-pictures-doc texlive-pstricks texlive-pstricks-doc"
+
+BLACKLIST_PKGS="$BLACKLIST_PKGS autogen-doc denemo-doc geda-doc gputils-doc libxine2-doc maxima-doc openshot-doc qucs-doc scribus-doc"
+BLACKLIST_PKGS="$BLACKLIST_PKGS fluid-soundfont-gm fonts-noto fonts-noto-cjk fonts-noto-hinted fonts-noto-mono fonts-noto-unhinted"
+
 
 
 
@@ -242,6 +253,8 @@ _revert_invoke() {
    [ -e $DIR/usr/sbin/update-grub.distrib ] && \
      mv $DIR/usr/sbin/update-grub.distrib $DIR/usr/sbin/update-grub
  fi
+
+ rm -f $DIR/usr/sbin/policy-rc.d
 }
 
 _add_invoke() {
@@ -274,6 +287,15 @@ echo "" >&2
 exit 0
 EOF
     chmod +x $DIR/sbin/start-stop-daemon
+  fi
+
+
+  if [ -e $DIR/usr/sbin/policy-rc.d ]; then
+cat > $DIR/usr/sbin/policy-rc.d << EOF
+#!/bin/sh
+echo "All runlevel operations denied by policy, args: '\$@'" >&2
+exit 101
+EOF
   fi
 
 }

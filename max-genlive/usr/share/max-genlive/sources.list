@@ -1,9 +1,9 @@
 #
-# sources.list for Max8.0 live session
+# sources.list for Max9.0 live session
 #
-deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse
-deb http://max.educa.madrid.org/max80 max main
+deb http://archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ xenial-updates main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ xenial-security main restricted universe multiverse
+deb http://max.educa.madrid.org/max90 max main
 
 
