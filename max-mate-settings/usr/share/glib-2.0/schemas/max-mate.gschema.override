@@ -15,7 +15,7 @@ keyservers=['hkp://keyserver.ubuntu.com:11371', 'hkp://pool.sks-keyservers.net',
 cursor-theme='DMZ-White'
 document-font-name='Ubuntu 11'
 font-name='Ubuntu 11'
-gtk-theme='MaxTheme'
+gtk-theme='MaxColors'
 icon-theme='maxtoon'
 monospace-font-name='Ubuntu Mono 13'
 
@@ -55,6 +55,7 @@ exec='thunderbird'
 
 [org.mate.background]
 picture-filename='/usr/share/backgrounds/max.png'
+picture-options='stretched'
 
 [org.mate.caja.desktop]
 font='Ubuntu 11'
@@ -78,7 +79,7 @@ hinting = 'slight'
 [org.mate.interface]
 icon-theme='maxtoon'
 gtk-decoration-layout='menu:minimize,maximize,close'
-gtk-theme='MaxTheme'
+gtk-theme='MaxColors'
 font-name='Ubuntu 11'
 document-font-name='Ubuntu 11'
 monospace-font-name='Ubuntu Mono 13'
@@ -142,7 +143,7 @@ print-font-numbers-pango='Ubuntu 8'
 
 [org.mate.screensaver]
 lock-delay=1
-mode='single'
+mode='blank-only'
 themes=['screensavers-footlogo-floaters']
 
 [org.mate.sound]
@@ -171,3 +172,7 @@ use-system-font=true
 
 [org.yorba.shotwell.printing]
 titles-font='Ubuntu Bold 12'
+
+[desktop.ibus.panel]
+show-icon-on-systray=false
+
