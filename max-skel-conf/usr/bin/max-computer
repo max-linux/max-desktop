@@ -5,5 +5,12 @@ if [ "$SESSION" = "xfce" ]; then
   exit
 fi
 
+
+if [ "$DESKTOP_SESSION" = "mate" ]; then
+  caja computer://
+  exit
+fi
+
+
 #SESSION=gnome-fallback
 nautilus computer://
