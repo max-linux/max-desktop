@@ -176,3 +176,12 @@ titles-font='Ubuntu Bold 12'
 [desktop.ibus.panel]
 show-icon-on-systray=false
 
+[com.canonical.unity-greeter]
+theme-name='Ambiance'
+background='/usr/share/images/gdm/maxgdm.png'
+icon-theme-name='maxtoon'
+logo=''
+draw-user-backgrounds=false
+draw-grid=false
+background-color='#0b2562'
+
