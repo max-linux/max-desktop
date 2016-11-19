@@ -1,3 +1,15 @@
+ubiquity-frontend-max (9.0.max8) max; urgency=medium
+
+  * Fix MAX repo max2.educa.madrid.org => max.educa.madrid.org
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 19 Nov 2016 11:55:29 +0100
+
+ubiquity-frontend-max (9.0.max7) max; urgency=medium
+
+  * Fix override usr/bin/ubiquity => usr/lib/ubiquity/bin/ubiquity
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 18 Nov 2016 09:02:34 +0100
+
 ubiquity-frontend-max (9.0.max6) max; urgency=medium
 
   * Override usr/bin/ubiquity to force LC_NUMERIC=C
