@@ -173,6 +173,10 @@ use-system-font=true
 [org.yorba.shotwell.printing]
 titles-font='Ubuntu Bold 12'
 
+[desktop.ibus.general]
+preload-engines=['xkb:es::spa']
+version='1.5.11'
+
 [desktop.ibus.panel]
 show-icon-on-systray=false
 
