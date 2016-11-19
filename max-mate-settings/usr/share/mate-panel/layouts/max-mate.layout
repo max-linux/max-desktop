@@ -24,10 +24,34 @@ toplevel-id=bottom
 object-type=launcher
 menu-path=applications:/
 
-[Object thunderbird]
+[Object chromium]
 locked=true
-position=30
-launcher-location=/usr/share/applications/thunderbird.desktop
+position=21
+launcher-location=/usr/share/applications/chromium-browser.desktop
+toplevel-id=bottom
+object-type=launcher
+menu-path=applications:/
+
+[Object writer]
+locked=true
+position=22
+launcher-location=/usr/share/applications/libreoffice-writer.desktop
+toplevel-id=bottom
+object-type=launcher
+menu-path=applications:/
+
+[Object screenshot]
+locked=true
+position=23
+launcher-location=/usr/share/applications/mate-screenshot.desktop
+toplevel-id=bottom
+object-type=launcher
+menu-path=applications:/
+
+[Object terminal]
+locked=true
+position=24
+launcher-location=/usr/share/applications/mate-terminal.desktop
 toplevel-id=bottom
 object-type=launcher
 menu-path=applications:/
