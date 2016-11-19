@@ -1,4 +1,46 @@
 
+# install syslinux-themes-${MAX_VERSION} in chroot and copy to $CDRW/isolinux
+chroot $CHROOT << EOC || _exit "Error instalando syslinux-themes-${MAX_VERSION}"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+export ERROR=0
+apt-get $APT_OPTS update || ERROR=1
+apt-get $APT_OPTS -f install
+apt-get $APT_OPTS install syslinux-themes-${MAX_VERSION} gfxboot-theme-ubuntu || ERROR=1
+apt-get clean
+exit \$ERROR
+EOC
+
+#set -x
+rm -f $CDRW/isolinux/*
+cp -L --remove-destination $CHROOT/usr/share/syslinux/themes/${MAX_VERSION}/isolinux-live/* $CDRW/isolinux/
+
+mkdir -p $CDRW/gfxboot
+tar -zxf $CHROOT/usr/share/gfxboot-theme-ubuntu/bootlogo.tar.gz -C $CDRW/gfxboot
+cp $CDRW/gfxboot/bootlogo $CDRW/gfxboot/es.tr $CDRW/gfxboot/16x16.fnt $CDRW/isolinux/
+rm -rf $CDRW/gfxboot
+
+# repack bootlogo like live-build
+#ls -lh $CDRW/isolinux/bootlogo
+tmpdir="$(mktemp -d)"
+(cd "$tmpdir" && cpio -i) < $CDRW/isolinux/bootlogo
+cp -a -f        $CDRW/isolinux/*.fnt \
+                $CDRW/isolinux/*.hlp \
+                $CDRW/isolinux/*.jpg \
+                $CDRW/isolinux/*.pcx \
+                $CDRW/isolinux/*.tr \
+                $CDRW/isolinux/*.cfg \
+                $(test -e $CDRW/isolinux/lang && echo $CDRW/isolinux/lang) \
+                $CDRW/isolinux/langlist \
+                "$tmpdir/" || true
+(cd "$tmpdir" && ls -1 | cpio --quiet -o) > $CDRW/isolinux/bootlogo
+rm -rf "$tmpdir"
+#ls -lh $CDRW/isolinux/bootlogo
+sed -i -e 's/initrd.lz/initrd.gz/g' $CDRW/isolinux/txt.cfg
+#set +x
 
 mkdir -p $CDRW/preseed $CDRW/.disk
 

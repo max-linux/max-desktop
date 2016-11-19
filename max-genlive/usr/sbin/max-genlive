@@ -1,6 +1,12 @@
 #!/bin/bash
 
-if [ "$1" = "amd64" ]; then
+if [ "$1" = "proxyamd64" ]; then
+  LOCAL_MIRROR=1 PROXY="http://192.168.0.2:3142" MIRROR="es.archive.ubuntu.com" ENABLE_EXTRA=1 AMD64=1 max-genlive 2>&1 | tee -a max-amd64.log
+  exit 0
+elif [ "$1" = "proxyi386" ]; then
+  LOCAL_MIRROR=1 PROXY="http://192.168.0.2:3142" MIRROR="es.archive.ubuntu.com" ENABLE_EXTRA=1 max-genlive 2>&1 | tee -a max-i386.log
+  exit 0
+elif [ "$1" = "amd64" ]; then
   LOCAL_MIRROR=1 MIRROR=127.0.0.1 ENABLE_EXTRA=1 AMD64=1 max-genlive 2>&1 | tee -a max-amd64.log
   exit 0
 elif [ "$1" = "i386" ]; then
@@ -20,6 +26,8 @@ LINUX_HEADERS="max-linux-headers"
 XSERVER_XORG="xserver-xorg"
 MAXHOSTNAME=max90
 INSTALL_MOODLE=no
+MIRRORMAX="max.educa.madrid.org"
+MAX_VERSION="max90"
 
 ## Create a 12.04 with trusty kernel and Xorg
 #LINUX_IMAGE="linux-image-generic-lts-trusty max-linux"
@@ -75,6 +83,9 @@ else
   NANOMAX_MOODLE=0
 fi
 
+if [ "$BASE" = "" ]; then
+  BASE=""
+fi
 
 CURDIR=$(pwd)
 
@@ -103,69 +114,12 @@ PAQUETES_EXTRA="tcos max-alumno max-profesor max-terminales"
 PAQUETES_EXTRA="$PAQUETES_EXTRA max-tcos-alumno max-tcos-profesor"
 PAQUETES_EXTRA="$PAQUETES_EXTRA linux-wlan-ng-firmware max-desktop-infantil-primaria max-infantil"
 
-BLACKLIST_PKGS="resolvconf "
-#BLACKLIST_PKGS="$BLACKLIST_PKGS python-ubuntuone python-ubuntuone-client python-ubuntuone-storageprotocol ubuntuone-client"
-#BLACKLIST_PKGS="$BLACKLIST_PKGS ubuntuone-client-gnome rhythmbox-ubuntuone-music-store"
-BLACKLIST_PKGS="$BLACKLIST_PKGS arora"
-BLACKLIST_PKGS="$BLACKLIST_PKGS x11proto-core-dev x11proto-composite-dev python-dev libglade2.0-cil-dev xtrans-dev"
-BLACKLIST_PKGS="$BLACKLIST_PKGS x11proto-kb-dev x11proto-input-dev x11proto-core-dev libxt-dev libxdmcp-dev libxcb1-dev libxau-dev"
-BLACKLIST_PKGS="$BLACKLIST_PKGS libx11-dev libltdl-dev libplymouth-dev libpthread-stubs0-dev"
-BLACKLIST_PKGS="$BLACKLIST_PKGS mythbuntu-default-settings"
-BLACKLIST_PKGS="$BLACKLIST_PKGS freemind-doc libatk1.0-doc libglib2.0-doc libgtk2.0-doc libpango1.0-doc lilypond-doc winff-doc"
-BLACKLIST_PKGS="$BLACKLIST_PKGS landscape-client landscape-common"
-# Ubuntu 12.04 globalmenu
-BLACKLIST_PKGS="$BLACKLIST_PKGS appmenu-gtk appmenu-gtk3 appmenu-qt indicator-appmenu"
-BLACKLIST_PKGS="$BLACKLIST_PKGS firefox-globalmenu thunderbird-globalmenu"
-# Ubuntu 12.04 Overlay scrollbar
-BLACKLIST_PKGS="$BLACKLIST_PKGS overlay-scrollbar"
-## gdm by default https://bugs.launchpad.net/ubuntu/+source/gdm/+bug/805154
-##BLACKLIST_PKGS="$BLACKLIST_PKGS lightdm unity-greeter"
-# ibus (chinnese and japan input)
-#BLACKLIST_PKGS="$BLACKLIST_PKGS ibus-gtk ibus-gtk3 ibus-pinyin ibus-table pinyin-database"
-# don't install English help #439
-BLACKLIST_PKGS="$BLACKLIST_PKGS libreoffice-help-en-gb libreoffice-help-en-us"
-# ubiquity install KDE
-BLACKLIST_PKGS="$BLACKLIST_PKGS ubiquity-frontend-kde"
-#BLACKLIST_PKGS="$BLACKLIST_PKGS compiz compiz-core" # no remove compiz
-# no software center
-BLACKLIST_PKGS="$BLACKLIST_PKGS software-center"
-# ubuntu trusty
-BLACKLIST_PKGS="$BLACKLIST_PKGS oneconf oneconf-common"
-BLACKLIST_PKGS="$BLACKLIST_PKGS unity-gtk2-module unity-gtk3-module unity-services xul-ext-unity "
-BLACKLIST_PKGS="$BLACKLIST_PKGS unity-webapps-common "
-BLACKLIST_PKGS="$BLACKLIST_PKGS apport apport-gtk "
-BLACKLIST_PKGS="$BLACKLIST_PKGS dvdisaster"
 
 
-
-BLACKLIST_PKGS="$BLACKLIST_PKGS texlive-base texlive-binaries texlive-extra-utils texlive-font-utils texlive-fonts-recommended texlive-fonts-recommended-doc"
-BLACKLIST_PKGS="$BLACKLIST_PKGS texlive-generic-recommended texlive-latex-base texlive-latex-base-doc texlive-latex-extra texlive-latex-extra-doc"
-BLACKLIST_PKGS="$BLACKLIST_PKGS texlive-latex-recommended texlive-latex-recommended-doc texlive-pictures texlive-pictures-doc texlive-pstricks texlive-pstricks-doc"
-
-BLACKLIST_PKGS="$BLACKLIST_PKGS autogen-doc denemo-doc geda-doc gputils-doc libxine2-doc maxima-doc openshot-doc qucs-doc scribus-doc"
-BLACKLIST_PKGS="$BLACKLIST_PKGS fluid-soundfont-gm fonts-noto fonts-noto-cjk fonts-noto-hinted fonts-noto-mono fonts-noto-unhinted"
-
-
-
-
-#  appmenu-qt* compiz* compiz-core* compiz-gnome* compiz-plugins-default* ibus*
-#  ibus-gtk* ibus-gtk3* ibus-pinyin* ibus-table* indicator-appmenu*
-#  libcompizconfig0* libunity-core-6.0-9* libunity-webapps0* oneconf*
-#  oneconf-common* overlay-scrollbar* overlay-scrollbar-gtk2*
-#  overlay-scrollbar-gtk3* python-oneconf* python3-oneconf* resolvconf*
-#  software-center* ubuntu-desktop* ubuntu-minimal* unity*
-#  unity-control-center* unity-control-center-signon* unity-gtk2-module*
-#  unity-gtk3-module* unity-lens-applications* unity-services*
-#  unity-webapps-common* unity-webapps-qml* unity-webapps-service*
-#  webaccounts-extension-common* webapp-container* xorg* xorg-docs-core*
-#  xul-ext-unity* xul-ext-webaccounts* xul-ext-websites-integration*
-
-
-
-NEW_ISOLINUX=/usr/share/max-genlive/isolinux
-GENLIVE=/usr/share/max-genlive
+NEW_ISOLINUX=${BASE}/usr/share/max-genlive/isolinux
+GENLIVE=${BASE}/usr/share/max-genlive
 APT_OPTS="-y --force-yes -o Dpkg::Options::=\"--force-confnew\""
-HOOKS=/usr/share/max-genlive/hooks/
+HOOKS=${BASE}/usr/share/max-genlive/hooks/
 
 
 MY_NAME=$(basename $0)
@@ -291,11 +245,12 @@ EOF
 
 
   if [ -e $DIR/usr/sbin/policy-rc.d ]; then
-cat > $DIR/usr/sbin/policy-rc.d << EOF
+cat << EOF > $DIR/usr/sbin/policy-rc.d
 #!/bin/sh
 echo "All runlevel operations denied by policy, args: '\$@'" >&2
 exit 101
 EOF
+    chmod +x $DIR/usr/sbin/policy-rc.d
   fi
 
 }
@@ -303,7 +258,7 @@ EOF
 
 if [ "$1" = "--help" ]; then
   ayuda
-  exit 1
+  _exit ""
 fi
 
 
@@ -320,11 +275,19 @@ fi
 #_exit 1
 
 if [ "$ONLY_NANO_CDROM" = "1" ]; then
-  . /usr/share/max-genlive/hooks/90umount
-  . /usr/share/max-genlive/hooks/75nanomax
-  . /usr/share/max-genlive/hooks/90umount
+  . ${BASE}/usr/share/max-genlive/hooks/90umount
+  . ${BASE}/usr/share/max-genlive/hooks/75nanomax
+  . ${BASE}/usr/share/max-genlive/hooks/90umount
   _exit "Fin de pruebas"
 fi
+
+if [ "$ONLY_ISO" = "1" ]; then
+#  . ${BASE}/usr/share/max-genlive/hooks/60clean
+  . ${BASE}/usr/share/max-genlive/hooks/80buildiso
+  . ${BASE}/usr/share/max-genlive/hooks/90umount
+  _exit "Fin ONLY_ISO"
+fi
+
 
 for hook in $HOOKS/*; do
   #_echo "Cargando extension $hook"

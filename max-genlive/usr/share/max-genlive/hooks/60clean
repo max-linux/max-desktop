@@ -183,4 +183,8 @@ cp $GENLIVE/isolinux/* $CDRW/isolinux/ || _exit "No se puede sobreescribir isoli
 #cp $CHROOT/usr/lib/syslinux/isolinux.bin $CDRW/isolinux/
 cp $CHROOT/usr/lib/ISOLINUX/isolinux.bin $CDRW/isolinux/
 
-rm -f $CHROOT/etc/apt/apt.conf.d/99translations
+
+
+rm -f $CHROOT/etc/apt/apt.conf.d/99translations \
+      $CHROOT/etc/apt/apt.conf.d/00http-proxy \
+      $CHROOT/etc/apt/preferences.d/max-genlive

@@ -5,8 +5,15 @@ mkdir -p $CDRW $CDRW/casper $CDRW/pool $CDRW/preseed $CDRW/.disk $CDRW/isolinux
 
 
 if [ ! -d $CHROOT ]; then
-    _echo "debootstrap --arch=$ARCH $DISTRO $CHROOT http://$MIRROR/ubuntu"
-    (debootstrap --arch=$ARCH $DISTRO $CHROOT http://$MIRROR/ubuntu || _exit "Error en el debootstrap")
+
+     DEB_MIRROR="http://$MIRROR/ubuntu"
+
+     if [ "$PROXY" != "" ]; then
+         DEB_MIRROR="${PROXY}/$MIRROR/ubuntu"
+     fi
+
+    _echo "debootstrap --arch=$ARCH $DISTRO $CHROOT $DEB_MIRROR"
+    (debootstrap --arch=$ARCH $DISTRO $CHROOT $DEB_MIRROR || _exit "Error en el debootstrap")
 
     cat << EOF > $CHROOT/etc/hosts
 127.0.0.1	localhost $MAXHOSTNAME
@@ -25,9 +32,19 @@ EOF
     echo "$MAXHOSTNAME" > $CHROOT/etc/mailname
 fi
 
-set -x
-chroot $CHROOT hostname $MAXHOSTNAME
-set +x
+#set -x
+#chroot $CHROOT hostname $MAXHOSTNAME
+#set +x
+
+
+if [ "$PROXY" != "" ]; then
+    echo "Acquire::http::Proxy \"${PROXY}\";" > $CHROOT/etc/apt/apt.conf.d/00http-proxy
+fi
+
+rm -f $CHROOT/etc/apt/preferences.d/max-genlive
+for p in $(grep -v -e ^# -e "^$" $GENLIVE/blacklist.pkgs); do
+  echo -e "Package: $p\nPin: release *\nPin-Priority: -100\n\n" >> $CHROOT/etc/apt/preferences.d/max-genlive
+done
 
 
 if [ "$(file $CHROOT/usr/bin/apt-get | grep -c "ELF 64-bit")" = "1" ]; then

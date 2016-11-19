@@ -11,7 +11,6 @@ export DEBIAN_FRONTEND="noninteractive"
 export UCF_FORCE_CONFFOLD=1
 export ERROR=0
 apt-get $APT_OPTS remove --purge \$(dpkg -l|awk '{print \$2}'| grep language-pack| grep -v -e "-es" -e "-en" -e "common" -e "selector") || ERROR=1
-# apt-get $APT_OPTS install max-desktop-gnome max-desktop-xfce language-selector-gnome || ERROR=1
 apt-get $APT_OPTS install max-mate-core max-mate-desktop || ERROR=1
 apt-get $APT_OPTS autoremove --purge
 apt-get clean
@@ -19,18 +18,4 @@ exit \$ERROR
 EOC
 
 
-_echo "Borrando paquetes no necesarios"
-
-chroot $CHROOT << EOC || _exit "No se han podido borrar paquetes no necesarios"
-export LC_ALL=C
-export LC_MESSAGES=C
-export DEBCONF_FRONTEND="noninteractive"
-export DEBIAN_FRONTEND="noninteractive"
-export UCF_FORCE_CONFFOLD=1
-export ERROR=0
-apt-get $APT_OPTS remove --purge $BLACKLIST_PKGS || ERROR=1
-apt-get $APT_OPTS autoremove --purge || ERROR=1
-apt-get clean
-exit \$ERROR
-EOC
-
+# apt-get $APT_OPTS install max-desktop-gnome max-desktop-xfce language-selector-gnome || ERROR=1

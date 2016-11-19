@@ -1,3 +1,12 @@
+max-genlive (9.0.max2) max; urgency=medium
+
+  * Move blacklist to usr/share/max-genlive/blacklist.pkgs
+  * Add support to apt proxy
+  * Use syslinux-themes-max90 instead of local isolinux dir
+  * Fix bootlogo cpio image
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 19 Nov 2016 12:01:45 +0100
+
 max-genlive (9.0.max1) max; urgency=medium
 
   * Build in MAX 9.0

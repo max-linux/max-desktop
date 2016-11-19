@@ -68,8 +68,8 @@ UBUNTU_PACKAGES="$UBUNTU_PACKAGES mdetect openssl-blacklist"
 UBUNTU_PACKAGES="$UBUNTU_PACKAGES util-linux-locales valgrind xfsprogs"
 UBUNTU_PACKAGES="$UBUNTU_PACKAGES network-manager-openvpn network-manager-vpnc network-manager-pptp"
 
-_echo "Instalando ubuntu-desktop"
-
+#_echo "Instalando ubuntu-desktop"
+#
 #chroot $CHROOT << EOC || _exit "No se ha podido instalar ubuntu-desktop"
 #export LC_ALL=C
 #export LC_MESSAGES=C
@@ -82,6 +82,22 @@ _echo "Instalando ubuntu-desktop"
 #apt-get clean
 #exit \$ERROR
 #EOC
+
+
+_echo "Instalando MAX MATE base"
+
+chroot $CHROOT << EOC || _exit "No se ha podido instalar max-mate-desktop"
+export LC_ALL=C
+export LC_MESSAGES=C
+export DEBCONF_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+export UCF_FORCE_CONFFOLD=1
+export ERROR=0
+apt-get $APT_OPTS install ubuntu-minimal || ERROR=1
+apt-get $APT_OPTS install ubuntu-minimal max-mate-desktop max-mate-core  || ERROR=1
+apt-get clean
+exit \$ERROR
+EOC
 
 
 #LIVE_PACKAGES="casper ubiquity ubiquity-casper ubiquity-frontend-gtk ubiquity-ubuntu-artwork"
