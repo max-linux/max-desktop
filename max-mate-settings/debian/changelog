@@ -1,3 +1,10 @@
+max-mate-settings (9.0max10) max; urgency=medium
+
+  * Fix tilda and rename ubuntu-mate-settings-overlay => 
+    max-mate-settings-overlay
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 20 Nov 2016 15:52:08 +0100
+
 max-mate-settings (9.0max9) max; urgency=medium
 
   * Try to fix hidden ibus
