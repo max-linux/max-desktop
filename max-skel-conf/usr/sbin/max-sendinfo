@@ -10,6 +10,7 @@ import urllib
 import urllib2
 import base64
 import logging
+import uuid
 from subprocess import Popen, PIPE, STDOUT
 
 
@@ -110,20 +111,20 @@ if __name__ == '__main__':
     if not os.path.exists(PENDING):
         sys.exit(0)
     #
-    # id=[DBUS uniq UUID]
+    # id=[uniq UUID]
     # distro=[ Ubuntu or Debian with version ]
     # arch=[ i386 | amd64 ]
     # version=[ from sources.list max75 for ex ]
 
     if not os.path.exists(UUID_FILE):
-        UID=exe_cmd('/bin/dbus-uuidgen')
+        UID=str(uuid.uuid4())
         f=open(UUID_FILE, 'w')
         f.write("%s"%UID)
         f.close()
 
     UID=readfile(UUID_FILE)
     if UID == 'n/a':
-        UID=exe_cmd('/bin/dbus-uuidgen')
+        UID=str(uuid.uuid4())
         f=open(UUID_FILE, 'w')
         f.write("%s"%UID)
         f.close()

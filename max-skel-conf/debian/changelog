@@ -1,3 +1,9 @@
+max-skel-conf (9.0.max5) max; urgency=medium
+
+  * Fix max-sendinfo uuid generation
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 21 Nov 2016 14:21:00 +0100
+
 max-skel-conf (9.0.max4) max; urgency=medium
 
   * max-computer: Use caja if MATE desktop
