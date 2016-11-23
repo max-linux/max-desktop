@@ -8,7 +8,7 @@ VERSION=$(shell dpkg-parsechangelog -ldebian/changelog| awk '/^Version/ {print $
 printversion:
 	@echo "VERSION="$(VERSION)
 
-build/max-menus::
+build/max-mate-menus::
 	xmlstarlet val etc/xdg/menus/mate-applications.menu
 
 	grep -v ^# debian/max-mate-menus.divert.original > debian/max-mate-menus.divert
