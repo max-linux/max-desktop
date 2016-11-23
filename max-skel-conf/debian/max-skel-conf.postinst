@@ -36,6 +36,12 @@ case "$1" in
       rm -f '/etc/skel/.gnome2/nautilus-scripts/Crear lanzador'
       rm -f "/home/*/.gnome2/nautilus-scripts/Crear lanzador"
     fi
+
+    [ -e /etc/skel/Escritorio/Equipo.desktop ] && \
+	rm -f /etc/skel/Escritorio/Equipo.desktop /home/*/Escritorio/Equipo.desktop
+    [ -e  /etc/skel/Escritorio/Red.desktop ] && \
+	rm -f /etc/skel/Escritorio/Red.desktop /home/*/Escritorio/Red.desktop
+
     ;;
 
 esac
