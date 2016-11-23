@@ -1,0 +1,12 @@
+#!/bin/sh
+# tuxtype wrapper
+
+if [ ! -e $HOME/.tuxtype/settings.txt ]; then
+  mkdir -p $HOME/.tuxtype
+  cat << EOF > $HOME/.tuxtype/settings.txt
+lang=espanol
+fullscreen=1
+EOF
+fi
+
+/usr/games/tuxtype $@

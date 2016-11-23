@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=QDVDAuthor
+Name[es]=QDVDAuthor (creador de DVD)
+Comment=DVD Author GUI
+Comment[es]=Interfaz de maquetación de DVD
+Icon=qdvdauthor
+TryExec=/usr/bin/qdvdauthor
+Exec=qdvdauthor
+Terminal=false
+Type=Application
+X-Desktop-File-Install-Version=0.3
+Categories=Qt;AudioVideo;

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Gconf-editor
+Comment=Edite directamente su base de datos de configuración completa
+TryExec=gconf-editor
+Exec=gconf-editor
+Terminal=false
+Type=Application
+Icon=gconf-editor
+StartupNotify=true
+Categories=GNOME;GTK;System;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=gconf-editor
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=3.0.1

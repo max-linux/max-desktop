@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Installed User Documentation
+Name[es]=Documentación de Usuario Instalada
+Comment=get user help about MAX applications
+Comment[es]=Obtener ayuda de usuario sobre las aplicaciones de MAX
+TryExec=/usr/bin/firefox
+Exec=firefox file:///usr/share/doc/
+Icon=gnome-help.png
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=MAX;

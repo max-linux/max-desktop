@@ -1,0 +1,17 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Calculator
+Name[es]=Calculadora
+Comment=Perform arithmetic, scientific or financial calculations
+Comment[es]=Realiza cálculos matemáticos
+TryExec=/usr/bin/gnome-calculator
+Exec=gnome-calculator
+Icon=accessories-calculator
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Utility;Calculator;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=gnome-calculator
+X-GNOME-Bugzilla-Component=general
+X-Ubuntu-Gettext-Domain=gnome-calculator

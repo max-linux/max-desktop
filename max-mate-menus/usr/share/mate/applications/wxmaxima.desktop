@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=wxMaxima
+Name[es]=wxMaxima (álgebra)
+Comment=wxWidgets interface for CAS maxima
+Comment[es]=Interfaz wxWidgets para maxima (álgebra)
+TryExec=/usr/bin/wxmaxima
+Exec=wxmaxima
+Icon=wxmaxima-32
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Education;Math;Science;

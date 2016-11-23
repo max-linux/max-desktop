@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/aa-debhelper.mk
+
+VERSION=$(shell dpkg-parsechangelog -ldebian/changelog| awk '/^Version/ {print $$2}')
+
+printversion:
+	@echo "VERSION="$(VERSION)
+
+build/max-menus::
+	xmlstarlet val etc/xdg/menus/mate-applications.menu
+
+	grep -v ^# debian/max-mate-menus.divert.original > debian/max-mate-menus.divert
+

@@ -1,0 +1,16 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+TryExec=/usr/bin/celestia
+Exec=celestia-gnome
+Icon=celestia
+X-GNOME-DocPath=
+Terminal=false
+Name=Celestia (GNOME)
+GenericName=Space Simulator
+GenericName[es]=Simulador espacial
+Comment=Explore the Universe in this detailed space simulation
+Comment[es]=Explora el universo en este detallado simulador espacial
+StartupNotify=true
+Categories=Astronomy;Education;Application;

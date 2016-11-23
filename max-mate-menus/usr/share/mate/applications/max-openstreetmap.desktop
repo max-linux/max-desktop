@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=OpenStreetMap
+Comment=OpenStreetMap web site
+Comment[es]=Web de OpenStreetMap
+TryExec=/usr/bin/firefox
+Exec=firefox http://www.openstreetmap.org
+Icon=firefox
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Application;Core;

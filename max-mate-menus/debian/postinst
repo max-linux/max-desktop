@@ -1,0 +1,18 @@
+#!/bin/sh
+
+
+if [ "$1" = "configure" ]; then
+
+  # remove distrib to hide menu if ardesia is not installed
+  if [ -e /usr/bin/ardesia.distrib ]; then
+    if cmp /usr/bin/ardesia /usr/bin/ardesia.distrib >/dev/null 2>&1 ; then
+      rm -f /usr/bin/ardesia.distrib
+    fi
+  fi
+
+fi
+
+
+#DEBHELPER#
+
+exit 0

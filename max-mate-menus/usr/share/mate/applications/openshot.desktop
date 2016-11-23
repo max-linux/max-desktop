@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=OpenShot (video editor)
+Name[es]=OpenShot (editor de vídeo)
+X-GNOME-FullName=OpenShot (editor de vídeo)
+Comment=Create and edit movies and videos
+Comment[es]=Crea y edita vídeos y películas
+TryExec=/usr/bin/openshot
+Exec=openshot %F
+Terminal=false
+Type=Application
+Icon=openshot
+Categories=GNOME;GTK;AudioVideo;Video;AudioVideoEditing;
+MimeType=application/vnd.openshot-project;
+X-AppInstall-Package=openshot
+X-Ubuntu-Gettext-Domain=OpenShot

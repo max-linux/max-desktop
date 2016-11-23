@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=NoteLab
+GenericName=NoteLab
+Comment=Tablet PC app, exports notes to SVG format
+Comment[es]=Aplicación para Tablet PC, exporta las notas a formato SVG
+GenericName[es]=Exporte notas a formato SVG
+TryExec=/usr/bin/notelab
+Exec=notelab
+Icon=notelab.png
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Application;Utility;TextEditor;

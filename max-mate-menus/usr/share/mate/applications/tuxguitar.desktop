@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=tuxguitar
+Name[es]=tuxguitar (editor de tablaturas)
+Comment=Edit, playback guitar tablatures
+Comment[fr]=Edite, joue des tablatures de guitare
+Comment[es]=Edita, reproduce tablaturas de guitarra
+Exec=tuxguitar
+TryExec=/usr/bin/tuxguitar
+Icon=tuxguitar
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;
+MimeType=audio/x-tuxguitar;audio/x-gtp;audio/x-ptb;audio/midi;

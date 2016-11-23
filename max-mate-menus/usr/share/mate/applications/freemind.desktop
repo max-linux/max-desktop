@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Freemind
+Name[es]=Freemind (mapas mentales)
+Comment=Visual mind mapping tool
+Comment[es]=Herramienta de mapas mentales
+TryExec=/usr/bin/freemind
+Exec=freemind
+Categories=Office;
+Terminal=false
+Icon=FreeMindWindowIcon
+MimeType=application/x-freemind;

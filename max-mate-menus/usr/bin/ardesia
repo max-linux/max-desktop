@@ -1,0 +1,35 @@
+#!/bin/sh
+
+if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
+    # waiting for fix in #560
+    zenity --error --no-wrap --text="Ardesia tiene actualmente <b>problemas pendientes de resolución</b> para poder ejecutarse en <b>GNOME</b>.\n\nPuede cerrar sesión e iniciar sesión en <b>Xfce</b> donde podrá ejectuar Ardesia sin problemas.\n\nDisculpe las molestias."
+    exit
+    # enable metacity composite
+    gconftool-2 --set /apps/metacity/general/compositing_manager --type boolean "true"
+fi
+
+
+if [ "$XDG_CURRENT_DESKTOP" = "XFCE" ]; then
+    #enable Xfce4 composite
+    xfconf-query -c xfwm4 -p '/general/use_compositing' -t 'bool' -s 'true'
+fi
+
+# https://github.com/max-linux/max-desktop/issues/521
+posicion=$(zenity --list --width=500 --height=220 \
+--title "La barra de Ardesia" \
+--text "Elija la posición de la barra de Ardesia" \
+--radiolist --column="Selección" --column=" Lugar " --column="Descripción" \
+TRUE Abajo "Barra en zona inferior. Ideal para PDI" \
+FALSE Arriba "Barra en zona superior" \
+FALSE Izquierda "Barra en zona izquierda" \
+FALSE Derecha "Barra en zona derecha");
+
+case $posicion in
+Abajo)      ARGS="-d -g south"  ;;
+Arriba)     ARGS="-d  -g north" ;;
+Izquierda)  ARGS="-d -g west"   ;;
+Derecha)    ARGS="-d -g east"   ;;
+esac
+
+
+ardesia.distrib $ARGS

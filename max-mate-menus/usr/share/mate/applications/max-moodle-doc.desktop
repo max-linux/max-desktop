@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Moodle docs
+Name[es]=Documentación de Moodle
+Comment=Moodle documents
+Comment[es]=Documentación de Moodle
+TryExec=/usr/sbin/configure-moodle
+Exec=firefox http://docs.moodle.org/es/Portada
+Icon=firefox
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Moodle;

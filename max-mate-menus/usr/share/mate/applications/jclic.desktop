@@ -1,0 +1,15 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=JClic
+Name[es]=Biblioteca JClic
+Comment=Multimedia educational activities: puzzles, associations, text exercises, crosswords, scrambled letters, etc.
+Comment[ca]=Activitats educatives multimèdia: puzzles, associacions, exercicis de text, mots encreuats, sopes de lletres i altres.
+Comment[es]=Actividades educativas multimedia
+Comment[valencia]=Activitats educatives multimèdia: puzzles, associacions, exercicis de text, mots encreuats, sopes de lletres i altres.
+Icon=jclic.png
+TryExec=/usr/bin/jclic
+Exec=jclic %U
+Terminal=false
+Type=Application
+Categories=Application;Education
+StartupNotify=false

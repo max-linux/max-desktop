@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Sound Recorder
+Comment=Record sound clips
+Name[es]=Grabador de sonido
+Comment[es]=Graba clips de sonido
+TryExec=/usr/bin/gnome-sound-recorder
+Exec=gnome-sound-recorder
+Icon=gnome-sound-recorder
+StartupNotify=true
+Terminal=false
+Type=Application
+X-GNOME-DocPath=grecord/grecord.xml
+Categories=GNOME;GTK;AudioVideo;Audio;Recorder;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=gnome-media
+X-GNOME-Bugzilla-Component=Gnome-Sound-Recorder
+X-GNOME-Bugzilla-Version=2.30.0
+X-Ubuntu-Gettext-Domain=gnome-media-2.0

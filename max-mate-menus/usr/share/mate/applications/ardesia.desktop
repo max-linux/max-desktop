@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Ardesia desktop sketchpad 
+Name[es]=Ardesia
+GenericName=Desktop sketchpad
+Comment=Annotate on the desktop screen.
+Comment[it]=Annota sullo schermo del computer
+Comment[es]=Escribir en el escritorio de la computadora
+TryExec=/usr/bin/ardesia.distrib
+Exec=ardesia
+Icon=ardesia.png
+Terminal=false
+Categories=GNOME;GTK;Whiteboard;
+StartupNotify=true
+MimeType=application/x-iwb;

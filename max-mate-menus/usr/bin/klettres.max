@@ -1,0 +1,13 @@
+#!/bin/sh
+# kletters wrapper
+
+if [ ! -e $HOME/.kde/share/config/klettresrc ]; then
+  mkdir -p $HOME/.kde/share/config/
+  cat << EOF > $HOME/.kde/share/config/klettresrc
+[General]
+Language=es
+
+EOF
+fi
+
+/usr/bin/klettres

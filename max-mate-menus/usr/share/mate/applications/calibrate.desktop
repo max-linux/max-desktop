@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Calibrate Touchscreen
+Name[es]=Calibrar pantalla táctil
+Comment=Run the touchscreen calibration tool
+Comment[es]=Ejecutar la herramienta de calibración
+Encoding=UTF-8
+TryExec=/usr/bin/calibrate_touchscreen
+Exec=gksu /usr/bin/calibrate_touchscreen
+Terminal=false
+Type=Application
+Icon=calibrate.png
+StartupNotify=true
+Categories=GTK;System;Settings;
+X-Ubuntu-Gettext-Domain=evtouch

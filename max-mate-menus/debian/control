@@ -1,0 +1,19 @@
+Source: max-mate-menus
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 7.0.0), cdbs, xmlstarlet, aa-debhelper
+Standards-Version: 3.8.4
+
+Package: max-mate-menus
+Architecture: all
+Depends: zenity
+Provides: max-menus
+Breaks: max-menus
+Replaces: max-menus
+Description: Configuración de menus para MAX MATE.
+ Configuración basada en dh_divert para menus, lanzadores y submenus
+ Contiene:
+  * /usr/share/max/applications
+  * /etc/xdg/menus
+

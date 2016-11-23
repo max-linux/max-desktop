@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=0.2
+Type=Application
+Name=Curtain
+GenericName=Show and move a curtain 
+Comment=Show and move a curtain on the desktop screen.
+Comment[it]=Mostra e sposta una tendina sulla scrivania.
+Comment[es]=Muestra y mueve una cortina sobre el escritorio
+Exec=curtain %U
+TryExec=/usr/bin/curtain
+Icon=curtain.png
+Terminal=false
+Categories=GNOME;GTK;Whiteboard;
+StartupNotify=true
+Encoding=UTF-8

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=PSe Int
+Name[es]=PSe Int (programación)
+Comment=Pseodocode learning tool
+Comment[es]=Herramienta de aprendizaje de programación por pseudocódigo
+Icon=pseint.png
+TryExec=/usr/bin/pseint
+Exec=pseint
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Application;Education;

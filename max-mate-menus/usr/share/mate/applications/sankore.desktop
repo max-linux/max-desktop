@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Sankore TBI
+Name[es]=Sankore PDI
+Comment=Sankore Whiteboard
+Comment[es]=Pizarra digital Sankore
+TryExec=sankore-3.1
+Exec=sankore-3.1
+Icon=onboard
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Whiteboard;

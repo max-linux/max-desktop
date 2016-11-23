@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Skype
+Name[es]=Skype (mensajería, voz y vídeo)
+Comment=Skype Internet Telephony
+Comment[es]=Telefonía por internet Skype
+TryExec=/usr/bin/skype
+Exec=skype
+Icon=skype.png
+Terminal=0
+Type=Application
+Encoding=UTF-8
+Categories=Network;Application;

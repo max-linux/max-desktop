@@ -1,0 +1,15 @@
+[Desktop Entry]
+TryExec=/usr/bin/mscore
+Exec=mscore
+GenericName=mscore
+Hidden=false
+Icon=mscore
+Name=MuseScore
+Name[es]=MuseScore (editor de partituras)
+Comment=WYSIWYG Music score typesetter
+Comment[es]=Editor de partituras WYSIWYG
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0
+Categories=Application;Education;

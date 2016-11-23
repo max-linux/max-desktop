@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Language Translator
+Name[es]=Traductor de idiomas
+Name[fr]=Traducteur de Langues
+Icon=gnome-translate.png
+Comment=Translate a text or web page
+Comment[es]=Traduce textos y páginas web
+Comment[fr]=Traduire un texte ou une page web
+Type=Application
+Categories=GNOME;Application;Utility;Translation;
+TryExec=/usr/bin/gnome-translate
+Exec=gnome-translate %u
+Terminal=false
+StartupNotify=true
+X-GNOME-DocPath=gnome-translate/gnome-translate.xml
