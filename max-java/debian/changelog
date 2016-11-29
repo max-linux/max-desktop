@@ -1,3 +1,10 @@
+max-java (9.0.max2) max; urgency=medium
+
+  * Update max-java-selector, add OpenJDK 8, remove 7 and rewrite
+    detector
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 29 Nov 2016 12:13:57 +0100
+
 max-java (9.0.max1) max; urgency=medium
 
   * Build in MAX 9.0

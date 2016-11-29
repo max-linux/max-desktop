@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script para cambiar la versión de java a utilizar en el equipo.
-version="1.1"
+version="1.2"
 
 nombre_script=`basename $0`
 titulo_ventana="$nombre_script - v$version"
@@ -56,74 +56,134 @@ function comprueba_paquete()
 
 
 # Averigua el java en uso.
-java_actual=`ls -l /etc/alternatives/java | cut -d">" -f 2`
-echo $java_actual | grep -q /java-6-sun/
-if [ $? == 0 ] ; then
+if [ `readlink -f /etc/alternatives/java | grep "/java6-sun"` ]; then
    java_actual="Sun Java 6"
+
+elif [ `readlink -f /etc/alternatives/java | grep "/java-6-openjdk"` ]; then
+   java_actual="Open JDK 6"
+
+elif [ `readlink -f /etc/alternatives/java | grep "/java-7-openjdk"` ]; then
+   java_actual="Open JDK 7"
+
+elif [ `readlink -f /etc/alternatives/java | grep "/java-8-openjdk"` ]; then
+   java_actual="Open JDK 8"
+
+elif [ `readlink -f /etc/alternatives/java | grep "/java-9-openjdk"` ]; then
+   java_actual="Open JDK 9"
+
+elif [ `readlink -f /etc/alternatives/java | grep "/java-7-oracle"` ]; then
+   java_actual="Oracle Java 7"
+
+elif [ `readlink -f /etc/alternatives/java | grep "/java-8-oracle"` ]; then
+   java_actual="Oracle Java 8"
+
+elif [ `readlink -f /etc/alternatives/java | grep "/java-9-oracle"` ]; then
+   java_actual="Oracle Java 9" # no exists yet !!!
+
 else
-   echo $java_actual | grep -q -e "/java-6-openjdk-i386/" -e "/java-6-openjdk-amd64/" 
-   if [ $? == 0 ] ; then
-      java_actual="Open JDK 6"
-   else
-      echo $java_actual | grep -q /java-7-oracle/ 
-      if [ $? == 0 ] ; then
-         java_actual="Oracle Java 7"
-      else
-         echo $java_actual | grep -q -e "/java-7-openjdk-i386/" -e "/java-7-openjdk-amd64/" 
-         if [ $? == 0 ] ; then
-            java_actual="Open JDK 7"
-         else
-            echo $java_actual | grep -q /java-8-oracle/ 
-            if [ $? == 0 ] ; then
-               java_actual="Oracle Java 8"
-            else
-               zenity --title "$titulo_ventana" --warning --text "No se ha encontrado la versión en uso de java."
-            fi
-         fi
-      fi
-   fi
+   zenity --title "$titulo_ventana" --warning --text "No se ha encontrado la versión en uso de java."
 fi
+
+# echo $java_actual | grep -q /java-6-sun/
+# if [ $? == 0 ] ; then
+#    java_actual="Sun Java 6"
+# else
+#    echo $java_actual | grep -q -e "/java-6-openjdk-i386/" -e "/java-6-openjdk-amd64/" 
+#    if [ $? == 0 ] ; then
+#       java_actual="Open JDK 6"
+#    else
+#       echo $java_actual | grep -q /java-7-oracle/ 
+#       if [ $? == 0 ] ; then
+#          java_actual="Oracle Java 7"
+#       else
+#          echo $java_actual | grep -q -e "/java-7-openjdk-i386/" -e "/java-7-openjdk-amd64/" 
+#          if [ $? == 0 ] ; then
+#             java_actual="Open JDK 7"
+#          else
+#             echo $java_actual | grep -q /java-8-oracle/ 
+#             if [ $? == 0 ] ; then
+#                java_actual="Oracle Java 8"
+#             else
+#                zenity --title "$titulo_ventana" --warning --text "No se ha encontrado la versión en uso de java."
+#             fi
+#          fi
+#       fi
+#    fi
+# fi
+
+
 # Averigua el plugin en uso.
-plugin_actual=`ls -l /etc/alternatives/mozilla-javaplugin.so | cut -d">" -f 2`
-echo $plugin_actual | grep -q /java-6-sun/
-if [ $? == 0 ] ; then
-   plugin_actual="Sun Java 6"
+java_actual=`readlink -f /etc/alternatives/mozilla-javaplugin.so`
+if [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java6-sun"` ]; then
+   java_actual="Sun Java 6"
+
+elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-6-openjdk"` ]; then
+   java_actual="Open JDK 6"
+
+elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-7-openjdk"` ]; then
+   java_actual="Open JDK 7"
+
+elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-8-openjdk"` ]; then
+   java_actual="Open JDK 8"
+
+elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-9-openjdk"` ]; then
+   java_actual="Open JDK 9"
+
+elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-7-oracle"` ]; then
+   java_actual="Oracle Java 7"
+
+elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-8-oracle"` ]; then
+   java_actual="Oracle Java 8"
+
+elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-9-oracle"` ]; then
+   java_actual="Oracle Java 9" # no exists yet !!!
+
 else
-   echo $plugin_actual | grep -q /java-6-openjdk 
-   if [ $? == 0 ] ; then
-      plugin_actual="Open JDK 6"
-   else
-      echo $plugin_actual | grep -q /java-7-oracle/ 
-      if [ $? == 0 ] ; then
-         plugin_actual="Oracle Java 7"
-      else
-         echo $plugin_actual | grep -q /java-7-openjdk 
-         if [ $? == 0 ] ; then
-            plugin_actual="Open JDK 7"
-         else
-            echo $plugin_actual | grep -q /java-8-oracle/ 
-            if [ $? == 0 ] ; then
-               plugin_actual="Oracle Java 8"
-            else
-               zenity --title "$titulo_ventana" --warning --text "No se ha encontrado la versión en uso del plugin java para el navegador."
-            fi
-         fi
-      fi
-   fi
+   zenity --title "$titulo_ventana" --warning --text "No se ha encontrado la versión en uso del plugin java para el navegador."
 fi
+
+# plugin_actual=`ls -l /etc/alternatives/mozilla-javaplugin.so | cut -d">" -f 2`
+# echo $plugin_actual | grep -q /java-6-sun/
+# if [ $? == 0 ] ; then
+#    plugin_actual="Sun Java 6"
+# else
+#    echo $plugin_actual | grep -q /java-6-openjdk 
+#    if [ $? == 0 ] ; then
+#       plugin_actual="Open JDK 6"
+#    else
+#       echo $plugin_actual | grep -q /java-7-oracle/ 
+#       if [ $? == 0 ] ; then
+#          plugin_actual="Oracle Java 7"
+#       else
+#          echo $plugin_actual | grep -q /java-7-openjdk 
+#          if [ $? == 0 ] ; then
+#             plugin_actual="Open JDK 7"
+#          else
+#             echo $plugin_actual | grep -q /java-8-oracle/ 
+#             if [ $? == 0 ] ; then
+#                plugin_actual="Oracle Java 8"
+#             else
+#                zenity --title "$titulo_ventana" --warning --text "No se ha encontrado la versión en uso del plugin java para el navegador."
+#             fi
+#          fi
+#       fi
+#    fi
+# fi
 # Se prepara la lista de versiones java.
 #comprueba_paquete "Sun Java 6"    "sun-java6-jre"     "sun-java6-plugin"    "Obsoleto"
 #comprueba_paquete "Open JDK 6"    "openjdk-6-jre"     "icedtea-6-plugin"    "Obsoleto, compatible DescartesWeb"
+#comprueba_paquete "Open JDK 7"    "openjdk-7-jre"     "icedtea-7-plugin"    "Compatible DescartesWeb"
+comprueba_paquete "Open JDK 8"    "openjdk-8-jre"     "icedtea-8-plugin"    "Compatible DescartesWeb"
+comprueba_paquete "Open JDK 9"    "openjdk-9-jre"     "icedtea-9-plugin"    "Compatible DescartesWeb"
 comprueba_paquete "Oracle Java 7" "oracle-java7-jre"  "oracle-java7-plugin" "Compatible trámites oficiales"
-comprueba_paquete "Open JDK 7"    "openjdk-7-jre"     "icedtea-7-plugin"    "Compatible DescartesWeb"
-comprueba_paquete "Oracle Java 8" "oracle-java8-jre"  "oracle-java8-plugin" "Última versión oficial"
+comprueba_paquete "Oracle Java 8" "oracle-java8-jre"  "oracle-java8-plugin" "Última versión oficial 8.x"
 
 echo Lista de versiones: $lista_versiones
 
 IFS_OLD=$IFS
 IFS=@
 
-opcion=$(zenity --width=570 --height=270 --list \
+opcion=$(zenity --width=670 --height=270 --list \
 --title "$titulo_ventana" \
 --text "Seleccione la versión de Java que quiere utilizar.\n(*) Versión actualmente en uso." \
 --column "Versión" \
@@ -155,14 +215,6 @@ case "$opcion" in
 #         paquetes=`echo $paquetes`
 #         cadena_ruta_java="/java-6-openjdk"
 #   ;;
-   "Oracle Java 7")
-         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 10`
-         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="oracle-java7-jre" ; fi
-         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 11`
-         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes oracle-java7-plugin" ; fi
-         paquetes=`echo $paquetes`
-         cadena_ruta_java="/java-7-oracle/"
-   ;;
    "Open JDK 7")
          estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 14`
          if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="openjdk-7-jre" ; fi
@@ -171,6 +223,32 @@ case "$opcion" in
          paquetes=`echo $paquetes`
          alter_plugin="mozilla-javaplugin.so"
          cadena_ruta_java="/java-7-openjdk"
+   ;;
+   "Open JDK 8")
+         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 14`
+         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="openjdk-8-jre" ; fi
+         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 15`
+         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes icedtea-8-plugin" ; fi
+         paquetes=`echo $paquetes`
+         alter_plugin="mozilla-javaplugin.so"
+         cadena_ruta_java="/java-8-openjdk"
+   ;;
+   "Open JDK 9")
+         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 14`
+         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="openjdk-9-jre" ; fi
+         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 15`
+         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes icedtea-9-plugin" ; fi
+         paquetes=`echo $paquetes`
+         alter_plugin="mozilla-javaplugin.so"
+         cadena_ruta_java="/java-9-openjdk"
+   ;;
+   "Oracle Java 7")
+         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 10`
+         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="oracle-java7-jre" ; fi
+         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 11`
+         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes oracle-java7-plugin" ; fi
+         paquetes=`echo $paquetes`
+         cadena_ruta_java="/java-7-oracle/"
    ;;
    "Oracle Java 8")
          estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 18`
