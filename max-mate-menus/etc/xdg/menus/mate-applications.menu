@@ -484,6 +484,7 @@
           <Filename>jarnalannotate.desktop</Filename>
           <Filename>cellwriter.desktop</Filename>
           <Filename>mypaint.desktop</Filename>
+          <Filename>openboard.desktop</Filename>
       </Include>
       <Exclude><Filename>jarnal.desktop</Filename></Exclude>
   </Menu>
@@ -542,6 +543,7 @@
         <Filename>squeak-manual.desktop</Filename>
         <Filename>geda-gschem.desktop</Filename>
         <Filename>geda-gattrib.desktop</Filename>
+        <Filename>openboard.desktop</Filename>
     </Exclude>
   </Menu> <!-- End Other -->
 
