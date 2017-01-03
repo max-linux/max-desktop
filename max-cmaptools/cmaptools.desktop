@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Name=CMapTools
+Name[es]=CMapTools
+Comment=Conceptual maps
+Comment[es]=Mapas conceptuales
+GenericName=CMapTools
+GenericName[ca]=CMapTools
+Encoding=UTF-8
+Exec=/opt/CmapTools/CmapTools
+Terminal=false
+Icon=/usr/share/pixmaps/cmaptools.png
+Type=Application
+MimeType=application/x-cmaptools
+Categories=Application;Office;

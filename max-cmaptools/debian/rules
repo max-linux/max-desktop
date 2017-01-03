@@ -1,0 +1,45 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+VER=v6.02_08-11-16
+
+ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
+ifeq ($(ARCH), amd64)
+#	URL=http://cmapdownload.ihmc.us/installs/CmapTools/Linux/Linux64CmapTools_$(VER).bin
+	URL=http://localhost/remote-files/Linux64CmapTools_$(VER).bin
+else
+#	URL=http://cmapdownload.ihmc.us/installs/CmapTools/Linux/Linux32CmapTools_$(VER).bin
+	URL=http://localhost/remote-files/Linux32CmapTools_$(VER).bin
+endif
+
+
+
+%:
+	dh $@ 
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir -p build;\
+		( cd build && wget $(URL)); \
+	fi
+
+#build2:
+	rm -rf /opt/CmapTools ./build/CmapTools
+	mkdir /opt/CmapTools
+	cp LinuxCmapTools.responses build/
+	(cd build && bash -x ./Linux*CmapTools_$(VER).bin -f LinuxCmapTools.responses -i silent || true)
+
+#build3:
+	mv /opt/CmapTools ./build/
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+override_dh_shlibdeps:
+	dh_shlibdeps -Xopt/CmapTools/lib -Xopt/CmapTools/bin
+
+override_dh_strip:
+	# do not strip, break executables

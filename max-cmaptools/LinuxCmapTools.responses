@@ -1,0 +1,154 @@
+# Tue Jan 03 00:56:36 CET 2017
+# Replay feature output
+# ---------------------
+# This file was built by the Replay feature of InstallAnywhere.
+# It contains variables that were set by Panels, Consoles or Custom Code.
+
+
+
+#Installation Type
+#-----------------
+CHOSEN_FEATURE_LIST=Advance,Applica
+CHOSEN_INSTALL_FEATURE_LIST=Advance,Applica
+CHOSEN_INSTALL_SET=Advanced
+
+#Choose Install Folder
+#---------------------
+USER_INSTALL_DIR=/opt/CmapTools
+
+#Choose Link Folder
+#------------------
+USER_SHORTCUTS=/opt/CmapTools
+
+#Configuration
+#-------------
+KEEP_USERIDS=1
+DELETE_USERIDS=0
+USER_PROFILE=
+USER_MYCMAPS=
+AUTO_RECORDER=0
+NO_AUTO_RECORDER=1
+pki.enable=false
+pki.enable_1=
+pki.enable_2=No
+pki.enable_BOOLEAN_1=0
+pki.enable_BOOLEAN_2=1
+LOGS=0
+NO_LOGS=1
+LOGS_PATH=%h/CmapToolsLogs
+LOGS_PREFIX=cmaptools
+LOGS_SIZE=5242880
+LOGS_NO=3
+
+#Install
+#-------
+-fileOverwrite_/opt/CmapTools/UninstallerData/Change CmapTools Installation.lax=Yes
+-fileOverwrite_/opt/CmapTools/classes/core.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/nlk.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/slp.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/updater.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/wordnetClient.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/wsServer-client.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/AppleStubs.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/activation.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/winlaf-0.5.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/JimiProClasses.zip=Yes
+-fileOverwrite_/opt/CmapTools/classes/jmyspell-1.0.0-beta1.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/mail.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/xercesImpl.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/xml-apis.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/tm-extractors-0.4.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/lucene-core-2.4-dev.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/PDFBox-0.7.3-dev.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/FontBox-0.1.0-dev.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/log4j-1.2.12.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/symantec.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/jniregistry.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/socks.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/concurrent.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/poi-scratchpad-2.5.1-final-20040804.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/poi-2.5.1-final-20040804.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/poi-contrib-2.5.1-final-20040804.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/commons-digester.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/commons-collections.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/commons-beanutils.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/commons-beanutils-bean-collections.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/commons-beanutils-core.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/commons-logging.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/commons-io-2.2.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/commons-codec-1.6.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/ldapbp.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/mscrypto.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/wstx-asl-2.9.3.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/stax-api-1.0.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/axiom-impl.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/axiom-api.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/openide-lookup-1.9-patched-1.0.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/jdom-1.0.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/jas-plotter-2.2.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/freehep-io-2.2.2.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/freehep-graphicsio-swf-2.3.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/freehep-graphicsio-svg-2.3.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/freehep-graphicsio-ps-2.3.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/freehep-graphicsio-pdf-2.3.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/freehep-graphicsio-java-2.3.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/freehep-graphicsio-emf-2.3.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/freehep-graphicsio-2.3.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/freehep-graphicsbase-2.3.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/freehep-graphics2d-2.3.jar=Yes
+-fileOverwrite_/opt/CmapTools/classes/java-json.jar=Yes
+-fileOverwrite_/opt/CmapTools/lib/libwmflite-0.2.so.7=Yes
+-fileOverwrite_/opt/CmapTools/lib/libtiff.so.4=Yes
+-fileOverwrite_/opt/CmapTools/lib/libSM.so.6=Yes
+-fileOverwrite_/opt/CmapTools/lib/libpng12.so.0=Yes
+-fileOverwrite_/opt/CmapTools/lib/libjpeg.so.62=Yes
+-fileOverwrite_/opt/CmapTools/lib/libjasper.so.1=Yes
+-fileOverwrite_/opt/CmapTools/lib/libICE.so.6=Yes
+-fileOverwrite_/opt/CmapTools/lib/libgomp.so.1=Yes
+-fileOverwrite_/opt/CmapTools/lib/libfreetype.so.6=Yes
+-fileOverwrite_/opt/CmapTools/lib/pkgconfig/libavcodec.pc=Yes
+-fileOverwrite_/opt/CmapTools/lib/pkgconfig/libavdevice.pc=Yes
+-fileOverwrite_/opt/CmapTools/lib/pkgconfig/libavfilter.pc=Yes
+-fileOverwrite_/opt/CmapTools/lib/pkgconfig/libavformat.pc=Yes
+-fileOverwrite_/opt/CmapTools/lib/pkgconfig/libavutil.pc=Yes
+-fileOverwrite_/opt/CmapTools/lib/pkgconfig/libswresample.pc=Yes
+-fileOverwrite_/opt/CmapTools/lib/pkgconfig/libswscale.pc=Yes
+-fileOverwrite_/opt/CmapTools/lib/libswscale.a=Yes
+-fileOverwrite_/opt/CmapTools/lib/libswresample.a=Yes
+-fileOverwrite_/opt/CmapTools/lib/libavutil.a=Yes
+-fileOverwrite_/opt/CmapTools/lib/libavformat.a=Yes
+-fileOverwrite_/opt/CmapTools/lib/libavfilter.a=Yes
+-fileOverwrite_/opt/CmapTools/lib/libavdevice.a=Yes
+-fileOverwrite_/opt/CmapTools/lib/libavcodec.a=Yes
+-fileOverwrite_/opt/CmapTools/bin/CmapTools.lax=Yes
+-fileOverwrite_/opt/CmapTools/bin/modules.xml=Yes
+-fileOverwrite_/opt/CmapTools/bin/places.txt=Yes
+-fileOverwrite_/opt/CmapTools/bin/Updater.lax=Yes
+-fileOverwrite_/opt/CmapTools/bin/cmaptools.cfg=Yes
+-fileOverwrite_/opt/CmapTools/bin/DefaultStyleSheet.cxl=Yes
+-fileOverwrite_/opt/CmapTools/bin/readme.txt=Yes
+-fileOverwrite_/opt/CmapTools/bin/slp.conf=Yes
+-fileOverwrite_/opt/CmapTools/bin/cmapclientservices.jar=Yes
+-fileOverwrite_/opt/CmapTools/bin/imgman=Yes
+-fileOverwrite_/opt/CmapTools/bin/ffmpeg=Yes
+-fileOverwrite_/opt/CmapTools/bin/templates/White On White.cxl=Yes
+-fileOverwrite_/opt/CmapTools/bin/templates/White On Light Blue.cxl=Yes
+-fileOverwrite_/opt/CmapTools/bin/templates/White On Dark Blue.cxl=Yes
+-fileOverwrite_/opt/CmapTools/bin/templates/Orange On Black.cxl=Yes
+-fileOverwrite_/opt/CmapTools/bin/templates/Gray On White.cxl=Yes
+-fileOverwrite_/opt/CmapTools/bin/templates/Blue On Dark Blue.cxl=Yes
+-fileOverwrite_/opt/CmapTools/bin/templates/Black On Gray.cxl=Yes
+-fileOverwrite_/opt/CmapTools/bin/templates/Beige On White.cxl=Yes
+-fileOverwrite_/opt/CmapTools/bin/templates/Beige On Dark Green.cxl=Yes
+-fileOverwrite_/opt/CmapTools/licenses/CmapTools-license.txt=Yes
+-fileOverwrite_/opt/CmapTools/licenses/jakarta-log4j-license.txt=Yes
+-fileOverwrite_/opt/CmapTools/licenses/JAF-v1.0.1-license.txt=Yes
+-fileOverwrite_/opt/CmapTools/licenses/tm-extractors-license.txt=Yes
+-fileOverwrite_/opt/CmapTools/licenses/PDFBox-license.txt=Yes
+-fileOverwrite_/opt/CmapTools/licenses/lucene-license.txt=Yes
+-fileOverwrite_/opt/CmapTools/licenses/JavaMailv1.2-license.txt=Yes
+-fileOverwrite_/opt/CmapTools/licenses/jakarta-poi-license.txt=Yes
+-fileOverwrite_/opt/CmapTools/licenses/winlaf-license.txt=Yes
+-fileOverwrite_/opt/CmapTools/help/index.html=Yes
+-fileOverwrite_/opt/CmapTools/help/CmapHelp_es/index.html=Yes
+-fileOverwrite_/opt/CmapTools/help/CmapHelp_fi/index.html=Yes

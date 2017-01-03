@@ -1,0 +1,12 @@
+Source: max-cmaptools
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 8.0.0), wget, unzip, libmagick++-dev
+Standards-Version: 3.9.3
+
+Package: cmaptools
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Construct, navigate, share and criticize knowledge models represented as concept maps
+ Construct, navigate, share and criticize knowledge models represented as concept maps
