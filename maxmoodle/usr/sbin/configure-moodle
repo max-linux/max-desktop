@@ -11,6 +11,7 @@
 import os
 import sys
 
+APACHE="/etc/moodle/apache.conf"
 CONFIG="/etc/moodle/config.php"
 REPLACES=" $CFG->wwwroot = 'http://'.$_SERVER['SERVER_NAME'].'/moodle';\n"
 
@@ -20,11 +21,18 @@ def getHostname():
     f.close()
     return "%s"%hostname.strip()
 
-APACHE="/etc/moodle/apache.conf"
+
 APACHE_ALLOW="allow from 127.0.0.0/255.0.0.0\nallow from 127.0.1.0/255.0.0.0\nallow from %s\n"%(getHostname())
 
 
 def configure_apache():
+    # link if no exists
+    if not os.path.lexists("/etc/apache2/conf-enabled/moodle.conf"):
+        os.system("mkdir -p /etc/apache2/conf-enabled")
+        print " * Symlink apache2 ..."
+        os.symlink(APACHE, "/etc/apache2/conf-enabled/moodle.conf")
+
+
     f=open(APACHE, 'r')
     data=f.readlines()
     f.close()
@@ -45,31 +53,48 @@ def configure_apache():
         f.write(line)
     f.close()
 
-    # link if no exists
-    if not os.path.lexists("/etc/apache2/conf.d/moodle.conf"):
-        os.symlink(APACHE, "/etc/apache2/conf.d/moodle.conf")
-
 
 def configure_moodle():
     f=open(CONFIG, 'r')
     data=f.readlines()
     f.close()
 
-
     for i in range(len(data)):
         if "$CFG->wwwroot" in data[i]:
             data[i]=REPLACES
+        
+        elif "$CFG->dbname" in data[i]:
+            data[i]=" $CFG->dbuser = 'moodle';\n"
+        elif "$CFG->dbuser" in data[i]:
+            data[i]=" $CFG->dbuser = 'root';\n"
+        elif "$CFG->dbpass" in data[i]:
+            data[i]=" $CFG->dbpass = 'cmadrid';\n $CFG->lang='es';\n"
 
-        if "?>" in data[i]:
+        elif "?>" in data[i]:
             data[i]="?>"
 
     f=open(CONFIG, 'w')
     for line in data:
         f.write(line)
     f.close()
+    print " * Changed config.php"
 
+def configure_mysql():
+    if os.path.exists('/var/lib/moodle/max-db-created'):
+        return
+    print " * Creating database ..."
+    os.system("echo 'CREATE DATABASE moodle;'| mysql -uroot -pcmadrid 2>/dev/null")
+    os.system("echo 'ALTER DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;'| mysql -uroot -pcmadrid 2>/dev/null")
+    os.system("zcat /usr/share/maxmoodle/moodle.sql.gz| mysql -uroot -pcmadrid moodle 2>/dev/null")
+    os.system("touch /var/lib/moodle/max-db-created")
+    print " * MySQL configured"
 
-
-configure_moodle()
-configure_apache()
-#print getHostname()
+    
+    
+if __name__ == "__main__":
+    print " * Configuring moodle..."
+    configure_mysql()
+    configure_moodle()
+    configure_apache()
+    #print " * End moodle"
+    #print getHostname()

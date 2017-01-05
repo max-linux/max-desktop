@@ -13,3 +13,9 @@ moodle	moodle/db_postgres_create	boolean	true
 moodle	moodle/mismatch	note	
 moodle	moodle/old_webserver_config	note	
 moodle	moodle/dba_name	string	root
+#
+moodle	moodle/www	string	http://localhost
+moodle	moodle/dbconfig-install	boolean	false
+moodle	moodle/dbconfig-remove	boolean	false
+moodle	moodle/dbconfig-reinstall	boolean	false
+moodle	moodle/dbconfig-upgrade	boolean	false

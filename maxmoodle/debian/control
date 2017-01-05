@@ -8,8 +8,9 @@ Standards-Version: 3.8.4
 Package: maxmoodle
 Architecture: all
 Pre-Depends: maxmoodle-pressed
-Depends: apache2, mysql-server, php5-mysql, libapache2-mod-php5, 
-         mysql-client, moodle, jclicmoodle, python, python-gtk2
+Depends: apache2, mysql-server, php-mysql, libapache2-mod-php,
+         php-zip, php-mbstring, php-soap, php-intl,
+         mysql-client, moodle, python, python-gtk2
 Description: Moodle para MaX
  Dependencias y lanzador para moodle
 

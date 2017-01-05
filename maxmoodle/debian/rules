@@ -3,7 +3,8 @@
 include /usr/share/cdbs/1/rules/debhelper.mk
 
 #URL=http://download.moodle.org/lang16/es_utf8.zip
-URL=http://download.moodle.org/download.php/direct/langpack/2.5/es.zip
+#URL=http://download.moodle.org/download.php/direct/langpack/2.5/es.zip
+URL=http://download.moodle.org/download.php/direct/langpack/3.0/es.zip
 
 build-stamp:
 	rm -rf tmp

@@ -1,3 +1,16 @@
+maxmoodle (9.0.max2) max; urgency=medium
+
+  * Preseed mysql-server 5.7 and use a mysqldump with configure-moodle
+    to restore
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jan 2017 18:31:06 +0100
+
+maxmoodle (9.0.max1) max; urgency=medium
+
+  * Build in MAX 9.0
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jan 2017 17:20:20 +0100
+
 maxmoodle (8.0.max1) max; urgency=low
 
   * Build in MAX 8.0

@@ -4,7 +4,7 @@ GenericName=Moodle
 Comment=E-learning plataform
 Comment[es]=Plataforma e-learning
 TryExec=/usr/bin/firefox
-Exec=firefox http://127.0.0.1/moodle/
+Exec=firefox http://127.0.0.1/moodle/?lang=es
 Icon=moodle.png
 StartupNotify=false
 Terminal=false
