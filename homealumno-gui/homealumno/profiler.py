@@ -180,20 +180,35 @@ class Profiler(object):
                 if 'screensaver' in profile and int(profile['screensaver']) == 1:
                     print_debug("desactivar screensaver")
                     app=homealumno.gconfprofile.GconfProfile(os.getuid(), os.getgid(), direct=False)
+                    # mate screensaver
+                    data=[{'key':'/org/mate/screensaver/mode',
+                           'type':'string',
+                           'value':'blank-only'},
+                          {'key':'/org/mate/screensaver/lock_enabled',
+                           'type':'bool',
+                           'value':'false'}]
+                    app.do(data)
+                    # gnome screensaver
                     data=[{'key':'/apps/gnome-screensaver/mode',
-                             'type':'string',
-                             'value':'blank-only'},
-                             {'key':'/apps/gnome-screensaver/lock_enabled',
-                             'type':'bool',
-                             'value':'FALSE'}]
+                           'type':'string',
+                           'value':'blank-only'},
+                          {'key':'/apps/gnome-screensaver/lock_enabled',
+                           'type':'bool',
+                           'value':'false'}]
                     app.do(data)
                 
                 if 'wallpaper' in profile and profile['wallpaper'] != "" :
                     print_debug("aplicar wallpaper '%s'"%profile['wallpaper'])
                     app=homealumno.gconfprofile.GconfProfile(os.getuid(), os.getgid(), direct=False)
+                    # mate wallpaper
+                    data=[{'key':'/org/mate/desktop/background/picture-filename',
+                           'type':'string',
+                           'value':profile['wallpaper']}]
+                    app.do(data)
+                    # gnome wallpaper
                     data=[{'key':'/desktop/gnome/background/picture_filename',
-                             'type':'string',
-                             'value':profile['wallpaper']}]
+                           'type':'string',
+                           'value':profile['wallpaper']}]
                     app.do(data)
 
     def exe(self, cmd):

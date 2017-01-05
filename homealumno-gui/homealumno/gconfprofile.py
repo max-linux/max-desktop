@@ -39,6 +39,7 @@ class GconfProfile(object):
         self.uid=int(uid)
         self.gid=int(gid)
         self.direct=direct
+        self.dconf=True
         self.home=str(pwd.getpwuid(self.uid).pw_dir)
     
     def drop_all_privileges(self):
@@ -57,7 +58,14 @@ class GconfProfile(object):
                 --type bool --set /apps/nautilus/desktop/home_icon_visible "true"
         
         """
-        if self.direct:
+        if self.dconf:
+            value = cmd['value']
+            if cmd['type'] == 'string':
+                value = "'%s'", cmd['value']
+            #
+            cmd=['dconf', 'write',
+                 cmd['key'], value]
+        elif self.direct:
             cmd=['gconftool-2', '--direct',
                  '--config-source', "xml:readwrite:%s/.gconf"%(self.home),
                  '--type', cmd['type'], 

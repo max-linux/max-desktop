@@ -1,3 +1,16 @@
+homealumno-gui (0.9max8) max; urgency=medium
+
+  * Change gconftool-2 with dconf and add Mate wallpapper and
+    screensavers keys
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jan 2017 13:07:12 +0100
+
+homealumno-gui (0.9max7) max; urgency=medium
+
+  * Test if file manager existe before launching
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 04 Jan 2017 12:37:04 +0100
+
 homealumno-gui (0.9max6) max; urgency=medium
 
   * Build in MAX 9.0

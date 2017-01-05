@@ -123,9 +123,15 @@ class EditProfile(object):
         self.render_exceptions()
         self.load_default_excludes()
 
+    def get_file_manager(self):
+        fm = ('/usr/bin/nautilus', '/usr/bin/caja', '/usr/bin/thunar')
+        for m in fm:
+            if os.path.exists(m):
+                return m
+
     def open_profile(self, *args):
         path=self.txt_edit_path.get_text()
-        pid = subprocess.Popen(["/usr/bin/nautilus", path]).pid
+        pid = subprocess.Popen([self.get_file_manager(), path]).pid
 
     def hide_edit(self, *args):
         self.editwindow.hide()
