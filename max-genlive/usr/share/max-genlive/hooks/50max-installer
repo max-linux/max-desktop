@@ -23,27 +23,13 @@ EOC
 # needed to start mysql
 _revert_invoke
 
-# moodle need to createdatabase and user
-#chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes para la versión live"
-#export LC_ALL=C
-#export LC_MESSAGES=C
-#export DEBCONF_FRONTEND="noninteractive"
-#export DEBIAN_FRONTEND="noninteractive"
-#export UCF_FORCE_CONFFOLD=1
-#export ERROR=0
-#/etc/init.d/mysql start || ERROR=1
-#dpkg-reconfigure -phigh moodle || ERROR=1
-#/etc/init.d/mysql stop   || true
-#/etc/init.d/apache2 stop || true
-##exit \$ERROR
-#EOC
-
 chroot $CHROOT << EOC || _exit "No se han podido configurar moodle"
 export LC_ALL=C LC_MESSAGES=C DEBCONF_FRONTEND="noninteractive" DEBIAN_FRONTEND="noninteractive" UCF_FORCE_CONFFOLD=1 ERROR=0
 [ -d /var/run/mysqld ] || install -m 755 -o mysql -g root -d /var/run/mysqld
 /usr/sbin/mysqld &
 while ! /usr/bin/mysqladmin --defaults-file=/etc/mysql/debian.cnf ping; do sleep 1 ; echo " * wait for mysqld ..." ; done
-dpkg-reconfigure -phigh moodle || ERROR=1
+sleep 2
+rm -f rm /var/lib/moodle/max-db-created
 /usr/sbin/configure-moodle || true
 killall -15 mysqld
 exit \$ERROR
