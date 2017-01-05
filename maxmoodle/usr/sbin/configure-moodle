@@ -82,6 +82,9 @@ def configure_moodle():
 def configure_mysql():
     if os.path.exists('/var/lib/moodle/max-db-created'):
         return
+    if not os.path.exists('/run/mysqld/mysqld.sock'):
+        print " * MySQL not running..."
+        return
     print " * Creating database ..."
     os.system("echo 'CREATE DATABASE moodle;'| mysql -uroot -pcmadrid 2>/dev/null")
     os.system("echo 'ALTER DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;'| mysql -uroot -pcmadrid 2>/dev/null")
