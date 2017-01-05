@@ -1,3 +1,9 @@
+max-genlive (9.0.max7) max; urgency=medium
+
+  * Fix type in 50max-installer
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 06 Jan 2017 00:54:42 +0100
+
 max-genlive (9.0.max6) max; urgency=medium
 
   * Set owner www-data in /var/lib/moodle

@@ -44,7 +44,7 @@ _add_invoke
 
 fi # fin de [ ! -d $CHROOT/var/lib/mysql/moodle ]
 
-if [ "$INSTALL_MOODLE" = "yes" ];
+if [ "$INSTALL_MOODLE" = "yes" ]; then
   chroot $CHROOT << EOC || _exit "No se han podido configurar los permisos de moodle"
 chown -R www-data:www-data /var/lib/moodle
 EOC
