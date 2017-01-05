@@ -143,7 +143,6 @@ umount -l $CHROOT/sys
 umount $CHROOT/lib/modules/*/volatile/ 2>/dev/null
 
 _echo "Configurando repositorio global"
-cat /etc/resolv.conf > $CHROOT/etc/resolv.conf
 
 cp $GENLIVE/sources.list $CHROOT/etc/apt
 chroot $CHROOT << EOC || _exit "No se ha podido actualizar la base de Ubuntu"
@@ -162,15 +161,10 @@ apt-get clean
 exit \$ERROR
 EOC
 
-cat /dev/null > $CHROOT/etc/resolv.conf
-if [ ! -f $CHROOT/etc/default/resolvconf ]; then
-  touch $CHROOT/etc/default/resolvconf
-fi
 
-if ! grep -q REPORT_ABSENT_SYMLINK $CHROOT/etc/default/resolvconf; then
-  echo "REPORT_ABSENT_SYMLINK=no" >> $CHROOT/etc/default/resolvconf
-fi
-
+# link resolv.conf
+rm -f $CHROOT/etc/resolv.conf
+(cd $CHROOT/etc && ln -s ../run/resolvconf/resolv.conf resolv.conf)
 
 _echo "Deshabilitando contraseña de root"
 chroot $CHROOT/ usermod -L root
@@ -184,7 +178,10 @@ cp $GENLIVE/isolinux/* $CDRW/isolinux/ || _exit "No se puede sobreescribir isoli
 cp $CHROOT/usr/lib/ISOLINUX/isolinux.bin $CDRW/isolinux/
 
 
-
+# clean not needed files
 rm -f $CHROOT/etc/apt/apt.conf.d/99translations \
       $CHROOT/etc/apt/apt.conf.d/00http-proxy \
-      $CHROOT/etc/apt/preferences.d/max-genlive
+      $CHROOT/etc/apt/preferences.d/max-genlive \
+      $CHROOT/var/lib/update-notifier/user.d/*
+
+

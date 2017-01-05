@@ -17,6 +17,7 @@ apt-get $APT_OPTS install max-mate-core max-mate-desktop
 apt-get $APT_OPTS install max-libreoffice || ERROR=1
 apt-get $APT_OPTS install max-desktop-common || ERROR=1
 apt-get $APT_OPTS install max-manuales || ERROR=1
+apt-get $APT_OPTS install --reinstall ttf-mscorefonts-installer || ERROR=1
 # apt-get $APT_OPTS install max-gnome-desktop-environment || ERROR=1
 # apt-get $APT_OPTS install max-desktop-gnome || ERROR=1
 # apt-get $APT_OPTS install max-desktop-xfce || ERROR=1

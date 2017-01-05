@@ -111,6 +111,11 @@ _echo "Generando ${ISO_FILE}"
 # montar chroot 
 mount -o bind $CHROOT/../ $CHROOT/mnt
 
+#debian-live
+#genisoimage -J -l -cache-inodes -allow-multidot -A "MAX 9.0" -p "MAX developers on 2016-11-20_20:18:35" -publisher "MAdrid_linuX" -V "MAX 9.0" -no-emul-boot -boot-load-size 4 -boot-info-table -r -b isolinux/isolinux.bin -c isolinux/boot.cat -o binary.hybrid.iso binary
+#isohybrid  binary.hybrid.iso
+
+
 if [ "$ARCH" = "amd64" ]; then
   chroot $CHROOT genisoimage -U -A "$TITLE (${ARCH})" -V "$TITLE (${ARCH})" \
      -J -joliet-long -r -v -T -cache-inodes -l -b isolinux/isolinux.bin \

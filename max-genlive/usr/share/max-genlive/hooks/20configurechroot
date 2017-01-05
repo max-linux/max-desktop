@@ -39,6 +39,14 @@ mount --bind /sys   $CHROOT/sys
 touch $CHROOT/etc/X11/xorg.conf
 
 
+# force add _apt user to fix ttf fonts install
+adduser --force-badname --system --home /nonexistent --no-create-home --quiet _apt || true
+if [ ! -e "$CHROOT/var/lib/update-notifier/package-data-downloads/partial" ]; then
+    mkdir -p $CHROOT/var/lib/update-notifier/package-data-downloads/partial
+fi
+chroot $CHROOT chown -R _apt:root /var/lib/update-notifier/package-data-downloads/partial
+
+
 _echo "Configurando DEBCONF: licencia JAVA... zona horaria y firmware"
 chroot $CHROOT debconf-set-selections << EOF || _exit "No se ha podido aceptar la licencia JAVA"
 tzdata  tzdata/Areas    select  Europe
