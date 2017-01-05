@@ -89,7 +89,7 @@ configfile /boot/grub/grub.cfg
 EOF
 fi
 
-efibootmgr -q -c -p $EFI_NUM -d /dev/sda -l "\EFI\MAX\grubx64.efi" -L "MAX (grub)"
+efibootmgr -q -c -p $EFI_NUM -d /dev/sda -l "\EFI\MAX9\grubx64.efi" -L "MAX (grub)"
 
 # set MAX as default
 EFI_NUM=$(efibootmgr | awk '/MAX9/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
