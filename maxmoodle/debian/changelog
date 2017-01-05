@@ -1,3 +1,9 @@
+maxmoodle (9.0.max3) max; urgency=medium
+
+  * Fix gui apache path
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jan 2017 18:44:50 +0100
+
 maxmoodle (9.0.max2) max; urgency=medium
 
   * Preseed mysql-server 5.7 and use a mysqldump with configure-moodle

@@ -223,8 +223,8 @@ class MaXMoodle:
         os.chmod(MOODLE_CONF, 0640)
 
         # link if no exists
-        if not os.path.lexists("/etc/apache2/conf.d/moodle.conf"):
-            os.symlink(MOODLE_CONF, "/etc/apache2/conf.d/moodle.conf")
+        if not os.path.lexists("/etc/apache2/conf-enabled/moodle.conf"):
+            os.symlink(MOODLE_CONF, "/etc/apache2/conf-enabled/moodle.conf")
 
         # reload apache
         result=self.exe_cmd("/etc/init.d/apache2 reload")
