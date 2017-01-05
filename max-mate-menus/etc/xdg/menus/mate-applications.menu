@@ -16,8 +16,10 @@
   <DefaultDirectoryDirs/>
 
   <!-- Read in overrides and child menus from applications-merged/ -->
+  <!-- MAX disable merge menus
   <DefaultMergeDirs/>
   <MergeDir>applications-merged</MergeDir>
+  -->
 
   <Menu>
     <Name>MaX 9.0</Name>
@@ -77,6 +79,9 @@
       </And>
       <Filename>emacs.desktop</Filename>
     </Include>
+    <Exclude>
+      <Filename>fritzing.desktop</Filename>
+    </Exclude>
   </Menu> <!-- End Development Tools -->
 
   <!-- Education -->
@@ -97,6 +102,7 @@
             <And><Category>Malted</Category></And>
             <And><Category>Hotpot</Category></And>
             <Filename>libreoffice-math.desktop</Filename>
+            <Filename>www.octave.org-octave.desktop</Filename>
         </Exclude>
 
 
@@ -171,12 +177,12 @@
             <Filename>freemind.desktop</Filename>
             <!-- lengua -->
             <Filename>tuxtype.desktop</Filename>
-            <Filename>kde4-kwordquiz.desktop</Filename>
-            <Filename>kde4-kanagram.desktop</Filename>
-            <Filename>kde4-khangman.desktop</Filename>
-            <Filename>kde4-klettres.desktop</Filename>
+            <Filename>org.kde.kwordquiz.desktop</Filename>
+            <Filename>org.kde.kanagram.desktop</Filename>
+            <Filename>org.kde.khangman.desktop</Filename>
+            <Filename>org.kde.klettres.desktop</Filename>
             <Filename>kde4-ktouch.desktop</Filename>
-            <Filename>kde4-kwordquiz.desktop</Filename>
+            <Filename>org.kde.kwordquiz.desktop</Filename>
             <Filename>kde4-parley.desktop</Filename>
             <!-- mates -->
             <Filename>JFractionLab.desktop</Filename>
@@ -224,6 +230,7 @@
             <Filename>MathWar.desktop</Filename>
             <Filename>xabacus.desktop</Filename>
             <Filename>libreoffice-math.desktop</Filename>
+            <Filename>www.octave.org-octave.desktop</Filename>
         </Include>
     </Menu>
 
@@ -232,12 +239,12 @@
         <Directory>max-lengua.directory</Directory>
         <Include>
             <Filename>tuxtype.desktop</Filename>
-            <Filename>kde4-kwordquiz.desktop</Filename>
-            <Filename>kde4-kanagram.desktop</Filename>
-            <Filename>kde4-khangman.desktop</Filename>
-            <Filename>kde4-klettres.desktop</Filename>
+            <Filename>org.kde.kwordquiz.desktop</Filename>
+            <Filename>org.kde.kanagram.desktop</Filename>
+            <Filename>org.kde.khangman.desktop</Filename>
+            <Filename>org.kde.klettres.desktop</Filename>
             <Filename>kde4-ktouch.desktop</Filename>
-            <Filename>kde4-kwordquiz.desktop</Filename>
+            <Filename>org.kde.kwordquiz.desktop</Filename>
         </Include>
     </Menu>
 
@@ -266,7 +273,7 @@
             <Filename>physion.desktop</Filename>
             <Filename>tbe.desktop</Filename>
             <Filename>atomix.desktop</Filename>
-            <Filename>kde4-kalzium.desktop</Filename>
+            <Filename>org.kde.kalzium.desktop</Filename>
         </Include>
         <Menu>
             <Name>Animalandia</Name>
@@ -388,6 +395,8 @@
         <Filename>childsplay.desktop</Filename>
         <Filename>performous.desktop</Filename>
         <Filename>fretsonfire-game.desktop</Filename>
+        <Filename>org.kde.kanagram.desktop</Filename>
+        <Filename>org.kde.khangman.desktop</Filename>
     </Exclude>
   </Menu> <!-- End Games -->
 

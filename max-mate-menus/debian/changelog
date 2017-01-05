@@ -1,3 +1,12 @@
+max-mate-menus (9.0.max7) max; urgency=medium
+
+  * Disable merge menus
+  * Add symlink Fritzing broke icon
+  * josm.desktop: Fix TryExec path
+  * Fix mypaint icon
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jan 2017 16:37:07 +0100
+
 max-mate-menus (9.0.max6) max; urgency=medium
 
   * Move LibreOffice Math from other to Edu->Math menu
