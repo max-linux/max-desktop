@@ -1,3 +1,9 @@
+max-mate-menus (9.0.max4) max; urgency=medium
+
+  * Remove usr/share/tuxmath/images/icons/icon.png, conclicts tuxmath
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jan 2017 13:38:24 +0100
+
 max-mate-menus (9.0.max3) max; urgency=medium
 
   * Move openboard menu to PDI
