@@ -454,6 +454,9 @@ ALUMNO_GROUPS=$RET
 
 $log $chroot $ROOT adduser --disabled-password --gecos "$ALUMNO_USERFULLNAME" "$ALUMNO_USERNAME" >/dev/null || true
 setpassword "$ALUMNO_USERNAME" "$ALUMNO_PASSWORD" "false" || true
+# disable password change github #780
+$log $chroot $ROOT passwd -n 99999 "$ALUMNO_USERNAME"
+
 
 for group in $ALUMNO_GROUPS; do
   $log $chroot $ROOT adduser $ALUMNO_USERNAME $group || true

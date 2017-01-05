@@ -1,3 +1,9 @@
+ubiquity-frontend-max (9.0.max9) max; urgency=medium
+
+  * Disable alumno password change, close #780
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jan 2017 13:15:58 +0100
+
 ubiquity-frontend-max (9.0.max8) max; urgency=medium
 
   * Fix MAX repo max2.educa.madrid.org => max.educa.madrid.org
