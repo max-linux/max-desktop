@@ -1,4 +1,6 @@
 
+
+
 if [ "$INSTALL_MOODLE" = "yes" ] && [ ! -d $CHROOT/var/lib/mysql/moodle ]; then
 _echo "Configurando entorno live"
 
@@ -42,6 +44,11 @@ _add_invoke
 
 fi # fin de [ ! -d $CHROOT/var/lib/mysql/moodle ]
 
+if [ "$INSTALL_MOODLE" = "yes" ];
+  chroot $CHROOT << EOC || _exit "No se han podido configurar los permisos de moodle"
+chown -R www-data:www-data /var/lib/moodle
+EOC
+fi
 
 
 chroot $CHROOT << EOC || _exit "No se han podido instalar los paquetes para la versión live"

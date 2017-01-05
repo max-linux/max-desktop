@@ -1,3 +1,9 @@
+max-genlive (9.0.max6) max; urgency=medium
+
+  * Set owner www-data in /var/lib/moodle
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jan 2017 20:46:29 +0100
+
 max-genlive (9.0.max5) max; urgency=medium
 
   * Update GRUB EFI from ubuntu-mate-16.04.1-desktop-amd64
