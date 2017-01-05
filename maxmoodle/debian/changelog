@@ -1,3 +1,9 @@
+maxmoodle (9.0.max5) max; urgency=medium
+
+  * Fix dbuser->dbname and chown /var/lib/moodle to www-data
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jan 2017 20:43:47 +0100
+
 maxmoodle (9.0.max4) max; urgency=medium
 
   * Check if mysql is running before importing

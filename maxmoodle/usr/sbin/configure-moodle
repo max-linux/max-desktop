@@ -55,6 +55,8 @@ def configure_apache():
 
 
 def configure_moodle():
+    os.system('chown -R www-data:www-data /var/lib/moodle')
+    #
     f=open(CONFIG, 'r')
     data=f.readlines()
     f.close()
@@ -64,11 +66,16 @@ def configure_moodle():
             data[i]=REPLACES
         
         elif "$CFG->dbname" in data[i]:
-            data[i]=" $CFG->dbuser = 'moodle';\n"
+            data[i]=" $CFG->dbname = 'moodle';\n"
+
         elif "$CFG->dbuser" in data[i]:
             data[i]=" $CFG->dbuser = 'root';\n"
+
         elif "$CFG->dbpass" in data[i]:
             data[i]=" $CFG->dbpass = 'cmadrid';\n $CFG->lang='es';\n"
+
+        elif "$CFG->lang" in data[i]:
+            data[i]=""
 
         elif "?>" in data[i]:
             data[i]="?>"
