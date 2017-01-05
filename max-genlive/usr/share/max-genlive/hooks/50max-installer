@@ -44,6 +44,7 @@ export LC_ALL=C LC_MESSAGES=C DEBCONF_FRONTEND="noninteractive" DEBIAN_FRONTEND=
 /usr/sbin/mysqld &
 while ! /usr/bin/mysqladmin --defaults-file=/etc/mysql/debian.cnf ping; do sleep 1 ; echo " * wait for mysqld ..." ; done
 dpkg-reconfigure -phigh moodle || ERROR=1
+/usr/sbin/configure-moodle || true
 killall -15 mysqld
 exit \$ERROR
 EOC

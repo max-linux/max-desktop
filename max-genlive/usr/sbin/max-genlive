@@ -25,7 +25,7 @@ LINUX_IMAGE="max-linux"
 LINUX_HEADERS="max-linux-headers"
 XSERVER_XORG="xserver-xorg"
 MAXHOSTNAME=max90
-INSTALL_MOODLE=no
+INSTALL_MOODLE=yes
 MIRRORMAX="max.educa.madrid.org"
 MAX_VERSION="max90"
 
