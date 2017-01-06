@@ -2,14 +2,16 @@ Source: max-processing
 Section: max
 Priority: extra
 Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
-Build-Depends: debhelper (>= 7), wget, unzip
+Build-Depends: debhelper (>= 7), wget, unzip,
+               libasound2, libstdc++6,
+               libx11-6, libxext6, libxi6, libxrender1, libxtst6
 Standards-Version: 3.8.3
 Homepage: https://processing.org
 
 Package: processing
 Architecture: any
-Depends: max-java-jre, ${shlibs:Depends}, ${misc:Depends}
-Description: Java animation and interaction IDE
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Java animation and interaction IDE, version 2.x
  Processing is an open source programming language
  and environment for people who want to create images,
  animations, and interactions.
