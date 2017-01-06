@@ -164,3 +164,10 @@ fi
 # add alumno to dialout
 #groups alumno 2>/dev/null | grep -q dialout || adduser alumno dialout
 
+# disable ibus
+# /etc/X11/xinit/xinputrc
+if ! grep -q "run_im none" /etc/X11/xinit/xinputrc; then
+  echo " * Disable iBUS..."
+  im-config -n none
+fi
+
