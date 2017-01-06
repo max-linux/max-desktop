@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=BitBloq (offline)
+Comment=Visual Arduino programing
+Terminal=false
+Type=Application
+TryExec=/usr/bin/Bitbloq
+Exec=/usr/bin/Bitbloq
+Icon=/usr/share/bitbloq-offline/resources/app/app/images/bitbloq_ico.png
+Categories=Development;

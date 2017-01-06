@@ -1,6 +1,2 @@
-build/linux/* usr/share/bitbloq-offline
-
-#debian/appinventor.png                usr/share/pixmaps/
-#debian/appinventor.desktop            usr/share/applications/
-#debian/appinventor-starter.desktop    usr/share/applications/
-
+build/linux/*                          usr/share/bitbloq-offline
+bitbloq-offline.desktop                usr/share/applications/
