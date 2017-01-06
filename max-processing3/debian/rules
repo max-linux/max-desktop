@@ -1,0 +1,65 @@
+#!/usr/bin/make -f
+
+VERSION=3.2.3
+
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+ifeq ($(DEB_HOST_ARCH),i386)
+  PROC_ARCH=linux32
+  REMOVE=linux64
+  LD_LIBRARY_PATH:= $(CURDIR)/debian/processing/usr/share/processing/java/lib/i386:$(LD_LIBRARY_PATH)
+else
+  PROC_ARCH=linux64
+  REMOVE=linux32
+  LD_LIBRARY_PATH:= $(CURDIR)/debian/processing/usr/share/processing/java/lib/amd64:$(LD_LIBRARY_PATH)
+endif
+
+
+
+%:
+	dh $@
+
+
+#dpkg-shlibdeps: error: couldn't find library libavcodec.so.54 needed by debian/processing3/usr/share/processing3/java/lib/i386/libavplugin-54.so (ELF format: 'elf32-i386'; RPATH: '')
+#dpkg-shlibdeps: error: couldn't find library libavformat.so.54 needed by debian/processing3/usr/share/processing3/java/lib/i386/libavplugin-54.so (ELF format: 'elf32-i386'; RPATH: '')
+#dpkg-shlibdeps: error: couldn't find library libavcodec.so.56 needed by debian/processing3/usr/share/processing3/java/lib/i386/libavplugin-56.so (ELF format: 'elf32-i386'; RPATH: '')
+#dpkg-shlibdeps: error: couldn't find library libavformat.so.56 needed by debian/processing3/usr/share/processing3/java/lib/i386/libavplugin-56.so (ELF format: 'elf32-i386'; RPATH: '')
+#dpkg-shlibdeps: error: couldn't find library libavcodec.so.53 needed by debian/processing3/usr/share/processing3/java/lib/i386/libavplugin-53.so (ELF format: 'elf32-i386'; RPATH: '')
+#dpkg-shlibdeps: error: couldn't find library libavformat.so.53 needed by debian/processing3/usr/share/processing3/java/lib/i386/libavplugin-53.so (ELF format: 'elf32-i386'; RPATH: '')
+#dpkg-shlibdeps: error: couldn't find library libavcodec.so.55 needed by debian/processing3/usr/share/processing3/java/lib/i386/libavplugin-55.so (ELF format: 'elf32-i386'; RPATH: '')
+#dpkg-shlibdeps: error: couldn't find library libavformat.so.55 needed by debian/processing3/usr/share/processing3/java/lib/i386/libavplugin-55.so (ELF format: 'elf32-i386'; RPATH: '')
+
+override_dh_shlibdeps:
+	dh_shlibdeps -l$(CURDIR)/debian/processing/usr/share/processing/java/lib/$(DEB_HOST_ARCH) \
+		-Xdebian/processing3/usr/share/processing3/java/lib/$(DEB_HOST_ARCH)/libavplugin-56.so \
+		-Xdebian/processing3/usr/share/processing3/java/lib/$(DEB_HOST_ARCH)/libavplugin-55.so \
+		-Xdebian/processing3/usr/share/processing3/java/lib/$(DEB_HOST_ARCH)/libavplugin-54.so \
+		-Xdebian/processing3/usr/share/processing3/java/lib/$(DEB_HOST_ARCH)/libavplugin-53.so
+
+info:
+	@echo
+	@echo Build information
+	@echo ==========================
+	@echo ARCH         = $(DEB_HOST_ARCH)
+	@echo URL          = $(URL)
+	@echo CPU          = $(DEB_BUILD_GNU_CPU)
+	@echo
+	@echo
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build bin build-stamp
+
+
+override_dh_auto_build:
+	mkdir -p build
+#	if [ ! -e build/processing.tgz ]; then wget --no-check-certificate http://download.processing.org/processing-$(VERSION)-$(PROC_ARCH).tgz -O- > build/processing.tgz; fi
+	if [ ! -e build/processing.tgz ]; then wget --no-check-certificate http://localhost/remote-files/processing-$(VERSION)-$(PROC_ARCH).tgz -O- > build/processing.tgz; fi
+	(cd build && tar -zxf processing.tgz)
+
+	rm -rf build/processing-*/modes/java/application/launch4j/
+	rm -rf build/processing-*/modes/java/libraries/*/library/linux-armv6hf
+	rm -rf build/processing-*/modes/java/libraries/*/library/$(REMOVE)
+
+	# disable updates
+	sed -i 's/update.check = true/update.check = false/g'  build/processing-*/lib/defaults.txt
