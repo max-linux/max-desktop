@@ -1,0 +1,18 @@
+Source: max-jnetmap
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 7), curl
+Standards-Version: 3.8.3
+Homepage: http://rakudave.ch/jnetmap
+
+Package: jnetmap
+Architecture: all
+Depends: max-java-jre, ${shlibs:Depends}, ${misc:Depends}
+Description: Graphical network monitoring and documentation tool
+ jNetMap is a network monitoring and documentation tool.
+ It will (with some help from you) draw a representation of the network.
+ It pings all registered devices every x minutes, updating their
+ status according to the result of the ping. Alternatively you can also
+ monitor a specific port, such as port 80 for webservers.
+ Available devices are green, unavailable devices are red.

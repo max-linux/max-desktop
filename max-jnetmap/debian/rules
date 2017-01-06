@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+
+override_dh_auto_build:
+	mkdir -p build2
+	if [ ! -e build2/jnetmap.deb ]; then (cd build2 && curl -L -O "http://downloads.sourceforge.net/project/jnetmap/jNetMap%200.5.4/jNetMap-0.5.4.deb" && mv * jnetmap.deb); fi
+	if [ ! -e build2/usr ]; then (cd build2 && dpkg --extract jnetmap.deb ./ && dpkg --control jnetmap.deb); fi
