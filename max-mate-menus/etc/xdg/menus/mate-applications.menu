@@ -55,6 +55,9 @@
         <Not><Category>System</Category></Not>
       </And>
     </Include>
+    <Exclude>
+      <Filename>exe.desktop</Filename>
+    </Exclude>
   </Menu> <!-- End Accessories -->
 
   <!-- Accessibility submenu -->
