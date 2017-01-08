@@ -57,6 +57,8 @@
     </Include>
     <Exclude>
       <Filename>exe.desktop</Filename>
+      <Filename>shutter.desktop</Filename>
+      <Filename>owncloud.desktop</Filename>
     </Exclude>
   </Menu> <!-- End Accessories -->
 
@@ -418,6 +420,7 @@
         <Filename>tuxpaint.desktop</Filename>
         <Filename>leocad.desktop</Filename>
         <Filename>mypaint.desktop</Filename>
+        <Filename>shutter.desktop</Filename>
     </Include>
 
     <Exclude>
@@ -435,6 +438,7 @@
       <And>
         <Category>Network</Category>
       </And>
+      <Filename>owncloud.desktop</Filename>
     </Include>
     <Exclude>
         <Filename>kde4-Kontact.desktop</Filename>
