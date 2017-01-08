@@ -516,6 +516,7 @@
     </Include>
     <Include><Filename>gconf-editor.desktop</Filename></Include>
     <Exclude>
+        <Filename>kde4-k3b.desktop</Filename>
         <Filename>kde4-ksystemlog.desktop</Filename>
         <Filename>kde4-adept_manager.desktop</Filename>
         <Filename>xfce4-taskmanager.desktop</Filename>
