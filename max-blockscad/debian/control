@@ -1,0 +1,15 @@
+Source: max-blockscad
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 7), curl, unzip
+Standards-Version: 3.8.3
+Homepage: https://www.blockscad3d.com/
+
+Package: blockscad
+Architecture: all
+Depends: firefox, python, ${shlibs:Depends}, ${misc:Depends}
+Description: web-based 3D CAD tool
+ BlocksCAD is a web-based 3D CAD tool.
+ It is simple-to-use with robust design capabilities.
+ The tool incorporates programming and math concepts so users learn as they create!

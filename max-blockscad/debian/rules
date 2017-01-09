@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+VERSION=20170109
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+
+override_dh_auto_build:
+	mkdir -p build2
+	if [ ! -e build2/BlocksCAD-$(VERSION).zip ]; then (cd build2 && curl -L -O "http://localhost/remote-files/BlocksCAD-$(VERSION).zip"); fi
+	if [ ! -e build2/BlocksCAD-development ]; then (cd build2 && unzip BlocksCAD-$(VERSION).zip ); fi
