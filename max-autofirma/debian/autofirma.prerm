@@ -1,0 +1,12 @@
+#!/bin/sh
+
+#set -e
+
+if [ "x$1" = "xremove" ]; then
+    /usr/lib/AutoFirma/scripts/autofirma-prerm
+fi
+
+
+#DEBHELPER#
+
+exit 0

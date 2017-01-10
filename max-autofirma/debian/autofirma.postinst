@@ -1,0 +1,19 @@
+#!/bin/sh
+
+#set -e
+
+if [ "$1" = "triggered" ]; then
+    # launch trigger to mantain autofirma certs in firefox
+    /usr/lib/AutoFirma/scripts/autofirma-postinst || true
+   exit
+fi
+
+if [ "$1" = "configure" ]; then
+  /usr/lib/AutoFirma/scripts/autofirma-postinst || true
+fi
+
+
+
+#DEBHELPER#
+
+exit 0
