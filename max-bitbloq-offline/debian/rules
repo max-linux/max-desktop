@@ -1,11 +1,15 @@
 #!/usr/bin/make -f
 #export DH_VERBOSE=1
 
+BASEURL=http://localhost/remote-files
+
 ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
 ifeq ($(ARCH), amd64)
-	URL=https://github.com/bq/bitbloq-offline/releases/download/v1.0.3/linux.zip
+	URL=$(BASEURL)/bitbloq-x64.zip
+	LNX=linux
 else
-	URL=https://github.com/bq/bitbloq-offline/releases/download/v1.0.3/linux32.zip
+	URL=$(BASEURL)/bitbloq-x32.zip
+	LNX=linux32
 endif
 
 
@@ -22,6 +26,14 @@ override_dh_auto_build:
 	if [ -e build/linux32 ]; then \
 		mv build/linux32 build/linux ;\
 	fi
+
+
+	mv build/linux/resources/app/app/res/web2board/$(LNX)/web2boardLauncher \
+           build/linux/resources/app/app/res/web2board/$(LNX)/web2boardLauncher.distrib
+
+	cp ./web2boardLauncher build/linux/resources/app/app/res/web2board/$(LNX)/
+
+
 
 
 override_dh_clean:
