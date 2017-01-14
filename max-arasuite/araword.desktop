@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=AraWord
+Comment=Editor pictográfico
+Exec=/bin/bash -c "cd /opt/AraSuite/AraWord ; ./AraWordApp"
+Icon=AraWordApp
+Terminal=false
+Type=Application
+Categories=Accessibility;Education;Application
+StartupNotify=true

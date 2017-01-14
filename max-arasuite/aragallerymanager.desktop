@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Gallería AraSuite
+Comment=Galería
+Exec=/bin/bash -c "cd /opt/AraSuite/GalleryManager; ./GalleryManagerApp"
+Icon=GalleryManagerApp
+Terminal=false
+Type=Application
+Categories=Accessibility;Education;Application
+StartupNotify=true

@@ -1,0 +1,17 @@
+build2/AraSuite/AraWord               opt/AraSuite/
+build2/AraSuite/GalleryManager        opt/AraSuite/
+build2/AraSuite/TICO                  opt/AraSuite/
+
+
+build2/AraSuite/.install4j/TICOInterpreterApp.png    usr/share/pixmaps/
+build2/AraSuite/.install4j/TICOApp.png               usr/share/pixmaps/
+build2/AraSuite/.install4j/AraWordApp.png            usr/share/pixmaps/
+build2/AraSuite/.install4j/GalleryManagerApp.png     usr/share/pixmaps/
+
+
+
+araword.desktop                   usr/share/applications/
+aragallerymanager.desktop         usr/share/applications/
+aratico.desktop                   usr/share/applications/
+araticointerpreter.desktop        usr/share/applications/
+

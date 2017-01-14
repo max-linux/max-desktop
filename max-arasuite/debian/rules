@@ -1,0 +1,32 @@
+#!/usr/bin/make -f
+
+VERSION=2_2_3
+URL=https://downloads.sourceforge.net/project/arasuite/arasuite_unix_$(VERSION).sh
+
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+
+override_dh_auto_build:
+	mkdir -p build2
+	if [ ! -e build2/arasuite.sh ] && [ -e ./arasuite.sh ]; then (cp -v ./arasuite.sh ./build2/arasuite.sh); fi
+	if [ ! -e build2/arasuite.sh ]; then (cd build2 && curl -L -O $(URL) && mv * arasuite.sh); fi
+
+	# install
+	bash build2/arasuite.sh -q
+
+	# copy to build
+	cp -ra /opt/AraSuite build2/
+
+	# uninstall
+	/opt/AraSuite/uninstall -q	
+
+	find build2/AraSuite/ -type d -exec chmod 0755 {} \;
+	find build2/AraSuite/ -type f -exec chmod 0644 {} \;
+	find build2/AraSuite/ -type f -name "*App" -exec chmod 0755 {} \;

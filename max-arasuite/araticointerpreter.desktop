@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=TICO Interpreter AraSuite
+Comment=Tableros interactivos de comunicación
+Exec=/bin/bash -c "cd /opt/AraSuite/TICO; ./TICOInterpreterApp"
+Icon=TICOInterpreterApp
+Terminal=false
+Type=Application
+Categories=Accessibility;Education;Application
+StartupNotify=true

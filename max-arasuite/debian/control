@@ -1,0 +1,18 @@
+Source: max-arasuite
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 7), curl, openjdk-8-jre-headless
+Standards-Version: 3.8.3
+Homepage: http://arasuite.proyectotico.es/
+
+Package: arasuite
+Architecture: all
+Depends: max-java-jre, ${shlibs:Depends}, ${misc:Depends}
+Description: set of tools useful for working with people with disabilities
+ AraSuite is a set of tools (previously as separate projects: AraWord,
+ TICO, AraBoard...) useful for working with people with disabilities,
+ particularly those related with communication. That requires the use
+ of aumentative and adaptative communication systems that combine
+ pictograms and words as related concepts.
+
