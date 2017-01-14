@@ -19,7 +19,7 @@ override_dh_auto_build:
 	if [ ! -e build2/arasuite.sh ]; then (cd build2 && curl -L -O $(URL) && mv * arasuite.sh); fi
 
 	# install
-	bash build2/arasuite.sh -q
+	bash build2/arasuite.sh -q -dir "/opt/AraSuite"
 
 	# copy to build
 	cp -ra /opt/AraSuite build2/
