@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+
+URL=https://github.com/ch1x0r/LinuxRespin/raw/master/ubuntu/respin_1.1.0-1_all.deb
+
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2 debian/respin.1
+
+
+override_dh_auto_build:
+	mkdir -p build2
+	if [ ! -e build2/respin.deb ]; then (cd build2 && curl -L -O $(URL) && mv *.deb respin.deb); fi
+	if [ ! -e build2/usr ]; then (cd build2 && dpkg --extract respin.deb ./ && dpkg --control respin.deb); fi
+
+	zcat build2/usr/share/man/man1/respin.1.gz > debian/respin.1
+
+	# MAX
+	cat /usr/share/max-genlive/preseed/max.seed > build2/etc/respin/preseed/custom.seed
+
+	cp /usr/share/max-genlive/isolinux/splash.pcx build2/etc/respin/isolinux/
+	sed -i -e 's/splash.png/splash.pcx/g' build2/etc/respin/isolinux/isolinux.cfg.vesamenu
+	sed -i -e 's/splash.png/splash.pcx/g' build2/usr/bin/respin
+	sed -i -e 's/ubiquity-frontend-gtk/ubiquity-frontend-gtk max-live/g' build2/usr/bin/respin
+
+

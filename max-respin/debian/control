@@ -1,0 +1,18 @@
+Source: max-respin
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 7), curl, max-genlive
+Standards-Version: 3.8.3
+Homepage: https://github.com/ch1x0r/LinuxRespin
+
+Package: respin
+Architecture: all
+Depends: memtest86+, coreutils, dialog,
+         mkisofs | genisoimage,
+         findutils, bash, passwd, sed, squashfs-tools,
+         casper, rsync, mount, eject, libdebian-installer4,
+         os-prober, ubiquity-frontend-debconf, user-setup,
+         laptop-detect, syslinux, util-linux, xresprobe, ${shlibs:Depends}, ${misc:Depends}
+Description: Create a custom distro based on Ubuntu/Debian
+ Create a custom distro based on Ubuntu/Debian
