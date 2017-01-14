@@ -1,3 +1,22 @@
+max-skel-conf (9.0.max11) max; urgency=medium
+
+  * Configure sudo to empty $HOME var
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 14 Jan 2017 17:44:09 +0100
+
+max-skel-conf (9.0.max10) max; urgency=medium
+
+  * Create nautilus_background_for_root /root/config/.dconf
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 14 Jan 2017 17:43:45 +0100
+
+max-skel-conf (9.0.max9) max; urgency=medium
+
+  * Change khagnman theme and set spanish as default, fix
+    nautilus_red_background
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 08 Jan 2017 14:51:32 +0100
+
 max-skel-conf (9.0.max8) max; urgency=medium
 
   * Global disable iBUS (im-config -n none)

@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# set background color to red
+mkdir -p /root/config/.dconf
+HOME=/root dbus-launch gsettings set org.mate.caja.preferences background-color "'#AD3841'"
+HOME=/root dbus-launch gsettings set org.mate.caja.preferences background-set true
+exit
 
 if [ -d /root/.themes/MaxTheme ]; then
   #echo " * Root theme configured"
