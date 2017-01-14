@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+VERSION=8.4.0
+URL=https://github.com/mbusb/multibootusb/releases/download/v$(VERSION)/python3-multibootusb_$(VERSION)-1_all.deb
+
+
+%:
+	dh $@ --with python3
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+
+override_dh_auto_build:
+	mkdir -p build2
+	if [ ! -e build2/multibootusb.deb ]; then (cd build2 && curl -L -O $(URL) && mv *.deb multibootusb.deb); fi
+	if [ ! -e build2/usr ]; then (cd build2 && dpkg --extract multibootusb.deb ./ && dpkg --control multibootusb.deb); fi
