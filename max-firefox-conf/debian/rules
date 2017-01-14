@@ -1,13 +1,9 @@
 #!/usr/bin/make -f
 
 include /usr/share/cdbs/1/rules/debhelper.mk
-
+include /usr/share/cdbs/1/rules/aa-debhelper.mk
 
 binary-install/max-firefox-conf::
 	# clean svn dirs
-	find $(CURDIR)/debian/max-firefox-conf -type d -name .svn | xargs rm -rf --
 	find $(CURDIR)/debian/max-firefox-conf -type d -empty | xargs rm -rf --
 
-	tree $(CURDIR)/debian/max-firefox-conf
-	rm -rf $(CURDIR)/debian/max-firefox-conf/usr/share/dpsyco
-	tree $(CURDIR)/debian/max-firefox-conf

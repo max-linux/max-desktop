@@ -3,7 +3,7 @@ Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
 #Build-Depends: debhelper (>= 4.0.0), cdbs, dpatch, patchutils, mozilla-devscripts, zip, unzip, ca-certificates
-Build-Depends: debhelper (>= 4.0.0), cdbs, dpatch, patchutils, tree
+Build-Depends: debhelper (>= 4.0.0), cdbs, dpatch, patchutils, tree, aa-debhelper
 Standards-Version: 3.8.1
 
 Package: max-firefox-conf
