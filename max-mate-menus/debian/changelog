@@ -1,3 +1,9 @@
+max-mate-menus (9.0.max14) max; urgency=medium
+
+  * Change LC_ALL in freecad, ref #828
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 15 Jan 2017 16:34:28 +0100
+
 max-mate-menus (9.0.max13) max; urgency=medium
 
   * Add mate-search-tool to Accesories, close #801
