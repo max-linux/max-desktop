@@ -1,0 +1,42 @@
+#!/usr/bin/make -f
+
+VERSION=1_6_2
+URL=http://download.repetier.com/files/host/linux/repetierHostLinux_$(VERSION).tgz
+
+DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+ifeq ($(DEB_HOST_ARCH),i386)
+  ARCH=32
+else
+  ARCH=64
+endif
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+
+override_dh_auto_build:
+	mkdir -p build2
+	if [ ! -e build2/repetier.tgz ]; then (cd build2 && curl -L -O $(URL) && mv * repetier.tgz); fi
+	if [ ! -e build2/usr ]; then (cd build2 && tar -zxvf repetier.tgz); fi
+
+
+	# clean files
+	find build2/RepetierHost/ -name "Thumbs.db" -delete
+	find build2/RepetierHost/ -name ".DS_Store" -delete
+	chmod -x build2/RepetierHost/data/translations/*.*
+	rm -f build2/RepetierHost/Repetier-Host.desktop
+
+	cp build2/RepetierHost/plugins/CuraEngine/CuraEngine$(ARCH) build2/RepetierHost/plugins/CuraEngine/CuraEngine
+	chmod +x build2/RepetierHost/plugins/CuraEngine/CuraEngine
+	rm -vf build2/RepetierHost/plugins/CuraEngine/CuraEngine??
+
+
+	rm -f build2/RepetierHost/SetBaudrate
+	g++ build2/RepetierHost/SetBaudrate.cpp -o build2/RepetierHost/SetBaudrate
+

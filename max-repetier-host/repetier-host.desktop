@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Repetier-Host
+Exec=mono /usr/share/repetier-host/RepetierHost.exe -home /usr/share/repetier-host
+Type=Application
+StartupNotify=true
+Comment=Repetier-Host 3d printer host software
+Icon=/usr/share/repetier-host/repetier-logo.png
+Comment[en_US.UTF-8]=Repetier Host
+Name[en_US]=Repetier
+Categories=Graphics;

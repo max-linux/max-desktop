@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+#set -e
+
+for prof in $(find /home/*/ -maxdepth 1 -name .config 2>/dev/null); do
+  username=$(grep "`dirname $prof`:" /etc/passwd | cut -d: -f 1)
+  [ "$username" = "" ] && continue
+  [ -d "$prof/.Slic3r" ] && continue
+
+  echo " * Configurando slic3r en $prof ..."
+  su $username -c "cp -ra /usr/share/repetier-host/slic3r-conf $prof/.Slic3r"
+done
+
+
+
+
+#DEBHELPER#
+

@@ -1,0 +1,27 @@
+Source: max-repetier-host
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 7), curl, g++,
+         mono-runtime,
+         libmono-system-windows-forms4.0-cil,
+         libmono-system-serviceprocess4.0-cil,
+Standards-Version: 3.8.3
+Homepage: https://www.repetier.com/download-now
+
+Package: repetier-host
+Architecture: any
+Depends: libboost-geometry-utils-perl,
+         libmath-clipper-perl,
+         libmath-convexhull-monotonechain-perl, libmath-convexhull-perl,
+         libmath-geometry-voronoi-perl, libmath-planepath-perl,
+         libmoo-perl,
+         libwx-perl,
+         libnet-dbus-perl,
+         slic3r,
+         mono-runtime,
+         libmono-system-windows-forms4.0-cil,
+         libmono-system-serviceprocess4.0-cil,         
+         ${shlibs:Depends}, ${misc:Depends}
+Description: 3D printing software
+ 3D printing software
