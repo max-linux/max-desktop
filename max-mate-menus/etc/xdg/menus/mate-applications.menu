@@ -54,6 +54,7 @@
         <Not><Category>Accessibility</Category></Not>
         <Not><Category>System</Category></Not>
       </And>
+      <Filename>mate-search-tool.desktop</Filename>
     </Include>
     <Exclude>
       <Filename>exe.desktop</Filename>
