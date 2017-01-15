@@ -1,0 +1,23 @@
+Source: max-peek
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 7), curl,
+               autotools-dev,
+               gettext,
+               libglib2.0-dev,
+               libgtk-3-dev,
+               valac,
+               cmake
+Standards-Version: 3.8.3
+Homepage: https://github.com/phw/peek
+
+Package: peek
+Architecture: any
+Depends: ffmpeg, imagemagick, ${shlibs:Depends}, ${misc:Depends}
+Description: record short animated GIF images from your screen
+ A simple tool that allows you to record short animated GIF images from your screen.
+ .
+ Currently only Linux with X11 is supported.
+ Other Unix like systems using X11 should work as well.
+ It is planned to also support Wayland and maybe other operating systems in the future.
