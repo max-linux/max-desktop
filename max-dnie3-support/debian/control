@@ -1,0 +1,21 @@
+Source: max-dnie3-support
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 7), curl,
+               libassuan-dev,
+               libgpg-error-dev,
+               libpcsclite-dev
+Standards-Version: 3.8.3
+Homepage: https://www.dnielectronico.es/PortalDNIe/PRF1_Cons02.action?pag=REF_1112
+
+Package: dnie3-support
+Architecture: any
+Provides: libpkcs11-dnie
+Replaces: libpkcs11-dnie
+Depends: pinentry-gtk2 | pinentry-qt | pinentry-gtk, pcscd,
+         ${shlibs:Depends}, ${misc:Depends}
+Description: SmartCard library with support for dnie card
+ This package contains the necessary libraries for dnie card.
+ These libraries allow programs to access data, such as
+ cryptographic keys, on specific PKCS#15 FNMT smart card.

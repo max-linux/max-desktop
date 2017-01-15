@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+
+URL32="https://www.dnielectronico.es/descargas/distribuciones_linux/Ubuntu-32bits/Ubuntu_(16.04_LTS_Xenial%20Xerus_15.10%20Wily%20Werewolf)_libpkcs11-dnie_1.4.0_i386.deb"
+URL64="https://www.dnielectronico.es/descargas/distribuciones_linux/Ubuntu-64bits/Ubuntu_(16.04_LTS_Xenial%20Xerus_15.10%20Wily%20Werewolf)_libpkcs11-dnie_1.4.0_amd64.deb"
+
+DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+ifeq ($(DEB_HOST_ARCH),i386)
+  URL=$(URL32)
+else
+  URL=$(URL64)
+endif
+
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+
+override_dh_auto_build:
+	mkdir -p build2
+	if [ ! -e build2/dnie3.deb ]; then (cd build2 && curl -L -O $(URL) && mv * dnie3.deb); fi
+	if [ ! -e build2/usr ]; then (cd build2 && dpkg --extract dnie3.deb ./ && dpkg --control dnie3.deb); fi
+
+	chmod -x build2/usr/share/libpkcs11-dnie/*
+
+	sed -i -e 's@/libpkcs11-dnie/@/dnie3-support/@g' build2/usr/share/applications/launch.dnie.desktop

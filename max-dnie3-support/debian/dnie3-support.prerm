@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+#set -e
+
+
+
+for prof in $(find /home/*/ -maxdepth 1 -name .mozilla 2>/dev/null); do
+
+  username=$(grep "`dirname $prof`:" /etc/passwd | cut -d: -f 1)
+  [ "$username" = "" ] && continue
+  ffprof=$(echo $prof/firefox/*.default/ )
+  su $username -c "modutil -force -delete \"DNIe Modulo PKCS #11\" -libfile /usr/lib/libpkcs11-dnie.so -dbdir \"$ffprof\""        2>/dev/null || true
+  su $username -c "certutil -D -n \"ac_raiz_dnie\" -t \"C,C,C\" -d \"$ffprof\" -i /usr/share/dnie3-support/ac_raiz_dnie.crt"      2>/dev/null || true
+
+done
+
+#DEBHELPER#
+
