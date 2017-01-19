@@ -835,7 +835,7 @@ class Wizard(BaseFrontend):
 Puede seguir probando MaX, pero recuerde que hasta que
 reinicie el equipo, cualquier cambio que haga o
 documento que guarde no se conservará.\n\n
-Se han creado los usuarios madrid y alumno con contraseñas cmadrid y alumno,\n
+Se han creado los usuarios 'madrid' (contraseña cmadrid) y 'alumno' (contraseña alumno),\n
 madrid es administrador y alumno usuario básico cuyos datos se borran al cerrar sesión,\n
 comportamiento modificable por madrid desde Inicio->Administración->Configurar perfiles."""
             self.finished_label.set_label(txt)
