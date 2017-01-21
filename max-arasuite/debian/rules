@@ -1,8 +1,7 @@
 #!/usr/bin/make -f
 
 VERSION=2_2_3
-URL=https://downloads.sourceforge.net/project/arasuite/arasuite_unix_$(VERSION).sh
-
+URL=http://localhost/remote-files/arasuite_unix_$(VERSION).sh
 
 %:
 	dh $@
@@ -30,3 +29,4 @@ override_dh_auto_build:
 	find build2/AraSuite/ -type d -exec chmod 0755 {} \;
 	find build2/AraSuite/ -type f -exec chmod 0644 {} \;
 	find build2/AraSuite/ -type f -name "*App" -exec chmod 0755 {} \;
+
