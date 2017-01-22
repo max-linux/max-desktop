@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+TryExec=/usr/games/pysycache
+Exec=pysycache
+Icon=/usr/share/pixmaps/pysycache.png
+Type=Application
+Categories=Education;KidsGame
+Name=PySyCache
+GenericName=PySyCache
+Comment=Teach kids to move the mouse
+Comment[fr]=Apprendre aux enfants à manipuler la souris
+Comment[es]=Juegos para aprender a usar el ratón
+Terminal=true
+StartupNotify=false

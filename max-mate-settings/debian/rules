@@ -2,3 +2,15 @@
 
 %:
 	dh $@ 
+
+
+override_dh_clean:
+	dh_clean
+	./build-infantil-plank.sh clean
+
+
+override_dh_auto_build:
+	dh_auto_build
+	./build-infantil-plank.sh
+
+

@@ -15,6 +15,7 @@ function overlay_file() {
 # for pre-existing configurations, a patch has been submitted upstream.
 #  - https://bugs.launchpad.net/language-selector/+bug/1550325
 function correct_xinputrc() {
+    [ ! -e ${HOME}/.xinputrc ] && return
     DETECT_XIM=$(grep xim ${HOME}/.xinputrc)
     if [ $? -eq 0 ]; then
         AUTO=$(im-config -m | sed '3q;d')
@@ -23,10 +24,16 @@ function correct_xinputrc() {
 }
 
 if [ ! -d "${HOME}/.config/plank/dock1" ]; then
-    overlay_file config/plank/dock1/launchers/clock.dockitem
-    overlay_file config/plank/dock1/launchers/desktop.dockitem
-    overlay_file config/plank/dock1/launchers/firefox.dockitem
-    overlay_file config/plank/dock1/launchers/matecc.dockitem
+    #overlay_file config/plank/dock1/launchers/clock.dockitem
+    #overlay_file config/plank/dock1/launchers/desktop.dockitem
+    #overlay_file config/plank/dock1/launchers/firefox.dockitem
+    #overlay_file config/plank/dock1/launchers/matecc.dockitem
+
+    LAUNCHERS="/usr/share/max-mate/settings-overlay/config/plank/dock1/launchers/"
+    for f in $(find "${LAUNCHERS}" -type f | sed -e 's@/usr/share/max-mate/settings-overlay/@@g'); do
+        overlay_file ${f}
+    done
+
 fi
 overlay_file config/folder-color/hide_donation
 overlay_file config/libreoffice/4/user/registrymodifications.xcu

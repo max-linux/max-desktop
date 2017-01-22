@@ -1,0 +1,18 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GCompris (educational suite)
+Name[es]=GCompris (suite educativa)
+GenericName=Games for children between 2 and 10 years
+GenericName[es]=Juegos para niños de 2 a 10 años
+Comment=Games for children between 2 and 10 years
+Comment[es]=Juegos para niños de 2 a 10 años
+TryExec=/usr/games/gcompris
+Exec=gcompris
+Icon=gcompris
+Terminal=false
+Type=Application
+Categories=Education;
+StartupNotify=true
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=gcompris
+X-GNOME-Bugzilla-Component=

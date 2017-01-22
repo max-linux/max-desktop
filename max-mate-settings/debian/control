@@ -25,6 +25,15 @@ Provides: ubuntu-mate-default-settings
 Description: Default settings for MAX MATE
  Various system settings tailored for MAX MATE.
 
+Package: max-mate-settings-infantil
+Architecture: all
+Depends: max-mate-default-settings, plank,
+         ${misc:Depends},
+Conflicts: max-gnome-default-settings-infantil-primaria
+Provides: max-gnome-default-settings-infantil-primaria
+Description: Default settings for MAX MATE Infantil
+ Various system settings tailored for MAX MATE Infantil.
+
 Package: max-mate-live-settings
 Architecture: all
 Depends: ${misc:Depends},

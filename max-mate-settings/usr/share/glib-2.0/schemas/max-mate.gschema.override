@@ -2,12 +2,6 @@
 show-details=true
 show-versions=true
 
-[net.launchpad.plank.dock.settings]
-dock-items=['desktop.dockitem','clock.dockitem','firefox.dockitem','matecc.dockitem']
-hide-mode='window-dodge'
-show-dock-item=true
-theme='Ubuntu-MATE'
-
 [org.gnome.crypto.pgp]
 keyservers=['hkp://keyserver.ubuntu.com:11371', 'hkp://pool.sks-keyservers.net', 'ldap://keyserver.pgp.com']
 
