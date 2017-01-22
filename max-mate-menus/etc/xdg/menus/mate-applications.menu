@@ -178,7 +178,7 @@
             <Filename>tuxpaint.desktop</Filename>
             <Filename>denemo.desktop</Filename>
             <Filename>josm.desktop</Filename>
-            <Filename>kde4-marble.desktop</Filename>
+            <Filename>marble.desktop</Filename>
             <Filename>qelectrotech.desktop</Filename>
             <Filename>ktechlab.desktop</Filename>
             <Filename>exe.desktop</Filename>
@@ -199,7 +199,7 @@
             <!-- elearning -->
             <Filename>edilim.desktop</Filename>
             <!-- geografia -->
-            <Filename>kde4-kgeography.desktop</Filename>
+            <Filename>org.kde.kgeography.desktop</Filename>
             <Filename>leocad.desktop</Filename>
             <Filename>kde4-kalzium.desktop</Filename>
             <!-- musica -->
@@ -310,8 +310,8 @@
         <Include>
             <Filename>josm.desktop</Filename>
             <Filename>max-openstreetmap.desktop</Filename>
-            <Filename>kde4-marble.desktop</Filename>
-            <Filename>kde4-kgeography.desktop</Filename>
+            <Filename>marble.desktop</Filename>
+            <Filename>org.kde.kgeography.desktop</Filename>
             <Filename>kde4-kstars.desktop</Filename>
             <Filename>starplot.desktop</Filename>
             <Filename>kde4-celestia.desktop</Filename>
