@@ -2,7 +2,8 @@
 Type=Application
 Exec=/usr/bin/plank
 Terminal=false
-X-MATE-Autostart-enabled=true
 Name=Top launcher for infantil
 Name[es]=Barra superior para infantil
-
+NoDisplay=true
+X-MATE-Autostart-enabled=true
+X-MATE-Autostart-Delay=4
