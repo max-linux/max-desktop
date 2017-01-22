@@ -110,6 +110,7 @@
             <And><Category>Hotpot</Category></And>
             <Filename>libreoffice-math.desktop</Filename>
             <Filename>www.octave.org-octave.desktop</Filename>
+            <Filename>logisim.desktop</Filename>
         </Exclude>
 
 
@@ -331,6 +332,7 @@
             <Filename>geda-gschem.desktop</Filename>
             <Filename>geda-gattrib.desktop</Filename>
             <Filename>qucs.desktop</Filename>
+            <Filename>logisim.desktop</Filename>
         </Include>
     </Menu>
 
