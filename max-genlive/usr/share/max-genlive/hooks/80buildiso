@@ -112,7 +112,10 @@ _echo "Generando ${ISO_FILE}"
 mount -o bind $CHROOT/../ $CHROOT/mnt
 
 #debian-live
-#genisoimage -J -l -cache-inodes -allow-multidot -A "MAX 9.0" -p "MAX developers on 2016-11-20_20:18:35" -publisher "MAdrid_linuX" -V "MAX 9.0" -no-emul-boot -boot-load-size 4 -boot-info-table -r -b isolinux/isolinux.bin -c isolinux/boot.cat -o binary.hybrid.iso binary
+#genisoimage -J -l -cache-inodes -allow-multidot -A "MAX 9.0"
+#    -p "MAX developers on 2016-11-20_20:18:35" -publisher "MAdrid_linuX"
+#    -V "MAX 9.0"
+#    -no-emul-boot -boot-load-size 4 -boot-info-table -r -b isolinux/isolinux.bin -c isolinux/boot.cat -o binary.hybrid.iso binary
 #isohybrid  binary.hybrid.iso
 
 
@@ -130,6 +133,8 @@ else
      -boot-info-table -o /mnt/${ISO_FILE} /mnt/cdimage.${ARCH}/ || _exit "Error generando la imagen ISO"
 fi
 
+_echo " Generando isohybrid ... "
+chroot $CHROOT isohybrid /mnt/${ISO_FILE}
 
 umount $CHROOT/mnt
 

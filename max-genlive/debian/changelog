@@ -1,3 +1,9 @@
+max-genlive (9.0.max8) max; urgency=medium
+
+  * Run isohybrid after genisoimage, close #846
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 22 Jan 2017 19:12:02 +0100
+
 max-genlive (9.0.max7) max; urgency=medium
 
   * Fix type in 50max-installer
