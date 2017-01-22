@@ -1,3 +1,9 @@
+max-genlive (9.0.max9) max; urgency=medium
+
+  * Change version to beta2
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 22 Jan 2017 19:14:48 +0100
+
 max-genlive (9.0.max8) max; urgency=medium
 
   * Run isohybrid after genisoimage, close #846
