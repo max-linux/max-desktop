@@ -1,3 +1,9 @@
+max-meta (9.0.max14) max; urgency=medium
+
+  * Add phonon4qt5 phonon4qt5-backend-gstreamer, close #835
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 22 Jan 2017 18:08:39 +0100
+
 max-meta (9.0.max13) max; urgency=medium
 
   * Replace max-gnome-default-settings-infantil-primaria with new max-
