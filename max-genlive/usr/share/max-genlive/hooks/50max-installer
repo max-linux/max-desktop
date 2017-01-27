@@ -31,7 +31,7 @@ export LC_ALL=C LC_MESSAGES=C DEBCONF_FRONTEND="noninteractive" DEBIAN_FRONTEND=
 /usr/sbin/mysqld &
 while ! /usr/bin/mysqladmin --defaults-file=/etc/mysql/debian.cnf ping; do sleep 1 ; echo " * wait for mysqld ..." ; done
 sleep 2
-rm -f rm /var/lib/moodle/max-db-created
+rm -f /var/lib/moodle/max-db-created
 /usr/sbin/configure-moodle || true
 killall -15 mysqld
 exit \$ERROR
