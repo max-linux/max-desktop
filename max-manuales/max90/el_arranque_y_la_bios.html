@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>El arranque y la BIOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="generator" content="eXeLearning 2.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Anterior",next:"Siguiente",show:"Mostrar",hide:"Ocultar",showFeedback:"Mostrar retroalimentación",hideFeedback:"Ocultar retroalimentación",correct:"Correcto",incorrect:"Incorrecto",menu:"Menú",print:"Imprimir"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="emptyHeader"></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Portada</a></li>
+   <li><a href="introduccin_qu_es_max.html" class="daddy">Introducción. ¿Qué es MAX?</a>
+   <ul class="other-section">
+      <li><a href="por_qu_max.html" class="no-ch">¿Por qué MAX?</a></li>
+      <li><a href="origen_de_max.html" class="no-ch">Origen de MAX</a></li>
+   </ul>
+   </li>
+   <li><a href="modos_de_funcionamiento_de_max.html" class="daddy">Modos de funcionamiento de MAX</a>
+   <ul class="other-section">
+      <li><a href="trabajar_desde_un_dvd_en_modo_live.html" class="no-ch">Trabajar desde un DVD en modo live</a></li>
+      <li><a href="trabajar_desde_un_dvd_en_modo_live_con_la_accesibilidad_activada.html" class="no-ch">Trabajar desde un DVD en modo live con la accesibilidad activada</a></li>
+      <li><a href="trabajar_desde_un_dispositivo_usb_en_modo_live.html" class="no-ch">Trabajar desde un dispositivo USB en modo live</a></li>
+      <li><a href="trabajar_desde_el_disco_duro_con_la_distribucin_instalada.html" class="no-ch">Trabajar desde el disco duro con la distribución instalada</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="instalacin_de_max_en_el_disco_duro.html" class="current-page-parent daddy">Instalación de MAX en el disco duro</a>
+   <ul>
+      <li><a href="requisitos.html" class="no-ch">Requisitos</a></li>
+      <li id="active"><a href="el_arranque_y_la_bios.html" class="active no-ch">El arranque y la BIOS</a></li>
+      <li><a href="equipos_con_bios_uefi_windows_8_y_10.html" class="no-ch">Equipos con BIOS UEFI. Windows 8 y 10</a></li>
+      <li><a href="el_instalador_de_max.html" class="daddy">El instalador de MAX</a>
+      <ul class="other-section">
+         <li><a href="ejecutar_el_instalador.html" class="no-ch">Ejecutar el instalador</a></li>
+         <li><a href="seleccionar_el_tipo_de_instalacin.html" class="no-ch">Seleccionar el tipo de instalación</a></li>
+         <li><a href="particionando_discos_con_gparted.html" class="no-ch">Particionando discos con GParted</a></li>
+         <li><a href="seleccionar_caractersticas_de_la_instalacin.html" class="no-ch">Seleccionar características de la instalación</a></li>
+         <li><a href="finalizar_la_instalacin.html" class="no-ch">Finalizar la instalación</a></li>
+         <li><a href="crear_un_usb_autoarrancable.html" class="no-ch">Crear un USB autoarrancable</a></li>
+      </ul>
+      </li>
+      <li><a href="terminales_ligeros_tcos.html" class="no-ch">Terminales ligeros (TCOS)</a></li>
+      <li><a href="max_en_un_mac.html" class="no-ch">MAX en un Mac</a></li>
+   </ul>
+   </li>
+   <li><a href="configuracin_de_max.html" class="daddy">Configuración de MAX</a>
+   <ul class="other-section">
+      <li><a href="arranque_del_equipo.html" class="no-ch">Arranque del equipo</a></li>
+      <li><a href="el_gestor_de_entrada_lightdm.html" class="daddy">El gestor de entrada (lightdm)</a>
+      <ul class="other-section">
+         <li><a href="seleccin_de_usuarios.html" class="no-ch">Selección de usuarios</a></li>
+         <li><a href="entorno_de_escritorio_y_personalizacin.html" class="daddy">Entorno de escritorio y personalización</a>
+         <ul class="other-section">
+            <li><a href="mate.html" class="daddy">MATE</a>
+            <ul class="other-section">
+               <li><a href="personalizacin.html" class="no-ch">Personalización</a></li>
+            </ul>
+            </li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="configuracin_de_red.html" class="daddy">Configuración de red</a>
+      <ul class="other-section">
+         <li><a href="configurar_la_red.html" class="no-ch">Configurar la red</a></li>
+         <li><a href="configuracin_de_la_tarjeta_de_red_cableada.html" class="no-ch">Configuración de la tarjeta de red cableada</a></li>
+         <li><a href="configuracin_de_una_tarjeta_de_red_inalmbrica.html" class="no-ch">Configuración de una tarjeta de red inalámbrica</a></li>
+      </ul>
+      </li>
+      <li><a href="comparticin_de_recursos.html" class="daddy">Compartición de recursos</a>
+      <ul class="other-section">
+         <li><a href="nombre_del_equipo_y_grupo_de_trabajo.html" class="no-ch">Nombre del equipo y grupo de trabajo</a></li>
+         <li><a href="compartir_recursos_en_una_red.html" class="no-ch">Compartir recursos en una red</a></li>
+      </ul>
+      </li>
+      <li><a href="impresoras.html" class="daddy">Impresoras</a>
+      <ul class="other-section">
+         <li><a href="impresora_usb.html" class="no-ch">Impresora USB</a></li>
+         <li><a href="impresora_en_red.html" class="no-ch">Impresora en red</a></li>
+         <li><a href="archivo_ppd.html" class="no-ch">Archivo ppd</a></li>
+         <li><a href="impresora_en_otro_equipo_con_max.html" class="no-ch">Impresora en otro equipo con MAX</a></li>
+         <li><a href="impresora_en_otro_equipo_con_windows.html" class="no-ch">Impresora en otro equipo con Windows</a></li>
+      </ul>
+      </li>
+      <li><a href="pizarras_digitales.html" class="no-ch">Pizarras digitales</a></li>
+      <li><a href="otros_dispositivos.html" class="no-ch">Otros dispositivos</a></li>
+      <li><a href="el_configurador_de_perfiles.html" class="no-ch">El configurador de perfiles</a></li>
+      <li><a href="instalacin_de_software.html" class="daddy">Instalación de software</a>
+      <ul class="other-section">
+         <li><a href="instalacin_de_software_de_max.html" class="no-ch">Instalación de software de MAX</a></li>
+         <li><a href="gestor_de_paquetes_synaptic.html" class="daddy">Gestor de paquetes Synaptic</a>
+         <ul class="other-section">
+            <li><a href="conceptos_generales_sobre_la_gestin_de_paquetes.html" class="no-ch">Conceptos generales sobre la gestión de paquetes</a></li>
+            <li><a href="arranque_de_synaptic.html" class="no-ch">Arranque de Synaptic</a></li>
+            <li><a href="la_pantalla_principal.html" class="no-ch">La pantalla principal</a></li>
+            <li><a href="gestin_de_repositorios.html" class="no-ch">Gestión de repositorios</a></li>
+            <li><a href="actualizacin_de_los_listados_de_paquetes_desde_los_repositorios.html" class="no-ch">Actualización de los listados de paquetes desde los repositorios</a></li>
+            <li><a href="buscar_un_paquete.html" class="no-ch">Buscar un paquete</a></li>
+            <li><a href="seleccin_de_un_paquete_para_instalar.html" class="no-ch">Selección de un paquete para instalar</a></li>
+            <li><a href="aplicar_los_cambios_marcados.html" class="no-ch">Aplicar los cambios marcados</a></li>
+            <li><a href="finalizando_synaptic.html" class="no-ch">Finalizando Synaptic</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="usar_max.html" class="daddy">Usar MAX</a>
+   <ul class="other-section">
+      <li><a href="utilizacin_bsica_del_sistema.html" class="daddy">Utilización básica del sistema</a>
+      <ul class="other-section">
+         <li><a href="explorador_de_archivos.html" class="daddy">Explorador de archivos</a>
+         <ul class="other-section">
+            <li><a href="seleccin_de_elementos.html" class="no-ch">Selección de elementos</a></li>
+            <li><a href="copiar_o_mover_archivos.html" class="no-ch">Copiar o mover archivos</a></li>
+            <li><a href="crear_una_nueva_carpeta.html" class="no-ch">Crear una nueva carpeta</a></li>
+            <li><a href="diferentes_vistas_de_documentos.html" class="no-ch">Diferentes vistas de documentos</a></li>
+         </ul>
+         </li>
+         <li><a href="usbs_y_otros_dispositivos.html" class="no-ch">USBs y otros dispositivos</a></li>
+         <li><a href="comprimir_y_descomprimir.html" class="daddy">Comprimir y descomprimir</a>
+         <ul class="other-section">
+            <li><a href="comprimir_archivos.html" class="no-ch">Comprimir archivos</a></li>
+            <li><a href="descomprimir_archivos.html" class="no-ch">Descomprimir archivos</a></li>
+         </ul>
+         </li>
+         <li><a href="alojamiento_de_ficheros_en_la_red.html" class="daddy">Alojamiento de ficheros en la red</a>
+         <ul class="other-section">
+            <li><a href="directorio_de_ficheros_de_educamadrid.html" class="no-ch">Directorio de ficheros de Educamadrid</a></li>
+         </ul>
+         </li>
+         <li><a href="compartir_una_carpeta_con_alumnos.html" class="daddy">Compartir una carpeta con alumnos</a>
+         <ul class="other-section">
+            <li><a href="el_profesor_quiere_enviar_ficheros.html" class="no-ch">El profesor quiere enviar ficheros</a></li>
+            <li><a href="alumnos_comparten_informacin.html" class="no-ch">Alumnos comparten información</a></li>
+            <li><a href="alumnos_entregan_examen.html" class="no-ch">Alumnos entregan examen</a></li>
+            <li><a href="cmo_accede_un_alumno_a_carpeta_compartida.html" class="no-ch">Cómo accede un alumno a carpeta compartida</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="aplicaciones_bsicas.html" class="daddy">Aplicaciones básicas</a>
+      <ul class="other-section">
+         <li><a href="navegadores.html" class="no-ch">Navegadores</a></li>
+         <li><a href="trabajar_con_documentos_de_office.html" class="daddy">Trabajar con documentos de Office</a>
+         <ul class="other-section">
+            <li><a href="guardar_archivo_como_microsoft_office.html" class="no-ch">Guardar archivo como Microsoft Office</a></li>
+            <li><a href="guardar_archivo_como_pdf.html" class="no-ch">Guardar archivo como PDF</a></li>
+         </ul>
+         </li>
+         <li><a href="reproductores_multimedia.html" class="daddy">Reproductores multimedia</a>
+         <ul class="other-section">
+            <li><a href="imagen.html" class="no-ch">Imagen</a></li>
+            <li><a href="sonido.html" class="no-ch">Sonido</a></li>
+            <li><a href="vdeo.html" class="no-ch">Vídeo</a></li>
+         </ul>
+         </li>
+         <li><a href="correo_electrnico.html" class="daddy">Correo electrónico</a>
+         <ul class="other-section">
+            <li><a href="thunderbird__crear_una_cuenta.html" class="no-ch">Thunderbird - crear una cuenta</a></li>
+            <li><a href="uso_bsico_y_opciones.html" class="no-ch">Uso básico y opciones</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="accesorios.html" class="daddy">Accesorios</a>
+      <ul class="other-section">
+         <li><a href="herramienta_de_bsqueda_de_mate.html" class="daddy">Herramienta de búsqueda de MATE</a>
+         <ul class="other-section">
+            <li><a href="capturar_pantalla.html" class="no-ch">Capturar pantalla</a></li>
+         </ul>
+         </li>
+         <li><a href="synapse_lanzador_de_aplicaciones_y_documentos.html" class="no-ch">Synapse, lanzador de aplicaciones y documentos</a></li>
+      </ul>
+      </li>
+      <li><a href="educacin.html" class="daddy">Educación</a>
+      <ul class="other-section">
+         <li><a href="exelearning.html" class="no-ch">eXeLearning</a></li>
+         <li><a href="animalandia.html" class="no-ch">Animalandia</a></li>
+         <li><a href="fritzing.html" class="no-ch">Fritzing</a></li>
+         <li><a href="geda_schematic_editor.html" class="no-ch">gEDA Schematic Editor</a></li>
+         <li><a href="celestia.html" class="no-ch">Celestia</a></li>
+         <li><a href="openstreetmap.html" class="no-ch">OpenStreetMap</a></li>
+         <li><a href="stellarium.html" class="no-ch">Stellarium</a></li>
+         <li><a href="geogebra.html" class="no-ch">Geogebra</a></li>
+         <li><a href="speedcrunch_calculator.html" class="no-ch">SpeedCrunch Calculator</a></li>
+         <li><a href="gtick_metrnomo.html" class="no-ch">GTick (metrónomo)</a></li>
+         <li><a href="musescore_edicin_de_partituras.html" class="no-ch">MuseScore (edición de partituras)</a></li>
+         <li><a href="gnu_octave_simulacin_de_procesos.html" class="no-ch">GNU Octave (simulación de procesos)</a></li>
+         <li><a href="step_simulador_fsico.html" class="no-ch">Step (simulador físico)</a></li>
+      </ul>
+      </li>
+      <li><a href="grficos.html" class="daddy">Gráficos</a>
+      <ul class="other-section">
+         <li><a href="editor_de_imgenes_gimp.html" class="no-ch">Editor de imágenes GIMP</a></li>
+         <li><a href="editor_de_grficos_vectoriales_inkscape.html" class="no-ch">Editor de gráficos vectoriales Inkscape</a></li>
+         <li><a href="librecad.html" class="no-ch">LibreCAD</a></li>
+         <li><a href="mypaint.html" class="no-ch">MyPaint</a></li>
+         <li><a href="scribus_publicaciones.html" class="no-ch">Scribus (Publicaciones)</a></li>
+         <li><a href="organizador_de_imgenes_shotwell.html" class="no-ch">Organizador de imágenes Shotwell</a></li>
+         <li><a href="shutter__captura_de_pantallas.html" class="no-ch">Shutter - Captura de pantallas</a></li>
+         <li><a href="visor_de_imgenes_eye_of_mate.html" class="no-ch">Visor de imágenes Eye of MATE</a></li>
+      </ul>
+      </li>
+      <li><a href="oficina.html" class="daddy">Oficina</a>
+      <ul class="other-section">
+         <li><a href="libreoffice.html" class="no-ch">LibreOffice</a></li>
+         <li><a href="pdfshuffler.html" class="no-ch">PDF-Shuffler</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="personalizacin_para_infantil_y_primaria.html" class="daddy">Personalización para Infantil y Primaria</a>
+   <ul class="other-section">
+      <li><a href="instalacin_infantil_y_primaria.html" class="no-ch">Instalación infantil y primaria</a></li>
+      <li><a href="firefox_en_escritorio.html" class="no-ch">Firefox en escritorio</a></li>
+      <li><a href="barra_superior.html" class="daddy">Barra superior</a>
+      <ul class="other-section">
+         <li><a href="gcompris.html" class="no-ch">GCompris</a></li>
+         <li><a href="childsplay.html" class="no-ch">Childsplay</a></li>
+         <li><a href="omnitux.html" class="no-ch">Omnitux</a></li>
+         <li><a href="pysycache.html" class="no-ch">PySyCache</a></li>
+         <li><a href="pysiogame.html" class="no-ch">pySioGame</a></li>
+         <li><a href="khangman.html" class="no-ch">KhangMan</a></li>
+         <li><a href="tuxtyping.html" class="no-ch">TuxTyping</a></li>
+         <li><a href="tuxmath.html" class="no-ch">TuxMath</a></li>
+         <li><a href="seor_patata.html" class="no-ch">Señor Patata</a></li>
+         <li><a href="tux_paint.html" class="no-ch">Tux Paint</a></li>
+         <li><a href="pinta.html" class="no-ch">PInta</a></li>
+         <li><a href="scratch.html" class="no-ch">Scratch</a></li>
+      </ul>
+      </li>
+      <li><a href="otros_programas_aadidos.html" class="daddy">Otros programas añadidos</a>
+      <ul class="other-section">
+         <li><a href="klettres.html" class="no-ch">KLettres</a></li>
+         <li><a href="plopp.html" class="no-ch">Plopp</a></li>
+         <li><a href="marble.html" class="no-ch">Marble</a></li>
+         <li><a href="kgeography.html" class="no-ch">KGeography</a></li>
+         <li><a href="ajedrez.html" class="no-ch">Ajedrez</a></li>
+         <li><a href="blinken.html" class="no-ch">Blinken</a></li>
+         <li><a href="frozenbubble.html" class="no-ch">Frozen-Bubble</a></li>
+         <li><a href="cinco_o_ms.html" class="no-ch">Cinco o más</a></li>
+         <li><a href="cuatro_en_raya.html" class="no-ch">Cuatro en raya</a></li>
+         <li><a href="hitori.html" class="no-ch">Hitori</a></li>
+         <li><a href="iagno.html" class="no-ch">Iagno</a></li>
+         <li><a href="klotski.html" class="no-ch">Klotski</a></li>
+         <li><a href="mahjongg.html" class="no-ch">Mahjongg</a></li>
+         <li><a href="minas.html" class="no-ch">Minas</a></li>
+         <li><a href="nibbles.html" class="no-ch">Nibbles</a></li>
+         <li><a href="quadrapassel.html" class="no-ch">Quadrapassel</a></li>
+         <li><a href="rili.html" class="no-ch">Ri-li</a></li>
+         <li><a href="robots.html" class="no-ch">Robots</a></li>
+         <li><a href="solitario.html" class="no-ch">Solitario</a></li>
+         <li><a href="sudoku.html" class="no-ch">Sudoku</a></li>
+         <li><a href="swell_foop.html" class="no-ch">Swell Foop</a></li>
+         <li><a href="tali.html" class="no-ch">Tali</a></li>
+         <li><a href="tetravex.html" class="no-ch">Tetravex</a></li>
+      </ul>
+      </li>
+      <li><a href="fuentes_tipogrficas.html" class="no-ch">Fuentes tipográficas</a></li>
+      <li><a href="aplicaciones_por_contenidos_y_tareas.html" class="no-ch">Aplicaciones por contenidos y tareas</a></li>
+      <li><a href="documentos_y_experiencias.html" class="no-ch">Documentos y experiencias</a></li>
+   </ul>
+   </li>
+   <li><a href="para_saber_ms.html" class="no-ch">Para saber más</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="requisitos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="equipos_con_bios_uefi_windows_8_y_10.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">El arranque y la BIOS</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id42">
+<div class="iDevice emphasis0">
+<div id="ta42_239" class="block iDevice_content">
+<p>En este apartado se mostrará cómo cambiar la configuración del ordenador para que, si hay un DVD arrancable metido en su lector de CD/DVD, arranque directamente desde este medio en vez de hacerlo desde el disco duro del ordenador. Esto se denomina cambiar la secuencia de arranque del ordenador.</p>
+<p>Debido al gran número de modelos de placas base y BIOS disponibles en los diferentes modelos y tipos de ordenadores, es imposible abarcarlos todos en un documento de este tipo, y por ello se dará una guía de pasos genéricos. Para más detalles sobre como configurar la secuencia de arranque en su BIOS concreta, revise el manual de su ordenador.</p>
+<p>El primer paso es encender el ordenador, o reiniciarlo si ya estuviera encendido. Justo unos segundos después del encendido se debe pulsar la tecla para ejecutar el menú de arranque (Boot Menu) si existiera, o en caso contrario entrar dentro de la configuración de la BIOS (ejemplos de teclas son: &lt;Esc&gt;, &lt;F10&gt;, &lt;F12&gt;, &lt;F8&gt;, &lt;F2&gt;, &lt;Supr&gt;, &lt;Del&gt;). En muchos modelos indicará la tecla que hay que pulsar en un mensaje en inglés en la parte inferior de la pantalla durante los primeros segundos del arranque.</p>
+<div class="exe-figure exe-image position-center" style="width: 501px;"><img src="fig_01.png" width="501" height="375" />
+<div class="figcaption"><span class="title"><em>Pantalla de arranque y de acceso a la BIOS</em></span></div>
+</div>
+<p>En el ejemplo de la figura anterior, se observa que puede accederse al menú de arranque sin necesidad de entrar en la BIOS, pulsando la tecla &lt;ESC&gt;, algo que empieza a ser habitual en los ordenadores modernos. Con esta opción saldrá en medio de la pantalla una lista de dispositivos y bastará elegir el DVD o pendrive con <strong>MAX 9.0</strong> para que inicie el arranque.</p>
+<p>Si su ordenador no dispone de dicho menú de arranque, al entrar dentro de la BIOS (en el ejemplo la entrada en la BIOS se realiza pulsando la tecla &lt;F2&gt;, pero puede cambiar según el modelo de ordenador) deberá buscar el apartado donde se configura la secuencia de arranque del ordenador. Cambie la secuencia (con las operaciones necesarias mostradas en el manual de su placa base) para que el lector de CD/DVD se coloque antes del disco duro, tal como se muestra en la figura siguiente:</p>
+<div class="exe-figure exe-image position-center" style="width: 501px;"><img alt="Fig02" src="fig_02.png" width="500" height="387" />
+<div class="figcaption"><span class="title"><em>Pantalla que permite cambiar la secuencia de arranque</em></span></div>
+</div>
+<p>Una vez configurada la secuencia de arranque, tendrá que guardar la nueva configuración seleccionando el apartado, o pulsación de teclas, que permita salvar los datos de la configuración, tal como se muestra en la figura siguiente:</p>
+<div class="exe-figure exe-image position-center" style="width: 501px;"><img alt="Fig 03" src="fig_03.png" width="500" height="372" />
+<div class="figcaption"><span class="title"><em>Opción de salir y guardar los datos de la configuración</em></span></div>
+</div>
+<p>A continuación se le pedirá la confirmación de que desea salir y guardar los datos, y para ello pulse la tecla &lt;Intro&gt; en la opción YES, tal como se muestra en la figura siguiente:</p>
+<div class="exe-figure exe-image position-center" style="width: 501px;"><img alt="Fig04" src="fig_04.png" width="500" height="380" />
+<div class="figcaption"><span class="title"><em>Ejemplo de la confirmación de la salida de la BIOS</em></span></div>
+</div>
+<p>El ordenador se reiniciará en ese momento, asegúrese de que el DVD de <strong>MAX 9.0</strong> está metido en el lector de CD/DVD, si no es así el ordenador arrancará desde el disco duro. Cuando pueda introduzca el DVD <strong></strong> y reinicie el ordenador.</p>
+<h2>Opciones de Arranque desde el DVD</h2>
+<p>Si el arranque desde el DVD ha funcionado correctamente, debería poder ver una pantalla como la que se muestra a continuación:</p>
+<div class="exe-figure exe-image position-center" style="width: 600px;"><img alt="fig05" src="arranq01.png" width="636" height="477" />
+<div class="figcaption"><span class="title"><em>Menú de arranque desde el DVD de <strong>MAX</strong></em></span></div>
+</div>
+<p>Si no se pulsa ninguna tecla durante 30 segundos, el tiempo de espera configurado por defecto, se arrancará <strong>MAX</strong> con las opciones por defecto.</p>
+<p>A continuación se detallan las principales opciones y usos del menú de arranque del DVD:</p>
+<ul>
+<li><strong>Arrancar MAX 9</strong> (opción por defecto). Esta opción nos permitirá trabajar con el DVD Live e incluso instalar la distribución.</li>
+<li><strong>Instalar MAX 9 (sólo muestra el instalador)</strong>. Esta opción nos permitirá instalar directamente la distribución sin poder utilizar el equipo mientras se realiza.</li>
+<li><strong>Test de memoria</strong>: permite realizar una prueba de funcionamiento de la memoria RAM del ordenador, si el arranque de <strong>MAX</strong> falla, no dude en pasar esta prueba por si su memoria RAM está afectada y debe cambiarla.</li>
+<li><strong>Arrancar desde el primer disco duro</strong>: esta opción es la que debe escoger en el caso de que haya arrancado desde el DVD por error, no olvide retirar el DVD de MAX si no quiere que arranque desde el DVD.</li>
+</ul>
+<p>Al pulsar la tecla &lt;F4&gt; aparecerá un menú con opciones especiales de arranque que puede seleccionar si tiene problemas con la carga de <strong>MAX</strong> desde el DVD, tal como se muestra en la figura siguiente:</p>
+<div class="exe-figure exe-image position-center" style="width: 600px;"><img alt="fig06" src="arranq02.png" width="638" height="476" />
+<div class="figcaption"><span class="title"><em>Acceso a más opciones de arranque</em></span></div>
+</div>
+<p>Todas las teclas de función que permiten realizar diversas acciones se describen en la tabla siguiente:</p>
+<table align="center" border="2" cellpadding="3" cellspacing="3">
+<tbody>
+<tr>
+<td><strong>Tecla de función</strong></td>
+<td>
+<p align="CENTER"><strong>Acción realizada</strong></p>
+</td>
+</tr>
+<tr>
+<td><strong>F1 Ayuda</strong></td>
+<td>Describe las distintas teclas de función y la información u opciones que contienen.</td>
+</tr>
+<tr>
+<td><strong>F2 Idioma</strong></td>
+<td>Sólo muestra el idioma español, no hay disponibles otros idiomas.</td>
+</tr>
+<tr>
+<td><strong>F3 Teclado</strong></td>
+<td>Permite cambiar la configuración de teclado, de una manera similar a la de idioma. La configuración de teclado por defecto es la de <em><strong>español</strong></em>.</td>
+</tr>
+<tr>
+<td><strong>F4 Modos</strong></td>
+<td>Permite seleccionar opciones especiales de arranque.</td>
+</tr>
+<tr>
+<td><strong>F5 Accesibilidad</strong></td>
+<td>Permite cambiar el arranque de MAX para permitir que personas con minusvalías visuales puedan interactuar mejor con <strong>MAX</strong>.</td>
+</tr>
+<tr>
+<td><strong>F6 Otras opciones</strong></td>
+<td>Permite modificar los parámetros de arranque de <strong>MAX</strong> manualmente.</td>
+</tr>
+</tbody>
+</table>
+<p>Una vez configurado el arranque, resalte moviéndose con la teclas del cursor la opción que prefiera (normalmente <em><strong>Arrancar o instalar MAX</strong></em>) y pulse la tecla <strong>&lt;Intro&gt;</strong>, y entonces comenzará la carga del sistema operativo, tal como se muestra en la figura siguiente:</p>
+<div class="exe-figure exe-image position-center" style="width: 600px;"><img alt="fig 07" src="arranq03.png" width="712" height="395" />
+<div class="figcaption"><span class="title"><em>Carga del Sistema Operativo</em></span></div>
+</div>
+<p>A continuación se procederá a la carga de los todos los servicios y del entorno gráfico. Tenga paciencia, este proceso puede tardar varios minutos y depende de la memoria, la velocidad de su lector de DVD y de su procesador.<br /><br />Después de que termine el proceso de carga, arrancará el escritorio de <strong>MAX 9</strong>.</p>
+<div class="exe-figure exe-image position-center" style="width: 600px;"><img alt="fig08" src="arranq04.png" width="600" height="450" />
+<div class="figcaption"><span class="title"><em>El escritorio de <strong>MAX 9</strong></em></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="requisitos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="equipos_con_bios_uefi_windows_8_y_10.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_max_js.js"></script></body></html>
