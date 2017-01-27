@@ -90,13 +90,10 @@ dicc = {
     'instalacin_de_software.': 'intsoft.',
     'seleccin_de_usuarios': 'usersel',
     'el_instalador_de_max': 'instmax',
-    'usbs_y_otros_dispositivos.': 'usbdevs.',
-    'usbs_y_': 'usb',
     'configuracin_de_red': 'netconf',
     'terminales_ligeros_tcos': 'tcos',
     'seleccin_de_un_paquete_para_instalar': 'selpkg',
     'icon_objectives': 'iconobj',
-    'otros_dispositivos.': 'othedev.',
     'alojamiento_de_ficheros_en_la_red': 'netfile',
     'speedcrunch_calculator': 'sppedcrh',
     'barra_superior': 'topbar',
@@ -155,6 +152,16 @@ dicc = {
 
     'personalizacin.': 'perso.',
     'Thumbnail': 'tb',
+
+
+    # 'otros_dispositivos.': 'othedev.',
+    # 'usbs_y_otros_dispositivos.': 'usbdevs.',
+    # 'usbs_y_': 'usb',
+}
+
+dicc2 = {
+    'usbs_y_otros_dispositivos.html': 'usbsdev.html',
+    'otros_dispositivos.html': 'othdevs.html',
 }
 
 
@@ -162,6 +169,10 @@ def getName(name):
     for w in dicc:
         if w in name:
             name = name.replace(w, dicc[w])
+    #
+    for w in dicc2:
+        if w == name:
+            name = dicc2[w]
     return name
 
 
