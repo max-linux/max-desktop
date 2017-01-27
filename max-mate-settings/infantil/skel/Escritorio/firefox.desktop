@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0
+Name=Firefox Web Browser
+Name[es]=Navegador web Firefox
+Comment=Browse the World Wide Web
+Comment[es]=Navegue por la web
+GenericName=Web Browser
+GenericName[es]=Navegador web
+Exec=firefox http://www.educa2.madrid.org/web/max/personalizacion_infantil_primaria
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=firefox
+Categories=Application;Internet;Network;WebBrowser;
+StartupWMClass=Firefox
+StartupNotify=true

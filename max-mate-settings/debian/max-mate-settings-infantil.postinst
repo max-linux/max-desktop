@@ -17,6 +17,14 @@ for prof in $(find /home/*/ -maxdepth 1 -name .config 2>/dev/null); do
 done
 
 
+# install firefox in Desktop
+for desktop in $(find /home/ -maxdepth 2 -name Escritorio); do
+  home=$(dirname $desktop)
+  username=$(basename $home)
+  cp /etc/skel/Escritorio/firefox.desktop $desktop/
+  chown -R $username $desktop/firefox.desktop || true
+done
+
 
 
 #DEBHELPER#
