@@ -1,3 +1,9 @@
+max-skel-conf (9.0.max12) max; urgency=medium
+
+  * Fix mscore launcher, close #848
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 28 Jan 2017 15:20:05 +0100
+
 max-skel-conf (9.0.max11) max; urgency=medium
 
   * Configure sudo to empty $HOME var
