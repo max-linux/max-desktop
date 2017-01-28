@@ -42,9 +42,17 @@ if [ "$PROXY" != "" ]; then
 fi
 
 rm -f $CHROOT/etc/apt/preferences.d/max-genlive
-for p in $(grep -v -e ^# -e "^$" $GENLIVE/blacklist.pkgs); do
-  echo -e "Package: $p\nPin: release *\nPin-Priority: -100\n\n" >> $CHROOT/etc/apt/preferences.d/max-genlive
+
+# include all blacklist packages ex:  max.blacklist
+for blkf in $(find ${PKGSDIR}/ -name "*.blacklist" -type f); do
+  echo " * Blacklist file ${blkf}"
+  for p in $(grep -v -e ^# -e "^$" ${blkf}); do
+    echo "   - Blacklist package ${p} in DVD live"
+    echo -e "Package: ${p}\nPin: release *\nPin-Priority: -100\n\n" >> $CHROOT/etc/apt/preferences.d/max-genlive
+  done
 done
+
+
 
 
 if [ "$(file $CHROOT/usr/bin/apt-get | grep -c "ELF 64-bit")" = "1" ]; then

@@ -109,6 +109,7 @@ ISO_FILE="${IMAGE_NAME}-DVDlive-$ARCH-${stamp}.iso"
 _echo "Generando ${ISO_FILE}"
 
 # montar chroot 
+umount $CHROOT/mnt 2>/dev/null || true
 mount -o bind $CHROOT/../ $CHROOT/mnt
 
 #debian-live
@@ -119,24 +120,51 @@ mount -o bind $CHROOT/../ $CHROOT/mnt
 #isohybrid  binary.hybrid.iso
 
 
+
 if [ "$ARCH" = "amd64" ]; then
-  chroot $CHROOT genisoimage -U -A "$TITLE (${ARCH})" -V "$TITLE (${ARCH})" \
-     -J -joliet-long -r -v -T -cache-inodes -l -b isolinux/isolinux.bin \
-     -volset "$TITLE (${ARCH})" \
-     -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
-     -boot-info-table -o /mnt/${ISO_FILE} \
-     -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot \
-     /mnt/cdimage.${ARCH}/ || _exit "Error generando la imagen ISO"
+
+#  chroot $CHROOT genisoimage -U -A "$TITLE (${ARCH})" -V "$TITLE (${ARCH})" \
+#     -J -joliet-long -r -v -T -cache-inodes -l -b isolinux/isolinux.bin \
+#     -volset "$TITLE (${ARCH})" \
+#     -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
+#     -boot-info-table -o /mnt/${ISO_FILE} \
+#     -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot \
+#     /mnt/cdimage.${ARCH}/ || _exit "Error generando la imagen ISO"
+#
+#
+#     _echo " Generando isohybrid ... "
+#     chroot $CHROOT isohybrid -u /mnt/${ISO_FILE}
+
+  chroot $CHROOT xorriso \
+           -as mkisofs \
+           -volid "${MAX_VOLID}_${ARCH}" \
+           -appid "$TITLE ${ARCH}" \
+           -o /mnt/${ISO_FILE} \
+           -rock -omit-version-number -disable-deep-relocation -joliet \
+           -isohybrid-mbr /usr/lib/ISOLINUX/isohdpfx.bin \
+           -c isolinux/boot.cat \
+           -b isolinux/isolinux.bin \
+           -no-emul-boot -boot-load-size 4 -boot-info-table \
+           -eltorito-alt-boot \
+           -e boot/grub/efi.img \
+           -no-emul-boot \
+           -isohybrid-gpt-basdat \
+           -isohybrid-apm-hfsplus \
+           /mnt/cdimage.${ARCH} || _exit "Error generando la imagen ISO"
+
 else
   chroot $CHROOT genisoimage -r -V "$TITLE (${ARCH})" -cache-inodes -J -l -b isolinux/isolinux.bin \
      -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
      -boot-info-table -o /mnt/${ISO_FILE} /mnt/cdimage.${ARCH}/ || _exit "Error generando la imagen ISO"
+
+     _echo " Generando isohybrid ... "
+     chroot $CHROOT isohybrid /mnt/${ISO_FILE}
 fi
 
-_echo " Generando isohybrid ... "
-chroot $CHROOT isohybrid /mnt/${ISO_FILE}
 
 umount $CHROOT/mnt
+
+_echo "Tamaño Archivo ISO: `du -h ${ISO_FILE}`"
 
 
 #genisoimage -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \

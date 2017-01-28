@@ -14,12 +14,16 @@ elif [ "$1" = "i386" ]; then
   exit 0
 fi
 
+stamp=$(date '+%Y%m%d_%H%M')
+created=$(date '+%Y%m%d')
+
 
 DISTRO=xenial
 DISTRO_VERSION="16.04"
 ARCH=i386
 NANOARCH=i386
-MAX_VERSION="9.0-beta2"
+MAX_VERSION="9.0-final"
+MAX_VOLID="MAX_90_${created}"
 IMAGE_NAME="MaX-${MAX_VERSION}"
 LINUX_IMAGE="max-linux"
 LINUX_HEADERS="max-linux-headers"
@@ -38,9 +42,6 @@ unset HOME
 export LC_ALL=C
 export LANG=C
 
-
-stamp=$(date '+%Y%m%d_%H%M')
-created=$(date '+%Y%m%d')
 
 if [ "$MIRROR" = "" ]; then
   MIRROR=127.0.0.1
@@ -97,32 +98,29 @@ NANOMAX=$CDRW/nanomax
 #MKSQUASHFS=/usr/local/bin/mksquashfs
 MKSQUASHFS=/usr/bin/mksquashfs
 
-PAQUETES_EXTRA_MAIN="b43-fwcutter build-essential dpkg-dev fakeroot g++ capiutils ipppd "
-PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN linux-wlan-ng localechooser-data lupin-support mouseemu "
-PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN patch pptp-linux setserial"
-if [ "$ARCH" = "amd64" ]; then
-  PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN efibootmgr grub-efi grub-efi-amd64 grub-efi-amd64-bin grub-efi-amd64-signed secureboot-db shim shim-signed"
-fi
-
-#PAQUETES_EXTRA_RESTRICTED="drdsl"
-PAQUETES_EXTRA_RESTRICTED="virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms"
-#PAQUETES_EXTRA_RESTRICTED="$PAQUETES_EXTRA_RESTRICTED nvidia-current nvidia-settings"
-
-PAQUETES_INFANTIL="max-desktop-infantil-primaria max-infantil"
-
-PAQUETES_EXTRA="tcos max-alumno max-profesor max-terminales"
-PAQUETES_EXTRA="$PAQUETES_EXTRA max-tcos-alumno max-tcos-profesor"
-PAQUETES_EXTRA="$PAQUETES_EXTRA linux-wlan-ng-firmware max-desktop-infantil-primaria max-infantil"
-
-
 
 NEW_ISOLINUX=${BASE}/usr/share/max-genlive/isolinux
 GENLIVE=${BASE}/usr/share/max-genlive
+PKGSDIR=${GENLIVE}/pkgs
 APT_OPTS="-y --force-yes -o Dpkg::Options::=\"--force-confnew\""
 HOOKS=${BASE}/usr/share/max-genlive/hooks/
-
-
 MY_NAME=$(basename $0)
+
+
+
+# include all dvd package list
+for f in $(find ${PKGSDIR}/ -name "*.dvdlist" -type f); do
+  echo " * Include $f for DVD repo packages"
+  . ${f}
+done
+
+
+# include all dvd package list *.livelist
+for f in $(find ${PKGSDIR}/ -name "*.livelist" -type f); do
+  echo " * Include $f for DVD live packages"
+  . ${f}
+done
+
 
 
 ayuda() {

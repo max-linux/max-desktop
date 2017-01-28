@@ -57,33 +57,6 @@ EOC
 
 
 
-
-#UBUNTU_PACKAGES="deskbar-applet dkms gnome-netstatus-applet gnome-spell "
-#UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnome-themes gnome-volume-manager gnupg-agent gparted gpgsm gtk-qt-engine "
-
-UBUNTU_PACKAGES="$LINUX_IMAGE $XSERVER_XORG dkms"
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES gnupg-agent gparted"
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES ispanish ispell jfsutils language-pack-gnome-es language-pack-gnome-es-base"
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES mdetect openssl-blacklist"
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES util-linux-locales valgrind xfsprogs"
-UBUNTU_PACKAGES="$UBUNTU_PACKAGES network-manager-openvpn network-manager-vpnc network-manager-pptp"
-
-#_echo "Instalando ubuntu-desktop"
-#
-#chroot $CHROOT << EOC || _exit "No se ha podido instalar ubuntu-desktop"
-#export LC_ALL=C
-#export LC_MESSAGES=C
-#export DEBCONF_FRONTEND="noninteractive"
-#export DEBIAN_FRONTEND="noninteractive"
-#export UCF_FORCE_CONFFOLD=1
-#export ERROR=0
-#apt-get $APT_OPTS install $UBUNTU_PACKAGES ubuntu-minimal ubuntu-desktop ubuntu-standard || ERROR=1
-#apt-get $APT_OPTS install $UBUNTU_PACKAGES || ERROR=1
-#apt-get clean
-#exit \$ERROR
-#EOC
-
-
 _echo "Instalando MAX MATE base"
 
 chroot $CHROOT << EOC || _exit "No se ha podido instalar max-mate-desktop"
@@ -98,27 +71,6 @@ apt-get $APT_OPTS install ubuntu-minimal max-mate-desktop max-mate-core  || ERRO
 apt-get clean
 exit \$ERROR
 EOC
-
-
-#LIVE_PACKAGES="casper ubiquity ubiquity-casper ubiquity-frontend-gtk ubiquity-ubuntu-artwork"
-LIVE_PACKAGES="casper ubiquity ubiquity-casper ubiquity-frontend-gtk ubiquity-slideshow-max max-live"
-
-#_echo "Instalando linux-image=$LINUX_IMAGE"
-#
-#chroot $CHROOT << EOC || _exit "No se ha podido instalar $LINUX_IMAGE"
-#export LC_ALL=C
-#export LC_MESSAGES=C
-#export DEBCONF_FRONTEND="noninteractive"
-#export DEBIAN_FRONTEND="noninteractive"
-#export UCF_FORCE_CONFFOLD=1
-#export ERROR=0
-#dpkg --configure -a
-#apt-get $APT_OPTS -f install
-#apt-get $APT_OPTS install $LIVE_PACKAGES || ERROR=1
-#apt-get $APT_OPTS install $LINUX_IMAGE $LINUX_HEADERS || ERROR=1
-#apt-get clean
-#exit \$ERROR
-#EOC
 
 
 
