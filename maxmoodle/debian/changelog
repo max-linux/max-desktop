@@ -1,3 +1,9 @@
+maxmoodle (9.0.max6) max; urgency=medium
+
+  * Add systemd less timeout for MySQL server, close #807
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 28 Jan 2017 15:13:35 +0100
+
 maxmoodle (9.0.max5) max; urgency=medium
 
   * Fix dbuser->dbname and chown /var/lib/moodle to www-data
