@@ -51,6 +51,13 @@ dicc = {
     'alumnos_comparten_informacin': 'pupshare',
     'synapse_lanzador_de_aplicaciones_y_documentos': 'synapse',
 
+    'exe_media_loading': 'exeml',
+    'exe_media_background': 'exemb',
+    'exe_media_flashPlayer': 'exemfl',
+    'exe_media_controls': 'exemc',
+    'exe_media_bigplay': 'exembp',
+    'exe_media_silverlightPlayer': 'exemslv',
+
     'exe_lightbox_sprite_prev.': 'exesptp.',
     'exe_lightbox_sprite_next.': 'exesptn.',
     'exe_lightbox_sprite_y.': 'exespty.',
