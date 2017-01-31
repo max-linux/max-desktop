@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# Start MySQL and Apache2 if not started
+#
+#
+#
+is_enabled() {
+  systemctl is-enabled ${1} 2>/dev/null
+}
+
+
+MYSQL=$(systemctl status mysql     >/dev/null 2>&1 ; echo $?)
+APACHE2=$(systemctl status apache2 >/dev/null 2>&1 ; echo $?)
+
+if [ "$MYSQL" != "0" ] || [ "$APACHE2" != "0" ]; then
+  (gksudo systemctl restart mysql && \
+   gksudo systemctl restart apache2 ) | zenity --progress --pulsate --auto-close --text="Arrancando moodle"
+
+fi
+
+MYSQL_ENABLED=$(is_enabled mysql)
+APACHE_ENABLED=$(is_enabled apache2)
+
+if [ "$MYSQL_ENABLED" != "enabled" ] || [ "$APACHE_ENABLED" != "enabled" ]; then
+  zenity --question --text="¿Desea que se inicie Moodle automáticamente?" && \
+    (gksudo systemctl enable mysql && gksudo systemctl enable apache2) | \
+    zenity --progress --pulsate --auto-close --text="Activando arranque por defecto"
+fi
+
+
+firefox http://127.0.0.1/moodle/?lang=es

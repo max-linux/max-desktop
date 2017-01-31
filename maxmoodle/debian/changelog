@@ -1,3 +1,10 @@
+maxmoodle (9.0.max7) max; urgency=medium
+
+  * Start MySQL and Apache2 if not avalaible and ask to enable if
+    disabled
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 31 Jan 2017 19:31:01 +0100
+
 maxmoodle (9.0.max6) max; urgency=medium
 
   * Add systemd less timeout for MySQL server, close #807
