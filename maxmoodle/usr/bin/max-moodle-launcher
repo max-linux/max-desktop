@@ -14,18 +14,21 @@ APACHE2=$(systemctl status apache2 >/dev/null 2>&1 ; echo $?)
 
 if [ "$MYSQL" != "0" ] || [ "$APACHE2" != "0" ]; then
   (gksudo systemctl restart mysql && \
-   gksudo systemctl restart apache2 ) | zenity --progress --pulsate --auto-close --text="Arrancando moodle"
+   gksudo systemctl restart apache2 ) | zenity --progress --pulsate --auto-close --text="Iniciando moodle..."
 
 fi
 
-MYSQL_ENABLED=$(is_enabled mysql)
-APACHE_ENABLED=$(is_enabled apache2)
 
-if [ "$MYSQL_ENABLED" != "enabled" ] || [ "$APACHE_ENABLED" != "enabled" ]; then
-  zenity --question --text="¿Desea que se inicie Moodle automáticamente?" && \
-    (gksudo systemctl enable mysql && gksudo systemctl enable apache2) | \
-    zenity --progress --pulsate --auto-close --text="Activando arranque por defecto"
+if [ ! -e "/cdrom/casper" ]; then
+  MYSQL_ENABLED=$(is_enabled mysql)
+  APACHE_ENABLED=$(is_enabled apache2)
+
+  # we are not in live
+  if [ "$MYSQL_ENABLED" != "enabled" ] || [ "$APACHE_ENABLED" != "enabled" ]; then
+    zenity --question --text="¿Desea que se inicie Moodle automáticamente?" && \
+      (gksudo systemctl enable mysql && gksudo systemctl enable apache2) | \
+      zenity --progress --pulsate --auto-close --text="Activando arranque por defecto..."
+  fi
 fi
-
 
 firefox http://127.0.0.1/moodle/?lang=es

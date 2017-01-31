@@ -1,3 +1,9 @@
+maxmoodle (9.0.max8) max; urgency=medium
+
+  * Only try to enable MySQl and Apache in installed MAx, not live
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 31 Jan 2017 21:34:14 +0100
+
 maxmoodle (9.0.max7) max; urgency=medium
 
   * Start MySQL and Apache2 if not avalaible and ask to enable if
