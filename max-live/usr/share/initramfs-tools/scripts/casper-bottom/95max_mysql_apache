@@ -1,0 +1,33 @@
+#!/bin/sh
+
+PREREQ=""
+DESCRIPTION="Disable MySQL and Apache2 in LOW memory..."
+
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+. /scripts/casper-functions
+
+log_begin_msg "$DESCRIPTION"
+
+LOW_RAM=$(grep "MemTotal" /proc/meminfo | awk '{print $2/1024 < 2048}')
+
+if [ "$LOW_RAM" = "1" ]; then
+  # less than 2 GB
+  # disable MySQL and Apache2
+  chroot /root systemctl disable mysql
+  chroot /root systemctl disable apache2
+fi
+
+log_end_msg

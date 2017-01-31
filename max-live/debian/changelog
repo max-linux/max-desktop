@@ -1,3 +1,9 @@
+max-live (9.0.max2) max; urgency=medium
+
+  * Add script to disable MySQl and Apache2 in low RAM systems (< 2 GB)
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 31 Jan 2017 19:41:57 +0100
+
 max-live (9.0.max1) max; urgency=medium
 
   * Build in MAX 9.0
