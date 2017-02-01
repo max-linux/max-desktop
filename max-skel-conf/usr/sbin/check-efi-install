@@ -109,4 +109,8 @@ fi
 
 update-grub
 
+# fix for USB install
+killall grub-mount 2>/dev/null
+
+
 echo " * Done"

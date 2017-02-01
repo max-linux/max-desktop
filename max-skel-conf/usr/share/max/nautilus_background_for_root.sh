@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# disable in live
+if [ -d "/cdrom" ]; then
+  if [ ! -d "/cdrom/casper" ]; then
+    echo " * Detect chroot not configuring nautilus_background_for_root"
+    exit
+  fi
+fi
+
 # set background color to red
 mkdir -p /root/config/.dconf
 HOME=/root dbus-launch gsettings set org.mate.caja.preferences background-color "'#AD3841'"
