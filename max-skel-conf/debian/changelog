@@ -1,3 +1,9 @@
+max-skel-conf (9.0.max16) max; urgency=medium
+
+  * Create /etc/libuser.conf if no exists, close #852
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 05 Feb 2017 15:13:00 +0100
+
 max-skel-conf (9.0.max15) max; urgency=medium
 
   * Fix os-probes/mounted/35detect_max

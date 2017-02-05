@@ -171,3 +171,6 @@ if ! grep -q "run_im none" /etc/X11/xinit/xinputrc; then
   im-config -n none
 fi
 
+
+# fix for system-config-samba
+[ ! -e /etc/libuser.conf ] && touch /etc/libuser.conf
