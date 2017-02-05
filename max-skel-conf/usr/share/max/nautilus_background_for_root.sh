@@ -1,11 +1,16 @@
 #!/bin/sh
 
 # disable in live
-if [ -d "/cdrom" ]; then
-  if [ ! -d "/cdrom/casper" ]; then
-    echo " * Detect chroot not configuring nautilus_background_for_root"
-    exit
-  fi
+#if [ -d "/cdrom" ]; then
+#  if [ ! -d "/cdrom/casper" ]; then
+#    echo " * Detect chroot not configuring nautilus_background_for_root"
+#    exit
+#  fi
+#fi
+
+if grep -q "/cdrom" /proc/1/mounts; then
+  echo " * Detect chroot not configuring nautilus_background_for_root"
+  exit
 fi
 
 # set background color to red

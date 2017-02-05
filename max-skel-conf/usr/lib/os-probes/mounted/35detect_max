@@ -8,6 +8,19 @@ partition="$1"
 dir="$2"
 type="$3"
 
+disk=$(echo ${partition}| cut -c1-8)
+if grep -q "^${disk} /cdrom" /proc/1/mounts; then
+  # its a USB live, don't use/mount
+  logger -t 35detect_max "${partition} in ${disk} is mounted as /cdrom ignoring ..."
+  exit 1
+fi
+
+if [ "$dir/etc/apt/apt.conf.d/92max-update-post-inst" ]; then
+  logger -t 35detect_max "No /etc/apt/apt.conf.d/92max-update-post-inst file in ${partition}"
+  exit 1
+fi
+
+
 if [ -f "$dir/boot/grub/menu.lst" ]; then
   first_entry=$(grep ^title "$dir/boot/grub/menu.lst" | grep kernel | head -1 | sed 's/title//g' | sed 's|\t||g')
   if [ "$(echo $first_entry | grep -c -i max)" != "0" ]; then

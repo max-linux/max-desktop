@@ -1,3 +1,17 @@
+max-skel-conf (9.0.max15) max; urgency=medium
+
+  * Fix os-probes/mounted/35detect_max
+  * Fix chroot detect in nautilus_background_for_root.sh
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 05 Feb 2017 14:18:18 +0100
+
+max-skel-conf (9.0.max14) max; urgency=medium
+
+  * os-probes/mounted/35detect_max: no detect live USB as linux
+    installed device
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 05 Feb 2017 12:38:12 +0100
+
 max-skel-conf (9.0.max13) max; urgency=medium
 
   * Fix USB install, don't run nautilus_background_for_root in chroot
