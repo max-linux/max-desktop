@@ -15,10 +15,10 @@ if grep -q "^${disk} /cdrom" /proc/1/mounts; then
   exit 1
 fi
 
-if [ "$dir/etc/apt/apt.conf.d/92max-update-post-inst" ]; then
-  logger -t 35detect_max "No /etc/apt/apt.conf.d/92max-update-post-inst file in ${partition}"
-  exit 1
-fi
+#if [ "$dir/etc/apt/apt.conf.d/92max-update-post-inst" ]; then
+#  logger -t 35detect_max "No /etc/apt/apt.conf.d/92max-update-post-inst file in ${partition}"
+#  exit 1
+#fi
 
 
 if [ -f "$dir/boot/grub/menu.lst" ]; then

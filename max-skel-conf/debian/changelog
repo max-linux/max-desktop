@@ -1,3 +1,9 @@
+max-skel-conf (9.0.max17) max; urgency=medium
+
+  * Disable /etc/apt/apt.conf.d/92max-update-post-inst test is os-prober
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 06 Feb 2017 19:18:23 +0100
+
 max-skel-conf (9.0.max16) max; urgency=medium
 
   * Create /etc/libuser.conf if no exists, close #852
