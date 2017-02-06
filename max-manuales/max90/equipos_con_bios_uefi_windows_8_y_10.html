@@ -311,10 +311,51 @@ li {margin-bottom:10px;margin-top:10px;}
 <li>Abrir el administrador de discos (buscar por particiones, o con botón derecho encima de Equipo y opción "Administrar") y redimensionar la partición con más espacio para crear un hueco de al menos 20 GB para <strong>MAX 9</strong>. Al pulsar con el botón derecho sobre la partición y redimensionar, seleccionar el espacio a reducir.</li>
 <li>Reiniciar el equipo para arrancar con el DVD o pendrive de <strong>MAX 9 64 bits</strong> (<strong>MAX 9 32 bits</strong> no es compatible con UEFI) El arranque desde DVD o pendrive se puede controlar desde la BIOS o con la tecla de menú de arranque (Boot menu) descrito en apartados anteriores.</li>
 </ol></li>
-<li>Asegurar que <strong>MAX</strong> arranca en modo <strong>UEFI</strong>, el primer menú de selección aparece con el<strong> fondo de pantalla en negro</strong> en vez de azul, ninguna imagen de fondo y con las opciones de "<strong>Arrancar MAX 9.x UEFI</strong>" e "<strong>Instalar MAX 9.x UEFI</strong>". Si no fuera el caso, mirar si en el menú de arranque aparece el dispositivo (DVD o USB) dos veces, una en modo uefi y otra no, o en BIOS desactivar totalmente el modo BIOS PC  (opción Legacy o CSM desactivada).<br /><br /><img style="display: block; margin-left: auto; margin-right: auto;" src="inuefim9.png" alt="Grub de MAX en modo UEFI" title="Grub de MAX en modo UEFI" width="800" height="600" /></li>
-<li>A partir de aquí se lanzará el instalador de <strong>MAX</strong>, cuyo funcionamiento se describe en la <a marked="1" href="el_instalador_de_max.html">siguiente sección</a>, y cuando propone varias opciones de instalación, <strong>seleccionar "Más opciones".</strong><br /><ol>
+<li>Asegurar que <strong>MAX</strong> arranca en modo <strong>UEFI</strong>, el primer menú de selección aparece con el<strong> fondo de pantalla en negro</strong> en vez de azul, ninguna imagen de fondo y con las opciones de "<strong>Arrancar MAX 9.x UEFI</strong>" e "<strong>Instalar MAX 9.x UEFI</strong>". Si no fuera el caso, mirar si en el menú de arranque aparece el dispositivo (DVD o USB) dos veces, una en modo UEFI y otra no, o en BIOS desactivar totalmente el modo BIOS PC  (opción Legacy o CSM desactivada).<br /><br />
+<div class="exe-figure exe-image position-center" style="width: 800px;"><img src="inuefim9.png" alt="Grub de MAX en modo UEFI" title="Grub de MAX en modo UEFI" width="700" height="525" />
+<div class="figcaption"><span class="title"><em>Grub de MAX en modo UEFI</em></span></div>
+</div>
+</li>
+<li>A partir de aquí se lanzará el instalador de <strong>MAX</strong>, cuyo funcionamiento se describe en la <a marked="1" href="el_instalador_de_max.html">siguiente sección</a>, y cuando propone varias opciones de instalación, seleccionar<strong> "Más opciones" </strong>y en el asistente nos aparecerá un listado de la aprticones existentes, tal como se muestra en la figura siguiente:<br />
+<div class="exe-figure exe-image position-center" style="width: 600px;"><img src="p_uefi.png" width="600" height="383" />
+<div class="figcaption"><span class="title"><em>Listado de particiones</em></span></div>
+</div>
+La imagen anterior corresponde a un ejemplo de particiones que el asistente de instalación muestra en un equipo con Windows instalado en modo <strong>UEFI</strong>. Las particiones son las siguientes:<br />
+<table cellspacing="2" cellpadding="2" border="1" align="center"><caption></caption>
+<tbody>
+<tr>
+<td>sda1</td>
+<td>es la partición EFI que se creó cuando se instaló Windows y es la misma que se utilizará para instalar los ficheros de arranque de MAX. En una instalación UEFI es obligatorio que exista esta partición, por lo que en otros casos si observamos que no existe se debe crear.</td>
+</tr>
+<tr>
+<td>sda2</td>
+<td>es una partición reservada por Windows. Puede no existir en otros casos.</td>
+</tr>
+<tr>
+<td>sda3</td>
+<td>es la partición de Windows.</td>
+</tr>
+<tr>
+<td>sda4</td>
+<td>es una partición de datos. También es opcional y puede no existir en otros casos.</td>
+</tr>
+<tr>
+<td>sda5</td>
+<td>es la partición donde se va a instalar MAX. Esta partición no existía, se ha creado con el propio asistente, para lo cual antes se ha tenido que reservar espacio en del disco.</td>
+</tr>
+<tr>
+<td>sda6</td>
+<td>es la partición "swap" o área de intercambio para linux. Esta partición también se ha creado con el asistente pero en equipos con bastante memoria se puede llegar a omitir.</td>
+</tr>
+<tr>
+<td>sdb</td>
+<td>corresponde a la memoria USB desde la que hemos iniciado la instalación.</td>
+</tr>
+</tbody>
+</table>
+<br /><ol>
 <li>Se debe seleccionar el hueco generado con la reducción de particiones y dar al botón + para especificar que cree una partición primaria en todo ese espacio, de tipo "sistema de ficheros ext4 transaccional" con punto de montaje "/" y formatearla. Opcionalmente puede no consumir todo el hueco y dejar espacio para crear una partición de intercambio (swap) con el mismo tamaño que la memoria RAM del equipo. No obstante en los equipos actuales con 4GB de RAM y más, no es necesario salvo para utilizar la opción de hibernación del equipo.</li>
-<li>Al dar a "Instalar ahora" dará un aviso si no ha seleccionado partición de intercambio, que puede ignorar.</li>
+<li>Al dar a "Instalar ahora" dará un aviso si no ha seleccionado partición de intercambio, que puede ignorar.<br /><br /><strong>NOTA</strong>: Una alternativa al asistente de instalación para crear las particiones de GNU/Linux es utilizar el gestor de particiones <strong>GParted</strong>.</li>
 </ol></li>
 <li>Al terminar la instalación y reiniciar el equipo debería aparecer el menú de arranque de <strong>MAX</strong> con la primera opción para arrancar <strong>MAX 9</strong> y la última para arrancar Windows. Si no fuera el caso consulte a continuación la resolución de problemas o los mensajes en los <a marked="1" target="_blank" title="Foros de MAX" href="http://foros.educa.madrid.org/viewforum.php?f=20&amp;sid=db77d17a8468dbab3ac1c3ed3ec41d8d">foros de MAX</a> a este respecto.</li>
 </ol>
