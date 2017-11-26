@@ -1,8 +1,9 @@
 build2/usr/lib/AutoFirma                        usr/lib/
 build2/usr/share/applications/afirma.desktop    usr/share/applications/
-build2/usr/share/AutoFirma/AutoFirma.png        usr/share/AutoFirma/
 build2/etc/firefox/pref/AutoFirma.js            etc/firefox/pref/
 build2/usr/bin/AutoFirma                        usr/bin/
 
+#build2/usr/share/AutoFirma/AutoFirma.png       usr/share/AutoFirma/
+build2/usr/share/AutoFirma/AutoFirma.svg        usr/share/AutoFirma/
 
 build2/scripts/                                 usr/lib/AutoFirma/
