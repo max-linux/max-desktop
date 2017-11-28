@@ -4,7 +4,9 @@
 
 if [ "$1" = "triggered" ]; then
     # launch trigger to mantain autofirma certs in firefox
-    /usr/lib/AutoFirma/scripts/autofirma-postinst || true
+    # /usr/lib/AutoFirma/scripts/autofirma-postinst || true
+    # be more silent
+    /usr/lib/AutoFirma/scripts/autofirma-postinst >/dev/null 2>&1 || true
    exit
 fi
 
