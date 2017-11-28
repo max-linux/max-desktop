@@ -3,7 +3,3 @@
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/rules/aa-debhelper.mk
 
-binary-install/max-firefox-conf::
-	# clean svn dirs
-	find $(CURDIR)/debian/max-firefox-conf -type d -empty | xargs rm -rf --
-

@@ -4,6 +4,9 @@ pref("extensions.blocklist.enabled",false);
 // evitar que deniegue conexiones seguras via proxy a partir de la versión 27 de firefox
 pref("security.tls.version.max",1);
 
+// allow old certificates github #889 https://github.com/max-linux/max-desktop/issues/889
+pref("security.tls.version.min",0);
+
 
 // disable PDF internal plugin
 // https://github.com/max-linux/max-desktop/issues/552
