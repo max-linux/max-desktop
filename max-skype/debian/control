@@ -35,9 +35,6 @@ Homepage: https://repo.skype.com
 
 Package: skypeforlinux
 Architecture: any
-Provides: skype
-Replaces: skype
-Breaks: skype
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Skype keeps the world talking, for free.
  Skype keeps you together. Call, message and share with others.
@@ -46,3 +43,11 @@ Description: Skype keeps the world talking, for free.
   * Easily text message anywhere in the world.
   * Get your friends together on a group call.
  And that's just the start...
+
+
+Package: skype
+Architecture: any
+Depends: skypeforlinux
+Description: Skype upgrade for MAX
+ Skype upgrade for MAX
+
