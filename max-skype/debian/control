@@ -44,16 +44,3 @@ Description: Skype keeps the world talking, for free.
   * Get your friends together on a group call.
  And that's just the start...
 
-
-Package: skype
-Architecture: any
-Depends: skypeforlinux
-Description: Skype upgrade for MAX
- Skype upgrade for MAX
-
-Package: skype-bin
-Architecture: any
-Depends: skypeforlinux
-Description: Skype upgrade for MAX
- Skype upgrade for MAX
-

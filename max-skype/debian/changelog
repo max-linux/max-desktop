@@ -1,3 +1,16 @@
+max-skype (1:8.12.76.7-max5) max; urgency=medium
+
+  * Switch skype and skype-bin to multiarch
+  * Add icons in skypeforlinux:i386
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 04 Dec 2017 10:28:04 +0100
+
+max-skype (1:8.12.76.7-max4) max; urgency=medium
+
+  * Switch upgrade packages to all
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 04 Dec 2017 10:15:09 +0100
+
 max-skype (1:8.12.76.7-max3) max; urgency=medium
 
   * Add skype-bin
