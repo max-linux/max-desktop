@@ -1,3 +1,9 @@
+max-menus (9.0.max2) max; urgency=medium
+
+  * Remove OnlyShow=unity in vino-server, close #876
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 04 Dec 2017 12:13:08 +0100
+
 max-menus (9.0.max1) max; urgency=medium
 
   * Build in MAX 9.0
