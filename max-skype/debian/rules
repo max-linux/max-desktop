@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+
+DH_VERBOSE=1
+
+VERSION=8.12.76.7
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+URL="https://repo.skype.com/deb/pool/main/s/skypeforlinux/skypeforlinux_$(VERSION)_amd64.deb"
+
+info:
+	@echo VERSION=$(VERSION)
+	@echo DEB_HOST_ARCH=$(DEB_HOST_ARCH)
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+override_dh_auto_build:
+	if [ $(DEB_HOST_ARCH) != "amd64" ]; then \
+		rm -rf build ;\
+		mkdir build; \
+		cp -ra x86/* build/ ;\
+	fi
+
+	if [ $(DEB_HOST_ARCH) = "amd64" ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) && dpkg -x *deb ./); \
+	fi
+
+override_dh_auto_install:
+	dh_install
+
