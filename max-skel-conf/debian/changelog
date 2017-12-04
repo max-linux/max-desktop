@@ -1,3 +1,9 @@
+max-skel-conf (9.0.max18) max; urgency=medium
+
+  * Update pysiogame profile => eduactiv8
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 04 Dec 2017 08:05:09 +0100
+
 max-skel-conf (9.0.max17) max; urgency=medium
 
   * Disable /etc/apt/apt.conf.d/92max-update-post-inst test is os-prober
