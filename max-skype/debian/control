@@ -51,3 +51,9 @@ Depends: skypeforlinux
 Description: Skype upgrade for MAX
  Skype upgrade for MAX
 
+Package: skype-bin
+Architecture: any
+Depends: skypeforlinux
+Description: Skype upgrade for MAX
+ Skype upgrade for MAX
+
