@@ -4,14 +4,10 @@
 BASEURL=http://localhost/remote-files
 
 ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
-ARCH=i386
-
 ifeq ($(ARCH), amd64)
-#	URL=$(BASEURL)/bitbloq-x64.zip
 	URL=$(BASEURL)/BitbloqOffline-linux.zip
 	LNX=linux
 else
-#	URL=$(BASEURL)/bitbloq-x32.zip
 	URL=$(BASEURL)/BitbloqOffline-linux32.zip
 	LNX=linux32
 endif
