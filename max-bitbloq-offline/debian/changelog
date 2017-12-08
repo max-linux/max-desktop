@@ -1,3 +1,10 @@
+max-bitbloq-offline (1.2.3.max1) max; urgency=medium
+
+  * New upstream version v1.2.3
+  * Fix web2boardLauncher params, close #880
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 08 Dec 2017 15:59:02 +0100
+
 max-bitbloq-offline (1.0.3.max3) max; urgency=medium
 
   * Launch web2boardLauncher with gksudo
