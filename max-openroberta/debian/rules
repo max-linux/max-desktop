@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+DH_VERBOSE=1
+
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+#URL="https://github.com/OpenRoberta/robertalab/releases/download/ORA-2.4.1/robertalab_binaries.zip"
+URL="http://localhost/remote-files/robertalab_binaries-2.4.1.zip"
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) && unzip *zip); \
+	fi
+
+override_dh_auto_install:
+	dh_install
+

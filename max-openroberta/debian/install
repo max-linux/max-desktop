@@ -1,0 +1,11 @@
+build/dbBase                                     usr/share/openroberta
+build/lib                                        usr/share/openroberta
+build/OpenRobertaParent                          usr/share/openroberta
+build/start-ora-server-and-db-server.sh          usr/share/openroberta
+build/start-ora-server-with-db-embedded.sh       usr/share/openroberta
+build/start-sql-client.sh                        usr/share/openroberta
+
+
+openroberta                 usr/bin/
+openroberta.desktop         usr/share/applications/
+openroberta.png             usr/share/pixmaps/

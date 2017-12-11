@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Open-Roberta (offline)
+Comment=Visual programing
+Terminal=false
+Type=Application
+TryExec=/usr/bin/openroberta
+Exec=/usr/bin/openroberta
+Icon=openroberta
+Categories=Development;

@@ -1,0 +1,23 @@
+Source: max-openroberta
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 7), wget
+Standards-Version: 3.8.3
+Homepage: https://github.com/OpenRoberta/robertalab
+
+
+Package: openroberta
+Architecture: all
+Depends: max-java-jre,
+         gcc-avr, avrdude, gcc, avr-libc,
+         nbc,
+         python-uflash,
+         ${shlibs:Depends}, ${misc:Depends}
+Description: Robots programming environment
+ The programming environment by Fraunhofer IAIS enables children
+ and adolescents to program robots.
+ A variety of different programming blocks are provided to program
+ motors and sensors of the robot.
+ Open Roberta Lab uses an approach of graphical programming so
+ that beginners can seamlessly start coding
