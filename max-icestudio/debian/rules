@@ -1,0 +1,48 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+VERSION=0.3.1
+
+#URL="https://github.com/FPGAwars/icestudio/releases/download/0.3.1/icestudio-0.3.1-linux32.zip"
+#URL="https://github.com/FPGAwars/icestudio/releases/download/0.3.1/icestudio-0.3.1-linux64.zip"
+
+ifeq ($(DEB_HOST_ARCH),i386)
+  PROC_ARCH=linux32
+  REMOVE=linux64
+else
+  PROC_ARCH=linux64
+  REMOVE=linux32
+endif
+
+URL="http://localhost/remote-files/icestudio-$(VERSION)-$(PROC_ARCH).zip"
+
+
+
+%:
+	dh $@ 
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) && unzip *.zip); \
+	fi
+
+	rm -f build/*.zip	
+	mv build/icestudio* build/icestudio
+
+	# extract icon
+	cp build/icestudio/resources/images/icestudio-logo.png build/icestudio.png
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+#override_dh_shlibdeps:
+#	dh_shlibdeps -Xusr/google/appinventor/commands-for-Appinventor/emulator64-x86 -Xusr/google/appinventor/commands-for-Appinventor/emulator64-mips -Xusr/google/appinventor/commands-for-Appinventor/emulator64-arm
+#
+#override_dh_strip:
+#	# do not strip, break executables

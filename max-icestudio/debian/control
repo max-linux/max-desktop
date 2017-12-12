@@ -1,0 +1,18 @@
+Source: max-icestudio
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 8.0.0), wget, unzip,
+               libnotify-dev, libasound2-dev,
+               libnss3-dev, libcairo2-dev, libdbus-1-dev, libfontconfig1-dev,
+               libfreetype6-dev, libgconf2-dev, libgtk2.0-dev, libpango1.0-dev,
+               libxcomposite-dev, libxdamage-dev, libxext-dev, libxi-dev,
+               libxrandr-dev, libxrender-dev, libxtst-dev
+Standards-Version: 3.9.3
+Homepage: https://github.com/FPGAwars/icestudio
+
+Package: icestudio
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Experimental graphic editor for open FPGAs
+ Experimental graphic editor for open FPGAs
