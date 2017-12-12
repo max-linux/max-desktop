@@ -1,3 +1,9 @@
+max-mate-menus (9.0.max22) max; urgency=medium
+
+  * Add ax-autologin script and launcher in System menu, close #856
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 12 Dec 2017 09:08:27 +0100
+
 max-mate-menus (9.0.max21) max; urgency=medium
 
   * Hide python-whiteboard menu if not installed, close #847

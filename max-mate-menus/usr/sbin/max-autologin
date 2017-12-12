@@ -1,0 +1,71 @@
+#!/bin/bash
+set -e
+
+#   lxdm-login Version 2.0.1
+#   Sept 07, 2012
+#
+#   Bodhi Linux (c) 2012
+#   Authors : rbt y-lee <ylee@bodhilinux.com>
+#             Jeff Hoogland <JeffHoogland@Linux.com>
+#   Special Thanks: Vivek Gite for his listusers.bash script
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program.  If not, see <http://www.gnu.org/licenses/>
+#
+#   This version is a remix for MAdrid-linuX ver. 9.0 by
+#   Ezequiel Cabrillo García ezequiel.cabrillo@educa.madrid.org
+#   Febr 25, 2017
+
+
+# check for root user
+if [ "$(id -u)" != "0" ]; then
+    gksudo --message "Introduzca la contraseña de administrador para realizar cambios en el equipo" /usr/sbin/max-autologin
+    exit
+fi
+
+
+_l="/etc/login.defs"
+_p="/etc/passwd"
+AUTOLOGIN="/etc/lightdm/lightdm.conf.d/50-maxautologin.conf"
+
+
+MIN_UID=$(grep "^UID_MIN" $_l)
+MAX_UID=$(grep "^UID_MAX" $_l)
+USERLIST=$(awk -F':' -v "min=${MIN_UID##UID_MIN}" -v "max=${MAX_UID##UID_MAX}" '{ if ( $3 >= min && $3 <= max  && $7 != "/sbin/nologin" ) print "FALSE", $1}' "$_p")
+
+username=$(zenity --window-icon=/usr/share/icons/maxtoon/16x16/apps/max.png \
+                  --list --title max-auto-login \
+                  --text "Selecciona el usuario para entrada automática" \
+                  --radiolist\
+                  --column "" --column "Usuario" TRUE Ninguno ${USERLIST[@]})
+
+if [ $? -eq 1 ]; then
+    # User canceled exit 0
+    exit 0
+fi
+
+if [ "$username" == "Ninguno" ]; then
+    # remove autologin and exit
+    rm -f "${AUTOLOGIN}"
+    exit 0
+fi
+
+# create new autologin
+cat << EOF > ${AUTOLOGIN}
+
+[SeatDefaults]
+autologin-user=$username
+
+EOF
+
+exit 0

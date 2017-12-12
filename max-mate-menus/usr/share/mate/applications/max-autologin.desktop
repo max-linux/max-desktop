@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Configure autologin
+Name[es]=Configurar entrada automática
+Exec=/usr/sbin/max-autologin
+Terminal=false
+Type=Application
+Icon=max.png
+Categories=GNOME;Settings;System;DesktopSettings
+
