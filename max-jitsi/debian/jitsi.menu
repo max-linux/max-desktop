@@ -1,0 +1,8 @@
+?package(jitsi):needs="x11"                   \
+  section="Applications/Network/Communication"           \
+  title="Jitsi"                               \
+  longtitle="Jitsi, VoIP and IM client"       \
+  command="/usr/bin/jitsi"                    \
+  icon="/usr/share/pixmaps/jitsi-32.xpm"      \
+  icon32x32="/usr/share/pixmaps/jitsi-32.xpm" \
+  icon16x16="/usr/share/pixmaps/jitsi-16.xpm"

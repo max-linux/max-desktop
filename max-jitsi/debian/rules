@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+VERSION=2.10.5550-1
+# URL="https://download.jitsi.org/stable/jitsi_2.10.5550-1_i386.deb"
+URL="http://localhost/remote-files/jitsi_$(VERSION)_$(DEB_HOST_ARCH).deb"
+
+
+ifeq ($(DEB_HOST_ARCH),i386)
+  LD_LIBRARY_PATH:= /usr/lib/jvm/java-8-openjdk-i386/lib/i386/:$(LD_LIBRARY_PATH)
+else
+  LD_LIBRARY_PATH:= /usr/lib/jvm/java-8-openjdk-amd64/lib/amd64/:$(LD_LIBRARY_PATH)
+endif
+
+
+
+
+%:
+	dh $@ 
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) && dpkg -x *deb ./); \
+	fi
+
+	cat build/usr/share/doc/jitsi/copyright > debian/copyright
+	zcat build/usr/share/man/man1/jitsi.1.gz > build/jitsi.1
+	cp build/usr/share/menu/jitsi debian/jitsi.menu
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+

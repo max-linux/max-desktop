@@ -1,0 +1,24 @@
+Source: max-jitsi
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 8.0.0), wget,
+               openjdk-8-jdk-headless,
+               libxss-dev,
+               libgtk2.0-dev
+Standards-Version: 3.9.3
+Homepage: https://jitsi.org
+
+Package: jitsi
+Architecture: any
+Depends: max-java-jre,
+         libappindicator1,
+         libxss1,
+         libspeex1,
+         libspeexdsp1,
+         ${shlibs:Depends}, ${misc:Depends}
+Description: VoIP and Instant Messaging client
+ Jitsi is an application that allows you to do audio/video
+ conversations over the Internet through the SIP and XMPP/Jabber protocol,
+ as well as chat with your friends using some of the most popular instant
+ messaging protocols such as SIP/SIMPLE, XMPP/Jabber, AIM/ICQ and others.
