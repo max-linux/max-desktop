@@ -2,10 +2,14 @@
 // github #492 https://github.com/max-linux/max-desktop/issues/492
 pref("extensions.blocklist.enabled",false);
 // evitar que deniegue conexiones seguras via proxy a partir de la versión 27 de firefox
-pref("security.tls.version.max",1);
+//pref("security.tls.version.max",1);
 
 // allow old certificates github #889 https://github.com/max-linux/max-desktop/issues/889
-pref("security.tls.version.min",0);
+//pref("security.tls.version.min",0);
+
+// github #902 Scratch online
+pref("security.tls.version.max",3);
+pref("security.tls.version.min",1);
 
 
 // disable PDF internal plugin
