@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# remove arasuite configuration
+if [ "$1" = "purge" ] ; then
+    echo " * [arasuite] Removing default data ..."
+    rm -rf /opt/AraSuite/.arasuite
+fi
+
+
+#DEBHELPER#

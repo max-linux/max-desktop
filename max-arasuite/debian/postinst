@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+#set -e
+
+if [ ! -e /opt/AraSuite/.arasuite ]; then
+  echo " * [arasuite] Installing default data ..."
+  cp -ra /opt/AraSuite/dot_arasuite /opt/AraSuite/.arasuite
+
+  # very ugly
+  chmod -R 777 /opt/AraSuite/.arasuite
+fi
+
+#DEBHELPER#
+

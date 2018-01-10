@@ -1,3 +1,10 @@
+max-arasuite (2.2.4.max1) max; urgency=medium
+
+  * New upstream version, close #783
+  * Include 540 MB of data in /optArasuite/.arasuite/
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 09 Jan 2018 08:45:32 +0100
+
 max-arasuite (2.2.3.max2) max; urgency=medium
 
   * Include some .install4j files, close #783

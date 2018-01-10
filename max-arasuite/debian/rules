@@ -1,7 +1,8 @@
 #!/usr/bin/make -f
 
-VERSION=2_2_3
-URL=http://localhost/remote-files/arasuite_unix_$(VERSION).sh
+VERSION=2_2_4
+URL1=http://localhost/remote-files/arasuite_unix_$(VERSION).sh
+URL2=http://localhost/remote-files/arasuite_unix_$(VERSION)_dot.tar.gz
 
 %:
 	dh $@
@@ -15,7 +16,8 @@ override_dh_clean:
 override_dh_auto_build:
 	mkdir -p build2
 	if [ ! -e build2/arasuite.sh ] && [ -e ./arasuite.sh ]; then (cp -v ./arasuite.sh ./build2/arasuite.sh); fi
-	if [ ! -e build2/arasuite.sh ]; then (cd build2 && curl -L -O $(URL) && mv * arasuite.sh); fi
+	if [ ! -e build2/arasuite.sh ]; then (cd build2 && curl -L -O $(URL1) && mv *.sh arasuite.sh); fi
+	if [ ! -e build2/arasuite.tar.gz ]; then (cd build2 && curl -L -O $(URL2) && mv *.tar.gz arasuite.tar.gz); fi
 
 	# install
 	bash build2/arasuite.sh -q -dir "/opt/AraSuite"
@@ -25,6 +27,11 @@ override_dh_auto_build:
 
 	# uninstall
 	/opt/AraSuite/uninstall -q	
+
+	# 500 MB of data
+	tar -zxvf build2/arasuite.tar.gz -C build2/
+	mv build2/opt/AraSuite/.arasuite/ build2/AraSuite/dot_arasuite
+	rm -rf build2/opt
 
 	find build2/AraSuite/ -type d -exec chmod 0755 {} \;
 	find build2/AraSuite/ -type f -exec chmod 0644 {} \;
