@@ -2,8 +2,10 @@
 
 DH_VERBOSE=1
 
+VERSION=5.0.414.0-586960
+
 DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
-URL="http://www.geogebra.net/linux/pool/main/g/geogebra5/geogebra5_5.0.281.0-49718"
+URL="http://www.geogebra.net/linux/pool/main/g/geogebra5/geogebra5_$(VERSION)"
 
 info:
 	@echo VERSION=$(VERSION)
