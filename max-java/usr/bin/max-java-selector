@@ -38,6 +38,10 @@ function comprueba_paquete()
          lista_versiones="${lista_versiones}${1}@Instalado@"
       fi
    fi
+   if [ "$3" = "" ]; then
+       lista_versiones="${lista_versiones}No disponible@${4}@"
+       return
+   fi
    # Comprueba si existe el paquete del plugin de java
    apt-cache show "$3" > /dev/null
    if [ $? != 0 ] ; then
@@ -174,8 +178,8 @@ fi
 #comprueba_paquete "Open JDK 6"    "openjdk-6-jre"     "icedtea-6-plugin"    "Obsoleto, compatible DescartesWeb"
 #comprueba_paquete "Open JDK 7"    "openjdk-7-jre"     "icedtea-7-plugin"    "Compatible DescartesWeb"
 comprueba_paquete "Open JDK 8"    "openjdk-8-jre"     "icedtea-8-plugin"    "Compatible DescartesWeb"
-comprueba_paquete "Open JDK 9"    "openjdk-9-jre"     "icedtea-9-plugin"    "Compatible DescartesWeb"
-comprueba_paquete "Oracle Java 7" "oracle-java7-jre"  "oracle-java7-plugin" "Compatible trámites oficiales"
+comprueba_paquete "Open JDK 9"    "openjdk-9-jre"     ""                    "Compatible DescartesWeb"
+#comprueba_paquete "Oracle Java 7" "oracle-java7-jre"  "oracle-java7-plugin" "Compatible trámites oficiales"
 comprueba_paquete "Oracle Java 8" "oracle-java8-jre"  "oracle-java8-plugin" "Última versión oficial 8.x"
 
 echo Lista de versiones: $lista_versiones
@@ -237,7 +241,7 @@ case "$opcion" in
          estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 14`
          if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="openjdk-9-jre" ; fi
          estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 15`
-         if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes icedtea-9-plugin" ; fi
+         # if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes icedtea-9-plugin" ; fi
          paquetes=`echo $paquetes`
          alter_plugin="mozilla-javaplugin.so"
          cadena_ruta_java="/java-9-openjdk"
