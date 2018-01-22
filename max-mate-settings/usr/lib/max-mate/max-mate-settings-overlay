@@ -23,16 +23,20 @@ function correct_xinputrc() {
     fi
 }
 
-if [ ! -d "${HOME}/.config/plank/dock1" ]; then
-    #overlay_file config/plank/dock1/launchers/clock.dockitem
-    #overlay_file config/plank/dock1/launchers/desktop.dockitem
-    #overlay_file config/plank/dock1/launchers/firefox.dockitem
-    #overlay_file config/plank/dock1/launchers/matecc.dockitem
+PLANK_VERSION="20180122"
+
+if [ ! -e "${HOME}/.config/plank/dock1/.v${PLANK_VERSION}" ]; then
+
+    rm -f "${HOME}/.config/plank/dock1/.v*"
+    rm -f "${HOME}/.config/plank/dock1/*"
 
     LAUNCHERS="/usr/share/max-mate/settings-overlay/config/plank/dock1/launchers/"
     for f in $(find "${LAUNCHERS}" -type f | sed -e 's@/usr/share/max-mate/settings-overlay/@@g'); do
         overlay_file ${f}
     done
+
+    # plank version
+    touch "${HOME}/.config/plank/dock1/.v${PLANK_VERSION}"
 
 fi
 overlay_file config/folder-color/hide_donation
