@@ -28,7 +28,9 @@ PLANK_VERSION="20180122"
 if [ ! -e "${HOME}/.config/plank/dock1/.v${PLANK_VERSION}" ]; then
 
     rm -f "${HOME}/.config/plank/dock1/.v*"
-    rm -f "${HOME}/.config/plank/dock1/*"
+    rm -f "${HOME}/.config/plank/dock1/launchers/*"
+
+    dconf reset -f /net/launchpad/plank/
 
     LAUNCHERS="/usr/share/max-mate/settings-overlay/config/plank/dock1/launchers/"
     for f in $(find "${LAUNCHERS}" -type f | sed -e 's@/usr/share/max-mate/settings-overlay/@@g'); do
