@@ -27,8 +27,8 @@ PLANK_VERSION="20180122"
 
 if [ ! -e "${HOME}/.config/plank/dock1/.v${PLANK_VERSION}" ]; then
 
-    rm -f "${HOME}/.config/plank/dock1/.v*"
-    rm -f "${HOME}/.config/plank/dock1/launchers/*"
+    rm -f ${HOME}/.config/plank/dock1/.v*
+    rm -f ${HOME}/.config/plank/dock1/launchers/*
 
     dconf reset -f /net/launchpad/plank/
 
