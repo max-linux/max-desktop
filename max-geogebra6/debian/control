@@ -2,7 +2,7 @@ Source: max-geogebra6
 Section: max
 Priority: extra
 Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
-Build-Depends: debhelper (>= 7), wget
+Build-Depends: debhelper (>= 7), wget, unzip
 Standards-Version: 3.8.3
 Homepage: http://www.geogebra.org/
 
