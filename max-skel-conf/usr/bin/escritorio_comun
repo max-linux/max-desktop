@@ -1,0 +1,57 @@
+#!/bin/bash
+# Copiar este script a /usr/bin y darle permisos 755.
+# Roberto Mengibar roberto.mengibar@educa.madrid.org
+# Licencia GPL v3
+
+version="1.0"
+nombre_script=`basename $0`
+autostart="/etc/xdg/autostart/escritorio_comun.desktop"
+escritorio_comun="/etc/escritorio_comun"
+destino="${HOME}/Escritorio"
+
+if [ "$1" == "-s" ] ; then
+   # Hay que comprobar si el directorio está vacio ya que si no el bucle
+   # "for f in ${escritorio_comun}/*" devuelve "/etc/escritorio_comun/*"
+   # y se crea un enlace no deseado de nombre "*".
+   if [ "$(ls -A ${escritorio_comun})" ] ; then
+      # El directorio no está vacio
+      for f in ${escritorio_comun}/*
+      do
+         lanzador=`basename "$f"`
+         if [ ! -e "${destino}/${lanzador}" ] ; then
+            ln -s "$f" "${destino}/${lanzador}"
+         fi
+      done
+   fi
+elif [ "$1" == "-c" ] ; then
+   if [ "$UID" != "0" ] ; then
+      echo ERROR: Se necesitan privilegios de administrador.
+   else
+      echo "[Desktop Entry]
+Type=Application
+Exec=/usr/bin/escritorio_comun -s
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[es_ES]=escritorio_comun
+Comment[es_ES]=Crea enlaces simbólicos a los ficheros del escritorio común
+Name=escritorio_comun
+Comment=Crea enlaces simbólicos a los ficheros del escritorio común" > "$autostart"
+   mkdir -p "$escritorio_comun"
+   fi
+else
+   echo "- $nombre_script v${version} -"
+   echo "Script que crea en el escritorio del usuario enlaces simbólicos al contenido"
+   echo "que exista dentro del directorio: ${escritorio_comun}"
+   echo "El contenido puede ser carpetas o ficheros de cualquier tipo, pero lo ideal"
+   echo "es que sean ficheros \".desktop\"."
+   echo "Este script se ejecuta en cada inicio de la sesión gráfica(gnome o xfce),"
+   echo "para ello utiliza el fichero \"/etc/xdg/autostart/escritorio_comun.desktop\"."
+   echo "Puede borrar este fichero para cancelar la ejecución automática."
+   echo
+   echo "Se aceptan los siguientes parámetros:"
+   echo "-c  : Crea el fichero \"${autostart}\""
+   echo "      y el directorio \"${escritorio_comun}\""
+   echo "      (Se necesitan privilegios de administrador)"
+   echo "-s  : Crea los enlaces simbólicos."
+fi
