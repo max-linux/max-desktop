@@ -1,0 +1,12 @@
+--- main.js	2018-01-24 07:42:39.719049242 +0100
++++ build/geogebra6/app/main.js	2018-01-24 07:43:21.667794678 +0100
+@@ -21,6 +21,9 @@
+ );
+ 
+ const {app, BrowserWindow, Menu} = require('electron');
++// force enable 3D view
++app.commandLine.appendSwitch('ignore-gpu-blacklist', 'true'); 
++//
+ const Config = require('electron-config')
+ const path = require('path')
+ const ggbConfig = require('./ggb-config.js')

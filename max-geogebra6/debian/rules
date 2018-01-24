@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+
+DH_VERBOSE=1
+VERSION=6-0-417-0
+
+#URL="https://download.geogebra.org/installers/6.0/GeoGebra-Linux32-Portable-$(VERSION).zip"
+URL="http://localhost/remote-files/GeoGebra-Linux32-Portable-$(VERSION).zip"
+
+info:
+	@echo VERSION=$(VERSION)
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) && unzip *.zip); \
+	fi
+
+	mv build/GeoGebra-linux-ia32/resources/ build/geogebra6
+	rm -rf build/GeoGebra-linux-ia32
+
+	cat geogebra6.patch | patch -p0
+
+override_dh_auto_install:
+	dh_install
+
