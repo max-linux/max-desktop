@@ -22,20 +22,39 @@
   -->
 
   <Menu>
-    <Name>MaX 9.0</Name>
-    <Directory>max90.directory</Directory>
-    <Include>
-      <And>
-        <Category>MAX</Category>
-      </And>
-    </Include>
-    <Include>
-      <Filename>max-educamadrid.desktop</Filename>
-      <Filename>max-guia-referencia.desktop</Filename>
-      <Filename>max-foros.desktop</Filename>
-      <Filename>install-manual.desktop</Filename>
-      <Filename>install-personalizacion.desktop</Filename>
-    </Include>
+    <Name>MaX y EducaMadrid</Name>
+    <Directory>max-educamadrid.directory</Directory>
+
+    <Menu>
+      <Name>MaX</Name>
+      <Directory>max.directory</Directory>
+      <Include>
+        <And>
+          <Category>MAX</Category>
+        </And>
+      </Include>
+      <Include>
+        <Filename>max-educamadrid.desktop</Filename>
+        <Filename>max-guia-referencia.desktop</Filename>
+        <Filename>max-foros.desktop</Filename>
+        <Filename>install-manual.desktop</Filename>
+        <Filename>install-personalizacion.desktop</Filename>
+      </Include>
+    </Menu>
+
+    <Menu>
+      <Name>EducaMadrid</Name>
+      <Directory>educamadrid.directory</Directory>
+      <Include>
+        <And>
+          <Category>EducaMadrid</Category>
+        </And>
+      </Include>
+      <Include>
+        <Filename>max-educamadrid.desktop</Filename>
+      </Include>
+    </Menu>
+
   </Menu>
 
   <!-- Accessories submenu -->

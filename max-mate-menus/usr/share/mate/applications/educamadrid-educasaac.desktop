@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=EducaSAAC
+Comment=educasaac.educa.madrid.org
+TryExec=/usr/bin/firefox
+Exec=firefox http://educasaac.educa.madrid.org/
+Icon=max
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=EducaMadrid;

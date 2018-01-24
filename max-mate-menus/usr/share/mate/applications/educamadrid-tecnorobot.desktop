@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Tecnorobot
+Comment=tecnorobot.educa2.madrid.org
+TryExec=/usr/bin/firefox
+Exec=firefox http://tecnorobot.educa2.madrid.org/
+Icon=max
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=EducaMadrid;

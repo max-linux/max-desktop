@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Correo Web
+Comment=Correo web
+TryExec=/usr/bin/firefox
+Exec=firefox https://correoweb.educa.madrid.org
+Icon=max
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=EducaMadrid;

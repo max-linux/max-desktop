@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Nube de EducaMadrid (ownCloud)
+Comment=Cliente nube EducaMadrid (ownCloud)
+TryExec=/usr/bin/owncloud
+Exec=owncloud
+Icon=owncloud
+X-GNOME-Autostart-Delay=3
+Type=Application
+Categories=EducaMadrid;
