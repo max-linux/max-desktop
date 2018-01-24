@@ -164,6 +164,7 @@
             <Filename>tuxmath.desktop</Filename>
             <Filename>wxmaxima.desktop</Filename>
             <Filename>geogebra.desktop</Filename>
+            <Filename>geogebra6.desktop</Filename>
             <Filename>kstars.desktop</Filename>
             <Filename>kde4-celestia.desktop</Filename>
             <Filename>celestia.desktop</Filename>
@@ -223,6 +224,7 @@
         <Directory>max-matematicas.directory</Directory>
         <Include>
             <Filename>geogebra.desktop</Filename>
+            <Filename>geogebra6.desktop</Filename>
             <Filename>descartes.desktop</Filename>
             <Filename>wxmaxima.desktop</Filename>
             <Filename>kde4-kbruch.desktop</Filename>
@@ -554,6 +556,7 @@
     </Include>
     <Exclude>
         <Filename>geogebra.desktop</Filename>
+        <Filename>geogebra6.desktop</Filename>
         <Filename>javahotpot.desktop</Filename>
         <Filename>orage.desktop</Filename>
         <Filename>kde4-audioencoding.desktop</Filename>
