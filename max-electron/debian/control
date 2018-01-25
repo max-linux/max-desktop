@@ -1,0 +1,17 @@
+Source: electron
+Section: utils
+Priority: extra
+Maintainer: Fernando Toledo <ragnarok@docksud.com.ar>
+Build-Depends: debhelper (>= 9.0.0), devscripts, libwww-perl, unzip
+Standards-Version: 3.9.6
+Homepage: http://electron.atom.io
+Vcs-Browser: https://github.com/HuayraLinux/pkg-electron
+Vcs-Git: https://github.com/HuayraLinux/pkg-electron.git
+
+Package: electron
+Architecture: i386 amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Framework lets you write cross-platform desktop applications
+ The Electron framework lets you write cross-platform desktop applications
+ using JavaScript, HTML and CSS. It is based on Node.js and Chromium and is
+ used by the Atom editor and many other apps.

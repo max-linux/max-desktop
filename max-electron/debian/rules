@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DH_VERBOSE=1
+export PKG = $(word 2,$(shell dpkg-parsechangelog | grep ^Source))
+export ARCH=$(shell dpkg-architecture -qDEB_TARGET_ARCH)
+#export CURVER=$(shell dpkg-parsechangelog -SVersion| sed -re 's,.([0-9])+$$,,')
+export CURVER=$(shell dpkg-parsechangelog -SVersion| awk -F "." '{print $$1"."$$2"."$$3}')
+
+ifeq ($(ARCH), i386)
+    export UPSTREAM_ARCH=ia32
+else
+    export UPSTREAM_ARCH=x64
+endif
+
+export PKG_BASE = electron-v$(CURVER)-linux-$(UPSTREAM_ARCH)
+export PKG_TGZ = $(PKG_BASE).tar.gz
+export PKG_VER = $(CURVER)-linux-$(UPSTREAM_ARCH)
+
+%:
+	dh $@
+
+override_dh_auto_build: get-orig-source
+	dh_auto_build
+
+override_dh_install:
+	mkdir -p $(CURDIR)/debian/tmp/$(PKG)
+	tar xvzf $(CURDIR)/packages/$(PKG)_$(PKG_VER).orig.tar.gz --directory $(CURDIR)/debian/tmp/$(PKG)
+	dh_install
+
+override_dh_auto_clean:
+	rm -fr packages/$(PKG)_$(PKG_VER).orig.tar.gz
+	rm -fr debian/tmp
+
+override_dh_shlibdeps:
+	echo "override"
+
+.PHONY: get-orig-source
+get-orig-source:
+	mkdir -p $(CURDIR)/packages
+	uscan --noconf --verbose --rename --destdir=$(CURDIR)/packages/ --check-dirname-level=0 --force-download --download-version $(PKG_VER)
