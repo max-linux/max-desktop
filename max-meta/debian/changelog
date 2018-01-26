@@ -1,3 +1,9 @@
+max-meta (9.0.max20) max; urgency=medium
+
+  * max-pdi: Add mrpdi packages as depends
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 26 Jan 2018 09:40:22 +0100
+
 max-meta (9.0.max19) max; urgency=medium
 
   * Add pseint: close #898
