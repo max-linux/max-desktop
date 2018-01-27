@@ -1,3 +1,9 @@
+max-java (9.0.max5) max; urgency=medium
+
+  * Remove triggers, rel #905
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 27 Jan 2018 17:34:29 +0100
+
 max-java (9.0.max4) max; urgency=medium
 
   * max-java-selector: Hide Oracle java 9, and fix OpenJDK 9, close #803

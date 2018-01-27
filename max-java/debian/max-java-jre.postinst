@@ -2,55 +2,31 @@
 
 #set -e
 
-# openjdk have priority 1061
-#priority=2063
-#basedir=/usr/lib/jvm/java-6-sun-max
-#jre_tools='ControlPanel java java_vm javaws jcontrol keytool pack200 policytool rmid rmiregistry unpack200 orbd servertool tnameserv appletviewer jar jarsigner pluginappletviewer'
+
+#if [ "$1" = "triggered" ]; then
+#    # launch trigger to mantain java-libs (descartes or malted) symlinks in JVM
+#    JVMS=$(find /usr/lib/jvm/ -maxdepth 1 -mindepth 1 -type d | grep -v jmf)
+#    LIBS=$(find /usr/share/max/java-libs/ -type f)
 #
-#configure_alternatives() {
-#  for i in $jre_tools; do
-#    [ ! -e $basedir/jre/bin/$i ] && continue 
-#    update-alternatives --quiet \
-#            --install \
-#            /usr/bin/$i \
-#            $i \
-#            $basedir/jre/bin/$i \
-#            $priority
-#    #update-alternatives --quiet --set $i $basedir/jre/bin/$i
-#    update-alternatives --quiet --auto $i
-#  done
-#}
-
-
-if [ "$1" = "triggered" ]; then
-    # launch trigger to mantain java-libs (descartes or malted) symlinks in JVM
-    JVMS=$(find /usr/lib/jvm/ -maxdepth 1 -mindepth 1 -type d | grep -v jmf)
-    LIBS=$(find /usr/share/max/java-libs/ -type f)
-
-    for jvm in $JVMS; do
-        if [ "$(find ${jvm} -type f| wc -l)" = "0" ]; then
-            #echo " * JVM empty ($jvm) cleaning ..."
-            rm -rf "${jvm}"
-        elif [ -d ${jvm}/jre/lib/ext/ ]; then
-            for lib in $LIBS; do
-                libname=$(basename $lib)
-                if [ ! -e "${jvm}/jre/lib/ext/${libname}" ]; then
-                    #echo "${lib}  => ${jvm}/jre/lib/ext/"
-                    ln -s "${lib}" ${jvm}/jre/lib/ext/
-                #else
-                #    echo "EXISTS $jvm/jre/lib/ext/$libname"
-                fi
-            done
-        fi
-    done
-    exit
-fi
-
-
-#if [ "$1" = "configure" ]; then
-#    configure_alternatives
-#    update-java-alternatives --jre --set java-6-sun-max
+#    for jvm in $JVMS; do
+#        if [ "$(find ${jvm} -type f| wc -l)" = "0" ]; then
+#            #echo " * JVM empty ($jvm) cleaning ..."
+#            rm -rf "${jvm}"
+#        elif [ -d ${jvm}/jre/lib/ext/ ]; then
+#            for lib in $LIBS; do
+#                libname=$(basename $lib)
+#                if [ ! -e "${jvm}/jre/lib/ext/${libname}" ]; then
+#                    #echo "${lib}  => ${jvm}/jre/lib/ext/"
+#                    ln -s "${lib}" ${jvm}/jre/lib/ext/
+#                #else
+#                #    echo "EXISTS $jvm/jre/lib/ext/$libname"
+#                fi
+#            done
+#        fi
+#    done
+#    exit
 #fi
+
 
 
 
