@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 DH_VERBOSE=1
-VERSION=6-0-417-0
+VERSION=6-0-438-0
 
 #URL="https://download.geogebra.org/installers/6.0/GeoGebra-Linux32-Portable-$(VERSION).zip"
 URL="http://localhost/remote-files/GeoGebra-Linux32-Portable-$(VERSION).zip"
