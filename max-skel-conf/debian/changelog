@@ -1,3 +1,9 @@
+max-skel-conf (9.0.max20) max; urgency=medium
+
+  * mscore: Don't use pasuspender, close #906
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 19 Mar 2018 17:52:15 +0100
+
 max-skel-conf (9.0.max19) max; urgency=medium
 
   * Add escritorio_comun, close #789

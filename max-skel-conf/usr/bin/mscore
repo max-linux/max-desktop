@@ -24,27 +24,6 @@ fi
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 MSCORE=$(which mscore.distrib)
-PULSEAUDIO=$(pgrep -f pulseaudio > /dev/null)
 
-if $PULSEAUDIO; then
-
-	PACTL=$(which pactl)
-	JACK=$($PACTL list | grep jack-sink)
-	PASUSPENDER=$(which pasuspender)
-
-	if [ "$PACTL" -a "$JACK" ]; then
-		echo "Using JACK for audio";
-		$MSCORE "$@";
-	elif [ $PASUSPENDER ]; then
-		echo "Suspending PulseAudio";
-		$PASUSPENDER $MSCORE "$@";
-	else
-		echo "Warning: Cannot suspend PulseAudio";
-		$MSCORE "$@";
-	fi
-
-else
-
-	$MSCORE "$@";
-
-fi
+# don't run pasuspender, use pulseaudio
+${MSCORE} "$@"
