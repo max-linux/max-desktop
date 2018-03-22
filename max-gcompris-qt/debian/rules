@@ -1,0 +1,40 @@
+#!/usr/bin/make -f
+
+DH_VERBOSE=1
+
+VERSION=0.90
+
+DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+#URL="http://gcompris.net/download/qt/linux/gcompris-qt-$(VERSION)-Linux32.sh"
+
+ifeq ($(DEB_HOST_ARCH),i386)
+  URL="http://localhost/remote-files/gcompris-qt-$(VERSION)-Linux32.sh"
+  LD_LIBRARY_PATH:= $(CURDIR)/debian/gcompris-qt/usr/share/gcompris-qt/bin:$(LD_LIBRARY_PATH)
+else
+  URL="http://localhost/remote-files/gcompris-qt-$(VERSION)-Linux64.sh"
+  LD_LIBRARY_PATH:= $(CURDIR)/debian/gcompris-qt/usr/share/gcompris-qt/bin:$(LD_LIBRARY_PATH)
+endif
+
+info:
+	@echo VERSION=$(VERSION)
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir -p build/tmp ;\
+		( cd build && wget $(URL) -O- > gcompris.sh &&  bash gcompris.sh --prefix=./tmp --skip-license ); \
+	fi
+	rm -f build/tmp/bin/gcompris-qt.sh
+	rm -f build/tmp/bin/plugins/imageformats/libqjp2.so
+
+override_dh_auto_install:
+	dh_install
+
