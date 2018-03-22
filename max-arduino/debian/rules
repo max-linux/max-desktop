@@ -1,0 +1,48 @@
+#!/usr/bin/make -f
+
+DH_VERBOSE=1
+
+VERSION=1.8.5
+
+DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+URL="https://downloads.arduino.cc/arduino-$(VERSION)-linux32.tar.xz"
+
+ifeq ($(DEB_HOST_ARCH),i386)
+  URL="http://localhost/remote-files/arduino-$(VERSION)-linux32.tar.xz"
+
+#  LD_LIBRARY_PATH:= $(CURDIR)/debian/gcompris-qt/usr/share/gcompris-qt/bin:$(LD_LIBRARY_PATH)
+else
+  URL="http://localhost/remote-files/arduino-$(VERSION)-linux64.tar.xz"
+
+#  LD_LIBRARY_PATH:= $(CURDIR)/debian/gcompris-qt/usr/share/gcompris-qt/bin:$(LD_LIBRARY_PATH)
+endif
+
+info:
+	@echo VERSION=$(VERSION)
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir -p build ;\
+		( cd build && wget $(URL) -O- > linux.tar.xz && tar -xvf linux.tar.xz && mv arduino-$(VERSION) arduino); \
+	fi
+
+	rm -rf 	build/arduino/java/
+	(cd build/arduino/ && ln -s /usr/lib/jvm/default-java ./java)
+	rm -f build/arduino/uninstall.sh build/arduino/install.sh
+
+
+override_dh_auto_install:
+	dh_install
+
+
+override_dh_strip:
+        # do not strip
+

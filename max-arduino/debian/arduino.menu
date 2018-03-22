@@ -1,0 +1,6 @@
+?package(arduino):\
+       needs="X11"\
+       section="Applications/Science/Electronics"\
+       title="Arduino"\
+       command="arduino" \
+       icon="/usr/share/pixmaps/arduino.xpm"

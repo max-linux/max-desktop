@@ -1,0 +1,37 @@
+Source: max-arduino
+Section: electronics
+Priority: extra
+Maintainer: Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.7
+Homepage: http://www.arduino.cc
+
+
+Package: arduino
+Architecture: all
+Depends: max-java-jre,
+         arduino-core (= ${source:Version}),
+         ${misc:Depends}, ${shlibs:Depends}
+Recommends: extra-xdg-menus, policykit-1
+Description: AVR development board IDE and built-in libraries
+ Arduino is an open-source electronics prototyping platform based on
+ flexible, easy-to-use hardware and software. It's intended for artists,
+ designers, hobbyists, and anyone interested in creating interactive
+ objects or environments.
+ .
+ This package will install the integrated development environment that
+ allows for program writing, code verfication, compiling, and uploading
+ to the Arduino development board. Libraries and example code will also
+ be installed.
+
+
+Package: arduino-core
+Architecture: any
+Depends: gcc, ${misc:Depends}, ${shlibs:Depends}
+Description: Code, examples, and libraries for the Arduino platform
+ Arduino is an open hardware microcontroller platform.  This package contains
+ the minimal set of tools to allow one to program an Arduino.  It also contains
+ examples and libraries. For a CLI, see the 'arduino-mk' package.
+ .
+ This package does not include the Java based Integrated Development
+ Environment, which can be found in the 'arduino' package.

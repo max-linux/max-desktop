@@ -1,0 +1,52 @@
+#!/bin/bash
+
+if [[ `id -u` -ne 0 ]]; then
+#    for group in dialout tty; do
+    for group in dialout; do
+        if ! groups | grep -q "\b$group\b"; then
+            missing_groups="$missing_groups\n$group"
+        fi
+    done
+
+    if [[ -n $missing_groups ]] && ! java -jar /usr/share/arduino/arduinopc.jar; then
+        pkexec /usr/bin/arduino-add-groups
+    fi
+fi
+
+
+APPDIR=/usr/share/arduino
+cd "$APPDIR"
+
+for LIB in \
+    "$APPDIR"/java/lib/rt.jar \
+    "$APPDIR"/java/lib/tools.jar \
+    "$APPDIR"/lib/*.jar \
+    ;
+do
+    CLASSPATH="${CLASSPATH}:${LIB}"
+done
+export CLASSPATH
+
+LD_LIBRARY_PATH=$APPDIR/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH
+
+export PATH="${APPDIR}/java/bin:${PATH}"
+
+export JAVA_TOOL_OPTIONS=`echo $JAVA_TOOL_OPTIONS | sed 's|-javaagent:/usr/share/java/jayatanaag.jar||g'`
+
+JAVA=java
+if [ -x "$APPDIR/java/bin/java" ]; then
+  JAVA=$APPDIR/java/bin/java
+fi
+
+# Collect options to java in an array, to properly handle whitespace in options
+JAVA_OPTIONS=("-DAPP_DIR=$APPDIR" "-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel")
+
+# Only show the splash screen when no options are present
+if [[ "$@" != *"--"* ]] ; then
+        JAVA_OPTIONS+=("-splash:$APPDIR/lib/splash.png")
+fi
+
+"$JAVA" "${JAVA_OPTIONS[@]}" processing.app.Base "$@"
+
+
