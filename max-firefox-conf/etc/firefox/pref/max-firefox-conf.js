@@ -16,3 +16,9 @@ pref("security.tls.version.min",1);
 // https://github.com/max-linux/max-desktop/issues/552
 pref("pdfjs.disabled",true);
 //pref("plugin.disable_full_page_plugin_for_types", "application/pdf");
+
+
+// Mozilla Firefox >=59 languages change
+// http://herramientas.educa.madrid.org/foros/viewtopic.php?f=2&t=3733&p=12757
+//pref("intl.locale.matchOS", false);
+pref("intl.locale.requested", '');

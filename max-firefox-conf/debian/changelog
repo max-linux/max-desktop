@@ -1,3 +1,9 @@
+max-firefox-conf (9.0.max6) max; urgency=medium
+
+  * Fix Firefox >=59 lang change
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 23 Mar 2018 08:47:33 +0100
+
 max-firefox-conf (9.0.max5) max; urgency=medium
 
   * Set TLS max min for scratch, close #902
