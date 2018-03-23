@@ -6,5 +6,5 @@
 #/usr/lib                               /usr/share/arduino/hardware/tools/avr/lib
 
 
-/usr/share/arduino/hardware/tools/avr/etc/avrdude.conf   /etc/avrdude.conf
-/usr/share/arduino/hardware/tools/avr/bin/avrdude        /usr/bin/avrdude
+#/usr/share/arduino/hardware/tools/avr/etc/avrdude.conf   /etc/avrdude.conf
+#/usr/share/arduino/hardware/tools/avr/bin/avrdude        /usr/bin/avrdude

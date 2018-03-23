@@ -1,3 +1,9 @@
+max-arduino (3:1.8.5-0max2) max; urgency=medium
+
+  * Remove avrdude links
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 23 Mar 2018 08:16:57 +0100
+
 max-arduino (3:1.8.5-0max1) max; urgency=medium
 
   * Initial version, close #724
