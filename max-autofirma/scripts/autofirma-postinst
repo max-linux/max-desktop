@@ -1,0 +1,50 @@
+#!/bin/sh
+set -e
+
+TMP_DIR=$(mktemp -d)
+cd ${TMP_DIR}
+
+
+# Generamos una password aleatoria
+openssl rand -base64 48 > randomkey.txt
+
+# CREACION DE UNA AUTORIDAD DE CERTIFICACION (CA) "AutoFirma ROOT LOCAL"
+# Creamos una clave para la CA
+openssl genrsa -aes128 -passout file:randomkey.txt -out AutoFirma.key 2777
+
+# Generamos la petición de firma
+openssl req -new -passin file:randomkey.txt -key AutoFirma.key -out AutoFirma.csr  -subj "/CN=AutoFirma ROOT LOCAL"
+
+# Nos autofirmamos la petición
+openssl x509 -req -days 3650 -in AutoFirma.csr -signkey AutoFirma.key -passin file:randomkey.txt  -out AutoFirma.crt
+
+# CREACION DE UN CERTIFICADO PARA LA COMUNICACION ENTRE NAVEGADOR Y AUTOFIRMA
+# Creamos otra clave para el certificado de localhost que usará el navegador para comunicarse con Autofirma
+openssl genrsa -aes128 -passout file:randomkey.txt -out localhost.key 2777
+
+# Generamos la petición de firma
+openssl req -new -passin file:randomkey.txt -key localhost.key -out localhost.csr  -subj "/CN=127.0.0.1"
+
+# Firmamos la petición con la clave de nuestra Autoridad de Certificación
+openssl ca -batch -config /usr/share/AutoFirma/openssl.cnf -policy signing_policy -extensions signing_req -cert AutoFirma.crt -keyfile AutoFirma.key -passin file:randomkey.txt -in localhost.csr -out localhost.crt
+
+# Exportamos la clave y certificado de localhost a formato pfx 
+openssl pkcs12 -export -out autofirma.pfx -passout pass:654321 -inkey localhost.key -passin file:randomkey.txt  -in localhost.crt  -name "socketautofirmalocal" -certfile AutoFirma.crt 
+
+# Borramos todos los ficheros generados salvo el certificado de la CA por si hay que agregarlo a nuevos usuarios o nuevos perfiles del navegador
+rm randomkey.txt AutoFirma.key AutoFirma.csr localhost.key localhost.csr localhost.crt
+
+# Movemos el certificado de la CA a un sitio seguro para poder agregarlo a los navegadores cuando sea necesario
+mv AutoFirma.crt /usr/share/AutoFirma/
+
+# Movemos el almacén pfx a la ubicación donde lo buscará la aplicación AutoFirma
+mv autofirma.pfx /usr/lib/AutoFirma/
+
+# Agregamos el certificado a todos los perfiles de todos los usuarios
+/usr/bin/AutoFirma-Firefox -all
+
+echo "La aplicación Autofirma ha sido instalada"
+
+
+cd /
+rm -rf "${TMP_DIR}"

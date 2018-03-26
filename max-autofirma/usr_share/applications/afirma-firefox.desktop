@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Instalar AutoFirma
+Comment=Agrega el certificado de Autofirma al navegador
+Exec=/usr/bin/AutoFirma-Firefox
+Icon=/usr/lib/AutoFirma/AutoFirma.png
+Terminal=false
+Type=Application
+Categories=GNOME;Application;Office
+StartupNotify=true
+StartupWMClass=autofirma
+Name[es_ES]=Instalar Autofirma

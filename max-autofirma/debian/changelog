@@ -1,3 +1,10 @@
+max-autofirma (1:1.6.2max1) max; urgency=medium
+
+  * New upstream version
+  * Use postinst/postrm scripts from github.com/gecos-team/autofirma-gecos
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 26 Mar 2018 20:14:26 +0200
+
 max-autofirma (1:1.5.0max3) max; urgency=medium
 
   * Be more silent on triggered events

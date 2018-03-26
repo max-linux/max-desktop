@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-VERSION=1.5
+VERSION=1_6_2
 
 %:
 	dh $@
@@ -16,12 +16,15 @@ override_dh_auto_build:
 	if [ ! -e build2/AutoFirma_Linux.zip ]; then (cd build2 && curl -L -O "http://estaticos.redsara.es/comunes/autofirma/currentversion/AutoFirma_Linux.zip"); fi
 	if [ ! -e build2/usr ]; then (cd build2 && unzip -u AutoFirma_Linux.zip && dpkg --extract AutoFirma_$(VERSION).deb ./ && dpkg --control AutoFirma_$(VERSION).deb); fi
 
-	rm -rf build2/scripts
-	mkdir -p build2/scripts
+	rm -f build2/usr/lib/AutoFirma/AutoFirmaConfigurador.jar
 
-	cat build2/DEBIAN/postinst > build2/scripts/autofirma-postinst
-	cat build2/DEBIAN/postrm   > build2/scripts/autofirma-postrm
-	cat build2/DEBIAN/preinst  > build2/scripts/autofirma-preinst
-	cat build2/DEBIAN/prerm    > build2/scripts/autofirma-prerm
-	chmod +x build2/scripts/*
+#	rm -rf build2/scripts
+#	mkdir -p build2/scripts
+#
+#
+#	cat build2/DEBIAN/postinst > build2/scripts/autofirma-postinst
+#	cat build2/DEBIAN/postrm   > build2/scripts/autofirma-postrm
+#	cat build2/DEBIAN/preinst  > build2/scripts/autofirma-preinst
+#	cat build2/DEBIAN/prerm    > build2/scripts/autofirma-prerm
+#	chmod +x build2/scripts/*
 

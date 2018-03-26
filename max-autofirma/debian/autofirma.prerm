@@ -2,8 +2,8 @@
 
 #set -e
 
-if [ "x$1" = "xremove" ]; then
-    /usr/lib/AutoFirma/scripts/autofirma-prerm
+if [ "x$1" = "xpurge" ]; then
+    /usr/lib/AutoFirma/scripts/autofirma-prerm >/dev/null 2>&1 || true
 fi
 
 

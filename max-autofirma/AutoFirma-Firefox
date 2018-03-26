@@ -1,0 +1,30 @@
+#!/bin/bash
+# Instala el certificado de Autofirma en los almacenes de Mozilla Firefox
+#
+# Con el parámetro -all recorre todos los directorios de usuario y funciona silenciosamente
+# Sin parámetros, sólo instala el certificado en el directorio del usuario que lanza este script
+
+certfile="/usr/share/AutoFirma/AutoFirma.crt"
+certname="AutoFirma ROOT LOCAL"
+
+if [ "$1" = "-all" ]; then 
+ userdir=$(find /home/ -maxdepth 2 -name ".mozilla") 
+else
+ userdir="$HOME/.mozilla" 
+fi
+
+for dir in $userdir
+do
+  echo "Actualizando el certificado de AutoFirma en el directorio" $dir
+  for certdb in $(find $userdir/firefox -maxdepth 2 -name "cert8.db")
+  do
+    certdir=$(dirname ${certdb});
+    certutil -A -n "${certname}" -t "TCu,Cu,Tu" -i ${certfile} -d dbm:${certdir}
+  done
+done
+
+if [ "$1" != "-all" ]; then 
+  if [ -x "/usr/bin/zenity" ]; then
+    zenity --info --title "AutoFirma" --text "El certificado para usar AutoFirma se ha instalado"
+  fi
+fi
