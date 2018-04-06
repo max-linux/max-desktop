@@ -1,3 +1,9 @@
+max-arduino (3:1.8.5-0max3) max; urgency=medium
+
+  * Include arduino-builder static
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 23 Mar 2018 11:56:57 +0100
+
 max-arduino (3:1.8.5-0max2) max; urgency=medium
 
   * Remove avrdude links
