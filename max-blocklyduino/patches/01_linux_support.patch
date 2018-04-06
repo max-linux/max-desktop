@@ -1,0 +1,34 @@
+diff --git a/arduino_web_server.py b/arduino_web_server.py
+index 1b8911c..f88616c 100644
+--- a/arduino_web_server.py
++++ b/arduino_web_server.py
+@@ -11,6 +11,7 @@ import logging
+ import platform
+ import os
+ import re
++import glob
+ import subprocess
+ import tempfile
+ import urllib
+@@ -34,6 +35,10 @@ def get_arduino_command():
+                 "c:\Program Files (x86)\Arduino\Arduino_debug.exe",
+                 "c:\Program Files (x86)\Arduino\Arduino.exe"
+             ]
++        elif platform.system() == "Linux":
++            arduino_cmd_guesses = [
++                "/usr/bin/arduino",
++            ]
+         else:
+             arduino_cmd_guesses = []
+ 
+@@ -60,6 +65,10 @@ def guess_port_name():
+                 portname = winreg.EnumValue(key, i)[1]
+             except WindowsError:
+                 break
++    elif platform.system() == "Linux":
++        ttys = glob.glob("/dev/ttyUSB*") + glob.glob("/dev/ttyACM*")
++        if len(ttys):
++            portname = ttys[0]
+     else:
+         # We'll guess it's the first non-bluetooth tty. or cu. prefixed device
+         ttys = [filename for filename in os.listdir("/dev")

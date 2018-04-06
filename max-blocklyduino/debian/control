@@ -1,0 +1,17 @@
+Source: max-blocklyduino
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
+Build-Depends: debhelper (>= 9), git, patch
+Standards-Version: 3.8.3
+Homepage: https://github.com/BlocklyDuino/BlocklyDuino
+
+Package: blocklyduino
+Architecture: all
+Depends: arduino, electron, ${shlibs:Depends}, ${misc:Depends}
+Description: web-based visual programming editor for arduino
+ Web-based visual programming editor for arduino
+ Arduino is an open-source electronics prototyping platform based on
+ flexible, easy-to-use hardware and software. It's intended for artists,
+ designers, hobbyists, and anyone interested in creating interactive
+ objects or environments.

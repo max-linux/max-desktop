@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf blocklyduino
+
+override_dh_auto_build:
+	git clone --depth=1 --branch=master  https://github.com/BlocklyDuino/BlocklyDuino.git blocklyduino
+	./patch.sh
+
+	find blocklyduino -type f -name "*.orig" -delete
+	chmod +x blocklyduino/arduino_web_server.py

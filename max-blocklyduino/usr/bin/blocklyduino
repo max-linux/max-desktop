@@ -1,0 +1,26 @@
+#!/bin/bash
+
+PID_SRV=0
+
+on_exit() {
+  if [ "${PID_SRV}" != "0" ];then
+    echo "kill python server ${PID_SRV}"
+    kill -9 ${PID_SRV}
+  fi
+}
+
+trap on_exit SIGINT SIGTERM
+trap on_exit EXIT
+trap on_exit INT
+trap on_exit QUIT
+trap on_exit TERM
+
+
+cd /usr/share/blocklyduino/
+./arduino_web_server.py &
+PID_SRV=${!}
+
+cd ${HOME}
+electron http://127.0.0.1:8080
+
+
