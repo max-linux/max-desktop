@@ -1,3 +1,11 @@
+max-openroberta (2.6.1-max1) max; urgency=medium
+
+  * New upstream version 2.6.1
+  * Use electron for show
+  * Fixed database creation, close #857, rel #875
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 07 Apr 2018 11:36:11 +0200
+
 max-openroberta (2.4.1-max1) max; urgency=medium
 
   * First release, close #857

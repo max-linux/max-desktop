@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# start of the openroberta server with the database EMBEDDED. Optionally enable remote debugging.
+# typical use case: small standalone servers, e.g. Raspberry PI. When the server is running, the database cannot
+# be accessed by a sql client.
+# if the server runs version x.y.z, the the database is expected in directory db-x.y.z
+# note: if the database version is lower than the server version, first the database is upgraded
+# admin responsibilities:
+# - avoid log files to grow and grow ...
+# - remove old database directories after successful upgrade
+
+# DO NOT use this script with DOCKER, see the docker directory for alternatives
+
+PIDS=""
+
+function propagateSignal() {
+  if [ "${PIDS}" != "" ]; then
+	echo " KILLING pids=${PIDS}"
+    kill -9 "${PIDS}" 2>/dev/null
+  fi
+  echo " Force kill ..."
+  kill -9 $(ps aux | grep java | grep -e openroberta -e staticresources| awk '{print $2}') 2>/dev/null
+}
+trap propagateSignal SIGTERM SIGINT EXIT INT QUIT TERM
+
+cd /usr/share/openroberta
+
+ODIR="${HOME}/.openroberta"
+mkdir -p ${ODIR}
+DBLOGFILE="${ODIR}/ora-db.log"
+SERVERLOGFILE="${ODIR}/ora-server.log"
+XMX=''
+DATABASE="${ODIR}/db-${serverVersionForDb}/openroberta-db"
+
+
+serverVersionForDb=$(java -cp lib/\* de.fhg.iais.roberta.main.Administration version-for-db)
+
+if [ ! -e "${ODIR}/db-${serverVersionForDb}" ]; then
+    echo "An empty database for version ${serverVersionForDb} will be created at ${DATABASE}."
+    java -cp lib/\* de.fhg.iais.roberta.main.Administration createemptydb jdbc:hsqldb:file:${DATABASE}
+fi
+
+echo "start the database server and the ${DATABASE}"
+java $XMX -cp lib/\* org.hsqldb.Server --database.0 file:${DATABASE} --dbname.0 openroberta-db >>$DBLOGFILE 2>&1 &
+PIDS="${PIDS} ${!}"
+sleep 3 # for the database to initialize
+
+echo "starting openroberta server ..."
+java -cp lib/\* de.fhg.iais.roberta.main.ServerStarter \
+     -d server.staticresources.dir=./staticResources -d database.parentdir=. -d database.mode=server $* >>$SERVERLOGFILE 2>&1 &
+PIDS="${PIDS} ${!}"
+
+echo " Started pids=${PIDS}"
+# electron-main.js have a loop for retry load
+electron /usr/share/openroberta/electron-main.js
