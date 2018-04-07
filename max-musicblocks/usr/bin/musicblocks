@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# electron doesn't load this app
+# electron /usr/share/musicblocks/index.html
+chromium-browser /usr/share/musicblocks/index.html

@@ -1,0 +1,14 @@
+Source: max-musicblocks
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
+Build-Depends: debhelper (>= 9), git, patch
+Standards-Version: 3.8.3
+Homepage: https://github.com/walterbender/musicblocks
+
+Package: musicblocks
+Architecture: all
+Depends: electron, ${shlibs:Depends}, ${misc:Depends}
+Description: collection of tools for exploring musical concepts
+ Music Blocks is a collection of manipulative tools for exploring
+ fundamental musical concepts in an integrative and fun way.

@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+VERSION=2.5
+URL=https://github.com/walterbender/musicblocks/archive/v$(VERSION).tar.gz
+
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build; \
+		(cd build && wget $(URL) -O- > musicblocks.tar.gz && tar -zxf musicblocks.tar.gz); \
+		(cd build && rm -f musicblocks.tar.gz && mv musicblocks-* musicblocks) ;\
+	fi
