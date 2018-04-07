@@ -1,0 +1,40 @@
+#!/usr/bin/make -f
+
+VERSION=1.2.5
+
+export ARCH=$(shell dpkg-architecture -qDEB_TARGET_ARCH)
+ifeq ($(ARCH), i386)
+    export UPSTREAM_ARCH=32
+else
+    export UPSTREAM_ARCH=64
+endif
+
+
+#URL=https://github.com/bromagosa/Snap4Arduino/releases/download/$(VERSION)/Snap4Arduino_desktop-gnu-32_$(VERSION).tar.gz
+URL=http://localhost/remote-files/Snap4Arduino_desktop-gnu-$(UPSTREAM_ARCH)_$(VERSION).tar.gz
+
+LD_LIBRARY_PATH:= $(CURDIR)/debian/snap4arduino/usr/share/snap4arduino/lib:$(LD_LIBRARY_PATH)
+
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) && tar -zxvf *.tar.gz && mv Snap4Arduino_desktop-gnu-$(UPSTREAM_ARCH)_$(VERSION) snap4arduino); \
+        fi
+	rm -f build/snap4arduino/minidump_stackwalk
+	rm -f build/snap4arduino/*.desktop
+	rm -f build/snap4arduino/launcher.sh
+
+
+override_dh_strip:
+	# do not strip
+
