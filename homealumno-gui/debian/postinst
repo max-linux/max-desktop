@@ -3,7 +3,7 @@
 if [ -d /var/lib/homealumno/ ] && [ ! -e /var/lib/homealumno/profiles.ini ]; then
   cat << EOF > /var/lib/homealumno/profiles.ini
 [alumno]
-exceptions = .mozilla,
+exceptions = .dmrc,
 screensaver = 1
 wallpaper = ""
 users = alumno,

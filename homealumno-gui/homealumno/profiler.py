@@ -40,7 +40,7 @@ def print_debug(txt):
         print >> sys.stderr, "%s::%s" % ("homealumno-gui::profiler", txt)
 
 DEFAULT_CONF={'main':{'profiles':['alumno']},
-              'alumno':{'users':['alumno'], 'exceptions':['.mozilla'], 
+              'alumno':{'users':['alumno'], 'exceptions':['.dmrc'], 
                         'compiz':0, 'screensaver':0, 'wallpaper':''},
              }
 

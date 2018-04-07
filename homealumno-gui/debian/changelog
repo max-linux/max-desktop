@@ -1,3 +1,9 @@
+homealumno-gui (0.9max9) max; urgency=medium
+
+  * Remove Firefox exception, close #874
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 07 Apr 2018 18:07:02 +0200
+
 homealumno-gui (0.9max8) max; urgency=medium
 
   * Change gconftool-2 with dconf and add Mate wallpapper and
