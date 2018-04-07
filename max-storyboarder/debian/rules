@@ -1,0 +1,49 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+VERSION=1.5.1
+
+#URL=https://github.com/wonderunit/storyboarder/releases/download/v1.5.1/Storyboarder-1.5.1-linux-x86_64.AppImage
+
+URL="http://localhost/remote-files/Storyboarder-$(VERSION)-linux-amd64.snap"
+
+
+
+%:
+	dh $@ 
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) && mv Storyboarder-$(VERSION)-linux-amd64.snap Storyboarder.snap); \
+		( cd build && unsquashfs ./Storyboarder.snap ) ;\
+	fi
+
+	(cd build/squashfs-root/resources/app.asar.unpacked/node_modules/@ffmpeg-installer && mkdir linux-ia32 && cd linux-ia32 && ln -s /usr/bin/ffmpeg ./ffmpeg)
+	(cd build/squashfs-root/resources/app.asar.unpacked/node_modules/@ffmpeg-installer/linux-x64 && rm -f ffmpeg && ln -s /usr/bin/ffmpeg ./ffmpeg)
+
+	rm -f build/Storyboarder.snap
+	rm -rf build/squashfs-root/bin build/squashfs-root/etc build/squashfs-root/lib
+	rm -rf build/squashfs-root/meta build/squashfs-root/locales build/squashfs-root/usr
+	rm -rf build/squashfs-root/var
+
+	(cd build/squashfs-root && \
+		rm -f  \
+		command.sh \
+		blink_image_resources_200_percent.pak \
+		content_resources_200_percent.pak \
+		content_shell.pak \
+		flavor-select icudtl.dat libffmpeg.so \
+		libnode.so LICENSE.electron.txt \
+		LICENSES.chromium.html \
+		natives_blob.bin pdf_viewer_resources.pak \
+		snapshot_blob.bin storyboarder \
+		ui_resources_200_percent.pak \
+		views_resources_200_percent.pak \
+	)
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
