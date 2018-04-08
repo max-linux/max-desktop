@@ -2,7 +2,7 @@
 
 DH_VERBOSE=1
 
-VERSION=8.15.76.1
+VERSION=8.19.76.3
 DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 URL="https://repo.skype.com/deb/pool/main/s/skypeforlinux/skypeforlinux_$(VERSION)_amd64.deb"
 
