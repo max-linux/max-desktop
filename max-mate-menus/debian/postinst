@@ -1,14 +1,24 @@
 #!/bin/sh
 
 
+_remove_distrib() {
+  # remove distrib file if found and is identical as diverted
+  DISTRIB="${1}.distrib"
+  if [ -e "${DISTRIB}" ]; then
+    if cmp "${1}" "${DISTRIB}" >/dev/null 2>&1 ; then
+      rm -f "${DISTRIB}"
+    fi
+  fi
+}
+
+
 if [ "$1" = "configure" ]; then
 
   # remove distrib to hide menu if ardesia is not installed
-  if [ -e /usr/bin/ardesia.distrib ]; then
-    if cmp /usr/bin/ardesia /usr/bin/ardesia.distrib >/dev/null 2>&1 ; then
-      rm -f /usr/bin/ardesia.distrib
-    fi
-  fi
+  _remove_distrib "/usr/bin/ardesia"
+
+  # hide josm menu if not installed
+  _remove_distrib "/usr/bin/josm"
 
 fi
 

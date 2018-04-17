@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Editor de texto Pluma
+Comment=Edit text files
+Comment[es]=Edite archivos de texto
+Exec=pluma %U
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+Icon=accessories-text-editor
+Categories=GTK;Utility;TextEditor;
+Keywords=text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;
+X-MATE-DocPath=pluma/pluma.xml
+X-MATE-FullName=Pluma Text Editor
+X-MATE-Bugzilla-Bugzilla=MATE
+X-MATE-Bugzilla-Product=Pluma
+X-MATE-Bugzilla-Component=general
+X-MATE-Bugzilla-Version=1.12.2
+X-MATE-Bugzilla-ExtraInfoScript=/usr/lib/pluma/pluma-bugreport.sh

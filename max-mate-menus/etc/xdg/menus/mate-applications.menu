@@ -77,6 +77,8 @@
       <Filename>exe.desktop</Filename>
       <Filename>shutter.desktop</Filename>
       <Filename>owncloud.desktop</Filename>
+      <Filename>synapse.desktop</Filename>
+      <Filename>xournal.desktop</Filename>
     </Exclude>
   </Menu> <!-- End Accessories -->
 
@@ -591,5 +593,9 @@
         <Filename>openboard.desktop</Filename>
     </Exclude>
   </Menu> <!-- End Other -->
+
+  <Include>
+    <Filename>max-search-apps.desktop</Filename>
+  </Include>
 
 </Menu> <!-- End Applications -->
