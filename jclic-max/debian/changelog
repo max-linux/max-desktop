@@ -1,3 +1,9 @@
+jclic-max (9.0.max2) max; urgency=medium
+
+  * Remove postinst,not needed mysql-connector
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 10 Apr 2018 09:40:52 +0200
+
 jclic-max (9.0.max1) max; urgency=medium
 
   * Build in MAX 9.0
