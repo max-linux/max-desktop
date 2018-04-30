@@ -9,3 +9,11 @@ ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
         MAKEFLAGS += -j$(NUMJOBS)
 endif
 
+
+install/max-artwork::
+	rm -rf debian/max-artwork/usr/share/themes/MaxTheme/metacity-1
+	rm -rf debian/max-artwork/usr/share/themes/MaxTheme/gtk-2.0
+	rm -rf debian/max-artwork/usr/share/themes/MaxTheme/gtk-3.0
+	rm -rf debian/max-artwork/usr/share/themes/MaxTheme/unity
+
+	find debian/max-artwork
