@@ -174,3 +174,12 @@ fi
 
 # fix for system-config-samba
 [ ! -e /etc/libuser.conf ] && touch /etc/libuser.conf
+
+# CUPS, not stop printers #883
+if [ -e /etc/cups/printers.conf ]; then
+  if grep -q "ErrorPolicy stop-printer" /etc/cups/printers.conf; then
+    echo " * Fix printers ErrorPolicy..."
+    sed -i -e 's/ErrorPolicy stop-printer/ErrorPolicy retry-job/g' /etc/cups/printers.conf
+    invoke-rc.d cups restart || true
+  fi
+fi
