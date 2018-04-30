@@ -1,3 +1,9 @@
+max-meta (9.0.max21) max; urgency=medium
+
+  * Switch openshot => kdenlive, close #884
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 30 Apr 2018 08:15:44 +0200
+
 max-meta (9.0.max20) max; urgency=medium
 
   * max-pdi: Add mrpdi packages as depends
