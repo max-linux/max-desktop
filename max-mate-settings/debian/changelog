@@ -1,3 +1,15 @@
+max-mate-settings (9.0max23) max; urgency=medium
+
+  * Don't run dconf in infantil postinst
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 02 May 2018 08:30:18 +0200
+
+max-mate-settings (9.0max22) max; urgency=medium
+
+  * Update plank panel config version
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 02 May 2018 08:25:14 +0200
+
 max-mate-settings (9.0max21) max; urgency=medium
 
   * Update for new gcompris, rel #907

@@ -1,19 +1,19 @@
 #!/bin/sh
 
-
+LOCK=".infantil-20180502"
 
 for prof in $(find /home/*/ -maxdepth 1 -name .config 2>/dev/null); do
   username=$(grep "`dirname $prof`:" /etc/passwd | cut -d: -f 1)
   home=$(dirname $prof)
   [ "$username" = "" ] && continue
-  [ -e "$home/.infantil" ] && continue
+  [ -e "$home/${LOCK}" ] && continue
 
   # delete plank old settings
   rm -rf "$home/.config/plank"
 
   echo " * Configurando max-mate-settings-infantil en $home ..."
-  su $username -c "/usr/lib/max-mate/max-mate-settings-overlay"
-  su $username -c "touch $home/.infantil"
+  # su $username -c "/usr/lib/max-mate/max-mate-settings-overlay" 2>&1 > /dev/null
+  su $username -c "touch $home/${LOCK}"
 done
 
 

@@ -23,14 +23,14 @@ function correct_xinputrc() {
     fi
 }
 
-PLANK_VERSION="20180122"
+PLANK_VERSION="20180502"
 
 if [ ! -e "${HOME}/.config/plank/dock1/.v${PLANK_VERSION}" ]; then
 
     rm -f ${HOME}/.config/plank/dock1/.v*
     rm -f ${HOME}/.config/plank/dock1/launchers/*
 
-    dconf reset -f /net/launchpad/plank/
+    dconf reset -f /net/launchpad/plank/ 2>&1 > /dev/null
 
     LAUNCHERS="/usr/share/max-mate/settings-overlay/config/plank/dock1/launchers/"
     for f in $(find "${LAUNCHERS}" -type f | sed -e 's@/usr/share/max-mate/settings-overlay/@@g'); do
