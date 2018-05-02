@@ -136,6 +136,7 @@
             <Include>
                 <Filename>gcompris-edit.desktop</Filename>
                 <Filename>gcompris.desktop</Filename>
+                <Filename>org.kde.gcompris.desktop</Filename>
             </Include>
         </Menu>
 
@@ -187,6 +188,7 @@
             <Filename>kde4-celestia.desktop</Filename>
             <Filename>celestia.desktop</Filename>
             <Filename>gcompris.desktop</Filename>
+            <Filename>org.kde.gcompris.desktop</Filename>
             <Filename>maxmoodle.desktop</Filename>
             <Filename>maxmoodle-gui.desktop</Filename>
             <Filename>squeak.desktop</Filename>
@@ -415,6 +417,7 @@
     <Exclude>
         <Filename>freecell.desktop</Filename>
         <Filename>gcompris.desktop</Filename>
+        <Filename>org.kde.gcompris.desktop</Filename>
         <Filename>tuxmath.desktop</Filename>
         <Filename>jclic.desktop</Filename>
         <Filename>tuxtype.desktop</Filename>
