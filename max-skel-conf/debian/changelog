@@ -1,3 +1,9 @@
+max-skel-conf (9.0.max22) max; urgency=medium
+
+  * Change version 9.0 => 9.5
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 07 May 2018 09:52:03 +0200
+
 max-skel-conf (9.0.max21) max; urgency=medium
 
   * Configure CUPS to retry-job instead of stop-printer, close #883
