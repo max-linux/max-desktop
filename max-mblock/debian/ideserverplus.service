@@ -1,0 +1,14 @@
+[Unit]
+Description=mblock ide service
+
+[Service]
+ExecStart=/opt/makeblock/ideserverplus/ide_server_plus.sh
+Restart=always
+RestartSec=10                       # Restart service after 10 seconds if node service crashes
+StandardOutput=/dev/null            # Output to syslog
+StandardError=syslog                # Output to syslog
+SyslogIdentifier=ideserverplus
+Environment=
+
+[Install]
+WantedBy=multi-user.target

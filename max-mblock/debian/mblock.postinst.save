@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+update-mime-database /usr/share/mime
+
+xdg-icon-resource install --context mimetypes \
+                  --size 32 /usr/share/icons/mBlock/32x32.png \
+                  application-scratch
+
+
+#DEBHELPER#

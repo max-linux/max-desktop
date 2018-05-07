@@ -1,0 +1,73 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+VERSION=4.0.4
+
+#URL="http://mblock.makeblock.com/mBlock4.0/mBlock_4.0.4_i386.deb"
+#URL="http://mblock.makeblock.com/mBlock4.0/mBlock_4.0.4_amd64.deb"
+
+URL="http://localhost/remote-files/mBlock_$(VERSION)_$(DEB_HOST_ARCH).deb"
+
+
+%:
+	dh $@ --with systemd
+
+
+override_dh_installinit:
+	dh_installinit
+	dh_systemd_enable -pmblock --name=ideserverplus ideserverplus.service
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) && dpkg -x *.deb ./); \
+	fi
+
+	( cd build && dpkg -e *.deb && rm -f *.deb )
+
+	# remove desktop launcher
+	rm -f build/opt/makeblock/mblock.desktop
+
+	# replace Arduino JAVA with Java 8 from Oracle
+	# original 1.8.0_51-b16
+	rm -rf build/opt/makeblock/mBlock/resources/tools/arduino-server/tools/arduino/java/
+	( cd build/opt/makeblock/mBlock/resources/tools/arduino-server/tools/arduino/ && ln -s /usr/lib/jvm/java-8-oracle/ java )
+
+	( cd build/opt/makeblock/mBlock/resources/tools/arduino-server/tools/arduino/hardware/tools/avr && rm -rf bin && ln -s /usr/bin . )
+	( cd build/opt/makeblock/mBlock/resources/tools/arduino-server/tools/arduino/hardware/tools/avr && rm -rf lib && ln -s /usr/lib . )
+	( cd build/opt/makeblock/mBlock/resources/tools/arduino-server/tools/arduino/hardware/tools/avr && rm -rf libexec/ x86_64-unknown-linux-gnu/ )
+
+	rm -f build/opt/makeblock/ideserverplus/node
+	( cd build/opt/makeblock/ideserverplus && ln -s  /usr/bin/nodejs ./node)
+
+	rm -f build/opt/makeblock/mBlock/resources/plugins/libpepflashplayer.so
+	( cd build/opt/makeblock/mBlock/resources/plugins/ && ln -s /usr/lib/pepperflashplugin-nonfree/libpepflashplayer.so . )
+
+	# duplicate ideserverplus
+	rm -rf 	build/opt/makeblock/mBlock/resources/web/resources/MakeBlockIdeServicePlus_*
+
+	# disable cp arduino.desktop file to HOME
+	sed  -i 's/cp/#cp/g' build/opt/makeblock/mBlock/resources/tools/arduino-server/tools/arduino/install.sh 
+	chmod +x build/opt/makeblock/mBlock/resources/tools/arduino-server/tools/arduino/arduino
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+override_dh_strip:
+	# do not strip, break executables
+
+
+override_dh_shlibdeps:
+	# do not search for libs
+
+override_dh_fixperms:
+	dh_fixperms
+
+	# mblock special perms
+	chmod    0777 debian/mblock/opt/makeblock/mBlock/resources/ext
+	# chmod -R 0777 debian/mblock/opt/makeblock/mBlock/resources/tools
+	# chmod -R 0777 debian/mblock/opt/makeblock/mBlock/resources/web
+
