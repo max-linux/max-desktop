@@ -1,3 +1,17 @@
+max-ubufox (3.2.3max4) max; urgency=medium
+
+  * Fix homepage in max-firefox-conf => distribution.ini
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 12 May 2018 10:11:34 +0200
+
+max-ubufox (3.2.3max3) max; urgency=medium
+
+  * Remove extension, firefox > 57 incompatible, add pref to set
+    homepage
+  * Update version 9.0 => 9.5
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 12 May 2018 09:57:45 +0200
+
 max-ubufox (3.2.3max2) max; urgency=medium
 
   * Fix, add  xpi extension

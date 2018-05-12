@@ -11,11 +11,12 @@ ID=maxubufox@educa.madrid.org.xpi
 test-id:
 	@echo $(ID)
 
-override_dh_auto_install:
-	mkdir -p debian/tmp/usr/share/mozilla/extensions/\{ec8030f7-c20a-464f-9b0e-13a3a9e97384\}
-	install *.xpi debian/tmp/usr/share/mozilla/extensions/\{ec8030f7-c20a-464f-9b0e-13a3a9e97384\}/$(ID)
-
-#	mkdir -p debian/tmp/usr/lib/firefox-addons/extensions
-#	install *.xpi debian/tmp/usr/lib/firefox-addons/extensions/$(ID)
-
-	dh_auto_install
+#override_dh_auto_install:
+#	mkdir -p debian/tmp/usr/share/mozilla/extensions/\{ec8030f7-c20a-464f-9b0e-13a3a9e97384\}
+#	install *.xpi debian/tmp/usr/share/mozilla/extensions/\{ec8030f7-c20a-464f-9b0e-13a3a9e97384\}/$(ID)
+#
+##	mkdir -p debian/tmp/usr/lib/firefox-addons/extensions
+##	install *.xpi debian/tmp/usr/lib/firefox-addons/extensions/$(ID)
+#
+#	dh_auto_install
+#

@@ -2,9 +2,8 @@ Source: max-ubufox
 Section: web
 Priority: optional
 Maintainer: Ubuntu Mozilla Team <ubuntu-mozillateam@lists.ubuntu.com>
-Build-Depends: debhelper (>= 7),
-               cdbs,
-               mozilla-devscripts (>= 0.22~)
+Build-Depends: debhelper (>= 9), cdbs
+#               mozilla-devscripts (>= 0.22~)
 Standards-Version: 3.9.1
 Homepage: https://launchpad.net/ubufox
 
