@@ -31,7 +31,7 @@ XSERVER_XORG="xserver-xorg"
 MAXHOSTNAME=max95
 INSTALL_MOODLE=yes
 MIRRORMAX="max.educa.madrid.org"
-MAX_VERSION="max90"
+SYSLINUX_THEME_VERSION="max90"
 
 ## Create a 12.04 with trusty kernel and Xorg
 #LINUX_IMAGE="linux-image-generic-lts-trusty max-linux"

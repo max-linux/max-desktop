@@ -1,6 +1,6 @@
 
-# install syslinux-themes-${MAX_VERSION} in chroot and copy to $CDRW/isolinux
-chroot $CHROOT << EOC || _exit "Error instalando syslinux-themes-${MAX_VERSION}"
+# install syslinux-themes-${SYSLINUX_THEME_VERSION} in chroot and copy to $CDRW/isolinux
+chroot $CHROOT << EOC || _exit "Error instalando syslinux-themes-${SYSLINUX_THEME_VERSION}"
 export LC_ALL=C
 export LC_MESSAGES=C
 export DEBCONF_FRONTEND="noninteractive"
@@ -9,14 +9,14 @@ export UCF_FORCE_CONFFOLD=1
 export ERROR=0
 apt-get $APT_OPTS update || ERROR=1
 apt-get $APT_OPTS -f install
-apt-get $APT_OPTS install syslinux-themes-${MAX_VERSION} gfxboot-theme-ubuntu || ERROR=1
+apt-get $APT_OPTS install syslinux-themes-${SYSLINUX_THEME_VERSION} gfxboot-theme-ubuntu || ERROR=1
 apt-get clean
 exit \$ERROR
 EOC
 
 #set -x
 rm -f $CDRW/isolinux/*
-cp -L --remove-destination $CHROOT/usr/share/syslinux/themes/${MAX_VERSION}/isolinux-live/* $CDRW/isolinux/
+cp -L --remove-destination $CHROOT/usr/share/syslinux/themes/${SYSLINUX_THEME_VERSION}/isolinux-live/* $CDRW/isolinux/
 
 mkdir -p $CDRW/gfxboot
 tar -zxf $CHROOT/usr/share/gfxboot-theme-ubuntu/bootlogo.tar.gz -C $CDRW/gfxboot
