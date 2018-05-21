@@ -32,6 +32,7 @@ MAXHOSTNAME=max95
 INSTALL_MOODLE=yes
 MIRRORMAX="max.educa.madrid.org"
 SYSLINUX_THEME_VERSION="max90"
+REPODIR="max90"
 
 ## Create a 12.04 with trusty kernel and Xorg
 #LINUX_IMAGE="linux-image-generic-lts-trusty max-linux"
