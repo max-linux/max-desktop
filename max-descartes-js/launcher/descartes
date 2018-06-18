@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-if [ -e $HOME/.descartes ]; then
+if [ ! -e $HOME/.descartes/version_manager/descartes-min.js ]; then
   # first run
   mkdir -p $HOME/.descartes
   tar -zxf /usr/share/descartes/descartes.tar.gz -C $HOME/.descartes/

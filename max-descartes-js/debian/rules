@@ -15,5 +15,5 @@ override_dh_clean:
 
 override_dh_auto_build:
 	mkdir -p build2
-	if [ ! -e build2/Descartes.jar ]; then (cd build2 && curl -L -O "$(JAR_URL)" ); fi
-	if [ ! -e build2/descartes.tar.gz ]; then (cd build2 && curl -L -O "$(TARGZ_URL)" ); fi
+	if [ ! -e build2/Descartes.jar ]; then (cd build2 &&    curl -L -O $(JAR_URL) ); fi
+	if [ ! -e build2/descartes.tar.gz ]; then (cd build2 && curl -L -O $(TARGZ_URL) ); fi
