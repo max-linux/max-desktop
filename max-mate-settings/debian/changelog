@@ -1,3 +1,9 @@
+max-mate-settings (9.0max24) max; urgency=medium
+
+  * Enable delete in caja, rel #917
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 18 Jun 2018 07:49:36 +0200
+
 max-mate-settings (9.0max23) max; urgency=medium
 
   * Don't run dconf in infantil postinst
