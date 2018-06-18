@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+if [ -e $HOME/.descartes ]; then
+  # first run
+  mkdir -p $HOME/.descartes
+  tar -zxf /usr/share/descartes/descartes.tar.gz -C $HOME/.descartes/
+fi
+
+java -jar /usr/share/descartes/Descartes.jar -ms64M -mx256M
+

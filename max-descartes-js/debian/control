@@ -1,0 +1,16 @@
+Source: max-descartes-js
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 7), curl
+Standards-Version: 3.8.3
+Homepage: http://reddescartes.org/
+
+
+Package: descartes
+Architecture: all
+Depends: max-java-jre, ${misc:Depends}
+Description: Standalone and JAVA extension of DescartesWeb
+ Potente herramienta para confeccionar páginas interactivas 
+ de Matemáticas, donde los gráficos y los cálculos cobran 
+ vida a través de escenas configurables que permiten a los alumnos.
