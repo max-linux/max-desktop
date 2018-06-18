@@ -1,3 +1,9 @@
+max-meta (9.0.max23) max; urgency=medium
+
+  * Remove lightdm-gtk-greeter, rel #914
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 18 Jun 2018 13:37:58 +0200
+
 max-meta (9.0.max22) max; urgency=medium
 
   * Change gcompris->gcompris-qt close #907
