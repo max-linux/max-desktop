@@ -1,3 +1,9 @@
+max-mate-meta (1:9.0max27) max; urgency=medium
+
+  * Remove lightdm-gtk-greeter, we use unity-greeter rel #914
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 18 Jun 2018 13:34:03 +0200
+
 max-mate-meta (1:9.0max26) max; urgency=medium
 
   * Add caja-owncloud
