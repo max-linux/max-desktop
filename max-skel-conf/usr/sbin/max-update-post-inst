@@ -183,3 +183,6 @@ if [ -e /etc/cups/printers.conf ]; then
     invoke-rc.d cups restart || true
   fi
 fi
+
+# update desktop cache files, rel #865
+update-desktop-database || true
