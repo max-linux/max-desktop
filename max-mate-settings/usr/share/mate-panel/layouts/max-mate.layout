@@ -61,7 +61,7 @@ object-type=applet
 applet-iid=WnckletFactory::WindowListApplet
 toplevel-id=bottom
 position=40
-locked=true
+locked=false
 
 [Object notification-area]
 object-type=applet
