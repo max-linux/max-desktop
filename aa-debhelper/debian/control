@@ -3,9 +3,9 @@ Section: devel
 Priority: optional
 Maintainer: Torsten Werner <twerner@debian.org>
 Build-Depends: cdbs,
- debhelper,
+ debhelper (>= 9~),
  dh-buildinfo
-Standards-Version: 3.6.0
+Standards-Version: 3.9.0
 
 Package: aa-debhelper
 Architecture: all
