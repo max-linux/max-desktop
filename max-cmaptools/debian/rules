@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 #export DH_VERBOSE=1
 
-VER=v6.02_08-11-16
+VER=v6.03_10-04-17
 
 ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
 ifeq ($(ARCH), amd64)
