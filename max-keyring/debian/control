@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Maintainer: Pedro Peña Pérez <pedro.pena@edmanufacturer.es>
 Build-Depends: debhelper (>= 7.0.0), cdbs, aa-debhelper, gnupg, ubuntu-keyring
-Standards-Version: 3.8.4
+Standards-Version: 3.9.1
 
 Package: max-keyring
 Priority: important
