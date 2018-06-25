@@ -2,7 +2,7 @@ Source: max-arasuite
 Section: max
 Priority: extra
 Maintainer: Mario Izquierdo Rodríguez <hola@marioizquierdo.es>
-Build-Depends: debhelper (>= 7), curl, openjdk-8-jre-headless
+Build-Depends: debhelper (>= 7), curl, openjdk-8-jre
 Standards-Version: 3.8.3
 Homepage: http://arasuite.proyectotico.es/
 
