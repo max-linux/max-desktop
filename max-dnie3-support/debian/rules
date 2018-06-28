@@ -1,7 +1,10 @@
 #!/usr/bin/make -f
 
-URL32="https://www.dnielectronico.es/descargas/distribuciones_linux/Ubuntu-32bits/Ubuntu_(16.04_LTS_Xenial%20Xerus_15.10%20Wily%20Werewolf)_libpkcs11-dnie_1.4.0_i386.deb"
-URL64="https://www.dnielectronico.es/descargas/distribuciones_linux/Ubuntu-64bits/Ubuntu_(16.04_LTS_Xenial%20Xerus_15.10%20Wily%20Werewolf)_libpkcs11-dnie_1.4.0_amd64.deb"
+#URL32="https://www.dnielectronico.es/descargas/distribuciones_linux/Ubuntu-32bits/Ubuntu_(16.04_LTS_Xenial%20Xerus_15.10%20Wily%20Werewolf)_libpkcs11-dnie_1.4.0_i386.deb"
+#URL64="https://www.dnielectronico.es/descargas/distribuciones_linux/Ubuntu-64bits/Ubuntu_(16.04_LTS_Xenial%20Xerus_15.10%20Wily%20Werewolf)_libpkcs11-dnie_1.4.0_amd64.deb"
+
+URL32="https://www.dnielectronico.es/descargas/distribuciones_linux/libpkcs11-dnie_1.4.1_i386.deb"
+URL64="https://www.dnielectronico.es/descargas/distribuciones_linux/libpkcs11-dnie_1.4.1_amd64.deb"
 
 DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
