@@ -1,11 +1,12 @@
 #!/usr/bin/make -f
 
 DH_VERBOSE=1
-VERSION=2.6.1
+#VERSION=2.6.1
+VERSION=Hotfix-2.7.1
 
 DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 #URL="https://github.com/OpenRoberta/robertalab/archive/ORA-$(VERSION).tar.gz"
-URL="http://localhost/remote-files/ORA-$(VERSION).tar.gz"
+URL="http://localhost/remote-files/$(VERSION).tar.gz"
 
 %:
 	dh $@
@@ -19,8 +20,8 @@ override_dh_auto_build:
 		mkdir build ;\
 		( cd build && wget $(URL) && tar -zxf *.tar.gz); \
 	fi
-	(cd build/robertalab-ORA-$(VERSION)/OpenRobertaParent/ && mvn clean install)
-	(cd build/robertalab-ORA-$(VERSION) && ./ora.sh --export ../ora-export)
+	(cd build/robertalab-$(VERSION)/OpenRobertaParent/ && mvn clean install)
+	(cd build/robertalab-$(VERSION) && ./ora.sh --export ../ora-export)
 
 #override_dh_auto_install:
 #	dh_install
