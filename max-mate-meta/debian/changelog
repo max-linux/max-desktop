@@ -1,3 +1,9 @@
+max-mate-meta (10.0.max1) max; urgency=medium
+
+  * Build in MAX 10.0
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 29 Jun 2018 08:10:07 +0200
+
 max-mate-meta (1:9.0max27) max; urgency=medium
 
   * Remove lightdm-gtk-greeter, we use unity-greeter rel #914
