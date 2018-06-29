@@ -64,3 +64,6 @@ override_dh_auto_build:
 
 	# disable updates
 	sed -i 's/update.check = true/update.check = false/g'  build/processing-*/lib/defaults.txt
+
+	# replace java with oracle
+	(cd build/processing-*/ && rm -rf java && ln -s /usr/lib/jvm/java-8-oracle ./java)

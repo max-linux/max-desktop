@@ -5,9 +5,13 @@ Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@
 Build-Depends: debhelper (>= 7), wget, unzip,
                libasound2, libstdc++6,
                libx11-6, libxext6, libxi6, libxrender1, libxtst6,
-               libatk1.0-0, libavcodec-ffmpeg56, libavcodec-dev, libavformat-ffmpeg56,
+               libatk1.0-0,
+#               libavcodec-ffmpeg56,
+               libavcodec-dev,
+#               libavformat-ffmpeg56,
                libcairo2-dev, libfontconfig1-dev, libfreetype6-dev, libgdk-pixbuf2.0-dev,
-               libgtk2.0-dev, libgl1-mesa-glx, libpango1.0-dev, libxslt1-dev, libxxf86vm-dev
+               libgtk2.0-dev, libgl1-mesa-glx, libpango1.0-dev, libxslt1-dev, libxxf86vm-dev,
+               libopenjfx-jni
 Standards-Version: 3.8.3
 Homepage: https://processing.org
 
