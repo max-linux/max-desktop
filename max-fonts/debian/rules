@@ -19,7 +19,9 @@ override_dh_auto_build:
 	done;
 
 	@rm -rf fonts/*.txt tmp/
-	cd fonts && rename 's/\.TTF$$/\.ttf/' *.TTF
+
+#	cd fonts && rename.ul 's/\.TTF$$/\.ttf/' *.TTF
+	debian/lowercase.sh fonts/
 
 override_dh_auto_clean:
 	dh_auto_clean
