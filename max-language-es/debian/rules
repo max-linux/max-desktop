@@ -15,6 +15,3 @@ build/max-language-es::
 
 binary-install/max-language-es::
 #	(cd ktechlab && make install DESTDIR=$(CURDIR)/debian/max-language-es/ )
-
-	# clean svn dirs
-	find $(CURDIR)/debian/max-language-es -type d -name .svn | xargs rm -rf --
