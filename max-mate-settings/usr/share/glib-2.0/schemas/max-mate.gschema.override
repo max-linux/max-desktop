@@ -173,7 +173,7 @@ version='1.5.11'
 [desktop.ibus.panel]
 show-icon-on-systray=false
 
-[com.canonical.unity-greeter]
+[x.dm.slick-greeter]
 theme-name='Ambiance'
 background='/usr/share/images/gdm/maxgdm.png'
 icon-theme-name='maxtoon'
