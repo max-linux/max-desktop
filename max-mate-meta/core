@@ -19,7 +19,6 @@ brltty
 brltty-x11
 ca-certificates
 caja
-caja-gksu
 caja-open-terminal
 caja-sendto
 caja-share
@@ -88,7 +87,6 @@ indicator-sound-gtk2
 info
 inputattach
 inxi
-iproute
 iptables
 iputils-arping
 iputils-tracepath
@@ -166,6 +164,7 @@ modemmanager
 mozo
 mtr-tiny
 nano
+net-tools
 network-manager
 network-manager-gnome
 network-manager-pptp-gnome

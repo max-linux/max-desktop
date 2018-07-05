@@ -1,7 +1,4 @@
 a11y-profile-manager-indicator
-account-plugin-facebook
-account-plugin-flickr
-account-plugin-google
 accountsservice
 acpid
 alsa-base
@@ -23,7 +20,6 @@ brltty
 brltty-x11
 ca-certificates
 caja
-caja-gksu
 caja-open-terminal
 caja-sendto
 caja-wallpaper
@@ -43,9 +39,6 @@ cups-ppdc
 dconf-cli
 dconf-editor
 deja-dup
-deja-dup-backend-cloudfiles
-deja-dup-backend-gvfs
-deja-dup-backend-s3
 deja-dup-caja
 dialog
 dmz-cursor-theme
@@ -109,7 +102,6 @@ indicator-application-gtk2
 indicator-sound-gtk2
 inputattach
 inxi
-iproute
 iputils-arping
 iso-codes
 iw
@@ -117,8 +109,6 @@ language-pack-es
 language-pack-gnome-es
 language-selector-gnome
 libaacs0
-libaccount-plugin-generic-oauth
-libaccount-plugin-google
 libavahi-compat-libdnssd1
 libbdplus0
 libbluray-bdj
@@ -129,7 +119,6 @@ libcanberra-gtk3-module
 libcanberra-pulse
 libdvdnav4
 libdvdread4
-libegl1-mesa-drivers
 libfile-mimeinfo-perl
 libgpod-common
 libimobiledevice-utils
@@ -143,7 +132,6 @@ libplist-utils
 libproxy1-plugin-gsettings
 libproxy1-plugin-networkmanager
 libpurple-bin
-libqt5libqgtk2
 libreoffice-avmedia-backend-gstreamer
 libreoffice-calc
 libreoffice-gnome
@@ -154,18 +142,12 @@ libreoffice-style-human
 libreoffice-writer
 librsvg2-common
 libsasl2-modules
-libtopmenu-client-gtk2-0
-libtopmenu-client-gtk3-0
-libtopmenu-server-gtk2-0
-libtopmenu-server-gtk3-0
-libtxc-dxtn-s2tc0
 libwmf0.2-7-gtk
 libx11-protocol-perl
 lightdm
 logisim
 marco
 mate-accessibility-profiles
-mate-applet-topmenu
 mate-applets
 mate-desktop-environment-core
 mate-dock-applet
@@ -224,7 +206,6 @@ pulseaudio-module-x11
 pulseaudio-utils
 python3-aptdaemon
 python3-aptdaemon.gtk3widgets
-python3-aptdaemon.pkcompat
 qt4-qtconfig
 resolvconf
 rfkill
@@ -251,10 +232,6 @@ thunderbird
 tilda
 tlp
 tlp-rdw
-topmenu-gtk-common
-topmenu-gtk2
-topmenu-gtk3
-toshset
 transmission-gtk
 ubuntu-drivers-common
 max-artwork

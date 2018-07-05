@@ -1,3 +1,17 @@
+max-mate-meta (10.0.max2) max; urgency=medium
+
+  * Remove cajagksu iproute 
+    accountpluginfacebook accountpluginflickr accountplugingoogle
+    cajagksu dejadupbackendcloudfiles dejadupbackendgvfs
+    dejadupbackends3 iproute libaccountplugingenericoauth
+    libaccountplugingoogle libegl1mesadrivers libqt5libqgtk2
+    libtopmenuclientgtk20 libtopmenuclientgtk30 libtopmenuservergtk20
+    libtopmenuservergtk30 libtxcdxtns2tc0 mateapplettopmenu
+    python3aptdaemon.pkcompat topmenugtkcommon topmenugtk2 topmenugtk3
+    toshset
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jul 2018 08:40:57 +0200
+
 max-mate-meta (10.0.max1) max; urgency=medium
 
   * Build in MAX 10.0
