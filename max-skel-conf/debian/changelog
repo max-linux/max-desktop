@@ -1,3 +1,9 @@
+max-skel-conf (10.0.max4) max; urgency=medium
+
+  * Set version to 10.0-peta and remove descartes
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jul 2018 09:40:12 +0200
+
 max-skel-conf (10.0.max3) max; urgency=medium
 
   * max-set-background, more silent and update-desktop-database in post-

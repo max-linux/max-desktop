@@ -14,11 +14,12 @@ if [ -x /usr/share/gnome-menus/update-gnome-menus-cache ]; then
 fi
 
 UPDATE_GRUB=0
+MAX_VERSION="MAX-10.0-peta"
 
 if [ -e /etc/default/grub ]; then
-  if ! grep -q "MaX-9.5" /etc/default/grub 2>/dev/null; then
+  if ! grep -q "${MAX_VERSION}" /etc/default/grub 2>/dev/null; then
     echo '' >> /etc/default/grub
-    echo 'GRUB_DISTRIBUTOR="MaX-9.5"' >> /etc/default/grub
+    echo 'GRUB_DISTRIBUTOR="${MAX_VERSION}"' >> /etc/default/grub
     UPDATE_GRUB=1
   fi
 
@@ -83,15 +84,15 @@ fi
 
 
 
-if [ -d /usr/lib/jvm/ ] && [ -e /usr/share/descartes/DescartesLib.jar ]; then
-  # link descartes in every JAVA package
-  JVMS=$(find /usr/lib/jvm/ -maxdepth 1 -mindepth 1 -type d | grep -v jmf)
-  for jvm in $JVMS; do
-    if [ -d ${jvm}/jre/lib/ext/ ] && [ ! -e ${jvm}/jre/lib/ext/DescartesLib.jar ]; then
-      ln -s /usr/share/descartes/DescartesLib.jar ${jvm}/jre/lib/ext/
-    fi
-  done
-fi
+#if [ -d /usr/lib/jvm/ ] && [ -e /usr/share/descartes/DescartesLib.jar ]; then
+#  # link descartes in every JAVA package
+#  JVMS=$(find /usr/lib/jvm/ -maxdepth 1 -mindepth 1 -type d | grep -v jmf)
+#  for jvm in $JVMS; do
+#    if [ -d ${jvm}/jre/lib/ext/ ] && [ ! -e ${jvm}/jre/lib/ext/DescartesLib.jar ]; then
+#      ln -s /usr/share/descartes/DescartesLib.jar ${jvm}/jre/lib/ext/
+#    fi
+#  done
+#fi
 
 if [ -x /usr/bin/xdg-mime ] && [ -e /etc/gnome/defaults.list ]; then
   # chech exe-learning mime
