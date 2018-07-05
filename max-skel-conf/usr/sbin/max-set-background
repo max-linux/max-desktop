@@ -40,10 +40,10 @@ fi
 
 cd /usr/share/backgrounds
 
-rm max.png
+rm -f max.png
 ln -s "max-madrid-linux-${SUFFIX}.png" max.png
 
-rm max-infantil.png
+rm -f max-infantil.png
 ln -s "max-madrid-linux-infantil-${SUFFIX}.png" max-infantil.png
 
 

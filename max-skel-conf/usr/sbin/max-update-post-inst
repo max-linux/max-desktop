@@ -185,4 +185,4 @@ if [ -e /etc/cups/printers.conf ]; then
 fi
 
 # update desktop cache files, rel #865
-update-desktop-database || true
+update-desktop-database 2>/dev/null || true
