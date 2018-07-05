@@ -1,3 +1,24 @@
+max-mate-meta (10.0.max5) max; urgency=medium
+
+  * Remove python3-aptdaemon.pkcompat
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jul 2018 09:09:01 +0200
+
+max-mate-meta (10.0.max4) max; urgency=medium
+
+  * Remove topmenu, egl1-mesa, etc...
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jul 2018 09:07:24 +0200
+
+max-mate-meta (10.0.max3) max; urgency=medium
+
+  * Remove obsolete deps mate-gnome-main-menu-applet mate-netspeed
+    pulseaudio-module-x11 fonts-takao-pgothic ttf-ancient-fonts-symbola
+    libbluray1 mate-gnome-main-menu-applet mate-netspeed pulseaudio-
+    module-x11 fonts-takao-pgothic ttf-ancient-fonts-symbola
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jul 2018 09:01:44 +0200
+
 max-mate-meta (10.0.max2) max; urgency=medium
 
   * Remove cajagksu iproute 
