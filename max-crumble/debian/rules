@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+URL="http://complubot.com/docu/Crumble/Software/crumble_1.0.0_all.deb"
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+
+override_dh_auto_build:
+	mkdir -p build2
+	if [ ! -e build2/crumble.deb ]; then (cd build2 && curl -L -O $(URL) && mv * crumble.deb); fi
+	if [ ! -e build2/usr ]; then (cd build2 && dpkg --extract crumble.deb ./ && dpkg --control crumble.deb); fi
+
+	rm -rf build2/usr/share/doc

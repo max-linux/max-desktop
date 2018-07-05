@@ -1,0 +1,14 @@
+Source: max-crumble
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 7), curl
+Standards-Version: 3.8.3
+Homepage: http://complubot.com/inicio/proyectos/swr/crumble/software-crumble/
+
+Package: crumble
+Architecture: all
+Depends: python2.7, python-numpy, python-wxgtk3.0, python-cairo, python-pyparsing, libhidapi-libusb0,
+         ${shlibs:Depends}, ${misc:Depends}
+Description: Scratch inspired programming for the Crumble Controller
+ Scratch inspired programming for the Crumble Controller.
