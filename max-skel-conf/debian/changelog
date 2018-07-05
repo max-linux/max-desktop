@@ -1,3 +1,9 @@
+max-skel-conf (10.0.max5) max; urgency=medium
+
+  * lightdm: remove unity-greeter, update samba conf, update issue/motd
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jul 2018 09:49:08 +0200
+
 max-skel-conf (10.0.max4) max; urgency=medium
 
   * Set version to 10.0-peta and remove descartes

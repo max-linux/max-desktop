@@ -17,7 +17,8 @@ case "$1" in
 
     if [ -e /etc/samba/smb.conf ]; then
       # configure SAMBA
-      grep -q MAX95AULAMAX /etc/samba/smb.conf || \
+      grep -q MAX10AULAMAX /etc/samba/smb.conf || \
+         cp /etc/samba/smb.conf /etc/samba/smb.conf.backupmax10
          cat /usr/share/max-skel-conf/etc/samba/smb.conf > /etc/samba/smb.conf
     fi
 
