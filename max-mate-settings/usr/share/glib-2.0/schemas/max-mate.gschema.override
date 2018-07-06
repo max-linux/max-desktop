@@ -6,7 +6,7 @@ show-versions=true
 keyservers=['hkp://keyserver.ubuntu.com:11371', 'hkp://pool.sks-keyservers.net', 'ldap://keyserver.pgp.com']
 
 [org.gnome.desktop.interface]
-cursor-theme='DMZ-White'
+cursor-theme='mate'
 document-font-name='Ubuntu 11'
 font-name='Ubuntu 11'
 gtk-theme='MaxColors'
@@ -84,7 +84,7 @@ autorun-x-content-start-app=['x-content/software','x-content/video-bluray.xml','
 [org.mate.Marco.general]
 center-new-windows=false
 compositing-manager=true
-theme='MaxColors'
+theme='MAXborde'
 titlebar-font='Ubuntu Medium 11'
 
 [org.mate.Marco.global-keybindings]
