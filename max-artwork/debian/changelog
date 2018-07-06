@@ -1,3 +1,10 @@
+max-artwork (10.0.max2) max; urgency=medium
+
+  * Add MAXborde metacity theme
+  * Clean Makefile.in files, use autogen.sh during build
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jul 2018 14:47:03 +0200
+
 max-artwork (10.0.max1) max; urgency=medium
 
   * Build in MAX 10.0

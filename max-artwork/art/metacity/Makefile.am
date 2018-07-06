@@ -1,1 +1,1 @@
-SUBDIRS = MaxColors
+SUBDIRS = MaxColors MAXborde
