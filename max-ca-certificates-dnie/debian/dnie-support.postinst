@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+#DEBHELPER#
+
+
+PKCS11_LIB="/usr/lib/x86_64-linux-gnu/pkcs11/opensc-pkcs11.so"
+
+
+for prof in $(find /home/*/ -maxdepth 1 -name .mozilla 2>/dev/null); do
+  username=$(grep "`dirname $prof`:" /etc/passwd | cut -d: -f 1)
+  [ "$username" = "" ] && continue
+  ffprof=$(echo $prof/firefox/*.default/ )
+  su $username -c "modutil -force -add \"OpenSC PKCS#11 DNIe\" -libfile ${PKCS11_LIB} -dbdir \"$ffprof\""  2>/dev/null || true
+  cat << EOF >> ${ffprof}/pkcs11.txt
+
+
+library=${PKCS11_LIB}
+name=DNIe
+EOF
+
+done

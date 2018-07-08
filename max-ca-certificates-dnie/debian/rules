@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ 
+
+
+override_dh_auto_build:
+	./build.sh
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+override_dh_usrlocal:
+

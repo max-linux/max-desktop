@@ -1,0 +1,19 @@
+Source: max-ca-certificates-dnie
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 8.0.0), wget, unzip, cabextract
+Standards-Version: 3.9.3
+Homepage: https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=ca-certificates-dnie
+
+Package: ca-certificates-dnie
+Architecture: all
+Depends: ca-certificates, ${shlibs:Depends}, ${misc:Depends}
+Description: Spanish CA certificates for DNIe and FNMT
+ Spanish CA certificates for DNIe and FNMT
+
+Package: dnie-support
+Architecture: all
+Depends: ca-certificates-dnie, opensc, pcsc-tools, ${shlibs:Depends}, ${misc:Depends}
+Description: Support for Spanish DNIe in MAX
+ Support for Spanish DNIe in MAX
