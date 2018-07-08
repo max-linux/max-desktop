@@ -1,0 +1,32 @@
+#!/bin/sh
+
+
+if [ -x /usr/bin/xdg-mime ] && [ -e /etc/gnome/defaults.list ]; then
+  # chech exe-learning mime
+  if [ "$(xdg-mime query default application/x-exe-learning 2>/dev/null)" = "" ]; then
+    echo "application/x-exe-learning=exe.desktop" >> /etc/gnome/defaults.list
+  fi
+
+
+  if xdg-mime query default x-scheme-handler/apt| grep -q software-center; then
+    xdg-mime default apturl.desktop x-scheme-handler/apt
+    sed -i '/ubuntu-software-center/d' /etc/gnome/defaults.list
+    echo "x-scheme-handler/apt=apturl.desktop" >> /etc/gnome/defaults.list
+  fi
+fi
+
+
+
+# apturl for firefox
+if [ -d /etc/firefox/pref ]; then
+  # link pref in install dir
+  for f in /etc/firefox/pref/*; do
+    fname=$(basename $f)
+    if [ ! -e "/usr/lib/firefox/defaults/pref/$fname" ]; then
+      #echo ln -s $f /usr/lib/firefox/defaults/pref/$fname
+      ln -s "$f" "/usr/lib/firefox/defaults/pref/$fname"
+    fi
+  done
+fi
+
+

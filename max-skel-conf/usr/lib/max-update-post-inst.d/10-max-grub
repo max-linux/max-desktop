@@ -1,0 +1,27 @@
+#!/bin/sh
+
+MAX_VERSION="MAX-10.0-peta"
+
+UPDATE_GRUB=0
+
+if [ -e /etc/default/grub ]; then
+  if ! grep -q "${MAX_VERSION}" /etc/default/grub 2>/dev/null; then
+    echo '' >> /etc/default/grub
+    echo "GRUB_DISTRIBUTOR=\"${MAX_VERSION}\"" >> /etc/default/grub
+    UPDATE_GRUB=1
+  fi
+
+  if grep -q "^GRUB_HIDDEN" /etc/default/grub 2>/dev/null; then
+    sed -i -e 's/^GRUB_HIDDEN/#GRUB_HIDDEN/g' /etc/default/grub
+    UPDATE_GRUB=1
+  fi
+
+  if [ "$UPDATE_GRUB" = "1" ]; then
+    if [ -x "`which update-grub 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
+      update-grub
+    fi
+  fi
+fi # end of [ -e /etc/default/grub ]
+
+test -e /boot/grub/grub.cfg && sed -i '/submenu/s/Previous Linux versions/Versiones anteriores/g' /boot/grub/grub.cfg
+

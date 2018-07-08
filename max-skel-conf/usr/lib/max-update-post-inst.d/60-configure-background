@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+
+# set nautilus background red color for root
+# bash /usr/share/max/nautilus_background_for_root.sh
+
+
+# change background image with better size
+/usr/sbin/max-set-background 2>&1 > /dev/null
