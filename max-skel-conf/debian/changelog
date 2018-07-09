@@ -1,3 +1,9 @@
+max-skel-conf (10.0.max7) max; urgency=medium
+
+  * Set slick-greeter as default greeter-session
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 09 Jul 2018 07:33:13 +0200
+
 max-skel-conf (10.0.max6) max; urgency=medium
 
   * Split max-update-post-inst into usr/lib/max-update-post-inst.d/
