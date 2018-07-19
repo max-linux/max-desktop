@@ -1,0 +1,39 @@
+#!/usr/bin/make -f
+
+LD_LIBRARY_PATH:= $(CURDIR)/debian/shotcut/usr/lib/shotcut/lib:$(LD_LIBRARY_PATH)
+
+VERSION=v18.07
+URL=https://github.com/mltframework/shotcut/releases/download/v18.07/shotcut-linux-x86_64-180702.tar.bz2
+
+
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+
+override_dh_auto_build:
+	if [ ! -d build2 ]; then \
+		mkdir build2 ;\
+		( cd build2 && wget $(URL) && tar -jxvf *.tar.bz2); \
+        fi
+
+	rm -rf build2/Shotcut/Shotcut.app/lib/qml/Qt/labs
+
+	mv build2/Shotcut/Shotcut.app/share/mime build2/
+
+	cp build2/Shotcut/Shotcut.app/share/icons/hicolor/64x64/apps/org.shotcut.Shotcut.png build2/shotcut.png
+	rm -rf build2/Shotcut/Shotcut.app/share/icons \
+		build2/Shotcut/Shotcut.app/share/aclocal \
+		build2/Shotcut/Shotcut.app/share/applications
+
+
+override_dh_strip:
+	# do not strip
+
+override_dh_shlibdeps:
+	dh_shlibdeps -Xdebian/shotcut/usr/lib/shotcut/lib/qt5/platforms/libqeglfs.so
