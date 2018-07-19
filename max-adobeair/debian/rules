@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+#LD_LIBRARY_PATH:= $(CURDIR)/debian/shotcut/usr/lib/shotcut/lib:$(LD_LIBRARY_PATH)
+
+SDK=http://airdownload.adobe.com/air/lin/download/2.6/AdobeAIRSDK.tbz2
+AIR=https://aur.archlinux.org/cgit/aur.git/snapshot/adobe-air.tar.gz
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+
+override_dh_auto_build:
+	if [ ! -d build2 ]; then \
+		mkdir -p build2/opt/adobe-air-sdk ;\
+		( cd build2 && wget $(SDK) $(AIR) && tar -jxvf AdobeAIRSDK.tbz2 -C opt/adobe-air-sdk && tar -zxvf adobe-air.tar.gz -C opt/adobe-air-sdk ); \
+        fi
+
+	chmod +x build2/opt/adobe-air-sdk/adobe-air/adobe-air
+
+override_dh_strip:
+	# do not strip
+
+override_dh_shlibdeps:
+	dh_shlibdeps -Xdebian/adobeair/opt/adobe-air-sdk/runtimes/air/linux/Adobe AIR/Versions/1.0/Resources/libaddkey.so

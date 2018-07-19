@@ -1,0 +1,41 @@
+Source: max-adobeair
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 7), wget,
+               libgtk2.0-0,
+               libstdc++6,
+               libxml2,
+               libxslt1.1,
+               libcanberra-gtk-module,
+               gtk2-engines-murrine,
+               libqt4-qt3support,
+               libgnome-keyring0,
+               libnss-mdns,
+               libnss3,
+               libhal1-flash,
+               libqt3-mt, kwalletmanager
+Standards-Version: 3.8.3
+Homepage: https://helpx.adobe.com/air/kb/archived-air-sdk-version.html
+
+Package: adobeair
+Architecture: i386
+Multi-Arch: foreign
+Depends: libnss3, libatk1.0-0 (>= 1.20.0),
+         libc6 (>= 2.7), libcairo2 (>= 1.6.0),
+         libdbus-1-3 (>= 1.1.1), libfontconfig1 (>= 2.4.0),
+         libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1-21),
+         libglib2.0-0 (>= 2.12.0), libgtk2.0-0 (>= 2.12.0),
+         libpango1.0-0 (>= 1.20.5), libpng12-0 (>= 1.2.13-4),
+         libstdc++6 (>= 4.1.1-21), libx11-6, libxext6,
+         libxml2 (>= 2.6.27), libxrender1, libxslt1.1 (>= 1.1.20),
+         libhal1-flash,
+         libxt6, zlib1g (>= 1:1.2.3.3.dfsg-1),
+         libgnome-keyring0 | kwalletmanager, libqt3-mt,
+         ${misc:Depends}
+Conflicts: adobeair1.0
+Description: runtime for rich Internet applications
+ The Adobe® AIR® runtime lets developers use proven web technologies to build
+ rich Internet applications that run outside the browser on multiple
+ operating systems.
+
