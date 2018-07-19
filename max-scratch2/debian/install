@@ -1,9 +1,4 @@
-#build/www              opt/Scratch2/share/
-#build/locale           opt/Scratch2/share/
-#build/icons            opt/Scratch2/share/
-#build/static_tips      opt/Scratch2/share/
-#build/META-INF         opt/Scratch2/share/
-#build/media            opt/Scratch2/share/
-
-
 debian/edu.media.mit.scratch2editor.desktop usr/share/applications/
+build/scratch2.png                          usr/share/pixmaps/
+
+build/Scratch*.air  opt/adobe-air-sdk/scratch/

@@ -2,7 +2,7 @@
 
 DH_VERBOSE=1
 
-VERSION=$(shell dpkg-parsechangelog | awk -F" |-" '/^Version/ {print $$2}')
+VERSION=$(shell dpkg-parsechangelog | awk -F" |-" '/^Version/ {print $$2}' | sed 's/1://g')
 
 info:
 	@echo VERSION=$(VERSION)
@@ -18,22 +18,27 @@ override_dh_clean:
 override_dh_auto_build:
 	if [ ! -d build ]; then \
 		mkdir build ;\
-		( cd build && wget http://cdn.scratch.mit.edu/scratchr2/static/sa/Scratch-$(VERSION).air && unzip Scratch-$(VERSION).air && rm -f *.air); \
+		( cd build && wget http://cdn.scratch.mit.edu/scratchr2/static/sa/Scratch-$(VERSION).air && \
+                  unzip Scratch-$(VERSION).air && ln -s Scratch-$(VERSION).air Scratch.air); \
 	fi
 
-override_dh_auto_install:
-	dh_install
+	cp build/icons/AppIcon128.png build/scratch2.png
 
-	mkdir -p "debian/scratch2/etc/opt/Adobe AIR/AIR Applications/1.0/"
-	cp build/META-INF/AIR/application.xml "debian/scratch2/etc/opt/Adobe AIR/AIR Applications/1.0/edu.media.mit.scratch2editor"
-
-	mkdir -p "debian/scratch2/opt/Scratch 2/bin"
-	mkdir -p "debian/scratch2/opt/Scratch 2/share"
-	mkdir debian/scratch2/usr/share/pixmaps/
-
-	cp "/opt/Adobe AIR/Versions/1.0/Resources/appentry" "debian/scratch2/opt/Scratch 2/bin/Scratch 2"
-	cp -ra build/* "debian/scratch2/opt/Scratch 2/share/"
-
-	cp debian/edu.media.mit.scratch2editor.desktop "debian/scratch2/opt/Scratch 2/share/META-INF/AIR/"
-
-	cp "debian/scratch2/opt/Scratch 2/share/icons/AppIcon48.png" "debian/scratch2/usr/share/pixmaps/scratch2.png"
+#override_dh_auto_install:
+#	dh_install
+#
+#	mkdir -p "debian/scratch2/etc/opt/Adobe AIR/AIR Applications/1.0/"
+#	cp build/META-INF/AIR/application.xml "debian/scratch2/etc/opt/Adobe AIR/AIR Applications/1.0/edu.media.mit.scratch2editor"
+#
+#	mkdir -p "debian/scratch2/opt/Scratch 2/bin"
+#	mkdir -p "debian/scratch2/opt/Scratch 2/share"
+#
+#	mkdir debian/scratch2/usr/share/pixmaps/
+#
+#	cp "/opt/Adobe AIR/Versions/1.0/Resources/appentry" "debian/scratch2/opt/Scratch 2/bin/Scratch 2"
+#	cp -ra build/* "debian/scratch2/opt/Scratch 2/share/"
+#
+#
+#	cp debian/edu.media.mit.scratch2editor.desktop "debian/scratch2/opt/Scratch 2/share/META-INF/AIR/"
+#
+#

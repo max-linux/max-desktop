@@ -2,7 +2,7 @@
 Name=Scratch 2 Offline
 Comment=Scratch 2
 GenericName=Scratch 2
-Exec="/opt/Scratch 2/bin/Scratch 2"
+Exec=/opt/adobe-air-sdk/adobe-air/adobe-air /opt/adobe-air-sdk/scratch/Scratch.air
 Type=Application
 Terminal=false
 Icon=scratch2.png

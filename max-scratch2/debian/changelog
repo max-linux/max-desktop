@@ -1,3 +1,15 @@
+max-scratch2 (1:453-0max1) max; urgency=medium
+
+  * Back to 453, 461 doesn't work, white screen
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 19 Jul 2018 10:11:10 +0200
+
+max-scratch2 (461-0max2) max; urgency=medium
+
+  * Depends on new adobeair (SDK), don't install uncompressed
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 19 Jul 2018 09:35:36 +0200
+
 max-scratch2 (461-0max1) max; urgency=medium
 
   * Build in MAX 10.0

@@ -1,11 +1,8 @@
 Source: max-scratch2
 Section: max
 Priority: extra
-Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
-Build-Depends: debhelper (>= 7), wget, unzip,
-               libnss3, libatk1.0-0, libcairo2, libdbus-1-3, libfontconfig1, libfreetype6, libgcc1, libglib2.0-0,
-               libgtk2.0-0, libpango1.0-0, libpng12-0, libstdc++6,
-               libx11-6, libxext6, libxml2, libxrender1, libxslt1.1, libxt6, zlib1g, adobeair
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 7), wget, unzip
 Standards-Version: 3.8.3
 Homepage: http://scratch.mit.edu
 
@@ -13,7 +10,7 @@ Homepage: http://scratch.mit.edu
 Package: scratch2
 Architecture: i386
 Multi-Arch: foreign
-Depends: adobeair (>= 1:2.6.0.0), ${shlibs:Depends}, ${misc:Depends}
+Depends: adobeair (>= 2:2.6.0.19120-0max1), ${shlibs:Depends}, ${misc:Depends}
 Conflicts: edu.media.mit.scratch2editor
 Description: Scratch2 Offline
  Scratch2 Offline
