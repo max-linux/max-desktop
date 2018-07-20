@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf Remarkable
+
+override_dh_auto_build:
+	git clone --depth=1 https://github.com/jamiemcg/Remarkable.git
+
+	./do-patch.sh Remarkable

@@ -1,0 +1,196 @@
+diff --git a/data/ui/RemarkableWindow.ui b/data/ui/RemarkableWindow.ui
+index af153bb..03353ec 100644
+--- a/data/ui/RemarkableWindow.ui
++++ b/data/ui/RemarkableWindow.ui
+@@ -422,6 +422,15 @@
+                       </object>
+                     </child>
+                     <child>
++                      <object class="GtkCheckMenuItem" id="menuitem_js">
++                        <property name="visible">True</property>
++                        <property name="can_focus">False</property>
++                        <property name="label" translatable="yes">Enable Java-Script</property>
++                        <property name="use_underline">True</property>
++                        <property name="active">True</property>
++                      </object>
++                    </child>
++                    <child>
+                       <object class="GtkCheckMenuItem" id="menuitem_vertical_layout">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+diff --git a/remarkable/RemarkableWindow.py b/remarkable/RemarkableWindow.py
+index 71cab5c..91d565b 100644
+--- a/remarkable/RemarkableWindow.py
++++ b/remarkable/RemarkableWindow.py
+@@ -24,10 +24,10 @@
+ import gi
+ gi.require_version('Gtk', '3.0')
+ gi.require_version('GtkSource', '3.0')
+-gi.require_version('WebKit', '3.0')
++gi.require_version('WebKit2', '4.0')
+ 
+ from bs4 import BeautifulSoup
+-from gi.repository import Gdk, Gtk, GtkSource, Pango, WebKit
++from gi.repository import Gdk, Gtk, GtkSource, Pango, WebKit2
+ from locale import gettext as _
+ from urllib.request import urlopen
+ import markdown
+@@ -36,18 +36,18 @@ import pdfkit
+ import re, subprocess, datetime, os, webbrowser, _thread, sys, locale
+ import tempfile
+ import traceback
+-import styles
++from remarkable import styles
+ import unicodedata
+ import warnings
+ import datetime
+-from findBar import FindBar
++from remarkable.findBar import FindBar
+ 
+ #Check if gtkspellcheck is installed
+ try:
+     from gtkspellcheck import SpellChecker
+     spellcheck_enabled = True
+ except:
+-    print("*Spellchecking not enabled.\n*To enable spellchecking install pygtkspellcheck\n*https://pypi.python.org/pypi/pygtkspellcheck/")
++    print("*Spellchecking not enabled.\n*To enable spellchecking install python3-gtkspellcheck.")
+     spellcheck_enabled = False
+ 
+ import logging
+@@ -115,8 +115,9 @@ class RemarkableWindow(Window):
+         self.text_view.set_wrap_mode(Gtk.WrapMode.WORD)
+         self.text_view.connect('key-press-event', self.cursor_ctrl_arrow_rtl_fix)
+ 
+-        self.live_preview = WebKit.WebView()
+-        self.live_preview.connect("console-message", self._javascript_console_message) # Suppress .js output
++        my_settings = self.create_webkit_settings()
++        self.live_preview = WebKit2.WebView.new_with_settings(my_settings)
++        self.zoom_out(self.live_preview)
+ 
+         self.scrolledwindow_text_view = Gtk.ScrolledWindow()
+         self.scrolledwindow_text_view.add(self.text_view)
+@@ -225,7 +226,8 @@ class RemarkableWindow(Window):
+         if not os.path.isfile(self.settings_path):
+             self.remarkable_settings = {}
+             self.remarkable_settings['css'] = '' 
+-            self.remarkable_settings['font'] = "Sans 10"  
++            self.remarkable_settings['font'] = "Sans 10"
++            self.remarkable_settings['js'] = True
+             self.remarkable_settings['line-numbers'] = True
+             self.remarkable_settings['live-preview'] = True
+             self.remarkable_settings['nightmode'] = False       
+@@ -264,6 +266,12 @@ class RemarkableWindow(Window):
+             # Disable word wrap on startup
+             self.builder.get_object("menuitem_word_wrap").set_active(False)
+             self.on_menuitem_word_wrap_activate(self)
++        
++        if not 'js' in self.remarkable_settings:
++           self.remarkable_settings['js'] = True
++        if self.remarkable_settings['js'] == False:
++            # Disable Live Preview on startup
++            self.builder.get_object("menuitem_js").set_active(False)
+ 
+         if self.remarkable_settings['live-preview'] == False:
+             # Disable Live Preview on startup
+@@ -679,13 +687,13 @@ class RemarkableWindow(Window):
+         self.redo(self)
+ 
+     def on_toolbutton_zoom_in_clicked(self, widget):
+-        self.live_preview.zoom_in()
++        self.zoom_in(self.live_preview)
+         self.remarkable_settings['zoom-level'] = self.live_preview.get_zoom_level()
+         self.write_settings()
+         self.scrollPreviewToFix(self)
+ 
+     def on_toolbutton_zoom_out_clicked(self, widget):
+-        self.live_preview.zoom_out()
++        self.zoom_out(self.live_preview)
+         self.remarkable_settings['zoom-level'] = self.live_preview.get_zoom_level()
+         self.write_settings()
+         self.scrollPreviewToFix(self)
+@@ -874,7 +882,16 @@ class RemarkableWindow(Window):
+             self.builder.get_object("toolbar1").set_visible(True)
+             self.update_live_preview(self)
+         self.write_settings()
+-
++    
++    def on_menuitem_js_activate(self, widget):
++        self.toggle_js(self)
++    
++    def toggle_js(self, widget):
++        state = self.webkit_settings.get_enable_javascript()
++        state = not state
++        self.remarkable_settings['js'] = state
++        self.webkit_settings.set_enable_javascript(state)
++        self.write_settings()
+ 
+     def on_menuitem_swap_activate(self, widget):
+         if self.live_preview.get_visible():
+@@ -1412,12 +1429,12 @@ class RemarkableWindow(Window):
+         window_feedback.set_title("Feedback Form")
+         window_feedback.set_default_size(640, 640)
+         window_feedback.set_position(Gtk.WindowPosition.CENTER)
+-        feedback_browser = WebKit.WebView()
+-        feedback_browser.connect("console-message", self._javascript_console_message) # Suppress .js output
++        my_settings = self.create_webkit_settings()
++        feedback_browser = WebKit2.WebView.new_with_settings(my_settings)
+         feedback_scroller = Gtk.ScrolledWindow()
+         feedback_scroller.add(feedback_browser)
+         window_feedback.add(feedback_scroller)
+-        feedback_browser.open("https://jamiemcgowan.typeform.com/to/ng5Lhc")
++        feedback_browser.load_uri("https://jamiemcgowan.typeform.com/to/ng5Lhc")
+         window_feedback.show_all()
+ 
+     def on_menuitem_about_activate(self, widget):
+@@ -1548,14 +1565,47 @@ class RemarkableWindow(Window):
+         html = self.default_html_start + html_middle + self.default_html_end
+ 
+         # Update the display, supporting relative paths to local images
+-        self.live_preview.load_string(html, "text/html", "utf-8", "file://{}".format(os.path.abspath(self.name)))
++        self.live_preview.load_html(html, "file://{}".format(os.path.abspath(self.name)))
++
++    """
++        This function returns WebKit settings instance to suppress
++        the messages from the WebKit (live preview) console
++    """
++    def create_webkit_settings(self):
++        result = WebKit2.Settings()
++        result.set_enable_write_console_messages_to_stdout(False) # Suppress .js output
++        #js = self.remarkable_settings['js']
++        result.set_enable_javascript(True) # JS-Kill-Switch for issue #175
++        return result
+ 
+     """
+-        This function suppresses the messages from the WebKit (live preview) console
++        This function implements zoom_in for WebKit2.WebView
+     """
+-    def _javascript_console_message(self, view, message, line, sourceid):
+-        return True
++    def zoom_in(self, webView):
++        zoom_level = webView.get_zoom_level()
++        zoom_level = zoom_level + self.get_zoom_step()
++        webView.set_zoom_level(zoom_level)
+ 
++    """
++        This function implements zoom_out for WebKit2.WebView
++    """
++    def zoom_out(self, webView):
++        zoom_level = webView.get_zoom_level()
++        zoom_level = zoom_level - self.get_zoom_step()
++        webView.set_zoom_level(zoom_level)
++
++    """
++        This function returns the same magic number as in previous WebKit API:
++        https://lazka.github.io/pgi-docs/WebKit-3.0/classes/WebSettings.html#WebKit.WebSettings.props.zoom_step
++    """
++    def get_zoom_step(self):
++        return 0.10000000149011612
++
++    """
++        This function resets the zoom_level to the default value
++    """
++    def reset_zoom_level(self, webView):
++       webView.set_zoom_level(1.0)
+ 
+     """
+         This function deletes any temporary files that were created during execution
