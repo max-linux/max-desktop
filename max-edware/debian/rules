@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+
+URL=https://meetedison.com/content/EdWare/EdWare-Linux-Src-1.0.6.zip
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+override_dh_auto_build:
+	if [ ! -e build2 ]; then \
+		mkdir build2; \
+		(cd build2 && wget $(URL) && unzip EdWare-Linux-Src-*.zip) ; \
+	fi
+
+	rm -f EdWare-Linux-Src-*.zip
+
+	mv "build2/My Programs" "build2/My_Programs"
+
+	convert build2/edware.ico edware.png
+	mv edware-0.png edware.png
+	rm -f edware-*.png

@@ -1,0 +1,19 @@
+Source: max-edware
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 9), unzip, imagemagick
+Standards-Version: 3.8.3
+Homepage: http://edison.micro-log.com/software/
+
+Package: edware
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         python,
+         python-jsonpickle,
+         python-pyaudio, python-pygame,
+         libasound2-plugins,
+         python-wxgtk3.0
+Description: Block programming software for Edison robots
+ Block programming software, similar to Lego
+ Also available online at: www.edwareapp.com

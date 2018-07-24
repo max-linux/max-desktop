@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /usr/share/edware
+python ./edware.py --userdir --audio pygame "$@"
