@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+
+VERSION=0.8.9.25-alpha
+URL=https://github.com/tentone/nunuStudio/releases/download/v$(VERSION)/nunustudio-$(VERSION)-linux64.tar.gz
+
+
+%:
+	dh $@ 
+
+
+override_dh_auto_build:
+	if [ ! -d build2 ]; then \
+		mkdir build2 ;\
+		( cd build2 && wget $(URL) && mv nunustudio-$(VERSION)-linux64.tar.gz nunustudio.tar.gz); \
+		( cd build2 && tar -zxvf nunustudio.tar.gz ) ;\
+	fi
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2

@@ -1,0 +1,16 @@
+Source: max-nunustudio
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 8.0.0), wget
+Standards-Version: 3.9.3
+Homepage: https://github.com/tentone/nunuStudio
+
+Package: nunustudio
+Architecture: all
+Depends: nwjs, ${shlibs:Depends}, ${misc:Depends}
+Description: web based game engine for 3D and 2D game development
+ Open source 3D VR game engine for the web it allows
+ designers and web developers to easily develop 3D
+ experiences that can run directly in a web page
+ or be exported as Desktop applications.
