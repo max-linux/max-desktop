@@ -1,0 +1,14 @@
+build2/nwjs/nw				usr/share/nwjs/
+
+build2/nwjs/lib				usr/share/nwjs/
+build2/nwjs/swiftshader			usr/share/nwjs/
+
+build2/nwjs/natives_blob.bin		usr/share/nwjs/
+build2/nwjs/v8_context_snapshot.bin	usr/share/nwjs/
+
+build2/nwjs/icudtl.dat			usr/share/nwjs/
+
+build2/nwjs/*.pak			usr/share/nwjs/
+build2/nwjs/locales			usr/share/nwjs/
+
+build2/nwjs/credits.html		usr/share/nwjs/

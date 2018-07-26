@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DH_VERBOSE=1
+
+ifeq ($(ARCH), i386)
+    export UPSTREAM_ARCH=ia32
+else
+    export UPSTREAM_ARCH=x64
+endif
+
+VERSION=0.32.0
+#URL=https://dl.nwjs.io/v$(VERSION)/nwjs-v$(VERSION)-linux-$(UPSTREAM_ARCH).tar.gz
+URL=http://localhost/remote-files/nwjs-v$(VERSION)-linux-$(UPSTREAM_ARCH).tar.gz
+SRC_DIR=nwjs-v$(VERSION)-linux-$(UPSTREAM_ARCH)
+
+%:
+	dh $@
+
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+override_dh_auto_build:
+	mkdir -p build2
+	( cd build2 && wget $(URL) -O- > nwjs.tar.gz )
+	(cd build2 && tar -zxvf nwjs.tar.gz )
+	mv build2/$(SRC_DIR)    build2/nwjs
+	rm -f build2/nwjs.tar.gz

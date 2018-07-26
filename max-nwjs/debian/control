@@ -1,0 +1,45 @@
+Source: max-nwjs
+Section: utils
+Priority: extra
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 9.0.0), wget,
+	libasound2-dev,
+	libatk1.0-dev,
+	libcairo2-dev,
+	libcups2-dev,
+	libdbus-1-dev,
+	libfontconfig1-dev,
+	libfreetype6-dev,
+	libgconf2-dev,
+	libgdk-pixbuf2.0-dev,
+	libgtk2.0-dev,
+	libpango1.0-dev,
+	libsecret-1-dev,
+	libv4l-dev,
+	libx11-dev,
+	libx11-xcb-dev,
+	libxcb1-dev,
+	libxcomposite-dev,
+	libxdamage-dev,
+	libxext-dev,
+	libxfixes-dev,
+	libxi-dev,
+	libxkbfile-dev,
+	libxrandr-dev,
+	libxrender-dev,
+	libxss-dev,
+	libxtst-dev,
+        libgtk-3-dev,
+        libnss3, libnspr4
+Standards-Version: 3.9.6
+Homepage: https://github.com/nwjs/nw.js
+
+Package: nwjs
+Architecture: i386 amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: app runtime based on Chromium and node.js
+ You can write native apps in HTML and JavaScript with
+ NW.js. It also lets you call Node.js modules directly
+ from the DOM and enables a new way of writing native
+ applications with all Web technologies.
+
