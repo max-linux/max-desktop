@@ -2,7 +2,7 @@
 
 DH_VERBOSE=1
 #VERSION=2.6.1
-VERSION=Hotfix-2.7.1
+VERSION=Hotfix-2.8.1
 
 DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 #URL="https://github.com/OpenRoberta/robertalab/archive/ORA-$(VERSION).tar.gz"
