@@ -3,7 +3,8 @@
 
 export DH_VERBOSE=1
 
-ifeq ($(ARCH), i386)
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+ifeq ($(DEB_HOST_ARCH), i386)
     export UPSTREAM_ARCH=ia32
 else
     export UPSTREAM_ARCH=x64
