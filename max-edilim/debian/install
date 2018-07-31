@@ -1,3 +1,14 @@
-build/usr/bin/edilim usr/bin/
-debian/edilim.desktop usr/share/applications/
-build/usr/share/edilim usr/share/
+build2/edilim_src/dlm              usr/share/edilim/
+#build2/edilim_src/edilim           usr/share/edilim/
+
+build2/edilim_src/edilim_es.pdf    usr/share/edilim/
+build2/edilim_src/edilim_gz.pdf    usr/share/edilim/
+build2/edilim_src/edilim_pt.pdf    usr/share/edilim/
+
+build2/edilim_src/libbass.so       usr/share/edilim/
+
+build2/edilim_src/tpl              usr/share/edilim/
+
+
+limlogo.jpg                        usr/share/edilim/
+edilim                             usr/bin/

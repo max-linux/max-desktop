@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd /usr/share/edilim
+
+LIBOVERLAY_SCROLLBAR=0 ./dlm

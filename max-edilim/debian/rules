@@ -6,15 +6,14 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
 ifeq ($(DEB_HOST_ARCH),i386)
-  URL=http://educalim.com/edilim41/edilim43_386.deb
-  BIN=http://educalim.com/edilim41/edilim43_linux386_portable.zip  
+#  URL=http://educalim.com/edilim41/edilim43_386.deb
+#  BIN=http://educalim.com/edilim41/edilim43_linux386_portable.zip
+  BIN=http://www.educalim.com/edilim5/edilim5linux32_rc9.tar.gz
 else
-  URL=http://educalim.com/edilim41/edilim43_amd64.deb
-  BIN=http://educalim.com/edilim41/edilim43_amd64_portable.zip
+#  URL=http://educalim.com/edilim41/edilim43_amd64.deb
+#  BIN=http://educalim.com/edilim41/edilim43_amd64_portable.zip
+  BIN=http://www.educalim.com/edilim5/edilim5linux64_rc9.tar.gz
 endif
-
-#URL=http://www.educalim.com/edilim33/edilim330rc11_linux.deb
-#BIN=http://www.educalim.com/edilim33/edilim330rc11_portable_linux.zip
 
 info:
 	@echo
@@ -28,32 +27,37 @@ info:
 
 
 clean::
-	rm -rf build bin build-stamp
+	rm -rf build2 bin build-stamp
 
 build-stamp:
-	mkdir -p build
-	if [ ! -e build/edilim.deb ]; then wget $(URL) -O- > build/edilim.deb; fi
-	if [ ! -e build/usr ]; then (cd build && dpkg --extract edilim.deb ./); fi
+	mkdir -p build2
+	if [ ! -e build2/edilim.tar.gz ]; then (cd build2 && wget $(BIN) -O- > edilim.tar.gz); fi
+	if [ ! -e build2/edilim_src ]; then (cd build2 && tar -zxvf edilim.tar.gz && mv edilim5linux64_rc9 edilim_src); fi
 
-	mkdir -p build/usr/bin
-	mv build/usr/share/edilim/edilim build/usr/bin/edilim
-#	ldd build/usr/share/edilim/edilim
-#	rm build/usr/share/edilim/edilim
-#	chmod 644 build/usr/share/edilim/imaxes/*
-#	chmod 644 build/usr/share/edilim/*
 
-#	mkdir -p bin
-#	if [ ! -e bin/edilim.zip ]; then wget $(BIN) -O- > bin/edilim.zip; fi
-#	if [ ! -e bin/edilim ]; then (cd bin && unzip edilim.zip); fi
-	
-
+#	mkdir -p build
+#	if [ ! -e build/edilim.deb ]; then wget $(URL) -O- > build/edilim.deb; fi
+#	if [ ! -e build/usr ]; then (cd build && dpkg --extract edilim.deb ./); fi
+#
 #	mkdir -p build/usr/bin
-#	mv bin/edilim build/usr/bin/edilim
-#	chmod 644 build/usr/bin/edilim
-#	ldd build/usr/bin/edilim
-
-	rm -rf build/usr/share/applications
-
+#	mv build/usr/share/edilim/edilim build/usr/bin/edilim
+##	ldd build/usr/share/edilim/edilim
+##	rm build/usr/share/edilim/edilim
+##	chmod 644 build/usr/share/edilim/imaxes/*
+##	chmod 644 build/usr/share/edilim/*
+#
+##	mkdir -p bin
+##	if [ ! -e bin/edilim.zip ]; then wget $(BIN) -O- > bin/edilim.zip; fi
+##	if [ ! -e bin/edilim ]; then (cd bin && unzip edilim.zip); fi
+#	
+#
+##	mkdir -p build/usr/bin
+##	mv bin/edilim build/usr/bin/edilim
+##	chmod 644 build/usr/bin/edilim
+##	ldd build/usr/bin/edilim
+#
+#	rm -rf build/usr/share/applications
+#
 	touch build-stamp
 
 build/max-edilim:: build-stamp

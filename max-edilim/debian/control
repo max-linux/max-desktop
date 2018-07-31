@@ -1,11 +1,13 @@
 Source: max-edilim
 Section: max
 Priority: extra
-Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
 Build-Depends: cdbs, debhelper (>= 7), 
                wget, unzip, 
                libx11-dev,
                libgtk2.0-dev,
+               libgdk-pixbuf2.0-dev,
+               libatk1.0-dev
 Standards-Version: 3.8.3
 Homepage: http://www.educalim.com/clinux.htm
 
