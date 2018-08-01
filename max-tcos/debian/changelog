@@ -1,3 +1,10 @@
+max-tcos (10.0.max1) max; urgency=medium
+
+  * Build in MAX 10.0
+  * max-terminales: Don't depend on obsolete max-netboot-server, install dnsmasq.
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 01 Aug 2018 10:54:17 +0200
+
 max-tcos (9.0.max1) max; urgency=medium
 
   * Build in MAX 9.0

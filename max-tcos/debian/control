@@ -1,7 +1,7 @@
 Source: max-tcos
 Section: max
 Priority: optional
-Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
 Build-Depends: debhelper (>= 7.0.0), cdbs
 Standards-Version: 3.8.4
 
@@ -25,9 +25,10 @@ Architecture: all
 Conflicts: max-tcos-alumno
 Provides: max-tcos-alumno
 Replaces: max-tcos-alumno
-Depends: max-netboot-server, tcos-configurator, tcosconfig, paman, pavumeter, pavucontrol, max-tcos-profesor
-Description: The Max NETBOOT server metapackage
- This package depends on max-server and max-netboot-server
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
+Depends: tcos-configurator,
+         tcosconfig,
+         paman, pavumeter, pavucontrol,
+         dnsmasq,
+         max-tcos-profesor
+Description: The MAX TCOS server
+ This package configure MAX to be a terminal client server
