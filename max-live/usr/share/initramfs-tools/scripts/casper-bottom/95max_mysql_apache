@@ -26,8 +26,8 @@ LOW_RAM=$(grep "MemTotal" /proc/meminfo | awk '{print $2/1024 < 2048}')
 if [ "$LOW_RAM" = "1" ]; then
   # less than 2 GB
   # disable MySQL and Apache2
-  chroot /root systemctl disable mysql
-  chroot /root systemctl disable apache2
+  chroot /root systemctl disable mysql    || true
+  chroot /root systemctl disable apache2  || true
 fi
 
 log_end_msg

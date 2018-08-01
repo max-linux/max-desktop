@@ -20,5 +20,6 @@ Replaces: max-install
 Conflicts: max-install
 Description: Some files to custom ubiquity installer
  Contains:
-  * Configuration of MaX mirror
+  * User creation
+  * Disable MySQL && Apache2 on low RAM
 
