@@ -1,3 +1,15 @@
+maxmoodle (10.0.max1) max; urgency=medium
+
+  * Build in MAX 10.0
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 01 Aug 2018 11:06:43 +0200
+
+maxmoodle (9.0.max9) max; urgency=medium
+
+  * Build in MAX 10.0
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 01 Aug 2018 10:59:19 +0200
+
 maxmoodle (9.0.max8) max; urgency=medium
 
   * Only try to enable MySQl and Apache in installed MAx, not live
