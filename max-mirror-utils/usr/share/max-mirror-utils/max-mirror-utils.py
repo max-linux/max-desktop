@@ -56,14 +56,11 @@ gtk.gdk.threads_init()
 gobject.threads_init()
 
 
-
-
-
-debug=False
-PACKAGE="max-mirror-utils"
+debug = False
+PACKAGE = "max-mirror-utils"
 
 # if exec from svn or sources dir
-if os.path.isfile('/home/mario/MaX/svn/max/trunk/max-mirror-utils/debian/rules'):
+if os.path.isfile('./debian/rules'):
     LOCALE_DIR = "./po/"
     GLADE_DIR = "usr/share/max-mirror-utils/"
     IMG_DIR = "./usr/share/pixmaps/"
@@ -74,9 +71,6 @@ else:
     IMG_DIR = "/usr/share/pixmaps/"
     LOCALE_DIR = "/usr/share/locale/"
     CONF_PATH="/etc/approx/approx.conf"
-
-
-
 
 
 def print_debug(txt):
@@ -112,7 +106,6 @@ for o, a in opts:
 setlocale( LC_ALL )
 bindtextdomain( PACKAGE, LOCALE_DIR )
 textdomain( PACKAGE )
-        
 
 
 ################################################################################
@@ -161,19 +154,24 @@ UBUNTU_MIRRORS=[
                 ]
 
 DISTROS=[
-          [ _("MaX 4.0"), ['hardy', 'hardy-updates', 'hardy-security'], ['max40'] ],
-          [ _("MaX 5.0"), ['jaunty', 'jaunty-updates', 'jaunty-security'], ['max50'] ],
-          [ _("MaX 6.0"), ['lucid', 'lucid-updates', 'lucid-security'], ['max60'] ],
-          [ _("MaX 7.5"), ['precise', 'precise-updates', 'precise-security'], ['max75'] ],
-          [ _("MaX 8.0"), ['trusty', 'trusty-updates', 'trusty-security'], ['max80'] ],
-          [ _("MaX 9.0"), ['xenial', 'xenial-updates', 'xenial-security'], ['max80'] ],
-          [ _("MaX 4.0, 5.0, 6.0, 7.5, 8.0 y 9.0"), ['hardy', 'hardy-updates', 'hardy-security',
-                                             'jaunty', 'jaunty-updates', 'jaunty-security',
-                                             'lucid', 'lucid-updates', 'lucid-security',
-                                             'precise', 'precise-updates', 'precise-security',
-                                             'trusty', 'trusty-updates', 'trusty-security',
-                                             'xenial', 'xenial-updates', 'xenial-security'], 
-                                            ['max40', 'max50', 'max60', 'max75', 'max80', 'max90'] ],
+#          [ _("MaX 4.0"), ['hardy', 'hardy-updates', 'hardy-security'], ['max40'] ],
+#          [ _("MaX 5.0"), ['jaunty', 'jaunty-updates', 'jaunty-security'], ['max50'] ],
+#          [ _("MaX 6.0"), ['lucid', 'lucid-updates', 'lucid-security'], ['max60'] ],
+#          [ _("MaX 7.5"), ['precise', 'precise-updates', 'precise-security'], ['max75'] ],
+#          [ _("MaX 8.0"), ['trusty', 'trusty-updates', 'trusty-security'], ['max80'] ],
+          [ _("MAX 9.0"), ['xenial', 'xenial-updates', 'xenial-security'], ['max90'] ],
+          [ _("MAX 10.0"), ['bionic', 'bionic-updates', 'bionic-security'], ['max10'] ],
+#          [ _("MaX 4.0, 5.0, 6.0, 7.5, 8.0 y 9.0"), ['hardy', 'hardy-updates', 'hardy-security',
+          [ _("MAX 9.0 and 10.0"), [
+#                                             'jaunty', 'jaunty-updates', 'jaunty-security',
+#                                             'lucid', 'lucid-updates', 'lucid-security',
+#                                             'precise', 'precise-updates', 'precise-security',
+#                                             'trusty', 'trusty-updates', 'trusty-security',
+                                             'xenial', 'xenial-updates', 'xenial-security',
+                                             'bionic', 'bionic-updates', 'bionic-security',
+                                  ],
+#                                            ['max40', 'max50', 'max60', 'max75', 'max80', 'max90'] ],
+                                            ['max90', 'max10'] ],
         ]
 
 
@@ -199,22 +197,21 @@ class MaXMirrorUtils:
         self.ui = gtk.glade.XML(GLADE_DIR + 'max-mirror-utils.glade')
         self.mainwindow = self.ui.get_widget('mainwindow')
         self.mainwindow.set_icon_from_file(IMG_DIR +'max-mirror-utils.png')
-        
+
         # close windows signals
         self.mainwindow.connect('destroy', self.quitapp )
         self.mainwindow.connect('delete_event', self.quitapp)
-        
+
         self.button_quit=self.ui.get_widget("btn_quit")
         self.button_quit.connect('clicked', self.quitapp)
-        
-        
+
         # widgets
         self.w={}
         for widget in ['combo_options', 'combo_distro', 'btn_configure', 'table',
                        'btn_generate', 'lbl_message', 'expander', 'textview']:
             self.w[widget]=self.ui.get_widget(widget)
             print_debug("widget name=%s obj=%s"%(widget, self.w[widget]))
-        
+
         self.w['lbl_message'].set_text("")
         self.w['lbl_message'].show()
         self.w['combo_options'].connect('changed', self.combo_options_change )
@@ -222,17 +219,15 @@ class MaXMirrorUtils:
         self.w['btn_configure'].set_sensitive(True)
         self.w['btn_generate'].connect('clicked', self.on_btn_generate )
         self.w['btn_generate'].set_sensitive(False)
-        
+
         self.w['expander'].hide()
-        
+
         self.populate_select(self.w['combo_options'], UBUNTU_MIRRORS)
         self.set_active_in_select(self.w['combo_options'], UBUNTU_MIRRORS[0][0])
-        
+
         self.populate_select(self.w['combo_distro'], DISTROS)
         self.set_active_in_select(self.w['combo_distro'], DISTROS[2][0])
-        
-        
-        
+
     def combo_options_change(self, widget):
         print_debug("combo_options_change() '%s'"%self.read_select_value(widget))
         self.w['btn_configure'].set_sensitive(True)
@@ -257,9 +252,8 @@ class MaXMirrorUtils:
             print_debug("SELMIRROR item[0]=%s mode=%s"%(item[0], mode) )
             if item[0] == mode:
                 mirror="http://%s%s"%(item[1], MIRROR_SUFFIX)
-                #print_debug("configure_aprox() setting mode with '%s' mirror=%s"%(mode, mirror))
-        
-        
+                # print_debug("configure_aprox() setting mode with '%s' mirror=%s"%(mode, mirror))
+
         seldistro=self.read_select_value(self.w['combo_distro'])
         distros=None
         for item in DISTROS:
@@ -294,7 +288,7 @@ class MaXMirrorUtils:
             if "OK" in line: fail=False
             if "done" in line: fail=False
 
-        # update lbl_message        
+        # update lbl_message
         gtk.gdk.threads_enter()
         if not fail:
             self.w['lbl_message'].set_markup( _("<b>Proxy configured</b>") )
@@ -302,10 +296,9 @@ class MaXMirrorUtils:
             self.w['lbl_message'].set_markup( _("<b>Error configuring proxy.</b>") )
         gtk.gdk.threads_leave()
 
-
     def generate_sources_list(self, *args):
         print_debug("generate_sources_list() ")
-        
+
         # use self.data
         ips=[]
         for iface in self.getNetInterfaces():
@@ -358,7 +351,6 @@ class MaXMirrorUtils:
             return ip[netifaces.AF_INET][0]['addr']
         return None
 
-
 ################### combo stuff ##############################
 
     def populate_select(self, widget, values):
@@ -401,15 +393,11 @@ class MaXMirrorUtils:
         widget.scroll_to_mark(mark, 0.2)
         return
 
-
-
-
 ################################################################################
-
 
     def exe_cmd(self, cmd, verbose=1):
         print_debug("exe_cmd() cmd=%s" %cmd)
-        
+
         self.p = Popen(cmd, shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
         output=[]
         stdout = self.p.stdout
@@ -436,7 +424,6 @@ class MaXMirrorUtils:
         d.run()
         d.destroy()
 
-
     def quitapp(self,*args):
         print_debug ( "Exiting" )
         self.mainloop.quit()
@@ -447,7 +434,6 @@ class MaXMirrorUtils:
             self.mainloop.run()
         except KeyboardInterrupt: # Press Ctrl+C
             self.quitapp()
-   
 
 
 if __name__ == '__main__':
