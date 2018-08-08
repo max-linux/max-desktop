@@ -1,0 +1,16 @@
+Source: max-is-system-upgrading
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 7.0.0), dh-python
+Standards-Version: 3.8.4
+
+Package: max-is-system-upgrading
+Architecture: all
+Depends: python3,
+         gir1.2-gtk-3.0,
+         gir1.2-appindicator3-0.1,
+         gir1.2-glib-2.0,
+Description: Indicador de panel para saber si el sistema se está actualizando
+ Indicador que se activa cuando unattended-upgrades se está ejecutando
+

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=MAX is system upgrading icon
+Comment=Show an indicattor if unattended upgrades if running
+Categories=
+Terminal=false
+Type=Application
+Exec=/usr/bin/max-is-system-upgrading
+Icon=aptdaemon-upgrade
+StartupNotify=false
+NoDisplay=true
+X-MATE-Autostart-Delay=8

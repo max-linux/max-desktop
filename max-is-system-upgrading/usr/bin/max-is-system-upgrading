@@ -1,0 +1,110 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+##########################################################################
+# max-is-system-upgrading writen by Mario Izquierdo <hola@marioizquierdo.es>
+#
+#    max-is-system-upgrading version 10.0
+#
+# Copyright (c) 2018 Mario Izquierdo <hola@marioizquierdo.es>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+# 02111-1307, USA.
+###########################################################################
+
+import subprocess
+import os
+import time
+import signal
+import gi
+gi.require_version('Gtk', '3.0')
+gi.require_version('AppIndicator3', '0.1')
+from gi.repository import Gtk, AppIndicator3, GObject
+from threading import Thread
+
+PID_FILE = "/var/run/unattended-upgrades.pid"
+LOCK_FILE = "/var/run/unattended-upgrades.lock"
+
+
+class Indicator():
+    def __init__(self):
+        self.app = 'is_system_upgrading'
+        self.iconpath = "/usr/share/icons/hicolor/48x48/status/aptdaemon-upgrade.png"
+        self.indicator = AppIndicator3.Indicator.new(
+            self.app,
+            self.iconpath,
+            AppIndicator3.IndicatorCategory.SYSTEM_SERVICES
+        )
+        self.indicator.set_status(AppIndicator3.IndicatorStatus.PASSIVE)
+        self.indicator.set_menu(self.create_menu())
+
+        self.update = Thread(target=self.check_runs)
+        # daemonize the thread to make the indicator stopable
+        self.update.setDaemon(True)
+        self.update.start()
+
+    def is_running(self):
+        return os.path.exists(PID_FILE) or os.path.exists(LOCK_FILE)
+
+    def check_runs(self):
+        # the function (thread), checking for the process to run
+        runs1 = runs2 = False
+        while True:
+            time.sleep(1)
+            runs2 = self.is_running()
+            # if there is a change in state, update the icon
+            if runs1 != runs2:
+                if runs2:
+                    print("Encender")
+                    GObject.idle_add(
+                        self.indicator.set_status,
+                        AppIndicator3.IndicatorStatus.ACTIVE
+                    )
+                    # set the icon to show
+                    GObject.idle_add(
+                        self.indicator.set_icon,
+                        self.iconpath,
+                        priority=GObject.PRIORITY_DEFAULT
+                    )
+                    # set the title
+                    GObject.idle_add(
+                        self.indicator.set_title,
+                        "Sistema actualizándose",
+                        priority=GObject.PRIORITY_DEFAULT
+                    )
+                else:
+                    print("Apagar")
+                    GObject.idle_add(
+                        self.indicator.set_status,
+                        AppIndicator3.IndicatorStatus.PASSIVE
+                    )
+            runs1 = runs2
+
+    def create_menu(self):
+        menu = Gtk.Menu()
+        # quit
+        item_quit = Gtk.MenuItem('Sistema actualizándose')
+        # item_quit.connect('activate', self.stop)
+        menu.append(item_quit)
+        menu.show_all()
+        return menu
+
+    def stop(self, source):
+        Gtk.main_quit()
+
+
+Indicator()
+GObject.threads_init()
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+Gtk.main()
