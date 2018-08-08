@@ -1,15 +1,8 @@
 
-if ! grep -q max60 /etc/apt/sources.list; then
-  wget -q http://max.educa.madrid.org:8000/svn/trunk/max-keyring/usr/share/keyrings/max50-archive-keyring.gpg -O- > /etc/apt/max.gpg
-  apt-key add /etc/apt/max.gpg
-  echo "deb http://max.educa.madrid.org/max60 max main" >> /etc/apt/sources.list
-  apt-get update
-else
-  # forzar la actualización de max-hardware
-  apt-get update
-  rm -rf /var/cache/tcos/packages/max-hardware
-  /usr/sbin/gentcos -instpkg max-hardware
-fi
+# forzar la actualización de max-hardware
+apt-get update
+rm -rf /var/cache/tcos/packages/max-hardware
+/usr/sbin/gentcos -instpkg max-hardware
 
 
 mkdir -p /var/cache/tcos/packages/
@@ -89,7 +82,6 @@ cat << EOF > $DESTDIR/scripts/tcos-bottom/22max-hardware
 
      setserial /dev/ttyS0 port 0x338 irq 4 autoconfig || true
 
-     #max-setup-tablet /etc/X11/xorg.conf
      cat /usr/share/max-hardware/TabletToshiba/xorg.conf > /etc/X11/xorg.conf
 
     #if [ "\$TOSH_MODEL" = "PORTEGE M400" ]; then

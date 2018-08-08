@@ -12,7 +12,6 @@
 
 #[ ! -x /usr/sbin/dmidecode ] && exit 0
 [ ! -x /bin/setserial ] && exit 0
-[ ! -x /usr/sbin/max-setup-tablet ] && exit 0
 
 . /lib/lsb/init-functions
 
@@ -55,7 +54,6 @@ enable_toshiba() {
      #    echo "#WACOM" > /etc/X11/xorg.conf
      #fi
      #
-     #max-setup-tablet /etc/X11/xorg.conf
 
   fi
 
