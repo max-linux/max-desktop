@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+
+VERSION="3.3440.1806.g65046b7"
+URL32="http://opensource.spotify.com/cefbuilds/cef_binary_${VERSION}_linux32_minimal.tar.bz2"
+URL64="http://opensource.spotify.com/cefbuilds/cef_binary_${VERSION}_linux64_minimal.tar.bz2"
+
+DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+ifeq ($(DEB_HOST_ARCH),i386)
+  URL=$(URL32)
+else
+  URL=$(URL64)
+endif
+
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+
+override_dh_auto_build:
+	mkdir -p build2
+	if [ ! -e build2/cef_binary ]; then (cd build2 && curl -L -O $(URL) && tar -jxvf *.tar.bz2 && rm -f *.tar.bz2 && mv cef_binary_* cef_binary ); fi
+
+
+	sed '/^add_subdirectory[\(]tests[\/].*/d' -i build2/cef_binary/CMakeLists.txt
+	(cd build2/cef_binary/ && cmake .)
+	(cd build2/cef_binary/ && make clean)
+	(cd build2/cef_binary/ && make -j4 libcef_dll_wrapper)
+

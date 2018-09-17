@@ -1,0 +1,20 @@
+Source: max-cef-minimal
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: cdbs, debhelper (>= 7), cmake,
+               wget, unzip,
+               libx11-dev,
+               libgles2-mesa, libnss3, libx11-xcb-dev,
+               libxtst-dev, libxss-dev, libasound2-dev,
+               libatk1.0-dev, libdbus-1-dev, libpango1.0-dev,
+               libxrandr-dev, libfontconfig1-dev, libxrender-dev,
+               libxdamage-dev, libxcursor-dev, libxcomposite-dev
+Standards-Version: 3.8.3
+Homepage: https://www.spotify.com/es/opensource
+
+Package: cef-minimal
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Chromium Embedded Framework minimal release
+ Chromium Embedded Framework minimal release
