@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+VERSION="0.5.2"
+URL="https://github.com/bazukas/obs-linuxbrowser/archive/${VERSION}.tar.gz"
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build2
+
+
+override_dh_auto_build:
+	mkdir -p build2
+	if [ ! -e build2/obs-linuxbrowser ]; then (cd build2 && curl -L -O $(URL) && tar -zxvf *.tar.gz && rm -f *.tar.gz && mv obs-linuxbrowser-* obs-linuxbrowser ); fi
+
+	(cd build2/obs-linuxbrowser && cmake . )
+	(cd build2/obs-linuxbrowser && make )

@@ -1,0 +1,14 @@
+Source: max-obs-linuxbrowser
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: cdbs, debhelper (>= 7), cmake, curl,
+               cef-minimal, obs-studio
+Standards-Version: 3.8.3
+Homepage: https://github.com/bazukas/obs-linuxbrowser
+
+Package: obs-linuxbrowser
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Browser source plugin for obs-studio
+ Browser source plugin for obs-studio based on Chromium Embedded Framework.
