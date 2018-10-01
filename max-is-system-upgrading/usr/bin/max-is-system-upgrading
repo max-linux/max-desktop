@@ -55,7 +55,8 @@ class Indicator():
         self.update.start()
 
     def is_running(self):
-        return os.path.exists(PID_FILE) or os.path.exists(LOCK_FILE)
+        # return os.path.exists(PID_FILE) or os.path.exists(LOCK_FILE)
+        return os.path.exists(PID_FILE)
 
     def check_runs(self):
         # the function (thread), checking for the process to run
