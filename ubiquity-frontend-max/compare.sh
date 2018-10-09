@@ -6,7 +6,8 @@
 # for trusty
 #ORIG_PATH=/data/max/build/desktop/ubiquity/ubiquity-2.18.8.7/
 #ORIG_PATH=/data/max/build/desktop/ubiquity/ubiquity-2.18.8.8/
-ORIG_PATH=/data/max/build/desktop/ubiquity/ubiquity-2.21.63.2max1/
+#ORIG_PATH=/data/max/build/desktop/ubiquity/ubiquity-2.21.63.2max1/
+ORIG_PATH=/data/max/build/desktop/ubiquity/ubiquity-18.04.14.8/
 
 #for f in $(find usr/ -type f -name "*py"); do
 for f in $(find usr/ -type f | grep -v ".svn"); do
@@ -16,6 +17,8 @@ for f in $(find usr/ -type f | grep -v ".svn"); do
     orig=$ORIG_PATH/d-i/source/partman-auto/automatically_partition/resize_use_free/do_option
   elif [ "$e" = "ubiquity-maxui.desktop" ]; then
     orig=$ORIG_PATH/desktop/ubiquity-gtkui.desktop.in
+  elif [ "$e" = "ubiquity" ]; then
+    orig=$ORIG_PATH/bin/ubiquity
   else
     orig=$(find $ORIG_PATH -type f -name "$e"| head -1)
   fi
