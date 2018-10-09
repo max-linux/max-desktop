@@ -60,6 +60,15 @@ while :; do
 		4)
 			db_input low apt-setup/backports || true
 		;;
+		5)
+			if (db_get apt-setup/restricted && [ "$RET" = true ]) || \
+			   (db_get apt-setup/multiverse && [ "$RET" = true ]); then
+				db_input low apt-setup/partner || true
+			fi
+		;;
+		6)
+			db_input low apt-setup/enable-source-repositories || true
+		;;
 		*)
 			break
 		;;
@@ -100,6 +109,12 @@ hostname="$RET"
 db_get mirror/$protocol/directory
 directory="/${RET#/}"
 
+deb_src="#deb-src"
+db_get apt-setup/enable-source-repositories
+if [ "$RET" = false ]; then
+	deb_src="# deb-src"
+fi
+
 # MaX configure main mirror
 hostname=archive.ubuntu.com
 protocol=http
@@ -117,13 +132,14 @@ fi
 
 case $protocol in
     http|https)
-       db_get mirror/$protocol/proxy
-       proxy="$RET"
-       if [ -n "$proxy" ]; then
-               if ! grep -iq "Acquire::$protocol::Proxy" $ROOT/etc/apt/apt.conf.new; then
-                       echo "Acquire::$protocol::Proxy \"$proxy\";" >> $ROOT/etc/apt/apt.conf.new
-               fi
-       fi
+	db_get mirror/$protocol/proxy
+	proxy="$RET"
+	if [ -n "$proxy" ]; then
+		if ! grep -iq "Acquire::$protocol::Proxy" $ROOT/etc/apt/apt.conf.new; then
+			echo "Acquire::$protocol::Proxy \"$proxy\";" >> $ROOT/etc/apt/apt.conf.new
+		fi
+	fi
+	;;
 esac
 
 db_get apt-setup/proposed
@@ -134,19 +150,20 @@ cat >> $file <<EOF
 # newer versions of the distribution.
 
 deb $protocol://$hostname$directory $codename $dists
-#deb-src $protocol://$srchostname$srcdirectory $codename $dists
+$deb_src $protocol://$srchostname$srcdirectory $codename $dists
 
 ## Major bug fix updates produced after the final release of the
 ## distribution.
 deb $protocol://$hostname$directory $codename-updates $dists
-#deb-src $protocol://$srchostname$srcdirectory $codename-updates $dists
+$deb_src $protocol://$srchostname$srcdirectory $codename-updates $dists
 EOF
 if [ "$PROPOSED" = true ]; then
 	cat >> $file <<EOF
 
 ## Proposed updates undergoing testing.
+# MAX proposed disabled
 #deb $protocol://$hostname$directory $codename-proposed $dists
-#deb-src $protocol://$srchostname$srcdirectory $codename-proposed $dists
+$deb_src $protocol://$srchostname$srcdirectory $codename-proposed $dists
 EOF
 fi
 
@@ -154,27 +171,30 @@ fi
 echo >> $file
 if db_get apt-setup/universe && [ "$RET" = true ]; then
 	alldists="$alldists universe"
-	COMMENT=
+	DEB='deb'
+	DEB_SRC="$deb_src"
 else
 	cat >> $file <<EOF
 ## Uncomment the following two lines to add software from the 'universe'
 ## repository.
 EOF
-	COMMENT='# '
+	DEB='# deb'
+	DEB_SRC='# deb-src'
 fi
 cat >> $file <<EOF
 ## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
 ## team. Also, please note that software in universe WILL NOT receive any
 ## review or updates from the Ubuntu security team.
-${COMMENT}deb $protocol://$hostname$directory $codename universe
-${COMMENT}#deb-src $protocol://$srchostname$srcdirectory $codename universe
-${COMMENT}deb $protocol://$hostname$directory $codename-updates universe
-${COMMENT}#deb-src $protocol://$srchostname$srcdirectory $codename-updates universe
+${DEB} $protocol://$hostname$directory $codename universe
+${DEB_SRC} $protocol://$srchostname$srcdirectory $codename universe
+${DEB} $protocol://$hostname$directory $codename-updates universe
+${DEB_SRC} $protocol://$srchostname$srcdirectory $codename-updates universe
 EOF
 if [ "$PROPOSED" = true ]; then
 	cat >> $file <<EOF
-${COMMENT}#deb $protocol://$hostname$directory $codename-proposed universe
-${COMMENT}#deb-src $protocol://$srchostname$srcdirectory $codename-proposed universe
+# MAX proposed disabled
+#${DEB} $protocol://$hostname$directory $codename-proposed universe
+${DEB_SRC} $protocol://$srchostname$srcdirectory $codename-proposed universe
 EOF
 fi
 
@@ -189,14 +209,15 @@ if db_get apt-setup/multiverse && [ "$RET" = true ]; then
 ## multiverse WILL NOT receive any review or updates from the Ubuntu
 ## security team.
 deb $protocol://$hostname$directory $codename multiverse
-#deb-src $protocol://$srchostname$srcdirectory $codename multiverse
+$deb_src $protocol://$srchostname$srcdirectory $codename multiverse
 deb $protocol://$hostname$directory $codename-updates multiverse
-#deb-src $protocol://$srchostname$srcdirectory $codename-updates multiverse
+$deb_src $protocol://$srchostname$srcdirectory $codename-updates multiverse
 EOF
 	if [ "$PROPOSED" = true ]; then
 		cat >> $file <<EOF
+# MAX proposed disabled
 #deb $protocol://$hostname$directory $codename-proposed multiverse
-#deb-src $protocol://$srchostname$srcdirectory $codename-proposed multiverse
+$deb_src $protocol://$srchostname$srcdirectory $codename-proposed multiverse
 EOF
 	fi
 fi
@@ -205,13 +226,15 @@ fi
 # it.
 echo >> $file
 if db_get apt-setup/backports && [ "$RET" = true ]; then
-	COMMENT=
+	DEB='deb'
+	DEB_SRC="$deb_src"
 else
 	cat >> $file <<EOF
 ## Uncomment the following two lines to add software from the 'backports'
 ## repository.
 EOF
-	COMMENT='# '
+	DEB='# deb'
+	DEB_SRC='# deb-src'
 fi
 cat >> $file <<EOF
 ## N.B. software from this repository may not have been tested as
@@ -219,9 +242,36 @@ cat >> $file <<EOF
 ## newer versions of some applications which may provide useful features.
 ## Also, please note that software in backports WILL NOT receive any review
 ## or updates from the Ubuntu security team.
-${COMMENT}deb $protocol://$hostname$directory $codename-backports main restricted universe multiverse
-${COMMENT}#deb-src $protocol://$srchostname$srcdirectory $codename-backports main restricted universe multiverse
+${DEB} $protocol://$hostname$directory $codename-backports $alldists
+${DEB_SRC} $protocol://$srchostname$srcdirectory $codename-backports $alldists
 EOF
+
+if (db_get apt-setup/restricted && [ "$RET" = true ]) || \
+   (db_get apt-setup/multiverse && [ "$RET" = true ]) || \
+   (db_get apt-setup/partner && [ "$RET" = true ]); then
+	echo >> $file
+	if db_get apt-setup/partner && [ "$RET" = true ]; then
+		DEB='deb'
+		DEB_SRC="$deb_src"
+	else
+		cat >> $file <<EOF
+## Uncomment the following two lines to add software from Canonical's
+## 'partner' repository.
+EOF
+		DEB='# deb'
+		DEB_SRC='# deb-src'
+	fi
+	cat >> $file <<EOF
+## This software is not part of Ubuntu, but is offered by Canonical and the
+## respective vendors as a service to Ubuntu users.
+${DEB} http://archive.canonical.com/ubuntu $codename partner
+${DEB_SRC} http://archive.canonical.com/ubuntu $codename partner
+EOF
+
+	if db_get apt-setup/partner && [ "$RET" = true ]; then
+		apt-setup-signed-release archive.canonical.com "$file"
+	fi
+fi
 
 apt-setup-signed-release archive.ubuntu.com "$file"
 
