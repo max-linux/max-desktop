@@ -1,3 +1,9 @@
+max-skel-conf (10.0.max8) max; urgency=medium
+
+  * check-efi-install: Update for MAX 10
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 10 Oct 2018 12:25:28 +0200
+
 max-skel-conf (10.0.max7) max; urgency=medium
 
   * Set slick-greeter as default greeter-session
