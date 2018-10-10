@@ -1,12 +1,6 @@
 #!/bin/bash
 
-if [ "$1" = "proxyamd64" ]; then
-  LOCAL_MIRROR=1 PROXY="http://192.168.0.2:3142" MIRROR="es.archive.ubuntu.com" ENABLE_EXTRA=1 AMD64=1 max-genlive 2>&1 | tee -a max-amd64.log
-  exit 0
-elif [ "$1" = "proxyi386" ]; then
-  LOCAL_MIRROR=1 PROXY="http://192.168.0.2:3142" MIRROR="es.archive.ubuntu.com" ENABLE_EXTRA=1 max-genlive 2>&1 | tee -a max-i386.log
-  exit 0
-elif [ "$1" = "amd64" ]; then
+if [ "$1" = "amd64" ]; then
   LOCAL_MIRROR=1 MIRROR=127.0.0.1 ENABLE_EXTRA=1 AMD64=1 max-genlive 2>&1 | tee -a max-amd64.log
   exit 0
 elif [ "$1" = "i386" ]; then
@@ -18,21 +12,21 @@ stamp=$(date '+%Y%m%d_%H%M')
 created=$(date '+%Y%m%d')
 
 
-DISTRO=xenial
-DISTRO_VERSION="16.04"
+DISTRO=bionic
+DISTRO_VERSION="18.04"
 ARCH=i386
 NANOARCH=i386
-MAX_VERSION="9.5"
-MAX_VOLID="MAX_95_${created}"
+MAX_VERSION="10.0"
+MAX_VOLID="MAX_10_${created}"
 IMAGE_NAME="MaX-${MAX_VERSION}"
 LINUX_IMAGE="max-linux"
 LINUX_HEADERS="max-linux-headers"
 XSERVER_XORG="xserver-xorg"
-MAXHOSTNAME=max95
-INSTALL_MOODLE=yes
+MAXHOSTNAME=max10
+INSTALL_MOODLE=no
 MIRRORMAX="max.educa.madrid.org"
-SYSLINUX_THEME_VERSION="max90"
-REPODIR="max90"
+SYSLINUX_THEME_VERSION="max10"
+REPODIR="max10"
 
 ## Create a 12.04 with trusty kernel and Xorg
 #LINUX_IMAGE="linux-image-generic-lts-trusty max-linux"
@@ -104,6 +98,8 @@ NEW_ISOLINUX=${BASE}/usr/share/max-genlive/isolinux
 GENLIVE=${BASE}/usr/share/max-genlive
 PKGSDIR=${GENLIVE}/pkgs
 APT_OPTS="-y --force-yes -o Dpkg::Options::=\"--force-confnew\""
+# --force-yes => --allow-downgrades --allow-remove-essential --allow-change-held-packages
+APT_OPTS="-y --allow-downgrades --allow-change-held-packages -o Dpkg::Options::=\"--force-confnew\""
 HOOKS=${BASE}/usr/share/max-genlive/hooks/
 MY_NAME=$(basename $0)
 

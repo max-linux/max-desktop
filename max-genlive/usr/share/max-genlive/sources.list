@@ -1,9 +1,9 @@
 #
-# sources.list for Max9.0 live session
+# sources.list for MAX 10.0 live session
 #
-deb http://archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ xenial-updates main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ xenial-security main restricted universe multiverse
-deb http://max.educa.madrid.org/max90 max main
+deb http://archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ bionic-security main restricted universe multiverse
+deb http://max.educa.madrid.org/max10 max main
 
 

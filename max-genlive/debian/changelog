@@ -1,3 +1,18 @@
+max-genlive (10.0.max2) max; urgency=medium
+
+  * Disable moodle
+  * Set trusted=yes in local repo while building
+  * Remove deprecated depends sysv-rc
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 10 Oct 2018 08:07:13 +0200
+
+max-genlive (10.0.max1) max; urgency=medium
+
+  * Build in MAX 10.0
+  * Update grub EFI files from Ubuntu-MATE 18.04.1 (20180725)
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 09 Oct 2018 12:30:53 +0200
+
 max-genlive (9.0.max16) max; urgency=medium
 
   * Prepare for 9.5 final release

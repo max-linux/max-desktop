@@ -4,7 +4,7 @@ if [ ! -e /sbin/initctl.distrib ]; then
   chroot $CHROOT ln -s /bin/true /sbin/initctl
 fi
 
-chroot $CHROOT << EOC || _exit "No se ha podido instalar sysv-rc y dpkg"
+chroot $CHROOT << EOC || _exit "No se ha podido instalar dpkg"
 export LC_ALL=C
 export LC_MESSAGES=C
 export DEBCONF_FRONTEND="noninteractive"
@@ -14,7 +14,7 @@ export ERROR=0
 apt-get $APT_OPTS update || ERROR=1
 dpkg --configure -a
 apt-get $APT_OPTS -f install
-apt-get $APT_OPTS install sysv-rc dpkg max-keyring || ERROR=1
+apt-get $APT_OPTS install dpkg max-keyring || ERROR=1
 exit \$ERROR
 EOC
 

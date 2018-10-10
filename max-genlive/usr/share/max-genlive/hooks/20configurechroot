@@ -17,7 +17,7 @@ deb http://$MIRROR/ubuntu ${DISTRO} main universe multiverse restricted
 deb http://$MIRROR/ubuntu ${DISTRO}-updates main universe multiverse restricted
 deb http://$MIRROR/ubuntu ${DISTRO}-security main universe multiverse restricted
 
-deb http://$MIRRORMAX/$REPODIR max main
+deb [trusted=yes] http://$MIRRORMAX/$REPODIR max main
 
 EOF
 else
