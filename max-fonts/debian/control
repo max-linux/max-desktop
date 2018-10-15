@@ -8,20 +8,20 @@ Standards-Version: 3.9.3
 Package: max-fonts
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends},
-  ttf-essays1743, ttf-junicode,
-  ttf-marvosym,
-#  ttf-beteckna,
-  ttf-adf-verana, ttf-goudybookletter, ttf-linux-libertine,
-  ttf-ancient-fonts, ttf-engadget,
-  ttf-radisnoir,
-  ttf-atarismall, ttf-staypuft, ttf-aenigma,
-  ttf-fifthhorseman-dkg-handwriting, ttf-isabella, ttf-sjfonts,
-  ttf-georgewilliams, ttf-femkeklaver, ttf-adf-universalis,
-  ttf-adf-tribun, ttf-adf-switzera, ttf-adf-romande,
-  ttf-adf-oldania, ttf-adf-mekanus, ttf-adf-libris,
-  ttf-adf-irianis, ttf-adf-ikarius, ttf-adf-gillius,
-  ttf-adf-berenis, ttf-adf-baskervald, ttf-adf-accanthis,
+  fonts-essays1743, fonts-junicode,
+  fonts-marvosym,
+#  fonts-beteckna,
+  fonts-adf-verana, fonts-goudybookletter, fonts-linux-libertine,
+  fonts-ancient-fonts, fonts-engadget,
+  fonts-radisnoir,
+  fonts-atarismall, fonts-staypuft, fonts-aenigma,
+  fonts-fifthhorseman-dkg-handwriting, fonts-isabella, fonts-sjfonts,
+  fonts-georgewilliams, fonts-femkeklaver, fonts-adf-universalis,
+  fonts-adf-tribun, fonts-adf-switzera, fonts-adf-romande,
+  fonts-adf-oldania, fonts-adf-mekanus, fonts-adf-libris,
+  fonts-adf-irianis, fonts-adf-ikarius, fonts-adf-gillius,
+  fonts-adf-berenis, fonts-adf-baskervald, fonts-adf-accanthis,
   otf-freefont,
-  ttf-arabeyes, ttf-baekmuk, ttf-dejavu, ttf-freefont, ttf-liberation
+  fonts-arabeyes, fonts-baekmuk, fonts-dejavu, fonts-freefont, fonts-liberation
 Description: Some fonts for MAX distro
  Some fonts for MAX distro
