@@ -1,3 +1,9 @@
+max-fonts (10.0max3) max; urgency=medium
+
+  * Fix some fonts => ttf package names
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 15 Oct 2018 12:57:59 +0200
+
 max-fonts (10.0max2) max; urgency=medium
 
   * Replace Depends ttf-* with fonts-*

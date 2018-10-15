@@ -9,19 +9,20 @@ Package: max-fonts
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends},
   fonts-essays1743, fonts-junicode,
-  fonts-marvosym,
+  ttf-marvosym,
 #  fonts-beteckna,
-  fonts-adf-verana, fonts-goudybookletter, fonts-linux-libertine,
-  fonts-ancient-fonts, fonts-engadget,
+  fonts-adf-verana, fonts-goudybookletter, fonts-linuxlibertine,
+  ttf-ancient-fonts, ttf-engadget,
   fonts-radisnoir,
-  fonts-atarismall, fonts-staypuft, fonts-aenigma,
-  fonts-fifthhorseman-dkg-handwriting, fonts-isabella, fonts-sjfonts,
+  fonts-atarismall, ttf-staypuft, ttf-aenigma,
+  fonts-dkg-handwriting, fonts-isabella, ttf-sjfonts,
   fonts-georgewilliams, fonts-femkeklaver, fonts-adf-universalis,
   fonts-adf-tribun, fonts-adf-switzera, fonts-adf-romande,
   fonts-adf-oldania, fonts-adf-mekanus, fonts-adf-libris,
   fonts-adf-irianis, fonts-adf-ikarius, fonts-adf-gillius,
   fonts-adf-berenis, fonts-adf-baskervald, fonts-adf-accanthis,
-  otf-freefont,
-  fonts-arabeyes, fonts-baekmuk, fonts-dejavu, fonts-freefont, fonts-liberation
+  fonts-freefont-ttf,
+  fonts-freefont-otf,
+  fonts-arabeyes, fonts-baekmuk, fonts-dejavu, fonts-liberation
 Description: Some fonts for MAX distro
  Some fonts for MAX distro
