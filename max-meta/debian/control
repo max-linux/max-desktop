@@ -8,7 +8,8 @@ Build-Depends: debhelper (>= 4), cdbs
 Package: max-desktop
 Architecture: all
 Multi-Arch: foreign
-Recommends: max-desktop-common, max-desktop-mate | max-desktop-gnome | max-desktop-kde | max-desktop-xfce
+#Recommends: max-desktop-common, max-desktop-mate | max-desktop-gnome | max-desktop-kde | max-desktop-xfce
+Recommends: max-desktop-common, max-desktop-mate
 Description: The Max desktop system
  This package depends on all of the packages in the Max desktop system
  .

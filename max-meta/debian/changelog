@@ -1,3 +1,30 @@
+max-meta (10.0.max3) max; urgency=medium
+
+  * desktop-mate: Remove
+     - account-plugin-facebook, account-plugin-flickr, account-plugin-google
+     - deja-dup-backend-cloudfiles deja-dup-backend-gvfs deja-dup-backend-s3
+     - iproute
+     - libaccount-plugin-generic-oauth, libaccount-plugin-google
+     - libbluray1, libegl1-mesa-drivers, libqt5libqgtk2, libtxc-dxtn-s2tc0
+     - libwmf0.2-7-gtk
+     - mate-gnome-main-menu-applet, mate-netspeed
+     - pulseaudio-module-x11
+     - python3-aptdaemon.pkcompat
+     - toshset
+  * desktop-gnome: Remove
+     - gnome-search-tool
+     - netspeed
+     - remmina-plugin-gnome
+  * desktop-common: Remove
+     - dia-gnome => dia
+     - josm-plugins => josm-l10n
+     - max-tablet
+     - mktemp
+     - openssh-blacklist, openssh-blacklist-extra
+     - python-kde4, python-qt4, python-lxml, python-uniconvertor
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 15 Oct 2018 12:43:22 +0200
+
 max-meta (10.0.max2) max; urgency=medium
 
   * Add fritzing-parts, close #923

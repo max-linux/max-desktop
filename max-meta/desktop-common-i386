@@ -45,7 +45,7 @@ cups-pdf
 dc
 define-me
 denemo
-dia-gnome
+dia
 doc-base
 doc-debian
 dvd+rw-tools
@@ -95,7 +95,7 @@ jarnal
 jfractionlab
 jmf
 josm
-josm-plugins
+josm-l10n
 k3b
 k3b-i18n
 kdenlive
@@ -140,10 +140,8 @@ max-manuales
 max-mate-menus | max-menus
 max-libreoffice
 max-skel-conf
-max-tablet
 mesa-utils
 mjpegtools
-mktemp
 mscore
 hunspell-es|myspell-es
 nfs-kernel-server
@@ -153,8 +151,6 @@ ocrad
 openclipart-png
 openclipart-svg
 openssh-server
-openssh-blacklist
-openssh-blacklist-extra
 pepperflashplugin-nonfree
 pmidi
 powermanagement-interface
@@ -163,10 +159,6 @@ pppoeconf
 printer-driver-all
 pseint
 pulseaudio-mixer-applet|pavucontrol
-python-kde4
-python-qt4
-python-lxml
-python-uniconvertor
 qelectrotech
 qucs
 readahead
