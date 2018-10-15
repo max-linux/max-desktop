@@ -9,10 +9,9 @@ Standards-Version: 3.8.1
 Package: max-firefox-conf
 Architecture: all
 Recommends: max-java-plugin
-Depends: firefox, 
-         firefox-locale-es, firefox-locale-en,
+Depends: firefox-locale-es, firefox-locale-en,
          apturl,
-	 max-ubufox,
+	 max-ubufox, firefox
 #NO#         firefox-greasemonkey, 
 #NO#         firefox-downloadhelper, 
 #         xul-ext-procon-latte,
@@ -20,7 +19,7 @@ Depends: firefox,
 #NO#         xul-ext-flashblock,
 #         xul-ext-firebug,
 #         xul-ext-greasemonkey,
-         mozplugger
+#NO#         mozplugger
 #Conflicts: firefox (<< 9.99), firefox (>= 10.1)
 Description: Configuración de firefox para Ubuntu/MAX.
  Configuración basada en dpsyco/ubufox para firefox.
