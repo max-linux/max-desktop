@@ -1,0 +1,362 @@
+mate-desktop-environment (1:1.20.0+4max1) max; urgency=medium
+
+  * Remove caja-gksu from Conflicts
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 15 Oct 2018 13:15:40 +0200
+
+mate-desktop-environment (1.20.0+4) unstable; urgency=medium
+
+  * debian/control:
+    + Recommend mate-tweak and mate-menu in m-d-e--extras bin:pkg. Suggest
+      m-d-e-extras by m-d-e bin:pkg. (Closes: #895788).
+    + Drop D (m-d-e-core): gvfs-bin. Deprecated in Debian. For this, various
+      gfvs-open calls got replaced in other MATE packages (i.e. caja, mate-menu,
+      mate-notification-daemon). (Closes: #877742).
+    + Bump versioned D on caja to 1.20.2-2~ (part of gvfs-bin deprecation).
+    + Bump versioned D on mate-notification-daemon to 1.20.0-2~ (part of
+      gvfs-bin deprecation).
+
+    + Note on mate-menu: mate-menu had gvfs-bin dependency in its control file,
+      so no version bump is required here. Whereas caja and m-n-d did not
+      reference gvfs-bin in their control files, so explicit version bumping
+      in m-d-e-core is our way to address that flaw.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 18 Apr 2018 13:34:04 +0200
+
+mate-desktop-environment (1.20.0+3) unstable; urgency=medium
+
+  [ Mike Gabriel ]
+  * debian/*.gschema.override:
+    - Move keybindings for switch-windows-all{-backward} over from
+      10_mate-common.gschema.override to 20_mate-ubuntu.gschema.override.
+      (Closes: #892748).
+  * debian/control:
+    + Update versioned D on mate-themes (>= 3.22.16). We now use MATE's own
+      cursor theme, shipped in mate-themes with 3.22.16 or newer.
+
+  [ Martin Wimpress ]
+  * debian/control:
+    + Drop D: dmz-cursor-theme. Obsolete.
+  * debian/10_mate-common.gschema.override:
+    - Make the mate cursor theme default for Debian and Ubuntu.
+    - Add quadrant tiling keybindings. Add keybinding to toggle shaded windows.
+  * debian/20_mate-debian.gschema.override:
+    - Enable mate cursor theme by default.
+  * debian/20_mate-ubuntu.gschema.override:
+    - Enable mate cursor theme by default.
+    - Correct schema path for global-keybindings.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 05 Apr 2018 22:31:35 +0200
+
+mate-desktop-environment (1.20.0+2) unstable; urgency=medium
+
+  [ Mike Gabriel ]
+  * debian/copyright: Use secure URI for copyright format.
+
+  [ Martin Wimpress ]
+  * debian/control:
+    + Move D: mate-backgrounds (>= 1.20) | ubuntu-mate-wallpapers to
+      (mate-desktop-environment). Prevent unintended installation of
+      mate-backgrounds on Ubuntu MATE.
+    + Replace D: ttf-ubuntu-font-family with fonts-ubuntu
+      (mate-desktop-environment-core).
+    + Replace D: breeze-cursor-theme with dmz-cursor-theme
+      (mate-desktop-environment-core).
+  * debian/20_mate-debian.gschema.override:
+    + Enable DMZ-White cursors by default.
+  * debian/20_mate-ubuntu.gschema.override:
+    + Enable DMZ-Black cursors by default.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 01 Mar 2018 20:04:16 +0100
+
+mate-desktop-environment (1.20.0+1) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * Update for MATE Desktop 1.20.
+    debian/control:
+    + Dependencies updated for MATE 1.20.
+  * debian/10_mate-common.gschema.override:
+    + Disable tab switching borders.
+    + Remove obsolete side-by-side-tiling override.
+
+  [ Mike Gabriel ]
+  * debian/{control,compat}: Bump DH version level to 11.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 14 Feb 2018 16:13:22 +0100
+
+mate-desktop-environment (1.18.0+4) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * debian/10_mate-common.gschema.override: Remove duplicate overrides for
+    org.gnome.desktop.wm.preferences:MATE.
+  * debian/20_mate-debian.gschema.override: Enable Breeze Snow cursors by
+    default.
+  * debian/20_mate-ubuntu.gschema.override: Enable Breeze Dark cursors by
+    default.
+  * debian/10_mate-common.gschema.override: Disable click finger. (Closes:
+    #888034).
+
+  * debian/control:
+    + Add D: breeze-cursor-theme (mate-desktop-environment-core).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 23 Jan 2018 02:24:23 +0100
+
+mate-desktop-environment (1.18.0+3) unstable; urgency=medium
+
+  [ Vangelis Mouhtsis ]
+  * debian/control:
+    + Bump Standards-Version: to 4.1.3. No changes needed.
+    + Rename pretty name of our team -> Debian+Ubuntu MATE Packaging Team.
+    + Update Maintainer: field to debian-mate ML on lists.debian.org.
+    + Temporarily have pkg-mate-team ML under Uploaders:.
+
+  [ Martin Wimpress ]
+  * debian/10_mate-common.gschema.override:
+    + Add common defaults for MATE on Debian and Ubuntu MATE.
+  * debian/10_mate-debian.gschema.override:
+    + Update MATE on Debian defaults.
+    + Renamed to conform with glib-compile-schema naming convention for
+      overrides.
+  * debian/10_mate-ubuntu.gschema.override:
+    + Update Ubuntu MATE defaults.
+    + Renamed to conform with glib-compile-schema naming convention for
+      overrides.
+  * debian/rules:
+    + Update dh_install for gschema overrides.
+  * debian/control:
+    + Install the appropriate default fonts.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 20 Jan 2018 01:07:51 +0100
+
+mate-desktop-environment (1.18.0+2) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * Add/update packages.
+  * debian/rules:
+    + Conform to glib-compile-schema naming convention for overrides.
+      (LP: #1577715)
+
+  [ Mike Gabriel ]
+  * debian/control:
+    + Add C:/R: pair for caja-gksu to m-d-e-core. The caja-gksu package is about
+      to be removed from Debian unstable and derivatives.
+     + Bump Standards-Version: to 4.1.1. No changes needed.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 16 Nov 2017 12:05:12 +0100
+
+mate-desktop-environment (1.18.0+1) unstable; urgency=medium
+
+  [ Jeremy Bicha ]
+  * Suggest firefox & thunderbird instead of their transitional pkgs
+
+  [ Martin Wimpress ]
+  * debian/control: Dependencies updated for MATE 1.18.
+  * debian/control: Replace galculator with mate-calc.
+  * debian/control: Correct version of mate-icon-theme-faenza.
+
+  [ Aron Xu ]
+  * New upstream release.
+
+  [ Vangelis Mouhtsis ]
+  * debian/compat:
+    + Update compat version.
+  * debian/control:
+    + Bump debhelper version to (>= 10.3~).
+  * debian/control:
+    + Bump Standards-Version: to 4.0.0. No changes needed.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 25 Jul 2017 19:26:44 +0200
+
+mate-desktop-environment (1.16.0+1) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * New upstream release. (Closes: #836348).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 04 Oct 2016 10:52:14 +0200
+
+mate-desktop-environment (1.15.0+0ubuntu1) yakkety; urgency=medium
+
+  * New upstream development release. (Closes: #836348).
+
+ -- Martin Wimpress <code@flexion.org>  Fri, 09 Sep 2016 13:04:49 +0100
+
+mate-desktop-environment (1.14.0+2) unstable; urgency=medium
+
+  * debian/control:
+    + Move mate-themes from R (mate-desktop-environment) to D
+      (mate-desktop-environment-core). Dependency is now versioned
+      (>= 3) to ensure upgrade of mate-themes from 1.12.x to 3.x.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 29 May 2016 20:28:57 +0200
+
+mate-desktop-environment (1.14.0+1) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * debian/control:
+    + Bump Standards: to 3.9.8. No changes needed.
+    + Versioned D (mate-desktop-environment-core): caja (>= 1.14.0).
+    + Versioned D (mate-desktop-environment-core): marco (>= 1.14.0).
+    + Versioned D (mate-desktop-environment-core): mate-backgrounds (>= 1.14.0).
+    + Versioned D (mate-desktop-environment-core): mate-control-center
+      (>= 1.14.0).
+    + Versioned D (mate-desktop-environment-core): mate-desktop (>= 1.14.0).
+    + Versioned D (mate-desktop-environment-core): mate-icon-theme (>= 1.14.0).
+    + Versioned D (mate-desktop-environment-core): mate-menus (>= 1.14.0).
+    + Versioned D (mate-desktop-environment-core): mate-notification-daemon
+      (>= 1.14.0).
+    + Versioned D (mate-desktop-environment-core): mate-panel (>= 1.14.0).
+    + Versioned D (mate-desktop-environment-core): mate-polkit (>= 1.14.0).
+    + Versioned D (mate-desktop-environment-core): mate-session-manager
+      (>= 1.14.0).
+    + Versioned D (mate-desktop-environment-core): mate-settings-daemon
+      (>= 1.14.0).
+    + Versioned D (mate-desktop-environment-core): mate-terminal (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): atril (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): engrampa (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): eom (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): mate-applets (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): mate-icon-theme-faenza
+      (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): mate-media (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): mate-notification-daemon
+      (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): mate-power-manager (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): mate-screensaver (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): mate-system-monitor (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): mate-themes (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): mate-user-guide (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): mate-utils (>= 1.14.0).
+    + Versioned R (mate-desktop-environment): pluma (>= 1.14.0).
+    + Versioned R (mate-desktop-environment-extras): caja-gksu (>= 1.14.0).
+    + Versioned R (mate-desktop-environment-extras): caja-image-converter
+      (>= 1.14.0).
+    + Versioned R (mate-desktop-environment-extras): caja-open-terminal
+      (>= 1.14.0).
+    + Versioned R (mate-desktop-environment-extras): caja-sendto (>= 1.14.0).
+    + Versioned R (mate-desktop-environment-extras): caja-share (>= 1.14.0).
+    + Versioned R (mate-desktop-environment-extras): caja-wallpaper (>= 1.14.0).
+    + Drop (mate-desktop-environment-extras): mate-gnome-main-menu-applet. It
+      is obsolete.
+    + Drop (mate-desktop-environment-extras): mate-netspeed. It is now part of
+      mate-applets.
+    + Versioned R (mate-desktop-environment-extras): mate-sensors-applet
+      (>= 1.14.0).
+    + Versioned R (mate-desktop-environment-extras): mate-user-share
+      (>= 1.14.0).
+    + Versioned R (mate-desktop-environment-extras): mozo (>= 1.14.0).
+    + Versioned S (mate-desktop-environment-extras): mate-netbook (>= 1.14.0).
+    + Unversion R (mate-desktop-environment): mate-themes. No longer follows
+      MATE Desktop versioning.
+
+  [ Mike Gabriel ]
+  * debian/control:
+    + Add to Conflicts:/Replaces: (mate-desktop-environment-core):
+      mate-gnome-main-menu-applet. Not continued upstream as GTK-3 build
+      variant.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 26 May 2016 05:34:38 +0200
+
+mate-desktop-environment (1.12.0+1) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * Update for MATE 1.12 release.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 02 Jan 2016 13:30:41 +0100
+
+mate-desktop-environment (1.10.0+1) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * debian/control:
+    + Update for MATE 1.10 component releases.
+
+  [ Mike Gabriel ]
+  * debian/control:
+    + Add to R (mate-desktop-environment): mate-user-guide.
+  * lintian: meta package -> metapackage in debian/control's SYNOPSIS
+    fields.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 08 Sep 2015 20:07:32 +0200
+
+mate-desktop-environment (1.8.0+10) unstable; urgency=medium
+
+  * debian/control:
+    + Bump Standards: to 3.9.6. No changes needed.
+    + Drop alternative R (mate-desktop-environment-extras):
+      dconf-tools (transitional package). (Closes: #786937).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 28 May 2015 09:48:01 +0200
+
+mate-desktop-environment (1.8.0+9) unstable; urgency=medium
+
+  * debian/control:
+    + Fix typo in Depends: gvfs-backend -> gvfs-backends.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 09 Feb 2015 12:03:22 +0100
+
+mate-desktop-environment (1.8.0+8) unstable; urgency=medium
+
+  [ Mike Gabriel ]
+  * debian/control:
+    + Add to D (mate-desktop-environment-core): gvfs-backend. (Closes: #776698).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 07 Feb 2015 12:13:37 +0100
+
+mate-desktop-environment (1.8.0+7) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * Ubuntu theming:
+    + Make 'slider' the default notification theme on Ubuntu.
+
+  [ Stefano Karapetsas ]
+  * debian/control:
+    + Don't conflict with mate-calc.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 04 Aug 2014 20:01:59 +0200
+
+mate-desktop-environment (1.8.0+6) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * Correct a typo in the Ubuntu gschema override.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 03 Jul 2014 08:57:10 +0200
+
+mate-desktop-environment (1.8.0+5) unstable; urgency=medium
+
+  * debian/control:
+    + Add Provides: mate (to mate-desktop-environment) and mate-extras
+      (to mate-desktop-environment-extras). (Closes: #750798).
+  * debian/control:
+    + Enforce removal of old (<< 1.8.0) MATE components when installing
+      the mate-desktop-environment-core meta:package. (Closes: #751546).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 02 Jul 2014 11:06:30 +0200
+
+mate-desktop-environment (1.8.0+4) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * Change the Ubuntu gschema override to use Ambiance as this is the default
+    Ubuntu theme.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 01 Jul 2014 19:27:44 +0200
+
+mate-desktop-environment (1.8.0+3) unstable; urgency=low
+
+  * debian/control:
+    + Drop the MATE project's initial self-irony from all LONG_DESCRIPTION
+      fields and replace it by a far more positive teaser text. (Closes:
+      #750662).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 07 Jun 2014 15:02:21 +0200
+
+mate-desktop-environment (1.8.0+2) unstable; urgency=low
+
+  * debian/control:
+    + Meta:package m-d-e-core breaks old (<< 1.8.0) m-d-e meta packages.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 12 May 2014 12:49:22 +0200
+
+mate-desktop-environment (1.8.0+1) unstable; urgency=low
+
+  * Initial upload to Debian. (Closes: #746731, #743401).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 11 May 2014 21:47:04 +0200

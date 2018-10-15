@@ -1,0 +1,44 @@
+[org.gnome.desktop.interface:MATE]
+cursor-theme='mate'
+document-font-name='Cantarell 11'
+font-name='Cantarell 11'
+gtk-theme='Menta'
+icon-theme='menta'
+monospace-font-name='Monospace 13'
+
+[org.gnome.desktop.wm.preferences:MATE]
+theme='Menta'
+titlebar-font='Cantarell Bold 11'
+
+[org.mate.background]
+picture-filename='/usr/share/images/desktop-base/desktop-background'
+
+[org.mate.caja.desktop]
+font='Cantarell 11'
+
+[org.mate.dictionary]
+print-font='Cantarell 12'
+
+[org.mate.interface]
+icon-theme='menta'
+gtk-theme='Menta'
+font-name='Cantarell 11'
+document-font-name='Cantarell 11'
+monospace-font-name='Monospace 13'
+
+[org.mate.Marco.general]
+theme='Menta'
+titlebar-font='Cantarell Bold 11'
+
+[org.mate.pluma]
+color-scheme='classic'
+editor-font='Monospace 13'
+print-font-body-pango='Monospace 9'
+print-font-header-pango='Cantarell 11'
+print-font-numbers-pango='Cantarell 8'
+
+[org.mate.sound]
+theme-name='freedesktop'
+
+[org.mate.stickynotes]
+default-font='Cantarell 10'

@@ -1,0 +1,48 @@
+[org.gnome.desktop.interface:MATE]
+cursor-theme='mate'
+document-font-name='Ubuntu 11'
+font-name='Ubuntu 11'
+gtk-theme='Ambiant-MATE'
+icon-theme='Ambiant-MATE'
+monospace-font-name='Ubuntu Mono 13'
+
+[org.gnome.desktop.wm.preferences:MATE]
+theme='Ambiant-MATE'
+titlebar-font='Ubuntu Bold 11'
+
+[org.mate.background]
+picture-filename='/usr/share/backgrounds/ubuntu-mate-common/Green-Wall-Logo.png'
+
+[org.mate.caja.desktop]
+font='Ubuntu 11'
+
+[org.mate.dictionary]
+print-font='Ubuntu 12'
+
+[org.mate.interface]
+icon-theme='Ambiant-MATE'
+gtk-theme='Ambiant-MATE'
+font-name='Ubuntu 11'
+document-font-name='Ubuntu 11'
+monospace-font-name='Ubuntu Mono 13'
+
+[org.mate.Marco.general]
+theme='Ambiant-MATE'
+titlebar-font='Ubuntu Medium 11'
+
+[org.mate.Marco.global-keybindings]
+switch-windows-all='<Control><Alt>Tab'
+switch-windows-all-backward='<Control><Alt><Shift>Tab'
+
+[org.mate.pluma]
+color-scheme='Ambiant-MATE'
+editor-font='Ubuntu Mono 13'
+print-font-body-pango='Ubuntu Mono 9'
+print-font-header-pango='Ubuntu 11'
+print-font-numbers-pango='Ubuntu 8'
+
+[org.mate.sound]
+theme-name='ubuntu'
+
+[org.mate.stickynotes]
+default-font='Ubuntu 10'
