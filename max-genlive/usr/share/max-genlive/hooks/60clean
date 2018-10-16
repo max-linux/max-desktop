@@ -169,6 +169,10 @@ rm -f $CHROOT/etc/resolv.conf
 _echo "Deshabilitando contraseña de root"
 chroot $CHROOT/ usermod -L root
 
+# https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/1638842
+_echo "Habilitando Network Manager"
+mkdir -p $CHROOT/etc/NetworkManager/conf.d/
+touch $CHROOT/etc/NetworkManager/conf.d/10-globally-managed-devices.conf
 
 _echo "Copiando archivos isolinux..."
 

@@ -1,3 +1,10 @@
+max-genlive (10.0.max3) max; urgency=medium
+
+  * Fix NetworkManager and netplan.io disabled network, set beta1 as
+    version
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 16 Oct 2018 08:19:33 +0200
+
 max-genlive (10.0.max2) max; urgency=medium
 
   * Disable moodle
