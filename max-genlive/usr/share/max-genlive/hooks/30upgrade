@@ -1,5 +1,5 @@
 
-if [ ! -e /sbin/initctl.distrib ]; then
+if [ -e /sbin/initctl ] && [ ! -e /sbin/initctl.distrib ]; then
   chroot $CHROOT dpkg-divert --local --rename --add /sbin/initctl
   chroot $CHROOT ln -s /bin/true /sbin/initctl
 fi

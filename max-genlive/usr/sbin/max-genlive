@@ -182,6 +182,7 @@ _revert_invoke() {
  else
    DIR=$CHROOT
  fi
+
  if [ -e $DIR/usr/sbin/invoke-rc.d.REAL ]; then
    _echo "Revirtiendo /usr/sbin/invoke-rc.d"
    mv $DIR/usr/sbin/invoke-rc.d.REAL $DIR/usr/sbin/invoke-rc.d
@@ -190,18 +191,36 @@ _revert_invoke() {
    _echo "Revirtiendo /sbin/start-stop-daemon"
    mv $DIR/sbin/start-stop-daemon.REAL $DIR/sbin/start-stop-daemon
  fi
- if [ -e $DIR/sbin/initctl.distrib ]; then
+
+ if chroot $DIR/ dpkg-divert --list| grep -q "/sbin/initctl"; then
+   _echo "Revirtiendo /sbin/initctl"
    rm -f $DIR/sbin/initctl
    chroot $DIR dpkg-divert --local --remove /sbin/initctl
    [ -e $DIR/sbin/initctl.distrib ] && \
      mv $DIR/sbin/initctl.distrib $DIR/sbin/initctl
  fi
- if [ -e $DIR/usr/sbin/update-grub.distrib ]; then
+
+# if [ -e $DIR/sbin/initctl.distrib ]; then
+#   rm -f $DIR/sbin/initctl
+#   chroot $DIR dpkg-divert --local --remove /sbin/initctl
+#   [ -e $DIR/sbin/initctl.distrib ] && \
+#     mv $DIR/sbin/initctl.distrib $DIR/sbin/initctl
+# fi
+
+ if chroot $DIR/ dpkg-divert --list| grep -q "/usr/sbin/update-grub"; then
+   _echo "Revirtiendo /usr/sbin/update-grub"
    rm -f $DIR/usr/sbin/update-grub
    chroot $DIR dpkg-divert --local --remove /usr/sbin/update-grub
    [ -e $DIR/usr/sbin/update-grub.distrib ] && \
      mv $DIR/usr/sbin/update-grub.distrib $DIR/usr/sbin/update-grub
  fi
+
+# if [ -e $DIR/usr/sbin/update-grub.distrib ]; then
+#   rm -f $DIR/usr/sbin/update-grub
+#   chroot $DIR dpkg-divert --local --remove /usr/sbin/update-grub
+#   [ -e $DIR/usr/sbin/update-grub.distrib ] && \
+#     mv $DIR/usr/sbin/update-grub.distrib $DIR/usr/sbin/update-grub
+# fi
 
  rm -f $DIR/usr/sbin/policy-rc.d
 }

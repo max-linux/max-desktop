@@ -1,3 +1,9 @@
+max-genlive (10.0.max4) max; urgency=medium
+
+  * Not divert /sbin/initctl
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 17 Oct 2018 11:04:19 +0200
+
 max-genlive (10.0.max3) max; urgency=medium
 
   * Fix NetworkManager and netplan.io disabled network, set beta1 as
