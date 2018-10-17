@@ -72,5 +72,3 @@ ${DEB_SRC} http://$host$directory $codename-security multiverse
 EOF
 
 apt-setup-signed-release security.ubuntu.com "$file"
-
-exit 0

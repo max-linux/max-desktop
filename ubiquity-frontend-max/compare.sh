@@ -13,12 +13,16 @@ ORIG_PATH=/data/max/build/desktop/ubiquity/ubiquity-18.04.14.8/
 for f in $(find usr/ -type f | grep -v ".svn"); do
 
   e=$(basename $f)
+
   if [ "$e" = "do_option" ]; then
     orig=$ORIG_PATH/d-i/source/partman-auto/automatically_partition/resize_use_free/do_option
+
   elif [ "$e" = "ubiquity-maxui.desktop" ]; then
     orig=$ORIG_PATH/desktop/ubiquity-gtkui.desktop.in
-  elif [ "$e" = "ubiquity" ]; then
-    orig=$ORIG_PATH/bin/ubiquity
+
+  elif [ "$f" = "usr/lib/ubiquity/bin/ubiquity" ]; then
+    orig=$ORIG_PATH/$f
+
   else
     orig=$(find $ORIG_PATH -type f -name "$e"| head -1)
   fi
