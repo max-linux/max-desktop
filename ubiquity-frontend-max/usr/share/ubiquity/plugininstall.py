@@ -1805,21 +1805,21 @@ class Install(install_misc.InstallBase):
     def do_autoremove(self):
         syslog.syslog("DEBUG do_autoremove() init")
         install_misc.chroot_setup(self.target)
-        to_delete = ["/bin/log-output"]
+        to_delete = []
+        # to_delete = ["/bin/log-output"]
         try:
-            shutil.copy("/bin/log-output", "/target/bin/log-output")
-
-            for arch in ['', "i386-linux-gnu", "x86_64-linux-gnu"]:
-                if os.path.exists("/usr/lib/%s/libdebian-installer.so.4" % arch):
-                    syslog.syslog("DEBUG: do_autoremove copy arch %s"  % arch)
-                    shutil.copy("/usr/lib/%s/libdebian-installer.so.4" % arch,
-                                "/target/usr/lib/%s/libdebian-installer.so.4" % arch)
-                    to_delete.append("/usr/lib/%s/libdebian-installer.so.4" % arch)
-
-                    shutil.copy("/usr/lib/%s/libdebian-installer.so.4.0.7" % arch,
-                                "/target/usr/lib/%s/libdebian-installer.so.4.0.7" % arch)
-                    to_delete.append("/usr/lib/%s/libdebian-installer.so.4.0.7")
-
+            # shutil.copy("/bin/log-output", "/target/bin/log-output")
+            # for arch in ['', "i386-linux-gnu", "x86_64-linux-gnu"]:
+            #     if os.path.exists("/usr/lib/%s/libdebian-installer.so.4" % arch):
+            #         syslog.syslog("DEBUG: do_autoremove copy arch %s"  % arch)
+            #         shutil.copy("/usr/lib/%s/libdebian-installer.so.4" % arch,
+            #                     "/target/usr/lib/%s/libdebian-installer.so.4" % arch)
+            #         to_delete.append("/usr/lib/%s/libdebian-installer.so.4" % arch)
+            #
+            #         shutil.copy("/usr/lib/%s/libdebian-installer.so.4.0.8" % arch,
+            #                     "/target/usr/lib/%s/libdebian-installer.so.4.0.8" % arch)
+            #         to_delete.append("/usr/lib/%s/libdebian-installer.so.4.0.8")
+            #
             subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
                           'apt-get', 'autoremove', '--purge', '-y'],
                           preexec_fn=install_misc.debconf_disconnect, close_fds=True)
@@ -1872,7 +1872,7 @@ class Install(install_misc.InstallBase):
         if not os.path.exists(install_file):
             syslog.syslog("DEBUG: install_max_extras() file %s not found"%install_file)
             return
-        new=set()        
+        new=set()
         newpkgs=open(install_file)
         for line in newpkgs:
             if line.strip() != '' and not line.startswith('#'):
@@ -1911,7 +1911,7 @@ class Install(install_misc.InstallBase):
 
         if found_cdrom:
             os.rename("%s.apt-setup" % sources_list, sources_list)
-        
+
         try:
             self.killall_target_proc()
         except Exception:
