@@ -162,9 +162,9 @@ exit \$ERROR
 EOC
 
 
-# link resolv.conf
+# link resolv.conf to systemd-resolv
 rm -f $CHROOT/etc/resolv.conf
-(cd $CHROOT/etc && ln -s ../run/resolvconf/resolv.conf resolv.conf)
+(cd $CHROOT && ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf)
 
 _echo "Deshabilitando contraseña de root"
 chroot $CHROOT/ usermod -L root

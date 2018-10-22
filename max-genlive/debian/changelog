@@ -1,3 +1,9 @@
+max-genlive (10.0.max5) max; urgency=medium
+
+  * Link resolv.conf to systemd-resolved resolv.conf file
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 22 Oct 2018 08:43:18 +0200
+
 max-genlive (10.0.max4) max; urgency=medium
 
   * Not divert /sbin/initctl
