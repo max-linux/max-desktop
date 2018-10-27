@@ -1,3 +1,9 @@
+max-mate-meta (10.0.max9) max; urgency=medium
+
+  * Remove libbluray because openjdk 8, rel #937
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 27 Oct 2018 13:18:03 +0200
+
 max-mate-meta (10.0.max8) max; urgency=medium
 
   * Add max-mate-welcome
