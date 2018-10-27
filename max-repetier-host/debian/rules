@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-VERSION=1_6_2
+VERSION=2_1_3
 URL=http://download.repetier.com/files/host/linux/repetierHostLinux_$(VERSION).tgz
 
 DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
