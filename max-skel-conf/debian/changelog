@@ -1,3 +1,9 @@
+max-skel-conf (10.0.max10) max; urgency=medium
+
+  * Set default lang to es in speech-dispatcher, close #950
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 27 Oct 2018 11:38:20 +0200
+
 max-skel-conf (10.0.max9) max; urgency=medium
 
   * Add 25-enable-sudo-network-manager max postint
