@@ -1,3 +1,9 @@
+ubiquity-frontend-max (10.0.max7) max; urgency=medium
+
+  * Fix repo directory, closes #940
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 27 Oct 2018 12:28:57 +0200
+
 ubiquity-frontend-max (10.0.max6) max; urgency=medium
 
   * Remove copying log-output libdebian-installer.so in chroot
