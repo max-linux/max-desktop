@@ -157,10 +157,11 @@ Slide's body text goes inside here.
 }
 /* hack to get the text wrapping around the icon. If we could do this for
 ul :first-line, there would be less room for failure. */
+/*
 .content.wrap-top li:first-child {
 	width:550px;
 }
-
+*/
 .content .footer {
 	position:relative;
 	width:100%;

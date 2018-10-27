@@ -1,3 +1,9 @@
+ubiquity-slideshow-max (22max20) max; urgency=medium
+
+  * Disable max-width in first ul child, closes #939
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 27 Oct 2018 12:22:00 +0200
+
 ubiquity-slideshow-max (22max19) max; urgency=medium
 
   * Update Slideshow.py (new python3 Webkit), fix firefox icon
