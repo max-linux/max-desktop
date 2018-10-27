@@ -1,0 +1,10 @@
+#!/bin/sh
+
+SKEL_PATH=$(find /usr/share/max-mate-settings-infantil -maxdepth 1 -type d -name "gcompris*")
+
+if [ ! -e $HOME/.config/gcompris/gcompris-qt.conf ]; then
+  rsync -Pav "${SKEL_PATH}"/ "${HOME}"/
+fi
+
+# run gcompris
+/usr/bin/gcompris-qt
