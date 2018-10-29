@@ -1,3 +1,9 @@
+max-skel-conf (10.0.max14) max; urgency=medium
+
+  * gimp: Change icon theme to Legacy, rel #953
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 29 Oct 2018 09:27:50 +0100
+
 max-skel-conf (10.0.max13) max; urgency=medium
 
   * 10-max-grub: Replace hidden TIMEOUT_STYLE with menu
