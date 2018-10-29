@@ -1,7 +1,6 @@
 #!/bin/sh
 
 MAX_VERSION="MAX-10.0-peta"
-
 UPDATE_GRUB=0
 
 if [ -e /etc/default/grub ]; then
@@ -16,12 +15,19 @@ if [ -e /etc/default/grub ]; then
     UPDATE_GRUB=1
   fi
 
+  if grep -q "^GRUB_TIMEOUT_STYLE=hidden" /etc/default/grub 2>/dev/null; then
+    sed -i -e 's/^GRUB_TIMEOUT_STYLE=hidden/GRUB_TIMEOUT_STYLE=menu/g' /etc/default/grub
+    UPDATE_GRUB=1
+  fi
+
   if [ "$UPDATE_GRUB" = "1" ]; then
     if [ -x "`which update-grub 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
       update-grub
     fi
   fi
+
+  sed -i '/submenu/s/Previous Linux versions/Versiones anteriores/g' /boot/grub/grub.cfg
+
 fi # end of [ -e /etc/default/grub ]
 
-test -e /boot/grub/grub.cfg && sed -i '/submenu/s/Previous Linux versions/Versiones anteriores/g' /boot/grub/grub.cfg
 
