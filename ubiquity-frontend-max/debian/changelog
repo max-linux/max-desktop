@@ -1,3 +1,9 @@
+ubiquity-frontend-max (10.0.max8) max; urgency=medium
+
+  * Fix sources.list MAX in target
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 29 Oct 2018 08:13:18 +0100
+
 ubiquity-frontend-max (10.0.max7) max; urgency=medium
 
   * Fix repo directory, closes #940
