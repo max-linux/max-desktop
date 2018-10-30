@@ -1,3 +1,9 @@
+max-genlive (10.0.max8) max; urgency=medium
+
+  * Fix exclude initrd
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 30 Oct 2018 14:37:54 +0100
+
 max-genlive (10.0.max7) max; urgency=medium
 
   * 70buildsquash: exclude /boot/initrd.img-*
