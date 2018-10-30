@@ -1,3 +1,9 @@
+max-skel-conf (10.0.max16) max; urgency=medium
+
+  * Disable check-efi-install
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 30 Oct 2018 09:09:04 +0100
+
 max-skel-conf (10.0.max15) max; urgency=medium
 
   * Change GRUB version MAX-10.0-peta => MAX-10.0, close #957

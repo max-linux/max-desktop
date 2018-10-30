@@ -1,6 +1,11 @@
 #!/bin/sh
 set -e
 
+if [ "$MAX_FORCE_EFI" != "" ]; then
+  echo "No MAX_FORCE_EFI in environ, exit now"
+  exit 0
+fi
+
 if [ ! -d /sys/firmware/efi/efivars ]; then
   echo " *  NO UEFI found /sys/firmware/efi/efivars "
   exit
