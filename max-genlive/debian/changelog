@@ -1,3 +1,9 @@
+max-genlive (10.0.max6) max; urgency=medium
+
+  * Blacklist compton, change => beta2
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 30 Oct 2018 11:12:23 +0100
+
 max-genlive (10.0.max5) max; urgency=medium
 
   * Link resolv.conf to systemd-resolved resolv.conf file
