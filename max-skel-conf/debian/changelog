@@ -1,3 +1,10 @@
+max-skel-conf (10.0.max15) max; urgency=medium
+
+  * Change GRUB version MAX-10.0-peta => MAX-10.0, close #957
+  * Disable Gimp theme and icon.
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 30 Oct 2018 08:06:26 +0100
+
 max-skel-conf (10.0.max14) max; urgency=medium
 
   * gimp: Change icon theme to Legacy, rel #953

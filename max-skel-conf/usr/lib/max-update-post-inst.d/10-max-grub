@@ -1,6 +1,6 @@
 #!/bin/sh
 
-MAX_VERSION="MAX-10.0-peta"
+MAX_VERSION="MAX-10.0"
 UPDATE_GRUB=0
 
 if [ -e /etc/default/grub ]; then
