@@ -25,6 +25,7 @@ if [ ! $DISABLE_SQUASHFS ]; then
   cat << EOF > $CHROOT/exclude.sq
 /media/
 /exclude.sq
+/boot/initrd.img-*
 EOF
 
   chroot $CHROOT $MKSQUASHFS /mnt/ /media/casper/filesystem.squashfs -ef /exclude.sq $LZMA $NUMPROC || _exit "No se ha podido generar el archivo squashfs"

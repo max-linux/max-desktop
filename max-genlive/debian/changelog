@@ -1,3 +1,9 @@
+max-genlive (10.0.max7) max; urgency=medium
+
+  * 70buildsquash: exclude /boot/initrd.img-*
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 30 Oct 2018 14:25:29 +0100
+
 max-genlive (10.0.max6) max; urgency=medium
 
   * Blacklist compton, change => beta2
