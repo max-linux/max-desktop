@@ -1826,7 +1826,7 @@ class Install(install_misc.InstallBase):
 
             install_misc.chrex(self.target,'max-update-post-inst')
             install_misc.chrex(self.target,'max-reset-ssh-keys')
-            install_misc.chrex(self.target,'check-efi-install')
+            # disabled for MAX 10 # install_misc.chrex(self.target,'check-efi-install')
             for f in to_delete:
                 if os.path.exists("/target/%s" % f):
                     os.unlink("/target/%s" % f)
