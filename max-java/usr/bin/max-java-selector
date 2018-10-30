@@ -72,8 +72,8 @@ elif [ `readlink -f /etc/alternatives/java | grep "/java-7-openjdk"` ]; then
 elif [ `readlink -f /etc/alternatives/java | grep "/java-8-openjdk"` ]; then
    java_actual="Open JDK 8"
 
-elif [ `readlink -f /etc/alternatives/java | grep "/java-9-openjdk"` ]; then
-   java_actual="Open JDK 9"
+#elif [ `readlink -f /etc/alternatives/java | grep "/java-9-openjdk"` ]; then
+#   java_actual="Open JDK 9"
 
 elif [ `readlink -f /etc/alternatives/java | grep "/java-11-openjdk"` ]; then
    java_actual="Open JDK 11"
@@ -84,8 +84,8 @@ elif [ `readlink -f /etc/alternatives/java | grep "/java-7-oracle"` ]; then
 elif [ `readlink -f /etc/alternatives/java | grep "/java-8-oracle"` ]; then
    java_actual="Oracle Java 8"
 
-elif [ `readlink -f /etc/alternatives/java | grep "/java-9-oracle"` ]; then
-   java_actual="Oracle Java 9" # no exists yet !!!
+#elif [ `readlink -f /etc/alternatives/java | grep "/java-9-oracle"` ]; then
+#   java_actual="Oracle Java 9" # no exists yet !!!
 
 else
    zenity --title "$titulo_ventana" --warning --text "No se ha encontrado la versión en uso de java."
@@ -133,8 +133,8 @@ elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-7-open
 elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-8-openjdk"` ]; then
    java_actual="Open JDK 8"
 
-elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-9-openjdk"` ]; then
-   java_actual="Open JDK 9"
+#elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-9-openjdk"` ]; then
+#   java_actual="Open JDK 9"
 
 elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-11-openjdk"` ]; then
    java_actual="Open JDK 11"
@@ -145,8 +145,8 @@ elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-7-orac
 elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-8-oracle"` ]; then
    java_actual="Oracle Java 8"
 
-elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-9-oracle"` ]; then
-   java_actual="Oracle Java 9" # no exists yet !!!
+#elif [ `readlink -f /etc/alternatives/mozilla-javaplugin.so | grep "/java-9-oracle"` ]; then
+#   java_actual="Oracle Java 9" # no exists yet !!!
 
 else
    zenity --title "$titulo_ventana" --warning --text "No se ha encontrado la versión en uso del plugin java para el navegador."
@@ -184,7 +184,7 @@ fi
 #comprueba_paquete "Open JDK 6"    "openjdk-6-jre"     "icedtea-6-plugin"    "Obsoleto, compatible DescartesWeb"
 #comprueba_paquete "Open JDK 7"    "openjdk-7-jre"     "icedtea-7-plugin"    "Compatible DescartesWeb"
 comprueba_paquete "Open JDK 8"    "openjdk-8-jre"     "icedtea-8-plugin"    "Compatible DescartesWeb"
-comprueba_paquete "Open JDK 9"    "openjdk-9-jre"     ""                    "Compatible DescartesWeb"
+#comprueba_paquete "Open JDK 9"    "openjdk-9-jre"     ""                    "Compatible DescartesWeb"
 comprueba_paquete "Open JDK 11"   "openjdk-11-jre"     ""                    "Compatible DescartesWeb"
 #comprueba_paquete "Oracle Java 7" "oracle-java7-jre"  "oracle-java7-plugin" "Compatible trámites oficiales"
 comprueba_paquete "Oracle Java 8" "oracle-java8-jre"  "oracle-java8-plugin" "Última versión oficial 8.x"
@@ -244,15 +244,15 @@ case "$opcion" in
          alter_plugin="mozilla-javaplugin.so"
          cadena_ruta_java="/java-8-openjdk"
    ;;
-   "Open JDK 9")
-         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 14`
-         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="openjdk-9-jre" ; fi
-         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 15`
-         # if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes icedtea-9-plugin" ; fi
-         paquetes=`echo $paquetes`
-         alter_plugin="mozilla-javaplugin.so"
-         cadena_ruta_java="/java-9-openjdk"
-   ;;
+#   "Open JDK 9")
+#         estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 14`
+#         if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="openjdk-9-jre" ; fi
+#         estado_paquete_plugin=`echo $lista_versiones | cut -d"@" -f 15`
+#         # if [ "$estado_paquete_plugin" != "No encontrado en repositorios" ] ; then paquetes="$paquetes icedtea-9-plugin" ; fi
+#         paquetes=`echo $paquetes`
+#         alter_plugin="mozilla-javaplugin.so"
+#         cadena_ruta_java="/java-9-openjdk"
+#   ;;
    "Open JDK 11")
          estado_paquete_jre=`echo $lista_versiones | cut -d"@" -f 14`
          if [ "$estado_paquete_jre" != "No encontrado en repositorios" ] ; then paquetes="openjdk-11-jre" ; fi

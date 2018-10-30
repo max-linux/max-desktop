@@ -1,3 +1,9 @@
+max-java (10.0.max4) max; urgency=medium
+
+  * Remove non-existant openjdk-9
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 30 Oct 2018 11:09:35 +0100
+
 max-java (10.0.max3) max; urgency=medium
 
   * Update max-java-selector icon, ref #942
