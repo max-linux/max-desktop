@@ -159,3 +159,7 @@ grub-pc grub-pc/hidden_timeout boolean false
 ubiquity ubiquity/use_nonfree boolean true
 ubiquity ubiquity/download_updates boolean false
 
+# disable ubuntu-restricted
+d-i apt-setup/restricted boolean false
+d-i apt-setup/partner boolean false
+d-i apt-setup/enable-source-repositories boolean false

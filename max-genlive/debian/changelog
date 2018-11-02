@@ -1,3 +1,9 @@
+max-genlive (10.0.max9) max; urgency=medium
+
+  * preseed: Disable restricted partner and src repositories
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 02 Nov 2018 10:04:02 +0100
+
 max-genlive (10.0.max8) max; urgency=medium
 
   * Fix exclude initrd
