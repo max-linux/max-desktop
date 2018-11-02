@@ -1,3 +1,9 @@
+max-skel-conf (10.0.max17) max; urgency=medium
+
+  * 10-max-grub: Only translate menu if grub.cfg exists
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 02 Nov 2018 08:44:29 +0100
+
 max-skel-conf (10.0.max16) max; urgency=medium
 
   * Disable check-efi-install

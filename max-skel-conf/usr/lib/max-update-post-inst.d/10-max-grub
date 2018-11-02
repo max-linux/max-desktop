@@ -26,7 +26,7 @@ if [ -e /etc/default/grub ]; then
     fi
   fi
 
-  sed -i '/submenu/s/Previous Linux versions/Versiones anteriores/g' /boot/grub/grub.cfg
+  [ -e /boot/grub/grub.cfg ] && sed -i '/submenu/s/Previous Linux versions/Versiones anteriores/g' /boot/grub/grub.cfg
 
 fi # end of [ -e /etc/default/grub ]
 
