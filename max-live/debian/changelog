@@ -1,3 +1,11 @@
+max-live (10.0.max2) max; urgency=medium
+
+  * Add max-mate-live
+  * Divert /sbin/casper-stop to translate shutdown message
+  * Don't setup console in casper-bottom/99max
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 05 Nov 2018 09:37:35 +0100
+
 max-live (10.0.max1) max; urgency=medium
 
   * Build in MAX 10.0

@@ -70,8 +70,9 @@ fi
 # ubiquity loads with black background
 rm -rf /root/root/.themes
 
-chroot /root loadkeys es
-chroot /root setupcon --save-only
+# Try to no corrupt console (MAX 10.0)
+# chroot /root loadkeys es
+# chroot /root setupcon --save-only
 
 # don't run jockey in live session
 rm -f /root/etc/xdg/autostart/*jockey*

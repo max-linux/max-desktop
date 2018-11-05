@@ -14,7 +14,8 @@ Depends: ubiquity-frontend-max,
 #         language-support-es,
          laptop-detect,
 #        ntfsprogs,
-         lupin-casper
+         lupin-casper,
+         max-mate-live
 Provides: max-install
 Replaces: max-install
 Conflicts: max-install

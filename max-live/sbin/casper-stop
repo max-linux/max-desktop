@@ -1,21 +1,10 @@
 #! /bin/sh
-### BEGIN INIT INFO
-# Provides:          casper
-# Required-Start:    $syslog
-# Required-Stop:
-# Should-Start:      $local_fs
-# Should-Stop:       halt reboot
-# X-Stop-After:      umountroot
-# Default-Start:
-# Default-Stop:      0 6
-# Short-Description: Casper init script
-# Description:       Resyncs snapshots, evantually caches files in order
-#                    to let remove the media.
-### END INIT INFO
 
-# Author: Tollef Fog Heen <tfheen@canonical.com>
+# Author: Mathieu Trudel-Lapierre <mathieu.trudel-lapierre@canonical.com>
+#         Tollef Fog Heen <tfheen@canonical.com>
 #         Marco Amadori <marco.amadori@gmail.com>
 #
+
 PATH=/usr/sbin:/usr/bin:/sbin:/bin
 NAME=casper
 SCRIPTNAME=/etc/init.d/${NAME}
@@ -30,21 +19,16 @@ grep -qs find_iso= /proc/cmdline && exit 0
 # Read configuration variable file if it is present
 [ -r /etc/$NAME.conf ] && . /etc/$NAME.conf
 
-# Load the VERBOSE setting and other rcS variables
-[ -f /etc/default/rcS ] && . /etc/default/rcS
-
-# Define LSB log_* functions.
-# Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
-. /lib/lsb/init-functions
-
 # Try to cache everything we're likely to need after ejecting.  This
 # is fragile and simple-minded, but our options are limited.
 cache_path() {
     path="$1"
 
     if [ -d "$path" ]; then
-        find "$path" -type f | xargs cat > /dev/null 2>&1
-    elif [ -f "$path" ]; then
+        for f in $(find "$path" -type f); do
+            cache_path "$f"
+        done
+    elif [ -f "$path" ] && [ ! -L "$path" ]; then
         if [ -x "$path" ]; then
             if file -L "$path" | grep -q 'dynamically linked'; then
                 for lib in $(ldd "$path" | awk '{ print $3 }'); do
@@ -52,12 +36,14 @@ cache_path() {
                 done
             fi
         fi
-        cat "$path" >/dev/null 2>&1
+        echo -n >> "$path"
     fi
 }
 
 do_stop ()
 {
+    logger -t ${NAME} "resyncing snapshots and caching reboot files..."
+
     if [ ! -z "${ROOTSNAP}" ]; then
         $DO_SNAPSHOT --resync-string="${ROOTSNAP}"
     fi
@@ -85,11 +71,11 @@ do_stop ()
     fi
 
     prompt=1
-    if grep -qs noprompt /proc/cmdline; then
+    if grep -qs noprompt /proc/cmdline || [ -e /run/casper-no-prompt ]; then
         prompt=
     fi
 
-    for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth $(which eject) /sbin/usplash_write; do
+    for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth /lib/plymouth /lib/*/plymouth /lib/systemd /etc/systemd /lib/*/libnss_files* /etc/nsswitch.conf /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf /usr/share/fonts/truetype/ubuntu/Ubuntu-R.ttf /usr/share/fonts/truetype/ubuntu/UbuntuMono-R.ttf /etc/fonts/fonts.conf /etc/fonts/conf.d/60-latin.conf; do
         cache_path "$path"
     done
 
@@ -113,48 +99,33 @@ do_stop ()
         return 0
     fi
 
-    eject -p -m /cdrom >/dev/null 2>&1
+    # XXX - i18n
+    # MSG="Please remove the installation medium, then press ENTER: "
+    MSG="Por favor retire el DVD/USB, luego pulse INTRO: "
+    # MSG_FALLBACK="Please remove the installation medium, then reboot."
+    MSG_FALLBACK="Por favor retire el DVD/USB, luego reinice."
+
+    if [ "$prompt" ]; then
+        if [ -x /bin/plymouth ] && plymouth --ping; then
+            plymouth message --text="$MSG"
+            clear > /dev/tty1
+            echo $MSG_FALLBACK > /dev/tty1
+        else
+            stty sane < /dev/console
+            echo $MSG > /dev/console
+        fi
+    fi
+
+    eject -p -m $device >/dev/null 2>&1
 
     [ "$prompt" ] || return 0
 
-    # XXX - i18n
-    #MSG="Please remove installation media and close the tray (if any) then press ENTER: "
-    MSG="Por favor, retire el disco, cierre la bandeja y pulse RETORNO para continuar"
-
     if [ -x /bin/plymouth ] && plymouth --ping; then
-        plymouth message --text="$MSG"
         plymouth watch-keystroke > /dev/null
     else
-        stty sane < /dev/console
-
-        echo $MSG > /dev/console
-        if [ -x /sbin/usplash_write ]; then
-            /sbin/usplash_write "TIMEOUT 86400"
-            #/sbin/usplash_write "TEXT-URGENT Please remove installation media, close the tray"
-            #/sbin/usplash_write "TEXT-URGENT (if any) and press ENTER to continue"
-            /sbin/usplash_write "TEXT-URGENT Por favor, retire el disco, cierre la bandeja"
-            /sbin/usplash_write "TEXT-URGENT y pulse RETORNO para continuar"
-
-        fi
         read x < /dev/console
     fi
 }
 
-case "$1" in
-    restart|reload|force-reload|status)
-        [ "$VERBOSE" != no ] && log_end_msg 0
-        ;;
-    # We normally run on start; stop is just for backwards compatibility.
-    start|stop)
-        log_begin_msg "${NAME} is resyncing snapshots and caching reboot files..."
-        do_stop
-        case "$?" in
-            0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
-            2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
-        esac
-        ;;
-    *)
-        log_success_msg "Usage: $SCRIPTNAME {start|stop|restart|force-reload}" >&2
-        exit 3
-        ;;
-esac
+do_stop
+
