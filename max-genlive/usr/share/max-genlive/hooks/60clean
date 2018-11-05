@@ -158,13 +158,10 @@ apt-get $APT_OPTS upgrade || ERROR=1
 apt-get $APT_OPTS dist-upgrade || ERROR=1
 apt-get $APT_OPTS autoremove --purge || ERROR=1
 apt-get clean
+rm -f /etc/resolv.conf
+ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
 exit \$ERROR
 EOC
-
-
-# link resolv.conf to systemd-resolv
-rm -f $CHROOT/etc/resolv.conf
-(cd $CHROOT && ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf)
 
 _echo "Deshabilitando contraseña de root"
 chroot $CHROOT/ usermod -L root
