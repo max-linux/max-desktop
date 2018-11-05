@@ -83,5 +83,16 @@ sudo /usr/sbin/max-set-background
 
 EOF
 
+# start max-mate-welcome in LIVE mode
+if [ -e /root/usr/share/applications/max-mate-software.desktop ]; then
+  sed -i 's/Exec=max-mate-welcome/Exec=max-mate-welcome --jump-to=hellolive/g' \
+         /root/usr/share/applications/max-mate-software.desktop
+fi
+
+if [ -e /root/etc/xdg/autostart/max-mate-welcome-autostart.desktop ]; then
+  sed -i 's/Exec=max-mate-welcome/Exec=max-mate-welcome --jump-to=hellolive/g' \
+         /root/etc/xdg/autostart/max-mate-welcome-autostart.desktop
+fi
+
 
 log_end_msg
