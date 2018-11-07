@@ -1827,7 +1827,7 @@ class Install(install_misc.InstallBase):
             install_misc.chrex(self.target,'max-update-post-inst')
             install_misc.chrex(self.target,'max-reset-ssh-keys')
             # force install (ubuntu installer don't format EFI partition)
-            install_misc.chrex(self.target,'check-efi-install force-remove')
+            install_misc.chrex(self.target,'check-efi-install', 'force-remove')
             install_misc.chrex(self.target,'check-efi-install')
             #
             for f in to_delete:
