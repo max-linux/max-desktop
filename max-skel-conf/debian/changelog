@@ -1,3 +1,9 @@
+max-skel-conf (10.0.max19) max; urgency=medium
+
+  * Add X11 xsession script to start all user indicators during login
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 07 Nov 2018 08:53:06 +0100
+
 max-skel-conf (10.0.max18) max; urgency=medium
 
   * check-efi-install: Update grub.cfg generation

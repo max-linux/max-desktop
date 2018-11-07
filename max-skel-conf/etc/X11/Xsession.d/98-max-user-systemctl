@@ -1,0 +1,8 @@
+
+
+if [ -x /bin/systemctl ]; then
+  # start all indicators
+  for SRV in $(systemctl --user --list-units | awk '/indicator/ {print $1}'); do
+    systemctl --user start ${SRV} || true
+  done
+fi
