@@ -1,3 +1,10 @@
+max-live (10.0.max4) max; urgency=medium
+
+  * scripts/casper-bottom/99max: Remove distrib (diverted) files of
+    ubiquity
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 07 Nov 2018 10:04:49 +0100
+
 max-live (10.0.max3) max; urgency=medium
 
   * Change max-mate-welcome to start in hellolive

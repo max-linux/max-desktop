@@ -94,5 +94,7 @@ if [ -e /root/etc/xdg/autostart/max-mate-welcome-autostart.desktop ]; then
          /root/etc/xdg/autostart/max-mate-welcome-autostart.desktop
 fi
 
+# prevent double entries in sources.list
+chroot /root find /usr/lib/ubiquity -name "*.distrib" -delete
 
 log_end_msg
