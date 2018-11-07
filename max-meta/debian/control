@@ -401,8 +401,6 @@ Architecture: all
 Multi-Arch: foreign
 Depends: ${max-desktop-extras:Depends}
 Provides: ubuntu-restricted-extras, ubuntu-restricted-addons
-Replaces: ubuntu-restricted-extras, ubuntu-restricted-addons
-Conflicts: ubuntu-restricted-extras, ubuntu-restricted-addons
 Description: The Max desktop extras package
  This package depends on all EXTRAS packages in the Max desktop system
  .
