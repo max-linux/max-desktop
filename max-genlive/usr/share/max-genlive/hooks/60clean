@@ -91,8 +91,18 @@ sed -ie /max-live/d                  $CDRW/casper/filesystem.manifest-desktop
 sed -ie /libdebian-installer4/d      $CDRW/casper/filesystem.manifest-desktop
 sed -ie /os-prober/d                 $CDRW/casper/filesystem.manifest-desktop
 sed -ie /ubuntu-live/d               $CDRW/casper/filesystem.manifest-desktop
-#sed -ie /user-setup/d                $CDRW/casper/filesystem.manifest-desktop
+sed -ie /user-setup/d                $CDRW/casper/filesystem.manifest-desktop
 sed -ie /example-content/d           $CDRW/casper/filesystem.manifest-desktop
+
+# MAX mate live packages
+sed -ie /max-mate-live-settings/d   $CDRW/casper/filesystem.manifest-desktop
+sed -ie /max-mate-live/d            $CDRW/casper/filesystem.manifest-desktop
+sed -ie /boot-repair/d              $CDRW/casper/filesystem.manifest-desktop
+sed -ie /boot-sav/d                 $CDRW/casper/filesystem.manifest-desktop
+sed -ie /boot-sav-extra/d           $CDRW/casper/filesystem.manifest-desktop
+sed -ie /ubiquity-slideshow-max/d   $CDRW/casper/filesystem.manifest-desktop
+sed -ie /localechooser-data/d       $CDRW/casper/filesystem.manifest-desktop
+
 
 # borrar temporal
 rm -f $CDRW/casper/filesystem.manifest-desktope

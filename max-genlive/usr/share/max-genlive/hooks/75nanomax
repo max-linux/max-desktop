@@ -5,7 +5,7 @@
 if [ "$ENABLE_NANO" = "1" ]; then
 
   #rm -rf $NANOCHROOT
-  # don't build nanoMaX for amd64, use i386 or nothing
+  # don't build nanoMAX for amd64, use i386 or nothing
   if [ ! -d $NANOCHROOT ]; then
     _echo "debootstrap --arch=$NANOARCH $DISTRO $NANOCHROOT http://$MIRROR/ubuntu"
     (debootstrap --arch=$NANOARCH $DISTRO $NANOCHROOT http://$MIRROR/ubuntu || _exit "Error en el debootstrap")
@@ -152,7 +152,7 @@ MOODLE_PKGS="maxmoodle"
 MOODLE_PRE="dpkg-reconfigure maxmoodle; dpkg-reconfigure moodle || true"
 
 if [ ! -d $NANOCHROOT/usr/share/moodle ] && [ ! -d $NANOCHROOT/var/lib/mysql/moodle ]; then
-_echo "Configurando MOODLE en nanoMaX"
+_echo "Configurando MOODLE en nanoMAX"
 
 chroot $NANOCHROOT << EOC || _exit "No se han podido instalar los paquetes para la versión live"
 export LC_ALL=C
@@ -271,7 +271,7 @@ EOC
   # este archivo le indica al instalador que no hay seleccion de Escritorio, Alumno, Profesor, Servidor...
   touch $NANOMAX/casper/nanomax
 
-  _echo "Deshabilitando contraseña de root (nanoMaX)"
+  _echo "Deshabilitando contraseña de root (nanoMAX)"
   chroot $NANOCHROOT/ usermod -L root
 
   rm -f $NANOCHROOT/root/.bash_history

@@ -46,7 +46,7 @@ if [ "$AMD64" = "1" ]; then
   ARCH=amd64
 fi
 
-TITLE="MaX ${MAX_VERSION}"
+TITLE="MAX ${MAX_VERSION}"
 
 
 if [ "$LOCAL_MIRROR" = "" ]; then
@@ -143,7 +143,7 @@ cat << EOF
     ENABLE_EXTRA=1 Añade al DVD varios paquetes (ver variable PAQUETES_EXTRA)
                    Para usar esta opción tienes que ser desarrollador de max y tener cuenta
                    SSH en max.educa.madrid.org porque hay que subir el archivo Release
-                   firmarlo con la clave GPG de MaX y descargar el Release.gpg
+                   firmarlo con la clave GPG de MAX y descargar el Release.gpg
 
     ENABLE_EXTRA_INFANTIL=1 Crea un CDROM multiarquitectura  de complementos para
                             infantil y primaria (sólo en i386)

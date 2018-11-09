@@ -72,17 +72,6 @@ done
 #chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA > /dev/null 2>&1 || _exit "Error buscando URIS de $PAQUETES_EXTRA"
 #URIS=$(chroot $CHROOT apt-get --print-uris -qq install $PAQUETES_EXTRA | awk '{print $1}' | sed "s/'//g")
 
-## esound conclicts with pulseaudio-esound-compat
-#for pkg in esound libesd0; do
-#  tmp=`chroot $CHROOT/ apt-cache show $pkg| awk '/^Filename/ {print $2}'`
-#  if [ $LOCAL_MIRROR ]; then
-#    tmp="http://$MIRROR/ubuntu/$tmp"
-#  else
-#    tmp="http://archive.ubuntu.com/ubuntu/$tmp"
-#  fi
-#  URIS="$URIS $tmp"
-#done
-
 if [ "$URIS" = "" ]; then
   _exit "Error leyendo URIS de paquetes extra, conflictos o dependencias seguramente..."
 fi
@@ -243,7 +232,7 @@ APT::FTPArchive::Release::Version "$DISTRO_VERSION";
 APT::FTPArchive::Release::Codename "$DISTRO";
 APT::FTPArchive::Release::Architectures "amd64 i386";
 APT::FTPArchive::Release::Components "main restricted max";
-APT::FTPArchive::Release::Description "Ubuntu Trusty 14.04";
+APT::FTPArchive::Release::Description "Ubuntu Bionic 18.04";
 EOF
 
 fi
@@ -285,7 +274,7 @@ APT::FTPArchive::Release::Version "$DISTRO_VERSION";
 APT::FTPArchive::Release::Codename "$DISTRO";
 APT::FTPArchive::Release::Architectures "$ARCH";
 APT::FTPArchive::Release::Components "main restricted max";
-APT::FTPArchive::Release::Description "Ubuntu Trusty 14.04";
+APT::FTPArchive::Release::Description "Ubuntu Bionic 18.04";
 EOF
 
 APTCONF=$TMP/release.conf
@@ -312,7 +301,7 @@ echo ""
 echo "  IMPORTANTE"
 echo ""
 echo "   Hay que subir el archivo  $CDRW/dists/$DISTRO/Release (por scp)"
-echo "   a max.educa.madrid.org firmarlo con la clave privada de MaX y copiarlo en"
+echo "   a max.educa.madrid.org firmarlo con la clave privada de MAX y copiarlo en"
 echo "   $CDRW/dists/$DISTRO/Release.gpg"
 echo ""
 echo "  gpg -bao $CDRW/dists/$DISTRO/Release.gpg --default-key 0C32D249 $CDRW/dists/$DISTRO/Release"

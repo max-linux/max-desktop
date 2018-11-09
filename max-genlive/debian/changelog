@@ -1,3 +1,9 @@
+max-genlive (10.0.max13) max; urgency=medium
+
+  * Remove more live packages in manifest-desktop, close #960
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 09 Nov 2018 08:58:38 +0100
+
 max-genlive (10.0.max12) max; urgency=medium
 
   * Blacklist lubuntu packages
