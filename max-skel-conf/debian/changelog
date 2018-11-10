@@ -1,3 +1,9 @@
+max-skel-conf (10.0.max21) max; urgency=medium
+
+  * Set caja background red for root, rel #962
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 10 Nov 2018 12:32:32 +0100
+
 max-skel-conf (10.0.max20) max; urgency=medium
 
   * Fix systemd indicator detect to start on login
