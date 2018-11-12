@@ -465,10 +465,7 @@
       <Filename>owncloud.desktop</Filename>
     </Include>
     <Exclude>
-        <Filename>kde4-Kontact.desktop</Filename>
-        <Filename>kde4-kwifimanager.desktop</Filename>
-        <Filename>openjdk-6-javaws.desktop</Filename>
-        <Filename>evolution-mail.desktop</Filename>
+        <Filename>lftp.desktop</Filename>
     </Exclude>
   </Menu>   <!-- End Internet -->
 
@@ -481,7 +478,9 @@
         <Category>AudioVideo</Category>
       </And>
     </Include>
-    <Include><Filename>kde4-k3b.desktop</Filename></Include>
+    <Include>
+        <Filename>org.kde.k3b.desktop</Filename>
+    </Include>
     <Exclude>
         <Filename>kde4-audiocd.desktop</Filename>
         <Filename>denemo.desktop</Filename>
@@ -545,15 +544,9 @@
     </Include>
     <Include><Filename>gconf-editor.desktop</Filename></Include>
     <Exclude>
-        <Filename>kde4-k3b.desktop</Filename>
-        <Filename>kde4-ksystemlog.desktop</Filename>
-        <Filename>kde4-adept_manager.desktop</Filename>
-        <Filename>xfce4-taskmanager.desktop</Filename>
-        <Filename>kde4-kcron.desktop</Filename>
+        <Filename>org.kde.k3b.desktop</Filename>
         <Filename>gdmflexiserver-xnest.desktop</Filename>
         <Filename>gdmflexiserver.desktop</Filename>
-        <Filename>kde4-nepomukcontroller.desktop</Filename>
-        <Filename>kde4-nepomukbackup.desktop</Filename>
         <Filename>xfce4-session-logout.desktop</Filename>
         <Filename>xfce4-session-halt.desktop</Filename>
         <Filename>debian-uxterm.desktop</Filename>
@@ -578,11 +571,6 @@
         <Filename>geogebra6.desktop</Filename>
         <Filename>javahotpot.desktop</Filename>
         <Filename>orage.desktop</Filename>
-        <Filename>kde4-audioencoding.desktop</Filename>
-        <Filename>kde4-kcm_knetworkconfmodule_ss.desktop</Filename>
-        <Filename>kde4-clock.desktop</Filename>
-        <Filename>kde4-kwalletmanager.desktop</Filename>
-        <Filename>kde4-medianotifications.desktop</Filename>
         <Filename>tcospersonalize.desktop</Filename>
         <Filename>squeak-doc.desktop</Filename>
         <Filename>squeak-manual.desktop</Filename>
