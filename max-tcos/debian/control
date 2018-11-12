@@ -27,7 +27,6 @@ Provides: max-tcos-alumno
 Replaces: max-tcos-alumno
 Depends: tcos-configurator,
          tcosconfig,
-         paman, pavumeter, pavucontrol,
          dnsmasq,
          max-tcos-profesor
 Description: The MAX TCOS server
