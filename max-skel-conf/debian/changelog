@@ -1,3 +1,9 @@
+max-skel-conf (10.0.max22) max; urgency=medium
+
+  * Remove /etc/skel/config dir
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 12 Nov 2018 12:41:23 +0100
+
 max-skel-conf (10.0.max21) max; urgency=medium
 
   * Set caja background red for root, rel #962

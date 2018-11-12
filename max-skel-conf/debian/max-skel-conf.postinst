@@ -43,6 +43,9 @@ case "$1" in
     [ -e  /etc/skel/Escritorio/Red.desktop ] && \
 	rm -f /etc/skel/Escritorio/Red.desktop /home/*/Escritorio/Red.desktop
 
+
+    [ -e  /etc/skel/config ] && rmdir /etc/skel/config || true
+
     ;;
 
 esac

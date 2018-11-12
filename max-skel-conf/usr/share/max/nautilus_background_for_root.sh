@@ -14,7 +14,7 @@ if grep -q "/cdrom" /proc/1/mounts; then
 fi
 
 # set background color to red
-mkdir -p /root/config/.dconf
+mkdir -p /root/.config/.dconf
 HOME=/root dbus-launch gsettings set org.mate.caja.preferences background-color "'#AD3841'"
 HOME=/root dbus-launch gsettings set org.mate.caja.preferences background-set true
 exit
