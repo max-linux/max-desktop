@@ -1,3 +1,9 @@
+max-genlive (10.0.max14) max; urgency=medium
+
+  * Blacklist lxqt packages
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 12 Nov 2018 07:53:52 +0100
+
 max-genlive (10.0.max13) max; urgency=medium
 
   * Remove more live packages in manifest-desktop, close #960
