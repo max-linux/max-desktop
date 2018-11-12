@@ -129,23 +129,13 @@
             <Filename>logisim.desktop</Filename>
         </Exclude>
 
-
-        <Menu>
-            <Name>GCompris</Name>
-            <Directory>max-gcompris.directory</Directory>
-            <Include>
-                <Filename>gcompris-edit.desktop</Filename>
-                <Filename>gcompris.desktop</Filename>
-                <Filename>org.kde.gcompris.desktop</Filename>
-            </Include>
-        </Menu>
-
         <!--include -->
         <Include>
             <Filename>exe.desktop</Filename>
             <Filename>freemind.desktop</Filename>
             <Filename>qelectrotech.desktop</Filename>
             <Filename>tuxtype.desktop</Filename>
+            <Filename>org.kde.gcompris.desktop</Filename>
         </Include>
 
         <Exclude>
@@ -166,7 +156,6 @@
             <Filename>scratch.desktop</Filename>
             <Filename>squeak-small-land.desktop</Filename>
             <Filename>squeak-small-land-plugin.desktop</Filename>
-            <Filename>gcompris-edit.desktop</Filename>
             <Filename>animalandia.desktop</Filename>
             <Filename>animalandia-tutorial.desktop</Filename>
             <Filename>descartes.desktop</Filename>
@@ -187,8 +176,6 @@
             <Filename>kstars.desktop</Filename>
             <Filename>kde4-celestia.desktop</Filename>
             <Filename>celestia.desktop</Filename>
-            <Filename>gcompris.desktop</Filename>
-            <Filename>org.kde.gcompris.desktop</Filename>
             <Filename>maxmoodle.desktop</Filename>
             <Filename>maxmoodle-gui.desktop</Filename>
             <Filename>squeak.desktop</Filename>
@@ -197,7 +184,7 @@
             <Filename>tuxpaint.desktop</Filename>
             <Filename>denemo.desktop</Filename>
             <Filename>josm.desktop</Filename>
-            <Filename>marble.desktop</Filename>
+            <Filename>org.kde.marble.desktop</Filename>
             <Filename>qelectrotech.desktop</Filename>
             <Filename>ktechlab.desktop</Filename>
             <Filename>exe.desktop</Filename>
@@ -330,7 +317,7 @@
         <Include>
             <Filename>josm.desktop</Filename>
             <Filename>max-openstreetmap.desktop</Filename>
-            <Filename>marble.desktop</Filename>
+            <Filename>org.kde.marble.desktop</Filename>
             <Filename>org.kde.kgeography.desktop</Filename>
             <Filename>kde4-kstars.desktop</Filename>
             <Filename>starplot.desktop</Filename>
@@ -416,8 +403,6 @@
     </Include>
     <Exclude>
         <Filename>freecell.desktop</Filename>
-        <Filename>gcompris.desktop</Filename>
-        <Filename>org.kde.gcompris.desktop</Filename>
         <Filename>tuxmath.desktop</Filename>
         <Filename>jclic.desktop</Filename>
         <Filename>tuxtype.desktop</Filename>
