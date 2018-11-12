@@ -1,3 +1,9 @@
+max-meta (10.0.max10) max; urgency=medium
+
+  * Remove lftp unity-common
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 12 Nov 2018 07:42:38 +0100
+
 max-meta (10.0.max9) max; urgency=medium
 
   * max-desktop-extras: Don't conflict with ubuntu-restricted-extras
