@@ -1,3 +1,9 @@
+max-genlive (10.0.max16) max; urgency=medium
+
+  * Blacklist, snapd, rel #969
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 12 Nov 2018 11:32:41 +0100
+
 max-genlive (10.0.max15) max; urgency=medium
 
   * Add gnome session/settings/control/online to blacklist
