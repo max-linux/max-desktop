@@ -142,7 +142,7 @@
                     <child>
                       <object class="GtkRadioButton" id="install_type_terminales">
                         <property name="label" translatable="yes">Terminales ligeros (TCOS)</property>
-                        <property name="visible">True</property>
+                        <property name="visible">False</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="tooltip_text" translatable="yes">Convierte tu equipo en un servidor de terminales ligeros.</property>
