@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+DH_VERBOSE=1
+
+#URL=http://bluegriffon.org/freshmeat/3.0.1/bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb
+URL=http://localhost/remote-files/bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb
+
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) && dpkg -x *deb ./); \
+	fi
+
+	rm -f build/usr/share/applications/bluegriffon.desktop~
+	cat debian/max-preferences.js >> build/opt/bluegriffon/defaults/pref/bluegriffon-prefs.js
+
+override_dh_auto_install:
+	dh_install
+
