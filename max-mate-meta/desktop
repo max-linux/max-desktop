@@ -22,7 +22,10 @@ brltty
 brltty-x11
 ca-certificates
 caja
+caja-admin
+caja-gksu
 caja-open-terminal
+caja-rename
 caja-sendto
 caja-wallpaper
 cheese
@@ -80,6 +83,7 @@ gnome-keyring
 gnome-orca
 gnome-user-docs-es
 gnome-sound-recorder
+gnome-web-photo
 gparted
 grub2-themes-ubuntu-mate
 gstreamer1.0-alsa
@@ -178,6 +182,7 @@ mythes-es
 network-manager
 network-manager-gnome
 network-manager-pptp-gnome
+network-manager-openvpn-gnome
 onboard
 onboard-data
 owncloud-client
