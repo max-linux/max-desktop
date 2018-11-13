@@ -21,6 +21,7 @@ override_dh_auto_build:
 	fi
 
 	rm -f build/usr/share/applications/bluegriffon.desktop~
+	cat debian/bluegriffon.desktop > build/usr/share/applications/bluegriffon.desktop
 	cat debian/max-preferences.js >> build/opt/bluegriffon/defaults/pref/bluegriffon-prefs.js
 
 override_dh_auto_install:
