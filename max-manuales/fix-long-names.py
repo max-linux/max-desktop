@@ -160,6 +160,12 @@ dicc = {
     'personalizacin.': 'perso.',
     'Thumbnail': 'tb',
 
+    'men_principal.': 'mppal',
+    'pantalla_de_bienvenida': 'pwelc',
+    'trabajar_en_modo_live_desde_un_dvd_o_usb_con_la_accesibilidad_activada': 'tmlive',
+    'seleccin_de_color_de_mate': 'scolmate',
+    'max_en_el_aula': 'maxaula',
+    'max_USB_inicial': 'maxUSB',
 
     # 'otros_dispositivos.': 'othedev.',
     # 'usbs_y_otros_dispositivos.': 'usbdevs.',
@@ -235,6 +241,7 @@ for fp in glob.glob(ORIG + '/*'):
 
 
 if numbad > 0:
+    print "numbad > 0, exit"
     sys.exit(1)
 
 # pprint.pprint(renames)
