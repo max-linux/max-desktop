@@ -1,0 +1,6 @@
+build/usr/*         usr/
+build/opt/Etcher/resources   usr/share/etcher-electron/
+
+
+etcher-electron              usr/bin/
+etcher-electron.desktop      usr/share/applications/
