@@ -8,9 +8,9 @@
 <title>Seleccionar el tipo de instalación </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta http-equiv="content-language" content="es" />
-<meta name="generator" content="eXeLearning 2.2ppa1 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.1.3 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
-<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Anterior",next:"Siguiente",show:"Mostrar",hide:"Ocultar",showFeedback:"Mostrar retroalimentación",hideFeedback:"Ocultar retroalimentación",correct:"Correcto",incorrect:"Incorrecto",menu:"Menú",download:"Descargar",print:"Imprimir"}</script>
 <script type="text/javascript" src="common.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
@@ -297,14 +297,14 @@
 <ul>
 <li><strong>Instalar MAX junto a ellos: </strong>lo que permitirá elegir entre los sistemas operativos instalados al arrancar el equipo.<br /><br /></li>
 <li><strong>Borrar disco e instalar MAX</strong>: borrará completamente el disco duro seleccionado para instalar sólo <strong>MAX</strong>.<br /><br /></li>
-<li><strong>Más opciones</strong>: esta opción permitirá particionar los discos duros de forma manual, para ajustar así las particiones a sus necesidades.</li>
+<li><strong>Más opciones</strong>: esta opción permitirá particionar los discos duros de forma manual para ajustar así las particiones a sus necesidades.</li>
 </ul>
 <div class="exe-figure exe-image position-center" style="width: 600px;"><img alt="Tipo de instalación" src="instmax3.png" width="700" height="401" />
 <div class="figcaption"><span class="title"><em>Detección de sistemas ya instalados</em></span></div>
 </div>
-<p><strong>Atención: Si tuviera Windows 8 o 10 en ordenadores con BIOS UEFI ¡consulte la sección Equipos con <a href="equipos_con_bios_uefi_windows_8_y_10.html">BIOS UEFI. Windows 8 y 10</a> de este manual antes de seguir!</strong></p>
+<p><strong>Atención: Si tuviera Windows 8 o 10 en ordenadores con BIOS UEFI ¡consulte la sección Equipos con <a href="equipos_con_bios_uefi_windows_8_y_10.html">BIOS UEFI. Windows, 8 y 10</a> de este manual antes de seguir!</strong></p>
 <h2>Conservar el sistema operativo anterior</h2>
-<p>En caso de querer conservar la instalación de <strong>Windows</strong> (u otro sistema operativo) se seleccionará la primera opción, <strong>Instalar MAX junto a ellos</strong>, y se pulsará en el botón <strong>Continuar</strong>, y en la siguiente ventana, se mostrará el espacio de disco duro asignado de forma automática a la instalación de <strong>MAX</strong>, conservando el sistema operativo original:</p>
+<p>En caso de querer conservar la instalación de <strong>Windows</strong> (u otro sistema operativo), se seleccionará la primera opción, <strong>Instalar MAX junto a ellos</strong>, y se pulsará en el botón <strong>Continuar</strong>, y en la siguiente ventana, se mostrará el espacio de disco duro asignado de forma automática a la instalación de <strong>MAX</strong>, conservando el sistema operativo original:</p>
 <div class="exe-figure exe-image position-center" style="width: 600px;"><img alt="Instalar junto a otro SO" src="instmax4.png" width="700" height="401" />
 <div class="figcaption"><span class="title"><em>Tipo de instalación automatizada</em></span></div>
 </div>
@@ -388,7 +388,7 @@
 <p>Para instalar <strong>MAX</strong> <strong>es necesaria una partición</strong> principal con, al menos, <strong>20 GB</strong> de tamaño, formateada como <strong>ext4</strong> (se pueden utilizar otras particiones formateadas con otros sistemas de ficheros), que utilizará el punto de <strong>montaje /</strong></p>
 <p><strong>También es recomendable</strong>, aunque no obligatorio: una partición <em><strong>swap</strong></em> o de intercambio, con el mismo tamaño que la memoria <strong>RAM</strong> de la que disponga el equipo.</p>
 <p>Opcionalmente, puede reservar una partición de datos con punto de montaje <strong>/home</strong> con el espacio que estime oportuno para sus documentos, imágenes, vídeos, etc. Si decide crear una partición<strong> /home</strong> para sus documentos, podrá reducir el tamaño de la partición raíz a unos <strong>10 GB</strong>.</p>
-<p>Si el disco duro no tiene ningún espacio vacío habrá que redimensionar una de las particiones existentes para conseguirlo.</p>
+<p>Si el disco duro no tiene ningún espacio vacío, habrá que redimensionar una de las particiones existentes para conseguirlo.</p>
 <p>Para comenzar a realizar un particionado personalizado, elija <strong>Más opciones</strong> en la pantalla de selección de tipo de instalación:</p>
 <div class="exe-figure exe-image position-center" style="width: 600px;"><img alt="Tipo de instalación" src="instmax6.png" width="700" height="401" />
 <div class="figcaption"><span class="title"><em>Selección para un particionado personalizado</em></span></div>
@@ -399,13 +399,13 @@
 </div>
 <p>Para reducir de tamaño la partición de Windows, selecciónela (en la imagen es justo la que está encima del espacio libre, marcada con tipo ntfs) y pulse el botón<strong> Cambiar... </strong>(<strong>Change...</strong>).<strong><br /></strong></p>
 <p><img src="instmax8.png" style="display: block; margin-left: auto; margin-right: auto;" width="650" height="426" /></p>
-<p>Seleccione el nuevo tamaño de la partición de <strong>Windows</strong> para conseguir el espacio deseado para <strong>MAX</strong>, recuerde que necesita como mínimo <strong>20 GB</strong>. En este ejemplo se reduce la partición de <strong>Windows</strong> a <strong>10737 MB</strong>, como el disco es de <strong>30 GB</strong> conseguimos unos<strong> 20 GB</strong> aproximadamente de espacio libre para <strong>MAX</strong>.</p>
+<p>Seleccione el nuevo tamaño de la partición de <strong>Windows</strong> para conseguir el espacio deseado para <strong>MAX</strong>. Recuerde que necesita como mínimo <strong>20 GB</strong>. En este ejemplo se reduce la partición de <strong>Windows</strong> a <strong>10737 MB</strong>, como el disco es de <strong>30 GB</strong> conseguimos unos<strong> 20 GB</strong> aproximadamente de espacio libre para <strong>MAX</strong>.</p>
 <div class="exe-figure exe-image position-center" style="width: 400px;"><img alt="Reducción de partición" src="instmax9.png" width="421" height="192" />
 <div class="figcaption"><span class="title"><em>Reducción de la partición de Windows</em></span></div>
 </div>
 <p>Al pulsar el botón <strong>Aceptar</strong> el asistente ajustará la partición de <strong>Windows</strong> al nuevo tamaño, este proceso puede tardar unos minutos.</p>
 <h3>Creación de las particiones y selección del punto de montaje</h3>
-<p>Como se ha indicado, para la instalación de <strong>MAX</strong> es necesario crear la partición denominada <strong>raíz (/)</strong> y opcionalmente la de intercambio <strong>(swap)</strong>. Una vez que<br />ha conseguido espacio suficiente en el disco seleccione la fila <strong>espacio libre</strong> y pulse el botón <strong>Añadir</strong> para crear la partición raíz:</p>
+<p>Como se ha indicado, para la instalación de <strong>MAX</strong> es necesario crear la partición denominada <strong>raíz (/)</strong> y opcionalmente la de intercambio <strong>(swap)</strong>. Una vez que ha conseguido espacio suficiente en el disco seleccione la fila <strong>espacio libre</strong> y pulse el botón <strong>Añadir</strong> para crear la partición raíz:</p>
 <div class="exe-figure exe-image position-center" style="width: 600px;"><img alt="Creación de la partición raíz" src="insmax10.png" width="700" height="460" />
 <div class="figcaption"><span class="title"><em>Creación de la partición raíz</em></span></div>
 </div>
@@ -416,8 +416,8 @@
 </div>
 <h3>Compartir datos entre distintas particiones</h3>
 <p>Si dispone de espacio suficiente en el disco, quizás le interese crear una partición de <strong>Datos</strong> donde pueda almacenar documentos a los que se pueda acceder desde cualquiera de los sistemas operativos.</p>
-<p>Se crearía de la misma manera, tan sólo debe tener en cuenta que si uno de los sistemas es <strong>Windows</strong>, forzosamente el sistema de ficheros debe ser <strong>FAT32</strong> o <strong>NTFS</strong> (recomendado), que son los únicos con los que <strong>Windows</strong> es capaz de trabajar. Por su parte, <strong>MAX</strong> es capaz de entenderse perfectamente con esos sistemas de ficheros y con otros muchos.</p>
-<p>Una vez definidas todas las particiones pulse el botón <strong>Instalar ahora</strong>, aparecerá la ventana para seleccionar las características de la instalación, que se explican en una <a marked="1" href="seleccionar_caractersticas_de_la_instalacin.html">sección posterior</a>.</p>
+<p>Se crearía de la misma manera, tan solo debe tener en cuenta que, si uno de los sistemas es <strong>Windows</strong>, forzosamente el sistema de ficheros debe ser <strong>FAT32</strong> o <strong>NTFS</strong> (recomendado), que son los únicos con los que <strong>Windows</strong> es capaz de trabajar. Por su parte, <strong>MAX</strong> es capaz de entenderse perfectamente con esos sistemas de ficheros y con otros muchos.</p>
+<p>Una vez definidas todas las particiones, pulse el botón <strong>Instalar ahora</strong> y aparecerá la ventana para seleccionar las características de la instalación, que se explican en una <a marked="1" href="seleccionar_caractersticas_de_la_instalacin.html">sección posterior</a>.</p>
 </div>
 </div>
 </div>

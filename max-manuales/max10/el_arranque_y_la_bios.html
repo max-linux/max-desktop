@@ -8,9 +8,9 @@
 <title>El arranque y la BIOS </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta http-equiv="content-language" content="es" />
-<meta name="generator" content="eXeLearning 2.2ppa1 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.1.3 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
-<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Anterior",next:"Siguiente",show:"Mostrar",hide:"Ocultar",showFeedback:"Mostrar retroalimentación",hideFeedback:"Ocultar retroalimentación",correct:"Correcto",incorrect:"Incorrecto",menu:"Menú",download:"Descargar",print:"Imprimir"}</script>
 <script type="text/javascript" src="common.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
@@ -295,11 +295,11 @@
 <div id="ta42_239" class="block iDevice_content">
 <p>En este apartado se mostrará cómo cambiar la configuración del ordenador para que, si hay un <strong>DVD</strong> arrancable metido en su lector de <strong>CD/DVD </strong>o un<strong> USB </strong>arrancable conectado a uno de los puertos <strong>USB</strong>, arranque directamente desde este medio en vez de hacerlo desde el disco duro del ordenador. Esto se denomina cambiar la secuencia de arranque del ordenador.</p>
 <p>Debido al gran número de modelos de placas base y <strong>BIOS</strong> disponibles en los diferentes modelos y tipos de ordenadores, es imposible abarcarlos todos en un documento de este tipo, y por ello se dará una guía de pasos genéricos. Para más detalles sobre como configurar la secuencia de arranque en su <strong>BIOS</strong> concreta, revise el manual de su ordenador.</p>
-<p>El primer paso es encender el ordenador, o reiniciarlo si ya estuviera encendido. Justo unos segundos después del encendido se debe pulsar la tecla para ejecutar el menú de arranque (<em><strong>Boot Menu</strong></em>) si existiera, o en caso contrario entrar dentro de la configuración de la <strong>BIOS</strong> (ejemplos de teclas son: <strong>&lt;Esc&gt;</strong>, <strong>&lt;F10&gt;</strong>, <strong>&lt;F12&gt;</strong>, <strong>&lt;F8&gt;</strong>, <strong>&lt;F2&gt;</strong>, <strong>&lt;Supr&gt;</strong>, <strong>&lt;Del&gt;</strong>). En muchos modelos indicará la tecla que hay que pulsar en un mensaje en inglés en la parte inferior de la pantalla durante los primeros segundos del arranque.</p>
+<p>El primer paso es encender el ordenador o reiniciarlo si ya estuviera encendido. Justo unos segundos después del encendido, se debe pulsar la tecla para ejecutar el menú de arranque (<em><strong>Boot Menu</strong></em>) si existiera, o en caso contrario entrar dentro de la configuración de la <strong>BIOS</strong> (ejemplos de teclas son: <strong>&lt;Esc&gt;</strong>, <strong>&lt;F10&gt;</strong>, <strong>&lt;F12&gt;</strong>, <strong>&lt;F8&gt;</strong>, <strong>&lt;F2&gt;</strong>, <strong>&lt;Supr&gt;</strong>, <strong>&lt;Del&gt;</strong>). En muchos modelos indicará la tecla que hay que pulsar en un mensaje en inglés en la parte inferior de la pantalla durante los primeros segundos del arranque.</p>
 <div class="exe-figure exe-image position-center" style="width: 501px;"><img src="fig_01.png" width="501" height="375" />
 <div class="figcaption"><span class="title"><em>Pantalla de arranque y de acceso a la <strong>BIOS</strong>.</em></span></div>
 </div>
-<p>En el ejemplo de la figura anterior, se observa que puede accederse al menú de arranque sin necesidad de entrar en la <strong>BIOS</strong>, pulsando la tecla <strong>&lt;ESC&gt;</strong>, algo que empieza a ser habitual en los ordenadores modernos. Con esta opción saldrá en medio de la pantalla una lista de dispositivos y bastará elegir el <strong>DVD</strong> o pendrive <strong>USB</strong> con <strong>MAX 10</strong> para que inicie el arranque.</p>
+<p>En el ejemplo de la figura anterior, se observa que puede accederse al menú de arranque, sin necesidad de entrar en la <strong>BIOS</strong>, pulsando la tecla <strong>&lt;ESC&gt;</strong>, algo que empieza a ser habitual en los ordenadores modernos. Con esta opción saldrá en medio de la pantalla una lista de dispositivos y bastará elegir el <strong>DVD</strong> o pendrive <strong>USB</strong> con <strong>MAX 10</strong> para que inicie el arranque.</p>
 <p>Si su ordenador no dispone de dicho menú de arranque, al entrar dentro de la <strong>BIOS</strong> (en el ejemplo la entrada en la <strong>BIOS</strong> se realiza pulsando la tecla <strong>&lt;F2&gt;</strong>, pero puede cambiar según el modelo de ordenador) deberá buscar el apartado donde se configura la secuencia de arranque del ordenador. Cambie la secuencia (con las operaciones necesarias mostradas en el manual de su placa base) para que el lector de <strong>CD/DVD</strong> o unidad <strong>USB</strong> se coloque antes del disco duro, tal como se muestra en la figura siguiente:</p>
 <div class="exe-figure exe-image position-center" style="width: 501px;"><img alt="Fig02" src="fig_02.png" width="500" height="387" />
 <div class="figcaption"><span class="title"><em>Pantalla que permite cambiar la secuencia de arranque</em></span></div>
@@ -323,7 +323,7 @@
 <ul>
 <li><strong>Arrancar MAX 10.0</strong> (opción por defecto). Esta opción nos permitirá trabajar con el <strong>DVD</strong> o <strong>USB</strong> Live e incluso instalar la distribución.</li>
 <li><strong>Instalar MAX 10.0 (sólo instalador)</strong>. Esta opción nos permitirá instalar directamente la distribución sin poder utilizar el equipo mientras se realiza.</li>
-<li><strong>Test de memoria</strong>: permite realizar una prueba de funcionamiento de la memoria <strong>RAM</strong> del ordenador, si el arranque de <strong>MAX</strong> falla, no dude en pasar esta prueba por si su memoria <strong>RAM</strong> está afectada y debe cambiarla.</li>
+<li><strong>Test de memoria</strong>: permite realizar una prueba de funcionamiento de la memoria <strong>RAM</strong> del ordenador. Si el arranque de <strong>MAX</strong> falla, no dude en pasar esta prueba por si su memoria <strong>RAM</strong> está afectada y debe cambiarla.</li>
 <li><strong>Arrancar desde el primer disco duro</strong>: esta opción es la que debe escoger en el caso de que haya arrancado desde el <strong>DVD</strong> o <strong>USB</strong> por error, no olvide retirar el <strong>DVD</strong> o el <strong>USB</strong> con <strong>MAX</strong> si no quiere que arranque desde el <strong>DVD</strong> o desde el <strong>USB</strong>.</li>
 </ul>
 <p>Al pulsar la tecla <strong>&lt;F4&gt;</strong> aparecerá un menú con opciones especiales de arranque que puede seleccionar si tiene problemas con la carga de <strong>MAX</strong> desde el <strong>DVD</strong> o desde el <strong>USB</strong>, tal como se muestra en la figura siguiente:</p>
@@ -365,7 +365,7 @@
 <div class="exe-figure exe-image position-center" style="width: 600px;"><img alt="fig 07" src="arranq03.1.png" width="600" height="330" />
 <div class="figcaption"><span class="title"><em>Carga del Sistema Operativo MAX 10<br /></em></span></div>
 </div>
-<p>A continuación se procederá a la carga de los todos los servicios y del entorno gráfico. Tenga paciencia, este proceso puede tardar varios minutos y depende de la memoria, la velocidad de su lector de <strong>DVD</strong> y de su procesador.<br /><br />Después de que termine el proceso de carga, arrancará el escritorio de <strong>MAX 10</strong>, que incluye un cuadro de diálogo de <em><strong>Bienvenida</strong></em>.</p>
+<p>A continuación se procederá a la carga de todos los servicios y del entorno gráfico. Tenga paciencia, este proceso puede tardar varios minutos y depende de la memoria, la velocidad de su lector de <strong>DVD</strong> y de su procesador.<br /><br />Después de que termine el proceso de carga, arrancará el escritorio de <strong>MAX 10</strong>, que incluye un cuadro de diálogo de <em><strong>Bienvenida</strong></em>.</p>
 <div class="exe-figure exe-image position-center" style="width: 600px;"><img alt="fig08" src="max_USB_inicial.png" width="600" height="338" />
 <div class="figcaption"><span class="title"><em>El escritorio de <strong>MAX 10</strong></em></span></div>
 </div>

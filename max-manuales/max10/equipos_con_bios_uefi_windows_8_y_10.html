@@ -8,9 +8,9 @@
 <title>Equipos con BIOS UEFI. Windows 8 y 10 </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta http-equiv="content-language" content="es" />
-<meta name="generator" content="eXeLearning 2.2ppa1 - exelearning.net" />
+<meta name="generator" content="eXeLearning 2.1.3 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
-<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Anterior",next:"Siguiente",show:"Mostrar",hide:"Ocultar",showFeedback:"Mostrar retroalimentación",hideFeedback:"Ocultar retroalimentación",correct:"Correcto",incorrect:"Incorrecto",menu:"Menú",download:"Descargar",print:"Imprimir"}</script>
 <script type="text/javascript" src="common.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
@@ -296,7 +296,7 @@
 <div class="iDevice_inner">
 <div class="iDevice_content_wrapper">
 <div id="ta136_43_2" class="block iDevice_content">
-<p>Incluso en sistemas con Windows 8 y 10 instalados sin modo UEFI (algo que no es habitual) es necesario <strong>desactivar el inicio rápido </strong>para que pueda convivir con otros sistemas. Para ello, como se describe más abajo, basta con arrancar <strong>Windows 8</strong> o <strong>Windows 10</strong>, ir al <em><strong>panel de contro</strong></em>l, <em><strong>opciones de energía</strong></em> (buscando botón de encendido, por ejemplo) tras seleccionar <em><strong>"Elegir el comportamiento del botón de encendido"</strong></em> pulsar en <em><strong>"Cambiar la configuración actualmente no disponible"</strong></em> y entonces se permite desactivar la casilla de <strong>Inicio Rápido</strong>, tal como se muestra en la imagen siguiente:</p>
+<p>Incluso en sistemas con Windows 8 y 10 instalados sin modo UEFI (algo que no es habitual), es necesario <strong>desactivar el inicio rápido </strong>para que pueda convivir con otros sistemas. Para ello, como se describe más abajo, basta con arrancar <strong>Windows 8</strong> o <strong>Windows 10</strong>, ir al <em><strong>panel de contro</strong></em>l, <em><strong>opciones de energía</strong></em> (buscando botón de encendido, por ejemplo) tras seleccionar <em><strong>"Elegir el comportamiento del botón de encendido"</strong></em> pulsar en <em><strong>"Cambiar la configuración actualmente no disponible"</strong></em> y entonces se permite desactivar la casilla de <strong>Inicio Rápido</strong>, tal como se muestra en la imagen siguiente:</p>
 <p><img src="win10max.png" style="display: block; margin-left: auto; margin-right: auto;" width="700" height="451" /></p>
 <p></p>
 </div>
@@ -313,21 +313,25 @@ li {margin-bottom:10px;margin-top:10px;}
 <p>Desde hace unos años se comercializan los ordenadores personales con <strong>BIOS UEFI</strong>, que sustituye a la <strong>BIOS PC</strong> superando algunas de sus limitaciones. No obstante estos equipos nuevos suelen ser compatibles también con <strong>BIOS PC</strong>. Los ordenadores que vienen instalados con versiones de <strong>Windows 8</strong> y <strong>Windows 10</strong>, vienen en modo <strong>UEFI</strong>. El primer paso será averiguar si su <strong>Windows</strong> está instalado en modo <strong>UEFI</strong>. Para ello debe arrancar <strong>Windows</strong>, abrir un terminal de administrador ("<em><strong>Ejecutar como</strong></em>" sale al dar botón derecho sobre el icono de "<em><strong>Símbolo del sistema</strong></em>") y teclear el comando <strong><em>bcdedit</em></strong> (y pulsar enter)  Saldrán en la ventana negra unas líneas de texto en las que tendrá que localizar una línea con el texto "<em><strong>Windows Boot Loader</strong></em>" o "<em><strong>Cargador de Arranque de Windows</strong></em>" y comprobar su contenido: la expresión <em><strong>winload.efi</strong></em> indica arranque en modo <strong>UEFI</strong>, mientras que <strong><em>winload.exe</em></strong> indica arranque en modo <strong>BIOS PC</strong> tradicional.</p>
 <p><strong>Solo en el caso de querer realizar una instalación de MAX 10 conviviendo con un sistema operativo preinstalado en modo UEFI 64 bits</strong>, deberá seguir estas instrucciones:</p>
 <ol>
-<li>Existe un pequeño riesgo de que la instalación vaya mal y pierda los datos del equipo, es muy importante tener una <strong>copia de seguridad</strong> y saber si tiene un método de restauración del equipo al estado de fábrica.</li>
-<li>Es necesario entrar en la <strong>BIOS</strong> del equipo y <strong>desactivar la opción "SecureBoot"</strong> en los apartados anteriores y en el manual de su equipo están las instrucciones sobre cómo entrar en <strong>BIOS</strong>. En el caso de <strong>Windows 8</strong> y <strong>Windows 10</strong>, una opción es mantener pulsada la tecla mayúsculas (<em><strong>shift</strong></em>) a la vez que se pulsa en la opción <em><strong>Reiniciar</strong></em> (opciones, apagado) y entonces se llegará a una pantalla azul con varias opciones, eligiendo "<em><strong>Solucionar Problemas"</strong></em>, luego "<em><strong>Opciones Avanzadas</strong></em>" y por último "<em><strong>Configuración de firmware UEFI</strong></em>", reiniciará entrando en <strong>BIOS</strong> directamente.<ol>
+<li>Existe un pequeño riesgo de que la instalación vaya mal y pierda los datos del equipo. Es muy importante tener una <strong>copia de seguridad</strong> y saber si tiene un método de restauración del equipo al estado de fábrica.</li>
+<li>Es necesario entrar en la <strong>BIOS</strong> del equipo y <strong>desactivar la opción "SecureBoot"</strong>. En los apartados anteriores y en el manual de su equipo están las instrucciones sobre cómo entrar en <strong>BIOS</strong>. En el caso de <strong>Windows 8</strong> y <strong>Windows 10</strong>, una opción es mantener pulsada la tecla mayúsculas (<em><strong>shift</strong></em>) a la vez que se pulsa en la opción <em><strong>Reiniciar</strong></em> (opciones, apagado) y entonces se llegará a una pantalla azul con varias opciones, eligiendo "<em><strong>Solucionar Problemas"</strong></em>, luego "<em><strong>Opciones Avanzadas</strong></em>" y por último "<em><strong>Configuración de firmware UEFI</strong></em>", reiniciará entrando en <strong>BIOS</strong> directamente.
+<ol>
 <li><strong>Nota</strong>: en algunos equipos no deja modificar esas opciones de <strong>BIOS</strong> hasta que no se establece una contraseña de supervisor para aumentar la seguridad en el acceso a la configuración de la <strong>BIOS</strong>.</li>
-</ol></li>
-<li>Arrancar en <strong>Windows</strong> y realizar las siguientes acciones:<ol>
+</ol>
+</li>
+<li>Arrancar en <strong>Windows</strong> y realizar las siguientes acciones:
+<ol>
 <li><strong>Desactivar el inicio rápido</strong>: para ello ir al <em><strong>panel de control</strong></em>, <em><strong>opciones de energía</strong></em> (buscando botón de encendido, por ejemplo) tras seleccionar "<em><strong>Elegir el comportamiento del botón de encendido</strong></em>" pulsar en "<em><strong>Cambiar la configuración actualmente no disponible</strong></em>" y entonces se permite desactivar la casilla de <em><strong>Inicio Rápido</strong></em>.</li>
 <li>Abrir el administrador de discos (buscar por particiones, o con botón derecho encima de <em><strong>Equipo</strong></em> y opción "<em><strong>Administrar</strong></em>") y redimensionar la partición con más espacio para crear un hueco de al menos 20 GB para <strong>MAX 10</strong>. Al pulsar con el botón derecho sobre la partición y redimensionar, seleccionar el espacio a reducir.</li>
-<li>Reiniciar el equipo para arrancar con el <strong>DVD</strong> o <strong>USB</strong> de <strong>MAX 10</strong>.  El arranque desde <strong>DVD</strong> o <strong>USB</strong> se puede controlar desde la <strong>BIOS</strong> o con la tecla de menú de arranque (<em><strong>Boot menu</strong></em>) descrito en apartados anteriores.</li>
-</ol></li>
+<li>Reiniciar el equipo para arrancar con el <strong>DVD</strong> o <strong>USB</strong> de <strong>MAX 10</strong>.  El arranque desde <strong>DVD</strong> o <strong>USB</strong> se puede controlar desde la <strong>BIOS</strong> o con la tecla de menú de arranque (<em><strong>Boot menu</strong></em>) descrita en apartados anteriores.</li>
+</ol>
+</li>
 <li><span style="color: #000000;">Asegurar que <strong>MAX</strong> arranca en modo <strong>UEFI</strong>, el primer menú de selección aparece con el<strong> fondo de pantalla en negro</strong> en vez de azul, ninguna imagen de fondo y con las opciones de "<strong>Arrancar MAX 10.0 UEFI</strong>" e "<strong>Instalar MAX 10.x UEFI</strong>". Si no fuera el caso, mirar si en el menú de arranque aparece el dispositivo (DVD o USB) dos veces, una en modo UEFI y otra no, o en BIOS desactivar totalmente el modo BIOS PC  (opción Legacy o CSM desactivada).</span><br />
 <div class="exe-figure exe-image position-center" style="width: 800px;"><img src="maxuefi.png" alt="Grub de MAX en modo UEFI" title="Grub de MAX en modo UEFI" width="700" height="496" />
 <div class="figcaption"><span class="title"><em>Grub de MAX en modo UEFI</em></span></div>
 </div>
 </li>
-<li>A partir de aquí se lanzará el instalador de <strong>MAX</strong>, cuyo funcionamiento se describe en la <a marked="1" href="el_instalador_de_max.html">siguiente sección</a>, y cuando propone varias opciones de instalación, seleccionar<strong> "Más opciones" </strong>y en el asistente nos aparecerá un listado de la particIones existentes, tal como se muestra en la figura siguiente:<br />
+<li>A partir de aquí se lanzará el instalador de <strong>MAX</strong>, cuyo funcionamiento se describe en la <a marked="1" href="el_instalador_de_max.html">siguiente sección</a>, y cuando propone varias opciones de instalación, seleccionar<strong> "Más opciones" </strong>y, en el asistente nos aparecerá un listado de la particiones existentes, tal como se muestra en la figura siguiente:<br />
 <div class="exe-figure exe-image position-center" style="width: 600px;"><img src="p_uefi.png" width="600" height="383" />
 <div class="figcaption"><span class="title"><em>Listado de particiones</em></span></div>
 </div>
@@ -364,26 +368,28 @@ La imagen anterior corresponde a un ejemplo de particiones que el asistente de i
 </tr>
 </tbody>
 </table>
-<br /><ol>
+<br />
+<ol>
 <li>Se debe seleccionar el hueco generado con la reducción de particiones y dar al botón + para especificar que cree una partición primaria en todo ese espacio, de tipo "<em><strong>sistema de ficheros ext4 transacciona</strong></em>l" con punto de montaje <em><strong>"/</strong></em>" y formatearla. Opcionalmente puede no consumir todo el hueco y dejar espacio para crear una partición de intercambio (<em><strong>swap</strong></em>) con el mismo tamaño que la memoria <strong>RAM</strong> del equipo. No obstante en los equipos actuales con 4GB de <strong>RAM</strong> y más, no es necesario salvo para utilizar la opción de hibernación del equipo.</li>
 <li>Al dar a "<em><strong>Instalar ahora</strong></em>" dará un aviso si no ha seleccionado partición de intercambio, que puede ignorar.<br /><br /><strong>NOTA</strong>: Una alternativa al asistente de instalación para crear las particiones de GNU/Linux es utilizar el gestor de particiones <strong>GParted</strong>.</li>
-</ol></li>
-<li>Al terminar la instalación y reiniciar el equipo debería aparecer el menú de arranque de <strong>MAX</strong> con la primera opción para arrancar <strong>MAX 10</strong> y la última para arrancar <strong>Windows</strong>. Si no fuera el caso consulte a continuación la resolución de problemas o los mensajes en los <a marked="1" target="_blank" title="Foros de MAX" href="http://foros.educa.madrid.org/viewforum.php?f=20&amp;sid=db77d17a8468dbab3ac1c3ed3ec41d8d">foros de MAX</a> a este respecto.</li>
+</ol>
+</li>
+<li>Al terminar la instalación y reiniciar el equipo debería aparecer el menú de arranque de <strong>MAX</strong> con la primera opción para arrancar <strong>MAX 10</strong> y la última para arrancar <strong>Windows</strong>. Si no fuera el caso consulte a continuación la resolución de problemas o los mensajes en los <a marked="1" target="_blank" title="Foros de MAX" href="http://foros.educa.madrid.org/viewforum.php?f=20&amp;sid=db77d17a8468dbab3ac1c3ed3ec41d8d" rel="noopener">foros de MAX</a> a este respecto.</li>
 </ol>
 <h2>Resolución de problemas</h2>
 <p>La tecnología <strong>UEFI</strong>, aunque estandarizada, no está implementada igual por todos los fabricantes, encontrando a menudo <strong>BIOS</strong> defectuosas que generan problemas en arranques duales. Los siguientes consejos ayudarán a recuperar el sistema ante esos problemas:</p>
 <h3>Tras instalar MAX en modo UEFI no aparece el menú de arranque de MAX y solo arranca en windows</h3>
-<p>Puede ser debido a que se necesita entrar en <strong>BIOS</strong> y ordenar la prioridad de las distintas entradas <strong>UEFI</strong> que haya creadas en el sistema, debería encontrarse una entrada <strong>MAX(grub)</strong> y poniéndola en primer lugar solucionarse el problema. Si no fuera el caso puede volver a arrancar en modo live (<strong>UEFI</strong>) y tras abrir una terminal ejecutar los siguientes comandos:</p>
+<p>Puede ser debido a que se necesita entrar en <strong>BIOS</strong> y ordenar la prioridad de las distintas entradas <strong>UEFI</strong> que haya creadas en el sistema. Debería encontrarse una entrada <strong>MAX(grub)</strong> y poniéndola en primer lugar solucionarse el problema. Si no fuera el caso, puede volver a arrancar en modo live (<strong>UEFI</strong>) y, tras abrir una terminal, ejecutar los siguientes comandos:</p>
 <pre><strong>sudo apt-get install efibootmgr</strong></pre>
 <pre><strong>sudo check-efi-install</strong></pre>
-<p>si no tuviera internet se puede sustituir el primer comando por este otro:</p>
+<p>Si no tuviera internet, se puede sustituir el primer comando por este otro:</p>
 <pre><strong>sudo dpkg -i /cdrom/pool/main/e/efibootmgr/efibootmgr_0.5.4-7ubuntu1.1_amd64.deb</strong></pre>
 <h3>Tras instalar MAX en modo UEFI el equipo no arranca quedándose en una pantalla negra con el texto "grub&gt;"</h3>
-<p>Podrá arrancar el equipo con el comando <em><strong>configfile</strong></em> seguido de la ruta del fichero de configuración, que se puede conseguir haciendo <em><strong>ls</strong></em> o autocompletando con tabulador, mientras se escribe, es del tipo:</p>
+<p>Podrá arrancar el equipo con el comando <em><strong>configfile</strong></em> seguido de la ruta del fichero de configuración, que se puede conseguir haciendo <em><strong>ls</strong></em> o autocompletando con tabulador mientras se escribe, es del tipo:</p>
 <pre><strong>configfile (hd0,gpt4)/boot/grub/grub.cfg</strong></pre>
 <p>siendo la parte variable en <strong>hd0</strong> (primer disco) y <strong>gpt4</strong> (cuarta partición) se puede ir viendo el contenido de cada partición con:</p>
 <pre><strong>ls (hd0,gpt1)</strong> </pre>
-<p>una vez arrancado el equipo verificar con el comando <em><strong>efibootmgr</strong></em> si el orden de las entradas es el correcto, y si no cambiarlo con el comando <em><strong>efibootmgr</strong></em> seguido por <strong>-o</strong> y la lista de entradas, ejemplo:</p>
+<p>una vez arrancado el equipo, verificar con el comando <em><strong>efibootmgr</strong></em> si el orden de las entradas es el correcto, y si no cambiarlo con el comando <em><strong>efibootmgr</strong></em> seguido por <strong>-o</strong> y la lista de entradas, ejemplo:</p>
 <pre><strong>sudo efibootmgr -o 3,1,0</strong></pre>
 <p>y probar también los siguiente comandos:</p>
 <pre><strong>sudo grub-install</strong></pre>
@@ -393,19 +399,19 @@ La imagen anterior corresponde a un ejemplo de particiones que el asistente de i
 <h4>Programa boot-repair</h4>
 <p>Arrancar en modo live con conexión a internet e instalar y ejectuar el programa boot-repair con las siguientes instrucciones desde un terminal (línea de comandos):</p>
 <pre><strong>sudo apt-add-repository ppa:yannubuntu/boot-repair</strong><br /><strong>sudo apt-get update</strong><br /><strong>sudo apt-get install boot-repair</strong><br /><strong>sudo boot-repair</strong></pre>
-<p>Una vez en el programa seguir estas instrucciones:</p>
+<p>Una vez en el programa, seguir estas instrucciones:</p>
 <ul>
 <li>Ir a opciones avanzadas y poner estas opciones en sus pestañas:
 <ul>
 <li>Opciones principales: reinstalar Grub, usar el archivo efi estándar y mostrar el menú de arranque 10 segundos.</li>
 <li>Ubicaciones de Grub: se deja sin modificar.</li>
-<li>Opciones de Grub: sólo marcada Purgar Grub antes de reinstalarlo.</li>
+<li>Opciones de Grub: solo marcada Purgar Grub antes de reinstalarlo.</li>
 <li>Otras opciones: todo marcado.</li>
 </ul>
 </li>
-<li>Al darle a <strong>Salir</strong> pregunta si hacer copia de la configuración de <strong>Windows</strong> se debe seleccionar <strong>NO</strong>.</li>
+<li>Al darle a <strong>Salir</strong> pregunta si hacer copia de la configuración de <strong>Windows</strong> y se debe seleccionar <strong>NO</strong>.</li>
 </ul>
-<p> En el <a marked="1" target="_blank" title="Foros de MAX" href="http://foros.educa.madrid.org/viewforum.php?f=3&amp;sid=db77d17a8468dbab3ac1c3ed3ec41d8d">foro de instalación de MAX</a> se encuentra más información para contrastar experiencias con la de otros usuarios y solicitar soporte.</p>
+<p> En el <a marked="1" target="_blank" title="Foros de MAX" href="http://foros.educa.madrid.org/viewforum.php?f=3&amp;sid=db77d17a8468dbab3ac1c3ed3ec41d8d" rel="noopener">foro de instalación de MAX</a> se encuentra más información para contrastar experiencias con la de otros usuarios y solicitar soporte.</p>
 </div>
 </div>
 </div>
