@@ -166,6 +166,15 @@ umount $CHROOT/mnt
 
 _echo "Tamaño Archivo ISO: `du -h ${ISO_FILE}`"
 
+MAX_DVD_SIZE=4707319808
+SIZE_BYTES=$(stat -c %s ${ISO_FILE})
+
+if [ ${SIZE_BYTES} -ge ${MAX_DVD_SIZE} ]; then
+  _echo "ADVERTENCIA: No entra en un DVD (${SIZE_BYTES} > ${MAX_DVD_SIZE})"
+else
+  _echo "OK: Si entra en un DVD (${SIZE_BYTES} < ${MAX_DVD_SIZE})"
+fi
+
 
 #genisoimage -r -V "$TITLE" -cache-inodes -J -l -b isolinux/isolinux.bin \
 #     -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
