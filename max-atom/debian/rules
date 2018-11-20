@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+VERSION=1.32.2
+
+URL=https://github.com/atom/atom/releases/download/v1.32.2/atom-amd64.deb
+#URL=http://localhost/remote-files/atom-amd64.deb
+
+
+
+%:
+	dh $@ 
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) ); \
+		( cd build && dpkg -x atom-amd64.deb ./ ) ;\
+	fi
+
+override_dh_clean:
+	dh_clean
+	rm -rf build

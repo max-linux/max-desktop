@@ -1,0 +1,47 @@
+Source: max-atom
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 8.0.0), wget,
+	libasound2-dev,
+	libatk1.0-dev,
+	libcairo2-dev,
+	libcups2-dev,
+	libdbus-1-dev,
+	libfontconfig1-dev,
+	libfreetype6-dev,
+	libgconf2-dev,
+	libgdk-pixbuf2.0-dev,
+	libgtk2.0-dev,
+	libpango1.0-dev,
+	libsecret-1-dev,
+	libv4l-dev,
+	libx11-dev,
+	libx11-xcb-dev,
+	libxcb1-dev,
+	libxcomposite-dev,
+	libxdamage-dev,
+	libxext-dev,
+	libxfixes-dev,
+	libxi-dev,
+	libxkbfile-dev,
+	libxrandr-dev,
+	libxrender-dev,
+	libxss-dev,
+	libxtst-dev,
+        libgtk-3-dev,
+        libnss3, libnspr4,
+        libssl1.0-dev
+Standards-Version: 3.9.3
+Homepage: https://github.com/atom/atom
+
+Package: atom
+Architecture: amd64
+Recommends: lsb-release
+Suggests: libsecret-1-0, gir1.2-gnomekeyring-1.0
+Depends:  git, gconf2, gconf-service,
+          python, gvfs-bin, xdg-utils,
+          ${shlibs:Depends}, ${misc:Depends}
+Description: A hackable text editor for the 21st Century.
+ Atom is a free and open source text editor that is modern,
+ approachable, and hackable to the core.
