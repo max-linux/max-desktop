@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+VERSION=1.13
+
+URL=https://github.com/adobe/brackets/releases/download/release-$(VERSION)/Brackets.Release.$(VERSION).64-bit.deb
+#URL=http://localhost/remote-files/Brackets.Release.$(VERSION).64-bit.deb
+
+
+%:
+	dh $@ 
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) && mv Brackets*.deb brackets.deb); \
+		( cd build && dpkg -x brackets.deb ./ ) ;\
+	fi
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
