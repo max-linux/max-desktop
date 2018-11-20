@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-VERSION=1.2.5
+VERSION=1.2.7
 
 export ARCH=$(shell dpkg-architecture -qDEB_TARGET_ARCH)
 ifeq ($(ARCH), i386)
