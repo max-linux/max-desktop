@@ -41,50 +41,56 @@ class GconfProfile(object):
         self.direct=direct
         self.dconf=True
         self.home=str(pwd.getpwuid(self.uid).pw_dir)
-    
+
     def drop_all_privileges(self):
         # gconf needs both the UID and effective UID set.
         if 'SUDO_GID' in os.environ:
-            #gid = int(os.environ['SUDO_GID'])
+            # gid = int(os.environ['SUDO_GID'])
+            print_debug("drop_all_privileges GID=%s" % self.gid)
             os.setregid(self.gid, self.gid)
         if 'SUDO_UID' in os.environ:
-            #uid = int(os.environ['SUDO_UID'])
+            # uid = int(os.environ['SUDO_UID'])
+            print_debug("drop_all_privileges UID=%s HOME=%s" % (self.uid, self.home))
             os.setreuid(self.uid, self.uid)
             os.environ['HOME'] = self.home
 
-    def __gconf(self, cmd):
-        """
-        gconftool-2 --direct --config-source xml:readwrite:/etc/gconf/gconf.xml.defaults \
-                --type bool --set /apps/nautilus/desktop/home_icon_visible "true"
-        
-        """
-        if self.dconf:
-            value = cmd['value']
-            if cmd['type'] == 'string':
-                value = "'%s'", cmd['value']
-            #
-            cmd=['dconf', 'write',
-                 cmd['key'], value]
-        elif self.direct:
-            cmd=['gconftool-2', '--direct',
-                 '--config-source', "xml:readwrite:%s/.gconf"%(self.home),
-                 '--type', cmd['type'], 
-                 '--set', cmd['key'], cmd['value']]
+    def _run_cmd(self, cmd, background=True):
+        """Run command into shell"""
+        if background:
+            proc = subprocess.Popen(
+                cmd, shell=False,
+                preexec_fn=self.drop_all_privileges
+            )
         else:
-            cmd=['gconftool-2', 
-                 '--type', cmd['type'], 
-                 '--set', cmd['key'], cmd['value']]
-        print_debug("cmd=%s"%cmd)
-        subp = subprocess.Popen(cmd,
-                  stdout=subprocess.PIPE,
-                  stderr=subprocess.PIPE,
-                  preexec_fn=self.drop_all_privileges)
+            proc = subprocess.Popen(
+                cmd, shell=False,
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                preexec_fn=self.drop_all_privileges
+            )
+            stdout,stderr = proc.communicate()
+            return stdout,stderr
 
-        stdout,stderr=subp.communicate()
-        if int(subp.returncode) != 0:
-            print_debug("WARNING STDERR=%s"%stderr.strip('\n'))
+    def __gconf(self, cmd):
+        # use gsetting to write into  dconf
+        value = cmd['value']
+        if cmd['type'] == 'string':
+            value = "'%s'" % cmd['value']
+        #
+        #
+        schema = ".".join( cmd['key'].split('.')[0:-1] )
+        key = cmd['key'].split('.')[-1]
+        #
+        #
+        cmd=['dbus-launch', '--exit-with-session', 'gsettings', 'set', schema, key, value]
+
+        print_debug("cmd=%s" % cmd)
+        stdout, stderr = self._run_cmd(cmd, False)
+        if stdout:
+            print_debug("WARNING STDOUT=%s" % stdout.strip('\n'))
+        if stderr:
+            print_debug("WARNING STDERR=%s" % stderr.strip('\n'))
+
         return stdout.rstrip('\n')
-
 
     def do(self, data):
         """

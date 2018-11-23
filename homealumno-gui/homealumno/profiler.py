@@ -110,7 +110,7 @@ class Profiler(object):
         currentusername=pwd.getpwuid(os.getuid()).pw_name
         currenthome=pwd.getpwuid(os.getuid()).pw_dir
         (fd, tmpexc)=tempfile.mkstemp()
-        
+
         print_debug("applying profiles user=%s home=%s..."%(currentusername, currenthome))
         for profilename in self.get_allprofiles():
             profile=self.get_profile(profilename)
@@ -132,7 +132,7 @@ class Profiler(object):
                 post_run=os.path.abspath(homealumno.PRERUN_PATH + profilename)
                 if os.path.isfile(post_run):
                     self.exe(post_run)
-                
+
                 # hacer un rsync desde /etc/skel con exclude
                 #print_debug("rsync %s -Pav /etc/skel/ --delete %s/"%(excludes, currenthome))
                 self.exe("rsync %s -Pav /etc/skel/ --delete %s/"%(excludes, currenthome))
@@ -146,7 +146,7 @@ class Profiler(object):
                         self.exe("chmod 775 %s/Escritorio"%currenthome)
                 except:
                     pass
-                
+
                 # hacer un rsync desde PROFILES_PATH + profilename con exclude
                 absprof=os.path.abspath(homealumno.PROFILES_PATH + profilename)
                 if os.path.isdir(absprof):
@@ -161,61 +161,43 @@ class Profiler(object):
                 post_run=os.path.abspath(homealumno.POSTRUN_PATH + profilename)
                 if os.path.isfile(post_run):
                     self.exe(post_run)
-                
+
                 # aplicar cambios de salvapantallas y fondo
                 if 'compiz' in profile and int(profile['compiz']) == 1:
                     print_debug("desactivar compiz")
                     app=homealumno.gconfprofile.GconfProfile(os.getuid(), os.getgid(), direct=False)
-                    data=[{'key':'/desktop/gnome/applications/window_manager/current',
-                             'type':'string',
-                             'value':'/usr/bin/metacity'},
-                             {'key':'/desktop/gnome/applications/window_manager/default',
-                             'type':'string',
-                             'value':'/usr/bin/metacity'},
-                             {'key':'/desktop/gnome/session/required_components/windowmanager',
-                             'type':'string',
-                             'value':'metacity'}]
+                    data = [
+                        {'key': 'org.mate.Marco.general.compositing-manager',
+                         'type': 'boolean', 'value': 'false'},
+                    ]
                     app.do(data)
-                
+
                 if 'screensaver' in profile and int(profile['screensaver']) == 1:
                     print_debug("desactivar screensaver")
                     app=homealumno.gconfprofile.GconfProfile(os.getuid(), os.getgid(), direct=False)
                     # mate screensaver
-                    data=[{'key':'/org/mate/screensaver/mode',
-                           'type':'string',
-                           'value':'blank-only'},
-                          {'key':'/org/mate/screensaver/lock_enabled',
-                           'type':'bool',
-                           'value':'false'}]
+                    data=[{'key': 'org.mate.screensaver.mode',
+                           'type': 'string',
+                           'value': 'blank-only'},
+                          {'key': 'org.mate.screensaver.lock-enabled',
+                           'type': 'bool',
+                           'value': 'false'}]
                     app.do(data)
-                    # gnome screensaver
-                    data=[{'key':'/apps/gnome-screensaver/mode',
-                           'type':'string',
-                           'value':'blank-only'},
-                          {'key':'/apps/gnome-screensaver/lock_enabled',
-                           'type':'bool',
-                           'value':'false'}]
-                    app.do(data)
-                
+
                 if 'wallpaper' in profile and profile['wallpaper'] != "" :
                     print_debug("aplicar wallpaper '%s'"%profile['wallpaper'])
                     app=homealumno.gconfprofile.GconfProfile(os.getuid(), os.getgid(), direct=False)
                     # mate wallpaper
-                    data=[{'key':'/org/mate/desktop/background/picture-filename',
-                           'type':'string',
-                           'value':profile['wallpaper']}]
-                    app.do(data)
-                    # gnome wallpaper
-                    data=[{'key':'/desktop/gnome/background/picture_filename',
-                           'type':'string',
-                           'value':profile['wallpaper']}]
+                    data=[{'key': 'org.mate.desktop.background.picture-filename',
+                           'type': 'string',
+                           'value': profile['wallpaper']}]
                     app.do(data)
 
     def exe(self, cmd):
         #print_debug(cmd)
         _cmd=cmd.split()
         print_debug(_cmd)
-        
+
         subp = subprocess.Popen(_cmd,
                   stdout=subprocess.PIPE,
                   stderr=subprocess.PIPE)
