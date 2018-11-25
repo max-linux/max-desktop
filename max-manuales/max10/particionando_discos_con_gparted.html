@@ -1,23 +1,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="stylesheet" type="text/css" href="base.css" />
 <link rel="stylesheet" type="text/css" href="content.css" />
 <link rel="stylesheet" type="text/css" href="nav.css" />
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
-<title>Particionando discos con GParted </title>
+<title>Particionando discos con GParted | Portada </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<meta http-equiv="content-language" content="es" />
-<meta name="generator" content="eXeLearning 2.1.3 - exelearning.net" />
+<meta http-equiv="content-language" content="en" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.2 - exelearning.net" />
 <script type="text/javascript" src="exe_jquery.js"></script>
-<script type="text/javascript">$exe_i18n={previous:"Anterior",next:"Siguiente",show:"Mostrar",hide:"Ocultar",showFeedback:"Mostrar retroalimentación",hideFeedback:"Ocultar retroalimentación",correct:"Correcto",incorrect:"Incorrecto",menu:"Menú",download:"Descargar",print:"Imprimir"}</script>
+<script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
-<body class="exe-web-site" id="exe-node-97"><script type="text/javascript">document.body.className+=" js"</script>
+<body class="exe-web-site" id="exe-node-679"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
-<div id="emptyHeader"></div>
+<div id="header" ><div id="headerContent">Portada</div></div>
 <div id="siteNav">
 <ul>
    <li><a href="index.html" class="daddy main-node">Portada</a></li>
@@ -60,6 +61,7 @@
       <li><a href="el_gestor_de_entrada_lightdm.html" class="daddy">El gestor de entrada (lightdm)</a>
       <ul class="other-section">
          <li><a href="seleccin_de_usuarios.html" class="no-ch">Selección de usuarios</a></li>
+         <li><a href="entrada_automtica.html" class="no-ch">Entrada Automática</a></li>
          <li><a href="entorno_de_escritorio_y_personalizacin.html" class="daddy">Entorno de escritorio y personalización</a>
          <ul class="other-section">
             <li><a href="pantalla_de_bienvenida.html" class="no-ch">Pantalla de Bienvenida</a></li>
@@ -271,7 +273,7 @@
          <li><a href="tali.html" class="no-ch">Tali</a></li>
          <li><a href="taquin.html" class="no-ch">Taquin</a></li>
          <li><a href="tetravex.html" class="no-ch">Tetravex</a></li>
-         <li><a href="max_en_el_aula.html" class="no-ch">MAX en el aula.</a></li>
+         <li><a href="max_en_el_aula.html" class="no-ch">MAX en el aula</a></li>
       </ul>
       </li>
       <li><a href="fuentes_tipogrficas.html" class="no-ch">Fuentes tipográficas</a></li>
@@ -290,9 +292,9 @@
 <div id="main-wrapper">
 <div id="main"><a name="main"></a>
 <div id="nodeDecoration"><h1 id="nodeTitle">Particionando discos con GParted</h1></div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id154">
+<div class="iDevice_wrapper FreeTextIdevice" id="id954">
 <div class="iDevice emphasis0">
-<div id="ta154_239" class="block iDevice_content">
+<div id="ta954_239" class="block iDevice_content">
 <p>Como alternativa al asistente de particionado de la propia instalación, puede utilizar el programa <strong>GParted</strong>, localizado en <strong>Sistema</strong> → <strong>Administración</strong> → <strong>Editor de </strong><strong>particiones (GParted)</strong>, que también se puede lanzar desde una terminal mediante el comando:</p>
 <pre><strong>sudo gparted</strong></pre>
 <p>y con la contraseña: <strong>cmadrid</strong></p>
@@ -338,12 +340,12 @@
 <div class="figcaption"><span class="title"><em>Redimensionado de la partición de Windows</em></span></div>
 </div>
 <p>En esta ventana encontrará dos métodos para cambiar el tamaño de la partición: arrastrando las flechas negras que están en los limites del dibujo de la partición o introduciendo el valor en los campos correspondientes. En el ejemplo de la imagen se ha introducido directamente un valor de 10 GiB (10240 MiB) para dejar libre unos 20 GB para la instalación de <strong>MAX</strong>.</p>
-<p>Ajuste en su caso el cuadro <strong>Tamaño Nuevo</strong> poniendo un valor tal que en la casilla del <strong>Espacio libre a continuación</strong> se ajuste a un valor de al menos<br />20379 MiB (unos 20 GB aproximadamente, que es el tamaño mínimo para instalar <strong>MAX</strong>).</p>
-<p>Al pulsar el botón <strong>Redimensionar/Mover</strong> vuelve a la ventana principal. Compruebe que debajo de la tabla de particiones, en el listado de acciones pendientes, se ha añadido una nueva entrada que identifica que se ha planificado una redimensión. Según se vayan realizando nuevas acciones, se irán añadiendo a ese listado. Observe también que el botón de aplicar las acciones pendientes se ha activado.</p>
+<p>Ajuste en su caso el cuadro <strong>Tamaño Nuevo</strong> poniendo un valor tal que en la casilla del <strong>Espacio libre a continuación</strong> se ajuste a un valor de al menos 20379 MiB (unos 20 GB aproximadamente, que es el tamaño mínimo para instalar <strong>MAX</strong>).</p>
+<p>Al pulsar el botón <strong>Redimensionar/Mover</strong> se vuelve a la ventana principal. Compruebe que debajo de la tabla de particiones, en el listado de acciones pendientes, se ha añadido una nueva entrada que identifica que se ha planificado una redimensión. Según se vayan realizando nuevas acciones, se irán añadiendo a ese listado. Observe también que el botón de aplicar las acciones pendientes se ha activado.</p>
 <div class="exe-figure exe-image position-center" style="width: 450px;"><img src="fgp8.png" width="450" height="213" />
 <div class="figcaption"><span class="title"><em>Redimensionando particiones con GParted</em></span></div>
 </div>
-<p>Aunque es posible seguir realizando cambios, es preferible hacerlos uno a uno por si hay algún error saber en que punto aparecen los problemas, así que pulse el botón de aplicar cambios el cual pedirá confirmar la acción. El redimensionado de una partición puede tardar desde unos pocos segundos hasta varios minutos. Espere a que termine el proceso.</p>
+<p>Aunque es posible seguir realizando cambios, es preferible hacerlos uno a uno por si hay algún error, saber en que punto aparecen los problemas, así que pulse el botón de aplicar cambios el cual pedirá confirmar la acción. El redimensionado de una partición puede tardar desde unos pocos segundos hasta varios minutos. Espere a que termine el proceso.</p>
 <div class="exe-figure exe-image position-center" style="width: 350px;"><img src="fgp9.png" style="float: right;" width="350" height="130" />
 <div class="figcaption"><span class="title"><em>Redimensionado terminado</em></span></div>
 </div>
@@ -354,41 +356,41 @@
 <p>Ahora ya podemos crear las particiones para la instalación de <strong>MAX</strong>:</p>
 <ul>
 <li>Una partición principal con, al menos, <strong>20 GB</strong> de tamaño, formateada como <strong>ext4</strong>, utilizará el punto de montaje llamado <strong>raíz</strong> representado por el símbolo de la barra diagonal "/".<br /><br /></li>
-<li>Opcionalmente una partición <strong>swap</strong> o de intercambio, de <strong>1GB</strong>.<br /><br /></li>
-<li>Opcionalmente una partición de datos formateada como <strong>ext4</strong> con punto de montaje <strong>/home</strong>.<br /><br /></li>
-<li>Opcionalmente una partición de datos formateada como <strong>NTFS</strong> para que sea accesible desde cualquier sistema operativo.</li>
+<li>Opcionalmente, una partición <strong>swap</strong> o de intercambio, de <strong>1GB</strong>.<br /><br /></li>
+<li>Opcionalmente, una partición de datos formateada como <strong>ext4</strong> con punto de montaje <strong>/home</strong>.<br /><br /></li>
+<li>Opcionalmente, una partición de datos formateada como <strong>NTFS</strong> para que sea accesible desde cualquier sistema operativo.</li>
 </ul>
 <p>Veremos cómo crear las dos primeras con <strong>GParted</strong>.</p>
 <h3><strong>Crear las particiones</strong></h3>
-<p>Para ello pulse con el botón derecho del ratón sobre la fila del espacio sin asignar y en el menú contextual que aparece, pulse sobre la opción <strong>Nueva</strong>, aparecerá la siguiente ventana:</p>
+<p>Para ello pulse con el botón derecho del ratón sobre la fila del espacio sin asignar y, en el menú contextual que aparece, pulse sobre la opción <strong>Nueva</strong>. Aparecerá la siguiente ventana:</p>
 <div class="exe-figure exe-image position-center" style="width: 450px;"><img alt="gparted11" src="fgp11.png" width="450" height="196" />
 <div class="figcaption"><span class="title"><em>Creación de una partición extendida</em></span></div>
 </div>
-<p>En un disco duro de un ordenador sólo puede haber cuatro particiones primarias. Cuando se necesitan más particiones, se recurre a crear una partición especial llamada <strong>partición extendida</strong>, que actúa como un contenedor en el que se pueden incluir un número ilimitado de particiones que se llaman <strong>particiones lógicas</strong>.</p>
+<p>En un disco duro de un ordenador solo puede haber cuatro particiones primarias. Cuando se necesitan más particiones, se recurre a crear una partición especial llamada <strong>partición extendida</strong>, que actúa como un contenedor en el que se pueden incluir un número ilimitado de particiones que se llaman <strong>particiones lógicas</strong>.</p>
 <p>Aunque en el ejemplo no sería necesario, se ha elegido documentar el caso de utilizar una <strong>partición extendida</strong>, porque es algo más complejo y ofrece una mayor generalización.</p>
-<p>Al pulsar el botón <strong>Añadir</strong> aparece la nueva partición extendida en la ventana principal de <strong>GParted</strong>.</p>
+<p>Al pulsar el botón <strong>Añadir</strong>, aparece la nueva partición extendida en la ventana principal de <strong>GParted</strong>.</p>
 <div class="exe-figure exe-image position-center" style="width: 450px;"><img alt="gparted12" src="fgp12.png" width="450" height="236" />
 <div class="figcaption"><span class="title"><em>Partición extendida sin ninguna partición lógica creada</em></span></div>
 </div>
-<p>Ahora el espacio sin asignar está dentro de la partición extendida, es ahí donde se crearán la particiones para el sistema raíz y el área de intercambio, para ello haga clic derecho sobre la fila del espacio <strong>sin asignar</strong> y en el menú contextual que aparece seleccione <strong>Nueva</strong>. Aparecerá una ventana parecida a la siguiente.</p>
+<p>Ahora el espacio sin asignar está dentro de la partición extendida y es ahí donde se crearán la particiones para el sistema raíz y el área de intercambio. Para ello haga clic derecho sobre la fila del espacio <strong>sin asignar</strong> y en el menú contextual que aparece seleccione <strong>Nueva</strong>. Aparecerá una ventana parecida a la siguiente.</p>
 <div class="exe-figure exe-image position-center" style="width: 450px;"><img alt="Crear partición" src="fgp13.png" width="450" height="197" />
 <div class="figcaption"><span class="title"><em>Creación de la partición raíz</em></span></div>
 </div>
 <p>Ajuste los valores con el tamaño que desee para la partición de <strong>MAX</strong>. Si sólo va a crear además la partición de intercambio, lo normal es modificar directamente el <strong>espacio libre a continuación</strong> para reservar el tamaño de la partición de intercambio, en el ejemplo <strong>1024 MiB</strong>, y el resto dejarlo para <strong>MAX</strong>.</p>
-<p>Cambie el sistema de archivos a <strong>ext4</strong> y escriba una etiqueta que identifique ese partición. Es recomendable dejar la alineación de las particiones con "<strong>MiB</strong>", debido a ello puede que entre particiones queden espacios de <strong>1 MiB</strong> tal como se observa en el espacio libre precedente. Hay particionadores que muestran estos espacios como no usados, no intente aprovecharlos moviendo las particiones pues puede ocasionar la perdida de la partición.</p>
+<p>Cambie el sistema de archivos a <strong>ext4</strong> y escriba una etiqueta que identifique ese partición. Es recomendable dejar la alineación de las particiones con "<strong>MiB</strong>"; debido a ello puede que entre particiones queden espacios de <strong>1 MiB</strong>, tal como se observa en el espacio libre precedente. Hay particionadores que muestran estos espacios como no usados, pero no intente aprovecharlos moviendo las particiones pues, puede ocasionar la pérdida de la partición.</p>
 <p>Realice el mismo proceso para añadir la partición de intercambio, solo que ahora configure las opciones tal como se muestran en la siguiente imagen, teniendo en cuenta que el tamaño de su partición de intercambio puede ser diferente:</p>
 <div class="exe-figure exe-image position-center" style="width: 450px;"><img alt="gparted14" src="fgp14.png" width="450" height="197" />
 <div class="figcaption"><span class="title"><em>Creación de la partición de intercambio o swap</em></span></div>
 </div>
-<p>Después de añadir la partición de intercambio tan sólo queda pulsar el botón de aplicar los cambios para que sean permanentes, nos advertirá que la edición de particiones puede ser peligrosa y puede provocar la perdida de datos:</p>
+<p>Después de añadir la partición de intercambio, solo queda pulsar el botón de aplicar los cambios para que sean permanentes, lo que nos advertirá que la edición de particiones puede ser peligrosa y puede provocar la pérdida de datos:</p>
 <div class="exe-figure exe-image position-center" style="width: 300px;"><img alt="gparted15" src="fgp15.png" width="300" height="127" />
 <div class="figcaption"><span class="title"><em>Confirmando los cambios en las particiones</em></span></div>
 </div>
-<p>pulse sobre el botón <strong>Aplicar</strong> si está conforme con los resultados y verá como se van aplicando cada uno de los pasos que ha ido dando en una ventana de progreso similar a la siguiente.</p>
+<p>pulse sobre el botón <strong>Aplicar</strong> si está conforme con los resultados y verá cómo se va aplicando cada uno de los pasos que ha ido dando en una ventana de progreso similar a la siguiente:</p>
 <div class="exe-figure exe-image position-center" style="width: 300px;"><img alt="gparted16" src="fgp16.png" width="300" height="174" />
 <div class="figcaption"><span class="title"><em>Aplicando los cambios en las particiones</em></span></div>
 </div>
-<p>Al terminar ya estarán preparadas las particiones para la instalación de <strong>MAX</strong>, el resultado final debería ser algo parecido a la siguiente imagen.</p>
+<p>Al terminar, ya estarán preparadas las particiones para la instalación de <strong>MAX</strong>. El resultado final debería ser algo parecido a la siguiente imagen.</p>
 <div class="exe-figure exe-image position-center" style="width: 600px;"><img alt="gparted17" src="fgp17.png" width="600" height="283" />
 <div class="figcaption"><span class="title"><em>Esquema de particiones</em></span></div>
 </div>
@@ -397,21 +399,24 @@
 <div class="exe-figure exe-image position-center" style="width: 600px;"><img alt="Tipo de instalación" src="imgmso.png" width="600" height="361" />
 <div class="figcaption"><span class="title"><em>Instalación con selección personalizada de particiones</em></span></div>
 </div>
-<p>Así aparecen las particiones que ya están definidas y tan sólo hay que indicar al asistente qué partición será la partición raíz (la partición de intercambio es detectada y utilizada de manera automática), para ello seleccione la partición <strong>ext4</strong> y pulse el botón <strong>Cambiar</strong>...:</p>
+<p>Así aparecen las particiones que ya están definidas y tan solo hay que indicar al asistente qué partición será la partición raíz (la partición de intercambio es detectada y utilizada de manera automática). Para ello seleccione la partición <strong>ext4</strong> y pulse el botón <strong>Cambiar</strong>...:</p>
 <div class="exe-figure exe-image position-center" style="width: 500px;"><img alt="gparted18" src="fgp18.png" width="500" height="335" />
 <div class="figcaption"><span class="title"><em>Selección de puntos de montaje</em></span></div>
 </div>
-<p>Elija el mismo sistema de ficheros con el que se creó la partición, <strong>ext4</strong>, y lo mas importante, indique que el punto de montaje será la raíz. No hace falta volver a formatear la partición si está recién creada por lo que no es necesario marcar dicha opción. En caso de estar realizando una instalación sobre una versión anterior de <strong>MAX</strong> sí habría que marcar formatear la partición para que se elimine cualquier resto de la versión anterior:</p>
+<p>Elija el mismo sistema de ficheros con el que se creó la partición, <strong>ext4 </strong>y, lo más importante, indique que el punto de montaje será la raíz. No hace falta volver a formatear la partición si está recién creada por lo que no es necesario marcar dicha opción. En caso de estar realizando una instalación sobre una versión anterior de <strong>MAX</strong>, sí habría que marcar <em><strong>formatear la partición</strong></em> para que se elimine cualquier resto de la versión anterior:</p>
 <div class="exe-figure exe-image position-center" style="width: 350px;"><img alt="gparted" src="cpraiz.png" width="350" height="178" />
 <div class="figcaption"><span class="title"><em>Configuración de la partición raíz</em></span></div>
 </div>
-<p>Pulse el botón <strong>Aceptar</strong> y al volver a la ventana principal del asistente ya podemos pulsar <strong>Instalar ahora</strong>. Como no hemos marcado la opción de formatear la partición el asistente avisa con el siguiente mensaje:</p>
+<p>Pulse el botón <strong>Aceptar</strong> y al volver a la ventana principal del asistente ya podemos pulsar <strong>Instalar ahora</strong>. Como no hemos marcado la opción de formatear la partición, el asistente avisa con el siguiente mensaje:</p>
 <div class="exe-figure exe-image position-center" style="width: 500px;"><img alt="gparted19" src="fgp19.png" width="500" height="267" />
 <div class="figcaption"><span class="title"><em>Aviso sobre marcado para formatear</em></span></div>
 </div>
-<p>Al pulsar en el botón <strong>Continuar</strong> se pasará a la ventana de selección del tipo de instalación (Escritorio, Profesor, Alumno, etc.) que se describe en la siguiente sección.</p>
+<p>Al pulsar en el botón <strong>Continuar</strong>, se pasará a la ventana de selección del tipo de instalación (Escritorio, Profesor, Alumno, etc.) que se describe en la siguiente sección.</p>
 </div>
 </div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
 </div>
 </div>
 </div>

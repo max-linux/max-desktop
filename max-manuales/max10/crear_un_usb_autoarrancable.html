@@ -1,26 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="stylesheet" type="text/css" href="base.css" />
 <link rel="stylesheet" type="text/css" href="exe_lightbox.css" />
 <link rel="stylesheet" type="text/css" href="content.css" />
 <link rel="stylesheet" type="text/css" href="nav.css" />
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
-<title>Crear un USB autoarrancable </title>
+<title>Crear un USB autoarrancable | Portada </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<meta http-equiv="content-language" content="es" />
-<meta name="generator" content="eXeLearning 2.1.3 - exelearning.net" />
+<meta http-equiv="content-language" content="en" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.2 - exelearning.net" />
 <!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="exe_lightbox.js"></script>
-<script type="text/javascript">$exe_i18n={previous:"Anterior",next:"Siguiente",show:"Mostrar",hide:"Ocultar",showFeedback:"Mostrar retroalimentación",hideFeedback:"Ocultar retroalimentación",correct:"Correcto",incorrect:"Incorrecto",menu:"Menú",download:"Descargar",print:"Imprimir"}</script>
+<script type="text/javascript" src="common_i18n.js"></script>
 <script type="text/javascript" src="common.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
-<body class="exe-web-site" id="exe-node-318"><script type="text/javascript">document.body.className+=" js"</script>
+<body class="exe-web-site" id="exe-node-682"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
-<div id="emptyHeader"></div>
+<div id="header" ><div id="headerContent">Portada</div></div>
 <div id="siteNav">
 <ul>
    <li><a href="index.html" class="daddy main-node">Portada</a></li>
@@ -63,6 +64,7 @@
       <li><a href="el_gestor_de_entrada_lightdm.html" class="daddy">El gestor de entrada (lightdm)</a>
       <ul class="other-section">
          <li><a href="seleccin_de_usuarios.html" class="no-ch">Selección de usuarios</a></li>
+         <li><a href="entrada_automtica.html" class="no-ch">Entrada Automática</a></li>
          <li><a href="entorno_de_escritorio_y_personalizacin.html" class="daddy">Entorno de escritorio y personalización</a>
          <ul class="other-section">
             <li><a href="pantalla_de_bienvenida.html" class="no-ch">Pantalla de Bienvenida</a></li>
@@ -274,7 +276,7 @@
          <li><a href="tali.html" class="no-ch">Tali</a></li>
          <li><a href="taquin.html" class="no-ch">Taquin</a></li>
          <li><a href="tetravex.html" class="no-ch">Tetravex</a></li>
-         <li><a href="max_en_el_aula.html" class="no-ch">MAX en el aula.</a></li>
+         <li><a href="max_en_el_aula.html" class="no-ch">MAX en el aula</a></li>
       </ul>
       </li>
       <li><a href="fuentes_tipogrficas.html" class="no-ch">Fuentes tipográficas</a></li>
@@ -293,23 +295,23 @@
 <div id="main-wrapper">
 <div id="main"><a name="main"></a>
 <div id="nodeDecoration"><h1 id="nodeTitle">Crear un USB autoarrancable</h1></div>
-<div class="iDevice_wrapper FreeTextIdevice" id="id56">
+<div class="iDevice_wrapper FreeTextIdevice" id="id957">
 <div class="iDevice emphasis0">
-<div id="ta56_239" class="block iDevice_content">
+<div id="ta957_239" class="block iDevice_content">
 <p>La instalación de<strong> MAX </strong>se puede realizar desde un <strong>DVD</strong> generado a partir de la imagen <em><strong>iso</strong></em> de <strong>MAX</strong> y también desde un dispositivo <strong>USB</strong> (memoria flash) autoarrancable. En esta sección se explica cómo crear un dispositivo <strong>USB</strong> autoarrancable a partir de la imagen iso de <strong>MAX 10</strong></p>
 <h3><strong>Mediante el comando dd</strong></h3>
 <p>Abra una terminal y escriba el comando:</p>
 <pre>sudo dd if=archivo.iso of=/dev/sdx </pre>
 <p>donde <em><strong>iF</strong></em> (iniciales de <strong>I</strong>nput <strong>F</strong>ile) hace referencia al archivo de entrada, la imagen iso descargada, y <em><strong>OF</strong></em> (iniciales de <strong>O</strong>utput <strong>F</strong>ile) representa el dispositivo usb en el que queremos copiar la imagen iso, siendo <em><strong>x</strong></em> el valor asignado a nuestra memoria flash / pendrive / dispostivo de almacenamiento usb y que pdremos averiguar mediante el comado:</p>
 <pre> fdisk -l</pre>
-<p>Resumiendo, si el archivo descargado se llamara, por ejemplo, <em><strong>MAX-10.0-beta2-DVDlive-amd64-20181107_1205.iso</strong></em> y nuestro dispositvo <strong>USB</strong> fuera, por ejemplo <em><strong>sdc</strong></em>, entonces el comado que deberías escribir sería:</p>
+<p>Resumiendo, si el archivo descargado se llamará, por ejemplo, <em><strong>MAX-10.0/MAX-10.0-final-DVDlive-amd64-20181118_0032.iso</strong></em> y nuestro dispositvo <strong>USB</strong> fuera, por ejemplo <em><strong>sdc</strong></em>, entonces el comando que debería escribir sería:</p>
 <pre>sudo dd if=MAX-10.0-beta2-DVDlive-amd64-20181107_1205.iso of=/dev/sdc</pre>
 <h3>En modo gráfico con el Creador de discos de arranque</h3>
-<p>A continuación se incluye también un videotutorial de cómo crear un dispositivo <strong>USB</strong> autoarrancable desde el <em><strong>Escritor de discos de arranque</strong></em>:</p>
+<p>A continuación, se incluye también un videotutorial de cómo crear un dispositivo <strong>USB</strong> autoarrancable desde el <em><strong>Creador de discos de arranque</strong></em>:</p>
 <p><video width="800" height="600" style="display: block; margin-left: auto; margin-right: auto;" class="mediaelement" src="crea_usb.mp4" controls="controls"><a href="crea_usb.mp4">crea_usb.mp4</a></video></p>
 <p style="text-align: center;"><a href="https://mediateca.educa.madrid.org/video/at8najupammd79pb" target="_blank">Ver en la Mediateca</a></p>
-<h3>En modo gráfico con el Escritor de imágenes en disco</h3>
-<p>Localizar el archivo de imagen iso descargada, situar el cursor sobre el nombre de la imagen y pulsar con el botón derecho del ratón, aparecera el menú contextual y habrá que seleccionar la opción "<strong>Abrir con /  Escritor de imágenes en disco</strong>" y a partir de ahí seguir las instrucciones que irán apareciendo, seleccionar el dispositiivo usb y en unos 10 minutos se tendrá grabada, tal como se muestra en la siguiente galería de imágenes.</p>
+<h3>En modo gráfico con el Grabador de imágenes en disco</h3>
+<p>Localizar el archivo de imagen iso descargada, situar el cursor sobre el nombre de la imagen y pulsar con el botón derecho del ratón, aparecerá el menú contextual y habrá que seleccionar la opción "<strong>Abrir con /  Grabador de imágenes en disco</strong>" y a partir de ahí seguir las instrucciones que irán apareciendo, seleccionar el dispositiivo usb y en unos 10 minutos se tendrá grabada, tal como se muestra en la siguiente galería de imágenes.</p>
 <p></p>
 <p></p>
 <p></p>
@@ -318,12 +320,12 @@
 </div>
 </div>
 </div>
-<div class="iDevice_wrapper GalleryIdevice em_iDevice" id="id57">
+<div class="iDevice_wrapper GalleryIdevice em_iDevice" id="id958">
 <div class="iDevice emphasis1" >
 <div class="iDevice_header"><h2 class="iDeviceTitle">Crear USB en modo gráfico</h2></div>
 <div class="iDevice_inner">
 <div class="iDevice_content_wrapper">
-<ul class="exeImageGallery" id="exeImageGallery57">
+<ul class="exeImageGallery" id="exeImageGallery958">
 <li><a title="1) Seleccionamos la opción " href="usbgrab1.png"><img alt="1) Seleccionamos la opción " width="128" height="128" src="usbgrab1Thumbnail.png" /><span class="tit">1) Seleccionamos la opción </span></a></li>
 <li><a title="2) Se nos muestra cuadro de diálogo para seleccionar el dispositvo." href="usbgrab2.png"><img alt="2) Se nos muestra cuadro de diálogo para seleccionar el dispositvo." width="128" height="128" src="usbgrab2Thumbnail.png" /><span class="tit">2) Se nos muestra cuadro de diálogo para seleccionar el dispositvo.</span></a></li>
 <li><a title="3) Seleccionamos la unidad en la que queremos crear el dispositivo USB autoarrancable, en este caso una unidad de 8 GB, denominada sdc." href="usbgrab3.png"><img alt="3) Seleccionamos la unidad en la que queremos crear el dispositivo USB autoarrancable, en este caso una unidad de 8 GB, denominada sdc." width="128" height="128" src="usbgrab3Thumbnail.png" /><span class="tit">3) Seleccionamos la unidad en la que queremos crear el dispositivo USB autoarrancable, en este caso una unidad de 8 GB, denominada sdc.</span></a></li>
@@ -333,10 +335,13 @@
 <li><a title="7) Copiando la imagen iso a nuestro usb." href="cpen07.png"><img alt="7) Copiando la imagen iso a nuestro usb." width="128" height="128" src="cpen07Thumbnail.png" /><span class="tit">7) Copiando la imagen iso a nuestro usb.</span></a></li>
 <li><a title="8) Proceso terminado" href="usbgrab8.png"><img alt="8) Proceso terminado" width="128" height="128" src="usbgrab8Thumbnail.png" /><span class="tit">8) Proceso terminado</span></a></li>
 </ul>
-<script type="text/javascript">$exe.imageGallery.init("exeImageGallery57");</script>
+<script type="text/javascript">$exe.imageGallery.init("exeImageGallery958");</script>
 </div>
 </div>
 </div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
 </div>
 </div>
 </div>
