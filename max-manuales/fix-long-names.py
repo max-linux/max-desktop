@@ -167,6 +167,9 @@ dicc = {
     'max_en_el_aula': 'maxaula',
     'max_USB_inicial': 'maxUSB',
 
+    'entrada_automatica_': 'inauto_',
+    'entrada_automtica': 'inauto',
+
     # 'otros_dispositivos.': 'othedev.',
     # 'usbs_y_otros_dispositivos.': 'usbdevs.',
     # 'usbs_y_': 'usb',
