@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Install and use manual (Internet)
+Name[es]=Manual de instalación y uso (Internet)
+Comment=Reference MAX guide online mode
+Comment[es]=Guía de referencia para consultar de manera online
+TryExec=/usr/bin/firefox
+Exec=firefox http://max.educa.madrid.org/manual/max10/
+Icon=menu-max-doc
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=MAX;
