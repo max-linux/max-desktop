@@ -147,6 +147,9 @@ rm -rf $CHROOT/tmp/*
 rm -rf $CHROOT/.kde
 for log in $(find $CHROOT/var/log/ -type f); do cat /dev/null > $log; done
 
+# clean run folder
+find $CHROOT/run/ -type f -delete
+
 _echo "Desmontando proc sys y posiblemente modules/volatile"
 umount -l $CHROOT/proc
 umount -l $CHROOT/sys
@@ -166,6 +169,7 @@ apt-get $APT_OPTS update || ERROR=1
 apt-get $APT_OPTS -f install
 apt-get $APT_OPTS upgrade || ERROR=1
 apt-get $APT_OPTS dist-upgrade || ERROR=1
+apt-get $APT_OPTS remove --purge syslinux-themes-max10 gfxboot-theme-ubuntu || ERROR=1
 apt-get $APT_OPTS autoremove --purge || ERROR=1
 apt-get clean
 rm -f /etc/resolv.conf
