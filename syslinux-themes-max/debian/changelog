@@ -1,3 +1,9 @@
+syslinux-themes-max (10.0max2) max; urgency=medium
+
+  * Add nomodeset to cmdline
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 26 Nov 2018 08:45:05 +0100
+
 syslinux-themes-max (10.0max1) max; urgency=medium
 
   * Build in MAX 10.0
