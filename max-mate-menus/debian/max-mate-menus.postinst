@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# always restart mate panel
+killall -HUP mate-panel 2>/dev/null || true
+
+if [ "$1" = "triggered" ]; then
+    exit 0
+fi
+
+#DEBHELPER#
