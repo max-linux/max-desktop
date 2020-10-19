@@ -4,11 +4,11 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/rules/aa-debhelper.mk
 
 clean::
-	rm -f po/*mo
+	if [ -d po/ ]; then rm -f po/*mo; fi
 #	(cd ktechlab && make clean)
 
 build/max-language-es::
-	find po/ -type f -name "*.po" -exec sh -x -c "N='{}'; msgfmt -v -o \$${N%.po}.mo \$$N" \;
+	if [ -d po/ ]; then (find po/ -type f -name "*.po" -exec sh -x -c "N='{}'; msgfmt -v -o \$${N%.po}.mo \$$N" \;); fi
 
 #	(cd ktechlab && make)
 
