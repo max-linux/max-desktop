@@ -3,7 +3,7 @@ Section: devel
 Priority: optional
 Maintainer: Torsten Werner <twerner@debian.org>
 Build-Depends: cdbs,
- debhelper (>= 9~),
+ debhelper,
  dh-buildinfo
 Standards-Version: 3.9.0
 
