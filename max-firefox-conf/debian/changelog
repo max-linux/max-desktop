@@ -1,3 +1,10 @@
+max-firefox-conf (11.0.max1) max; urgency=medium
+
+  * Build in MAX 11.0
+  * Remove Recommends: max-java-plugin
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 23 Oct 2020 16:54:13 +0200
+
 max-firefox-conf (10.0.max2) max; urgency=medium
 
   * Remove mozplugger from Depends

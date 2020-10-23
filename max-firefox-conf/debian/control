@@ -8,7 +8,6 @@ Standards-Version: 3.8.1
 
 Package: max-firefox-conf
 Architecture: all
-Recommends: max-java-plugin
 Depends: firefox-locale-es, firefox-locale-en,
          apturl,
 	 max-ubufox, firefox
