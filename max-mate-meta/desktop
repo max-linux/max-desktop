@@ -83,7 +83,6 @@ gnome-orca
 gnome-user-docs-es
 gnome-sound-recorder
 gnome-system-tools
-gnome-web-photo
 gparted
 grub2-themes-ubuntu-mate
 gstreamer1.0-alsa
@@ -104,8 +103,7 @@ hwdata
 ideviceinstaller
 ifuse
 im-config
-indicator-application-gtk2
-indicator-sound-gtk2
+indicator-application
 inputattach
 inxi
 iputils-arping
@@ -121,14 +119,13 @@ libcanberra-gtk-module
 libcanberra-gtk3-module
 libcanberra-pulse
 libdvdnav4
-libdvdread4
+libdvdread7
 libfile-mimeinfo-perl
 libgpod-common
 libimobiledevice-utils
 libmtp-runtime
 libnet-dbus-perl
 libnotify-bin
-libp11-kit-gnome-keyring
 libpam-gnome-keyring
 libpaper-utils
 libplist-utils
@@ -278,7 +275,6 @@ xterm
 xul-ext-calendar-timezones
 xul-ext-gdata-provider
 xul-ext-lightning
-max-ubufox
 xzoom
 yelp
 zenity

@@ -1,3 +1,16 @@
+max-mate-meta (11.0.max2) max; urgency=medium
+
+  * Remove:
+     - indicator-application-gtk2
+     - indicator-sound-gtk2
+     - libp11-kit-gnome-keyring
+     - max-ubufox
+     - fwupdate
+     - gnome-web-photo
+     - libdvdread4
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 16 Nov 2020 15:36:33 +0100
+
 max-mate-meta (11.0.max1) max; urgency=medium
 
   * Build in MAX 11.0

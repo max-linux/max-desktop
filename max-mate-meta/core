@@ -79,8 +79,7 @@ hddtemp
 hdparm
 hwdata
 im-config
-indicator-application-gtk2
-indicator-sound-gtk2
+indicator-application
 info
 inputattach
 inxi
@@ -99,7 +98,6 @@ libcanberra-pulse
 libfile-mimeinfo-perl
 libnet-dbus-perl
 libnotify-bin
-libp11-kit-gnome-keyring
 libpam-gnome-keyring
 libpam-systemd
 libpaper-utils
@@ -142,7 +140,6 @@ mate-utils
 max-artwork
 max-mate-default-settings
 max-mate-menus
-max-ubufox
 memtest86+
 mime-support
 mlocate
