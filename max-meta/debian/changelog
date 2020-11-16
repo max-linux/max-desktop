@@ -1,3 +1,13 @@
+max-meta (11.0.max2) max; urgency=medium
+
+  * Remove:
+    - indicator-application-gtk2
+    - indicator-sound-gtk2
+    - libdvdread4
+    - libp11-kit-gnome-keyring
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 16 Nov 2020 15:40:18 +0100
+
 max-meta (11.0.max1) max; urgency=medium
 
   * Build in MAX 11.0

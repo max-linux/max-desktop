@@ -109,8 +109,7 @@ hwdata
 ideviceinstaller
 ifuse
 im-config
-indicator-application-gtk2
-indicator-sound-gtk2
+indicator-application
 inputattach
 inxi
 iputils-arping
@@ -127,7 +126,7 @@ libcanberra-gtk-module
 libcanberra-gtk3-module
 libcanberra-pulse
 libdvdnav4
-libdvdread4
+libdvdread7
 libfile-mimeinfo-perl
 libgpod-common
 libimobiledevice-utils
@@ -135,7 +134,6 @@ libmtp-runtime
 libnet-dbus-perl
 libnotify-bin
 libnss-mdns
-libp11-kit-gnome-keyring
 libpam-gnome-keyring
 libpaper-utils
 libplist-utils
