@@ -7,8 +7,10 @@ icon-theme='menta'
 monospace-font-name='Monospace 13'
 
 [org.gnome.desktop.wm.preferences:MATE]
+button-layout='menu:minimize,maximize,close'
 theme='Menta'
 titlebar-font='Cantarell Bold 11'
+titlebar-uses-system-font=false
 
 [org.mate.background]
 picture-filename='/usr/share/images/desktop-base/desktop-background'
@@ -21,14 +23,19 @@ print-font='Cantarell 12'
 
 [org.mate.interface]
 icon-theme='menta'
+gtk-decoration-layout='menu:minimize,maximize,close'
 gtk-theme='Menta'
 font-name='Cantarell 11'
 document-font-name='Cantarell 11'
 monospace-font-name='Monospace 13'
 
 [org.mate.Marco.general]
+button-layout='menu:minimize,maximize,close'
 theme='Menta'
 titlebar-font='Cantarell Bold 11'
+
+[org.mate.Marco.global-keybindings]
+switch-panels='<Control><Alt>Tab'
 
 [org.mate.pluma]
 color-scheme='classic'

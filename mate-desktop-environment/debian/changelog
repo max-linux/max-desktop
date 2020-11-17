@@ -1,8 +1,77 @@
-mate-desktop-environment (1:1.20.0+4max1) max; urgency=medium
+mate-desktop-environment (1:1.24.0+1max1) max; urgency=medium
 
-  * Remove caja-gksu from Conflicts
+  * Update from Ubuntu focal
+  * Remove conflicts caja-gksu
 
- -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 15 Oct 2018 13:15:40 +0200
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 17 Nov 2020 12:03:20 +0100
+
+mate-desktop-environment (1.24.0+1) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * debian/10_mate-common.gschema.override:
+    + Correct behaviour of <Mod4>Down keybinding.
+    + Drop <Mod4>+ for launching the screen magnifier; it is not a supported
+      keybinding.
+  * debian/control:
+    + Update to support MATE Desktop 1.24.
+
+  [ Mike Gabriel ]
+  * debian/control:
+    + Add Rules-Requires-Root: field and set it to no.
+    + Bump Standards-Version: to 4.5.0. No changes needed.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 14 Feb 2020 21:13:56 +0100
+
+mate-desktop-environment (1.22.0+2) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * debian/10_mate-common.gschema.override:
+    + Add custom keybindings that a common on other platforms.
+    + Enable auto indentation in Pluma.
+    + Update window tiling keybindings.
+    + Drop common window manager button layouts.
+  * debian/20_mate-debian.gschema.override:
+    + Add WM button layout for Debian.
+    + Set default WM button layout for Marco on Debian.
+  * debian/20_mate-ubuntu.gschema.override:
+    + Add WM button layout for Ubuntu.
+    + Change default sound theme to Yaru.
+    + Set default WM button layout for Marco on Ubuntu.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 02 Sep 2019 16:59:17 +0200
+
+mate-desktop-environment (1.22.0+1) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * Update for MATE Desktop 1.22.
+
+  [ Mike Gabriel ]
+  * debian/{compat,control}:
+    + Use debhelper-compat notation. Bump to DH compat level version 12.
+  * debian/control:
+    + Bump Standards-Version: to 4.4.0. No changes needed.
+    + Make sure mate-system-tools gets wiped off the system when upgrading
+      to recent MATE. (Closes: #910860).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 31 Jul 2019 16:57:16 +0200
+
+mate-desktop-environment (1.20.0+5) unstable; urgency=medium
+
+  [ Alex ARNAUD ]
+  * debian/20_mate-debian.gschema.override:
+    + Restore switch-panels function to make it possible to use panels only with
+      keyboard, for example for blind users (follow-up change for #892748).
+
+  [ Mike Gabriel ]
+  * debian/control:
+    + Update Vcs-*: fields. Package has been migrated to salsa.debian.org.
+    + Bump Standards-Version: to 4.1.4. No changes needed.
+    + Drop pkg-mate-team Alioth mailing list from Uploaders: field.
+    + De-promote caja-share from R: to S:. (Closes: #901775).
+    + Add to R (mate-desktop-environment-extras): gnome-system-tools. (Closes:
+      #873526).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 08 Jul 2018 03:32:48 +0200
 
 mate-desktop-environment (1.20.0+4) unstable; urgency=medium
 

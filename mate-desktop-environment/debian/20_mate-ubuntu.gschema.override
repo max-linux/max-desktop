@@ -7,8 +7,10 @@ icon-theme='Ambiant-MATE'
 monospace-font-name='Ubuntu Mono 13'
 
 [org.gnome.desktop.wm.preferences:MATE]
+button-layout=':minimize,maximize,close'
 theme='Ambiant-MATE'
 titlebar-font='Ubuntu Bold 11'
+titlebar-uses-system-font=false
 
 [org.mate.background]
 picture-filename='/usr/share/backgrounds/ubuntu-mate-common/Green-Wall-Logo.png'
@@ -21,12 +23,14 @@ print-font='Ubuntu 12'
 
 [org.mate.interface]
 icon-theme='Ambiant-MATE'
+gtk-decoration-layout=':minimize,maximize,close'
 gtk-theme='Ambiant-MATE'
 font-name='Ubuntu 11'
 document-font-name='Ubuntu 11'
 monospace-font-name='Ubuntu Mono 13'
 
 [org.mate.Marco.general]
+button-layout=':minimize,maximize,close'
 theme='Ambiant-MATE'
 titlebar-font='Ubuntu Medium 11'
 
@@ -42,7 +46,7 @@ print-font-header-pango='Ubuntu 11'
 print-font-numbers-pango='Ubuntu 8'
 
 [org.mate.sound]
-theme-name='ubuntu'
+theme-name='Yaru'
 
 [org.mate.stickynotes]
 default-font='Ubuntu 10'
