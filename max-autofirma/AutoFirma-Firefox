@@ -7,10 +7,10 @@
 certfile="/usr/share/AutoFirma/AutoFirma.crt"
 certname="AutoFirma ROOT LOCAL"
 
-if [ "$1" = "-all" ]; then 
- userdir=$(find /home/ -maxdepth 2 -name ".mozilla") 
+if [ "$1" = "-all" ]; then
+ userdir=$(find /home/ -maxdepth 2 -name ".mozilla")
 else
- userdir="$HOME/.mozilla" 
+ userdir="$HOME/.mozilla"
 fi
 
 for dir in $userdir
@@ -23,7 +23,7 @@ do
   done
 done
 
-if [ "$1" != "-all" ]; then 
+if [ "$1" != "-all" ]; then
   if [ -x "/usr/bin/zenity" ]; then
     zenity --info --title "AutoFirma" --text "El certificado para usar AutoFirma se ha instalado"
   fi

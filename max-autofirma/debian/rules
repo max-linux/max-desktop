@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-VERSION=1_6_2
+VERSION=1_6_5
 
 %:
 	dh $@
