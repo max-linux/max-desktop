@@ -76,8 +76,6 @@ fonts-noto-unhinted
 fonts-opendyslexic
 foomatic-db-compressed-ppds
 fwupd
-fwupdate
-fwupdate-signed
 galculator
 gdb
 gdebi
@@ -150,15 +148,10 @@ libreoffice-style-human
 libreoffice-writer
 librsvg2-common
 libsasl2-modules
-libtopmenu-client-gtk2-0
-libtopmenu-client-gtk3-0
-libtopmenu-server-gtk2-0
-libtopmenu-server-gtk3-0
 libx11-protocol-perl
 lightdm
 marco
 mate-accessibility-profiles
-mate-applet-topmenu
 mate-applets
 mate-desktop-environment-core
 mate-dock-applet
@@ -220,7 +213,6 @@ pulseaudio-module-bluetooth
 pulseaudio-utils
 python3-aptdaemon
 python3-aptdaemon.gtk3widgets
-qt4-qtconfig
 rfkill
 rhythmbox
 rhythmbox-plugin-cdrecorder
@@ -242,9 +234,6 @@ thunderbird
 tilda
 tlp
 tlp-rdw
-topmenu-gtk-common
-topmenu-gtk2
-topmenu-gtk3
 transmission-gtk
 ttf-ubuntu-font-family
 ubuntu-drivers-common

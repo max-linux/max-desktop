@@ -1,3 +1,20 @@
+max-meta (11.0.max5) max; urgency=medium
+
+  * Remove from max-desktop-mate:
+    - fwupdate
+    - fwupdate-signed
+    - libtopmenu-client-gtk2-0
+    - libtopmenu-client-gtk3-0
+    - libtopmenu-server-gtk2-0
+    - libtopmenu-server-gtk3-0
+    - mate-applet-topmenu
+    - qt4-qtconfig
+    - topmenu-gtk-common
+    - topmenu-gtk2
+    - topmenu-gtk3
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 17 Nov 2020 12:09:50 +0100
+
 max-meta (11.0.max4) max; urgency=medium
 
   * Remove sessioninstaller
