@@ -51,112 +51,112 @@ Description: The Max desktop system (MATE desktop)
  it not be removed.
 
 
-Package: max-desktop-gnome
-Architecture: all
-Multi-Arch: foreign
-Recommends: max-gnome-desktop-environment, ${max-desktop-gnome:Recommends}, max-desktop-common, ${max-desktop-gnome:Depends}
-Provides: max-desktop
-Description: The Max desktop system (GNOME desktop)
- This package depends on all GNOME packages in the Max desktop system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
-
-Package: max-desktop-gnome-deps
-Architecture: all
-Multi-Arch: foreign
-Depends: max-gnome-desktop-environment, max-desktop-gnome, max-desktop-common-deps, ${max-desktop-gnome-deps:Depends}
-Recommends: ${max-desktop-gnome-deps:Recommends}
-Provides: max-desktop
-Description: The Max desktop system (GNOME desktop)
- This package depends on all GNOME packages in the Max desktop system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
-Package: max-desktop-kde
-Architecture: all
-Multi-Arch: foreign
-Recommends: ${max-desktop-kde:Recommends}, max-desktop-common, ${max-desktop-kde:Depends}
-Provides: max-desktop
-Description: The Max desktop system (KDE desktop)
- This package depends on all KDE packages in the Max desktop system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
-Package: max-desktop-kde-deps
-Architecture: all
-Multi-Arch: foreign
-Depends:  max-desktop-kde, max-desktop-common-deps, ${max-desktop-kde-deps:Depends}
-Recommends: ${max-desktop-kde-deps:Recommends}
-Provides: max-desktop
-Description: The Max desktop system (KDE desktop)
- This package depends on all KDE packages in the Max desktop system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
-
-Package: max-desktop-kde-extra
-Architecture: all
-Multi-Arch: foreign
-Depends:  max-desktop-common, ${max-desktop-kde-extra:Depends}
-Recommends: ${max-desktop-kde-extra:Recommends}
-Description: The Max desktop system (KDE desktop extra apps)
- This package depends on all KDE extra packages in the Max desktop system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
-
-Package: max-desktop-xfce
-Architecture: all
-Multi-Arch: foreign
-Recommends: ${max-desktop-xfce:Recommends}, max-desktop-common, ${max-desktop-xfce:Depends}
-Provides: max-desktop
-Description: The Max desktop system (Xfce4 desktop)
- This package depends on all Xfce4 packages in the Max desktop system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
-Package: max-desktop-xfce-deps
-Architecture: all
-Multi-Arch: foreign
-Depends: max-desktop-xfce, max-desktop-common-deps, ${max-desktop-xfce-deps:Depends}
-Recommends: ${max-desktop-xfce-deps:Recommends}
-Provides: max-desktop
-Description: The Max desktop system (Xfce4 desktop)
- This package depends on all Xfce4 packages in the Max desktop system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
-Package: max-desktop-lxde
-Architecture: all
-Multi-Arch: foreign
-Recommends: ${max-desktop-lxde:Recommends}, ${max-desktop-lxde:Depends}
-Depends: max-libreoffice-core
-Provides: max-desktop
-Description: The Max desktop system (LXDE desktop)
- This package depends on all LXDE packages in the Max desktop system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
-Package: max-desktop-lxde-deps
-Architecture: all
-Multi-Arch: foreign
-Depends: max-desktop-lxde, ${max-desktop-lxde-deps:Depends}
-Recommends: ${max-desktop-lxde-deps:Recommends}
-Provides: max-desktop
-Description: The Max desktop system (LXDE desktop)
- This package depends on all LXDE packages in the Max desktop system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
+#Package: max-desktop-gnome
+#Architecture: all
+#Multi-Arch: foreign
+#Recommends: max-gnome-desktop-environment, ${max-desktop-gnome:Recommends}, max-desktop-common, ${max-desktop-gnome:Depends}
+#Provides: max-desktop
+#Description: The Max desktop system (GNOME desktop)
+# This package depends on all GNOME packages in the Max desktop system
+# .
+# It is also used to help ensure proper upgrades, so it is recommended that
+# it not be removed.
+#
+#
+#Package: max-desktop-gnome-deps
+#Architecture: all
+#Multi-Arch: foreign
+#Depends: max-gnome-desktop-environment, max-desktop-gnome, max-desktop-common-deps, ${max-desktop-gnome-deps:Depends}
+#Recommends: ${max-desktop-gnome-deps:Recommends}
+#Provides: max-desktop
+#Description: The Max desktop system (GNOME desktop)
+# This package depends on all GNOME packages in the Max desktop system
+# .
+# It is also used to help ensure proper upgrades, so it is recommended that
+# it not be removed.
+#
+#Package: max-desktop-kde
+#Architecture: all
+#Multi-Arch: foreign
+#Recommends: ${max-desktop-kde:Recommends}, max-desktop-common, ${max-desktop-kde:Depends}
+#Provides: max-desktop
+#Description: The Max desktop system (KDE desktop)
+# This package depends on all KDE packages in the Max desktop system
+# .
+# It is also used to help ensure proper upgrades, so it is recommended that
+# it not be removed.
+#
+#Package: max-desktop-kde-deps
+#Architecture: all
+#Multi-Arch: foreign
+#Depends:  max-desktop-kde, max-desktop-common-deps, ${max-desktop-kde-deps:Depends}
+#Recommends: ${max-desktop-kde-deps:Recommends}
+#Provides: max-desktop
+#Description: The Max desktop system (KDE desktop)
+# This package depends on all KDE packages in the Max desktop system
+# .
+# It is also used to help ensure proper upgrades, so it is recommended that
+# it not be removed.
+#
+#
+#Package: max-desktop-kde-extra
+#Architecture: all
+#Multi-Arch: foreign
+#Depends:  max-desktop-common, ${max-desktop-kde-extra:Depends}
+#Recommends: ${max-desktop-kde-extra:Recommends}
+#Description: The Max desktop system (KDE desktop extra apps)
+# This package depends on all KDE extra packages in the Max desktop system
+# .
+# It is also used to help ensure proper upgrades, so it is recommended that
+# it not be removed.
+#
+#
+#Package: max-desktop-xfce
+#Architecture: all
+#Multi-Arch: foreign
+#Recommends: ${max-desktop-xfce:Recommends}, max-desktop-common, ${max-desktop-xfce:Depends}
+#Provides: max-desktop
+#Description: The Max desktop system (Xfce4 desktop)
+# This package depends on all Xfce4 packages in the Max desktop system
+# .
+# It is also used to help ensure proper upgrades, so it is recommended that
+# it not be removed.
+#
+#Package: max-desktop-xfce-deps
+#Architecture: all
+#Multi-Arch: foreign
+#Depends: max-desktop-xfce, max-desktop-common-deps, ${max-desktop-xfce-deps:Depends}
+#Recommends: ${max-desktop-xfce-deps:Recommends}
+#Provides: max-desktop
+#Description: The Max desktop system (Xfce4 desktop)
+# This package depends on all Xfce4 packages in the Max desktop system
+# .
+# It is also used to help ensure proper upgrades, so it is recommended that
+# it not be removed.
+#
+#Package: max-desktop-lxde
+#Architecture: all
+#Multi-Arch: foreign
+#Recommends: ${max-desktop-lxde:Recommends}, ${max-desktop-lxde:Depends}
+#Depends: max-libreoffice-core
+#Provides: max-desktop
+#Description: The Max desktop system (LXDE desktop)
+# This package depends on all LXDE packages in the Max desktop system
+# .
+# It is also used to help ensure proper upgrades, so it is recommended that
+# it not be removed.
+#
+#Package: max-desktop-lxde-deps
+#Architecture: all
+#Multi-Arch: foreign
+#Depends: max-desktop-lxde, ${max-desktop-lxde-deps:Depends}
+#Recommends: ${max-desktop-lxde-deps:Recommends}
+#Provides: max-desktop
+#Description: The Max desktop system (LXDE desktop)
+# This package depends on all LXDE packages in the Max desktop system
+# .
+# It is also used to help ensure proper upgrades, so it is recommended that
+# it not be removed.
 
 Package: max-server
 Architecture: all
@@ -167,7 +167,6 @@ Description: The Max server system
  .
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
-
 
 Package: max-server-deps
 Architecture: all
@@ -261,45 +260,45 @@ Description: The Max desktop profesor metapackage
  It is also used to help ensure proper upgrades, so it is recommended that
  it not be removed.
 
-Package: max-nanomax
-Architecture: all
-Multi-Arch: foreign
-Recommends: ${max-nanomax:Depends}
-Description: The Max nanoMaX metapackage
- This package depends on all nanomax installed packages and live-system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
-Package: max-nanomax-deps
-Architecture: all
-Multi-Arch: foreign
-Depends: max-nanomax, ${max-nanomax-deps:Depends}
-Description: The Max nanoMaX metapackage
- This package depends on all nanomax installed packages and live-system
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
-Package: max-servidor
-Architecture: all
-Multi-Arch: foreign
-Recommends: max-server
-Description: The Max server metapackage
- This package depends on max-server
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
-
-Package: max-servidor-deps
-Architecture: all
-Multi-Arch: foreign
-Depends: max-servidor, max-server
-Description: The Max server metapackage
- This package depends on max-server
- .
- It is also used to help ensure proper upgrades, so it is recommended that
- it not be removed.
+#Package: max-nanomax
+#Architecture: all
+#Multi-Arch: foreign
+#Recommends: ${max-nanomax:Depends}
+#Description: The Max nanoMaX metapackage
+# This package depends on all nanomax installed packages and live-system
+# .
+# It is also used to help ensure proper upgrades, so it is recommended that
+# it not be removed.
+#
+#Package: max-nanomax-deps
+#Architecture: all
+#Multi-Arch: foreign
+#Depends: max-nanomax, ${max-nanomax-deps:Depends}
+#Description: The Max nanoMaX metapackage
+# This package depends on all nanomax installed packages and live-system
+# .
+# It is also used to help ensure proper upgrades, so it is recommended that
+# it not be removed.
+#
+#Package: max-servidor
+#Architecture: all
+#Multi-Arch: foreign
+#Recommends: max-server
+#Description: The Max server metapackage
+# This package depends on max-server
+# .
+# It is also used to help ensure proper upgrades, so it is recommended that
+# it not be removed.
+#
+#Package: max-servidor-deps
+#Architecture: all
+#Multi-Arch: foreign
+#Depends: max-servidor, max-server
+#Description: The Max server metapackage
+# This package depends on max-server
+# .
+# It is also used to help ensure proper upgrades, so it is recommended that
+# it not be removed.
 
 Package: max-drivers
 Architecture: all
