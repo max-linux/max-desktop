@@ -9,7 +9,7 @@ Package: max-fonts
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends},
   fonts-essays1743, fonts-junicode,
-  ttf-marvosym,
+#  ttf-marvosym,
 #  fonts-beteckna,
   fonts-adf-verana, fonts-goudybookletter, fonts-linuxlibertine,
   ttf-ancient-fonts, ttf-engadget,
