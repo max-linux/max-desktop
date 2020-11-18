@@ -1,3 +1,12 @@
+max-meta (11.0.max6) max; urgency=medium
+
+  * Remove kde-l10n-es, freshplayerplugin|flashplugin-installer,
+    gstreamer1.0-fluendo-mp3
+  * Update name mscore => musescore3
+  * Update khelpcenter4 => khelpcenter
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 18 Nov 2020 10:11:42 +0100
+
 max-meta (11.0.max5) max; urgency=medium
 
   * Remove from max-desktop-mate:
