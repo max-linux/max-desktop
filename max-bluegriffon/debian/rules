@@ -3,7 +3,8 @@
 DH_VERBOSE=1
 
 #URL=http://bluegriffon.org/freshmeat/3.0.1/bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb
-URL=http://localhost/remote-files/bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb
+#URL=http://localhost/remote-files/bluegriffon-3.0.1.Ubuntu16.04-x86_64.deb
+URL=http://bluegriffon.org/freshmeat/3.1/bluegriffon-3.1.Ubuntu18.04-x86_64.deb
 
 
 %:
@@ -27,3 +28,6 @@ override_dh_auto_build:
 override_dh_auto_install:
 	dh_install
 
+
+override_dh_strip_nondeterminism:
+	dh_strip_nondeterminism || true

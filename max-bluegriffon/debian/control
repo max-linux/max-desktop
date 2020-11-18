@@ -10,7 +10,8 @@ Build-Depends: debhelper (>= 9),
                libcairo2-dev,
                libx11-xcb-dev,
                libxt6,
-               libasound2
+               libasound2,
+               wget
 Standards-Version: 3.9.3
 Homepage: http://bluegriffon.org/
 
