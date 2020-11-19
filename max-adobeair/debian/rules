@@ -17,7 +17,7 @@ override_dh_clean:
 override_dh_auto_build:
 	if [ ! -d build2 ]; then \
 		mkdir -p build2/opt/adobe-air-sdk ;\
-		( cd build2 && wget $(SDK) $(AIR) && tar -jxvf AdobeAIRSDK.tbz2 -C opt/adobe-air-sdk && tar -zxvf adobe-air.tar.gz -C opt/adobe-air-sdk ); \
+		( cd build2 && wget --no-check-certificate $(SDK) $(AIR) && tar -jxvf AdobeAIRSDK.tbz2 -C opt/adobe-air-sdk && tar -zxvf adobe-air.tar.gz -C opt/adobe-air-sdk ); \
         fi
 
 	chmod +x build2/opt/adobe-air-sdk/adobe-air/adobe-air

@@ -14,7 +14,9 @@ Build-Depends: debhelper (>= 7), wget,
                libnss-mdns,
                libnss3,
                libhal1-flash,
-               libqt3-mt, kwalletmanager
+               libqt3-mt,
+               libncurses5, libncurses5-dev,
+#               kwalletmanager
 Standards-Version: 3.8.3
 Homepage: https://helpx.adobe.com/air/kb/archived-air-sdk-version.html
 
