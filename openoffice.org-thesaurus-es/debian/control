@@ -5,13 +5,13 @@ Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
 Build-Depends-Indep: debhelper (>= 7.0.0), cdbs, libmythes-dev
 Standards-Version: 3.8.4
 
-Package: openoffice.org-thesaurus-es
-Architecture: all
-Depends: openoffice.org-core (>= 1.9) | language-support-es, dictionaries-common (>= 0.10) | openoffice.org-updatedicts, ${misc:Depends}
-Conflicts: openoffice.org (<< 1.9), libreoffice-thesaurus-es
-Description: Spanish Thesaurus for LibreOffice | OpenOffice.org
- This package contains an Spanish thesaurus for use with the
- LibreOffice | OpenOffice.org office suite.
+#Package: openoffice.org-thesaurus-es
+#Architecture: all
+#Depends: openoffice.org-core (>= 1.9) | language-support-es, dictionaries-common (>= 0.10) | openoffice.org-updatedicts, ${misc:Depends}
+#Conflicts: openoffice.org (<< 1.9), libreoffice-thesaurus-es
+#Description: Spanish Thesaurus for LibreOffice | OpenOffice.org
+# This package contains an Spanish thesaurus for use with the
+# LibreOffice | OpenOffice.org office suite.
 
 Package: libreoffice-thesaurus-es
 Architecture: all
