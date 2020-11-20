@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# MAX 11
+exit 0
+
 if grep -q sudo /etc/dbus-1/system.d/org.freedesktop.NetworkManager.conf; then
   exit 0
 fi
