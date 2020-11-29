@@ -169,7 +169,7 @@ apt-get $APT_OPTS update || ERROR=1
 apt-get $APT_OPTS -f install
 apt-get $APT_OPTS upgrade || ERROR=1
 apt-get $APT_OPTS dist-upgrade || ERROR=1
-apt-get $APT_OPTS remove --purge syslinux-themes-max10 gfxboot-theme-ubuntu || ERROR=1
+apt-get $APT_OPTS remove --purge syslinux-themes-max11 gfxboot-theme-ubuntu || ERROR=1
 apt-get $APT_OPTS autoremove --purge || ERROR=1
 apt-get clean
 rm -f /etc/resolv.conf

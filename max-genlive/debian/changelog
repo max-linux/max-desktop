@@ -1,3 +1,10 @@
+max-genlive (11.0.max1) max; urgency=medium
+
+  * Build in MAX 11.0
+  * Use Ubuntu focal repos, change max10 => max11
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 29 Nov 2020 17:46:18 +0100
+
 max-genlive (10.0.max20) max; urgency=medium
 
   * Remove Thai fonts, clean /run chroot

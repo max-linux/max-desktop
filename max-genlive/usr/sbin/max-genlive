@@ -13,20 +13,20 @@ created=$(date '+%Y%m%d')
 
 
 DISTRO=bionic
-DISTRO_VERSION="18.04"
+DISTRO_VERSION="20.04"
 ARCH=i386
 NANOARCH=i386
-MAX_VERSION="10.0-final"
-MAX_VOLID="MAX_10_${created}"
+MAX_VERSION="11.0-final"
+MAX_VOLID="MAX_11_${created}"
 IMAGE_NAME="MAX-${MAX_VERSION}"
 LINUX_IMAGE="max-linux"
 LINUX_HEADERS="max-linux-headers"
 XSERVER_XORG="xserver-xorg"
-MAXHOSTNAME=max10
+MAXHOSTNAME=max11
 INSTALL_MOODLE=no
 MIRRORMAX="max.educa.madrid.org"
-SYSLINUX_THEME_VERSION="max10"
-REPODIR="max10"
+SYSLINUX_THEME_VERSION="max11"
+REPODIR="max11"
 
 ## Create a 12.04 with trusty kernel and Xorg
 #LINUX_IMAGE="linux-image-generic-lts-trusty max-linux"
