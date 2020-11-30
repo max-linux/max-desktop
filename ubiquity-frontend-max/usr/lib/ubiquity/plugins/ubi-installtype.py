@@ -119,12 +119,12 @@ class PageGtk(PageBase):
         self.hostname_error_widget = builder.get_object('hostname_error')
 
         self.sendinfo_widget = builder.get_object('sendinfo_check')
-        
+
         self.install_vbox = builder.get_object('install_vbox')
         self.scrolledwin = builder.get_object('install_scrolledwindow')
         self.install_warn_nano = builder.get_object('install_warn_nano')
         self.install_warn_sti = builder.get_object('install_warn_sti')
-        
+
         self.desktop_type_group = builder.get_object('desktop_type_group')
         self.desktop_type_gnome = builder.get_object('desktop_gnome')
         self.desktop_type_xfce = builder.get_object('desktop_xfce')
@@ -145,19 +145,19 @@ class PageGtk(PageBase):
         for radio in self.install_types:
             getattr(self, "install_type_%s"%radio).connect('toggled', self.on_install_type_radio_toggled, radio)
 
-        self.set_hostname('max10')
+        self.set_hostname('max11')
         self.hostname_widget.connect('changed', self.on_hostname_changed)
         self.hostname_error_widget.hide()
 
         self.plugin_widgets = self.page
-        
+
         self.sti=False
         self.get_test_sti()
 
         self.sendinfo_widget.connect('toggled', self.on_sendinfo_toggled)
         # by default enabled
         os.popen("sudo touch /tmp/sendinfo")
-        
+
         if os.path.isfile("/cdrom/casper/nanomax"):
             self.install_type_escritorio.set_sensitive(False)
             self.install_type_profesor.set_sensitive(False)
@@ -298,7 +298,7 @@ class Page(plugin.Plugin):
                 syslog.syslog("DEBUG: %s"%line.strip())
             # quit when done
             self.quit_installer()
-        
+
         plugin.Plugin.ok_handler(self)
 
     def quit_installer(self):

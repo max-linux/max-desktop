@@ -23,6 +23,7 @@ from __future__ import print_function
 
 import gzip
 import io
+import itertools
 import os
 import platform
 import pwd
@@ -36,7 +37,7 @@ import textwrap
 import traceback
 
 import apt_pkg
-from apt.cache import Cache
+from apt.cache import Cache, FetchFailedException
 import debconf
 
 sys.path.insert(0, '/usr/lib/ubiquity')
@@ -93,6 +94,7 @@ class Install(install_misc.InstallBase):
             write=io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8'))
 
         self.kernel_version = platform.release()
+        self.re_kernel_version = re.compile(r'^linux-image-\d.*')
 
         # Get langpacks from install
         self.langpacks = []
@@ -222,6 +224,9 @@ class Install(install_misc.InstallBase):
         else:
             self.install_extras()
 
+        # Configure zsys
+        self.configure_zsys()
+
         self.next_region()
         self.db.progress('INFO', 'ubiquity/install/bootloader')
         self.copy_mok()
@@ -331,12 +336,12 @@ class Install(install_misc.InstallBase):
         cache = Cache()
 
         # Python standard library.
-        re_minimal = re.compile('^python\d+\.\d+-minimal$')
+        re_minimal = re.compile(r'^python\d+\.\d+-minimal$')
         python_installed = sorted([
             pkg[:-8] for pkg in cache.keys()
             if re_minimal.match(pkg) and cache[pkg].is_installed])
         for python in python_installed:
-            re_file = re.compile('^/usr/lib/%s/.*\.py$' % python)
+            re_file = re.compile(r'^/usr/lib/%s/.*\.py$' % python)
             files = [
                 f for f in cache['%s-minimal' % python].installed_files
                 if (re_file.match(f) and
@@ -687,7 +692,7 @@ class Install(install_misc.InstallBase):
             return None
         for dep in dependencies:
             name = dep[0].target_pkg.name
-            if name.startswith('linux-image-2.'):
+            if self.re_kernel_version.match(name):
                 return name
             elif name.startswith('linux-'):
                 return self.traverse_for_kernel(cache, name)
@@ -724,7 +729,7 @@ class Install(install_misc.InstallBase):
                     if kernel.startswith('linux-image-2.'):
                         new_kernel_pkg = kernel
                         new_kernel_version = kernel[12:]
-                    elif kernel.startswith('linux-generic-'):
+                    elif kernel.startswith('linux-'):
                         # Traverse dependencies to find the real kernel image.
                         cache = Cache()
                         kernel = self.traverse_for_kernel(cache, kernel)
@@ -773,27 +778,6 @@ class Install(install_misc.InstallBase):
         self.db.progress('SET', 5)
         self.db.progress('STOP')
 
-    def get_resume_partition(self):
-        biggest_size = 0
-        biggest_partition = None
-        try:
-            with open('/proc/swaps') as swaps:
-                for line in swaps:
-                    words = line.split()
-                    if words[1] != 'partition':
-                        continue
-                    if not os.path.exists(words[0]):
-                        continue
-                    if words[0].startswith('/dev/zram'):
-                        continue
-                    size = int(words[2])
-                    if size > biggest_size:
-                        biggest_size = size
-                        biggest_partition = words[0]
-        except Exception:
-            return None
-        return biggest_partition
-
     def configure_hardware(self):
         """Reconfigure several hardware-specific packages.
 
@@ -820,29 +804,6 @@ class Install(install_misc.InstallBase):
         if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
             script += '-oem'
         misc.execute(script)
-
-        resume = self.get_resume_partition()
-        if resume is not None:
-            resume_uuid = None
-            try:
-                resume_uuid = subprocess.Popen(
-                    ['block-attr', '--uuid', resume],
-                    stdout=subprocess.PIPE,
-                    universal_newlines=True).communicate()[0].rstrip('\n')
-            except OSError:
-                pass
-            if resume_uuid:
-                resume = "UUID=%s" % resume_uuid
-            if os.path.exists(self.target_file('etc/initramfs-tools/conf.d')):
-                configdir = self.target_file('etc/initramfs-tools/conf.d')
-            elif os.path.exists(self.target_file('etc/mkinitramfs/conf.d')):
-                configdir = self.target_file('etc/mkinitramfs/conf.d')
-            else:
-                configdir = None
-            if configdir is not None:
-                resume_path = os.path.join(configdir, 'resume')
-                with open(resume_path, 'w') as configfile:
-                    print("RESUME=%s" % resume, file=configfile)
 
         osextras.unlink_force(self.target_file('etc/popularity-contest.conf'))
         try:
@@ -888,10 +849,6 @@ class Install(install_misc.InstallBase):
                     'libpaper1',
                     'ssl-cert']
         arch, subarch = install_misc.archdetect()
-
-        # this postinst installs EFI application and cleans old entries
-        if arch in ('amd64', 'i386') and subarch == 'efi':
-            packages.append('fwupdate')
 
         try:
             for package in packages:
@@ -969,14 +926,15 @@ class Install(install_misc.InstallBase):
 
         inst_boot = self.db.get('ubiquity/install_bootloader')
         if inst_boot == 'true' and 'UBIQUITY_NO_BOOTLOADER' not in os.environ:
-            binds = ("/proc", "/sys", "/dev", "/run")
+            binds = ("/proc", "/sys", "/dev", "/run",
+                     "/sys/firmware/efi/efivars")
             for bind in binds:
                 misc.execute('mount', '--bind', bind, self.target + bind)
 
             arch, subarch = install_misc.archdetect()
 
             try:
-                if arch in ('amd64', 'i386'):
+                if arch in ('amd64', 'arm64', 'i386'):
                     from ubiquity.components import grubinstaller
                     while 1:
                         dbfilter = grubinstaller.GrubInstaller(None, self.db)
@@ -1001,21 +959,6 @@ class Install(install_misc.InstallBase):
                                 self.db.set('grub-installer/bootdev', response)
                         else:
                             break
-                elif (arch in ('armel', 'armhf') and
-                      subarch in ('omap', 'omap4', 'mx5')):
-                    from ubiquity.components import flash_kernel
-                    dbfilter = flash_kernel.FlashKernel(None, self.db)
-                    ret = dbfilter.run_command(auto_process=True)
-                    if ret != 0:
-                        raise install_misc.InstallStepError(
-                            "FlashKernel failed with code %d" % ret)
-                elif arch == 'powerpc':
-                    from ubiquity.components import yabootinstaller
-                    dbfilter = yabootinstaller.YabootInstaller(None, self.db)
-                    ret = dbfilter.run_command(auto_process=True)
-                    if ret != 0:
-                        raise install_misc.InstallStepError(
-                            "YabootInstaller failed with code %d" % ret)
                 else:
                     raise install_misc.InstallStepError(
                         "No bootloader installer found")
@@ -1025,6 +968,12 @@ class Install(install_misc.InstallBase):
 
             for bind in binds:
                 misc.execute('umount', '-f', self.target + bind)
+
+    def configure_zsys(self):
+        """ Configure zsys """
+        use_zfs = self.db.get('ubiquity/use_zfs')
+        if use_zfs:
+            misc.execute_root('/usr/share/ubiquity/zsys-setup', 'finalize')
 
     def copy_mok(self):
         if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
@@ -1073,6 +1022,12 @@ class Install(install_misc.InstallBase):
 
         with cache.actiongroup():
             install_misc.get_remove_list(cache, to_remove, recursive)
+
+        with cache.actiongroup():
+            for cachedpkg in cache:
+                if cachedpkg.is_auto_removable and not cachedpkg.marked_delete:
+                    syslog.syslog("Autopurge %s" % cachedpkg.name)
+                    cachedpkg.mark_delete(auto_fix=False, purge=True)
 
         self.db.progress('SET', 1)
         self.progress_region(1, 5)
@@ -1206,10 +1161,13 @@ class Install(install_misc.InstallBase):
             self.verify_language_packs()
 
     def install_restricted_extras(self):
+        packages = []
         if self.db.get('ubiquity/use_nonfree') == 'true':
             self.db.progress('INFO', 'ubiquity/install/nonfree')
-            packages = self.db.get('ubiquity/nonfree_package').split()
-            self.do_install(packages)
+            packages.extend(self.db.get('ubiquity/nonfree_package').split())
+        # also install recorded non-free packages
+        packages.extend(install_misc.query_recorded_installed())
+        self.do_install(packages)
 
     def install_extras(self):
         """Try to install packages requested by installer components."""
@@ -1226,7 +1184,48 @@ class Install(install_misc.InstallBase):
         if not found_cdrom:
             os.rename("%s.apt-setup" % sources_list, sources_list)
 
-        self.do_install(install_misc.query_recorded_installed())
+        # this will install free & non-free things, but not things
+        # that have multiarch Depends or Recommends. Instead, those
+        # will be installed by install_restricted_extras() later
+        # because this function runs before i386 foreign arch is
+        # enabled
+        cache = Cache()
+        filtered_extra_packages = install_misc.query_recorded_installed()
+        for package in filtered_extra_packages.copy():
+            pkg = cache.get(package)
+            if not pkg:
+                continue
+            candidate = pkg.candidate
+            dependencies = candidate.dependencies + candidate.recommends
+            all_deps = itertools.chain.from_iterable(dependencies)
+            for dep in all_deps:
+                if ':' in dep.name:
+                    filtered_extra_packages.remove(package)
+                    break
+
+        self.do_install(filtered_extra_packages)
+
+        if self.db.get('ubiquity/install_oem') == 'true':
+            try:
+                # If we installed any OEM metapackages, we should try to update /
+                # upgrade them to their versions in the OEM archive.
+                with open('/run/ubuntu-drivers-oem.autoinstall', 'r') as f:
+                    oem_pkgs = set(f.read().splitlines())
+                    for oem_pkg in oem_pkgs.copy():
+                        target_sources_list = self.target_file("etc/apt/sources.list.d/{}.list".format(oem_pkg))
+                        if not os.path.exists(target_sources_list):
+                            continue
+
+                        try:
+                            cache.update(sources_list=target_sources_list)
+                            cache.open()
+                        except FetchFailedException:
+                            syslog.syslog("Failed to apt update {}".format(target_sources_list))
+                            oem_pkgs.discard(oem_pkg)
+                    if oem_pkgs:
+                        self.do_install(oem_pkgs)
+            except FileNotFoundError:
+                pass
 
         if found_cdrom:
             os.rename("%s.apt-setup" % sources_list, sources_list)
@@ -1459,8 +1458,10 @@ class Install(install_misc.InstallBase):
 
         arch, subarch = install_misc.archdetect()
 
-        if arch in ('amd64', 'i386'):
-            for pkg in ('grub', 'grub-pc', 'grub-efi', 'grub-efi-amd64',
+        if arch in ('amd64', 'arm64', 'i386'):
+            for pkg in ('grub', 'grub-efi', 'grub-efi-amd64',
+                        'grub-efi-arm64', 'grub-efi-arm64-signed',
+                        'flash-kernel', 'aarch64-laptops-support',
                         'grub-efi-amd64-signed', 'shim-signed', 'mokutil',
                         'lilo'):
                 if pkg not in keep:
@@ -1484,7 +1485,8 @@ class Install(install_misc.InstallBase):
             cache = self.restricted_cache
             for pkg in cache.keys():
                 if (cache[pkg].is_installed and
-                        cache[pkg].section.startswith('restricted/')):
+                        cache[pkg].candidate.section.startswith(
+                            'restricted/')):
                     difference.add(pkg)
             del cache
 

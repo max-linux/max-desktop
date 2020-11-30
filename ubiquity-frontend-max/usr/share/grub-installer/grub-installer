@@ -57,6 +57,9 @@ umount_on_exit () {
 	fi
 }
 
+# XXX cjwatson 2019-03-25: This is all far too complicated and fragile, and
+# should be replaced with in-target or similar.
+
 # Ensure proc is mounted in all the $chroot calls;
 # needed for RAID+LVM for example
 initial_proc_contents="$(ls $ROOT/proc)"
@@ -71,6 +74,12 @@ fi
 
 if [ "$(udpkg --print-os)" = linux ] && [ -z "$(ls $ROOT/sys)" ]; then
 	mount -t sysfs sysfs $ROOT/sys && umount_on_exit /sys
+fi
+
+# On Linux, we need /run in the chroot to work around
+# https://bugs.debian.org/918590.
+if [ "$(udpkg --print-os)" = "linux" ] && [ ! -d "$ROOT/run/udev" ]; then
+	mount --bind /run $ROOT/run
 fi
 
 get_serial_console() {
@@ -232,9 +241,17 @@ is_removable () {
 		return
 	fi
 	if type udevadm >/dev/null 2>&1; then
-		bus="$(udevadm info -q env -n $removabledevice)"
+		if [ "$bootfstype" = "zfs" ] || [ "$rootfstype" = "zfs" ]; then
+			bus="$(udevadm info -q env -n $removabledevice || true)"
+		else
+			bus="$(udevadm info -q env -n $removabledevice)"
+		fi
 	else
-		bus="$(udevinfo -q env -n $removabledevice)"
+		if [ "$bootfstype" = "zfs" ] || [ "$rootfstype" = "zfs" ]; then
+			bus="$(udevinfo -q env -n $removabledevice || true)"
+		else
+			bus="$(udevinfo -q env -n $removabledevice)"
+		fi
 	fi
 	bus="$(echo "$bus" | grep ^ID_BUS= | sed 's/^ID_BUS=//')"
 	case $bus in
@@ -1247,7 +1264,7 @@ fi
 db_progress STEP 1
 db_progress INFO grub-installer/progress/step_config_loader
 
-if [ "$bootfstype" = "zfs" ] || [ "$rootfstype" = "zfs" ] ; then
+if [ "$bootfstype" = "zfs" ] || [ "$rootfstype" = "zfs" ]  && [ -f "/boot/zfs/zpool.cache" ]; then
 	# Required by update-grub on ZFS
 	mkdir -p $ROOT/boot/zfs
 	cp /boot/zfs/zpool.cache $ROOT/boot/zfs/
@@ -1600,3 +1617,11 @@ fi
 
 db_progress STEP 1
 db_progress STOP
+
+if [ "$(udpkg --print-os)" = "linux" ] && ! umount $ROOT/run; then
+	info "Failed to unmount /run in $ROOT"
+fi
+if ! umount $ROOT/proc; then
+	info "Failed to unmount /proc in $ROOT"
+fi
+

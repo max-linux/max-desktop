@@ -15,7 +15,7 @@ else
 	log=
 fi
 
-. /usr/lib/ubiquity/user-setup/functions.sh
+. /usr/lib/user-setup/functions.sh
 
 # Set a password, via chpasswd.
 # Use a heredoc rather than echo, to avoid the password
@@ -202,6 +202,7 @@ if [ "$RET" = true ] && ! is_system_user; then
 		ENCRYPT_HOME_OPT=
 	fi
 
+	umountproc=false
 	umountsys=false
 	if [ -n "$ENCRYPT_HOME_OPT" ]; then
 		if [ ! -e $ROOT/sys/kernel ]; then
@@ -210,6 +211,10 @@ if [ "$RET" = true ] && ! is_system_user; then
 		fi
 		mkdir -p $ROOT/dev/shm
 		$log $chroot $ROOT mount -t tmpfs tmpfs /dev/shm
+		if [ ! -e $ROOT/proc/cmdline ]; then
+			$log $chroot $ROOT mount -t proc proc /proc
+			umountproc=:
+		fi
 	fi
 	if [ -x $ROOT/usr/sbin/adduser ]; then
 		$log $chroot $ROOT adduser --disabled-password --gecos "$RET" $UIDOPT $ENCRYPT_HOME_OPT "$USER" >/dev/null || true
@@ -227,6 +232,9 @@ if [ "$RET" = true ] && ! is_system_user; then
 			$log $chroot $ROOT umount /sys
 		fi
 		$log $chroot $ROOT umount /dev/shm
+		if $umountproc; then
+			$log $chroot $ROOT umount /proc
+		fi
 	fi
 
 	if [ "$HOME_EXISTED" ]; then
@@ -309,7 +317,7 @@ AutomaticLogin=$USER\n"
 
 			if $chroot $ROOT [ -f /usr/bin/sddm ]; then
 				# Configure SDDM autologin with an appropiate session
-				$log $chroot $ROOT /bin/bash -c "cat > /etc/sddm.conf" << EOF
+				$log $chroot $ROOT /bin/sh -c "cat > /etc/sddm.conf" << EOF
 [Autologin]
 User=$USER
 Session=PLACEHOLDER

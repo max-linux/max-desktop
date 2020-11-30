@@ -19,9 +19,11 @@
 
 from __future__ import print_function
 
+import glob
 import os
 import subprocess
 import sys
+import syslog
 
 from ubiquity import i18n, misc, osextras, plugin, upower
 from ubiquity.install_misc import (archdetect, is_secure_boot,
@@ -40,15 +42,24 @@ OEM = False
 
 class PreparePageBase(plugin.PluginUI):
     plugin_title = 'ubiquity/text/prepare_heading_label'
+    download_updates = False
+    download_updates_enabled = False
 
     def __init__(self, *args, **kwargs):
         plugin.PluginUI.__init__(self)
 
     def plugin_set_online_state(self, state):
+        # if we're disabling, remember what it was before so we can re-enable
+        # properly if network comes back
+        if self.prepare_network_connection.get_state() and not state:
+            self.download_updates = self.get_download_updates()
         self.prepare_network_connection.set_state(state)
         self.enable_download_updates(state)
+        self.download_updates_enabled = state
         if not state:
             self.set_download_updates(False)
+        else:
+            self.set_download_updates(self.download_updates)
 
     def set_sufficient_space(self, state, required, free):
         if not state:
@@ -59,6 +70,7 @@ class PreparePageBase(plugin.PluginUI):
         self.prepare_sufficient_space.set_state(state)
 
     def plugin_translate(self, lang):
+        self.rst_title_text = i18n.get_string('rst_header', lang)
         return
 
 
@@ -111,9 +123,16 @@ class PageGtk(PreparePageBase):
 
         self.prepare_page = builder.get_object('stepPrepare')
         self.insufficient_space_page = builder.get_object('stepNoSpace')
+        self.rst_page = builder.get_object('stepRST')
+        self.rst_label = builder.get_object('label_using_rst')
+        self.rst_label.connect('activate-link', self.on_link_clicked)
         self.current_page = self.prepare_page
         self.plugin_widgets = self.prepare_page
-        self.plugin_optional_widgets = [self.insufficient_space_page]
+        self.plugin_optional_widgets = [self.insufficient_space_page,
+                                        self.rst_page]
+
+    def on_link_clicked(self, widget, uri):
+        misc.launch_uri(uri)
 
     def plugin_get_current_page(self):
         return self.current_page
@@ -125,6 +144,22 @@ class PageGtk(PreparePageBase):
         self.label_free_space.set_label(free)
 
         self.controller.go_to_page(self.current_page)
+
+    def show_rst_page(self):
+        for page in self.controller._wizard.pages:
+            if page.module.NAME == NAME:
+                page.title = 'ubiquity/text/rst_header'
+                break
+        self.current_page = self.rst_page
+        self.controller.go_to_page(self.current_page)
+        return True
+
+    def plugin_on_next_clicked(self):
+        if self.current_page != self.rst_page:
+            return
+
+        self.controller._wizard.do_reboot()
+        return True
 
     def set_using_secureboot(self, secureboot):
         self.using_secureboot = secureboot
@@ -306,6 +341,9 @@ class PageKde(PreparePageBase):
         self.set_using_secureboot(False)
         self.plugin_widgets = self.page
 
+    def show_rst_page(self):
+        return False
+
     def show_insufficient_space_page(self, required, free):
         from PyQt5 import QtWidgets
         QtWidgets.QMessageBox.critical(self.page,
@@ -409,12 +447,40 @@ class Page(plugin.Plugin):
             if is_secure_boot():
                 self.ui.set_using_secureboot(True)
 
-        download_updates = self.db.get('ubiquity/download_updates') == 'true'
-        self.ui.set_download_updates(download_updates)
+        self.ui.download_updates = self.db.get('ubiquity/download_updates') == 'true'
+        if self.ui.download_updates_enabled:
+            self.ui.set_download_updates(self.ui.download_updates)
         minimal_install = self.db.get('ubiquity/minimal_install') == 'true'
         self.ui.set_minimal_install(minimal_install)
         self.apply_debconf_branding()
-        self.setup_sufficient_space()
+
+        # wait for it to finish
+        if self.frontend.ubuntu_drivers:
+            self.frontend.ubuntu_drivers.communicate()
+            self.frontend.ubuntu_drivers = None
+
+        # output whether there are OEM packages for this system
+        try:
+            with open('/run/ubuntu-drivers-oem.autoinstall', 'r') as f:
+                syslog.syslog(F'ubuntu-drivers list-oem finished with: "{" ".join(f.read().splitlines())}"')
+        except FileNotFoundError:
+            syslog.syslog("ubuntu-drivers list-oem finished with no available packages. Maybe we need to apt update? "
+                          "Doing that and trying again.")
+            # We only do this when we really have to since it could be slow: apt update & re-run of ubuntu-drivers
+            self.frontend.save_oem_metapackages_list(wait_finished=True)
+            try:
+                with open('/run/ubuntu-drivers-oem.autoinstall', 'r') as f:
+                    syslog.syslog(F'ubuntu-drivers list-oem finished with: "{" ".join(f.read().splitlines())}"')
+            except FileNotFoundError:
+                syslog.syslog("No, we didn't find any OEM packages again.")
+
+        if self.should_show_rst_page():
+            if not self.ui.show_rst_page():
+                self.setup_sufficient_space()
+            else:
+                self.ui.plugin_is_restart = True
+        else:
+            self.setup_sufficient_space()
         command = ['/usr/share/ubiquity/simple-plugins', 'prepare']
         questions = ['ubiquity/use_nonfree']
         return command, questions
@@ -424,6 +490,14 @@ class Page(plugin.Plugin):
         for template in ['ubiquity/text/required_space',
                          'ubiquity/text/free_space']:
             self.db.subst(template, 'RELEASE', release.name)
+
+    def should_show_rst_page(self):
+        search = '/sys/module/ahci/drivers/pci:ahci/*/remapped_nvme'
+        for remapped_nvme in glob.glob(search):
+            with open(remapped_nvme, 'r') as f:
+                if int(f.read()) > 0:
+                    return True
+        return os.environ.get('SHOW_RST_UI', '0') == '1'
 
     def setup_sufficient_space(self):
         # TODO move into prepare.

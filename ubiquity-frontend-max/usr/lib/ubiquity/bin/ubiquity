@@ -35,7 +35,7 @@ sys.path.insert(0, '/usr/lib/ubiquity')
 from ubiquity import im_switch, misc, osextras
 
 
-VERSION = '18.04.14.8'
+VERSION = '20.04.15.2'
 TARGET = '/target'
 LOCKFILE = '/var/lock/ubiquity'
 lock = None
@@ -382,16 +382,21 @@ def unmount_target():
     if not TARGET:
         return
     paths = []
+    pools = set()
     with open('/proc/mounts') as mounts:
         for line in mounts:
-            path = line.split(' ')[1]
+            source, path, fstype = line.split(' ')[:3]
             if path == TARGET or path.startswith(TARGET + '/'):
                 paths.append(path)
+                if fstype == 'zfs':
+                    pools.add(source.split('/')[0])
     paths.sort()
     paths.reverse()
     for path in paths:
         misc.execute_root('fuser', '-cv', path)
         misc.execute_root('umount', path)
+    for pool in pools:
+        misc.execute_root('/sbin/zpool', 'export', pool)
 
 
 def prepend_path(directory):
