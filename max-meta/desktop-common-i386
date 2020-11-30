@@ -24,7 +24,7 @@ automake
 avidemux
 bash-completion
 bc
-bluegriffon
+#bluegriffon
 brltty
 build-essential
 celestia
@@ -61,8 +61,8 @@ foomatic-db-engine
 foomatic-filters
 fortune-mod
 freepats
-fritzing
-fritzing-parts
+#fritzing
+#fritzing-parts
 galternatives
 geda
 geda-doc
@@ -108,7 +108,7 @@ libdvdcss2
 libgl1-mesa-glx
 libgl1-mesa-dri
 libgxps-utils
-librecad
+#librecad
 libtool
 lilypond
 max-linux
@@ -140,8 +140,8 @@ nfs-kernel-server
 nmap
 ntfs-config
 ocrad
-openclipart-png
-openclipart-svg
+#openclipart-png
+#openclipart-svg
 openssh-server
 pmidi
 powermanagement-interface
@@ -165,9 +165,9 @@ simple-scan
 speedcrunch
 starplot
 startupmanager
-stellarium
+#stellarium
+#max-stellarium
 syslinux
-max-stellarium
 step
 synapse
 testdisk

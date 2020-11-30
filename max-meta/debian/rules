@@ -11,12 +11,10 @@ configure/max-desktop::
 	for seed in $(PACKAGES); do \
 		package=max-$$seed; \
 		echo " * Building depends of max-$$seed" ;\
-		(printf "$$package:Depends="; perl -pe 's/\n/, /g'  $$seed-$(DEB_BUILD_ARCH); echo) \
+		(printf "$$package:Depends="; grep -v "^#" $$seed-$(DEB_BUILD_ARCH) | perl -pe 's/\n/, /g'; echo) \
 			>> debian/$$package.substvars; \
-		(printf "$$package-deps:Depends="; perl -pe 's/\n/, /g'  $$seed-$(DEB_BUILD_ARCH); echo) \
+		(printf "$$package-deps:Depends="; grep -v "^#" $$seed-$(DEB_BUILD_ARCH) | perl -pe 's/\n/, /g'; echo) \
 			>> debian/$$package-deps.substvars; \
-		#(printf "$$package:Recommends="; perl -pe 's/\n/, /g'  $$seed-recommends-$(DEB_BUILD_ARCH); echo) \
-		#	>> debian/$$package.substvars; \
 	done
 
 clean::
