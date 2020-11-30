@@ -12,7 +12,7 @@ stamp=$(date '+%Y%m%d_%H%M')
 created=$(date '+%Y%m%d')
 
 
-DISTRO=bionic
+DISTRO=focal
 DISTRO_VERSION="20.04"
 ARCH=i386
 NANOARCH=i386
