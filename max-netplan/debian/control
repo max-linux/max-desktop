@@ -1,0 +1,15 @@
+Source: max-netplan
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.2
+
+Package: max-netplan
+Replaces: netplan.io
+Conflicts: netplan.io
+Provides: netplan.io
+Depends: network-manager
+Architecture: all 
+Description: MAX netplan.io avoid install
+ MAX netplan.io avoid install
