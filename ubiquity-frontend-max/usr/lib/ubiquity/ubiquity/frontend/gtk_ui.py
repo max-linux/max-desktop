@@ -242,7 +242,7 @@ class Wizard(BaseFrontend):
         self.installing = False
         self.installing_no_return = False
         self.partitioned = False
-        self.timezone_set = False
+        self.timezone_set = True
         self.ubuntu_drivers = None
         self.returncode = 0
         self.history = []
