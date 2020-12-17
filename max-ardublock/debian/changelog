@@ -1,6 +1,7 @@
 max-ardublock (0.1max6) max; urgency=medium
 
   * Build in MAX 11.0
+  * Switch maven repo to insecure (non https)
 
  -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 19 Nov 2020 23:59:46 +0100
 

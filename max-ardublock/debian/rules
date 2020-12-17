@@ -13,7 +13,12 @@ override_dh_auto_build:
 #	wget --no-check-certificate http://cloud.github.com/downloads/taweili/ardublock/ardublock-all.jar
 #	curl -L -O http://cloud.github.com/downloads/taweili/ardublock/ardublock-all.jar
 
-	git clone https://github.com/taweili/ardublock
+#	git clone https://github.com/taweili/ardublock
+	# forked project
+	mkdir -p /root/.m2
+	cp debian/maven-settings.xml /root/.m2/settings.xml
+
+	git clone https://github.com/karlTH/ardublock
 	(cd ardublock && ./install_openblocks)
 	(cd ardublock && mvn validate && mvn clean package)
 
