@@ -1,3 +1,9 @@
+max-ca-certificates-dnie (20180411.max4) max; urgency=medium
+
+  * Build in MAX 11.0
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 17 Dec 2020 18:34:00 +0100
+
 max-ca-certificates-dnie (20180411.max3) max; urgency=medium
 
   * Register opensc lib in pkcs11.txt
