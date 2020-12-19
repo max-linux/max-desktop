@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Etcher
+Comment=Flash OS images to SD cards and USB drives, safely and easily.
+Comment[es]=Escribir imágenes de sistemas operativos en tarjetas SD o pendrive.
+Exec=balena-etcher-electron %U
+Terminal=false
+Type=Application
+Icon=balena-etcher-electron
+StartupWMClass=balenaEtcher
+MimeType=x-scheme-handler/etcher;
+Categories=Utility;

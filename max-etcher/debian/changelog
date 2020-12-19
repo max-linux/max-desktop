@@ -1,4 +1,11 @@
-max-ether (1:1.4.6.max1) max; urgency=medium
+max-etcher (1:1.5.113.max1) max; urgency=medium
+
+  * Build in MAX 11.0
+  * Rename to balena-etcher
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 19 Dec 2020 10:52:05 +0100
+
+max-etcher (1:1.4.6.max1) max; urgency=medium
 
   * Initial release
 

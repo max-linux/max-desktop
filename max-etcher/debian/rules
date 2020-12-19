@@ -3,9 +3,9 @@
 
 DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
-VERSION=1.4.6
-#URL=https://github.com/balena-io/etcher/releases/download/v$(VERSION)/etcher-electron_$(VERSION)_amd64.deb
-URL=http://localhost/remote-files/etcher-electron_$(VERSION)_amd64.deb
+VERSION=1.5.113
+URL=https://github.com/balena-io/etcher/releases/download/v$(VERSION)/balena-etcher-electron_$(VERSION)_amd64.deb
+#URL=http://localhost/remote-files/etcher-electron_$(VERSION)_amd64.deb
 
 
 %:
@@ -15,7 +15,7 @@ URL=http://localhost/remote-files/etcher-electron_$(VERSION)_amd64.deb
 override_dh_auto_build:
 	if [ ! -d build ]; then \
 		mkdir build ;\
-		( cd build && wget $(URL) && mv etcher-electron_$(VERSION)_amd64.deb etcher.deb); \
+		( cd build && wget $(URL) && mv balena-etcher-electron_$(VERSION)_amd64.deb etcher.deb); \
 		( cd build && dpkg -x etcher.deb ./ ) ;\
 	fi
 

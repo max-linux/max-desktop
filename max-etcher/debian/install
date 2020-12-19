@@ -1,6 +1,6 @@
 build/usr/*         usr/
-build/opt/Etcher/resources   usr/share/etcher-electron/
 
+build/opt/balenaEtcher/resources    usr/share/balena-etcher-electron/
 
-etcher-electron              usr/bin/
-etcher-electron.desktop      usr/share/applications/
+balena-etcher-electron              usr/bin/
+balena-etcher-electron.desktop      usr/share/applications/

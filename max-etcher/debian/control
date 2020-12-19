@@ -1,4 +1,4 @@
-Source: max-ether
+Source: max-etcher
 Section: max
 Priority: extra
 Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
@@ -6,8 +6,17 @@ Build-Depends: debhelper (>= 8.0.0), wget
 Standards-Version: 3.9.3
 Homepage: https://github.com/balena-io/etcher
 
-Package: etcher-electron
+Package: balena-etcher-electron
 Architecture: all
 Depends: electron, ${shlibs:Depends}, ${misc:Depends}
 Description: Flash OS images to SD cards & USB drives, safely and easily
  Flash OS images to SD cards & USB drives, safely and easily
+
+
+Package: etcher-electron
+Architecture: all
+Depends: balena-etcher-electron
+Description: Flash OS images to SD cards & USB drives, safely and easily
+ Flash OS images to SD cards & USB drives, safely and easily
+ .
+ Upgrade new name: balena-etcher-electron
