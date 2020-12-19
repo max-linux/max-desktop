@@ -14,7 +14,7 @@ else
 endif
 
 export PKG_BASE = electron-v$(CURVER)-linux-$(UPSTREAM_ARCH)
-export PKG_TGZ = $(PKG_BASE).tar.gz
+export PKG_TGZ = $(PKG_BASE).tar.xz
 export PKG_VER = $(CURVER)-linux-$(UPSTREAM_ARCH)
 
 %:
@@ -25,11 +25,11 @@ override_dh_auto_build: get-orig-source
 
 override_dh_install:
 	mkdir -p $(CURDIR)/debian/tmp/$(PKG)
-	tar xvzf $(CURDIR)/packages/$(PKG)_$(PKG_VER).orig.tar.gz --directory $(CURDIR)/debian/tmp/$(PKG)
+	tar xvf $(CURDIR)/packages/$(PKG)_$(PKG_VER).orig.tar.xz --directory $(CURDIR)/debian/tmp/$(PKG)
 	dh_install
 
 override_dh_auto_clean:
-	rm -fr packages/$(PKG)_$(PKG_VER).orig.tar.gz
+	rm -fr packages/$(PKG)_$(PKG_VER).orig.tar.xz
 	rm -fr debian/tmp
 
 override_dh_shlibdeps:

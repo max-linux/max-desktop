@@ -1,13 +1,18 @@
 electron/electron			usr/share/electron/
-electron/*.pak			usr/share/electron/
+electron/chrome-sandbox			usr/share/electron/
+
+electron/*.pak				usr/share/electron/
 electron/icudtl.dat			usr/share/electron/
-electron/libffmpeg.so		usr/share/electron/
-electron/libnode.so			usr/share/electron/
-electron/natives_blob.bin		usr/share/electron/
-electron/snapshot_blob.bin		usr/share/electron/
+
+electron/*.so				usr/share/electron/
+electron/swiftshader/*.so		usr/share/electron/swiftshader/
+
+electron/*.bin				usr/share/electron/
+
 electron/LICENSE			usr/share/electron/
-electron/LICENSES.chromium.html	usr/share/electron/
+electron/LICENSES.chromium.html		usr/share/electron/
 electron/version			usr/share/electron/
-electron/resources/electron.asar	usr/share/electron/resources/
-electron/resources/default_app.asar	usr/share/electron/resources/
-electron/locales/*.pak		usr/share/electron/locales/
+
+electron/resources/*.asar		usr/share/electron/resources/
+
+electron/locales/*.pak			usr/share/electron/locales/
