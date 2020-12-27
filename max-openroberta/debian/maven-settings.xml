@@ -1,0 +1,11 @@
+<settings>
+  <mirrors>
+    <mirror>
+      <id>centralhttps</id>
+      <mirrorOf>central</mirrorOf>
+      <name>Maven central https</name>
+      <url>http://insecure.repo1.maven.org/maven2/</url>
+    </mirror>
+  </mirrors>
+</settings>
+

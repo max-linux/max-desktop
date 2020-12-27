@@ -1,8 +1,7 @@
 #!/usr/bin/make -f
 
 DH_VERBOSE=1
-#VERSION=2.6.1
-VERSION=Hotfix-2.8.1
+VERSION=ORA-3.3.0
 
 DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 #URL="https://github.com/OpenRoberta/robertalab/archive/ORA-$(VERSION).tar.gz"
@@ -20,6 +19,11 @@ override_dh_auto_build:
 		mkdir build ;\
 		( cd build && wget $(URL) && tar -zxf *.tar.gz); \
 	fi
+
+	mkdir -p /root/.m2
+	cp debian/maven-settings.xml /root/.m2/settings.xml
+
+	# build/robertalab-ORA-3.3.0/OpenRobertaParent/
 	(cd build/robertalab-$(VERSION)/OpenRobertaParent/ && mvn clean install)
 	(cd build/robertalab-$(VERSION) && ./ora.sh --export ../ora-export)
 
