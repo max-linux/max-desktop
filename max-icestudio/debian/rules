@@ -2,7 +2,7 @@
 #export DH_VERBOSE=1
 
 DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
-VERSION=0.3.3
+VERSION=0.5.0
 
 #URL="https://github.com/FPGAwars/icestudio/releases/download/0.3.1/icestudio-0.3.1-linux32.zip"
 #URL="https://github.com/FPGAwars/icestudio/releases/download/0.3.1/icestudio-0.3.1-linux64.zip"
@@ -15,8 +15,8 @@ else
   REMOVE=linux32
 endif
 
-URL="http://localhost/remote-files/icestudio-$(VERSION)-$(PROC_ARCH).zip"
-
+#URL="http://localhost/remote-files/icestudio-$(VERSION)-$(PROC_ARCH).zip"
+URL="https://github.com/FPGAwars/icestudio/releases/download/v$(VERSION)/icestudio-$(VERSION)-$(PROC_ARCH).zip"
 
 
 %:
