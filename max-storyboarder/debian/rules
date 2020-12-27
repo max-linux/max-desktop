@@ -2,11 +2,10 @@
 #export DH_VERBOSE=1
 
 DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
-VERSION=1.6.3
+VERSION=2.1.0
 
-#URL=https://github.com/wonderunit/storyboarder/releases/download/v1.5.1/Storyboarder-1.5.1-linux-x86_64.AppImage
-
-URL="http://localhost/remote-files/Storyboarder-$(VERSION)-linux-amd64.snap"
+#URL=https://github.com/wonderunit/storyboarder/releases/download/v$(VERSION)/Storyboarder-$(VERSION)-linux-x86_64.AppImage
+URL="http://localhost/remote-files/Storyboarder-$(VERSION)-linux-x86_64.AppImage"
 
 
 
@@ -17,8 +16,8 @@ URL="http://localhost/remote-files/Storyboarder-$(VERSION)-linux-amd64.snap"
 override_dh_auto_build:
 	if [ ! -d build ]; then \
 		mkdir build ;\
-		( cd build && wget $(URL) && mv Storyboarder-$(VERSION)-linux-amd64.snap Storyboarder.snap); \
-		( cd build && unsquashfs ./Storyboarder.snap ) ;\
+		( cd build && wget $(URL) && mv Storyboarder-$(VERSION)-linux-x86_64.AppImage Storyboarder.AppImage); \
+		( cd build && chmod +x ./Storyboarder.AppImage && ./Storyboarder.AppImage --appimage-extract ) ;\
 	fi
 
 	(cd build/squashfs-root/resources/app.asar.unpacked/node_modules/@ffmpeg-installer && mkdir linux-ia32 && cd linux-ia32 && ln -s /usr/bin/ffmpeg ./ffmpeg)
