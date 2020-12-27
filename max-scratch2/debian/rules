@@ -18,7 +18,7 @@ override_dh_clean:
 override_dh_auto_build:
 	if [ ! -d build ]; then \
 		mkdir build ;\
-		( cd build && wget http://cdn.scratch.mit.edu/scratchr2/static/sa/Scratch-$(VERSION).air && \
+		( cd build && wget --no-check-certificate http://cdn.scratch.mit.edu/scratchr2/static/sa/Scratch-$(VERSION).air && \
                   unzip Scratch-$(VERSION).air && ln -s Scratch-$(VERSION).air Scratch.air); \
 	fi
 
