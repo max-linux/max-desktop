@@ -20,8 +20,8 @@ bc
 blueman
 bluez
 bluez-cups
-brasero
-brasero-cdrkit
+#brasero
+#brasero-cdrkit
 brltty
 brltty-x11
 ca-certificates
@@ -76,7 +76,7 @@ fonts-noto-unhinted
 fonts-opendyslexic
 foomatic-db-compressed-ppds
 fwupd
-galculator
+#galculator
 gdb
 gdebi
 gdisk
@@ -186,8 +186,8 @@ network-manager-pptp-gnome
 onboard
 onboard-data
 openprinting-ppds
-pidgin
-pidgin-otr
+#pidgin
+#pidgin-otr
 pinentry-gtk2
 policykit-desktop-privileges
 plank
