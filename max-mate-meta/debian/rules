@@ -8,9 +8,9 @@ build/max-mate-core::
 	for seed in $(PACKAGES); do \
 		package=max-mate-$$seed; \
 		echo " * Building depends of max-mate-$$seed" ;\
-		(printf "$$package:Depends="; grep -v "^#" $$seed-$(DEB_BUILD_ARCH) | perl -pe 's/\n/, /g'; echo) \
+		(printf "$$package:Depends="; grep -v "^#" $$seed | perl -pe 's/\n/, /g'; echo) \
 			>> debian/$$package.substvars; \
-		(printf "$$package-deps:Depends="; grep -v "^#" $$seed-$(DEB_BUILD_ARCH) | perl -pe 's/\n/, /g'; echo) \
+		(printf "$$package-deps:Depends="; grep -v "^#" $$seed | perl -pe 's/\n/, /g'; echo) \
 			>> debian/$$package-deps.substvars; \
 	done
 
