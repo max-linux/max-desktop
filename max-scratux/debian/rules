@@ -2,10 +2,11 @@
 
 DH_VERBOSE=1
 
-VERSION=1.4.0
+VERSION=1.4.1
 
 #URL="https://dl.bintray.com/scratux/stable/pool/main/s/scratux/:scratux_$(VERSION)_amd64.deb"
-URL="https://dl.bintray.com/scratux/stable/pool/main/s/scratux/scratux_$(VERSION)_amd64.deb"
+#URL="https://dl.bintray.com/scratux/stable/pool/main/s/scratux/scratux_$(VERSION)_amd64.deb"
+URL="https://dl.bintray.com/scratux/stable/pool/s/scratux/scratux_$(VERSION)_amd64.deb"
 
 %:
 	dh $@
