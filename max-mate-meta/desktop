@@ -16,8 +16,8 @@ avahi-dnsconfd
 avahi-utils
 bc
 blender
-brasero
-brasero-cdrkit
+#brasero
+#brasero-cdrkit
 brltty
 brltty-x11
 ca-certificates
@@ -62,7 +62,7 @@ fonts-liberation
 fonts-nanum
 fonts-opendyslexic
 foomatic-db-compressed-ppds
-galculator
+#galculator
 gdb
 gdebi
 gdisk
@@ -146,7 +146,7 @@ libsasl2-modules
 libwmf0.2-7-gtk
 libx11-protocol-perl
 lightdm
-logisim
+#logisim
 marco
 mate-accessibility-profiles
 mate-applets
@@ -189,8 +189,8 @@ owncloud-client-l10n
 caja-owncloud
 openprinting-ppds
 pdfshuffler
-pidgin
-pidgin-otr
+#pidgin
+#pidgin-otr
 pinentry-gtk2
 plank
 pluma
