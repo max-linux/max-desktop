@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+URL=https://dllb2.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE2MTA4OTUzNDciLCJ1IjpudWxsLCJsdCI6ImRvd25sb2FkIiwicyI6IjViOGYwZjg5OTMxZmI0MGIwMzUwMGMwYzJiNjRlMDEwMGUyZTQzZGU1YmRiNDFhMmE3NDM4YWNmNDBlZWRlNTk3YjkxMTZmZGJhZDVlNDc0MWM0M2ZjMzgyNDljMTRkZDIzZmIyY2YwOTVmZGFkZDkxYzkyMjg2NTk4ODA5NzZlIiwidCI6MTYxNDE5MDMwMSwic3RmcCI6bnVsbCwic3RpcCI6bnVsbH0.ukxmfJN8Vr80bfw04dXk77oQSaLG3eHQ5sKdpPkKmDU/Marwaita.tar.xz
+
+#( cd build && wget "$(URL)" -O Marwaita.tar.xz && tar -xvf Marwaita.tar.xz); \
+
+%:
+	dh $@ 
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && tar -xvf ../Marwaita.tar.xz); \
+	fi
+	find build/ -type f -exec chmod 0644 {} \;
+	find build/ -type d -exec chmod 0755 {} \;
+
+override_dh_clean:
+	dh_clean
+	rm -rf build

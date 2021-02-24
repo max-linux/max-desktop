@@ -1,0 +1,13 @@
+Source: max-theme-marwaita
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 8.0.0), wget
+Standards-Version: 3.9.3
+Homepage: https://www.mate-look.org/p/1239855/
+
+Package: max-theme-marwaita
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: MAX theme Marwaita
+ MAX theme Marwaita
