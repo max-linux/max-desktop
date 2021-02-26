@@ -2,10 +2,10 @@
 
 set -e
 
-OUT="usr/share/max-mate/settings-overlay-infantil/config/plank/dock1/launchers"
-SCHEMA="usr/share/glib-2.0/schemas/zzz-max-mate-infantil-plank.gschema.override"
+OUT="usr/share/max-mate/settings-overlay/config/plank/dock1/launchers"
+SCHEMA="usr/share/glib-2.0/schemas/zz-max-mate-plank.gschema.override"
 
-LIST="org.kde.gcompris childsplay omnitux pysycache eduactiv8 org.kde.khangman tuxtype tuxmath tuxpaint org.kde.ktuberling pinta scratch"
+LIST="educamadrid max-educamadrid owncloud firefox max-search-apps shutter galculator simplescreenrecorder libreoffice-startcenter"
 
 mkdir -p "${OUT}"
 rm -f "${SCHEMA}"
@@ -19,8 +19,8 @@ fi
 i=0
 for d in $LIST; do
 
-  if [ ! -e "usr/share/mate/plank/infantil/${d}.desktop" ]; then
-    echo " ERROR: usr/share/mate/plank/infantil/${d}.desktop no exists !!!"
+  if [ ! -e "usr/share/mate/plank/normal/${d}.desktop" ]; then
+    echo " ERROR: usr/share/mate/plank/normal/${d}.desktop no exists !!!"
     exit 1
   fi
 
@@ -28,7 +28,7 @@ for d in $LIST; do
   echo " * Writing to ${outfile}"
   cat << EOF > ${outfile}
 [PlankDockItemPreferences]
-Launcher=file:///usr/share/mate/plank/infantil/${d}.desktop
+Launcher=file:///usr/share/mate/plank/normal/${d}.desktop
 EOF
 
 
@@ -53,23 +53,29 @@ cat << EOF > ${SCHEMA}
 
 [net.launchpad.plank.dock.settings]
 dock-items=[${ITEMS}]
-hide-mode='window-dodge'
-show-dock-item=true
+hide-mode='intelligent'
+show-dock-item=false
 theme='Transparent'
-position='top'
-pinned-only=true
+position='bottom'
+pinned-only=false
 lock-items=true
 show-dock-item=false
+hide-delay=1000
+unhide-delay=1000
+icon-size=50
 
 [net.launchpad.plank.docks.dock1]
 dock-items=[${ITEMS}]
-hide-mode='window-dodge'
-show-dock-item=true
+hide-mode='intelligent'
+show-dock-item=false
 theme='Transparent'
-position='top'
-pinned-only=true
+position='bottom'
+pinned-only=false
 lock-items=true
 show-dock-item=false
+hide-delay=1000
+unhide-delay=1000
+icon-size=50
 
 EOF
 

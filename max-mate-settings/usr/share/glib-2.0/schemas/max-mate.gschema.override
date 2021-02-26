@@ -9,13 +9,13 @@ keyservers=['hkp://keyserver.ubuntu.com:11371', 'hkp://pool.sks-keyservers.net',
 cursor-theme='mate'
 document-font-name='Ubuntu 11'
 font-name='Ubuntu 11'
-gtk-theme='MaxColors'
-icon-theme='maxtoon'
+gtk-theme='Marwaita Light'
+icon-theme='Papirus-Light'
 monospace-font-name='Ubuntu Mono 13'
 
 [org.gnome.desktop.wm.preferences]
 button-layout='menu:minimize,maximize,close'
-theme='MaxColors'
+theme='Marwaita Light'
 titlebar-font='Ubuntu Bold 11'
 
 [org.gnome.rhythmbox.encoding-settings]
@@ -71,9 +71,9 @@ antialiasing = 'rgba'
 hinting = 'slight'
 
 [org.mate.interface]
-icon-theme='maxtoon'
+icon-theme='Papirus-Light'
 gtk-decoration-layout='menu:minimize,maximize,close'
-gtk-theme='MaxColors'
+gtk-theme='Marwaita Light'
 font-name='Ubuntu 11'
 document-font-name='Ubuntu 11'
 monospace-font-name='Ubuntu Mono 13'
@@ -84,7 +84,7 @@ autorun-x-content-start-app=['x-content/software','x-content/video-bluray.xml','
 [org.mate.Marco.general]
 center-new-windows=false
 compositing-manager=true
-theme='MAXborde'
+theme='Marwaita Light'
 titlebar-font='Ubuntu Medium 11'
 
 [org.mate.Marco.global-keybindings]
@@ -176,7 +176,7 @@ show-icon-on-systray=false
 [x.dm.slick-greeter]
 theme-name='Ambiance'
 background='/usr/share/images/gdm/maxgdm.png'
-icon-theme-name='maxtoon'
+icon-theme-name='Papirus-Light'
 logo=''
 draw-user-backgrounds=false
 draw-grid=false

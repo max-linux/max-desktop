@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Portal EducaMadrid
+Comment=Portal EducaMadrid www.educa2.madrid.org/educamadrid
+TryExec=/usr/bin/firefox
+Exec=firefox https://www.educa2.madrid.org/educamadrid/
+Icon=menu-educa-madrid
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=EducaMadrid;

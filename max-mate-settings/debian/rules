@@ -6,11 +6,13 @@
 
 override_dh_clean:
 	dh_clean
+	./build-max-plank.sh clean
 	./build-infantil-plank.sh clean
 
 
 override_dh_auto_build:
 	dh_auto_build
+	./build-max-plank.sh
 	./build-infantil-plank.sh
 
 

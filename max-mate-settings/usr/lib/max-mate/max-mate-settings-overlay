@@ -2,6 +2,9 @@
 
 function overlay_file() {
     local SYSTEM_FILE="/usr/share/max-mate/settings-overlay/${1}"
+    if [ -e /usr/share/max-mate/settings-overlay-infantil/${1} ]; then
+        local SYSTEM_FILE="/usr/share/max-mate/settings-overlay-infantil/${1}"
+    fi
     local USER_FILE="${HOME}/.${1}"
     local USER_DIR=$(dirname "${USER_FILE}")
     if [ ! -f "${USER_FILE}" ]; then
@@ -23,7 +26,7 @@ function correct_xinputrc() {
     fi
 }
 
-PLANK_VERSION="20180502"
+PLANK_VERSION="20210224"
 
 if [ ! -e "${HOME}/.config/plank/dock1/.v${PLANK_VERSION}" ]; then
 
@@ -32,15 +35,22 @@ if [ ! -e "${HOME}/.config/plank/dock1/.v${PLANK_VERSION}" ]; then
 
     dconf reset -f /net/launchpad/plank/ 2>&1 > /dev/null
 
-    LAUNCHERS="/usr/share/max-mate/settings-overlay/config/plank/dock1/launchers/"
-    for f in $(find "${LAUNCHERS}" -type f | sed -e 's@/usr/share/max-mate/settings-overlay/@@g'); do
-        overlay_file ${f}
-    done
+    if [ -d /usr/share/max-mate/settings-overlay-infantil/config/plank/dock1/launchers ]; then
+        LAUNCHERS="/usr/share/max-mate/settings-overlay-infantil/config/plank/dock1/launchers"
+        for f in $(find "${LAUNCHERS}" -type f | sed -e 's@/usr/share/max-mate/settings-overlay-infantil/@@g'); do
+            overlay_file ${f}
+        done
+    else
+        LAUNCHERS="/usr/share/max-mate/settings-overlay/config/plank/dock1/launchers/"
+        for f in $(find "${LAUNCHERS}" -type f | sed -e 's@/usr/share/max-mate/settings-overlay/@@g'); do
+            overlay_file ${f}
+        done
+    fi
 
     # plank version
     touch "${HOME}/.config/plank/dock1/.v${PLANK_VERSION}"
-
 fi
+
 overlay_file config/folder-color/hide_donation
 overlay_file config/libreoffice/4/user/registrymodifications.xcu
 overlay_file config/synapse/config.json
