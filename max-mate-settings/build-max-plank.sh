@@ -35,13 +35,22 @@ EOF
   i=$((i + 1))
 done
 
+# create desktop launcher in last position
+outfile=$(printf "%s/%02d_desktop.dockitem" ${OUT} ${i})
+
+cat << EOF > ${outfile}
+[PlankDockItemPreferences]
+Launcher=docklet://desktop
+EOF
+
+
 
 i=0
 ITEMS=$(for d in $LIST; do
-  if [ "$d" = "scratch" ]; then
-    printf "'%02d_%s.dockitem'" $i $d
+  if [ "$d" = "libreoffice-startcenter" ]; then
+    printf "'%02d_%s.dockitem', '%s'" $i $d `basename ${outfile}`
   else
-    printf "'%02d_%s.dockitem'," $i $d
+    printf "'%02d_%s.dockitem', " $i $d
   fi
   i=$((i + 1))
 done
