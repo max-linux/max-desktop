@@ -27,6 +27,10 @@ function correct_xinputrc() {
 }
 
 PLANK_VERSION="20210226-01"
+if [ -d /usr/share/max-mate/settings-overlay-infantil/config/plank/dock1/launchers ]; then
+    PLANK_VERSION="${PLANK_VERSION}-infantil"
+fi
+
 
 if [ ! -e "${HOME}/.config/plank/dock1/.v${PLANK_VERSION}" ]; then
 
