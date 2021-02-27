@@ -53,23 +53,29 @@ cat << EOF > ${SCHEMA}
 
 [net.launchpad.plank.dock.settings]
 dock-items=[${ITEMS}]
-hide-mode='window-dodge'
-show-dock-item=true
+hide-mode='intelligent'
+show-dock-item=false
 theme='Transparent'
-position='top'
-pinned-only=true
+position='bottom'
+pinned-only=false
 lock-items=true
 show-dock-item=false
+hide-delay=1000
+unhide-delay=1000
+icon-size=50
 
 [net.launchpad.plank.docks.dock1]
 dock-items=[${ITEMS}]
-hide-mode='window-dodge'
-show-dock-item=true
+hide-mode='intelligent'
+show-dock-item=false
 theme='Transparent'
-position='top'
-pinned-only=true
+position='bottom'
+pinned-only=false
 lock-items=true
 show-dock-item=false
+hide-delay=1000
+unhide-delay=1000
+icon-size=50
 
 EOF
 

@@ -1,3 +1,16 @@
+max-mate-settings (11.0.max7) max; urgency=medium
+
+  * Use org.mate.background schema (not org.mate.desktop.background)
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 27 Feb 2021 10:49:50 +0100
+
+max-mate-settings (11.0.max6) max; urgency=medium
+
+  * build-infantil-plank.sh: bottom panel, change PLANK version
+  * Fix mate background image
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 27 Feb 2021 10:26:14 +0100
+
 max-mate-settings (11.0.max5) max; urgency=medium
 
   * Force plank update if infantil is installed after initial setup
