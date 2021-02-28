@@ -1,6 +1,7 @@
 #!/bin/sh
 
 MAX_VERSION="MAX-11.0"
+TIMEOUT=5
 UPDATE_GRUB=0
 
 if [ -e /etc/default/grub ]; then
@@ -10,13 +11,27 @@ if [ -e /etc/default/grub ]; then
     UPDATE_GRUB=1
   fi
 
+  # disable hidden
   if grep -q "^GRUB_HIDDEN" /etc/default/grub 2>/dev/null; then
     sed -i -e 's/^GRUB_HIDDEN/#GRUB_HIDDEN/g' /etc/default/grub
     UPDATE_GRUB=1
   fi
 
+  # menu style
   if grep -q "^GRUB_TIMEOUT_STYLE=hidden" /etc/default/grub 2>/dev/null; then
     sed -i -e 's/^GRUB_TIMEOUT_STYLE=hidden/GRUB_TIMEOUT_STYLE=menu/g' /etc/default/grub
+    UPDATE_GRUB=1
+  fi
+
+  # use 5 seconds timeout
+  if grep -q "^GRUB_TIMEOUT=0" /etc/default/grub 2>/dev/null; then
+    sed -i -e 's/^GRUB_TIMEOUT=0/GRUB_TIMEOUT='${TIMEOUT}'/g' /etc/default/grub
+    UPDATE_GRUB=1
+  fi
+
+  # silent boot
+  if ! grep -q "quiet loglevel=0 splash" /etc/default/grub 2>/dev/null; then
+    sed -i -e 's/quiet splash/quiet loglevel=0 splash/g' /etc/default/grub
     UPDATE_GRUB=1
   fi
 
