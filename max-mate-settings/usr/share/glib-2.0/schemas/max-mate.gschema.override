@@ -124,6 +124,9 @@ cursor-theme='DMZ-White'
 disable-while-typing=true
 tap-to-click=true
 
+[org.mate.peripherals-keyboard-xkb.general]
+duplicate-leds=true
+
 [org.mate.pluma]
 color-scheme='Ambiant-MATE'
 display-line-numbers=true

@@ -1,3 +1,10 @@
+max-mate-settings (11.0.max8) max; urgency=medium
+
+  * Replace shutter => mate-screenshot, enable Keyboard leds in panel
+  * Remove all launcher from top panel, rel #1034
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 28 Feb 2021 11:03:31 +0100
+
 max-mate-settings (11.0.max7) max; urgency=medium
 
   * Use org.mate.background schema (not org.mate.desktop.background)

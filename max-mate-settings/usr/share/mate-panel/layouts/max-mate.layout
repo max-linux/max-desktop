@@ -16,38 +16,6 @@ toplevel-id=bottom
 applet-iid=WnckletFactory::ShowDesktopApplet
 object-type=applet
 
-[Object firefox]
-locked=true
-position=20
-launcher-location=/usr/share/applications/firefox.desktop
-toplevel-id=bottom
-object-type=launcher
-menu-path=applications:/
-
-[Object chromium]
-locked=true
-position=21
-launcher-location=/usr/share/applications/chromium-browser.desktop
-toplevel-id=bottom
-object-type=launcher
-menu-path=applications:/
-
-[Object writer]
-locked=true
-position=22
-launcher-location=/usr/share/applications/libreoffice-writer.desktop
-toplevel-id=bottom
-object-type=launcher
-menu-path=applications:/
-
-[Object screenshot]
-locked=true
-position=23
-launcher-location=/usr/share/applications/mate-screenshot.desktop
-toplevel-id=bottom
-object-type=launcher
-menu-path=applications:/
-
 [Object terminal]
 locked=true
 position=24
