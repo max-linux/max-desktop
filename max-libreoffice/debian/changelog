@@ -1,3 +1,10 @@
+max-libreoffice (11.0.max2) max; urgency=medium
+
+  * Move registry from usr/lib/libreoffice/share/registry to
+    etc/libreoffice/registry
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 01 Mar 2021 10:48:47 +0100
+
 max-libreoffice (11.0.max1) max; urgency=medium
 
   * Build in MAX 11.0
