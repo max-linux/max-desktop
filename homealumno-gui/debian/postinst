@@ -7,7 +7,6 @@ exceptions = .dmrc,
 screensaver = 1
 wallpaper = ""
 users = alumno,
-compiz = 1
 [main]
 profiles = alumno,
 EOF
@@ -16,5 +15,13 @@ EOF
 fi
 
 
+
+# remove compiz=1 line by default
+if [ -e /var/lib/homealumno/.disable-compiz ] ; then
+  if grep -q compiz /var/lib/homealumno/profiles.ini; then
+    sed -i '/compiz/d' /var/lib/homealumno/profiles.ini
+    touch /var/lib/homealumno/.disable-compiz
+  fi
+fi
 
 #DEBHELPER#

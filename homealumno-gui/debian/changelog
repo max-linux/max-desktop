@@ -1,3 +1,9 @@
+homealumno-gui (0.9max15) max; urgency=medium
+
+  * Remove compiz=1 in postinst too, rel #983
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 21 Mar 2021 10:45:53 +0100
+
 homealumno-gui (0.9max14) max; urgency=medium
 
   * Enable compiz on alumno profile, close #983
