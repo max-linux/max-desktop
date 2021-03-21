@@ -1,0 +1,13 @@
+Source: max-noisetorch
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>
+Build-Depends: debhelper (>= 9), curl
+Standards-Version: 3.8.3
+Homepage: https://github.com/lawl/NoiseTorch
+
+Package: noisetorch
+Architecture: any
+Depends: pulseaudio, ${shlibs:Depends}, ${misc:Depends}
+Description: Virtual microphone that suppresses noise
+ Virtual microphone that suppresses noise

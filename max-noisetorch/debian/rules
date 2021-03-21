@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+VERSION=0.10.1
+URL=https://github.com/lawl/NoiseTorch/releases/download/$(VERSION)/NoiseTorch_x64.tgz
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+override_dh_auto_build:
+	mkdir -p build
+	if [ ! -e build/NoiseTorch_x64.tgz ] ; then (cd build && curl -L -O $(URL)); fi
+	if [ ! -e build/.local ]; then (cd build && tar -zxvfNoiseTorch_x64.tgz); fi
+
+override_dh_strip:
+	# do not strip
+
