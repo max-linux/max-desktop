@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+VERSION=v0.18b
+URL=https://github.com/ratwithacompiler/OBS-captions-plugin/releases/download/$(VERSION)/Closed_Captions_Plugin__$(VERSION)_Linux.zip
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+override_dh_auto_build:
+	mkdir -p build
+	if [ ! -e build/Closed_Captions_Plugin__$(VERSION)_Linux.zip ] ; then (cd build && curl -L -O $(URL)); fi
+	if [ ! -e build/.local ]; then (cd build && unzip Closed_Captions_Plugin__$(VERSION)_Linux.zip ); fi
+
+override_dh_strip:
+	# do not strip
+
