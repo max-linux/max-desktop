@@ -1,6 +1,13 @@
+homealumno-gui (0.9max16) max; urgency=medium
+
+  * Build in MAX 11.0
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 06 May 2021 13:38:12 +0200
+
 homealumno-gui (0.9max15) max; urgency=medium
 
   * Remove compiz=1 in postinst too, rel #983
+  * Run twice 'xdg-user-dirs-update --force' to force create XDG dirs
 
  -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 21 Mar 2021 10:45:53 +0100
 

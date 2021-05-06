@@ -157,6 +157,8 @@ class Profiler(object):
                 if os.path.isfile(tmpexc):
                     os.unlink(tmpexc)
 
+                self.exe("xdg-user-dirs-update --force")
+
                 # ejecutar post-run scripts
                 post_run=os.path.abspath(homealumno.POSTRUN_PATH + profilename)
                 if os.path.isfile(post_run):
