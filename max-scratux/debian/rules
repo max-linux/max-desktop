@@ -6,7 +6,10 @@ VERSION=1.4.1
 
 #URL="https://dl.bintray.com/scratux/stable/pool/main/s/scratux/:scratux_$(VERSION)_amd64.deb"
 #URL="https://dl.bintray.com/scratux/stable/pool/main/s/scratux/scratux_$(VERSION)_amd64.deb"
-URL="https://dl.bintray.com/scratux/stable/pool/s/scratux/scratux_$(VERSION)_amd64.deb"
+#URL="https://dl.bintray.com/scratux/stable/pool/s/scratux/scratux_$(VERSION)_amd64.deb"
+
+# temp hack, upstream is down
+URL="http://max.marioizquierdo.es/max11/pool/main/m/max-scratux/scratux_1.4.0-max2_amd64.deb"
 
 %:
 	dh $@

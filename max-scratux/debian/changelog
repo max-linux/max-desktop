@@ -1,3 +1,10 @@
+max-scratux (1:1.4.1-max1) max; urgency=medium
+
+  * Already change version
+  * Fix electron app.asar, close #1022
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Sat, 29 May 2021 18:46:14 +0200
+
 max-scratux (1:1.4.0-max2) max; urgency=medium
 
   * New upstream version 1.4.1
