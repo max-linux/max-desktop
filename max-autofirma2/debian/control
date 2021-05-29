@@ -1,0 +1,16 @@
+Source: max-autofirma2
+Section: max
+Priority: extra
+Maintainer: Mario Izquierdo Rodríguez <hola@marioizquierdo.es>
+Build-Depends: debhelper (>= 7), curl, unzip
+Standards-Version: 3.8.3
+Homepage: http://firmaelectronica.gob.es/Home/Descargas.html
+
+Package: autofirma
+Architecture: all
+Depends: max-java-jre, libnss3-tools, ${shlibs:Depends}, ${misc:Depends}
+Description: AutoFirma - Cliente @firma
+ Aplicación de firma electrónica desarrollada por el Ministerio
+ de Hacienda y Administraciones Públicas. Al poder ser ejecutada
+ desde el navegador, permite la firma en páginas de Administración
+ Electrónica cuando se requiere la firma en un procedimiento administrativo

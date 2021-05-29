@@ -1,0 +1,15 @@
+#AutoFirma-Firefox     usr/bin/
+#usr_share/*           usr/share/
+#scripts/              usr/lib/AutoFirma/
+#
+#
+#build2/usr/lib/AutoFirma                        usr/lib/
+#build2/usr/share/applications/afirma.desktop    usr/share/applications/
+#build2/etc/firefox/pref/AutoFirma.js            etc/firefox/pref/
+#build2/usr/bin/AutoFirma                        usr/bin/
+#build2/usr/share/AutoFirma/AutoFirma.svg        usr/share/AutoFirma/
+
+
+
+build2/etc/*     etc/
+build2/usr/*     usr/

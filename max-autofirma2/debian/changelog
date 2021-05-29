@@ -1,0 +1,12 @@
+max-autofirma2 (2:1.6.5max2) max; urgency=medium
+
+  * Fix etc => usr
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Sat, 29 May 2021 19:45:34 +0200
+
+max-autofirma2 (2:1.6.5max1) max; urgency=medium
+
+  * Build in MAX 11.0
+  * Use only autofirma files, not try to do anything
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Sat, 29 May 2021 19:39:21 +0200
