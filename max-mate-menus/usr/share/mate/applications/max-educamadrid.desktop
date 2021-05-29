@@ -1,11 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Educamadrid MAX
-Name[es]=MAX en Educamadrid
-Comment=Educamadrid link 
-Comment[es]= Enlace a la página oficial de MAX en Educamadrid
-TryExec=/usr/bin/firefox
-Exec=firefox http://www.educa2.madrid.org/web/max/
+Name=EducaMadrid MAX
+Name[es]=MAX en EducaMadrid
+Comment=EducaMadrid link 
+Comment[es]= Enlace a la página oficial de MAX en EducaMadrid
+Exec=x-www-browser http://www.educa2.madrid.org/web/max/
 Icon=menu-max-web
 StartupNotify=true
 Terminal=false

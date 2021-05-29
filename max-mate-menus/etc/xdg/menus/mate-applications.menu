@@ -21,6 +21,23 @@
   <MergeDir>applications-merged</MergeDir>
   -->
 
+   
+  <Menu>
+        <Name>Profesor</Name>
+        <Directory>max-profesor.directory</Directory>
+        <Include>
+          <And>
+            <Category>menuProfesor</Category>
+          </And>
+        </Include>
+        <Include>
+            <Filename>menu-profesor-raices.desktop</Filename>
+            <Filename>menu-profesor-pdatos.desktop</Filename>
+            <Filename>menu-profesor-innovacion.desktop</Filename>
+            <Filename>menu-profesor-dat.desktop</Filename>
+        </Include>
+  </Menu>
+
   <Menu>
     <Name>MaX y EducaMadrid</Name>
     <Directory>max-educamadrid.directory</Directory>
@@ -34,12 +51,17 @@
         </And>
       </Include>
       <Include>
+        <Filename>max-aplicaciones.desktop</Filename>
         <Filename>max-educamadrid.desktop</Filename>
         <Filename>max-guia-referencia.desktop</Filename>
         <Filename>max-foros.desktop</Filename>
         <Filename>install-manual.desktop</Filename>
-        <Filename>install-personalizacion.desktop</Filename>
+        
       </Include>
+
+      <Exclude>
+      <Filename>install-personalizacion.desktop</Filename>
+      </Exclude> 
     </Menu>
 
     <Menu>
@@ -50,9 +72,78 @@
           <Category>EducaMadrid</Category>
         </And>
       </Include>
-    </Menu>
+      <Include>
+        <Filename>educamadrid-ServiciosEducativos.desktop</Filename>
+        <Filename>educamadrid-EspaciosFormacion.desktop</Filename>
+        <Filename>educamadrid-ComunidadesVirtuales.desktop</Filename> 
+        <Filename>educamadrid-EspaciosInstitucionales.desktop</Filename>
+        
+       
+      </Include>
 
-  </Menu>
+      <Exclude>
+        <Filename>educamadrid-infopitagoras.desktop</Filename>
+        <Filename>educamadrid-correoweb.desktop</Filename>
+        <Filename>educamadrid-nube.desktop</Filename>
+        <Filename>educamadrid-mediateca.desktop</Filename>
+        <Filename>educamadrid-jitsi.desktop</Filename>
+        <Filename>educamadrid-bilingue.desktop</Filename>
+        <Filename>educamadrid-educasaac.desktop</Filename>
+        <Filename>educamadrid-peac.desktop</Filename>
+        <Filename>educamadrid-stem.desktop</Filename>
+        <Filename>educamadrid-tecnorobot.desktop</Filename>
+        <Filename>educamadrid.desktop</Filename>
+      </Exclude>
+     </Menu>
+   </Menu>
+
+   <Menu>
+    <Name>Educación A distancia</Name>
+    <Directory>edu-distancia.directory</Directory>
+
+      <Menu>
+        <Name>Programas</Name>
+        <Directory>edu-programas.directory</Directory>
+        <Include>
+          <And>
+            <Category>EduProgramas</Category>
+          </And>
+        <Filename>audacity.desktop</Filename>
+        <Filename>fr.handbrake.ghb.desktop</Filename>
+        <Filename>com.github.xournalpp.xournalpp.desktop</Filename>
+        <Filename>flameshot.desktop</Filename>
+        <Filename>org.gnome.SoundRecorder.desktop</Filename>
+        <Filename>org.kde.kdenlive.desktop</Filename>
+        <Filename>owncloud.desktop</Filename>
+        <Filename>simplescreenrecorder.desktop</Filename>
+        <Filename>com.obsproject.Studio.desktop</Filename>
+        </Include>
+      </Menu>
+
+      <Menu>
+        <Name>Enlaces</Name>
+        <Directory>edu-enlaces.directory</Directory>
+        <Include>
+          <And>
+            <Category>EduEnlaces</Category>
+          </And>
+        </Include>
+        <Include>
+        <Filename>educamadrid-boletines.desktop</Filename>
+        <Filename>educamadrid-buscador.desktop</Filename>
+        <Filename>educamadrid-encuesta.deskto</Filename>
+        <Filename>educamadrid-correoweb.desktop</Filename>
+        <Filename>educamadrid-jitsi.desktop</Filename>
+        <Filename>educamadrid-mediateca.desktop</Filename>
+        <Filename>educamadrid-nube.desktop</Filename>
+        <Filename>educamadrid-portal.desktop</Filename>
+        </Include>
+      </Menu>
+</Menu>
+
+
+
+
 
   <!-- Accessories submenu -->
   <Menu>
@@ -107,11 +198,13 @@
     </Exclude>
   </Menu> <!-- End Development Tools -->
 
+ 
+ 
+ 
   <!-- Education -->
   <Menu>
     <Name>Education</Name>
     <Directory>mate-education.directory</Directory>
-    <Include><Filename>max-aplicaciones.desktop</Filename></Include>
     <Menu>
         <Name>Otras aplicaciones educativas</Name>
         <Directory>max-eduotros.directory</Directory>
@@ -127,6 +220,7 @@
             <Filename>libreoffice-math.desktop</Filename>
             <Filename>www.octave.org-octave.desktop</Filename>
             <Filename>logisim.desktop</Filename>
+            <Filename>max-aplicaciones.desktop</Filename>
         </Exclude>
 
         <!--include -->
@@ -211,8 +305,19 @@
             <!-- musica -->
             <Filename>solfege.desktop</Filename>
             <Filename>qucs.desktop</Filename>
+            <!-- educamadrid -->
+            <Filename>educamadrid-bilingue.desktop</Filename>
+            <Filename>educamadrid-educasaac.desktop</Filename>
+            <Filename>educamadrid-peac.desktop</Filename>
+            <Filename>educamadrid-stem.desktop</Filename>
+            <Filename>educamadrid-tecnorobot.desktop</Filename>
         </Exclude>
     </Menu> <!-- eduotros -->
+
+
+
+
+
 
     <Menu>
         <Name>Robótica</Name>
@@ -223,6 +328,51 @@
             <Filename>robolinux-nxt.desktop</Filename>
             <Filename>robolinux-nxt-doc.desktop</Filename>
             <Filename>kde4-kturtle.desktop</Filename>
+        </Include>
+    </Menu>
+
+     <Menu>
+        <Name>Accesibilidad e Inclusión</Name>
+        <Directory>max-inclusion.directory</Directory>
+        <Include>
+            <And>
+            <Category>edu-inclusion</Category>
+            </And>
+        </Include>
+        <Include>
+            <Filename>max-albor.desktop</Filename>
+            <Filename>educamadrid-educasaac.desktop</Filename>
+            <Filename>educamadrid-peac.desktop</Filename>
+            <Filename>educamadrid-educasaac.desktop</Filename>
+        </Include>
+    </Menu>
+
+    <Menu>
+        <Name>STEM</Name>
+        <Directory>max-ESTM.directory</Directory>
+        <Include>
+            <And>
+            <Category>stem</Category>
+            </And>
+        </Include>
+        <Include>
+            <Filename>educamadrid-stem.desktop</Filename>
+            <Filename>max-esero.desktop</Filename>
+            <Filename>max-tecnorobot.desktop</Filename>
+        </Include>
+    </Menu>
+
+     <Menu>
+        <Name>REA</Name>
+        <Directory>max-rea.directory</Directory>
+        <Include>
+            <And>
+            <Category>max-rea</Category>
+            </And>
+        </Include>
+        <Include>
+            <Filename>exe.desktop</Filename>
+            <Filename></Filename>
         </Include>
     </Menu>
 
@@ -260,6 +410,7 @@
             <Filename>org.kde.klettres.desktop</Filename>
             <Filename>kde4-ktouch.desktop</Filename>
             <Filename>org.kde.kwordquiz.desktop</Filename>
+            <Filename>educamadrid-bilingue.desktop</Filename>
         </Include>
     </Menu>
 
@@ -289,6 +440,9 @@
             <Filename>tbe.desktop</Filename>
             <Filename>atomix.desktop</Filename>
             <Filename>org.kde.kalzium.desktop</Filename>
+            <Filename>org.kde.step.desktop</Filename>
+            <Filename>ciencias-phet.desktop</Filename>
+            
         </Include>
         <Menu>
             <Name>Animalandia</Name>
@@ -347,7 +501,6 @@
         <Name>Aplicaciones eLearning</Name>
         <Directory>max-elearning.directory</Directory>
         <Include>
-            <Filename>exe.desktop</Filename>
             <Filename>edilim.desktop</Filename>
         </Include>
         <Menu>
@@ -451,6 +604,9 @@
     </Include>
     <Exclude>
         <Filename>lftp.desktop</Filename>
+        <Filename>org.kde.kdeconnect.sms.desktop</Filename>
+        <Filename>org.kde.kdeconnect.app.desktop</Filename>
+        <Filename>org.kde.kdeconnect.nonplasma.desktop</Filename>
     </Exclude>
   </Menu>   <!-- End Internet -->
 
@@ -490,6 +646,7 @@
       </And>
     </Include>
     <Exclude>
+        <Filename>mate-dictionary.desktop</Filename>
         <Filename>kde4-knotes.desktop</Filename>
         <Filename>kde4-korganizer.desktop</Filename>
         <Filename>ooo-base.desktop</Filename>
@@ -552,6 +709,11 @@
       </And>
     </Include>
     <Exclude>
+        <Filename>educamadrid-bilingue.desktop</Filename>
+        <Filename>educamadrid-educasaac.desktop</Filename>
+        <Filename>educamadrid-peac.desktop</Filename>
+        <Filename>educamadrid-stem.desktop</Filename>
+        <Filename>educamadrid-tecnorobot.desktop</Filename>
         <Filename>geogebra.desktop</Filename>
         <Filename>geogebra6.desktop</Filename>
         <Filename>javahotpot.desktop</Filename>

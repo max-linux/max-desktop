@@ -14,7 +14,7 @@ Comment[ru]=Запись и редактирование звуковых фай
 Icon=audacity
 
 Type=Application
-Categories=AudioVideo;Audio;AudioVideoEditing;
+Categories=EduProgramas;AudioVideo;Audio;AudioVideoEditing;
 
 TryExec=/usr/bin/audacity
 Exec=audacity

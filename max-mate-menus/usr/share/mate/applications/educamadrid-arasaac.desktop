@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=AraSAAC
+Comment=arasaac.org
+TryExec=/usr/bin/firefox
+Exec=x-www-browser https://arasaac.org/
+Icon=menu-educa-educasaac
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=edu-inclusion

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Formularios y encuestas
+Name[es]=Formularios y encuestas
+Comment=Enlace Formularios y encuestas   
+Exec=x-www-browser https://encuestas.educa.madrid.org/index.php/admin/authentication/sa/login
+Icon=menu-edu-encuesta
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=EduEnlaces;EducaMAdrid;

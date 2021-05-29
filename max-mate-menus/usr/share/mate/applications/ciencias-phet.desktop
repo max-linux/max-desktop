@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Phet
+Name[es]=Phet
+Comment=Enlace web a Phet
+Exec=x-www-browser https://phet.colorado.edu/es
+Icon=menu-ciencia-phet
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=ciencias;

@@ -1,9 +1,11 @@
 [Desktop Entry]
+Encoding=UTF-8
 Name=Nube de EducaMadrid (ownCloud)
-Comment=Cliente nube EducaMadrid (ownCloud)
-TryExec=/usr/bin/owncloud
-Exec=owncloud
+Name[es]=Nube de EducaMadrid
+Comment=Enlace web a la nube de EducaMadrid
+Exec=x-www-browser https://cloud.educa.madrid.org/index.php/login
 Icon=menu-educa-nube
-X-GNOME-Autostart-Delay=3
+StartupNotify=true
+Terminal=false
 Type=Application
-Categories=EducaMadrid;
+Categories=EduEnlaces;EducaMAdrid;

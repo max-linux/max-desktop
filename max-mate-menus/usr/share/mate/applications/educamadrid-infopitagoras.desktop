@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=InfoPitágoras
 Comment=Info Pitágoras
-Exec=firefox http://infopitagoras.educa.madrid.org/zprivada/login.php
+Exec=x-www-browser http://infopitagoras.educa.madrid.org/zprivada/login.php
 Icon=max-menu-infopitagoras
 StartupNotify=true
 Terminal=false

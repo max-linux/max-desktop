@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Encoding=UTF-8
+Name=EducaMadrid Servicios Educativos
+Name[es]=Servicios Educativos
+Comment=EducaMadrid Enlace link 
+Comment[es]=Enlace a la página oficial de servicios educativos de EducaMadrid
+TryExec=/usr/bin/firefox
+Exec=x-www-browser https://www.educa2.madrid.org/educamadrid/
+Icon=ServiciosEducativos
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=EducaMAdrid;

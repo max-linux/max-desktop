@@ -2,8 +2,7 @@
 Encoding=UTF-8
 Name=PEAC
 Comment=www.educa2.madrid.org/web/peac
-TryExec=/usr/bin/firefox
-Exec=firefox http://www.educa2.madrid.org/web/peac
+Exec=x-www-browser http://www.educa2.madrid.org/web/peac
 Icon=menu-educa-peac
 StartupNotify=true
 Terminal=false
