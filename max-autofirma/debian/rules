@@ -3,6 +3,19 @@
 VERSION=1_6_5
 
 %:
+	#
+	#
+	#
+	#
+	#
+	# OBSOLETE use => max-autofirma2
+	#
+	#
+	#
+	#
+	#
+	#
+	exit 1
 	dh $@
 
 
