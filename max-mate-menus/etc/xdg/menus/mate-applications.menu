@@ -117,7 +117,9 @@
         <Filename>owncloud.desktop</Filename>
         <Filename>simplescreenrecorder.desktop</Filename>
         <Filename>com.obsproject.Studio.desktop</Filename>
-        </Include>
+      	<Filename>optimizarpdf.desktop</Filename>
+	<Filename>shutter.desktop</Filename> 
+       </Include>
       </Menu>
 
       <Menu>
@@ -162,6 +164,7 @@
       <Filename>mate-search-tool.desktop</Filename>
     </Include>
     <Exclude>
+      <Filename>info.desktop</Filename>	
       <Filename>exe.desktop</Filename>
       <Filename>shutter.desktop</Filename>
       <Filename>owncloud.desktop</Filename>
@@ -233,6 +236,7 @@
         </Include>
 
         <Exclude>
+            <Filename>info.desktop</Filename>
             <Filename>physion.desktop</Filename>
             <Filename>jclic.desktop</Filename>
             <Filename>jclicauthor.desktop</Filename>

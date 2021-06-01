@@ -1,3 +1,4 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Encoding=UTF-8
 TryExec=/usr/bin/denemo
@@ -14,3 +15,5 @@ GenericName=Score Editor
 GenericName[es]=Editor de partituras GNU
 GenericName[en]=Score Editor
 Comment=Edit musical scores
+Comment[es]=Editor de partituras
+

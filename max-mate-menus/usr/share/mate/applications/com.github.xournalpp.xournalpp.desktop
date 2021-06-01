@@ -1,3 +1,4 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Type=Application
 
@@ -18,7 +19,7 @@ Name[zh_CN]=Xournal++
 Comment[zh_CN]=手写注释工具，可为PDF文件添加各种元素的注释标记
 Name[ru]=Xournal++
 Comment[ru]=Делайте рукописные заметки
-
+Comment[es]=Toma notas a mano
 Exec=xournalpp %f
 Terminal=false
 StartupNotify=true

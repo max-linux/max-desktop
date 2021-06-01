@@ -1,0 +1,15 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=GTick
+Comment=a GTK-based metronome
+Comment[pt]=Um metrônomo baseado em GTK
+Comment[pt-br]=Um metrônomo baseado em GTK
+Comment[es]=Metrónomo
+Exec=/usr/bin/gtick
+Icon=/usr/share/icons/hicolor/64x64/apps/gtick.xpm
+Terminal=false
+Type=Application
+Categories=GTK;AudioVideo;Audio;
+GenericName[pt_BR]=

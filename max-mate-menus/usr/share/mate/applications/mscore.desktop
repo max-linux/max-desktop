@@ -1,3 +1,4 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 TryExec=/usr/bin/mscore
 Exec=mscore
@@ -7,7 +8,7 @@ Icon=mscore
 Name=MuseScore
 Name[es]=MuseScore (editor de partituras)
 Comment=WYSIWYG Music score typesetter
-Comment[es]=Editor de partituras WYSIWYG
+Comment[es]=Crea, escucha e imprime tus partituras
 StartupNotify=true
 Terminal=false
 Type=Application

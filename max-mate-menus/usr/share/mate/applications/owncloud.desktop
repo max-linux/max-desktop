@@ -1,8 +1,9 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Categories=EduProgramas;Utility;X-SuSE-SyncUtility;
 Type=Application
 Exec=owncloud
-Name=ownCloud desktop sync client 
+Name=OwnCloud desktop sync client 
 Comment=ownCloud desktop synchronization client
 GenericName=Folder Sync
 Icon=owncloud
@@ -11,7 +12,6 @@ X-GNOME-Autostart-Delay=3
 MimeType=application/vnd.owncloud;
 
 # Translations
-
 
 # Translations
 
@@ -128,9 +128,9 @@ Comment[en_GB]=ownCloud desktop synchronisation client
 Icon[en_GB]=owncloud
 Name[en_GB]=ownCloud desktop sync client 
 GenericName[en_GB]=Folder Sync
-Comment[es]=ownCloud cliente de sincronización de escritorio
+Comment[es]=OwnCloud cliente de sincronización de escritorio
 Icon[es]=owncloud
-Name[es]=ownCloud cliente de sincronización de escritorio
+Name[es]=OwnCloud cliente de sincronización de escritorio
 GenericName[es]=Sincronización de carpeta
 Comment[de_DE]=ownCloud Desktop-Synchronisationsclient
 Icon[de_DE]=owncloud
@@ -262,7 +262,7 @@ Name[lt_LT]=ownCloud darbalaukio programa
 GenericName[lt_LT]=Katalogo sinchnorizacija
 Comment[th_TH]=ownCloud ประสานข้อมูลด้วยโปรแกรมบนเดสก์ท็อป
 Icon[th_TH]=owncloud
-Name[th_TH]= ownCloud ประสานข้อมูลด้วยโปรแกรมบนเดสก์ท็อป
+Name[th_TH]=ownCloud ประสานข้อมูลด้วยโปรแกรมบนเดสก์ท็อป
 GenericName[th_TH]=ประสานข้อมูลโฟลเดอร์
 Comment[es_MX]=Cliente de escritorio para  sincronziación de ownCloud
 Icon[es_MX]=owncloud

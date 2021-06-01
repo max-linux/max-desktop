@@ -1,0 +1,16 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Screen Magnifier
+Name[zh_CN]=屏幕放大镜
+GenericName=Screen Magnifier
+GenericName[zh_CN]=屏幕放大镜
+Comment=Magnify part of display, with real-time updates.
+Comment[zh_CN]=放大屏幕的一部分，具有实时更新功能。
+Comment[es]=Amplía zonas de la pantalla para facilitar la lectura
+Keywords=screen magnifier;
+Exec=xzoom -mag 3 -geometry 320x240
+Icon=system-search
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GTK;GNOME;Utility;Accessibility;

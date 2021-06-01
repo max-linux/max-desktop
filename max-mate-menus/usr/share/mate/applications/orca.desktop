@@ -1,7 +1,9 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Encoding=UTF-8
-Name=Orca Screen Reader and Magnifier
+Name=Orca
 Comment=Present on-screen information as speech or braille, or magnify the screen
+Comment[es]=Presenta la información de la pantalla como voz o Braille
 TryExec=/usr/bin/orca
 Exec=orca
 Icon=orca
