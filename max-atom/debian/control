@@ -31,7 +31,8 @@ Build-Depends: debhelper (>= 8.0.0), wget,
 	libxtst-dev,
         libgtk-3-dev,
         libnss3, libnspr4,
-        libssl1.0-dev
+        libssl1.0-dev,
+        libcurl4
 Standards-Version: 3.9.3
 Homepage: https://github.com/atom/atom
 

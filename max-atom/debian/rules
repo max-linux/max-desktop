@@ -3,9 +3,9 @@
 
 DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
-VERSION=1.52.0
+VERSION=1.57.0
 
-URL=https://github.com/atom/atom/releases/download/v1.52.0/atom-amd64.deb
+URL=https://github.com/atom/atom/releases/download/v$(VERSION)/atom-amd64.deb
 #URL=http://localhost/remote-files/atom-amd64.deb
 
 
