@@ -587,12 +587,14 @@
         <Filename>tuxpaint.desktop</Filename>
         <Filename>leocad.desktop</Filename>
         <Filename>shutter.desktop</Filename>
+	<Filename>display-im6.desktop</Filename>
     </Include>
 
     <Exclude>
         <Filename>blender-fullscreen.desktop</Filename>
         <Filename>gqview.desktop</Filename>
         <Filename>kde4-gwenview.desktop</Filename>
+	<Filename>display-im6.q16.desktop</Filename>
     </Exclude>
   </Menu> <!-- End Graphics -->
 
