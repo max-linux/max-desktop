@@ -11,4 +11,4 @@ override_dh_clean:
 override_dh_auto_build:
 	git clone --depth=1 https://github.com/jamiemcg/Remarkable.git
 
-	./do-patch.sh Remarkable
+	# ./do-patch.sh Remarkable
