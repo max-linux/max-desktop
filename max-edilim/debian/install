@@ -1,14 +1,13 @@
-build2/edilim_src/dlm              usr/share/edilim/
-#build2/edilim_src/edilim           usr/share/edilim/
-
-build2/edilim_src/edilim_es.pdf    usr/share/edilim/
-build2/edilim_src/edilim_gz.pdf    usr/share/edilim/
-build2/edilim_src/edilim_pt.pdf    usr/share/edilim/
-
-build2/edilim_src/libbass.so       usr/share/edilim/
-
-build2/edilim_src/tpl              usr/share/edilim/
+limlogo.jpg            usr/share/edilim/
+edilim                 usr/bin/
 
 
-limlogo.jpg                        usr/share/edilim/
-edilim                             usr/bin/
+build2/dlm             usr/share/edilim/
+build2/edilim          usr/share/edilim/
+build2/tpl             usr/share/edilim/
+build2/libbass.so      usr/share/edilim/
+
+build2/edilim_es.pdf   usr/share/edilim/
+build2/edilim_pt.pdf   usr/share/edilim/
+build2/edilim_gz.pdf   usr/share/edilim/
+
