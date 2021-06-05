@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-VERSION=3.3.7
+VERSION=3.5.4
 
 DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 ifeq ($(DEB_HOST_ARCH),i386)
@@ -53,8 +53,8 @@ override_dh_clean:
 
 override_dh_auto_build:
 	mkdir -p build
-#	if [ ! -e build/processing.tgz ]; then wget --no-check-certificate http://download.processing.org/processing-$(VERSION)-$(PROC_ARCH).tgz -O- > build/processing.tgz; fi
-	if [ ! -e build/processing.tgz ]; then wget --no-check-certificate http://localhost/remote-files/processing-$(VERSION)-$(PROC_ARCH).tgz -O- > build/processing.tgz; fi
+	if [ ! -e build/processing.tgz ]; then wget --no-check-certificate http://download.processing.org/processing-$(VERSION)-$(PROC_ARCH).tgz -O- > build/processing.tgz; fi
+#	if [ ! -e build/processing.tgz ]; then wget --no-check-certificate http://localhost/remote-files/processing-$(VERSION)-$(PROC_ARCH).tgz -O- > build/processing.tgz; fi
 	(cd build && tar -zxf processing.tgz)
 
 	rm -rf build/processing-*/modes/java/application/launch4j/
