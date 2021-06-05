@@ -1,15 +1,15 @@
 #!/usr/bin/make -f
 #export DH_VERBOSE=1
 
-VER=v6.03_10-04-17
+VER=v6.04_09-24-19
 
 ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
 ifeq ($(ARCH), amd64)
-#	URL=http://cmapdownload.ihmc.us/installs/CmapTools/Linux/Linux64CmapTools_$(VER).bin
-	URL=http://localhost/remote-files/Linux64CmapTools_$(VER).bin
+	URL=http://cmapdownload.ihmc.us/installs/CmapTools/Linux/Linux64CmapTools_$(VER).bin
+#	URL=http://localhost/remote-files/Linux64CmapTools_$(VER).bin
 else
-#	URL=http://cmapdownload.ihmc.us/installs/CmapTools/Linux/Linux32CmapTools_$(VER).bin
-	URL=http://localhost/remote-files/Linux32CmapTools_$(VER).bin
+	URL=http://cmapdownload.ihmc.us/installs/CmapTools/Linux/Linux32CmapTools_$(VER).bin
+#	URL=http://localhost/remote-files/Linux32CmapTools_$(VER).bin
 endif
 
 
