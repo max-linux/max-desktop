@@ -10,9 +10,9 @@ else
     export UPSTREAM_ARCH=x64
 endif
 
-VERSION=0.32.0
-#URL=https://dl.nwjs.io/v$(VERSION)/nwjs-v$(VERSION)-linux-$(UPSTREAM_ARCH).tar.gz
-URL=http://localhost/remote-files/nwjs-v$(VERSION)-linux-$(UPSTREAM_ARCH).tar.gz
+VERSION=0.54.0
+URL=https://dl.nwjs.io/v$(VERSION)/nwjs-v$(VERSION)-linux-$(UPSTREAM_ARCH).tar.gz
+#URL=http://localhost/remote-files/nwjs-v$(VERSION)-linux-$(UPSTREAM_ARCH).tar.gz
 SRC_DIR=nwjs-v$(VERSION)-linux-$(UPSTREAM_ARCH)
 
 %:
