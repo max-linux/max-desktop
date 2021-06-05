@@ -45,3 +45,6 @@ override_dh_auto_build:
 
 	# disable updates
 	sed -i 's/update.check = true/update.check = false/g'  build/processing-*/lib/defaults.txt
+
+override_dh_strip_nondeterminism:
+	# pass
