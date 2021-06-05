@@ -423,7 +423,7 @@
         <Directory>max-musica.directory</Directory>
         <Include>
             <Filename>denemo.desktop</Filename>
-            <Filename>mscore.desktop</Filename>
+            <Filename>mscore3.desktop</Filename>
             <Filename>kde4-rosegarden.desktop</Filename>
             <Filename>tuxguitar.desktop</Filename>
             <Filename>solfege.desktop</Filename>
@@ -670,7 +670,7 @@
       <Directory>max-pdi.directory</Directory>
       <Include><Category>Whiteboard</Category></Include>
       <Include>
-          <Filename>xournal.desktop</Filename>
+          <Filename>com.github.xournalpp.xournalpp.desktop</Filename>
           <Filename>notelab.desktop</Filename>
           <Filename>jarnalannotate.desktop</Filename>
           <Filename>cellwriter.desktop</Filename>
