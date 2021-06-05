@@ -1,3 +1,9 @@
+max-skel-conf (11.0.max5) max; urgency=medium
+
+  * Update for MuseScore3, create default config and dirs, rel #1035
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Sat, 05 Jun 2021 10:23:11 +0200
+
 max-skel-conf (11.0.max4) max; urgency=medium
 
   * grub: set silent boot, use 5 seconds as menu timeout

@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# create default config => Spanish keyboard
+
+if [ ! -e $HOME/.local/share/MuseScore/MuseScore3 ]; then
+  mkdir -p $HOME/.config/MuseScore
+  cat /usr/share/max-skel-conf/MuseScore3.ini | sed -e 's@/home/madrid@'$HOME'@g' > HOME/.config/MuseScore/MuseScore3.ini
+
+  mkdir -p "$HOME/Documentos/MuseScore3/Extensiones" \
+           "$HOME/Documentos/MuseScore3/Imágenes" \
+           "$HOME/Documentos/MuseScore3/Plugins" \
+           "$HOME/Documentos/MuseScore3/Partituras" \
+           "$HOME/Documentos/MuseScore3/SoundFonts" \
+           "$HOME/Documentos/MuseScore3/Estilos" \
+           "$HOME/Documentos/MuseScore3/Plantillas"
+
+  mkdir -p $HOME/.local/share/MuseScore/MuseScore3
+  cp -ra /usr/share/max-skel-conf/MuseScore/MuseScore3/* $HOME/.local/share/MuseScore/MuseScore3/
+fi
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+MSCORE=$(which mscore3.distrib)
+${MSCORE} "$@"

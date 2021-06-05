@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<museScore version="3.01">
+  <Toolbar name="noteInput">
+    <action>note-input</action>
+    <action>pad-note-128</action>
+    <action>pad-note-64</action>
+    <action>pad-note-32</action>
+    <action>pad-note-16</action>
+    <action>pad-note-8</action>
+    <action>pad-note-4</action>
+    <action>pad-note-2</action>
+    <action>pad-note-1</action>
+    <action>note-breve</action>
+    <action>note-longa</action>
+    <action>pad-dot</action>
+    <action>pad-dotdot</action>
+    <action>pad-dot3</action>
+    <action>pad-dot4</action>
+    <action>tie</action>
+    <action></action>
+    <action>pad-rest</action>
+    <action></action>
+    <action>sharp2</action>
+    <action>sharp</action>
+    <action>nat</action>
+    <action>flat</action>
+    <action>flat2</action>
+    <action>flip</action>
+    <action></action>
+    <action>voice-1</action>
+    <action>voice-2</action>
+    <action>voice-3</action>
+    <action>voice-4</action>
+    </Toolbar>
+  <Toolbar name="fileOperation">
+    <action>file-new</action>
+    <action>file-open</action>
+    <action>file-save</action>
+    <action>file-save-online</action>
+    <action>print</action>
+    <action>undo</action>
+    <action>redo</action>
+    </Toolbar>
+  <Toolbar name="playbackControl">
+    <action>midi-on</action>
+    <action></action>
+    <action>rewind</action>
+    <action>play</action>
+    <action>loop</action>
+    <action></action>
+    <action>repeat</action>
+    <action>pan</action>
+    <action>metronome</action>
+    <action>countin</action>
+    </Toolbar>
+  </museScore>
