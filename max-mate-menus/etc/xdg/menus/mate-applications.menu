@@ -22,23 +22,7 @@
   -->
 
    
-  <Menu>
-        <Name>Profesor</Name>
-        <Directory>max-profesor.directory</Directory>
-        <Include>
-          <And>
-            <Category>menuProfesor</Category>
-          </And>
-        </Include>
-        <Include>
-            <Filename>menu-profesor-raices.desktop</Filename>
-            <Filename>menu-profesor-pdatos.desktop</Filename>
-            <Filename>menu-profesor-innovacion.desktop</Filename>
-            <Filename>menu-profesor-dat.desktop</Filename>
-        </Include>
-  </Menu>
-
-  <Menu>
+    <Menu>
     <Name>MaX y EducaMadrid</Name>
     <Directory>max-educamadrid.directory</Directory>
 
@@ -101,7 +85,26 @@
     <Name>Educación A distancia</Name>
     <Directory>edu-distancia.directory</Directory>
 
-      <Menu>
+     <Menu>
+        <Name>Otros Enlaces</Name>
+        <Directory>max-profesor.directory</Directory>
+        <Include>
+          <And>
+            <Category>menuProfesor</Category>
+          </And>
+        </Include>
+        <Include>
+            <Filename>menu-profesor-raices.desktop</Filename>
+            <Filename>menu-profesor-pdatos.desktop</Filename>
+            <Filename>menu-profesor-innovacion.desktop</Filename>
+            <Filename>menu-profesor-dat.desktop</Filename>
+        </Include>
+     </Menu>
+ 
+
+
+
+     <Menu>
         <Name>Programas</Name>
         <Directory>edu-programas.directory</Directory>
         <Include>
@@ -123,7 +126,7 @@
       </Menu>
 
       <Menu>
-        <Name>Enlaces</Name>
+        <Name>Herramientas Web</Name>
         <Directory>edu-enlaces.directory</Directory>
         <Include>
           <And>
