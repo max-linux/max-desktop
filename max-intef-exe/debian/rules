@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+VERSION=2.6
+
+URL=https://github.com/exelearning/iteexe/releases/download/$(VERSION)/intef-exe_$(VERSION)_all.deb
+
+%:
+	dh $@ --with python2
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) && dpkg -x *.deb ./); \
+	fi
+
+	cat build/usr/share/doc/intef-exe/copyright > debian/copyright
+	mv build/usr/share/doc/intef-exe/changelog.gz build/usr/share/doc/intef-exe/changelog.upstream.gz
+
+	# change default style
+	sed -i -e 's/INTEF/MAX/g' build/usr/lib/python2.7/dist-packages/exe/engine/config.py
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+

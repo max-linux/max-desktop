@@ -1,0 +1,34 @@
+Source: max-intef-exe
+Section: education
+Priority: optional
+Maintainer: eXeLearning <admin@exelearning.net>
+Build-Depends: debhelper (>= 8.0.0), wget, python2, dh-python
+Standards-Version: 3.9.3
+Homepage: https://github.com/exelearning/iteexe
+
+Package: intef-exe
+Architecture: all
+Depends: python (>= 2.7) | python2, 
+         python-setuptools,
+         python-zopeinterface (>= 3.0.0-6) | python-zope.interface,
+         python-pil,
+         python-chardet,
+         python-lxml,
+         iceweasel | www-browser,
+         python-feedparser,
+         mimetex,
+         python-bs4,
+         python-suds,
+         python-requests-oauthlib,
+         python-dateutil,
+         python-cssmin | cssmin,
+         python-webassets,
+         ${shlibs:Depends}, ${misc:Depends}
+Conflicts: python-exe, python-intef-exe, python2.3-exe, python2.4-exe, python2.5-exe
+Replaces: python-exe, python-intef-exe, python2.3-exe, python2.4-exe, python2.5-exe
+Description: eLearning XHTML & HTML5 editor
+ The eXeLearning project is an authoring environment that enables teachers
+ and students to create and publish open educational resources without the
+ need to become proficient in HTML or XML markup. Content generated using
+ eXeLearning can be exported as web pages, as educational-standard packages
+ used by any Learning Management System, as epub3 files and on mobile devices.
