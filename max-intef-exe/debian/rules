@@ -6,7 +6,7 @@ VERSION=2.6
 URL=https://github.com/exelearning/iteexe/releases/download/$(VERSION)/intef-exe_$(VERSION)_all.deb
 
 %:
-	dh $@ --with python2
+	dh $@
 
 
 override_dh_auto_build:

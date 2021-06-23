@@ -2,7 +2,7 @@ Source: max-intef-exe
 Section: education
 Priority: optional
 Maintainer: eXeLearning <admin@exelearning.net>
-Build-Depends: debhelper (>= 8.0.0), wget, python2, dh-python
+Build-Depends: debhelper (>= 8.0.0), wget
 Standards-Version: 3.9.3
 Homepage: https://github.com/exelearning/iteexe
 
