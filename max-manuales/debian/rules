@@ -11,5 +11,5 @@ override_dh_clean:
 
 
 override_dh_auto_build:
-	./fix-long-names.py $(CURDIR)/max10/ $(CURDIR)/dvd/manual/
+	./fix-long-names.py $(CURDIR)/max11/ $(CURDIR)/dvd/manual/
 

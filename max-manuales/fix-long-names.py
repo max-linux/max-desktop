@@ -125,7 +125,7 @@ dicc = {
     'ejecutar_el_instalador': 'runinst',
     'aplicar_los_cambios_marcados': 'chapp',
     'guardar_archivo_como_pdf': 'savpdf',
-    'entorno_de_escritorio_y_personalizacin': 'dskenvmod',
+    # 'entorno_de_escritorio_y_personalizacin': 'dskenvmod',
     'cuatro_en_raya': '4enry',
     'fuentes_tipogrficas': 'fttf',
     'trabajar_desde_el_disco_duro_con_la_distribucin_instalada': 'wkhddin',
@@ -156,9 +156,22 @@ dicc = {
     'impresora_usb': 'printusb',
     'para_saber_ms': 'knomor',
     'origen_de_max': 'orgmax',
-
-    'personalizacin.': 'perso.',
-    'Thumbnail': 'tb',
+    'usb_modo3_': 'u3',
+    'instamax11_': 'im11',
+    'insta_max_11_bienvenida': 'im11w',
+    'insta_max11_dual_definitiva': 'im11dd',
+    'insta_max11_junto_a_ellos': 'im11je',
+    'insta_max_tipo_instalacion': 'imti',
+    'max11_accesibilidad': 'm11acc',
+    'max11_bienvenida': 'm11w',
+    'usb_auto_v1_con_audio_y_con_max11': 'uam11',
+    'welcome_max11': 'wm11',
+    'arranquelivemax11': 'alm11',
+    'escritorio_max_11': 'em_11',
+    'escritorio_max11': 'em11',
+    'ico_cableadad': 'ieth',
+    'ico_inalambrica': 'iwal',
+    'ico_insta_max': 'iim',
 
     'men_principal.': 'mppal',
     'pantalla_de_bienvenida': 'pwelc',
@@ -170,6 +183,23 @@ dicc = {
     'entrada_automatica_': 'inauto_',
     'entrada_automtica': 'inauto',
 
+    '14-11-47': '1411',
+    '14-12-09': '14120',
+    '14-12-24': '14122',
+    '14-12-46': '14124',
+    '14-13-03': '14130',
+    '14-13-27': '14132',
+    '14-14-52': '14145',
+    '14-33-05': '14330',
+    '20210609_19': '216919',
+
+    'Captura de pantalla -2021-06-08 ': '2168',
+    'captura_de_pantalla_2021_03_02_a_las_10': '213210',
+
+    # 'personalizacin.': 'perso.',
+    'Thumbnail': 't',
+    'Seleccion_': 'sel',
+
     # 'otros_dispositivos.': 'othedev.',
     # 'usbs_y_otros_dispositivos.': 'usbdevs.',
     # 'usbs_y_': 'usb',
@@ -178,6 +208,13 @@ dicc = {
 dicc2 = {
     'usbs_y_otros_dispositivos.html': 'usbsdev.html',
     'otros_dispositivos.html': 'othdevs.html',
+    'tomar_una_captura_de_pantalla.html': 'capt.html',
+    'visor_de_imgenes_ojo_de_mate.html': 'ojo.html',
+    'inclusin_de_plank.html': 'plank.html',
+    'educacin_a_distancia.html': 'edist.html',
+    'personalizacin_de_max_11x_para_infantil_y_primaria.html': 'infpri.html',
+    'entorno_de_escritorio_y_personalizacin.html': 'eeyp.html',
+    'personalizacin.html': 'perso.html',
 }
 
 
@@ -235,7 +272,7 @@ for fp in glob.glob(ORIG + '/*'):
     else:
         newf = getName(f)
         if len(newf) > MAX:
-            print f, newf
+            print "NUMBAD", f, newf
             numbad += 1
 
         renames[f] = newf
@@ -244,7 +281,7 @@ for fp in glob.glob(ORIG + '/*'):
 
 
 if numbad > 0:
-    print "numbad > 0, exit"
+    print "numbad > 0 (%s), exit" % numbad
     sys.exit(1)
 
 # pprint.pprint(renames)
@@ -257,8 +294,10 @@ for t in types:
     files.extend(glob.glob(DST + '/' + t))
 
 for fp in files:
+    print("replace()", fp)
     replace(fp, renames)
     # print fp, replace(fp, renames), '%'
 
 for f in files:
+    print("rgrep '%s' %s " % (f, DST))
     os.system("rgrep '%s' %s " % (f, DST))
