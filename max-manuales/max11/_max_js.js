@@ -87,7 +87,7 @@ var myTheme = {
 }
 
 $(function(){
-    if ($("body").hasClass("exe-web-site")) {
+    if (document.body.className=='exe-web-site js') {
         myTheme.init();
     }
 });

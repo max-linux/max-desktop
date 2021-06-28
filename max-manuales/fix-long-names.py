@@ -298,6 +298,6 @@ for fp in files:
     replace(fp, renames)
     # print fp, replace(fp, renames), '%'
 
-for f in files:
-    print("rgrep '%s' %s " % (f, DST))
-    os.system("rgrep '%s' %s " % (f, DST))
+#for f in files:
+#    print("rgrep '%s' %s " % (f, DST))
+#    os.system("rgrep '%s' %s " % (f, DST))
