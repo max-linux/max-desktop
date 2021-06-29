@@ -1,0 +1,8 @@
+
+
+	1.- Editar splash.png con gimp
+
+	2.- Exportar a splash.pcx
+
+	3.- Ejecutar:
+		mogrify -units PixelsPerInch -depth 300 splash.pcx
