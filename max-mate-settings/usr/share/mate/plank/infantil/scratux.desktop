@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Scratux
+Exec=scratux %U
+Terminal=false
+Type=Application
+Icon=scratux
+StartupWMClass=scratux
+Comment=A free programming language where you can create your own interactive stories, games, and animations
+Comment[es]=Programa historias, juegos y animaciones interactivas
+Categories=Education;Development;

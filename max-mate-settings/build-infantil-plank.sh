@@ -5,7 +5,7 @@ set -e
 OUT="usr/share/max-mate/settings-overlay-infantil/config/plank/dock1/launchers"
 SCHEMA="usr/share/glib-2.0/schemas/zzz-max-mate-infantil-plank.gschema.override"
 
-LIST="org.kde.gcompris childsplay omnitux pysycache eduactiv8 org.kde.khangman tuxtype tuxmath tuxpaint org.kde.ktuberling pinta scratch"
+LIST="org.kde.gcompris childsplay omnitux pysycache eduactiv8 org.kde.khangman tuxtype tuxmath tuxpaint org.kde.ktuberling pinta scratux"
 
 mkdir -p "${OUT}"
 rm -f "${SCHEMA}"
@@ -38,7 +38,7 @@ done
 
 i=0
 ITEMS=$(for d in $LIST; do
-  if [ "$d" = "scratch" ]; then
+  if [ "$d" = "scratux" ]; then
     printf "'%02d_%s.dockitem'" $i $d
   else
     printf "'%02d_%s.dockitem'," $i $d
