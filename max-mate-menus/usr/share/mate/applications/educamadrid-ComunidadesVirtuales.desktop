@@ -3,8 +3,8 @@
 Encoding=UTF-8
 Name=EducaMadrid Comunidades Virtuales
 Name[es]=Comunidades Virtuales
-Comment=EducaMadrid Enlace link 
-Comment[es]=Enlace a las Espacios de Formación en EducaMadrid
+Comment=Selección de Comunidades Virtuales en EducaMadrid
+Comment[es]=Selección de Comunidades Virtuales en EducaMadrid
 Exec=x-www-browser https://www.educa2.madrid.org/educamadrid/#comunidades-virtuales
 Icon=ComunidadesVirtuales
 StartupNotify=true
