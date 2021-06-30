@@ -111,6 +111,8 @@
           <And>
             <Category>EduProgramas</Category>
           </And>
+	</Include>
+	<Include>
         <Filename>audacity.desktop</Filename>
         <Filename>fr.handbrake.ghb.desktop</Filename>
         <Filename>com.github.xournalpp.xournalpp.desktop</Filename>
@@ -123,7 +125,8 @@
       	<Filename>optimizarpdf.desktop</Filename>
 	<Filename>shutter.desktop</Filename> 
         <Filename>org.gnome.clocks.desktop</Filename>
-	 </Include>
+	<Filename>exe.desktop</Filename>
+	</Include>
       </Menu>
 
       <Menu>
