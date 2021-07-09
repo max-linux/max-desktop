@@ -1,3 +1,9 @@
+max-genlive (11.0.max9) max; urgency=medium
+
+  * Remove nomodeset from cdmline, rel #1039
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 09 Jul 2021 17:51:38 +0200
+
 max-genlive (11.0.max8) max; urgency=medium
 
   * Change version rc1 to final
