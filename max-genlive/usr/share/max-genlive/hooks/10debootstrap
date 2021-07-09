@@ -47,7 +47,7 @@ rm -f $CHROOT/etc/apt/preferences.d/max-genlive
 for blkf in $(find ${PKGSDIR}/ -name "*.blacklist" -type f); do
   echo " * Blacklist file ${blkf}"
   for p in $(grep -v -e ^# -e "^$" ${blkf}); do
-    echo "   - Blacklist package ${p} in DVD live"
+    echo "   - Blacklist package ${p} in ISO live"
     echo -e "Package: ${p}\nPin: release *\nPin-Priority: -100\n\n" >> $CHROOT/etc/apt/preferences.d/max-genlive
   done
 done

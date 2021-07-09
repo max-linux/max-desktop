@@ -105,16 +105,16 @@ MY_NAME=$(basename $0)
 
 
 
-# include all dvd package list
+# include all package list
 for f in $(find ${PKGSDIR}/ -name "*.dvdlist" -type f); do
-  echo " * Include $f for DVD repo packages"
+  echo " * Include $f for repo packages"
   . ${f}
 done
 
 
-# include all dvd package list *.livelist
+# include all package list *.livelist
 for f in $(find ${PKGSDIR}/ -name "*.livelist" -type f); do
-  echo " * Include $f for DVD live packages"
+  echo " * Include $f for live packages"
   . ${f}
 done
 
@@ -140,7 +140,7 @@ cat << EOF
 
     DISABLE_CLEAN=1 no borra los directorios temporales
 
-    ENABLE_EXTRA=1 Añade al DVD varios paquetes (ver variable PAQUETES_EXTRA)
+    ENABLE_EXTRA=1 Añade a la ISO varios paquetes (ver variable PAQUETES_EXTRA)
                    Para usar esta opción tienes que ser desarrollador de max y tener cuenta
                    SSH en max.educa.madrid.org porque hay que subir el archivo Release
                    firmarlo con la clave GPG de MAX y descargar el Release.gpg

@@ -55,7 +55,7 @@ ubiquity localechooser/shortlist select ES
 ubiquity ubiquity/stepMigrationAssistant boolean false
 #
 # Tipo de instalacion, puede ser:
-#  escritorio (lo que va en el DVD)
+#  escritorio (lo que va en la ISO)
 #  alumno (instala max-alumno)
 #  profesor (instala max-profesor)
 #  servidor (instala max-servidor)

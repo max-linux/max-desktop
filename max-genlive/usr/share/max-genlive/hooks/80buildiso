@@ -93,7 +93,7 @@ fi
 # copiar memtest
 cp /boot/memtest86+.bin $CDRW/casper/mt86plus
 
-_echo "Generando md5sum de archivos de dentro del DVD..."
+_echo "Generando md5sum de archivos de dentro de la ISO..."
 #(cd $CDRW && find . -type f -print0 | grep -v boot.cat | grep -v isolinux.bin | xargs -0 md5sum > md5sum.txt)
 (cd $CDRW && find . -type f -print0 | xargs -0 md5sum > md5sum.txt)
 
@@ -107,7 +107,7 @@ sed -i '/md5sum.txt/d' $CDRW/md5sum.txt
 #(cd debian/python-exe >/dev/null ; find . -type f  ! -regex '.*/DEBIAN/.*' -printf '%P\0' | xargs -r0 md5sum > DEBIAN/md5sums)
 
 
-ISO_FILE="${IMAGE_NAME}-DVDlive-$ARCH-${stamp}.iso"
+ISO_FILE="${IMAGE_NAME}-live-$ARCH-${stamp}.iso"
 
 _echo "Generando ${ISO_FILE}"
 
@@ -183,5 +183,5 @@ fi
 #     -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
 #     -boot-info-table -o ${ISO_FILE} $CDRW/ || _exit "Error generando la imagen ISO"
 
-_echo "Generando md5 del DVD"
+_echo "Generando md5 de la ISO"
 md5sum ${ISO_FILE} > ${ISO_FILE}.md5 || _exit "Error generando el md5"

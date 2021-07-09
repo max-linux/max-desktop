@@ -429,7 +429,7 @@ fi
 _echo "Extrayendo portables a pendrive"
 tar -zxf portables.tar.gz -C part1/ 2>/dev/null
 
-_echo "Copiando portables al DVD"
+_echo "Copiando portables a la ISO"
 mkdir -p $CDRW/portables/
 cp portables.tar.gz $CDRW/portables/
 
