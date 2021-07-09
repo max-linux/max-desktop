@@ -1,3 +1,9 @@
+max-genlive (11.0.max10) max; urgency=medium
+
+  * Remove md5sum line from md5sums.txt, rel #1040
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 09 Jul 2021 18:13:19 +0200
+
 max-genlive (11.0.max9) max; urgency=medium
 
   * Remove nomodeset from cdmline, rel #1039

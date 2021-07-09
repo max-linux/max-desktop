@@ -101,6 +101,9 @@ _echo "Generando md5sum de archivos de dentro del DVD..."
 (cd $CDRW && grep -v -e "boot.cat" -e "isolinux.bin" md5sum.txt > md5sum.txt.new)
 (cd $CDRW && mv md5sum.txt.new md5sum.txt)
 
+# delete md5sum.txt line #1040
+sed -i '/md5sum.txt/d' $CDRW/md5sum.txt
+
 #(cd debian/python-exe >/dev/null ; find . -type f  ! -regex '.*/DEBIAN/.*' -printf '%P\0' | xargs -r0 md5sum > DEBIAN/md5sums)
 
 
