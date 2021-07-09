@@ -16,6 +16,7 @@ case "$1" in
     # remove cached wallpapers
     [ -d /var/lib/gdm/.cache/wallpaper/ ] && rm -f /var/lib/gdm/.cache/wallpaper/*
     rm -f /home/*/.cache/wallpaper/* >/dev/null 2>&1
+    rm -f /home/*/.cache/mate/background/* >/dev/null 2>&1
 
 
     # create default links to wallpapers

@@ -1,3 +1,9 @@
+max-artwork (11.0.max9) max; urgency=medium
+
+  * Remove MATE background cache on update, close #1041
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 09 Jul 2021 18:21:11 +0200
+
 max-artwork (11.0.max8) max; urgency=medium
 
   * Fix max-madrid-linux-infantil-1920x1080.png
