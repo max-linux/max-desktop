@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Encoding=UTF-8
+Name=Comparti2
+Comment=Comparte archivos de gran tamaño
+Exec=x-www-browser https://comparti2.educa.madrid.org/ 
+Icon=menu-educa-comparti2
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=EduEnlaces;
