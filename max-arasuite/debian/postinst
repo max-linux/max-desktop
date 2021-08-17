@@ -10,5 +10,8 @@ if [ ! -e /opt/AraSuite/.arasuite ]; then
   chmod -R 777 /opt/AraSuite/.arasuite
 fi
 
+chmod -R 777 /opt/AraSuite/AraWord/resources
+
+
 #DEBHELPER#
 
