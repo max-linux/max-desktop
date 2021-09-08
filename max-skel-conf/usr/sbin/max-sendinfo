@@ -14,7 +14,7 @@ import uuid
 from subprocess import Popen, PIPE, STDOUT
 
 
-URL = "http://madrid_linux.educa.madrid.org/stats/stats.php"
+URL = "https://madridlinux.educa.madrid.org/stats/stats.php"
 HEADERS = {'User-Agent': "MAX 11.0"}
 VERBOSE = True
 

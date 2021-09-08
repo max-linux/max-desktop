@@ -1,3 +1,9 @@
+max-skel-conf (11.0.max7) max; urgency=medium
+
+  * Update max-sendinfo to use new URL
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 08 Sep 2021 12:35:05 +0200
+
 max-skel-conf (11.0.max6) max; urgency=medium
 
   * usr/sbin/max-sendinfo: Update HTTP headers to MAX 11
