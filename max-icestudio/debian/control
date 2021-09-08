@@ -14,6 +14,6 @@ Homepage: https://github.com/FPGAwars/icestudio
 
 Package: icestudio
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-venv
 Description: Experimental graphic editor for open FPGAs
  Experimental graphic editor for open FPGAs
