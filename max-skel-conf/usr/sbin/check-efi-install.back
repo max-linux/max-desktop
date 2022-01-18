@@ -40,22 +40,16 @@ if [ "$1" = "remove" ]; then
 fi
 
 if [ "$REMOVE" = "1" ]; then
-  #Vic - finder device
-  EFI_DISC=$(df -h | awk '{ if ($NF == "/boot/efi" ) print $1 }')
-
   # remove MAX entry
   EFI_NUM=$(efibootmgr | awk '/MAX/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
-  #[ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d /dev/sda
-  [ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d  $EFI_DISC
+  [ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d /dev/sda
 
   EFI_NUM=$(efibootmgr | awk '/MAX11/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
-  #[ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d /dev/sda
-  [ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d  $EFI_DISC
+  [ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d /dev/sda
 
   # ubuntu install max-*.* entry (don't works)
   EFI_NUM_UBUNTU=$(efibootmgr | awk '/max\-/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
-  #[ ! -z $EFI_NUM_UBUNTU ] && efibootmgr -q -B -b "$EFI_NUM_UBUNTU" -d /dev/sda
-  [ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d  $EFI_DISC
+  [ ! -z $EFI_NUM_UBUNTU ] && efibootmgr -q -B -b "$EFI_NUM_UBUNTU" -d /dev/sda
   # rm -rf /boot/efi/EFI/MAX/ /boot/efi/EFI/MAX11/
   echo " * Removed."
   exit
@@ -101,15 +95,12 @@ EFI_NUM_UBUNTU=$(efibootmgr | awk '/max\-/ {print $1}'| sed -e 's/Boot//g' -e 's
 grub-mkimage --format=x86_64-efi -p /EFI/MAX11 -o /tmp/grubx64.efi acpi all_video bitmap bitmap bitmap_scale boot btrfs bufio bufio chain configfile crypto datetime disk diskfilter diskfilter echo efifwsetup efi_gop efinet efi_uga ext2 extcmd extcmd font fshelp gcry_sha512 gettext gfxmenu gfxterm gfxterm_background gzio halt hfsplus iso9660 jpeg keystatus linux linuxefi loadenv lsefi lsefimmap lsefisystab lssal lzopio memdisk minicmd mmap normal part_gpt part_msdos password_pbkdf2 pbkdf2 priority_queue reboot relocator search search_fs_file search_fs_uuid search_label sleep terminal test trig video video_bochs video_cirrus video_colors video_fb fat help ls lspci
 
 mkdir -p /boot/efi/EFI/MAX11
-if ! [ -d /boot/efi/EFI/ubuntu ]; then 
-mkdir -p /boot/efi/EFI/ubuntu
-fi
+
 OLD=$(find /boot/efi/EFI -type d -name "max-*")
 if [ "${OLD}" != "" ]; then
   # copy all files and delete dir
-  cp ${OLD}/* /boot/efi/EFI/MAX11/  
-  cp ${OLD}/* /boot/efi/EFI/ubuntu/
- # rm -rf "${OLD}" # no remove
+  cp ${OLD}/* /boot/efi/EFI/MAX11/
+  # rm -rf "${OLD}" # no remove
 fi
 
 # copy ubuntu fw files

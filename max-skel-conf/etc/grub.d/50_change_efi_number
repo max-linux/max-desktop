@@ -1,0 +1,10 @@
+#! /bin/bash
+
+if [ -d /boot/efi/ ] ; then 
+
+EFI_NUM=`efibootmgr | awk '/MAX/ {print $1}' | sed -e 's/Boot//g' -e 's/*//g' | tail -1`
+
+efibootmgr -o $EFI_NUM
+
+fi
+
