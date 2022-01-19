@@ -1,3 +1,9 @@
+max-skel-conf (11.0.max9) max; urgency=medium
+
+  * change MAX11 position and check-efi-install.back file removed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 19 Jan 2022 10:28:26 +0100
+
 max-skel-conf (11.0.max8) max; urgency=medium
 
   * efiboot position fixed
