@@ -1,3 +1,10 @@
+max-skel-conf (11.0.max10) max; urgency=medium
+
+  * change line in 50_change_efi_number
+   
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 24 Jan 2022 08:41:24 +0100
+
 max-skel-conf (11.0.max9) max; urgency=medium
 
   * change MAX11 position and check-efi-install.back file removed

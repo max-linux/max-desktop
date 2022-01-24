@@ -4,7 +4,7 @@ if [ -d /boot/efi/ ] ; then
 
 EFI_NUM=`efibootmgr | awk '/MAX/ {print $1}' | sed -e 's/Boot//g' -e 's/*//g' | tail -1`
 
-	if ! [ $EFI_NUM == "" ] ; then
+	if ! [ "$EFI_NUM" == "" ] ; then
 	efibootmgr -o $EFI_NUM
 	fi
 
