@@ -190,7 +190,7 @@ class Profiler(object):
                     print_debug("aplicar wallpaper '%s'"%profile['wallpaper'])
                     app=homealumno.gconfprofile.GconfProfile(os.getuid(), os.getgid(), direct=False)
                     # mate wallpaper
-                    data=[{'key': 'org.mate.desktop.background.picture-filename',
+                    data=[{'key': 'org.mate.background.picture-filename',
                            'type': 'string',
                            'value': profile['wallpaper']}]
                     app.do(data)
