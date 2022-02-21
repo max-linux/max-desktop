@@ -46,6 +46,8 @@ case "$1" in
 
     [ -e  /etc/skel/config ] && rmdir /etc/skel/config || true
 
+    /usr/sbin/check-efi-install || true
+
     ;;
 
 esac
