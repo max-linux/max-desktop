@@ -76,7 +76,8 @@ EFI_NUM=$(echo ${EFI_PART}|  awk '{print NF}')
 MAX_PART=$(mount | awk '/ \/ / {print $1}')
 MAX_GRUB=$(grub-probe --device $MAX_PART --target=efi_hints)
 MAX_UUID=$(grub-probe --device $MAX_PART --target=fs_uuid)
-EFI_DISC=$(fdisk -l | awk '/Disco/ { print $2 }' | sed -e 's/://g')
+#EFI_DISC=$(fdisk -l | awk '/Disco/ { print $2 }' | sed -e 's/://g') ugly
+EFI_DISC=$(grub-probe --device $MAX_PART --target=disk)
 
 echo " * Installing GRUB in UEFI part $EFI_PART to boot $MAX_PART ..."
 

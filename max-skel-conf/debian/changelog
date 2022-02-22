@@ -1,3 +1,15 @@
+max-skel-conf (11.0.max16) max; urgency=medium
+
+  * EFI_DISC variable fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 22 Feb 2022 11:59:19 +0100
+
+max-skel-conf (11.0.max15) max; urgency=medium
+
+  * EFI_DISC variable fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 22 Feb 2022 11:57:28 +0100
+
 max-skel-conf (11.0.max14) max; urgency=medium
 
   * Exec check-efi-install in package postinst
