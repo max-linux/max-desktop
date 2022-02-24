@@ -43,6 +43,18 @@ cat << EOF > ${outfile}
 Launcher=docklet://desktop
 EOF
 
+# create clippy launcher in last position
+i=$((i + 1))
+outfile=$(printf "%s/%02d_clippy.dockitem" ${OUT} ${i})
+
+cat << EOF > ${outfile}
+[PlankDockItemPreferences]
+Launcher=docklet://clippy
+
+[DockyClippyPreferences]
+MaxEtries=15
+TrackMouseSelections=false
+EOF
 
 
 i=0

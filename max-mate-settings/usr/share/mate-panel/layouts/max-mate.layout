@@ -24,6 +24,29 @@ toplevel-id=bottom
 object-type=launcher
 menu-path=applications:/
 
+[Object stickynote]
+locked=false
+toplevel-id=bottom
+position=25
+object-type=applet
+applet-iid=StickyNotesAppletFactory::StickyNotesApplet
+
+[Object screenshot]
+launcher-location=/usr/share/applications/mate-screenshot.desktop
+locked=false
+toplevel-id=bottom
+position=30
+object-type=launcher
+menu-path=applications:/
+
+[Object force-quit]
+locked=true
+toplevel-id=bottom
+position=35
+object-type=action
+action-type=force-quit
+
+
 [Object window-list]
 object-type=applet
 applet-iid=WnckletFactory::WindowListApplet
