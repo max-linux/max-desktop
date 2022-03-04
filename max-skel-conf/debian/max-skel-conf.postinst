@@ -48,6 +48,8 @@ case "$1" in
 
     /usr/sbin/check-efi-install || true
 
+    /usr/sbin/max-autoenable-bluetooth || true
+
     ;;
 
 esac

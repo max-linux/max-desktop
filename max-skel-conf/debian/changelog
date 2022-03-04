@@ -1,3 +1,9 @@
+max-skel-conf (11.0.max17) max; urgency=medium
+
+  * bluetooth AutoEnable to false changed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 04 Mar 2022 00:34:04 +0100
+
 max-skel-conf (11.0.max16) max; urgency=medium
 
   * EFI_DISC variable fixed
