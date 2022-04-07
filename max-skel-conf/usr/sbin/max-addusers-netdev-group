@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#Se agregan los usuarios al grupo netdev necesario para eliminar el error rfkill producido por blueman-applet.
+
+for u in $( awk -F":" '/\/bin\/bash/ { if($3>999) print $1}' /etc/passwd ); do
+	grep netdev /etc/group| grep -q "$u" || adduser "$u" netdev
+done

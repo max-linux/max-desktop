@@ -1,3 +1,9 @@
+max-skel-conf (11.0.max18) max; urgency=medium
+
+  * add users to netdev group
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 07 Apr 2022 10:46:33 +0200
+
 max-skel-conf (11.0.max17) max; urgency=medium
 
   * bluetooth AutoEnable to false changed
