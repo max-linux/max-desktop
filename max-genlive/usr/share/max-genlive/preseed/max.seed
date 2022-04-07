@@ -69,14 +69,14 @@ passwd passwd/user-fullname string Madrid
 passwd passwd/username string madrid
 passwd passwd/user-password password cmadrid
 passwd passwd/user-password-again password cmadrid
-passwd passwd/user-default-groups string adm audio cdrom dialout floppy video dip lpadmin plugdev fuse scanner vboxusers sambashare
+passwd passwd/user-default-groups string adm audio cdrom dialout floppy video dip lpadmin plugdev fuse scanner vboxusers sambashare netdev
 passwd passwd/auto-login boolean false
 ubiquity user-setup/allow-password-weak boolean true
 #
 passwd passwd/alumno-userfullname string Alumno
 passwd passwd/alumno-username string alumno
 passwd passwd/alumno-password password alumno
-passwd passwd/alumno-default-groups string audio cdrom dialout floppy video plugdev scanner vboxusers sambashare
+passwd passwd/alumno-default-groups string audio cdrom dialout floppy video plugdev scanner vboxusers sambashare netdev
 
 ubiquity ubiquity/stepUserInfo boolean false
 #
