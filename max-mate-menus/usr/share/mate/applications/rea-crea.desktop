@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Enconding=UTF-8
+Name=CREA
+Comment=CREA
+Exec=x-www-browser https://emtic.educarex.es/recursos-crea
+Icon=crea
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=max-rea;

@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Enconding=UTF-8
+Name=eScholarium
+Comment=eScholarium
+Exec=x-www-browser https://escholarium.educarex.es/LMS/index.php?u=11&catalog
+Icon=escholarium
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=max-rea;

@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Enconding=UTF-8
+Name=Europeana
+Comment=Europeana
+Exec=x-www-browser https://www.europeana.eu/es
+Icon=europeana
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=max-rea;

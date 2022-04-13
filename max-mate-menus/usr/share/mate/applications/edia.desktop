@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Enconding=UTF-8
+Name=Proyecto EDIA  
+Comment=Proyecto EDIA  
+Exec=x-www-browser https://cedec.intef.es/proyecto-edia/ 
+Icon=cedec
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=max-rea;

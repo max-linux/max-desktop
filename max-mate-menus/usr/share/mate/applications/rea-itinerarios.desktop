@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Enconding=UTF-8
+Name=Itinerarios didácticos  
+Comment=Itinerarios didácticos  
+Exec=x-www-browser https://intef.es/recursos-educativos/recursos-para-el-aprendizaje-en-linea/itinerarios-didacticos/
+Icon=IteDidact
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=max-rea;
