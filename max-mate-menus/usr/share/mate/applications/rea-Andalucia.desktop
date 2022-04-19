@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Enconding=UTF-8
+Name=REA Andalucia
+Comment=REA Andalucia
+Exec=x-www-browser https://www.juntadeandalucia.es/educacion/portals/web/transformacion-digital-educativa/rea
+Icon=AndaluciaREA
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=max-rea;
