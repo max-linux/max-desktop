@@ -1,0 +1,21 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon=scratux
+Icon[es_ES]=scratux
+Name[es_ES]=Scratux
+Exec=/opt/scratux/scratux
+Name=Scratux
+
+
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon[es_ES]=scratux
+Name[es_ES]=Scratux
+Comment[es]=Ide de programación visual basado en bloques.
+Exec=/opt/scratux/scratux %U
+Icon=scratux
+Terminal=false
+Categories=Development;

@@ -9,7 +9,8 @@ VERSION=1.4.1
 #URL="https://dl.bintray.com/scratux/stable/pool/s/scratux/scratux_$(VERSION)_amd64.deb"
 
 # temp hack, upstream is down
-URL="http://max.marioizquierdo.es/max11/pool/main/m/max-scratux/scratux_1.4.0-max2_amd64.deb"
+##URL="http://max.marioizquierdo.es/max11/pool/main/m/max-scratux/scratux_1.4.0-max2_amd64.deb"
+URL="https://github.com/scratux/scratux/releases/download/$(VERSION)/scratux_$(VERSION)_amd64.deb"
 
 %:
 	dh $@
@@ -22,11 +23,21 @@ override_dh_clean:
 override_dh_auto_build:
 	mkdir build ; ( cd build && wget $(URL) && dpkg -x *deb ./)
 
-	rm -rf build/usr/share/doc/scratux
-	rm -rf build/opt/scratux/resources/static/translations/.git
+	rm -f build/usr/share/applications/scratux.desktop
+	#rm -rf build/usr/share/doc/scratux
+	#rm -rf build/opt/scratux/resources/static/translations/.git
 
-	sed -i -e 's@/opt/scratux/@@g' build/usr/share/applications/scratux.desktop
+	#sed -i -e 's@/opt/scratux/@@g' build/usr/share/applications/scratux.desktop
 
-override_dh_auto_install:
-	dh_install
+override_dh_shlibdeps:
+	dh_shlibdeps -X scratux
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+
+##override_dh_auto_install:
+##	dh_install
 

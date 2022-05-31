@@ -1,0 +1,8 @@
+bin/scratux         usr/bin/
+build/usr/*         usr/
+
+#build/opt/scratux/resources       usr/share/scratux/
+build/usr/share/scratux/resources  usr/share/scratux/
+
+
+FIX/usr/share/electron/resources   usr/share/electron/

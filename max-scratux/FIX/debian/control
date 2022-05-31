@@ -1,0 +1,14 @@
+Source: max-scratux
+Section: max
+Priority: extra
+Maintainer: Joan Ciprià <joancipria@gmail.com>
+Build-Depends: debhelper (>= 7), wget
+Standards-Version: 3.8.3
+Homepage: https://github.com/scratux/scratux-desktop#readme
+
+Package: scratux
+Architecture: amd64
+Depends: electron, ${shlibs:Depends}, ${misc:Depends}
+Description: A free programming language where you can create your own interactive stories
+  A free programming language where you can create your own interactive stories, games, and animations
+
