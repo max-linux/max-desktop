@@ -46,12 +46,19 @@ position=35
 object-type=action
 action-type=force-quit
 
+[Object lockscreen]
+locked=false
+toplevel-id=bottom
+position=40
+object-type=action
+action-type=lock
+panel-right-stick=false
 
 [Object window-list]
 object-type=applet
 applet-iid=WnckletFactory::WindowListApplet
 toplevel-id=bottom
-position=40
+position=45
 locked=false
 
 [Object notification-area]
