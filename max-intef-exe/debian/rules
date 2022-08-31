@@ -18,11 +18,13 @@ override_dh_auto_build:
 	cat build/usr/share/doc/intef-exe/copyright > debian/copyright
 	mv build/usr/share/doc/intef-exe/changelog.gz build/usr/share/doc/intef-exe/changelog.upstream.gz
 
+	# temporal change
+	rm -f build/usr/share/exe/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js
+	cp fix/plugin.min.js build/usr/share/exe/scripts/tinymce_4/js/tinymce/plugins/exemedia/
+
 	# change default style
 	sed -i -e 's/INTEF/EducaMadrid-REA/g' build/usr/lib/python2.7/dist-packages/exe/engine/config.py
-
 
 override_dh_clean:
 	dh_clean
 	rm -rf build
-
