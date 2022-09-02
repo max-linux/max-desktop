@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+VERSION=2.3.16
+URL1=http://localhost/remote-files/twine-${VERSION}.tar.gz 
+
+
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	if [ -d build2 ]; then rm -rf build; fi 
+
+
+override_dh_auto_build:
+	
+	mkdir -p build2 &&  cd build2 && wget ${URL1} ;
+	if [ -f build2/twine-${VERSION}.tar.gz ]; then cd build2/ && tar xzvf twine-${VERSION}.tar.gz ; fi	
+	mv build2/twine-2.3.16/ build2/twine
+	find build2/twine/locales/ -type f \( ! -iname "es*" ! -iname "en*" \) -exec rm -f {} \;
+
+

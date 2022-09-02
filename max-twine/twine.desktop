@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Twine
+Name[es]=Twine
+Comment[es]=Twine, herramienta para contar historias interactivas y no lineales.
+Icon=max-twine
+Exec=/opt/twine/twine %U
+Terminal=false
+Type=Application
+Categories=Education;
+StartupNotify=false
+
