@@ -1,7 +1,7 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Name=Scratux
-Exec=scratux %U
+Exec=/opt/scratux/scratux %U
 Terminal=false
 Type=Application
 Icon=scratux
