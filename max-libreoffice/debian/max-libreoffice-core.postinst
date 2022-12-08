@@ -8,7 +8,10 @@ if [ "$1" = "configure" ]; then
 
 fi
 
+if [ -e /etc/libreoffice/registry/zz-max.xcd  ]; then
+   rm -f /etc/libreoffice/registry/zz-max.xcd
 
+fi
 
 #DEBHELPER#
 
