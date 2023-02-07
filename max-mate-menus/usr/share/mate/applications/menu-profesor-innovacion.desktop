@@ -2,7 +2,7 @@
 Enconding=UTF-8
 Name=Innovación y formación
 Comment=Innovación y formación  
-Exec=x-www-browser https://innovacionyformacion.educa.madrid.org/ 
+Exec=firefox https://innovacionyformacion.educa.madrid.org/ 
 Icon=innoFormacion
 StartupNotify=true
 Terminal=false

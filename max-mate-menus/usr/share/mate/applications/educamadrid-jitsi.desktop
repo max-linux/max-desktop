@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=Videoconferencias
 Comment=jitsi.educa.madrid.org
-Exec=x-www-browser https://jitsi.educa.madrid.org/ 
+Exec=firefox https://jitsi.educa.madrid.org/ 
 Icon=menu-educa-jitsi
 StartupNotify=true
 Terminal=false

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Comunicador ARASAAC
+Name[es]=Comunicador ARASAAC
+Comment=Enlace para el uso de Asterics Grid 
+Exec=firefox https://grid.asterics.eu/#grids
+Icon=menu-astericsgrid
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=EduEnlaces;

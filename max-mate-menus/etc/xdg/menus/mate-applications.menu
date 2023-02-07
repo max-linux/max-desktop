@@ -150,6 +150,9 @@
 	<Filename>educamadrid-documentacion.desktop</Filename>
         <Filename>educamadrid-PortalCAU.desktop</Filename>
 	</Include>
+	<Exclude>
+	<Filename>menu-astericsgrid.desktop</Filename>
+	</Exclude>
       </Menu>
 </Menu>
 
@@ -193,6 +196,9 @@
         <Not><Category>Settings</Category></Not>
       </And>
     </Include>
+    <Exclude>
+	<Filename>xzoom.desktop</Filename>
+    </Exclude>
   </Menu> <!-- End Accessibility -->
 
   <!-- Development Tools -->
@@ -206,6 +212,13 @@
       <Filename>emacs.desktop</Filename>
     </Include>
     <Exclude>
+      <Filename>bitmap2component.desktop</Filename>
+      <Filename>eeschema.desktop</Filename>
+      <Filename>gerbview.desktop</Filename>
+      <Filename>gnuradio-grc.desktop</Filename>
+      <Filename>kicad.desktop</Filename>
+      <Filename>pcbcalculator.desktop</Filename>
+      <Filename>pcbnew.desktop</Filename>
       <Filename>fritzing.desktop</Filename>
       <Filename>squeak.desktop</Filename>
     </Exclude>
@@ -234,6 +247,15 @@
             <Filename>www.octave.org-octave.desktop</Filename>
             <Filename>logisim.desktop</Filename>
             <Filename>max-aplicaciones.desktop</Filename>
+            <Filename>aragallerymanager.desktop</Filename>
+            <Filename>aratico.desktop</Filename>
+            <Filename>araticointerpreter.desktop</Filename>
+            <Filename>araword.desktop</Filename>
+            <Filename>org.kde.kalzium.desktop</Filename>
+            <Filename>org.kde.ktouch.desktop</Filename>
+            <Filename>org.kde.marble.maps.desktop</Filename>
+            <Filename>org.kde.marble-qt.desktop</Filename>
+            <Filename>pseint.desktop</Filename>
         </Exclude>
 
         <!--include -->
@@ -358,6 +380,7 @@
             <Filename>educamadrid-educasaac.desktop</Filename>
             <Filename>educamadrid-peac.desktop</Filename>
             <Filename>educamadrid-educasaac.desktop</Filename>
+            <Filename>menu-astericsgrid.desktop</Filename>
         </Include>
     </Menu>
 
@@ -495,12 +518,23 @@
             <Filename>stellarium.desktop</Filename>
             <Filename>kstars.desktop</Filename>
         </Include>
+	<Exclude>
+            <Filename>starplot.desktop</Filename>
+        </Exclude>
     </Menu>
 
     <Menu>
         <Name>Electrónica</Name>
         <Directory>max-electronica.directory</Directory>
         <Include>
+           <And>
+           <Category>Electronics</Category>
+           </And>
+        </Include>
+
+        <Include>
+            <Filename>gnuradio-grc.desktop</Filename>
+            <Filename>kicad.desktop</Filename>
             <Filename>ktechlab.desktop</Filename>
             <Filename>qelectrotech.desktop</Filename>
             <Filename>fritzing.desktop</Filename>
@@ -509,6 +543,14 @@
             <Filename>qucs.desktop</Filename>
             <Filename>logisim.desktop</Filename>
         </Include>
+	<Exclude>
+            <Filename>arduino.desktop</Filename>
+            <Filename>bitmap2component.desktop</Filename>
+            <Filename>eeschema.desktop</Filename>
+            <Filename>gerbview.desktop</Filename>
+            <Filename>pcbcalculator.desktop</Filename>
+            <Filename>pcbnew.desktop</Filename>
+        </Exclude>
     </Menu>
 
     <Menu>
@@ -640,6 +682,7 @@
     </Include>
     <Exclude>
         <Filename>kde4-audiocd.desktop</Filename>
+        <Filename>timidity.desktop</Filename>
         <Filename>denemo.desktop</Filename>
         <Filename>mscore.desktop</Filename>
         <Filename>tuxguitar.desktop</Filename>
@@ -662,6 +705,7 @@
       </And>
     </Include>
     <Exclude>
+        <Filename>pdfarranger.desktop</Filename>
         <Filename>mate-dictionary.desktop</Filename>
         <Filename>kde4-knotes.desktop</Filename>
         <Filename>kde4-korganizer.desktop</Filename>
@@ -725,6 +769,7 @@
       </And>
     </Include>
     <Exclude>
+	<Filename>texdoctk.desktop</Filename>
         <Filename>educamadrid-bilingue.desktop</Filename>
         <Filename>educamadrid-educasaac.desktop</Filename>
         <Filename>educamadrid-peac.desktop</Filename>

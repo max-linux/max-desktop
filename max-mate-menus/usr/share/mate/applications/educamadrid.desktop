@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=Portal EducaMadrid
 Comment=Portal EducaMadrid www.educa2.madrid.org/educamadrid
-Exec=x-www-browser https://www.educa2.madrid.org/educamadrid/
+Exec=firefox https://www.educa2.madrid.org/educamadrid/
 Icon=max
 StartupNotify=true
 Terminal=false

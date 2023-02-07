@@ -2,7 +2,7 @@
 Enconding=UTF-8
 Name= Direcciones de Área  
 Comment=Dirección de Área  
-Exec=x-www-browser https://external.educa2.madrid.org/web/direcciones-de-area 
+Exec=firefox https://external.educa2.madrid.org/web/direcciones-de-area 
 Icon=dat150
 StartupNotify=true
 Terminal=false

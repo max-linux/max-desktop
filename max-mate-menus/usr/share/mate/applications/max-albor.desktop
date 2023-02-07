@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=ALBOR
 Comment=ALBOR
-Exec=x-www-browser http://www.educa2.madrid.org/web/albor
+Exec=firefox http://www.educa2.madrid.org/web/albor
 Icon=menu-educa-albor
 StartupNotify=true
 Terminal=false

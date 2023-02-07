@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name[es]=Timbre Escolar
+Name[fr]=Réveil
+Comment=Wake up in the morning
+Icon=max-timbreEscolar
+Exec=alarm-clock-applet
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Utility;
+X-Ubuntu-Gettext-Domain=alarm-clock

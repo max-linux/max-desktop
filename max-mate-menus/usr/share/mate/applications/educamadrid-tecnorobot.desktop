@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=Tecnorobot
 Comment=tecnorobot.educa2.madrid.org
-Exec=x-www-browser http://tecnorobot.educa2.madrid.org/
+Exec=firefox http://tecnorobot.educa2.madrid.org/
 Icon=menu-educa-tecnorobot
 StartupNotify=true
 Terminal=false

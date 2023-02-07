@@ -3,7 +3,7 @@
 Encoding=UTF-8
 Name=Comparti2
 Comment=Comparte archivos de gran tamaño
-Exec=x-www-browser https://comparti2.educa.madrid.org/ 
+Exec=firefox https://comparti2.educa.madrid.org/ 
 Icon=menu-educa-comparti2
 StartupNotify=true
 Terminal=false

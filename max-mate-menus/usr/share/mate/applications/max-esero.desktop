@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=Esero ESA Europa
 Comment=Esero ESA Europa
-Exec=x-www-browser https://esero.es/recursos/
+Exec=firefox https://esero.es/recursos/
 Icon=esero
 StartupNotify=true
 Terminal=false
