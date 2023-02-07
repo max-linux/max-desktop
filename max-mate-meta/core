@@ -3,12 +3,14 @@ accountsservice
 acpid
 aegisub
 aegisub-l10n
+alarm-clock-applet
 alsa-base
 alsa-utils
 anacron
 apparmor
 apt-transport-https
 apturl
+arasuite
 atril
 at-spi2-core
 avahi-autoipd
@@ -56,6 +58,7 @@ fonts-liberation
 fonts-nanum
 fonts-opendyslexic
 foomatic-db-compressed-ppds
+fotowall
 friendly-recovery
 ftp
 galculator
@@ -67,6 +70,7 @@ ghostscript-x
 gksu
 gnome-keyring
 gnome-orca
+gnuradio
 grub-customizer
 gstreamer1.0-alsa
 gstreamer1.0-plugins-base
@@ -93,6 +97,9 @@ iputils-tracepath
 irqbalance
 iso-codes
 iw
+kalzium
+kicad
+kmag
 krename
 krita
 language-selector-common
@@ -121,6 +128,7 @@ ltrace
 man-db
 manpages
 marco
+marble
 mate-accessibility-profiles
 mate-applets
 mate-desktop-environment-core
@@ -147,8 +155,10 @@ max-artwork
 max-mate-default-settings
 max-mate-menus
 max-netplan
+max-sorteo
 max-twine
 memtest86+
+mediainfo
 mime-support
 minetest
 mlocate
@@ -168,6 +178,7 @@ onboard-data
 openprinting-ppds
 openssh-client
 openssh-server
+ocrfeeder
 parted
 pciutils
 peek
@@ -190,6 +201,7 @@ pulseaudio-module-bluetooth
 pulseaudio-utils
 python3-aptdaemon
 python3-aptdaemon.gtk3widgets
+python3-pip
 qtqr
 rfkill
 rsync
@@ -204,6 +216,8 @@ smbclient
 software-properties-gtk
 speech-dispatcher
 strace
+stellarium
+solfege
 syslinux-utils
 system-config-printer-gnome
 system-config-printer-udev
@@ -212,6 +226,8 @@ tcpdump
 telnet
 tilda
 time
+tesseract-ocr
+tesseract-ocr-spa
 texlive
 texlive-latex-extra
 ubuntu-drivers-common
@@ -244,7 +260,6 @@ xserver-xorg
 xserver-xorg-input-all
 xserver-xorg-video-all
 xterm
-xzoom
 yelp
 zenity
 zip

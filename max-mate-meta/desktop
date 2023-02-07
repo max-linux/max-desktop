@@ -3,9 +3,11 @@ accountsservice
 acpid
 aegisub
 aegisub-l10n
+alarm-clock-applet
 alsa-base
 alsa-utils
 anacron
+arasuite
 apturl
 arduino
 at-spi2-core
@@ -66,6 +68,7 @@ fonts-liberation
 fonts-nanum
 fonts-opendyslexic
 foomatic-db-compressed-ppds
+fotowall
 galculator
 gdb
 gdebi
@@ -89,6 +92,7 @@ gnome-user-docs-es
 gnome-sound-recorder
 gnome-system-tools
 gnome-web-photo
+gnuradio
 gparted
 grub2-themes-ubuntu-mate
 grub-customizer
@@ -116,6 +120,9 @@ inxi
 iputils-arping
 iso-codes
 iw
+kmag
+kalzium
+kicad
 krename
 language-pack-es
 language-pack-gnome-es
@@ -155,6 +162,7 @@ libx11-protocol-perl
 lightdm
 #logisim
 marco
+marble
 mate-accessibility-profiles
 mate-applets
 mate-desktop-environment-core
@@ -162,6 +170,7 @@ mate-dock-applet
 mate-icon-theme
 mate-indicator-applet
 max-mate-welcome
+max-sorteo
 mate-media
 mate-menu
 mate-menus
@@ -180,6 +189,7 @@ mate-tweak
 mate-user-guide
 mate-utils
 memtest86+
+mediainfo
 mobile-broadband-provider-info
 modemmanager
 mozo
@@ -190,6 +200,7 @@ network-manager-pptp-gnome
 network-manager-openvpn-gnome
 obs-studio
 obs-captions-plugin
+ocrfeeder
 noisetorch
 onboard
 onboard-data
@@ -219,6 +230,7 @@ pulseaudio-module-bluetooth
 pulseaudio-utils
 python3-aptdaemon
 python3-aptdaemon.gtk3widgets
+python3-pip
 qstopmotion
 qtqr
 resolvconf
@@ -236,13 +248,16 @@ simple-scan
 slick-greeter
 smbclient
 software-properties-gtk
+solfege
 speech-dispatcher
+stellarium
 synaptic
 synapse
 syslinux-utils
 system-config-printer-gnome
 system-config-printer-udev
 system-config-samba
+tesseract-ocr
 thunderbird
 tilda
 tlp
@@ -290,7 +305,6 @@ xterm
 xul-ext-calendar-timezones
 xul-ext-gdata-provider
 xul-ext-lightning
-xzoom
 yelp
 zenity
 zip
