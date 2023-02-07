@@ -5,6 +5,9 @@ build/usr/*            usr/
 #MAX_institucional/*    usr/share/exe/style/MAX_institucional/
 
 
-# descargado de aqui https://exelearning.net/exe-style/max/
-MAX/*                  usr/share/exe/style/MAX/
-EducaMadrid-REA/*	usr/share/exe/style/EducaMadrid-REA/
+#Nuevas plantillas para exe 2.8
+educamadrid-rea/*	usr/share/exe/style/EducaMadrid-REA/
+educamadrid/*		usr/share/exe/style/EducaMadrid/
+educamadrid-max/*	usr/share/exe/style/EducaMadrid-MAX/
+educamadrid-max-sp/*	usr/share/exe/style/EducaMadrid-MAX-Presentacion/
+educamadrid-sp/*	usr/share/exe/style/EducaMadrid-Presentacion/
