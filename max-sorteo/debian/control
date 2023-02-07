@@ -1,0 +1,13 @@
+Source: max-sorteo
+Section:  contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, libgcc1, electron, debhelper (>= 11),
+		libgtk-3-dev, qmmp, libxss-dev,
+Standards-Version: 1.0.0.
+Homepage: https://www.gros.es/
+
+Package: max-sorteo
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Sorteo Aplicación de numeros o letras al azar.  

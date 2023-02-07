@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon=sorteo
+Exec=sorteo
+Name[es_ES]=Sorteo
+Name=Sorteo
+Categories=Utility;EduProgramas;
