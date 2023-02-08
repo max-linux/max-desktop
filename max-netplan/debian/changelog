@@ -1,8 +1,15 @@
-max-netplan (12.0.max1) max; urgency=medium
+max-netplan (12.0.max3) max; urgency=medium
 
-  * Build in MAX 12.0 
+  * New version for max 11.5.1
 
- -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 03 Nov 2022 13:45:36 +0100
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 08 Feb 2023 09:10:46 +0100
+
+max-netplan (12.0.max2) max; urgency=medium
+
+  * Build in MAX 12.0
+  * changelog fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 03 Nov 2022 14:11:55 +0100
 
 max-netplan (12.0.max1) max; urgency=medium
 
