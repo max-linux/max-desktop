@@ -1,3 +1,27 @@
+max-mate-meta (12.0.max16) max; urgency=medium
+
+  * arasuite and alarm-clock-applet added
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 13 Feb 2023 10:55:19 +0100
+
+max-mate-meta (12.0.max15) max; urgency=medium
+
+  *  stellarium removed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 10 Feb 2023 19:53:19 +0100
+
+max-mate-meta (12.0.max14) max; urgency=medium
+
+  * clean core file
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 10 Feb 2023 16:18:22 +0100
+
+max-mate-meta (12.0.max13) max; urgency=medium
+
+  * remove packages from desktop and core files
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 10 Feb 2023 14:00:48 +0100
+
 max-mate-meta (12.0.max12) max; urgency=medium
 
   * max-netplan texlive texlive-latex-extra removed form core file
