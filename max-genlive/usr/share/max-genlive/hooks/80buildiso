@@ -147,6 +147,8 @@ if [ "$ARCH" = "amd64" ]; then
            -isohybrid-mbr /usr/lib/ISOLINUX/isohdpfx.bin \
            -c isolinux/boot.cat \
            -b isolinux/isolinux.bin \
+#	   Se añade -iso-level 3 para agrandar el peso del squash
+	   -iso-level 3 \
            -no-emul-boot -boot-load-size 4 -boot-info-table \
            -eltorito-alt-boot \
            -e boot/grub/efi.img \
@@ -156,8 +158,9 @@ if [ "$ARCH" = "amd64" ]; then
            /mnt/cdimage.${ARCH} || _exit "Error generando la imagen ISO"
 
 else
+# se añade opcion para el peso de la usb -allow-limited-size -udf   
   chroot $CHROOT genisoimage -r -V "$TITLE (${ARCH})" -cache-inodes -J -l -b isolinux/isolinux.bin \
-     -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 \
+     -c isolinux/boot.cat -no-emul-boot -boot-load-size 4  --allow-limited-size -udf \
      -boot-info-table -o /mnt/${ISO_FILE} /mnt/cdimage.${ARCH}/ || _exit "Error generando la imagen ISO"
 
      _echo " Generando isohybrid ... "

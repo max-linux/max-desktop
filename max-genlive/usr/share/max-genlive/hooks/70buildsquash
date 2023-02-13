@@ -32,7 +32,8 @@ if [ ! $DISABLE_SQUASHFS ]; then
 /boot/${init}
 EOF
 
-  chroot $CHROOT $MKSQUASHFS /mnt/ /media/casper/filesystem.squashfs -ef /exclude.sq $LZMA $NUMPROC || _exit "No se ha podido generar el archivo squashfs"
+#cambiando compresor default gz por xz
+  chroot $CHROOT $MKSQUASHFS /mnt/ /media/casper/filesystem.squashfs -comp xz -ef /exclude.sq $LZMA $NUMPROC || _exit "No se ha podido generar el archivo squashfs"
 
   umount $CHROOT/media
   umount $CHROOT/mnt
