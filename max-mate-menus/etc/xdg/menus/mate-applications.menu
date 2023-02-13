@@ -681,6 +681,7 @@
         <Filename>org.kde.k3b.desktop</Filename>
     </Include>
     <Exclude>
+	<Filename>noisetorch.desktop</Filename>
         <Filename>kde4-audiocd.desktop</Filename>
         <Filename>timidity.desktop</Filename>
         <Filename>denemo.desktop</Filename>
