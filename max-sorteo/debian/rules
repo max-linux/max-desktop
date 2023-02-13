@@ -3,6 +3,7 @@ export DH_VERBOSE = 1
 
 VERSION=1.0.0
 URL1=http://localhost/remote-files/sorteo-${VERSION}.tar.xz 
+URL2=http://localhost/remote-files/relojmax-${VERSION}.tar.xz 
 
 
 
@@ -17,7 +18,8 @@ override_dh_clean:
 
 override_dh_auto_build:
 	
-	mkdir -p build &&  cd build  && wget ${URL1}
+	mkdir -p build &&  cd build  && wget ${URL1} && wget ${URL2}
 	if [ -e build/sorteo-${VERSION}.tar.xz ]; then cd build/ && tar xJvf sorteo-${VERSION}.tar.xz && rm -f sorteo-${VERSION}.tar.xz; fi
+	if [ -e build/relojmax-${VERSION}.tar.xz ]; then cd build/ && tar xJvf relojmax-${VERSION}.tar.xz && rm -f relojmax-${VERSION}.tar.xz; fi
 
 
