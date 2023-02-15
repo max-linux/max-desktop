@@ -5,7 +5,7 @@ Maintainer: Colin Watson <cjwatson@ubuntu.com>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.2
 
-Package: syslinux-themes-max12
+Package: syslinux-themes-max11
 Architecture: amd64 i386
 Depends: ${misc:Depends}, memtest86+, syslinux-common, isolinux
 Enhances: extlinux
@@ -15,4 +15,4 @@ Description: collection of boot loaders (ubuntu-precise theme)
  btrfs filesystems, MS-DOS FAT filesystems, network servers using PXE firmware,
  or from CD-ROMs.
  .
- This package contains the graphical bootloader theme for MAX 12.x
+ This package contains the graphical bootloader theme for MAX 11.x
