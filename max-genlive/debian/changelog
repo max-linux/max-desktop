@@ -1,3 +1,57 @@
+max-genlive (12.0.max15) max; urgency=medium
+
+  * Update grub EFI files from Ubuntu-MATE 20.04.1
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 22 Feb 2023 12:50:03 +0100
+
+max-genlive (12.0.max14) max; urgency=medium
+
+  * split option removed from xorriso
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 14 Feb 2023 12:00:48 +0100
+
+max-genlive (12.0.max13) max; urgency=medium
+
+  * trying again with split_size is 2047m at 80file hook
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 14 Feb 2023 10:25:21 +0100
+
+max-genlive (12.0.max12) max; urgency=medium
+
+  * trying with iso_level 3
+ 
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 13 Feb 2023 22:53:04 +0100
+
+max-genlive (12.0.max11) max; urgency=medium
+
+  * option -file_size_limit off added on xorriso
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 13 Feb 2023 21:54:52 +0100
+
+max-genlive (12.0.max10) max; urgency=medium
+
+  * option -file_size_limit off added on xorriso
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 13 Feb 2023 21:54:36 +0100
+
+max-genlive (12.0.max9) max; urgency=medium
+
+  * clean xorriso command
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 13 Feb 2023 21:37:34 +0100
+
+max-genlive (12.0.max8) max; urgency=medium
+
+  * gz compress default at 70buildsquash
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 13 Feb 2023 18:54:37 +0100
+
+max-genlive (12.0.max7) max; urgency=medium
+
+  * test with split_size
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 13 Feb 2023 15:58:30 +0100
+
 max-genlive (12.0.max6) max; urgency=medium
 
   *  MAX 11.5 ==> MAX 11.5.1

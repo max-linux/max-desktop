@@ -137,7 +137,7 @@ if [ "$ARCH" = "amd64" ]; then
 #
 #     _echo " Generando isohybrid ... "
 #     chroot $CHROOT isohybrid -u /mnt/${ISO_FILE}
-
+#
   chroot $CHROOT xorriso \
            -as mkisofs \
            -volid "${MAX_VOLID}_${ARCH}" \
@@ -147,8 +147,6 @@ if [ "$ARCH" = "amd64" ]; then
            -isohybrid-mbr /usr/lib/ISOLINUX/isohdpfx.bin \
            -c isolinux/boot.cat \
            -b isolinux/isolinux.bin \
-#	   Se añade -iso-level 3 para agrandar el peso del squash
-	   -iso-level 3 \
            -no-emul-boot -boot-load-size 4 -boot-info-table \
            -eltorito-alt-boot \
            -e boot/grub/efi.img \
