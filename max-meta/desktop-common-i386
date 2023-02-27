@@ -1,8 +1,8 @@
 acpi
 acpid
 acpi-support
-acroread
-acroread-plugins
+#acroread
+#acroread-plugins
 anacron
 animalandia
 apertium
@@ -149,7 +149,7 @@ powermanagement-interface
 pppoe
 pppoeconf
 printer-driver-all
-pseint
+#pseint
 pulseaudio-mixer-applet|pavucontrol
 qucs
 rfkill
@@ -165,7 +165,7 @@ scratux
 setserial
 simple-scan
 #speedcrunch
-starplot
+#starplot
 startupmanager
 #stellarium
 #max-stellarium
