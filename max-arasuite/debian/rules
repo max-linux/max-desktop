@@ -18,9 +18,9 @@ override_dh_auto_build:
 	mkdir -p build2
 	if [ ! -e build2/arasuite.sh ] && [ -e ./arasuite.sh ]; then (cp -v ./arasuite.sh ./build2/arasuite.sh); fi
 	if [ ! -e build2/arasuite.sh ]; then (cd build2 && curl -L -O $(URL1) && mv *.sh arasuite.sh); fi
-	if [ ! -e build2/arasuite.tar.gz ]; then (cd build2 && curl -L -O $(URL2) && mv arasuite_unix*.tar.gz arasuite.tar.gz); fi
+#	if [ ! -e build2/arasuite.tar.gz ]; then (cd build2 && curl -L -O $(URL2) && mv arasuite_unix*.tar.gz arasuite.tar.gz); fi
 
-	if [ ! -e build2/dot_arasuite.tar.gz ]; then (cd build2 && curl -L -O $(URL3) ); fi
+#	if [ ! -e build2/dot_arasuite.tar.gz ]; then (cd build2 && curl -L -O $(URL3) ); fi
 
 	# install
 	bash build2/arasuite.sh -q -dir "/opt/AraSuite"
@@ -32,11 +32,11 @@ override_dh_auto_build:
 	/opt/AraSuite/uninstall -q	
 
 	# 500 MB of data
-	tar -zxvf build2/arasuite.tar.gz -C build2/
+#	tar -zxvf build2/arasuite.tar.gz -C build2/
 
-	rm -rf build2/opt/AraSuite/.arasuite/
-	cd build2/opt/AraSuite && tar -zxvf ../../dot_arasuite.tar.gz
-	mv build2/opt/AraSuite/.arasuite/ build2/AraSuite/dot_arasuite
+#	rm -rf build2/opt/AraSuite/.arasuite/
+#	cd build2/opt/AraSuite && tar -zxvf ../../dot_arasuite.tar.gz
+#	mv build2/opt/AraSuite/.arasuite/ build2/AraSuite/dot_arasuite
 
 	rm -rf build2/opt
 
