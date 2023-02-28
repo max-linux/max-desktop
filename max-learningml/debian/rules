@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+VERSION=1.4.3
+
+URL=https://web.learningml.org/lml-desktop/learningml-desktop_$(VERSION)_amd64.deb
+
+
+%:
+	dh $@
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget $(URL) && dpkg -x *.deb ./); \
+	fi
+
+	mkdir build/usr/share/pixmaps
+	cp build/usr/share/icons/hicolor/0x0/apps/learningml-desktop.png build/usr/share/pixmaps
+	mv build/usr/share/doc/learningml-desktop/changelog.gz build/usr/share/doc/learningml-desktop/changelog.upstream.gz
+
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
