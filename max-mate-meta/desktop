@@ -7,7 +7,7 @@ alarm-clock-applet
 alsa-base
 alsa-utils
 anacron
-#arasuite
+arasuite
 apturl
 arduino
 at-spi2-core
@@ -57,6 +57,7 @@ engrampa
 eom
 espeak
 ethtool
+evince
 exfat-fuse
 exfat-utils
 ffmpegthumbnailer
@@ -83,8 +84,8 @@ gimp-help-es
 gimp-plugin-registry
 gimp-help-es
 gksu
-gnome-disk-utility
 gnome-clocks
+gnome-disk-utility
 gnome-games
 gnome-keyring
 gnome-orca
@@ -92,7 +93,7 @@ gnome-user-docs-es
 gnome-sound-recorder
 gnome-system-tools
 gnome-web-photo
-gnuradio
+#gnuradio
 gparted
 grub2-themes-ubuntu-mate
 grub-customizer
@@ -122,11 +123,13 @@ iso-codes
 iw
 kmag
 kalzium
-kicad
+#kicad
 krename
+krita
 language-pack-es
 language-pack-gnome-es
 language-selector-gnome
+learningml-desktop
 libaacs0
 libavahi-compat-libdnssd1
 libbdplus0
@@ -202,6 +205,7 @@ network-manager-openvpn-gnome
 obs-studio
 obs-captions-plugin
 ocrfeeder
+okular
 #noisetorch
 onboard
 onboard-data
