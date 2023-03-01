@@ -1,0 +1,16 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Visor de PDF Evince
+Comment=Visor de documentos PDF  
+# Translators: Search terms to find this application. Do NOT translate or loca>
+Keywords=pdf;ps;postscript;dvi;xps;djvu;tiff;document;presentation;viewer;evin>
+TryExec=evince
+Exec=evince %U
+StartupNotify=true
+Terminal=false
+Type=Application
+# Translators: Do NOT translate or transliterate this text (this is an icon fi>
+Icon=org.gnome.Evince
+Categories=Office;
+MimeType=application/pdf;application/x-bzpdf;application/x-gzpdf;application/x>
+X-Ubuntu-Gettext-Domain=evince

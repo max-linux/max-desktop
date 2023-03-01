@@ -1,0 +1,16 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Terminal=false
+Name=Visor de PDF Okular
+Name[es]=Visor de PDF Okular
+GenericName=VIsor de PDF Okular
+Comment=Visor de Documentos PDF
+Exec=okular %U
+Icon=okular
+Type=Application
+X-DocPath=okular/index.html
+InitialPreference=7
+Categories=Office;
+MimeType=application/vnd.kde.okular-archive;
+X-DBUS-ServiceName=org.kde.okular
+

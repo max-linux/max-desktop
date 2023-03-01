@@ -124,7 +124,6 @@
         <Filename>com.obsproject.Studio.desktop</Filename>
       	<Filename>optimizarpdf.desktop</Filename>
 	<Filename>shutter.desktop</Filename> 
-        <Filename>org.gnome.clocks.desktop</Filename>
 	<Filename>exe.desktop</Filename>
 	</Include>
       </Menu>
@@ -178,6 +177,7 @@
     </Include>
     <Exclude>
       <Filename>info.desktop</Filename>	
+      <Filename>org.gnome.clocks.desktop</Filename>	
       <Filename>exe.desktop</Filename>
       <Filename>shutter.desktop</Filename>
       <Filename>owncloud.desktop</Filename>
@@ -644,6 +644,8 @@
 
     <Exclude>
         <Filename>blender-fullscreen.desktop</Filename>
+        <Filename>org.gnome.Evince.desktop</Filename>
+        <Filename>org.kde.okular.desktop</Filename>
         <Filename>gqview.desktop</Filename>
         <Filename>kde4-gwenview.desktop</Filename>
 	<Filename>display-im6.q16.desktop</Filename>
@@ -707,6 +709,9 @@
     </Include>
     <Exclude>
         <Filename>pdfarranger.desktop</Filename>
+        <Filename>atril.desktop</Filename>
+        <Filename>org.gnome.Evince.desktop</Filename>
+        <Filename>org.kde.okular.desktop</Filename>
         <Filename>mate-dictionary.desktop</Filename>
         <Filename>kde4-knotes.desktop</Filename>
         <Filename>kde4-korganizer.desktop</Filename>
