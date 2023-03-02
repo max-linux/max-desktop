@@ -5,6 +5,7 @@ Type=Application
 Terminal=false
 Icon=relojmax
 Exec=chromium-browser --app=file:///opt/relojmax-1.0.0/index.html
-Name[es_ES]=Cronómetro
-Name=Cronómetro
+Name[es_ES]=Relojes
+Name=Relojes
 Categories=Utility;EduProgramas;
+Comment=Cronómetro y temporizador
