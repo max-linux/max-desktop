@@ -1,0 +1,43 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name[es]=Salvapantallas
+Name=Screensaver
+Comment[es]=Cambia las propiedades del salvapantallas
+Comment=Cambia las propiedades del salvapantallas
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+Icon[ca]=preferences-desktop-screensaver
+Icon[cs]=preferences-desktop-screensaver
+Icon[da]=preferences-desktop-screensaver
+Icon[es]=preferences-desktop-screensaver
+Icon[gl]=preferences-desktop-screensaver
+Icon[it]=preferences-desktop-screensaver
+Icon[lt]=preferences-desktop-screensaver
+Icon[ms]=preferences-desktop-screensaver
+Icon[nb]=preferences-desktop-screensaver
+Icon[nl]=voorkeuren-bureaublad-schermbeveiliging
+Icon[uk]=preferences-desktop-screensaver
+Icon[zh_TW]=preferences-desktop-screensaver
+Icon=preferences-desktop-screensaver
+Exec=mate-screensaver-preferences
+Terminal=false
+Type=Application
+Categories=GTK;Settings;DesktopSettings;
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords[ca]=MATE;estalvi;pantalla;preferències;
+Keywords[cs]=MATE;spořič obrazovky;šetřič;předvolby;
+Keywords[da]=MATE;screensaver;preferences;pauseskærm;præferencer;
+Keywords[es]=MATE;salvapantallas;preferencias;
+Keywords[gl]=MATE;protector de pantalla;preferencias;
+Keywords[it]=MATE;screensaver;preferenze;salvaschermo;
+Keywords[lt]=MATE;ekrano užsklanda;nustatymai;
+Keywords[ms]=MATE;penyelamatskrin;keutamaan
+Keywords[nb]=MATE;skjermsparer;innstillinger;
+Keywords[nl]=MATE;schermbeveiliging;voorkeuren;
+Keywords[uk]=MATE;зберігач екрану;уподобання;
+Keywords[zh_TW]=MATE;screensaver;preferences;
+Keywords=MATE;screensaver;preferences;
+OnlyShowIn=MATE;
+StartupNotify=true
+X-MATE-Bugzilla-Bugzilla=MATE
+X-MATE-Bugzilla-Product=mate-screensaver
+X-MATE-Bugzilla-Component=general

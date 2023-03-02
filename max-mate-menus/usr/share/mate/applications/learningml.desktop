@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=LearningML
+Exec=/opt/LearningMLDesktop/learningml-desktop %U
+Terminal=false
+Type=Application
+Icon=learningml-desktop
+StartupWMClass=LearningMLDesktop
+Comment=Aprende a entrenar una IA
+Categories=Development;
+

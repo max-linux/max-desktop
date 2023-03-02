@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=PosteRazor
+Comment=Crea un póster a partir de una imagen
+TryExec=PosteRazor
+Exec=PosteRazor %f
+Terminal=false
+Icon=PosteRazor
+Categories=Graphics;

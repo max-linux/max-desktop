@@ -213,6 +213,7 @@
     </Include>
     <Exclude>
       <Filename>bitmap2component.desktop</Filename>
+      <Filename>learningml-desktop.desktop</Filename>
       <Filename>eeschema.desktop</Filename>
       <Filename>gerbview.desktop</Filename>
       <Filename>gnuradio-grc.desktop</Filename>
@@ -644,6 +645,7 @@
 
     <Exclude>
         <Filename>blender-fullscreen.desktop</Filename>
+        <Filename>qtqr.desktop</Filename>
         <Filename>org.gnome.Evince.desktop</Filename>
         <Filename>org.kde.okular.desktop</Filename>
         <Filename>gqview.desktop</Filename>

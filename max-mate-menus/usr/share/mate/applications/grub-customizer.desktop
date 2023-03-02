@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Grub Customizer
+Comment=Personaliza el gestor de arranque
+Exec=grub-customizer
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+StartupNotify=false
+Categories=System;Settings;
+Icon=grub-customizer
+X-Ubuntu-Gettext-Domain=grub-customizer
+X-KDE-SubstituteUID=true
+Keywords=GRUB;GRUB2;BURG;configuration;settings;menu;

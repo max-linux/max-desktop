@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=qStopMotion
+Comment=Crea tus películas Stop-Motion
+Exec=qstopmotion %f
+Icon=qstopmotion
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Categories=AudioVideo;Video;AudioVideoEditing;
+StartupNotify=true
+Keywords=animation;stop-motion;video;
+MimeType=application/x-qstopmotion;

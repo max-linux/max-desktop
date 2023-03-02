@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=GNU Solfege
+GenericName=Ear training
+GenericName[de]=Gehörtraining
+Exec=solfege
+Terminal=false
+Type=Application
+Icon=solfege
+Categories=GTK;AudioVideo;Audio;Education;Music;
+Keywords=music;education;practice;intervals;chords;rhythm;scales;dictation;intonation;harmonic;sing;cadences
+Comment=Entrena tu oído
