@@ -8,7 +8,7 @@ GRUB_TIMEOUT="10"
 GRUB_DISTRIBUTOR="MAX-11"
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 GRUB_CMDLINE_LINUX=""
-
+GRUB_FONT="/boot/grub/unicode.pf2"
 # Uncomment to disable graphical terminal (grub-pc only)
 GRUB_TERMINAL=console
 
