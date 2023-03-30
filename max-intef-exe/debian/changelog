@@ -1,3 +1,16 @@
+max-intef-exe (12:2.8.0.max3) max; urgency=medium
+
+  * changelog fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 30 Mar 2023 13:06:15 +0200
+
+max-intef-exe (12:2.8.0.max2) max; urgency=medium
+
+  * Build in MAX 12.0
+  * Initial version, get deb from github and repack
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 30 Mar 2023 12:38:45 +0200
+
 max-intef-exe (11:2.8.0.max1) max; urgency=medium
 
   * New upstream version
