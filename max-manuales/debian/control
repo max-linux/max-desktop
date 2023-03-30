@@ -2,7 +2,7 @@ Source: max-manuales
 Section: max
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 9), python
+Build-Depends: debhelper (>= 9), python2
 Standards-Version: 3.8.2
 
 Package: max-manuales
