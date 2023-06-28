@@ -10,6 +10,13 @@ if [ -e /etc/default/grub ]; then
     echo "GRUB_DISTRIBUTOR=\"${MAX_VERSION}\"" >> /etc/default/grub
     UPDATE_GRUB=1
   fi
+  
+  # font path
+  if ! grep -q "unicode.pf2" /etc/default/grub 2>/dev/null; then
+   echo '' >> /etc/default/grub
+   echo "GRUB_FONT=\"/boot/grub/unicode.pf2\"" >> /etc/default/grub
+   UPDATE_GRUB=1
+  fi 
 
   # disable hidden
   if grep -q "^GRUB_HIDDEN" /etc/default/grub 2>/dev/null; then
