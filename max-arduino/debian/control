@@ -8,6 +8,7 @@ Homepage: http://www.arduino.cc
 
 
 Package: arduino
+Conflicts: arduino-core-avr, arduino-builder, arduino-ctags
 Architecture: all
 Depends: max-java-jre,
          arduino-core (= ${source:Version}),
@@ -26,6 +27,7 @@ Description: AVR development board IDE and built-in libraries
 
 
 Package: arduino-core
+Conflicts: arduino-core-avr, arduino-builder, arduino-ctags
 Architecture: any
 Depends: gcc, ${misc:Depends}, ${shlibs:Depends}
 Description: Code, examples, and libraries for the Arduino platform

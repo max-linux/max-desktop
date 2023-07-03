@@ -1,3 +1,27 @@
+max-arduino (3:1.8.19-0max7) max; urgency=medium
+
+  * changelog fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 30 Mar 2023 09:52:42 +0200
+
+max-arduino (3:1.8.19-0max6) max; urgency=medium
+
+  * Build in MAX 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 29 Mar 2023 14:36:36 +0200
+
+max-arduino (3:1.8.19-0max5) max; urgency=medium
+
+  * conflicts packages added on arduino package
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 21 Feb 2023 17:29:30 +0100
+
+max-arduino (3:1.8.19-0max4) max; urgency=medium
+
+  * conflicts packages added
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 21 Feb 2023 17:10:57 +0100
+
 max-arduino (3:1.8.19-0max3) max; urgency=medium
 
   * Arduino compile step fixed
