@@ -1,8 +1,8 @@
 #!/usr/bin/make -f
 
-VERSION=1_7_1
-URL="https://estaticos.redsara.es/comunes/autofirma/1/7/1/AutoFirma_Linux.zip"
-
+VERSION=1_8_2
+#URL="https://estaticos.redsara.es/comunes/autofirma/1/7/1/AutoFirma_Linux.zip"
+URL="https://estaticos.redsara.es/comunes/autofirma/currentversion/AutoFirma_Linux_Debian.zip"
 %:
 	dh $@
 
@@ -15,7 +15,7 @@ override_dh_clean:
 override_dh_auto_build:
 	mkdir -p build2
 	if [ ! -e build2/AutoFirma_Linux.zip ]; then (cd build2 && curl -L -O $(URL) ); fi
-	if [ ! -e build2/usr ]; then (cd build2 && unzip -u AutoFirma_Linux.zip && dpkg --extract AutoFirma_$(VERSION).deb ./ && dpkg --control AutoFirma_$(VERSION).deb); fi
+	if [ ! -e build2/usr ]; then (cd build2 && unzip -u AutoFirma_Linux_Debian.zip && dpkg --extract AutoFirma_$(VERSION).deb ./ && dpkg --control AutoFirma_$(VERSION).deb); fi
 
 	cp -v build2/DEBIAN/p* debian/	
 
