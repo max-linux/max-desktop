@@ -153,6 +153,7 @@ if [ "$ARCH" = "amd64" ]; then
            -no-emul-boot \
            -isohybrid-gpt-basdat \
            -isohybrid-apm-hfsplus \
+           --iso-level 3 \
            /mnt/cdimage.${ARCH} || _exit "Error generando la imagen ISO"
 
 else
