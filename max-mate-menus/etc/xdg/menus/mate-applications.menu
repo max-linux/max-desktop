@@ -177,6 +177,7 @@
     </Include>
     <Exclude>
       <Filename>info.desktop</Filename>	
+      <Filename>nextcloud.desktop</Filename>
       <Filename>org.gnome.clocks.desktop</Filename>	
       <Filename>exe.desktop</Filename>
       <Filename>shutter.desktop</Filename>
@@ -664,6 +665,7 @@
         <Category>Network</Category>
       </And>
       <Filename>owncloud.desktop</Filename>
+      <Filename>nextcloud.desktop</Filename>
     </Include>
     <Exclude>
         <Filename>lftp.desktop</Filename>

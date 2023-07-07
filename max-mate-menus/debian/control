@@ -8,9 +8,10 @@ Standards-Version: 3.8.4
 Package: max-mate-menus
 Architecture: all
 Depends: zenity
-Provides: max-menus
-Breaks: max-menus
-Replaces: max-menus
+Provides: max-menus, ubuntu-mate-default-settings
+Breaks: max-menus, ubuntu-mate-default-settings
+Replaces: max-menus, ubuntu-mate-default-settings
+Conflicts: max-menus, ubuntu-mate-default-settings
 Description: Configuración de menus para MAX MATE.
  Configuración basada en dh_divert para menus, lanzadores y submenus
  Contiene:
