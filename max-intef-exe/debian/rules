@@ -1,10 +1,10 @@
 #!/usr/bin/make -f
 #export DH_VERBOSE=1
 
-VERSION=2.8
+VERSION=2.8.1
 
-#URL=https://github.com/exelearning/iteexe/releases/download/$(VERSION)/intef-exe_$(VERSION)_all.deb
-URL=http://localhost/remote-files/intef-exe_$(VERSION)_all.deb
+URL=https://github.com/exelearning/iteexe/releases/download/$(VERSION)/intef-exe_$(VERSION)_all.deb
+#URL=http://localhost/remote-files/intef-exe_$(VERSION)_all.deb
 
 %:
 	dh $@
@@ -13,7 +13,7 @@ URL=http://localhost/remote-files/intef-exe_$(VERSION)_all.deb
 override_dh_auto_build:
 	if [ ! -d build ]; then \
 		mkdir build ;\
-		( cd build && wget $(URL) && dpkg -x *.deb ./); \
+		( cd build && wget --no-check-certificate $(URL) && dpkg -x *.deb ./); \
 	fi
 
 	cat build/usr/share/doc/intef-exe/copyright > debian/copyright
