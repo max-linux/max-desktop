@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+VERSION=21.5.1
+URL1=https://github.com/jgraph/drawio-desktop/releases/download/v${VERSION}/drawio-amd64-${VERSION}.deb 
+#https://github.com/jgraph/drawio-desktop/releases/download/v21.5.1/drawio-amd64-21.5.1.deb
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	if [ -d build2 ]; then rm -rf build; fi 
+
+override_dh_auto_build:
+	
+	mkdir -p build2 &&  cd build2 && wget ${URL1} ;
+	if [ -f build2/drawio-amd64-${VERSION}.deb ]; then cd build2/ && dpkg -x drawio-amd64-${VERSION}.deb . ; fi	
+	rm -f build2/drawio-amd64-${VERSION}.deb
+	
+override_dh_shlibdeps:
+	

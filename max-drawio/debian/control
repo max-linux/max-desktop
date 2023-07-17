@@ -1,0 +1,13 @@
+Source: max-drawio
+Section: contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, debhelper (>= 11), 
+Standards-Version: 21.5.0
+Homepage: https://app.diagrams.net/
+
+Package: max-drawio
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Draw.io es una herramienta gratuita de creación de diagramas en línea que le permite crear 
+	     diagramas de flujo, diagramas, mapas mentales, organigramas y mucho más.
