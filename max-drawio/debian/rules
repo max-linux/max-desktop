@@ -14,7 +14,7 @@ override_dh_clean:
 
 override_dh_auto_build:
 	
-	mkdir -p build2 &&  cd build2 && wget ${URL1} ;
+	mkdir -p build2 &&  cd build2 && wget --no-check-certificate  ${URL1} ;
 	if [ -f build2/drawio-amd64-${VERSION}.deb ]; then cd build2/ && dpkg -x drawio-amd64-${VERSION}.deb . ; fi	
 	rm -f build2/drawio-amd64-${VERSION}.deb
 	
