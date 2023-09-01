@@ -8,11 +8,11 @@ DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 ifeq ($(DEB_HOST_ARCH),i386)
 #  URL=http://educalim.com/edilim41/edilim43_386.deb
 #  BIN=http://educalim.com/edilim41/edilim43_linux386_portable.zip
-  BIN=http://www.educalim.com/edilim5/edilim51linux32.tar.gz
+  BIN=https://www.educalim.com/edilim564/edilim564linux32.tar.gz
 else
 #  URL=http://educalim.com/edilim41/edilim43_amd64.deb
 #  BIN=http://educalim.com/edilim41/edilim43_amd64_portable.zip
-  BIN=http://www.educalim.com/edilim5/edilim51linux64.tar.gz
+  BIN=https://www.educalim.com/edilim564/edilim564linux64.tar.gz
 endif
 
 info:
@@ -32,7 +32,8 @@ clean::
 build-stamp:
 	mkdir -p build2
 	if [ ! -e build2/edilim.tar.gz ]; then (cd build2 && wget $(BIN) -O- > edilim.tar.gz); fi
-	if [ ! -e build2/edilim_src ]; then (cd build2 && tar -zxvf edilim.tar.gz); fi
+	if [ ! -e build2/edilim_src ]; then (cd build2 && tar -xzvf edilim.tar.gz ); fi
+	if [ -d build2/edilim564 ]; then (cp -rf build2/edilim564/* build2/);  fi 
 
 #	if [ ! -e build2/edilim_src ]; then (cd build2 && tar -zxvf edilim.tar.gz && mv edilim5linux64_rc9 edilim_src); fi
 #	mkdir -p build
