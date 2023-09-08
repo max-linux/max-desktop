@@ -93,7 +93,7 @@ gnome-user-docs-es
 gnome-sound-recorder
 gnome-system-tools
 gnome-web-photo
-#gnuradio
+gnuradio
 gparted
 grub2-themes-ubuntu-mate
 grub-customizer
@@ -140,6 +140,7 @@ libcanberra-gtk3-module
 libcanberra-pulse
 libdvdnav4
 libdvdread7
+#libdvdread8
 libfile-mimeinfo-perl
 libgpod-common
 libimobiledevice-utils
@@ -174,6 +175,7 @@ mate-desktop-environment-core
 mate-dock-applet
 mate-icon-theme
 mate-indicator-applet
+max-drawio
 max-mate-welcome
 max-sorteo
 max-twine
@@ -205,6 +207,10 @@ network-manager
 network-manager-gnome
 network-manager-pptp-gnome
 network-manager-openvpn-gnome
+nextcloud-desktop
+nextcloud-common-desktop
+nextcloud-desktop-l10n
+caja-nextcloud
 obs-studio
 obs-captions-plugin
 ocrfeeder
@@ -214,11 +220,12 @@ onboard
 onboard-data
 openscad
 optimizarpdf
-owncloud-client
-owncloud-client-l10n
-caja-owncloud
+#owncloud-client
+#owncloud-client-l10n
+#caja-owncloud
 openprinting-ppds
-pdfshuffler
+#pdfshuffler
+pdfarranger
 peek
 #pidgin
 #pidgin-otr
@@ -267,7 +274,7 @@ system-config-printer-udev
 system-config-samba
 tesseract-ocr
 thunderbird
-tilda
+#tilda
 tlp
 tlp-rdw
 transmission-gtk
