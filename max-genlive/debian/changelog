@@ -1,3 +1,9 @@
+max-genlive (12.0.max25) max; urgency=medium
+
+  * virtualbox-guest-dkms removed from max.dvdlist
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 03 Nov 2023 00:00:33 +0100
+
 max-genlive (12.0.max24) max; urgency=medium
 
   * capiutils and ipppd packages removed from max.dvdlist

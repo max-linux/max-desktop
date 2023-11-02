@@ -9,7 +9,7 @@ if [ "$ARCH" = "amd64" ]; then
 fi
 
 # Virtualbox guest tools
-PAQUETES_EXTRA_RESTRICTED="virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms"
+PAQUETES_EXTRA_RESTRICTED="virtualbox-guest-utils virtualbox-guest-x11"
 
 # Paquetes infantil en DVD
 PAQUETES_INFANTIL="max-desktop-infantil-primaria max-infantil"
