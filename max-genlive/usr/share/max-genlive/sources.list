@@ -1,9 +1,9 @@
 #
-# sources.list for MAX 11.5.2 live session
+# sources.list for MAX 12 session
 #
-deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
-deb http://max.educa.madrid.org/max11 max main
+deb http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+deb http://max.educa.madrid.org/max12 max main
 
 

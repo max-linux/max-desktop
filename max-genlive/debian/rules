@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
 
 include /usr/share/cdbs/1/rules/debhelper.mk
+DEB_DH_BUILDDEB_ARGS = -- -Zgzip
 
 build-stamp:
 	mkdir -p build
@@ -19,6 +20,8 @@ clean::
 #	rm -f $(CURDIR)/gfxboot-build
 	rm -rf build/
 
+
+
 binary-install/max-genlive::
 	install -d $(CURDIR)/debian/max-genlive/usr/share/max-genlive/isolinux
 
@@ -31,3 +34,4 @@ binary-install/max-genlive::
 
 	# clean svn dirs
 	find $(CURDIR)/debian/max-genlive -type d -name .svn | xargs rm -rf --
+

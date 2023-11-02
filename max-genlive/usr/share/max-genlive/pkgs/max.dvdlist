@@ -1,6 +1,6 @@
 
 
-PAQUETES_EXTRA_MAIN="b43-fwcutter build-essential dpkg-dev fakeroot g++ capiutils ipppd "
+PAQUETES_EXTRA_MAIN="b43-fwcutter build-essential dpkg-dev fakeroot g++ libcapi20-dev "
 PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN linux-wlan-ng localechooser-data lupin-support mouseemu "
 PAQUETES_EXTRA_MAIN="$PAQUETES_EXTRA_MAIN patch pptp-linux setserial"
 

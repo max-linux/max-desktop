@@ -12,21 +12,21 @@ stamp=$(date '+%Y%m%d_%H%M')
 created=$(date '+%Y%m%d')
 
 
-DISTRO=focal
-DISTRO_VERSION="20.04"
+DISTRO=jammy
+DISTRO_VERSION="22.04"
 ARCH=i386
 NANOARCH=i386
-MAX_VERSION="11.5.2-Final"
-MAX_VOLID="MAX_11_${created}"
+MAX_VERSION="12.0-Alfa"
+MAX_VOLID="MAX_12_${created}"
 IMAGE_NAME="MAX-${MAX_VERSION}"
 LINUX_IMAGE="max-linux"
 LINUX_HEADERS="max-linux-headers"
 XSERVER_XORG="xserver-xorg"
-MAXHOSTNAME=max11
+MAXHOSTNAME=max
 INSTALL_MOODLE=no
 MIRRORMAX="max.educa.madrid.org"
-SYSLINUX_THEME_VERSION="max11"
-REPODIR="max11"
+SYSLINUX_THEME_VERSION="max12"
+REPODIR="max12"
 
 ## Create a 12.04 with trusty kernel and Xorg
 #LINUX_IMAGE="linux-image-generic-lts-trusty max-linux"
