@@ -9,7 +9,7 @@ Package: max-mate-menus
 Architecture: all
 Depends: zenity
 Provides: max-menus
-Breaks: max-menus 
+Breaks: max-menus
 Replaces: max-menus
 Conflicts: max-menus
 Description: Configuración de menus para MAX MATE.
