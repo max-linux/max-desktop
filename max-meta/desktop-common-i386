@@ -27,9 +27,9 @@ bc
 #bluegriffon
 brltty
 build-essential
-celestia
-celestia-gnome
-celestia-common-nonfree
+#celestia
+#celestia-gnome
+#celestia-common-nonfree
 cellwriter
 cdparanoia
 cdrdao
@@ -104,7 +104,7 @@ kwordquiz
 language-pack-es
 language-selector-gnome
 less
-libdvdcss2
+#libdvdcss2
 libgl1-mesa-glx
 libgl1-mesa-dri
 libgxps-utils
@@ -166,7 +166,7 @@ setserial
 simple-scan
 #speedcrunch
 #starplot
-startupmanager
+#startupmanager
 #stellarium
 #max-stellarium
 syslinux
