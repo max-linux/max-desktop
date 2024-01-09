@@ -37,7 +37,7 @@ Comment[tr]=Basit bir tıklamayla NTFS yazma desteğini etkinleştir/etkisizleş
 Comment[zh_CN]=一次点击启用/禁用 NTFS 写入支持。
 
 TryExec=/usr/bin/ntfs-config
-Exec=gksu ntfs-config
+Exec=gksudo ntfs-config
 Terminal=false
 Type=Application
 Icon=gnome-dev-harddisk
