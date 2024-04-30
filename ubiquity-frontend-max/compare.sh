@@ -9,7 +9,9 @@
 #ORIG_PATH=/data/max/build/desktop/ubiquity/ubiquity-2.21.63.2max1/
 #ORIG_PATH=/data/max/build/desktop/ubiquity/ubiquity-18.04.14.8/
 # for focal
-ORIG_PATH=/data/max/build/desktop/ubiquity/ubiquity-20.04.15.2/
+#ORIG_PATH=/data/max/build/desktop/ubiquity/ubiquity-20.04.15.2/
+# for  jammy
+ORIG_PATH=/data/max/build/desktop/ubiquity/ubiquity-22.04.20/
 
 #for f in $(find usr/ -type f -name "*py"); do
 for f in $(find usr/ -type f | grep -v ".svn"); do

@@ -8,10 +8,17 @@ set -e
 if [ "$1" ]; then
 	ROOT="$1"
 	chroot=chroot
+        shift
 else
 	ROOT=
 	chroot=
 fi
+
+if [ "$1" ]; then
+       ARCH="$1"
+fi
+
+
 
 . /usr/share/grub-installer/functions.sh
 . /usr/share/grub-installer/otheros.sh
@@ -37,7 +44,8 @@ debug () {
 	[ -z "${DEBCONF_DEBUG}" ] || log "debug: $@"
 }
 
-ARCH="$(archdetect)"
+ARCH="${ARCH:-$(archdetect)}"
+## ARCH="$(archdetect)"
 info "architecture: $ARCH"
 
 umount_dirs=
@@ -494,7 +502,7 @@ case $ARCH in
 	if [ -f /var/lib/partman/ignore_uefi ]; then
 		grub_package="grub-pc"
 	else
-		grub_package="grub-efi"
+#		grub_package="grub-efi"
 		# Override the package choice if we can figure out the
 		# right package to use directly
 		if [ -f /sys/firmware/efi/fw_platform_size ] ; then
@@ -646,7 +654,7 @@ db_progress INFO grub-installer/progress/step_install
 # to grub legacy, or vice-versa
 case "$grub_package" in
     grub-pc)
-	log-output -t grub-installer $chroot $ROOT dpkg -P grub-efi grub-efi-amd64-bin grub-efi-amd64 grub-efi-amd64-signed grub-efi-ia32-bin grub-efi-ia32
+	log-output -t grub-installer $chroot $ROOT dpkg -P grub-efi grub-efi-amd64 grub-efi-ia32-bin grub-efi-ia32
 	;;
     grub-efi)
 	log-output -t grub-installer $chroot $ROOT dpkg -P grub-efi-amd64-signed
@@ -1093,6 +1101,10 @@ EOF
 			# install even if it requires blocklists
 			grub_install_params="$grub_install_params --force"
 		fi
+
+                if [ "$ARCH" = "amd64/efi" ] ; then
+                       grub_install_params="$grub_install_params --target x86_64-efi"
+                 fi
 
 		CODE=0
 		case $ARCH:$grub_package in

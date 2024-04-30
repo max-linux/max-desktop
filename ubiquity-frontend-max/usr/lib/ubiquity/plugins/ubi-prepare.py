@@ -73,6 +73,11 @@ class PreparePageBase(plugin.PluginUI):
         self.rst_title_text = i18n.get_string('rst_header', lang)
         return
 
+    def show_ubuntu_drivers_spinner(self):
+        return
+
+    def hide_ubuntu_drivers_spinner(self):
+        return
 
 class PageGtk(PreparePageBase):
     # restricted_package_name = 'ubuntu-restricted-addons'
@@ -154,8 +159,22 @@ class PageGtk(PreparePageBase):
         self.controller.go_to_page(self.current_page)
         return True
 
+    def show_ubuntu_drivers_spinner(self):
+        frontend = self.controller._wizard
+        frontend.status_spinner.show()
+        frontend.status_spinner.start()
+        frontend.status_label.show()
+
+    def hide_ubuntu_drivers_spinner(self):
+        frontend = self.controller._wizard
+        frontend.status_spinner.hide()
+        frontend.status_spinner.stop()
+        frontend.status_label.hide()
+
     def plugin_on_next_clicked(self):
         if self.current_page != self.rst_page:
+            if self.get_use_nonfree():
+                self.show_ubuntu_drivers_spinner()
             return
 
         self.controller._wizard.do_reboot()
@@ -209,6 +228,11 @@ class PageGtk(PreparePageBase):
 
     def plugin_translate(self, lang):
         PreparePageBase.plugin_translate(self, lang)
+
+        frontend = self.controller._wizard
+        frontend.status_label.set_text(self.controller.get_string(
+            'ubiquity/text/preparing_ud_label', lang))
+
         release = misc.get_release()
 
         from gi.repository import Gtk
@@ -300,7 +324,10 @@ class PageKde(PreparePageBase):
         self.controller = controller
         try:
             from PyQt5 import uic
-            from PyQt5 import QtGui
+            from PyQt5 import QtGui, QtWidgets
+            # No worries, this has nothing to do with NM, we just want the
+            # generic progress indicator from there
+            from ubiquity.frontend.kde_components.nmwidgets import ProgressIndicator
             self.page = uic.loadUi('/usr/share/ubiquity/qt/stepPrepare.ui')
             self.prepare_minimal_install = self.page.prepare_minimal_install
             self.qt_label_minimal_install = self.page.qt_label_minimal_install
@@ -316,6 +343,10 @@ class PageKde(PreparePageBase):
             self.badPassword = self.page.badPassword
             self.badPassword.setPixmap(QtGui.QPixmap(
                 "/usr/share/icons/oxygen/16x16/status/dialog-warning.png"))
+            self.progress_indicator = ProgressIndicator()
+            self.progress_indicator.hide()
+            layout = QtWidgets.QHBoxLayout(self.page.progress_container)
+            layout.addWidget(self.progress_indicator)
             # TODO we should set these up and tear them down while on this
             # page.
             try:
@@ -343,6 +374,18 @@ class PageKde(PreparePageBase):
 
     def show_rst_page(self):
         return False
+
+    def show_ubuntu_drivers_spinner(self):
+        self.progress_indicator.show()
+        self.progress_indicator.setSpinnerVisible(True)
+
+    def hide_ubuntu_drivers_spinner(self):
+        self.progress_indicator.setSpinnerVisible(False)
+        self.progress_indicator.hide()
+
+    def plugin_on_next_clicked(self):
+        if self.get_use_nonfree():
+            self.show_ubuntu_drivers_spinner()
 
     def show_insufficient_space_page(self, required, free):
         from PyQt5 import QtWidgets
@@ -419,6 +462,9 @@ class PageKde(PreparePageBase):
 
     def plugin_translate(self, lang):
         PreparePageBase.plugin_translate(self, lang)
+        # Translate the progress label
+        self.progress_indicator.setText(self.controller.get_string(
+            'ubiquity/text/preparing_ud_label', lang))
         # gtk does the ${RELEASE} replace for the title in gtk_ui but we do
         # it per plugin because our title widget is per plugin
         release = misc.get_release()
@@ -545,3 +591,7 @@ class Page(plugin.Plugin):
                         'ubiquity/nonfree_package',
                         self.ui.restricted_package_name)
         plugin.Plugin.ok_handler(self)
+
+    def cleanup(self):
+        self.ui.hide_ubuntu_drivers_spinner()
+        plugin.Plugin.cleanup(self)

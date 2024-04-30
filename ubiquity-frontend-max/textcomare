@@ -1,0 +1,945 @@
+--- /data/max/build/desktop/ubiquity/ubiquity-22.04.20/ubiquity/plugins/ubi-console-setup.py	2023-03-30 07:19:53.000000000 +0200
++++ usr/lib/ubiquity/plugins/ubi-console-setup.py	2024-02-21 12:57:07.876000000 +0100
+@@ -18,10 +18,12 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ 
++from __future__ import print_function
++
+ import os
+ import re
+ 
+-from ubiquity import gsettings, keyboard_names, misc, osextras, plugin
++from ubiquity import keyboard_names, misc, osextras, plugin
+ 
+ 
+ NAME = 'console_setup'
+@@ -29,7 +31,7 @@
+ WEIGHT = 10
+ 
+ 
+-class PageGtk(plugin.PluginUI):
++class PageGtk2(plugin.PluginUI):
+     plugin_title = 'ubiquity/text/keyboard_heading_label'
+ 
+     def __init__(self, controller, *args, **kwargs):
+@@ -250,7 +252,7 @@
+             return misc.utf8(model.get_value(iterator, 0))
+ 
+ 
+-class PageKde(plugin.PluginUI):
++class PageKde2(plugin.PluginUI):
+     plugin_breadcrumb = 'ubiquity/text/breadcrumb_keyboard'
+ 
+     def __init__(self, controller, *args, **kwargs):
+@@ -418,7 +420,7 @@
+         return self.keyboard_variant
+ 
+ 
+-class Page(plugin.Plugin):
++class Page2(plugin.Plugin):
+     def prepare(self, unfiltered=False):
+         self.preseed('console-setup/ask_detect', 'false')
+ 
+@@ -857,7 +859,7 @@
+         self.rewrite_xorg_conf(model, layout, variant, options)
+ 
+ 
+-class Install(plugin.InstallPlugin):
++class Install2(plugin.InstallPlugin):
+     def prepare(self, unfiltered=False):
+         return (['/usr/share/ubiquity/console-setup-apply'], [])
+ 
+--- /data/max/build/desktop/ubiquity/ubiquity-22.04.20/ubiquity/plugins/ubi-prepare.py	2023-03-30 07:19:53.000000000 +0200
++++ usr/lib/ubiquity/plugins/ubi-prepare.py	2024-02-21 13:36:09.996000000 +0100
+@@ -17,6 +17,8 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ 
++from __future__ import print_function
++
+ import glob
+ import os
+ import subprocess
+@@ -40,8 +42,8 @@
+ 
+ class PreparePageBase(plugin.PluginUI):
+     plugin_title = 'ubiquity/text/prepare_heading_label'
+-    download_updates = True
+-    download_updates_enabled = True
++    download_updates = False
++    download_updates_enabled = False
+ 
+     def __init__(self, *args, **kwargs):
+         plugin.PluginUI.__init__(self)
+@@ -77,11 +79,14 @@
+     def hide_ubuntu_drivers_spinner(self):
+         return
+ 
+-
+ class PageGtk(PreparePageBase):
+-    restricted_package_name = 'ubuntu-restricted-addons'
++    # restricted_package_name = 'ubuntu-restricted-addons'
++    restricted_package_name = 'max-desktop-extras'
+ 
+     def __init__(self, controller, *args, **kwargs):
++        if self.is_automatic:
++            self.page = None
++            return
+         self.controller = controller
+         from ubiquity.gtkwidgets import Builder
+         builder = Builder()
+@@ -308,10 +313,14 @@
+ 
+ class PageKde(PreparePageBase):
+     plugin_breadcrumb = 'ubiquity/text/breadcrumb_prepare'
+-    restricted_package_name = 'kubuntu-restricted-addons'
++    # restricted_package_name = 'kubuntu-restricted-addons'
++    restricted_package_name = 'max-desktop-extras'
+ 
+     def __init__(self, controller, *args, **kwargs):
+         from ubiquity.qtwidgets import StateBox
++        if self.is_automatic:
++            self.page = None
++            return
+         self.controller = controller
+         try:
+             from PyQt5 import uic
+--- /data/max/build/desktop/ubiquity/ubiquity-22.04.20/d-i/source/user-setup/user-setup-apply	2023-03-30 07:19:53.000000000 +0200
++++ usr/lib/ubiquity/user-setup/user-setup-apply	2022-03-04 14:50:49.009672098 +0100
+@@ -1,5 +1,6 @@
+-#! /bin/sh
+-set -e
++#! /bin/bash
++# MaX dont fail creating users
++#set -e
+ 
+ . /usr/share/debconf/confmodule
+ 
+@@ -420,4 +421,80 @@
+ 	db_set passwd/user-password-again ''
+ fi
+ 
++
++# MaX ensure to disable root password
++usermod -L root || true
++
++# add tcos group
++if [ "$(grep -c tcos $ROOT/etc/group)" = "0" ]; then
++  $log $chroot $ROOT addgroup --quiet --system tcos || true
++fi
++
++# add madrid to tcos group
++$log $chroot $ROOT adduser madrid tcos || true
++# ugly but necesary
++setpassword "madrid" "cmadrid" "false" || true
++
++
++# copy tcosmonitor.desktop if install_type is profesor or terminales
++INSTALL_TYPE=$(cat /tmp/max_install_type 2>/dev/null)
++if [ "$INSTALL_TYPE" = "profesor" -o "$INSTALL_TYPE" = "terminales" ]; then
++  $log cp /usr/share/ubiquity/tcosmonitor.desktop $ROOT/home/madrid/Escritorio/ || true
++  $log chmod 755 $ROOT/home/madrid/Escritorio/tcosmonitor.desktop || true
++  $log $chroot $ROOT chown madrid:madrid /home/madrid/Escritorio/tcosmonitor.desktop || true
++fi
++
++# MaX add alumno user
++
++db_get passwd/alumno-username
++ALUMNO_USERNAME="$RET"
++
++db_get passwd/alumno-userfullname
++ALUMNO_USERFULLNAME="$RET"
++
++db_get passwd/alumno-password
++ALUMNO_PASSWORD="$RET"
++
++db_get passwd/alumno-default-groups
++ALUMNO_GROUPS=$RET
++
++
++
++$log $chroot $ROOT adduser --disabled-password --gecos "$ALUMNO_USERFULLNAME" "$ALUMNO_USERNAME" >/dev/null || true
++setpassword "$ALUMNO_USERNAME" "$ALUMNO_PASSWORD" "false" || true
++# disable password change github #780
++$log $chroot $ROOT passwd -n 99999 "$ALUMNO_USERNAME"
++
++
++for group in $ALUMNO_GROUPS; do
++  $log $chroot $ROOT adduser $ALUMNO_USERNAME $group || true
++done
++
++# add user profesor
++if [ -f /tmp/max_install_type ] && [ "$(grep -c profesor /tmp/max_install_type)" != "0" ]; then
++
++  $log $chroot $ROOT adduser --disabled-password --gecos "Profesor" "profesor" >/dev/null || true
++  setpassword "profesor" "profesor" "false" || true
++
++  for group in $ALUMNO_GROUPS; do
++    $log $chroot $ROOT adduser profesor $group || true
++  done
++
++
++  # add profesor to tcos group
++  $log $chroot $ROOT adduser profesor tcos || true
++
++  $log cp /usr/share/ubiquity/tcosmonitor.desktop $ROOT/home/profesor/Escritorio/ || true
++  $log chmod 755 $ROOT/home/profesor/Escritorio/tcosmonitor.desktop || true
++  $log $chroot $ROOT chown profesor:profesor /home/profesor/Escritorio/tcosmonitor.desktop || true
++
++fi
++
++# force locale
++cat << EOF >> $ROOT/etc/default/locale
++LANG="es_ES.UTF-8"
++LC_ALL="es_ES.UTF-8"
++EOF
++
++
+ exit 0
+--- /data/max/build/desktop/ubiquity/ubiquity-22.04.20/ubiquity/frontend/gtk_ui.py	2023-06-05 23:00:53.000000000 +0200
++++ usr/lib/ubiquity/ubiquity/frontend/gtk_ui.py	2024-02-27 11:36:59.652000000 +0100
+@@ -14,6 +14,7 @@
+ # - Colin Watson <cjwatson@ubuntu.com>
+ # - Evan Dandrea <ev@ubuntu.com>
+ # - Mario Limonciello <superm1@ubuntu.com>
++# - Mario Izquierdo <mariodebian@gmail.com>
+ #
+ # This file is part of Ubiquity.
+ #
+@@ -31,6 +32,8 @@
+ # with Ubiquity; if not, write to the Free Software Foundation, Inc., 51
+ # Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ 
++from __future__ import print_function
++
+ import atexit
+ import configparser
+ from functools import reduce
+@@ -240,7 +243,7 @@
+         self.installing = False
+         self.installing_no_return = False
+         self.partitioned = False
+-        self.timezone_set = False
++        self.timezone_set = True
+         self.ubuntu_drivers = None
+         self.returncode = 0
+         self.history = []
+@@ -327,6 +330,9 @@
+         steps = self.builder.get_object("steps")
+         found_install = False
+         for mod in self.modules:
++            # MAX disable some modules
++            if mod.module.NAME in ['prepare', 'timezone', 'console-setup', 'usersetup', 'language', 'webcam', 'migrationassistant']:
++                continue
+             if hasattr(mod.module, 'PageGtk'):
+                 mod.ui_class = mod.module.PageGtk
+                 mod.controller = Controller(self)
+@@ -414,6 +420,8 @@
+                 ['canberra-gtk-play', '--id=system-ready'],
+                 preexec_fn=misc.drop_all_privileges)
+ 
++        self.save_oem_metapackages_list()
++
+     def save_oem_metapackages_list(self, wait_finished=False):
+         ''' If we can, update the apt indexes. Then run 'ubuntu-drivers
+         list-oem' to find any OEM metapackages for this system. If we've
+@@ -580,6 +588,7 @@
+             if hasattr(p.ui, 'plugin_set_connectivity_state'):
+                 p.ui.plugin_set_connectivity_state(state)
+ 
++
+     def set_online_state(self, state):
+         for p in self.pages:
+             if hasattr(p.ui, 'plugin_set_online_state'):
+@@ -938,6 +947,14 @@
+             else:
+                 txt = self.finished_label.get_label()
+                 txt = txt.replace('${RELEASE}', misc.get_release().name)
++            # MAX
++            txt="""La instalación ha finalizado.
++Puede seguir probando MaX, pero recuerde que hasta que
++reinicie el equipo, cualquier cambio que haga o
++documento que guarde no se conservará.\n\n
++Se han creado los usuarios 'madrid' (contraseña cmadrid) y 'alumno' (contraseña alumno),\n
++madrid es administrador y alumno usuario básico cuyos datos se borran al cerrar sesión,\n
++comportamiento modificable por madrid desde Inicio->Administración->Configurar perfiles."""
+             self.finished_label.set_label(txt)
+             with misc.raised_privileges():
+                 with open('/var/run/reboot-required', "w"):
+@@ -965,6 +982,9 @@
+             uri = request.get_uri()
+             decision.ignore()
+             misc.launch_uri(uri)
++            subprocess.Popen(['sensible-browser', uri],
++                             close_fds=True,
++                             preexec_fn=misc.drop_all_privileges)
+             return True
+         return False
+ 
+@@ -1896,7 +1916,9 @@
+             msg = title
+         dialog = Gtk.MessageDialog(
+             self.live_installer, Gtk.DialogFlags.MODAL,
+-            Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, "")
++#victor comment
++            Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, msg)
++#           Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, "")
+         dialog.set_title(title)
+         dialog.set_markup(msg)
+         for label in dialog.get_message_area().get_children():
+--- /data/max/build/desktop/ubiquity/ubiquity-22.04.20/d-i/source/apt-setup/generators/40cdrom	2023-03-30 07:19:52.000000000 +0200
++++ usr/lib/ubiquity/apt-setup/generators/40cdrom	2018-11-12 09:32:01.686289676 +0100
+@@ -86,8 +86,9 @@
+ 	rm -f $ROOT$tmp $ROOT$tmp~
+ 	rm -f /var/lib/install-cd.id
+ 
+-	db_input critical apt-setup/cdrom/failed || true
+-	db_go || exit 10
++    # MaX disable show error (needed to nanoMaX)
++	# db_input critical apt-setup/cdrom/failed || true
++	# db_go || exit 10
+ 	exit 1
+ }
+ 
+@@ -129,7 +130,7 @@
+ 	trap chroot_cleanup_localmounts EXIT HUP INT QUIT TERM
+ fi
+ 
+-tmp=$($chroot $ROOT mktemp)
++tmp=$($chroot $ROOT tempfile)
+ 
+ # apt-cdrom can be interactive, avoid that
+ if $logoutput $chroot $ROOT apt-cdrom add \
+--- /data/max/build/desktop/ubiquity/ubiquity-22.04.20/d-i/source/apt-setup/generators/91security	2023-03-30 07:19:52.000000000 +0200
++++ usr/lib/ubiquity/apt-setup/generators/91security	2022-03-04 14:50:48.949671169 +0100
+@@ -32,7 +32,8 @@
+ 	fi
+ done
+ 
+-deb_src="deb-src"
++# MAX disabled deb-src
++deb_src="#deb-src"
+ db_get apt-setup/enable-source-repositories
+ if [ "$RET" = false ]; then
+ 	deb_src="# deb-src"
+--- /data/max/build/desktop/ubiquity/ubiquity-22.04.20/d-i/source/apt-setup/generators/50mirror.ubuntu	2023-03-30 07:19:52.000000000 +0200
++++ usr/lib/ubiquity/apt-setup/generators/50mirror.ubuntu	2018-11-12 09:32:01.690289897 +0100
+@@ -61,6 +61,12 @@
+ 			db_input low apt-setup/backports || true
+ 		;;
+ 		5)
++			if (db_get apt-setup/restricted && [ "$RET" = true ]) || \
++			   (db_get apt-setup/multiverse && [ "$RET" = true ]); then
++				db_input low apt-setup/partner || true
++			fi
++		;;
++		6)
+ 			db_input low apt-setup/enable-source-repositories || true
+ 		;;
+ 		*)
+@@ -103,12 +109,17 @@
+ db_get mirror/$protocol/directory
+ directory="/${RET#/}"
+ 
+-deb_src="deb-src"
++deb_src="#deb-src"
+ db_get apt-setup/enable-source-repositories
+ if [ "$RET" = false ]; then
+ 	deb_src="# deb-src"
+ fi
+ 
++# MaX configure main mirror
++hostname=archive.ubuntu.com
++protocol=http
++
++
+ # Awful hack. Source for ports architectures is only available on
+ # archive.ubuntu.com, not ports.ubuntu.com.
+ if [ "$hostname" = ports.ubuntu.com ]; then
+@@ -150,7 +161,8 @@
+ 	cat >> $file <<EOF
+ 
+ ## Proposed updates undergoing testing.
+-deb $protocol://$hostname$directory $codename-proposed $dists
++# MAX proposed disabled
++#deb $protocol://$hostname$directory $codename-proposed $dists
+ $deb_src $protocol://$srchostname$srcdirectory $codename-proposed $dists
+ EOF
+ fi
+@@ -180,7 +192,8 @@
+ EOF
+ if [ "$PROPOSED" = true ]; then
+ 	cat >> $file <<EOF
+-${DEB} $protocol://$hostname$directory $codename-proposed universe
++# MAX proposed disabled
++#${DEB} $protocol://$hostname$directory $codename-proposed universe
+ ${DEB_SRC} $protocol://$srchostname$srcdirectory $codename-proposed universe
+ EOF
+ fi
+@@ -202,7 +215,8 @@
+ EOF
+ 	if [ "$PROPOSED" = true ]; then
+ 		cat >> $file <<EOF
+-deb $protocol://$hostname$directory $codename-proposed multiverse
++# MAX proposed disabled
++#deb $protocol://$hostname$directory $codename-proposed multiverse
+ $deb_src $protocol://$srchostname$srcdirectory $codename-proposed multiverse
+ EOF
+ 	fi
+@@ -232,4 +246,33 @@
+ ${DEB_SRC} $protocol://$srchostname$srcdirectory $codename-backports $alldists
+ EOF
+ 
++if (db_get apt-setup/restricted && [ "$RET" = true ]) || \
++   (db_get apt-setup/multiverse && [ "$RET" = true ]) || \
++   (db_get apt-setup/partner && [ "$RET" = true ]); then
++	echo >> $file
++	if db_get apt-setup/partner && [ "$RET" = true ]; then
++		DEB='deb'
++		DEB_SRC="$deb_src"
++	else
++		cat >> $file <<EOF
++## Uncomment the following two lines to add software from Canonical's
++## 'partner' repository.
++EOF
++		DEB='# deb'
++		DEB_SRC='# deb-src'
++	fi
++	cat >> $file <<EOF
++## This software is not part of Ubuntu, but is offered by Canonical and the
++## respective vendors as a service to Ubuntu users.
++${DEB} http://archive.canonical.com/ubuntu $codename partner
++${DEB_SRC} http://archive.canonical.com/ubuntu $codename partner
++EOF
++
++	if db_get apt-setup/partner && [ "$RET" = true ]; then
++		apt-setup-signed-release archive.canonical.com "$file"
++	fi
++fi
++
+ apt-setup-signed-release archive.ubuntu.com "$file"
++
++exit 0
+--- /data/max/build/desktop/ubiquity/ubiquity-22.04.20/bin/ubiquity-dm	2023-03-30 07:19:52.000000000 +0200
++++ usr/bin/ubiquity-dm	2024-02-21 14:16:28.624000000 +0100
+@@ -1,8 +1,11 @@
+ #!/usr/bin/python3
+ 
++from __future__ import print_function
++
+ import errno
+ import getpass
+ import grp
++import imp
+ import os
+ import pwd
+ import signal
+@@ -20,6 +23,7 @@
+ from ubiquity import gsettings, osextras
+ from ubiquity.casper import get_casper
+ from ubiquity.debconfcommunicator import DebconfCommunicator
++import ubiquity.frontend
+ from ubiquity.misc import create_bool, utf8
+ 
+ 
+@@ -177,14 +181,16 @@
+         # this lets us find out which window manager etc. to launch. Be
+         # careful that importing this here will cause the underlying library
+         # to try to talk to the X server, which won't go well.
+-        from importlib import util
+         frontend_names = ['gtk_ui', 'kde_ui']
+         self.frontend = None
+         for f in frontend_names:
+-            if util.find_spec('ubiquity.frontend.%s' % f) is not None:
++            try:
++                imp.find_module(f, ubiquity.frontend.__path__)
+                 self.frontend = f
+                 break
+-        if self.frontend is None:
++            except ImportError:
++                pass
++        else:
+             raise AttributeError('No frontend available; tried %s' %
+                                  ', '.join(frontend_names))
+ 
+@@ -429,7 +435,7 @@
+             visual_a11y = 'access=v' in proc_cmdline
+ 
+             background_image = None
+-            for background in (
++            for background in ('/usr/share/backgrounds/max.png',
+                     '/usr/share/xfce4/backdrops/xubuntu-wallpaper.png',
+                     '/usr/share/backgrounds/'
+                     'ubuntustudio/ubuntustudio-default.png',
+@@ -519,7 +525,8 @@
+                             'dbus-update-activation-environment')):
+                         subprocess.Popen(
+                             ['dbus-update-activation-environment',
+-                             '--verbose', '--systemd', 'XDG_CURRENT_DESKTOP'],
++                             '--verbose', '--systemd', 'XDG_CURRENT_DESKTOP',
++                             'DISPLAY'],
+                             stdin=null, stdout=logfile, stderr=logfile,
+                             preexec_fn=self.drop_privileges)
+ 
+@@ -719,6 +726,24 @@
+ 
+             log("add_ubiquity_kdedir")
+             add_ubiquity_kdedir()
++            log('start kde4breeze')
++            if osextras.find_on_path('kf5-config'):
++                output = subprocess.check_output(
++                    ['kf5-config', '--path', 'lib'],
++                    preexec_fn=self.drop_privileges)
++                output = output.decode()
++                output = output.replace('\n', '')
++                output = output.split(':')[1]
++                breeze = subprocess.Popen(
++                    [output + '/kconf_update_bin/kde4breeze'],
++                    stdin=null, stdout=logfile, stderr=logfile,
++                    preexec_fn=self.drop_privileges)
++                ret = breeze.wait()
++                log('kde4breeze exited with code {}'.format(ret))
++                if ret != 0:
++                    raise
++            else:
++                raise
+             log('start kwin')
+             if osextras.find_on_path('kwin'):
+                 wm_cmd = ['kwin']
+Los ficheros binarios /data/max/build/desktop/ubiquity/ubiquity-22.04.20/pixmaps/ubuntu/logo.png y usr/share/ubiquity/pixmaps/max/logo.png son distintos
+--- /data/max/build/desktop/ubiquity/ubiquity-22.04.20/scripts/plugininstall.py	2023-03-30 07:19:53.000000000 +0200
++++ usr/share/ubiquity/plugininstall.py	2024-02-21 14:48:43.152000000 +0100
+@@ -19,7 +19,8 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ 
+-import grp
++from __future__ import print_function
++
+ import gzip
+ import io
+ import itertools
+@@ -236,6 +237,9 @@
+         self.configure_recovery_key()
+         self.configure_bootloader()
+ 
++        # MAX install max packages
++        self.install_max_extras()
++
+         self.next_region(size=4)
+         self.db.progress('INFO', 'ubiquity/install/removing')
+         if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
+@@ -251,6 +255,17 @@
+         if 'UBIQUITY_OEM_USER_CONFIG' not in os.environ:
+             self.install_restricted_extras()
+ 
++        self.db.progress('INFO', 'ubiquity/install/apt_clone_restore')
++        try:
++            self.apt_clone_restore()
++        except Exception:
++            syslog.syslog(
++                syslog.LOG_WARNING,
++                'Could not restore packages from the previous install:')
++            for line in traceback.format_exc().split('\n'):
++                syslog.syslog(syslog.LOG_WARNING, line)
++            self.db.input('critical', 'ubiquity/install/broken_apt_clone')
++            self.db.go()
+         try:
+             self.copy_network_config()
+         except Exception:
+@@ -285,6 +300,11 @@
+                 syslog.LOG_WARNING, 'Could not copy wallpaper cache:')
+             for line in traceback.format_exc().split('\n'):
+                 syslog.syslog(syslog.LOG_WARNING, line)
++
++        # MaX exec apt-get autoremove --purge
++        self.do_autoremove()
++        # end MAX
++
+         self.copy_dcd()
+ 
+         self.db.progress('SET', self.count)
+@@ -455,6 +475,12 @@
+                 print("127.0.1.1\t%s" % hostname, file=hosts)
+             print(HOSTS_TEXT, file=hosts)
+ 
++            # MAX disable repos during installation
++            print("127.0.1.1\tmax.educa.madrid.org", file=hosts)
++            print("127.0.1.1\tmax2.educa.madrid.org", file=hosts)
++            print("127.0.1.1\tarchive.ubuntu.com", file=hosts)
++            print("127.0.1.1\tsecurity.ubuntu.com", file=hosts)
++
+         # Network Manager's ifupdown plugin has an inotify watch on
+         # /etc/hostname, which can trigger a race condition if /etc/hostname is
+         # written and immediately followed with /etc/hosts.
+@@ -784,6 +810,15 @@
+             script += '-oem'
+         misc.execute(script)
+ 
++        osextras.unlink_force(self.target_file('etc/popularity-contest.conf'))
++        try:
++            participate = self.db.get('popularity-contest/participate')
++            install_misc.set_debconf(
++                self.target, 'popularity-contest/participate', participate,
++                self.db)
++        except debconf.DebconfError:
++            pass
++
+         osextras.unlink_force(self.target_file('etc/papersize'))
+         subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
+                          'ucf', '--purge', '/etc/papersize'],
+@@ -815,6 +850,7 @@
+             pass
+ 
+         packages = ['linux-image-' + self.kernel_version,
++                    'popularity-contest',
+                     'libpaper1',
+                     'ssl-cert']
+         arch, subarch = install_misc.archdetect()
+@@ -1075,9 +1111,6 @@
+             syslog.syslog(syslog.LOG_ERR, ' '.join(log_args))
+             return False
+ 
+-        syslog.syslog(' '.join(log_args))
+-        return True
+-
+     def copy_mok(self):
+         if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
+             return
+@@ -1294,7 +1327,7 @@
+         # enabled
+         cache = Cache()
+         filtered_extra_packages = install_misc.query_recorded_installed()
+-        for package in sorted(filtered_extra_packages):
++        for package in filtered_extra_packages.copy():
+             pkg = cache.get(package)
+             if not pkg:
+                 continue
+@@ -1306,8 +1339,7 @@
+                     filtered_extra_packages.remove(package)
+                     break
+ 
+-        # An ordered list from the set() to avoid the random dependencies failure.
+-        self.do_install(sorted(filtered_extra_packages))
++        self.do_install(filtered_extra_packages)
+ 
+         if self.db.get('ubiquity/install_oem') == 'true':
+             try:
+@@ -1315,7 +1347,7 @@
+                 # upgrade them to their versions in the OEM archive.
+                 with open('/run/ubuntu-drivers-oem.autoinstall', 'r') as f:
+                     oem_pkgs = set(f.read().splitlines())
+-                    for oem_pkg in sorted(oem_pkgs):
++                    for oem_pkg in oem_pkgs.copy():
+                         target_sources_list = self.target_file("etc/apt/sources.list.d/{}.list".format(oem_pkg))
+                         if not os.path.exists(target_sources_list):
+                             continue
+@@ -1327,8 +1359,7 @@
+                             syslog.syslog("Failed to apt update {}".format(target_sources_list))
+                             oem_pkgs.discard(oem_pkg)
+                     if oem_pkgs:
+-                        # An ordered list from the set() to avoid the random dependencies failure.
+-                        self.do_install(sorted(oem_pkgs))
++                        self.do_install(oem_pkgs)
+             except FileNotFoundError:
+                 pass
+ 
+@@ -1621,6 +1652,31 @@
+                 for line in installed:
+                     print(line, file=fp)
+ 
++    def apt_clone_restore(self):
++        if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
++            return
++        import lsb_release
++        working = self.target_file('ubiquity-apt-clone')
++        working = os.path.join(working,
++                               'apt-clone-state-%s.tar.gz' % os.uname()[1])
++        codename = lsb_release.get_distro_information()['CODENAME']
++        if not os.path.exists(working):
++            return
++        install_misc.chroot_setup(self.target)
++        binds = ("/proc", "/sys", "/dev", "/run")
++        try:
++            for bind in binds:
++                misc.execute('mount', '--bind', bind, self.target + bind)
++            restore_cmd = [
++                'apt-clone', 'restore-new-distro',
++                working, codename, '--destination', self.target]
++            subprocess.check_call(
++                restore_cmd, preexec_fn=install_misc.debconf_disconnect)
++        finally:
++            install_misc.chroot_cleanup(self.target)
++            for bind in binds:
++                misc.execute('umount', '-f', self.target + bind)
++
+     def copy_network_config(self):
+         if 'UBIQUITY_OEM_USER_CONFIG' in os.environ:
+             return
+@@ -1750,15 +1806,14 @@
+ 
+         for log_file in ('/var/log/syslog', '/var/log/partman',
+                          '/var/log/installer/version', '/var/log/casper.log',
+-                         '/var/log/installer/debug', '/run/casper-md5check.json'):
++                         '/var/log/installer/debug'):
+             target_log_file = os.path.join(target_dir,
+                                            os.path.basename(log_file))
+             if os.path.isfile(log_file):
+                 if not misc.execute('cp', '-a', log_file, target_log_file):
+                     syslog.syslog(syslog.LOG_ERR,
+                                   'Failed to copy installation log file')
+-                os.chmod(target_log_file, 0o640)
+-                os.chown(target_log_file, -1, grp.getgrnam('adm').gr_gid)
++                os.chmod(target_log_file, stat.S_IRUSR | stat.S_IWUSR)
+         media_info = '/cdrom/.disk/info'
+         if os.path.isfile(media_info):
+             try:
+@@ -1792,6 +1847,12 @@
+                     print(oem_id, file=oem_id_file)
+         except (debconf.DebconfError, IOError):
+             pass
++        try:
++            path = self.target_file('ubiquity-apt-clone')
++            if os.path.exists(path):
++                shutil.move(path, self.target_file('var/log/installer'))
++        except IOError:
++            pass
+ 
+     def save_random_seed(self):
+         """Save random seed to the target system.
+@@ -1845,6 +1906,158 @@
+             osextras.unlink_force(
+                 self.target_file('etc/apt/apt.conf.d', apt_conf))
+ 
++    # MaX
++    def killall_target_proc(self):
++        pin,pout=os.popen2("sudo lsof /target 2>/dev/null")
++        pin.close()
++        data=pout.readlines()
++        pout.close()
++        pids={}
++        for line in data:
++            pid=line.strip().split()[1]
++            name=line.strip().split()[0]
++            if pids.has_key(pid): continue
++            try:
++                # PID must be an integer
++                pids[pid]=[int(pid), name]
++            except:
++                pass
++        syslog.syslog("DEBUG: killall_target_proc() pids=%s"%pids)
++        if len(pids) > 0:
++            strpids=""
++            for pid in pids.keys():
++                # don't kill python process
++                syslog.syslog("DEBUG: killall_target_proc() pid=%s"%(pids[pid]))
++                if pids[pid][1].startswith("python"): continue
++                if pids[pid][1].startswith("install"): continue
++                if pids[pid][1].startswith("plugininstall"): continue
++                if pids[pid][1].startswith("pluginin"): continue
++                syslog.syslog("DEBUG: killing %s" %(pids[pid]) )
++                pin,pout=os.popen2("sudo kill %s"%(pid) )
++                pin.close()
++                pout.close()
++        else:
++            syslog.syslog("No process to kill")
++
++    # MaX
++    def do_autoremove(self):
++        syslog.syslog("DEBUG do_autoremove() init")
++        install_misc.chroot_setup(self.target)
++        to_delete = []
++        # to_delete = ["/bin/log-output"]
++        try:
++            # shutil.copy("/bin/log-output", "/target/bin/log-output")
++            # for arch in ['', "i386-linux-gnu", "x86_64-linux-gnu"]:
++            #     if os.path.exists("/usr/lib/%s/libdebian-installer.so.4" % arch):
++            #         syslog.syslog("DEBUG: do_autoremove copy arch %s"  % arch)
++            #         shutil.copy("/usr/lib/%s/libdebian-installer.so.4" % arch,
++            #                     "/target/usr/lib/%s/libdebian-installer.so.4" % arch)
++            #         to_delete.append("/usr/lib/%s/libdebian-installer.so.4" % arch)
++            #
++            #         shutil.copy("/usr/lib/%s/libdebian-installer.so.4.0.8" % arch,
++            #                     "/target/usr/lib/%s/libdebian-installer.so.4.0.8" % arch)
++            #         to_delete.append("/usr/lib/%s/libdebian-installer.so.4.0.8")
++            #
++            subprocess.call(['log-output', '-t', 'ubiquity', 'chroot', self.target,
++                          'apt-get', 'autoremove', '--purge', '-y'],
++                          preexec_fn=install_misc.debconf_disconnect, close_fds=True)
++
++            install_misc.chrex(self.target,'max-update-post-inst')
++            install_misc.chrex(self.target,'max-reset-ssh-keys')
++            # force install (ubuntu installer don't format EFI partition)
++            install_misc.chrex(self.target,'check-efi-install', 'force-remove')
++            install_misc.chrex(self.target,'check-efi-install')
++            #
++            for f in to_delete:
++                if os.path.exists("/target/%s" % f):
++                    os.unlink("/target/%s" % f)
++
++        except Exception:
++            syslog.syslog("DEBUG: Exception in do_autoremove()")
++            for line in traceback.format_exc().split('\n'):
++                syslog.syslog(syslog.LOG_WARNING, line)
++        install_misc.chroot_cleanup(self.target)
++
++    # MaX
++    def install_max_extras(self):
++        # MaX have 6 different install types
++        # ["escritorio", "profesor", "alumno", "infantil", "nanomax", "terminales"]
++        if not os.path.exists("/tmp/max_install_type"):
++            syslog.syslog("DEBUG: install_max_extras() /tmp/max_install_type not found")
++            return
++        # FIXME use debconf preseed instead of a file
++        f=open("/tmp/max_install_type", "r")
++        install_type=f.readline().strip()
++        f.close()
++        it_txt=""
++        if install_type != "escritorio":
++            it_txt="    \"^max-%s$\";" %install_type
++        f=open('/target/etc/apt/apt.conf.d/01autoremove-ubiquity-max', 'w')
++        f.write("""APT
++{
++  NeverAutoRemove
++  {
++    "^max-.*";
++%s
++  };
++};
++""" %it_txt)
++        f.close()
++        if install_type == "escritorio":
++            # return, no things to do
++            syslog.syslog("DEBUG: install_max_extras() type escritorio, nothing to do")
++            return
++        syslog.syslog("DEBUG: install_max_extras() trying to get diferences with %s install_type"%install_type)
++        # make a diff between filesystem.manifest-desktop and filesystem.manifest-desktop.xxxxxx
++        install_file="/cdrom/casper/filesystem.manifest-desktop.%s"%install_type
++        if not os.path.exists(install_file):
++            syslog.syslog("DEBUG: install_max_extras() file %s not found"%install_file)
++            return
++        new=set()
++        newpkgs=open(install_file)
++        for line in newpkgs:
++            if line.strip() != '' and not line.startswith('#'):
++                new.add(line.split()[0])
++        newpkgs.close()
++        # read old packages
++        oldpkgs=open("/cdrom/casper/filesystem.manifest-desktop")
++        old=set()
++        for line in oldpkgs:
++            if line.strip() != '' and not line.startswith('#'):
++                old.add(line.split()[0])
++        oldpkgs.close()
++        # diff
++        diff=new - old
++        if len(diff) == 0:
++            syslog.syslog("DEBUG: no diferences")
++            return
++        syslog.syslog("DEBUG: install_max_extras() installing: %s"%diff)
++        # We only ever install these packages from the CD.
++        sources_list = os.path.join(self.target, 'etc/apt/sources.list')
++        os.rename(sources_list, "%s.apt-setup" % sources_list)
++        old_sources = open("%s.apt-setup" % sources_list)
++        new_sources = open(sources_list, 'w')
++        found_cdrom = False
++        for line in old_sources:
++            if 'cdrom:' in line:
++                # print >>new_sources, line,
++                new_sources.write(line)
++                found_cdrom = True
++        new_sources.close()
++        old_sources.close()
++        if not found_cdrom:
++            os.rename("%s.apt-setup" % sources_list, sources_list)
++
++        self.do_install(diff)
++
++        if found_cdrom:
++            os.rename("%s.apt-setup" % sources_list, sources_list)
++
++        try:
++            self.killall_target_proc()
++        except Exception:
++            syslog.syslog("DEBUG: install_max_extras() Exception")
++
+ 
+ if __name__ == '__main__':
+     os.environ['DPKG_UNTRANSLATED_MESSAGES'] = '1'
+--- /data/max/build/desktop/ubiquity/ubiquity-22.04.20/d-i/source/grub-installer/grub-installer	2023-03-30 07:19:52.000000000 +0200
++++ usr/share/grub-installer/grub-installer	2024-02-27 09:25:22.380000000 +0100
+@@ -8,16 +8,18 @@
+ if [ "$1" ]; then
+ 	ROOT="$1"
+ 	chroot=chroot
+-	shift
++        shift
+ else
+ 	ROOT=
+ 	chroot=
+ fi
+ 
+ if [ "$1" ]; then
+-	ARCH="$1"
++       ARCH="$1"
+ fi
+ 
++
++
+ . /usr/share/grub-installer/functions.sh
+ . /usr/share/grub-installer/otheros.sh
+ 
+@@ -43,6 +45,7 @@
+ }
+ 
+ ARCH="${ARCH:-$(archdetect)}"
++## ARCH="$(archdetect)"
+ info "architecture: $ARCH"
+ 
+ umount_dirs=
+@@ -499,7 +502,17 @@
+ 	if [ -f /var/lib/partman/ignore_uefi ]; then
+ 		grub_package="grub-pc"
+ 	else
+-		grub_package="grub-efi-amd64-signed"
++#		grub_package="grub-efi"
++		# Override the package choice if we can figure out the
++		# right package to use directly
++		if [ -f /sys/firmware/efi/fw_platform_size ] ; then
++			SIZE=$(cat /sys/firmware/efi/fw_platform_size)
++			if [ $SIZE -eq 64 ] ; then
++				grub_package="grub-efi-amd64-signed"
++			elif [ $SIZE -eq 32 ] ; then
++				grub_package="grub-efi-ia32"
++			fi
++		fi
+ 		if [ ! -d /target/boot/efi ]; then
+ 			# No EFI System Partition, so presumably the partitioner
+ 			# believed this to be unnecessary, perhaps because we're
+@@ -1089,9 +1102,9 @@
+ 			grub_install_params="$grub_install_params --force"
+ 		fi
+ 
+-		if [ "$ARCH" = "amd64/efi" ] ; then
+-		        grub_install_params="$grub_install_params --target x86_64-efi"
+-                fi
++                if [ "$ARCH" = "amd64/efi" ] ; then
++                       grub_install_params="$grub_install_params --target x86_64-efi"
++                 fi
+ 
+ 		CODE=0
+ 		case $ARCH:$grub_package in
+@@ -1106,6 +1119,12 @@
+ 		esac
+ 		if [ "$CODE" = 0 ]; then
+ 			info "grub-install ran successfully"
++                        # MAX
++                        if [ ! -d /sys/firmware/efi ] && [ -e /tmp/max_sti ]; then
++                            info "DETECTED STI card running $chroot $ROOT grub-install $grub_install_params \"/dev/sda1\" --force"
++                            log-output -t grub-installer $chroot $ROOT grub-install $grub_install_params "/dev/sda1" --force
++                            rm -f /tmp/max_sti
++                        fi
+ 		else
+ 			case $ARCH:$grub_package in
+ 			    *:grub|*:grub-pc|*:grub-efi*|sparc:grub-ieee1275|ppc64el/*:grub-ieee1275)

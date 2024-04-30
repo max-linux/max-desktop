@@ -1,3 +1,70 @@
+ubiquity-frontend-max (12.0.max15) max; urgency=medium
+
+  * failed indentation fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 27 Feb 2024 11:38:36 +0100
+
+ubiquity-frontend-max (12.0.max14) max; urgency=medium
+
+  * Build in MAX 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 27 Feb 2024 10:57:59 +0100
+
+ubiquity-frontend-max (12.0.max13) max; urgency=medium
+
+  * rebuild from github 
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 21 Feb 2024 15:18:52 +0100
+
+ubiquity-frontend-max (12.0.max12) max; urgency=medium
+
+  * compare files again
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 21 Feb 2024 09:45:52 +0100
+
+ubiquity-frontend-max (12.0.max11) max; urgency=medium
+
+  * back to original line at  grub legacy, or vice-versa 
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 20 Feb 2024 09:36:10 +0100
+
+ubiquity-frontend-max (12.0.max10) max; urgency=medium
+
+  * grub-efi-amd64-signed removed from dpkg -P at grub-installer
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 16 Feb 2024 12:26:13 +0100
+
+ubiquity-frontend-max (12.0.max9) max; urgency=medium
+
+  * instalador.desktop fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 05 Dec 2023 12:09:38 +0100
+
+ubiquity-frontend-max (12.0.max8) max; urgency=medium
+
+  * Build in MAX 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 01 Dec 2023 12:49:26 +0100
+
+ubiquity-frontend-max (12.0.max7) max; urgency=medium
+
+  * Build in MAX 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 01 Dec 2023 10:38:58 +0100
+
+ubiquity-frontend-max (12.0.max6) max; urgency=medium
+
+  * Build in MAX 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 30 Nov 2023 13:25:22 +0100
+
+ubiquity-frontend-max (12.0.max5) max; urgency=medium
+
+  * Build in MAX 12.0
+  * Tabs errors fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 26 Oct 2023 20:40:37 +0200
+
 ubiquity-frontend-max (12.0.max4) max; urgency=medium
 
   * 11.5.1 => 11.5.2 at ubiquity-gtkui.desktop

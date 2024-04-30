@@ -457,6 +457,8 @@ class Page2(plugin.Plugin):
 
         self.has_variants = False
 
+        self.gnome_input_sources = self.get_gnome_input_sources()
+
         # Technically we should provide a version as the second argument,
         # but that isn't currently needed and it would require querying
         # apt/dpkg for the current version, which would be slow, so we don't
@@ -698,9 +700,41 @@ class Page2(plugin.Plugin):
 
         (model, layout, variant, options) = \
             self.adjust_keyboard(model, layout, variant, [])
+        self.set_gnome_keyboard_layout(layout, variant)
         self.debug("Setting keyboard layout: %s %s %s %s" %
                    (model, layout, variant, options))
         self.apply_real_keyboard(model, layout, variant, options)
+
+    @staticmethod
+    def get_gnome_input_sources():
+        return gsettings.get_list("org.gnome.desktop.input-sources", "sources")
+
+    def set_gnome_input_sources(self, input_sources):
+        self.debug(
+            "Setting org.gnome.desktop.input-sources sources to %r",
+            input_sources,
+        )
+        gsettings.set_list(
+            "org.gnome.desktop.input-sources", "sources", input_sources
+        )
+
+    def set_gnome_keyboard_layout(self, layout, variant):
+        if variant:
+            input_source = ("xkb", f"{layout}+{variant}")
+        else:
+            input_source = ("xkb", f"{layout}")
+
+        # The only reliable way to change the keyboard layout in GNOME is to
+        # set the input sources to exacly the desired layout. See also
+        # https://discourse.gnome.org/t/how-to-set-gnome-keyboard-layout-programatically/9459
+        self.set_gnome_input_sources([input_source])
+        if not self.gnome_input_sources:
+            return
+        if input_source in self.gnome_input_sources:
+            input_sources = self.gnome_input_sources
+        else:
+            input_sources = [input_source] + self.gnome_input_sources
+        self.set_gnome_input_sources(input_sources)
 
     def apply_real_keyboard(self, model, layout, variant, options):
         args = []
@@ -814,6 +848,7 @@ class Page2(plugin.Plugin):
             options_list = options.split(',')
         else:
             options_list = []
+        self.set_gnome_keyboard_layout(layout, variant)
         self.apply_real_keyboard(model, layout, variant, options_list)
 
         plugin.Plugin.cleanup(self)

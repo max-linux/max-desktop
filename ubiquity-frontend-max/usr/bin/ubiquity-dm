@@ -410,6 +410,20 @@ EndSection
                 stdin=null, stdout=logfile, stderr=logfile,
                 preexec_fn=self.drop_privileges))
 
+        if osextras.find_on_path("dbus-update-activation-environment"):
+            subprocess.Popen(
+                [
+                    "dbus-update-activation-environment",
+                    "--verbose",
+                    "--systemd",
+                    "DISPLAY",
+                ],
+                stdin=null,
+                stdout=logfile,
+                stderr=logfile,
+                preexec_fn=self.drop_privileges,
+            )
+
         # Accessibility infrastructure
         proc_cmdline = []
         with open('/proc/cmdline', 'r') as fp:
