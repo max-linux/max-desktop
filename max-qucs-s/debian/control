@@ -1,0 +1,17 @@
+Source: max-qucs-s
+Section: education
+Priority: optional
+Maintainer: eXeLearning <admin@exelearning.net>
+Build-Depends: debhelper (>= 8.0.0), wget
+Standards-Version: 2.1.0-1
+Homepage: https://github.com/ra3xdh/qucs_s/releases
+
+Package: qucs-s
+Version: 2.1.0-1
+Architecture: amd64
+Depends: libc6, libqt5gui5, libqt5core5a, libqt5svg5, libqt5widgets5, libqt5printsupport5, ${shlibs:Depends}, ${misc:Depends}
+Recommends: ngspice
+Conflicts: qucs
+Replaces: qucs
+Description: Quite Universal Circuit Simulator with SPICE (Qucs-S)
+ allows to simulate electronic circuits with SPICE-compatible kernels

@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+
+VERSION=2.1.0-1
+DISTRO=22.04
+URL=http://localhost/remote-files/qucs-s_${VERSION}_amd64.deb
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+override_dh_auto_build:
+
+	if [ ! -d build ]; then	( mkdir build && cd build && wget ${URL} && mkdir tmpdeb && dpkg-deb -x qucs-s_${VERSION}_amd64.deb tmpdeb ) ;	fi
+
+override_dh_shlibdeps:
