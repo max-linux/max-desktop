@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e 
+
+UGESTION="madrid"
+ 
+if [ -e /home/${UGESTION} ];  then 
+
+	if [ ! -d /home/${UGESTION}/.config/autostart ]; then 
+	mkdir  /home/${UGESTION}/.config/autostart ;\
+	chown -R ${UGESTION}:${UGESTION} /home/${UGESTION}/.config/autostart ;\
+	fi
+
+	cp /etc/xdg/autostart/msjinicio.desktop /home/${UGESTION}/.config/autostart/
+fi
+
+if [ 
+
+
+
+
+exit 0
