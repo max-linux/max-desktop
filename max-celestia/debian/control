@@ -1,0 +1,12 @@
+Source: max-celestia
+Section:  contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, debhelper (>= 10)
+		
+Standards-Version: 1.6.4
+Homepage: https://celestiaproject.space
+Package: celestia
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description:  The free space simulation that lets you explore our universe in three dimensions

@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Terminal=false
+Exec=/opt/celestia/celestia-latest-x86_64.AppImage
+Icon=celestia
+Icon[es_ES]=celestia
+Name[es_ES]=celestia
+Comment[es_ES]=Celestia, La simulación espacial gratuita que te permite explorar nuestro universo en tres dimensiones.
+Name=celestia
+Comment=Celestia, La simulación espacial gratuita que te permite explorar nuestro universo en tres dimensiones.
+Categories=Education;Science;Geoscience;

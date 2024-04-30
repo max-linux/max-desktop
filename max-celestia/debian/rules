@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+VERSION=1.6.4
+URL1=http://localhost/remote-files/celestia-latest-x86_64.AppImage
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	if [ -d build ]; then rm -rf build; fi 
+
+
+override_dh_auto_build:
+	
+	mkdir -p build &&  cd build && wget ${URL1} ;
+	cd build && chmod +x * ;
+
+override_dh_shlibdeps:
+
+override_dh_strip:
