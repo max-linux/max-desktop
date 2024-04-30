@@ -2,7 +2,7 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
-PACKAGES=core desktop live
+PACKAGES=core desktop live desktop-gestion
 
 build/max-mate-core::
 	for seed in $(PACKAGES); do \

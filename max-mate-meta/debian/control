@@ -26,3 +26,10 @@ Depends: ${max-mate-live:Depends}, ${misc:Depends}
 Recommends: ${max-mate-live:Recommends}
 Description: MAX MATE - live system
  This package is the minimal MATE desktop as a Ubuntu environment.
+
+Package: max-mate-desktop-gestion
+Architecture: all
+depends: ${max-mate-desktop-gestion:Depends}, ${misc:Depends}
+Recomends: ${max-mate-desktop-gestion}
+Description: MAX MATE - Minimal Gestion desktop
+ This package is the minimal MATE desktop enviroment.

@@ -1,3 +1,100 @@
+max-mate-meta (12.0.max55) max; urgency=medium
+
+  * max-desktop-gestion package created
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 15 Mar 2024 12:49:45 +0100
+
+max-mate-meta (12.0.max54) max; urgency=medium
+
+  * fixed changelog 
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 13 Mar 2024 16:25:17 +0100
+
+max-mate-meta (12.0.max53) max; urgency=medium
+
+  * chromium added at desktop file 
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 13 Mar 2024 15:40:02 +0100
+
+max-mate-meta (12.0.max52) max; urgency=medium
+
+  * default-jdk added at desktop file
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 23 Feb 2024 12:31:10 +0100
+
+max-mate-meta (12.0.max51) max; urgency=medium
+
+  * sox, qwiff, dnie-support, dnie3-support added to desktop file
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 22 Feb 2024 23:41:08 +0100
+
+max-mate-meta (12.0.max50) max; urgency=medium
+
+  * libs  libqt5multimedia5-plugins and libqt5multimediagsttoo added
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 21 Feb 2024 11:06:49 +0100
+
+max-mate-meta (12.0.max49) max; urgency=medium
+
+  * libdvd-pkg added to desktop file
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 19 Feb 2024 13:30:17 +0100
+
+max-mate-meta (12.0.max48) max; urgency=medium
+
+  * wa11y-profile-manager-indicator and mate-terminalmate-themes removed 
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 14 Feb 2024 20:17:37 +0100
+
+max-mate-meta (12.0.max47) max; urgency=medium
+
+  * obs-captions-plugin removed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 14 Feb 2024 19:52:58 +0100
+
+max-mate-meta (12.0.max46) max; urgency=medium
+
+  * desktop file fixed at name arduino-ide and libreoffice-avmedia-backend-gstreamer removed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 14 Feb 2024 19:45:42 +0100
+
+max-mate-meta (12.0.max45) max; urgency=medium
+
+  * arduino-ide, qucs-s and ngspice added 
+  * Build in MAX 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 14 Feb 2024 19:45:00 +0100
+
+max-mate-meta (12.0.max43) max; urgency=medium
+
+  * Build in MAX 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 14 Feb 2024 16:20:29 +0100
+
+max-mate-meta (12.0.max42) max; urgency=medium
+
+  * Added new libreries for Openboard and indicator-applets
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 06 Feb 2024 08:31:34 +0100
+
+max-mate-meta (12.0.max41) max; urgency=medium
+
+  * removed old packages
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 20 Oct 2023 14:55:23 +0200
+
+max-mate-meta (12.0.max40) max; urgency=medium
+
+  * aegisub-l10n removed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 16 Oct 2023 19:58:58 +0200
+
+max-mate-meta (12.0.max39) max; urgency=medium
+
+  * aegisub removed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 16 Oct 2023 19:41:43 +0200
+
 max-mate-meta (12.0.max38) max; urgency=medium
 
   * tilda removed from core file
