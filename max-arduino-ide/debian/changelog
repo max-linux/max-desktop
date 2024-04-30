@@ -1,0 +1,67 @@
+max-arduino (3:2.2.1max1) max; urgency=medium
+
+  * New upstream version 2.2.1 added
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 30 Mar 2023 09:52:42 +0200
+
+max-arduino (3:1.8.19-0max6) max; urgency=medium
+
+  * Build in MAX 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 29 Mar 2023 14:36:36 +0200
+
+max-arduino (3:1.8.19-0max5) max; urgency=medium
+
+  * conflicts packages added on arduino package
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 21 Feb 2023 17:29:30 +0100
+
+max-arduino (3:1.8.19-0max4) max; urgency=medium
+
+  * conflicts packages added
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 21 Feb 2023 17:10:57 +0100
+
+max-arduino (3:1.8.19-0max3) max; urgency=medium
+
+  * Arduino compile step fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 20 Feb 2023 21:04:23 +0100
+
+max-arduino (3:1.8.19-0max2) max; urgency=medium
+
+  * New version fixed
+  
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 20 Feb 2023 20:36:36 +0100
+
+max-arduino (3:1.8.19-0max1) max; urgency=medium
+
+  * New upstream version 1.8.19
+ 
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 24 Aug 2022 11:06:11 +0200
+
+max-arduino (3:1.8.5-0max4) max; urgency=medium
+
+  * Build in MAX 10.0
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 30 Jun 2018 13:49:27 +0200
+
+max-arduino (3:1.8.5-0max3) max; urgency=medium
+
+  * Include arduino-builder static
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 23 Mar 2018 11:56:57 +0100
+
+max-arduino (3:1.8.5-0max2) max; urgency=medium
+
+  * Remove avrdude links
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 23 Mar 2018 08:16:57 +0100
+
+max-arduino (3:1.8.5-0max1) max; urgency=medium
+
+  * Initial version, close #724
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 22 Mar 2018 08:12:20 +0100
+
