@@ -7,3 +7,5 @@ binary-install/max-win32-apps::
 	# clean svn dirs
 	find $(CURDIR)/debian/max-win32-apps -type d -name .svn | xargs rm -rf --
 
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip
