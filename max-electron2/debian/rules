@@ -1,0 +1,32 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DH_VERBOSE=1
+
+VERSION=17.4.10
+
+
+URL=https://github.com/electron/electron/archive/refs/tags/v$(VERSION).tar.gz
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	dh_clean
+	rm -rf build/
+
+override_dh_auto_build:
+	if [ ! -d build ];  then \
+		mkdir build ;\
+	fi 
+
+	cd build && wget $(URL)
+	cd build && tar xzvf v$(VERSION).tar.gz && mv electron-$(VERSION)/ electron
+	cd build/electron/ && npm install electron --save-dev
+
+#override_dh_install:
+	
+
+override_dh_shlibdeps:
+	echo "override"
+

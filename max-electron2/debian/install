@@ -1,0 +1,16 @@
+build/electron/node_modules/electron/dist/electron                    usr/share/electron/
+build/electron/node_modules/electron/dist/chrome-sandbox              usr/share/electron/
+build/electron/node_modules/electron/dist/icudtl.dat                  usr/share/electron/
+build/electron/node_modules/electron/dist/*.so                        usr/share/electron/
+build/electron/node_modules/electron/dist/*.bin                       usr/share/electron/
+build/electron/LICENSE                                                usr/share/electron/
+build/electron/node_modules/electron/dist/LICENSES.chromium.html      usr/share/electron/
+build/electron/node_modules/electron/dist/version                     usr/share/electron/
+build/electron/node_modules/electron/dist/*.pak                       usr/share/electron/
+
+build/electron/node_modules/electron/dist/locales/*.pak               usr/share/electron/locales/
+build/electron/node_modules/electron/dist/locales/*.pak               usr/share/electron/locales/
+
+build/electron/node_modules/electron/dist/resources/*.asar            usr/share/electron/resources/
+build/electron/node_modules/cacache/locales/en.json                   usr/share/electron/resources/static/translations/
+
