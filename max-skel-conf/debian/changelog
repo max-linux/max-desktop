@@ -1,3 +1,39 @@
+max-skel-conf (12.0.max16) max; urgency=medium
+
+  * trusted gpg file fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 05 Feb 2024 16:03:20 +0100
+
+max-skel-conf (12.0.max15) max; urgency=medium
+
+  * new exelearning layouts add at skel directory
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 02 Feb 2024 10:46:37 +0100
+
+max-skel-conf (12.0.max14) max; urgency=medium
+
+  * Build in MAX 12.0 
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 01 Feb 2024 14:22:44 +0100
+
+max-skel-conf (12.0.max13) max; urgency=medium
+
+  * Link to python2 fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 18 Jan 2024 15:36:48 +0100
+
+max-skel-conf (12.0.max12) max; urgency=medium
+
+  * Change to 10-max-grub 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 11 Dec 2023 10:03:18 +0100
+
+max-skel-conf (12.0.max11) max; urgency=medium
+
+  * Build in MAX 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 17 Oct 2023 12:27:25 +0200
+
 max-skel-conf (12.0.max10) max; urgency=medium
 
   * 11.5.1 => 11.5.2

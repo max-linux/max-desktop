@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#Se añade un enlace simbolico de python a python2.
+
+if [ ! -h /usr/bin/python ];  then 
+    ln -s /usr/bin/python2 /usr/bin/python
+fi
+

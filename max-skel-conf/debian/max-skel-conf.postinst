@@ -43,6 +43,8 @@ case "$1" in
     [ -e  /etc/skel/Escritorio/Red.desktop ] && \
 	rm -f /etc/skel/Escritorio/Red.desktop /home/*/Escritorio/Red.desktop
 
+    [ ! -e /etc/apt/trusted.gpg.d/trusted.gpg ]  && \
+       cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d/
 
     [ -e  /etc/skel/config ] && rmdir /etc/skel/config || true
 
@@ -51,6 +53,8 @@ case "$1" in
     /usr/sbin/max-autoenable-bluetooth || true
     
     /usr/sbin/max-addusers-netdev-group || true
+
+    /usr/sbin/max-set-python2 || true
 
     ;;
 
