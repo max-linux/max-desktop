@@ -100,9 +100,6 @@
             <Filename>menu-profesor-dat.desktop</Filename>
         </Include>
      </Menu>
- 
-
-
 
      <Menu>
         <Name>Programas</Name>
@@ -122,8 +119,8 @@
         <Filename>owncloud.desktop</Filename>
         <Filename>simplescreenrecorder.desktop</Filename>
         <Filename>com.obsproject.Studio.desktop</Filename>
-      	<Filename>optimizarpdf.desktop</Filename>
-	<Filename>shutter.desktop</Filename> 
+        <Filename>optimizarpdf.desktop</Filename>
+        <Filename>shutter.desktop</Filename> 
 	<Filename>exe.desktop</Filename>
 	</Include>
       </Menu>
@@ -137,21 +134,23 @@
           </And>
         </Include>
         <Include>
-        <Filename>educamadrid-boletines.desktop</Filename>
-        <Filename>educamadrid-buscador.desktop</Filename>
-        <Filename>educamadrid-encuesta.deskto</Filename>
-        <Filename>educamadrid-correoweb.desktop</Filename>
-        <Filename>educamadrid-jitsi.desktop</Filename>
-        <Filename>educamadrid-mediateca.desktop</Filename>
-        <Filename>educamadrid-nube.desktop</Filename>
-        <Filename>educamadrid-portal.desktop</Filename>
-	<Filename>educamadrid-Comparti2.desktop</Filename>
-	<Filename>educamadrid-documentacion.desktop</Filename>
-        <Filename>educamadrid-PortalCAU.desktop</Filename>
-	</Include>
-	<Exclude>
-	<Filename>menu-astericsgrid.desktop</Filename>
-	</Exclude>
+            <Filename>educamadrid-boletines.desktop</Filename>
+            <Filename>educamadrid-buscador.desktop</Filename>
+            <Filename>educamadrid-encuesta.deskto</Filename>
+            <Filename>educamadrid-correoweb.desktop</Filename>
+            <Filename>educamadrid-jitsi.desktop</Filename>
+            <Filename>educamadrid-mediateca.desktop</Filename>
+            <Filename>educamadrid-nube.desktop</Filename>
+            <Filename>educamadrid-portal.desktop</Filename>
+	        <Filename>educamadrid-Comparti2.desktop</Filename>
+	        <Filename>educamadrid-documentacion.desktop</Filename>
+            <Filename>educamadrid-PortalCAU.desktop</Filename>
+            <Filename>educamadrid-empieza.desktop</Filename>
+	    </Include>
+	    <Exclude>
+	        <Filename>menu-astericsgrid.desktop</Filename>
+            <Filename>educamadrid-Comparti2.desktop</Filename>
+	    </Exclude>
       </Menu>
 </Menu>
 
@@ -173,9 +172,12 @@
         <Not><Category>Accessibility</Category></Not>
         <Not><Category>System</Category></Not>
       </And>
+      <Filename>intef-exe.desktop</Filename>
       <Filename>mate-search-tool.desktop</Filename>
     </Include>
     <Exclude>
+      <Filename>plank.desktop</Filename>	
+      <Filename>max-plank.desktop</Filename>	
       <Filename>info.desktop</Filename>	
       <Filename>nextcloud.desktop</Filename>
       <Filename>org.gnome.clocks.desktop</Filename>	
@@ -520,9 +522,11 @@
             <Filename>stars.desktop</Filename>
             <Filename>stellarium.desktop</Filename>
             <Filename>kstars.desktop</Filename>
+	    <Filename>celestia2.desktop</Filename>	
         </Include>
 	<Exclude>
             <Filename>starplot.desktop</Filename>
+	    <Filename>josm.desktop</Filename>
         </Exclude>
     </Menu>
 
@@ -654,7 +658,8 @@
         <Filename>org.kde.okular.desktop</Filename>
         <Filename>gqview.desktop</Filename>
         <Filename>kde4-gwenview.desktop</Filename>
-	<Filename>display-im6.q16.desktop</Filename>
+	    <Filename>display-im6.q16.desktop</Filename>
+	    <Filename>io.sourceforge.posterazor.desktop</Filename>
     </Exclude>
   </Menu> <!-- End Graphics -->
 
@@ -729,6 +734,7 @@
         <Filename>globaltime.desktop</Filename>
         <Filename>freeplane.desktop</Filename>
         <Filename>cmaptools.desktop</Filename>
+        <Filename>com.github.jeromerobert.pdfarranger.desktop</Filename>
     </Exclude>
   </Menu> <!-- End Office -->
 
@@ -798,6 +804,7 @@
         <Filename>geda-gschem.desktop</Filename>
         <Filename>geda-gattrib.desktop</Filename>
         <Filename>openboard.desktop</Filename>
+        <Filename>intef-exe.desktop</Filename>
     </Exclude>
   </Menu> <!-- End Other -->
 
