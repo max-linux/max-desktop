@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+VERSION=2.8.1
+URL1=http://localhost/remote-files/Cloud_EducaMadridLinux64-3.12.1.AppImage 
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	if [ -d build ]; then rm -rf build; fi 
+
+
+override_dh_auto_build:
+	
+	mkdir -p build &&  cd build && wget --no-check-certificate ${URL1} ;
+#	if [ -f build2/Twine-${VERSION}-Linux-x64.zip ]; then cd build2/ && 7z x Twine-${VERSION}-Linux-x64.zip && rm -f Twine-${VERSION}-Linux-x64.zip ; fi
+	if [ -f build/Cloud_EducaMadridLinux64-3.12.1.AppImage ]; then  chmod +x build/Cloud_EducaMadridLinux64-3.12.1.AppImage; fi
+
+
+override_dh_strip:
+#do not remove appimage

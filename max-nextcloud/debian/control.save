@@ -1,0 +1,16 @@
+Source: max-nextcloud
+Section:  contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, debhelper (>= 10)
+Standards-Version: 3.12.1
+Homepage: https://nextcloud.com/
+
+Package: max-nextcloud-desktop
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Provides: nextcloud-desktop, nextcloud-desktop-common, nextcloud-desktop-l10n, Conflicts: nextcloud-desktop, nextcloud-desktop-common, nextcloud-desktop-l10n
+ 
+Replaces: nextcloud-desktop, nextcloud-desktop-common, nextcloud-desktop-l10n 
+Conflicts: nextcloud-desktop, nextcloud-desktop-common, nextcloud-desktop-l10n 
+Description: Twine is an open-source tool for telling interactive, nonlinear stories. 
