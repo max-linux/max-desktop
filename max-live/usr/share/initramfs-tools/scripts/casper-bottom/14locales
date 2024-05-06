@@ -52,7 +52,7 @@ done
 
 if [ -z "${locale}" ]; then
     # Set a default one
-    locale=en_US.UTF-8
+    locale=es_ES.UTF-8
     set_locale="true"
 fi
 
