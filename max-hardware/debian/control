@@ -28,7 +28,8 @@ Standards-Version: 3.8.4
 
 Package: max-hardware
 Architecture: all
-Depends: setserial, xresprobe, usbutils, xbindkeys,
+#Depends: setserial, xresprobe, usbutils, xbindkeys,
+Depends: setserial, usbutils, xbindkeys,
          ${shlibs:Depends}, ${misc:Depends}
 Description: Some files to support in MAX some special devices and computers
  Contains:
