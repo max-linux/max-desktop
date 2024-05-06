@@ -2,7 +2,7 @@
 Version=1.0
 Name=Configure profiles (homealumno)
 Name[es]=Configurar perfiles (homealumno)
-Exec=gksu /usr/bin/homealumno-gui
+Exec=gksudo /usr/bin/homealumno-gui
 Terminal=false
 Type=Application
 Icon=max.png
