@@ -1,3 +1,41 @@
+max-genlive (12.0.max33) max; urgency=medium
+
+  * Build in MAX 12.0
+  * grub-efi-amd64-signed and shim-signed added from usr/share/max-genlive/pkgs/max.dvdlist
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 19 Feb 2024 19:02:36 +0100
+
+max-genlive (12.0.max32) max; urgency=medium
+
+  * Build in MAX 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 19 Feb 2024 17:18:58 +0100
+
+max-genlive (12.0.max31) max; urgency=medium
+
+  * Build in MAX 12.0
+  * grub-efi-amd64-signed and shim-signed added from usr/share/max-genlive/pkgs/max.dvdlist
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 16 Feb 2024 10:52:23 +0100
+
+max-genlive (12.0.max30) max; urgency=medium
+
+  * grub-efi-amd64-signed and shim-signed removed from usr/share/max-genlive/pkgs/max.dvdlist
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 15 Feb 2024 15:26:31 +0100
+
+max-genlive (12.0.max29) max; urgency=medium
+
+  * restore old changes
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 14 Nov 2023 13:42:36 +0100
+
+max-genlive (12.0.max28) max; urgency=medium
+
+  * zcat changed to cpio at 80buildiso
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 13 Nov 2023 22:05:37 +0100
+
 max-genlive (12.0.max27) max; urgency=medium
 
   *  change MAX to MAX 12.0
