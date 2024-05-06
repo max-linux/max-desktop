@@ -1,10 +1,10 @@
 #!/usr/bin/make -f
 export DH_VERBOSE = 1
 
-VERSION=2.7.0
+VERSION=2.8.1
 #URL1=http://localhost/remote-files/twine-${VERSION}.tar.gz 
 URL1=https://github.com/klembot/twinejs/archive/refs/tags/${VERSION}.tar.gz
-
+URL1=https://github.com/klembot/twinejs/releases/download/${VERSION}/Twine-${VERSION}-Linux-x64.zip
 
 %:
 	dh $@
@@ -18,8 +18,8 @@ override_dh_clean:
 override_dh_auto_build:
 	
 	mkdir -p build2 &&  cd build2 && wget --no-check-certificate ${URL1} ;
-	if [ -f build2/${VERSION}.tar.gz ]; then cd build2/ && tar xzvf ${VERSION}.tar.gz ; fi	
-	mv build2/twinejs-${VERSION}/ build2/twine
-	find build2/twine/public/locales/ -type f \( ! -iname "es*" ! -iname "en*" \) -exec rm -f {} \;
+	if [ -f build2/Twine-${VERSION}-Linux-x64.zip ]; then cd build2/ && 7z x Twine-${VERSION}-Linux-x64.zip && rm -f Twine-${VERSION}-Linux-x64.zip ; fi	
+#	mv build2/twinejs-${VERSION}/ build2/twine
+	find build2/locales/ -type f \( ! -iname "es*" ! -iname "en*" \) -exec rm -f {} \;
 
 
