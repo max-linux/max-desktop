@@ -5,10 +5,12 @@ VER=v6.04_09-24-19
 
 ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
 ifeq ($(ARCH), amd64)
-	URL=http://cmapdownload.ihmc.us/installs/CmapTools/Linux/Linux64CmapTools_$(VER).bin
+	URL=https://cmapdownload.ihmc.us/installs/CmapTools/Linux/Linux64CmapTools_$(VER).bin
+#	URL=http://cmapdownload.ihmc.us/installs/CmapTools/Linux/Linux64CmapTools_$(VER).bin
 #	URL=http://localhost/remote-files/Linux64CmapTools_$(VER).bin
 else
-	URL=http://cmapdownload.ihmc.us/installs/CmapTools/Linux/Linux32CmapTools_$(VER).bin
+	URL=https://cmapdownload.ihmc.us/installs/CmapTools/Linux/Linux32CmapTools_$(VER).bin
+#	URL=http://cmapdownload.ihmc.us/installs/CmapTools/Linux/Linux32CmapTools_$(VER).bin
 #	URL=http://localhost/remote-files/Linux32CmapTools_$(VER).bin
 endif
 
@@ -20,7 +22,7 @@ endif
 override_dh_auto_build:
 	if [ ! -d build ]; then \
 		mkdir -p build;\
-		( cd build && wget $(URL)); \
+		( cd build && wget --no-check-certificate  $(URL)); \
 	fi
 
 #build2:
