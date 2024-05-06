@@ -4,7 +4,7 @@ Version=1.0
 Type=Application
 Terminal=false
 Icon=relojmax
-Exec=chromium-browser --app=file:///opt/relojmax-1.0.0/index.html
+Exec=chromium --app=file:///opt/relojmax-1.0.0/index.html
 Name[es_ES]=Relojes
 Name=Relojes
 Categories=Utility;EduProgramas;
