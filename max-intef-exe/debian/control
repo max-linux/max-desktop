@@ -3,26 +3,12 @@ Section: education
 Priority: optional
 Maintainer: eXeLearning <admin@exelearning.net>
 Build-Depends: debhelper (>= 8.0.0), wget
-Standards-Version: 3.9.3
+Standards-Version: 2.9
 Homepage: https://github.com/exelearning/iteexe
 
 Package: intef-exe
 Architecture: all
-Depends: python (>= 2.7) | python2, 
-         python-setuptools,
-         python-zopeinterface (>= 3.0.0-6) | python-zope.interface,
-         python-pil,
-         python-chardet,
-         python-lxml,
-         iceweasel | www-browser,
-         python-feedparser,
-         mimetex,
-         python-bs4,
-         python-suds,
-         python-requests-oauthlib,
-         python-dateutil,
-         python-cssmin | cssmin,
-         python-webassets,
+Depends: tar, python (>= 2.7) | python2, 
          ${shlibs:Depends}, ${misc:Depends}
 Conflicts: python-exe, python-intef-exe, python2.3-exe, python2.4-exe, python2.5-exe
 Replaces: python-exe, python-intef-exe, python2.3-exe, python2.4-exe, python2.5-exe

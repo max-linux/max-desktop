@@ -1,30 +1,22 @@
 #!/usr/bin/make -f
 #export DH_VERBOSE=1
 
-VERSION=2.8.1
+VERSION=2.9.0
 
-URL=https://github.com/exelearning/iteexe/releases/download/$(VERSION)/intef-exe_$(VERSION)_all.deb
-#URL=http://localhost/remote-files/intef-exe_$(VERSION)_all.deb
+URL=http://localhost/remote-files/eXeLearning-x86_64.AppImage
 
 %:
 	dh $@
 
 
 override_dh_auto_build:
-	if [ ! -d build ]; then \
-		mkdir build ;\
-		( cd build && wget --no-check-certificate $(URL) && dpkg -x *.deb ./); \
+	if [ ! -d build ]; then	mkdir build ;\
+	cd build && wget $(URL) ;\
+	chmod +x eXeLearning-x86_64.AppImage ;\
 	fi
 
-	cat build/usr/share/doc/intef-exe/copyright > debian/copyright
-	mv build/usr/share/doc/intef-exe/changelog.gz build/usr/share/doc/intef-exe/changelog.upstream.gz
+override_dh_strip_nondeterminism:
 
-	# temporal change
-	#rm -f build/usr/share/exe/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js
-	#cp fix/plugin.min.js build/usr/share/exe/scripts/tinymce_4/js/tinymce/plugins/exemedia/
-
-	# change default style
-	sed -i -e 's/INTEF/EducaMadrid-MAX/g' build/usr/lib/python2.7/dist-packages/exe/engine/config.py
 
 override_dh_clean:
 	dh_clean
