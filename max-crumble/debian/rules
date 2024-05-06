@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-URL="http://complubot.com/docu/Crumble/Software/crumble_1.2.13_all.deb"
+URL="http://complubot.com/docu/Crumble/Software/crumble_1.4.13_all.deb"
 
 %:
 	dh $@
