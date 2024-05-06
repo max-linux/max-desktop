@@ -1,12 +1,12 @@
-build/ora-export/admin.sh                                   usr/share/openroberta
-build/ora-export/gui-sql-client.sh                          usr/share/openroberta
-build/ora-export/start-ora-server-and-db-server.sh          usr/share/openroberta
-build/ora-export/start-ora-server-with-db-embedded.sh       usr/share/openroberta
+#build/ora-export/admin.sh                                   usr/share/openroberta
+#build/ora-export/gui-sql-client.sh                          usr/share/openroberta
+#build/ora-export/start-ora-server-and-db-server.sh          usr/share/openroberta
+#build/ora-export/start-ora-server-with-db-embedded.sh       usr/share/openroberta
 
-build/ora-export/lib                                        usr/share/openroberta
-build/ora-export/OpenRobertaParent                          usr/share/openroberta
-build/ora-export/staticResources                            usr/share/openroberta
-
+#build/ora-export/lib                                        usr/share/openroberta
+#build/ora-export/OpenRobertaParent                          usr/share/openroberta
+#build/ora-export/staticResources                            usr/share/openroberta
+build/ora-export/*        usr/share/openroberta
 usr/*             usr/
 
 
