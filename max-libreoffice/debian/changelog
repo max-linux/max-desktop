@@ -1,3 +1,21 @@
+max-libreoffice (12.0.max5) max; urgency=medium
+
+  * Changelog fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 19 Feb 2024 17:48:16 +0100
+
+max-libreoffice (12.0.max4) max; urgency=medium
+
+  * libreoffice-gtk ==> libreoffice-gtk3
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 19 Feb 2024 17:46:38 +0100
+
+max-libreoffice (12.0.max3) max; urgency=medium
+
+  * Build in MAX 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 08 Feb 2024 18:24:04 +0100
+
 max-libreoffice (12.0.max2) max; urgency=medium
 
   *  format failure at calc sheets fixed
