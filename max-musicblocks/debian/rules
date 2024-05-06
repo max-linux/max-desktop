@@ -15,6 +15,6 @@ override_dh_clean:
 override_dh_auto_build:
 	if [ ! -d build ]; then \
 		mkdir build; \
-		(cd build && wget $(URL) -O- > musicblocks.tar.gz && tar -zxf musicblocks.tar.gz); \
+		(cd build && wget --no-check-certificate  $(URL) -O- > musicblocks.tar.gz && tar -zxf musicblocks.tar.gz); \
 		(cd build && rm -f musicblocks.tar.gz && mv musicblocks-* musicblocks) ;\
 	fi
