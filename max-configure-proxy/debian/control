@@ -7,7 +7,7 @@ Standards-Version: 3.8.4
 
 Package: max-configure-proxy
 Architecture: all
-Depends: python, python-gtk2, gksu
+Depends: python-all, python-gtk2, gksu
 Description: Configurar PROXY para MaX
  Interfaz gráfica para configurar PROXY en MAX
 
