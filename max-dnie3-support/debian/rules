@@ -5,9 +5,12 @@
 
 #URL32="https://www.dnielectronico.es/descargas/distribuciones_linux/libpkcs11-dnie_1.4.1_i386.deb"
 #URL64="https://www.dnielectronico.es/descargas/distribuciones_linux/libpkcs11-dnie_1.4.1_amd64.deb"
+#victor
+#URL32="https://www.dnielectronico.es/descargas/distribuciones_linux/Ubuntu_20.04_libpkcs11-dnie_1.6.1_i386.deb"
+#URL64="https://www.dnielectronico.es/descargas/distribuciones_linux/Ubuntu_20.04_libpkcs11-dnie_1.6.1_amd64.deb"
 
-URL32="https://www.dnielectronico.es/descargas/distribuciones_linux/Ubuntu_20.04_libpkcs11-dnie_1.6.1_i386.deb"
-URL64="https://www.dnielectronico.es/descargas/distribuciones_linux/Ubuntu_20.04_libpkcs11-dnie_1.6.1_amd64.deb"
+URL64="https://www.dnielectronico.es/descargas/distribuciones_linux/libpkcs11-dnie_1.6.8_amd64.deb"
+URL32="https://www.dnielectronico.es/descargas/distribuciones_linux/libpkcs11-dnie_1.6.8_i386.deb"
 
 DEB_HOST_ARCH   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
