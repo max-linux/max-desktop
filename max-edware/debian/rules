@@ -13,7 +13,7 @@ override_dh_clean:
 override_dh_auto_build:
 	if [ ! -e build2 ]; then \
 		mkdir build2; \
-		(cd build2 && wget $(URL) && unzip EdWare-Linux-Src-*.zip) ; \
+		(cd build2 && wget --no-check-certificate $(URL) && unzip EdWare-Linux-Src-*.zip) ; \
 	fi
 
 	rm -f EdWare-Linux-Src-*.zip
