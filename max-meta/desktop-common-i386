@@ -36,7 +36,7 @@ cdrdao
 cdrecord
 chromium-browser
 chromium-browser-l10n
-chromium-codecs-ffmpeg-extra
+#chromium-codecs-ffmpeg-extra
 cups
 cups-bsd
 cups-client
@@ -110,7 +110,7 @@ libgl1-mesa-dri
 libgxps-utils
 #librecad
 libtool
-libdvd-pkg
+#libdvd-pkg
 lilypond
 max-linux
 max-linux-headers

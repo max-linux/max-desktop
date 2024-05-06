@@ -1,3 +1,15 @@
+max-meta (12.0.max12) max; urgency=medium
+
+  * Remove #chromium-codecs-ffmpeg-extra
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 13 Mar 2024 09:07:54 +0100
+
+max-meta (12.0.max11) max; urgency=medium
+
+  * libdvd-pkg removed from desktop-common-i386
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 19 Feb 2024 13:25:15 +0100
+
 max-meta (12.0.max10) max; urgency=medium
 
   * childsplay omnitux pypsycache removed
