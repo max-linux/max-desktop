@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 DH_VERBOSE=1
-VERSION=6-0-620-0
+VERSION=6-0-778-0
 
 URL="https://download.geogebra.org/installers/6.0/GeoGebra-Linux64-Portable-$(VERSION).zip"
 #URL="http://localhost/remote-files/GeoGebra-Linux64-Portable-$(VERSION).zip"
@@ -20,7 +20,7 @@ override_dh_clean:
 override_dh_auto_build:
 	if [ ! -d build ]; then \
 		mkdir build ;\
-		( cd build && wget $(URL) && unzip *.zip); \
+		( cd build && wget --no-check-certificate $(URL) && unzip *.zip); \
 	fi
 
 	mv build/GeoGebra-linux-x64/resources/ build/geogebra6
