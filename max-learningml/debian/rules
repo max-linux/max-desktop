@@ -13,7 +13,7 @@ URL=https://web.learningml.org/lml-desktop/learningml-desktop_$(VERSION)_amd64.d
 override_dh_auto_build:
 	if [ ! -d build ]; then \
 		mkdir build ;\
-		( cd build && wget $(URL) && dpkg -x *.deb ./); \
+		( cd build && wget --no-check-certificate  $(URL) && dpkg -x *.deb ./); \
 	fi
 
 	mkdir build/usr/share/pixmaps
