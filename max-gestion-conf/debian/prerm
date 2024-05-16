@@ -1,0 +1,20 @@
+#! /bin/bash
+
+set -e
+
+if [ -e /etc/pam.d/lightdm ]; then
+
+	rm -f /etc/pam.d/lightdm
+fi
+
+if [ -e /etc/security/faillock.conf ]; then
+
+        rm -f /etc/security/faillock.conf
+fi
+
+
+
+
+#DEBHELPER#
+
+exit 0

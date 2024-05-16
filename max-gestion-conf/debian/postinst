@@ -8,12 +8,24 @@ if [ -e /home/${UGESTION} ];  then
 
 
 	if [ ! -d /home/${UGESTION}/.config/autostart ]; then 
-	mkdir  /home/${UGESTION}/.config/autostart ;\
-	chown -R ${UGESTION}:${UGESTION} /home/${UGESTION}/.config/autostart ;\
+		mkdir  /home/${UGESTION}/.config/autostart ;\
+		chown -R ${UGESTION}:${UGESTION} /home/${UGESTION}/.config/autostart ;\
 	fi
 
-cp /etc/xdg/autostart/msjinicio.desktop /home/${UGESTION}/.config/autostart/
+	cp /etc/xdg/autostart/msjinicio.desktop /home/${UGESTION}/.config/autostart/
+
+fi
+
+if [ ! -e /etc/pam.d/lightdm ] || ! cmp /usr/share/max-gestion-conf/lightdm /etc/pam.d/lightdm  ; then
+	cp /usr/share/max-gestion-conf/lightdm	/etc/pam.d/lightdm
+fi
+
+if [ ! -e /etc/security/faillock.conf ] || ! cmp /usr/share/max-gestion-conf/faillock.conf /etc/security/faillock.conf ; then
+        cp /usr/share/max-gestion-conf/faillock.conf  /etc/security/faillock.conf
 fi
 
 
+
+
+#DEBHELPER#
 exit 0

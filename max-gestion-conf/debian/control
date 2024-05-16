@@ -3,9 +3,9 @@ Section: max
 Priority: optional
 Maintainer: caumax <cau_max@educa.madrid.org>
 Build-Depends: debhelper (>= 10)
-Standards-Version: 1.0
+Standards-Version: 3.8.4
 
 Package: max-gestion-conf
-Depends: python3, libpam-tally2
+Depends: python3, max-mate-desktop-gestion
 Architecture: all 
 Description: max-gestion-conf configure all files for max-mate-gestion.

@@ -1,0 +1,24 @@
+#! /bin/bash
+
+set -e
+
+version=12.0
+
+if [ upgrade != "$1" ] || dpkg --compare-versions "$2" lt $version; then
+	if [ ! -e /etc/pam.d/lightdm.back ]; then 
+	cp /etc/pam.d/lightdm /etc/pam.d/lightdm.back
+	fi
+    dpkg-divert  --divert /etc/pam.d/lightdm.orig --add --rename  /etc/pam.d/lightdm
+
+fi
+
+if [ upgrade != "$1" ] || dpkg --compare-versions "$2" lt $version; then
+	if  ! -e /etc/security/faillock.conf.back ]; then 
+	cp /etc/security/faillock.conf /etc/security/faillock.conf.back
+	fi
+    dpkg-divert --divert /etc/security/faillock.conf.orig --add --rename /etc/security/faillock.conf
+fi
+
+
+#DEBHELPER#
+exit 0

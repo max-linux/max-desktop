@@ -1,0 +1,24 @@
+#! /bin/bash
+
+set -e
+
+if [ remove = "$1" -o abort-install = "$1" -o disappear = "$1" ]; then
+    dpkg-divert  --rename --remove /etc/pam.d/lightdm
+fi
+
+if [ remove = "$1" -o abort-install = "$1" -o disappear = "$1" ]; then
+    dpkg-divert  --rename --remove /etc/security/faillock.conf
+fi
+
+if [ ! /etc/pam.d/lightdm ] ; then 
+cp /etc/pam.d/lightdm.back /etc/pam.d/lightdm
+fi
+
+if [ ! /etc/security/faillock.conf ] ; then 
+cp /etc/security/faillock.conf.back /etc/security/faillock.conf
+fi
+
+#DEBHELPER#
+
+
+exit 0

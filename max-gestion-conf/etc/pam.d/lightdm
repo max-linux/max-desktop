@@ -1,0 +1,37 @@
+#%PAM-1.0
+auth    requisite       pam_nologin.so
+auth    sufficient      pam_succeed_if.so user ingroup nopasswdlogin
+#maxgestion
+auth     required       pam_securetty.so
+auth     required       pam_env.so
+auth     required       pam_nologin.so
+# optionally call: 
+auth requisite pam_faillock.so preauth
+# to display the message about account being locked
+auth     [success=1 default=bad] pam_unix.so
+auth     [default=die]  pam_faillock.so authfail
+auth     sufficient     pam_faillock.so authsucc
+auth     required       pam_deny.so
+account  required       pam_unix.so
+password required       pam_unix.so shadow
+session  required       pam_selinux.so close
+session  required       pam_loginuid.so
+session  required       pam_unix.so
+session  required       pam_selinux.so open
+#termina maxgestion
+@include common-auth
+-auth    optional        pam_gnome_keyring.so
+-auth    optional        pam_kwallet.so
+-auth    optional        pam_kwallet5.so
+@include common-account
+session [success=ok ignore=ignore module_unknown=ignore default=bad] pam_selinux.so close
+#session required        pam_loginuid.so
+session required        pam_limits.so
+@include common-session
+session [success=ok ignore=ignore module_unknown=ignore default=bad] pam_selinux.so open
+-session optional        pam_gnome_keyring.so auto_start
+-session optional        pam_kwallet.so auto_start
+-session optional        pam_kwallet5.so auto_start
+session required        pam_env.so readenv=1
+session required        pam_env.so readenv=1 user_readenv=1 envfile=/etc/default/locale
+@include common-password
