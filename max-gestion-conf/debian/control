@@ -6,6 +6,7 @@ Build-Depends: debhelper (>= 10)
 Standards-Version: 3.8.4
 
 Package: max-gestion-conf
-Depends: python3, max-mate-desktop-gestion
+Depends: python3
+Recommends: max-mate-desktop-gestion
 Architecture: all 
 Description: max-gestion-conf configure all files for max-mate-gestion.
