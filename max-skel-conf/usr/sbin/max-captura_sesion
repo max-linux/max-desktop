@@ -1,0 +1,100 @@
+#! /bin/bash
+#borramos archivos con más de 10 días de antiguedad
+
+rm -f `find /var/tmp/c_sesion -atime +10`
+
+# si no existe, crea el directorio c_sesion
+
+if [ ! -e /var/tmp/c_sesion  ]; 
+then
+ mkdir /var/tmp/c_sesion
+fi
+
+
+#si no existe crea el directorio mes
+if [ ! -e /var/tmp/c_sesion/mes_`date +%m` ]; 
+then
+ mkdir /var/tmp/c_sesion/mes_`date +%m`
+fi
+
+#sino existe, crea el directorio día
+if [ ! -e /var/tmp/c_sesion/mes_`date +%m`/dia_`date +%d`  ]; 
+then
+ mkdir /var/tmp/c_sesion/mes_`date +%m`/dia_`date +%d`
+fi
+#calcula la hora
+minutos=$(( ($(date --date "`date +%D` `date +%T`" +%s) - $(date --date "`date +%D` 08:30" +%s))/(60)  ))
+echo $minutos
+
+if [ $minutos -lt 55 ];
+then
+hora=1
+fi
+
+
+if [ $minutos -gt 50 ] && [ $minutos -lt 110 ]; then
+hora=2
+fi
+
+
+
+
+if [ $minutos -gt 100 ] && [ $minutos -lt 165 ]; then
+hora=3;
+fi
+
+
+
+if [ $minutos -gt 160 ] && [ $minutos -lt 200 ]; then
+hora=recreo;
+fi
+
+
+
+if [ $minutos -gt 190 ] && [ $minutos -lt 255 ]; then
+hora=4;
+fi
+
+
+
+if [ $minutos -gt 250 ] && [ $minutos -lt 310 ]; then
+hora=5;
+fi
+
+
+
+if [ $minutos -gt 305 ] && [ $minutos -lt 365 ]; then
+hora=6;
+fi
+
+
+
+if [ $minutos -gt 350 ] ; then
+hora=7;
+fi
+
+
+#crea el directorio hora si no existe
+
+if [ ! -e /var/tmp/c_sesion/mes_`date +%m`/dia_`date +%d`/hora_$hora  ]; 
+then
+ mkdir /var/tmp/c_sesion/mes_`date +%m`/dia_`date +%d`/hora_$hora
+fi
+#ruta para guardar imágenes
+ruta="/var/tmp/c_sesion/mes_`date  +%m`/dia_`date +%d`/hora_$hora"
+
+#capturamos imágenes cada 5 segunos durante 10 minutos (120 capturas)
+
+for indice in `seq  60`; do
+
+DISPLAY=:0  scrot -z $ruta/`date +%H:%M:%S`.png
+sleep 5s
+done
+
+#capturamos cada 30 segundos durante 40 minutos
+for indice in `seq 80`; do
+
+DISPLAY=:0  scrot -z $ruta/`date +%H:%M:%S`.png
+sleep 30s
+done
+
