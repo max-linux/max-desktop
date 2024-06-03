@@ -27,10 +27,12 @@ if output_array[1] == "Dec" : mes = "Diciembre"
 
 
 mensaje = '''
-Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-when an unknown printer took a galley of type and scrambled it to make a type
-specimen book. It has survived not only five centuries.'''
+El presente equipo se encuentra protegido por los sistemas de seguridad definidos en el Sistema de Gestión de la Seguridad 
+de la Información implantado por EDUCAMADRID. Todo ello para dar cumplimiento a lo dispuesto en el Real Decreto 311/2022 
+que regula el Esquema Nacional de Seguridad y a la Ley Orgánica 3/2018 de 5 de diciembre sobre la Protección de Datos Personales 
+y garantía de los derechos digitales.
+
+Toda actividad puede ser supervisada y que queda prohibido todo uso no autorizado'''
 ws = Tk()
 
 ws.title("Información de inicio de Sesión")
