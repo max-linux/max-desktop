@@ -27,10 +27,12 @@ if output_array[1] == "Dec" : mes = "Diciembre"
 
 
 mensaje = '''
-El presente equipo se encuentra protegido por los sistemas de seguridad definidos en el Sistema de Gestión de la Seguridad 
-de la Información implantado por EDUCAMADRID. Todo ello para dar cumplimiento a lo dispuesto en el Real Decreto 311/2022 
-que regula el Esquema Nacional de Seguridad y a la Ley Orgánica 3/2018 de 5 de diciembre sobre la Protección de Datos Personales 
-y garantía de los derechos digitales.
+El presente equipo se encuentra protegido por los sistemas de seguridad 
+definidos en el Sistema de Gestión de la Seguridad de la Información 
+implantado por EDUCAMADRID. Todo ello para dar cumplimiento a lo dispuesto
+en el Real Decreto 311/2022 que regula el Esquema Nacional de Seguridad 
+y a la Ley Orgánica 3/2018 de 5 de diciembre sobre la Protección de Datos
+Personales y garantía de los derechos digitales.
 
 Toda actividad puede ser supervisada y que queda prohibido todo uso no autorizado'''
 ws = Tk()
@@ -42,6 +44,6 @@ canvas= Canvas(ws, width= 700, height= 450, bg="#28A6D8")
 canvas.create_text(30, 50, anchor="w", text="Bienvenido", fill="white", font=('Helvetica 25 bold') )
 canvas.create_text(30, 80, anchor="w", text="Usuario: "+output_Usuario, fill="white", font=('Helvetica 12'), justify="left")
 canvas.create_text(30, 100, anchor="w", text="Última sesión activa: "+mes+" "+output_array[2] +", hora:" +output_array[3], fill="white", font=('Helvetica 12'), justify="left")
-canvas.create_text(30, 150, anchor="w", text=mensaje, fill="white", font=('Helvetica 12'), justify="left")
+canvas.create_text(30, 190, anchor="w", text=mensaje, fill="white", font=('Helvetica 12'), justify="left")
 canvas.pack()
 ws.mainloop()
