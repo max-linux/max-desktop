@@ -22,70 +22,34 @@
   -->
 
    
-    <Menu>
-    <Name>MaX y EducaMadrid</Name>
-    <Directory>max-educamadrid.directory</Directory>
+   <Menu>
+     <Name>Educación a distancia</Name>
+     <Directory>edu-distancia.directory</Directory>
 
-    <Menu>
-      <Name>MaX</Name>
-      <Directory>max.directory</Directory>
-      <Include>
-        <And>
-          <Category>MAX</Category>
-        </And>
-      </Include>
-      <Include>
-        <Filename>max-aplicaciones.desktop</Filename>
-        <Filename>max-educamadrid.desktop</Filename>
-        <Filename>max-guia-referencia.desktop</Filename>
-        <Filename>max-foros.desktop</Filename>
-        <Filename>install-manual.desktop</Filename>
-        
-      </Include>
-
-      <Exclude>
-      <Filename>install-personalizacion.desktop</Filename>
-      </Exclude> 
-    </Menu>
-
-    <Menu>
-      <Name>EducaMadrid</Name>
-      <Directory>educamadrid.directory</Directory>
-      <Include>
-        <And>
-          <Category>EducaMadrid</Category>
-        </And>
-      </Include>
-      <Include>
-        <Filename>educamadrid-ServiciosEducativos.desktop</Filename>
-        <Filename>educamadrid-EspaciosFormacion.desktop</Filename>
-        <Filename>educamadrid-ComunidadesVirtuales.desktop</Filename> 
-        <Filename>educamadrid-EspaciosInstitucionales.desktop</Filename>
-        <Filename>educamadrid-PortalCAU.desktop</Filename>
-       
-      </Include>
-
-      <Exclude>
-        <Filename>educamadrid-infopitagoras.desktop</Filename>
-        <Filename>educamadrid-correoweb.desktop</Filename>
-        <Filename>educamadrid-nube.desktop</Filename>
-        <Filename>educamadrid-mediateca.desktop</Filename>
-        <Filename>educamadrid-jitsi.desktop</Filename>
-        <Filename>educamadrid-bilingue.desktop</Filename>
-        <Filename>educamadrid-educasaac.desktop</Filename>
-        <Filename>educamadrid-peac.desktop</Filename>
-        <Filename>educamadrid-stem.desktop</Filename>
-        <Filename>educamadrid-tecnorobot.desktop</Filename>
-        <Filename>educamadrid.desktop</Filename>
-      </Exclude>
-     </Menu>
+       <Menu>
+          <Name>MaX</Name>
+          <Directory>max.directory</Directory>
+          <Include>
+          <And>
+             <Category>MAX</Category>
+          </And>
+         </Include>
+         <Include>
+            <Filename>max-aplicaciones.desktop</Filename>
+            <Filename>max-educamadrid.desktop</Filename>
+            <Filename>max-guia-referencia.desktop</Filename>
+            <Filename>max-foros.desktop</Filename>
+            <Filename>install-manual.desktop</Filename>
+        </Include>
+ 
+        <Exclude>
+           <Filename>install-personalizacion.desktop</Filename>
+        </Exclude>
    </Menu>
 
-   <Menu>
-    <Name>Educación A distancia</Name>
-    <Directory>edu-distancia.directory</Directory>
 
-     <Menu>
+
+   <Menu>
         <Name>Otros Enlaces</Name>
         <Directory>max-profesor.directory</Directory>
         <Include>
@@ -151,15 +115,15 @@
 	        <Filename>menu-astericsgrid.desktop</Filename>
             <Filename>educamadrid-Comparti2.desktop</Filename>
 	    </Exclude>
-      </Menu>
-</Menu>
+        </Menu>
+   </Menu>
 
 
 
 
 
   <!-- Accessories submenu -->
-  <Menu>
+<Menu>
     <Name>Accessories</Name>
     <Directory>mate-utility.directory</Directory>
     <Include>
@@ -596,15 +560,6 @@
                 <Filename>max-jclicdescarga.desktop</Filename>
             </Include>
         </Menu>
-        <Menu>
-            <Name>Moodle</Name>
-            <Directory>max-moodle.directory</Directory>
-            <Include>
-                <Filename>maxmoodle.desktop</Filename>
-                <Filename>maxmoodle-gui.desktop</Filename>
-                <Filename>max-moodle-doc.desktop</Filename>
-            </Include>
-        </Menu>
     </Menu>
   </Menu> <!-- End Education -->
 
@@ -715,6 +670,14 @@
     <Name>Office</Name>
     <Directory>mate-office.directory</Directory>
     <Include>
+    <Filename>diffpdf.desktop</Filename>
+    <Filename>max-atril.desktop</Filename>
+    <Filename>max-evince.desktop</Filename>
+    <Filename>max-okular.desktop</Filename>
+    <Filename>optimizarpdf.desktop</Filename>
+    <Filename>pdfarranger.desktop</Filename>
+    </Include>
+    <Include>
       <And>
         <Category>Office</Category>
       </And>
@@ -739,7 +702,7 @@
   </Menu> <!-- End Office -->
 
   <Menu>
-      <Name>Pizarras Digitales</Name>
+      <Name>Panel Digital</Name>
       <Directory>max-pdi.directory</Directory>
       <Include><Category>Whiteboard</Category></Include>
       <Include>
@@ -752,62 +715,7 @@
       <Exclude><Filename>jarnal.desktop</Filename></Exclude>
   </Menu>
 
-
-  <!-- System Tools-->
-  <Menu>
-    <Name>System</Name>
-    <Directory>mate-system-tools.directory</Directory>
-    <Include>
-      <And>
-        <Category>System</Category>
-        <Not><Category>Settings</Category></Not>
-      </And>
-    </Include>
-    <Include><Filename>gconf-editor.desktop</Filename></Include>
-    <Exclude>
-        <Filename>org.kde.k3b.desktop</Filename>
-        <Filename>gdmflexiserver-xnest.desktop</Filename>
-        <Filename>gdmflexiserver.desktop</Filename>
-        <Filename>xfce4-session-logout.desktop</Filename>
-        <Filename>xfce4-session-halt.desktop</Filename>
-        <Filename>debian-uxterm.desktop</Filename>
-        <Filename>debian-xterm.desktop</Filename>
-    </Exclude>
-  </Menu>   <!-- End System Tools -->
-
-  <!-- Other -->
-  <Menu>
-    <Name>Other</Name>
-    <Directory>mate-other.directory</Directory>
-    <OnlyUnallocated/>
-    <Include>
-      <And>
-        <Not><Category>Core</Category></Not>
-        <Not><Category>Settings</Category></Not>
-        <Not><Category>Screensaver</Category></Not>
-      </And>
-    </Include>
-    <Exclude>
-	<Filename>texdoctk.desktop</Filename>
-        <Filename>educamadrid-bilingue.desktop</Filename>
-        <Filename>educamadrid-educasaac.desktop</Filename>
-        <Filename>educamadrid-peac.desktop</Filename>
-        <Filename>educamadrid-stem.desktop</Filename>
-        <Filename>educamadrid-tecnorobot.desktop</Filename>
-        <Filename>geogebra.desktop</Filename>
-        <Filename>geogebra6.desktop</Filename>
-        <Filename>javahotpot.desktop</Filename>
-        <Filename>orage.desktop</Filename>
-        <Filename>tcospersonalize.desktop</Filename>
-        <Filename>squeak-doc.desktop</Filename>
-        <Filename>squeak-manual.desktop</Filename>
-        <Filename>geda-gschem.desktop</Filename>
-        <Filename>geda-gattrib.desktop</Filename>
-        <Filename>openboard.desktop</Filename>
-        <Filename>intef-exe.desktop</Filename>
-    </Exclude>
-  </Menu> <!-- End Other -->
-
+ 
   <Include>
     <Filename>max-search-apps.desktop</Filename>
   </Include>

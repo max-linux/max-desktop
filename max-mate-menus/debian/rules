@@ -10,6 +10,8 @@ printversion:
 
 build/max-mate-menus::
 	xmlstarlet val etc/xdg/menus/mate-applications.menu
+	xmlstarlet val etc/xdg/menus/mate-settings.menu
 
 	grep -v ^# debian/max-mate-menus.divert.original > debian/max-mate-menus.divert
+
 
