@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Declaración de variables para directorio temporal y url de descarga de instalador de Anaconda
+ruta=`pwd`
+temp_dir="temp_anaconda"
+ruta="$ruta/$temp_dir"
+url="https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh"
+
+# Comprobar si el directorio temp_anaconda ya existe
+if [ -d "$temp_dir" ]; then
+    echo "El directorio $temp_dir ya existe."
+    
+    echo "Eliminando el directorio $temp_dir y su contenido."
+    rm -rf $temp_dir || { echo "Error al eliminar el directorio $temp_dir"; exit 1; }
+fi
+
+# Creación del directorio temp_anaconda
+echo "Creando el directorio $temp_dir"
+mkdir $temp_dir || { echo "Error al crear el directorio $temp_dir"; exit 1; }
+
+# Acceder al directorio
+cd $temp_dir || { echo "Error al acceder al directorio $temp_dir"; exit 1; }
+
+# Descargar el instalador usando wget
+wget $url || { echo "Error al descargar el instalador"; exit 1; }
+
+# Extraer el nombre del archivo descargado de la URL
+installer_name=$(basename $url)
+
+# Hacer que el instalador sea ejecutable
+chmod +x $installer_name || { echo "Error al hacer ejecutable el instalador"; exit 1; }
+
+# Ejecutar el instalador
+./$installer_name || { echo "Error al ejecutar el instalador"; exit 1; }
+
+# Ejecutar el instalador (-b es opción silenciosa de Anaconda para aceptar licencia y automatizar)
+# ./$installer_name -b || { echo "Error al ejecutar el instalador"; exit 1; }
+
+# Volver al directorio anterior
+cd ..
+
+# Eliminar el directorio junto con todo su contenido
+if rm -rf $temp_dir; then
+    echo "Directorio $temp_dir eliminado correctamente."
+else
+    echo "Error al eliminar el directorio $temp_dir", acción no permitida.
+fi
+
+echo "Instalación completada y directorio $temp_dir eliminado."
+
