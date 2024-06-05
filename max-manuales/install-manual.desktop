@@ -1,12 +1,12 @@
 [Desktop Entry]
 Version=1.0
 Encoding=UTF-8
-Name=Install and use manual (Local)
-Name[es]=Manual de instalación y uso (Local)
-Comment=Reference MAX guide offline mode
-Comment[es]=Guía de referencia para consultar de forma offline
+Name=Install and use manual
+Name[es]=Manual de instalación y uso (Internet)
+Comment=Reference MAX guide 
+Comment[es]=Guía de referencia
 Type=Application
-Exec=x-www-browser file:///usr/share/max-manuales/index.html
+Exec=x-www-browser https://ayuda.educa.madrid.org/
 Icon=menu-max-manual
 Terminal=false
 Categories=MaX;
