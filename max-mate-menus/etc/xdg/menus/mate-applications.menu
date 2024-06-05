@@ -150,6 +150,8 @@
       <Filename>owncloud.desktop</Filename>
       <Filename>synapse.desktop</Filename>
       <Filename>xournal.desktop</Filename>
+      <Filename>gscriptor.desktop</Filename>
+      <Filename>picom.desktop</Filename>
     </Exclude>
   </Menu> <!-- End Accessories -->
 
@@ -189,6 +191,7 @@
       <Filename>pcbnew.desktop</Filename>
       <Filename>fritzing.desktop</Filename>
       <Filename>squeak.desktop</Filename>
+      <Filename>SciTE.desktop</Filename>
     </Exclude>
   </Menu> <!-- End Development Tools -->
 
@@ -640,6 +643,9 @@
         <Filename>org.kde.kdeconnect.sms.desktop</Filename>
         <Filename>org.kde.kdeconnect.app.desktop</Filename>
         <Filename>org.kde.kdeconnect.nonplasma.desktop</Filename>
+        <Filename>launch.dnie.desktop</Filename>
+        <Filename>oracle-java8-javaws.desktop</Filename>
+
     </Exclude>
   </Menu>   <!-- End Internet -->
 
