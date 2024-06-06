@@ -5,7 +5,7 @@ set -e
 OUT="usr/share/max-mate/settings-overlay/config/plank/dock1/launchers"
 SCHEMA="usr/share/glib-2.0/schemas/zz-max-mate-plank.gschema.override"
 
-LIST="educamadrid max-educamadrid owncloud firefox thunderbird max-search-apps mate-screenshot galculator simplescreenrecorder libreoffice-startcenter"
+LIST="educamadrid max-educamadrid max-nextcloud firefox thunderbird max-search-apps mate-screenshot galculator simplescreenrecorder libreoffice-startcenter"
 
 mkdir -p "${OUT}"
 rm -f "${SCHEMA}"

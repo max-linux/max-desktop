@@ -5,7 +5,7 @@ set -e
 OUT="usr/share/max-mate/settings-overlay-infantil/config/plank/dock1/launchers"
 SCHEMA="usr/share/glib-2.0/schemas/zzz-max-mate-infantil-plank.gschema.override"
 
-LIST="org.kde.gcompris childsplay omnitux pysycache eduactiv8 org.kde.khangman tuxtype tuxmath tuxpaint org.kde.ktuberling pinta scratux"
+LIST="org.kde.gcompris eduactive8 org.kde.khangman tuxtype tuxmath tuxpaint org.kde.ktuberling pinta scratux"
 
 mkdir -p "${OUT}"
 rm -f "${SCHEMA}"
