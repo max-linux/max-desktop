@@ -12,4 +12,4 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Provides: nextcloud-desktop, nextcloud-desktop-common, nextcloud-desktop-l10n, caja-nextcloud, libnextcloudsync0, nextcloud-desktop-doc 
 Replaces: nextcloud-desktop, nextcloud-desktop-common, nextcloud-desktop-l10n, caja-nextcloud, libnextcloudsync0, nextcloud-desktop-doc 
 Conflicts: nextcloud-desktop, nextcloud-desktop-common, nextcloud-desktop-l10n, caja-nextcloud, libnextcloudsync0, nextcloud-desktop-doc
-Description: Twine is an open-source tool for telling interactive, nonlinear stories. 
+Description: Servicio de alojamineto de archivos de EducaMadrid. 
