@@ -1,0 +1,14 @@
+Source: max-joplin
+Section: contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, debhelper (>= 10)
+Standards-Version: 2.14.22
+Homepage: https://joplin.org/
+
+Package: joplin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Joplin is a free, open source note taking and to-do application, which can handle a large number
+ of notes organised into notebooks. The notes are searchable, can be copied, tagged and modified either from the applications 
+ directly or from your own text editor. 
