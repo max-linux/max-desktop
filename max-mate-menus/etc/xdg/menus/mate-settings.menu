@@ -49,12 +49,14 @@
     <Include><Filename>gconf-editor.desktop</Filename></Include>
     <Exclude>
         <Filename>org.kde.k3b.desktop</Filename>
+        <Filename>hardinfo.desktop</Filename>
         <Filename>gdmflexiserver-xnest.desktop</Filename>
         <Filename>gdmflexiserver.desktop</Filename>
         <Filename>xfce4-session-logout.desktop</Filename>
         <Filename>xfce4-session-halt.desktop</Filename>
         <Filename>debian-uxterm.desktop</Filename>
         <Filename>debian-xterm.desktop</Filename>
+        <Filename>mate-screensaver-preferences.desktop</Filename>
     </Exclude>
   </Menu>   <!-- End System Tools -->
 

@@ -1,8 +1,13 @@
-ktop Entry]
+#!/usr/bin/env xdg-open
+[Desktop Entry]
 Name=System Profiler and Benchmark
 Name[es]=Informacion y Rendimiento del Sistema
+Name[fr]=Informations et Benchmarks du Système
+Name[pt_BR]=Informações e Testes do Sistema
+Name[ru]=Информация о системе и тестирование
+Comment[es]=Obtenga información detallada del sistema
 Comment=Displays system information
-Comment[es]="Obtenga información detallada del sistema"
+Comment[ru]=Показывает информацию о системе
 Exec=/usr/bin/hardinfo
 Icon=/usr/share/hardinfo/pixmaps/logo.png
 Terminal=false

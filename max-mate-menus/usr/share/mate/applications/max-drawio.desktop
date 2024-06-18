@@ -1,8 +1,7 @@
-  GNU nano 6.2                                                                                       drawio.desktop                                                                                                
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Name=drawio
-Comment[es]="Editor de diagramas"
+Comment[es]=Editor de diagramas
 Exec=/opt/drawio/drawio %U
 Terminal=false
 Type=Application

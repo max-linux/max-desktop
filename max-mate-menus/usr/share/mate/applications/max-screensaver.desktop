@@ -3,26 +3,16 @@
 [Desktop Entry]
 Name[es]=Salvapantallas
 Name=Screensaver
-Comment[es]="Configure el salvapantallas"
+Comment[es]=Configure el salvapantallas
 Comment=Cambia las propiedades del salvapantallas
+Icon=preferences-desktop-screensaver
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Exec=mate-screensaver-preferences
 Terminal=false
 Type=Application
 Categories=GTK;Settings;DesktopSettings;
 # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-Keywords[ca]=MATE;estalvi;pantalla;preferències;
-Keywords[cs]=MATE;spořič obrazovky;šetřič;předvolby;
-Keywords[da]=MATE;screensaver;preferences;pauseskærm;præferencer;
 Keywords[es]=MATE;salvapantallas;preferencias;
-Keywords[gl]=MATE;protector de pantalla;preferencias;
-Keywords[it]=MATE;screensaver;preferenze;salvaschermo;
-Keywords[lt]=MATE;ekrano užsklanda;nustatymai;
-Keywords[ms]=MATE;penyelamatskrin;keutamaan
-Keywords[nb]=MATE;skjermsparer;innstillinger;
-Keywords[nl]=MATE;schermbeveiliging;voorkeuren;
-Keywords[uk]=MATE;зберігач екрану;уподобання;
-Keywords[zh_TW]=MATE;screensaver;preferences;
 Keywords=MATE;screensaver;preferences;
 OnlyShowIn=MATE;
 StartupNotify=true

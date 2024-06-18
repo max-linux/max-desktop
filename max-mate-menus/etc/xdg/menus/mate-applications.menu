@@ -106,13 +106,13 @@
             <Filename>educamadrid-mediateca.desktop</Filename>
             <Filename>educamadrid-nube.desktop</Filename>
             <Filename>educamadrid-portal.desktop</Filename>
-	        <Filename>educamadrid-Comparti2.desktop</Filename>
-	        <Filename>educamadrid-documentacion.desktop</Filename>
+            <Filename>educamadrid-Comparti2.desktop</Filename>
+            <Filename>educamadrid-documentacion.desktop</Filename>
             <Filename>educamadrid-PortalCAU.desktop</Filename>
             <Filename>educamadrid-empieza.desktop</Filename>
 	    </Include>
 	    <Exclude>
-	        <Filename>menu-astericsgrid.desktop</Filename>
+            <Filename>menu-astericsgrid.desktop</Filename>
             <Filename>educamadrid-Comparti2.desktop</Filename>
 	    </Exclude>
         </Menu>
@@ -152,6 +152,7 @@
       <Filename>xournal.desktop</Filename>
       <Filename>gscriptor.desktop</Filename>
       <Filename>picom.desktop</Filename>
+      <Filename>org.keepassxc.KeePassXC.desktop</Filename>
     </Exclude>
   </Menu> <!-- End Accessories -->
 
@@ -186,6 +187,7 @@
       <Filename>eeschema.desktop</Filename>
       <Filename>gerbview.desktop</Filename>
       <Filename>gnuradio-grc.desktop</Filename>
+      <Filename>max-gnuradio.desktop</Filename>
       <Filename>kicad.desktop</Filename>
       <Filename>pcbcalculator.desktop</Filename>
       <Filename>pcbnew.desktop</Filename>
@@ -234,6 +236,10 @@
             <Filename>qucs-s.desktop</Filename>
             <Filename>openboard.desktop</Filename>
             <Filename>pysiogame.desktop</Filename>
+            <Filename>anki.desktop</Filename>
+            <Filename>max-openboard.desktop</Filename>
+            <Filename>qucs-s.desktop</Filename>
+            <Filename>max-qucs-s.desktop</Filename>
         </Exclude>
 
         <!--include -->
@@ -512,17 +518,17 @@
         </Include>
 
         <Include>
-            <Filename>gnuradio-grc.desktop</Filename>
+            <Filename>max-gnuradio.desktop</Filename>
             <Filename>kicad.desktop</Filename>
             <Filename>ktechlab.desktop</Filename>
             <Filename>qelectrotech.desktop</Filename>
             <Filename>fritzing.desktop</Filename>
             <Filename>geda-gschem.desktop</Filename>
             <Filename>geda-gattrib.desktop</Filename>
-            <Filename>qucs.desktop</Filename>
             <Filename>logisim.desktop</Filename>
         </Include>
 	<Exclude>
+            <Filename>qucs-s.desktop</Filename>
             <Filename>arduino.desktop</Filename>
             <Filename>bitmap2component.desktop</Filename>
             <Filename>eeschema.desktop</Filename>
@@ -612,6 +618,7 @@
         <Filename>leocad.desktop</Filename>
         <Filename>shutter.desktop</Filename>
 	<Filename>display-im6.desktop</Filename>
+	<Filename>max-drawio.desktop</Filename>
     </Include>
 
     <Exclude>
@@ -621,8 +628,9 @@
         <Filename>org.kde.okular.desktop</Filename>
         <Filename>gqview.desktop</Filename>
         <Filename>kde4-gwenview.desktop</Filename>
-	    <Filename>display-im6.q16.desktop</Filename>
-	    <Filename>io.sourceforge.posterazor.desktop</Filename>
+	<Filename>display-im6.q16.desktop</Filename>
+	<Filename>io.sourceforge.posterazor.desktop</Filename>
+	<Filename>drawio.desktop</Filename>
     </Exclude>
   </Menu> <!-- End Graphics -->
 
@@ -681,7 +689,7 @@
     <Name>Office</Name>
     <Directory>mate-office.directory</Directory>
     <Include>
-    <Filename>diffpdf.desktop</Filename>
+    <Filename>max-diffpdf.desktop</Filename>
     <Filename>max-atril.desktop</Filename>
     <Filename>max-evince.desktop</Filename>
     <Filename>max-okular.desktop</Filename>
@@ -695,6 +703,7 @@
     </Include>
     <Exclude>
         <Filename>pdfarranger.desktop</Filename>
+        <Filename>diffpdf.desktop</Filename>
         <Filename>atril.desktop</Filename>
         <Filename>org.gnome.Evince.desktop</Filename>
         <Filename>org.kde.okular.desktop</Filename>
@@ -721,7 +730,7 @@
           <Filename>notelab.desktop</Filename>
           <Filename>jarnalannotate.desktop</Filename>
           <Filename>cellwriter.desktop</Filename>
-          <Filename>openboard.desktop</Filename>
+          <Filename>max-openboard.desktop</Filename>
       </Include>
       <Exclude><Filename>jarnal.desktop</Filename></Exclude>
   </Menu>
