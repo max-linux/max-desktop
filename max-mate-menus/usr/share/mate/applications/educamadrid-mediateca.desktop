@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Mediateca
-Comment=mediateca.educa.madrid.org
+Comment[es]="Enlace a Mediateca"
 TryExec=/usr/bin/firefox
 Exec=firefox https://mediateca.educa.madrid.org/ 
 Icon=menu-educa-mediateca
