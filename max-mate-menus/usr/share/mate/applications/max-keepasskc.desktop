@@ -4,7 +4,7 @@ Name=KeePassXC
 GenericName=Password Manager
 GenericName[es]=Gestor de contraseñas
 Comment=Community-driven port of the Windows application “KeePass Password Safe”
-Comment[es]="Gestor de contraseñas."
+Comment[es]=Gestor de contraseñas.
 
 Exec=keepassxc %f
 TryExec=keepassxc
