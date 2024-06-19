@@ -368,21 +368,6 @@
     </Menu>
 
     <Menu>
-        <Name>STEM</Name>
-        <Directory>max-ESTM.directory</Directory>
-        <Include>
-            <And>
-            <Category>stem</Category>
-            </And>
-        </Include>
-        <Include>
-            <Filename>educamadrid-stem.desktop</Filename>
-            <Filename>max-esero.desktop</Filename>
-            <Filename>max-tecnorobot.desktop</Filename>
-        </Include>
-    </Menu>
-
-     <Menu>
         <Name>REA</Name>
         <Directory>max-rea.directory</Directory>
         <Include>
@@ -670,7 +655,8 @@
     </Include>
     <Exclude>
 	<Filename>noisetorch.desktop</Filename>
-        <Filename>kde4-audiocd.desktop</Filename>
+	<Filename>noisetorch.desktop</Filename>
+        <Filename>qwinff.desktop</Filename>
         <Filename>timidity.desktop</Filename>
         <Filename>denemo.desktop</Filename>
         <Filename>mscore.desktop</Filename>

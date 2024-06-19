@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=QWinFF
+Name[es]=Conversor de archivos
+Comment=Convert between media file formats
+Comment[es]=Convertir entre formatos de archivos
+Exec=qwinff %U
+Icon=qwinff
+Type=Application
+Terminal=false
+X-KDE-StartupNotify=true
+X-SuSE-translate=true
+Categories=AudioVideo;AudioVideoEditing;
