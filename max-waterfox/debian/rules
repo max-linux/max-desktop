@@ -1,0 +1,27 @@
+#! /usr/bin/make -f
+
+export DH_VERBOSE = 1
+
+VERSION=G6.0.16
+URL=https://cdn1.waterfox.net/waterfox/releases/${VERSION}/Linux_x86_64/waterfox-${VERSION}.tar.bz2
+PACKAGE=waterfox-${VERSION}.tar.bz2
+%:
+	dh $@
+
+
+override_dh_clean:
+	
+	if [ -d build]; then  rm -rf build; fi
+
+override_dh_auto_build:
+
+	mkdir -p build && cd build && wget --no-check-certificate ${URL};
+	if [ -e build/${PACKAGE} ]; then tar -xvjf build/${PACKAGE} -C build/ ; fi
+	
+
+override_dh_shlibdeps:
+
+
+override_dh_strip:
+
+override_dh_strip_nondeterminism:

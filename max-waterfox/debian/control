@@ -1,0 +1,15 @@
+Source: max-waterfox
+Section: contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, tar, debhelper (>= 10)
+		
+Version: 6.0.16
+Homepage: https://www.waterfox.net/
+Package: waterfox 
+Architecture:amd64 
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Waterfox is a web browser, used to surf the web. You are using a web browser right now, reading this! 
+ It’s the portal to the world wide web and arguably your most important piece of software installed. What makes Waterfox 
+ different from other browsers is that it is built with privacy in mind. We don’t track you, and we don’t make money from 
+ your data. We don’t have a parent company to report to, so we can make the right decisions for our users.

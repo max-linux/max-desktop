@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=waterfox
+Name[es]=waterfox 
+Comment[es]=Navegador web waterfox
+Icon=waterfox
+Exec=/usr/share/waterfox/waterfox 
+Terminal=false
+Type=Application
+Categories=Internet;
+StartupNotify=false
