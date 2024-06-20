@@ -1,0 +1,103 @@
+#!/bin/bash
+
+# Función para encontrar el usuario cuyo ID esté entre 1002 y 1005
+encontrar_usuario() {
+    for ID in {1002..1005}; do
+        USER=$(getent passwd "$ID" | cut -d: -f1)
+        if [ -n "$USER" ]; then
+            echo "$USER"
+            return 0
+        fi
+    done
+    echo "No se encontró ningún usuario con ID entre 1002 y 1005."
+    exit 1
+}
+
+# Obtener el nombre del usuario que ha iniciado sesión
+#USER="$USER"
+
+# Indicar un usuario concreto
+#USER="nombre_apellido"
+
+# Indicar el usuario cuyo ID se encuentra entre 1002 y 1005
+USER=$(encontrar_usuario)
+
+# Definir la ruta del directorio usando el home del usuario indicado
+DIR="/home/$USER/admin_gestion"
+
+# Comprobar si el directorio existe
+if [ -d "$DIR" ]; then
+    echo "El directorio $DIR ya existe."
+else
+    # Crear el directorio
+    sudo mkdir -p "$DIR"
+    echo "El directorio $DIR ha sido creado."
+    sudo chown "$USER":"$USER" "$DIR"
+    echo "Modificado el propietario del directorio $DIR a $USER"
+fi
+
+# Comprobar si el grupo "editores" existe
+if getent group editores > /dev/null 2>&1; then
+    echo "El grupo 'editores' ya existe."
+else
+    # Crear el grupo
+    sudo groupadd editores
+    echo "El grupo 'editores' ha sido creado."
+fi
+
+# Comprobar si el usuario está en el grupo "editores"
+if id -nG "$USER" | grep -qw "editores"; then
+    echo "El usuario $USER ya está en el grupo 'editores'."
+else
+    # Añadir el usuario al grupo "editores"
+    sudo usermod -aG editores "$USER"
+    echo "El usuario $USER ha sido añadido al grupo 'editores'."
+fi
+
+# Función para hacer copia de seguridad de los archivos
+backup_ficheros() {
+    FILE=$1
+    BACKUP_FILE="$FILE.backup"
+    if [ -f "$BACKUP_FILE" ]; then
+        echo "El archivo de respaldo $BACKUP_FILE ya existe."
+    else
+        sudo cp "$FILE" "$BACKUP_FILE"
+        echo "Copia de seguridad de $FILE creada en $BACKUP_FILE."
+    fi
+}
+
+# Función para crear enlaces simbólicos en el directorio admin_gestion
+creacion_simbolico() {
+    FILE=$1
+    if [ -e "$DIR/$(basename "$FILE")" ]; then
+        echo "El enlace simbólico $DIR/$(basename "$FILE") ya existe."
+    else
+        sudo ln -s "$FILE" "$DIR/$(basename "$FILE")"
+        echo "Enlace simbólico creado: $DIR/$(basename "$FILE") -> $FILE"
+        sudo chown "$USER":"$USER" "$DIR/$(basename "$FILE")" 
+        echo "Modificado el propietario del enlace simbólico $DIR/$(basename "$FILE") a $USER"
+    fi
+}
+
+# Función para comprobar y añadir ACLs
+gestion_acl() {
+    FILE=$1
+    if getfacl -p "$FILE" | awk -F ":" '{if ($2 == "editores") print $2}' | grep -qw "editores"; then
+        echo "El archivo $FILE ya tiene ACLs para el grupo 'editores'."
+    else
+        sudo setfacl -m g:editores:rw "$FILE"
+        echo "ACLs para el grupo 'editores' han sido añadidas a $FILE."
+    fi
+}
+
+# Hacer copia de seguridad de los archivos antes de modificarlos
+backup_ficheros /etc/hosts
+backup_ficheros /etc/hostname
+
+# Crear enlaces simbólicos en el directorio config
+creacion_simbolico /etc/hosts
+creacion_simbolico /etc/hostname
+
+# Comprobar y añadir ACLs a los archivos especificados
+gestion_acl /etc/hosts
+gestion_acl /etc/hostname
