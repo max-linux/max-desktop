@@ -7,6 +7,6 @@ Icon=musescore.png
 Exec=/opt/musescore4/MuseScore-4.3.2-x86_64.AppImage 
 Terminal=false
 Type=Application
-Categories=Network;
+Categories=AudioVideo;Audio;AudioVideoEditing;
 StartupNotify=false
 
