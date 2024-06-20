@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+VERSION=4.3.2
+PACKAGE=MuseScore-${VERSION}-x86_64.AppImage
+URL1=http://localhost/remote-files/${PACKAGE} 
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	if [ -d build ]; then rm -rf build; fi 
+
+
+override_dh_auto_build:
+	
+	mkdir -p build &&  cd build && wget --no-check-certificate ${URL1} ;
+	if [ -f build/${PACKAGE} ]; then  chmod +x build/${PACKAGE}; fi
+
+
+override_dh_strip:
+#do not remove appimage

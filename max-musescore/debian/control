@@ -1,0 +1,15 @@
+Source: max-musescore
+Section: contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, debhelper (>= 10)
+Standards-Version: 4.3.2
+Homepage: https://musescore.org
+
+Package: musescore
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: MuseScore es un programa de notación musical que soporta una amplia variedad de formatos de archivo
+ y métodos de entrada. Se publica como software libre y de código abierto bajo la Licencia Pública General de GNU.
+ MuseScore está complementado por un visor y una aplicación de reproducción de partituras para dispositivos móviles
+ y una plataforma de intercambio de partituras en línea.
