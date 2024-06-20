@@ -6,7 +6,7 @@ Build-Depends: wget, debhelper (>= 10)
 Standards-Version: 4.3.2
 Homepage: https://musescore.org
 
-Package: musescore
+Package: musescore4
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: MuseScore es un programa de notación musical que soporta una amplia variedad de formatos de archivo
