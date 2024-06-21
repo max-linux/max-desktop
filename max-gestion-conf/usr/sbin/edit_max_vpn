@@ -6,20 +6,20 @@
 # Indicar un usuario concreto
 #USER="nombre_apellido"
 
-# Función para encontrar el usuario cuyo ID esté entre 1002 y 1005
+# Función para encontrar el usuario cuyo ID esté entre 1001 y 1005
 encontrar_usuario() {
-    for ID in {1002..1005}; do
+    for ID in {1001..1005}; do
         USER=$(getent passwd "$ID" | cut -d: -f1)
         if [ -n "$USER" ]; then
             echo "$USER"
             return 0
         fi
     done
-    echo "No se encontró ningún usuario con ID entre 1002 y 1005."
+    echo "No se encontró ningún usuario con ID entre 1001 y 1005."
     exit 1
 }
 
-# Indicar el usuario cuyo ID se encuentra entre 1002 y 1005
+# Indicar el usuario cuyo ID se encuentra entre 1001 y 1005
 USER=$(encontrar_usuario)
 
 # Definir la ruta del directorio admin_gestion usando el home del usuario indicado
