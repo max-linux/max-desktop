@@ -14,7 +14,7 @@ Description: Kernel por defecto en MAX
 
 Package: max-linux-headers
 Architecture: i386 amd64
-Depends: linux-image-generic-hwe-22.04
+Depends: linux-headers-generic-hwe-22.04
 Provides: linux-headers-generic-pae
 Description: Cabeceras del kernel por defecto en MAX
  Cabeceras del kernel por defecto en MAX
