@@ -28,7 +28,10 @@
         <Category>Accessibility</Category>
       </And>
     </Include>
-    <Exclude><Filename>gnome-language-selector.desktop</Filename></Exclude>
+    <Exclude>
+        <Filename>gnome-language-selector.desktop</Filename>
+        <Filename>language-selector.desktop</Filename>
+    </Exclude>
   </Menu>
 
   <Menu>
@@ -73,6 +76,7 @@
         <Not><Category>System</Category></Not>
       </And>
     </Include>
+    <Exclude><Filename>mate-network-properties.desktop</Filename></Exclude>
   </Menu>
 
   <Menu>
