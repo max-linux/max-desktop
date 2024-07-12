@@ -106,12 +106,10 @@ mkdir -p /boot/efi/EFI/max
 if ! [ -d /boot/efi/EFI/ubuntu ]; then
 mkdir -p /boot/efi/EFI/ubuntu
 fi
-OLD=$(find /boot/efi/EFI -type d -name "max-*")
+OLD=$(find /boot/efi/EFI -type d -name "max")
 if [ "${OLD}" != "" ]; then
-  # copy all files and delete dir
-  cp ${OLD}/* /boot/efi/EFI/max/
+  # copy all files to ubuntu directory
   cp ${OLD}/* /boot/efi/EFI/ubuntu/
- # rm -rf "${OLD}" # no remove
 fi
 
 # copy ubuntu fw files
