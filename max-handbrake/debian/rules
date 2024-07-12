@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+PACKAGE=handbrake
+VERSION=1.8.0-0
+URL1=https://launchpad.net/~ubuntuhandbook1/+archive/ubuntu/handbrake/+files/handbrake_1.8.0-0build7~ubuntu22.04_amd64.deb
+#https://github.com/laurent22/joplin/releases/download/v2.14.22/Joplin-2.14.22.AppImage
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	if [ -d build ]; then rm -rf build; fi 
+
+
+override_dh_auto_build:
+	
+	mkdir -p build &&  cd build &&  wget --no-check-certificate  ${URL1} && dpkg-deb -x  ${PACKAGE}_${VERSION}build7~ubuntu22.04_amd64.deb . ;
+
+
+override_dh_strip:
+#do not remove appimage
