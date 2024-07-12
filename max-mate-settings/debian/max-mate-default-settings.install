@@ -15,12 +15,10 @@ usr/share/mate/applications/kde-Kantiword-Installer.desktop
 usr/share/mate/applications/language-selector.desktop
 usr/share/mate/applications/marco.desktop
 usr/share/mate/applications/software-properties-gtk.desktop
-usr/share/mate/applications/tilda.desktop
+#usr/share/mate/applications/tilda.desktop
 usr/share/mate/autostart/
 usr/share/plank/themes/
-
-usr/share/max-mate/settings-overlay
-
+#usr/share/max-mate/settings-overlay
 usr/share/glib-2.0/schemas/zz-max-mate-plank.gschema.override
 usr/share/mate/plank/normal
 usr/share/max-mate/settings-overlay
