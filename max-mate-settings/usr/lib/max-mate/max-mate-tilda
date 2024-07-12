@@ -13,5 +13,6 @@ function overlay_file() {
     fi
 }
 
-overlay_file config/tilda/config_0
-tilda &
+#deshabilitar tilda
+#ioverlay_file config/tilda/config_0
+#tilda &
