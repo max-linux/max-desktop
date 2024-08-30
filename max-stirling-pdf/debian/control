@@ -1,0 +1,14 @@
+Source: max-stirling-pdf
+Section: contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, tar, debhelper (>= 10)
+Standards-version: 0.28.3
+Homepage: https://stirlingtools.com/
+
+Package: max-stirlingpdf 
+Architecture:amd64 
+Depends: ${shlibs:Depends}, ${misc:Depends}, unoconv, openjdk-21-jre
+Description: Stirling PDF is a locally hosted web application designed to perform various operations on PDF files.
+ Born out of a passion for creating reliable, user-friendly tools, Stirling-PDF is free, secure, and private,
+ with no outbound calls for tracking or record-keeping. Your files stay on your device, ensuring complete control and privacy.

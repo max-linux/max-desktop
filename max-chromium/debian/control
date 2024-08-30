@@ -1,0 +1,19 @@
+Source: chromium-browser
+Section: contrib
+Priority: optional
+Maintainer: Clement Lefebvre <root@linuxmint.com>
+Build-Depends: wget, debhelper (>=11)
+Standards-Version:122.0.6261.94
+
+Package: chromium
+Architecture: amd64
+Depends: python3 (>= 3.3), perl, libgbm1, libgl1, libglx-mesa0, libgtk-3-0, libnss3, libsecret-1-0, libxss1, shared-mime-info, libxshmfence1
+Provides: chromium-codecs-ffmpeg, chromium-codecs-ffmpeg-extra
+Breaks: chromium-browser-l10n, chromium-chromedriver, chromium-codecs-ffmpeg, chromium-codecs-ffmpeg-extra, chromium-common, chromium-driver, chromium-l10n, chromium-sandbox, chromium-shell
+Replaces: chromium-browser-l10n, chromium-chromedriver, chromium-codecs-ffmpeg, chromium-codecs-ffmpeg-extra, chromium-common, chromium-driver, chromium-l10n, chromium-sandbox, chromium-shell
+Conflicts: chromium-codecs-ffmpeg-extra
+Section: web
+Priority: optional
+Description: web browser
+ Web browser that aims to build a safer, faster, and more stable internet
+ browsing experience, This package contains the web browser component.

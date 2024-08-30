@@ -1,0 +1,32 @@
+chromium-browser (1:128.0.6613.84max1) max; urgency=medium
+
+  * Build in MAX 12.0
+  * Newstream version
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 27 Aug 2024 09:03:19 +0200
+
+chromium-browser (1:122.0.6261.94max4) max; urgency=medium
+
+  * bookmarks removed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 13 Mar 2024 11:39:32 +0100
+
+chromium-browser (1:122.0.6261.94max3) max; urgency=medium
+
+  * remove linux-mint homepage
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 13 Mar 2024 11:10:41 +0100
+
+chromium-browser (1:122.0.6261.94max2) max; urgency=medium
+
+  * add chromium-codecs-ffmpeg-extra to section conflicts
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 13 Mar 2024 09:29:26 +0100
+
+chromium-browser (1:122.0.6261.94max1) max; urgency=medium
+
+  * Initial release. 
+  * Build in MAX 12.0
+  * 
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 12 Mar 2024 14:17:32 +0100

@@ -1,0 +1,47 @@
+#!/bin/bash
+
+comprobador=0
+
+echo "Comprobador inicial = $comprobador"
+echo "$espacio"
+
+echo "Inicio de la ejecución inicial del archivo .jar"
+echo "$espacio"
+
+cola="$( ps -ef | grep -m 1 Stirling-PDF | awk '{ if($10 ~ /28.3.jar/) { print $8 } }' )"
+
+if [ "$cola" == "java" ]; then 
+	
+	firefox --new-tab http://localhost:8080
+	
+else
+
+	if [ ! -d $HOME/stirling-pdf ]; then
+			mkdir $HOME/stirling-pdf
+	fi
+
+	cd $HOME/stirling-pdf && java -jar /opt/StirlingPDF/Stirling-PDF-0.28.3.jar > $HOME/stirling-pdf/senal &
+
+	while [ $comprobador -eq 0 ]
+		do
+			echo "Comprobación del resultado con comprobador igual a $comprobador"
+			
+			cola="$( cat $HOME/stirling-pdf/senal | awk '{ if($6 ~ /Navigate/) { print $6 } }' )"
+
+			echo "Cola = $cola"
+			echo "$espacio"
+			
+			if [ "$cola" == "Navigate" ]; then
+				echo "Se lanza firefox"
+				echo "$espacio"
+				firefox --new-tab http://localhost:8080
+				
+				rm -rf $HOME/stirling-pdf/senal
+				break
+			fi
+			
+			sleep 1
+			
+		done    
+
+fi
