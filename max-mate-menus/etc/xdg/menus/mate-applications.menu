@@ -675,12 +675,9 @@
     <Name>Office</Name>
     <Directory>mate-office.directory</Directory>
     <Include>
-    <Filename>max-diffpdf.desktop</Filename>
     <Filename>max-atril.desktop</Filename>
     <Filename>max-evince.desktop</Filename>
     <Filename>max-okular.desktop</Filename>
-    <Filename>optimizarpdf.desktop</Filename>
-    <Filename>pdfarranger.desktop</Filename>
     </Include>
     <Include>
       <And>
@@ -689,7 +686,10 @@
     </Include>
     <Exclude>
         <Filename>pdfarranger.desktop</Filename>
+        <Filename>max-pdfarranger.desktop</Filename>
+        <Filename>optimizarpdf.desktop</Filename>
         <Filename>diffpdf.desktop</Filename>
+        <Filename>max-diffpdf.desktop</Filename>
         <Filename>atril.desktop</Filename>
         <Filename>org.gnome.Evince.desktop</Filename>
         <Filename>org.kde.okular.desktop</Filename>
