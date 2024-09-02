@@ -14,7 +14,7 @@ pref("security.tls.version.min",1);
 
 // disable PDF internal plugin
 // https://github.com/max-linux/max-desktop/issues/552
-pref("pdfjs.disabled",true);
+pref("pdfjs.disabled",false);
 //pref("plugin.disable_full_page_plugin_for_types", "application/pdf");
 
 
