@@ -83,7 +83,7 @@
         <Filename>owncloud.desktop</Filename>
         <Filename>simplescreenrecorder.desktop</Filename>
         <Filename>com.obsproject.Studio.desktop</Filename>
-        <Filename>optimizarpdf.desktop</Filename>
+        <Filename>max-stirlingpdf.desktop</Filename>
         <Filename>shutter.desktop</Filename> 
 	<Filename>exe.desktop</Filename>
 	</Include>
@@ -424,7 +424,7 @@
         <Directory>max-musica.directory</Directory>
         <Include>
             <Filename>denemo.desktop</Filename>
-            <Filename>mscore3.desktop</Filename>
+            <Filename>max-musescore.desktop</Filename>
             <Filename>kde4-rosegarden.desktop</Filename>
             <Filename>tuxguitar.desktop</Filename>
             <Filename>solfege.desktop</Filename>
