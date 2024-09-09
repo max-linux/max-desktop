@@ -1,3 +1,16 @@
+max-skel-conf (12.0.max25) max; urgency=medium
+
+  * Build in MAX 12.0
+  * remove mozilla from skel
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 10 Sep 2024 00:15:17 +0200
+
+max-skel-conf (12.0.max24) max; urgency=medium
+
+  * mozilla skel fixed 
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 02 Sep 2024 17:01:17 +0200
+
 max-skel-conf (12.0.max23) max; urgency=medium
 
   * mozilla skel  ayuda.educamadrid added 
