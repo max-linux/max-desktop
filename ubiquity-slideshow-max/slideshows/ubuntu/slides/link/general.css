@@ -99,7 +99,7 @@ of 215px. The actual content should be 128x128px. (The rest is padding).
 	z-index:11;
 	border:0px;
 }
-.icon#firefox {
+.icon #firefox {
 	top:47px;
 	left:590px;
 	width:128px;
@@ -129,13 +129,6 @@ appear, spaced appropriately from .title.
 Slide's body text goes inside here.
 */
 .content {
-	padding:16px;
-	padding-top:32px;
-	
-	font-size:14px;
-	color:#484848;
-}
-.content2 {
 	padding:16px;
 	padding-top:74px;
 	
