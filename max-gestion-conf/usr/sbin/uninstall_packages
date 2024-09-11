@@ -1,0 +1,92 @@
+#!/bin/bash
+
+# Listado de paquetes a desinstalar
+packages=(
+	aisleriot
+	alarm-clock-applet
+	anki
+	arasuite
+	arduino
+	atomix
+	audacity
+	blender
+	celestia
+	cellwriter
+	crumble
+	denemo
+	eom
+	five-or-more
+	fotowall
+	four-in-a-row
+	geogebra5
+	gnome-2048
+	gnome-chess
+	gnome-klotski
+	gnome-mahjongg
+	gnome-mines
+	gnome-nibbles
+	gnome-robots
+	gnome-sudoku
+	gnome-taquin
+	gnome-tetravex
+	gnuradio
+	gtick
+	handbrake
+	hitori
+	homealumno-gui
+	iagno
+	intef-exe
+	jfractionlab
+	k3b
+	kalzium
+	kanagram
+	kdenlive
+	khangman
+	klettres
+	krita
+	kwordquiz
+	learningml-desktop
+	lightsoff
+	marble
+	max-drawio
+	max-mate-desktop-gestion
+	max-mate-welcome
+	max-stirlingpdf
+	max-twine
+	minetest
+	musescore3
+	neverputt
+	obs-studio
+	ocrfeeder
+	openboard
+	openscad
+	peek
+	picom
+	posterazor
+	qstopmotion
+	quadrapassel
+	qucs-s
+	qwinff
+	scratux
+	scribus
+	shotwell
+	shutter
+	solfege
+	step
+	swell-foop
+	tali
+	tilix
+	transmission-gtk
+	xfce4-power-manager
+	xournalpp		
+)
+
+echo "Desinstalando los paquetes: ${packages[@]}"
+
+# Desinstalación de los paquetes listados
+sudo apt remove --purge -y "${packages[@]}"
+
+# Limpieza de paquetes innecesarios
+sudo apt autoremove -y
+
+echo "Desinstalación completada con éxito."
