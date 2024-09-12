@@ -3,9 +3,9 @@ Section: contrib
 Priority: optional
 Maintainer: Clement Lefebvre <root@linuxmint.com>
 Build-Depends: wget, debhelper (>=11)
-Standards-Version:122.0.6261.94
+Standards-Version:128.0.6613.84
 
-Package: chromium
+Package: chromium-browser
 Architecture: amd64
 Depends: python3 (>= 3.3), perl, libgbm1, libgl1, libglx-mesa0, libgtk-3-0, libnss3, libsecret-1-0, libxss1, shared-mime-info, libxshmfence1
 Provides: chromium-codecs-ffmpeg, chromium-codecs-ffmpeg-extra

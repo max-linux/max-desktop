@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+PACKAGE="chromium_128.0.6613.84~linuxmint1+virginia_amd64.deb"
+URL1=http://packages.linuxmint.com/pool/upstream/c/chromium/chromium_128.0.6613.84~linuxmint1%2Bvirginia_amd64.deb
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	if [ -d build ]; then rm -rf build; fi
+
+override_dh_auto_build:
+	mkdir -p build/ &&  cd build && wget  ${URL1} ;
+	if [ -d build/ ]; then cd build/ && dpkg-deb -x ${PACKAGE} . &&  rm -f ${PACKAGE} ; fi
+	if [ -e build/etc/chromium/master_preferences ]; then \
+		sed -i 's/https:\/\/www.linuxmint.com\/start\/virginia/file:\/\/\/usr\/share\/doc\/max-ubufox\/startpage.html/g' build/etc/chromium/master_preferences ; fi
+
+	if [ -e build/etc/chromium/master_preferences ]; then \
+		sed -i 's/"\/usr\/share\/chromium\/initial_bookmarks.html"/""/g' build/etc/chromium/master_preferences ; fi
+
+
+
+
+
+override_dh_shlibdeps:
