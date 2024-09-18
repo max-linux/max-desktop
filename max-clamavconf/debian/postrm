@@ -1,0 +1,7 @@
+#! /bin/bash
+# restaura la configuracion clamav
+if [ -e /etc/clamav/clamd.conf ]; then
+sed -i 's/LogSyslog true/LogSyslog false/' /etc/clamav/clamd.conf
+
+fi
+

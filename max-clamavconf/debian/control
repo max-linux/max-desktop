@@ -1,0 +1,11 @@
+Source: max-clamavconf
+Section:  contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: debhelper (>= 7.0.0)
+Standards-Version: 1.0
+
+Package: clamavconf
+Architecture: any
+Depends: clamav, ${shlibs:Depends}, ${misc:Depends}
+Description: aplicación crada para la configuración de clamav.  
