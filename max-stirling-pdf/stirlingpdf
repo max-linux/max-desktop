@@ -8,7 +8,7 @@ echo "$espacio"
 echo "Inicio de la ejecución inicial del archivo .jar"
 echo "$espacio"
 
-cola="$( ps -ef | grep -m 1 Stirling-PDF | awk '{ if($10 ~ /28.3.jar/) { print $8 } }' )"
+cola="$( ps -ef | grep -m 1 Stirling-PDF | awk '{ if($10 ~ /29.0.jar/) { print $8 } }' )"
 
 if [ "$cola" == "java" ]; then 
 	
@@ -20,7 +20,7 @@ else
 			mkdir $HOME/stirling-pdf
 	fi
 
-	cd $HOME/stirling-pdf && java -jar /opt/StirlingPDF/Stirling-PDF-0.28.3.jar > $HOME/stirling-pdf/senal &
+	cd $HOME/stirling-pdf && java -jar /opt/StirlingPDF/Stirling-PDF-0.29.0.jar > $HOME/stirling-pdf/senal &
 
 	while [ $comprobador -eq 0 ]
 		do
