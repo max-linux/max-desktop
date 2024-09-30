@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=Microbit
+Name[es_ES]=Microbit
+Exec=chromium --new-window https://makecode.microbit.org
+Comment[es_ES]=Página Oficial de Makecode de Microbit
+Comment=Página Oficial de Makecode de Microbit
+Icon=microbit
+Categories=GTK;Development;IDE;TextEditor;
