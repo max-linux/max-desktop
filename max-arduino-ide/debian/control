@@ -3,7 +3,7 @@ Section: electronics
 Priority: extra
 Maintainer: Maintainer: Mario Izquierdo <hola@marioizquierdo.es>
 Build-Depends: unzip, wget, debhelper (>= 9)
-Standards-Version: 3.9.7
+Standards-Version: 2.3.3
 Homepage: http://www.arduino.cc
 
 Package: arduino
