@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+VERSION=0.26.4-0+649.1
+
+URL=https://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_22.04/amd64/albert_$(VERSION)_amd64.deb
+
+%:
+	dh $@ 
+
+
+override_dh_auto_build:
+	if [ ! -d build ]; then \
+		mkdir build ;\
+		( cd build && wget --no-check-certificate $(URL) ); \
+		( cd build && dpkg -x albert_$(VERSION)_amd64.deb  ./ ) ;\
+	fi
+
+override_dh_shlibdeps:
+
+override_dh_clean:
+	dh_clean
+	rm -rf build

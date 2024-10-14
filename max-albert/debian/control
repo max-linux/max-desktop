@@ -1,0 +1,42 @@
+Source: max-albert
+Section: max
+Priority: extra
+Maintainer: cau_max <cau_max@educa.madrid.org>
+Build-Depends: debhelper (>= 8.0.0), wget
+Standards-Version: 0.26.4
+Homepage: https://albertlauncher.github.io
+
+Package: albert
+Architecture: amd64
+Depends: libarchive13 (>= 3.0.4),
+         libc6 (>= 2.34),
+         libgcc-s1 (>= 3.3.1),
+         libpython3.10 (>= 3.10.0),
+         libqalculate22 (>= 3.22.0),
+         libqt6concurrent6 (>= 6.1.2),
+         libqt6core6 (>= 6.2.0),
+         libqt6dbus6 (>= 6.1.2),
+         libqt6gui6 (>= 6.2.0),
+         libqt6network6 (>= 6.1.2),
+         libqt6qml6 (>= 6.2.0),
+         libqt6quick6 (>= 6.2.0),
+         libqt6sql6 (>= 6.1.2),
+         libqt6statemachine6 (>= 6.2.1),
+         libqt6svg6 (>= 6.2.0),
+         libqt6widgets6 (>= 6.1.2),
+         libstdc++6 (>= 11), libx11-6,
+         libqt6sql6-sqlite,
+         python3-pip, 
+         python3-venv,
+         qml6-module-qt5compat-graphicaleffects,
+         qml6-module-qtqml-statemachine,
+         qml6-module-qtqml-workerscript, 
+         qml6-module-qtquick-shapes,
+         qml6-module-qtquick-window, 
+         qt6-qpa-plugins,
+         qt6-wayland,
+         ${shlibs:Depends},
+         ${misc:Depends}
+Conflicts: synapse
+Replace: synapse 
+Description: Albert is a blazing-fast, plugin-based keyboard launcher written in C++/Qt.
