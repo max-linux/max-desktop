@@ -3,8 +3,9 @@
 
 DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
-VERSION=0.26.4-0+649.1
+####https://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_22.04/amd64/albert_0.26.5-0+650.1_amd64.deb
 
+VERSION=0.26.5-0+650.1
 URL=https://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_22.04/amd64/albert_$(VERSION)_amd64.deb
 
 %:

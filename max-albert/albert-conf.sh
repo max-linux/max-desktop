@@ -1,0 +1,18 @@
+#!/bin/bash
+
+USUARIO=$( id -u )
+
+if [ "${USUARIO}" == 0 ]; then
+
+	if [ ! -e /home/madrid/.config/albert/albertok ]; then 
+	
+		for u in $( awk -F":" '/\/bin\/bash/ { if($3>999) print $1}' /etc/passwd ) ; do
+			cp -rf /etc/skel/.config/albert  /home/"$u"/.config/
+			cp -rf /etc/skel/.cache/albert	/home/"$u"/.cache/
+			cp -rf /etc/skel/.local/share/albert /home/"$u"/.local/share/albert
+			touch /home/"$u"/.config/albert/albertok
+		done
+	
+	fi
+
+fi
