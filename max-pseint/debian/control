@@ -1,0 +1,14 @@
+Source: max-pseint
+Section:  contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, p7zip-full, debhelper (>= 11)
+Standards-Version: 20240122
+Homepage: https://pseint.sourceforge.net
+
+Package: pseint
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, breeze-gtk-theme, breeze-dev
+Description: PSeInt le ayuda a escribir algoritmos utilizando un pseudo-lenguaje simple, intuitivo y en español.
+ El objetivo es permitir al estudiante centrar la atención en los conceptos fundamentales que debe aprender, 
+ sin perder tiempo en los detalles de un lenguaje o del uso de un intérprete o compilador. 

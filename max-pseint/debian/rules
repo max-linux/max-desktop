@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+VERSION=20240122
+URL1=http://localhost/remote-files/pseint-l64-${VERSION}.tgz 
+#URL1=https://github.com/klembot/twinejs/archive/refs/tags/${VERSION}.tar.gz
+#URL1=https://github.com/klembot/twinejs/releases/download/${VERSION}/Twine-${VERSION}-Linux-x64.zip
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	if [ -d build ]; then rm -rf build; fi 
+
+
+override_dh_auto_build:
+	
+	mkdir -p build &&  cd build && wget --no-check-certificate ${URL1} ;
+	if [ -f build/pseint-l64-${VERSION}.tgz ]; then cd build/ && tar xzvf pseint-l64-${VERSION}.tgz  && rm -f pseint-l64-${VERSION}.tgz ; fi
+
+#	find build2/locales/ -type f \( ! -iname "es*" ! -iname "en*" \) -exec rm -f {} \;
+
+override_dh_shlibdeps:

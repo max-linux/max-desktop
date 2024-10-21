@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=PseInt
+Name[es]=PseInt
+Comment[es]=Herramienta para asistir a un estudiante en sus primeros pasos en programación.
+Icon=max-pseint
+Exec=/usr/share/pseint/pseint %U
+Terminal=false
+Type=Application
+Categories=Application;Development;
+StartupNotify=false
+
