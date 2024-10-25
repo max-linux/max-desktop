@@ -4,6 +4,7 @@ acpid
 #aegisub
 #aegisub-l10n
 alarm-clock-applet
+albert
 alsa-base
 alsa-utils
 anacron
@@ -34,7 +35,7 @@ diffpdf
 ca-certificates
 caja
 caja-admin
-caja-gksu
+#caja-gksu
 caja-image-converter
 caja-mediainfo
 caja-open-terminal
@@ -65,6 +66,7 @@ dialog
 dnie-support
 dnie3-support
 default-jdk
+echidnaml
 engrampa
 eom
 espeak
@@ -146,7 +148,7 @@ krita
 language-pack-es
 language-pack-gnome-es
 language-selector-gnome
-learningml-desktop
+#learningml-desktop
 libaacs0
 libavahi-compat-libdnssd1
 libbdplus0
@@ -291,7 +293,7 @@ solfege
 speech-dispatcher
 #stellarium
 synaptic
-synapse
+#synapse
 syslinux-utils
 system-config-printer-gnome
 system-config-printer-udev

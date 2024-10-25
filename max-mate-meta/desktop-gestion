@@ -1,5 +1,6 @@
 accountsservice
 acpid
+albert
 alsa-base
 alsa-utils
 anacron
@@ -21,8 +22,8 @@ blueman
 #brltty-x11
 ca-certificates
 caja
-caja-admin
-caja-gksu
+#caja-admin
+#caja-gksu
 caja-image-converter
 caja-mediainfo
 caja-open-terminal
@@ -235,7 +236,7 @@ smbclient
 software-properties-gtk
 speech-dispatcher
 synaptic
-synapse
+#synapse
 syslinux-utils
 system-config-printer-gnome
 system-config-printer-udev
