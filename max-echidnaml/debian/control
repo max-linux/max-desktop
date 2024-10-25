@@ -1,0 +1,24 @@
+Source: max-echidnaml
+Section: Development
+Priority: optional
+Maintainer: juanda@jaundarodriguez.es
+Build-Depends: debhelper (>= 10.0.0), wget
+Standards-Version: 1.0.9
+Homepage: https://gitlab.com/lml-corp/lml-desktop#readme
+
+Package: echidnaml
+Architecture: all
+Depends: libgtk-3-0, 
+	 libnotify4,
+	 libnss3,
+         libxss1,
+         libxtst6,
+         xdg-utils,
+	 libatspi2.0-0,
+         libuuid1,
+         libsecret-1-0, 
+         ${shlibs:Depends}, ${misc:Depends}
+Recommends: libappindicator3-1
+Conflicts: learningml-desktop, brltty
+Replaces: learningml-desktop, brltty
+Description: LearningML in the desktop with echidna and internet independent

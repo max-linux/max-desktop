@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if type update-alternatives 2>/dev/null >&1; then
+    # Remove previous link if it doesn't use update-alternatives
+    if [ -L '/usr/bin/echidnaml' -a -e '/usr/bin/echidnaml' -a "`readlink '/usr/bin/echidnaml'`" != '/etc/alternatives/echidnaml' ]; then
+      rm -f '/usr/bin/echidnaml'
+    fi
+    update-alternatives --install '/usr/bin/echidnaml' 'echidnaml' '/opt/EchidnaML/echidnaml' 100
+else
+    ln -sf '/opt/EchidnaML/echidnaml' '/usr/bin/echidnaml'
+fi
+
+# SUID chrome-sandbox for Electron 5+
+chmod 4755 '/opt/EchidnaML/chrome-sandbox' || true
+
+update-mime-database /usr/share/mime || true
+update-desktop-database /usr/share/applications || true

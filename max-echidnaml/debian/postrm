@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Delete the link to the binary
+if type update-alternatives >/dev/null 2>&1; then
+    update-alternatives --remove 'echidnaml' '/usr/bin/echidnaml'
+else
+    rm -f '/usr/bin/echidnaml'
+fi
