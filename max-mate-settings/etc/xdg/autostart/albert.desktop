@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Categories=Utility;
+Comment=A desktop agnostic launcher
+Exec=albert --platform xcb
+GenericName=Launcher
+Icon=albert
+Name=Albert
+StartupNotify=false
+Type=Application
+Version=1.0
+# Give desktop environments time to init. Otherwise QGnomePlatform does not correctly pick up the palette.
+X-GNOME-Autostart-Delay=3
