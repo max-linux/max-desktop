@@ -1,0 +1,1 @@
+ATE TABLE activation (     timestamp INTEGER DEFAULT CURRENT_TIMESTAMP,     query TEXT,     extension_id,     item_id TEXT,     action_id TEXT )
