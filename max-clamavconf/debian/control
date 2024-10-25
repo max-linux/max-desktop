@@ -7,5 +7,5 @@ Standards-Version: 1.0
 
 Package: clamavconf
 Architecture: any
-Depends: clamav, ${shlibs:Depends}, ${misc:Depends}
+Depends: clamav, clamav-daemon,clamtk, ${shlibs:Depends}, ${misc:Depends}
 Description: aplicación crada para la configuración de clamav.  
