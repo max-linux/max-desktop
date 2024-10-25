@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+DH_VERBOSE=1
+
+VERSION=4.22.11-1
+
+URL="https://download.opensuse.org/repositories/home:/imiolek-i/xUbuntu_22.04/all/eduactiv8_$(VERSION)_all.deb"
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+override_dh_auto_build:
+	mkdir build ; ( cd build && wget --no-check-certificate $(URL) && dpkg -x *deb ./)
+
+
+override_dh_shlibdeps:
+
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+
+
+
