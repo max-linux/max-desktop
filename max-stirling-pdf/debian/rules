@@ -2,7 +2,7 @@
 
 export DH_VERBOSE = 1
 
-PACKAGE=stirlingPDF-0.29.0.tar.xz
+PACKAGE=StirlingPDF-0.28.3.tar.xz
 URL=http://localhost/remote-files/${PACKAGE}
 %:
 	dh $@
@@ -15,7 +15,7 @@ override_dh_clean:
 override_dh_auto_build:
 
 	mkdir -p build && cd build && wget --no-check-certificate ${URL};
-	if [ -e build/${PACKAGE} ]; then tar -xvJf build/${PACKAGE} -C build/ ; fi
+	if [ -e build/${PACKAGE} ]; then cd build && tar -xJvf ${PACKAGE} ; fi
 	if [ -e build/${PACKAGE} ]; then rm -rf build/${PACKAGE} ; fi
 
 override_dh_shlibdeps:
