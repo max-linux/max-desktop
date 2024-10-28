@@ -1,0 +1,14 @@
+[Unit]
+Description=ClamAV On Access Scanner
+Requires=clamav-daemon.service
+After=clamav-daemon.service syslog.target network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/sbin/clamonacc -F --remove --fdpass --log=/var/log/clamav/clamonacc.log
+Restart=on-failure
+RestartSec=120s
+
+[Install]
+WantedBy=multi-user.target

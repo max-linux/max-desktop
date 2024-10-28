@@ -1,3 +1,16 @@
+max-clamavconf (1.0.max4) max; urgency=medium
+
+  * postinstall target fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 28 Oct 2024 17:35:16 +0100
+
+max-clamavconf (1.0.max3) max; urgency=medium
+
+  * Se agregan instancias en el fichero de configuracion clamav.conf y
+    se carga servicio
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 28 Oct 2024 12:34:15 +0100
+
 max-clamavconf (1.0.max2) max; urgency=medium
 
   * packages added

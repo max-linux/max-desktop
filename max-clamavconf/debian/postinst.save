@@ -1,0 +1,14 @@
+#! /bin/bash
+
+# Modifica el fichero de configuracion de clamav para la lectura de logs con wazuh.
+if [ -e /etc/clamav/clamd.conf ]; then
+sed -i 's/LogSyslog false/LogSyslog true/' /etc/clamav/clamd.conf
+echo "OnAccessIncludePath /home" >>  /etc/clamav/clamd.conf
+echo "OnAccessPrevention yes" >>  /etc/clamav/clamd.conf
+echo "OnAccessExtraScanning yes" >>  /etc/clamav/clamd.conf
+echo "OnAccessExcludeUname clamav" >>  /etc/clamav/clamd.conf
+fi
+
+if [ -e /etc/clamav/clamd.conf ]; then
+
+
