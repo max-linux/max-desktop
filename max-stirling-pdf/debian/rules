@@ -2,7 +2,7 @@
 
 export DH_VERBOSE = 1
 
-PACKAGE=StirlingPDF-0.28.3.tar.xz
+PACKAGE=max-stirlingPDF-0.30.1.tar.xz
 URL=http://localhost/remote-files/${PACKAGE}
 %:
 	dh $@
