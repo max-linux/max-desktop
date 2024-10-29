@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 export DH_VERBOSE = 1
 
-VERSION=2.14.22
+VERSION=3.1.20
 URL1=https://github.com/laurent22/joplin/releases/download/v${VERSION}/Joplin-${VERSION}.AppImage  
 #https://github.com/laurent22/joplin/releases/download/v2.14.22/Joplin-2.14.22.AppImage
 PACKAGE="Joplin-${VERSION}.AppImage"
@@ -18,8 +18,8 @@ override_dh_clean:
 override_dh_auto_build:
 	
 	mkdir -p build &&  cd build && wget --no-check-certificate ${URL1} ;
-	if [ -f build/${PACKAGE} ]; then  chmod +x build/${PACKAGE}; fi
-
+	if [ -f build/${PACKAGE} ]; then chmod +x build/${PACKAGE}; fi
+	if [ -f build/${PACKAGE} ]; then mv build/${PACKAGE} build/Joplin.AppImage; fi
 
 override_dh_strip:
 #do not remove appimage

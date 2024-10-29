@@ -4,9 +4,8 @@ Name=Joplin
 Name[es]= Joplin
 Comment[es]= joplin
 Icon=joplin
-Exec=/usr/share/joplin/Joplin-2.14.22.AppImage 
+Exec=/usr/share/joplin/Joplin.AppImage 
 Terminal=false
 Type=Application
 Categories=Office;
 StartupNotify=false
-
