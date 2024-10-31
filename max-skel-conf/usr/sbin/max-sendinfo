@@ -1,30 +1,28 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
-#
+
 import os
 import sys
 import datetime
 import time
 import simplejson as json
-import urllib
-import urllib2
+import urllib.request  # Cambio: se usa urllib.request en lugar de urllib2 en Python 3
+import urllib.parse    # Cambio: se usa urllib.parse en lugar de urllib2 en Python 3
 import base64
 import logging
 import uuid
 from subprocess import Popen, PIPE, STDOUT
 
-
 URL = "https://madridlinux.educa.madrid.org/stats/stats.php"
 HEADERS = {'User-Agent': "MAX 11.0"}
 VERBOSE = True
-
 
 LOGGER_FILE = '/var/lib/max-sendinfo/sendinfo.log'
 UUID_FILE = '/var/lib/max-sendinfo/uuid'
 # add numbers to the end to force upload again
 PENDING = '/var/lib/max-sendinfo/pending'
 
-
+# Configuración del logger
 if not os.access(LOGGER_FILE, os.W_OK) or "--debug" in sys.argv:
     lg = logging.getLogger('max-sendinfo')
     lg.setLevel(logging.DEBUG)
@@ -32,7 +30,6 @@ if not os.access(LOGGER_FILE, os.W_OK) or "--debug" in sys.argv:
     ch = logging.StreamHandler(sys.stdout)
     ch.setFormatter(formatter)
     lg.addHandler(ch)
-    lg.setLevel(logging.DEBUG)
 else:
     logging.basicConfig(level=logging.DEBUG,
                         format='%(asctime)s %(message)s',
@@ -43,52 +40,47 @@ else:
 
 def sendRequest(data={}, method=None):
     local_indent = ''
-    #
-    data = urllib.urlencode(data)
-    #print data
-    req = urllib2.Request(URL, data, HEADERS)
+    data = urllib.parse.urlencode(data).encode("utf-8")  # Cambio: se utiliza urllib.parse y codificación UTF-8
+    req = urllib.request.Request(URL, data, HEADERS)     # Cambio: se utiliza urllib.request en lugar de urllib2.Request
     response = None
     raw = ""
     try:
         lg.debug("Pushing to (%s) ..." % (URL))
-        raw = urllib2.urlopen(req).read()
-    except Exception, err:
+        raw = urllib.request.urlopen(req).read().decode("utf-8")  # Cambio: urllib.request.urlopen y decodificación UTF-8
+    except Exception as err:
         lg.error("Exception loading API (%s), err=%s" % (URL, err))
         return response
 
     try:
         response = json.loads(raw)
-    except Exception, err:
+    except Exception as err:
         lg.error("sendRequest() received raw\n")
         lg.error("="*80)
         lg.error(raw)
         lg.error("="*80)
-    #
     return response
 
 def exe_cmd(cmd, verbose=True):
-    bin=cmd.split(' ')[0]
+    bin = cmd.split(' ')[0]
     if not os.path.exists(bin):
-        lg.error( "exe_cmd(%s) bin no exists" %(cmd) )
+        lg.error("exe_cmd(%s) bin no exists" % (cmd))
         return 'n/a'
     p = Popen(cmd, shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
 
-    output=[]   
+    output = []
     for line in p.stdout.readlines():
-        if line != '\n':
-            line=line.replace('\n', '')
+        line = line.decode("utf-8").strip()  # Cambio: se decodifica cada línea de bytes a utf-8 y se elimina el salto de línea
+        if line:
             output.append(line)
     if len(output) == 1:
-        if not output[0]:
-            return 'n/a'
-        return output[0]
+        return output[0] if output[0] else 'n/a'
     elif len(output) > 1:
-        if verbose==1:
-            lg.info( "exe_cmd(%s) %s" %(cmd, output) )
+        if verbose:
+            lg.info("exe_cmd(%s) %s" % (cmd, output))
         return "_".join(output)
     else:
-        if verbose == 1:
-            lg.info( "exe_cmd(%s)=None" %(cmd) )
+        if verbose:
+            lg.info("exe_cmd(%s)=None" % (cmd))
         return 'n/a'
 
 
@@ -96,13 +88,9 @@ def readfile(fname):
     if not os.path.exists(fname):
         return 'n/a'
 
-    fd=open(fname, 'r')
-    data=fd.readlines()
-    fd.close()
-
-    # remove line breaks
+    with open(fname, 'r') as fd:  # Cambio: uso de with para manejar el archivo de forma segura
+        data = fd.readlines()
     temp = [line.rstrip('\n') for line in data]
-
     return "_".join(temp)
 
 
@@ -110,41 +98,38 @@ if __name__ == '__main__':
     # don't run if no pending file
     if not os.path.exists(PENDING):
         sys.exit(0)
-    #
+
     # id=[uniq UUID]
     # distro=[ Ubuntu or Debian with version ]
     # arch=[ i386 | amd64 ]
     # version=[ from sources.list max75 for ex ]
 
     if not os.path.exists(UUID_FILE):
-        UID=str(uuid.uuid4())
-        f=open(UUID_FILE, 'w')
-        f.write("%s"%UID)
-        f.close()
+        UID = str(uuid.uuid4())
+        with open(UUID_FILE, 'w') as f:  # Cambio: uso de with para escribir el archivo de forma segura
+            f.write("%s" % UID)
 
-    UID=readfile(UUID_FILE)
+    UID = readfile(UUID_FILE)
     if UID == 'n/a':
-        UID=str(uuid.uuid4())
-        f=open(UUID_FILE, 'w')
-        f.write("%s"%UID)
-        f.close()
-    #
-    #
-    DISTRO=exe_cmd('/usr/bin/lsb_release -s -i -r -c')  # Ubuntu_12.04_precise  => Depende de lsb-release
-    ARCH=exe_cmd('/usr/bin/dpkg-architecture -qDEB_HOST_ARCH') # i386 o amd64   => Depende de dpkg-dev
-    VERSION=exe_cmd("/usr/bin/awk -F \"/| \" '/\/max/ {print $5;exit}' /etc/apt/sources.list")
+        UID = str(uuid.uuid4())
+        with open(UUID_FILE, 'w') as f:  # Cambio: uso de with para escribir el archivo de forma segura
+            f.write("%s" % UID)
 
-    data={
+    DISTRO = exe_cmd('/usr/bin/lsb_release -s -i -r -c')  # Ubuntu_12.04_precise
+    ARCH = exe_cmd('/usr/bin/dpkg-architecture -qDEB_HOST_ARCH')  # i386 o amd64
+    VERSION = exe_cmd("/usr/bin/awk -F \"/| \" '/\/max/ {print $5;exit}' /etc/apt/sources.list")
+
+    data = {
        'id':      UID,
        'distro':  DISTRO,
        'version': VERSION,
        'arch':    ARCH,
-       }
+    }
     lg.debug(data)
     recv = sendRequest(data)
     lg.info(recv)
-    if 'msg' in recv and recv['msg'] == 'OK' and os.path.exists(PENDING):
+    if recv and 'msg' in recv and recv['msg'] == 'OK' and os.path.exists(PENDING):
         os.unlink(PENDING)
-        lg.info("Delete pending file=%s" %(PENDING))
+        lg.info("Delete pending file=%s" % (PENDING))
 
     sys.exit(0)
