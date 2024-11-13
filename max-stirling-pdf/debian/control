@@ -8,7 +8,7 @@ Homepage: https://stirlingtools.com/
 
 Package: max-stirlingpdf 
 Architecture:amd64 
-Depends: ${shlibs:Depends}, ${misc:Depends}, unoconv, openjdk-17-jre
+Depends: ${shlibs:Depends}, ${misc:Depends}, unoconv, openjdk-17-jre, unpaper, ocrmypdf, libtool, libleptonica-dev, pkg-config, zlib1g-dev
 Description: Stirling PDF is a locally hosted web application designed to perform various operations on PDF files.
  Born out of a passion for creating reliable, user-friendly tools, Stirling-PDF is free, secure, and private,
  with no outbound calls for tracking or record-keeping. Your files stay on your device, ensuring complete control and privacy.
