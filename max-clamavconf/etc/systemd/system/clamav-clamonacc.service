@@ -8,7 +8,7 @@ Type=simple
 User=root
 ExecStartPre=/bin/bash -c "while [ ! -S /run/clamav/clamd.ctl ]; do sleep 1; done"
 ExecStart=/usr/sbin/clamonacc -F --remove --fdpass --log=/var/log/clamav/clamonacc.log
-Restart=on-failure
+Restart=always
 RestartSec=120s
 
 [Install]
