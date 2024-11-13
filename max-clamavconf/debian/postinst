@@ -22,9 +22,3 @@ fi
 # Habilitar los servicios daemon y clamonacc
 systemctl enable clamav-daemon.service
 systemctl enable clamav-clamonacc.service
-
-# Habilitar e iniciar el servicio para activar los servicios anteriores
-systemctl enable clamav-setup.service
-systemctl start clamav-setup.service
-
-
