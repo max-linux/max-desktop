@@ -1,0 +1,11 @@
+[Unit]
+Description=Servicio para iniciar clamav-daemon y clamonacc después de la instalación
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl restart clamav-daemon clamav-clamonacc
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

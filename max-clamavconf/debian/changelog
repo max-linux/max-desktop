@@ -1,3 +1,15 @@
+max-clamavconf (1.0.max6) max; urgency=medium
+
+  * Service changes in postinst file and added clamav-setup.service
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 13 Nov 2024 10:38:48 +0100
+
+max-clamavconf (1.0.max5) max; urgency=medium
+
+  * Added service startup in posinst
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 12 Nov 2024 16:02:52 +0100
+
 max-clamavconf (1.0.max4) max; urgency=medium
 
   * postinstall target fixed

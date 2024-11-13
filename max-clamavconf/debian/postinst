@@ -2,25 +2,29 @@
 
 # Modifica el fichero de configuracion de clamav para la lectura de logs con wazuh.
 FICHERO=/etc/clamav/clamd.conf
+
 if [ -e "$FICHERO" ]; then
-sed -i 's/LogSyslog false/LogSyslog true/' /etc/clamav/clamd.conf
+     sed -i 's/LogSyslog false/LogSyslog true/' /etc/clamav/clamd.conf
 
      if [ -f "$FICHERO" ]; then
 
-TARGET=$( awk '{ if ($1=="OnAccessIncludePath") { print $1 }}' "$FICHERO" | head -1 )
+          TARGET=$( awk '{ if ($1=="OnAccessIncludePath") { print $1 }}' "$FICHERO" | head -1 )
 
-
-      if [ "$TARGET"!="OnAccessIncludePath" ]; then 
-        echo "OnAccessIncludePath /home" >>  /etc/clamav/clamd.conf
-        echo "OnAccessPrevention yes" >>  /etc/clamav/clamd.conf
-        echo "OnAccessExtraScanning yes" >>  /etc/clamav/clamd.conf
-        echo "OnAccessExcludeUname clamav" >>  /etc/clamav/clamd.conf
-      fi
-
+          if [ "$TARGET" != "OnAccessIncludePath" ]; then 
+               echo "OnAccessIncludePath /home" >>  /etc/clamav/clamd.conf
+               echo "OnAccessPrevention yes" >>  /etc/clamav/clamd.conf
+               echo "OnAccessExtraScanning yes" >>  /etc/clamav/clamd.conf
+               echo "OnAccessExcludeUname clamav" >>  /etc/clamav/clamd.conf
+          fi
      fi
+fi
 
+# Habilitar los servicios daemon y clamonacc
 systemctl enable clamav-daemon.service
 systemctl enable clamav-clamonacc.service
-fi
+
+# Habilitar e iniciar el servicio para activar los servicios anteriores
+systemctl enable clamav-setup.service
+systemctl start clamav-setup.service
 
 
