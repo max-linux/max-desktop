@@ -1,3 +1,15 @@
+max-gestion-conf (12.0max16) max; urgency=medium
+
+  * sesion lock after 15 minutes added
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 15 Nov 2024 11:31:18 +0100
+
+max-gestion-conf (12.0max15) max; urgency=medium
+
+  * screensaver lock-delay modified, 15 minutes
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 12 Nov 2024 11:57:54 +0100
+
 max-gestion-conf (12.0max14) max; urgency=medium
 
   * Changelog fixed

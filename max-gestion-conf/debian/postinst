@@ -25,7 +25,5 @@ if [ ! -e /etc/security/faillock.conf ] || ! cmp /usr/share/max-gestion-conf/fai
 fi
 
 
-
-
 #DEBHELPER#
 exit 0

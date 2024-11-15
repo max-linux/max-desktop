@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/sbin/auto-lock.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Auto Lock
+Comment=Automatically lock the screen after 15 minutes of inactivity
+
