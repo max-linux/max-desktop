@@ -1,0 +1,15 @@
+Source: max-apache-directorystudio
+Section: contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, tar, debhelper (>= 10)
+		
+Version: 2.0
+Homepage: https://directory.apache.org/studio/
+Package: apache-directorystudio
+Architecture:amd64 
+Depends: ${shlibs:Depends}, ${misc:Depends}, openjdk-11-jdk | openjdk-17-jdk
+Description: Apache Directory Studio is a complete directory tooling platform intended to be used with any LDAP
+ server however it is particularly designed for use with ApacheDS. It is an Eclipse RCP application, composed of
+ several Eclipse (OSGi) plugins, that can be easily upgraded with additional ones. These plugins can even run within Eclipse itself.
+ 

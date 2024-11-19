@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Encoding=UTF-8
+Name=Apache Directory Studio
+Name[es]=Apache Directory Studio 
+Comment[es]=Apache Directory Studio
+Icon=apachedstudio
+Exec=/usr/share/ApacheDirectoryStudio/ApacheDirectoryStudio 
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;Internet;
+StartupNotify=true
