@@ -1,0 +1,12 @@
+Source: max-examen-av
+Section: contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: debhelper (>= 10)
+		
+Version: 1.0
+Homepage: https://www.educa.madrid.org
+Package: max-examen-av 
+Architecture:amd64 
+Depends: wmctrl, ${shlibs:Depends}, ${misc:Depends}
+Description: MAX-Examen-AV es una app para las aulas virtuales en modo examen.
