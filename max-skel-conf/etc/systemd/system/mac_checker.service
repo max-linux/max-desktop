@@ -1,0 +1,11 @@
+[Unit]
+Description=Comprobador de MAC para envio de estadisticas
+After=network.target
+
+[Service]
+Type=oneshot
+User=root
+ExecStart= sudo /usr/sbin/mac_checker
+
+[Install]
+WantedBy=multi-user.target

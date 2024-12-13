@@ -1,0 +1,35 @@
+#!/bin/bash
+
+mac_actual=$(ip a | grep -e 'link/ether' | awk '{ print $2 }' | head -n 1)
+mac_anterior=$(tail -n 1 /var/lib/max-sendinfo/uuid)
+dir_sendinfo="/var/lib/max-sendinfo/"
+contador_sendinfo=$(ls -la $dir_sendinfo | wc -l)
+intentos_totales=10
+
+if [ -d "$dir_sendinfo" ] && [ "$contador_sendinfo" -eq 4 ]; then
+    echo "El directorio está vacío, por tanto no se autoriza el envío de estadísticas."
+else
+	echo "Se habilita el servicio de comprobación de dirección MAC"
+	systemctl enable mac_checker.service
+
+    echo "El directorio no está vacío. Se procede a comprobar la dirección MAC."
+    echo "MAC actual = ${mac_actual}"
+	echo "MAC almacenada = ${mac_anterior}"
+    
+    if [ "${mac_actual}" != "${mac_anterior}" ]; then
+		echo "La dirección MAC no coincide, ejecutando script"
+		/usr/sbin/max-sendinfo-enable || exit 0
+	else
+		echo "La dirección MAC coincide, no se hace nada"
+		echo "$(date +'%D %R') , Intento realizado" >> $dir_sendinfo/intentos
+		
+		intentos_actuales=$(cat $dir_sendinfo/intentos | wc -l)
+		
+		if [ $intentos_actuales -ge $intentos_totales ]; then
+			echo "Ultimo intento, se deshabilita el servicio" >> $dir_sendinfo/intentos
+			systemctl disable mac_checker.service
+		fi
+	fi
+
+	exit 0
+fi

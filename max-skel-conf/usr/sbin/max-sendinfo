@@ -12,6 +12,7 @@ import base64
 import logging
 import uuid
 from subprocess import Popen, PIPE, STDOUT
+import subprocess
 
 URL = "https://madridlinux.educa.madrid.org/stats/stats.php"
 HEADERS = {'User-Agent': "MAX 11.0"}
@@ -104,27 +105,24 @@ if __name__ == '__main__':
     # arch=[ i386 | amd64 ]
     # version=[ from sources.list max75 for ex ]
 
-    if not os.path.exists(UUID_FILE):
-        UID = str(uuid.uuid4())
-        with open(UUID_FILE, 'w') as f:  # Cambio: uso de with para escribir el archivo de forma segura
-            f.write("%s" % UID)
-
-    UID = readfile(UUID_FILE)
-    if UID == 'n/a':
-        UID = str(uuid.uuid4())
-        with open(UUID_FILE, 'w') as f:  # Cambio: uso de with para escribir el archivo de forma segura
-            f.write("%s" % UID)
+    # Generar siempre un nuevo UUID y comprobar la dirección MAC del equipo
+    UID = str(uuid.uuid4())
+    MAC_ADDRESS = subprocess.check_output("ip a | grep -e 'link/ether' | awk '{ print $2 }' | head -n 1", shell=True, text=True).strip()
+    with open(UUID_FILE, 'w') as f:  # Se sobrescribe el archivo con un nuevo UUID
+        f.write(f"{UID}\n")
+        f.write(f"{MAC_ADDRESS}\n")
 
     DISTRO = exe_cmd('/usr/bin/lsb_release -s -i -r -c')  # Ubuntu_12.04_precise
     ARCH = exe_cmd('/usr/bin/dpkg-architecture -qDEB_HOST_ARCH')  # i386 o amd64
     VERSION = exe_cmd("/usr/bin/awk -F \"/| \" '/\/max/ {print $5;exit}' /etc/apt/sources.list")
 
     data = {
-       'id':      UID,
-       'distro':  DISTRO,
-       'version': VERSION,
-       'arch':    ARCH,
+        'id':      UID,
+        'distro':  DISTRO,
+        'version': VERSION,
+        'arch':    ARCH,
     }
+
     lg.debug(data)
     recv = sendRequest(data)
     lg.info(recv)

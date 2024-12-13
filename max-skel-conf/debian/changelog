@@ -1,3 +1,34 @@
+max-skel-conf (12.0.max35) max; urgency=medium
+
+  * mac_checker date format fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 13 Dec 2024 09:36:22 +0100
+
+max-skel-conf (12.0.max34) max; urgency=medium
+
+  * mac_checker date fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 13 Dec 2024 09:28:45 +0100
+
+max-skel-conf (12.0.max33) max; urgency=medium
+
+  * mac_checker error fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 13 Dec 2024 09:22:45 +0100
+
+max-skel-conf (12.0.max32) max; urgency=medium
+
+  * max-monitor-examen  script added
+  * mac_checker and mac_checker service added
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 28 Nov 2024 10:27:30 +0100
+
+max-skel-conf (12.0.max31) max; urgency=medium
+
+  * reset counter id  max-sendinfo-enabled.
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 22 Nov 2024 10:26:31 +0100
+
 max-skel-conf (12.0.max30) max; urgency=medium
 
   * Python3 adaptation
