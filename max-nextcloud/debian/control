@@ -3,7 +3,7 @@ Section:  contrib
 Priority: optional
 Maintainer: CAU de MAX <cau_max@educa.madrid.org>
 Build-Depends: wget, debhelper (>= 10)
-Standards-Version: 3.13.4
+Standards-Version: 3.15.0
 Homepage: https://nextcloud.com/
 
 Package: nextcloud-desktop
