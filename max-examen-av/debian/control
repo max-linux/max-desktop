@@ -8,5 +8,5 @@ Version: 1.0
 Homepage: https://www.educa.madrid.org
 Package: max-examen-av 
 Architecture:amd64 
-Depends: wmctrl, ${shlibs:Depends}, ${misc:Depends}
+Depends: openssl, ${shlibs:Depends}, ${misc:Depends}
 Description: MAX-Examen-AV es una app para las aulas virtuales en modo examen.

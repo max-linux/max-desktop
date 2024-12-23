@@ -1,0 +1,3 @@
+if [ "$HOME" == "/home/examen" ] ; then
+   . /usr/share/max-examen-av/xsession
+fi
