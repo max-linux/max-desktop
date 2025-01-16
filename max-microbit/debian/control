@@ -1,0 +1,12 @@
+Source: max-microbit-conf
+Section:  contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: debhelper (>=9)
+Standards-Version: 1.0
+Homepage: https://makecode.microbit.org/
+
+Package: max-microbit-conf
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: configuracion de tarjeta microbit en MAX-Linux.

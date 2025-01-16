@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ ! -f /etc/udev/rules.d/50-microbit.rules ]; then 
+
+cat <<EOF >> /etc/udev/rules.d/50-microbit.rules
+SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", MODE="0664", GROUP="plugdev"
+EOF
+
+fi
+cd

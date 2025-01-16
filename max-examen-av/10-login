@@ -1,2 +1,0 @@
-# Uncomment and edit /etc/security/access.conf if you need to set access limits. (Replaces /etc/login.access file)
-account  required       pam_access.so

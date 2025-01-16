@@ -5,15 +5,35 @@ if [ ! -f /usr/share/max-examen-av/desactivar ] ; then
    #chown examen:examen /home/examen/.config/dconf/user
    #chmod 664 /home/examen/.config/dconf/user
 
+   #Restaura dconf/user
+   if [ ! -d /home/examen/.config/dconf ]; then
+   mkdir -p /home/examen/.config/dconf
+   chown -R examen: /home/examen/.config/dconf
+   fi
+   
+   cp /usr/share/max-examen-av/user /home/examen/.config/dconf/
+   
+   
+   
    /usr/bin/marco &
 
    #/usr/bin/galculator &
 
    # Restaura el perfil de Firefox.
+
+
+
+
    rm -rf /home/examen/.mozilla
    tar xzpvf /usr/share/max-examen-av/mozilla.tar.gz -C /home/examen/
    # Para crear el fichero 'mozilla.tar.gz' ejecutar como root desde '/home/examen'
    # el comando: tar czpvf /usr/share/max-examen-av/mozilla.tar.gz .mozilla/
+
+   
+
+
+   rm -rf /home/examen/.config/dconf/user
+   cp /usr/share/max-examen-av/user /home/examen/.config/dconf/
 
 
    zenity --info --text "\
@@ -27,4 +47,5 @@ Alt+Flecha derecha = Página siguiente"
    exec /usr/bin/firefox --kiosk https://examen.educa.madrid.org
 
    # exec /usr/bin/mate-session -a /usr/share/max-examen-av/mate
+   
 fi
