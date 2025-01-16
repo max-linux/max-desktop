@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: CAU de MAX <cau_max@educa.madrid.org>
 Build-Depends: wget, tar, debhelper (>= 10)
 		
-Version: 6.0.20
+Version: 6.5.3
 Homepage: https://www.waterfox.net/
 Package: waterfox 
 Architecture:amd64 
