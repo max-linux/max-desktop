@@ -2,7 +2,7 @@
 
 export DH_VERBOSE = 1
 
-VERSION=3.1.24
+VERSION=3.2.11
 URL=https://github.com/laurent22/joplin/releases/download/v${VERSION}/Joplin-${VERSION}.AppImage
 PACKAGE="Joplin-${VERSION}.AppImage"
 
