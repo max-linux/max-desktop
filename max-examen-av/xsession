@@ -1,10 +1,5 @@
 if [ ! -f /usr/share/max-examen-av/desactivar ] ; then
-   #/usr/bin/mate-terminal &
-
-   #cp -f /usr/share/max-examen-av/user /home/examen/.config/dconf/
-   #chown examen:examen /home/examen/.config/dconf/user
-   #chmod 664 /home/examen/.config/dconf/user
-
+   
    #Restaura dconf/user
    if [ ! -d /home/examen/.config/dconf ]; then
    mkdir -p /home/examen/.config/dconf
@@ -13,37 +8,23 @@ if [ ! -f /usr/share/max-examen-av/desactivar ] ; then
    
    cp /usr/share/max-examen-av/user /home/examen/.config/dconf/
    
-   
-   
+   #Incio del gestor de ventanas marco.
    /usr/bin/marco &
 
-   #/usr/bin/galculator &
-
-   # Restaura el perfil de Firefox.
-
-
-
-
+ 
+    # Restaura el perfil de Firefox.
    rm -rf /home/examen/.mozilla
    tar xzpvf /usr/share/max-examen-av/mozilla.tar.gz -C /home/examen/
    # Para crear el fichero 'mozilla.tar.gz' ejecutar como root desde '/home/examen'
    # el comando: tar czpvf /usr/share/max-examen-av/mozilla.tar.gz .mozilla/
 
-   
-
-
-   rm -rf /home/examen/.config/dconf/user
-   cp /usr/share/max-examen-av/user /home/examen/.config/dconf/
-
-
+   # Caja de texto Incio Zenity
    zenity --info --text "\
 Va a entrar en un entorno gráficamente limitado.\n\
 Recuerde las siguientes combinaciones de teclas:\n\n\
 Ctrl+Q = Cerrar el navegador y salir de la sesión\n\
-Ctrl+F5 = Recargar la página del navegador\n\n\"
+Ctrl+F5 = Recargar la página del navegador"
 
    exec /usr/bin/firefox --kiosk https://examen.educa.madrid.org
 
-   # exec /usr/bin/mate-session -a /usr/share/max-examen-av/mate
-   
 fi
