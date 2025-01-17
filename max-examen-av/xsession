@@ -40,9 +40,7 @@ if [ ! -f /usr/share/max-examen-av/desactivar ] ; then
 Va a entrar en un entorno gráficamente limitado.\n\
 Recuerde las siguientes combinaciones de teclas:\n\n\
 Ctrl+Q = Cerrar el navegador y salir de la sesión\n\
-Ctrl+F5 = Recargar la página del navegador\n\n\
-Alt+Flecha Izquierda = Página anterior\n\
-Alt+Flecha derecha = Página siguiente"
+Ctrl+F5 = Recargar la página del navegador\n\n\"
 
    exec /usr/bin/firefox --kiosk https://examen.educa.madrid.org
 
