@@ -1,0 +1,2 @@
+chown root:root /usr/lib/chromium/chrome-sandbox
+chmod 4555 /usr/lib/chromium/chrome-sandbox
