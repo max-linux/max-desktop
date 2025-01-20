@@ -1,0 +1,28 @@
+Source: max-mate-meta
+Section: metapackages
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Standards-Version: 3.9.6
+Build-Depends: debhelper (>= 9), cdbs
+Homepage: https://launchpad.net/ubuntu-mate/
+
+Package: max-mate-core
+Architecture: all
+Depends: ${max-mate-core:Depends}, ${misc:Depends}
+Recommends: ${max-mate-core:Recommends}
+Description: MAX MATE - core system
+ This package is the minimal MATE desktop as a Ubuntu environment.
+
+Package: max-mate-desktop
+Architecture: all
+Depends: ${max-mate-desktop:Depends}, ${misc:Depends}
+Recommends: ${max-mate-desktop:Recommends}
+Description: MAX MATE - full desktop
+ This package is the MAX MATE desktop environment.
+
+Package: max-mate-live
+Architecture: all
+Depends: ${max-mate-live:Depends}, ${misc:Depends}
+Recommends: ${max-mate-live:Recommends}
+Description: MAX MATE - live system
+ This package is the minimal MATE desktop as a Ubuntu environment.
