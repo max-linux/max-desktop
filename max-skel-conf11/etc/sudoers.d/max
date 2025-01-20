@@ -1,0 +1,2 @@
+# no preserve HOME for red background in caja /root
+Defaults env_keep -= "HOME"

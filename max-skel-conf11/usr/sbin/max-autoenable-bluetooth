@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+#
+#
+set -e
+RUTA=/etc/bluetooth/main.conf
+# Desactiva el encendido automático del bluetooth
+
+if [ -e ${RUTA} ]; then
+	sed -i 's/AutoEnable=true/AutoEnable=false/g' ${RUTA}
+fi
+
+

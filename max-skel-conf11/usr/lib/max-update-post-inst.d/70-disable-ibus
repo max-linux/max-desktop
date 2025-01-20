@@ -1,0 +1,11 @@
+#!/bin/sh
+
+
+# disable ibus
+# /etc/X11/xinit/xinputrc
+if ! grep -q "run_im none" /etc/X11/xinit/xinputrc; then
+  echo " * Disable iBUS..."
+  im-config -n none
+fi
+
+

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# https://github.com/max-linux/max-desktop/issues/950
+if [ -e /etc/speech-dispatcher/speechd.conf ]; then
+  if ! grep -q "DefaultLanguage es" /etc/speech-dispatcher/speechd.conf; then
+    echo "DefaultLanguage es" >> /etc/speech-dispatcher/speechd.conf
+  fi
+fi

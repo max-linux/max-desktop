@@ -1,0 +1,18 @@
+#!/bin/sh
+
+
+# force to not dist upgrades
+if [ -f /etc/update-manager/release-upgrades ]; then
+  if ! grep -q "^Prompt=never" /etc/update-manager/release-upgrades 2>/dev/null; then
+    echo " * Desactivando actualizaciones a nuevas versiones ..."
+    sed -i -s 's/Prompt=.*/Prompt=never/g' /etc/update-manager/release-upgrades
+  fi
+fi
+
+
+# Disable HWE https://wiki.ubuntu.com/HweStackEolNotifications
+if [ ! -e /var/lib/update-notifier/disable-hwe-eol-messages ]; then
+  mkdir -p /var/lib/update-notifier
+  touch /var/lib/update-notifier/disable-hwe-eol-messages
+fi
+

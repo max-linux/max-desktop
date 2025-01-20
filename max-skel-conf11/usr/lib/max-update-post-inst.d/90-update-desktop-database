@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -x /usr/share/gnome-menus/update-gnome-menus-cache ]; then
+  # this breaks Smart PDI install script WTF !!!!
+  #LC_ALL=C /usr/share/gnome-menus/update-gnome-menus-cache /usr/share/applications > /usr/share/applications/desktop.C.cache
+  rm -f /usr/share/applications/desktop.C.cache
+  LC_ALL=es_ES.UTF-8 /usr/share/gnome-menus/update-gnome-menus-cache /usr/share/applications > /usr/share/applications/desktop.es_ES.utf8.cache
+fi
+
+
+# update desktop cache files, rel #865
+update-desktop-database 2>/dev/null || true

@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Enable cron to send info
+#
+
+mkdir -p /var/lib/max-sendinfo/
+touch /var/lib/max-sendinfo/pending
+
+
+MINUTE=$((RANDOM%59))
+cat << EOF > /etc/cron.d/max-sendinfo
+
+# Try to send install info and hardware to MAX servers every hour in a random minute
+$MINUTE *     * * *     root   [ -d /var/lib/max-sendinfo ] && [ -x /usr/sbin/max-sendinfo ] && /usr/sbin/max-sendinfo >> /var/lib/max-sendinfo/sendinfo.log 2>&1
+EOF
+
+
+echo " * max-sendinfo enabled"

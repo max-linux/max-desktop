@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+# disable dnsmasq cache
+if grep -q ^dns /etc/NetworkManager/NetworkManager.conf 2>&1; then
+    echo " * Desactivando cache DNS (dnsmasq)"
+    sed -i 's/dns=/#dns=/g' /etc/NetworkManager/NetworkManager.conf
+fi

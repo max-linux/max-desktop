@@ -1,0 +1,20 @@
+Source: max-skel-conf
+Section: max
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), cdbs, aa-debhelper
+Standards-Version: 3.7.2
+
+Package: max-skel-conf
+Architecture: all
+Depends: dbus, lsb-release, dpkg-dev, python3-simplejson
+Description: Configuración skel para Ubuntu/MAX.
+ Configuración basada en dh_divert para /etc/skel y APT
+ Contiene:
+  * /etc/skel
+
+#Package: homealumno
+#Architecture: all
+#Depends: homealumno-gui
+#Description: Sistema modo kiosko para el usuario alumno (antiguo)
+# Sistema modo kiosko para el usuario alumno (antiguo)

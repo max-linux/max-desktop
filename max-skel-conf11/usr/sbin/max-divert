@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# Add a divert:
+# max-divert add /path/to/file.ext
+#
+# Remove a divert:
+# max-divert remove /path/to/file.ext
+# 
+#
+
+
+
+case "$1" in
+  add)
+        if [ ! -e "$2" ]; then
+            echo "max-divert: ERROR '$2' no exists"
+            exit
+        fi
+        if [ -e "${2}.max" ]; then
+            echo "max-divert: ERROR '${2}.max' exists"
+            exit
+        fi
+        dpkg-divert --package max-dpsyco-custom \
+                    --add --rename \
+                    --divert "${2}.max" "${2}"
+	cp -v "${2}.max" "${2}"
+        ;;
+  remove)
+        if [ ! -e "$2" ]; then
+            echo "max-divert: ERROR '$2' no exists"
+            exit
+        fi
+        if [ ! -e "${2}.max" ]; then
+            echo "max-divert: ERROR '${2}.max' no exists"
+            exit
+        fi
+        rm -fv "$2"
+        dpkg-divert --package max-dpsyco-custom \
+                    --rename --remove "${2}"
+
+        ;;
+  *)
+	echo "max-divert [add|remove] file"
+	;;
+esac

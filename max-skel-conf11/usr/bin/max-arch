@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# return architecture based on file command
+#
+
+if [ -x /usr/bin/dpkg-architecture ]; then
+  dpkg-architecture -qDEB_HOST_ARCH
+  exit
+fi
+
+
+ARCH=i386
+file /sbin/mkfs| grep -q "x86-64" && ARCH=amd64
+echo $ARCH
+
+

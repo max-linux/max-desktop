@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# https://bugs.launchpad.net/ubuntu/+source/xfswitch-plugin/+bug/1320560
+# replacement for missing gdmflexiserver in Ubuntu 14.04
+#
+dm-tool switch-to-greeter

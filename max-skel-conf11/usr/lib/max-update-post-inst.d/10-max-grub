@@ -1,0 +1,55 @@
+#!/bin/sh
+
+MAX_VERSION="MAX-11.5.2"
+TIMEOUT=5
+UPDATE_GRUB=0
+
+if [ -e /etc/default/grub ]; then
+  if ! grep -q "${MAX_VERSION}" /etc/default/grub 2>/dev/null; then
+    echo '' >> /etc/default/grub
+    echo "GRUB_DISTRIBUTOR=\"${MAX_VERSION}\"" >> /etc/default/grub
+    UPDATE_GRUB=1
+  fi
+  
+  # font path
+  if ! grep -q "unicode.pf2" /etc/default/grub 2>/dev/null; then
+   echo '' >> /etc/default/grub
+   echo "GRUB_FONT=\"/boot/grub/unicode.pf2\"" >> /etc/default/grub
+   UPDATE_GRUB=1
+  fi 
+
+  # disable hidden
+  if grep -q "^GRUB_HIDDEN" /etc/default/grub 2>/dev/null; then
+    sed -i -e 's/^GRUB_HIDDEN/#GRUB_HIDDEN/g' /etc/default/grub
+    UPDATE_GRUB=1
+  fi
+
+  # menu style
+  if grep -q "^GRUB_TIMEOUT_STYLE=hidden" /etc/default/grub 2>/dev/null; then
+    sed -i -e 's/^GRUB_TIMEOUT_STYLE=hidden/GRUB_TIMEOUT_STYLE=menu/g' /etc/default/grub
+    UPDATE_GRUB=1
+  fi
+
+  # use 5 seconds timeout
+  if grep -q "^GRUB_TIMEOUT=0" /etc/default/grub 2>/dev/null; then
+    sed -i -e 's/^GRUB_TIMEOUT=0/GRUB_TIMEOUT='${TIMEOUT}'/g' /etc/default/grub
+    UPDATE_GRUB=1
+  fi
+
+  # silent boot
+  if ! grep -q "quiet loglevel=0 splash" /etc/default/grub 2>/dev/null; then
+    sed -i -e 's/quiet splash/quiet loglevel=0 splash/g' /etc/default/grub
+    UPDATE_GRUB=1
+  fi
+
+  if [ "$UPDATE_GRUB" = "1" ]; then
+    if [ -x "`which update-grub 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
+      update-grub
+    fi
+  fi
+
+  [ -e /boot/grub/grub.cfg ] && sed -i '/submenu/s/Previous Linux versions/Versiones anteriores/g' /boot/grub/grub.cfg
+
+fi # end of [ -e /etc/default/grub ]
+
+

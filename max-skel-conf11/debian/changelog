@@ -1,0 +1,1397 @@
+max-skel-conf (12.0.max11) max; urgency=medium
+
+  * fixed for M11.5.2 version
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 20 Jan 2025 12:52:48 +0100
+
+max-skel-conf (12.0.max10) max; urgency=medium
+
+  * 11.5.1 => 11.5.2
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 06 Jul 2023 14:46:51 +0200
+
+max-skel-conf (12.0.max9) max; urgency=medium
+
+  * Tahoma font family added 
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 28 Jun 2023 11:59:06 +0200
+
+max-skel-conf (12.0.max8) max; urgency=medium
+
+  * Build in MAX 12.0
+  * change to python3-simplejson
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 01 Jun 2023 09:59:14 +0200
+
+max-skel-conf (12.0.max7) max; urgency=medium
+
+  * Build in MAX 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 29 May 2023 10:45:10 +0200
+
+max-skel-conf (12.0.max6) max; urgency=medium
+
+  * Build in MAX 12.0
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Sun, 12 Mar 2023 20:47:10 +0100
+
+max-skel-conf (12.0.max5) max; urgency=medium
+
+  * Font path fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Sun, 12 Mar 2023 20:11:29 +0100
+
+max-skel-conf (12.0.max4) max; urgency=medium
+
+  * font  added on grub.cfg
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 10 Mar 2023 15:53:10 +0100
+
+max-skel-conf (12.0.max3) max; urgency=medium
+
+  * acrobat removed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 01 Mar 2023 10:12:53 +0100
+
+max-skel-conf (12.0.max2) max; urgency=medium
+
+  * 10-max-grub changed to 11.5.1
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 15 Feb 2023 14:35:36 +0100
+
+max-skel-conf (12.0.max1) max; urgency=medium
+
+  * Build in MAX 12.0  
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 03 Nov 2022 13:51:10 +0100
+
+max-skel-conf (11.0.max19) max; urgency=medium
+
+  * Extra fonts Atkinson-Hyperlegible-Font added
+   
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 07 Jul 2022 18:05:18 +0200
+
+max-skel-conf (11.0.max18) max; urgency=medium
+
+  * add users to netdev group
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Thu, 07 Apr 2022 10:46:33 +0200
+
+max-skel-conf (11.0.max17) max; urgency=medium
+
+  * bluetooth AutoEnable to false changed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 04 Mar 2022 00:34:04 +0100
+
+max-skel-conf (11.0.max16) max; urgency=medium
+
+  * EFI_DISC variable fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 22 Feb 2022 11:59:19 +0100
+
+max-skel-conf (11.0.max15) max; urgency=medium
+
+  * EFI_DISC variable fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 22 Feb 2022 11:57:28 +0100
+
+max-skel-conf (11.0.max14) max; urgency=medium
+
+  * Exec check-efi-install in package postinst
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 21 Feb 2022 15:24:09 +0100
+
+max-skel-conf (11.0.max13) max; urgency=medium
+
+  * 50_change_efi_number fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 18 Feb 2022 09:02:41 +0100
+
+max-skel-conf (11.0.max12) max; urgency=medium
+
+  * display error efibootmgr on legacy fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Fri, 28 Jan 2022 13:47:07 +0100
+
+max-skel-conf (11.0.max11) max; urgency=medium
+
+  * check-efi-install able to install in another disk label types
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 25 Jan 2022 11:58:05 +0100
+
+max-skel-conf (11.0.max10) max; urgency=medium
+
+  * change line in 50_change_efi_number
+   
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Mon, 24 Jan 2022 08:41:24 +0100
+
+max-skel-conf (11.0.max9) max; urgency=medium
+
+  * change MAX11 position and check-efi-install.back file removed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 19 Jan 2022 10:28:26 +0100
+
+max-skel-conf (11.0.max8) max; urgency=medium
+
+  * efiboot position fixed
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Tue, 18 Jan 2022 07:50:21 +0100
+
+max-skel-conf (11.0.max7) max; urgency=medium
+
+  * Update max-sendinfo to use new URL
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 08 Sep 2021 12:35:05 +0200
+
+max-skel-conf (11.0.max6) max; urgency=medium
+
+  * usr/sbin/max-sendinfo: Update HTTP headers to MAX 11
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Wed, 30 Jun 2021 22:07:19 +0200
+
+max-skel-conf (11.0.max5) max; urgency=medium
+
+  * Update for MuseScore3, create default config and dirs, rel #1035
+
+ -- CAU de MAX <cau_max@educa.madrid.org>  Sat, 05 Jun 2021 10:23:11 +0200
+
+max-skel-conf (11.0.max4) max; urgency=medium
+
+  * grub: set silent boot, use 5 seconds as menu timeout
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 28 Feb 2021 10:39:52 +0100
+
+max-skel-conf (11.0.max3) max; urgency=medium
+
+  * Change default lightdm theme Marwaita Light+Papirus-Light
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 27 Feb 2021 09:55:11 +0100
+
+max-skel-conf (11.0.max2) max; urgency=medium
+
+  * Change MAX version 10 => 11
+  * Enable gimp theme change again
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 20 Nov 2020 12:57:45 +0100
+
+max-skel-conf (11.0.max1) max; urgency=medium
+
+  * Build in MAX 11.0
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 19 Oct 2020 23:24:35 +0200
+
+max-skel-conf (10.0.max22) max; urgency=medium
+
+  * Remove /etc/skel/config dir
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 12 Nov 2018 12:41:23 +0100
+
+max-skel-conf (10.0.max21) max; urgency=medium
+
+  * Set caja background red for root, rel #962
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 10 Nov 2018 12:32:32 +0100
+
+max-skel-conf (10.0.max20) max; urgency=medium
+
+  * Fix systemd indicator detect to start on login
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 07 Nov 2018 09:32:13 +0100
+
+max-skel-conf (10.0.max19) max; urgency=medium
+
+  * Add X11 xsession script to start all user indicators during login
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 07 Nov 2018 08:53:06 +0100
+
+max-skel-conf (10.0.max18) max; urgency=medium
+
+  * check-efi-install: Update grub.cfg generation
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 06 Nov 2018 14:48:44 +0100
+
+max-skel-conf (10.0.max17) max; urgency=medium
+
+  * 10-max-grub: Only translate menu if grub.cfg exists
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 02 Nov 2018 08:44:29 +0100
+
+max-skel-conf (10.0.max16) max; urgency=medium
+
+  * Disable check-efi-install
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 30 Oct 2018 09:09:04 +0100
+
+max-skel-conf (10.0.max15) max; urgency=medium
+
+  * Change GRUB version MAX-10.0-peta => MAX-10.0, close #957
+  * Disable Gimp theme and icon.
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Tue, 30 Oct 2018 08:06:26 +0100
+
+max-skel-conf (10.0.max14) max; urgency=medium
+
+  * gimp: Change icon theme to Legacy, rel #953
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 29 Oct 2018 09:27:50 +0100
+
+max-skel-conf (10.0.max13) max; urgency=medium
+
+  * 10-max-grub: Replace hidden TIMEOUT_STYLE with menu
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 29 Oct 2018 08:10:54 +0100
+
+max-skel-conf (10.0.max12) max; urgency=medium
+
+  * Change gimp theme to System (light), close #951
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 27 Oct 2018 21:40:21 +0200
+
+max-skel-conf (10.0.max11) max; urgency=medium
+
+  * Fix typo in 32-speech-dispatcher-spanish
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 27 Oct 2018 12:48:14 +0200
+
+max-skel-conf (10.0.max10) max; urgency=medium
+
+  * Set default lang to es in speech-dispatcher, close #950
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 27 Oct 2018 11:38:20 +0200
+
+max-skel-conf (10.0.max9) max; urgency=medium
+
+  * Add 25-enable-sudo-network-manager max postint
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 15 Oct 2018 11:07:25 +0200
+
+max-skel-conf (10.0.max8) max; urgency=medium
+
+  * check-efi-install: Update for MAX 10
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 10 Oct 2018 12:25:28 +0200
+
+max-skel-conf (10.0.max7) max; urgency=medium
+
+  * Set slick-greeter as default greeter-session
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 09 Jul 2018 07:33:13 +0200
+
+max-skel-conf (10.0.max6) max; urgency=medium
+
+  * Split max-update-post-inst into usr/lib/max-update-post-inst.d/
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 08 Jul 2018 20:22:20 +0200
+
+max-skel-conf (10.0.max5) max; urgency=medium
+
+  * lightdm: remove unity-greeter, update samba conf, update issue/motd
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jul 2018 09:49:08 +0200
+
+max-skel-conf (10.0.max4) max; urgency=medium
+
+  * Set version to 10.0-peta and remove descartes
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jul 2018 09:40:12 +0200
+
+max-skel-conf (10.0.max3) max; urgency=medium
+
+  * max-set-background, more silent and update-desktop-database in post-
+    inst
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 05 Jul 2018 09:11:26 +0200
+
+max-skel-conf (10.0.max2) max; urgency=medium
+
+  * Remove unity-freeter from depends
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 29 Jun 2018 12:06:57 +0200
+
+max-skel-conf (10.0.max1) max; urgency=medium
+
+  * Build in MAX 10.0
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 29 Jun 2018 08:15:45 +0200
+
+max-skel-conf (9.0.max24) max; urgency=medium
+
+  * Update desktop cache files in postinst, rel #865
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Thu, 21 Jun 2018 09:34:40 +0200
+
+max-skel-conf (9.0.max23) max; urgency=medium
+
+  * Change lightdm theme to Adwaita
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 12 May 2018 18:25:20 +0200
+
+max-skel-conf (9.0.max22) max; urgency=medium
+
+  * Change version 9.0 => 9.5
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 07 May 2018 09:52:03 +0200
+
+max-skel-conf (9.0.max21) max; urgency=medium
+
+  * Configure CUPS to retry-job instead of stop-printer, close #883
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 30 Apr 2018 07:45:13 +0200
+
+max-skel-conf (9.0.max20) max; urgency=medium
+
+  * mscore: Don't use pasuspender, close #906
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 19 Mar 2018 17:52:15 +0100
+
+max-skel-conf (9.0.max19) max; urgency=medium
+
+  * Add escritorio_comun, close #789
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 24 Jan 2018 08:32:16 +0100
+
+max-skel-conf (9.0.max18) max; urgency=medium
+
+  * Update pysiogame profile => eduactiv8
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 04 Dec 2017 08:05:09 +0100
+
+max-skel-conf (9.0.max17) max; urgency=medium
+
+  * Disable /etc/apt/apt.conf.d/92max-update-post-inst test is os-prober
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 06 Feb 2017 19:18:23 +0100
+
+max-skel-conf (9.0.max16) max; urgency=medium
+
+  * Create /etc/libuser.conf if no exists, close #852
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 05 Feb 2017 15:13:00 +0100
+
+max-skel-conf (9.0.max15) max; urgency=medium
+
+  * Fix os-probes/mounted/35detect_max
+  * Fix chroot detect in nautilus_background_for_root.sh
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 05 Feb 2017 14:18:18 +0100
+
+max-skel-conf (9.0.max14) max; urgency=medium
+
+  * os-probes/mounted/35detect_max: no detect live USB as linux
+    installed device
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 05 Feb 2017 12:38:12 +0100
+
+max-skel-conf (9.0.max13) max; urgency=medium
+
+  * Fix USB install, don't run nautilus_background_for_root in chroot
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 01 Feb 2017 23:02:52 +0100
+
+max-skel-conf (9.0.max12) max; urgency=medium
+
+  * Fix mscore launcher, close #848
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 28 Jan 2017 15:20:05 +0100
+
+max-skel-conf (9.0.max11) max; urgency=medium
+
+  * Configure sudo to empty $HOME var
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 14 Jan 2017 17:44:09 +0100
+
+max-skel-conf (9.0.max10) max; urgency=medium
+
+  * Create nautilus_background_for_root /root/config/.dconf
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 14 Jan 2017 17:43:45 +0100
+
+max-skel-conf (9.0.max9) max; urgency=medium
+
+  * Change khagnman theme and set spanish as default, fix
+    nautilus_red_background
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 08 Jan 2017 14:51:32 +0100
+
+max-skel-conf (9.0.max8) max; urgency=medium
+
+  * Global disable iBUS (im-config -n none)
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 06 Jan 2017 18:11:34 +0100
+
+max-skel-conf (9.0.max7) max; urgency=medium
+
+  * check-efi-install: FIX EFI path => MAX9
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 06 Jan 2017 00:52:46 +0100
+
+max-skel-conf (9.0.max6) max; urgency=medium
+
+  * Remove Equipo Red launchers from desktop
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Wed, 23 Nov 2016 09:07:41 +0100
+
+max-skel-conf (9.0.max5) max; urgency=medium
+
+  * Fix max-sendinfo uuid generation
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Mon, 21 Nov 2016 14:21:00 +0100
+
+max-skel-conf (9.0.max4) max; urgency=medium
+
+  * max-computer: Use caja if MATE desktop
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 19 Nov 2016 11:56:49 +0100
+
+max-skel-conf (9.0.max3) max; urgency=medium
+
+  * Change default session to mate
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Fri, 11 Nov 2016 09:47:57 +0100
+
+max-skel-conf (9.0.max2) max; urgency=medium
+
+  * Remove divert update-notifier/package-data-downloader, apt should
+    use apt.conf proxy
+  * Use invoke-rc.d to restart ssh
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sun, 16 Oct 2016 20:32:32 +0200
+
+max-skel-conf (9.0.max1) max; urgency=medium
+
+  * Build in MAX 9.0
+  * Multiple changes to update MAx version to 9.0
+
+ -- Mario Izquierdo <hola@marioizquierdo.es>  Sat, 15 Oct 2016 18:17:14 +0200
+
+max-skel-conf (8.0.max19) max; urgency=medium
+
+  * Change max-sendinfo version to 8.2
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 May 2016 08:08:46 +0200
+
+max-skel-conf (8.0.max18) max; urgency=medium
+
+  * Error handling in max-set-background
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 23 Jul 2015 08:29:51 +0200
+
+max-skel-conf (8.0.max17) max; urgency=medium
+
+  * Use MAX8 in UEFI for this version (don't breaks MAX < 8.0)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 12 Jul 2015 15:50:54 +0200
+
+max-skel-conf (8.0.max16) max; urgency=medium
+
+  * Disable kwallet, close #662
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 01 Jul 2015 19:11:19 +0200
+
+max-skel-conf (8.0.max15) max; urgency=medium
+
+  * Update issue
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 01 Jul 2015 15:56:31 +0200
+
+max-skel-conf (8.0.max14) max; urgency=medium
+
+  * Preconfigure pysiogame with homealumno profile, close #708
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 27 Jun 2015 18:54:43 +0200
+
+max-skel-conf (8.0.max13) max; urgency=medium
+
+  * Add gdmflexiserver to fix switch users, close #687
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 25 Jun 2015 20:58:43 +0200
+
+max-skel-conf (8.0.max12) max; urgency=medium
+
+  * Rebuild
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 18 Jun 2015 11:02:07 +0200
+
+max-skel-conf (8.0.max11) max; urgency=medium
+
+  * Remove nautilus 'Crear lanzador' script
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 18 Jun 2015 10:52:23 +0200
+
+max-skel-conf (8.0.max10) max; urgency=medium
+
+  * Fix GRUB EFI install, close #677
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Jun 2015 14:21:05 +0200
+
+max-skel-conf (8.0.max9) max; urgency=low
+
+  * Set path of grub EFI, close #677
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 03 Jun 2015 11:04:10 +0200
+
+max-skel-conf (8.0.max8) max; urgency=low
+
+  * Add Desktop Computer icon to GNOME, close #659
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 25 May 2015 20:03:48 +0200
+
+max-skel-conf (8.0.max7) max; urgency=low
+
+  * Check for /etc/default/apport before editing
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 17 May 2015 16:26:46 +0200
+
+max-skel-conf (8.0.max6) max; urgency=low
+
+  * Add depends python-simplejson to push max-sendinfo
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 03 May 2015 15:55:24 +0200
+
+max-skel-conf (8.0.max5) max; urgency=low
+
+  * Update lightdm to use /usr/share/lightdm/lightdm.conf.d/
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 14 Mar 2015 15:23:20 +0100
+
+max-skel-conf (8.0.max4) max; urgency=low
+
+  * Change theme Max70 to MaxTheme
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 09 Mar 2015 18:01:27 +0100
+
+max-skel-conf (8.0.max3) max; urgency=low
+
+  * Don't fail if alumno no exists set GRUB MAX 8.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 07 Mar 2015 13:16:09 +0100
+
+max-skel-conf (8.0.max2) max; urgency=low
+
+  * Add /etc/default/rcS to divert
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 17 Feb 2015 18:06:14 +0100
+
+max-skel-conf (8.0.max1) max; urgency=low
+
+  * Build in MAX 8.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 26 Jan 2015 22:40:15 +0100
+
+max-skel-conf (7.0.max74) max; urgency=low
+
+  * Add alumno to dialout, close #636
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 19 Dec 2014 15:35:07 +0100
+
+max-skel-conf (7.0.max73) max; urgency=low
+
+  * Fix JFractionLab launcher, close #629
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Dec 2014 19:04:21 +0100
+
+max-skel-conf (7.0.max72) max; urgency=low
+
+  * Fix jsom launcher, close #628
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Dec 2014 18:55:00 +0100
+
+max-skel-conf (7.0.max71) max; urgency=low
+
+  * Disable HWE
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Sep 2014 15:30:38 +0200
+
+max-skel-conf (7.0.max70) max; urgency=low
+
+  * Fix typo 'l' => 'line' to crash flash plugin download with proxy
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 12 May 2014 15:18:38 +0200
+
+max-skel-conf (7.0.max69) max; urgency=low
+
+  * Modift ligthdm.conf at first time
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 11 May 2014 22:42:28 +0200
+
+max-skel-conf (7.0.max68) max; urgency=low
+
+  * Ensure lightdm.conf is configured
+  * Check for resolution before setting to no image
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 11 May 2014 22:30:14 +0200
+
+max-skel-conf (7.0.max67) max; urgency=low
+
+  * Only check double login if /etc/max-check-double-login exists
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 11 May 2014 11:37:12 +0200
+
+max-skel-conf (7.0.max66) max; urgency=low
+
+  * Disable double-login check for now
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 11 May 2014 11:34:38 +0200
+
+max-skel-conf (7.0.max65) max; urgency=low
+
+  * Select better size background, close #570
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 10 May 2014 18:43:40 +0200
+
+max-skel-conf (7.0.max64) max; urgency=low
+
+  * Remove lightdm.conf from diverts
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 10 May 2014 18:26:23 +0200
+
+max-skel-conf (7.0.max63) max; urgency=low
+
+  * Fix typo in postinst
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 10 May 2014 13:17:12 +0200
+
+max-skel-conf (7.0.max62) max; urgency=low
+
+  * Add 'Crea Lanzador' nautilus script in skel, close #571
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 10 May 2014 12:41:29 +0200
+
+max-skel-conf (7.0.max61) max; urgency=low
+
+  * Remove lightdm.conf from diverts and use lightdm-set-defaults to edit it
+  * Add etc/X11/Xsession.d/01-max-double-login and usr/bin/max-check-double-login, close #464
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 10 May 2014 10:24:22 +0200
+
+max-skel-conf (7.0.max60) max; urgency=low
+
+  * Add usr/lib/update-notifier/package-data-downloader to force download flash plugin with proxy
+  * Add vacio.png for gnome-panel background
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 09 May 2014 22:32:25 +0200
+
+max-skel-conf (7.0.max59) max; urgency=low
+
+  * Fix max-sendinfo uuid
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 03 Apr 2014 11:37:24 +0200
+
+max-skel-conf (7.0.max58) max; urgency=low
+
+  * Generate UUID in max-sendinfo dir
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 26 Feb 2014 18:20:10 +0100
+
+max-skel-conf (7.0.max57) max; urgency=low
+
+  * Don't send data if no pending file
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 26 Feb 2014 18:15:57 +0100
+
+max-skel-conf (7.0.max56) max; urgency=low
+
+  * Use bash intead of sh in max-sendinfo-enable
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 26 Feb 2014 15:43:20 +0100
+
+max-skel-conf (7.0.max55) max; urgency=low
+
+  * Fix cron path in max-sendinfo-enable
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 26 Feb 2014 15:26:21 +0100
+
+max-skel-conf (7.0.max54) max; urgency=low
+
+  * Add max-sendinfo to put stats into MAX servers (disabled by default), close #525
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 26 Feb 2014 15:20:40 +0100
+
+max-skel-conf (7.0.max53) max; urgency=low
+
+  * Fix max-update-acroread
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 03 Feb 2014 12:43:03 +0100
+
+max-skel-conf (7.0.max52) max; urgency=low
+
+  * Change repo instead of creating new one
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 28 Jan 2014 10:59:24 +0100
+
+max-skel-conf (7.0.max51) max; urgency=low
+
+  * Add force to max-update-acroread
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 20 Jan 2014 10:54:50 +0100
+
+max-skel-conf (7.0.max50) max; urgency=low
+
+  * usr/sbin/max-update-post-inst:
+    - Clean old code
+    - Edit sources.list to change repo /max70 => /max75
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Jan 2014 17:51:02 +0100
+
+max-skel-conf (7.0.max49) max; urgency=low
+
+  * Add usr/share/polkit-1/actions/org.freedesktop.consolekit.policy
+    to allow reboot/poweroff when multiple users logged, close #435
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 05 Jan 2014 15:04:16 +0100
+
+max-skel-conf (7.0.max48) max; urgency=low
+
+  * usr/sbin/check-efi-install:
+    - Remove linux16 from grubx64.efi
+  * usr/lib/os-probes/mounted/35detect_max (rroobbeerr):
+    - Add double quotes in grub.cfg paths (can countain spaces)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 27 Dec 2013 16:07:56 +0100
+
+max-skel-conf (7.0.max47) max; urgency=low
+
+  * Set apturl as default x-scheme-handler/apt (Chromium opens apt:// links OK), close #459
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Dec 2013 17:26:18 +0100
+
+max-skel-conf (7.0.max46) max; urgency=low
+
+  * Start pysiogame in spanish
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Dec 2013 16:56:41 +0100
+
+max-skel-conf (7.0.max45) max; urgency=low
+
+  * Fix max-update-acroread and add canberra-gtk
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Dec 2013 14:07:06 +0100
+
+max-skel-conf (7.0.max44) max; urgency=low
+
+  * Add max-update-acroread to update acroread packages in 64 bits
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Dec 2013 13:57:51 +0100
+
+max-skel-conf (7.0.max43) max; urgency=low
+
+  * Change GRUB name to MaX-7.5
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 20 Dec 2013 11:37:53 +0100
+
+max-skel-conf (7.0.max42) max; urgency=low
+
+  * More changes to usr/sbin/check-efi-install
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 15 Dec 2013 22:16:56 +0100
+
+max-skel-conf (7.0.max41) max; urgency=low
+
+  * Small changes in usr/sbin/check-efi-install
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 15 Dec 2013 17:55:05 +0100
+
+max-skel-conf (7.0.max40) max; urgency=low
+
+  * Umount of /boot/efi can fail, ignore it
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 15 Dec 2013 17:16:52 +0100
+
+max-skel-conf (7.0.max39) max; urgency=low
+
+  * Add check-efi-install command and disable os-prober in Windows/UEFI
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 15 Dec 2013 00:20:06 +0100
+
+max-skel-conf (7.0.max38) max; urgency=low
+
+  * Force always gnome-session in fallback mode, close #454 and #474
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 13 Dec 2013 15:36:18 +0100
+
+max-skel-conf (7.0.max37) max; urgency=low
+
+  * Link /etc/firefox/pref/* inside /usr/lib/firefox/defaults/pref/
+    - Add apturl to firefox (close: #504)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Jul 2013 12:31:03 +0200
+
+max-skel-conf (7.0.max36) max; urgency=low
+
+  * Start khangman in spanish (close #470)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 06 May 2013 18:22:04 +0200
+
+max-skel-conf (7.0.max35) max; urgency=low
+
+  * usr/sbin/max-update-post-inst:
+    - Add pam_lastlog.so to /etc/pam.d/lightdm (support TCOS)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 17 Apr 2013 16:14:56 +0200
+
+max-skel-conf (7.0.max34) max; urgency=low
+
+  * Add Xfce4 desktop computer and network icons, close #479
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 05 Mar 2013 14:07:48 +0100
+
+max-skel-conf (7.0.max33) max; urgency=low
+
+  * Configure apparmor.d to allow /etc/dconf
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 08 Oct 2012 20:40:30 +0200
+
+max-skel-conf (7.0.max32) max; urgency=low
+
+  * Configure Xscreensaver #446
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 08 Oct 2012 15:39:09 +0200
+
+max-skel-conf (7.0.max31) max; urgency=low
+
+  * Hide welcome windows, close #457, #455, #454, #453
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 08 Oct 2012 15:01:45 +0200
+
+max-skel-conf (7.0.max30) max; urgency=low
+
+  * Add usr/share/max/nautilus_background_for_root.sh
+    Close #412
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 28 Sep 2012 16:27:56 +0200
+
+max-skel-conf (7.0.max29) max; urgency=low
+
+  * Disable apport
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 27 Sep 2012 13:35:27 +0200
+
+max-skel-conf (7.0.max28) max; urgency=low
+
+  * Test if GRUB is installed
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 17 Sep 2012 14:57:44 +0200
+
+max-skel-conf (7.0.max27) max; urgency=low
+
+  * Disable firefox hacks
+  * Fix network-manager dns hack
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 13 Sep 2012 16:32:38 +0200
+
+max-skel-conf (7.0.max26) max; urgency=low
+
+  * Remove obsolete /etc/skel/.dmrc
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 13 Sep 2012 14:34:09 +0200
+
+max-skel-conf (7.0.max25) max; urgency=low
+
+  * Disable dnsmasq cache in network-manager
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 12 Sep 2012 13:12:48 +0200
+
+max-skel-conf (7.0.max24) max; urgency=low
+
+  * Translate GRUB submenu
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 12 Sep 2012 12:33:47 +0200
+
+max-skel-conf (7.0.max23) max; urgency=low
+
+  * Use unity-greeter
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 10 Sep 2012 21:28:32 +0200
+
+max-skel-conf (7.0.max22) max; urgency=low
+
+  * Depends on lightdm-gtk-greeter
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 01 Jun 2012 11:26:21 +0200
+
+max-skel-conf (7.0.max21) max; urgency=low
+
+  * Clean FF without version in dir
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 09 Apr 2012 15:38:35 +0200
+
+max-skel-conf (7.0.max20) max; urgency=low
+
+  * usr/sbin/max-update-post-inst:
+    - Update Firefox profile (max-firefox-conf)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 27 Feb 2012 15:35:21 +0100
+
+max-skel-conf (7.0.max19) max; urgency=low
+
+  * Use another icon in lightdm
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 28 Jan 2012 15:13:53 +0100
+
+max-skel-conf (7.0.max18) max; urgency=low
+
+  * Divert etc/lightdm/unity-greeter.conf
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 28 Jan 2012 14:56:52 +0100
+
+max-skel-conf (7.0.max17) max; urgency=low
+
+  * Build with new aa-debhelper
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Jan 2012 15:44:10 +0100
+
+max-skel-conf (7.0.max16) max; urgency=low
+
+  * Readd divert and remove conflict with ubuntu-artwork
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Jan 2012 15:01:43 +0100
+
+max-skel-conf (7.0.max15) max; urgency=low
+
+  * Conflict with ubuntu-artwork
+  * Update MAX version in smb.conf
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Jan 2012 14:25:13 +0100
+
+max-skel-conf (7.0.max14) max; urgency=low
+
+  * Divert usr/share/icons/hicolor/48x48/apps/distributor-logo.png
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 26 Jan 2012 13:56:21 +0100
+
+max-skel-conf (7.0.max13) max; urgency=low
+
+  * usr/sbin/max-update-post-inst
+    - Disable acpi=force
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 24 Jan 2012 15:02:48 +0100
+
+max-skel-conf (7.0.max12) max; urgency=low
+
+  * Rebuild with new aa-debhelper
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 23 Jan 2012 16:44:38 +0100
+
+max-skel-conf (7.0.max11) max; urgency=low
+
+  * Add divert usr/bin/mscore
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 19 Jan 2012 16:26:56 +0100
+
+max-skel-conf (7.0.max10) max; urgency=low
+
+  * usr/bin/max-arch:
+    - Use file /sbin/mkfs to get arch when dpkg-dev is not installed
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 12 Jan 2012 16:21:49 +0100
+
+max-skel-conf (7.0.max9) max; urgency=low
+
+  * Build with new aa-debhelper
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 12 Jan 2012 16:14:38 +0100
+
+max-skel-conf (7.0.max8) max; urgency=low
+
+  * Fix /etc/default => /etc/default/rcS
+  * Convert homealumno package to dummy upgrade to homealumno-gui
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 16:38:08 +0100
+
+max-skel-conf (7.0.max7) max; urgency=low
+
+  * No divert /etc/default/rcS
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 16:18:51 +0100
+
+max-skel-conf (7.0.max6) max; urgency=low
+
+  * Build with new aa-debhelper
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 16:13:06 +0100
+
+max-skel-conf (7.0.max5) max; urgency=low
+
+  * Clean postinst/postrm
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 15:40:37 +0100
+
+max-skel-conf (7.0.max4) max; urgency=low
+
+  * Merge with max-dpsyco-custom
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 15:22:06 +0100
+
+max-skel-conf (7.0.max3) max; urgency=low
+
+  * Fix max-skel-conf.postinst
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 14:45:20 +0100
+
+max-skel-conf (7.0.max2) max; urgency=low
+
+  * Fix debian/max-skel-conf.divert file
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 14:40:46 +0100
+
+max-skel-conf (7.0.max1) max; urgency=low
+
+  * Build in MAX 7.0
+  * Convert dpsyco to dh_divert
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 11 Jan 2012 14:34:41 +0100
+
+max-skel-conf (6.0.max9) max; urgency=low
+
+  * Change issue and motd to 6.5
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 26 Jul 2011 11:18:17 +0200
+
+max-skel-conf (6.0.max8) max; urgency=low
+
+  * Fix creation of XDG user dirs
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 21 Nov 2010 15:13:33 +0100
+
+max-skel-conf (6.0.max7) max; urgency=low
+
+  * Remove manual.desktop
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 16 Nov 2010 16:05:31 +0100
+
+max-skel-conf (6.0.max6) max; urgency=low
+
+  * Add XDG default config in /etc/skel
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 14 Nov 2010 17:49:22 +0100
+
+max-skel-conf (6.0.max5) max; urgency=low
+
+  * Fix qdvdauthor initial config
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 13 Nov 2010 17:49:39 +0100
+
+max-skel-conf (6.0.max4) max; urgency=low
+
+  * Add +x in /etc/skel/Escritorio/manual.desktop
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 07 Oct 2010 16:08:42 +0200
+
+max-skel-conf (6.0.max3) max; urgency=low
+
+  * Remove /etc/update-manager/release-upgrades, work donde in max-update-post-inst
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sun, 28 Mar 2010 20:11:11 +0200
+
+max-skel-conf (6.0.max2) max; urgency=low
+
+  * Update issues to MaX6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 10 Mar 2010 17:25:02 +0100
+
+max-skel-conf (6.0.max1) max; urgency=low
+
+  * Change version to 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 09 Mar 2010 11:51:49 +0100
+
+max-skel-conf (5.0.max14) max; urgency=low
+
+  * Delete .kde from skel
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 06 Mar 2010 20:25:32 +0100
+
+max-skel-conf (5.0.max13) max; urgency=low
+
+  * Build in MaX 6.0
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 13 Feb 2010 16:49:44 +0100
+
+max-skel-conf (5.0.max12) max; urgency=low
+
+  * Configure Cellwriter with normal colors
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 21 Nov 2009 19:39:19 +0100
+
+max-skel-conf (5.0.max11) max; urgency=low
+
+  * Configure Audacity in Spanish and MP3 and FFmpeg paths
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 21 Nov 2009 19:28:53 +0100
+
+max-skel-conf (5.0.max10) max; urgency=low
+
+  * Use hw:0 in mscore (Close: #239)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 14 Nov 2009 13:59:42 +0100
+
+max-skel-conf (5.0.max9) max; urgency=low
+
+  * Change Guia version 4 => 5
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 09 Nov 2009 19:31:50 +0100
+
+max-skel-conf (5.0.max8) max; urgency=low
+
+  * Remove creditos_max40.desktop
+  * Force Prompt=never in /etc/update-manager/release-upgrades
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 07 Nov 2009 13:57:53 +0100
+
+max-skel-conf (5.0.max7) max; urgency=low
+
+  * Use new smb.conf (thanks to Pedro Peña) Close: #105
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Tue, 13 Oct 2009 18:55:22 +0200
+
+max-skel-conf (5.0.max6) max; urgency=low
+
+  * Open WebHTTrack in Spanish (Close: #214)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Thu, 24 Sep 2009 19:03:11 +0200
+
+max-skel-conf (5.0.max5) max; urgency=low
+
+  * Clean epmty dirs
+  * Remove ooo-base from /etc/skel
+  * homealumno:
+    - Create /etc/homealumno/preclean.d/ and /etc/homealumno/postclean.d/ to put scripts
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 16 Sep 2009 17:01:02 +0200
+
+max-skel-conf (5.0.max4) max; urgency=low
+
+  * Disable maxmenus in homealumno
+  * Set metacity as compositing manager
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Sat, 12 Sep 2009 20:25:42 +0200
+
+max-skel-conf (5.0.max3) max; urgency=low
+
+  * Update qdvdauthor skel config
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Wed, 15 Jul 2009 22:35:21 +0200
+
+max-skel-conf (5.0.max2) max; urgency=low
+
+  * Don't delete kompozer dir in homealumno (close #179)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 03 Jul 2009 13:18:00 +0200
+
+max-skel-conf (5.0.max1) max; urgency=low
+
+  * Build in MaX 5.0
+  * Add GROUP support in homealumno (Thanks Carlos Salamanca)
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Mon, 11 May 2009 13:33:13 +0200
+
+max-skel-conf (4.0.max17) max; urgency=low
+
+  * Update manual.desktop with new filename
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 13 Jun 2008 12:37:08 +0200
+
+max-skel-conf (4.0.max16) max; urgency=low
+
+  * Fix typ in postinst (use abs path of smb.conf)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 11 Jun 2008 19:12:39 +0200
+
+max-skel-conf (4.0.max15) max; urgency=low
+
+  * homealumno:
+    - Disable compiz using gconftool-2 (needs test)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 09 Jun 2008 15:13:13 +0200
+
+max-skel-conf (4.0.max14) max; urgency=low
+
+  * /etc/skel:
+    - Add .qt/qcadrc (default spanish)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 05 Jun 2008 22:59:09 +0200
+
+max-skel-conf (4.0.max13) max; urgency=low
+
+  * postinst:
+    - Configure smb.conf only if exists
+  * /etc/skel:
+    - Configure qdvdauthor in spanish (avoid to show error startup message) (closes: #82)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 28 May 2008 19:42:41 +0200
+
+max-skel-conf (4.0.max12) max; urgency=low
+
+  * Change KDE icon theme to maxtoon and set 4 desktops instead of 3
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 18 May 2008 13:01:31 +0200
+
+max-skel-conf (4.0.max11) max; urgency=low
+
+  * Uppssss, set default-display-manager to /usr/sbin/gdm instead of /usr/bin/gdm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 19:53:07 +0200
+
+max-skel-conf (4.0.max10) max; urgency=low
+
+  * Dpsyco /etc/X11/default-display-manager:
+    - Force GDM as default display manager
+  * max-skel-conf.postinst:
+    - Preseed shared/default-x-display-manager to gdm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 May 2008 13:17:44 +0200
+
+max-skel-conf (4.0.max9) max; urgency=low
+
+  * etc/gftp/gftprc:
+    - Don't show hidden files by default
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 16:35:24 +0200
+
+max-skel-conf (4.0.max8) max; urgency=low
+
+  * Configure SAMBA without dpsyco (max-skel-conf.postinst)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 13 May 2008 16:05:16 +0200
+
+max-skel-conf (4.0.max7) max; urgency=low
+
+  * Use chown instead of chmod
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 13:35:48 +0200
+
+max-skel-conf (4.0.max6) max; urgency=low
+
+  * Fix postinst of creditos_max40.dekstop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 13:32:21 +0200
+
+max-skel-conf (4.0.max5) max; urgency=low
+
+  * Add creditos_max40 launcher in Desktop/Escritorio
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 23 Apr 2008 13:17:23 +0200
+
+max-skel-conf (4.0.max4) max; urgency=low
+
+  * Add /etc/issue[.net]
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 16 Apr 2008 18:01:46 +0200
+
+max-skel-conf (4.0.max3) max; urgency=low
+
+  * /etc/profile /etc/skel/.bashrc /etc/bash.bashrc
+    - Resync with Ubuntu files 
+  * Add /etc/motd.tail
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 23:05:49 +0200
+
+max-skel-conf (4.0.max2) max; urgency=low
+
+  * postinst, postrm:
+    - Search home with find instead of /home/*
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Apr 2008 22:39:01 +0200
+
+max-skel-conf (4.0.max1) max; urgency=low
+
+  * Rebuild in MaX 4.0
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 24 Feb 2008 12:27:41 +0100
+
+max-skel-conf (3.1.20080102.max11) max; urgency=low
+
+  * Fix typo in rsync homealumno-apply
+  * Fix type in config PRECLEAN not defined hook
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 13:34:10 +0100
+
+max-skel-conf (3.1.20080102.max10) max; urgency=low
+
+  * Change POSTCLEAN to source file instead of string
+  * Add PRECLEAN hook
+  * Add verbose to rsync command
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 13:21:33 +0100
+
+max-skel-conf (3.1.20080102.max9) max; urgency=low
+
+  * Fix POSTCLEAN typo (need spaces)
+  * Fix homealumno-apply echos, rsync is now exec
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 13:11:53 +0100
+
+max-skel-conf (3.1.20080102.max8) max; urgency=low
+
+  * Fix error in homealumno dirs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 13:00:31 +0100
+
+max-skel-conf (3.1.20080102.max7) max; urgency=low
+
+  * Merge homealumno package with max-skel-conf
+  * homelaumno use rsync with /etc/skel first and secondly with /etc/homealumno/skel
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 13 Feb 2008 12:03:37 +0100
+
+max-skel-conf (3.1.20080102.max6) max; urgency=low
+
+  * Remove update-dpsyco-skel call in postinst and postrm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 28 Jan 2008 12:41:42 +0100
+
+max-skel-conf (3.1.20080102.max5) max; urgency=low
+
+  * Delete xfce4 settings from skel, settings are in max-xfce-default-settings package
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 21 Jan 2008 16:02:18 +0100
+
+max-skel-conf (3.1.20080102.max4) max; urgency=low
+
+  * debian/postinst:
+    - Link manual.desktop from /etc/skel/Escritorio
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 03 Jan 2008 11:45:31 +0100
+
+max-skel-conf (3.1.20080102.max3) max; urgency=low
+
+  * Remove /etc/skel-alumno
+  * Rename Desktop => Escritorio
+  * Clean postinst and postrm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 20:47:00 +0100
+
+max-skel-conf (3.1.20080102.max2) max; urgency=low
+
+  * Fix typo in postint creating link
+  * Remove some not needed code in potinst and postrm
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 19:26:18 +0100
+
+max-skel-conf (3.1.20080102.max1) max; urgency=low
+
+  * Use Escritorio or Desktop with manual.desktop
+  * Redirect dpsyco output to /dev/null
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Jan 2008 10:34:16 +0100
+
+max-skel-conf (3.1-20071230.max2) max; urgency=low
+
+  * Create/Remove manual.desktop file in user Desktop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Jan 2008 19:48:33 +0100
+
+max-skel-conf (3.1-20071230.max1) max; urgency=low
+
+  * new version
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 17:15:29 +0100
+
+max-skel-conf (3.1-20071230) max; urgency=low
+
+  * New version
+  * Remove some of /etc/skel hidden dirs
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Dec 2007 17:02:47 +0100

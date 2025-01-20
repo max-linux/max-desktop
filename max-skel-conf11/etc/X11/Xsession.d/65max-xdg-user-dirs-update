@@ -1,0 +1,8 @@
+# force create XDG dirs in MaX
+
+if [ -x /usr/bin/xdg-user-dirs-update ] && \
+   [ ! -d $HOME/Documentos ] && \
+   [ ! -e /etc/X11/Xsession.d/80_configure_ldap_session ]; then
+	/usr/bin/xdg-user-dirs-update --force
+fi
+

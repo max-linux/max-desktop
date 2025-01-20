@@ -1,0 +1,52 @@
+#!/bin/bash
+set -e
+
+if [ -e /var/lib/max/background-selected ]; then
+  exit 0
+fi
+
+if [ "$DISPLAY" = "" ]; then
+  exit
+fi
+
+
+RES=$(xrandr | grep '*' | head -1 | awk '{ print $1 }' 2>/dev/null)
+if [ -z "$RES" ]; then
+  exit 0
+fi
+
+X=${RES%x*}
+case $X in
+ ''|*[!0-9]*) exit 0 ;;
+esac
+
+Y=${RES#*x}
+case $Y in
+ ''|*[!0-9]*) exit 0 ;;
+esac
+
+REL=$(($X*10/$Y))
+
+case 1 in
+$(( $REL <= 13)) ) SUFFIX="1600x1200";;
+$(( $REL <= 15)) ) SUFFIX="1900x1200";;
+*) SUFFIX="1920x1080";;
+esac
+
+
+if [ "$SUFFIX" = "" ]; then
+  exit
+fi
+
+cd /usr/share/backgrounds
+
+rm -f max.png
+ln -s "max-madrid-linux-${SUFFIX}.png" max.png
+
+rm -f max-infantil.png
+ln -s "max-madrid-linux-infantil-${SUFFIX}.png" max-infantil.png
+
+
+mkdir -p /var/lib/max/
+touch /var/lib/max/background-selected
+echo "${SUFFIX}" > /var/lib/max/background-selected

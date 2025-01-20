@@ -1,0 +1,156 @@
+#!/bin/sh
+set -e
+
+REMOVE=0
+
+#if [ "${MAX_FORCE_EFI}" = "" ]; then
+#  echo "No MAX_FORCE_EFI in environ, exit now"
+#  exit 0
+#fi
+
+if [ ! -d /sys/firmware/efi/efivars ]; then
+  echo " *  NO UEFI found /sys/firmware/efi/efivars "
+  exit
+fi
+
+if [ ! -e /bin/efibootmgr ]; then
+  echo " * No efibootmgr found"
+  exit
+fi
+
+EFI_PART=$(awk '/boot\/efi/ {print $1}' /proc/mounts| tail -1)
+
+if [ -x "${EFI_PART}" ]; then
+  echo " * NO UEFI partition"
+  exit
+fi
+
+if [ "$1" = "force-remove" ]; then
+  REMOVE=1
+fi
+
+if [ "$1" = "remove" ]; then
+  echo -n " Are you sure to remove UEFI MAX entries?? [y/N] "
+  read reqremove
+  if [ "${reqremove}" != "y" ]; then
+    echo " Canceled."
+    exit
+  fi
+  REMOVE=1
+fi
+
+if [ "$REMOVE" = "1" ]; then
+  #Vic - finder device
+  #EFI_DISC=$(df -h | awk '{ if ($NF == "/boot/efi" ) print $1 }')
+  EFI_DISC=$(fdisk -l | awk '/Disco/ { print $2 }' | sed -e 's/://g')
+
+  # remove MAX entry
+  EFI_NUM=$(efibootmgr | awk '/MAX/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
+  #[ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d /dev/sda
+  [ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d  $EFI_DISC
+
+  EFI_NUM=$(efibootmgr | awk '/MAX11/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
+  #[ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d /dev/sda
+  [ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d  $EFI_DISC
+
+  # ubuntu install max-*.* entry (don't works)
+  EFI_NUM_UBUNTU=$(efibootmgr | awk '/max\-/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
+  #[ ! -z $EFI_NUM_UBUNTU ] && efibootmgr -q -B -b "$EFI_NUM_UBUNTU" -d /dev/sda
+  [ ! -z $EFI_NUM ] && efibootmgr -q -B -b "$EFI_NUM" -d  $EFI_DISC
+  # rm -rf /boot/efi/EFI/MAX/ /boot/efi/EFI/MAX11/
+  echo " * Removed."
+  exit
+fi
+
+EFI_NUM=$(efibootmgr | awk '/MAX/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
+if [ ! -z ${EFI_NUM} ]; then
+  echo " * UEFI MAX is installed, run with 'remove' arg to delete"
+  exit
+fi
+
+
+
+
+#Changed to take number partition
+EFI_NUM=$(echo ${EFI_PART}|  awk '{print NF}')
+MAX_PART=$(mount | awk '/ \/ / {print $1}')
+MAX_GRUB=$(grub-probe --device $MAX_PART --target=efi_hints)
+MAX_UUID=$(grub-probe --device $MAX_PART --target=fs_uuid)
+#EFI_DISC=$(fdisk -l | awk '/Disco/ { print $2 }' | sed -e 's/://g') ugly
+EFI_DISC=$(grub-probe --device $MAX_PART --target=disk)
+
+echo " * Installing GRUB in UEFI part $EFI_PART to boot $MAX_PART ..."
+
+if [ ! -d /boot/efi/EFI ]; then
+  # remount (Ubiquity don't mount efi dir)
+  umount ${EFI_PART} || true
+  mkdir -p /boot/efi
+  mount ${EFI_PART} /boot/efi
+fi
+
+if [ ! -d /boot/efi/EFI ]; then
+  echo " * No /boot/efi/EFI found"
+  exit
+fi
+
+EFI_NUM_UBUNTU=$(efibootmgr | awk '/max\-/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
+[ ! -z $EFI_NUM_UBUNTU ] && efibootmgr -q -B -b "$EFI_NUM_UBUNTU" -d "$EFI_DISC"
+
+# generate grubx64.efi
+# https://help.ubuntu.com/community/UEFIBooting
+#grub-mkimage -O x86_64-efi -d /usr/lib/grub/x86_64-efi/ -o /tmp/grubx64.efi -p "" part_gpt part_msdos ntfs ntfscomp hfsplus fat ext2 normal chain boot configfile linux multiboot efi_gop efi_uga gettext gfxterm gzio png video_bochs video_cirrus search_fs_file search_fs_uuid search_label search loadenv boot cat chain cmp echo extcmd help ls reboot test
+# update from https://github.com/max-linux/max-desktop/issues/677
+grub-mkimage --format=x86_64-efi -p /EFI/MAX11 -o /tmp/grubx64.efi acpi all_video bitmap bitmap bitmap_scale boot btrfs bufio bufio chain configfile crypto datetime disk diskfilter diskfilter echo efifwsetup efi_gop efinet efi_uga ext2 extcmd extcmd font fshelp gcry_sha512 gettext gfxmenu gfxterm gfxterm_background gzio halt hfsplus iso9660 jpeg keystatus linux linuxefi loadenv lsefi lsefimmap lsefisystab lssal lzopio memdisk minicmd mmap normal part_gpt part_msdos password_pbkdf2 pbkdf2 priority_queue reboot relocator search search_fs_file search_fs_uuid search_label sleep terminal test trig video video_bochs video_cirrus video_colors video_fb fat help ls lspci
+
+mkdir -p /boot/efi/EFI/MAX11
+if ! [ -d /boot/efi/EFI/ubuntu ]; then
+mkdir -p /boot/efi/EFI/ubuntu
+fi
+OLD=$(find /boot/efi/EFI -type d -name "max-*")
+if [ "${OLD}" != "" ]; then
+  # copy all files and delete dir
+  cp ${OLD}/* /boot/efi/EFI/MAX11/
+  cp ${OLD}/* /boot/efi/EFI/ubuntu/
+ # rm -rf "${OLD}" # no remove
+fi
+
+# copy ubuntu fw files
+if [ -d /boot/efi/EFI/ubuntu ]; then
+  cp -ra /boot/efi/EFI/ubuntu/* /boot/efi/EFI/MAX11/
+fi
+
+cp /tmp/grubx64.efi /boot/efi/EFI/MAX11/
+
+if [ ! -e /boot/efi/EFI/MAX11/grub.cfg ]; then
+cat << EOF > /boot/efi/EFI/MAX11/grub.cfg
+search.fs_uuid ${MAX_UUID} root ${MAX_GRUB}
+set prefix=(\$root)'/boot/grub'
+configfile \$prefix/grub.cfg
+EOF
+fi
+echo ${EFI_DISC}
+efibootmgr -q -c -p ${EFI_NUM} -d ${EFI_DISC} -l "\EFI\MAX11\grubx64.efi" -L "MAX (grub)"
+
+# set MAX as default
+EFI_NUM=$(efibootmgr | awk '/MAX11/ {print $1}'| sed -e 's/Boot//g' -e 's/*//g'| tail -1)
+[ ! -z $EFI_NUM ] && efibootmgr -q -a -b "$EFI_NUM" -d $EFI_DISC
+
+rm -f /tmp/grubx64.efi
+
+
+
+if [ -e "/boot/efi/EFI/Microsoft/Boot/BCD" ]; then
+  # replace os.prober with new detection script
+  grep -q "^GRUB_DISABLE_OS_PROBER=true" /etc/default/grub || echo "GRUB_DISABLE_OS_PROBER=true" >> /etc/default/grub
+  cp /usr/share/max/25_windows_uefi /etc/grub.d/25_windows_uefi
+  chmod +x /etc/grub.d/25_windows_uefi
+fi
+
+
+update-grub
+
+# fix for USB install
+killall grub-mount 2>/dev/null
+
+
+echo " * Done"

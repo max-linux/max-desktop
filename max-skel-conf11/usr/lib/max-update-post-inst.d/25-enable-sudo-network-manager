@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# MAX 11
+exit 0
+
+if grep -q sudo /etc/dbus-1/system.d/org.freedesktop.NetworkManager.conf; then
+  exit 0
+fi
+
+# from livecd-rootfs package
+echo " * Adding sudo group policy to NM system service"
+
+sed -i 's/<policy user="root">/<policy group="sudo">\n\t\t\t\t<allow send_destination="org.freedesktop.NetworkManager"\/>\n\t\t\t\t<allow send_interface="org.freedesktop.NetworkManager"\/>\n\t\t\t\t<allow send_interface="org.freedesktop.NetworkManager.SecretAgent"\/>\n\t\t<\/policy>\n\t\t<policy user="root">/g' /etc/dbus-1/system.d/org.freedesktop.NetworkManager.conf
+
+mkdir -p /etc/polkit-1/localauthority/50-local.d
+cat > /etc/polkit-1/localauthority/50-local.d/org.freedesktop.NetworkManager.pkla << EOF
+[indicator-network-service]
+Identity=unix-group:sudo
+Action=org.freedesktop.NetworkManager.*
+ResultAny=yes
+ResultInactive=no
+ResultActive=yes
+EOF
+

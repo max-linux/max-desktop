@@ -1,0 +1,29 @@
+#!/bin/sh
+
+if [ "$(max-arch)" != "amd64" ]; then
+  echo " * Este script sólo es necesario para arquitectura 64 bits"
+  exit
+fi
+
+
+
+PKGS=$(dpkg -l| awk '/9.4.7/ {print $2}'| grep acroread)
+
+if [ "$PKGS" = "" ] && [ "$1" != "force" ]; then
+  echo " * Acrobat está actualizado o no instalado"
+  exit
+fi
+
+
+if [ "$1" != "force" ] && ! apt-cache policy acroread-debian-files| grep -q 9.5; then
+  echo " * Acrobat 9.5 no disponible en el repositorio, necesita un apt-get update"
+  exit
+fi
+
+[ ! -z "$PKGS" ] && apt-get remove --purge -y $PKGS
+
+## apt-get install -y acroread:i386 acroread-data:i386 acroread-plugins:i386 acroread-debian-files:i386 libcanberra-gtk0:i386 gtk2-engines-murrine:i386
+
+## apt-get autoremove --purge -y
+
+echo " * Acrobat Reader eliminado."

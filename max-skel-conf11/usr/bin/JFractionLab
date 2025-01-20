@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# jfractionlab wrapper script
+# code for java detection based on tuxguitar code
+# but adding detection of alternatives for jclic
+
+if [ -z $JAVA_HOME ] ; then
+    JAVA="`readlink -n -f /etc/alternatives/java`"
+fi
+
+export JAVA=${JAVA:=java}
+
+
+
+exec $JAVA -client -jar /usr/share/jfractionlab/bin/JFractionLab.jar "$@" > /dev/null 2>&1
+

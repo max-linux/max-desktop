@@ -1,0 +1,73 @@
+#!/bin/bash
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>
+
+# (c) Antonio Sánchez León <introlinux[fix@]gmail[fix.]com>
+# (c) Miguel Anxo Bouzada <mbouzada[fix@]gmail[fix.]com>
+# (c) GALPon MinNo Team <minino[fix@]galpon[fix.]org>
+# july 2012
+
+## -
+## uso: como root  escrivimos traspasa_a destino
+### Destino es un parámetro dado, por ejemplo sda1 formateado en ext4
+##La unidad de destino debe de tener una partición swap de al menos 128M
+
+
+### Montamos el destino
+cd /media
+mkdir $1
+mount /dev/$1 /media/$1
+
+
+### Copiamos todo el sistema al destino
+
+rsync -va --delete / /media/$1/ --exclude '/proc/*' --exclude '/dev/*' --exclude '/sys/*' --exclude '/tmp/*' --exclude '/media/*' --exclude '/run/*' --exclude '/live/*' --exclude '/var/tmp/*'
+
+
+### Etiquetamos el destino para no andar con UUIDs
+
+e2label /dev/$1 MIMAX
+
+
+### Modificamos fstab para que el sistema encuentre dónde está la nueva partición
+
+cat <<EOF >/media/$1/etc/fstab
+# /etc/fstab: static file system information.
+# Format:
+#  <file system>         <mount point>   <type>  <options>      <dump>  <pass>
+
+proc /proc  proc  defaults  0  0
+
+LABEL=MIMAX  /  ext4  errors=remount-ro,noatime,commit=60  0  1
+/SWAPFILE none swap sw 0 0
+
+EOF
+
+### Añadimos un archivo swap en el raíz del destino de 128M
+
+dd if=/dev/zero of=/media/$1/SWAPFILE bs=1M count=128
+mkswap -L SWAP /media/$1/SWAPFILE
+
+
+### Instalamos GRUB
+mount -B /proc /media/$1/proc
+mount -B /sys /media/$1/sys
+mount -B /dev /media/$1/dev
+
+chroot /media/$1 update-grub
+discoduro=`echo $1 |tr -d [:digit:]`
+chroot /media/$1 grub-install /dev/$discoduro
+sync
+
+echo "REINICIA"

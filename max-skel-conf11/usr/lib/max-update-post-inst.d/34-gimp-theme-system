@@ -1,0 +1,16 @@
+#!/bin/sh
+
+
+# https://github.com/max-linux/max-desktop/issues/951
+if [ -e /etc/gimp/2.0/gimprc ]; then
+  # interface theme
+  if ! grep -q '(theme "System")' /etc/gimp/2.0/gimprc; then
+    echo '(theme "System")' >> /etc/gimp/2.0/gimprc
+  fi
+
+  # icon theme
+  if ! grep -q '(icon-theme "Lgeacy")' /etc/gimp/2.0/gimprc; then
+    echo '(icon-theme "Legacy")' >> /etc/gimp/2.0/gimprc
+  fi
+fi
+

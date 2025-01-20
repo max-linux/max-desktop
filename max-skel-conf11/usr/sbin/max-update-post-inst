@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# called from /etc/apt/apt.conf.d/92update-dpsyco-skel
+#
+
+echo "Procesando disparadores para max ..."
+
+for s in /usr/lib/max-update-post-inst.d/*; do
+  # echo ${s}
+  if [ -x "${s}" ]; then
+    "${s}" || true
+  fi
+done
+

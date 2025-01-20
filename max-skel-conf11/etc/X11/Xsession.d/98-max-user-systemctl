@@ -1,0 +1,9 @@
+
+
+if [ -x /bin/systemctl ]; then
+  # start all indicators
+  for SRV in $(ls /usr/lib/systemd/user/indicator*.service | \
+               grep -e 'sound' -e 'bluetoooth' -e 'power'); do
+    systemctl --user start `basename ${SRV}` || true
+  done
+fi

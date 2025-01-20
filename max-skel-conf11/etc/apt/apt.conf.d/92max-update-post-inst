@@ -1,0 +1,2 @@
+// Sync dpsyco skel with /
+DPkg::Post-Invoke {"/usr/sbin/max-update-post-inst || true";};

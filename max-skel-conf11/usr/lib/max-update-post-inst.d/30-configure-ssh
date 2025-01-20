@@ -1,0 +1,27 @@
+#!/bin/sh
+
+
+# configure SSH to not allow danger logins
+if [ -f /etc/ssh/sshd_config ]; then
+  if ! grep -q "# MAX" /etc/ssh/sshd_config ; then
+    cat << EOF >> /etc/ssh/sshd_config
+# ******** no borrar este comentario ******
+# MAX
+# deshabilitar contraseñas conocidas
+# para activar el login cambiar la contraseña
+# del usuario que se quiera habilitar y eliminar
+# su nombre de la siguiente línea
+#
+#
+DenyUsers madrid alumno profesor
+
+EOF
+  # restart ssh service
+  invoke-rc.d ssh restart || true
+  fi
+fi
+
+
+
+# fix for system-config-samba
+[ ! -e /etc/libuser.conf ] && touch /etc/libuser.conf
