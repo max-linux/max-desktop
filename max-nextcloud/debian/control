@@ -9,7 +9,7 @@ Homepage: https://nextcloud.com/
 Package: nextcloud-desktop
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Provides: nextcloud-desktop, nextcloud-desktop-common, nextcloud-desktop-l10n, caja-nextcloud, libnextcloudsync0, nextcloud-desktop-doc 
-Replaces: nextcloud-desktop, nextcloud-desktop-common, nextcloud-desktop-l10n, caja-nextcloud, libnextcloudsync0, nextcloud-desktop-doc 
-Conflicts: nextcloud-desktop, nextcloud-desktop-common, nextcloud-desktop-l10n, caja-nextcloud, libnextcloudsync0, nextcloud-desktop-doc
-Description: Servicio de alojamineto de archivos de EducaMadrid. 
+Provides: nextcloud-desktop, nextcloud-desktop-common, nextcloud-desktop-l10n, caja-nextcloud, libnextcloudsync0, nextcloud-desktop-doc
+Conflicts: nextcloud-desktop (<= 3.15.1), nextcloud-desktop-common, nextcloud-desktop-l10n, caja-nextcloud, libnextcloudsync0, nextcloud-desktop-doc
+Replaces: nextcloud-desktop (<= 3.15.1), nextcloud-desktop-common, nextcloud-desktop-l10n, caja-nextcloud, libnextcloudsync0, nextcloud-desktop-doc
+Description: Servicio de alojamineto de archivos de EducaMadrid.

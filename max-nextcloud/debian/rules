@@ -2,7 +2,8 @@
 export DH_VERBOSE = 1
 
 VERSION=3.15.2
-URL1=http://172.18.2.51/remote-files/Cloud_EducaMadridLinux64-${VERSION}.AppImage 
+APLICACION="Cloud_EducaMadridLinux64-${VERSION}.AppImage"
+URL1=http://172.18.2.51/remote-files/${APLICACION} 
 
 %:
 	dh $@
@@ -14,9 +15,9 @@ override_dh_clean:
 
 
 override_dh_auto_build:
-	
-	mkdir -p build &&  cd build && wget --no-check-certificate ${URL1} ;
-	if [ -f build/Cloud_EducaMadridLinux64-${VERSION}.AppImage ]; then  chmod +x build/Cloud_EducaMadridLinux64-${VERSION}.AppImage; fi
-
+	mkdir -p build && cd build && wget --no-check-certificate ${URL1} ;
+	if [ -f build/${APLICACION} ]; then chmod +x build/${APLICACION}; fi
+	if [ -f build/${APLICACION} ]; then cd build && mv ${APLICACION} Cloud_EducaMadrid.AppImage; fi
+ 
 override_dh_strip:
 #do not remove appimage
