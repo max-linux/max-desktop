@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE = 1
+
+VERSION=1.0
+URL=http://172.18.2.51/remote-files/${APLICACION} 
+APLICACION="freecad_linux64-${VERSION}.AppImage"
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	if [ -d build ]; then rm -rf build; fi 
+
+override_dh_auto_build:
+	mkdir -p build && cd build && wget --no-check-certificate ${URL};
+	if [ -f build/${APLICACION} ]; then chmod +x build/${APLICACION}; fi
+	if [ -f build/${APLICACION} ]; then mv build/${APLICACION} build/freecad.AppImage; fi
+
+override_dh_strip:
+# Do not remove appimage

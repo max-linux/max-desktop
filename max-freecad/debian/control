@@ -1,0 +1,13 @@
+Source: max-freecad
+Section: contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, debhelper (>= 10)
+Standards-Version: 1.0
+Homepage: https://www.freecad.org/
+
+Package: freecad
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: FreeCAD is made primarily to design objects for the real world.
+ Everything you do in FreeCAD uses real-world units, be it microns, kilometers, inches or feet, or even any combination of units.
