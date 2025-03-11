@@ -19,6 +19,7 @@ Depends: libgtk-3-0,
          libsecret-1-0, 
          ${shlibs:Depends}, ${misc:Depends}
 Recommends: libappindicator3-1
-Conflicts: learningml-desktop, brltty
-Replaces: learningml-desktop, brltty
+# Para la instalación en MAX 11 se elimina brltty-x11 en conflicts y replaces
+Conflicts: learningml-desktop
+Replaces: learningml-desktop
 Description: LearningML in the desktop with echidna and internet independent
