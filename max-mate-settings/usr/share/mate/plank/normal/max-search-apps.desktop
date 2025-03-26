@@ -5,6 +5,6 @@ Name[es]=Buscador de aplicaciones
 Comment=Search applications
 Comment[es]=Buscador de aplicaciones
 Keywords=search;find;launch
-Exec=synapse
+Exec=albert toggle
 Icon=gtk-find
 Categories=GNOME;Utility;
