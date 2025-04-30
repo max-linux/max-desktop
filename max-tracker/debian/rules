@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+VERSION=6.3.0
+URL=http://localhost/remote-files/tracker.tar.gz
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	if [ -d build ]; then rm -rf build; fi 
+
+
+override_dh_auto_build:
+	mkdir -p build && cd build && wget --no-check-certificate ${URL} && tar -xzvf tracker.tar.gz && rm -rf tracker.tar.gz;
+
+
+override_dh_shlibdeps:
+	dh_shlibdeps --exclude=opt/tracker/9.0.4-x64-jre/

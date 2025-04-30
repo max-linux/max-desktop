@@ -1,0 +1,13 @@
+Source: max-tracker
+Section: contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, debhelper (>= 11)
+Standards-Version: 6.3.0
+Homepage: https://opensourcephysics.github.io/tracker-website/
+
+Package: max-tracker
+Architecture: any
+Depends: ${misc:Depends}, default-jre | java8-runtime, libgtk-3-0
+Description: Tracker
+ Herramienta de analisis y modelado de video para física
