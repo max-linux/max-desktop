@@ -1,0 +1,4 @@
+#montar con veracrypt
+%veracrypt ALL=(ALL) NOPASSWD: /usr/bin/veracrypt
+#desmontar con veracrypt
+%veracrypt ALL=(ALL) NOPASSWD: /usr/bin/veracrypt -d

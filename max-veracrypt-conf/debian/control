@@ -1,0 +1,12 @@
+Source: max-veracrypt-conf
+Section: contrib
+Priority: optional
+Maintainer: MAX Mantainer <cau_max@educa.madrid.org>
+Build-Depends: debhelper (>=9)
+Standards-Version: 4.0.0
+Homepage: http://educa.madrid.org
+
+Package: max-veracrypt-conf
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, veracrypt
+Description: Configuracion del paquete veracrypt para usuarios comunes. 

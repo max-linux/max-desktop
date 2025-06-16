@@ -1,0 +1,48 @@
+#!/usr/bin/bash
+
+set -e
+
+directorio_vera="/media/veracrypt"
+grupo_veracrypt=$( cat /etc/group | awk  -F ":" '$1 == "veracrypt" { print $1 }' );
+
+
+## Se crea el directorio veracrypt para montar la particion cifrada.
+##
+
+
+case "$1" in
+
+	configure)
+
+		echo "configurando el paquete..."
+
+		if [ ! -d "${directorio_vera}" ]; then
+
+    		mkdir -p "${directorio_vera}"
+
+		fi
+
+		echo "Creando el grupo veracrypt..."
+
+		## se comprueba que exista el grupo veracrypt  
+		## si no existe se crea
+
+
+		if [ ! "${rupo_veracrypt}" == " " ]; then
+
+    		groupadd veracrypt  || echo "El grupo ya esta creado"
+
+    		fi
+		
+		
+		## Se añade a el grupo varacrypt a los usuarios 
+		
+
+		/usr/sbin/max-adduser-veracrypt.sh || true
+
+
+			
+	;;
+esac 
+
+exit 0
