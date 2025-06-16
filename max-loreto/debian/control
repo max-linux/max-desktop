@@ -1,0 +1,12 @@
+Source: max-loreto
+Section: contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, debhelper (>= 10)
+Standards-Version: 3.15.3
+Homepage: https://nextcloud.com/
+
+Package: max-loreto
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Servicio de alojamiento de archivos de EducaMadrid.

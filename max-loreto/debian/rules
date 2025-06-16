@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE = 1
+
+VERSION=3.16.5
+#URL1=http://172.18.2.51/remote-files/${APLICACION} 
+URL1=https://github.com/nextcloud-releases/desktop/releases/download/v3.16.5/Nextcloud-${VERSION}-x86_64.AppImage
+APLICACION="Nextcloud-${VERSION}-x86_64.AppImage"
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	if [ -d build ]; then rm -rf build; fi 
+
+override_dh_auto_build:
+	mkdir -p build && cd build && wget --no-check-certificate ${URL1};
+	if [ -f build/${APLICACION} ]; then chmod +x build/${APLICACION}; fi
+	if [ -f build/${APLICACION} ]; then cd build && mv ${APLICACION} Loreto_EducaMadrid.AppImage; fi
+ 
+override_dh_strip:
+# Do not remove appimage
