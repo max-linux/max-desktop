@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+
+VERSION=139.0
+TAR=firefox-$(VERSION).tar.xz
+URL=https://ftp.mozilla.org/pub/firefox/releases/$(VERSION)/linux-x86_64/en-US/$(TAR)
+%:
+	dh $@
+
+override_dh_clean:
+	#limpiar el directorio de construccion si existe.
+	rm -rf build;
+	dh_clean
+
+
+override_dh_auto_build:
+	mkdir -p  build
+	
+	#Descargar y descomprimir firefox
+	cd  build && wget --no-check-certificate $(URL) && tar -xf $(TAR) && rm $(TAR);
+
+
+override_dh_shlibdeps:
+
+override_dh_strip:
+
+override_dh_strip_nondeterminism:

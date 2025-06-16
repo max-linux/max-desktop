@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Exec=firefox %u
+Terminal=false
+X-MultipleArgs=false
+Icon=firefox
+StartupWMClass=firefox
+Categories=GNOME;GTK;Network;WebBrowser;
+Actions=new-window;new-private-window;open-profile-manager;
+Name=Firefox
+Name[es_ES]=Firefox
