@@ -1,0 +1,13 @@
+Source: max-maqueta-eed-md-2021-1
+Section: contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, debhelper (>= 10)
+
+Standards-Version: 4.3.0.3
+Package: max-maqueta-eed-md-2021-1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: parche de configuracion para el funcionamiento del 
+ del microfono en la maqueta BAC-EED-MD-2021-1.
+
