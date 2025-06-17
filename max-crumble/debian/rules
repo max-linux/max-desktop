@@ -1,7 +1,8 @@
 #!/usr/bin/make -f
 
 #URL="http://complubot.com/docu/Crumble/Software/crumble_1.4.13_all.deb"
-URL="https://complubot.com/wp-content/uploads/2024/03/crumble_1.5.8_all.deb"
+#URL="https://complubot.com/wp-content/uploads/2024/03/crumble_1.5.8_all.deb"
+URL="https://complubot.com/docu/Crumble/Software/crumble_1.6.12_all.deb"
 %:
 	dh $@
 
