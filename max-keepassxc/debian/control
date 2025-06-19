@@ -1,0 +1,14 @@
+Source: max-keepassxc
+Section: contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, debhelper (>= 10)
+Standards-Version: 2.7.10
+Homepage: https://keepassxc.org/
+
+Package: keepassxc
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: KeePassXC, Cross-platform Password Manager
+ Let KeePassXC safely store your passwords and auto-fill them into your favorite apps, so you can forget all about them.
+ We do the heavy lifting in a no-nonsense, ad-free, tracker-free, and cloud-free manner. Free and open source.

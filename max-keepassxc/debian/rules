@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE = 1
+
+VERSION=2.7.10
+URL=https://github.com/keepassxreboot/keepassxc/releases/download/${VERSION}/KeePassXC-${VERSION}-x86_64.AppImage
+PACKAGE="KeePassXC-${VERSION}-x86_64.AppImage"
+
+%:
+	dh $@
+
+
+override_dh_clean:
+	dh_clean
+	if [ -d build ]; then rm -rf build; fi 
+
+override_dh_auto_build:
+	
+	mkdir -p build && cd build && wget --no-check-certificate ${URL};
+	if [ -f build/${PACKAGE} ]; then chmod +x build/${PACKAGE}; fi
+	if [ -f build/${PACKAGE} ]; then mv build/${PACKAGE} build/Keepassxc.AppImage; fi
+
+override_dh_strip:
+# Do not remove appimage
