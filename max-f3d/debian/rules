@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+VERSION=3.1.0
+NAME=raytracing
+URL1=https://github.com/f3d-app/f3d/releases/download/v${VERSION}/F3D-${VERSION}-Linux-x86_64-${NAME}.deb
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	if [ -d build2 ]; then rm -rf build; fi 
+
+override_dh_auto_build:
+	
+	mkdir -p build2 &&  cd build2 && wget --no-check-certificate  ${URL1} ;
+	if [ -f build2/F3D-${VERSION}-Linux-x86_64-${NAME}.deb ]; then cd build2/ && dpkg -x F3D-${VERSION}-Linux-x86_64-${NAME}.deb . ; fi	
+	rm -f build2/F3D-${VERSION}-Linux-x86_64-${NAME}.deb
+	
+override_dh_shlibdeps:
+	

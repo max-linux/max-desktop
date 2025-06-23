@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=F3D
+Name[es]= F3D
+Comment[es]= 3D viewer
+Icon=f3d
+Exec=f3d %F
+TryExec=f3d 
+Terminal=false
+Type=Application
+Categories=Graphics;3DGraphics;Viewer;
+StartupNotify=false

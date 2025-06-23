@@ -1,0 +1,15 @@
+Source: max-f3d
+Section: contrib
+Priority: optional
+Maintainer: CAU de MAX <cau_max@educa.madrid.org>
+Build-Depends: wget, debhelper (>= 11)
+Standards-Version: 3.1.0
+Homepage: https://f3d.app/
+
+Package: f3d
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libassimp5, libassimp-doc, libassimp-dev, assimp-utils, assimp-testmodels, python3-pyassimp
+Description: F3D - 3D viewer
+	F3D is a fast and minimalist 3D viewer desktop application. It supports many file formats (from digital content to scientific datasets),
+	can show animations and support thumbnails and many rendering and texturing options including real time physically based rendering and raytracing.
+	     
