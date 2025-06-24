@@ -2,9 +2,17 @@
 
 set -e
 
-# Generar locale en_GB.UTF-8 si no está
-if ! locale -a | grep -q "^en_GB\.utf8$"; then
-    echo "Generando locale en_GB.UTF-8..."
-    locale-gen en_GB.UTF-8
-    update-locale
-fi
+case "$1" in
+
+	configure)
+
+		# Generar locale en_GB.UTF-8 si no está
+		if ! locale -a | grep -q "^en_GB\.utf8$"; then
+			echo "Generando locale en_GB.UTF-8..."
+    			locale-gen en_GB.UTF-8
+    			update-locale
+		fi
+	;;
+esac
+
+exit 0
