@@ -1,8 +1,15 @@
 #!/usr/bin/make -f
 
-VERSION=139.0
+VERSION=140.0
 TAR=firefox-$(VERSION).tar.xz
 URL=https://ftp.mozilla.org/pub/firefox/releases/$(VERSION)/linux-x86_64/en-US/$(TAR)
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+LANGS=es-ES es-AR es-CL es-MX de ca-valencia ca eu fr it gl en-US en-CA en-GB
+PKG_PREFIX=firefox-lang
+
+
+
 %:
 	dh $@
 
@@ -13,10 +20,28 @@ override_dh_clean:
 
 
 override_dh_auto_build:
-	mkdir -p  build
+	dh_auto_build
 	
+	mkdir -p  build
+		
 	#Descargar y descomprimir firefox
 	cd  build && wget --no-check-certificate $(URL) && tar -xf $(TAR) && rm $(TAR);
+	
+	# Descarga de lenguajes
+	for lang in $(LANGS); do \
+		wget --no-check-certificate -q -O $$lang.xpi https://ftp.mozilla.org/pub/firefox/releases/$(VERSION)/linux-x86_64/xpi/$$lang.xpi || { echo "Error descargando $$lang.xpi"; exit 1; }; \
+		ls -l ; \
+	done
+
+
+
+override_dh_auto_install:
+	for lang in $(LANGS); do \
+		install -d debian/$(PKG_PREFIX)-$${lang%%-*}/usr/lib/firefox/browser/extensions/; \
+		install -m 644 $$lang.xpi debian/$(PKG_PREFIX)-$${lang%%-*}/usr/lib/firefox/browser/extensions/langpack-$$lang@firefox.mozilla.org.xpi; \
+		tree  ; \
+	done
+
 
 
 override_dh_shlibdeps:

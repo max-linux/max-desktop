@@ -2,7 +2,7 @@ Source: firefox
 Section: web
 Priority: extra
 Maintainer: cau_max <cau_max@educa.madrid.org>
-Build-Depends: debhelper (>= 10.0), wget, tar
+Build-Depends: debhelper (>= 10.0), wget, tar, tree
 Standards-Version:  4.3.0.3
 Homepage: https://www.mozilla.org
 
@@ -38,3 +38,51 @@ Depends:libasound2 (>= 1.0.16),
 	libxrender1
 Provides: gnome-www-browser, www-browser
 Description: Mozilla Firefox
+
+Package: firefox-locale-es
+Architecture: all
+Depends: ${misc:Depends}
+Description: Language pack for Firefox (Spain - es)
+ Firefox language pack for it locale.
+
+Package: firefox-locale-it
+Architecture: all
+Depends: ${misc:Depends}
+Description: Language pack for Firefox (Italy - it)
+ Firefox language pack for it locale.
+
+Package: firefox-locale-de
+Architecture: all
+Depends: ${misc:Depends}
+Description: Language pack for Firefox (German - de)
+ Firefox language pack for de locale.
+
+Package: firefox-locale-fr
+Architecture: all
+Depends: ${misc:Depends}
+Description: Language pack for Firefox (French - fr)
+ Firefox language pack for fr locale.
+
+Package: firefox-locale-en
+Architecture: all
+Depends: ${misc:Depends}
+Description: Language pack for Firefox (English - en)
+ Firefox language pack for en locale.
+
+Package: firefox-locale-ca
+Architecture: all
+Depends: ${misc:Depends}
+Description: Language pack for Firefox (catalan - ca)
+ Firefox language pack for catalan locale.
+
+Package: firefox-locale-gl
+Architecture: all
+Depends: ${misc:Depends}
+Description: Language pack for Firefox (Gallego - gl-es)
+ Firefox language pack for it locale.
+
+Package: firefox-locale-eu
+Architecture: all
+Depends: ${misc:Depends}
+Description: Language pack for Firefox (Euskera - eu)
+ Firefox language pack for it locale.
