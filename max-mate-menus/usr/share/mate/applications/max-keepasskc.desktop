@@ -6,7 +6,7 @@ GenericName[es]=Gestor de contraseñas
 Comment=Community-driven port of the Windows application “KeePass Password Safe”
 Comment[es]=Gestor de contraseñas.
 
-Exec=keepassxc %f
+Exec=/usr/bin/keepassxc
 TryExec=keepassxc
 Icon=keepassxc
 StartupWMClass=keepassxc
