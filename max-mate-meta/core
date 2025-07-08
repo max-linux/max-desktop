@@ -1,8 +1,6 @@
 a11y-profile-manager-indicator
 accountsservice
 acpid
-#aegisub
-#aegisub-l10n
 alsa-base
 alsa-utils
 anacron
@@ -17,8 +15,6 @@ avahi-dnsconfd
 avahi-utils
 bash-completion
 bc
-#brltty
-#brltty-x11
 ca-certificates
 caja
 caja-mediainfo
@@ -171,6 +167,8 @@ onboard-data
 openprinting-ppds
 openssh-client
 openssh-server
+open-vm-tools
+open-vm-tools-desktop
 ocrfeeder
 parted
 pciutils
@@ -216,7 +214,6 @@ system-config-printer-udev
 systemd-sysv
 tcpdump
 telnet
-#tilda
 time
 tesseract-ocr
 tesseract-ocr-spa
