@@ -2,7 +2,7 @@
 
 VERSION=140.0
 TAR=firefox-$(VERSION).tar.xz
-URL=https://ftp.mozilla.org/pub/firefox/releases/$(VERSION)/linux-x86_64/en-US/$(TAR)
+URL=https://ftp.mozilla.org/pub/firefox/releases/$(VERSION)/linux-x86_64/es-ES/$(TAR)
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 LANGS=es-ES es-AR es-CL es-MX de ca-valencia ca eu fr it gl en-US en-CA en-GB
