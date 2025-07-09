@@ -471,6 +471,33 @@ for group in $ALUMNO_GROUPS; do
   $log $chroot $ROOT adduser $ALUMNO_USERNAME $group || true
 done
 
+#add user examen
+
+db_get passwd/examen-username
+EXAMEN_USERNAME="$RET"
+
+db_get passwd/examen-userfullname
+EXAMEN_USERFULLNAME="$RET"
+
+db_get passwd/examen-password
+EXAMEN_PASSWORD="$RET"
+
+db_get passwd/examen-default-groups
+EXAMEN_GROUPS=$RET
+
+$log $chroot $ROOT adduser --disabled-password --gecos "$EXAMEN_USERFULLNAME" "$EXAMEN_USERNAME" >/dev/null || true
+setpassword "$EXAMEN_USERNAME" "$EXAMEN_PASSWORD" "false" || true
+# disable password change github #780
+$log $chroot $ROOT passwd -n 99999 "$EXAMEN_USERNAME"
+
+
+for group in $EXAMEN_GROUPS; do
+  $log $chroot $ROOT adduser $EXAMEN_USERNAME $group || true
+done
+
+
+
+
 # add user profesor
 if [ -f /tmp/max_install_type ] && [ "$(grep -c profesor /tmp/max_install_type)" != "0" ]; then
 
