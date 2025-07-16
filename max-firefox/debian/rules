@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-VERSION=140.0
+VERSION=140.0.4
 TAR=firefox-$(VERSION).tar.xz
 URL=https://ftp.mozilla.org/pub/firefox/releases/$(VERSION)/linux-x86_64/es-ES/$(TAR)
 
