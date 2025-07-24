@@ -2,9 +2,11 @@
 
 export DH_VERBOSE = 1
 
-VERSION=3.16.2
-URL1=http://172.18.2.51/remote-files/${APLICACION} 
+VERSION=3.16.6
 APLICACION="Cloud_EducaMadridLinux64-${VERSION}.AppImage"
+URL1=http://172.18.2.51/remote-files/${APLICACION} 
+
+
 %:
 	dh $@
 
