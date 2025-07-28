@@ -1,10 +1,9 @@
 #!/usr/bin/make -f
 #export DH_VERBOSE=1
 
-VERSION=1.4.3
+VERSION=1.2.0
 
-URL=https://web.learningml.org/echidnaml/1.0.9/echidnaml_1.0.9_amd64.deb
-
+URL=https://web.learningml.org/echidnaml/echidnaml_${VERSION}_amd64.deb
 
 %:
 	dh $@

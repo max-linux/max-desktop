@@ -3,7 +3,7 @@ Section: Development
 Priority: optional
 Maintainer: juanda@jaundarodriguez.es
 Build-Depends: debhelper (>= 10.0.0), wget
-Standards-Version: 1.0.9
+Standards-Version: 4.3.0.3
 Homepage: https://gitlab.com/lml-corp/lml-desktop#readme
 
 Package: echidnaml
