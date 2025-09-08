@@ -1,8 +1,8 @@
 #!/usr/bin/make -f
 export DH_VERBOSE = 1
-
-PACKAGE="chromium_131.0.6778.204~linuxmint1+virginia_amd64.deb"
-URL1=http://packages.linuxmint.com/pool/upstream/c/chromium/chromium_131.0.6778.204~linuxmint1+virginia_amd64.deb
+VERSION=140.0.7339.80
+PACKAGE="chromium_${VERSION}~linuxmint1+virginia_amd64.deb"
+URL1=http://packages.linuxmint.com/pool/upstream/c/chromium/chromium_"${VERSION}"~linuxmint1+virginia_amd64.deb
 %:
 	dh $@
 
