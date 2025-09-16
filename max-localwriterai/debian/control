@@ -1,0 +1,15 @@
+Source: max-localwriteai
+Section: miscellaneous
+Priority: optional
+Maintainer:  <cau_max@educa.madrid.org>
+Build-Depends: curl, tar, debhelper (>=10)
+Standards-Version: 4.6.2.0
+Homepage: https://github.com/balisujohn/localwriter
+
+Package: localwriterai
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: LocalWriterAI Esta es una extensión de LibreOffice Writer
+ que permite la edición generativa en línea con inferencia local. 
+ Es compatible con los modelos de lenguaje soportados por text-generation-webui
+ y ollama.

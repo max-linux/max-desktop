@@ -1,0 +1,30 @@
+#!/bin/sh
+set -e
+
+# Este script se ejecuta después de instalar o actualizar el paquete
+
+case "$1" in
+    configure)
+        echo "Librewriter AI configure..."
+
+        # Crear directorio si no existe
+        if [ -e /opt/max-localwriter.oxt ]; then
+		echo "Inicio de carga de extension"
+		unopkg add  -f --shared -s /opt/max-localwriter.oxt || true
+            
+        fi
+
+
+
+        ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+        echo "Abortando operación..."
+        ;;
+    *)
+        echo "postinst llamado con parámetro desconocido \`$1'" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
+
