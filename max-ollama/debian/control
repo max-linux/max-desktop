@@ -1,0 +1,14 @@
+Source: max-ollama
+Section: miscellaneous
+Priority: optional
+Maintainer:  <cau_max@educa.madrid.org>
+Build-Depends: curl, tar, debhelper (>=10)
+Standards-Version: 4.6.2.0
+Homepage: https://ollama.com
+
+Package: ollama
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Ollama es una herramienta que permite ejecutar 
+ modelos de lenguaje grandes (LLMs) de forma local en tu ordenador, 
+ sin depender de la nube.

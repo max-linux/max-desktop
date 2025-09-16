@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+
+DH_VERBOSE = 1
+PACKAGE = ollama-linux-amd64.tgz
+URL = https://ollama.com/download/${PACKAGE}
+%:
+	dh $@
+
+override_dh_auto_clean:
+	if [ -d build ]; then \
+	rm -rf build; \
+	fi 
+
+override_dh_auto_build:
+	if ! [ -d build ]; then  \
+	mkdir build ;\
+	cd build && curl -LO ${URL} && \
+	tar -xzf ollama-linux-amd64.tgz && \
+	rm -f ${PACKAGE}; \
+	fi
+
+override_dh_shlibdeps:
+	#do nothing
+
+override_dh_strip:
+	#do nothing

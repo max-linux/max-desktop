@@ -1,0 +1,27 @@
+#!/bin/sh
+
+set -e
+
+
+case "$1" in
+    remove)
+        # Remove bin ollama file.
+        rm -rf $(which ollama) || true
+        ;;
+    purge)
+        # Commands to run when the package is purged (configuration files are removed)
+        ;;
+    upgrade)
+        # This is usually handled by the postinst script for the new version.
+        # For example, to do something with old-postrm.
+        # old-postrm upgrade new-version
+        ;;
+    *)
+        # Handle other cases if necessary, though this is less common.
+        # For example, a deconfigured package might still have a postrm
+        # called by a different package.
+        ;;
+esac
+
+exit 0
+
