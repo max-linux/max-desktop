@@ -3,7 +3,7 @@ Section: contrib
 Priority: optional
 Maintainer: CAU de MAX <cau_max@educa.madrid.org>
 Build-Depends: wget, debhelper (>= 10)
-Standards-Version: 3.3.13
+Standards-Version: 3.4.12
 Homepage: https://joplin.org/
 
 Package: joplin
