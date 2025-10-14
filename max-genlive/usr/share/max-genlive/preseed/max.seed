@@ -77,6 +77,11 @@ passwd passwd/alumno-userfullname string Alumno
 passwd passwd/alumno-username string alumno
 passwd passwd/alumno-password password alumno
 passwd passwd/alumno-default-groups string audio cdrom dialout floppy video plugdev scanner vboxusers sambashare netdev
+#
+passwd passwd/examen-userfullname string Examen
+passwd passwd/examen-username string examen
+passwd passwd/examen-password password examen
+passwd passwd/examen-default-groups string audio cdrom dialout floppy video plugdev scanner vboxusers sambashare netdev
 
 ubiquity ubiquity/stepUserInfo boolean false
 #

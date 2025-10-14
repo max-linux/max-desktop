@@ -18,7 +18,7 @@ PAQUETES_INFANTIL="max-desktop-infantil-primaria max-infantil"
 
 
 # repo extra para MAX
-PAQUETES_EXTRA="tcos max-alumno max-profesor max-terminales"
+PAQUETES_EXTRA="tcos max-alumno max-profesor max-terminales max-examen-av"
 PAQUETES_EXTRA="$PAQUETES_EXTRA max-tcos-alumno max-tcos-profesor"
 PAQUETES_EXTRA="$PAQUETES_EXTRA linux-wlan-ng-firmware max-desktop-infantil-primaria max-infantil"
 
